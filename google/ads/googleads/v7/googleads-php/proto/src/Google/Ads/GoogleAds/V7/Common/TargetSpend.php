@@ -25,7 +25,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
      * for details.
      *
-     * Generated from protobuf field <code>int64 target_spend_micros = 3 [deprecated = true];</code>
+     * Generated from protobuf field <code>optional int64 target_spend_micros = 3 [deprecated = true];</code>
      * @deprecated
      */
     protected $target_spend_micros = null;
@@ -33,7 +33,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 4;</code>
      */
     protected $cpc_bid_ceiling_micros = null;
 
@@ -70,7 +70,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
      * for details.
      *
-     * Generated from protobuf field <code>int64 target_spend_micros = 3 [deprecated = true];</code>
+     * Generated from protobuf field <code>optional int64 target_spend_micros = 3 [deprecated = true];</code>
      * @return int|string
      * @deprecated
      */
@@ -101,7 +101,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
      * for details.
      *
-     * Generated from protobuf field <code>int64 target_spend_micros = 3 [deprecated = true];</code>
+     * Generated from protobuf field <code>optional int64 target_spend_micros = 3 [deprecated = true];</code>
      * @param int|string $var
      * @return $this
      * @deprecated
@@ -119,7 +119,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 4;</code>
      * @return int|string
      */
     public function getCpcBidCeilingMicros()
@@ -141,7 +141,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 4;</code>
      * @param int|string $var
      * @return $this
      */

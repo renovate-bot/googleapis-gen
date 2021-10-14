@@ -227,19 +227,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Recommendation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Resources.RecommendationReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Recommendation() {
       OnConstruction();
     }
@@ -247,6 +251,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Recommendation(Recommendation other) : this() {
       _hasBits0 = other._hasBits0;
       resourceName_ = other.resourceName_;
@@ -317,6 +322,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Recommendation Clone() {
       return new Recommendation(this);
     }
@@ -330,6 +336,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// `customers/{customer_id}/recommendations/{recommendation_id}`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ResourceName {
       get { return resourceName_; }
       set {
@@ -344,6 +351,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The type of recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.RecommendationTypeEnum.Types.RecommendationType Type {
       get { return type_; }
       set {
@@ -359,6 +367,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.RecommendationImpact Impact {
       get { return impact_; }
       set {
@@ -378,6 +387,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// MOVE_UNUSED_BUDGET
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CampaignBudget {
       get { return campaignBudget_ ?? ""; }
       set {
@@ -386,11 +396,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
     /// <summary>Gets whether the "campaign_budget" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCampaignBudget {
       get { return campaignBudget_ != null; }
     }
     /// <summary>Clears the value of the "campaign_budget" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCampaignBudget() {
       campaignBudget_ = null;
     }
@@ -409,6 +421,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Campaign {
       get { return campaign_ ?? ""; }
       set {
@@ -417,11 +430,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
     /// <summary>Gets whether the "campaign" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCampaign {
       get { return campaign_ != null; }
     }
     /// <summary>Clears the value of the "campaign" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCampaign() {
       campaign_ = null;
     }
@@ -437,6 +452,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AdGroup {
       get { return adGroup_ ?? ""; }
       set {
@@ -445,11 +461,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
     /// <summary>Gets whether the "ad_group" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAdGroup {
       get { return adGroup_ != null; }
     }
     /// <summary>Clears the value of the "ad_group" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAdGroup() {
       adGroup_ = null;
     }
@@ -461,6 +479,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. Whether the recommendation is dismissed or not.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Dismissed {
       get { if ((_hasBits0 & 1) != 0) { return dismissed_; } else { return false; } }
       set {
@@ -470,11 +489,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
     /// <summary>Gets whether the "dismissed" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasDismissed {
       get { return (_hasBits0 & 1) != 0; }
     }
     /// <summary>Clears the value of the "dismissed" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearDismissed() {
       _hasBits0 &= ~1;
     }
@@ -485,6 +506,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The campaign budget recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation CampaignBudgetRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.CampaignBudgetRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation) recommendation_ : null; }
       set {
@@ -499,6 +521,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The forecasting campaign budget recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation ForecastingCampaignBudgetRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.ForecastingCampaignBudgetRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation) recommendation_ : null; }
       set {
@@ -513,6 +536,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The keyword recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.KeywordRecommendation KeywordRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.KeywordRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.KeywordRecommendation) recommendation_ : null; }
       set {
@@ -527,6 +551,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. Add expanded text ad recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TextAdRecommendation TextAdRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.TextAdRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TextAdRecommendation) recommendation_ : null; }
       set {
@@ -541,6 +566,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The TargetCPA opt-in recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TargetCpaOptInRecommendation TargetCpaOptInRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.TargetCpaOptInRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TargetCpaOptInRecommendation) recommendation_ : null; }
       set {
@@ -555,6 +581,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The MaximizeConversions Opt-In recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.MaximizeConversionsOptInRecommendation MaximizeConversionsOptInRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.MaximizeConversionsOptInRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.MaximizeConversionsOptInRecommendation) recommendation_ : null; }
       set {
@@ -569,6 +596,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Enhanced Cost-Per-Click Opt-In recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.EnhancedCpcOptInRecommendation EnhancedCpcOptInRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.EnhancedCpcOptInRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.EnhancedCpcOptInRecommendation) recommendation_ : null; }
       set {
@@ -583,6 +611,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Search Partners Opt-In recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.SearchPartnersOptInRecommendation SearchPartnersOptInRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.SearchPartnersOptInRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.SearchPartnersOptInRecommendation) recommendation_ : null; }
       set {
@@ -597,6 +626,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The MaximizeClicks Opt-In recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.MaximizeClicksOptInRecommendation MaximizeClicksOptInRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.MaximizeClicksOptInRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.MaximizeClicksOptInRecommendation) recommendation_ : null; }
       set {
@@ -611,6 +641,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Optimize Ad Rotation recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.OptimizeAdRotationRecommendation OptimizeAdRotationRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.OptimizeAdRotationRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.OptimizeAdRotationRecommendation) recommendation_ : null; }
       set {
@@ -625,6 +656,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Callout extension recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CalloutExtensionRecommendation CalloutExtensionRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.CalloutExtensionRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CalloutExtensionRecommendation) recommendation_ : null; }
       set {
@@ -639,6 +671,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Sitelink extension recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.SitelinkExtensionRecommendation SitelinkExtensionRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.SitelinkExtensionRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.SitelinkExtensionRecommendation) recommendation_ : null; }
       set {
@@ -653,6 +686,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Call extension recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CallExtensionRecommendation CallExtensionRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.CallExtensionRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CallExtensionRecommendation) recommendation_ : null; }
       set {
@@ -667,6 +701,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The keyword match type recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.KeywordMatchTypeRecommendation KeywordMatchTypeRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.KeywordMatchTypeRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.KeywordMatchTypeRecommendation) recommendation_ : null; }
       set {
@@ -681,6 +716,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The move unused budget recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.MoveUnusedBudgetRecommendation MoveUnusedBudgetRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.MoveUnusedBudgetRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.MoveUnusedBudgetRecommendation) recommendation_ : null; }
       set {
@@ -695,6 +731,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The Target ROAS opt-in recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TargetRoasOptInRecommendation TargetRoasOptInRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.TargetRoasOptInRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TargetRoasOptInRecommendation) recommendation_ : null; }
       set {
@@ -709,6 +746,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The add responsive search ad recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.ResponsiveSearchAdRecommendation ResponsiveSearchAdRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.ResponsiveSearchAdRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.ResponsiveSearchAdRecommendation) recommendation_ : null; }
       set {
@@ -723,6 +761,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The marginal ROI campaign budget recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation MarginalRoiCampaignBudgetRecommendation {
       get { return recommendationCase_ == RecommendationOneofCase.MarginalRoiCampaignBudgetRecommendation ? (global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation) recommendation_ : null; }
       set {
@@ -756,22 +795,26 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
     private RecommendationOneofCase recommendationCase_ = RecommendationOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RecommendationOneofCase RecommendationCase {
       get { return recommendationCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearRecommendation() {
       recommendationCase_ = RecommendationOneofCase.None;
       recommendation_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Recommendation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Recommendation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -809,6 +852,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ResourceName.Length != 0) hash ^= ResourceName.GetHashCode();
@@ -844,11 +888,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -961,6 +1007,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ResourceName.Length != 0) {
         output.WriteRawTag(10);
@@ -1069,6 +1116,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ResourceName.Length != 0) {
@@ -1153,6 +1201,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Recommendation other) {
       if (other == null) {
         return;
@@ -1296,6 +1345,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1506,6 +1556,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1714,6 +1765,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     #region Nested types
     /// <summary>Container for nested types declared in the Recommendation message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The impact of making the change as described in the recommendation.
@@ -1727,19 +1779,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<RecommendationImpact> _parser = new pb::MessageParser<RecommendationImpact>(() => new RecommendationImpact());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<RecommendationImpact> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RecommendationImpact() {
           OnConstruction();
         }
@@ -1747,6 +1803,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RecommendationImpact(RecommendationImpact other) : this() {
           baseMetrics_ = other.baseMetrics_ != null ? other.baseMetrics_.Clone() : null;
           potentialMetrics_ = other.potentialMetrics_ != null ? other.potentialMetrics_.Clone() : null;
@@ -1754,6 +1811,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RecommendationImpact Clone() {
           return new RecommendationImpact(this);
         }
@@ -1765,6 +1823,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Base metrics at the time the recommendation was generated.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.RecommendationMetrics BaseMetrics {
           get { return baseMetrics_; }
           set {
@@ -1779,6 +1838,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Estimated metrics if the recommendation is applied.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.RecommendationMetrics PotentialMetrics {
           get { return potentialMetrics_; }
           set {
@@ -1787,11 +1847,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as RecommendationImpact);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(RecommendationImpact other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1805,6 +1867,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (baseMetrics_ != null) hash ^= BaseMetrics.GetHashCode();
@@ -1816,11 +1879,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1841,6 +1906,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (baseMetrics_ != null) {
             output.WriteRawTag(10);
@@ -1857,6 +1923,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (baseMetrics_ != null) {
@@ -1872,6 +1939,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(RecommendationImpact other) {
           if (other == null) {
             return;
@@ -1892,6 +1960,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1923,6 +1992,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1964,19 +2034,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<RecommendationMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RecommendationMetrics() {
           OnConstruction();
         }
@@ -1984,6 +2058,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RecommendationMetrics(RecommendationMetrics other) : this() {
           _hasBits0 = other._hasBits0;
           impressions_ = other.impressions_;
@@ -1995,6 +2070,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RecommendationMetrics Clone() {
           return new RecommendationMetrics(this);
         }
@@ -2006,6 +2082,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Number of ad impressions.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Impressions {
           get { if ((_hasBits0 & 1) != 0) { return impressions_; } else { return 0D; } }
           set {
@@ -2015,11 +2092,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "impressions" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasImpressions {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "impressions" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearImpressions() {
           _hasBits0 &= ~1;
         }
@@ -2031,6 +2110,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Number of ad clicks.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Clicks {
           get { if ((_hasBits0 & 2) != 0) { return clicks_; } else { return 0D; } }
           set {
@@ -2040,11 +2120,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "clicks" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasClicks {
           get { return (_hasBits0 & 2) != 0; }
         }
         /// <summary>Clears the value of the "clicks" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearClicks() {
           _hasBits0 &= ~2;
         }
@@ -2056,6 +2138,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Cost (in micros) for advertising, in the local currency for the account.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long CostMicros {
           get { if ((_hasBits0 & 4) != 0) { return costMicros_; } else { return 0L; } }
           set {
@@ -2065,11 +2148,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "cost_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasCostMicros {
           get { return (_hasBits0 & 4) != 0; }
         }
         /// <summary>Clears the value of the "cost_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearCostMicros() {
           _hasBits0 &= ~4;
         }
@@ -2081,6 +2166,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Number of conversions.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Conversions {
           get { if ((_hasBits0 & 8) != 0) { return conversions_; } else { return 0D; } }
           set {
@@ -2090,11 +2176,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "conversions" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasConversions {
           get { return (_hasBits0 & 8) != 0; }
         }
         /// <summary>Clears the value of the "conversions" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearConversions() {
           _hasBits0 &= ~8;
         }
@@ -2106,6 +2194,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Number of video views for a video ad campaign.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double VideoViews {
           get { if ((_hasBits0 & 16) != 0) { return videoViews_; } else { return 0D; } }
           set {
@@ -2115,21 +2204,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "video_views" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasVideoViews {
           get { return (_hasBits0 & 16) != 0; }
         }
         /// <summary>Clears the value of the "video_views" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearVideoViews() {
           _hasBits0 &= ~16;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as RecommendationMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(RecommendationMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2146,6 +2239,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (HasImpressions) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Impressions);
@@ -2160,11 +2254,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2197,6 +2293,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (HasImpressions) {
             output.WriteRawTag(49);
@@ -2225,6 +2322,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (HasImpressions) {
@@ -2249,6 +2347,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(RecommendationMetrics other) {
           if (other == null) {
             return;
@@ -2272,6 +2371,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2309,6 +2409,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2355,19 +2456,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<CampaignBudgetRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CampaignBudgetRecommendation() {
           OnConstruction();
         }
@@ -2375,6 +2480,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CampaignBudgetRecommendation(CampaignBudgetRecommendation other) : this() {
           _hasBits0 = other._hasBits0;
           currentBudgetAmountMicros_ = other.currentBudgetAmountMicros_;
@@ -2384,6 +2490,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CampaignBudgetRecommendation Clone() {
           return new CampaignBudgetRecommendation(this);
         }
@@ -2395,6 +2502,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The current budget amount in micros.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long CurrentBudgetAmountMicros {
           get { if ((_hasBits0 & 1) != 0) { return currentBudgetAmountMicros_; } else { return 0L; } }
           set {
@@ -2404,11 +2512,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "current_budget_amount_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasCurrentBudgetAmountMicros {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "current_budget_amount_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearCurrentBudgetAmountMicros() {
           _hasBits0 &= ~1;
         }
@@ -2420,6 +2530,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The recommended budget amount in micros.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long RecommendedBudgetAmountMicros {
           get { if ((_hasBits0 & 2) != 0) { return recommendedBudgetAmountMicros_; } else { return 0L; } }
           set {
@@ -2429,11 +2540,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "recommended_budget_amount_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRecommendedBudgetAmountMicros {
           get { return (_hasBits0 & 2) != 0; }
         }
         /// <summary>Clears the value of the "recommended_budget_amount_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRecommendedBudgetAmountMicros() {
           _hasBits0 &= ~2;
         }
@@ -2448,16 +2561,19 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// possible budget amounts.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation.Types.CampaignBudgetRecommendationOption> BudgetOptions {
           get { return budgetOptions_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as CampaignBudgetRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(CampaignBudgetRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2472,6 +2588,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (HasCurrentBudgetAmountMicros) hash ^= CurrentBudgetAmountMicros.GetHashCode();
@@ -2484,11 +2601,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2510,6 +2629,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           budgetOptions_.WriteTo(ref output, _repeated_budgetOptions_codec);
           if (HasCurrentBudgetAmountMicros) {
@@ -2527,6 +2647,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (HasCurrentBudgetAmountMicros) {
@@ -2543,6 +2664,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(CampaignBudgetRecommendation other) {
           if (other == null) {
             return;
@@ -2558,6 +2680,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2587,6 +2710,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2614,6 +2738,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #region Nested types
         /// <summary>Container for nested types declared in the CampaignBudgetRecommendation message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// The impact estimates for a given budget amount.
@@ -2627,19 +2752,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             private pb::UnknownFieldSet _unknownFields;
             private int _hasBits0;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<CampaignBudgetRecommendationOption> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public CampaignBudgetRecommendationOption() {
               OnConstruction();
             }
@@ -2647,6 +2776,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public CampaignBudgetRecommendationOption(CampaignBudgetRecommendationOption other) : this() {
               _hasBits0 = other._hasBits0;
               budgetAmountMicros_ = other.budgetAmountMicros_;
@@ -2655,6 +2785,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public CampaignBudgetRecommendationOption Clone() {
               return new CampaignBudgetRecommendationOption(this);
             }
@@ -2666,6 +2797,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             /// Output only. The budget amount for this option.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long BudgetAmountMicros {
               get { if ((_hasBits0 & 1) != 0) { return budgetAmountMicros_; } else { return 0L; } }
               set {
@@ -2675,11 +2807,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
             /// <summary>Gets whether the "budget_amount_micros" field is set</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool HasBudgetAmountMicros {
               get { return (_hasBits0 & 1) != 0; }
             }
             /// <summary>Clears the value of the "budget_amount_micros" field</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void ClearBudgetAmountMicros() {
               _hasBits0 &= ~1;
             }
@@ -2692,6 +2826,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             /// option.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.RecommendationImpact Impact {
               get { return impact_; }
               set {
@@ -2700,11 +2835,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as CampaignBudgetRecommendationOption);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(CampaignBudgetRecommendationOption other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -2718,6 +2855,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (HasBudgetAmountMicros) hash ^= BudgetAmountMicros.GetHashCode();
@@ -2729,11 +2867,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -2754,6 +2894,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (impact_ != null) {
                 output.WriteRawTag(18);
@@ -2770,6 +2911,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (HasBudgetAmountMicros) {
@@ -2785,6 +2927,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(CampaignBudgetRecommendationOption other) {
               if (other == null) {
                 return;
@@ -2802,6 +2945,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -2830,6 +2974,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -2872,19 +3017,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<KeywordRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KeywordRecommendation() {
           OnConstruction();
         }
@@ -2892,6 +3041,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KeywordRecommendation(KeywordRecommendation other) : this() {
           _hasBits0 = other._hasBits0;
           keyword_ = other.keyword_ != null ? other.keyword_.Clone() : null;
@@ -2900,6 +3050,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KeywordRecommendation Clone() {
           return new KeywordRecommendation(this);
         }
@@ -2911,6 +3062,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The recommended keyword.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Common.KeywordInfo Keyword {
           get { return keyword_; }
           set {
@@ -2925,6 +3077,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The recommended CPC (cost-per-click) bid.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long RecommendedCpcBidMicros {
           get { if ((_hasBits0 & 1) != 0) { return recommendedCpcBidMicros_; } else { return 0L; } }
           set {
@@ -2934,21 +3087,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "recommended_cpc_bid_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRecommendedCpcBidMicros {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "recommended_cpc_bid_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRecommendedCpcBidMicros() {
           _hasBits0 &= ~1;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as KeywordRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(KeywordRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2962,6 +3119,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (keyword_ != null) hash ^= Keyword.GetHashCode();
@@ -2973,11 +3131,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2998,6 +3158,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (keyword_ != null) {
             output.WriteRawTag(10);
@@ -3014,6 +3175,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (keyword_ != null) {
@@ -3029,6 +3191,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(KeywordRecommendation other) {
           if (other == null) {
             return;
@@ -3046,6 +3209,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3074,6 +3238,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3110,19 +3275,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<CallExtensionRecommendation> _parser = new pb::MessageParser<CallExtensionRecommendation>(() => new CallExtensionRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<CallExtensionRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CallExtensionRecommendation() {
           OnConstruction();
         }
@@ -3130,12 +3299,14 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CallExtensionRecommendation(CallExtensionRecommendation other) : this() {
           recommendedExtensions_ = other.recommendedExtensions_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CallExtensionRecommendation Clone() {
           return new CallExtensionRecommendation(this);
         }
@@ -3149,16 +3320,19 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Call extensions recommended to be added.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.CallFeedItem> RecommendedExtensions {
           get { return recommendedExtensions_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as CallExtensionRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(CallExtensionRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3171,6 +3345,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= recommendedExtensions_.GetHashCode();
@@ -3181,11 +3356,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3199,6 +3376,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           recommendedExtensions_.WriteTo(ref output, _repeated_recommendedExtensions_codec);
           if (_unknownFields != null) {
@@ -3208,6 +3386,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += recommendedExtensions_.CalculateSize(_repeated_recommendedExtensions_codec);
@@ -3218,6 +3397,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(CallExtensionRecommendation other) {
           if (other == null) {
             return;
@@ -3227,6 +3407,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3248,6 +3429,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3277,19 +3459,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<TextAdRecommendation> _parser = new pb::MessageParser<TextAdRecommendation>(() => new TextAdRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<TextAdRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TextAdRecommendation() {
           OnConstruction();
         }
@@ -3297,6 +3483,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TextAdRecommendation(TextAdRecommendation other) : this() {
           ad_ = other.ad_ != null ? other.ad_.Clone() : null;
           creationDate_ = other.creationDate_;
@@ -3305,6 +3492,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TextAdRecommendation Clone() {
           return new TextAdRecommendation(this);
         }
@@ -3316,6 +3504,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Recommended ad.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Resources.Ad Ad {
           get { return ad_; }
           set {
@@ -3331,6 +3520,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// YYYY-MM-DD format, e.g., 2018-04-17.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string CreationDate {
           get { return creationDate_ ?? ""; }
           set {
@@ -3339,11 +3529,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "creation_date" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasCreationDate {
           get { return creationDate_ != null; }
         }
         /// <summary>Clears the value of the "creation_date" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearCreationDate() {
           creationDate_ = null;
         }
@@ -3357,6 +3549,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// YYYY-MM-DD format, e.g., 2018-04-17.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string AutoApplyDate {
           get { return autoApplyDate_ ?? ""; }
           set {
@@ -3365,21 +3558,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "auto_apply_date" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasAutoApplyDate {
           get { return autoApplyDate_ != null; }
         }
         /// <summary>Clears the value of the "auto_apply_date" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearAutoApplyDate() {
           autoApplyDate_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as TextAdRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(TextAdRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3394,6 +3591,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (ad_ != null) hash ^= Ad.GetHashCode();
@@ -3406,11 +3604,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3435,6 +3635,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (ad_ != null) {
             output.WriteRawTag(10);
@@ -3455,6 +3656,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (ad_ != null) {
@@ -3473,6 +3675,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(TextAdRecommendation other) {
           if (other == null) {
             return;
@@ -3493,6 +3696,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3525,6 +3729,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3565,19 +3770,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<OptimizeAdRotationRecommendation> _parser = new pb::MessageParser<OptimizeAdRotationRecommendation>(() => new OptimizeAdRotationRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<OptimizeAdRotationRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public OptimizeAdRotationRecommendation() {
           OnConstruction();
         }
@@ -3585,21 +3794,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public OptimizeAdRotationRecommendation(OptimizeAdRotationRecommendation other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public OptimizeAdRotationRecommendation Clone() {
           return new OptimizeAdRotationRecommendation(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as OptimizeAdRotationRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(OptimizeAdRotationRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3611,6 +3824,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -3620,11 +3834,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3637,6 +3853,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -3645,6 +3862,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -3654,6 +3872,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(OptimizeAdRotationRecommendation other) {
           if (other == null) {
             return;
@@ -3662,6 +3881,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3679,6 +3899,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3705,19 +3926,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<TargetCpaOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TargetCpaOptInRecommendation() {
           OnConstruction();
         }
@@ -3725,6 +3950,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TargetCpaOptInRecommendation(TargetCpaOptInRecommendation other) : this() {
           _hasBits0 = other._hasBits0;
           options_ = other.options_.Clone();
@@ -3733,6 +3959,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TargetCpaOptInRecommendation Clone() {
           return new TargetCpaOptInRecommendation(this);
         }
@@ -3746,6 +3973,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The available goals and corresponding options for Target CPA strategy.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Types.TargetCpaOptInRecommendationOption> Options {
           get { return options_; }
         }
@@ -3758,6 +3986,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// of using this recommendation in options list.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long RecommendedTargetCpaMicros {
           get { if ((_hasBits0 & 1) != 0) { return recommendedTargetCpaMicros_; } else { return 0L; } }
           set {
@@ -3767,21 +3996,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "recommended_target_cpa_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRecommendedTargetCpaMicros {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "recommended_target_cpa_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRecommendedTargetCpaMicros() {
           _hasBits0 &= ~1;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as TargetCpaOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(TargetCpaOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3795,6 +4028,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= options_.GetHashCode();
@@ -3806,11 +4040,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3828,6 +4064,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           options_.WriteTo(ref output, _repeated_options_codec);
           if (HasRecommendedTargetCpaMicros) {
@@ -3841,6 +4078,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += options_.CalculateSize(_repeated_options_codec);
@@ -3854,6 +4092,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(TargetCpaOptInRecommendation other) {
           if (other == null) {
             return;
@@ -3866,6 +4105,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3891,6 +4131,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3914,6 +4155,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #region Nested types
         /// <summary>Container for nested types declared in the TargetCpaOptInRecommendation message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// The Target CPA opt-in option with impact estimate.
@@ -3927,19 +4169,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             private pb::UnknownFieldSet _unknownFields;
             private int _hasBits0;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<TargetCpaOptInRecommendationOption> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TargetCpaOptInRecommendationOption() {
               OnConstruction();
             }
@@ -3947,6 +4193,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TargetCpaOptInRecommendationOption(TargetCpaOptInRecommendationOption other) : this() {
               _hasBits0 = other._hasBits0;
               goal_ = other.goal_;
@@ -3957,6 +4204,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TargetCpaOptInRecommendationOption Clone() {
               return new TargetCpaOptInRecommendationOption(this);
             }
@@ -3968,6 +4216,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             /// Output only. The goal achieved by this option.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Ads.GoogleAds.V7.Enums.TargetCpaOptInRecommendationGoalEnum.Types.TargetCpaOptInRecommendationGoal Goal {
               get { return goal_; }
               set {
@@ -3982,6 +4231,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             /// Output only. Average CPA target.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long TargetCpaMicros {
               get { if ((_hasBits0 & 1) != 0) { return targetCpaMicros_; } else { return 0L; } }
               set {
@@ -3991,11 +4241,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
             /// <summary>Gets whether the "target_cpa_micros" field is set</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool HasTargetCpaMicros {
               get { return (_hasBits0 & 1) != 0; }
             }
             /// <summary>Clears the value of the "target_cpa_micros" field</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void ClearTargetCpaMicros() {
               _hasBits0 &= ~1;
             }
@@ -4010,6 +4262,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             /// currency unit.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long RequiredCampaignBudgetAmountMicros {
               get { if ((_hasBits0 & 2) != 0) { return requiredCampaignBudgetAmountMicros_; } else { return 0L; } }
               set {
@@ -4019,11 +4272,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
             /// <summary>Gets whether the "required_campaign_budget_amount_micros" field is set</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool HasRequiredCampaignBudgetAmountMicros {
               get { return (_hasBits0 & 2) != 0; }
             }
             /// <summary>Clears the value of the "required_campaign_budget_amount_micros" field</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void ClearRequiredCampaignBudgetAmountMicros() {
               _hasBits0 &= ~2;
             }
@@ -4035,6 +4290,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             /// Output only. The impact estimate if this option is selected.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.RecommendationImpact Impact {
               get { return impact_; }
               set {
@@ -4043,11 +4299,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as TargetCpaOptInRecommendationOption);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(TargetCpaOptInRecommendationOption other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -4063,6 +4321,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Goal != global::Google.Ads.GoogleAds.V7.Enums.TargetCpaOptInRecommendationGoalEnum.Types.TargetCpaOptInRecommendationGoal.Unspecified) hash ^= Goal.GetHashCode();
@@ -4076,11 +4335,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -4109,6 +4370,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Goal != global::Google.Ads.GoogleAds.V7.Enums.TargetCpaOptInRecommendationGoalEnum.Types.TargetCpaOptInRecommendationGoal.Unspecified) {
                 output.WriteRawTag(8);
@@ -4133,6 +4395,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Goal != global::Google.Ads.GoogleAds.V7.Enums.TargetCpaOptInRecommendationGoalEnum.Types.TargetCpaOptInRecommendationGoal.Unspecified) {
@@ -4154,6 +4417,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(TargetCpaOptInRecommendationOption other) {
               if (other == null) {
                 return;
@@ -4177,6 +4441,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4213,6 +4478,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -4262,19 +4528,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<MoveUnusedBudgetRecommendation> _parser = new pb::MessageParser<MoveUnusedBudgetRecommendation>(() => new MoveUnusedBudgetRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MoveUnusedBudgetRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MoveUnusedBudgetRecommendation() {
           OnConstruction();
         }
@@ -4282,6 +4552,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MoveUnusedBudgetRecommendation(MoveUnusedBudgetRecommendation other) : this() {
           excessCampaignBudget_ = other.excessCampaignBudget_;
           budgetRecommendation_ = other.budgetRecommendation_ != null ? other.budgetRecommendation_.Clone() : null;
@@ -4289,6 +4560,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MoveUnusedBudgetRecommendation Clone() {
           return new MoveUnusedBudgetRecommendation(this);
         }
@@ -4300,6 +4572,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The excess budget's resource_name.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ExcessCampaignBudget {
           get { return excessCampaignBudget_ ?? ""; }
           set {
@@ -4308,11 +4581,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "excess_campaign_budget" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasExcessCampaignBudget {
           get { return excessCampaignBudget_ != null; }
         }
         /// <summary>Clears the value of the "excess_campaign_budget" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearExcessCampaignBudget() {
           excessCampaignBudget_ = null;
         }
@@ -4324,6 +4599,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The recommendation for the constrained budget to increase.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Types.CampaignBudgetRecommendation BudgetRecommendation {
           get { return budgetRecommendation_; }
           set {
@@ -4332,11 +4608,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as MoveUnusedBudgetRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(MoveUnusedBudgetRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4350,6 +4628,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (HasExcessCampaignBudget) hash ^= ExcessCampaignBudget.GetHashCode();
@@ -4361,11 +4640,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4386,6 +4667,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (budgetRecommendation_ != null) {
             output.WriteRawTag(18);
@@ -4402,6 +4684,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (HasExcessCampaignBudget) {
@@ -4417,6 +4700,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(MoveUnusedBudgetRecommendation other) {
           if (other == null) {
             return;
@@ -4434,6 +4718,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4462,6 +4747,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4498,19 +4784,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<EnhancedCpcOptInRecommendation> _parser = new pb::MessageParser<EnhancedCpcOptInRecommendation>(() => new EnhancedCpcOptInRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<EnhancedCpcOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[9]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EnhancedCpcOptInRecommendation() {
           OnConstruction();
         }
@@ -4518,21 +4808,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EnhancedCpcOptInRecommendation(EnhancedCpcOptInRecommendation other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EnhancedCpcOptInRecommendation Clone() {
           return new EnhancedCpcOptInRecommendation(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as EnhancedCpcOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(EnhancedCpcOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4544,6 +4838,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -4553,11 +4848,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4570,6 +4867,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -4578,6 +4876,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -4587,6 +4886,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(EnhancedCpcOptInRecommendation other) {
           if (other == null) {
             return;
@@ -4595,6 +4895,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4612,6 +4913,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4638,19 +4940,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MaximizeConversionsOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[10]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaximizeConversionsOptInRecommendation() {
           OnConstruction();
         }
@@ -4658,6 +4964,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaximizeConversionsOptInRecommendation(MaximizeConversionsOptInRecommendation other) : this() {
           _hasBits0 = other._hasBits0;
           recommendedBudgetAmountMicros_ = other.recommendedBudgetAmountMicros_;
@@ -4665,6 +4972,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaximizeConversionsOptInRecommendation Clone() {
           return new MaximizeConversionsOptInRecommendation(this);
         }
@@ -4676,6 +4984,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The recommended new budget amount.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long RecommendedBudgetAmountMicros {
           get { if ((_hasBits0 & 1) != 0) { return recommendedBudgetAmountMicros_; } else { return 0L; } }
           set {
@@ -4685,21 +4994,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "recommended_budget_amount_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRecommendedBudgetAmountMicros {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "recommended_budget_amount_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRecommendedBudgetAmountMicros() {
           _hasBits0 &= ~1;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as MaximizeConversionsOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(MaximizeConversionsOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4712,6 +5025,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (HasRecommendedBudgetAmountMicros) hash ^= RecommendedBudgetAmountMicros.GetHashCode();
@@ -4722,11 +5036,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4743,6 +5059,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (HasRecommendedBudgetAmountMicros) {
             output.WriteRawTag(16);
@@ -4755,6 +5072,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (HasRecommendedBudgetAmountMicros) {
@@ -4767,6 +5085,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(MaximizeConversionsOptInRecommendation other) {
           if (other == null) {
             return;
@@ -4778,6 +5097,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4799,6 +5119,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4829,19 +5150,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<TargetRoasOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[11]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TargetRoasOptInRecommendation() {
           OnConstruction();
         }
@@ -4849,6 +5174,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TargetRoasOptInRecommendation(TargetRoasOptInRecommendation other) : this() {
           _hasBits0 = other._hasBits0;
           recommendedTargetRoas_ = other.recommendedTargetRoas_;
@@ -4857,6 +5183,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TargetRoasOptInRecommendation Clone() {
           return new TargetRoasOptInRecommendation(this);
         }
@@ -4869,6 +5196,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// The value is between 0.01 and 1000.0, inclusive.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double RecommendedTargetRoas {
           get { if ((_hasBits0 & 1) != 0) { return recommendedTargetRoas_; } else { return 0D; } }
           set {
@@ -4878,11 +5206,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "recommended_target_roas" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRecommendedTargetRoas {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "recommended_target_roas" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRecommendedTargetRoas() {
           _hasBits0 &= ~1;
         }
@@ -4897,6 +5227,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// currency unit.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long RequiredCampaignBudgetAmountMicros {
           get { if ((_hasBits0 & 2) != 0) { return requiredCampaignBudgetAmountMicros_; } else { return 0L; } }
           set {
@@ -4906,21 +5237,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "required_campaign_budget_amount_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRequiredCampaignBudgetAmountMicros {
           get { return (_hasBits0 & 2) != 0; }
         }
         /// <summary>Clears the value of the "required_campaign_budget_amount_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRequiredCampaignBudgetAmountMicros() {
           _hasBits0 &= ~2;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as TargetRoasOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(TargetRoasOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4934,6 +5269,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (HasRecommendedTargetRoas) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(RecommendedTargetRoas);
@@ -4945,11 +5281,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4970,6 +5308,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (HasRecommendedTargetRoas) {
             output.WriteRawTag(9);
@@ -4986,6 +5325,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (HasRecommendedTargetRoas) {
@@ -5001,6 +5341,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(TargetRoasOptInRecommendation other) {
           if (other == null) {
             return;
@@ -5015,6 +5356,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5040,6 +5382,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5073,19 +5416,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<SearchPartnersOptInRecommendation> _parser = new pb::MessageParser<SearchPartnersOptInRecommendation>(() => new SearchPartnersOptInRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<SearchPartnersOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[12]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SearchPartnersOptInRecommendation() {
           OnConstruction();
         }
@@ -5093,21 +5440,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SearchPartnersOptInRecommendation(SearchPartnersOptInRecommendation other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SearchPartnersOptInRecommendation Clone() {
           return new SearchPartnersOptInRecommendation(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as SearchPartnersOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(SearchPartnersOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5119,6 +5470,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -5128,11 +5480,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5145,6 +5499,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -5153,6 +5508,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -5162,6 +5518,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(SearchPartnersOptInRecommendation other) {
           if (other == null) {
             return;
@@ -5170,6 +5527,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5187,6 +5545,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5212,19 +5571,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<SitelinkExtensionRecommendation> _parser = new pb::MessageParser<SitelinkExtensionRecommendation>(() => new SitelinkExtensionRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<SitelinkExtensionRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[13]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SitelinkExtensionRecommendation() {
           OnConstruction();
         }
@@ -5232,12 +5595,14 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SitelinkExtensionRecommendation(SitelinkExtensionRecommendation other) : this() {
           recommendedExtensions_ = other.recommendedExtensions_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SitelinkExtensionRecommendation Clone() {
           return new SitelinkExtensionRecommendation(this);
         }
@@ -5251,16 +5616,19 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Sitelink extensions recommended to be added.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.SitelinkFeedItem> RecommendedExtensions {
           get { return recommendedExtensions_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as SitelinkExtensionRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(SitelinkExtensionRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5273,6 +5641,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= recommendedExtensions_.GetHashCode();
@@ -5283,11 +5652,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5301,6 +5672,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           recommendedExtensions_.WriteTo(ref output, _repeated_recommendedExtensions_codec);
           if (_unknownFields != null) {
@@ -5310,6 +5682,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += recommendedExtensions_.CalculateSize(_repeated_recommendedExtensions_codec);
@@ -5320,6 +5693,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(SitelinkExtensionRecommendation other) {
           if (other == null) {
             return;
@@ -5329,6 +5703,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5350,6 +5725,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5380,19 +5756,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MaximizeClicksOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[14]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaximizeClicksOptInRecommendation() {
           OnConstruction();
         }
@@ -5400,6 +5780,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaximizeClicksOptInRecommendation(MaximizeClicksOptInRecommendation other) : this() {
           _hasBits0 = other._hasBits0;
           recommendedBudgetAmountMicros_ = other.recommendedBudgetAmountMicros_;
@@ -5407,6 +5788,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaximizeClicksOptInRecommendation Clone() {
           return new MaximizeClicksOptInRecommendation(this);
         }
@@ -5419,6 +5801,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Only set if the current budget is too high.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long RecommendedBudgetAmountMicros {
           get { if ((_hasBits0 & 1) != 0) { return recommendedBudgetAmountMicros_; } else { return 0L; } }
           set {
@@ -5428,21 +5811,25 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
         /// <summary>Gets whether the "recommended_budget_amount_micros" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasRecommendedBudgetAmountMicros {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "recommended_budget_amount_micros" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearRecommendedBudgetAmountMicros() {
           _hasBits0 &= ~1;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as MaximizeClicksOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(MaximizeClicksOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5455,6 +5842,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (HasRecommendedBudgetAmountMicros) hash ^= RecommendedBudgetAmountMicros.GetHashCode();
@@ -5465,11 +5853,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5486,6 +5876,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (HasRecommendedBudgetAmountMicros) {
             output.WriteRawTag(16);
@@ -5498,6 +5889,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (HasRecommendedBudgetAmountMicros) {
@@ -5510,6 +5902,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(MaximizeClicksOptInRecommendation other) {
           if (other == null) {
             return;
@@ -5521,6 +5914,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5542,6 +5936,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5571,19 +5966,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<CalloutExtensionRecommendation> _parser = new pb::MessageParser<CalloutExtensionRecommendation>(() => new CalloutExtensionRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<CalloutExtensionRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[15]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CalloutExtensionRecommendation() {
           OnConstruction();
         }
@@ -5591,12 +5990,14 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CalloutExtensionRecommendation(CalloutExtensionRecommendation other) : this() {
           recommendedExtensions_ = other.recommendedExtensions_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CalloutExtensionRecommendation Clone() {
           return new CalloutExtensionRecommendation(this);
         }
@@ -5610,16 +6011,19 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Callout extensions recommended to be added.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.CalloutFeedItem> RecommendedExtensions {
           get { return recommendedExtensions_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as CalloutExtensionRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(CalloutExtensionRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5632,6 +6036,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= recommendedExtensions_.GetHashCode();
@@ -5642,11 +6047,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5660,6 +6067,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           recommendedExtensions_.WriteTo(ref output, _repeated_recommendedExtensions_codec);
           if (_unknownFields != null) {
@@ -5669,6 +6077,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += recommendedExtensions_.CalculateSize(_repeated_recommendedExtensions_codec);
@@ -5679,6 +6088,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(CalloutExtensionRecommendation other) {
           if (other == null) {
             return;
@@ -5688,6 +6098,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5709,6 +6120,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5738,19 +6150,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<KeywordMatchTypeRecommendation> _parser = new pb::MessageParser<KeywordMatchTypeRecommendation>(() => new KeywordMatchTypeRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<KeywordMatchTypeRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[16]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KeywordMatchTypeRecommendation() {
           OnConstruction();
         }
@@ -5758,6 +6174,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KeywordMatchTypeRecommendation(KeywordMatchTypeRecommendation other) : this() {
           keyword_ = other.keyword_ != null ? other.keyword_.Clone() : null;
           recommendedMatchType_ = other.recommendedMatchType_;
@@ -5765,6 +6182,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KeywordMatchTypeRecommendation Clone() {
           return new KeywordMatchTypeRecommendation(this);
         }
@@ -5776,6 +6194,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The existing keyword where the match type should be more broad.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Common.KeywordInfo Keyword {
           get { return keyword_; }
           set {
@@ -5790,6 +6209,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. The recommended new match type.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Enums.KeywordMatchTypeEnum.Types.KeywordMatchType RecommendedMatchType {
           get { return recommendedMatchType_; }
           set {
@@ -5798,11 +6218,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as KeywordMatchTypeRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(KeywordMatchTypeRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5816,6 +6238,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (keyword_ != null) hash ^= Keyword.GetHashCode();
@@ -5827,11 +6250,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5852,6 +6277,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (keyword_ != null) {
             output.WriteRawTag(10);
@@ -5868,6 +6294,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (keyword_ != null) {
@@ -5883,6 +6310,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(KeywordMatchTypeRecommendation other) {
           if (other == null) {
             return;
@@ -5900,6 +6328,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5928,6 +6357,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5964,19 +6394,23 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         private static readonly pb::MessageParser<ResponsiveSearchAdRecommendation> _parser = new pb::MessageParser<ResponsiveSearchAdRecommendation>(() => new ResponsiveSearchAdRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ResponsiveSearchAdRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Resources.Recommendation.Descriptor.NestedTypes[17]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ResponsiveSearchAdRecommendation() {
           OnConstruction();
         }
@@ -5984,12 +6418,14 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ResponsiveSearchAdRecommendation(ResponsiveSearchAdRecommendation other) : this() {
           ad_ = other.ad_ != null ? other.ad_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ResponsiveSearchAdRecommendation Clone() {
           return new ResponsiveSearchAdRecommendation(this);
         }
@@ -6001,6 +6437,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         /// Output only. Recommended ad.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Ads.GoogleAds.V7.Resources.Ad Ad {
           get { return ad_; }
           set {
@@ -6009,11 +6446,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ResponsiveSearchAdRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ResponsiveSearchAdRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -6026,6 +6465,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (ad_ != null) hash ^= Ad.GetHashCode();
@@ -6036,11 +6476,13 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -6057,6 +6499,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (ad_ != null) {
             output.WriteRawTag(10);
@@ -6069,6 +6512,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (ad_ != null) {
@@ -6081,6 +6525,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ResponsiveSearchAdRecommendation other) {
           if (other == null) {
             return;
@@ -6095,6 +6540,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6119,6 +6565,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {

@@ -258,7 +258,7 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
      */
     public function getModifyTime()
     {
-        return isset($this->modify_time) ? $this->modify_time : null;
+        return $this->modify_time;
     }
 
     public function hasModifyTime()

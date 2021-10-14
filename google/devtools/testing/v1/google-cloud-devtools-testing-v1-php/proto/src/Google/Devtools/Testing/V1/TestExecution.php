@@ -197,7 +197,7 @@ class TestExecution extends \Google\Protobuf\Internal\Message
      */
     public function getTestSpecification()
     {
-        return isset($this->test_specification) ? $this->test_specification : null;
+        return $this->test_specification;
     }
 
     public function hasTestSpecification()
@@ -233,7 +233,7 @@ class TestExecution extends \Google\Protobuf\Internal\Message
      */
     public function getShard()
     {
-        return isset($this->shard) ? $this->shard : null;
+        return $this->shard;
     }
 
     public function hasShard()
@@ -269,7 +269,7 @@ class TestExecution extends \Google\Protobuf\Internal\Message
      */
     public function getEnvironment()
     {
-        return isset($this->environment) ? $this->environment : null;
+        return $this->environment;
     }
 
     public function hasEnvironment()
@@ -333,7 +333,7 @@ class TestExecution extends \Google\Protobuf\Internal\Message
      */
     public function getToolResultsStep()
     {
-        return isset($this->tool_results_step) ? $this->tool_results_step : null;
+        return $this->tool_results_step;
     }
 
     public function hasToolResultsStep()
@@ -369,7 +369,7 @@ class TestExecution extends \Google\Protobuf\Internal\Message
      */
     public function getTimestamp()
     {
-        return isset($this->timestamp) ? $this->timestamp : null;
+        return $this->timestamp;
     }
 
     public function hasTimestamp()
@@ -405,7 +405,7 @@ class TestExecution extends \Google\Protobuf\Internal\Message
      */
     public function getTestDetails()
     {
-        return isset($this->test_details) ? $this->test_details : null;
+        return $this->test_details;
     }
 
     public function hasTestDetails()

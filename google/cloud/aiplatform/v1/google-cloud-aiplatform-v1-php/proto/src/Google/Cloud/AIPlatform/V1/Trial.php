@@ -281,7 +281,7 @@ class Trial extends \Google\Protobuf\Internal\Message
      */
     public function getFinalMeasurement()
     {
-        return isset($this->final_measurement) ? $this->final_measurement : null;
+        return $this->final_measurement;
     }
 
     public function hasFinalMeasurement()
@@ -347,7 +347,7 @@ class Trial extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -383,7 +383,7 @@ class Trial extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()

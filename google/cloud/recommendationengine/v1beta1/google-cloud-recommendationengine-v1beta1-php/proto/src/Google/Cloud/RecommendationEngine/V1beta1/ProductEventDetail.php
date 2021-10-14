@@ -334,7 +334,7 @@ class ProductEventDetail extends \Google\Protobuf\Internal\Message
      */
     public function getPurchaseTransaction()
     {
-        return isset($this->purchase_transaction) ? $this->purchase_transaction : null;
+        return $this->purchase_transaction;
     }
 
     public function hasPurchaseTransaction()

@@ -18,7 +18,7 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
     /**
      * YouTube video id as it appears on the YouTube watch page.
      *
-     * Generated from protobuf field <code>string video_id = 2;</code>
+     * Generated from protobuf field <code>optional string video_id = 2;</code>
      */
     protected $video_id = null;
 
@@ -40,7 +40,7 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
     /**
      * YouTube video id as it appears on the YouTube watch page.
      *
-     * Generated from protobuf field <code>string video_id = 2;</code>
+     * Generated from protobuf field <code>optional string video_id = 2;</code>
      * @return string
      */
     public function getVideoId()
@@ -61,7 +61,7 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
     /**
      * YouTube video id as it appears on the YouTube watch page.
      *
-     * Generated from protobuf field <code>string video_id = 2;</code>
+     * Generated from protobuf field <code>optional string video_id = 2;</code>
      * @param string $var
      * @return $this
      */

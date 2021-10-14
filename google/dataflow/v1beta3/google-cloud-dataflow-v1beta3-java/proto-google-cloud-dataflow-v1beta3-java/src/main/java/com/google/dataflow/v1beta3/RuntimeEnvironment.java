@@ -945,28 +945,28 @@ private static final long serialVersionUID = 0L;
     if (maxWorkers_ != 0) {
       output.writeInt32(1, maxWorkers_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zone_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceAccountEmail_);
     }
-    if (!getTempLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tempLocation_);
     }
     if (bypassTempDirValidation_ != false) {
       output.writeBool(5, bypassTempDirValidation_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, machineType_);
     }
     for (int i = 0; i < additionalExperiments_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, additionalExperiments_.getRaw(i));
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, subnetwork_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -978,16 +978,16 @@ private static final long serialVersionUID = 0L;
     if (numWorkers_ != 0) {
       output.writeInt32(11, numWorkers_);
     }
-    if (!getKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, kmsKeyName_);
     }
     if (ipConfiguration_ != com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.WORKER_IP_UNSPECIFIED.getNumber()) {
       output.writeEnum(14, ipConfiguration_);
     }
-    if (!getWorkerRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerRegion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, workerRegion_);
     }
-    if (!getWorkerZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, workerZone_);
     }
     if (enableStreamingEngine_ != false) {
@@ -1006,20 +1006,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, maxWorkers_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceAccountEmail_);
     }
-    if (!getTempLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tempLocation_);
     }
     if (bypassTempDirValidation_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, bypassTempDirValidation_);
     }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, machineType_);
     }
     {
@@ -1030,10 +1030,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAdditionalExperimentsList().size();
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, subnetwork_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -1050,17 +1050,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, numWorkers_);
     }
-    if (!getKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, kmsKeyName_);
     }
     if (ipConfiguration_ != com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.WORKER_IP_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(14, ipConfiguration_);
     }
-    if (!getWorkerRegionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerRegion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, workerRegion_);
     }
-    if (!getWorkerZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, workerZone_);
     }
     if (enableStreamingEngine_ != false) {

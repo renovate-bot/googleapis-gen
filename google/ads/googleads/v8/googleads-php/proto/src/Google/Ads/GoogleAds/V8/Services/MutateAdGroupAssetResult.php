@@ -85,7 +85,7 @@ class MutateAdGroupAssetResult extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAsset()
     {
-        return isset($this->ad_group_asset) ? $this->ad_group_asset : null;
+        return $this->ad_group_asset;
     }
 
     public function hasAdGroupAsset()

@@ -195,7 +195,7 @@ class WindowsBasedSli extends \Google\Protobuf\Internal\Message
      */
     public function getWindowPeriod()
     {
-        return isset($this->window_period) ? $this->window_period : null;
+        return $this->window_period;
     }
 
     public function hasWindowPeriod()

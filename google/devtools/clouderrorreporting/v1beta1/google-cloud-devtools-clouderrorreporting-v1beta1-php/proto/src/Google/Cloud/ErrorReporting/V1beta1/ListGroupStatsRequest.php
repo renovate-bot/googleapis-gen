@@ -219,7 +219,7 @@ class ListGroupStatsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getServiceFilter()
     {
-        return isset($this->service_filter) ? $this->service_filter : null;
+        return $this->service_filter;
     }
 
     public function hasServiceFilter()
@@ -264,7 +264,7 @@ class ListGroupStatsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTimeRange()
     {
-        return isset($this->time_range) ? $this->time_range : null;
+        return $this->time_range;
     }
 
     public function hasTimeRange()
@@ -308,7 +308,7 @@ class ListGroupStatsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTimedCountDuration()
     {
-        return isset($this->timed_count_duration) ? $this->timed_count_duration : null;
+        return $this->timed_count_duration;
     }
 
     public function hasTimedCountDuration()
@@ -374,7 +374,7 @@ class ListGroupStatsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAlignmentTime()
     {
-        return isset($this->alignment_time) ? $this->alignment_time : null;
+        return $this->alignment_time;
     }
 
     public function hasAlignmentTime()

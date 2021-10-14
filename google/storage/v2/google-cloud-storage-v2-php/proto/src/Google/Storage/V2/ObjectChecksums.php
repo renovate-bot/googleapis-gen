@@ -21,7 +21,7 @@ class ObjectChecksums extends \Google\Protobuf\Internal\Message
      * If set in an WriteObjectRequest, service will validate that the stored
      * object matches this checksum.
      *
-     * Generated from protobuf field <code>fixed32 crc32c = 1;</code>
+     * Generated from protobuf field <code>optional fixed32 crc32c = 1;</code>
      */
     protected $crc32c = null;
     /**
@@ -69,7 +69,7 @@ class ObjectChecksums extends \Google\Protobuf\Internal\Message
      * If set in an WriteObjectRequest, service will validate that the stored
      * object matches this checksum.
      *
-     * Generated from protobuf field <code>fixed32 crc32c = 1;</code>
+     * Generated from protobuf field <code>optional fixed32 crc32c = 1;</code>
      * @return int
      */
     public function getCrc32C()
@@ -93,7 +93,7 @@ class ObjectChecksums extends \Google\Protobuf\Internal\Message
      * If set in an WriteObjectRequest, service will validate that the stored
      * object matches this checksum.
      *
-     * Generated from protobuf field <code>fixed32 crc32c = 1;</code>
+     * Generated from protobuf field <code>optional fixed32 crc32c = 1;</code>
      * @param int $var
      * @return $this
      */

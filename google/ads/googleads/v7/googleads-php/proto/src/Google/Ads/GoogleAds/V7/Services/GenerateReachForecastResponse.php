@@ -53,7 +53,7 @@ class GenerateReachForecastResponse extends \Google\Protobuf\Internal\Message
      */
     public function getOnTargetAudienceMetrics()
     {
-        return isset($this->on_target_audience_metrics) ? $this->on_target_audience_metrics : null;
+        return $this->on_target_audience_metrics;
     }
 
     public function hasOnTargetAudienceMetrics()
@@ -89,7 +89,7 @@ class GenerateReachForecastResponse extends \Google\Protobuf\Internal\Message
      */
     public function getReachCurve()
     {
-        return isset($this->reach_curve) ? $this->reach_curve : null;
+        return $this->reach_curve;
     }
 
     public function hasReachCurve()

@@ -36,7 +36,7 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>bool metric_system = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool metric_system = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $metric_system = null;
 
@@ -120,7 +120,7 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>bool metric_system = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool metric_system = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getMetricSystem()
@@ -141,7 +141,7 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>bool metric_system = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool metric_system = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

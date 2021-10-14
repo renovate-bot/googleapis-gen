@@ -352,7 +352,7 @@ private static final long serialVersionUID = 0L;
     if (kind_ != io.grafeas.v1beta1.source.AliasContext.Kind.KIND_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     unknownFields.writeTo(output);
@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     size += unknownFields.getSerializedSize();

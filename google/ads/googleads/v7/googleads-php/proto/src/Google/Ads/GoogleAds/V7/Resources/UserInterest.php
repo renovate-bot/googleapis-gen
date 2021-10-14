@@ -32,25 +32,25 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>int64 user_interest_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 user_interest_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $user_interest_id = null;
     /**
      * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>string name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
      * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>string user_interest_parent = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string user_interest_parent = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $user_interest_parent = null;
     /**
      * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $launched_to_all = null;
     /**
@@ -148,7 +148,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>int64 user_interest_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 user_interest_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getUserInterestId()
@@ -169,7 +169,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>int64 user_interest_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 user_interest_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -184,7 +184,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>string name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -205,7 +205,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>string name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -220,7 +220,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>string user_interest_parent = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string user_interest_parent = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getUserInterestParent()
@@ -241,7 +241,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>string user_interest_parent = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string user_interest_parent = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -256,7 +256,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getLaunchedToAll()
@@ -277,7 +277,7 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool launched_to_all = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

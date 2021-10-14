@@ -131,7 +131,7 @@ class DriveItemReference extends \Google\Protobuf\Internal\Message
     public function getFile()
     {
         @trigger_error('file is deprecated.', E_USER_DEPRECATED);
-        return isset($this->file) ? $this->file : null;
+        return $this->file;
     }
 
     public function hasFile()
@@ -173,7 +173,7 @@ class DriveItemReference extends \Google\Protobuf\Internal\Message
     public function getFolder()
     {
         @trigger_error('folder is deprecated.', E_USER_DEPRECATED);
-        return isset($this->folder) ? $this->folder : null;
+        return $this->folder;
     }
 
     public function hasFolder()

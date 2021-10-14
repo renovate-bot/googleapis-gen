@@ -159,7 +159,7 @@ class ExecutePatchJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getInstanceFilter()
     {
-        return isset($this->instance_filter) ? $this->instance_filter : null;
+        return $this->instance_filter;
     }
 
     public function hasInstanceFilter()
@@ -197,7 +197,7 @@ class ExecutePatchJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPatchConfig()
     {
-        return isset($this->patch_config) ? $this->patch_config : null;
+        return $this->patch_config;
     }
 
     public function hasPatchConfig()
@@ -235,7 +235,7 @@ class ExecutePatchJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDuration()
     {
-        return isset($this->duration) ? $this->duration : null;
+        return $this->duration;
     }
 
     public function hasDuration()

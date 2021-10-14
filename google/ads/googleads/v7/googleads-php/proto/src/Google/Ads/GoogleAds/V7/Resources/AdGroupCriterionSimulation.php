@@ -34,13 +34,13 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. AdGroup ID of the simulation.
      *
-     * Generated from protobuf field <code>int64 ad_group_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_group_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_group_id = null;
     /**
      * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -58,13 +58,13 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string start_date = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string start_date = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $start_date = null;
     /**
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string end_date = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string end_date = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $end_date = null;
     protected $point_list;
@@ -135,7 +135,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. AdGroup ID of the simulation.
      *
-     * Generated from protobuf field <code>int64 ad_group_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_group_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getAdGroupId()
@@ -156,7 +156,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. AdGroup ID of the simulation.
      *
-     * Generated from protobuf field <code>int64 ad_group_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_group_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -171,7 +171,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCriterionId()
@@ -192,7 +192,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -259,7 +259,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string start_date = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string start_date = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getStartDate()
@@ -280,7 +280,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string start_date = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string start_date = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -295,7 +295,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string end_date = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string end_date = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEndDate()
@@ -316,7 +316,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string end_date = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string end_date = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

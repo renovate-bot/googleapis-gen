@@ -85,7 +85,7 @@ class MutateCampaignFeedResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignFeed()
     {
-        return isset($this->campaign_feed) ? $this->campaign_feed : null;
+        return $this->campaign_feed;
     }
 
     public function hasCampaignFeed()

@@ -86,19 +86,23 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     private static readonly pb::MessageParser<FinalizeMfaSignInRequest> _parser = new pb::MessageParser<FinalizeMfaSignInRequest>(() => new FinalizeMfaSignInRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FinalizeMfaSignInRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.IdentityToolkit.V2.AuthenticationServiceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinalizeMfaSignInRequest() {
       OnConstruction();
     }
@@ -106,6 +110,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinalizeMfaSignInRequest(FinalizeMfaSignInRequest other) : this() {
       mfaPendingCredential_ = other.mfaPendingCredential_;
       tenantId_ = other.tenantId_;
@@ -119,6 +124,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinalizeMfaSignInRequest Clone() {
       return new FinalizeMfaSignInRequest(this);
     }
@@ -130,6 +136,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Required. Pending credential from first factor sign-in.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string MfaPendingCredential {
       get { return mfaPendingCredential_; }
       set {
@@ -143,6 +150,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Proof of completion of the SMS based MFA challenge.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.IdentityToolkit.V2.FinalizeMfaPhoneRequestInfo PhoneVerificationInfo {
       get { return verificationInfoCase_ == VerificationInfoOneofCase.PhoneVerificationInfo ? (global::Google.Cloud.IdentityToolkit.V2.FinalizeMfaPhoneRequestInfo) verificationInfo_ : null; }
       set {
@@ -159,6 +167,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// set, the user will sign in to the default Identity Platform project.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TenantId {
       get { return tenantId_; }
       set {
@@ -174,22 +183,26 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
     private VerificationInfoOneofCase verificationInfoCase_ = VerificationInfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VerificationInfoOneofCase VerificationInfoCase {
       get { return verificationInfoCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVerificationInfo() {
       verificationInfoCase_ = VerificationInfoOneofCase.None;
       verificationInfo_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FinalizeMfaSignInRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FinalizeMfaSignInRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -205,6 +218,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (MfaPendingCredential.Length != 0) hash ^= MfaPendingCredential.GetHashCode();
@@ -218,11 +232,13 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -247,6 +263,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MfaPendingCredential.Length != 0) {
         output.WriteRawTag(18);
@@ -267,6 +284,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (MfaPendingCredential.Length != 0) {
@@ -285,6 +303,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FinalizeMfaSignInRequest other) {
       if (other == null) {
         return;
@@ -308,6 +327,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -342,6 +362,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -384,19 +405,23 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     private static readonly pb::MessageParser<FinalizeMfaSignInResponse> _parser = new pb::MessageParser<FinalizeMfaSignInResponse>(() => new FinalizeMfaSignInResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FinalizeMfaSignInResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.IdentityToolkit.V2.AuthenticationServiceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinalizeMfaSignInResponse() {
       OnConstruction();
     }
@@ -404,6 +429,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinalizeMfaSignInResponse(FinalizeMfaSignInResponse other) : this() {
       idToken_ = other.idToken_;
       refreshToken_ = other.refreshToken_;
@@ -417,6 +443,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinalizeMfaSignInResponse Clone() {
       return new FinalizeMfaSignInResponse(this);
     }
@@ -428,6 +455,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// ID token for the authenticated user.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string IdToken {
       get { return idToken_; }
       set {
@@ -442,6 +470,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Refresh token for the authenticated user.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RefreshToken {
       get { return refreshToken_; }
       set {
@@ -455,6 +484,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Extra phone auth info, including android verification proof.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.IdentityToolkit.V2.FinalizeMfaPhoneResponseInfo PhoneAuthInfo {
       get { return auxiliaryAuthInfoCase_ == AuxiliaryAuthInfoOneofCase.PhoneAuthInfo ? (global::Google.Cloud.IdentityToolkit.V2.FinalizeMfaPhoneResponseInfo) auxiliaryAuthInfo_ : null; }
       set {
@@ -471,22 +501,26 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
     private AuxiliaryAuthInfoOneofCase auxiliaryAuthInfoCase_ = AuxiliaryAuthInfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AuxiliaryAuthInfoOneofCase AuxiliaryAuthInfoCase {
       get { return auxiliaryAuthInfoCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAuxiliaryAuthInfo() {
       auxiliaryAuthInfoCase_ = AuxiliaryAuthInfoOneofCase.None;
       auxiliaryAuthInfo_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FinalizeMfaSignInResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FinalizeMfaSignInResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -502,6 +536,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (IdToken.Length != 0) hash ^= IdToken.GetHashCode();
@@ -515,11 +550,13 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -544,6 +581,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IdToken.Length != 0) {
         output.WriteRawTag(10);
@@ -564,6 +602,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (IdToken.Length != 0) {
@@ -582,6 +621,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FinalizeMfaSignInResponse other) {
       if (other == null) {
         return;
@@ -605,6 +645,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -639,6 +680,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -681,19 +723,23 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     private static readonly pb::MessageParser<StartMfaSignInRequest> _parser = new pb::MessageParser<StartMfaSignInRequest>(() => new StartMfaSignInRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<StartMfaSignInRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.IdentityToolkit.V2.AuthenticationServiceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartMfaSignInRequest() {
       OnConstruction();
     }
@@ -701,6 +747,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartMfaSignInRequest(StartMfaSignInRequest other) : this() {
       mfaPendingCredential_ = other.mfaPendingCredential_;
       mfaEnrollmentId_ = other.mfaEnrollmentId_;
@@ -715,6 +762,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartMfaSignInRequest Clone() {
       return new StartMfaSignInRequest(this);
     }
@@ -726,6 +774,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Required. Pending credential from first factor sign-in.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string MfaPendingCredential {
       get { return mfaPendingCredential_; }
       set {
@@ -740,6 +789,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Required. MFA enrollment id from the user's list of current MFA enrollments.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string MfaEnrollmentId {
       get { return mfaEnrollmentId_; }
       set {
@@ -753,6 +803,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// Verification info to authorize sending an SMS for phone verification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.IdentityToolkit.V2.StartMfaPhoneRequestInfo PhoneSignInInfo {
       get { return signInInfoCase_ == SignInInfoOneofCase.PhoneSignInInfo ? (global::Google.Cloud.IdentityToolkit.V2.StartMfaPhoneRequestInfo) signInInfo_ : null; }
       set {
@@ -769,6 +820,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// set, the user will sign in to the default Identity Platform project.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TenantId {
       get { return tenantId_; }
       set {
@@ -784,22 +836,26 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
     private SignInInfoOneofCase signInInfoCase_ = SignInInfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SignInInfoOneofCase SignInInfoCase {
       get { return signInInfoCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSignInInfo() {
       signInInfoCase_ = SignInInfoOneofCase.None;
       signInInfo_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as StartMfaSignInRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(StartMfaSignInRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -816,6 +872,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (MfaPendingCredential.Length != 0) hash ^= MfaPendingCredential.GetHashCode();
@@ -830,11 +887,13 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -863,6 +922,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MfaPendingCredential.Length != 0) {
         output.WriteRawTag(18);
@@ -887,6 +947,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (MfaPendingCredential.Length != 0) {
@@ -908,6 +969,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(StartMfaSignInRequest other) {
       if (other == null) {
         return;
@@ -934,6 +996,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -972,6 +1035,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1018,19 +1082,23 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     private static readonly pb::MessageParser<StartMfaSignInResponse> _parser = new pb::MessageParser<StartMfaSignInResponse>(() => new StartMfaSignInResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<StartMfaSignInResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.IdentityToolkit.V2.AuthenticationServiceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartMfaSignInResponse() {
       OnConstruction();
     }
@@ -1038,6 +1106,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartMfaSignInResponse(StartMfaSignInResponse other) : this() {
       switch (other.ResponseInfoCase) {
         case ResponseInfoOneofCase.PhoneResponseInfo:
@@ -1049,6 +1118,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartMfaSignInResponse Clone() {
       return new StartMfaSignInResponse(this);
     }
@@ -1062,6 +1132,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     /// FinalizeMfaSignIn to complete the sign in.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.IdentityToolkit.V2.StartMfaPhoneResponseInfo PhoneResponseInfo {
       get { return responseInfoCase_ == ResponseInfoOneofCase.PhoneResponseInfo ? (global::Google.Cloud.IdentityToolkit.V2.StartMfaPhoneResponseInfo) responseInfo_ : null; }
       set {
@@ -1078,22 +1149,26 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
     private ResponseInfoOneofCase responseInfoCase_ = ResponseInfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResponseInfoOneofCase ResponseInfoCase {
       get { return responseInfoCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearResponseInfo() {
       responseInfoCase_ = ResponseInfoOneofCase.None;
       responseInfo_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as StartMfaSignInResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(StartMfaSignInResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1107,6 +1182,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (responseInfoCase_ == ResponseInfoOneofCase.PhoneResponseInfo) hash ^= PhoneResponseInfo.GetHashCode();
@@ -1118,11 +1194,13 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1139,6 +1217,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (responseInfoCase_ == ResponseInfoOneofCase.PhoneResponseInfo) {
         output.WriteRawTag(10);
@@ -1151,6 +1230,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (responseInfoCase_ == ResponseInfoOneofCase.PhoneResponseInfo) {
@@ -1163,6 +1243,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(StartMfaSignInResponse other) {
       if (other == null) {
         return;
@@ -1180,6 +1261,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1206,6 +1288,7 @@ namespace Google.Cloud.IdentityToolkit.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

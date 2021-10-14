@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < layerInfo_.size(); i++) {
       output.writeMessage(3, layerInfo_.get(i));
     }
-    if (!getBaseResourceUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseResourceUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, baseResourceUrl_);
     }
     unknownFields.writeTo(output);
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, layerInfo_.get(i));
     }
-    if (!getBaseResourceUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseResourceUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, baseResourceUrl_);
     }
     size += unknownFields.getSerializedSize();

@@ -19,7 +19,7 @@ class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
     /**
      * Seed UserList from which this list is derived.
      *
-     * Generated from protobuf field <code>string seed_user_list = 2;</code>
+     * Generated from protobuf field <code>optional string seed_user_list = 2;</code>
      */
     protected $seed_user_list = null;
 
@@ -41,7 +41,7 @@ class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
     /**
      * Seed UserList from which this list is derived.
      *
-     * Generated from protobuf field <code>string seed_user_list = 2;</code>
+     * Generated from protobuf field <code>optional string seed_user_list = 2;</code>
      * @return string
      */
     public function getSeedUserList()
@@ -62,7 +62,7 @@ class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
     /**
      * Seed UserList from which this list is derived.
      *
-     * Generated from protobuf field <code>string seed_user_list = 2;</code>
+     * Generated from protobuf field <code>optional string seed_user_list = 2;</code>
      * @param string $var
      * @return $this
      */

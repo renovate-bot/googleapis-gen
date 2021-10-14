@@ -27,28 +27,28 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The automatic placement string at detail level, e. g. website URL, mobile
      * application ID, or a YouTube video ID.
      *
-     * Generated from protobuf field <code>string placement = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string placement = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $placement = null;
     /**
      * Output only. The display name is URL name for websites, YouTube video name for YouTube
      * videos, and translated mobile app name for mobile apps.
      *
-     * Generated from protobuf field <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $display_name = null;
     /**
      * Output only. URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
-     * Generated from protobuf field <code>string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $group_placement_target_url = null;
     /**
      * Output only. URL of the placement, e.g. website, link to the mobile application in app
      * store, or a YouTube video URL.
      *
-     * Generated from protobuf field <code>string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_url = null;
     /**
@@ -123,7 +123,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The automatic placement string at detail level, e. g. website URL, mobile
      * application ID, or a YouTube video ID.
      *
-     * Generated from protobuf field <code>string placement = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string placement = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPlacement()
@@ -145,7 +145,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The automatic placement string at detail level, e. g. website URL, mobile
      * application ID, or a YouTube video ID.
      *
-     * Generated from protobuf field <code>string placement = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string placement = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -161,7 +161,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The display name is URL name for websites, YouTube video name for YouTube
      * videos, and translated mobile app name for mobile apps.
      *
-     * Generated from protobuf field <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDisplayName()
@@ -183,7 +183,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The display name is URL name for websites, YouTube video name for YouTube
      * videos, and translated mobile app name for mobile apps.
      *
-     * Generated from protobuf field <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -199,7 +199,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
-     * Generated from protobuf field <code>string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getGroupPlacementTargetUrl()
@@ -221,7 +221,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
-     * Generated from protobuf field <code>string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string group_placement_target_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -237,7 +237,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. URL of the placement, e.g. website, link to the mobile application in app
      * store, or a YouTube video URL.
      *
-     * Generated from protobuf field <code>string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getTargetUrl()
@@ -259,7 +259,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. URL of the placement, e.g. website, link to the mobile application in app
      * store, or a YouTube video URL.
      *
-     * Generated from protobuf field <code>string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string target_url = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

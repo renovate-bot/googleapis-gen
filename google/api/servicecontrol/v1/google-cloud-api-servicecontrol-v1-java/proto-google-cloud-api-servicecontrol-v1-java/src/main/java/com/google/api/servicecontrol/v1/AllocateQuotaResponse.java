@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getOperationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, operationId_);
     }
     for (int i = 0; i < allocateErrors_.size(); i++) {
@@ -397,7 +397,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < quotaMetrics_.size(); i++) {
       output.writeMessage(3, quotaMetrics_.get(i));
     }
-    if (!getServiceConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceConfigId_);
     }
     unknownFields.writeTo(output);
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getOperationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, operationId_);
     }
     for (int i = 0; i < allocateErrors_.size(); i++) {
@@ -420,7 +420,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, quotaMetrics_.get(i));
     }
-    if (!getServiceConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceConfigId_);
     }
     size += unknownFields.getSerializedSize();

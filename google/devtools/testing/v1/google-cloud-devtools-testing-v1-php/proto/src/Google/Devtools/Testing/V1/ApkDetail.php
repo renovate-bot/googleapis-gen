@@ -41,7 +41,7 @@ class ApkDetail extends \Google\Protobuf\Internal\Message
      */
     public function getApkManifest()
     {
-        return isset($this->apk_manifest) ? $this->apk_manifest : null;
+        return $this->apk_manifest;
     }
 
     public function hasApkManifest()

@@ -27,7 +27,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>string campaign = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
@@ -38,7 +38,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>string shared_set = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string shared_set = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $shared_set = null;
     /**
@@ -109,7 +109,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>string campaign = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -130,7 +130,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>string campaign = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>string shared_set = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string shared_set = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getSharedSet()
@@ -176,7 +176,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>string shared_set = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string shared_set = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

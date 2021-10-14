@@ -53,7 +53,7 @@ class UpdateWorkloadIdentityPoolRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getWorkloadIdentityPool()
     {
-        return isset($this->workload_identity_pool) ? $this->workload_identity_pool : null;
+        return $this->workload_identity_pool;
     }
 
     public function hasWorkloadIdentityPool()
@@ -89,7 +89,7 @@ class UpdateWorkloadIdentityPoolRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
     if (inspectConfig_ != null) {
       output.writeMessage(2, getInspectConfig());
     }
-    if (!getInspectTemplateNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplateName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, inspectTemplateName_);
     }
     for (int i = 0; i < actions_.size(); i++) {
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getInspectConfig());
     }
-    if (!getInspectTemplateNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplateName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, inspectTemplateName_);
     }
     for (int i = 0; i < actions_.size(); i++) {

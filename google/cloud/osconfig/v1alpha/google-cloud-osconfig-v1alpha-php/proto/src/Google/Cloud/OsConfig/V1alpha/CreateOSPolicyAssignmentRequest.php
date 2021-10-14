@@ -103,7 +103,7 @@ class CreateOSPolicyAssignmentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOsPolicyAssignment()
     {
-        return isset($this->os_policy_assignment) ? $this->os_policy_assignment : null;
+        return $this->os_policy_assignment;
     }
 
     public function hasOsPolicyAssignment()

@@ -216,7 +216,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getUserInfo()
     {
-        return isset($this->user_info) ? $this->user_info : null;
+        return $this->user_info;
     }
 
     public function hasUserInfo()
@@ -253,7 +253,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getEventDetail()
     {
-        return isset($this->event_detail) ? $this->event_detail : null;
+        return $this->event_detail;
     }
 
     public function hasEventDetail()
@@ -307,7 +307,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getProductEventDetail()
     {
-        return isset($this->product_event_detail) ? $this->product_event_detail : null;
+        return $this->product_event_detail;
     }
 
     public function hasProductEventDetail()
@@ -361,7 +361,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getEventTime()
     {
-        return isset($this->event_time) ? $this->event_time : null;
+        return $this->event_time;
     }
 
     public function hasEventTime()

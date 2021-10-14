@@ -63,7 +63,7 @@ class WorkloadsConfig extends \Google\Protobuf\Internal\Message
      */
     public function getScheduler()
     {
-        return isset($this->scheduler) ? $this->scheduler : null;
+        return $this->scheduler;
     }
 
     public function hasScheduler()
@@ -99,7 +99,7 @@ class WorkloadsConfig extends \Google\Protobuf\Internal\Message
      */
     public function getWebServer()
     {
-        return isset($this->web_server) ? $this->web_server : null;
+        return $this->web_server;
     }
 
     public function hasWebServer()
@@ -135,7 +135,7 @@ class WorkloadsConfig extends \Google\Protobuf\Internal\Message
      */
     public function getWorker()
     {
-        return isset($this->worker) ? $this->worker : null;
+        return $this->worker;
     }
 
     public function hasWorker()

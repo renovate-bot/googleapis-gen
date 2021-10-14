@@ -26,7 +26,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
@@ -39,21 +39,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $selectable = null;
     /**
      * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $filterable = null;
     /**
      * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $sortable = null;
     /**
@@ -113,13 +113,13 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type_url = null;
     /**
      * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $is_repeated = null;
 
@@ -220,7 +220,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -241,7 +241,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -283,7 +283,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getSelectable()
@@ -305,7 +305,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -321,7 +321,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getFilterable()
@@ -343,7 +343,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -359,7 +359,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getSortable()
@@ -381,7 +381,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -588,7 +588,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getTypeUrl()
@@ -609,7 +609,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -624,7 +624,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getIsRepeated()
@@ -645,7 +645,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

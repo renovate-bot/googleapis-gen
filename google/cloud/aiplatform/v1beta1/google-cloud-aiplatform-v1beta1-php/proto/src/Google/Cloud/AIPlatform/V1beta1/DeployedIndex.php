@@ -309,7 +309,7 @@ class DeployedIndex extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -347,7 +347,7 @@ class DeployedIndex extends \Google\Protobuf\Internal\Message
      */
     public function getPrivateEndpoints()
     {
-        return isset($this->private_endpoints) ? $this->private_endpoints : null;
+        return $this->private_endpoints;
     }
 
     public function hasPrivateEndpoints()
@@ -398,7 +398,7 @@ class DeployedIndex extends \Google\Protobuf\Internal\Message
      */
     public function getIndexSyncTime()
     {
-        return isset($this->index_sync_time) ? $this->index_sync_time : null;
+        return $this->index_sync_time;
     }
 
     public function hasIndexSyncTime()
@@ -454,7 +454,7 @@ class DeployedIndex extends \Google\Protobuf\Internal\Message
      */
     public function getAutomaticResources()
     {
-        return isset($this->automatic_resources) ? $this->automatic_resources : null;
+        return $this->automatic_resources;
     }
 
     public function hasAutomaticResources()
@@ -533,7 +533,7 @@ class DeployedIndex extends \Google\Protobuf\Internal\Message
      */
     public function getDeployedIndexAuthConfig()
     {
-        return isset($this->deployed_index_auth_config) ? $this->deployed_index_auth_config : null;
+        return $this->deployed_index_auth_config;
     }
 
     public function hasDeployedIndexAuthConfig()

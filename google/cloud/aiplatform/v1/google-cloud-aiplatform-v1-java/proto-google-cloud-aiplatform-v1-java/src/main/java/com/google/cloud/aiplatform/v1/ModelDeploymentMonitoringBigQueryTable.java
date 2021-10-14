@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     if (logType_ != com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringBigQueryTable.LogType.LOG_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, logType_);
     }
-    if (!getBigqueryTablePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bigqueryTablePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bigqueryTablePath_);
     }
     unknownFields.writeTo(output);
@@ -540,7 +540,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, logType_);
     }
-    if (!getBigqueryTablePathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bigqueryTablePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bigqueryTablePath_);
     }
     size += unknownFields.getSerializedSize();

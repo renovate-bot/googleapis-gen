@@ -1067,10 +1067,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDestinationBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, destinationBucket_);
     }
-    if (!getDestinationObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationObject_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, destinationObject_);
     }
     if (destinationPredefinedAcl_ != com.google.storage.v1.CommonEnums.PredefinedObjectAcl.PREDEFINED_OBJECT_ACL_UNSPECIFIED.getNumber()) {
@@ -1103,10 +1103,10 @@ private static final long serialVersionUID = 0L;
     if (projection_ != com.google.storage.v1.CommonEnums.Projection.PROJECTION_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, projection_);
     }
-    if (!getSourceBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, sourceBucket_);
     }
-    if (!getSourceObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceObject_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, sourceObject_);
     }
     if (sourceGeneration_ != 0L) {
@@ -1121,7 +1121,7 @@ private static final long serialVersionUID = 0L;
     if (commonRequestParams_ != null) {
       output.writeMessage(19, getCommonRequestParams());
     }
-    if (!getDestinationKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationKmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, destinationKmsKeyName_);
     }
     unknownFields.writeTo(output);
@@ -1133,10 +1133,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDestinationBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, destinationBucket_);
     }
-    if (!getDestinationObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationObject_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, destinationObject_);
     }
     if (destinationPredefinedAcl_ != com.google.storage.v1.CommonEnums.PredefinedObjectAcl.PREDEFINED_OBJECT_ACL_UNSPECIFIED.getNumber()) {
@@ -1179,10 +1179,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(12, projection_);
     }
-    if (!getSourceBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, sourceBucket_);
     }
-    if (!getSourceObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceObject_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, sourceObject_);
     }
     if (sourceGeneration_ != 0L) {
@@ -1201,7 +1201,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getCommonRequestParams());
     }
-    if (!getDestinationKmsKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationKmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, destinationKmsKeyName_);
     }
     size += unknownFields.getSerializedSize();

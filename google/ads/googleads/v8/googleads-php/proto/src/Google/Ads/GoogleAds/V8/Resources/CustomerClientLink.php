@@ -26,13 +26,13 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>string client_customer = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string client_customer = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $client_customer = null;
     /**
      * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>int64 manager_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 manager_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $manager_link_id = null;
     /**
@@ -46,7 +46,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * links in the Google Ads UI.
      * Default value is false
      *
-     * Generated from protobuf field <code>bool hidden = 9;</code>
+     * Generated from protobuf field <code>optional bool hidden = 9;</code>
      */
     protected $hidden = null;
 
@@ -110,7 +110,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>string client_customer = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string client_customer = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getClientCustomer()
@@ -131,7 +131,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>string client_customer = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string client_customer = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +146,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>int64 manager_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 manager_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getManagerLinkId()
@@ -167,7 +167,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>int64 manager_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 manager_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * links in the Google Ads UI.
      * Default value is false
      *
-     * Generated from protobuf field <code>bool hidden = 9;</code>
+     * Generated from protobuf field <code>optional bool hidden = 9;</code>
      * @return bool
      */
     public function getHidden()
@@ -233,7 +233,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * links in the Google Ads UI.
      * Default value is false
      *
-     * Generated from protobuf field <code>bool hidden = 9;</code>
+     * Generated from protobuf field <code>optional bool hidden = 9;</code>
      * @param bool $var
      * @return $this
      */

@@ -20,13 +20,13 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
      * strategy. The value is between 0.01 and 1000.0, inclusive. This is a
      * required field, unless new_campaign_budget_amount_micros is set.
      *
-     * Generated from protobuf field <code>double target_roas = 1;</code>
+     * Generated from protobuf field <code>optional double target_roas = 1;</code>
      */
     protected $target_roas = null;
     /**
      * Optional, budget amount to set for the campaign.
      *
-     * Generated from protobuf field <code>int64 new_campaign_budget_amount_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 new_campaign_budget_amount_micros = 2;</code>
      */
     protected $new_campaign_budget_amount_micros = null;
 
@@ -54,7 +54,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
      * strategy. The value is between 0.01 and 1000.0, inclusive. This is a
      * required field, unless new_campaign_budget_amount_micros is set.
      *
-     * Generated from protobuf field <code>double target_roas = 1;</code>
+     * Generated from protobuf field <code>optional double target_roas = 1;</code>
      * @return float
      */
     public function getTargetRoas()
@@ -77,7 +77,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
      * strategy. The value is between 0.01 and 1000.0, inclusive. This is a
      * required field, unless new_campaign_budget_amount_micros is set.
      *
-     * Generated from protobuf field <code>double target_roas = 1;</code>
+     * Generated from protobuf field <code>optional double target_roas = 1;</code>
      * @param float $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Optional, budget amount to set for the campaign.
      *
-     * Generated from protobuf field <code>int64 new_campaign_budget_amount_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 new_campaign_budget_amount_micros = 2;</code>
      * @return int|string
      */
     public function getNewCampaignBudgetAmountMicros()
@@ -113,7 +113,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Optional, budget amount to set for the campaign.
      *
-     * Generated from protobuf field <code>int64 new_campaign_budget_amount_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 new_campaign_budget_amount_micros = 2;</code>
      * @param int|string $var
      * @return $this
      */

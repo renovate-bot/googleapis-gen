@@ -764,7 +764,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getAdaptation()
     {
-        return isset($this->adaptation) ? $this->adaptation : null;
+        return $this->adaptation;
     }
 
     public function hasAdaptation()
@@ -807,7 +807,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getTranscriptNormalization()
     {
-        return isset($this->transcript_normalization) ? $this->transcript_normalization : null;
+        return $this->transcript_normalization;
     }
 
     public function hasTranscriptNormalization()
@@ -980,7 +980,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getEnableSpokenPunctuation()
     {
-        return isset($this->enable_spoken_punctuation) ? $this->enable_spoken_punctuation : null;
+        return $this->enable_spoken_punctuation;
     }
 
     public function hasEnableSpokenPunctuation()
@@ -1065,7 +1065,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getEnableSpokenEmojis()
     {
-        return isset($this->enable_spoken_emojis) ? $this->enable_spoken_emojis : null;
+        return $this->enable_spoken_emojis;
     }
 
     public function hasEnableSpokenEmojis()
@@ -1217,7 +1217,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getDiarizationConfig()
     {
-        return isset($this->diarization_config) ? $this->diarization_config : null;
+        return $this->diarization_config;
     }
 
     public function hasDiarizationConfig()
@@ -1260,7 +1260,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()

@@ -19,7 +19,7 @@ class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Message
      * Headline of the ad. This field is required. Allowed length is between 25
      * and 45 characters.
      *
-     * Generated from protobuf field <code>string headline = 2;</code>
+     * Generated from protobuf field <code>optional string headline = 2;</code>
      */
     protected $headline = null;
 
@@ -43,7 +43,7 @@ class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Message
      * Headline of the ad. This field is required. Allowed length is between 25
      * and 45 characters.
      *
-     * Generated from protobuf field <code>string headline = 2;</code>
+     * Generated from protobuf field <code>optional string headline = 2;</code>
      * @return string
      */
     public function getHeadline()
@@ -65,7 +65,7 @@ class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Message
      * Headline of the ad. This field is required. Allowed length is between 25
      * and 45 characters.
      *
-     * Generated from protobuf field <code>string headline = 2;</code>
+     * Generated from protobuf field <code>optional string headline = 2;</code>
      * @param string $var
      * @return $this
      */

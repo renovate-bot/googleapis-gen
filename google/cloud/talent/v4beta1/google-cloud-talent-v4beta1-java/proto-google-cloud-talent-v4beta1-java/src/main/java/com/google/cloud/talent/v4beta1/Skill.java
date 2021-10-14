@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
     if (lastUsedDate_ != null) {
@@ -363,10 +363,10 @@ private static final long serialVersionUID = 0L;
     if (level_ != com.google.cloud.talent.v4beta1.SkillProficiencyLevel.SKILL_PROFICIENCY_LEVEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, level_);
     }
-    if (!getContextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, context_);
     }
-    if (!getSkillNameSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skillNameSnippet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, skillNameSnippet_);
     }
     unknownFields.writeTo(output);
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
     }
     if (lastUsedDate_ != null) {
@@ -389,10 +389,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, level_);
     }
-    if (!getContextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(context_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, context_);
     }
-    if (!getSkillNameSnippetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skillNameSnippet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, skillNameSnippet_);
     }
     size += unknownFields.getSerializedSize();

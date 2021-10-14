@@ -45,7 +45,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * being false means that the default display campaign where channel sub type
      * is not set is not included in this availability configuration.
      *
-     * Generated from protobuf field <code>bool include_default_channel_sub_type = 5;</code>
+     * Generated from protobuf field <code>optional bool include_default_channel_sub_type = 5;</code>
      */
     protected $include_default_channel_sub_type = null;
 
@@ -172,7 +172,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * being false means that the default display campaign where channel sub type
      * is not set is not included in this availability configuration.
      *
-     * Generated from protobuf field <code>bool include_default_channel_sub_type = 5;</code>
+     * Generated from protobuf field <code>optional bool include_default_channel_sub_type = 5;</code>
      * @return bool
      */
     public function getIncludeDefaultChannelSubType()
@@ -196,7 +196,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * being false means that the default display campaign where channel sub type
      * is not set is not included in this availability configuration.
      *
-     * Generated from protobuf field <code>bool include_default_channel_sub_type = 5;</code>
+     * Generated from protobuf field <code>optional bool include_default_channel_sub_type = 5;</code>
      * @param bool $var
      * @return $this
      */

@@ -18,7 +18,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated target ROAS upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>double target_roas = 8;</code>
+     * Generated from protobuf field <code>optional double target_roas = 8;</code>
      */
     protected $target_roas = null;
     /**
@@ -31,38 +31,38 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 9;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 9;</code>
      */
     protected $biddable_conversions = null;
     /**
      * Projected total value of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 10;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 10;</code>
      */
     protected $biddable_conversions_value = null;
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 11;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 11;</code>
      */
     protected $clicks = null;
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 12;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 12;</code>
      */
     protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 13;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 13;</code>
      */
     protected $impressions = null;
     /**
      * Projected number of top slot impressions.
      * Only Search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 14;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 14;</code>
      */
     protected $top_slot_impressions = null;
 
@@ -100,7 +100,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated target ROAS upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>double target_roas = 8;</code>
+     * Generated from protobuf field <code>optional double target_roas = 8;</code>
      * @return float
      */
     public function getTargetRoas()
@@ -121,7 +121,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated target ROAS upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>double target_roas = 8;</code>
+     * Generated from protobuf field <code>optional double target_roas = 8;</code>
      * @param float $var
      * @return $this
      */
@@ -164,7 +164,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 9;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 9;</code>
      * @return float
      */
     public function getBiddableConversions()
@@ -185,7 +185,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 9;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 9;</code>
      * @param float $var
      * @return $this
      */
@@ -200,7 +200,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected total value of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 10;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 10;</code>
      * @return float
      */
     public function getBiddableConversionsValue()
@@ -221,7 +221,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected total value of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 10;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 10;</code>
      * @param float $var
      * @return $this
      */
@@ -236,7 +236,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 11;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 11;</code>
      * @return int|string
      */
     public function getClicks()
@@ -257,7 +257,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 11;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 11;</code>
      * @param int|string $var
      * @return $this
      */
@@ -272,7 +272,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 12;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 12;</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -293,7 +293,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 12;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 12;</code>
      * @param int|string $var
      * @return $this
      */
@@ -308,7 +308,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 13;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 13;</code>
      * @return int|string
      */
     public function getImpressions()
@@ -329,7 +329,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 13;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 13;</code>
      * @param int|string $var
      * @return $this
      */
@@ -345,7 +345,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of top slot impressions.
      * Only Search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 14;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 14;</code>
      * @return int|string
      */
     public function getTopSlotImpressions()
@@ -367,7 +367,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of top slot impressions.
      * Only Search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 14;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 14;</code>
      * @param int|string $var
      * @return $this
      */

@@ -113,7 +113,7 @@ class UpdateDeliveryPipelineRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()
@@ -153,7 +153,7 @@ class UpdateDeliveryPipelineRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDeliveryPipeline()
     {
-        return isset($this->delivery_pipeline) ? $this->delivery_pipeline : null;
+        return $this->delivery_pipeline;
     }
 
     public function hasDeliveryPipeline()

@@ -61,7 +61,7 @@ class UpdateGameServerDeploymentRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getGameServerDeployment()
     {
-        return isset($this->game_server_deployment) ? $this->game_server_deployment : null;
+        return $this->game_server_deployment;
     }
 
     public function hasGameServerDeployment()
@@ -100,7 +100,7 @@ class UpdateGameServerDeploymentRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

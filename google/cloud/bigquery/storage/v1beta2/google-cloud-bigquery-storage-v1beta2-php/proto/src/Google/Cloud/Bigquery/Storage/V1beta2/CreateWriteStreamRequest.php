@@ -83,7 +83,7 @@ class CreateWriteStreamRequest extends \Google\Protobuf\Internal\Message
      */
     public function getWriteStream()
     {
-        return isset($this->write_stream) ? $this->write_stream : null;
+        return $this->write_stream;
     }
 
     public function hasWriteStream()

@@ -83,7 +83,7 @@ class CreateSpecialistPoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSpecialistPool()
     {
-        return isset($this->specialist_pool) ? $this->specialist_pool : null;
+        return $this->specialist_pool;
     }
 
     public function hasSpecialistPool()

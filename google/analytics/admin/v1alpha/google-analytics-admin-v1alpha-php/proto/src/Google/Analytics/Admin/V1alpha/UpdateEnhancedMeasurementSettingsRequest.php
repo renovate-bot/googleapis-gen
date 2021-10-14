@@ -60,7 +60,7 @@ class UpdateEnhancedMeasurementSettingsRequest extends \Google\Protobuf\Internal
      */
     public function getEnhancedMeasurementSettings()
     {
-        return isset($this->enhanced_measurement_settings) ? $this->enhanced_measurement_settings : null;
+        return $this->enhanced_measurement_settings;
     }
 
     public function hasEnhancedMeasurementSettings()
@@ -99,7 +99,7 @@ class UpdateEnhancedMeasurementSettingsRequest extends \Google\Protobuf\Internal
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

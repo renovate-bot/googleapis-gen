@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getImageVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, imageVersion_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getImageVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, imageVersion_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry

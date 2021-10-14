@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
     if (!redactedImage_.isEmpty()) {
       output.writeBytes(1, redactedImage_);
     }
-    if (!getExtractedTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extractedText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, extractedText_);
     }
     if (inspectResult_ != null) {
@@ -249,7 +249,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(1, redactedImage_);
     }
-    if (!getExtractedTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(extractedText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, extractedText_);
     }
     if (inspectResult_ != null) {

@@ -128,7 +128,7 @@ class CreateSinkRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSink()
     {
-        return isset($this->sink) ? $this->sink : null;
+        return $this->sink;
     }
 
     public function hasSink()

@@ -113,7 +113,7 @@ class VirtualMachine extends \Google\Protobuf\Internal\Message
      */
     public function getVirtualMachineConfig()
     {
-        return isset($this->virtual_machine_config) ? $this->virtual_machine_config : null;
+        return $this->virtual_machine_config;
     }
 
     public function hasVirtualMachineConfig()

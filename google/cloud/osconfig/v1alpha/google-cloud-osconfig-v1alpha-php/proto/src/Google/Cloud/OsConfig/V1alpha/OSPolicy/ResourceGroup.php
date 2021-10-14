@@ -60,7 +60,7 @@ class ResourceGroup extends \Google\Protobuf\Internal\Message
      */
     public function getOsFilter()
     {
-        return isset($this->os_filter) ? $this->os_filter : null;
+        return $this->os_filter;
     }
 
     public function hasOsFilter()

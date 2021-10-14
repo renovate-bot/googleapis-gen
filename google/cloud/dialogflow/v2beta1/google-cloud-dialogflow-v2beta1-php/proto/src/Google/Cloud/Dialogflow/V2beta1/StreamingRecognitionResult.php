@@ -355,7 +355,7 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      */
     public function getSpeechEndOffset()
     {
-        return isset($this->speech_end_offset) ? $this->speech_end_offset : null;
+        return $this->speech_end_offset;
     }
 
     public function hasSpeechEndOffset()
@@ -418,7 +418,7 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      */
     public function getDtmfDigits()
     {
-        return isset($this->dtmf_digits) ? $this->dtmf_digits : null;
+        return $this->dtmf_digits;
     }
 
     public function hasDtmfDigits()

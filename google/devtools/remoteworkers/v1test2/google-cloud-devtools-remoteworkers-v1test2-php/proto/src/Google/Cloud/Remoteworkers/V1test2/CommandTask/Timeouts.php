@@ -83,7 +83,7 @@ class Timeouts extends \Google\Protobuf\Internal\Message
      */
     public function getExecution()
     {
-        return isset($this->execution) ? $this->execution : null;
+        return $this->execution;
     }
 
     public function hasExecution()
@@ -124,7 +124,7 @@ class Timeouts extends \Google\Protobuf\Internal\Message
      */
     public function getIdle()
     {
-        return isset($this->idle) ? $this->idle : null;
+        return $this->idle;
     }
 
     public function hasIdle()
@@ -168,7 +168,7 @@ class Timeouts extends \Google\Protobuf\Internal\Message
      */
     public function getShutdown()
     {
-        return isset($this->shutdown) ? $this->shutdown : null;
+        return $this->shutdown;
     }
 
     public function hasShutdown()

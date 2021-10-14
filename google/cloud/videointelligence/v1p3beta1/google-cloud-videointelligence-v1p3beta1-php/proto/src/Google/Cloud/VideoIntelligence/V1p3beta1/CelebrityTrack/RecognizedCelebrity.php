@@ -53,7 +53,7 @@ class RecognizedCelebrity extends \Google\Protobuf\Internal\Message
      */
     public function getCelebrity()
     {
-        return isset($this->celebrity) ? $this->celebrity : null;
+        return $this->celebrity;
     }
 
     public function hasCelebrity()

@@ -60,7 +60,7 @@ class UpdateDataRetentionSettingsRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getDataRetentionSettings()
     {
-        return isset($this->data_retention_settings) ? $this->data_retention_settings : null;
+        return $this->data_retention_settings;
     }
 
     public function hasDataRetentionSettings()
@@ -99,7 +99,7 @@ class UpdateDataRetentionSettingsRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -333,7 +333,7 @@ class VirtualMachineConfig extends \Google\Protobuf\Internal\Message
      */
     public function getDataDisk()
     {
-        return isset($this->data_disk) ? $this->data_disk : null;
+        return $this->data_disk;
     }
 
     public function hasDataDisk()
@@ -369,7 +369,7 @@ class VirtualMachineConfig extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionConfig()
     {
-        return isset($this->encryption_config) ? $this->encryption_config : null;
+        return $this->encryption_config;
     }
 
     public function hasEncryptionConfig()
@@ -405,7 +405,7 @@ class VirtualMachineConfig extends \Google\Protobuf\Internal\Message
      */
     public function getShieldedInstanceConfig()
     {
-        return isset($this->shielded_instance_config) ? $this->shielded_instance_config : null;
+        return $this->shielded_instance_config;
     }
 
     public function hasShieldedInstanceConfig()
@@ -441,7 +441,7 @@ class VirtualMachineConfig extends \Google\Protobuf\Internal\Message
      */
     public function getAcceleratorConfig()
     {
-        return isset($this->accelerator_config) ? $this->accelerator_config : null;
+        return $this->accelerator_config;
     }
 
     public function hasAcceleratorConfig()

@@ -25,7 +25,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>string currency_code = 9;</code>
+     * Generated from protobuf field <code>optional string currency_code = 9;</code>
      */
     protected $currency_code = null;
     /**
@@ -43,7 +43,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This field is deprecated in v4 and will eventually be removed.
      * Please use cookie_frequency_cap_setting instead.
      *
-     * Generated from protobuf field <code>int32 cookie_frequency_cap = 10;</code>
+     * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
      */
     protected $cookie_frequency_cap = null;
     /**
@@ -64,7 +64,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * If not specified, a default of 1 is applied.
      * This field cannot be combined with the effective_frequency_limit field.
      *
-     * Generated from protobuf field <code>int32 min_effective_frequency = 11;</code>
+     * Generated from protobuf field <code>optional int32 min_effective_frequency = 11;</code>
      */
     protected $min_effective_frequency = null;
     /**
@@ -77,7 +77,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * minimum effective frequency for the reported reach metrics.
      * This field cannot be combined with the min_effective_frequency field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
      */
     protected $effective_frequency_limit = null;
     /**
@@ -185,7 +185,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>string currency_code = 9;</code>
+     * Generated from protobuf field <code>optional string currency_code = 9;</code>
      * @return string
      */
     public function getCurrencyCode()
@@ -207,7 +207,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>string currency_code = 9;</code>
+     * Generated from protobuf field <code>optional string currency_code = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -227,7 +227,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignDuration()
     {
-        return isset($this->campaign_duration) ? $this->campaign_duration : null;
+        return $this->campaign_duration;
     }
 
     public function hasCampaignDuration()
@@ -264,7 +264,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This field is deprecated in v4 and will eventually be removed.
      * Please use cookie_frequency_cap_setting instead.
      *
-     * Generated from protobuf field <code>int32 cookie_frequency_cap = 10;</code>
+     * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
      * @return int
      */
     public function getCookieFrequencyCap()
@@ -291,7 +291,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This field is deprecated in v4 and will eventually be removed.
      * Please use cookie_frequency_cap_setting instead.
      *
-     * Generated from protobuf field <code>int32 cookie_frequency_cap = 10;</code>
+     * Generated from protobuf field <code>optional int32 cookie_frequency_cap = 10;</code>
      * @param int $var
      * @return $this
      */
@@ -316,7 +316,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCookieFrequencyCapSetting()
     {
-        return isset($this->cookie_frequency_cap_setting) ? $this->cookie_frequency_cap_setting : null;
+        return $this->cookie_frequency_cap_setting;
     }
 
     public function hasCookieFrequencyCapSetting()
@@ -356,7 +356,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * If not specified, a default of 1 is applied.
      * This field cannot be combined with the effective_frequency_limit field.
      *
-     * Generated from protobuf field <code>int32 min_effective_frequency = 11;</code>
+     * Generated from protobuf field <code>optional int32 min_effective_frequency = 11;</code>
      * @return int
      */
     public function getMinEffectiveFrequency()
@@ -381,7 +381,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * If not specified, a default of 1 is applied.
      * This field cannot be combined with the effective_frequency_limit field.
      *
-     * Generated from protobuf field <code>int32 min_effective_frequency = 11;</code>
+     * Generated from protobuf field <code>optional int32 min_effective_frequency = 11;</code>
      * @param int $var
      * @return $this
      */
@@ -403,12 +403,12 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * minimum effective frequency for the reported reach metrics.
      * This field cannot be combined with the min_effective_frequency field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
      * @return \Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit|null
      */
     public function getEffectiveFrequencyLimit()
     {
-        return isset($this->effective_frequency_limit) ? $this->effective_frequency_limit : null;
+        return $this->effective_frequency_limit;
     }
 
     public function hasEffectiveFrequencyLimit()
@@ -431,7 +431,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * minimum effective frequency for the reported reach metrics.
      * This field cannot be combined with the min_effective_frequency field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
      * @param \Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit $var
      * @return $this
      */
@@ -454,7 +454,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTargeting()
     {
-        return isset($this->targeting) ? $this->targeting : null;
+        return $this->targeting;
     }
 
     public function hasTargeting()

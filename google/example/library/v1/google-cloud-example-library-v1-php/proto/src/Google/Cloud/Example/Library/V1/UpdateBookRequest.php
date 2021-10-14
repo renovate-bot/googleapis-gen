@@ -53,7 +53,7 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBook()
     {
-        return isset($this->book) ? $this->book : null;
+        return $this->book;
     }
 
     public function hasBook()
@@ -89,7 +89,7 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

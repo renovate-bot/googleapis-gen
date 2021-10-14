@@ -79,7 +79,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     public function getAssignedUser()
     {
-        return isset($this->assigned_user) ? $this->assigned_user : null;
+        return $this->assigned_user;
     }
 
     public function hasAssignedUser()

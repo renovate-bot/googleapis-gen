@@ -117,7 +117,7 @@ class CreateConsumerOverrideRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOverride()
     {
-        return isset($this->override) ? $this->override : null;
+        return $this->override;
     }
 
     public function hasOverride()

@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (httpResponse_ != null) {
@@ -461,16 +461,16 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(3, getStatus());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, project_);
     }
-    if (!getTraceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, traceId_);
     }
     if (endpoint_ != com.google.cloud.apigeeconnect.v1.TetherEndpoint.TETHER_ENDPOINT_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, endpoint_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
     }
     unknownFields.writeTo(output);
@@ -482,7 +482,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (httpResponse_ != null) {
@@ -493,17 +493,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getStatus());
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, project_);
     }
-    if (!getTraceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, traceId_);
     }
     if (endpoint_ != com.google.cloud.apigeeconnect.v1.TetherEndpoint.TETHER_ENDPOINT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, endpoint_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
     }
     size += unknownFields.getSerializedSize();

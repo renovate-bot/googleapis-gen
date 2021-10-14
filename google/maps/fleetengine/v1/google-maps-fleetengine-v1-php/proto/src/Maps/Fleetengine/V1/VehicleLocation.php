@@ -300,7 +300,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getLocation()
     {
-        return isset($this->location) ? $this->location : null;
+        return $this->location;
     }
 
     public function hasLocation()
@@ -342,7 +342,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     public function getHorizontalAccuracy()
     {
         @trigger_error('horizontal_accuracy is deprecated.', E_USER_DEPRECATED);
-        return isset($this->horizontal_accuracy) ? $this->horizontal_accuracy : null;
+        return $this->horizontal_accuracy;
     }
 
     public function hasHorizontalAccuracy()
@@ -410,7 +410,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getLatlngAccuracy()
     {
-        return isset($this->latlng_accuracy) ? $this->latlng_accuracy : null;
+        return $this->latlng_accuracy;
     }
 
     public function hasLatlngAccuracy()
@@ -474,7 +474,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getHeading()
     {
-        return isset($this->heading) ? $this->heading : null;
+        return $this->heading;
     }
 
     public function hasHeading()
@@ -542,7 +542,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     public function getBearingAccuracy()
     {
         @trigger_error('bearing_accuracy is deprecated.', E_USER_DEPRECATED);
-        return isset($this->bearing_accuracy) ? $this->bearing_accuracy : null;
+        return $this->bearing_accuracy;
     }
 
     public function hasBearingAccuracy()
@@ -610,7 +610,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getHeadingAccuracy()
     {
-        return isset($this->heading_accuracy) ? $this->heading_accuracy : null;
+        return $this->heading_accuracy;
     }
 
     public function hasHeadingAccuracy()
@@ -673,7 +673,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getAltitude()
     {
-        return isset($this->altitude) ? $this->altitude : null;
+        return $this->altitude;
     }
 
     public function hasAltitude()
@@ -738,7 +738,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     public function getVerticalAccuracy()
     {
         @trigger_error('vertical_accuracy is deprecated.', E_USER_DEPRECATED);
-        return isset($this->vertical_accuracy) ? $this->vertical_accuracy : null;
+        return $this->vertical_accuracy;
     }
 
     public function hasVerticalAccuracy()
@@ -806,7 +806,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getAltitudeAccuracy()
     {
-        return isset($this->altitude_accuracy) ? $this->altitude_accuracy : null;
+        return $this->altitude_accuracy;
     }
 
     public function hasAltitudeAccuracy()
@@ -872,7 +872,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     public function getSpeedKmph()
     {
         @trigger_error('speed_kmph is deprecated.', E_USER_DEPRECATED);
-        return isset($this->speed_kmph) ? $this->speed_kmph : null;
+        return $this->speed_kmph;
     }
 
     public function hasSpeedKmph()
@@ -943,7 +943,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getSpeed()
     {
-        return isset($this->speed) ? $this->speed : null;
+        return $this->speed;
     }
 
     public function hasSpeed()
@@ -1006,7 +1006,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getSpeedAccuracy()
     {
-        return isset($this->speed_accuracy) ? $this->speed_accuracy : null;
+        return $this->speed_accuracy;
     }
 
     public function hasSpeedAccuracy()
@@ -1069,7 +1069,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -1106,7 +1106,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getServerTime()
     {
-        return isset($this->server_time) ? $this->server_time : null;
+        return $this->server_time;
     }
 
     public function hasServerTime()
@@ -1172,7 +1172,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getIsRoadSnapped()
     {
-        return isset($this->is_road_snapped) ? $this->is_road_snapped : null;
+        return $this->is_road_snapped;
     }
 
     public function hasIsRoadSnapped()
@@ -1244,7 +1244,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getIsGpsSensorEnabled()
     {
-        return isset($this->is_gps_sensor_enabled) ? $this->is_gps_sensor_enabled : null;
+        return $this->is_gps_sensor_enabled;
     }
 
     public function hasIsGpsSensorEnabled()
@@ -1309,7 +1309,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getTimeSinceUpdate()
     {
-        return isset($this->time_since_update) ? $this->time_since_update : null;
+        return $this->time_since_update;
     }
 
     public function hasTimeSinceUpdate()
@@ -1379,7 +1379,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getNumStaleUpdates()
     {
-        return isset($this->num_stale_updates) ? $this->num_stale_updates : null;
+        return $this->num_stale_updates;
     }
 
     public function hasNumStaleUpdates()
@@ -1445,7 +1445,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getRawLocation()
     {
-        return isset($this->raw_location) ? $this->raw_location : null;
+        return $this->raw_location;
     }
 
     public function hasRawLocation()
@@ -1481,7 +1481,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getRawLocationTime()
     {
-        return isset($this->raw_location_time) ? $this->raw_location_time : null;
+        return $this->raw_location_time;
     }
 
     public function hasRawLocationTime()
@@ -1543,7 +1543,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getRawLocationAccuracy()
     {
-        return isset($this->raw_location_accuracy) ? $this->raw_location_accuracy : null;
+        return $this->raw_location_accuracy;
     }
 
     public function hasRawLocationAccuracy()
@@ -1607,7 +1607,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getSupplementalLocation()
     {
-        return isset($this->supplemental_location) ? $this->supplemental_location : null;
+        return $this->supplemental_location;
     }
 
     public function hasSupplementalLocation()
@@ -1644,7 +1644,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getSupplementalLocationTime()
     {
-        return isset($this->supplemental_location_time) ? $this->supplemental_location_time : null;
+        return $this->supplemental_location_time;
     }
 
     public function hasSupplementalLocationTime()
@@ -1707,7 +1707,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     public function getSupplementalLocationAccuracy()
     {
-        return isset($this->supplemental_location_accuracy) ? $this->supplemental_location_accuracy : null;
+        return $this->supplemental_location_accuracy;
     }
 
     public function hasSupplementalLocationAccuracy()

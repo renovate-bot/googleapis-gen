@@ -18,7 +18,7 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
     /**
      * Whether bids are to be enhanced based on conversion optimizer data.
      *
-     * Generated from protobuf field <code>bool enhanced_cpc_enabled = 2;</code>
+     * Generated from protobuf field <code>optional bool enhanced_cpc_enabled = 2;</code>
      */
     protected $enhanced_cpc_enabled = null;
 
@@ -40,7 +40,7 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
     /**
      * Whether bids are to be enhanced based on conversion optimizer data.
      *
-     * Generated from protobuf field <code>bool enhanced_cpc_enabled = 2;</code>
+     * Generated from protobuf field <code>optional bool enhanced_cpc_enabled = 2;</code>
      * @return bool
      */
     public function getEnhancedCpcEnabled()
@@ -61,7 +61,7 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
     /**
      * Whether bids are to be enhanced based on conversion optimizer data.
      *
-     * Generated from protobuf field <code>bool enhanced_cpc_enabled = 2;</code>
+     * Generated from protobuf field <code>optional bool enhanced_cpc_enabled = 2;</code>
      * @param bool $var
      * @return $this
      */

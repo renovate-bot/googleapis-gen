@@ -32,7 +32,7 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * example), the value returned may not be identical to the string sent in a
      * mutate request.
      *
-     * Generated from protobuf field <code>string function_string = 5;</code>
+     * Generated from protobuf field <code>optional string function_string = 5;</code>
      */
     protected $function_string = null;
     /**
@@ -104,7 +104,7 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * example), the value returned may not be identical to the string sent in a
      * mutate request.
      *
-     * Generated from protobuf field <code>string function_string = 5;</code>
+     * Generated from protobuf field <code>optional string function_string = 5;</code>
      * @return string
      */
     public function getFunctionString()
@@ -137,7 +137,7 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * example), the value returned may not be identical to the string sent in a
      * mutate request.
      *
-     * Generated from protobuf field <code>string function_string = 5;</code>
+     * Generated from protobuf field <code>optional string function_string = 5;</code>
      * @param string $var
      * @return $this
      */

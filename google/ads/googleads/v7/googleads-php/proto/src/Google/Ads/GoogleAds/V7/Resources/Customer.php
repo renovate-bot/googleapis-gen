@@ -26,13 +26,13 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>int64 id = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Optional, non-unique descriptive name of the customer.
      *
-     * Generated from protobuf field <code>string descriptive_name = 20;</code>
+     * Generated from protobuf field <code>optional string descriptive_name = 20;</code>
      */
     protected $descriptive_name = null;
     /**
@@ -40,31 +40,31 @@ class Customer extends \Google\Protobuf\Internal\Message
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>string currency_code = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string currency_code = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $currency_code = null;
     /**
      * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>string time_zone = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string time_zone = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $time_zone = null;
     /**
      * The URL template for constructing a tracking URL out of parameters.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 23;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 23;</code>
      */
     protected $tracking_url_template = null;
     /**
      * The URL template for appending params to the final URL
      *
-     * Generated from protobuf field <code>string final_url_suffix = 24;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 24;</code>
      */
     protected $final_url_suffix = null;
     /**
      * Whether auto-tagging is enabled for the customer.
      *
-     * Generated from protobuf field <code>bool auto_tagging_enabled = 25;</code>
+     * Generated from protobuf field <code>optional bool auto_tagging_enabled = 25;</code>
      */
     protected $auto_tagging_enabled = null;
     /**
@@ -72,19 +72,19 @@ class Customer extends \Google\Protobuf\Internal\Message
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>bool has_partners_badge = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_partners_badge = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_partners_badge = null;
     /**
      * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>bool manager = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool manager = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $manager = null;
     /**
      * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>bool test_account = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool test_account = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $test_account = null;
     /**
@@ -121,7 +121,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/9061546.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double optimization_score = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double optimization_score = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $optimization_score = null;
     /**
@@ -238,7 +238,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>int64 id = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -259,7 +259,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>int64 id = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -274,7 +274,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Optional, non-unique descriptive name of the customer.
      *
-     * Generated from protobuf field <code>string descriptive_name = 20;</code>
+     * Generated from protobuf field <code>optional string descriptive_name = 20;</code>
      * @return string
      */
     public function getDescriptiveName()
@@ -295,7 +295,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Optional, non-unique descriptive name of the customer.
      *
-     * Generated from protobuf field <code>string descriptive_name = 20;</code>
+     * Generated from protobuf field <code>optional string descriptive_name = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -312,7 +312,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>string currency_code = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string currency_code = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getCurrencyCode()
@@ -335,7 +335,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>string currency_code = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string currency_code = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -350,7 +350,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>string time_zone = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string time_zone = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getTimeZone()
@@ -371,7 +371,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>string time_zone = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string time_zone = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -386,7 +386,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL out of parameters.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 23;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 23;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -407,7 +407,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL out of parameters.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 23;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 23;</code>
      * @param string $var
      * @return $this
      */
@@ -422,7 +422,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for appending params to the final URL
      *
-     * Generated from protobuf field <code>string final_url_suffix = 24;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 24;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -443,7 +443,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for appending params to the final URL
      *
-     * Generated from protobuf field <code>string final_url_suffix = 24;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 24;</code>
      * @param string $var
      * @return $this
      */
@@ -458,7 +458,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Whether auto-tagging is enabled for the customer.
      *
-     * Generated from protobuf field <code>bool auto_tagging_enabled = 25;</code>
+     * Generated from protobuf field <code>optional bool auto_tagging_enabled = 25;</code>
      * @return bool
      */
     public function getAutoTaggingEnabled()
@@ -479,7 +479,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Whether auto-tagging is enabled for the customer.
      *
-     * Generated from protobuf field <code>bool auto_tagging_enabled = 25;</code>
+     * Generated from protobuf field <code>optional bool auto_tagging_enabled = 25;</code>
      * @param bool $var
      * @return $this
      */
@@ -496,7 +496,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>bool has_partners_badge = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_partners_badge = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getHasPartnersBadge()
@@ -519,7 +519,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>bool has_partners_badge = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_partners_badge = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -534,7 +534,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>bool manager = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool manager = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getManager()
@@ -555,7 +555,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>bool manager = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool manager = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -570,7 +570,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>bool test_account = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool test_account = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getTestAccount()
@@ -591,7 +591,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>bool test_account = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool test_account = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -611,7 +611,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getCallReportingSetting()
     {
-        return isset($this->call_reporting_setting) ? $this->call_reporting_setting : null;
+        return $this->call_reporting_setting;
     }
 
     public function hasCallReportingSetting()
@@ -647,7 +647,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getConversionTrackingSetting()
     {
-        return isset($this->conversion_tracking_setting) ? $this->conversion_tracking_setting : null;
+        return $this->conversion_tracking_setting;
     }
 
     public function hasConversionTrackingSetting()
@@ -683,7 +683,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getRemarketingSetting()
     {
-        return isset($this->remarketing_setting) ? $this->remarketing_setting : null;
+        return $this->remarketing_setting;
     }
 
     public function hasRemarketingSetting()
@@ -748,7 +748,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/9061546.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double optimization_score = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double optimization_score = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getOptimizationScore()
@@ -775,7 +775,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/9061546.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double optimization_score = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double optimization_score = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */

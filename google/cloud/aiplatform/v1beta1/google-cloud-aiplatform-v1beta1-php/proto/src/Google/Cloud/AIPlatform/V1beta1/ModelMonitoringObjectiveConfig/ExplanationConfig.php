@@ -88,7 +88,7 @@ class ExplanationConfig extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationBaseline()
     {
-        return isset($this->explanation_baseline) ? $this->explanation_baseline : null;
+        return $this->explanation_baseline;
     }
 
     public function hasExplanationBaseline()

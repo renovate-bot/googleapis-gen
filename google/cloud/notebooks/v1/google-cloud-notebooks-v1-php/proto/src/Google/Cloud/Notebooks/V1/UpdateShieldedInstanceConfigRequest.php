@@ -84,7 +84,7 @@ class UpdateShieldedInstanceConfigRequest extends \Google\Protobuf\Internal\Mess
      */
     public function getShieldedInstanceConfig()
     {
-        return isset($this->shielded_instance_config) ? $this->shielded_instance_config : null;
+        return $this->shielded_instance_config;
     }
 
     public function hasShieldedInstanceConfig()

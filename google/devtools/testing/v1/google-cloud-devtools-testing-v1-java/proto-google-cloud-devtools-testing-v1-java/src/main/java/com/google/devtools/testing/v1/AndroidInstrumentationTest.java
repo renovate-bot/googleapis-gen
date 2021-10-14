@@ -674,13 +674,13 @@ private static final long serialVersionUID = 0L;
     if (testApk_ != null) {
       output.writeMessage(2, getTestApk());
     }
-    if (!getAppPackageIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appPackageId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appPackageId_);
     }
-    if (!getTestPackageIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testPackageId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, testPackageId_);
     }
-    if (!getTestRunnerClassBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testRunnerClass_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, testRunnerClass_);
     }
     for (int i = 0; i < testTargets_.size(); i++) {
@@ -712,13 +712,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTestApk());
     }
-    if (!getAppPackageIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appPackageId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appPackageId_);
     }
-    if (!getTestPackageIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testPackageId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, testPackageId_);
     }
-    if (!getTestRunnerClassBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testRunnerClass_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, testRunnerClass_);
     }
     {

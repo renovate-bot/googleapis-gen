@@ -782,16 +782,16 @@ private static final long serialVersionUID = 0L;
       if (errorType_ != com.google.cloud.aiplatform.v1.NearestNeighborSearchOperationMetadata.RecordError.RecordErrorType.ERROR_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, errorType_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
       }
-      if (!getSourceGcsUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGcsUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceGcsUri_);
       }
-      if (!getEmbeddingIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embeddingId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, embeddingId_);
       }
-      if (!getRawRecordBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawRecord_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rawRecord_);
       }
       unknownFields.writeTo(output);
@@ -807,16 +807,16 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, errorType_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
       }
-      if (!getSourceGcsUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGcsUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceGcsUri_);
       }
-      if (!getEmbeddingIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embeddingId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, embeddingId_);
       }
-      if (!getRawRecordBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawRecord_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rawRecord_);
       }
       size += unknownFields.getSerializedSize();
@@ -2020,7 +2020,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSourceGcsUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGcsUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceGcsUri_);
       }
       if (validRecordCount_ != 0L) {
@@ -2041,7 +2041,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getSourceGcsUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGcsUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceGcsUri_);
       }
       if (validRecordCount_ != 0L) {

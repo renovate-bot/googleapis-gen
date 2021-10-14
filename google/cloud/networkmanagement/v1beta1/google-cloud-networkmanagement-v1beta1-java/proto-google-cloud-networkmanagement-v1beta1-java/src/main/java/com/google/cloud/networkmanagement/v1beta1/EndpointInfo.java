@@ -405,13 +405,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSourceIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceIp_);
     }
-    if (!getDestinationIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, destinationIp_);
     }
-    if (!getProtocolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protocol_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, protocol_);
     }
     if (sourcePort_ != 0) {
@@ -420,10 +420,10 @@ private static final long serialVersionUID = 0L;
     if (destinationPort_ != 0) {
       output.writeInt32(5, destinationPort_);
     }
-    if (!getSourceNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceNetworkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sourceNetworkUri_);
     }
-    if (!getDestinationNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationNetworkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, destinationNetworkUri_);
     }
     unknownFields.writeTo(output);
@@ -435,13 +435,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSourceIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceIp_);
     }
-    if (!getDestinationIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, destinationIp_);
     }
-    if (!getProtocolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protocol_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, protocol_);
     }
     if (sourcePort_ != 0) {
@@ -452,10 +452,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, destinationPort_);
     }
-    if (!getSourceNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceNetworkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sourceNetworkUri_);
     }
-    if (!getDestinationNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationNetworkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, destinationNetworkUri_);
     }
     size += unknownFields.getSerializedSize();

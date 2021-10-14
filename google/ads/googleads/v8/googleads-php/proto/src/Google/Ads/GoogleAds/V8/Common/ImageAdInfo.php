@@ -18,37 +18,37 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Width in pixels of the full size image.
      *
-     * Generated from protobuf field <code>int64 pixel_width = 15;</code>
+     * Generated from protobuf field <code>optional int64 pixel_width = 15;</code>
      */
     protected $pixel_width = null;
     /**
      * Height in pixels of the full size image.
      *
-     * Generated from protobuf field <code>int64 pixel_height = 16;</code>
+     * Generated from protobuf field <code>optional int64 pixel_height = 16;</code>
      */
     protected $pixel_height = null;
     /**
      * URL of the full size image.
      *
-     * Generated from protobuf field <code>string image_url = 17;</code>
+     * Generated from protobuf field <code>optional string image_url = 17;</code>
      */
     protected $image_url = null;
     /**
      * Width in pixels of the preview size image.
      *
-     * Generated from protobuf field <code>int64 preview_pixel_width = 18;</code>
+     * Generated from protobuf field <code>optional int64 preview_pixel_width = 18;</code>
      */
     protected $preview_pixel_width = null;
     /**
      * Height in pixels of the preview size image.
      *
-     * Generated from protobuf field <code>int64 preview_pixel_height = 19;</code>
+     * Generated from protobuf field <code>optional int64 preview_pixel_height = 19;</code>
      */
     protected $preview_pixel_height = null;
     /**
      * URL of the preview size image.
      *
-     * Generated from protobuf field <code>string preview_image_url = 20;</code>
+     * Generated from protobuf field <code>optional string preview_image_url = 20;</code>
      */
     protected $preview_image_url = null;
     /**
@@ -61,7 +61,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * The name of the image. If the image was created from a MediaFile, this is
      * the MediaFile's name. If the image was created from bytes, this is empty.
      *
-     * Generated from protobuf field <code>string name = 21;</code>
+     * Generated from protobuf field <code>optional string name = 21;</code>
      */
     protected $name = null;
     protected $image;
@@ -105,7 +105,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Width in pixels of the full size image.
      *
-     * Generated from protobuf field <code>int64 pixel_width = 15;</code>
+     * Generated from protobuf field <code>optional int64 pixel_width = 15;</code>
      * @return int|string
      */
     public function getPixelWidth()
@@ -126,7 +126,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Width in pixels of the full size image.
      *
-     * Generated from protobuf field <code>int64 pixel_width = 15;</code>
+     * Generated from protobuf field <code>optional int64 pixel_width = 15;</code>
      * @param int|string $var
      * @return $this
      */
@@ -141,7 +141,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Height in pixels of the full size image.
      *
-     * Generated from protobuf field <code>int64 pixel_height = 16;</code>
+     * Generated from protobuf field <code>optional int64 pixel_height = 16;</code>
      * @return int|string
      */
     public function getPixelHeight()
@@ -162,7 +162,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Height in pixels of the full size image.
      *
-     * Generated from protobuf field <code>int64 pixel_height = 16;</code>
+     * Generated from protobuf field <code>optional int64 pixel_height = 16;</code>
      * @param int|string $var
      * @return $this
      */
@@ -177,7 +177,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * URL of the full size image.
      *
-     * Generated from protobuf field <code>string image_url = 17;</code>
+     * Generated from protobuf field <code>optional string image_url = 17;</code>
      * @return string
      */
     public function getImageUrl()
@@ -198,7 +198,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * URL of the full size image.
      *
-     * Generated from protobuf field <code>string image_url = 17;</code>
+     * Generated from protobuf field <code>optional string image_url = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -213,7 +213,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Width in pixels of the preview size image.
      *
-     * Generated from protobuf field <code>int64 preview_pixel_width = 18;</code>
+     * Generated from protobuf field <code>optional int64 preview_pixel_width = 18;</code>
      * @return int|string
      */
     public function getPreviewPixelWidth()
@@ -234,7 +234,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Width in pixels of the preview size image.
      *
-     * Generated from protobuf field <code>int64 preview_pixel_width = 18;</code>
+     * Generated from protobuf field <code>optional int64 preview_pixel_width = 18;</code>
      * @param int|string $var
      * @return $this
      */
@@ -249,7 +249,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Height in pixels of the preview size image.
      *
-     * Generated from protobuf field <code>int64 preview_pixel_height = 19;</code>
+     * Generated from protobuf field <code>optional int64 preview_pixel_height = 19;</code>
      * @return int|string
      */
     public function getPreviewPixelHeight()
@@ -270,7 +270,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Height in pixels of the preview size image.
      *
-     * Generated from protobuf field <code>int64 preview_pixel_height = 19;</code>
+     * Generated from protobuf field <code>optional int64 preview_pixel_height = 19;</code>
      * @param int|string $var
      * @return $this
      */
@@ -285,7 +285,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * URL of the preview size image.
      *
-     * Generated from protobuf field <code>string preview_image_url = 20;</code>
+     * Generated from protobuf field <code>optional string preview_image_url = 20;</code>
      * @return string
      */
     public function getPreviewImageUrl()
@@ -306,7 +306,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * URL of the preview size image.
      *
-     * Generated from protobuf field <code>string preview_image_url = 20;</code>
+     * Generated from protobuf field <code>optional string preview_image_url = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -348,7 +348,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * The name of the image. If the image was created from a MediaFile, this is
      * the MediaFile's name. If the image was created from bytes, this is empty.
      *
-     * Generated from protobuf field <code>string name = 21;</code>
+     * Generated from protobuf field <code>optional string name = 21;</code>
      * @return string
      */
     public function getName()
@@ -370,7 +370,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * The name of the image. If the image was created from a MediaFile, this is
      * the MediaFile's name. If the image was created from bytes, this is empty.
      *
-     * Generated from protobuf field <code>string name = 21;</code>
+     * Generated from protobuf field <code>optional string name = 21;</code>
      * @param string $var
      * @return $this
      */

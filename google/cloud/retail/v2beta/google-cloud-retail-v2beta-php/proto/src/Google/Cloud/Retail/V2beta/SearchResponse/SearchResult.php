@@ -218,7 +218,7 @@ class SearchResult extends \Google\Protobuf\Internal\Message
      */
     public function getProduct()
     {
-        return isset($this->product) ? $this->product : null;
+        return $this->product;
     }
 
     public function hasProduct()

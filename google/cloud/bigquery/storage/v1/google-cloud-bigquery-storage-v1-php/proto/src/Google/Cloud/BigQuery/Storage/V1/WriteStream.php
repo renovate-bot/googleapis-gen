@@ -148,7 +148,7 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -188,7 +188,7 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      */
     public function getCommitTime()
     {
-        return isset($this->commit_time) ? $this->commit_time : null;
+        return $this->commit_time;
     }
 
     public function hasCommitTime()
@@ -230,7 +230,7 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      */
     public function getTableSchema()
     {
-        return isset($this->table_schema) ? $this->table_schema : null;
+        return $this->table_schema;
     }
 
     public function hasTableSchema()

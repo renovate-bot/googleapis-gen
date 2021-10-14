@@ -93,7 +93,7 @@ class CreateRowRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRow()
     {
-        return isset($this->row) ? $this->row : null;
+        return $this->row;
     }
 
     public function hasRow()

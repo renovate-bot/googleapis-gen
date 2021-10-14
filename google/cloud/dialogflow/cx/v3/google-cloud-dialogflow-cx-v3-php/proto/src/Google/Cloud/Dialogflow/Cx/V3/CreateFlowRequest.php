@@ -109,7 +109,7 @@ class CreateFlowRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFlow()
     {
-        return isset($this->flow) ? $this->flow : null;
+        return $this->flow;
     }
 
     public function hasFlow()

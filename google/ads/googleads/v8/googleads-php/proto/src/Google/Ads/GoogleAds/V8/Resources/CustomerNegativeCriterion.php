@@ -26,7 +26,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -103,7 +103,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -124,7 +124,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

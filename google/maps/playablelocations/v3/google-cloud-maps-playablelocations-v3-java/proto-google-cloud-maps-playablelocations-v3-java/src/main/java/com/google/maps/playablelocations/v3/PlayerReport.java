@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getLocationNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, locationName_);
     }
     if (getReasonsList().size() > 0) {
@@ -587,10 +587,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < reasons_.size(); i++) {
       output.writeEnumNoTag(reasons_.get(i));
     }
-    if (!getReasonDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reasonDetails_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reasonDetails_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, languageCode_);
     }
     unknownFields.writeTo(output);
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getLocationNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, locationName_);
     }
     {
@@ -617,10 +617,10 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }reasonsMemoizedSerializedSize = dataSize;
     }
-    if (!getReasonDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reasonDetails_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reasonDetails_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, languageCode_);
     }
     size += unknownFields.getSerializedSize();

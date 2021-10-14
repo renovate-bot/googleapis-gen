@@ -45,7 +45,7 @@ class StateAndNotificationPayload extends \Google\Protobuf\Internal\Message
      */
     public function getDevices()
     {
-        return isset($this->devices) ? $this->devices : null;
+        return $this->devices;
     }
 
     public function hasDevices()

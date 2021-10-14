@@ -94,7 +94,7 @@ class DistributionCut extends \Google\Protobuf\Internal\Message
      */
     public function getRange()
     {
-        return isset($this->range) ? $this->range : null;
+        return $this->range;
     }
 
     public function hasRange()

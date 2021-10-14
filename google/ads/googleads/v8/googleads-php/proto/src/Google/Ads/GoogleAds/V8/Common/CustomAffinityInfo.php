@@ -19,7 +19,7 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CustomInterest resource name.
      *
-     * Generated from protobuf field <code>string custom_affinity = 2;</code>
+     * Generated from protobuf field <code>optional string custom_affinity = 2;</code>
      */
     protected $custom_affinity = null;
 
@@ -41,7 +41,7 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CustomInterest resource name.
      *
-     * Generated from protobuf field <code>string custom_affinity = 2;</code>
+     * Generated from protobuf field <code>optional string custom_affinity = 2;</code>
      * @return string
      */
     public function getCustomAffinity()
@@ -62,7 +62,7 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CustomInterest resource name.
      *
-     * Generated from protobuf field <code>string custom_affinity = 2;</code>
+     * Generated from protobuf field <code>optional string custom_affinity = 2;</code>
      * @param string $var
      * @return $this
      */

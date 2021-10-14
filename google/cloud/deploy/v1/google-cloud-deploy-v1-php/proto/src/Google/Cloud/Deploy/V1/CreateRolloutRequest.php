@@ -159,7 +159,7 @@ class CreateRolloutRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRollout()
     {
-        return isset($this->rollout) ? $this->rollout : null;
+        return $this->rollout;
     }
 
     public function hasRollout()

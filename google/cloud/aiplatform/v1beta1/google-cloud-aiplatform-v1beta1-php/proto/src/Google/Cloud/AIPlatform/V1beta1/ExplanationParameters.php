@@ -287,7 +287,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      */
     public function getOutputIndices()
     {
-        return isset($this->output_indices) ? $this->output_indices : null;
+        return $this->output_indices;
     }
 
     public function hasOutputIndices()

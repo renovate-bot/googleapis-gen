@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    * @return Whether the startMinutesAgo field is set.
    */
   @java.lang.Override
@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    * @return The startMinutesAgo.
    */
   @java.lang.Override
@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    * @return Whether the endMinutesAgo field is set.
    */
   @java.lang.Override
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    * @return The endMinutesAgo.
    */
   @java.lang.Override
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(2, endMinutesAgo_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     unknownFields.writeTo(output);
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, endMinutesAgo_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     size += unknownFields.getSerializedSize();
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      * @return Whether the startMinutesAgo field is set.
      */
     @java.lang.Override
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      * @return The startMinutesAgo.
      */
     @java.lang.Override
@@ -645,7 +645,7 @@ private static final long serialVersionUID = 0L;
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      * @param value The startMinutesAgo to set.
      * @return This builder for chaining.
      */
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
      * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 start_minutes_ago = 1;</code>
+     * <code>optional int32 start_minutes_ago = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearStartMinutesAgo() {
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      * @return Whether the endMinutesAgo field is set.
      */
     @java.lang.Override
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      * @return The endMinutesAgo.
      */
     @java.lang.Override
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      * @param value The endMinutesAgo to set.
      * @return This builder for chaining.
      */
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
      * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
      * </pre>
      *
-     * <code>int32 end_minutes_ago = 2;</code>
+     * <code>optional int32 end_minutes_ago = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearEndMinutesAgo() {

@@ -54,7 +54,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      */
     public function getGenerateTime()
     {
-        return isset($this->generate_time) ? $this->generate_time : null;
+        return $this->generate_time;
     }
 
     public function hasGenerateTime()

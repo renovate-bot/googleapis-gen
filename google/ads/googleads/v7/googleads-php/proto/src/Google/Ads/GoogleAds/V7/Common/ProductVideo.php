@@ -18,7 +18,7 @@ class ProductVideo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of a video which must be hosted on YouTube.
      *
-     * Generated from protobuf field <code>string product_video = 2;</code>
+     * Generated from protobuf field <code>optional string product_video = 2;</code>
      */
     protected $product_video = null;
 
@@ -40,7 +40,7 @@ class ProductVideo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of a video which must be hosted on YouTube.
      *
-     * Generated from protobuf field <code>string product_video = 2;</code>
+     * Generated from protobuf field <code>optional string product_video = 2;</code>
      * @return string
      */
     public function getProductVideo()
@@ -61,7 +61,7 @@ class ProductVideo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of a video which must be hosted on YouTube.
      *
-     * Generated from protobuf field <code>string product_video = 2;</code>
+     * Generated from protobuf field <code>optional string product_video = 2;</code>
      * @param string $var
      * @return $this
      */

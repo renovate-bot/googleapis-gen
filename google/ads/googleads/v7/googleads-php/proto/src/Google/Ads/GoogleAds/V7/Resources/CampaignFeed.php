@@ -26,13 +26,13 @@ class CampaignFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed to which the CampaignFeed belongs.
      *
-     * Generated from protobuf field <code>string feed = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
      * Immutable. The campaign to which the CampaignFeed belongs.
      *
-     * Generated from protobuf field <code>string campaign = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
@@ -122,7 +122,7 @@ class CampaignFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed to which the CampaignFeed belongs.
      *
-     * Generated from protobuf field <code>string feed = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getFeed()
@@ -143,7 +143,7 @@ class CampaignFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed to which the CampaignFeed belongs.
      *
-     * Generated from protobuf field <code>string feed = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -158,7 +158,7 @@ class CampaignFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the CampaignFeed belongs.
      *
-     * Generated from protobuf field <code>string campaign = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -179,7 +179,7 @@ class CampaignFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the CampaignFeed belongs.
      *
-     * Generated from protobuf field <code>string campaign = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -229,7 +229,7 @@ class CampaignFeed extends \Google\Protobuf\Internal\Message
      */
     public function getMatchingFunction()
     {
-        return isset($this->matching_function) ? $this->matching_function : null;
+        return $this->matching_function;
     }
 
     public function hasMatchingFunction()

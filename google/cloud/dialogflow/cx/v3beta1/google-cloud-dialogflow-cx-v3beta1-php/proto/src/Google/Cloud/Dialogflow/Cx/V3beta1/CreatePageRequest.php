@@ -129,7 +129,7 @@ class CreatePageRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPage()
     {
-        return isset($this->page) ? $this->page : null;
+        return $this->page;
     }
 
     public function hasPage()

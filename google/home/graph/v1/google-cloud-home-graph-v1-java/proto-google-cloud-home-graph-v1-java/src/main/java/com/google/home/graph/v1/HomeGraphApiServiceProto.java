@@ -222,7 +222,7 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agentUserId_);
       }
       if (async_ != false) {
@@ -237,7 +237,7 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agentUserId_);
       }
       if (async_ != false) {
@@ -1674,19 +1674,19 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentUserId_);
       }
       if (payload_ != null) {
         output.writeMessage(3, getPayload());
       }
-      if (!getEventIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, eventId_);
       }
-      if (!getFollowUpTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(followUpToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, followUpToken_);
       }
       unknownFields.writeTo(output);
@@ -1698,20 +1698,20 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentUserId_);
       }
       if (payload_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPayload());
       }
-      if (!getEventIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, eventId_);
       }
-      if (!getFollowUpTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(followUpToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, followUpToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -2860,7 +2860,7 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
       unknownFields.writeTo(output);
@@ -2872,7 +2872,7 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
       size += unknownFields.getSerializedSize();
@@ -5255,10 +5255,10 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentUserId_);
       }
       unknownFields.writeTo(output);
@@ -5270,10 +5270,10 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentUserId_);
       }
       size += unknownFields.getSerializedSize();
@@ -6184,10 +6184,10 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentUserId_);
       }
       for (int i = 0; i < inputs_.size(); i++) {
@@ -6202,10 +6202,10 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentUserId_);
       }
       for (int i = 0; i < inputs_.size(); i++) {
@@ -8899,7 +8899,7 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       unknownFields.writeTo(output);
@@ -8911,7 +8911,7 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       size += unknownFields.getSerializedSize();
@@ -9616,7 +9616,7 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
       if (payload_ != null) {
@@ -9631,7 +9631,7 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
       if (payload_ != null) {
@@ -11340,10 +11340,10 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentUserId_);
       }
       unknownFields.writeTo(output);
@@ -11355,10 +11355,10 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentUserId_);
       }
       size += unknownFields.getSerializedSize();
@@ -12181,7 +12181,7 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
       }
       if (payload_ != null) {
@@ -12196,7 +12196,7 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getRequestIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
       }
       if (payload_ != null) {
@@ -13133,7 +13133,7 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agentUserId_);
       }
       for (int i = 0; i < devices_.size(); i++) {
@@ -13148,7 +13148,7 @@ public final class HomeGraphApiServiceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAgentUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUserId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agentUserId_);
       }
       for (int i = 0; i < devices_.size(); i++) {

@@ -77,7 +77,7 @@ class UpdateContextRequest extends \Google\Protobuf\Internal\Message
      */
     public function getContext()
     {
-        return isset($this->context) ? $this->context : null;
+        return $this->context;
     }
 
     public function hasContext()
@@ -118,7 +118,7 @@ class UpdateContextRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

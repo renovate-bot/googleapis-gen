@@ -119,7 +119,7 @@ class CreateAttestorRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAttestor()
     {
-        return isset($this->attestor) ? $this->attestor : null;
+        return $this->attestor;
     }
 
     public function hasAttestor()

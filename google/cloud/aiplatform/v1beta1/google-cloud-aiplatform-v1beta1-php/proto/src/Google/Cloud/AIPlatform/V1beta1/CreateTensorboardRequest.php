@@ -83,7 +83,7 @@ class CreateTensorboardRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTensorboard()
     {
-        return isset($this->tensorboard) ? $this->tensorboard : null;
+        return $this->tensorboard;
     }
 
     public function hasTensorboard()

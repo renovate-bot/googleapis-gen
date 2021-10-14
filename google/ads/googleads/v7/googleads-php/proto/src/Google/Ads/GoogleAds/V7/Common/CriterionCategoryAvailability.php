@@ -53,7 +53,7 @@ class CriterionCategoryAvailability extends \Google\Protobuf\Internal\Message
      */
     public function getChannel()
     {
-        return isset($this->channel) ? $this->channel : null;
+        return $this->channel;
     }
 
     public function hasChannel()

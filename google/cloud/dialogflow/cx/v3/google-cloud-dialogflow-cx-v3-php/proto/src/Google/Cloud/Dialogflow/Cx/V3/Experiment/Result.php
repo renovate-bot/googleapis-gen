@@ -83,7 +83,7 @@ class Result extends \Google\Protobuf\Internal\Message
      */
     public function getLastUpdateTime()
     {
-        return isset($this->last_update_time) ? $this->last_update_time : null;
+        return $this->last_update_time;
     }
 
     public function hasLastUpdateTime()

@@ -63,7 +63,7 @@ class PhotoResponse extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()
@@ -101,7 +101,7 @@ class PhotoResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPhoto()
     {
-        return isset($this->photo) ? $this->photo : null;
+        return $this->photo;
     }
 
     public function hasPhoto()

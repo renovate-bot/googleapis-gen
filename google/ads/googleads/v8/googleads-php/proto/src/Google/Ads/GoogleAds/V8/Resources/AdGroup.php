@@ -26,7 +26,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -37,7 +37,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 35;</code>
+     * Generated from protobuf field <code>optional string name = 35;</code>
      */
     protected $name = null;
     /**
@@ -65,13 +65,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $base_ad_group = null;
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 37;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 37;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -84,19 +84,19 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
      * The maximum CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 39;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 39;</code>
      */
     protected $cpc_bid_micros = null;
     /**
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 cpm_bid_micros = 40;</code>
+     * Generated from protobuf field <code>optional int64 cpm_bid_micros = 40;</code>
      */
     protected $cpm_bid_micros = null;
     /**
@@ -106,20 +106,20 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 41;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 41;</code>
      */
     protected $target_cpa_micros = null;
     /**
      * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $cpv_bid_micros = null;
     /**
      * Average amount in micros that the advertiser is willing to pay for every
      * thousand times the ad is shown.
      *
-     * Generated from protobuf field <code>int64 target_cpm_micros = 43;</code>
+     * Generated from protobuf field <code>optional int64 target_cpm_micros = 43;</code>
      */
     protected $target_cpm_micros = null;
     /**
@@ -129,7 +129,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>double target_roas = 44;</code>
+     * Generated from protobuf field <code>optional double target_roas = 44;</code>
      */
     protected $target_roas = null;
     /**
@@ -137,7 +137,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 45;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 45;</code>
      */
     protected $percent_cpc_bid_micros = null;
     /**
@@ -157,7 +157,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * URL template for appending params to Final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 46;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 46;</code>
      */
     protected $final_url_suffix = null;
     /**
@@ -170,7 +170,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_target_cpa_micros = null;
     /**
@@ -184,7 +184,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_target_roas = null;
     /**
@@ -340,7 +340,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -361,7 +361,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -381,7 +381,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 35;</code>
+     * Generated from protobuf field <code>optional string name = 35;</code>
      * @return string
      */
     public function getName()
@@ -407,7 +407,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 35;</code>
+     * Generated from protobuf field <code>optional string name = 35;</code>
      * @param string $var
      * @return $this
      */
@@ -504,7 +504,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getBaseAdGroup()
@@ -529,7 +529,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -544,7 +544,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 37;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 37;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -565,7 +565,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 37;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 37;</code>
      * @param string $var
      * @return $this
      */
@@ -608,7 +608,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -629,7 +629,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -644,7 +644,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The maximum CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 39;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 39;</code>
      * @return int|string
      */
     public function getCpcBidMicros()
@@ -665,7 +665,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The maximum CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 39;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 39;</code>
      * @param int|string $var
      * @return $this
      */
@@ -680,7 +680,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 cpm_bid_micros = 40;</code>
+     * Generated from protobuf field <code>optional int64 cpm_bid_micros = 40;</code>
      * @return int|string
      */
     public function getCpmBidMicros()
@@ -701,7 +701,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 cpm_bid_micros = 40;</code>
+     * Generated from protobuf field <code>optional int64 cpm_bid_micros = 40;</code>
      * @param int|string $var
      * @return $this
      */
@@ -720,7 +720,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 41;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 41;</code>
      * @return int|string
      */
     public function getTargetCpaMicros()
@@ -745,7 +745,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 41;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 41;</code>
      * @param int|string $var
      * @return $this
      */
@@ -760,7 +760,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCpvBidMicros()
@@ -781,7 +781,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -797,7 +797,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Average amount in micros that the advertiser is willing to pay for every
      * thousand times the ad is shown.
      *
-     * Generated from protobuf field <code>int64 target_cpm_micros = 43;</code>
+     * Generated from protobuf field <code>optional int64 target_cpm_micros = 43;</code>
      * @return int|string
      */
     public function getTargetCpmMicros()
@@ -819,7 +819,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Average amount in micros that the advertiser is willing to pay for every
      * thousand times the ad is shown.
      *
-     * Generated from protobuf field <code>int64 target_cpm_micros = 43;</code>
+     * Generated from protobuf field <code>optional int64 target_cpm_micros = 43;</code>
      * @param int|string $var
      * @return $this
      */
@@ -838,7 +838,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>double target_roas = 44;</code>
+     * Generated from protobuf field <code>optional double target_roas = 44;</code>
      * @return float
      */
     public function getTargetRoas()
@@ -863,7 +863,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>double target_roas = 44;</code>
+     * Generated from protobuf field <code>optional double target_roas = 44;</code>
      * @param float $var
      * @return $this
      */
@@ -880,7 +880,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 45;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 45;</code>
      * @return int|string
      */
     public function getPercentCpcBidMicros()
@@ -903,7 +903,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 45;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 45;</code>
      * @param int|string $var
      * @return $this
      */
@@ -923,7 +923,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getExplorerAutoOptimizerSetting()
     {
-        return isset($this->explorer_auto_optimizer_setting) ? $this->explorer_auto_optimizer_setting : null;
+        return $this->explorer_auto_optimizer_setting;
     }
 
     public function hasExplorerAutoOptimizerSetting()
@@ -984,7 +984,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * URL template for appending params to Final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 46;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 46;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -1005,7 +1005,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * URL template for appending params to Final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 46;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 46;</code>
      * @param string $var
      * @return $this
      */
@@ -1025,7 +1025,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getTargetingSetting()
     {
-        return isset($this->targeting_setting) ? $this->targeting_setting : null;
+        return $this->targeting_setting;
     }
 
     public function hasTargetingSetting()
@@ -1057,7 +1057,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEffectiveTargetCpaMicros()
@@ -1079,7 +1079,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -1123,7 +1123,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getEffectiveTargetRoas()
@@ -1145,7 +1145,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */

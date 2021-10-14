@@ -44,7 +44,7 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\MatchIntentRequest $match_intent_request
      *           Must be same as the corresponding MatchIntent request, otherwise the
      *           behavior is undefined.
-     *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Match $match
+     *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch $match
      *           The matched intent/event to fulfill.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\OutputAudioConfig $output_audio_config
      *           Instructs the speech synthesizer how to generate output audio.
@@ -64,7 +64,7 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMatchIntentRequest()
     {
-        return isset($this->match_intent_request) ? $this->match_intent_request : null;
+        return $this->match_intent_request;
     }
 
     public function hasMatchIntentRequest()
@@ -97,11 +97,11 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      * The matched intent/event to fulfill.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Match match = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Match|null
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch|null
      */
     public function getMatch()
     {
-        return isset($this->match) ? $this->match : null;
+        return $this->match;
     }
 
     public function hasMatch()
@@ -118,12 +118,12 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      * The matched intent/event to fulfill.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Match match = 2;</code>
-     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\Match $var
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch $var
      * @return $this
      */
     public function setMatch($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3beta1\Match::class);
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch::class);
         $this->match = $var;
 
         return $this;
@@ -137,7 +137,7 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOutputAudioConfig()
     {
-        return isset($this->output_audio_config) ? $this->output_audio_config : null;
+        return $this->output_audio_config;
     }
 
     public function hasOutputAudioConfig()

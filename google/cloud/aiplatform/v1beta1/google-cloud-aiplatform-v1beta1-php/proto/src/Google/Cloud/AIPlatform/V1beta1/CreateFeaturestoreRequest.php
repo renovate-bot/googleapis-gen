@@ -103,7 +103,7 @@ class CreateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFeaturestore()
     {
-        return isset($this->featurestore) ? $this->featurestore : null;
+        return $this->featurestore;
     }
 
     public function hasFeaturestore()

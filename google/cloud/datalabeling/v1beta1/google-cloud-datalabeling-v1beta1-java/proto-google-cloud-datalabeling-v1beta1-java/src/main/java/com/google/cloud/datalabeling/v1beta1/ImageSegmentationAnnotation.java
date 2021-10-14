@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
         internalGetAnnotationColors(),
         AnnotationColorsDefaultEntryHolder.defaultEntry,
         1);
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
     if (!imageBytes_.isEmpty()) {
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, annotationColors__);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
     }
     if (!imageBytes_.isEmpty()) {

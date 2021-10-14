@@ -18,7 +18,7 @@ class TextAsset extends \Google\Protobuf\Internal\Message
     /**
      * Text content of the text asset.
      *
-     * Generated from protobuf field <code>string text = 2;</code>
+     * Generated from protobuf field <code>optional string text = 2;</code>
      */
     protected $text = null;
 
@@ -40,7 +40,7 @@ class TextAsset extends \Google\Protobuf\Internal\Message
     /**
      * Text content of the text asset.
      *
-     * Generated from protobuf field <code>string text = 2;</code>
+     * Generated from protobuf field <code>optional string text = 2;</code>
      * @return string
      */
     public function getText()
@@ -61,7 +61,7 @@ class TextAsset extends \Google\Protobuf\Internal\Message
     /**
      * Text content of the text asset.
      *
-     * Generated from protobuf field <code>string text = 2;</code>
+     * Generated from protobuf field <code>optional string text = 2;</code>
      * @param string $var
      * @return $this
      */

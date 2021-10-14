@@ -284,7 +284,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < scenarios_.size(); i++) {
       output.writeInt32NoTag(scenarios_.getInt(i));
     }
-    if (!getAppBundleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appBundleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appBundleId_);
     }
     unknownFields.writeTo(output);
@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
       }
       scenariosMemoizedSerializedSize = dataSize;
     }
-    if (!getAppBundleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appBundleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appBundleId_);
     }
     size += unknownFields.getSerializedSize();

@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getOsPolicyAssignmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osPolicyAssignment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, osPolicyAssignment_);
     }
     if (apiMethod_ != com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata.APIMethod.API_METHOD_UNSPECIFIED.getNumber()) {
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getOsPolicyAssignmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osPolicyAssignment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, osPolicyAssignment_);
     }
     if (apiMethod_ != com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata.APIMethod.API_METHOD_UNSPECIFIED.getNumber()) {

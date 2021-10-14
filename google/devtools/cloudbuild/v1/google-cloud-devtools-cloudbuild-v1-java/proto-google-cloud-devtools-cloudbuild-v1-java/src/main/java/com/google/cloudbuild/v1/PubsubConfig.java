@@ -478,13 +478,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSubscriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subscription_);
     }
-    if (!getTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceAccountEmail_);
     }
     if (state_ != com.google.cloudbuild.v1.PubsubConfig.State.STATE_UNSPECIFIED.getNumber()) {
@@ -499,13 +499,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSubscriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subscription_);
     }
-    if (!getTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
     }
-    if (!getServiceAccountEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceAccountEmail_);
     }
     if (state_ != com.google.cloudbuild.v1.PubsubConfig.State.STATE_UNSPECIFIED.getNumber()) {

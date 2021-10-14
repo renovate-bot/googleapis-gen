@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
     if (enableIpv4_ != null) {
       output.writeMessage(1, getEnableIpv4());
     }
-    if (!getPrivateNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateNetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, privateNetwork_);
     }
     if (requireSsl_ != null) {
@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getEnableIpv4());
     }
-    if (!getPrivateNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateNetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, privateNetwork_);
     }
     if (requireSsl_ != null) {

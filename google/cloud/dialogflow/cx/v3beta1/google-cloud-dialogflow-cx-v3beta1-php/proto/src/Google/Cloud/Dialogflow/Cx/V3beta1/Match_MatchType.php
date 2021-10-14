@@ -6,11 +6,11 @@ namespace Google\Cloud\Dialogflow\Cx\V3beta1;
 
 if (false) {
     /**
-     * This class is deprecated. Use Google\Cloud\Dialogflow\Cx\V3beta1\Match\MatchType instead.
+     * This class is deprecated. Use Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch\MatchType instead.
      * @deprecated
      */
     class Match_MatchType {}
 }
-class_exists(Match\MatchType::class);
-@trigger_error('Google\Cloud\Dialogflow\Cx\V3beta1\Match_MatchType is deprecated and will be removed in the next major release. Use Google\Cloud\Dialogflow\Cx\V3beta1\Match\MatchType instead', E_USER_DEPRECATED);
+class_exists(PBMatch\MatchType::class);
+@trigger_error('Google\Cloud\Dialogflow\Cx\V3beta1\Match_MatchType is deprecated and will be removed in the next major release. Use Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch\MatchType instead', E_USER_DEPRECATED);
 

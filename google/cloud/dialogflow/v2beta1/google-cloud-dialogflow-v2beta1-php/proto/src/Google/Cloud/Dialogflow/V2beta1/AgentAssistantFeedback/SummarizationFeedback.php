@@ -61,7 +61,7 @@ class SummarizationFeedback extends \Google\Protobuf\Internal\Message
      */
     public function getStartTimestamp()
     {
-        return isset($this->start_timestamp) ? $this->start_timestamp : null;
+        return $this->start_timestamp;
     }
 
     public function hasStartTimestamp()
@@ -97,7 +97,7 @@ class SummarizationFeedback extends \Google\Protobuf\Internal\Message
      */
     public function getSubmitTimestamp()
     {
-        return isset($this->submit_timestamp) ? $this->submit_timestamp : null;
+        return $this->submit_timestamp;
     }
 
     public function hasSubmitTimestamp()

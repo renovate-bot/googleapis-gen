@@ -273,10 +273,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < byteStreamOutputs_.size(); i++) {
       output.writeBytes(1, byteStreamOutputs_.get(i));
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
-    if (!getDetectedLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detectedLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, detectedLanguageCode_);
     }
     unknownFields.writeTo(output);
@@ -297,10 +297,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getByteStreamOutputsList().size();
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
     }
-    if (!getDetectedLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(detectedLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, detectedLanguageCode_);
     }
     size += unknownFields.getSerializedSize();

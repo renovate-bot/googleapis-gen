@@ -53,7 +53,7 @@ class UpdateSpecialistPoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSpecialistPool()
     {
-        return isset($this->specialist_pool) ? $this->specialist_pool : null;
+        return $this->specialist_pool;
     }
 
     public function hasSpecialistPool()
@@ -89,7 +89,7 @@ class UpdateSpecialistPoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

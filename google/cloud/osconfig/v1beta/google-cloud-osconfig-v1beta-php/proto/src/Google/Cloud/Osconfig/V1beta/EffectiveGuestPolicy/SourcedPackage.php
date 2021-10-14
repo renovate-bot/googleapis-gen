@@ -79,7 +79,7 @@ class SourcedPackage extends \Google\Protobuf\Internal\Message
      */
     public function getPackage()
     {
-        return isset($this->package) ? $this->package : null;
+        return $this->package;
     }
 
     public function hasPackage()

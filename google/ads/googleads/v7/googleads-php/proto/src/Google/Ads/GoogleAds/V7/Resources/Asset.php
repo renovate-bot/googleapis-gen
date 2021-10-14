@@ -29,13 +29,13 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Optional name of the asset.
      *
-     * Generated from protobuf field <code>string name = 12;</code>
+     * Generated from protobuf field <code>optional string name = 12;</code>
      */
     protected $name = null;
     /**
@@ -59,7 +59,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 17;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 17;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -73,7 +73,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 19;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 19;</code>
      */
     protected $final_url_suffix = null;
     /**
@@ -174,7 +174,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -195,7 +195,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Optional name of the asset.
      *
-     * Generated from protobuf field <code>string name = 12;</code>
+     * Generated from protobuf field <code>optional string name = 12;</code>
      * @return string
      */
     public function getName()
@@ -231,7 +231,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Optional name of the asset.
      *
-     * Generated from protobuf field <code>string name = 12;</code>
+     * Generated from protobuf field <code>optional string name = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -324,7 +324,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 17;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 17;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -345,7 +345,7 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 17;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -389,7 +389,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 19;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 19;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -411,7 +411,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 19;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 19;</code>
      * @param string $var
      * @return $this
      */
@@ -431,7 +431,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     public function getPolicySummary()
     {
-        return isset($this->policy_summary) ? $this->policy_summary : null;
+        return $this->policy_summary;
     }
 
     public function hasPolicySummary()

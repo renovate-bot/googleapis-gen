@@ -511,10 +511,10 @@ private static final long serialVersionUID = 0L;
     if (symptomType_ != com.google.cloud.tpu.v1.Symptom.SymptomType.SYMPTOM_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, symptomType_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, details_);
     }
-    if (!getWorkerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workerId_);
     }
     unknownFields.writeTo(output);
@@ -534,10 +534,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, symptomType_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, details_);
     }
-    if (!getWorkerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workerId_);
     }
     size += unknownFields.getSerializedSize();

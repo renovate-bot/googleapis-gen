@@ -83,7 +83,7 @@ class GenerateNetworkReportRequest extends \Google\Protobuf\Internal\Message
      */
     public function getReportSpec()
     {
-        return isset($this->report_spec) ? $this->report_spec : null;
+        return $this->report_spec;
     }
 
     public function hasReportSpec()

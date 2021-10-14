@@ -18,7 +18,7 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Carrier constant resource name.
      *
-     * Generated from protobuf field <code>string carrier_constant = 2;</code>
+     * Generated from protobuf field <code>optional string carrier_constant = 2;</code>
      */
     protected $carrier_constant = null;
 
@@ -40,7 +40,7 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Carrier constant resource name.
      *
-     * Generated from protobuf field <code>string carrier_constant = 2;</code>
+     * Generated from protobuf field <code>optional string carrier_constant = 2;</code>
      * @return string
      */
     public function getCarrierConstant()
@@ -61,7 +61,7 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Carrier constant resource name.
      *
-     * Generated from protobuf field <code>string carrier_constant = 2;</code>
+     * Generated from protobuf field <code>optional string carrier_constant = 2;</code>
      * @param string $var
      * @return $this
      */

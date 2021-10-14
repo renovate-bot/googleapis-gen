@@ -81,7 +81,7 @@ class Schedule extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -117,7 +117,7 @@ class Schedule extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -154,7 +154,7 @@ class Schedule extends \Google\Protobuf\Internal\Message
      */
     public function getCronJobDuration()
     {
-        return isset($this->cron_job_duration) ? $this->cron_job_duration : null;
+        return $this->cron_job_duration;
     }
 
     public function hasCronJobDuration()

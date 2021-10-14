@@ -78,7 +78,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The advertiser/brand name. Maximum display width is 25.
      *
-     * Generated from protobuf field <code>string business_name = 17;</code>
+     * Generated from protobuf field <code>optional string business_name = 17;</code>
      */
     protected $business_name = null;
     /**
@@ -86,7 +86,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string main_color = 18;</code>
+     * Generated from protobuf field <code>optional string main_color = 18;</code>
      */
     protected $main_color = null;
     /**
@@ -94,7 +94,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string accent_color = 19;</code>
+     * Generated from protobuf field <code>optional string accent_color = 19;</code>
      */
     protected $accent_color = null;
     /**
@@ -104,26 +104,26 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The default value is true.
      * Must be true if main_color and accent_color are not set.
      *
-     * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
+     * Generated from protobuf field <code>optional bool allow_flexible_color = 20;</code>
      */
     protected $allow_flexible_color = null;
     /**
      * The call-to-action text for the ad. Maximum display width is 30.
      *
-     * Generated from protobuf field <code>string call_to_action_text = 21;</code>
+     * Generated from protobuf field <code>optional string call_to_action_text = 21;</code>
      */
     protected $call_to_action_text = null;
     /**
      * Prefix before price. E.g. 'as low as'.
      *
-     * Generated from protobuf field <code>string price_prefix = 22;</code>
+     * Generated from protobuf field <code>optional string price_prefix = 22;</code>
      */
     protected $price_prefix = null;
     /**
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
-     * Generated from protobuf field <code>string promo_text = 23;</code>
+     * Generated from protobuf field <code>optional string promo_text = 23;</code>
      */
     protected $promo_text = null;
     /**
@@ -367,7 +367,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getLongHeadline()
     {
-        return isset($this->long_headline) ? $this->long_headline : null;
+        return $this->long_headline;
     }
 
     public function hasLongHeadline()
@@ -452,7 +452,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The advertiser/brand name. Maximum display width is 25.
      *
-     * Generated from protobuf field <code>string business_name = 17;</code>
+     * Generated from protobuf field <code>optional string business_name = 17;</code>
      * @return string
      */
     public function getBusinessName()
@@ -473,7 +473,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The advertiser/brand name. Maximum display width is 25.
      *
-     * Generated from protobuf field <code>string business_name = 17;</code>
+     * Generated from protobuf field <code>optional string business_name = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -490,7 +490,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string main_color = 18;</code>
+     * Generated from protobuf field <code>optional string main_color = 18;</code>
      * @return string
      */
     public function getMainColor()
@@ -513,7 +513,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string main_color = 18;</code>
+     * Generated from protobuf field <code>optional string main_color = 18;</code>
      * @param string $var
      * @return $this
      */
@@ -530,7 +530,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string accent_color = 19;</code>
+     * Generated from protobuf field <code>optional string accent_color = 19;</code>
      * @return string
      */
     public function getAccentColor()
@@ -553,7 +553,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string accent_color = 19;</code>
+     * Generated from protobuf field <code>optional string accent_color = 19;</code>
      * @param string $var
      * @return $this
      */
@@ -572,7 +572,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The default value is true.
      * Must be true if main_color and accent_color are not set.
      *
-     * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
+     * Generated from protobuf field <code>optional bool allow_flexible_color = 20;</code>
      * @return bool
      */
     public function getAllowFlexibleColor()
@@ -597,7 +597,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The default value is true.
      * Must be true if main_color and accent_color are not set.
      *
-     * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
+     * Generated from protobuf field <code>optional bool allow_flexible_color = 20;</code>
      * @param bool $var
      * @return $this
      */
@@ -612,7 +612,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The call-to-action text for the ad. Maximum display width is 30.
      *
-     * Generated from protobuf field <code>string call_to_action_text = 21;</code>
+     * Generated from protobuf field <code>optional string call_to_action_text = 21;</code>
      * @return string
      */
     public function getCallToActionText()
@@ -633,7 +633,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The call-to-action text for the ad. Maximum display width is 30.
      *
-     * Generated from protobuf field <code>string call_to_action_text = 21;</code>
+     * Generated from protobuf field <code>optional string call_to_action_text = 21;</code>
      * @param string $var
      * @return $this
      */
@@ -648,7 +648,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Prefix before price. E.g. 'as low as'.
      *
-     * Generated from protobuf field <code>string price_prefix = 22;</code>
+     * Generated from protobuf field <code>optional string price_prefix = 22;</code>
      * @return string
      */
     public function getPricePrefix()
@@ -669,7 +669,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Prefix before price. E.g. 'as low as'.
      *
-     * Generated from protobuf field <code>string price_prefix = 22;</code>
+     * Generated from protobuf field <code>optional string price_prefix = 22;</code>
      * @param string $var
      * @return $this
      */
@@ -685,7 +685,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
-     * Generated from protobuf field <code>string promo_text = 23;</code>
+     * Generated from protobuf field <code>optional string promo_text = 23;</code>
      * @return string
      */
     public function getPromoText()
@@ -707,7 +707,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
-     * Generated from protobuf field <code>string promo_text = 23;</code>
+     * Generated from protobuf field <code>optional string promo_text = 23;</code>
      * @param string $var
      * @return $this
      */
@@ -753,7 +753,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getControlSpec()
     {
-        return isset($this->control_spec) ? $this->control_spec : null;
+        return $this->control_spec;
     }
 
     public function hasControlSpec()

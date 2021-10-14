@@ -229,7 +229,7 @@ class ListHyperparameterTuningJobsRequest extends \Google\Protobuf\Internal\Mess
      */
     public function getReadMask()
     {
-        return isset($this->read_mask) ? $this->read_mask : null;
+        return $this->read_mask;
     }
 
     public function hasReadMask()

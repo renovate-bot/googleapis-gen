@@ -348,7 +348,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -384,7 +384,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getApproveTime()
     {
-        return isset($this->approve_time) ? $this->approve_time : null;
+        return $this->approve_time;
     }
 
     public function hasApproveTime()
@@ -420,7 +420,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getEnqueueTime()
     {
-        return isset($this->enqueue_time) ? $this->enqueue_time : null;
+        return $this->enqueue_time;
     }
 
     public function hasEnqueueTime()
@@ -456,7 +456,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getDeployStartTime()
     {
-        return isset($this->deploy_start_time) ? $this->deploy_start_time : null;
+        return $this->deploy_start_time;
     }
 
     public function hasDeployStartTime()
@@ -492,7 +492,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getDeployEndTime()
     {
-        return isset($this->deploy_end_time) ? $this->deploy_end_time : null;
+        return $this->deploy_end_time;
     }
 
     public function hasDeployEndTime()

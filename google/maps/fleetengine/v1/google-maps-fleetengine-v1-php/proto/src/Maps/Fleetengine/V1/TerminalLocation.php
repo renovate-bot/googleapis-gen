@@ -80,7 +80,7 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
      */
     public function getPoint()
     {
-        return isset($this->point) ? $this->point : null;
+        return $this->point;
     }
 
     public function hasPoint()
@@ -116,7 +116,7 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
      */
     public function getTerminalPointId()
     {
-        return isset($this->terminal_point_id) ? $this->terminal_point_id : null;
+        return $this->terminal_point_id;
     }
 
     public function hasTerminalPointId()

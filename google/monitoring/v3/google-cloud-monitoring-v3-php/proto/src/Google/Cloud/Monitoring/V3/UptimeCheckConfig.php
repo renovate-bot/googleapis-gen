@@ -388,7 +388,7 @@ class UptimeCheckConfig extends \Google\Protobuf\Internal\Message
      */
     public function getPeriod()
     {
-        return isset($this->period) ? $this->period : null;
+        return $this->period;
     }
 
     public function hasPeriod()
@@ -428,7 +428,7 @@ class UptimeCheckConfig extends \Google\Protobuf\Internal\Message
      */
     public function getTimeout()
     {
-        return isset($this->timeout) ? $this->timeout : null;
+        return $this->timeout;
     }
 
     public function hasTimeout()

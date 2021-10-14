@@ -97,7 +97,7 @@ class FeatureHistoricStatsAnomalies extends \Google\Protobuf\Internal\Message
      */
     public function getThreshold()
     {
-        return isset($this->threshold) ? $this->threshold : null;
+        return $this->threshold;
     }
 
     public function hasThreshold()
@@ -133,7 +133,7 @@ class FeatureHistoricStatsAnomalies extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingStats()
     {
-        return isset($this->training_stats) ? $this->training_stats : null;
+        return $this->training_stats;
     }
 
     public function hasTrainingStats()

@@ -90,19 +90,23 @@ namespace Google.Maps.Roads.V1Op {
     private static readonly pb::MessageParser<SnapToRoadsRequest> _parser = new pb::MessageParser<SnapToRoadsRequest>(() => new SnapToRoadsRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SnapToRoadsRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.Roads.V1Op.RoadsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnapToRoadsRequest() {
       OnConstruction();
     }
@@ -110,6 +114,7 @@ namespace Google.Maps.Roads.V1Op {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnapToRoadsRequest(SnapToRoadsRequest other) : this() {
       path_ = other.path_;
       interpolate_ = other.interpolate_;
@@ -119,6 +124,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnapToRoadsRequest Clone() {
       return new SnapToRoadsRequest(this);
     }
@@ -131,6 +137,7 @@ namespace Google.Maps.Roads.V1Op {
     /// a string of the format: lat,lng|lat,lng|...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Path {
       get { return path_; }
       set {
@@ -145,6 +152,7 @@ namespace Google.Maps.Roads.V1Op {
     /// Whether to interpolate the points to return full road geometry.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Interpolate {
       get { return interpolate_; }
       set {
@@ -160,6 +168,7 @@ namespace Google.Maps.Roads.V1Op {
     /// abuse detection purposes for clients with asset-based SKUs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AssetId {
       get { return assetId_; }
       set {
@@ -174,6 +183,7 @@ namespace Google.Maps.Roads.V1Op {
     /// The type of travel being tracked. This will constrain the paths we snap to.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Maps.Roads.V1Op.TravelMode TravelMode {
       get { return travelMode_; }
       set {
@@ -182,11 +192,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SnapToRoadsRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SnapToRoadsRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -202,6 +214,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Path.Length != 0) hash ^= Path.GetHashCode();
@@ -215,11 +228,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -248,6 +263,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Path.Length != 0) {
         output.WriteRawTag(10);
@@ -272,6 +288,7 @@ namespace Google.Maps.Roads.V1Op {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Path.Length != 0) {
@@ -293,6 +310,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SnapToRoadsRequest other) {
       if (other == null) {
         return;
@@ -313,6 +331,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -346,6 +365,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -387,19 +407,23 @@ namespace Google.Maps.Roads.V1Op {
     private static readonly pb::MessageParser<SnappedPoint> _parser = new pb::MessageParser<SnappedPoint>(() => new SnappedPoint());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SnappedPoint> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.Roads.V1Op.RoadsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnappedPoint() {
       OnConstruction();
     }
@@ -407,6 +431,7 @@ namespace Google.Maps.Roads.V1Op {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnappedPoint(SnappedPoint other) : this() {
       location_ = other.location_ != null ? other.location_.Clone() : null;
       OriginalIndex = other.OriginalIndex;
@@ -415,6 +440,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnappedPoint Clone() {
       return new SnappedPoint(this);
     }
@@ -426,6 +452,7 @@ namespace Google.Maps.Roads.V1Op {
     /// The lat,lng of the snapped location.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Type.LatLng Location {
       get { return location_; }
       set {
@@ -443,6 +470,7 @@ namespace Google.Maps.Roads.V1Op {
     /// this index is missing.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint? OriginalIndex {
       get { return originalIndex_; }
       set {
@@ -459,6 +487,7 @@ namespace Google.Maps.Roads.V1Op {
     /// as are currently used by the Places API.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PlaceId {
       get { return placeId_; }
       set {
@@ -467,11 +496,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SnappedPoint);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SnappedPoint other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -486,6 +517,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (location_ != null) hash ^= Location.GetHashCode();
@@ -498,11 +530,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -526,6 +560,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (location_ != null) {
         output.WriteRawTag(10);
@@ -545,6 +580,7 @@ namespace Google.Maps.Roads.V1Op {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (location_ != null) {
@@ -563,6 +599,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SnappedPoint other) {
       if (other == null) {
         return;
@@ -585,6 +622,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -620,6 +658,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -664,19 +703,23 @@ namespace Google.Maps.Roads.V1Op {
     private static readonly pb::MessageParser<SnapToRoadsResponse> _parser = new pb::MessageParser<SnapToRoadsResponse>(() => new SnapToRoadsResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SnapToRoadsResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.Roads.V1Op.RoadsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnapToRoadsResponse() {
       OnConstruction();
     }
@@ -684,6 +727,7 @@ namespace Google.Maps.Roads.V1Op {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnapToRoadsResponse(SnapToRoadsResponse other) : this() {
       snappedPoints_ = other.snappedPoints_.Clone();
       warningMessage_ = other.warningMessage_;
@@ -691,6 +735,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SnapToRoadsResponse Clone() {
       return new SnapToRoadsResponse(this);
     }
@@ -704,6 +749,7 @@ namespace Google.Maps.Roads.V1Op {
     /// A list of snapped points.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Maps.Roads.V1Op.SnappedPoint> SnappedPoints {
       get { return snappedPoints_; }
     }
@@ -716,6 +762,7 @@ namespace Google.Maps.Roads.V1Op {
     /// result.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WarningMessage {
       get { return warningMessage_; }
       set {
@@ -724,11 +771,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SnapToRoadsResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SnapToRoadsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -742,6 +791,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= snappedPoints_.GetHashCode();
@@ -753,11 +803,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -775,6 +827,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       snappedPoints_.WriteTo(ref output, _repeated_snappedPoints_codec);
       if (WarningMessage.Length != 0) {
@@ -788,6 +841,7 @@ namespace Google.Maps.Roads.V1Op {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += snappedPoints_.CalculateSize(_repeated_snappedPoints_codec);
@@ -801,6 +855,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SnapToRoadsResponse other) {
       if (other == null) {
         return;
@@ -813,6 +868,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -838,6 +894,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -872,19 +929,23 @@ namespace Google.Maps.Roads.V1Op {
     private static readonly pb::MessageParser<ListNearestRoadsRequest> _parser = new pb::MessageParser<ListNearestRoadsRequest>(() => new ListNearestRoadsRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListNearestRoadsRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.Roads.V1Op.RoadsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListNearestRoadsRequest() {
       OnConstruction();
     }
@@ -892,6 +953,7 @@ namespace Google.Maps.Roads.V1Op {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListNearestRoadsRequest(ListNearestRoadsRequest other) : this() {
       points_ = other.points_;
       travelMode_ = other.travelMode_;
@@ -899,6 +961,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListNearestRoadsRequest Clone() {
       return new ListNearestRoadsRequest(this);
     }
@@ -911,6 +974,7 @@ namespace Google.Maps.Roads.V1Op {
     /// a string of the format: lat,lng|lat,lng|...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Points {
       get { return points_; }
       set {
@@ -925,6 +989,7 @@ namespace Google.Maps.Roads.V1Op {
     /// The type of travel being tracked. This will constrain the roads we snap to.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Maps.Roads.V1Op.TravelMode TravelMode {
       get { return travelMode_; }
       set {
@@ -933,11 +998,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListNearestRoadsRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListNearestRoadsRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -951,6 +1018,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Points.Length != 0) hash ^= Points.GetHashCode();
@@ -962,11 +1030,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -987,6 +1057,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Points.Length != 0) {
         output.WriteRawTag(10);
@@ -1003,6 +1074,7 @@ namespace Google.Maps.Roads.V1Op {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Points.Length != 0) {
@@ -1018,6 +1090,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListNearestRoadsRequest other) {
       if (other == null) {
         return;
@@ -1032,6 +1105,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1057,6 +1131,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1091,19 +1166,23 @@ namespace Google.Maps.Roads.V1Op {
     private static readonly pb::MessageParser<ListNearestRoadsResponse> _parser = new pb::MessageParser<ListNearestRoadsResponse>(() => new ListNearestRoadsResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListNearestRoadsResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.Roads.V1Op.RoadsReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListNearestRoadsResponse() {
       OnConstruction();
     }
@@ -1111,12 +1190,14 @@ namespace Google.Maps.Roads.V1Op {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListNearestRoadsResponse(ListNearestRoadsResponse other) : this() {
       snappedPoints_ = other.snappedPoints_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListNearestRoadsResponse Clone() {
       return new ListNearestRoadsResponse(this);
     }
@@ -1130,16 +1211,19 @@ namespace Google.Maps.Roads.V1Op {
     /// A list of snapped points.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Maps.Roads.V1Op.SnappedPoint> SnappedPoints {
       get { return snappedPoints_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListNearestRoadsResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListNearestRoadsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1152,6 +1236,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= snappedPoints_.GetHashCode();
@@ -1162,11 +1247,13 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1180,6 +1267,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       snappedPoints_.WriteTo(ref output, _repeated_snappedPoints_codec);
       if (_unknownFields != null) {
@@ -1189,6 +1277,7 @@ namespace Google.Maps.Roads.V1Op {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += snappedPoints_.CalculateSize(_repeated_snappedPoints_codec);
@@ -1199,6 +1288,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListNearestRoadsResponse other) {
       if (other == null) {
         return;
@@ -1208,6 +1298,7 @@ namespace Google.Maps.Roads.V1Op {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1229,6 +1320,7 @@ namespace Google.Maps.Roads.V1Op {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

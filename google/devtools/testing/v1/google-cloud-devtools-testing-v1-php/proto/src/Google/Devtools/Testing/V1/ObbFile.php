@@ -99,7 +99,7 @@ class ObbFile extends \Google\Protobuf\Internal\Message
      */
     public function getObb()
     {
-        return isset($this->obb) ? $this->obb : null;
+        return $this->obb;
     }
 
     public function hasObb()

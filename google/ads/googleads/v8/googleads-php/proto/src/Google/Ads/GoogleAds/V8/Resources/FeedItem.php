@@ -26,13 +26,13 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>string feed = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
      * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -41,7 +41,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string start_date_time = 13;</code>
+     * Generated from protobuf field <code>optional string start_date_time = 13;</code>
      */
     protected $start_date_time = null;
     /**
@@ -50,7 +50,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string end_date_time = 14;</code>
+     * Generated from protobuf field <code>optional string end_date_time = 14;</code>
      */
     protected $end_date_time = null;
     /**
@@ -174,7 +174,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>string feed = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getFeed()
@@ -195,7 +195,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>string feed = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -231,7 +231,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -249,7 +249,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string start_date_time = 13;</code>
+     * Generated from protobuf field <code>optional string start_date_time = 13;</code>
      * @return string
      */
     public function getStartDateTime()
@@ -273,7 +273,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string start_date_time = 13;</code>
+     * Generated from protobuf field <code>optional string start_date_time = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -291,7 +291,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string end_date_time = 14;</code>
+     * Generated from protobuf field <code>optional string end_date_time = 14;</code>
      * @return string
      */
     public function getEndDateTime()
@@ -315,7 +315,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string end_date_time = 14;</code>
+     * Generated from protobuf field <code>optional string end_date_time = 14;</code>
      * @param string $var
      * @return $this
      */

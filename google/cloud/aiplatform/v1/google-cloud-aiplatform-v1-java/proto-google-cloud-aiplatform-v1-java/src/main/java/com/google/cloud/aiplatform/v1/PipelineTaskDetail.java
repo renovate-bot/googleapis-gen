@@ -1956,7 +1956,7 @@ private static final long serialVersionUID = 0L;
     if (taskId_ != 0L) {
       output.writeInt64(1, taskId_);
     }
-    if (!getTaskNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskName_);
     }
     if (createTime_ != null) {
@@ -2008,7 +2008,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, taskId_);
     }
-    if (!getTaskNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskName_);
     }
     if (createTime_ != null) {

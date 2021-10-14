@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
       if (code_ != com.google.rpc.Code.OK.getNumber()) {
         output.writeEnum(1, code_);
       }
-      if (!getCauseBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cause_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cause_);
       }
       unknownFields.writeTo(output);
@@ -398,7 +398,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
-      if (!getCauseBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cause_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cause_);
       }
       size += unknownFields.getSerializedSize();
@@ -1180,7 +1180,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fullResourceName_);
       }
       if (analysisState_ != null) {
@@ -1195,7 +1195,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fullResourceName_);
       }
       if (analysisState_ != null) {
@@ -3300,10 +3300,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSourceNodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceNode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceNode_);
       }
-      if (!getTargetNodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetNode_);
       }
       unknownFields.writeTo(output);
@@ -3315,10 +3315,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getSourceNodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceNode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceNode_);
       }
-      if (!getTargetNodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetNode_);
       }
       size += unknownFields.getSerializedSize();
@@ -4143,7 +4143,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       if (analysisState_ != null) {
@@ -4158,7 +4158,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       if (analysisState_ != null) {
@@ -8806,7 +8806,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getAttachedResourceFullNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachedResourceFullName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attachedResourceFullName_);
     }
     if (iamBinding_ != null) {
@@ -8830,7 +8830,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getAttachedResourceFullNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachedResourceFullName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attachedResourceFullName_);
     }
     if (iamBinding_ != null) {

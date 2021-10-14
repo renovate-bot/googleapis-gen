@@ -45,7 +45,7 @@ class CreateShelfRequest extends \Google\Protobuf\Internal\Message
      */
     public function getShelf()
     {
-        return isset($this->shelf) ? $this->shelf : null;
+        return $this->shelf;
     }
 
     public function hasShelf()

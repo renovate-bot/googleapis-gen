@@ -45,7 +45,7 @@ class MutateAccountBudgetProposalResponse extends \Google\Protobuf\Internal\Mess
      */
     public function getResult()
     {
-        return isset($this->result) ? $this->result : null;
+        return $this->result;
     }
 
     public function hasResult()

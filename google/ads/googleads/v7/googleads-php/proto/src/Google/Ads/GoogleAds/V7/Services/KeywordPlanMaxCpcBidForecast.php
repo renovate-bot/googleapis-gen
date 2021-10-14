@@ -18,7 +18,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
     /**
      * The max cpc bid in micros.
      *
-     * Generated from protobuf field <code>int64 max_cpc_bid_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 max_cpc_bid_micros = 3;</code>
      */
     protected $max_cpc_bid_micros = null;
     /**
@@ -48,7 +48,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
     /**
      * The max cpc bid in micros.
      *
-     * Generated from protobuf field <code>int64 max_cpc_bid_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 max_cpc_bid_micros = 3;</code>
      * @return int|string
      */
     public function getMaxCpcBidMicros()
@@ -69,7 +69,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
     /**
      * The max cpc bid in micros.
      *
-     * Generated from protobuf field <code>int64 max_cpc_bid_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 max_cpc_bid_micros = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -89,7 +89,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
      */
     public function getMaxCpcBidForecast()
     {
-        return isset($this->max_cpc_bid_forecast) ? $this->max_cpc_bid_forecast : null;
+        return $this->max_cpc_bid_forecast;
     }
 
     public function hasMaxCpcBidForecast()

@@ -173,7 +173,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getBillingSettings()
     {
-        return isset($this->billing_settings) ? $this->billing_settings : null;
+        return $this->billing_settings;
     }
 
     public function hasBillingSettings()
@@ -265,7 +265,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getSinkSettings()
     {
-        return isset($this->sink_settings) ? $this->sink_settings : null;
+        return $this->sink_settings;
     }
 
     public function hasSinkSettings()
@@ -385,7 +385,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

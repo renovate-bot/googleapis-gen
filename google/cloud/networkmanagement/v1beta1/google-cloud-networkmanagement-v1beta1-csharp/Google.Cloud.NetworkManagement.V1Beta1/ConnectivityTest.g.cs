@@ -117,19 +117,23 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     private static readonly pb::MessageParser<ConnectivityTest> _parser = new pb::MessageParser<ConnectivityTest>(() => new ConnectivityTest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ConnectivityTest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.NetworkManagement.V1Beta1.ConnectivityTestReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConnectivityTest() {
       OnConstruction();
     }
@@ -137,6 +141,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConnectivityTest(ConnectivityTest other) : this() {
       name_ = other.name_;
       description_ = other.description_;
@@ -154,6 +159,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConnectivityTest Clone() {
       return new ConnectivityTest(this);
     }
@@ -166,6 +172,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     ///     `projects/{project_id}/locations/global/connectivityTests/{test}`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -181,6 +188,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Maximum of 512 characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -216,6 +224,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// intend to test.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.Endpoint Source {
       get { return source_; }
       set {
@@ -247,6 +256,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// intend to test.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.Endpoint Destination {
       get { return destination_; }
       set {
@@ -261,6 +271,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// IP Protocol of the test. When not provided, "TCP" is assumed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Protocol {
       get { return protocol_; }
       set {
@@ -278,6 +289,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// This is applicable to scenarios where a test can cross project boundaries.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> RelatedProjects {
       get { return relatedProjects_; }
     }
@@ -289,6 +301,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Output only. The display name of a Connectivity Test.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DisplayName {
       get { return displayName_; }
       set {
@@ -305,6 +318,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Resource labels to represent user-provided metadata.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, string> Labels {
       get { return labels_; }
     }
@@ -316,6 +330,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Output only. The time the test was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -330,6 +345,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Output only. The time the test's configuration was updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp UpdateTime {
       get { return updateTime_; }
       set {
@@ -346,6 +362,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// existing test, or triggering a one-time rerun of an existing test.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.ReachabilityDetails ReachabilityDetails {
       get { return reachabilityDetails_; }
       set {
@@ -363,6 +380,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// test.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.ProbingDetails ProbingDetails {
       get { return probingDetails_; }
       set {
@@ -371,11 +389,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ConnectivityTest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ConnectivityTest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -399,6 +419,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -420,11 +441,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -479,6 +502,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -529,6 +553,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -570,6 +595,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ConnectivityTest other) {
       if (other == null) {
         return;
@@ -628,6 +654,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -711,6 +738,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -802,19 +830,23 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     private static readonly pb::MessageParser<Endpoint> _parser = new pb::MessageParser<Endpoint>(() => new Endpoint());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Endpoint> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.NetworkManagement.V1Beta1.ConnectivityTestReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Endpoint() {
       OnConstruction();
     }
@@ -822,6 +854,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Endpoint(Endpoint other) : this() {
       ipAddress_ = other.ipAddress_;
       port_ = other.port_;
@@ -835,6 +868,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Endpoint Clone() {
       return new Endpoint(this);
     }
@@ -849,6 +883,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string IpAddress {
       get { return ipAddress_; }
       set {
@@ -864,6 +899,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Only applicable when protocol is TCP or UDP.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Port {
       get { return port_; }
       set {
@@ -878,6 +914,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// A Compute Engine instance URI.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Instance {
       get { return instance_; }
       set {
@@ -893,6 +930,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GkeMasterCluster {
       get { return gkeMasterCluster_; }
       set {
@@ -907,6 +945,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// A [Cloud SQL](https://cloud.google.com/sql) instance URI.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CloudSqlInstance {
       get { return cloudSqlInstance_; }
       set {
@@ -921,6 +960,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// A Compute Engine network URI.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Network {
       get { return network_; }
       set {
@@ -937,6 +977,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// inferred from the source.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.Endpoint.Types.NetworkType NetworkType {
       get { return networkType_; }
       set {
@@ -959,6 +1000,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// resides in is defined in the host project.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProjectId {
       get { return projectId_; }
       set {
@@ -967,11 +1009,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Endpoint);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Endpoint other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -991,6 +1035,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (IpAddress.Length != 0) hash ^= IpAddress.GetHashCode();
@@ -1008,11 +1053,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1057,6 +1104,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IpAddress.Length != 0) {
         output.WriteRawTag(10);
@@ -1097,6 +1145,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (IpAddress.Length != 0) {
@@ -1130,6 +1179,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Endpoint other) {
       if (other == null) {
         return;
@@ -1162,6 +1212,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1211,6 +1262,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1258,6 +1310,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #region Nested types
     /// <summary>Container for nested types declared in the Endpoint message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type definition of an endpoint's network. Use one of the
@@ -1298,19 +1351,23 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     private static readonly pb::MessageParser<ReachabilityDetails> _parser = new pb::MessageParser<ReachabilityDetails>(() => new ReachabilityDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ReachabilityDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.NetworkManagement.V1Beta1.ConnectivityTestReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReachabilityDetails() {
       OnConstruction();
     }
@@ -1318,6 +1375,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReachabilityDetails(ReachabilityDetails other) : this() {
       result_ = other.result_;
       verifyTime_ = other.verifyTime_ != null ? other.verifyTime_.Clone() : null;
@@ -1327,6 +1385,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReachabilityDetails Clone() {
       return new ReachabilityDetails(this);
     }
@@ -1338,6 +1397,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// The overall result of the test's configuration analysis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.ReachabilityDetails.Types.Result Result {
       get { return result_; }
       set {
@@ -1352,6 +1412,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// The time of the configuration analysis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp VerifyTime {
       get { return verifyTime_; }
       set {
@@ -1366,6 +1427,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// The details of a failure or a cancellation of reachability analysis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.Status Error {
       get { return error_; }
       set {
@@ -1384,16 +1446,19 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// with multiple backends.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.NetworkManagement.V1Beta1.Trace> Traces {
       get { return traces_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ReachabilityDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ReachabilityDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1409,6 +1474,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != global::Google.Cloud.NetworkManagement.V1Beta1.ReachabilityDetails.Types.Result.Unspecified) hash ^= Result.GetHashCode();
@@ -1422,11 +1488,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1452,6 +1520,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Result != global::Google.Cloud.NetworkManagement.V1Beta1.ReachabilityDetails.Types.Result.Unspecified) {
         output.WriteRawTag(8);
@@ -1473,6 +1542,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Result != global::Google.Cloud.NetworkManagement.V1Beta1.ReachabilityDetails.Types.Result.Unspecified) {
@@ -1492,6 +1562,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ReachabilityDetails other) {
       if (other == null) {
         return;
@@ -1516,6 +1587,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1555,6 +1627,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1592,6 +1665,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #region Nested types
     /// <summary>Container for nested types declared in the ReachabilityDetails message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The overall result of the test's configuration analysis.
@@ -1651,19 +1725,23 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     private static readonly pb::MessageParser<LatencyPercentile> _parser = new pb::MessageParser<LatencyPercentile>(() => new LatencyPercentile());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LatencyPercentile> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.NetworkManagement.V1Beta1.ConnectivityTestReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LatencyPercentile() {
       OnConstruction();
     }
@@ -1671,6 +1749,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LatencyPercentile(LatencyPercentile other) : this() {
       percent_ = other.percent_;
       latencyMicros_ = other.latencyMicros_;
@@ -1678,6 +1757,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LatencyPercentile Clone() {
       return new LatencyPercentile(this);
     }
@@ -1689,6 +1769,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Percentage of samples this data point applies to.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Percent {
       get { return percent_; }
       set {
@@ -1705,6 +1786,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// equal to the value of this field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long LatencyMicros {
       get { return latencyMicros_; }
       set {
@@ -1713,11 +1795,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LatencyPercentile);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LatencyPercentile other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1731,6 +1815,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Percent != 0) hash ^= Percent.GetHashCode();
@@ -1742,11 +1827,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1767,6 +1854,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Percent != 0) {
         output.WriteRawTag(8);
@@ -1783,6 +1871,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Percent != 0) {
@@ -1798,6 +1887,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LatencyPercentile other) {
       if (other == null) {
         return;
@@ -1812,6 +1902,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1837,6 +1928,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1870,19 +1962,23 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     private static readonly pb::MessageParser<LatencyDistribution> _parser = new pb::MessageParser<LatencyDistribution>(() => new LatencyDistribution());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LatencyDistribution> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.NetworkManagement.V1Beta1.ConnectivityTestReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LatencyDistribution() {
       OnConstruction();
     }
@@ -1890,12 +1986,14 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LatencyDistribution(LatencyDistribution other) : this() {
       latencyPercentiles_ = other.latencyPercentiles_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LatencyDistribution Clone() {
       return new LatencyDistribution(this);
     }
@@ -1909,16 +2007,19 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Representative latency percentiles.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.NetworkManagement.V1Beta1.LatencyPercentile> LatencyPercentiles {
       get { return latencyPercentiles_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LatencyDistribution);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LatencyDistribution other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1931,6 +2032,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= latencyPercentiles_.GetHashCode();
@@ -1941,11 +2043,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1959,6 +2063,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       latencyPercentiles_.WriteTo(ref output, _repeated_latencyPercentiles_codec);
       if (_unknownFields != null) {
@@ -1968,6 +2073,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += latencyPercentiles_.CalculateSize(_repeated_latencyPercentiles_codec);
@@ -1978,6 +2084,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LatencyDistribution other) {
       if (other == null) {
         return;
@@ -1987,6 +2094,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2008,6 +2116,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2037,19 +2146,23 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     private static readonly pb::MessageParser<ProbingDetails> _parser = new pb::MessageParser<ProbingDetails>(() => new ProbingDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ProbingDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.NetworkManagement.V1Beta1.ConnectivityTestReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProbingDetails() {
       OnConstruction();
     }
@@ -2057,6 +2170,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProbingDetails(ProbingDetails other) : this() {
       result_ = other.result_;
       verifyTime_ = other.verifyTime_ != null ? other.verifyTime_.Clone() : null;
@@ -2070,6 +2184,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProbingDetails Clone() {
       return new ProbingDetails(this);
     }
@@ -2081,6 +2196,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// The overall result of active probing.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.ProbingDetails.Types.ProbingResult Result {
       get { return result_; }
       set {
@@ -2095,6 +2211,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// The time that reachability was assessed through active probing.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp VerifyTime {
       get { return verifyTime_; }
       set {
@@ -2109,6 +2226,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Details about an internal failure or the cancellation of active probing.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.Status Error {
       get { return error_; }
       set {
@@ -2123,6 +2241,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// The reason probing was aborted.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.ProbingDetails.Types.ProbingAbortCause AbortCause {
       get { return abortCause_; }
       set {
@@ -2137,6 +2256,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Number of probes sent.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int SentProbeCount {
       get { return sentProbeCount_; }
       set {
@@ -2151,6 +2271,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// Number of probes that reached the destination.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int SuccessfulProbeCount {
       get { return successfulProbeCount_; }
       set {
@@ -2166,6 +2287,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// for active probing.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.EndpointInfo EndpointInfo {
       get { return endpointInfo_; }
       set {
@@ -2181,6 +2303,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     /// from the source to the destination endpoint.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.NetworkManagement.V1Beta1.LatencyDistribution ProbingLatency {
       get { return probingLatency_; }
       set {
@@ -2189,11 +2312,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ProbingDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ProbingDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2213,6 +2338,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != global::Google.Cloud.NetworkManagement.V1Beta1.ProbingDetails.Types.ProbingResult.Unspecified) hash ^= Result.GetHashCode();
@@ -2230,11 +2356,13 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2279,6 +2407,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Result != global::Google.Cloud.NetworkManagement.V1Beta1.ProbingDetails.Types.ProbingResult.Unspecified) {
         output.WriteRawTag(8);
@@ -2319,6 +2448,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Result != global::Google.Cloud.NetworkManagement.V1Beta1.ProbingDetails.Types.ProbingResult.Unspecified) {
@@ -2352,6 +2482,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ProbingDetails other) {
       if (other == null) {
         return;
@@ -2396,6 +2527,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2457,6 +2589,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2516,6 +2649,7 @@ namespace Google.Cloud.NetworkManagement.V1Beta1 {
     #region Nested types
     /// <summary>Container for nested types declared in the ProbingDetails message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Overall probing result of the test.

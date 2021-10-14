@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    * Installs the default template library along with Policy Controller.
    * </pre>
    *
-   * <code>bool template_library_installed = 2;</code>
+   * <code>optional bool template_library_installed = 2;</code>
    * @return Whether the templateLibraryInstalled field is set.
    */
   @java.lang.Override
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
    * Installs the default template library along with Policy Controller.
    * </pre>
    *
-   * <code>bool template_library_installed = 2;</code>
+   * <code>optional bool template_library_installed = 2;</code>
    * @return The templateLibraryInstalled.
    */
   @java.lang.Override
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * When set to 0, this disables audit functionality altogether.
    * </pre>
    *
-   * <code>int64 audit_interval_seconds = 3;</code>
+   * <code>optional int64 audit_interval_seconds = 3;</code>
    * @return Whether the auditIntervalSeconds field is set.
    */
   @java.lang.Override
@@ -189,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * When set to 0, this disables audit functionality altogether.
    * </pre>
    *
-   * <code>int64 audit_interval_seconds = 3;</code>
+   * <code>optional int64 audit_interval_seconds = 3;</code>
    * @return The auditIntervalSeconds.
    */
   @java.lang.Override
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
      * Installs the default template library along with Policy Controller.
      * </pre>
      *
-     * <code>bool template_library_installed = 2;</code>
+     * <code>optional bool template_library_installed = 2;</code>
      * @return Whether the templateLibraryInstalled field is set.
      */
     @java.lang.Override
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
      * Installs the default template library along with Policy Controller.
      * </pre>
      *
-     * <code>bool template_library_installed = 2;</code>
+     * <code>optional bool template_library_installed = 2;</code>
      * @return The templateLibraryInstalled.
      */
     @java.lang.Override
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
      * Installs the default template library along with Policy Controller.
      * </pre>
      *
-     * <code>bool template_library_installed = 2;</code>
+     * <code>optional bool template_library_installed = 2;</code>
      * @param value The templateLibraryInstalled to set.
      * @return This builder for chaining.
      */
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
      * Installs the default template library along with Policy Controller.
      * </pre>
      *
-     * <code>bool template_library_installed = 2;</code>
+     * <code>optional bool template_library_installed = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearTemplateLibraryInstalled() {
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      * When set to 0, this disables audit functionality altogether.
      * </pre>
      *
-     * <code>int64 audit_interval_seconds = 3;</code>
+     * <code>optional int64 audit_interval_seconds = 3;</code>
      * @return Whether the auditIntervalSeconds field is set.
      */
     @java.lang.Override
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
      * When set to 0, this disables audit functionality altogether.
      * </pre>
      *
-     * <code>int64 audit_interval_seconds = 3;</code>
+     * <code>optional int64 audit_interval_seconds = 3;</code>
      * @return The auditIntervalSeconds.
      */
     @java.lang.Override
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
      * When set to 0, this disables audit functionality altogether.
      * </pre>
      *
-     * <code>int64 audit_interval_seconds = 3;</code>
+     * <code>optional int64 audit_interval_seconds = 3;</code>
      * @param value The auditIntervalSeconds to set.
      * @return This builder for chaining.
      */
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
      * When set to 0, this disables audit functionality altogether.
      * </pre>
      *
-     * <code>int64 audit_interval_seconds = 3;</code>
+     * <code>optional int64 audit_interval_seconds = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearAuditIntervalSeconds() {

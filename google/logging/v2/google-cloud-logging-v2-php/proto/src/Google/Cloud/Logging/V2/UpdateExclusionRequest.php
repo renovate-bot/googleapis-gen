@@ -120,7 +120,7 @@ class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getExclusion()
     {
-        return isset($this->exclusion) ? $this->exclusion : null;
+        return $this->exclusion;
     }
 
     public function hasExclusion()
@@ -162,7 +162,7 @@ class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

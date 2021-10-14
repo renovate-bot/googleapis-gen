@@ -38,7 +38,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     /**
      * Number of time units the cap lasts.
      *
-     * Generated from protobuf field <code>int32 time_length = 5;</code>
+     * Generated from protobuf field <code>optional int32 time_length = 5;</code>
      */
     protected $time_length = null;
 
@@ -147,7 +147,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     /**
      * Number of time units the cap lasts.
      *
-     * Generated from protobuf field <code>int32 time_length = 5;</code>
+     * Generated from protobuf field <code>optional int32 time_length = 5;</code>
      * @return int
      */
     public function getTimeLength()
@@ -168,7 +168,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     /**
      * Number of time units the cap lasts.
      *
-     * Generated from protobuf field <code>int32 time_length = 5;</code>
+     * Generated from protobuf field <code>optional int32 time_length = 5;</code>
      * @param int $var
      * @return $this
      */

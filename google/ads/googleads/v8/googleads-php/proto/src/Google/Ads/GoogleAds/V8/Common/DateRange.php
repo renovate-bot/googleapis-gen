@@ -18,13 +18,13 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string start_date = 3;</code>
+     * Generated from protobuf field <code>optional string start_date = 3;</code>
      */
     protected $start_date = null;
     /**
      * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string end_date = 4;</code>
+     * Generated from protobuf field <code>optional string end_date = 4;</code>
      */
     protected $end_date = null;
 
@@ -48,7 +48,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string start_date = 3;</code>
+     * Generated from protobuf field <code>optional string start_date = 3;</code>
      * @return string
      */
     public function getStartDate()
@@ -69,7 +69,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string start_date = 3;</code>
+     * Generated from protobuf field <code>optional string start_date = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string end_date = 4;</code>
+     * Generated from protobuf field <code>optional string end_date = 4;</code>
      * @return string
      */
     public function getEndDate()
@@ -105,7 +105,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string end_date = 4;</code>
+     * Generated from protobuf field <code>optional string end_date = 4;</code>
      * @param string $var
      * @return $this
      */

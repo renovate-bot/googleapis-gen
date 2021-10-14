@@ -20,21 +20,21 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Required. The desired revenue (based on conversion data) per unit of spend.
      * Value must be between 0.01 and 1000.0, inclusive.
      *
-     * Generated from protobuf field <code>double target_roas = 4;</code>
+     * Generated from protobuf field <code>optional double target_roas = 4;</code>
      */
     protected $target_roas = null;
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      */
     protected $cpc_bid_ceiling_micros = null;
     /**
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_floor_micros = 6;</code>
      */
     protected $cpc_bid_floor_micros = null;
 
@@ -64,7 +64,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Required. The desired revenue (based on conversion data) per unit of spend.
      * Value must be between 0.01 and 1000.0, inclusive.
      *
-     * Generated from protobuf field <code>double target_roas = 4;</code>
+     * Generated from protobuf field <code>optional double target_roas = 4;</code>
      * @return float
      */
     public function getTargetRoas()
@@ -86,7 +86,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Required. The desired revenue (based on conversion data) per unit of spend.
      * Value must be between 0.01 and 1000.0, inclusive.
      *
-     * Generated from protobuf field <code>double target_roas = 4;</code>
+     * Generated from protobuf field <code>optional double target_roas = 4;</code>
      * @param float $var
      * @return $this
      */
@@ -102,7 +102,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @return int|string
      */
     public function getCpcBidCeilingMicros()
@@ -124,7 +124,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @return int|string
      */
     public function getCpcBidFloorMicros()
@@ -162,7 +162,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @param int|string $var
      * @return $this
      */

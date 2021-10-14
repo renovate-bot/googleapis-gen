@@ -211,7 +211,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     public function getPayload()
     {
-        return isset($this->payload) ? $this->payload : null;
+        return $this->payload;
     }
 
     public function hasPayload()
@@ -248,7 +248,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -284,7 +284,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -348,7 +348,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     public function getAnnotationSource()
     {
-        return isset($this->annotation_source) ? $this->annotation_source : null;
+        return $this->annotation_source;
     }
 
     public function hasAnnotationSource()

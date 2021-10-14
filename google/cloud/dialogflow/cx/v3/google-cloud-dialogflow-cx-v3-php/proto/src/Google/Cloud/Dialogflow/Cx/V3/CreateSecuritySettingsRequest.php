@@ -83,7 +83,7 @@ class CreateSecuritySettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSecuritySettings()
     {
-        return isset($this->security_settings) ? $this->security_settings : null;
+        return $this->security_settings;
     }
 
     public function hasSecuritySettings()

@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
     if (code_ != com.google.cloud.gkehub.v1beta1.MembershipState.Code.CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (updateTime_ != null) {
@@ -454,7 +454,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (updateTime_ != null) {

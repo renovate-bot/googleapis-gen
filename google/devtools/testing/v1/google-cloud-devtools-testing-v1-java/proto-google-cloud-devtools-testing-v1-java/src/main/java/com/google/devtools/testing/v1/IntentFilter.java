@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < categoryNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, categoryNames_.getRaw(i));
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mimeType_);
     }
     unknownFields.writeTo(output);
@@ -315,7 +315,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getCategoryNamesList().size();
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mimeType_);
     }
     size += unknownFields.getSerializedSize();

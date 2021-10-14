@@ -87,7 +87,7 @@ class AddTrialMeasurementRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMeasurement()
     {
-        return isset($this->measurement) ? $this->measurement : null;
+        return $this->measurement;
     }
 
     public function hasMeasurement()

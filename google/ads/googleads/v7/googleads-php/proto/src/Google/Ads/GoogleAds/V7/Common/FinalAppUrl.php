@@ -30,7 +30,7 @@ class FinalAppUrl extends \Google\Protobuf\Internal\Message
      * unique location in the app where your content exists.
      * Example: "exampleapp://productid_1234". Required.
      *
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>optional string url = 3;</code>
      */
     protected $url = null;
 
@@ -92,7 +92,7 @@ class FinalAppUrl extends \Google\Protobuf\Internal\Message
      * unique location in the app where your content exists.
      * Example: "exampleapp://productid_1234". Required.
      *
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>optional string url = 3;</code>
      * @return string
      */
     public function getUrl()
@@ -119,7 +119,7 @@ class FinalAppUrl extends \Google\Protobuf\Internal\Message
      * unique location in the app where your content exists.
      * Example: "exampleapp://productid_1234". Required.
      *
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>optional string url = 3;</code>
      * @param string $var
      * @return $this
      */

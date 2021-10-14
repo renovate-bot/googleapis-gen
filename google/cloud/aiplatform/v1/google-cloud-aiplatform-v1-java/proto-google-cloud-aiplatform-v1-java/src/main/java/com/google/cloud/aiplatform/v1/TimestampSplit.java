@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
     if (testFraction_ != 0D) {
       output.writeDouble(3, testFraction_);
     }
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, key_);
     }
     unknownFields.writeTo(output);
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, testFraction_);
     }
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, key_);
     }
     size += unknownFields.getSerializedSize();

@@ -28,7 +28,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the link.
      * This field is read only.
      *
-     * Generated from protobuf field <code>int64 account_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 account_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $account_link_id = null;
     /**
@@ -109,7 +109,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the link.
      * This field is read only.
      *
-     * Generated from protobuf field <code>int64 account_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 account_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getAccountLinkId()
@@ -131,7 +131,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the link.
      * This field is read only.
      *
-     * Generated from protobuf field <code>int64 account_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 account_link_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

@@ -85,7 +85,7 @@ class MutateBiddingSeasonalityAdjustmentsResult extends \Google\Protobuf\Interna
      */
     public function getBiddingSeasonalityAdjustment()
     {
-        return isset($this->bidding_seasonality_adjustment) ? $this->bidding_seasonality_adjustment : null;
+        return $this->bidding_seasonality_adjustment;
     }
 
     public function hasBiddingSeasonalityAdjustment()

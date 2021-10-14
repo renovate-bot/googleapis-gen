@@ -1425,7 +1425,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getWriteStreamBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeStream_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, writeStream_);
     }
     if (offset_ != null) {
@@ -1434,7 +1434,7 @@ private static final long serialVersionUID = 0L;
     if (rowsCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData) rows_);
     }
-    if (!getTraceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, traceId_);
     }
     unknownFields.writeTo(output);
@@ -1446,7 +1446,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getWriteStreamBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeStream_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, writeStream_);
     }
     if (offset_ != null) {
@@ -1457,7 +1457,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData) rows_);
     }
-    if (!getTraceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, traceId_);
     }
     size += unknownFields.getSerializedSize();

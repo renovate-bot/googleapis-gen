@@ -18,7 +18,7 @@ class HotelStateInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Geo Target Constant resource name.
      *
-     * Generated from protobuf field <code>string state_criterion = 2;</code>
+     * Generated from protobuf field <code>optional string state_criterion = 2;</code>
      */
     protected $state_criterion = null;
 
@@ -40,7 +40,7 @@ class HotelStateInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Geo Target Constant resource name.
      *
-     * Generated from protobuf field <code>string state_criterion = 2;</code>
+     * Generated from protobuf field <code>optional string state_criterion = 2;</code>
      * @return string
      */
     public function getStateCriterion()
@@ -61,7 +61,7 @@ class HotelStateInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Geo Target Constant resource name.
      *
-     * Generated from protobuf field <code>string state_criterion = 2;</code>
+     * Generated from protobuf field <code>optional string state_criterion = 2;</code>
      * @param string $var
      * @return $this
      */

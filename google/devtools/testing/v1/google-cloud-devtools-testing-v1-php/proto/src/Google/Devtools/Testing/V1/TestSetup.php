@@ -221,7 +221,7 @@ class TestSetup extends \Google\Protobuf\Internal\Message
      */
     public function getAccount()
     {
-        return isset($this->account) ? $this->account : null;
+        return $this->account;
     }
 
     public function hasAccount()
@@ -320,7 +320,7 @@ class TestSetup extends \Google\Protobuf\Internal\Message
      */
     public function getSystrace()
     {
-        return isset($this->systrace) ? $this->systrace : null;
+        return $this->systrace;
     }
 
     public function hasSystrace()

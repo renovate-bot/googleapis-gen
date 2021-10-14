@@ -19,7 +19,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * URL display text for the sitelink.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string link_text = 9;</code>
+     * Generated from protobuf field <code>optional string link_text = 9;</code>
      */
     protected $link_text = null;
     /**
@@ -27,7 +27,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * If this value is set, line2 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
      *
-     * Generated from protobuf field <code>string line1 = 10;</code>
+     * Generated from protobuf field <code>optional string line1 = 10;</code>
      */
     protected $line1 = null;
     /**
@@ -35,7 +35,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * If this value is set, line1 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
      *
-     * Generated from protobuf field <code>string line2 = 11;</code>
+     * Generated from protobuf field <code>optional string line2 = 11;</code>
      */
     protected $line2 = null;
     /**
@@ -53,7 +53,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 14;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 14;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -67,7 +67,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Final URL suffix to be appended to landing page URLs served with
      * parallel tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 15;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 15;</code>
      */
     protected $final_url_suffix = null;
 
@@ -111,7 +111,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * URL display text for the sitelink.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string link_text = 9;</code>
+     * Generated from protobuf field <code>optional string link_text = 9;</code>
      * @return string
      */
     public function getLinkText()
@@ -133,7 +133,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * URL display text for the sitelink.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string link_text = 9;</code>
+     * Generated from protobuf field <code>optional string link_text = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * If this value is set, line2 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
      *
-     * Generated from protobuf field <code>string line1 = 10;</code>
+     * Generated from protobuf field <code>optional string line1 = 10;</code>
      * @return string
      */
     public function getLine1()
@@ -173,7 +173,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * If this value is set, line2 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
      *
-     * Generated from protobuf field <code>string line1 = 10;</code>
+     * Generated from protobuf field <code>optional string line1 = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -190,7 +190,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * If this value is set, line1 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
      *
-     * Generated from protobuf field <code>string line2 = 11;</code>
+     * Generated from protobuf field <code>optional string line2 = 11;</code>
      * @return string
      */
     public function getLine2()
@@ -213,7 +213,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * If this value is set, line1 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
      *
-     * Generated from protobuf field <code>string line2 = 11;</code>
+     * Generated from protobuf field <code>optional string line2 = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -280,7 +280,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 14;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 14;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -301,7 +301,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 14;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -345,7 +345,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Final URL suffix to be appended to landing page URLs served with
      * parallel tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 15;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 15;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -367,7 +367,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Final URL suffix to be appended to landing page URLs served with
      * parallel tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 15;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 15;</code>
      * @param string $var
      * @return $this
      */

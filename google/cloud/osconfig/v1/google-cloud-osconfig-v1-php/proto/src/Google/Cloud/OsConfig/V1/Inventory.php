@@ -113,7 +113,7 @@ class Inventory extends \Google\Protobuf\Internal\Message
      */
     public function getOsInfo()
     {
-        return isset($this->os_info) ? $this->os_info : null;
+        return $this->os_info;
     }
 
     public function hasOsInfo()
@@ -181,7 +181,7 @@ class Inventory extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

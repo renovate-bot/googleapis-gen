@@ -21,7 +21,7 @@ class GoogleAdsLinkIdentifier extends \Google\Protobuf\Internal\Message
      * Google Ads link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>string customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $customer = null;
 
@@ -49,7 +49,7 @@ class GoogleAdsLinkIdentifier extends \Google\Protobuf\Internal\Message
      * Google Ads link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>string customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCustomer()
@@ -73,7 +73,7 @@ class GoogleAdsLinkIdentifier extends \Google\Protobuf\Internal\Message
      * Google Ads link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>string customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

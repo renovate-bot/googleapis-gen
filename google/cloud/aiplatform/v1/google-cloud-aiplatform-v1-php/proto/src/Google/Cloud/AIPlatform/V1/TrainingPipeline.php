@@ -300,7 +300,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getInputDataConfig()
     {
-        return isset($this->input_data_config) ? $this->input_data_config : null;
+        return $this->input_data_config;
     }
 
     public function hasInputDataConfig()
@@ -382,7 +382,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingTaskInputs()
     {
-        return isset($this->training_task_inputs) ? $this->training_task_inputs : null;
+        return $this->training_task_inputs;
     }
 
     public function hasTrainingTaskInputs()
@@ -423,7 +423,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingTaskMetadata()
     {
-        return isset($this->training_task_metadata) ? $this->training_task_metadata : null;
+        return $this->training_task_metadata;
     }
 
     public function hasTrainingTaskMetadata()
@@ -476,7 +476,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getModelToUpload()
     {
-        return isset($this->model_to_upload) ? $this->model_to_upload : null;
+        return $this->model_to_upload;
     }
 
     public function hasModelToUpload()
@@ -552,7 +552,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -589,7 +589,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -626,7 +626,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -665,7 +665,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -703,7 +703,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -776,7 +776,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()

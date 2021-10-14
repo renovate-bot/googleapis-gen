@@ -97,7 +97,7 @@ public interface ReadObjectRequestOrBuilder extends
    * there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 6;</code>
+   * <code>optional int64 if_generation_match = 6;</code>
    * @return Whether the ifGenerationMatch field is set.
    */
   boolean hasIfGenerationMatch();
@@ -108,7 +108,7 @@ public interface ReadObjectRequestOrBuilder extends
    * there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 6;</code>
+   * <code>optional int64 if_generation_match = 6;</code>
    * @return The ifGenerationMatch.
    */
   long getIfGenerationMatch();
@@ -121,7 +121,7 @@ public interface ReadObjectRequestOrBuilder extends
    * version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 7;</code>
+   * <code>optional int64 if_generation_not_match = 7;</code>
    * @return Whether the ifGenerationNotMatch field is set.
    */
   boolean hasIfGenerationNotMatch();
@@ -133,7 +133,7 @@ public interface ReadObjectRequestOrBuilder extends
    * version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 7;</code>
+   * <code>optional int64 if_generation_not_match = 7;</code>
    * @return The ifGenerationNotMatch.
    */
   long getIfGenerationNotMatch();
@@ -144,7 +144,7 @@ public interface ReadObjectRequestOrBuilder extends
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 8;</code>
+   * <code>optional int64 if_metageneration_match = 8;</code>
    * @return Whether the ifMetagenerationMatch field is set.
    */
   boolean hasIfMetagenerationMatch();
@@ -154,7 +154,7 @@ public interface ReadObjectRequestOrBuilder extends
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 8;</code>
+   * <code>optional int64 if_metageneration_match = 8;</code>
    * @return The ifMetagenerationMatch.
    */
   long getIfMetagenerationMatch();
@@ -165,7 +165,7 @@ public interface ReadObjectRequestOrBuilder extends
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 9;</code>
+   * <code>optional int64 if_metageneration_not_match = 9;</code>
    * @return Whether the ifMetagenerationNotMatch field is set.
    */
   boolean hasIfMetagenerationNotMatch();
@@ -175,7 +175,7 @@ public interface ReadObjectRequestOrBuilder extends
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 9;</code>
+   * <code>optional int64 if_metageneration_not_match = 9;</code>
    * @return The ifMetagenerationNotMatch.
    */
   long getIfMetagenerationNotMatch();
@@ -243,7 +243,7 @@ public interface ReadObjectRequestOrBuilder extends
    * * may be used to mean "all fields".
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+   * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
@@ -256,7 +256,7 @@ public interface ReadObjectRequestOrBuilder extends
    * * may be used to mean "all fields".
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+   * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
@@ -269,7 +269,7 @@ public interface ReadObjectRequestOrBuilder extends
    * * may be used to mean "all fields".
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+   * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder();
 }

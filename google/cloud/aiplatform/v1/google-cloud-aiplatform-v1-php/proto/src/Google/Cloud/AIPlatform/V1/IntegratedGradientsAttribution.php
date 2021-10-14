@@ -105,7 +105,7 @@ class IntegratedGradientsAttribution extends \Google\Protobuf\Internal\Message
      */
     public function getSmoothGradConfig()
     {
-        return isset($this->smooth_grad_config) ? $this->smooth_grad_config : null;
+        return $this->smooth_grad_config;
     }
 
     public function hasSmoothGradConfig()

@@ -909,7 +909,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (createTime_ != null) {
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.cloud.networkservices.v1beta1.EndpointPolicy.EndpointPolicyType.ENDPOINT_POLICY_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, type_);
     }
-    if (!getAuthorizationPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, authorizationPolicy_);
     }
     if (endpointMatcher_ != null) {
@@ -936,13 +936,13 @@ private static final long serialVersionUID = 0L;
     if (trafficPortSelector_ != null) {
       output.writeMessage(10, getTrafficPortSelector());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, description_);
     }
-    if (!getServerTlsPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverTlsPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, serverTlsPolicy_);
     }
-    if (!getClientTlsPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientTlsPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, clientTlsPolicy_);
     }
     unknownFields.writeTo(output);
@@ -954,7 +954,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (createTime_ != null) {
@@ -979,7 +979,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, type_);
     }
-    if (!getAuthorizationPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, authorizationPolicy_);
     }
     if (endpointMatcher_ != null) {
@@ -990,13 +990,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getTrafficPortSelector());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, description_);
     }
-    if (!getServerTlsPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverTlsPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, serverTlsPolicy_);
     }
-    if (!getClientTlsPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientTlsPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, clientTlsPolicy_);
     }
     size += unknownFields.getSerializedSize();

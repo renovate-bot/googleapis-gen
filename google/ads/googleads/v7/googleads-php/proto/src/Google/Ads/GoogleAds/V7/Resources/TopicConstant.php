@@ -28,13 +28,13 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>string topic_constant_parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string topic_constant_parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $topic_constant_parent = null;
     /**
@@ -108,7 +108,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -129,7 +129,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>string topic_constant_parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string topic_constant_parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getTopicConstantParent()
@@ -165,7 +165,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>string topic_constant_parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string topic_constant_parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

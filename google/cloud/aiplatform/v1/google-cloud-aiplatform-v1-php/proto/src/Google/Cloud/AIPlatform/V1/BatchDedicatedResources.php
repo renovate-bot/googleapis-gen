@@ -68,7 +68,7 @@ class BatchDedicatedResources extends \Google\Protobuf\Internal\Message
      */
     public function getMachineSpec()
     {
-        return isset($this->machine_spec) ? $this->machine_spec : null;
+        return $this->machine_spec;
     }
 
     public function hasMachineSpec()

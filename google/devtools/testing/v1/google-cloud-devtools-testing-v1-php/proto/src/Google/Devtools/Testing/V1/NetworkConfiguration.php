@@ -85,7 +85,7 @@ class NetworkConfiguration extends \Google\Protobuf\Internal\Message
      */
     public function getUpRule()
     {
-        return isset($this->up_rule) ? $this->up_rule : null;
+        return $this->up_rule;
     }
 
     public function hasUpRule()
@@ -121,7 +121,7 @@ class NetworkConfiguration extends \Google\Protobuf\Internal\Message
      */
     public function getDownRule()
     {
-        return isset($this->down_rule) ? $this->down_rule : null;
+        return $this->down_rule;
     }
 
     public function hasDownRule()

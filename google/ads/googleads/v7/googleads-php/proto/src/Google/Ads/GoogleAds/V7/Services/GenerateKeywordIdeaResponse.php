@@ -101,7 +101,7 @@ class GenerateKeywordIdeaResponse extends \Google\Protobuf\Internal\Message
      */
     public function getAggregateMetricResults()
     {
-        return isset($this->aggregate_metric_results) ? $this->aggregate_metric_results : null;
+        return $this->aggregate_metric_results;
     }
 
     public function hasAggregateMetricResults()

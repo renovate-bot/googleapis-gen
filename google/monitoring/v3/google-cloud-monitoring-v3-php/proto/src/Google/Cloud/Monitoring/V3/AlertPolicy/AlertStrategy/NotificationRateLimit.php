@@ -46,7 +46,7 @@ class NotificationRateLimit extends \Google\Protobuf\Internal\Message
      */
     public function getPeriod()
     {
-        return isset($this->period) ? $this->period : null;
+        return $this->period;
     }
 
     public function hasPeriod()

@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
     if (effectivePrice_ != null) {
       output.writeMessage(3, getEffectivePrice());
     }
-    if (!getExternalPriceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalPriceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, externalPriceUri_);
     }
     unknownFields.writeTo(output);
@@ -307,7 +307,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getEffectivePrice());
     }
-    if (!getExternalPriceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalPriceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, externalPriceUri_);
     }
     size += unknownFields.getSerializedSize();

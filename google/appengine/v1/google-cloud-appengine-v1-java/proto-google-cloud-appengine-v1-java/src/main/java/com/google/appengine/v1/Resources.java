@@ -299,7 +299,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < volumes_.size(); i++) {
       output.writeMessage(4, volumes_.get(i));
     }
-    if (!getKmsKeyReferenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyReference_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, kmsKeyReference_);
     }
     unknownFields.writeTo(output);
@@ -327,7 +327,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, volumes_.get(i));
     }
-    if (!getKmsKeyReferenceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyReference_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, kmsKeyReference_);
     }
     size += unknownFields.getSerializedSize();

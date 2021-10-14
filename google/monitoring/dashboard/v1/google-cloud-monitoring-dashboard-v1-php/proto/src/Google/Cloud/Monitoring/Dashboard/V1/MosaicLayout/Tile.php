@@ -202,7 +202,7 @@ class Tile extends \Google\Protobuf\Internal\Message
      */
     public function getWidget()
     {
-        return isset($this->widget) ? $this->widget : null;
+        return $this->widget;
     }
 
     public function hasWidget()

@@ -94,7 +94,7 @@ class SparkChartView extends \Google\Protobuf\Internal\Message
      */
     public function getMinAlignmentPeriod()
     {
-        return isset($this->min_alignment_period) ? $this->min_alignment_period : null;
+        return $this->min_alignment_period;
     }
 
     public function hasMinAlignmentPeriod()

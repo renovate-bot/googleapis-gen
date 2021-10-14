@@ -418,7 +418,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, familyName_);
       }
       if (!columnQualifier_.isEmpty()) {
@@ -439,7 +439,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, familyName_);
       }
       if (!columnQualifier_.isEmpty()) {
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, familyName_);
       }
       if (!columnQualifier_.isEmpty()) {
@@ -1371,7 +1371,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, familyName_);
       }
       if (!columnQualifier_.isEmpty()) {
@@ -2226,7 +2226,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, familyName_);
       }
       unknownFields.writeTo(output);
@@ -2238,7 +2238,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFamilyNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, familyName_);
       }
       size += unknownFields.getSerializedSize();

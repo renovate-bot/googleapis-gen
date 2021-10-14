@@ -448,7 +448,7 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      */
     public function getInsightsExportSettings()
     {
-        return isset($this->insights_export_settings) ? $this->insights_export_settings : null;
+        return $this->insights_export_settings;
     }
 
     public function hasInsightsExportSettings()

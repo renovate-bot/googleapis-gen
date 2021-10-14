@@ -22,7 +22,7 @@ class Commission extends \Google\Protobuf\Internal\Message
      * this field as (x * 1,000,000). For example, 106,000 represents a commission
      * rate of 0.106 (10.6%).
      *
-     * Generated from protobuf field <code>int64 commission_rate_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 commission_rate_micros = 2;</code>
      */
     protected $commission_rate_micros = null;
 
@@ -50,7 +50,7 @@ class Commission extends \Google\Protobuf\Internal\Message
      * this field as (x * 1,000,000). For example, 106,000 represents a commission
      * rate of 0.106 (10.6%).
      *
-     * Generated from protobuf field <code>int64 commission_rate_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 commission_rate_micros = 2;</code>
      * @return int|string
      */
     public function getCommissionRateMicros()
@@ -74,7 +74,7 @@ class Commission extends \Google\Protobuf\Internal\Message
      * this field as (x * 1,000,000). For example, 106,000 represents a commission
      * rate of 0.106 (10.6%).
      *
-     * Generated from protobuf field <code>int64 commission_rate_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 commission_rate_micros = 2;</code>
      * @param int|string $var
      * @return $this
      */

@@ -46,7 +46,7 @@ class FunctionOperand extends \Google\Protobuf\Internal\Message
      */
     public function getMatchingFunction()
     {
-        return isset($this->matching_function) ? $this->matching_function : null;
+        return $this->matching_function;
     }
 
     public function hasMatchingFunction()

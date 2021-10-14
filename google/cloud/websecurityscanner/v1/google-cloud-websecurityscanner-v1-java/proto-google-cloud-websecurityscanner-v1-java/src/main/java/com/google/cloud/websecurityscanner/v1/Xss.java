@@ -674,13 +674,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < stackTraces_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stackTraces_.getRaw(i));
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
     }
     if (attackVector_ != com.google.cloud.websecurityscanner.v1.Xss.AttackVector.ATTACK_VECTOR_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, attackVector_);
     }
-    if (!getStoredXssSeedingUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storedXssSeedingUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, storedXssSeedingUrl_);
     }
     unknownFields.writeTo(output);
@@ -700,14 +700,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getStackTracesList().size();
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
     }
     if (attackVector_ != com.google.cloud.websecurityscanner.v1.Xss.AttackVector.ATTACK_VECTOR_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, attackVector_);
     }
-    if (!getStoredXssSeedingUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storedXssSeedingUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, storedXssSeedingUrl_);
     }
     size += unknownFields.getSerializedSize();

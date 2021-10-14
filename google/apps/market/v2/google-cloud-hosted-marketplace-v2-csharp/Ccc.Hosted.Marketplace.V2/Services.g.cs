@@ -77,19 +77,23 @@ namespace Ccc.Hosted.Marketplace.V2 {
     private static readonly pb::MessageParser<CustomerLicenseGetRequest> _parser = new pb::MessageParser<CustomerLicenseGetRequest>(() => new CustomerLicenseGetRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CustomerLicenseGetRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Ccc.Hosted.Marketplace.V2.ServicesReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomerLicenseGetRequest() {
       OnConstruction();
     }
@@ -97,6 +101,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomerLicenseGetRequest(CustomerLicenseGetRequest other) : this() {
       applicationId_ = other.applicationId_;
       customerId_ = other.customerId_;
@@ -104,6 +109,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomerLicenseGetRequest Clone() {
       return new CustomerLicenseGetRequest(this);
     }
@@ -115,6 +121,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     /// Application Id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ApplicationId {
       get { return applicationId_; }
       set {
@@ -129,6 +136,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     /// Customer Id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerId {
       get { return customerId_; }
       set {
@@ -137,11 +145,13 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CustomerLicenseGetRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CustomerLicenseGetRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -155,6 +165,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ApplicationId.Length != 0) hash ^= ApplicationId.GetHashCode();
@@ -166,11 +177,13 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -191,6 +204,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ApplicationId.Length != 0) {
         output.WriteRawTag(10);
@@ -207,6 +221,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ApplicationId.Length != 0) {
@@ -222,6 +237,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CustomerLicenseGetRequest other) {
       if (other == null) {
         return;
@@ -236,6 +252,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -261,6 +278,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -291,19 +309,23 @@ namespace Ccc.Hosted.Marketplace.V2 {
     private static readonly pb::MessageParser<LicenseNotificationListRequest> _parser = new pb::MessageParser<LicenseNotificationListRequest>(() => new LicenseNotificationListRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LicenseNotificationListRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Ccc.Hosted.Marketplace.V2.ServicesReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LicenseNotificationListRequest() {
       OnConstruction();
     }
@@ -311,6 +333,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LicenseNotificationListRequest(LicenseNotificationListRequest other) : this() {
       applicationId_ = other.applicationId_;
       maxResults_ = other.maxResults_;
@@ -320,6 +343,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LicenseNotificationListRequest Clone() {
       return new LicenseNotificationListRequest(this);
     }
@@ -331,6 +355,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     /// Application Id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ApplicationId {
       get { return applicationId_; }
       set {
@@ -342,6 +367,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     public const int MaxResultsFieldNumber = 2;
     private uint maxResults_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint MaxResults {
       get { return maxResults_; }
       set {
@@ -353,6 +379,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     public const int StartTokenFieldNumber = 3;
     private string startToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StartToken {
       get { return startToken_; }
       set {
@@ -367,6 +394,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     /// Timestamp in milliseconds since epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Timestamp {
       get { return timestamp_; }
       set {
@@ -375,11 +403,13 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LicenseNotificationListRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LicenseNotificationListRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -395,6 +425,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ApplicationId.Length != 0) hash ^= ApplicationId.GetHashCode();
@@ -408,11 +439,13 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -441,6 +474,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ApplicationId.Length != 0) {
         output.WriteRawTag(10);
@@ -465,6 +499,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ApplicationId.Length != 0) {
@@ -486,6 +521,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LicenseNotificationListRequest other) {
       if (other == null) {
         return;
@@ -506,6 +542,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -539,6 +576,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -577,19 +615,23 @@ namespace Ccc.Hosted.Marketplace.V2 {
     private static readonly pb::MessageParser<UserLicenseGetRequest> _parser = new pb::MessageParser<UserLicenseGetRequest>(() => new UserLicenseGetRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UserLicenseGetRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Ccc.Hosted.Marketplace.V2.ServicesReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserLicenseGetRequest() {
       OnConstruction();
     }
@@ -597,6 +639,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserLicenseGetRequest(UserLicenseGetRequest other) : this() {
       applicationId_ = other.applicationId_;
       userId_ = other.userId_;
@@ -604,6 +647,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserLicenseGetRequest Clone() {
       return new UserLicenseGetRequest(this);
     }
@@ -615,6 +659,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     /// Application Id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ApplicationId {
       get { return applicationId_; }
       set {
@@ -629,6 +674,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     /// User Id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string UserId {
       get { return userId_; }
       set {
@@ -637,11 +683,13 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UserLicenseGetRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UserLicenseGetRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -655,6 +703,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ApplicationId.Length != 0) hash ^= ApplicationId.GetHashCode();
@@ -666,11 +715,13 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -691,6 +742,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ApplicationId.Length != 0) {
         output.WriteRawTag(10);
@@ -707,6 +759,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ApplicationId.Length != 0) {
@@ -722,6 +775,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UserLicenseGetRequest other) {
       if (other == null) {
         return;
@@ -736,6 +790,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -761,6 +816,7 @@ namespace Ccc.Hosted.Marketplace.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

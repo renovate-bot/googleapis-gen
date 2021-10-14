@@ -100,7 +100,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPhoto()
     {
-        return isset($this->photo) ? $this->photo : null;
+        return $this->photo;
     }
 
     public function hasPhoto()
@@ -158,7 +158,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

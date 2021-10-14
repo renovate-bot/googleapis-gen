@@ -53,7 +53,7 @@ class TargetFleetDetails extends \Google\Protobuf\Internal\Message
      */
     public function getFleet()
     {
-        return isset($this->fleet) ? $this->fleet : null;
+        return $this->fleet;
     }
 
     public function hasFleet()
@@ -89,7 +89,7 @@ class TargetFleetDetails extends \Google\Protobuf\Internal\Message
      */
     public function getAutoscaler()
     {
-        return isset($this->autoscaler) ? $this->autoscaler : null;
+        return $this->autoscaler;
     }
 
     public function hasAutoscaler()

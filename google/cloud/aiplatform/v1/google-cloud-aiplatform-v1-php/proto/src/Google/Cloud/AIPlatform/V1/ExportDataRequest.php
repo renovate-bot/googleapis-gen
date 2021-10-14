@@ -87,7 +87,7 @@ class ExportDataRequest extends \Google\Protobuf\Internal\Message
      */
     public function getExportConfig()
     {
-        return isset($this->export_config) ? $this->export_config : null;
+        return $this->export_config;
     }
 
     public function hasExportConfig()

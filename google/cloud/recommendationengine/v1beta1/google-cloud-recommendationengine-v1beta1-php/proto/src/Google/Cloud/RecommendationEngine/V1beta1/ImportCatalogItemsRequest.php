@@ -133,7 +133,7 @@ class ImportCatalogItemsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getInputConfig()
     {
-        return isset($this->input_config) ? $this->input_config : null;
+        return $this->input_config;
     }
 
     public function hasInputConfig()
@@ -169,7 +169,7 @@ class ImportCatalogItemsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getErrorsConfig()
     {
-        return isset($this->errors_config) ? $this->errors_config : null;
+        return $this->errors_config;
     }
 
     public function hasErrorsConfig()

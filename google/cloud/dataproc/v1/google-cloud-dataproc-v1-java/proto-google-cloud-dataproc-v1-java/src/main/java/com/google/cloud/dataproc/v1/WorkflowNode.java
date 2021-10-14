@@ -554,19 +554,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getStepIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stepId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stepId_);
     }
     for (int i = 0; i < prerequisiteStepIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, prerequisiteStepIds_.getRaw(i));
     }
-    if (!getJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
     }
     if (state_ != com.google.cloud.dataproc.v1.WorkflowNode.NodeState.NODE_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, state_);
     }
-    if (!getErrorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, error_);
     }
     unknownFields.writeTo(output);
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getStepIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stepId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stepId_);
     }
     {
@@ -589,14 +589,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPrerequisiteStepIdsList().size();
     }
-    if (!getJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
     }
     if (state_ != com.google.cloud.dataproc.v1.WorkflowNode.NodeState.NODE_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, state_);
     }
-    if (!getErrorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, error_);
     }
     size += unknownFields.getSerializedSize();

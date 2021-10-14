@@ -33,7 +33,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * Three-character ISO 4217 currency code.
    * </pre>
    *
-   * <code>string currency_code = 9;</code>
+   * <code>optional string currency_code = 9;</code>
    * @return Whether the currencyCode field is set.
    */
   boolean hasCurrencyCode();
@@ -43,7 +43,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * Three-character ISO 4217 currency code.
    * </pre>
    *
-   * <code>string currency_code = 9;</code>
+   * <code>optional string currency_code = 9;</code>
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
@@ -53,7 +53,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * Three-character ISO 4217 currency code.
    * </pre>
    *
-   * <code>string currency_code = 9;</code>
+   * <code>optional string currency_code = 9;</code>
    * @return The bytes for currencyCode.
    */
   com.google.protobuf.ByteString
@@ -97,7 +97,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * Please use cookie_frequency_cap_setting instead.
    * </pre>
    *
-   * <code>int32 cookie_frequency_cap = 10;</code>
+   * <code>optional int32 cookie_frequency_cap = 10;</code>
    * @return Whether the cookieFrequencyCap field is set.
    */
   boolean hasCookieFrequencyCap();
@@ -112,7 +112,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * Please use cookie_frequency_cap_setting instead.
    * </pre>
    *
-   * <code>int32 cookie_frequency_cap = 10;</code>
+   * <code>optional int32 cookie_frequency_cap = 10;</code>
    * @return The cookieFrequencyCap.
    */
   int getCookieFrequencyCap();
@@ -167,7 +167,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * If not specified, a default of 1 is applied.
    * </pre>
    *
-   * <code>int32 min_effective_frequency = 11;</code>
+   * <code>optional int32 min_effective_frequency = 11;</code>
    * @return Whether the minEffectiveFrequency field is set.
    */
   boolean hasMinEffectiveFrequency();
@@ -179,7 +179,7 @@ public interface GenerateReachForecastRequestOrBuilder extends
    * If not specified, a default of 1 is applied.
    * </pre>
    *
-   * <code>int32 min_effective_frequency = 11;</code>
+   * <code>optional int32 min_effective_frequency = 11;</code>
    * @return The minEffectiveFrequency.
    */
   int getMinEffectiveFrequency();

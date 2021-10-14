@@ -27,7 +27,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>int64 id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -45,7 +45,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>string payments_account = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string payments_account = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $payments_account = null;
     /**
@@ -138,7 +138,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>int64 id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -159,7 +159,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>int64 id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -206,7 +206,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>string payments_account = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string payments_account = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getPaymentsAccount()
@@ -233,7 +233,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>string payments_account = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string payments_account = 18 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -257,7 +257,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsAccountInfo()
     {
-        return isset($this->payments_account_info) ? $this->payments_account_info : null;
+        return $this->payments_account_info;
     }
 
     public function hasPaymentsAccountInfo()

@@ -94,7 +94,7 @@ class PageInfo extends \Google\Protobuf\Internal\Message
      */
     public function getFormInfo()
     {
-        return isset($this->form_info) ? $this->form_info : null;
+        return $this->form_info;
     }
 
     public function hasFormInfo()

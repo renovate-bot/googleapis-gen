@@ -26,7 +26,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -45,20 +45,20 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>string source_url = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string source_url = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $source_url = null;
     /**
      * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>string name = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $name = null;
     /**
      * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>int64 file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $file_size = null;
     protected $mediatype;
@@ -135,7 +135,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -156,7 +156,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -224,7 +224,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>string source_url = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string source_url = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getSourceUrl()
@@ -246,7 +246,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>string source_url = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string source_url = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -262,7 +262,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>string name = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getName()
@@ -284,7 +284,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>string name = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -299,7 +299,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>int64 file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getFileSize()
@@ -320,7 +320,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>int64 file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 file_size = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

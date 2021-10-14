@@ -66,19 +66,23 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     private static readonly pb::MessageParser<ResourceErrorDetail> _parser = new pb::MessageParser<ResourceErrorDetail>(() => new ResourceErrorDetail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ResourceErrorDetail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationErrorDetailsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResourceErrorDetail() {
       OnConstruction();
     }
@@ -86,6 +90,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResourceErrorDetail(ResourceErrorDetail other) : this() {
       resourceInfo_ = other.resourceInfo_ != null ? other.resourceInfo_.Clone() : null;
       errorDetails_ = other.errorDetails_.Clone();
@@ -94,6 +99,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResourceErrorDetail Clone() {
       return new ResourceErrorDetail(this);
     }
@@ -105,6 +111,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Required. Information about the resource where the error is located.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.ResourceInfo ResourceInfo {
       get { return resourceInfo_; }
       set {
@@ -121,6 +128,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Required. The error details for the resource.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.BigQuery.Migration.V2Alpha.ErrorDetail> ErrorDetails {
       get { return errorDetails_; }
     }
@@ -134,6 +142,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// `error_details`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ErrorCount {
       get { return errorCount_; }
       set {
@@ -142,11 +151,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ResourceErrorDetail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ResourceErrorDetail other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -161,6 +172,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (resourceInfo_ != null) hash ^= ResourceInfo.GetHashCode();
@@ -173,11 +185,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -199,6 +213,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (resourceInfo_ != null) {
         output.WriteRawTag(10);
@@ -216,6 +231,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (resourceInfo_ != null) {
@@ -232,6 +248,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ResourceErrorDetail other) {
       if (other == null) {
         return;
@@ -250,6 +267,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -282,6 +300,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -323,19 +342,23 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     private static readonly pb::MessageParser<ErrorDetail> _parser = new pb::MessageParser<ErrorDetail>(() => new ErrorDetail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ErrorDetail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationErrorDetailsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorDetail() {
       OnConstruction();
     }
@@ -343,6 +366,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorDetail(ErrorDetail other) : this() {
       location_ = other.location_ != null ? other.location_.Clone() : null;
       errorInfo_ = other.errorInfo_ != null ? other.errorInfo_.Clone() : null;
@@ -350,6 +374,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorDetail Clone() {
       return new ErrorDetail(this);
     }
@@ -361,6 +386,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Optional. The exact location within the resource (if applicable).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.BigQuery.Migration.V2Alpha.ErrorLocation Location {
       get { return location_; }
       set {
@@ -375,6 +401,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Required. Describes the cause of the error with structured detail.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.ErrorInfo ErrorInfo {
       get { return errorInfo_; }
       set {
@@ -383,11 +410,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ErrorDetail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ErrorDetail other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -401,6 +430,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (location_ != null) hash ^= Location.GetHashCode();
@@ -412,11 +442,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -437,6 +469,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (location_ != null) {
         output.WriteRawTag(10);
@@ -453,6 +486,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (location_ != null) {
@@ -468,6 +502,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ErrorDetail other) {
       if (other == null) {
         return;
@@ -488,6 +523,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -519,6 +555,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -558,19 +595,23 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     private static readonly pb::MessageParser<ErrorLocation> _parser = new pb::MessageParser<ErrorLocation>(() => new ErrorLocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ErrorLocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationErrorDetailsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorLocation() {
       OnConstruction();
     }
@@ -578,6 +619,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorLocation(ErrorLocation other) : this() {
       line_ = other.line_;
       column_ = other.column_;
@@ -585,6 +627,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorLocation Clone() {
       return new ErrorLocation(this);
     }
@@ -597,6 +640,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// means that there is no line information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Line {
       get { return line_; }
       set {
@@ -612,6 +656,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// means that there is no columns information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Column {
       get { return column_; }
       set {
@@ -620,11 +665,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ErrorLocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ErrorLocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -638,6 +685,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Line != 0) hash ^= Line.GetHashCode();
@@ -649,11 +697,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -674,6 +724,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Line != 0) {
         output.WriteRawTag(8);
@@ -690,6 +741,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Line != 0) {
@@ -705,6 +757,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ErrorLocation other) {
       if (other == null) {
         return;
@@ -719,6 +772,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -744,6 +798,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

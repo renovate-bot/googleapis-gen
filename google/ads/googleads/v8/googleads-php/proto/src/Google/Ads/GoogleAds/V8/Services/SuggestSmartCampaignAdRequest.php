@@ -89,7 +89,7 @@ class SuggestSmartCampaignAdRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSuggestionInfo()
     {
-        return isset($this->suggestion_info) ? $this->suggestion_info : null;
+        return $this->suggestion_info;
     }
 
     public function hasSuggestionInfo()

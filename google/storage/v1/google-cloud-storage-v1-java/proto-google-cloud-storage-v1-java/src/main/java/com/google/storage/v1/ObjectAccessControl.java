@@ -676,34 +676,34 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRoleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, role_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, etag_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
     }
-    if (!getBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bucket_);
     }
-    if (!getObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, object_);
     }
     if (generation_ != 0L) {
       output.writeInt64(6, generation_);
     }
-    if (!getEntityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, entity_);
     }
-    if (!getEntityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, entityId_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, email_);
     }
-    if (!getDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, domain_);
     }
     if (projectTeam_ != null) {
@@ -718,35 +718,35 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRoleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, role_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, etag_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
     }
-    if (!getBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bucket_);
     }
-    if (!getObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, object_);
     }
     if (generation_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, generation_);
     }
-    if (!getEntityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, entity_);
     }
-    if (!getEntityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, entityId_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, email_);
     }
-    if (!getDomainBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, domain_);
     }
     if (projectTeam_ != null) {

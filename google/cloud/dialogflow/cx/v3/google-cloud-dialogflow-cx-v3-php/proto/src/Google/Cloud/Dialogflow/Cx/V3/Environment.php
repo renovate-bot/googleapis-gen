@@ -224,7 +224,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -260,7 +260,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      */
     public function getTestCasesConfig()
     {
-        return isset($this->test_cases_config) ? $this->test_cases_config : null;
+        return $this->test_cases_config;
     }
 
     public function hasTestCasesConfig()

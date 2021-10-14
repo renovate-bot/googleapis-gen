@@ -715,16 +715,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSourceTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceToken_);
     }
-    if (!getImportTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, importToken_);
     }
-    if (!getSyncTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, syncToken_);
     }
-    if (!getLastSyncBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastSync_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastSync_);
     }
     if (code_ != com.google.cloud.gkehub.configmanagement.v1alpha.SyncState.SyncCode.SYNC_CODE_UNSPECIFIED.getNumber()) {
@@ -745,16 +745,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSourceTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceToken_);
     }
-    if (!getImportTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, importToken_);
     }
-    if (!getSyncTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(syncToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, syncToken_);
     }
-    if (!getLastSyncBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastSync_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastSync_);
     }
     if (code_ != com.google.cloud.gkehub.configmanagement.v1alpha.SyncState.SyncCode.SYNC_CODE_UNSPECIFIED.getNumber()) {

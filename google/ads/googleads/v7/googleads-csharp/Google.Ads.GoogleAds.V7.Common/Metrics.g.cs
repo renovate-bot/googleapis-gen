@@ -251,19 +251,23 @@ namespace Google.Ads.GoogleAds.V7.Common {
     private int _hasBits2;
     private int _hasBits3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Metrics> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Common.MetricsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Metrics() {
       OnConstruction();
     }
@@ -271,6 +275,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Metrics(Metrics other) : this() {
       _hasBits0 = other._hasBits0;
       _hasBits1 = other._hasBits1;
@@ -399,6 +404,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Metrics Clone() {
       return new Metrics(this);
     }
@@ -411,6 +417,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// above the organic search results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AbsoluteTopImpressionPercentage {
       get { if ((_hasBits1 & 131072) != 0) { return absoluteTopImpressionPercentage_; } else { return 0D; } }
       set {
@@ -420,11 +427,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "absolute_top_impression_percentage" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAbsoluteTopImpressionPercentage {
       get { return (_hasBits1 & 131072) != 0; }
     }
     /// <summary>Clears the value of the "absolute_top_impression_percentage" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAbsoluteTopImpressionPercentage() {
       _hasBits1 &= ~131072;
     }
@@ -436,6 +445,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Average cost of viewable impressions (`active_view_impressions`).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ActiveViewCpm {
       get { if ((_hasBits1 & 262144) != 0) { return activeViewCpm_; } else { return 0D; } }
       set {
@@ -445,11 +455,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_cpm" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewCpm {
       get { return (_hasBits1 & 262144) != 0; }
     }
     /// <summary>Clears the value of the "active_view_cpm" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewCpm() {
       _hasBits1 &= ~262144;
     }
@@ -462,6 +474,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric is reported only for display network.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ActiveViewCtr {
       get { if ((_hasBits1 & 524288) != 0) { return activeViewCtr_; } else { return 0D; } }
       set {
@@ -471,11 +484,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_ctr" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewCtr {
       get { return (_hasBits1 & 524288) != 0; }
     }
     /// <summary>Clears the value of the "active_view_ctr" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewCtr() {
       _hasBits1 &= ~524288;
     }
@@ -488,6 +503,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Network site.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ActiveViewImpressions {
       get { if ((_hasBits1 & 1048576) != 0) { return activeViewImpressions_; } else { return 0L; } }
       set {
@@ -497,11 +513,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewImpressions {
       get { return (_hasBits1 & 1048576) != 0; }
     }
     /// <summary>Clears the value of the "active_view_impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewImpressions() {
       _hasBits1 &= ~1048576;
     }
@@ -514,6 +532,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// number of served impressions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ActiveViewMeasurability {
       get { if ((_hasBits1 & 2097152) != 0) { return activeViewMeasurability_; } else { return 0D; } }
       set {
@@ -523,11 +542,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_measurability" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewMeasurability {
       get { return (_hasBits1 & 2097152) != 0; }
     }
     /// <summary>Clears the value of the "active_view_measurability" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewMeasurability() {
       _hasBits1 &= ~2097152;
     }
@@ -540,6 +561,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// View.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ActiveViewMeasurableCostMicros {
       get { if ((_hasBits1 & 4194304) != 0) { return activeViewMeasurableCostMicros_; } else { return 0L; } }
       set {
@@ -549,11 +571,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_measurable_cost_micros" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewMeasurableCostMicros {
       get { return (_hasBits1 & 4194304) != 0; }
     }
     /// <summary>Clears the value of the "active_view_measurable_cost_micros" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewMeasurableCostMicros() {
       _hasBits1 &= ~4194304;
     }
@@ -566,6 +590,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// where they can be seen.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ActiveViewMeasurableImpressions {
       get { if ((_hasBits1 & 8388608) != 0) { return activeViewMeasurableImpressions_; } else { return 0L; } }
       set {
@@ -575,11 +600,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_measurable_impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewMeasurableImpressions {
       get { return (_hasBits1 & 8388608) != 0; }
     }
     /// <summary>Clears the value of the "active_view_measurable_impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewMeasurableImpressions() {
       _hasBits1 &= ~8388608;
     }
@@ -592,6 +619,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// (measurable impressions) and was viewable (viewable impressions).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ActiveViewViewability {
       get { if ((_hasBits1 & 16777216) != 0) { return activeViewViewability_; } else { return 0D; } }
       set {
@@ -601,11 +629,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "active_view_viewability" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasActiveViewViewability {
       get { return (_hasBits1 & 16777216) != 0; }
     }
     /// <summary>Clears the value of the "active_view_viewability" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActiveViewViewability() {
       _hasBits1 &= ~16777216;
     }
@@ -618,6 +648,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// divided by the number of ad interactions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromInteractionsRate {
       get { if ((_hasBits1 & 33554432) != 0) { return allConversionsFromInteractionsRate_; } else { return 0D; } }
       set {
@@ -627,11 +658,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_interactions_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromInteractionsRate {
       get { return (_hasBits1 & 33554432) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_interactions_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromInteractionsRate() {
       _hasBits1 &= ~33554432;
     }
@@ -643,6 +676,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The value of all conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsValue {
       get { if ((_hasBits1 & 67108864) != 0) { return allConversionsValue_; } else { return 0D; } }
       set {
@@ -652,11 +686,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsValue {
       get { return (_hasBits1 & 67108864) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsValue() {
       _hasBits1 &= ~67108864;
     }
@@ -671,6 +707,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/9549009.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsValueByConversionDate {
       get { return allConversionsValueByConversionDate_; }
       set {
@@ -686,6 +723,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// of the value of include_in_conversions_metric.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversions {
       get { if ((_hasBits1 & 134217728) != 0) { return allConversions_; } else { return 0D; } }
       set {
@@ -695,11 +733,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversions {
       get { return (_hasBits1 & 134217728) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversions() {
       _hasBits1 &= ~134217728;
     }
@@ -715,6 +755,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/9549009.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsByConversionDate {
       get { return allConversionsByConversionDate_; }
       set {
@@ -730,6 +771,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// (such as clicks for text ads or views for video ads).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsValuePerCost {
       get { if ((_hasBits1 & 268435456) != 0) { return allConversionsValuePerCost_; } else { return 0D; } }
       set {
@@ -739,11 +781,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_value_per_cost" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsValuePerCost {
       get { return (_hasBits1 & 268435456) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_value_per_cost" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsValuePerCost() {
       _hasBits1 &= ~268435456;
     }
@@ -758,6 +802,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromClickToCall {
       get { if ((_hasBits1 & 536870912) != 0) { return allConversionsFromClickToCall_; } else { return 0D; } }
       set {
@@ -767,11 +812,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_click_to_call" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromClickToCall {
       get { return (_hasBits1 & 536870912) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_click_to_call" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromClickToCall() {
       _hasBits1 &= ~536870912;
     }
@@ -785,6 +832,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromDirections {
       get { if ((_hasBits1 & 1073741824) != 0) { return allConversionsFromDirections_; } else { return 0D; } }
       set {
@@ -794,11 +842,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_directions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromDirections {
       get { return (_hasBits1 & 1073741824) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_directions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromDirections() {
       _hasBits1 &= ~1073741824;
     }
@@ -811,6 +861,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// of interactions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromInteractionsValuePerInteraction {
       get { if ((_hasBits1 & -2147483648) != 0) { return allConversionsFromInteractionsValuePerInteraction_; } else { return 0D; } }
       set {
@@ -820,11 +871,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_interactions_value_per_interaction" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromInteractionsValuePerInteraction {
       get { return (_hasBits1 & -2147483648) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_interactions_value_per_interaction" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromInteractionsValuePerInteraction() {
       _hasBits1 &= ~-2147483648;
     }
@@ -838,6 +891,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromMenu {
       get { if ((_hasBits2 & 1) != 0) { return allConversionsFromMenu_; } else { return 0D; } }
       set {
@@ -847,11 +901,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_menu" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromMenu {
       get { return (_hasBits2 & 1) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_menu" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromMenu() {
       _hasBits2 &= ~1;
     }
@@ -864,6 +920,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromOrder {
       get { if ((_hasBits2 & 2) != 0) { return allConversionsFromOrder_; } else { return 0D; } }
       set {
@@ -873,11 +930,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_order" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromOrder {
       get { return (_hasBits2 & 2) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_order" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromOrder() {
       _hasBits2 &= ~2;
     }
@@ -891,6 +950,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromOtherEngagement {
       get { if ((_hasBits2 & 4) != 0) { return allConversionsFromOtherEngagement_; } else { return 0D; } }
       set {
@@ -900,11 +960,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_other_engagement" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromOtherEngagement {
       get { return (_hasBits2 & 4) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_other_engagement" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromOtherEngagement() {
       _hasBits2 &= ~4;
     }
@@ -917,6 +979,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromStoreVisit {
       get { if ((_hasBits2 & 8) != 0) { return allConversionsFromStoreVisit_; } else { return 0D; } }
       set {
@@ -926,11 +989,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_store_visit" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromStoreVisit {
       get { return (_hasBits2 & 8) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_store_visit" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromStoreVisit() {
       _hasBits2 &= ~8;
     }
@@ -944,6 +1009,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AllConversionsFromStoreWebsite {
       get { if ((_hasBits2 & 16) != 0) { return allConversionsFromStoreWebsite_; } else { return 0D; } }
       set {
@@ -953,11 +1019,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "all_conversions_from_store_website" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAllConversionsFromStoreWebsite {
       get { return (_hasBits2 & 16) != 0; }
     }
     /// <summary>Clears the value of the "all_conversions_from_store_website" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAllConversionsFromStoreWebsite() {
       _hasBits2 &= ~16;
     }
@@ -970,6 +1038,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// of your ads divided by the total number of interactions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AverageCost {
       get { if ((_hasBits2 & 32) != 0) { return averageCost_; } else { return 0D; } }
       set {
@@ -979,11 +1048,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_cost" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAverageCost {
       get { return (_hasBits2 & 32) != 0; }
     }
     /// <summary>Clears the value of the "average_cost" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAverageCost() {
       _hasBits2 &= ~32;
     }
@@ -996,6 +1067,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// received.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AverageCpc {
       get { if ((_hasBits2 & 64) != 0) { return averageCpc_; } else { return 0D; } }
       set {
@@ -1005,11 +1077,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_cpc" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAverageCpc {
       get { return (_hasBits2 & 64) != 0; }
     }
     /// <summary>Clears the value of the "average_cpc" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAverageCpc() {
       _hasBits2 &= ~64;
     }
@@ -1023,6 +1097,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// of ad engagements.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AverageCpe {
       get { if ((_hasBits2 & 128) != 0) { return averageCpe_; } else { return 0D; } }
       set {
@@ -1032,11 +1107,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_cpe" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAverageCpe {
       get { return (_hasBits2 & 128) != 0; }
     }
     /// <summary>Clears the value of the "average_cpe" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAverageCpe() {
       _hasBits2 &= ~128;
     }
@@ -1048,6 +1125,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Average cost-per-thousand impressions (CPM).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AverageCpm {
       get { if ((_hasBits2 & 256) != 0) { return averageCpm_; } else { return 0D; } }
       set {
@@ -1057,11 +1135,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_cpm" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAverageCpm {
       get { return (_hasBits2 & 256) != 0; }
     }
     /// <summary>Clears the value of the "average_cpm" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAverageCpm() {
       _hasBits2 &= ~256;
     }
@@ -1075,6 +1155,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// the number of views.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AverageCpv {
       get { if ((_hasBits2 & 512) != 0) { return averageCpv_; } else { return 0D; } }
       set {
@@ -1084,11 +1165,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_cpv" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAverageCpv {
       get { return (_hasBits2 & 512) != 0; }
     }
     /// <summary>Clears the value of the "average_cpv" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAverageCpv() {
       _hasBits2 &= ~512;
     }
@@ -1100,6 +1183,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Average number of pages viewed per session.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AveragePageViews {
       get { if ((_hasBits2 & 1024) != 0) { return averagePageViews_; } else { return 0D; } }
       set {
@@ -1109,11 +1193,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_page_views" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAveragePageViews {
       get { return (_hasBits2 & 1024) != 0; }
     }
     /// <summary>Clears the value of the "average_page_views" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAveragePageViews() {
       _hasBits2 &= ~1024;
     }
@@ -1126,6 +1212,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// from Google Analytics.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AverageTimeOnSite {
       get { if ((_hasBits2 & 2048) != 0) { return averageTimeOnSite_; } else { return 0D; } }
       set {
@@ -1135,11 +1222,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "average_time_on_site" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAverageTimeOnSite {
       get { return (_hasBits2 & 2048) != 0; }
     }
     /// <summary>Clears the value of the "average_time_on_site" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAverageTimeOnSite() {
       _hasBits2 &= ~2048;
     }
@@ -1151,6 +1240,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// An indication of how other advertisers are bidding on similar products.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double BenchmarkAverageMaxCpc {
       get { if ((_hasBits2 & 4096) != 0) { return benchmarkAverageMaxCpc_; } else { return 0D; } }
       set {
@@ -1160,11 +1250,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "benchmark_average_max_cpc" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasBenchmarkAverageMaxCpc {
       get { return (_hasBits2 & 4096) != 0; }
     }
     /// <summary>Clears the value of the "benchmark_average_max_cpc" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearBenchmarkAverageMaxCpc() {
       _hasBits2 &= ~4096;
     }
@@ -1177,6 +1269,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// are performing based on how often people who see their ad click on it.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double BenchmarkCtr {
       get { if ((_hasBits2 & 8192) != 0) { return benchmarkCtr_; } else { return 0D; } }
       set {
@@ -1186,11 +1279,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "benchmark_ctr" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasBenchmarkCtr {
       get { return (_hasBits2 & 8192) != 0; }
     }
     /// <summary>Clears the value of the "benchmark_ctr" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearBenchmarkCtr() {
       _hasBits2 &= ~8192;
     }
@@ -1203,6 +1298,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// site. Imported from Google Analytics.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double BounceRate {
       get { if ((_hasBits2 & 16384) != 0) { return bounceRate_; } else { return 0D; } }
       set {
@@ -1212,11 +1308,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "bounce_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasBounceRate {
       get { return (_hasBits2 & 16384) != 0; }
     }
     /// <summary>Clears the value of the "bounce_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearBounceRate() {
       _hasBits2 &= ~16384;
     }
@@ -1228,6 +1326,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The number of clicks.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Clicks {
       get { if ((_hasBits0 & 1) != 0) { return clicks_; } else { return 0L; } }
       set {
@@ -1237,11 +1336,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "clicks" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasClicks {
       get { return (_hasBits0 & 1) != 0; }
     }
     /// <summary>Clears the value of the "clicks" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearClicks() {
       _hasBits0 &= ~1;
     }
@@ -1255,6 +1356,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/3097241 for details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CombinedClicks {
       get { if ((_hasBits0 & 33554432) != 0) { return combinedClicks_; } else { return 0L; } }
       set {
@@ -1264,11 +1366,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "combined_clicks" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCombinedClicks {
       get { return (_hasBits0 & 33554432) != 0; }
     }
     /// <summary>Clears the value of the "combined_clicks" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCombinedClicks() {
       _hasBits0 &= ~33554432;
     }
@@ -1283,6 +1387,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CombinedClicksPerQuery {
       get { if ((_hasBits0 & 67108864) != 0) { return combinedClicksPerQuery_; } else { return 0D; } }
       set {
@@ -1292,11 +1397,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "combined_clicks_per_query" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCombinedClicksPerQuery {
       get { return (_hasBits0 & 67108864) != 0; }
     }
     /// <summary>Clears the value of the "combined_clicks_per_query" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCombinedClicksPerQuery() {
       _hasBits0 &= ~67108864;
     }
@@ -1310,6 +1417,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/3097241 for details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CombinedQueries {
       get { if ((_hasBits0 & 134217728) != 0) { return combinedQueries_; } else { return 0L; } }
       set {
@@ -1319,11 +1427,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "combined_queries" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCombinedQueries {
       get { return (_hasBits0 & 134217728) != 0; }
     }
     /// <summary>Clears the value of the "combined_queries" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCombinedQueries() {
       _hasBits0 &= ~134217728;
     }
@@ -1338,6 +1448,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// to 0.9. Any value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ContentBudgetLostImpressionShare {
       get { if ((_hasBits0 & 268435456) != 0) { return contentBudgetLostImpressionShare_; } else { return 0D; } }
       set {
@@ -1347,11 +1458,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "content_budget_lost_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasContentBudgetLostImpressionShare {
       get { return (_hasBits0 & 268435456) != 0; }
     }
     /// <summary>Clears the value of the "content_budget_lost_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearContentBudgetLostImpressionShare() {
       _hasBits0 &= ~268435456;
     }
@@ -1366,6 +1479,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// value below 0.1 is reported as 0.0999.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ContentImpressionShare {
       get { if ((_hasBits0 & 536870912) != 0) { return contentImpressionShare_; } else { return 0D; } }
       set {
@@ -1375,11 +1489,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "content_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasContentImpressionShare {
       get { return (_hasBits0 & 536870912) != 0; }
     }
     /// <summary>Clears the value of the "content_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearContentImpressionShare() {
       _hasBits0 &= ~536870912;
     }
@@ -1395,6 +1511,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// advertiser). The date/time is in the customer's time zone.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConversionLastReceivedRequestDateTime {
       get { return conversionLastReceivedRequestDateTime_ ?? ""; }
       set {
@@ -1403,11 +1520,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversion_last_received_request_date_time" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionLastReceivedRequestDateTime {
       get { return conversionLastReceivedRequestDateTime_ != null; }
     }
     /// <summary>Clears the value of the "conversion_last_received_request_date_time" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionLastReceivedRequestDateTime() {
       conversionLastReceivedRequestDateTime_ = null;
     }
@@ -1420,6 +1539,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// is in the customer's time zone.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConversionLastConversionDate {
       get { return conversionLastConversionDate_ ?? ""; }
       set {
@@ -1428,11 +1548,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversion_last_conversion_date" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionLastConversionDate {
       get { return conversionLastConversionDate_ != null; }
     }
     /// <summary>Clears the value of the "conversion_last_conversion_date" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionLastConversionDate() {
       conversionLastConversionDate_ = null;
     }
@@ -1447,6 +1569,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// to 0.9. Any value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ContentRankLostImpressionShare {
       get { if ((_hasBits0 & 1073741824) != 0) { return contentRankLostImpressionShare_; } else { return 0D; } }
       set {
@@ -1456,11 +1579,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "content_rank_lost_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasContentRankLostImpressionShare {
       get { return (_hasBits0 & 1073741824) != 0; }
     }
     /// <summary>Clears the value of the "content_rank_lost_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearContentRankLostImpressionShare() {
       _hasBits0 &= ~1073741824;
     }
@@ -1476,6 +1601,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// optimize for these conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ConversionsFromInteractionsRate {
       get { if ((_hasBits0 & -2147483648) != 0) { return conversionsFromInteractionsRate_; } else { return 0D; } }
       set {
@@ -1485,11 +1611,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversions_from_interactions_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionsFromInteractionsRate {
       get { return (_hasBits0 & -2147483648) != 0; }
     }
     /// <summary>Clears the value of the "conversions_from_interactions_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionsFromInteractionsRate() {
       _hasBits0 &= ~-2147483648;
     }
@@ -1504,6 +1632,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ConversionsValue {
       get { if ((_hasBits1 & 1) != 0) { return conversionsValue_; } else { return 0D; } }
       set {
@@ -1513,11 +1642,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversions_value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionsValue {
       get { return (_hasBits1 & 1) != 0; }
     }
     /// <summary>Clears the value of the "conversions_value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionsValue() {
       _hasBits1 &= ~1;
     }
@@ -1535,6 +1666,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/9549009.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ConversionsValueByConversionDate {
       get { return conversionsValueByConversionDate_; }
       set {
@@ -1552,6 +1684,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// will optimize for these conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ConversionsValuePerCost {
       get { if ((_hasBits1 & 2) != 0) { return conversionsValuePerCost_; } else { return 0D; } }
       set {
@@ -1561,11 +1694,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversions_value_per_cost" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionsValuePerCost {
       get { return (_hasBits1 & 2) != 0; }
     }
     /// <summary>Clears the value of the "conversions_value_per_cost" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionsValuePerCost() {
       _hasBits1 &= ~2;
     }
@@ -1581,6 +1716,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ConversionsFromInteractionsValuePerInteraction {
       get { if ((_hasBits1 & 4) != 0) { return conversionsFromInteractionsValuePerInteraction_; } else { return 0D; } }
       set {
@@ -1590,11 +1726,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversions_from_interactions_value_per_interaction" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionsFromInteractionsValuePerInteraction {
       get { return (_hasBits1 & 4) != 0; }
     }
     /// <summary>Clears the value of the "conversions_from_interactions_value_per_interaction" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionsFromInteractionsValuePerInteraction() {
       _hasBits1 &= ~4;
     }
@@ -1609,6 +1747,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Conversions {
       get { if ((_hasBits1 & 8) != 0) { return conversions_; } else { return 0D; } }
       set {
@@ -1618,11 +1757,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversions {
       get { return (_hasBits1 & 8) != 0; }
     }
     /// <summary>Clears the value of the "conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversions() {
       _hasBits1 &= ~8;
     }
@@ -1640,6 +1781,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/9549009.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ConversionsByConversionDate {
       get { return conversionsByConversionDate_; }
       set {
@@ -1655,6 +1797,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// (CPM) costs during this period.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CostMicros {
       get { if ((_hasBits1 & 16) != 0) { return costMicros_; } else { return 0L; } }
       set {
@@ -1664,11 +1807,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "cost_micros" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCostMicros {
       get { return (_hasBits1 & 16) != 0; }
     }
     /// <summary>Clears the value of the "cost_micros" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCostMicros() {
       _hasBits1 &= ~16;
     }
@@ -1680,6 +1825,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The cost of ad interactions divided by all conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CostPerAllConversions {
       get { if ((_hasBits1 & 32) != 0) { return costPerAllConversions_; } else { return 0D; } }
       set {
@@ -1689,11 +1835,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "cost_per_all_conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCostPerAllConversions {
       get { return (_hasBits1 & 32) != 0; }
     }
     /// <summary>Clears the value of the "cost_per_all_conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCostPerAllConversions() {
       _hasBits1 &= ~32;
     }
@@ -1708,6 +1856,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// optimize for these conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CostPerConversion {
       get { if ((_hasBits1 & 64) != 0) { return costPerConversion_; } else { return 0D; } }
       set {
@@ -1717,11 +1866,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "cost_per_conversion" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCostPerConversion {
       get { return (_hasBits1 & 64) != 0; }
     }
     /// <summary>Clears the value of the "cost_per_conversion" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCostPerConversion() {
       _hasBits1 &= ~64;
     }
@@ -1737,6 +1888,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CostPerCurrentModelAttributedConversion {
       get { if ((_hasBits1 & 128) != 0) { return costPerCurrentModelAttributedConversion_; } else { return 0D; } }
       set {
@@ -1746,11 +1898,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "cost_per_current_model_attributed_conversion" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCostPerCurrentModelAttributedConversion {
       get { return (_hasBits1 & 128) != 0; }
     }
     /// <summary>Clears the value of the "cost_per_current_model_attributed_conversion" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCostPerCurrentModelAttributedConversion() {
       _hasBits1 &= ~128;
     }
@@ -1764,6 +1918,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Cross-device conversions are already included in all_conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CrossDeviceConversions {
       get { if ((_hasBits1 & 256) != 0) { return crossDeviceConversions_; } else { return 0D; } }
       set {
@@ -1773,11 +1928,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "cross_device_conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCrossDeviceConversions {
       get { return (_hasBits1 & 256) != 0; }
     }
     /// <summary>Clears the value of the "cross_device_conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCrossDeviceConversions() {
       _hasBits1 &= ~256;
     }
@@ -1790,6 +1947,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// of times your ad is shown (Impressions).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Ctr {
       get { if ((_hasBits1 & 512) != 0) { return ctr_; } else { return 0D; } }
       set {
@@ -1799,11 +1957,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "ctr" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCtr {
       get { return (_hasBits1 & 512) != 0; }
     }
     /// <summary>Clears the value of the "ctr" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCtr() {
       _hasBits1 &= ~512;
     }
@@ -1819,6 +1979,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CurrentModelAttributedConversions {
       get { if ((_hasBits1 & 1024) != 0) { return currentModelAttributedConversions_; } else { return 0D; } }
       set {
@@ -1828,11 +1989,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "current_model_attributed_conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCurrentModelAttributedConversions {
       get { return (_hasBits1 & 1024) != 0; }
     }
     /// <summary>Clears the value of the "current_model_attributed_conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCurrentModelAttributedConversions() {
       _hasBits1 &= ~1024;
     }
@@ -1849,6 +2012,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CurrentModelAttributedConversionsFromInteractionsRate {
       get { if ((_hasBits1 & 2048) != 0) { return currentModelAttributedConversionsFromInteractionsRate_; } else { return 0D; } }
       set {
@@ -1858,11 +2022,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "current_model_attributed_conversions_from_interactions_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCurrentModelAttributedConversionsFromInteractionsRate {
       get { return (_hasBits1 & 2048) != 0; }
     }
     /// <summary>Clears the value of the "current_model_attributed_conversions_from_interactions_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCurrentModelAttributedConversionsFromInteractionsRate() {
       _hasBits1 &= ~2048;
     }
@@ -1878,6 +2044,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CurrentModelAttributedConversionsFromInteractionsValuePerInteraction {
       get { if ((_hasBits1 & 4096) != 0) { return currentModelAttributedConversionsFromInteractionsValuePerInteraction_; } else { return 0D; } }
       set {
@@ -1887,11 +2054,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "current_model_attributed_conversions_from_interactions_value_per_interaction" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCurrentModelAttributedConversionsFromInteractionsValuePerInteraction {
       get { return (_hasBits1 & 4096) != 0; }
     }
     /// <summary>Clears the value of the "current_model_attributed_conversions_from_interactions_value_per_interaction" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCurrentModelAttributedConversionsFromInteractionsValuePerInteraction() {
       _hasBits1 &= ~4096;
     }
@@ -1906,6 +2075,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// optimize for these conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CurrentModelAttributedConversionsValue {
       get { if ((_hasBits1 & 8192) != 0) { return currentModelAttributedConversionsValue_; } else { return 0D; } }
       set {
@@ -1915,11 +2085,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "current_model_attributed_conversions_value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCurrentModelAttributedConversionsValue {
       get { return (_hasBits1 & 8192) != 0; }
     }
     /// <summary>Clears the value of the "current_model_attributed_conversions_value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCurrentModelAttributedConversionsValue() {
       _hasBits1 &= ~8192;
     }
@@ -1935,6 +2107,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double CurrentModelAttributedConversionsValuePerCost {
       get { if ((_hasBits1 & 16384) != 0) { return currentModelAttributedConversionsValuePerCost_; } else { return 0D; } }
       set {
@@ -1944,11 +2117,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "current_model_attributed_conversions_value_per_cost" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCurrentModelAttributedConversionsValuePerCost {
       get { return (_hasBits1 & 16384) != 0; }
     }
     /// <summary>Clears the value of the "current_model_attributed_conversions_value_per_cost" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCurrentModelAttributedConversionsValuePerCost() {
       _hasBits1 &= ~16384;
     }
@@ -1961,6 +2136,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// number of ad expansions divided by the number of times your ad is shown.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double EngagementRate {
       get { if ((_hasBits1 & 32768) != 0) { return engagementRate_; } else { return 0D; } }
       set {
@@ -1970,11 +2146,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "engagement_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasEngagementRate {
       get { return (_hasBits1 & 32768) != 0; }
     }
     /// <summary>Clears the value of the "engagement_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearEngagementRate() {
       _hasBits1 &= ~32768;
     }
@@ -1988,6 +2166,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// future, other ad types may support engagement metrics.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Engagements {
       get { if ((_hasBits1 & 65536) != 0) { return engagements_; } else { return 0L; } }
       set {
@@ -1997,11 +2176,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "engagements" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasEngagements {
       get { return (_hasBits1 & 65536) != 0; }
     }
     /// <summary>Clears the value of the "engagements" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearEngagements() {
       _hasBits1 &= ~65536;
     }
@@ -2013,6 +2194,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Average lead value based on clicks.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double HotelAverageLeadValueMicros {
       get { if ((_hasBits2 & 32768) != 0) { return hotelAverageLeadValueMicros_; } else { return 0D; } }
       set {
@@ -2022,11 +2204,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "hotel_average_lead_value_micros" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasHotelAverageLeadValueMicros {
       get { return (_hasBits2 & 32768) != 0; }
     }
     /// <summary>Clears the value of the "hotel_average_lead_value_micros" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearHotelAverageLeadValueMicros() {
       _hasBits2 &= ~32768;
     }
@@ -2039,6 +2223,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// advertiser and the cheapest price offered by the competing advertiser.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double HotelPriceDifferencePercentage {
       get { if ((_hasBits2 & 65536) != 0) { return hotelPriceDifferencePercentage_; } else { return 0D; } }
       set {
@@ -2048,11 +2233,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "hotel_price_difference_percentage" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasHotelPriceDifferencePercentage {
       get { return (_hasBits2 & 65536) != 0; }
     }
     /// <summary>Clears the value of the "hotel_price_difference_percentage" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearHotelPriceDifferencePercentage() {
       _hasBits2 &= ~65536;
     }
@@ -2065,6 +2252,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// feed performance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long HotelEligibleImpressions {
       get { if ((_hasBits2 & 131072) != 0) { return hotelEligibleImpressions_; } else { return 0L; } }
       set {
@@ -2074,11 +2262,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "hotel_eligible_impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasHotelEligibleImpressions {
       get { return (_hasBits2 & 131072) != 0; }
     }
     /// <summary>Clears the value of the "hotel_eligible_impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearHotelEligibleImpressions() {
       _hasBits2 &= ~131072;
     }
@@ -2090,6 +2280,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The creative historical quality score.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.QualityScoreBucketEnum.Types.QualityScoreBucket HistoricalCreativeQualityScore {
       get { return historicalCreativeQualityScore_; }
       set {
@@ -2104,6 +2295,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The quality of historical landing page experience.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.QualityScoreBucketEnum.Types.QualityScoreBucket HistoricalLandingPageQualityScore {
       get { return historicalLandingPageQualityScore_; }
       set {
@@ -2118,6 +2310,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The historical quality score.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long HistoricalQualityScore {
       get { if ((_hasBits2 & 262144) != 0) { return historicalQualityScore_; } else { return 0L; } }
       set {
@@ -2127,11 +2320,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "historical_quality_score" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasHistoricalQualityScore {
       get { return (_hasBits2 & 262144) != 0; }
     }
     /// <summary>Clears the value of the "historical_quality_score" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearHistoricalQualityScore() {
       _hasBits2 &= ~262144;
     }
@@ -2143,6 +2338,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The historical search predicted click through rate (CTR).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.QualityScoreBucketEnum.Types.QualityScoreBucket HistoricalSearchPredictedCtr {
       get { return historicalSearchPredictedCtr_; }
       set {
@@ -2157,6 +2353,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The number of times the ad was forwarded to someone else as a message.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long GmailForwards {
       get { if ((_hasBits2 & 524288) != 0) { return gmailForwards_; } else { return 0L; } }
       set {
@@ -2166,11 +2363,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "gmail_forwards" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGmailForwards {
       get { return (_hasBits2 & 524288) != 0; }
     }
     /// <summary>Clears the value of the "gmail_forwards" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGmailForwards() {
       _hasBits2 &= ~524288;
     }
@@ -2183,6 +2382,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// message.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long GmailSaves {
       get { if ((_hasBits2 & 1048576) != 0) { return gmailSaves_; } else { return 0L; } }
       set {
@@ -2192,11 +2392,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "gmail_saves" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGmailSaves {
       get { return (_hasBits2 & 1048576) != 0; }
     }
     /// <summary>Clears the value of the "gmail_saves" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGmailSaves() {
       _hasBits2 &= ~1048576;
     }
@@ -2209,6 +2411,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// ads.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long GmailSecondaryClicks {
       get { if ((_hasBits2 & 2097152) != 0) { return gmailSecondaryClicks_; } else { return 0L; } }
       set {
@@ -2218,11 +2421,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "gmail_secondary_clicks" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGmailSecondaryClicks {
       get { return (_hasBits2 & 2097152) != 0; }
     }
     /// <summary>Clears the value of the "gmail_secondary_clicks" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGmailSecondaryClicks() {
       _hasBits2 &= ~2097152;
     }
@@ -2235,6 +2440,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// This metric applies to feed items only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ImpressionsFromStoreReach {
       get { if ((_hasBits2 & 4194304) != 0) { return impressionsFromStoreReach_; } else { return 0L; } }
       set {
@@ -2244,11 +2450,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "impressions_from_store_reach" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasImpressionsFromStoreReach {
       get { return (_hasBits2 & 4194304) != 0; }
     }
     /// <summary>Clears the value of the "impressions_from_store_reach" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearImpressionsFromStoreReach() {
       _hasBits2 &= ~4194304;
     }
@@ -2261,6 +2469,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// website on the Google Network.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Impressions {
       get { if ((_hasBits2 & 8388608) != 0) { return impressions_; } else { return 0L; } }
       set {
@@ -2270,11 +2479,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasImpressions {
       get { return (_hasBits2 & 8388608) != 0; }
     }
     /// <summary>Clears the value of the "impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearImpressions() {
       _hasBits2 &= ~8388608;
     }
@@ -2288,6 +2499,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// is shown.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double InteractionRate {
       get { if ((_hasBits2 & 16777216) != 0) { return interactionRate_; } else { return 0D; } }
       set {
@@ -2297,11 +2509,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "interaction_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasInteractionRate {
       get { return (_hasBits2 & 16777216) != 0; }
     }
     /// <summary>Clears the value of the "interaction_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearInteractionRate() {
       _hasBits2 &= ~16777216;
     }
@@ -2315,6 +2529,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// for text and shopping ads, views for video ads, and so on.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Interactions {
       get { if ((_hasBits2 & 33554432) != 0) { return interactions_; } else { return 0L; } }
       set {
@@ -2324,11 +2539,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "interactions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasInteractions {
       get { return (_hasBits2 & 33554432) != 0; }
     }
     /// <summary>Clears the value of the "interactions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearInteractions() {
       _hasBits2 &= ~33554432;
     }
@@ -2342,6 +2559,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The types of payable and free interactions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Enums.InteractionEventTypeEnum.Types.InteractionEventType> InteractionEventTypes {
       get { return interactionEventTypes_; }
     }
@@ -2354,6 +2572,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// (filtered + non-filtered clicks) during the reporting period.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double InvalidClickRate {
       get { if ((_hasBits2 & 67108864) != 0) { return invalidClickRate_; } else { return 0D; } }
       set {
@@ -2363,11 +2582,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "invalid_click_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasInvalidClickRate {
       get { return (_hasBits2 & 67108864) != 0; }
     }
     /// <summary>Clears the value of the "invalid_click_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearInvalidClickRate() {
       _hasBits2 &= ~67108864;
     }
@@ -2379,6 +2600,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Number of clicks Google considers illegitimate and doesn't charge you for.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long InvalidClicks {
       get { if ((_hasBits2 & 134217728) != 0) { return invalidClicks_; } else { return 0L; } }
       set {
@@ -2388,11 +2610,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "invalid_clicks" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasInvalidClicks {
       get { return (_hasBits2 & 134217728) != 0; }
     }
     /// <summary>Clears the value of the "invalid_clicks" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearInvalidClicks() {
       _hasBits2 &= ~134217728;
     }
@@ -2405,6 +2629,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// were message tracking eligible.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MessageChats {
       get { if ((_hasBits2 & 268435456) != 0) { return messageChats_; } else { return 0L; } }
       set {
@@ -2414,11 +2639,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "message_chats" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasMessageChats {
       get { return (_hasBits2 & 268435456) != 0; }
     }
     /// <summary>Clears the value of the "message_chats" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearMessageChats() {
       _hasBits2 &= ~268435456;
     }
@@ -2430,6 +2657,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Number of Click To Message impressions that were message tracking eligible.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MessageImpressions {
       get { if ((_hasBits2 & 536870912) != 0) { return messageImpressions_; } else { return 0L; } }
       set {
@@ -2439,11 +2667,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "message_impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasMessageImpressions {
       get { return (_hasBits2 & 536870912) != 0; }
     }
     /// <summary>Clears the value of the "message_impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearMessageImpressions() {
       _hasBits2 &= ~536870912;
     }
@@ -2459,6 +2689,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Note that this rate can be more than 1.0 for a given message impression.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double MessageChatRate {
       get { if ((_hasBits2 & 1073741824) != 0) { return messageChatRate_; } else { return 0D; } }
       set {
@@ -2468,11 +2699,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "message_chat_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasMessageChatRate {
       get { return (_hasBits2 & 1073741824) != 0; }
     }
     /// <summary>Clears the value of the "message_chat_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearMessageChatRate() {
       _hasBits2 &= ~1073741824;
     }
@@ -2484,6 +2717,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The percentage of mobile clicks that go to a mobile-friendly page.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double MobileFriendlyClicksPercentage {
       get { if ((_hasBits2 & -2147483648) != 0) { return mobileFriendlyClicksPercentage_; } else { return 0D; } }
       set {
@@ -2493,11 +2727,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "mobile_friendly_clicks_percentage" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasMobileFriendlyClicksPercentage {
       get { return (_hasBits2 & -2147483648) != 0; }
     }
     /// <summary>Clears the value of the "mobile_friendly_clicks_percentage" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearMobileFriendlyClicksPercentage() {
       _hasBits2 &= ~-2147483648;
     }
@@ -2511,6 +2747,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/3097241 for details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long OrganicClicks {
       get { if ((_hasBits3 & 1) != 0) { return organicClicks_; } else { return 0L; } }
       set {
@@ -2520,11 +2757,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "organic_clicks" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasOrganicClicks {
       get { return (_hasBits3 & 1) != 0; }
     }
     /// <summary>Clears the value of the "organic_clicks" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOrganicClicks() {
       _hasBits3 &= ~1;
     }
@@ -2539,6 +2778,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/3097241 for details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double OrganicClicksPerQuery {
       get { if ((_hasBits3 & 2) != 0) { return organicClicksPerQuery_; } else { return 0D; } }
       set {
@@ -2548,11 +2788,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "organic_clicks_per_query" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasOrganicClicksPerQuery {
       get { return (_hasBits3 & 2) != 0; }
     }
     /// <summary>Clears the value of the "organic_clicks_per_query" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOrganicClicksPerQuery() {
       _hasBits3 &= ~2;
     }
@@ -2566,6 +2808,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long OrganicImpressions {
       get { if ((_hasBits3 & 4) != 0) { return organicImpressions_; } else { return 0L; } }
       set {
@@ -2575,11 +2818,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "organic_impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasOrganicImpressions {
       get { return (_hasBits3 & 4) != 0; }
     }
     /// <summary>Clears the value of the "organic_impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOrganicImpressions() {
       _hasBits3 &= ~4;
     }
@@ -2594,6 +2839,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// page at https://support.google.com/google-ads/answer/3097241 for details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double OrganicImpressionsPerQuery {
       get { if ((_hasBits3 & 8) != 0) { return organicImpressionsPerQuery_; } else { return 0D; } }
       set {
@@ -2603,11 +2849,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "organic_impressions_per_query" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasOrganicImpressionsPerQuery {
       get { return (_hasBits3 & 8) != 0; }
     }
     /// <summary>Clears the value of the "organic_impressions_per_query" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOrganicImpressionsPerQuery() {
       _hasBits3 &= ~8;
     }
@@ -2621,6 +2869,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/3097241 for details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long OrganicQueries {
       get { if ((_hasBits3 & 16) != 0) { return organicQueries_; } else { return 0L; } }
       set {
@@ -2630,11 +2879,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "organic_queries" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasOrganicQueries {
       get { return (_hasBits3 & 16) != 0; }
     }
     /// <summary>Clears the value of the "organic_queries" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOrganicQueries() {
       _hasBits3 &= ~16;
     }
@@ -2647,6 +2898,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// site before). Imported from Google Analytics.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PercentNewVisitors {
       get { if ((_hasBits3 & 32) != 0) { return percentNewVisitors_; } else { return 0D; } }
       set {
@@ -2656,11 +2908,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "percent_new_visitors" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasPercentNewVisitors {
       get { return (_hasBits3 & 32) != 0; }
     }
     /// <summary>Clears the value of the "percent_new_visitors" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearPercentNewVisitors() {
       _hasBits3 &= ~32;
     }
@@ -2672,6 +2926,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Number of offline phone calls.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long PhoneCalls {
       get { if ((_hasBits3 & 64) != 0) { return phoneCalls_; } else { return 0L; } }
       set {
@@ -2681,11 +2936,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "phone_calls" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasPhoneCalls {
       get { return (_hasBits3 & 64) != 0; }
     }
     /// <summary>Clears the value of the "phone_calls" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearPhoneCalls() {
       _hasBits3 &= ~64;
     }
@@ -2697,6 +2954,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Number of offline phone impressions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long PhoneImpressions {
       get { if ((_hasBits3 & 128) != 0) { return phoneImpressions_; } else { return 0L; } }
       set {
@@ -2706,11 +2964,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "phone_impressions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasPhoneImpressions {
       get { return (_hasBits3 & 128) != 0; }
     }
     /// <summary>Clears the value of the "phone_impressions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearPhoneImpressions() {
       _hasBits3 &= ~128;
     }
@@ -2723,6 +2983,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// times your phone number is shown (phone_impressions).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double PhoneThroughRate {
       get { if ((_hasBits3 & 256) != 0) { return phoneThroughRate_; } else { return 0D; } }
       set {
@@ -2732,11 +2993,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "phone_through_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasPhoneThroughRate {
       get { return (_hasBits3 & 256) != 0; }
     }
     /// <summary>Clears the value of the "phone_through_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearPhoneThroughRate() {
       _hasBits3 &= ~256;
     }
@@ -2750,6 +3013,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// perform on Display Network sites compared to other ads on the same sites.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double RelativeCtr {
       get { if ((_hasBits3 & 512) != 0) { return relativeCtr_; } else { return 0D; } }
       set {
@@ -2759,11 +3023,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "relative_ctr" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasRelativeCtr {
       get { return (_hasBits3 & 512) != 0; }
     }
     /// <summary>Clears the value of the "relative_ctr" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearRelativeCtr() {
       _hasBits3 &= ~512;
     }
@@ -2778,6 +3044,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// for details. Any value below 0.1 is reported as 0.0999.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchAbsoluteTopImpressionShare {
       get { if ((_hasBits0 & 32) != 0) { return searchAbsoluteTopImpressionShare_; } else { return 0D; } }
       set {
@@ -2787,11 +3054,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_absolute_top_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchAbsoluteTopImpressionShare {
       get { return (_hasBits0 & 32) != 0; }
     }
     /// <summary>Clears the value of the "search_absolute_top_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchAbsoluteTopImpressionShare() {
       _hasBits0 &= ~32;
     }
@@ -2806,6 +3075,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// 0.9. Any value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchBudgetLostAbsoluteTopImpressionShare {
       get { if ((_hasBits0 & 64) != 0) { return searchBudgetLostAbsoluteTopImpressionShare_; } else { return 0D; } }
       set {
@@ -2815,11 +3085,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_budget_lost_absolute_top_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchBudgetLostAbsoluteTopImpressionShare {
       get { return (_hasBits0 & 64) != 0; }
     }
     /// <summary>Clears the value of the "search_budget_lost_absolute_top_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchBudgetLostAbsoluteTopImpressionShare() {
       _hasBits0 &= ~64;
     }
@@ -2834,6 +3106,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchBudgetLostImpressionShare {
       get { if ((_hasBits0 & 128) != 0) { return searchBudgetLostImpressionShare_; } else { return 0D; } }
       set {
@@ -2843,11 +3116,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_budget_lost_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchBudgetLostImpressionShare {
       get { return (_hasBits0 & 128) != 0; }
     }
     /// <summary>Clears the value of the "search_budget_lost_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchBudgetLostImpressionShare() {
       _hasBits0 &= ~128;
     }
@@ -2862,6 +3137,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchBudgetLostTopImpressionShare {
       get { if ((_hasBits0 & 256) != 0) { return searchBudgetLostTopImpressionShare_; } else { return 0D; } }
       set {
@@ -2871,11 +3147,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_budget_lost_top_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchBudgetLostTopImpressionShare {
       get { return (_hasBits0 & 256) != 0; }
     }
     /// <summary>Clears the value of the "search_budget_lost_top_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchBudgetLostTopImpressionShare() {
       _hasBits0 &= ~256;
     }
@@ -2890,6 +3168,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// below 0.1 is reported as 0.0999.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchClickShare {
       get { if ((_hasBits0 & 512) != 0) { return searchClickShare_; } else { return 0D; } }
       set {
@@ -2899,11 +3178,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_click_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchClickShare {
       get { return (_hasBits0 & 512) != 0; }
     }
     /// <summary>Clears the value of the "search_click_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchClickShare() {
       _hasBits0 &= ~512;
     }
@@ -2920,6 +3201,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// is reported as 0.0999.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchExactMatchImpressionShare {
       get { if ((_hasBits0 & 1024) != 0) { return searchExactMatchImpressionShare_; } else { return 0D; } }
       set {
@@ -2929,11 +3211,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_exact_match_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchExactMatchImpressionShare {
       get { return (_hasBits0 & 1024) != 0; }
     }
     /// <summary>Clears the value of the "search_exact_match_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchExactMatchImpressionShare() {
       _hasBits0 &= ~1024;
     }
@@ -2948,6 +3232,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// value below 0.1 is reported as 0.0999.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchImpressionShare {
       get { if ((_hasBits0 & 2048) != 0) { return searchImpressionShare_; } else { return 0D; } }
       set {
@@ -2957,11 +3242,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchImpressionShare {
       get { return (_hasBits0 & 2048) != 0; }
     }
     /// <summary>Clears the value of the "search_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchImpressionShare() {
       _hasBits0 &= ~2048;
     }
@@ -2976,6 +3263,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchRankLostAbsoluteTopImpressionShare {
       get { if ((_hasBits0 & 4096) != 0) { return searchRankLostAbsoluteTopImpressionShare_; } else { return 0D; } }
       set {
@@ -2985,11 +3273,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_rank_lost_absolute_top_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchRankLostAbsoluteTopImpressionShare {
       get { return (_hasBits0 & 4096) != 0; }
     }
     /// <summary>Clears the value of the "search_rank_lost_absolute_top_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchRankLostAbsoluteTopImpressionShare() {
       _hasBits0 &= ~4096;
     }
@@ -3004,6 +3294,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// 0.9. Any value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchRankLostImpressionShare {
       get { if ((_hasBits0 & 8192) != 0) { return searchRankLostImpressionShare_; } else { return 0D; } }
       set {
@@ -3013,11 +3304,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_rank_lost_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchRankLostImpressionShare {
       get { return (_hasBits0 & 8192) != 0; }
     }
     /// <summary>Clears the value of the "search_rank_lost_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchRankLostImpressionShare() {
       _hasBits0 &= ~8192;
     }
@@ -3032,6 +3325,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// to 0.9. Any value above 0.9 is reported as 0.9001.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchRankLostTopImpressionShare {
       get { if ((_hasBits0 & 16384) != 0) { return searchRankLostTopImpressionShare_; } else { return 0D; } }
       set {
@@ -3041,11 +3335,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_rank_lost_top_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchRankLostTopImpressionShare {
       get { return (_hasBits0 & 16384) != 0; }
     }
     /// <summary>Clears the value of the "search_rank_lost_top_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchRankLostTopImpressionShare() {
       _hasBits0 &= ~16384;
     }
@@ -3061,6 +3357,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// value below 0.1 is reported as 0.0999.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double SearchTopImpressionShare {
       get { if ((_hasBits0 & 32768) != 0) { return searchTopImpressionShare_; } else { return 0D; } }
       set {
@@ -3070,11 +3367,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "search_top_impression_share" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSearchTopImpressionShare {
       get { return (_hasBits0 & 32768) != 0; }
     }
     /// <summary>Clears the value of the "search_top_impression_share" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSearchTopImpressionShare() {
       _hasBits0 &= ~32768;
     }
@@ -3087,6 +3386,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The score is a range from 1 to 10, 10 being the fastest.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long SpeedScore {
       get { if ((_hasBits0 & 65536) != 0) { return speedScore_; } else { return 0L; } }
       set {
@@ -3096,11 +3396,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "speed_score" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasSpeedScore {
       get { return (_hasBits0 & 65536) != 0; }
     }
     /// <summary>Clears the value of the "speed_score" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSpeedScore() {
       _hasBits0 &= ~65536;
     }
@@ -3113,6 +3415,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// organic search results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double TopImpressionPercentage {
       get { if ((_hasBits0 & 131072) != 0) { return topImpressionPercentage_; } else { return 0D; } }
       set {
@@ -3122,11 +3425,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "top_impression_percentage" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasTopImpressionPercentage {
       get { return (_hasBits0 & 131072) != 0; }
     }
     /// <summary>Clears the value of the "top_impression_percentage" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearTopImpressionPercentage() {
       _hasBits0 &= ~131072;
     }
@@ -3139,6 +3444,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// that reach a valid AMP page.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ValidAcceleratedMobilePagesClicksPercentage {
       get { if ((_hasBits0 & 262144) != 0) { return validAcceleratedMobilePagesClicksPercentage_; } else { return 0D; } }
       set {
@@ -3148,11 +3454,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "valid_accelerated_mobile_pages_clicks_percentage" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasValidAcceleratedMobilePagesClicksPercentage {
       get { return (_hasBits0 & 262144) != 0; }
     }
     /// <summary>Clears the value of the "valid_accelerated_mobile_pages_clicks_percentage" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearValidAcceleratedMobilePagesClicksPercentage() {
       _hasBits0 &= ~262144;
     }
@@ -3164,6 +3472,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The value of all conversions divided by the number of all conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ValuePerAllConversions {
       get { if ((_hasBits0 & 524288) != 0) { return valuePerAllConversions_; } else { return 0D; } }
       set {
@@ -3173,11 +3482,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "value_per_all_conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasValuePerAllConversions {
       get { return (_hasBits0 & 524288) != 0; }
     }
     /// <summary>Clears the value of the "value_per_all_conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearValuePerAllConversions() {
       _hasBits0 &= ~524288;
     }
@@ -3192,6 +3503,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// at https://support.google.com/google-ads/answer/9549009.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ValuePerAllConversionsByConversionDate {
       get { if ((_hasBits3 & 1024) != 0) { return valuePerAllConversionsByConversionDate_; } else { return 0D; } }
       set {
@@ -3201,11 +3513,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "value_per_all_conversions_by_conversion_date" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasValuePerAllConversionsByConversionDate {
       get { return (_hasBits3 & 1024) != 0; }
     }
     /// <summary>Clears the value of the "value_per_all_conversions_by_conversion_date" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearValuePerAllConversionsByConversionDate() {
       _hasBits3 &= ~1024;
     }
@@ -3220,6 +3534,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// will optimize for these conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ValuePerConversion {
       get { if ((_hasBits0 & 1048576) != 0) { return valuePerConversion_; } else { return 0D; } }
       set {
@@ -3229,11 +3544,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "value_per_conversion" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasValuePerConversion {
       get { return (_hasBits0 & 1048576) != 0; }
     }
     /// <summary>Clears the value of the "value_per_conversion" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearValuePerConversion() {
       _hasBits0 &= ~1048576;
     }
@@ -3251,6 +3568,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// https://support.google.com/google-ads/answer/9549009.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ValuePerConversionsByConversionDate {
       get { if ((_hasBits3 & 2048) != 0) { return valuePerConversionsByConversionDate_; } else { return 0D; } }
       set {
@@ -3260,11 +3578,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "value_per_conversions_by_conversion_date" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasValuePerConversionsByConversionDate {
       get { return (_hasBits3 & 2048) != 0; }
     }
     /// <summary>Clears the value of the "value_per_conversions_by_conversion_date" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearValuePerConversionsByConversionDate() {
       _hasBits3 &= ~2048;
     }
@@ -3280,6 +3600,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double ValuePerCurrentModelAttributedConversion {
       get { if ((_hasBits0 & 2097152) != 0) { return valuePerCurrentModelAttributedConversion_; } else { return 0D; } }
       set {
@@ -3289,11 +3610,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "value_per_current_model_attributed_conversion" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasValuePerCurrentModelAttributedConversion {
       get { return (_hasBits0 & 2097152) != 0; }
     }
     /// <summary>Clears the value of the "value_per_current_model_attributed_conversion" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearValuePerCurrentModelAttributedConversion() {
       _hasBits0 &= ~2097152;
     }
@@ -3305,6 +3628,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Percentage of impressions where the viewer watched all of your video.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double VideoQuartileP100Rate {
       get { if ((_hasBits0 & 2) != 0) { return videoQuartileP100Rate_; } else { return 0D; } }
       set {
@@ -3314,11 +3638,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "video_quartile_p100_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasVideoQuartileP100Rate {
       get { return (_hasBits0 & 2) != 0; }
     }
     /// <summary>Clears the value of the "video_quartile_p100_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVideoQuartileP100Rate() {
       _hasBits0 &= ~2;
     }
@@ -3330,6 +3656,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Percentage of impressions where the viewer watched 25% of your video.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double VideoQuartileP25Rate {
       get { if ((_hasBits0 & 4) != 0) { return videoQuartileP25Rate_; } else { return 0D; } }
       set {
@@ -3339,11 +3666,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "video_quartile_p25_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasVideoQuartileP25Rate {
       get { return (_hasBits0 & 4) != 0; }
     }
     /// <summary>Clears the value of the "video_quartile_p25_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVideoQuartileP25Rate() {
       _hasBits0 &= ~4;
     }
@@ -3355,6 +3684,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Percentage of impressions where the viewer watched 50% of your video.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double VideoQuartileP50Rate {
       get { if ((_hasBits0 & 8) != 0) { return videoQuartileP50Rate_; } else { return 0D; } }
       set {
@@ -3364,11 +3694,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "video_quartile_p50_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasVideoQuartileP50Rate {
       get { return (_hasBits0 & 8) != 0; }
     }
     /// <summary>Clears the value of the "video_quartile_p50_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVideoQuartileP50Rate() {
       _hasBits0 &= ~8;
     }
@@ -3380,6 +3712,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// Percentage of impressions where the viewer watched 75% of your video.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double VideoQuartileP75Rate {
       get { if ((_hasBits0 & 16) != 0) { return videoQuartileP75Rate_; } else { return 0D; } }
       set {
@@ -3389,11 +3722,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "video_quartile_p75_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasVideoQuartileP75Rate {
       get { return (_hasBits0 & 16) != 0; }
     }
     /// <summary>Clears the value of the "video_quartile_p75_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVideoQuartileP75Rate() {
       _hasBits0 &= ~16;
     }
@@ -3407,6 +3742,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// ads.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double VideoViewRate {
       get { if ((_hasBits0 & 4194304) != 0) { return videoViewRate_; } else { return 0D; } }
       set {
@@ -3416,11 +3752,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "video_view_rate" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasVideoViewRate {
       get { return (_hasBits0 & 4194304) != 0; }
     }
     /// <summary>Clears the value of the "video_view_rate" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVideoViewRate() {
       _hasBits0 &= ~4194304;
     }
@@ -3432,6 +3770,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The number of times your video ads were viewed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long VideoViews {
       get { if ((_hasBits0 & 8388608) != 0) { return videoViews_; } else { return 0L; } }
       set {
@@ -3441,11 +3780,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "video_views" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasVideoViews {
       get { return (_hasBits0 & 8388608) != 0; }
     }
     /// <summary>Clears the value of the "video_views" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearVideoViews() {
       _hasBits0 &= ~8388608;
     }
@@ -3460,6 +3801,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// clicking on) another ad.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ViewThroughConversions {
       get { if ((_hasBits0 & 16777216) != 0) { return viewThroughConversions_; } else { return 0L; } }
       set {
@@ -3469,11 +3811,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
     /// <summary>Gets whether the "view_through_conversions" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasViewThroughConversions {
       get { return (_hasBits0 & 16777216) != 0; }
     }
     /// <summary>Clears the value of the "view_through_conversions" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearViewThroughConversions() {
       _hasBits0 &= ~16777216;
     }
@@ -3485,6 +3829,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     /// The number of iOS Store Kit Ad Network conversions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long SkAdNetworkConversions {
       get { return skAdNetworkConversions_; }
       set {
@@ -3493,11 +3838,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Metrics);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Metrics other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3628,6 +3975,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (HasAbsoluteTopImpressionPercentage) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(AbsoluteTopImpressionPercentage);
@@ -3756,11 +4104,13 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4246,6 +4596,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (HistoricalCreativeQualityScore != global::Google.Ads.GoogleAds.V7.Enums.QualityScoreBucketEnum.Types.QualityScoreBucket.Unspecified) {
         output.WriteRawTag(128, 5);
@@ -4727,6 +5078,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (HasAbsoluteTopImpressionPercentage) {
@@ -5091,6 +5443,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Metrics other) {
       if (other == null) {
         return;
@@ -5454,6 +5807,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5948,6 +6302,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

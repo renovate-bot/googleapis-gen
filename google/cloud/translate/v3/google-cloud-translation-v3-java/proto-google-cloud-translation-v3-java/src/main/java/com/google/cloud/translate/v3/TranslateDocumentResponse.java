@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
     if (glossaryDocumentTranslation_ != null) {
       output.writeMessage(2, getGlossaryDocumentTranslation());
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
     if (glossaryConfig_ != null) {
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getGlossaryDocumentTranslation());
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
     if (glossaryConfig_ != null) {

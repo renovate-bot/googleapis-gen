@@ -14,7 +14,7 @@ public interface DimensionCompatibilityOrBuilder extends
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    * @return Whether the dimensionMetadata field is set.
    */
   boolean hasDimensionMetadata();
@@ -25,7 +25,7 @@ public interface DimensionCompatibilityOrBuilder extends
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    * @return The dimensionMetadata.
    */
   com.google.analytics.data.v1beta.DimensionMetadata getDimensionMetadata();
@@ -36,7 +36,7 @@ public interface DimensionCompatibilityOrBuilder extends
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    */
   com.google.analytics.data.v1beta.DimensionMetadataOrBuilder getDimensionMetadataOrBuilder();
 
@@ -46,7 +46,7 @@ public interface DimensionCompatibilityOrBuilder extends
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return Whether the compatibility field is set.
    */
   boolean hasCompatibility();
@@ -56,7 +56,7 @@ public interface DimensionCompatibilityOrBuilder extends
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The enum numeric value on the wire for compatibility.
    */
   int getCompatibilityValue();
@@ -66,7 +66,7 @@ public interface DimensionCompatibilityOrBuilder extends
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The compatibility.
    */
   com.google.analytics.data.v1beta.Compatibility getCompatibility();

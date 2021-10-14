@@ -20,14 +20,14 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * This string must not be empty, and the length of this string should
      * be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string link_text = 9;</code>
+     * Generated from protobuf field <code>optional string link_text = 9;</code>
      */
     protected $link_text = null;
     /**
      * The store-specific ID for the target application.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string app_id = 10;</code>
+     * Generated from protobuf field <code>optional string app_id = 10;</code>
      */
     protected $app_id = null;
     /**
@@ -53,7 +53,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL. Default value is "{lpurl}".
      *
-     * Generated from protobuf field <code>string tracking_url_template = 13;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 13;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -67,7 +67,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 14;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 14;</code>
      */
     protected $final_url_suffix = null;
 
@@ -112,7 +112,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * This string must not be empty, and the length of this string should
      * be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string link_text = 9;</code>
+     * Generated from protobuf field <code>optional string link_text = 9;</code>
      * @return string
      */
     public function getLinkText()
@@ -135,7 +135,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * This string must not be empty, and the length of this string should
      * be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string link_text = 9;</code>
+     * Generated from protobuf field <code>optional string link_text = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * The store-specific ID for the target application.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string app_id = 10;</code>
+     * Generated from protobuf field <code>optional string app_id = 10;</code>
      * @return string
      */
     public function getAppId()
@@ -173,7 +173,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * The store-specific ID for the target application.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string app_id = 10;</code>
+     * Generated from protobuf field <code>optional string app_id = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -270,7 +270,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL. Default value is "{lpurl}".
      *
-     * Generated from protobuf field <code>string tracking_url_template = 13;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 13;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -291,7 +291,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL. Default value is "{lpurl}".
      *
-     * Generated from protobuf field <code>string tracking_url_template = 13;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -335,7 +335,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 14;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 14;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -357,7 +357,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 14;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 14;</code>
      * @param string $var
      * @return $this
      */

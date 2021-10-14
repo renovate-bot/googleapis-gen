@@ -285,7 +285,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSoftwareConfig()
     {
-        return isset($this->software_config) ? $this->software_config : null;
+        return $this->software_config;
     }
 
     public function hasSoftwareConfig()
@@ -321,7 +321,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getNodeConfig()
     {
-        return isset($this->node_config) ? $this->node_config : null;
+        return $this->node_config;
     }
 
     public function hasNodeConfig()
@@ -357,7 +357,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getPrivateEnvironmentConfig()
     {
-        return isset($this->private_environment_config) ? $this->private_environment_config : null;
+        return $this->private_environment_config;
     }
 
     public function hasPrivateEnvironmentConfig()
@@ -394,7 +394,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getWebServerNetworkAccessControl()
     {
-        return isset($this->web_server_network_access_control) ? $this->web_server_network_access_control : null;
+        return $this->web_server_network_access_control;
     }
 
     public function hasWebServerNetworkAccessControl()
@@ -432,7 +432,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getDatabaseConfig()
     {
-        return isset($this->database_config) ? $this->database_config : null;
+        return $this->database_config;
     }
 
     public function hasDatabaseConfig()
@@ -469,7 +469,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getWebServerConfig()
     {
-        return isset($this->web_server_config) ? $this->web_server_config : null;
+        return $this->web_server_config;
     }
 
     public function hasWebServerConfig()
@@ -536,7 +536,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionConfig()
     {
-        return isset($this->encryption_config) ? $this->encryption_config : null;
+        return $this->encryption_config;
     }
 
     public function hasEncryptionConfig()
@@ -583,7 +583,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getMaintenanceWindow()
     {
-        return isset($this->maintenance_window) ? $this->maintenance_window : null;
+        return $this->maintenance_window;
     }
 
     public function hasMaintenanceWindow()
@@ -633,7 +633,7 @@ class EnvironmentConfig extends \Google\Protobuf\Internal\Message
      */
     public function getWorkloadsConfig()
     {
-        return isset($this->workloads_config) ? $this->workloads_config : null;
+        return $this->workloads_config;
     }
 
     public function hasWorkloadsConfig()

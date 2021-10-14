@@ -414,7 +414,7 @@ private static final long serialVersionUID = 0L;
     if (code_ != google.maps.fleetengine.v1.Status.Code.UNSPECIFIED.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     for (int i = 0; i < details_.size(); i++) {
@@ -433,7 +433,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     for (int i = 0; i < details_.size(); i++) {

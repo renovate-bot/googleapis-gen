@@ -1139,13 +1139,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!getDatasetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, datasetId_);
     }
     if (createTime_ != null) {
@@ -1154,7 +1154,7 @@ private static final long serialVersionUID = 0L;
     if (deploymentState_ != com.google.cloud.automl.v1.Model.DeploymentState.DEPLOYMENT_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, deploymentState_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, etag_);
     }
     if (updateTime_ != null) {
@@ -1193,13 +1193,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!getDatasetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, datasetId_);
     }
     if (createTime_ != null) {
@@ -1210,7 +1210,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, deploymentState_);
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, etag_);
     }
     if (updateTime_ != null) {

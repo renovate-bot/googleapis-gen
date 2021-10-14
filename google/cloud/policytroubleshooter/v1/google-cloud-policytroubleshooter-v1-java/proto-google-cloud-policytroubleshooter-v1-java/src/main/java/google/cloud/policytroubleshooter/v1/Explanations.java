@@ -713,13 +713,13 @@ public final class Explanations {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPrincipalBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(principal_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, principal_);
       }
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fullResourceName_);
       }
-      if (!getPermissionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(permission_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, permission_);
       }
       unknownFields.writeTo(output);
@@ -731,13 +731,13 @@ public final class Explanations {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPrincipalBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(principal_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, principal_);
       }
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fullResourceName_);
       }
-      if (!getPermissionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(permission_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, permission_);
       }
       size += unknownFields.getSerializedSize();
@@ -2015,7 +2015,7 @@ public final class Explanations {
       if (access_ != google.cloud.policytroubleshooter.v1.Explanations.AccessState.ACCESS_STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, access_);
       }
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fullResourceName_);
       }
       if (policy_ != null) {
@@ -2040,7 +2040,7 @@ public final class Explanations {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, access_);
       }
-      if (!getFullResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fullResourceName_);
       }
       if (policy_ != null) {
@@ -5236,7 +5236,7 @@ public final class Explanations {
       if (access_ != google.cloud.policytroubleshooter.v1.Explanations.AccessState.ACCESS_STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, access_);
       }
-      if (!getRoleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role_);
       }
       if (rolePermission_ != google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission.ROLE_PERMISSION_UNSPECIFIED.getNumber()) {
@@ -5270,7 +5270,7 @@ public final class Explanations {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, access_);
       }
-      if (!getRoleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role_);
       }
       if (rolePermission_ != google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.RolePermission.ROLE_PERMISSION_UNSPECIFIED.getNumber()) {

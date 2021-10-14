@@ -268,7 +268,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      */
     public function getFullTextAnnotation()
     {
-        return isset($this->full_text_annotation) ? $this->full_text_annotation : null;
+        return $this->full_text_annotation;
     }
 
     public function hasFullTextAnnotation()
@@ -307,7 +307,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      */
     public function getSafeSearchAnnotation()
     {
-        return isset($this->safe_search_annotation) ? $this->safe_search_annotation : null;
+        return $this->safe_search_annotation;
     }
 
     public function hasSafeSearchAnnotation()
@@ -343,7 +343,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      */
     public function getImagePropertiesAnnotation()
     {
-        return isset($this->image_properties_annotation) ? $this->image_properties_annotation : null;
+        return $this->image_properties_annotation;
     }
 
     public function hasImagePropertiesAnnotation()
@@ -379,7 +379,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      */
     public function getCropHintsAnnotation()
     {
-        return isset($this->crop_hints_annotation) ? $this->crop_hints_annotation : null;
+        return $this->crop_hints_annotation;
     }
 
     public function hasCropHintsAnnotation()
@@ -415,7 +415,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      */
     public function getWebDetection()
     {
-        return isset($this->web_detection) ? $this->web_detection : null;
+        return $this->web_detection;
     }
 
     public function hasWebDetection()
@@ -453,7 +453,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()

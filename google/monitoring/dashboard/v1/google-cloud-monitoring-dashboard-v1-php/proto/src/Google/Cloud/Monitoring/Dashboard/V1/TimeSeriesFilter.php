@@ -106,7 +106,7 @@ class TimeSeriesFilter extends \Google\Protobuf\Internal\Message
      */
     public function getAggregation()
     {
-        return isset($this->aggregation) ? $this->aggregation : null;
+        return $this->aggregation;
     }
 
     public function hasAggregation()
@@ -144,7 +144,7 @@ class TimeSeriesFilter extends \Google\Protobuf\Internal\Message
      */
     public function getSecondaryAggregation()
     {
-        return isset($this->secondary_aggregation) ? $this->secondary_aggregation : null;
+        return $this->secondary_aggregation;
     }
 
     public function hasSecondaryAggregation()

@@ -22,7 +22,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $merchant_id = null;
     /**
@@ -31,7 +31,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $sales_country = null;
     /**
@@ -42,13 +42,13 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is optional for Smart Shopping campaigns, but must be equal to
      * 3 if set.
      *
-     * Generated from protobuf field <code>int32 campaign_priority = 7;</code>
+     * Generated from protobuf field <code>optional int32 campaign_priority = 7;</code>
      */
     protected $campaign_priority = null;
     /**
      * Whether to include local products.
      *
-     * Generated from protobuf field <code>bool enable_local = 8;</code>
+     * Generated from protobuf field <code>optional bool enable_local = 8;</code>
      */
     protected $enable_local = null;
 
@@ -88,7 +88,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getMerchantId()
@@ -111,7 +111,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */
@@ -129,7 +129,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getSalesCountry()
@@ -153,7 +153,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is optional for Smart Shopping campaigns, but must be equal to
      * 3 if set.
      *
-     * Generated from protobuf field <code>int32 campaign_priority = 7;</code>
+     * Generated from protobuf field <code>optional int32 campaign_priority = 7;</code>
      * @return int
      */
     public function getCampaignPriority()
@@ -199,7 +199,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * This field is optional for Smart Shopping campaigns, but must be equal to
      * 3 if set.
      *
-     * Generated from protobuf field <code>int32 campaign_priority = 7;</code>
+     * Generated from protobuf field <code>optional int32 campaign_priority = 7;</code>
      * @param int $var
      * @return $this
      */
@@ -214,7 +214,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether to include local products.
      *
-     * Generated from protobuf field <code>bool enable_local = 8;</code>
+     * Generated from protobuf field <code>optional bool enable_local = 8;</code>
      * @return bool
      */
     public function getEnableLocal()
@@ -235,7 +235,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether to include local products.
      *
-     * Generated from protobuf field <code>bool enable_local = 8;</code>
+     * Generated from protobuf field <code>optional bool enable_local = 8;</code>
      * @param bool $var
      * @return $this
      */

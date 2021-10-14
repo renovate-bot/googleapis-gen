@@ -26,26 +26,26 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ISO 4217 three-letter currency code, e.g. "USD"
      *
-     * Generated from protobuf field <code>string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $code = null;
     /**
      * Output only. Full English name of the currency.
      *
-     * Generated from protobuf field <code>string name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
      * Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
      *
-     * Generated from protobuf field <code>string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $symbol = null;
     /**
      * Output only. The billable unit for this currency. Billed amounts should be multiples of
      * this value.
      *
-     * Generated from protobuf field <code>int64 billable_unit_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 billable_unit_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $billable_unit_micros = null;
 
@@ -108,7 +108,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ISO 4217 three-letter currency code, e.g. "USD"
      *
-     * Generated from protobuf field <code>string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCode()
@@ -129,7 +129,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ISO 4217 three-letter currency code, e.g. "USD"
      *
-     * Generated from protobuf field <code>string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Full English name of the currency.
      *
-     * Generated from protobuf field <code>string name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -165,7 +165,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Full English name of the currency.
      *
-     * Generated from protobuf field <code>string name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -180,7 +180,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
      *
-     * Generated from protobuf field <code>string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getSymbol()
@@ -201,7 +201,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Standard symbol for describing this currency, e.g. '$' for US Dollars.
      *
-     * Generated from protobuf field <code>string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string symbol = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -217,7 +217,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
      * Output only. The billable unit for this currency. Billed amounts should be multiples of
      * this value.
      *
-     * Generated from protobuf field <code>int64 billable_unit_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 billable_unit_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getBillableUnitMicros()
@@ -239,7 +239,7 @@ class CurrencyConstant extends \Google\Protobuf\Internal\Message
      * Output only. The billable unit for this currency. Billed amounts should be multiples of
      * this value.
      *
-     * Generated from protobuf field <code>int64 billable_unit_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 billable_unit_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

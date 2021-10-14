@@ -143,7 +143,7 @@ class FacetSpec extends \Google\Protobuf\Internal\Message
      */
     public function getFacetKey()
     {
-        return isset($this->facet_key) ? $this->facet_key : null;
+        return $this->facet_key;
     }
 
     public function hasFacetKey()

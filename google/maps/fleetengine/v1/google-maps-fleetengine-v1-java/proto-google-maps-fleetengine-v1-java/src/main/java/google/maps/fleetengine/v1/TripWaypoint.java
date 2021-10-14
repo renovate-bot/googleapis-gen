@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
     if (location_ != null) {
       output.writeMessage(1, getLocation());
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tripId_);
     }
     if (waypointType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getLocation());
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tripId_);
     }
     if (waypointType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {

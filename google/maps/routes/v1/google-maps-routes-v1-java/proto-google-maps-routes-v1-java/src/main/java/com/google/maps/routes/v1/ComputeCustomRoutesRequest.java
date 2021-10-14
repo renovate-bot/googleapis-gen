@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
     if (departureTime_ != null) {
       output.writeMessage(7, getDepartureTime());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, languageCode_);
     }
     if (units_ != com.google.maps.routes.v1.Units.UNITS_UNSPECIFIED.getNumber()) {
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getDepartureTime());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, languageCode_);
     }
     if (units_ != com.google.maps.routes.v1.Units.UNITS_UNSPECIFIED.getNumber()) {

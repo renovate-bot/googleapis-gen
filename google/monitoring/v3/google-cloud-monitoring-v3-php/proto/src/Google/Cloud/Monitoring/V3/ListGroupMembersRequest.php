@@ -226,7 +226,7 @@ class ListGroupMembersRequest extends \Google\Protobuf\Internal\Message
      */
     public function getInterval()
     {
-        return isset($this->interval) ? $this->interval : null;
+        return $this->interval;
     }
 
     public function hasInterval()

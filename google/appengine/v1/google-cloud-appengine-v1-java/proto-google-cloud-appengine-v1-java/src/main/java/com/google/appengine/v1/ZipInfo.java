@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSourceUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceUrl_);
     }
     if (filesCount_ != 0) {
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSourceUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceUrl_);
     }
     if (filesCount_ != 0) {

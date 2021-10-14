@@ -234,7 +234,7 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
      */
     public function getRelationshipDetails()
     {
-        return isset($this->relationship_details) ? $this->relationship_details : null;
+        return $this->relationship_details;
     }
 
     public function hasRelationshipDetails()
@@ -274,7 +274,7 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
      */
     public function getLookupDetails()
     {
-        return isset($this->lookup_details) ? $this->lookup_details : null;
+        return $this->lookup_details;
     }
 
     public function hasLookupDetails()

@@ -18,7 +18,7 @@ class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Value of the id.
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>optional string value = 2;</code>
      */
     protected $value = null;
 
@@ -40,7 +40,7 @@ class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Value of the id.
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>optional string value = 2;</code>
      * @return string
      */
     public function getValue()
@@ -61,7 +61,7 @@ class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Value of the id.
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>optional string value = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -18,7 +18,7 @@ class LocationInfo extends \Google\Protobuf\Internal\Message
     /**
      * The geo target constant resource name.
      *
-     * Generated from protobuf field <code>string geo_target_constant = 2;</code>
+     * Generated from protobuf field <code>optional string geo_target_constant = 2;</code>
      */
     protected $geo_target_constant = null;
 
@@ -40,7 +40,7 @@ class LocationInfo extends \Google\Protobuf\Internal\Message
     /**
      * The geo target constant resource name.
      *
-     * Generated from protobuf field <code>string geo_target_constant = 2;</code>
+     * Generated from protobuf field <code>optional string geo_target_constant = 2;</code>
      * @return string
      */
     public function getGeoTargetConstant()
@@ -61,7 +61,7 @@ class LocationInfo extends \Google\Protobuf\Internal\Message
     /**
      * The geo target constant resource name.
      *
-     * Generated from protobuf field <code>string geo_target_constant = 2;</code>
+     * Generated from protobuf field <code>optional string geo_target_constant = 2;</code>
      * @param string $var
      * @return $this
      */

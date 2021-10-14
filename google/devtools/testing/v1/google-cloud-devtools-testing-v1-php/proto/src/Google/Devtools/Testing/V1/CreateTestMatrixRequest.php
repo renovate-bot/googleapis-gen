@@ -95,7 +95,7 @@ class CreateTestMatrixRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTestMatrix()
     {
-        return isset($this->test_matrix) ? $this->test_matrix : null;
+        return $this->test_matrix;
     }
 
     public function hasTestMatrix()

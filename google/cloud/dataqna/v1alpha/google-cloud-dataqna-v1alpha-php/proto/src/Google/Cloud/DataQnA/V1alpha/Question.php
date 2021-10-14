@@ -276,7 +276,7 @@ class Question extends \Google\Protobuf\Internal\Message
      */
     public function getInterpretError()
     {
-        return isset($this->interpret_error) ? $this->interpret_error : null;
+        return $this->interpret_error;
     }
 
     public function hasInterpretError()
@@ -343,7 +343,7 @@ class Question extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -405,7 +405,7 @@ class Question extends \Google\Protobuf\Internal\Message
      */
     public function getDebugFlags()
     {
-        return isset($this->debug_flags) ? $this->debug_flags : null;
+        return $this->debug_flags;
     }
 
     public function hasDebugFlags()
@@ -444,7 +444,7 @@ class Question extends \Google\Protobuf\Internal\Message
      */
     public function getDebugInfo()
     {
-        return isset($this->debug_info) ? $this->debug_info : null;
+        return $this->debug_info;
     }
 
     public function hasDebugInfo()

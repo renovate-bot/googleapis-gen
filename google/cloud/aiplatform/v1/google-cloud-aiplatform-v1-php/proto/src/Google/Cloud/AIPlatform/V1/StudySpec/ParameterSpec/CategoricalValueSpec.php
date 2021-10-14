@@ -28,7 +28,7 @@ class CategoricalValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>string default_value = 3;</code>
+     * Generated from protobuf field <code>optional string default_value = 3;</code>
      */
     protected $default_value = null;
 
@@ -86,7 +86,7 @@ class CategoricalValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>string default_value = 3;</code>
+     * Generated from protobuf field <code>optional string default_value = 3;</code>
      * @return string
      */
     public function getDefaultValue()
@@ -111,7 +111,7 @@ class CategoricalValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>string default_value = 3;</code>
+     * Generated from protobuf field <code>optional string default_value = 3;</code>
      * @param string $var
      * @return $this
      */

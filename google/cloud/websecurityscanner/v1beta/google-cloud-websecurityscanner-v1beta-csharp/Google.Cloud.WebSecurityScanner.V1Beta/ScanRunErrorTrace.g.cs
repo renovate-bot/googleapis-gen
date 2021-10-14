@@ -66,19 +66,23 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     private static readonly pb::MessageParser<ScanRunErrorTrace> _parser = new pb::MessageParser<ScanRunErrorTrace>(() => new ScanRunErrorTrace());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ScanRunErrorTrace> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.WebSecurityScanner.V1Beta.ScanRunErrorTraceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScanRunErrorTrace() {
       OnConstruction();
     }
@@ -86,6 +90,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScanRunErrorTrace(ScanRunErrorTrace other) : this() {
       code_ = other.code_;
       scanConfigError_ = other.scanConfigError_ != null ? other.scanConfigError_.Clone() : null;
@@ -94,6 +99,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScanRunErrorTrace Clone() {
       return new ScanRunErrorTrace(this);
     }
@@ -105,6 +111,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     /// Indicates the error reason code.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.WebSecurityScanner.V1Beta.ScanRunErrorTrace.Types.Code Code {
       get { return code_; }
       set {
@@ -121,6 +128,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     /// before each scan run.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.WebSecurityScanner.V1Beta.ScanConfigError ScanConfigError {
       get { return scanConfigError_; }
       set {
@@ -137,6 +145,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     /// 404, the scan has encountered too many NOT_FOUND responses.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int MostCommonHttpErrorCode {
       get { return mostCommonHttpErrorCode_; }
       set {
@@ -145,11 +154,13 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ScanRunErrorTrace);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ScanRunErrorTrace other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -164,6 +175,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Code != global::Google.Cloud.WebSecurityScanner.V1Beta.ScanRunErrorTrace.Types.Code.Unspecified) hash ^= Code.GetHashCode();
@@ -176,11 +188,13 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -205,6 +219,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Code != global::Google.Cloud.WebSecurityScanner.V1Beta.ScanRunErrorTrace.Types.Code.Unspecified) {
         output.WriteRawTag(8);
@@ -225,6 +240,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Code != global::Google.Cloud.WebSecurityScanner.V1Beta.ScanRunErrorTrace.Types.Code.Unspecified) {
@@ -243,6 +259,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ScanRunErrorTrace other) {
       if (other == null) {
         return;
@@ -263,6 +280,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -295,6 +313,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -325,6 +344,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta {
     #region Nested types
     /// <summary>Container for nested types declared in the ScanRunErrorTrace message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Output only.

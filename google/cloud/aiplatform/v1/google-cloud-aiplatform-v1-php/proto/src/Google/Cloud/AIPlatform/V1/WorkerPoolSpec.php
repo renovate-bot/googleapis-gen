@@ -128,7 +128,7 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      */
     public function getMachineSpec()
     {
-        return isset($this->machine_spec) ? $this->machine_spec : null;
+        return $this->machine_spec;
     }
 
     public function hasMachineSpec()
@@ -190,7 +190,7 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      */
     public function getDiskSpec()
     {
-        return isset($this->disk_spec) ? $this->disk_spec : null;
+        return $this->disk_spec;
     }
 
     public function hasDiskSpec()

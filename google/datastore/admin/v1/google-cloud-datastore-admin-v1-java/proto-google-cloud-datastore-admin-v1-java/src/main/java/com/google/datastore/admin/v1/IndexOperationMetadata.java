@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
     if (progressEntities_ != null) {
       output.writeMessage(2, getProgressEntities());
     }
-    if (!getIndexIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, indexId_);
     }
     unknownFields.writeTo(output);
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getProgressEntities());
     }
-    if (!getIndexIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indexId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, indexId_);
     }
     size += unknownFields.getSerializedSize();

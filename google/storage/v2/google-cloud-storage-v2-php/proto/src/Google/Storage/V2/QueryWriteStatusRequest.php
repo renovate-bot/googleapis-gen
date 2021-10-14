@@ -91,7 +91,7 @@ class QueryWriteStatusRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCommonObjectRequestParams()
     {
-        return isset($this->common_object_request_params) ? $this->common_object_request_params : null;
+        return $this->common_object_request_params;
     }
 
     public function hasCommonObjectRequestParams()
@@ -127,7 +127,7 @@ class QueryWriteStatusRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCommonRequestParams()
     {
-        return isset($this->common_request_params) ? $this->common_request_params : null;
+        return $this->common_request_params;
     }
 
     public function hasCommonRequestParams()

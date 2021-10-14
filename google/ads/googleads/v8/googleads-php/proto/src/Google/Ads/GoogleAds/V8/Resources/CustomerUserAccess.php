@@ -34,7 +34,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Output only. Email address of the user.
      * Read only field
      *
-     * Generated from protobuf field <code>string email_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string email_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $email_address = null;
     /**
@@ -49,14 +49,14 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string access_creation_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string access_creation_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $access_creation_date_time = null;
     /**
      * Output only. The email address of the inviter user.
      * Read only field
      *
-     * Generated from protobuf field <code>string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $inviter_user_email_address = null;
 
@@ -155,7 +155,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Output only. Email address of the user.
      * Read only field
      *
-     * Generated from protobuf field <code>string email_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string email_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEmailAddress()
@@ -177,7 +177,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Output only. Email address of the user.
      * Read only field
      *
-     * Generated from protobuf field <code>string email_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string email_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -221,7 +221,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string access_creation_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string access_creation_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getAccessCreationDateTime()
@@ -245,7 +245,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string access_creation_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string access_creation_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -261,7 +261,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Output only. The email address of the inviter user.
      * Read only field
      *
-     * Generated from protobuf field <code>string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getInviterUserEmailAddress()
@@ -283,7 +283,7 @@ class CustomerUserAccess extends \Google\Protobuf\Internal\Message
      * Output only. The email address of the inviter user.
      * Read only field
      *
-     * Generated from protobuf field <code>string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string inviter_user_email_address = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

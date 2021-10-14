@@ -654,10 +654,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getGkeClusterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gkeCluster_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gkeCluster_);
     }
-    if (!getDagGcsPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dagGcsPrefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dagGcsPrefix_);
     }
     if (nodeCount_ != 0) {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
     if (nodeConfig_ != null) {
       output.writeMessage(5, getNodeConfig());
     }
-    if (!getAirflowUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, airflowUri_);
     }
     if (privateEnvironmentConfig_ != null) {
@@ -696,10 +696,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getGkeClusterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gkeCluster_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gkeCluster_);
     }
-    if (!getDagGcsPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dagGcsPrefix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dagGcsPrefix_);
     }
     if (nodeCount_ != 0) {
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getNodeConfig());
     }
-    if (!getAirflowUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, airflowUri_);
     }
     if (privateEnvironmentConfig_ != null) {

@@ -48,7 +48,7 @@ class TextAdParameters extends \Google\Protobuf\Internal\Message
      */
     public function getAd()
     {
-        return isset($this->ad) ? $this->ad : null;
+        return $this->ad;
     }
 
     public function hasAd()

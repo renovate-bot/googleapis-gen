@@ -103,7 +103,7 @@ class MutateAccountLinkRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOperation()
     {
-        return isset($this->operation) ? $this->operation : null;
+        return $this->operation;
     }
 
     public function hasOperation()

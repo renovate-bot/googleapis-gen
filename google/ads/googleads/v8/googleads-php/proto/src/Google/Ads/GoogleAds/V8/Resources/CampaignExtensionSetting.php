@@ -35,7 +35,7 @@ class CampaignExtensionSetting extends \Google\Protobuf\Internal\Message
      * Campaign resource names have the form:
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
@@ -145,7 +145,7 @@ class CampaignExtensionSetting extends \Google\Protobuf\Internal\Message
      * Campaign resource names have the form:
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -169,7 +169,7 @@ class CampaignExtensionSetting extends \Google\Protobuf\Internal\Message
      * Campaign resource names have the form:
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

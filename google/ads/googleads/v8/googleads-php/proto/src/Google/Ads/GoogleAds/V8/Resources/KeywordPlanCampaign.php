@@ -27,13 +27,13 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     /**
      * The keyword plan this campaign belongs to.
      *
-     * Generated from protobuf field <code>string keyword_plan = 9 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan = 9 [(.google.api.resource_reference) = {</code>
      */
     protected $keyword_plan = null;
     /**
      * Output only. The ID of the Keyword Plan campaign.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -41,7 +41,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
      *
-     * Generated from protobuf field <code>string name = 11;</code>
+     * Generated from protobuf field <code>optional string name = 11;</code>
      */
     protected $name = null;
     /**
@@ -65,7 +65,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 13;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 13;</code>
      */
     protected $cpc_bid_micros = null;
     /**
@@ -149,7 +149,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     /**
      * The keyword plan this campaign belongs to.
      *
-     * Generated from protobuf field <code>string keyword_plan = 9 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan = 9 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getKeywordPlan()
@@ -170,7 +170,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     /**
      * The keyword plan this campaign belongs to.
      *
-     * Generated from protobuf field <code>string keyword_plan = 9 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan = 9 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the Keyword Plan campaign.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -206,7 +206,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the Keyword Plan campaign.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -223,7 +223,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
      *
-     * Generated from protobuf field <code>string name = 11;</code>
+     * Generated from protobuf field <code>optional string name = 11;</code>
      * @return string
      */
     public function getName()
@@ -246,7 +246,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
      *
-     * Generated from protobuf field <code>string name = 11;</code>
+     * Generated from protobuf field <code>optional string name = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -322,7 +322,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 13;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 13;</code>
      * @return int|string
      */
     public function getCpcBidMicros()
@@ -346,7 +346,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 13;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 13;</code>
      * @param int|string $var
      * @return $this
      */

@@ -63,7 +63,7 @@ class WorkloadCertificates extends \Google\Protobuf\Internal\Message
      */
     public function getEnableCertificates()
     {
-        return isset($this->enable_certificates) ? $this->enable_certificates : null;
+        return $this->enable_certificates;
     }
 
     public function hasEnableCertificates()

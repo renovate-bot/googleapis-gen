@@ -207,7 +207,7 @@ private static final long serialVersionUID = 0L;
     if (git_ != null) {
       output.writeMessage(7, getGit());
     }
-    if (!getSourceFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sourceFormat_);
     }
     unknownFields.writeTo(output);
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getGit());
     }
-    if (!getSourceFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sourceFormat_);
     }
     size += unknownFields.getSerializedSize();

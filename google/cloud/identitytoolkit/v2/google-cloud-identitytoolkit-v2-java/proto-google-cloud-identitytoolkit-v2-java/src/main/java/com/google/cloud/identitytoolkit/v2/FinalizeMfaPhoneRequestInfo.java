@@ -310,16 +310,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSessionInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionInfo_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sessionInfo_);
     }
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
     }
-    if (!getAndroidVerificationProofBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidVerificationProof_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, androidVerificationProof_);
     }
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phoneNumber_);
     }
     unknownFields.writeTo(output);
@@ -331,16 +331,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSessionInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionInfo_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sessionInfo_);
     }
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
     }
-    if (!getAndroidVerificationProofBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidVerificationProof_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, androidVerificationProof_);
     }
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, phoneNumber_);
     }
     size += unknownFields.getSerializedSize();

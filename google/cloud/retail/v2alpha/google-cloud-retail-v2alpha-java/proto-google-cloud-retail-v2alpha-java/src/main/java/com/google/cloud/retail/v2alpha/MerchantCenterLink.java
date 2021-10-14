@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     if (merchantCenterAccountId_ != 0L) {
       output.writeInt64(1, merchantCenterAccountId_);
     }
-    if (!getBranchIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(branchId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, branchId_);
     }
     for (int i = 0; i < destinations_.size(); i++) {
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, merchantCenterAccountId_);
     }
-    if (!getBranchIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(branchId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, branchId_);
     }
     {

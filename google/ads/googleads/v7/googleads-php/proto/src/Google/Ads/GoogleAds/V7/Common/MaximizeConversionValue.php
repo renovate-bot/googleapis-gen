@@ -23,7 +23,7 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      * budget. If the target ROAS is not set, the bid strategy will aim to
      * achieve the highest possible ROAS for the budget.
      *
-     * Generated from protobuf field <code>double target_roas = 2;</code>
+     * Generated from protobuf field <code>optional double target_roas = 2;</code>
      */
     protected $target_roas = null;
 
@@ -53,7 +53,7 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      * budget. If the target ROAS is not set, the bid strategy will aim to
      * achieve the highest possible ROAS for the budget.
      *
-     * Generated from protobuf field <code>double target_roas = 2;</code>
+     * Generated from protobuf field <code>optional double target_roas = 2;</code>
      * @return float
      */
     public function getTargetRoas()
@@ -78,7 +78,7 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      * budget. If the target ROAS is not set, the bid strategy will aim to
      * achieve the highest possible ROAS for the budget.
      *
-     * Generated from protobuf field <code>double target_roas = 2;</code>
+     * Generated from protobuf field <code>optional double target_roas = 2;</code>
      * @param float $var
      * @return $this
      */

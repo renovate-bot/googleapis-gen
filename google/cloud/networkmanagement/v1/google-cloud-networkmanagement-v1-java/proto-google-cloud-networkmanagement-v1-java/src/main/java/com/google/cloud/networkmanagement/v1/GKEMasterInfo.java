@@ -311,16 +311,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getClusterUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterUri_);
     }
-    if (!getClusterNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterNetworkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clusterNetworkUri_);
     }
-    if (!getInternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, internalIp_);
     }
-    if (!getExternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, externalIp_);
     }
     unknownFields.writeTo(output);
@@ -332,16 +332,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getClusterUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterUri_);
     }
-    if (!getClusterNetworkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterNetworkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clusterNetworkUri_);
     }
-    if (!getInternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, internalIp_);
     }
-    if (!getExternalIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, externalIp_);
     }
     size += unknownFields.getSerializedSize();

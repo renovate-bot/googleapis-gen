@@ -103,7 +103,7 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     public function getTotalBilledTime()
     {
-        return isset($this->total_billed_time) ? $this->total_billed_time : null;
+        return $this->total_billed_time;
     }
 
     public function hasTotalBilledTime()
@@ -139,7 +139,7 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     public function getOutputConfig()
     {
-        return isset($this->output_config) ? $this->output_config : null;
+        return $this->output_config;
     }
 
     public function hasOutputConfig()
@@ -175,7 +175,7 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     public function getOutputError()
     {
-        return isset($this->output_error) ? $this->output_error : null;
+        return $this->output_error;
     }
 
     public function hasOutputError()

@@ -1698,7 +1698,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
     }
     if (state_ != com.google.cloud.networkmanagement.v1beta1.Step.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1707,7 +1707,7 @@ private static final long serialVersionUID = 0L;
     if (causesDrop_ != false) {
       output.writeBool(3, causesDrop_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, projectId_);
     }
     if (stepInfoCase_ == 5) {
@@ -1764,7 +1764,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
     }
     if (state_ != com.google.cloud.networkmanagement.v1beta1.Step.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1775,7 +1775,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, causesDrop_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, projectId_);
     }
     if (stepInfoCase_ == 5) {

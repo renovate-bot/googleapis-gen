@@ -83,7 +83,7 @@ class CreateAgentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAgent()
     {
-        return isset($this->agent) ? $this->agent : null;
+        return $this->agent;
     }
 
     public function hasAgent()

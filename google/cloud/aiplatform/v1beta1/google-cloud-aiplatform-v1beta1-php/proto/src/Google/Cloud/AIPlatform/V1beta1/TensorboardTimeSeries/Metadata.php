@@ -92,7 +92,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      */
     public function getMaxWallTime()
     {
-        return isset($this->max_wall_time) ? $this->max_wall_time : null;
+        return $this->max_wall_time;
     }
 
     public function hasMaxWallTime()

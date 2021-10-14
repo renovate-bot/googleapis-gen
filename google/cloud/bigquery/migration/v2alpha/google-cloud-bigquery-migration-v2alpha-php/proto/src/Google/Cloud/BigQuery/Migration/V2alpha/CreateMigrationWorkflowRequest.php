@@ -83,7 +83,7 @@ class CreateMigrationWorkflowRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMigrationWorkflow()
     {
-        return isset($this->migration_workflow) ? $this->migration_workflow : null;
+        return $this->migration_workflow;
     }
 
     public function hasMigrationWorkflow()

@@ -85,7 +85,7 @@ class MutateAdGroupFeedResult extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupFeed()
     {
-        return isset($this->ad_group_feed) ? $this->ad_group_feed : null;
+        return $this->ad_group_feed;
     }
 
     public function hasAdGroupFeed()

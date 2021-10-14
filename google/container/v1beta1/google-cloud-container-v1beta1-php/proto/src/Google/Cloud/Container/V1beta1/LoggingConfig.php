@@ -45,7 +45,7 @@ class LoggingConfig extends \Google\Protobuf\Internal\Message
      */
     public function getComponentConfig()
     {
-        return isset($this->component_config) ? $this->component_config : null;
+        return $this->component_config;
     }
 
     public function hasComponentConfig()

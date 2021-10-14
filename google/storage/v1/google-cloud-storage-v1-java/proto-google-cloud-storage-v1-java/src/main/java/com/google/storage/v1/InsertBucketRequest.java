@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
     if (predefinedDefaultObjectAcl_ != com.google.storage.v1.CommonEnums.PredefinedObjectAcl.PREDEFINED_OBJECT_ACL_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, predefinedDefaultObjectAcl_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, project_);
     }
     if (projection_ != com.google.storage.v1.CommonEnums.Projection.PROJECTION_UNSPECIFIED.getNumber()) {
@@ -394,7 +394,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, predefinedDefaultObjectAcl_);
     }
-    if (!getProjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, project_);
     }
     if (projection_ != com.google.storage.v1.CommonEnums.Projection.PROJECTION_UNSPECIFIED.getNumber()) {

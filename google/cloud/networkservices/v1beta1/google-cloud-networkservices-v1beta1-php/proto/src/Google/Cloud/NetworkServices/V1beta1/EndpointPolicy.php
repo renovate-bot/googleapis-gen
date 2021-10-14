@@ -192,7 +192,7 @@ class EndpointPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -228,7 +228,7 @@ class EndpointPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -354,7 +354,7 @@ class EndpointPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getEndpointMatcher()
     {
-        return isset($this->endpoint_matcher) ? $this->endpoint_matcher : null;
+        return $this->endpoint_matcher;
     }
 
     public function hasEndpointMatcher()
@@ -391,7 +391,7 @@ class EndpointPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getTrafficPortSelector()
     {
-        return isset($this->traffic_port_selector) ? $this->traffic_port_selector : null;
+        return $this->traffic_port_selector;
     }
 
     public function hasTrafficPortSelector()

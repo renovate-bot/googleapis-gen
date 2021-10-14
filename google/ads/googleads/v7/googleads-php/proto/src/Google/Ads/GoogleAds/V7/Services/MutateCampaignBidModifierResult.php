@@ -85,7 +85,7 @@ class MutateCampaignBidModifierResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignBidModifier()
     {
-        return isset($this->campaign_bid_modifier) ? $this->campaign_bid_modifier : null;
+        return $this->campaign_bid_modifier;
     }
 
     public function hasCampaignBidModifier()

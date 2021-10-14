@@ -1009,7 +1009,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMetricIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metricId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricId_);
       }
       if (goal_ != com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.GOAL_TYPE_UNSPECIFIED.getNumber()) {
@@ -1024,7 +1024,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getMetricIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metricId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricId_);
       }
       if (goal_ != com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.GOAL_TYPE_UNSPECIFIED.getNumber()) {
@@ -2128,7 +2128,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 4;</code>
+       * <code>optional double default_value = 4;</code>
        * @return Whether the defaultValue field is set.
        */
       boolean hasDefaultValue();
@@ -2141,7 +2141,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 4;</code>
+       * <code>optional double default_value = 4;</code>
        * @return The defaultValue.
        */
       double getDefaultValue();
@@ -2285,7 +2285,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 4;</code>
+       * <code>optional double default_value = 4;</code>
        * @return Whether the defaultValue field is set.
        */
       @java.lang.Override
@@ -2301,7 +2301,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 4;</code>
+       * <code>optional double default_value = 4;</code>
        * @return The defaultValue.
        */
       @java.lang.Override
@@ -2763,7 +2763,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 4;</code>
+         * <code>optional double default_value = 4;</code>
          * @return Whether the defaultValue field is set.
          */
         @java.lang.Override
@@ -2779,7 +2779,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 4;</code>
+         * <code>optional double default_value = 4;</code>
          * @return The defaultValue.
          */
         @java.lang.Override
@@ -2795,7 +2795,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 4;</code>
+         * <code>optional double default_value = 4;</code>
          * @param value The defaultValue to set.
          * @return This builder for chaining.
          */
@@ -2814,7 +2814,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 4;</code>
+         * <code>optional double default_value = 4;</code>
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
@@ -2909,7 +2909,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>int64 default_value = 4;</code>
+       * <code>optional int64 default_value = 4;</code>
        * @return Whether the defaultValue field is set.
        */
       boolean hasDefaultValue();
@@ -2922,7 +2922,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>int64 default_value = 4;</code>
+       * <code>optional int64 default_value = 4;</code>
        * @return The defaultValue.
        */
       long getDefaultValue();
@@ -3066,7 +3066,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>int64 default_value = 4;</code>
+       * <code>optional int64 default_value = 4;</code>
        * @return Whether the defaultValue field is set.
        */
       @java.lang.Override
@@ -3082,7 +3082,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>int64 default_value = 4;</code>
+       * <code>optional int64 default_value = 4;</code>
        * @return The defaultValue.
        */
       @java.lang.Override
@@ -3541,7 +3541,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>int64 default_value = 4;</code>
+         * <code>optional int64 default_value = 4;</code>
          * @return Whether the defaultValue field is set.
          */
         @java.lang.Override
@@ -3557,7 +3557,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>int64 default_value = 4;</code>
+         * <code>optional int64 default_value = 4;</code>
          * @return The defaultValue.
          */
         @java.lang.Override
@@ -3573,7 +3573,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>int64 default_value = 4;</code>
+         * <code>optional int64 default_value = 4;</code>
          * @param value The defaultValue to set.
          * @return This builder for chaining.
          */
@@ -3592,7 +3592,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>int64 default_value = 4;</code>
+         * <code>optional int64 default_value = 4;</code>
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
@@ -3708,7 +3708,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>string default_value = 3;</code>
+       * <code>optional string default_value = 3;</code>
        * @return Whether the defaultValue field is set.
        */
       boolean hasDefaultValue();
@@ -3721,7 +3721,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>string default_value = 3;</code>
+       * <code>optional string default_value = 3;</code>
        * @return The defaultValue.
        */
       java.lang.String getDefaultValue();
@@ -3734,7 +3734,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>string default_value = 3;</code>
+       * <code>optional string default_value = 3;</code>
        * @return The bytes for defaultValue.
        */
       com.google.protobuf.ByteString
@@ -3905,7 +3905,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>string default_value = 3;</code>
+       * <code>optional string default_value = 3;</code>
        * @return Whether the defaultValue field is set.
        */
       @java.lang.Override
@@ -3921,7 +3921,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>string default_value = 3;</code>
+       * <code>optional string default_value = 3;</code>
        * @return The defaultValue.
        */
       @java.lang.Override
@@ -3946,7 +3946,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>string default_value = 3;</code>
+       * <code>optional string default_value = 3;</code>
        * @return The bytes for defaultValue.
        */
       @java.lang.Override
@@ -4473,7 +4473,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>string default_value = 3;</code>
+         * <code>optional string default_value = 3;</code>
          * @return Whether the defaultValue field is set.
          */
         public boolean hasDefaultValue() {
@@ -4488,7 +4488,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>string default_value = 3;</code>
+         * <code>optional string default_value = 3;</code>
          * @return The defaultValue.
          */
         public java.lang.String getDefaultValue() {
@@ -4512,7 +4512,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>string default_value = 3;</code>
+         * <code>optional string default_value = 3;</code>
          * @return The bytes for defaultValue.
          */
         public com.google.protobuf.ByteString
@@ -4537,7 +4537,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>string default_value = 3;</code>
+         * <code>optional string default_value = 3;</code>
          * @param value The defaultValue to set.
          * @return This builder for chaining.
          */
@@ -4560,7 +4560,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>string default_value = 3;</code>
+         * <code>optional string default_value = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
@@ -4578,7 +4578,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>string default_value = 3;</code>
+         * <code>optional string default_value = 3;</code>
          * @param value The bytes for defaultValue to set.
          * @return This builder for chaining.
          */
@@ -4698,7 +4698,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 3;</code>
+       * <code>optional double default_value = 3;</code>
        * @return Whether the defaultValue field is set.
        */
       boolean hasDefaultValue();
@@ -4712,7 +4712,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 3;</code>
+       * <code>optional double default_value = 3;</code>
        * @return The defaultValue.
        */
       double getDefaultValue();
@@ -4891,7 +4891,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 3;</code>
+       * <code>optional double default_value = 3;</code>
        * @return Whether the defaultValue field is set.
        */
       @java.lang.Override
@@ -4908,7 +4908,7 @@ private static final long serialVersionUID = 0L;
        * HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
-       * <code>double default_value = 3;</code>
+       * <code>optional double default_value = 3;</code>
        * @return The defaultValue.
        */
       @java.lang.Override
@@ -5417,7 +5417,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 3;</code>
+         * <code>optional double default_value = 3;</code>
          * @return Whether the defaultValue field is set.
          */
         @java.lang.Override
@@ -5434,7 +5434,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 3;</code>
+         * <code>optional double default_value = 3;</code>
          * @return The defaultValue.
          */
         @java.lang.Override
@@ -5451,7 +5451,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 3;</code>
+         * <code>optional double default_value = 3;</code>
          * @param value The defaultValue to set.
          * @return This builder for chaining.
          */
@@ -5471,7 +5471,7 @@ private static final long serialVersionUID = 0L;
          * HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
-         * <code>double default_value = 3;</code>
+         * <code>optional double default_value = 3;</code>
          * @return This builder for chaining.
          */
         public Builder clearDefaultValue() {
@@ -9722,7 +9722,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getParameterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parameterId_);
       }
       if (parameterValueSpecCase_ == 2) {
@@ -9752,7 +9752,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getParameterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parameterId_);
       }
       if (parameterValueSpecCase_ == 2) {
@@ -12949,7 +12949,7 @@ private static final long serialVersionUID = 0L;
       if (autoregressiveOrder_ != 0L) {
         output.writeInt64(3, autoregressiveOrder_);
       }
-      if (!getLearningRateParameterNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(learningRateParameterName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, learningRateParameterName_);
       }
       if (useSeconds_ != false) {
@@ -12976,7 +12976,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, autoregressiveOrder_);
       }
-      if (!getLearningRateParameterNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(learningRateParameterName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, learningRateParameterName_);
       }
       if (useSeconds_ != false) {

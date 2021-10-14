@@ -80,7 +80,7 @@ class ReplaceTaxonomyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSerializedTaxonomy()
     {
-        return isset($this->serialized_taxonomy) ? $this->serialized_taxonomy : null;
+        return $this->serialized_taxonomy;
     }
 
     public function hasSerializedTaxonomy()

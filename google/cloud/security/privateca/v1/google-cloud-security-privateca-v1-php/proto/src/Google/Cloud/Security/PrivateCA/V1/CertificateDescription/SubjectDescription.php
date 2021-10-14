@@ -95,7 +95,7 @@ class SubjectDescription extends \Google\Protobuf\Internal\Message
      */
     public function getSubject()
     {
-        return isset($this->subject) ? $this->subject : null;
+        return $this->subject;
     }
 
     public function hasSubject()
@@ -132,7 +132,7 @@ class SubjectDescription extends \Google\Protobuf\Internal\Message
      */
     public function getSubjectAltName()
     {
-        return isset($this->subject_alt_name) ? $this->subject_alt_name : null;
+        return $this->subject_alt_name;
     }
 
     public function hasSubjectAltName()
@@ -194,7 +194,7 @@ class SubjectDescription extends \Google\Protobuf\Internal\Message
      */
     public function getLifetime()
     {
-        return isset($this->lifetime) ? $this->lifetime : null;
+        return $this->lifetime;
     }
 
     public function hasLifetime()
@@ -230,7 +230,7 @@ class SubjectDescription extends \Google\Protobuf\Internal\Message
      */
     public function getNotBeforeTime()
     {
-        return isset($this->not_before_time) ? $this->not_before_time : null;
+        return $this->not_before_time;
     }
 
     public function hasNotBeforeTime()
@@ -269,7 +269,7 @@ class SubjectDescription extends \Google\Protobuf\Internal\Message
      */
     public function getNotAfterTime()
     {
-        return isset($this->not_after_time) ? $this->not_after_time : null;
+        return $this->not_after_time;
     }
 
     public function hasNotAfterTime()

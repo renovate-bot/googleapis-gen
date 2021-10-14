@@ -45,7 +45,7 @@ class CsvDestination extends \Google\Protobuf\Internal\Message
      */
     public function getGcsDestination()
     {
-        return isset($this->gcs_destination) ? $this->gcs_destination : null;
+        return $this->gcs_destination;
     }
 
     public function hasGcsDestination()

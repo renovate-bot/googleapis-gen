@@ -206,10 +206,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getInstanceTemplateNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceTemplateName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceTemplateName_);
     }
-    if (!getInstanceGroupManagerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManagerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceGroupManagerName_);
     }
     unknownFields.writeTo(output);
@@ -221,10 +221,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceTemplateNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceTemplateName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceTemplateName_);
     }
-    if (!getInstanceGroupManagerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManagerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instanceGroupManagerName_);
     }
     size += unknownFields.getSerializedSize();

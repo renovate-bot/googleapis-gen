@@ -19,7 +19,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      * The code associated with the ad product. E.g. BUMPER, TRUEVIEW_IN_STREAM
      * To list the available plannable product codes use ListPlannableProducts.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 4;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 4;</code>
      */
     protected $plannable_product_code = null;
     /**
@@ -59,7 +59,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      * The code associated with the ad product. E.g. BUMPER, TRUEVIEW_IN_STREAM
      * To list the available plannable product codes use ListPlannableProducts.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 4;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 4;</code>
      * @return string
      */
     public function getPlannableProductCode()
@@ -81,7 +81,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      * The code associated with the ad product. E.g. BUMPER, TRUEVIEW_IN_STREAM
      * To list the available plannable product codes use ListPlannableProducts.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 4;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -127,7 +127,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getPlannableTargeting()
     {
-        return isset($this->plannable_targeting) ? $this->plannable_targeting : null;
+        return $this->plannable_targeting;
     }
 
     public function hasPlannableTargeting()

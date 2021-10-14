@@ -19,7 +19,7 @@ class KeywordPlanCampaignForecastCurve extends \Google\Protobuf\Internal\Message
      * The resource name of the Keyword Plan campaign related to the forecast.
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 3;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 3;</code>
      */
     protected $keyword_plan_campaign = null;
     /**
@@ -51,7 +51,7 @@ class KeywordPlanCampaignForecastCurve extends \Google\Protobuf\Internal\Message
      * The resource name of the Keyword Plan campaign related to the forecast.
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 3;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 3;</code>
      * @return string
      */
     public function getKeywordPlanCampaign()
@@ -73,7 +73,7 @@ class KeywordPlanCampaignForecastCurve extends \Google\Protobuf\Internal\Message
      * The resource name of the Keyword Plan campaign related to the forecast.
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 3;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -93,7 +93,7 @@ class KeywordPlanCampaignForecastCurve extends \Google\Protobuf\Internal\Message
      */
     public function getMaxCpcBidForecastCurve()
     {
-        return isset($this->max_cpc_bid_forecast_curve) ? $this->max_cpc_bid_forecast_curve : null;
+        return $this->max_cpc_bid_forecast_curve;
     }
 
     public function hasMaxCpcBidForecastCurve()

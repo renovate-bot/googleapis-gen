@@ -18,31 +18,31 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Postal code.
      *
-     * Generated from protobuf field <code>string postal_code = 8;</code>
+     * Generated from protobuf field <code>optional string postal_code = 8;</code>
      */
     protected $postal_code = null;
     /**
      * Province or state code.
      *
-     * Generated from protobuf field <code>string province_code = 9;</code>
+     * Generated from protobuf field <code>optional string province_code = 9;</code>
      */
     protected $province_code = null;
     /**
      * Country code.
      *
-     * Generated from protobuf field <code>string country_code = 10;</code>
+     * Generated from protobuf field <code>optional string country_code = 10;</code>
      */
     protected $country_code = null;
     /**
      * Province or state name.
      *
-     * Generated from protobuf field <code>string province_name = 11;</code>
+     * Generated from protobuf field <code>optional string province_name = 11;</code>
      */
     protected $province_name = null;
     /**
      * Street address line 1.
      *
-     * Generated from protobuf field <code>string street_address = 12;</code>
+     * Generated from protobuf field <code>optional string street_address = 12;</code>
      */
     protected $street_address = null;
     /**
@@ -50,13 +50,13 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * calculating the longitude and latitude of an address when geo_point is
      * empty.
      *
-     * Generated from protobuf field <code>string street_address2 = 13;</code>
+     * Generated from protobuf field <code>optional string street_address2 = 13;</code>
      */
     protected $street_address2 = null;
     /**
      * Name of the city.
      *
-     * Generated from protobuf field <code>string city_name = 14;</code>
+     * Generated from protobuf field <code>optional string city_name = 14;</code>
      */
     protected $city_name = null;
 
@@ -92,7 +92,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Postal code.
      *
-     * Generated from protobuf field <code>string postal_code = 8;</code>
+     * Generated from protobuf field <code>optional string postal_code = 8;</code>
      * @return string
      */
     public function getPostalCode()
@@ -113,7 +113,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Postal code.
      *
-     * Generated from protobuf field <code>string postal_code = 8;</code>
+     * Generated from protobuf field <code>optional string postal_code = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Province or state code.
      *
-     * Generated from protobuf field <code>string province_code = 9;</code>
+     * Generated from protobuf field <code>optional string province_code = 9;</code>
      * @return string
      */
     public function getProvinceCode()
@@ -149,7 +149,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Province or state code.
      *
-     * Generated from protobuf field <code>string province_code = 9;</code>
+     * Generated from protobuf field <code>optional string province_code = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -164,7 +164,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Country code.
      *
-     * Generated from protobuf field <code>string country_code = 10;</code>
+     * Generated from protobuf field <code>optional string country_code = 10;</code>
      * @return string
      */
     public function getCountryCode()
@@ -185,7 +185,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Country code.
      *
-     * Generated from protobuf field <code>string country_code = 10;</code>
+     * Generated from protobuf field <code>optional string country_code = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -200,7 +200,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Province or state name.
      *
-     * Generated from protobuf field <code>string province_name = 11;</code>
+     * Generated from protobuf field <code>optional string province_name = 11;</code>
      * @return string
      */
     public function getProvinceName()
@@ -221,7 +221,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Province or state name.
      *
-     * Generated from protobuf field <code>string province_name = 11;</code>
+     * Generated from protobuf field <code>optional string province_name = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -236,7 +236,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Street address line 1.
      *
-     * Generated from protobuf field <code>string street_address = 12;</code>
+     * Generated from protobuf field <code>optional string street_address = 12;</code>
      * @return string
      */
     public function getStreetAddress()
@@ -257,7 +257,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Street address line 1.
      *
-     * Generated from protobuf field <code>string street_address = 12;</code>
+     * Generated from protobuf field <code>optional string street_address = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -274,7 +274,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * calculating the longitude and latitude of an address when geo_point is
      * empty.
      *
-     * Generated from protobuf field <code>string street_address2 = 13;</code>
+     * Generated from protobuf field <code>optional string street_address2 = 13;</code>
      * @return string
      */
     public function getStreetAddress2()
@@ -297,7 +297,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * calculating the longitude and latitude of an address when geo_point is
      * empty.
      *
-     * Generated from protobuf field <code>string street_address2 = 13;</code>
+     * Generated from protobuf field <code>optional string street_address2 = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -312,7 +312,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Name of the city.
      *
-     * Generated from protobuf field <code>string city_name = 14;</code>
+     * Generated from protobuf field <code>optional string city_name = 14;</code>
      * @return string
      */
     public function getCityName()
@@ -333,7 +333,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Name of the city.
      *
-     * Generated from protobuf field <code>string city_name = 14;</code>
+     * Generated from protobuf field <code>optional string city_name = 14;</code>
      * @param string $var
      * @return $this
      */

@@ -85,7 +85,7 @@ class MutateBiddingStrategyResult extends \Google\Protobuf\Internal\Message
      */
     public function getBiddingStrategy()
     {
-        return isset($this->bidding_strategy) ? $this->bidding_strategy : null;
+        return $this->bidding_strategy;
     }
 
     public function hasBiddingStrategy()

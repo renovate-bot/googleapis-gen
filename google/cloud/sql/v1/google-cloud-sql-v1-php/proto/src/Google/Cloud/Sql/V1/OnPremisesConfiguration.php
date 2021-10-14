@@ -321,7 +321,7 @@ class OnPremisesConfiguration extends \Google\Protobuf\Internal\Message
      */
     public function getSourceInstance()
     {
-        return isset($this->source_instance) ? $this->source_instance : null;
+        return $this->source_instance;
     }
 
     public function hasSourceInstance()

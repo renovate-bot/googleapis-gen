@@ -29,13 +29,13 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ID of this offline user data job.
      *
-     * Generated from protobuf field <code>int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Immutable. User specified job ID.
      *
-     * Generated from protobuf field <code>int64 external_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 external_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $external_id = null;
     /**
@@ -122,7 +122,7 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ID of this offline user data job.
      *
-     * Generated from protobuf field <code>int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -143,7 +143,7 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ID of this offline user data job.
      *
-     * Generated from protobuf field <code>int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -158,7 +158,7 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. User specified job ID.
      *
-     * Generated from protobuf field <code>int64 external_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 external_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getExternalId()
@@ -179,7 +179,7 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. User specified job ID.
      *
-     * Generated from protobuf field <code>int64 external_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 external_id = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */

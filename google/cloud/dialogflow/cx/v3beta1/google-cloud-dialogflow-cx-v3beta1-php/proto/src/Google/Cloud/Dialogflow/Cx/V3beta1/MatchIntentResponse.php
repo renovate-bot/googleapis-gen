@@ -51,7 +51,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      *     @type string $trigger_event
      *           If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will
      *           contain a copy of the event name.
-     *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Match[]|\Google\Protobuf\Internal\RepeatedField $matches
+     *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch[]|\Google\Protobuf\Internal\RepeatedField $matches
      *           Match results, if more than one, ordered descendingly by the confidence
      *           we have that the particular intent matches the query.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Page $current_page
@@ -217,12 +217,12 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      * we have that the particular intent matches the query.
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.cx.v3beta1.Match matches = 4;</code>
-     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\Match[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMatches($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Dialogflow\Cx\V3beta1\Match::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Dialogflow\Cx\V3beta1\PBMatch::class);
         $this->matches = $arr;
 
         return $this;
@@ -237,7 +237,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentPage()
     {
-        return isset($this->current_page) ? $this->current_page : null;
+        return $this->current_page;
     }
 
     public function hasCurrentPage()

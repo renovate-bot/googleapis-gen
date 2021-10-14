@@ -85,7 +85,7 @@ class MutateFeedMappingResult extends \Google\Protobuf\Internal\Message
      */
     public function getFeedMapping()
     {
-        return isset($this->feed_mapping) ? $this->feed_mapping : null;
+        return $this->feed_mapping;
     }
 
     public function hasFeedMapping()

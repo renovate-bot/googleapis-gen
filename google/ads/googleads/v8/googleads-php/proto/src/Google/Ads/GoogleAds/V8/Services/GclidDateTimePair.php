@@ -20,7 +20,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * Google click ID (gclid) associated with the original conversion for this
      * adjustment.
      *
-     * Generated from protobuf field <code>string gclid = 3;</code>
+     * Generated from protobuf field <code>optional string gclid = 3;</code>
      */
     protected $gclid = null;
     /**
@@ -28,7 +28,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
      * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string conversion_date_time = 4;</code>
+     * Generated from protobuf field <code>optional string conversion_date_time = 4;</code>
      */
     protected $conversion_date_time = null;
 
@@ -56,7 +56,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * Google click ID (gclid) associated with the original conversion for this
      * adjustment.
      *
-     * Generated from protobuf field <code>string gclid = 3;</code>
+     * Generated from protobuf field <code>optional string gclid = 3;</code>
      * @return string
      */
     public function getGclid()
@@ -78,7 +78,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * Google click ID (gclid) associated with the original conversion for this
      * adjustment.
      *
-     * Generated from protobuf field <code>string gclid = 3;</code>
+     * Generated from protobuf field <code>optional string gclid = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -95,7 +95,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
      * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string conversion_date_time = 4;</code>
+     * Generated from protobuf field <code>optional string conversion_date_time = 4;</code>
      * @return string
      */
     public function getConversionDateTime()
@@ -118,7 +118,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
      * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string conversion_date_time = 4;</code>
+     * Generated from protobuf field <code>optional string conversion_date_time = 4;</code>
      * @param string $var
      * @return $this
      */

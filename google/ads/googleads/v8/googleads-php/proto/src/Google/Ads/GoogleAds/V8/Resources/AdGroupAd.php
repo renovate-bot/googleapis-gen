@@ -32,7 +32,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
@@ -160,7 +160,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroup()
@@ -181,7 +181,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -201,7 +201,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      */
     public function getAd()
     {
-        return isset($this->ad) ? $this->ad : null;
+        return $this->ad;
     }
 
     public function hasAd()
@@ -237,7 +237,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      */
     public function getPolicySummary()
     {
-        return isset($this->policy_summary) ? $this->policy_summary : null;
+        return $this->policy_summary;
     }
 
     public function hasPolicySummary()

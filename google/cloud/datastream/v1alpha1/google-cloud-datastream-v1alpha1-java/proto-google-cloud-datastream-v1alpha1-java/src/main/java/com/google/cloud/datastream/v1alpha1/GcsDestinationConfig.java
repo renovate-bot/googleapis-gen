@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
     }
     if (gcsFileFormat_ != com.google.cloud.datastream.v1alpha1.GcsFileFormat.GCS_FILE_FORMAT_UNSPECIFIED.getNumber()) {
@@ -443,7 +443,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
     }
     if (gcsFileFormat_ != com.google.cloud.datastream.v1alpha1.GcsFileFormat.GCS_FILE_FORMAT_UNSPECIFIED.getNumber()) {

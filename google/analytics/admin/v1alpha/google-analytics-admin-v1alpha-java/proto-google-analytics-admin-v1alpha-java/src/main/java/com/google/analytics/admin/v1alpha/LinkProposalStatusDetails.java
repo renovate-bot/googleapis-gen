@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
     if (linkProposalInitiatingProduct_ != com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.LINK_PROPOSAL_INITIATING_PRODUCT_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, linkProposalInitiatingProduct_);
     }
-    if (!getRequestorEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestorEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestorEmail_);
     }
     if (linkProposalState_ != com.google.analytics.admin.v1alpha.LinkProposalState.LINK_PROPOSAL_STATE_UNSPECIFIED.getNumber()) {
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, linkProposalInitiatingProduct_);
     }
-    if (!getRequestorEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestorEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestorEmail_);
     }
     if (linkProposalState_ != com.google.analytics.admin.v1alpha.LinkProposalState.LINK_PROPOSAL_STATE_UNSPECIFIED.getNumber()) {

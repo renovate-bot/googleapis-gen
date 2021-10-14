@@ -117,7 +117,7 @@ class CreateRuntimeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRuntime()
     {
-        return isset($this->runtime) ? $this->runtime : null;
+        return $this->runtime;
     }
 
     public function hasRuntime()

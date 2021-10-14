@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < oauthScopes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, oauthScopes_.getRaw(i));
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceAccount_);
     }
     if (upgradeSettings_ != null) {
@@ -646,22 +646,22 @@ private static final long serialVersionUID = 0L;
     if (management_ != null) {
       output.writeMessage(4, getManagement());
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, minCpuPlatform_);
     }
     if (diskSizeGb_ != 0) {
       output.writeInt32(6, diskSizeGb_);
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, diskType_);
     }
     if (shieldedInstanceConfig_ != null) {
       output.writeMessage(8, getShieldedInstanceConfig());
     }
-    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskKmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, bootDiskKmsKey_);
     }
-    if (!getImageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, imageType_);
     }
     unknownFields.writeTo(output);
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getOauthScopesList().size();
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceAccount_);
     }
     if (upgradeSettings_ != null) {
@@ -692,24 +692,24 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getManagement());
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, minCpuPlatform_);
     }
     if (diskSizeGb_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, diskSizeGb_);
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, diskType_);
     }
     if (shieldedInstanceConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getShieldedInstanceConfig());
     }
-    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskKmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, bootDiskKmsKey_);
     }
-    if (!getImageTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, imageType_);
     }
     size += unknownFields.getSerializedSize();

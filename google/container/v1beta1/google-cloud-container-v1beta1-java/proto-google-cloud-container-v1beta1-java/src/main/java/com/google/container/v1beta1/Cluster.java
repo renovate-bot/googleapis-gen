@@ -3811,7 +3811,7 @@ private static final long serialVersionUID = 0L;
    * overridden if specified on the specific NodePool object.
    * </pre>
    *
-   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
    * @return Whether the nodePoolDefaults field is set.
    */
   @java.lang.Override
@@ -3824,7 +3824,7 @@ private static final long serialVersionUID = 0L;
    * overridden if specified on the specific NodePool object.
    * </pre>
    *
-   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
    * @return The nodePoolDefaults.
    */
   @java.lang.Override
@@ -3837,7 +3837,7 @@ private static final long serialVersionUID = 0L;
    * overridden if specified on the specific NodePool object.
    * </pre>
    *
-   * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+   * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
    */
   @java.lang.Override
   public com.google.container.v1beta1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder() {
@@ -3934,10 +3934,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (initialNodeCount_ != 0) {
@@ -3949,22 +3949,22 @@ private static final long serialVersionUID = 0L;
     if (masterAuth_ != null) {
       output.writeMessage(5, getMasterAuth());
     }
-    if (!getLoggingServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loggingService_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, loggingService_);
     }
-    if (!getMonitoringServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(monitoringService_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, monitoringService_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, network_);
     }
-    if (!getClusterIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4Cidr_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clusterIpv4Cidr_);
     }
     if (addonsConfig_ != null) {
       output.writeMessage(10, getAddonsConfig());
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, subnetwork_);
     }
     for (int i = 0; i < nodePools_.size(); i++) {
@@ -3982,7 +3982,7 @@ private static final long serialVersionUID = 0L;
         internalGetResourceLabels(),
         ResourceLabelsDefaultEntryHolder.defaultEntry,
         15);
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelFingerprint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, labelFingerprint_);
     }
     if (legacyAbac_ != null) {
@@ -4015,7 +4015,7 @@ private static final long serialVersionUID = 0L;
     if (privateCluster_ != false) {
       output.writeBool(28, privateCluster_);
     }
-    if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, masterIpv4CidrBlock_);
     }
     if (defaultMaxPodsConstraint_ != null) {
@@ -4063,37 +4063,37 @@ private static final long serialVersionUID = 0L;
     if (identityServiceConfig_ != null) {
       output.writeMessage(54, getIdentityServiceConfig());
     }
-    if (!getSelfLinkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 101, zone_);
     }
-    if (!getEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 102, endpoint_);
     }
-    if (!getInitialClusterVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialClusterVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103, initialClusterVersion_);
     }
-    if (!getCurrentMasterVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentMasterVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104, currentMasterVersion_);
     }
-    if (!getCurrentNodeVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentNodeVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 105, currentNodeVersion_);
     }
-    if (!getCreateTimeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106, createTime_);
     }
     if (status_ != com.google.container.v1beta1.Cluster.Status.STATUS_UNSPECIFIED.getNumber()) {
       output.writeEnum(107, status_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 108, statusMessage_);
     }
     if (nodeIpv4CidrSize_ != 0) {
       output.writeInt32(109, nodeIpv4CidrSize_);
     }
-    if (!getServicesIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4Cidr_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110, servicesIpv4Cidr_);
     }
     for (int i = 0; i < instanceGroupUrls_.size(); i++) {
@@ -4102,16 +4102,16 @@ private static final long serialVersionUID = 0L;
     if (currentNodeCount_ != 0) {
       output.writeInt32(112, currentNodeCount_);
     }
-    if (!getExpireTimeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expireTime_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 113, expireTime_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 114, location_);
     }
     if (enableTpu_ != false) {
       output.writeBool(115, enableTpu_);
     }
-    if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 116, tpuIpv4CidrBlock_);
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -4123,7 +4123,7 @@ private static final long serialVersionUID = 0L;
     if (autopilot_ != null) {
       output.writeMessage(128, getAutopilot());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 129, id_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -4144,10 +4144,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (initialNodeCount_ != 0) {
@@ -4162,23 +4162,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getMasterAuth());
     }
-    if (!getLoggingServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loggingService_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, loggingService_);
     }
-    if (!getMonitoringServiceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(monitoringService_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, monitoringService_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, network_);
     }
-    if (!getClusterIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterIpv4Cidr_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterIpv4Cidr_);
     }
     if (addonsConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getAddonsConfig());
     }
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, subnetwork_);
     }
     for (int i = 0; i < nodePools_.size(); i++) {
@@ -4207,7 +4207,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, resourceLabels__);
     }
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelFingerprint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, labelFingerprint_);
     }
     if (legacyAbac_ != null) {
@@ -4250,7 +4250,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(28, privateCluster_);
     }
-    if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, masterIpv4CidrBlock_);
     }
     if (defaultMaxPodsConstraint_ != null) {
@@ -4313,39 +4313,39 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(54, getIdentityServiceConfig());
     }
-    if (!getSelfLinkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, zone_);
     }
-    if (!getEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, endpoint_);
     }
-    if (!getInitialClusterVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialClusterVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103, initialClusterVersion_);
     }
-    if (!getCurrentMasterVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentMasterVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104, currentMasterVersion_);
     }
-    if (!getCurrentNodeVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentNodeVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105, currentNodeVersion_);
     }
-    if (!getCreateTimeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(106, createTime_);
     }
     if (status_ != com.google.container.v1beta1.Cluster.Status.STATUS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(107, status_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(108, statusMessage_);
     }
     if (nodeIpv4CidrSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(109, nodeIpv4CidrSize_);
     }
-    if (!getServicesIpv4CidrBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv4Cidr_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110, servicesIpv4Cidr_);
     }
     {
@@ -4360,17 +4360,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(112, currentNodeCount_);
     }
-    if (!getExpireTimeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expireTime_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(113, expireTime_);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114, location_);
     }
     if (enableTpu_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(115, enableTpu_);
     }
-    if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(116, tpuIpv4CidrBlock_);
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -4385,7 +4385,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(128, getAutopilot());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(129, id_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -14607,7 +14607,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      * @return Whether the nodePoolDefaults field is set.
      */
     public boolean hasNodePoolDefaults() {
@@ -14619,7 +14619,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      * @return The nodePoolDefaults.
      */
     public com.google.container.v1beta1.NodePoolDefaults getNodePoolDefaults() {
@@ -14635,7 +14635,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     public Builder setNodePoolDefaults(com.google.container.v1beta1.NodePoolDefaults value) {
       if (nodePoolDefaultsBuilder_ == null) {
@@ -14656,7 +14656,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     public Builder setNodePoolDefaults(
         com.google.container.v1beta1.NodePoolDefaults.Builder builderForValue) {
@@ -14675,7 +14675,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     public Builder mergeNodePoolDefaults(com.google.container.v1beta1.NodePoolDefaults value) {
       if (nodePoolDefaultsBuilder_ == null) {
@@ -14700,7 +14700,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     public Builder clearNodePoolDefaults() {
       if (nodePoolDefaultsBuilder_ == null) {
@@ -14718,7 +14718,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     public com.google.container.v1beta1.NodePoolDefaults.Builder getNodePoolDefaultsBuilder() {
       bitField0_ |= 0x00000020;
@@ -14731,7 +14731,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     public com.google.container.v1beta1.NodePoolDefaultsOrBuilder getNodePoolDefaultsOrBuilder() {
       if (nodePoolDefaultsBuilder_ != null) {
@@ -14747,7 +14747,7 @@ private static final long serialVersionUID = 0L;
      * overridden if specified on the specific NodePool object.
      * </pre>
      *
-     * <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.container.v1beta1.NodePoolDefaults, com.google.container.v1beta1.NodePoolDefaults.Builder, com.google.container.v1beta1.NodePoolDefaultsOrBuilder> 

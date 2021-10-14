@@ -156,7 +156,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      */
     public function getExpireTime()
     {
-        return isset($this->expire_time) ? $this->expire_time : null;
+        return $this->expire_time;
     }
 
     public function hasExpireTime()
@@ -310,7 +310,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      */
     public function getTableModifiers()
     {
-        return isset($this->table_modifiers) ? $this->table_modifiers : null;
+        return $this->table_modifiers;
     }
 
     public function hasTableModifiers()
@@ -346,7 +346,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      */
     public function getReadOptions()
     {
-        return isset($this->read_options) ? $this->read_options : null;
+        return $this->read_options;
     }
 
     public function hasReadOptions()

@@ -79,7 +79,7 @@ class GenerateHistoricalMetricsResponse extends \Google\Protobuf\Internal\Messag
      */
     public function getAggregateMetricResults()
     {
-        return isset($this->aggregate_metric_results) ? $this->aggregate_metric_results : null;
+        return $this->aggregate_metric_results;
     }
 
     public function hasAggregateMetricResults()

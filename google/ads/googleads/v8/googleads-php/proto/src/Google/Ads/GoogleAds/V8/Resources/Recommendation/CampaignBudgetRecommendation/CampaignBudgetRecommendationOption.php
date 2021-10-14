@@ -18,7 +18,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $budget_amount_micros = null;
     /**
@@ -50,7 +50,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getBudgetAmountMicros()
@@ -71,7 +71,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
      */
     public function getImpact()
     {
-        return isset($this->impact) ? $this->impact : null;
+        return $this->impact;
     }
 
     public function hasImpact()

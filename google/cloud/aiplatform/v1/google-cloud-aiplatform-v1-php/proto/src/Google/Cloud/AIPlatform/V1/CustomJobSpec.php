@@ -183,7 +183,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      */
     public function getScheduling()
     {
-        return isset($this->scheduling) ? $this->scheduling : null;
+        return $this->scheduling;
     }
 
     public function hasScheduling()
@@ -310,7 +310,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      */
     public function getBaseOutputDirectory()
     {
-        return isset($this->base_output_directory) ? $this->base_output_directory : null;
+        return $this->base_output_directory;
     }
 
     public function hasBaseOutputDirectory()

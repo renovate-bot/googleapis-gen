@@ -105,7 +105,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getInputConfig()
     {
-        return isset($this->input_config) ? $this->input_config : null;
+        return $this->input_config;
     }
 
     public function hasInputConfig()
@@ -141,7 +141,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOutputConfig()
     {
-        return isset($this->output_config) ? $this->output_config : null;
+        return $this->output_config;
     }
 
     public function hasOutputConfig()
@@ -208,7 +208,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTableExtractionParams()
     {
-        return isset($this->table_extraction_params) ? $this->table_extraction_params : null;
+        return $this->table_extraction_params;
     }
 
     public function hasTableExtractionParams()
@@ -246,7 +246,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFormExtractionParams()
     {
-        return isset($this->form_extraction_params) ? $this->form_extraction_params : null;
+        return $this->form_extraction_params;
     }
 
     public function hasFormExtractionParams()
@@ -284,7 +284,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getEntityExtractionParams()
     {
-        return isset($this->entity_extraction_params) ? $this->entity_extraction_params : null;
+        return $this->entity_extraction_params;
     }
 
     public function hasEntityExtractionParams()
@@ -322,7 +322,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOcrParams()
     {
-        return isset($this->ocr_params) ? $this->ocr_params : null;
+        return $this->ocr_params;
     }
 
     public function hasOcrParams()

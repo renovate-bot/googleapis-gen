@@ -1677,13 +1677,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     if (type_ != com.google.dataflow.v1beta3.JobType.JOB_TYPE_UNKNOWN.getNumber()) {
@@ -1710,7 +1710,7 @@ private static final long serialVersionUID = 0L;
     if (createTime_ != null) {
       output.writeMessage(11, getCreateTime());
     }
-    if (!getReplaceJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replaceJobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, replaceJobId_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -1719,10 +1719,10 @@ private static final long serialVersionUID = 0L;
         internalGetTransformNameMapping(),
         TransformNameMappingDefaultEntryHolder.defaultEntry,
         13);
-    if (!getClientRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientRequestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, clientRequestId_);
     }
-    if (!getReplacedByJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replacedByJobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, replacedByJobId_);
     }
     for (int i = 0; i < tempFiles_.size(); i++) {
@@ -1734,7 +1734,7 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         17);
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, location_);
     }
     if (pipelineDescription_ != null) {
@@ -1749,10 +1749,10 @@ private static final long serialVersionUID = 0L;
     if (startTime_ != null) {
       output.writeMessage(22, getStartTime());
     }
-    if (!getCreatedFromSnapshotIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdFromSnapshotId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, createdFromSnapshotId_);
     }
-    if (!getStepsLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stepsLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, stepsLocation_);
     }
     if (satisfiesPzs_ != false) {
@@ -1767,13 +1767,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (type_ != com.google.dataflow.v1beta3.JobType.JOB_TYPE_UNKNOWN.getNumber()) {
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getCreateTime());
     }
-    if (!getReplaceJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replaceJobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, replaceJobId_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -1821,10 +1821,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, transformNameMapping__);
     }
-    if (!getClientRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientRequestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, clientRequestId_);
     }
-    if (!getReplacedByJobIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replacedByJobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, replacedByJobId_);
     }
     {
@@ -1845,7 +1845,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, labels__);
     }
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, location_);
     }
     if (pipelineDescription_ != null) {
@@ -1864,10 +1864,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, getStartTime());
     }
-    if (!getCreatedFromSnapshotIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdFromSnapshotId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, createdFromSnapshotId_);
     }
-    if (!getStepsLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stepsLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, stepsLocation_);
     }
     if (satisfiesPzs_ != false) {

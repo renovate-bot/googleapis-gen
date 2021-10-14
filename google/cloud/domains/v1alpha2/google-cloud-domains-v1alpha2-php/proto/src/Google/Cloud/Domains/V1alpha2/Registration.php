@@ -223,7 +223,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -259,7 +259,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      */
     public function getExpireTime()
     {
-        return isset($this->expire_time) ? $this->expire_time : null;
+        return $this->expire_time;
     }
 
     public function hasExpireTime()
@@ -376,7 +376,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      */
     public function getManagementSettings()
     {
-        return isset($this->management_settings) ? $this->management_settings : null;
+        return $this->management_settings;
     }
 
     public function hasManagementSettings()
@@ -417,7 +417,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      */
     public function getDnsSettings()
     {
-        return isset($this->dns_settings) ? $this->dns_settings : null;
+        return $this->dns_settings;
     }
 
     public function hasDnsSettings()
@@ -457,7 +457,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      */
     public function getContactSettings()
     {
-        return isset($this->contact_settings) ? $this->contact_settings : null;
+        return $this->contact_settings;
     }
 
     public function hasContactSettings()
@@ -501,7 +501,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      */
     public function getPendingContactSettings()
     {
-        return isset($this->pending_contact_settings) ? $this->pending_contact_settings : null;
+        return $this->pending_contact_settings;
     }
 
     public function hasPendingContactSettings()

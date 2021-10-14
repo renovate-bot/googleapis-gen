@@ -4631,28 +4631,28 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < inputBaselines_.size(); i++) {
         output.writeMessage(1, inputBaselines_.get(i));
       }
-      if (!getInputTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputTensorName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputTensorName_);
       }
       if (encoding_ != com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding.ENCODING_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, encoding_);
       }
-      if (!getModalityBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modality_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modality_);
       }
       if (featureValueDomain_ != null) {
         output.writeMessage(5, getFeatureValueDomain());
       }
-      if (!getIndicesTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indicesTensorName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, indicesTensorName_);
       }
-      if (!getDenseShapeTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denseShapeTensorName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, denseShapeTensorName_);
       }
       for (int i = 0; i < indexFeatureMapping_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, indexFeatureMapping_.getRaw(i));
       }
-      if (!getEncodedTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encodedTensorName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, encodedTensorName_);
       }
       for (int i = 0; i < encodedBaselines_.size(); i++) {
@@ -4661,7 +4661,7 @@ private static final long serialVersionUID = 0L;
       if (visualization_ != null) {
         output.writeMessage(11, getVisualization());
       }
-      if (!getGroupNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, groupName_);
       }
       unknownFields.writeTo(output);
@@ -4677,24 +4677,24 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, inputBaselines_.get(i));
       }
-      if (!getInputTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputTensorName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputTensorName_);
       }
       if (encoding_ != com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding.ENCODING_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, encoding_);
       }
-      if (!getModalityBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modality_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modality_);
       }
       if (featureValueDomain_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getFeatureValueDomain());
       }
-      if (!getIndicesTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(indicesTensorName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, indicesTensorName_);
       }
-      if (!getDenseShapeTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denseShapeTensorName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, denseShapeTensorName_);
       }
       {
@@ -4705,7 +4705,7 @@ private static final long serialVersionUID = 0L;
         size += dataSize;
         size += 1 * getIndexFeatureMappingList().size();
       }
-      if (!getEncodedTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encodedTensorName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, encodedTensorName_);
       }
       for (int i = 0; i < encodedBaselines_.size(); i++) {
@@ -4716,7 +4716,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getVisualization());
       }
-      if (!getGroupNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, groupName_);
       }
       size += unknownFields.getSerializedSize();
@@ -7902,7 +7902,7 @@ private static final long serialVersionUID = 0L;
       if (displayNameMappingCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayNameMapping_);
       }
-      if (!getOutputTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputTensorName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputTensorName_);
       }
       unknownFields.writeTo(output);
@@ -7921,7 +7921,7 @@ private static final long serialVersionUID = 0L;
       if (displayNameMappingCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayNameMapping_);
       }
-      if (!getOutputTensorNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputTensorName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputTensorName_);
       }
       size += unknownFields.getSerializedSize();
@@ -9165,7 +9165,7 @@ private static final long serialVersionUID = 0L;
         internalGetOutputs(),
         OutputsDefaultEntryHolder.defaultEntry,
         2);
-    if (!getFeatureAttributionsSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureAttributionsSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, featureAttributionsSchemaUri_);
     }
     unknownFields.writeTo(output);
@@ -9197,7 +9197,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, outputs__);
     }
-    if (!getFeatureAttributionsSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureAttributionsSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, featureAttributionsSchemaUri_);
     }
     size += unknownFields.getSerializedSize();

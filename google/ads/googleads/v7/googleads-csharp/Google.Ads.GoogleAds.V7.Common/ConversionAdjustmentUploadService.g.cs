@@ -105,19 +105,23 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private static readonly pb::MessageParser<UploadConversionAdjustmentsRequest> _parser = new pb::MessageParser<UploadConversionAdjustmentsRequest>(() => new UploadConversionAdjustmentsRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UploadConversionAdjustmentsRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentUploadServiceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadConversionAdjustmentsRequest() {
       OnConstruction();
     }
@@ -125,6 +129,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadConversionAdjustmentsRequest(UploadConversionAdjustmentsRequest other) : this() {
       customerId_ = other.customerId_;
       conversionAdjustments_ = other.conversionAdjustments_.Clone();
@@ -134,6 +139,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadConversionAdjustmentsRequest Clone() {
       return new UploadConversionAdjustmentsRequest(this);
     }
@@ -145,6 +151,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// Required. The ID of the customer performing the upload.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CustomerId {
       get { return customerId_; }
       set {
@@ -161,6 +168,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// Required. The conversion adjustments that are being uploaded.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustment> ConversionAdjustments {
       get { return conversionAdjustments_; }
     }
@@ -178,6 +186,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// for more information about partial failure.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool PartialFailure {
       get { return partialFailure_; }
       set {
@@ -193,6 +202,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// returned, not results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool ValidateOnly {
       get { return validateOnly_; }
       set {
@@ -201,11 +211,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UploadConversionAdjustmentsRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UploadConversionAdjustmentsRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -221,6 +233,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CustomerId.Length != 0) hash ^= CustomerId.GetHashCode();
@@ -234,11 +247,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -264,6 +279,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CustomerId.Length != 0) {
         output.WriteRawTag(10);
@@ -285,6 +301,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CustomerId.Length != 0) {
@@ -304,6 +321,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UploadConversionAdjustmentsRequest other) {
       if (other == null) {
         return;
@@ -322,6 +340,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -355,6 +374,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -397,19 +417,23 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private static readonly pb::MessageParser<UploadConversionAdjustmentsResponse> _parser = new pb::MessageParser<UploadConversionAdjustmentsResponse>(() => new UploadConversionAdjustmentsResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UploadConversionAdjustmentsResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentUploadServiceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadConversionAdjustmentsResponse() {
       OnConstruction();
     }
@@ -417,6 +441,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadConversionAdjustmentsResponse(UploadConversionAdjustmentsResponse other) : this() {
       partialFailureError_ = other.partialFailureError_ != null ? other.partialFailureError_.Clone() : null;
       results_ = other.results_.Clone();
@@ -424,6 +449,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadConversionAdjustmentsResponse Clone() {
       return new UploadConversionAdjustmentsResponse(this);
     }
@@ -441,6 +467,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// for more information about partial failure.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.Status PartialFailureError {
       get { return partialFailureError_; }
       set {
@@ -459,16 +486,19 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// validate_only is true.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentResult> Results {
       get { return results_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UploadConversionAdjustmentsResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UploadConversionAdjustmentsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -482,6 +512,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (partialFailureError_ != null) hash ^= PartialFailureError.GetHashCode();
@@ -493,11 +524,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -515,6 +548,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (partialFailureError_ != null) {
         output.WriteRawTag(10);
@@ -528,6 +562,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (partialFailureError_ != null) {
@@ -541,6 +576,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UploadConversionAdjustmentsResponse other) {
       if (other == null) {
         return;
@@ -556,6 +592,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -584,6 +621,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -620,19 +658,23 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private static readonly pb::MessageParser<ConversionAdjustment> _parser = new pb::MessageParser<ConversionAdjustment>(() => new ConversionAdjustment());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ConversionAdjustment> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentUploadServiceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionAdjustment() {
       OnConstruction();
     }
@@ -640,6 +682,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionAdjustment(ConversionAdjustment other) : this() {
       conversionAction_ = other.conversionAction_;
       adjustmentDateTime_ = other.adjustmentDateTime_;
@@ -658,6 +701,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionAdjustment Clone() {
       return new ConversionAdjustment(this);
     }
@@ -672,6 +716,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// conversion action id as the sole identifier of the conversion action.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConversionAction {
       get { return conversionAction_ ?? ""; }
       set {
@@ -680,11 +725,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "conversion_action" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionAction {
       get { return conversionAction_ != null; }
     }
     /// <summary>Clears the value of the "conversion_action" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionAction() {
       conversionAction_ = null;
     }
@@ -698,6 +745,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AdjustmentDateTime {
       get { return adjustmentDateTime_ ?? ""; }
       set {
@@ -706,11 +754,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "adjustment_date_time" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAdjustmentDateTime {
       get { return adjustmentDateTime_ != null; }
     }
     /// <summary>Clears the value of the "adjustment_date_time" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAdjustmentDateTime() {
       adjustmentDateTime_ = null;
     }
@@ -722,6 +772,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// The adjustment type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.ConversionAdjustmentTypeEnum.Types.ConversionAdjustmentType AdjustmentType {
       get { return adjustmentType_; }
       set {
@@ -742,6 +793,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// and ignored.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Services.RestatementValue RestatementValue {
       get { return restatementValue_; }
       set {
@@ -756,6 +808,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// specified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Services.GclidDateTimePair GclidDateTimePair {
       get { return conversionIdentifierCase_ == ConversionIdentifierOneofCase.GclidDateTimePair ? (global::Google.Ads.GoogleAds.V7.Services.GclidDateTimePair) conversionIdentifier_ : null; }
       set {
@@ -772,6 +825,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// identifier here.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OrderId {
       get { return conversionIdentifierCase_ == ConversionIdentifierOneofCase.OrderId ? (string) conversionIdentifier_ : ""; }
       set {
@@ -789,22 +843,26 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     private ConversionIdentifierOneofCase conversionIdentifierCase_ = ConversionIdentifierOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionIdentifierOneofCase ConversionIdentifierCase {
       get { return conversionIdentifierCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionIdentifier() {
       conversionIdentifierCase_ = ConversionIdentifierOneofCase.None;
       conversionIdentifier_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ConversionAdjustment);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ConversionAdjustment other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -823,6 +881,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (HasConversionAction) hash ^= ConversionAction.GetHashCode();
@@ -839,11 +898,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -880,6 +941,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (conversionIdentifierCase_ == ConversionIdentifierOneofCase.GclidDateTimePair) {
         output.WriteRawTag(10);
@@ -912,6 +974,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (HasConversionAction) {
@@ -939,6 +1002,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ConversionAdjustment other) {
       if (other == null) {
         return;
@@ -974,6 +1038,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1023,6 +1088,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1081,19 +1147,23 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RestatementValue> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentUploadServiceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RestatementValue() {
       OnConstruction();
     }
@@ -1101,6 +1171,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RestatementValue(RestatementValue other) : this() {
       _hasBits0 = other._hasBits0;
       adjustedValue_ = other.adjustedValue_;
@@ -1109,6 +1180,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RestatementValue Clone() {
       return new RestatementValue(this);
     }
@@ -1126,6 +1198,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// and ignored.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double AdjustedValue {
       get { if ((_hasBits0 & 1) != 0) { return adjustedValue_; } else { return 0D; } }
       set {
@@ -1135,11 +1208,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "adjusted_value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAdjustedValue {
       get { return (_hasBits0 & 1) != 0; }
     }
     /// <summary>Clears the value of the "adjusted_value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAdjustedValue() {
       _hasBits0 &= ~1;
     }
@@ -1154,6 +1229,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// code e.g. USD or EUR.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CurrencyCode {
       get { return currencyCode_ ?? ""; }
       set {
@@ -1162,21 +1238,25 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "currency_code" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCurrencyCode {
       get { return currencyCode_ != null; }
     }
     /// <summary>Clears the value of the "currency_code" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCurrencyCode() {
       currencyCode_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as RestatementValue);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(RestatementValue other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1190,6 +1270,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (HasAdjustedValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(AdjustedValue);
@@ -1201,11 +1282,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1226,6 +1309,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (HasAdjustedValue) {
         output.WriteRawTag(25);
@@ -1242,6 +1326,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (HasAdjustedValue) {
@@ -1257,6 +1342,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(RestatementValue other) {
       if (other == null) {
         return;
@@ -1271,6 +1357,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1296,6 +1383,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1330,19 +1418,23 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private static readonly pb::MessageParser<GclidDateTimePair> _parser = new pb::MessageParser<GclidDateTimePair>(() => new GclidDateTimePair());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GclidDateTimePair> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentUploadServiceReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GclidDateTimePair() {
       OnConstruction();
     }
@@ -1350,6 +1442,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GclidDateTimePair(GclidDateTimePair other) : this() {
       gclid_ = other.gclid_;
       conversionDateTime_ = other.conversionDateTime_;
@@ -1357,6 +1450,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GclidDateTimePair Clone() {
       return new GclidDateTimePair(this);
     }
@@ -1369,6 +1463,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// adjustment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Gclid {
       get { return gclid_ ?? ""; }
       set {
@@ -1377,11 +1472,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "gclid" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGclid {
       get { return gclid_ != null; }
     }
     /// <summary>Clears the value of the "gclid" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGclid() {
       gclid_ = null;
     }
@@ -1395,6 +1492,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConversionDateTime {
       get { return conversionDateTime_ ?? ""; }
       set {
@@ -1403,21 +1501,25 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "conversion_date_time" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionDateTime {
       get { return conversionDateTime_ != null; }
     }
     /// <summary>Clears the value of the "conversion_date_time" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionDateTime() {
       conversionDateTime_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GclidDateTimePair);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GclidDateTimePair other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1431,6 +1533,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (HasGclid) hash ^= Gclid.GetHashCode();
@@ -1442,11 +1545,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1467,6 +1572,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (HasGclid) {
         output.WriteRawTag(26);
@@ -1483,6 +1589,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (HasGclid) {
@@ -1498,6 +1605,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GclidDateTimePair other) {
       if (other == null) {
         return;
@@ -1512,6 +1620,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1537,6 +1646,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1570,19 +1680,23 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private static readonly pb::MessageParser<ConversionAdjustmentResult> _parser = new pb::MessageParser<ConversionAdjustmentResult>(() => new ConversionAdjustmentResult());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ConversionAdjustmentResult> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Services.ConversionAdjustmentUploadServiceReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionAdjustmentResult() {
       OnConstruction();
     }
@@ -1590,6 +1704,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionAdjustmentResult(ConversionAdjustmentResult other) : this() {
       conversionAction_ = other.conversionAction_;
       adjustmentDateTime_ = other.adjustmentDateTime_;
@@ -1607,6 +1722,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionAdjustmentResult Clone() {
       return new ConversionAdjustmentResult(this);
     }
@@ -1619,6 +1735,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// adjustment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ConversionAction {
       get { return conversionAction_ ?? ""; }
       set {
@@ -1627,11 +1744,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "conversion_action" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasConversionAction {
       get { return conversionAction_ != null; }
     }
     /// <summary>Clears the value of the "conversion_action" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionAction() {
       conversionAction_ = null;
     }
@@ -1644,6 +1763,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AdjustmentDateTime {
       get { return adjustmentDateTime_ ?? ""; }
       set {
@@ -1652,11 +1772,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     /// <summary>Gets whether the "adjustment_date_time" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasAdjustmentDateTime {
       get { return adjustmentDateTime_ != null; }
     }
     /// <summary>Clears the value of the "adjustment_date_time" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearAdjustmentDateTime() {
       adjustmentDateTime_ = null;
     }
@@ -1668,6 +1790,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// The adjustment type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.ConversionAdjustmentTypeEnum.Types.ConversionAdjustmentType AdjustmentType {
       get { return adjustmentType_; }
       set {
@@ -1682,6 +1805,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// specified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Services.GclidDateTimePair GclidDateTimePair {
       get { return conversionIdentifierCase_ == ConversionIdentifierOneofCase.GclidDateTimePair ? (global::Google.Ads.GoogleAds.V7.Services.GclidDateTimePair) conversionIdentifier_ : null; }
       set {
@@ -1696,6 +1820,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// The order ID of the conversion that was adjusted.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OrderId {
       get { return conversionIdentifierCase_ == ConversionIdentifierOneofCase.OrderId ? (string) conversionIdentifier_ : ""; }
       set {
@@ -1713,22 +1838,26 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
     private ConversionIdentifierOneofCase conversionIdentifierCase_ = ConversionIdentifierOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConversionIdentifierOneofCase ConversionIdentifierCase {
       get { return conversionIdentifierCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearConversionIdentifier() {
       conversionIdentifierCase_ = ConversionIdentifierOneofCase.None;
       conversionIdentifier_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ConversionAdjustmentResult);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ConversionAdjustmentResult other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1746,6 +1875,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (HasConversionAction) hash ^= ConversionAction.GetHashCode();
@@ -1761,11 +1891,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1798,6 +1930,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (conversionIdentifierCase_ == ConversionIdentifierOneofCase.GclidDateTimePair) {
         output.WriteRawTag(10);
@@ -1826,6 +1959,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (HasConversionAction) {
@@ -1850,6 +1984,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ConversionAdjustmentResult other) {
       if (other == null) {
         return;
@@ -1879,6 +2014,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1921,6 +2057,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

@@ -26,7 +26,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -41,7 +41,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * affinity audience.
      * This field is required for create operations.
      *
-     * Generated from protobuf field <code>string name = 9;</code>
+     * Generated from protobuf field <code>optional string name = 9;</code>
      */
     protected $name = null;
     /**
@@ -54,7 +54,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Description of this custom interest audience.
      *
-     * Generated from protobuf field <code>string description = 10;</code>
+     * Generated from protobuf field <code>optional string description = 10;</code>
      */
     protected $description = null;
     /**
@@ -134,7 +134,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -155,7 +155,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -200,7 +200,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * affinity audience.
      * This field is required for create operations.
      *
-     * Generated from protobuf field <code>string name = 9;</code>
+     * Generated from protobuf field <code>optional string name = 9;</code>
      * @return string
      */
     public function getName()
@@ -223,7 +223,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * affinity audience.
      * This field is required for create operations.
      *
-     * Generated from protobuf field <code>string name = 9;</code>
+     * Generated from protobuf field <code>optional string name = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -266,7 +266,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Description of this custom interest audience.
      *
-     * Generated from protobuf field <code>string description = 10;</code>
+     * Generated from protobuf field <code>optional string description = 10;</code>
      * @return string
      */
     public function getDescription()
@@ -287,7 +287,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Description of this custom interest audience.
      *
-     * Generated from protobuf field <code>string description = 10;</code>
+     * Generated from protobuf field <code>optional string description = 10;</code>
      * @param string $var
      * @return $this
      */

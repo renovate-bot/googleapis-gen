@@ -19,13 +19,13 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     /**
      * The key matching the parameter tag name.
      *
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>optional string key = 3;</code>
      */
     protected $key = null;
     /**
      * The value to be substituted.
      *
-     * Generated from protobuf field <code>string value = 4;</code>
+     * Generated from protobuf field <code>optional string value = 4;</code>
      */
     protected $value = null;
 
@@ -49,7 +49,7 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     /**
      * The key matching the parameter tag name.
      *
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>optional string key = 3;</code>
      * @return string
      */
     public function getKey()
@@ -70,7 +70,7 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     /**
      * The key matching the parameter tag name.
      *
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>optional string key = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -85,7 +85,7 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     /**
      * The value to be substituted.
      *
-     * Generated from protobuf field <code>string value = 4;</code>
+     * Generated from protobuf field <code>optional string value = 4;</code>
      * @return string
      */
     public function getValue()
@@ -106,7 +106,7 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     /**
      * The value to be substituted.
      *
-     * Generated from protobuf field <code>string value = 4;</code>
+     * Generated from protobuf field <code>optional string value = 4;</code>
      * @param string $var
      * @return $this
      */

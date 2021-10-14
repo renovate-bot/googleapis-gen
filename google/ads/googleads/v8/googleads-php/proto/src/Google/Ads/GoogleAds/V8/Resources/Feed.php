@@ -27,13 +27,13 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $name = null;
     /**
@@ -142,7 +142,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -164,7 +164,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -179,7 +179,7 @@ class Feed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getName()
@@ -200,7 +200,7 @@ class Feed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

@@ -18,7 +18,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
     /**
      * The ad group resource to add keyword to. This is a required field.
      *
-     * Generated from protobuf field <code>string ad_group = 4;</code>
+     * Generated from protobuf field <code>optional string ad_group = 4;</code>
      */
     protected $ad_group = null;
     /**
@@ -31,7 +31,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
      * Optional, CPC bid to set for the keyword. If not set, keyword will use
      * bid based on bidding strategy used by target ad group.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 5;</code>
      */
     protected $cpc_bid_micros = null;
 
@@ -58,7 +58,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
     /**
      * The ad group resource to add keyword to. This is a required field.
      *
-     * Generated from protobuf field <code>string ad_group = 4;</code>
+     * Generated from protobuf field <code>optional string ad_group = 4;</code>
      * @return string
      */
     public function getAdGroup()
@@ -79,7 +79,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
     /**
      * The ad group resource to add keyword to. This is a required field.
      *
-     * Generated from protobuf field <code>string ad_group = 4;</code>
+     * Generated from protobuf field <code>optional string ad_group = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -121,7 +121,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
      * Optional, CPC bid to set for the keyword. If not set, keyword will use
      * bid based on bidding strategy used by target ad group.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 5;</code>
      * @return int|string
      */
     public function getCpcBidMicros()
@@ -143,7 +143,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
      * Optional, CPC bid to set for the keyword. If not set, keyword will use
      * bid based on bidding strategy used by target ad group.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 5;</code>
      * @param int|string $var
      * @return $this
      */

@@ -18,7 +18,7 @@ class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
     /**
      * The mobile device constant resource name.
      *
-     * Generated from protobuf field <code>string mobile_device_constant = 2;</code>
+     * Generated from protobuf field <code>optional string mobile_device_constant = 2;</code>
      */
     protected $mobile_device_constant = null;
 
@@ -40,7 +40,7 @@ class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
     /**
      * The mobile device constant resource name.
      *
-     * Generated from protobuf field <code>string mobile_device_constant = 2;</code>
+     * Generated from protobuf field <code>optional string mobile_device_constant = 2;</code>
      * @return string
      */
     public function getMobileDeviceConstant()
@@ -61,7 +61,7 @@ class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
     /**
      * The mobile device constant resource name.
      *
-     * Generated from protobuf field <code>string mobile_device_constant = 2;</code>
+     * Generated from protobuf field <code>optional string mobile_device_constant = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -32,7 +32,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      * Email address of the user who should be invited on the created client
      * customer. Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string email_address = 5;</code>
+     * Generated from protobuf field <code>optional string email_address = 5;</code>
      */
     protected $email_address = null;
     /**
@@ -112,7 +112,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerClient()
     {
-        return isset($this->customer_client) ? $this->customer_client : null;
+        return $this->customer_client;
     }
 
     public function hasCustomerClient()
@@ -145,7 +145,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      * Email address of the user who should be invited on the created client
      * customer. Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string email_address = 5;</code>
+     * Generated from protobuf field <code>optional string email_address = 5;</code>
      * @return string
      */
     public function getEmailAddress()
@@ -167,7 +167,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      * Email address of the user who should be invited on the created client
      * customer. Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string email_address = 5;</code>
+     * Generated from protobuf field <code>optional string email_address = 5;</code>
      * @param string $var
      * @return $this
      */

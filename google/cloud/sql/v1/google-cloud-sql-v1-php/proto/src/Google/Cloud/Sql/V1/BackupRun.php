@@ -241,7 +241,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getEnqueuedTime()
     {
-        return isset($this->enqueued_time) ? $this->enqueued_time : null;
+        return $this->enqueued_time;
     }
 
     public function hasEnqueuedTime()
@@ -309,7 +309,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -349,7 +349,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -388,7 +388,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -481,7 +481,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getWindowStartTime()
     {
-        return isset($this->window_start_time) ? $this->window_start_time : null;
+        return $this->window_start_time;
     }
 
     public function hasWindowStartTime()
@@ -597,7 +597,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getDiskEncryptionConfiguration()
     {
-        return isset($this->disk_encryption_configuration) ? $this->disk_encryption_configuration : null;
+        return $this->disk_encryption_configuration;
     }
 
     public function hasDiskEncryptionConfiguration()
@@ -633,7 +633,7 @@ class BackupRun extends \Google\Protobuf\Internal\Message
      */
     public function getDiskEncryptionStatus()
     {
-        return isset($this->disk_encryption_status) ? $this->disk_encryption_status : null;
+        return $this->disk_encryption_status;
     }
 
     public function hasDiskEncryptionStatus()

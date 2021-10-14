@@ -446,7 +446,7 @@ private static final long serialVersionUID = 0L;
     if (code_ != com.google.container.v1beta1.StatusCondition.Code.UNKNOWN.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     if (canonicalCode_ != com.google.rpc.Code.OK.getNumber()) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     if (canonicalCode_ != com.google.rpc.Code.OK.getNumber()) {

@@ -65,7 +65,7 @@ class LongRunningRecognizeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getConfig()
     {
-        return isset($this->config) ? $this->config : null;
+        return $this->config;
     }
 
     public function hasConfig()
@@ -102,7 +102,7 @@ class LongRunningRecognizeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAudio()
     {
-        return isset($this->audio) ? $this->audio : null;
+        return $this->audio;
     }
 
     public function hasAudio()
@@ -138,7 +138,7 @@ class LongRunningRecognizeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOutputConfig()
     {
-        return isset($this->output_config) ? $this->output_config : null;
+        return $this->output_config;
     }
 
     public function hasOutputConfig()

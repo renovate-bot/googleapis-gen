@@ -356,7 +356,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ID of the ad group.
    * </pre>
    *
-   * <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the id field is set.
    */
   @java.lang.Override
@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ID of the ad group.
    * </pre>
    *
-   * <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The id.
    */
   @java.lang.Override
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
    * (code point 0xA) or carriage return (code point 0xD) characters.
    * </pre>
    *
-   * <code>string name = 35;</code>
+   * <code>optional string name = 35;</code>
    * @return Whether the name field is set.
    */
   @java.lang.Override
@@ -405,7 +405,7 @@ private static final long serialVersionUID = 0L;
    * (code point 0xA) or carriage return (code point 0xD) characters.
    * </pre>
    *
-   * <code>string name = 35;</code>
+   * <code>optional string name = 35;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -431,7 +431,7 @@ private static final long serialVersionUID = 0L;
    * (code point 0xA) or carriage return (code point 0xD) characters.
    * </pre>
    *
-   * <code>string name = 35;</code>
+   * <code>optional string name = 35;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the baseAdGroup field is set.
    */
   @java.lang.Override
@@ -557,7 +557,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The baseAdGroup.
    */
   @java.lang.Override
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for baseAdGroup.
    */
   @java.lang.Override
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
    * The URL template for constructing a tracking URL.
    * </pre>
    *
-   * <code>string tracking_url_template = 37;</code>
+   * <code>optional string tracking_url_template = 37;</code>
    * @return Whether the trackingUrlTemplate field is set.
    */
   @java.lang.Override
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
    * The URL template for constructing a tracking URL.
    * </pre>
    *
-   * <code>string tracking_url_template = 37;</code>
+   * <code>optional string tracking_url_template = 37;</code>
    * @return The trackingUrlTemplate.
    */
   @java.lang.Override
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
    * The URL template for constructing a tracking URL.
    * </pre>
    *
-   * <code>string tracking_url_template = 37;</code>
+   * <code>optional string tracking_url_template = 37;</code>
    * @return The bytes for trackingUrlTemplate.
    */
   @java.lang.Override
@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
    * Immutable. The campaign to which the ad group belongs.
    * </pre>
    *
-   * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the campaign field is set.
    */
   @java.lang.Override
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
    * Immutable. The campaign to which the ad group belongs.
    * </pre>
    *
-   * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The campaign.
    */
   @java.lang.Override
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
    * Immutable. The campaign to which the ad group belongs.
    * </pre>
    *
-   * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for campaign.
    */
   @java.lang.Override
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
    * The maximum CPC (cost-per-click) bid.
    * </pre>
    *
-   * <code>int64 cpc_bid_micros = 39;</code>
+   * <code>optional int64 cpc_bid_micros = 39;</code>
    * @return Whether the cpcBidMicros field is set.
    */
   @java.lang.Override
@@ -800,7 +800,7 @@ private static final long serialVersionUID = 0L;
    * The maximum CPC (cost-per-click) bid.
    * </pre>
    *
-   * <code>int64 cpc_bid_micros = 39;</code>
+   * <code>optional int64 cpc_bid_micros = 39;</code>
    * @return The cpcBidMicros.
    */
   @java.lang.Override
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
    * The maximum CPM (cost-per-thousand viewable impressions) bid.
    * </pre>
    *
-   * <code>int64 cpm_bid_micros = 40;</code>
+   * <code>optional int64 cpm_bid_micros = 40;</code>
    * @return Whether the cpmBidMicros field is set.
    */
   @java.lang.Override
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
    * The maximum CPM (cost-per-thousand viewable impressions) bid.
    * </pre>
    *
-   * <code>int64 cpm_bid_micros = 40;</code>
+   * <code>optional int64 cpm_bid_micros = 40;</code>
    * @return The cpmBidMicros.
    */
   @java.lang.Override
@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
    * The target CPA (cost-per-acquisition).
    * </pre>
    *
-   * <code>int64 target_cpa_micros = 41;</code>
+   * <code>optional int64 target_cpa_micros = 41;</code>
    * @return Whether the targetCpaMicros field is set.
    */
   @java.lang.Override
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
    * The target CPA (cost-per-acquisition).
    * </pre>
    *
-   * <code>int64 target_cpa_micros = 41;</code>
+   * <code>optional int64 target_cpa_micros = 41;</code>
    * @return The targetCpaMicros.
    */
   @java.lang.Override
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The CPV (cost-per-view) bid.
    * </pre>
    *
-   * <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the cpvBidMicros field is set.
    */
   @java.lang.Override
@@ -881,7 +881,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The CPV (cost-per-view) bid.
    * </pre>
    *
-   * <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The cpvBidMicros.
    */
   @java.lang.Override
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
    * thousand times the ad is shown.
    * </pre>
    *
-   * <code>int64 target_cpm_micros = 43;</code>
+   * <code>optional int64 target_cpm_micros = 43;</code>
    * @return Whether the targetCpmMicros field is set.
    */
   @java.lang.Override
@@ -910,7 +910,7 @@ private static final long serialVersionUID = 0L;
    * thousand times the ad is shown.
    * </pre>
    *
-   * <code>int64 target_cpm_micros = 43;</code>
+   * <code>optional int64 target_cpm_micros = 43;</code>
    * @return The targetCpmMicros.
    */
   @java.lang.Override
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
    * Otherwise, this value is ignored.
    * </pre>
    *
-   * <code>double target_roas = 44;</code>
+   * <code>optional double target_roas = 44;</code>
    * @return Whether the targetRoas field is set.
    */
   @java.lang.Override
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
    * Otherwise, this value is ignored.
    * </pre>
    *
-   * <code>double target_roas = 44;</code>
+   * <code>optional double target_roas = 44;</code>
    * @return The targetRoas.
    */
   @java.lang.Override
@@ -960,7 +960,7 @@ private static final long serialVersionUID = 0L;
    * value stored here is 1,000,000 * [fraction].
    * </pre>
    *
-   * <code>int64 percent_cpc_bid_micros = 45;</code>
+   * <code>optional int64 percent_cpc_bid_micros = 45;</code>
    * @return Whether the percentCpcBidMicros field is set.
    */
   @java.lang.Override
@@ -974,7 +974,7 @@ private static final long serialVersionUID = 0L;
    * value stored here is 1,000,000 * [fraction].
    * </pre>
    *
-   * <code>int64 percent_cpc_bid_micros = 45;</code>
+   * <code>optional int64 percent_cpc_bid_micros = 45;</code>
    * @return The percentCpcBidMicros.
    */
   @java.lang.Override
@@ -1058,7 +1058,7 @@ private static final long serialVersionUID = 0L;
    * URL template for appending params to Final URL.
    * </pre>
    *
-   * <code>string final_url_suffix = 46;</code>
+   * <code>optional string final_url_suffix = 46;</code>
    * @return Whether the finalUrlSuffix field is set.
    */
   @java.lang.Override
@@ -1070,7 +1070,7 @@ private static final long serialVersionUID = 0L;
    * URL template for appending params to Final URL.
    * </pre>
    *
-   * <code>string final_url_suffix = 46;</code>
+   * <code>optional string final_url_suffix = 46;</code>
    * @return The finalUrlSuffix.
    */
   @java.lang.Override
@@ -1091,7 +1091,7 @@ private static final long serialVersionUID = 0L;
    * URL template for appending params to Final URL.
    * </pre>
    *
-   * <code>string final_url_suffix = 46;</code>
+   * <code>optional string final_url_suffix = 46;</code>
    * @return The bytes for finalUrlSuffix.
    */
   @java.lang.Override
@@ -1155,7 +1155,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the effectiveTargetCpaMicros field is set.
    */
   @java.lang.Override
@@ -1168,7 +1168,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The effectiveTargetCpaMicros.
    */
   @java.lang.Override
@@ -1213,7 +1213,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the effectiveTargetRoas field is set.
    */
   @java.lang.Override
@@ -1226,7 +1226,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The effectiveTargetRoas.
    */
   @java.lang.Override
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
     }
     if (status_ != com.google.ads.googleads.v7.enums.AdGroupStatusEnum.AdGroupStatus.UNSPECIFIED.getNumber()) {
@@ -1511,7 +1511,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
     }
     if (status_ != com.google.ads.googleads.v7.enums.AdGroupStatusEnum.AdGroupStatus.UNSPECIFIED.getNumber()) {
@@ -2503,7 +2503,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the ad group.
      * </pre>
      *
-     * <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the id field is set.
      */
     @java.lang.Override
@@ -2515,7 +2515,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the ad group.
      * </pre>
      *
-     * <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The id.
      */
     @java.lang.Override
@@ -2527,7 +2527,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the ad group.
      * </pre>
      *
-     * <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -2542,7 +2542,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the ad group.
      * </pre>
      *
-     * <code>int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -2563,7 +2563,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 35;</code>
+     * <code>optional string name = 35;</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
@@ -2579,7 +2579,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 35;</code>
+     * <code>optional string name = 35;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -2604,7 +2604,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 35;</code>
+     * <code>optional string name = 35;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -2630,7 +2630,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 35;</code>
+     * <code>optional string name = 35;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2654,7 +2654,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 35;</code>
+     * <code>optional string name = 35;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -2673,7 +2673,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 35;</code>
+     * <code>optional string name = 35;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2921,7 +2921,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the baseAdGroup field is set.
      */
     public boolean hasBaseAdGroup() {
@@ -2936,7 +2936,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The baseAdGroup.
      */
     public java.lang.String getBaseAdGroup() {
@@ -2960,7 +2960,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for baseAdGroup.
      */
     public com.google.protobuf.ByteString
@@ -2985,7 +2985,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The baseAdGroup to set.
      * @return This builder for chaining.
      */
@@ -3008,7 +3008,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearBaseAdGroup() {
@@ -3026,7 +3026,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_ad_group = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for baseAdGroup to set.
      * @return This builder for chaining.
      */
@@ -3048,7 +3048,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 37;</code>
+     * <code>optional string tracking_url_template = 37;</code>
      * @return Whether the trackingUrlTemplate field is set.
      */
     public boolean hasTrackingUrlTemplate() {
@@ -3059,7 +3059,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 37;</code>
+     * <code>optional string tracking_url_template = 37;</code>
      * @return The trackingUrlTemplate.
      */
     public java.lang.String getTrackingUrlTemplate() {
@@ -3079,7 +3079,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 37;</code>
+     * <code>optional string tracking_url_template = 37;</code>
      * @return The bytes for trackingUrlTemplate.
      */
     public com.google.protobuf.ByteString
@@ -3100,7 +3100,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 37;</code>
+     * <code>optional string tracking_url_template = 37;</code>
      * @param value The trackingUrlTemplate to set.
      * @return This builder for chaining.
      */
@@ -3119,7 +3119,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 37;</code>
+     * <code>optional string tracking_url_template = 37;</code>
      * @return This builder for chaining.
      */
     public Builder clearTrackingUrlTemplate() {
@@ -3133,7 +3133,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 37;</code>
+     * <code>optional string tracking_url_template = 37;</code>
      * @param value The bytes for trackingUrlTemplate to set.
      * @return This builder for chaining.
      */
@@ -3485,7 +3485,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The campaign to which the ad group belongs.
      * </pre>
      *
-     * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the campaign field is set.
      */
     public boolean hasCampaign() {
@@ -3496,7 +3496,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The campaign to which the ad group belongs.
      * </pre>
      *
-     * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The campaign.
      */
     public java.lang.String getCampaign() {
@@ -3516,7 +3516,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The campaign to which the ad group belongs.
      * </pre>
      *
-     * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for campaign.
      */
     public com.google.protobuf.ByteString
@@ -3537,7 +3537,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The campaign to which the ad group belongs.
      * </pre>
      *
-     * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The campaign to set.
      * @return This builder for chaining.
      */
@@ -3556,7 +3556,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The campaign to which the ad group belongs.
      * </pre>
      *
-     * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearCampaign() {
@@ -3570,7 +3570,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The campaign to which the ad group belongs.
      * </pre>
      *
-     * <code>string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 38 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for campaign to set.
      * @return This builder for chaining.
      */
@@ -3592,7 +3592,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 cpc_bid_micros = 39;</code>
+     * <code>optional int64 cpc_bid_micros = 39;</code>
      * @return Whether the cpcBidMicros field is set.
      */
     @java.lang.Override
@@ -3604,7 +3604,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 cpc_bid_micros = 39;</code>
+     * <code>optional int64 cpc_bid_micros = 39;</code>
      * @return The cpcBidMicros.
      */
     @java.lang.Override
@@ -3616,7 +3616,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 cpc_bid_micros = 39;</code>
+     * <code>optional int64 cpc_bid_micros = 39;</code>
      * @param value The cpcBidMicros to set.
      * @return This builder for chaining.
      */
@@ -3631,7 +3631,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 cpc_bid_micros = 39;</code>
+     * <code>optional int64 cpc_bid_micros = 39;</code>
      * @return This builder for chaining.
      */
     public Builder clearCpcBidMicros() {
@@ -3647,7 +3647,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      * </pre>
      *
-     * <code>int64 cpm_bid_micros = 40;</code>
+     * <code>optional int64 cpm_bid_micros = 40;</code>
      * @return Whether the cpmBidMicros field is set.
      */
     @java.lang.Override
@@ -3659,7 +3659,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      * </pre>
      *
-     * <code>int64 cpm_bid_micros = 40;</code>
+     * <code>optional int64 cpm_bid_micros = 40;</code>
      * @return The cpmBidMicros.
      */
     @java.lang.Override
@@ -3671,7 +3671,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      * </pre>
      *
-     * <code>int64 cpm_bid_micros = 40;</code>
+     * <code>optional int64 cpm_bid_micros = 40;</code>
      * @param value The cpmBidMicros to set.
      * @return This builder for chaining.
      */
@@ -3686,7 +3686,7 @@ private static final long serialVersionUID = 0L;
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      * </pre>
      *
-     * <code>int64 cpm_bid_micros = 40;</code>
+     * <code>optional int64 cpm_bid_micros = 40;</code>
      * @return This builder for chaining.
      */
     public Builder clearCpmBidMicros() {
@@ -3702,7 +3702,7 @@ private static final long serialVersionUID = 0L;
      * The target CPA (cost-per-acquisition).
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 41;</code>
+     * <code>optional int64 target_cpa_micros = 41;</code>
      * @return Whether the targetCpaMicros field is set.
      */
     @java.lang.Override
@@ -3714,7 +3714,7 @@ private static final long serialVersionUID = 0L;
      * The target CPA (cost-per-acquisition).
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 41;</code>
+     * <code>optional int64 target_cpa_micros = 41;</code>
      * @return The targetCpaMicros.
      */
     @java.lang.Override
@@ -3726,7 +3726,7 @@ private static final long serialVersionUID = 0L;
      * The target CPA (cost-per-acquisition).
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 41;</code>
+     * <code>optional int64 target_cpa_micros = 41;</code>
      * @param value The targetCpaMicros to set.
      * @return This builder for chaining.
      */
@@ -3741,7 +3741,7 @@ private static final long serialVersionUID = 0L;
      * The target CPA (cost-per-acquisition).
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 41;</code>
+     * <code>optional int64 target_cpa_micros = 41;</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetCpaMicros() {
@@ -3757,7 +3757,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The CPV (cost-per-view) bid.
      * </pre>
      *
-     * <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the cpvBidMicros field is set.
      */
     @java.lang.Override
@@ -3769,7 +3769,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The CPV (cost-per-view) bid.
      * </pre>
      *
-     * <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cpvBidMicros.
      */
     @java.lang.Override
@@ -3781,7 +3781,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The CPV (cost-per-view) bid.
      * </pre>
      *
-     * <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The cpvBidMicros to set.
      * @return This builder for chaining.
      */
@@ -3796,7 +3796,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The CPV (cost-per-view) bid.
      * </pre>
      *
-     * <code>int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpv_bid_micros = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearCpvBidMicros() {
@@ -3813,7 +3813,7 @@ private static final long serialVersionUID = 0L;
      * thousand times the ad is shown.
      * </pre>
      *
-     * <code>int64 target_cpm_micros = 43;</code>
+     * <code>optional int64 target_cpm_micros = 43;</code>
      * @return Whether the targetCpmMicros field is set.
      */
     @java.lang.Override
@@ -3826,7 +3826,7 @@ private static final long serialVersionUID = 0L;
      * thousand times the ad is shown.
      * </pre>
      *
-     * <code>int64 target_cpm_micros = 43;</code>
+     * <code>optional int64 target_cpm_micros = 43;</code>
      * @return The targetCpmMicros.
      */
     @java.lang.Override
@@ -3839,7 +3839,7 @@ private static final long serialVersionUID = 0L;
      * thousand times the ad is shown.
      * </pre>
      *
-     * <code>int64 target_cpm_micros = 43;</code>
+     * <code>optional int64 target_cpm_micros = 43;</code>
      * @param value The targetCpmMicros to set.
      * @return This builder for chaining.
      */
@@ -3855,7 +3855,7 @@ private static final long serialVersionUID = 0L;
      * thousand times the ad is shown.
      * </pre>
      *
-     * <code>int64 target_cpm_micros = 43;</code>
+     * <code>optional int64 target_cpm_micros = 43;</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetCpmMicros() {
@@ -3874,7 +3874,7 @@ private static final long serialVersionUID = 0L;
      * Otherwise, this value is ignored.
      * </pre>
      *
-     * <code>double target_roas = 44;</code>
+     * <code>optional double target_roas = 44;</code>
      * @return Whether the targetRoas field is set.
      */
     @java.lang.Override
@@ -3889,7 +3889,7 @@ private static final long serialVersionUID = 0L;
      * Otherwise, this value is ignored.
      * </pre>
      *
-     * <code>double target_roas = 44;</code>
+     * <code>optional double target_roas = 44;</code>
      * @return The targetRoas.
      */
     @java.lang.Override
@@ -3904,7 +3904,7 @@ private static final long serialVersionUID = 0L;
      * Otherwise, this value is ignored.
      * </pre>
      *
-     * <code>double target_roas = 44;</code>
+     * <code>optional double target_roas = 44;</code>
      * @param value The targetRoas to set.
      * @return This builder for chaining.
      */
@@ -3922,7 +3922,7 @@ private static final long serialVersionUID = 0L;
      * Otherwise, this value is ignored.
      * </pre>
      *
-     * <code>double target_roas = 44;</code>
+     * <code>optional double target_roas = 44;</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetRoas() {
@@ -3940,7 +3940,7 @@ private static final long serialVersionUID = 0L;
      * value stored here is 1,000,000 * [fraction].
      * </pre>
      *
-     * <code>int64 percent_cpc_bid_micros = 45;</code>
+     * <code>optional int64 percent_cpc_bid_micros = 45;</code>
      * @return Whether the percentCpcBidMicros field is set.
      */
     @java.lang.Override
@@ -3954,7 +3954,7 @@ private static final long serialVersionUID = 0L;
      * value stored here is 1,000,000 * [fraction].
      * </pre>
      *
-     * <code>int64 percent_cpc_bid_micros = 45;</code>
+     * <code>optional int64 percent_cpc_bid_micros = 45;</code>
      * @return The percentCpcBidMicros.
      */
     @java.lang.Override
@@ -3968,7 +3968,7 @@ private static final long serialVersionUID = 0L;
      * value stored here is 1,000,000 * [fraction].
      * </pre>
      *
-     * <code>int64 percent_cpc_bid_micros = 45;</code>
+     * <code>optional int64 percent_cpc_bid_micros = 45;</code>
      * @param value The percentCpcBidMicros to set.
      * @return This builder for chaining.
      */
@@ -3985,7 +3985,7 @@ private static final long serialVersionUID = 0L;
      * value stored here is 1,000,000 * [fraction].
      * </pre>
      *
-     * <code>int64 percent_cpc_bid_micros = 45;</code>
+     * <code>optional int64 percent_cpc_bid_micros = 45;</code>
      * @return This builder for chaining.
      */
     public Builder clearPercentCpcBidMicros() {
@@ -4240,7 +4240,7 @@ private static final long serialVersionUID = 0L;
      * URL template for appending params to Final URL.
      * </pre>
      *
-     * <code>string final_url_suffix = 46;</code>
+     * <code>optional string final_url_suffix = 46;</code>
      * @return Whether the finalUrlSuffix field is set.
      */
     public boolean hasFinalUrlSuffix() {
@@ -4251,7 +4251,7 @@ private static final long serialVersionUID = 0L;
      * URL template for appending params to Final URL.
      * </pre>
      *
-     * <code>string final_url_suffix = 46;</code>
+     * <code>optional string final_url_suffix = 46;</code>
      * @return The finalUrlSuffix.
      */
     public java.lang.String getFinalUrlSuffix() {
@@ -4271,7 +4271,7 @@ private static final long serialVersionUID = 0L;
      * URL template for appending params to Final URL.
      * </pre>
      *
-     * <code>string final_url_suffix = 46;</code>
+     * <code>optional string final_url_suffix = 46;</code>
      * @return The bytes for finalUrlSuffix.
      */
     public com.google.protobuf.ByteString
@@ -4292,7 +4292,7 @@ private static final long serialVersionUID = 0L;
      * URL template for appending params to Final URL.
      * </pre>
      *
-     * <code>string final_url_suffix = 46;</code>
+     * <code>optional string final_url_suffix = 46;</code>
      * @param value The finalUrlSuffix to set.
      * @return This builder for chaining.
      */
@@ -4311,7 +4311,7 @@ private static final long serialVersionUID = 0L;
      * URL template for appending params to Final URL.
      * </pre>
      *
-     * <code>string final_url_suffix = 46;</code>
+     * <code>optional string final_url_suffix = 46;</code>
      * @return This builder for chaining.
      */
     public Builder clearFinalUrlSuffix() {
@@ -4325,7 +4325,7 @@ private static final long serialVersionUID = 0L;
      * URL template for appending params to Final URL.
      * </pre>
      *
-     * <code>string final_url_suffix = 46;</code>
+     * <code>optional string final_url_suffix = 46;</code>
      * @param value The bytes for finalUrlSuffix to set.
      * @return This builder for chaining.
      */
@@ -4503,7 +4503,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the effectiveTargetCpaMicros field is set.
      */
     @java.lang.Override
@@ -4516,7 +4516,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The effectiveTargetCpaMicros.
      */
     @java.lang.Override
@@ -4529,7 +4529,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The effectiveTargetCpaMicros to set.
      * @return This builder for chaining.
      */
@@ -4545,7 +4545,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 effective_target_cpa_micros = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearEffectiveTargetCpaMicros() {
@@ -4641,7 +4641,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the effectiveTargetRoas field is set.
      */
     @java.lang.Override
@@ -4654,7 +4654,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The effectiveTargetRoas.
      */
     @java.lang.Override
@@ -4667,7 +4667,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The effectiveTargetRoas to set.
      * @return This builder for chaining.
      */
@@ -4683,7 +4683,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double effective_target_roas = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearEffectiveTargetRoas() {

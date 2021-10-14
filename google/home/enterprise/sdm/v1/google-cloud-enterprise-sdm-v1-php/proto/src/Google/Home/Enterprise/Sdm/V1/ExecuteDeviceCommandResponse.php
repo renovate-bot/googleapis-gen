@@ -45,7 +45,7 @@ class ExecuteDeviceCommandResponse extends \Google\Protobuf\Internal\Message
      */
     public function getResults()
     {
-        return isset($this->results) ? $this->results : null;
+        return $this->results;
     }
 
     public function hasResults()

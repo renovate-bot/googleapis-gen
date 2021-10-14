@@ -113,7 +113,7 @@ class AndroidDeviceCatalog extends \Google\Protobuf\Internal\Message
      */
     public function getRuntimeConfiguration()
     {
-        return isset($this->runtime_configuration) ? $this->runtime_configuration : null;
+        return $this->runtime_configuration;
     }
 
     public function hasRuntimeConfiguration()

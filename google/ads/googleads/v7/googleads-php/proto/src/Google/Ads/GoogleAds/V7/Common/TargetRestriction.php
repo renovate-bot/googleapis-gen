@@ -30,7 +30,7 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
-     * Generated from protobuf field <code>bool bid_only = 3;</code>
+     * Generated from protobuf field <code>optional bool bid_only = 3;</code>
      */
     protected $bid_only = null;
 
@@ -92,7 +92,7 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
-     * Generated from protobuf field <code>bool bid_only = 3;</code>
+     * Generated from protobuf field <code>optional bool bid_only = 3;</code>
      * @return bool
      */
     public function getBidOnly()
@@ -119,7 +119,7 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
-     * Generated from protobuf field <code>bool bid_only = 3;</code>
+     * Generated from protobuf field <code>optional bool bid_only = 3;</code>
      * @param bool $var
      * @return $this
      */

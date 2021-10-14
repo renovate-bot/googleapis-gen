@@ -361,10 +361,10 @@ private static final long serialVersionUID = 0L;
     if (xctestrun_ != null) {
       output.writeMessage(2, getXctestrun());
     }
-    if (!getXcodeVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(xcodeVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, xcodeVersion_);
     }
-    if (!getAppBundleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appBundleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appBundleId_);
     }
     if (testSpecialEntitlements_ != false) {
@@ -387,10 +387,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getXctestrun());
     }
-    if (!getXcodeVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(xcodeVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, xcodeVersion_);
     }
-    if (!getAppBundleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appBundleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appBundleId_);
     }
     if (testSpecialEntitlements_ != false) {

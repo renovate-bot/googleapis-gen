@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (streamEnabled_ != false) {
@@ -488,10 +488,10 @@ private static final long serialVersionUID = 0L;
     if (pageChangesEnabled_ != false) {
       output.writeBool(13, pageChangesEnabled_);
     }
-    if (!getSearchQueryParameterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchQueryParameter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, searchQueryParameter_);
     }
-    if (!getUriQueryParameterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uriQueryParameter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, uriQueryParameter_);
     }
     unknownFields.writeTo(output);
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (streamEnabled_ != false) {
@@ -542,10 +542,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(13, pageChangesEnabled_);
     }
-    if (!getSearchQueryParameterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchQueryParameter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, searchQueryParameter_);
     }
-    if (!getUriQueryParameterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uriQueryParameter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, uriQueryParameter_);
     }
     size += unknownFields.getSerializedSize();

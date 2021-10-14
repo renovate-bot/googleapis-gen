@@ -90,7 +90,7 @@ class UpdateEntryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getEntry()
     {
-        return isset($this->entry) ? $this->entry : null;
+        return $this->entry;
     }
 
     public function hasEntry()
@@ -144,7 +144,7 @@ class UpdateEntryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

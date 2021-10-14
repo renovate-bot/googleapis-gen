@@ -417,10 +417,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
     }
-    if (!getEventIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, eventId_);
     }
     if (createTime_ != null) {
@@ -429,7 +429,7 @@ private static final long serialVersionUID = 0L;
     if (eventCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.talent.v4.JobEvent) event_);
     }
-    if (!getEventNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventNotes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, eventNotes_);
     }
     unknownFields.writeTo(output);
@@ -441,10 +441,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
     }
-    if (!getEventIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, eventId_);
     }
     if (createTime_ != null) {
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.google.cloud.talent.v4.JobEvent) event_);
     }
-    if (!getEventNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventNotes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, eventNotes_);
     }
     size += unknownFields.getSerializedSize();

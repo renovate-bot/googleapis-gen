@@ -12,7 +12,7 @@ public interface PlannableLocationOrBuilder extends
    * The location identifier.
    * </pre>
    *
-   * <code>string id = 4;</code>
+   * <code>optional string id = 4;</code>
    * @return Whether the id field is set.
    */
   boolean hasId();
@@ -21,7 +21,7 @@ public interface PlannableLocationOrBuilder extends
    * The location identifier.
    * </pre>
    *
-   * <code>string id = 4;</code>
+   * <code>optional string id = 4;</code>
    * @return The id.
    */
   java.lang.String getId();
@@ -30,7 +30,7 @@ public interface PlannableLocationOrBuilder extends
    * The location identifier.
    * </pre>
    *
-   * <code>string id = 4;</code>
+   * <code>optional string id = 4;</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
@@ -41,7 +41,7 @@ public interface PlannableLocationOrBuilder extends
    * The unique location name in english.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>optional string name = 5;</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
@@ -50,7 +50,7 @@ public interface PlannableLocationOrBuilder extends
    * The unique location name in english.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>optional string name = 5;</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -59,7 +59,7 @@ public interface PlannableLocationOrBuilder extends
    * The unique location name in english.
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>optional string name = 5;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -73,7 +73,7 @@ public interface PlannableLocationOrBuilder extends
    * accessing GeoTargetConstantService with the criterion id.
    * </pre>
    *
-   * <code>int64 parent_country_id = 6;</code>
+   * <code>optional int64 parent_country_id = 6;</code>
    * @return Whether the parentCountryId field is set.
    */
   boolean hasParentCountryId();
@@ -85,7 +85,7 @@ public interface PlannableLocationOrBuilder extends
    * accessing GeoTargetConstantService with the criterion id.
    * </pre>
    *
-   * <code>int64 parent_country_id = 6;</code>
+   * <code>optional int64 parent_country_id = 6;</code>
    * @return The parentCountryId.
    */
   long getParentCountryId();

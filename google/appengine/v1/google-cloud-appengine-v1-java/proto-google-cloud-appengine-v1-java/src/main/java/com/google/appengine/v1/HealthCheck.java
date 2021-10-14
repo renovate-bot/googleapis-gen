@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
     if (disableHealthCheck_ != false) {
       output.writeBool(1, disableHealthCheck_);
     }
-    if (!getHostBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, host_);
     }
     if (healthyThreshold_ != 0) {
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, disableHealthCheck_);
     }
-    if (!getHostBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, host_);
     }
     if (healthyThreshold_ != 0) {

@@ -91,7 +91,7 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -165,7 +165,7 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentRouteSegmentVersion()
     {
-        return isset($this->current_route_segment_version) ? $this->current_route_segment_version : null;
+        return $this->current_route_segment_version;
     }
 
     public function hasCurrentRouteSegmentVersion()
@@ -208,7 +208,7 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getWaypointsVersion()
     {
-        return isset($this->waypoints_version) ? $this->waypoints_version : null;
+        return $this->waypoints_version;
     }
 
     public function hasWaypointsVersion()

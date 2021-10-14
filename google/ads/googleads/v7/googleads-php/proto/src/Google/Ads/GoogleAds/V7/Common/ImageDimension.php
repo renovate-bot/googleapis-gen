@@ -18,19 +18,19 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * Height of the image.
      *
-     * Generated from protobuf field <code>int64 height_pixels = 4;</code>
+     * Generated from protobuf field <code>optional int64 height_pixels = 4;</code>
      */
     protected $height_pixels = null;
     /**
      * Width of the image.
      *
-     * Generated from protobuf field <code>int64 width_pixels = 5;</code>
+     * Generated from protobuf field <code>optional int64 width_pixels = 5;</code>
      */
     protected $width_pixels = null;
     /**
      * A URL that returns the image with this height and width.
      *
-     * Generated from protobuf field <code>string url = 6;</code>
+     * Generated from protobuf field <code>optional string url = 6;</code>
      */
     protected $url = null;
 
@@ -56,7 +56,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * Height of the image.
      *
-     * Generated from protobuf field <code>int64 height_pixels = 4;</code>
+     * Generated from protobuf field <code>optional int64 height_pixels = 4;</code>
      * @return int|string
      */
     public function getHeightPixels()
@@ -77,7 +77,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * Height of the image.
      *
-     * Generated from protobuf field <code>int64 height_pixels = 4;</code>
+     * Generated from protobuf field <code>optional int64 height_pixels = 4;</code>
      * @param int|string $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * Width of the image.
      *
-     * Generated from protobuf field <code>int64 width_pixels = 5;</code>
+     * Generated from protobuf field <code>optional int64 width_pixels = 5;</code>
      * @return int|string
      */
     public function getWidthPixels()
@@ -113,7 +113,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * Width of the image.
      *
-     * Generated from protobuf field <code>int64 width_pixels = 5;</code>
+     * Generated from protobuf field <code>optional int64 width_pixels = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * A URL that returns the image with this height and width.
      *
-     * Generated from protobuf field <code>string url = 6;</code>
+     * Generated from protobuf field <code>optional string url = 6;</code>
      * @return string
      */
     public function getUrl()
@@ -149,7 +149,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     /**
      * A URL that returns the image with this height and width.
      *
-     * Generated from protobuf field <code>string url = 6;</code>
+     * Generated from protobuf field <code>optional string url = 6;</code>
      * @param string $var
      * @return $this
      */

@@ -119,7 +119,7 @@ class SuggestSmartRepliesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentTextInput()
     {
-        return isset($this->current_text_input) ? $this->current_text_input : null;
+        return $this->current_text_input;
     }
 
     public function hasCurrentTextInput()

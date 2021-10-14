@@ -80,7 +80,7 @@ class CelebrityTrack extends \Google\Protobuf\Internal\Message
      */
     public function getFaceTrack()
     {
-        return isset($this->face_track) ? $this->face_track : null;
+        return $this->face_track;
     }
 
     public function hasFaceTrack()

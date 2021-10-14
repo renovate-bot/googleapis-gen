@@ -123,7 +123,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      */
     public function getExpireTime()
     {
-        return isset($this->expire_time) ? $this->expire_time : null;
+        return $this->expire_time;
     }
 
     public function hasExpireTime()
@@ -248,7 +248,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      */
     public function getTableReference()
     {
-        return isset($this->table_reference) ? $this->table_reference : null;
+        return $this->table_reference;
     }
 
     public function hasTableReference()
@@ -284,7 +284,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      */
     public function getTableModifiers()
     {
-        return isset($this->table_modifiers) ? $this->table_modifiers : null;
+        return $this->table_modifiers;
     }
 
     public function hasTableModifiers()

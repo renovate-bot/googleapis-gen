@@ -22,7 +22,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * use the account's timezone as default.
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *
-     * Generated from protobuf field <code>string transaction_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string transaction_date_time = 8;</code>
      */
     protected $transaction_date_time = null;
     /**
@@ -32,27 +32,27 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * items, after multiplying the unit price per item by the quantity provided
      * in the ItemAttributes.
      *
-     * Generated from protobuf field <code>double transaction_amount_micros = 9;</code>
+     * Generated from protobuf field <code>optional double transaction_amount_micros = 9;</code>
      */
     protected $transaction_amount_micros = null;
     /**
      * Transaction currency code. ISO 4217 three-letter code is used. Required.
      *
-     * Generated from protobuf field <code>string currency_code = 10;</code>
+     * Generated from protobuf field <code>optional string currency_code = 10;</code>
      */
     protected $currency_code = null;
     /**
      * The resource name of conversion action to report conversions to.
      * Required.
      *
-     * Generated from protobuf field <code>string conversion_action = 11;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 11;</code>
      */
     protected $conversion_action = null;
     /**
      * Transaction order id.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string order_id = 12;</code>
+     * Generated from protobuf field <code>optional string order_id = 12;</code>
      */
     protected $order_id = null;
     /**
@@ -66,7 +66,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Value of the custom variable for each transaction.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string custom_value = 13;</code>
+     * Generated from protobuf field <code>optional string custom_value = 13;</code>
      */
     protected $custom_value = null;
     /**
@@ -124,7 +124,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * use the account's timezone as default.
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *
-     * Generated from protobuf field <code>string transaction_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string transaction_date_time = 8;</code>
      * @return string
      */
     public function getTransactionDateTime()
@@ -149,7 +149,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * use the account's timezone as default.
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *
-     * Generated from protobuf field <code>string transaction_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string transaction_date_time = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * items, after multiplying the unit price per item by the quantity provided
      * in the ItemAttributes.
      *
-     * Generated from protobuf field <code>double transaction_amount_micros = 9;</code>
+     * Generated from protobuf field <code>optional double transaction_amount_micros = 9;</code>
      * @return float
      */
     public function getTransactionAmountMicros()
@@ -193,7 +193,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * items, after multiplying the unit price per item by the quantity provided
      * in the ItemAttributes.
      *
-     * Generated from protobuf field <code>double transaction_amount_micros = 9;</code>
+     * Generated from protobuf field <code>optional double transaction_amount_micros = 9;</code>
      * @param float $var
      * @return $this
      */
@@ -208,7 +208,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
     /**
      * Transaction currency code. ISO 4217 three-letter code is used. Required.
      *
-     * Generated from protobuf field <code>string currency_code = 10;</code>
+     * Generated from protobuf field <code>optional string currency_code = 10;</code>
      * @return string
      */
     public function getCurrencyCode()
@@ -229,7 +229,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
     /**
      * Transaction currency code. ISO 4217 three-letter code is used. Required.
      *
-     * Generated from protobuf field <code>string currency_code = 10;</code>
+     * Generated from protobuf field <code>optional string currency_code = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -245,7 +245,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * The resource name of conversion action to report conversions to.
      * Required.
      *
-     * Generated from protobuf field <code>string conversion_action = 11;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 11;</code>
      * @return string
      */
     public function getConversionAction()
@@ -267,7 +267,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * The resource name of conversion action to report conversions to.
      * Required.
      *
-     * Generated from protobuf field <code>string conversion_action = 11;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -283,7 +283,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Transaction order id.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string order_id = 12;</code>
+     * Generated from protobuf field <code>optional string order_id = 12;</code>
      * @return string
      */
     public function getOrderId()
@@ -305,7 +305,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Transaction order id.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string order_id = 12;</code>
+     * Generated from protobuf field <code>optional string order_id = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -326,7 +326,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      */
     public function getStoreAttribute()
     {
-        return isset($this->store_attribute) ? $this->store_attribute : null;
+        return $this->store_attribute;
     }
 
     public function hasStoreAttribute()
@@ -359,7 +359,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Value of the custom variable for each transaction.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string custom_value = 13;</code>
+     * Generated from protobuf field <code>optional string custom_value = 13;</code>
      * @return string
      */
     public function getCustomValue()
@@ -381,7 +381,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Value of the custom variable for each transaction.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string custom_value = 13;</code>
+     * Generated from protobuf field <code>optional string custom_value = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -401,7 +401,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      */
     public function getItemAttribute()
     {
-        return isset($this->item_attribute) ? $this->item_attribute : null;
+        return $this->item_attribute;
     }
 
     public function hasItemAttribute()

@@ -147,7 +147,7 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
      */
     public function getPhoneNumber()
     {
-        return isset($this->phone_number) ? $this->phone_number : null;
+        return $this->phone_number;
     }
 
     public function hasPhoneNumber()

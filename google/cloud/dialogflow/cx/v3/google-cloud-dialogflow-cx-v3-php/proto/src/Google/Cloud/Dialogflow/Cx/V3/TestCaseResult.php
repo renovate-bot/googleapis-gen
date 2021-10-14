@@ -197,7 +197,7 @@ class TestCaseResult extends \Google\Protobuf\Internal\Message
      */
     public function getTestTime()
     {
-        return isset($this->test_time) ? $this->test_time : null;
+        return $this->test_time;
     }
 
     public function hasTestTime()

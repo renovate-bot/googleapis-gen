@@ -154,7 +154,7 @@ class ConditionalParameterSpec extends \Google\Protobuf\Internal\Message
      */
     public function getParameterSpec()
     {
-        return isset($this->parameter_spec) ? $this->parameter_spec : null;
+        return $this->parameter_spec;
     }
 
     public function hasParameterSpec()

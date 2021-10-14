@@ -258,10 +258,10 @@ private static final long serialVersionUID = 0L;
     if (owned_ != false) {
       output.writeBool(2, owned_);
     }
-    if (!getCustomerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, customerName_);
     }
-    if (!getCustomerCloudIdentityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerCloudIdentityId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, customerCloudIdentityId_);
     }
     unknownFields.writeTo(output);
@@ -281,10 +281,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, owned_);
     }
-    if (!getCustomerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, customerName_);
     }
-    if (!getCustomerCloudIdentityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerCloudIdentityId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, customerCloudIdentityId_);
     }
     size += unknownFields.getSerializedSize();

@@ -165,7 +165,7 @@ class WindowsApplication extends \Google\Protobuf\Internal\Message
      */
     public function getInstallDate()
     {
-        return isset($this->install_date) ? $this->install_date : null;
+        return $this->install_date;
     }
 
     public function hasInstallDate()

@@ -143,7 +143,7 @@ class Study extends \Google\Protobuf\Internal\Message
      */
     public function getStudySpec()
     {
-        return isset($this->study_spec) ? $this->study_spec : null;
+        return $this->study_spec;
     }
 
     public function hasStudySpec()
@@ -205,7 +205,7 @@ class Study extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()

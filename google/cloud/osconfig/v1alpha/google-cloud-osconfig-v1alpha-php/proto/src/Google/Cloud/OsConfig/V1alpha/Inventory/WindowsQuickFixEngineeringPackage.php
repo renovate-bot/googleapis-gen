@@ -150,7 +150,7 @@ class WindowsQuickFixEngineeringPackage extends \Google\Protobuf\Internal\Messag
      */
     public function getInstallTime()
     {
-        return isset($this->install_time) ? $this->install_time : null;
+        return $this->install_time;
     }
 
     public function hasInstallTime()

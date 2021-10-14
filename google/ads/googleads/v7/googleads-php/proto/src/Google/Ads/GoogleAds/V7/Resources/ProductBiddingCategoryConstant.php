@@ -28,19 +28,19 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>string country_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_code = null;
     /**
      * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>string product_bidding_category_constant_parent = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_constant_parent = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $product_bidding_category_constant_parent = null;
     /**
@@ -58,14 +58,14 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>string language_code = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $language_code = null;
     /**
      * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>string localized_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string localized_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $localized_name = null;
 
@@ -138,7 +138,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -161,7 +161,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -176,7 +176,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>string country_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCountryCode()
@@ -197,7 +197,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>string country_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -212,7 +212,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>string product_bidding_category_constant_parent = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_constant_parent = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getProductBiddingCategoryConstantParent()
@@ -233,7 +233,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>string product_bidding_category_constant_parent = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_constant_parent = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -300,7 +300,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>string language_code = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLanguageCode()
@@ -321,7 +321,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>string language_code = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -337,7 +337,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>string localized_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string localized_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLocalizedName()
@@ -359,7 +359,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>string localized_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string localized_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

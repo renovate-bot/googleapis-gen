@@ -39,7 +39,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>int64 id = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -47,7 +47,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string billing_setup = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $billing_setup = null;
     /**
@@ -59,7 +59,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>string name = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
@@ -67,7 +67,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>string proposed_start_date_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string proposed_start_date_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $proposed_start_date_time = null;
     /**
@@ -76,7 +76,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>string approved_start_date_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string approved_start_date_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $approved_start_date_time = null;
     /**
@@ -98,13 +98,13 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>string purchase_order_number = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string purchase_order_number = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $purchase_order_number = null;
     /**
      * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>string notes = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string notes = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $notes = null;
     /**
@@ -238,7 +238,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>int64 id = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -259,7 +259,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>int64 id = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -276,7 +276,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string billing_setup = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getBillingSetup()
@@ -299,7 +299,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string billing_setup = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -340,7 +340,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>string name = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -361,7 +361,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>string name = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -378,7 +378,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>string proposed_start_date_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string proposed_start_date_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getProposedStartDateTime()
@@ -401,7 +401,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>string proposed_start_date_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string proposed_start_date_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -419,7 +419,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>string approved_start_date_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string approved_start_date_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getApprovedStartDateTime()
@@ -443,7 +443,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>string approved_start_date_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string approved_start_date_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -517,7 +517,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>string purchase_order_number = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string purchase_order_number = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPurchaseOrderNumber()
@@ -539,7 +539,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>string purchase_order_number = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string purchase_order_number = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -554,7 +554,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>string notes = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string notes = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getNotes()
@@ -575,7 +575,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>string notes = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string notes = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -595,7 +595,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      */
     public function getPendingProposal()
     {
-        return isset($this->pending_proposal) ? $this->pending_proposal : null;
+        return $this->pending_proposal;
     }
 
     public function hasPendingProposal()

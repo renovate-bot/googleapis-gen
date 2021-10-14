@@ -384,7 +384,7 @@ private static final long serialVersionUID = 0L;
     if (command_ != com.google.devtools.remoteworkers.v1test2.AdminTemp.Command.UNSPECIFIED.getNumber()) {
       output.writeEnum(1, command_);
     }
-    if (!getArgBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(arg_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, arg_);
     }
     unknownFields.writeTo(output);
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, command_);
     }
-    if (!getArgBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(arg_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, arg_);
     }
     size += unknownFields.getSerializedSize();

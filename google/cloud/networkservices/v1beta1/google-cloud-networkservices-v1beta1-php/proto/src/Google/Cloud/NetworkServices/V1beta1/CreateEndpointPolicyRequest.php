@@ -121,7 +121,7 @@ class CreateEndpointPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getEndpointPolicy()
     {
-        return isset($this->endpoint_policy) ? $this->endpoint_policy : null;
+        return $this->endpoint_policy;
     }
 
     public function hasEndpointPolicy()

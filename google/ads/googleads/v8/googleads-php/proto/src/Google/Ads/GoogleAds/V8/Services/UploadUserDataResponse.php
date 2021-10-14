@@ -19,13 +19,13 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
      * The date time at which the request was received by API, formatted as
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string upload_date_time = 3;</code>
+     * Generated from protobuf field <code>optional string upload_date_time = 3;</code>
      */
     protected $upload_date_time = null;
     /**
      * Number of upload data operations received by API.
      *
-     * Generated from protobuf field <code>int32 received_operations_count = 4;</code>
+     * Generated from protobuf field <code>optional int32 received_operations_count = 4;</code>
      */
     protected $received_operations_count = null;
 
@@ -51,7 +51,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
      * The date time at which the request was received by API, formatted as
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string upload_date_time = 3;</code>
+     * Generated from protobuf field <code>optional string upload_date_time = 3;</code>
      * @return string
      */
     public function getUploadDateTime()
@@ -73,7 +73,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
      * The date time at which the request was received by API, formatted as
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string upload_date_time = 3;</code>
+     * Generated from protobuf field <code>optional string upload_date_time = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
     /**
      * Number of upload data operations received by API.
      *
-     * Generated from protobuf field <code>int32 received_operations_count = 4;</code>
+     * Generated from protobuf field <code>optional int32 received_operations_count = 4;</code>
      * @return int
      */
     public function getReceivedOperationsCount()
@@ -109,7 +109,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
     /**
      * Number of upload data operations received by API.
      *
-     * Generated from protobuf field <code>int32 received_operations_count = 4;</code>
+     * Generated from protobuf field <code>optional int32 received_operations_count = 4;</code>
      * @param int $var
      * @return $this
      */

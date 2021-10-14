@@ -502,16 +502,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getResellerCloudIdentityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resellerCloudIdentityId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resellerCloudIdentityId_);
     }
     if (linkState_ != com.google.cloud.channel.v1.ChannelPartnerLinkState.CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, linkState_);
     }
-    if (!getInviteLinkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inviteLinkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, inviteLinkUri_);
     }
     if (createTime_ != null) {
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(6, getUpdateTime());
     }
-    if (!getPublicIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, publicId_);
     }
     if (channelPartnerCloudIdentityInfo_ != null) {
@@ -535,17 +535,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getResellerCloudIdentityIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resellerCloudIdentityId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resellerCloudIdentityId_);
     }
     if (linkState_ != com.google.cloud.channel.v1.ChannelPartnerLinkState.CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, linkState_);
     }
-    if (!getInviteLinkUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inviteLinkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, inviteLinkUri_);
     }
     if (createTime_ != null) {
@@ -556,7 +556,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getUpdateTime());
     }
-    if (!getPublicIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, publicId_);
     }
     if (channelPartnerCloudIdentityInfo_ != null) {

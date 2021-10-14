@@ -81,7 +81,7 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -152,7 +152,7 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentLocation()
     {
-        return isset($this->current_location) ? $this->current_location : null;
+        return $this->current_location;
     }
 
     public function hasCurrentLocation()

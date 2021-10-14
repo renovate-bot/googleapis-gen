@@ -87,7 +87,7 @@ class DirectoryMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getDigest()
     {
-        return isset($this->digest) ? $this->digest : null;
+        return $this->digest;
     }
 
     public function hasDigest()

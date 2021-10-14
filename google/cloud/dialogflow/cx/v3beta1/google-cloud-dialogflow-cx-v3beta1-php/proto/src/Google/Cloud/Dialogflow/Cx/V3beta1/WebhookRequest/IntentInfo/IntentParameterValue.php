@@ -82,7 +82,7 @@ class IntentParameterValue extends \Google\Protobuf\Internal\Message
      */
     public function getResolvedValue()
     {
-        return isset($this->resolved_value) ? $this->resolved_value : null;
+        return $this->resolved_value;
     }
 
     public function hasResolvedValue()

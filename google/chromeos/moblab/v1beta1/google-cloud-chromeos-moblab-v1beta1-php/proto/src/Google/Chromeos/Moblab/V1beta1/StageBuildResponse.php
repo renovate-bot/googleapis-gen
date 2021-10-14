@@ -45,7 +45,7 @@ class StageBuildResponse extends \Google\Protobuf\Internal\Message
      */
     public function getStagedBuildArtifact()
     {
-        return isset($this->staged_build_artifact) ? $this->staged_build_artifact : null;
+        return $this->staged_build_artifact;
     }
 
     public function hasStagedBuildArtifact()

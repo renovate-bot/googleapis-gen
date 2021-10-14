@@ -45,7 +45,7 @@ class Copy extends \Google\Protobuf\Internal\Message
      */
     public function getOriginalObject()
     {
-        return isset($this->original_object) ? $this->original_object : null;
+        return $this->original_object;
     }
 
     public function hasOriginalObject()

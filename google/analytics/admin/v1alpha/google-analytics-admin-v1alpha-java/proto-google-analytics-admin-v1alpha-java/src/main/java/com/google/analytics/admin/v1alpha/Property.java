@@ -674,10 +674,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, parent_);
     }
     if (createTime_ != null) {
@@ -686,16 +686,16 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
     if (industryCategory_ != com.google.analytics.admin.v1alpha.IndustryCategory.INDUSTRY_CATEGORY_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, industryCategory_);
     }
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, timeZone_);
     }
-    if (!getCurrencyCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, currencyCode_);
     }
     if (serviceLevel_ != com.google.analytics.admin.v1alpha.ServiceLevel.SERVICE_LEVEL_UNSPECIFIED.getNumber()) {
@@ -716,10 +716,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, parent_);
     }
     if (createTime_ != null) {
@@ -730,17 +730,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getUpdateTime());
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
     }
     if (industryCategory_ != com.google.analytics.admin.v1alpha.IndustryCategory.INDUSTRY_CATEGORY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, industryCategory_);
     }
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, timeZone_);
     }
-    if (!getCurrencyCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, currencyCode_);
     }
     if (serviceLevel_ != com.google.analytics.admin.v1alpha.ServiceLevel.SERVICE_LEVEL_UNSPECIFIED.getNumber()) {

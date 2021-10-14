@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
    * Plannable locations ID can be obtained from ListPlannableLocations.
    * </pre>
    *
-   * <code>string plannable_location_id = 6;</code>
+   * <code>optional string plannable_location_id = 6;</code>
    * @return Whether the plannableLocationId field is set.
    */
   @java.lang.Override
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * Plannable locations ID can be obtained from ListPlannableLocations.
    * </pre>
    *
-   * <code>string plannable_location_id = 6;</code>
+   * <code>optional string plannable_location_id = 6;</code>
    * @return The plannableLocationId.
    */
   @java.lang.Override
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * Plannable locations ID can be obtained from ListPlannableLocations.
    * </pre>
    *
-   * <code>string plannable_location_id = 6;</code>
+   * <code>optional string plannable_location_id = 6;</code>
    * @return The bytes for plannableLocationId.
    */
   @java.lang.Override
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
      * Plannable locations ID can be obtained from ListPlannableLocations.
      * </pre>
      *
-     * <code>string plannable_location_id = 6;</code>
+     * <code>optional string plannable_location_id = 6;</code>
      * @return Whether the plannableLocationId field is set.
      */
     public boolean hasPlannableLocationId() {
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
      * Plannable locations ID can be obtained from ListPlannableLocations.
      * </pre>
      *
-     * <code>string plannable_location_id = 6;</code>
+     * <code>optional string plannable_location_id = 6;</code>
      * @return The plannableLocationId.
      */
     public java.lang.String getPlannableLocationId() {
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
      * Plannable locations ID can be obtained from ListPlannableLocations.
      * </pre>
      *
-     * <code>string plannable_location_id = 6;</code>
+     * <code>optional string plannable_location_id = 6;</code>
      * @return The bytes for plannableLocationId.
      */
     public com.google.protobuf.ByteString
@@ -912,7 +912,7 @@ private static final long serialVersionUID = 0L;
      * Plannable locations ID can be obtained from ListPlannableLocations.
      * </pre>
      *
-     * <code>string plannable_location_id = 6;</code>
+     * <code>optional string plannable_location_id = 6;</code>
      * @param value The plannableLocationId to set.
      * @return This builder for chaining.
      */
@@ -932,7 +932,7 @@ private static final long serialVersionUID = 0L;
      * Plannable locations ID can be obtained from ListPlannableLocations.
      * </pre>
      *
-     * <code>string plannable_location_id = 6;</code>
+     * <code>optional string plannable_location_id = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearPlannableLocationId() {
@@ -947,7 +947,7 @@ private static final long serialVersionUID = 0L;
      * Plannable locations ID can be obtained from ListPlannableLocations.
      * </pre>
      *
-     * <code>string plannable_location_id = 6;</code>
+     * <code>optional string plannable_location_id = 6;</code>
      * @param value The bytes for plannableLocationId to set.
      * @return This builder for chaining.
      */

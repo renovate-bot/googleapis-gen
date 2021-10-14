@@ -27,7 +27,7 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * policy topics is not fixed for a particular API version and may change
      * at any time.
      *
-     * Generated from protobuf field <code>string topic = 5;</code>
+     * Generated from protobuf field <code>optional string topic = 5;</code>
      */
     protected $topic = null;
     /**
@@ -83,7 +83,7 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * policy topics is not fixed for a particular API version and may change
      * at any time.
      *
-     * Generated from protobuf field <code>string topic = 5;</code>
+     * Generated from protobuf field <code>optional string topic = 5;</code>
      * @return string
      */
     public function getTopic()
@@ -107,7 +107,7 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * policy topics is not fixed for a particular API version and may change
      * at any time.
      *
-     * Generated from protobuf field <code>string topic = 5;</code>
+     * Generated from protobuf field <code>optional string topic = 5;</code>
      * @param string $var
      * @return $this
      */

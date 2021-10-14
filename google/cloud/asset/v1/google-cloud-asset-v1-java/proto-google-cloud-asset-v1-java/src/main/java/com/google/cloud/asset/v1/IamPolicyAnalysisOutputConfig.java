@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
       }
       unknownFields.writeTo(output);
@@ -324,7 +324,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
       }
       size += unknownFields.getSerializedSize();
@@ -1367,16 +1367,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataset_);
       }
-      if (!getTablePrefixBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablePrefix_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tablePrefix_);
       }
       if (partitionKey_ != com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey.PARTITION_KEY_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, partitionKey_);
       }
-      if (!getWriteDispositionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeDisposition_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, writeDisposition_);
       }
       unknownFields.writeTo(output);
@@ -1388,17 +1388,17 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getDatasetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataset_);
       }
-      if (!getTablePrefixBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablePrefix_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tablePrefix_);
       }
       if (partitionKey_ != com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey.PARTITION_KEY_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, partitionKey_);
       }
-      if (!getWriteDispositionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeDisposition_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, writeDisposition_);
       }
       size += unknownFields.getSerializedSize();

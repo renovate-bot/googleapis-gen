@@ -103,7 +103,7 @@ class CreateFeatureRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFeature()
     {
-        return isset($this->feature) ? $this->feature : null;
+        return $this->feature;
     }
 
     public function hasFeature()

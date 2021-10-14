@@ -24,7 +24,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_cpc_bid_micros = null;
 
@@ -53,7 +53,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function getKeyword()
     {
-        return isset($this->keyword) ? $this->keyword : null;
+        return $this->keyword;
     }
 
     public function hasKeyword()
@@ -84,7 +84,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRecommendedCpcBidMicros()
@@ -105,7 +105,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

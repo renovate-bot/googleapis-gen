@@ -535,7 +535,7 @@ class SearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUserInfo()
     {
-        return isset($this->user_info) ? $this->user_info : null;
+        return $this->user_info;
     }
 
     public function hasUserInfo()
@@ -818,7 +818,7 @@ class SearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDynamicFacetSpec()
     {
-        return isset($this->dynamic_facet_spec) ? $this->dynamic_facet_spec : null;
+        return $this->dynamic_facet_spec;
     }
 
     public function hasDynamicFacetSpec()
@@ -857,7 +857,7 @@ class SearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBoostSpec()
     {
-        return isset($this->boost_spec) ? $this->boost_spec : null;
+        return $this->boost_spec;
     }
 
     public function hasBoostSpec()
@@ -894,7 +894,7 @@ class SearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function getQueryExpansionSpec()
     {
-        return isset($this->query_expansion_spec) ? $this->query_expansion_spec : null;
+        return $this->query_expansion_spec;
     }
 
     public function hasQueryExpansionSpec()

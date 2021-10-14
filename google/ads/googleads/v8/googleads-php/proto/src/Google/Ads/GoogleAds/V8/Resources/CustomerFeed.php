@@ -26,7 +26,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>string feed = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
@@ -114,7 +114,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>string feed = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getFeed()
@@ -135,7 +135,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>string feed = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      */
     public function getMatchingFunction()
     {
-        return isset($this->matching_function) ? $this->matching_function : null;
+        return $this->matching_function;
     }
 
     public function hasMatchingFunction()

@@ -53,7 +53,7 @@ class UpdateIndexOperationMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getGenericMetadata()
     {
-        return isset($this->generic_metadata) ? $this->generic_metadata : null;
+        return $this->generic_metadata;
     }
 
     public function hasGenericMetadata()
@@ -89,7 +89,7 @@ class UpdateIndexOperationMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getNearestNeighborSearchOperationMetadata()
     {
-        return isset($this->nearest_neighbor_search_operation_metadata) ? $this->nearest_neighbor_search_operation_metadata : null;
+        return $this->nearest_neighbor_search_operation_metadata;
     }
 
     public function hasNearestNeighborSearchOperationMetadata()

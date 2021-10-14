@@ -191,7 +191,7 @@ class Metric extends \Google\Protobuf\Internal\Message
      */
     public function getConfidenceInterval()
     {
-        return isset($this->confidence_interval) ? $this->confidence_interval : null;
+        return $this->confidence_interval;
     }
 
     public function hasConfidenceInterval()

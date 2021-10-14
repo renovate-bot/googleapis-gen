@@ -18,7 +18,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
     /**
      * The duration value in days.
      *
-     * Generated from protobuf field <code>int32 duration_in_days = 2;</code>
+     * Generated from protobuf field <code>optional int32 duration_in_days = 2;</code>
      */
     protected $duration_in_days = null;
 
@@ -40,7 +40,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
     /**
      * The duration value in days.
      *
-     * Generated from protobuf field <code>int32 duration_in_days = 2;</code>
+     * Generated from protobuf field <code>optional int32 duration_in_days = 2;</code>
      * @return int
      */
     public function getDurationInDays()
@@ -61,7 +61,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
     /**
      * The duration value in days.
      *
-     * Generated from protobuf field <code>int32 duration_in_days = 2;</code>
+     * Generated from protobuf field <code>optional int32 duration_in_days = 2;</code>
      * @param int $var
      * @return $this
      */

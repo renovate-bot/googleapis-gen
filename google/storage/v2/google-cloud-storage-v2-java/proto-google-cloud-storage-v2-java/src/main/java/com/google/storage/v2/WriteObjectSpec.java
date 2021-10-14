@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
    * succeed only if there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 3;</code>
+   * <code>optional int64 if_generation_match = 3;</code>
    * @return Whether the ifGenerationMatch field is set.
    */
   @java.lang.Override
@@ -214,7 +214,7 @@ private static final long serialVersionUID = 0L;
    * succeed only if there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 3;</code>
+   * <code>optional int64 if_generation_match = 3;</code>
    * @return The ifGenerationMatch.
    */
   @java.lang.Override
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
    * there is a live version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 4;</code>
+   * <code>optional int64 if_generation_not_match = 4;</code>
    * @return Whether the ifGenerationNotMatch field is set.
    */
   @java.lang.Override
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
    * there is a live version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 4;</code>
+   * <code>optional int64 if_generation_not_match = 4;</code>
    * @return The ifGenerationNotMatch.
    */
   @java.lang.Override
@@ -263,7 +263,7 @@ private static final long serialVersionUID = 0L;
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 5;</code>
+   * <code>optional int64 if_metageneration_match = 5;</code>
    * @return Whether the ifMetagenerationMatch field is set.
    */
   @java.lang.Override
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 5;</code>
+   * <code>optional int64 if_metageneration_match = 5;</code>
    * @return The ifMetagenerationMatch.
    */
   @java.lang.Override
@@ -292,7 +292,7 @@ private static final long serialVersionUID = 0L;
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 6;</code>
+   * <code>optional int64 if_metageneration_not_match = 6;</code>
    * @return Whether the ifMetagenerationNotMatch field is set.
    */
   @java.lang.Override
@@ -305,7 +305,7 @@ private static final long serialVersionUID = 0L;
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 6;</code>
+   * <code>optional int64 if_metageneration_not_match = 6;</code>
    * @return The ifMetagenerationNotMatch.
    */
   @java.lang.Override
@@ -993,7 +993,7 @@ private static final long serialVersionUID = 0L;
      * succeed only if there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 3;</code>
+     * <code>optional int64 if_generation_match = 3;</code>
      * @return Whether the ifGenerationMatch field is set.
      */
     @java.lang.Override
@@ -1007,7 +1007,7 @@ private static final long serialVersionUID = 0L;
      * succeed only if there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 3;</code>
+     * <code>optional int64 if_generation_match = 3;</code>
      * @return The ifGenerationMatch.
      */
     @java.lang.Override
@@ -1021,7 +1021,7 @@ private static final long serialVersionUID = 0L;
      * succeed only if there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 3;</code>
+     * <code>optional int64 if_generation_match = 3;</code>
      * @param value The ifGenerationMatch to set.
      * @return This builder for chaining.
      */
@@ -1038,7 +1038,7 @@ private static final long serialVersionUID = 0L;
      * succeed only if there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 3;</code>
+     * <code>optional int64 if_generation_match = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfGenerationMatch() {
@@ -1057,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * there is a live version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 4;</code>
+     * <code>optional int64 if_generation_not_match = 4;</code>
      * @return Whether the ifGenerationNotMatch field is set.
      */
     @java.lang.Override
@@ -1072,7 +1072,7 @@ private static final long serialVersionUID = 0L;
      * there is a live version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 4;</code>
+     * <code>optional int64 if_generation_not_match = 4;</code>
      * @return The ifGenerationNotMatch.
      */
     @java.lang.Override
@@ -1087,7 +1087,7 @@ private static final long serialVersionUID = 0L;
      * there is a live version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 4;</code>
+     * <code>optional int64 if_generation_not_match = 4;</code>
      * @param value The ifGenerationNotMatch to set.
      * @return This builder for chaining.
      */
@@ -1105,7 +1105,7 @@ private static final long serialVersionUID = 0L;
      * there is a live version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 4;</code>
+     * <code>optional int64 if_generation_not_match = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfGenerationNotMatch() {
@@ -1122,7 +1122,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 5;</code>
+     * <code>optional int64 if_metageneration_match = 5;</code>
      * @return Whether the ifMetagenerationMatch field is set.
      */
     @java.lang.Override
@@ -1135,7 +1135,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 5;</code>
+     * <code>optional int64 if_metageneration_match = 5;</code>
      * @return The ifMetagenerationMatch.
      */
     @java.lang.Override
@@ -1148,7 +1148,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 5;</code>
+     * <code>optional int64 if_metageneration_match = 5;</code>
      * @param value The ifMetagenerationMatch to set.
      * @return This builder for chaining.
      */
@@ -1164,7 +1164,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 5;</code>
+     * <code>optional int64 if_metageneration_match = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfMetagenerationMatch() {
@@ -1181,7 +1181,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 6;</code>
+     * <code>optional int64 if_metageneration_not_match = 6;</code>
      * @return Whether the ifMetagenerationNotMatch field is set.
      */
     @java.lang.Override
@@ -1194,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 6;</code>
+     * <code>optional int64 if_metageneration_not_match = 6;</code>
      * @return The ifMetagenerationNotMatch.
      */
     @java.lang.Override
@@ -1207,7 +1207,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 6;</code>
+     * <code>optional int64 if_metageneration_not_match = 6;</code>
      * @param value The ifMetagenerationNotMatch to set.
      * @return This builder for chaining.
      */
@@ -1223,7 +1223,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 6;</code>
+     * <code>optional int64 if_metageneration_not_match = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfMetagenerationNotMatch() {

@@ -471,7 +471,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getModelDeploymentMonitoringScheduleConfig()
     {
-        return isset($this->model_deployment_monitoring_schedule_config) ? $this->model_deployment_monitoring_schedule_config : null;
+        return $this->model_deployment_monitoring_schedule_config;
     }
 
     public function hasModelDeploymentMonitoringScheduleConfig()
@@ -507,7 +507,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getLoggingSamplingStrategy()
     {
-        return isset($this->logging_sampling_strategy) ? $this->logging_sampling_strategy : null;
+        return $this->logging_sampling_strategy;
     }
 
     public function hasLoggingSamplingStrategy()
@@ -543,7 +543,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getModelMonitoringAlertConfig()
     {
-        return isset($this->model_monitoring_alert_config) ? $this->model_monitoring_alert_config : null;
+        return $this->model_monitoring_alert_config;
     }
 
     public function hasModelMonitoringAlertConfig()
@@ -614,7 +614,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getSamplePredictInstance()
     {
-        return isset($this->sample_predict_instance) ? $this->sample_predict_instance : null;
+        return $this->sample_predict_instance;
     }
 
     public function hasSamplePredictInstance()
@@ -733,7 +733,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getLogTtl()
     {
-        return isset($this->log_ttl) ? $this->log_ttl : null;
+        return $this->log_ttl;
     }
 
     public function hasLogTtl()
@@ -807,7 +807,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -843,7 +843,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -880,7 +880,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getNextScheduleTime()
     {
-        return isset($this->next_schedule_time) ? $this->next_schedule_time : null;
+        return $this->next_schedule_time;
     }
 
     public function hasNextScheduleTime()
@@ -917,7 +917,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getStatsAnomaliesBaseDirectory()
     {
-        return isset($this->stats_anomalies_base_directory) ? $this->stats_anomalies_base_directory : null;
+        return $this->stats_anomalies_base_directory;
     }
 
     public function hasStatsAnomaliesBaseDirectory()
@@ -955,7 +955,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()
@@ -1024,7 +1024,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()

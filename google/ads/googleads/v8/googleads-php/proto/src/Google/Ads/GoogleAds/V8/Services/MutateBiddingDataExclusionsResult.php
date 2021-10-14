@@ -85,7 +85,7 @@ class MutateBiddingDataExclusionsResult extends \Google\Protobuf\Internal\Messag
      */
     public function getBiddingDataExclusion()
     {
-        return isset($this->bidding_data_exclusion) ? $this->bidding_data_exclusion : null;
+        return $this->bidding_data_exclusion;
     }
 
     public function hasBiddingDataExclusion()

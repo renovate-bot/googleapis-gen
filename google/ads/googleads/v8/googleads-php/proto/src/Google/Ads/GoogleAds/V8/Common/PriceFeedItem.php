@@ -30,13 +30,13 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Tracking URL template for all offers of this price extension.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 7;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 7;</code>
      */
     protected $tracking_url_template = null;
     /**
      * The code of the language used for this price extension.
      *
-     * Generated from protobuf field <code>string language_code = 8;</code>
+     * Generated from protobuf field <code>optional string language_code = 8;</code>
      */
     protected $language_code = null;
     /**
@@ -48,7 +48,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Tracking URL template for all offers of this price extension.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 9;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 9;</code>
      */
     protected $final_url_suffix = null;
 
@@ -132,7 +132,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Tracking URL template for all offers of this price extension.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 7;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 7;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -153,7 +153,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Tracking URL template for all offers of this price extension.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 7;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The code of the language used for this price extension.
      *
-     * Generated from protobuf field <code>string language_code = 8;</code>
+     * Generated from protobuf field <code>optional string language_code = 8;</code>
      * @return string
      */
     public function getLanguageCode()
@@ -189,7 +189,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The code of the language used for this price extension.
      *
-     * Generated from protobuf field <code>string language_code = 8;</code>
+     * Generated from protobuf field <code>optional string language_code = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -230,7 +230,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Tracking URL template for all offers of this price extension.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 9;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 9;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -251,7 +251,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Tracking URL template for all offers of this price extension.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 9;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 9;</code>
      * @param string $var
      * @return $this
      */

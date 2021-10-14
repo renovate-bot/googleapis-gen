@@ -85,7 +85,7 @@ class MutateSharedCriterionResult extends \Google\Protobuf\Internal\Message
      */
     public function getSharedCriterion()
     {
-        return isset($this->shared_criterion) ? $this->shared_criterion : null;
+        return $this->shared_criterion;
     }
 
     public function hasSharedCriterion()

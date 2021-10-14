@@ -21,13 +21,13 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * en is used by default. This is also used as a hint for returned geo
      * targets.
      *
-     * Generated from protobuf field <code>string locale = 6;</code>
+     * Generated from protobuf field <code>optional string locale = 6;</code>
      */
     protected $locale = null;
     /**
      * Returned geo targets are restricted to this country code.
      *
-     * Generated from protobuf field <code>string country_code = 7;</code>
+     * Generated from protobuf field <code>optional string country_code = 7;</code>
      */
     protected $country_code = null;
     protected $query;
@@ -60,7 +60,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * en is used by default. This is also used as a hint for returned geo
      * targets.
      *
-     * Generated from protobuf field <code>string locale = 6;</code>
+     * Generated from protobuf field <code>optional string locale = 6;</code>
      * @return string
      */
     public function getLocale()
@@ -83,7 +83,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * en is used by default. This is also used as a hint for returned geo
      * targets.
      *
-     * Generated from protobuf field <code>string locale = 6;</code>
+     * Generated from protobuf field <code>optional string locale = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -98,7 +98,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Returned geo targets are restricted to this country code.
      *
-     * Generated from protobuf field <code>string country_code = 7;</code>
+     * Generated from protobuf field <code>optional string country_code = 7;</code>
      * @return string
      */
     public function getCountryCode()
@@ -119,7 +119,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Returned geo targets are restricted to this country code.
      *
-     * Generated from protobuf field <code>string country_code = 7;</code>
+     * Generated from protobuf field <code>optional string country_code = 7;</code>
      * @param string $var
      * @return $this
      */

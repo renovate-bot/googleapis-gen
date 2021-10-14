@@ -18,7 +18,7 @@ class ProductTypeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Value of the type.
      *
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>optional string value = 3;</code>
      */
     protected $value = null;
     /**
@@ -48,7 +48,7 @@ class ProductTypeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Value of the type.
      *
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>optional string value = 3;</code>
      * @return string
      */
     public function getValue()
@@ -69,7 +69,7 @@ class ProductTypeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Value of the type.
      *
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>optional string value = 3;</code>
      * @param string $var
      * @return $this
      */

@@ -403,13 +403,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getBuildIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, buildId_);
     }
     if (component_ != com.google.devtools.build.v1.StreamId.BuildComponent.UNKNOWN_COMPONENT.getNumber()) {
       output.writeEnum(3, component_);
     }
-    if (!getInvocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(invocationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, invocationId_);
     }
     unknownFields.writeTo(output);
@@ -421,14 +421,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getBuildIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, buildId_);
     }
     if (component_ != com.google.devtools.build.v1.StreamId.BuildComponent.UNKNOWN_COMPONENT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, component_);
     }
-    if (!getInvocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(invocationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, invocationId_);
     }
     size += unknownFields.getSerializedSize();

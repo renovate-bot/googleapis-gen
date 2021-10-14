@@ -81,19 +81,23 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     private static readonly pb::MessageParser<AllocationRequest> _parser = new pb::MessageParser<AllocationRequest>(() => new AllocationRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AllocationRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.AllocationEndpointReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationRequest() {
       OnConstruction();
     }
@@ -101,6 +105,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationRequest(AllocationRequest other) : this() {
       realm_ = other.realm_;
       defaultGameServerDeployment_ = other.defaultGameServerDeployment_;
@@ -110,6 +115,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationRequest Clone() {
       return new AllocationRequest(this);
     }
@@ -122,6 +128,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// `{location}/{realm}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Realm {
       get { return realm_; }
       set {
@@ -138,6 +145,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// allocation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DefaultGameServerDeployment {
       get { return defaultGameServerDeployment_; }
       set {
@@ -156,6 +164,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// the second game server selector, and so on.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.GameServerSelector> GameServerSelectors {
       get { return gameServerSelectors_; }
     }
@@ -168,6 +177,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// allocation. You can use this to tell the server necessary session data.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.MetaPatch Metadata {
       get { return metadata_; }
       set {
@@ -176,11 +186,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AllocationRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AllocationRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -196,6 +208,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Realm.Length != 0) hash ^= Realm.GetHashCode();
@@ -209,11 +222,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -239,6 +254,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Realm.Length != 0) {
         output.WriteRawTag(10);
@@ -260,6 +276,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Realm.Length != 0) {
@@ -279,6 +296,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AllocationRequest other) {
       if (other == null) {
         return;
@@ -300,6 +318,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -336,6 +355,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -377,19 +397,23 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     private static readonly pb::MessageParser<AllocationResponse> _parser = new pb::MessageParser<AllocationResponse>(() => new AllocationResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AllocationResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.AllocationEndpointReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationResponse() {
       OnConstruction();
     }
@@ -397,6 +421,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationResponse(AllocationResponse other) : this() {
       gameServerName_ = other.gameServerName_;
       ports_ = other.ports_.Clone();
@@ -408,6 +433,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllocationResponse Clone() {
       return new AllocationResponse(this);
     }
@@ -419,6 +445,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// The name of the allocated game server.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GameServerName {
       get { return gameServerName_; }
       set {
@@ -435,6 +462,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// The allocated game server's port information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.AllocationResponse.Types.GameServerStatusPort> Ports {
       get { return ports_; }
     }
@@ -446,6 +474,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// The address of the allocated game server.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Address {
       get { return address_; }
       set {
@@ -460,6 +489,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// The node name of the allocated game server.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string NodeName {
       get { return nodeName_; }
       set {
@@ -474,6 +504,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// The game server cluster from which the game server was allocated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GameServerClusterName {
       get { return gameServerClusterName_; }
       set {
@@ -488,6 +519,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// The game server deployment from which the game server was allocated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DeploymentName {
       get { return deploymentName_; }
       set {
@@ -496,11 +528,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AllocationResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AllocationResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -518,6 +552,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (GameServerName.Length != 0) hash ^= GameServerName.GetHashCode();
@@ -533,11 +568,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -571,6 +608,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GameServerName.Length != 0) {
         output.WriteRawTag(10);
@@ -600,6 +638,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (GameServerName.Length != 0) {
@@ -625,6 +664,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AllocationResponse other) {
       if (other == null) {
         return;
@@ -649,6 +689,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -690,6 +731,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -729,6 +771,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the AllocationResponse message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The game server port info that is allocated.
@@ -741,19 +784,23 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         private static readonly pb::MessageParser<GameServerStatusPort> _parser = new pb::MessageParser<GameServerStatusPort>(() => new GameServerStatusPort());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<GameServerStatusPort> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.AllocationResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GameServerStatusPort() {
           OnConstruction();
         }
@@ -761,6 +808,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GameServerStatusPort(GameServerStatusPort other) : this() {
           name_ = other.name_;
           port_ = other.port_;
@@ -768,6 +816,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GameServerStatusPort Clone() {
           return new GameServerStatusPort(this);
         }
@@ -776,6 +825,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         public const int NameFieldNumber = 1;
         private string name_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Name {
           get { return name_; }
           set {
@@ -787,6 +837,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         public const int PortFieldNumber = 2;
         private int port_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Port {
           get { return port_; }
           set {
@@ -795,11 +846,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as GameServerStatusPort);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(GameServerStatusPort other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -813,6 +866,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -824,11 +878,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -849,6 +905,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Name.Length != 0) {
             output.WriteRawTag(10);
@@ -865,6 +922,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Name.Length != 0) {
@@ -880,6 +938,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(GameServerStatusPort other) {
           if (other == null) {
             return;
@@ -894,6 +953,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -919,6 +979,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -958,19 +1019,23 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     private static readonly pb::MessageParser<MetaPatch> _parser = new pb::MessageParser<MetaPatch>(() => new MetaPatch());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<MetaPatch> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.AllocationEndpointReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MetaPatch() {
       OnConstruction();
     }
@@ -978,6 +1043,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MetaPatch(MetaPatch other) : this() {
       labels_ = other.labels_.Clone();
       annotations_ = other.annotations_.Clone();
@@ -985,6 +1051,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MetaPatch Clone() {
       return new MetaPatch(this);
     }
@@ -995,6 +1062,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 10);
     private readonly pbc::MapField<string, string> labels_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, string> Labels {
       get { return labels_; }
     }
@@ -1005,16 +1073,19 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 18);
     private readonly pbc::MapField<string, string> annotations_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, string> Annotations {
       get { return annotations_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as MetaPatch);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(MetaPatch other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1028,6 +1099,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= Labels.GetHashCode();
@@ -1039,11 +1111,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1058,6 +1132,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       labels_.WriteTo(ref output, _map_labels_codec);
       annotations_.WriteTo(ref output, _map_annotations_codec);
@@ -1068,6 +1143,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += labels_.CalculateSize(_map_labels_codec);
@@ -1079,6 +1155,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(MetaPatch other) {
       if (other == null) {
         return;
@@ -1089,6 +1166,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1114,6 +1192,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1147,19 +1226,23 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     private static readonly pb::MessageParser<GameServerSelector> _parser = new pb::MessageParser<GameServerSelector>(() => new GameServerSelector());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GameServerSelector> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Gaming.Allocationendpoint.V1Alpha.AllocationEndpointReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GameServerSelector() {
       OnConstruction();
     }
@@ -1167,12 +1250,14 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GameServerSelector(GameServerSelector other) : this() {
       matchLabels_ = other.matchLabels_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GameServerSelector Clone() {
       return new GameServerSelector(this);
     }
@@ -1186,16 +1271,19 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     /// Labels to match.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, string> MatchLabels {
       get { return matchLabels_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GameServerSelector);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GameServerSelector other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1208,6 +1296,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= MatchLabels.GetHashCode();
@@ -1218,11 +1307,13 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1236,6 +1327,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       matchLabels_.WriteTo(ref output, _map_matchLabels_codec);
       if (_unknownFields != null) {
@@ -1245,6 +1337,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += matchLabels_.CalculateSize(_map_matchLabels_codec);
@@ -1255,6 +1348,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GameServerSelector other) {
       if (other == null) {
         return;
@@ -1264,6 +1358,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1285,6 +1380,7 @@ namespace Google.Cloud.Gaming.Allocationendpoint.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

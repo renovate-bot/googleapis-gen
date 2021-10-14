@@ -101,7 +101,7 @@ class CreateTensorboardRunRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTensorboardRun()
     {
-        return isset($this->tensorboard_run) ? $this->tensorboard_run : null;
+        return $this->tensorboard_run;
     }
 
     public function hasTensorboardRun()

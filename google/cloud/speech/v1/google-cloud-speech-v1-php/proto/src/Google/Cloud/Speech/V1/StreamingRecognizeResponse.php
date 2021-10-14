@@ -115,7 +115,7 @@ class StreamingRecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -211,7 +211,7 @@ class StreamingRecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     public function getTotalBilledTime()
     {
-        return isset($this->total_billed_time) ? $this->total_billed_time : null;
+        return $this->total_billed_time;
     }
 
     public function hasTotalBilledTime()

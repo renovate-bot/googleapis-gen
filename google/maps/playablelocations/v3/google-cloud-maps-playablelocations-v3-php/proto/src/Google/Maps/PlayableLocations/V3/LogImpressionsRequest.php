@@ -140,7 +140,7 @@ class LogImpressionsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getClientInfo()
     {
-        return isset($this->client_info) ? $this->client_info : null;
+        return $this->client_info;
     }
 
     public function hasClientInfo()

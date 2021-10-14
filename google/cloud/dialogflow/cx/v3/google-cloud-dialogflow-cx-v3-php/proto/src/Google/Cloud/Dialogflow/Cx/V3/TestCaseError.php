@@ -53,7 +53,7 @@ class TestCaseError extends \Google\Protobuf\Internal\Message
      */
     public function getTestCase()
     {
-        return isset($this->test_case) ? $this->test_case : null;
+        return $this->test_case;
     }
 
     public function hasTestCase()
@@ -89,7 +89,7 @@ class TestCaseError extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()

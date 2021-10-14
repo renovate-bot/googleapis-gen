@@ -95,7 +95,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getManagementSettings()
     {
-        return isset($this->management_settings) ? $this->management_settings : null;
+        return $this->management_settings;
     }
 
     public function hasManagementSettings()
@@ -133,7 +133,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

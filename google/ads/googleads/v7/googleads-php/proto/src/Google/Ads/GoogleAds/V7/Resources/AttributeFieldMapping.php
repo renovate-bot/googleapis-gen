@@ -18,7 +18,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $feed_attribute_id = null;
     /**
@@ -27,7 +27,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 field_id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 field_id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $field_id = null;
     protected $field;
@@ -99,7 +99,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getFeedAttributeId()
@@ -120,7 +120,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */
@@ -138,7 +138,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 field_id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 field_id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getFieldId()
@@ -162,7 +162,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 field_id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 field_id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

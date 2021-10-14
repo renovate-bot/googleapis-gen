@@ -117,7 +117,7 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -306,7 +306,7 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMinimumStaleness()
     {
-        return isset($this->minimum_staleness) ? $this->minimum_staleness : null;
+        return $this->minimum_staleness;
     }
 
     public function hasMinimumStaleness()

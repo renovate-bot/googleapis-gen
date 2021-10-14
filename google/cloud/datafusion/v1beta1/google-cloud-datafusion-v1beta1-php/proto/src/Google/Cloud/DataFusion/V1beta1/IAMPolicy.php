@@ -57,7 +57,7 @@ class IAMPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getPolicy()
     {
-        return isset($this->policy) ? $this->policy : null;
+        return $this->policy;
     }
 
     public function hasPolicy()
@@ -94,7 +94,7 @@ class IAMPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()

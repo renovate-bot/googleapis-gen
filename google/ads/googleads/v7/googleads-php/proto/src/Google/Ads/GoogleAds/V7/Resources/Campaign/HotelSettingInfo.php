@@ -18,7 +18,7 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $hotel_center_id = null;
 
@@ -40,7 +40,7 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getHotelCenterId()
@@ -61,7 +61,7 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */

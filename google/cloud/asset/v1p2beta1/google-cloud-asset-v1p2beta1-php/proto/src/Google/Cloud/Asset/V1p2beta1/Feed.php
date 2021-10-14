@@ -264,7 +264,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      */
     public function getFeedOutputConfig()
     {
-        return isset($this->feed_output_config) ? $this->feed_output_config : null;
+        return $this->feed_output_config;
     }
 
     public function hasFeedOutputConfig()

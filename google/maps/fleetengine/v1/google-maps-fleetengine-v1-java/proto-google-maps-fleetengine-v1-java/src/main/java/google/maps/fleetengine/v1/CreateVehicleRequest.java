@@ -370,10 +370,10 @@ private static final long serialVersionUID = 0L;
     if (header_ != null) {
       output.writeMessage(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parent_);
     }
-    if (!getVehicleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vehicleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, vehicleId_);
     }
     if (vehicle_ != null) {
@@ -392,10 +392,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parent_);
     }
-    if (!getVehicleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vehicleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, vehicleId_);
     }
     if (vehicle_ != null) {

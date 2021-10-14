@@ -136,19 +136,23 @@ namespace Google.Cloud.Retail.V2Beta {
     private static readonly pb::MessageParser<SearchRequest> _parser = new pb::MessageParser<SearchRequest>(() => new SearchRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SearchRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Beta.SearchServiceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchRequest() {
       OnConstruction();
     }
@@ -156,6 +160,7 @@ namespace Google.Cloud.Retail.V2Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchRequest(SearchRequest other) : this() {
       placement_ = other.placement_;
       branch_ = other.branch_;
@@ -178,6 +183,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchRequest Clone() {
       return new SearchRequest(this);
     }
@@ -196,6 +202,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// * `default_search`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Placement {
       get { return placement_; }
       set {
@@ -214,6 +221,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// products under the default branch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Branch {
       get { return branch_; }
       set {
@@ -228,6 +236,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Raw search query.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Query {
       get { return query_; }
       set {
@@ -248,6 +257,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// characters. Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string VisitorId {
       get { return visitorId_; }
       set {
@@ -262,6 +272,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// User information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.UserInfo UserInfo {
       get { return userInfo_; }
       set {
@@ -280,6 +291,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// If this field is negative, an INVALID_ARGUMENT is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int PageSize {
       get { return pageSize_; }
       set {
@@ -303,6 +315,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PageToken {
       get { return pageToken_; }
       set {
@@ -323,6 +336,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// If this field is negative, an INVALID_ARGUMENT is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Offset {
       get { return offset_; }
       set {
@@ -341,6 +355,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Filter {
       get { return filter_; }
       set {
@@ -363,6 +378,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// for more details about filter syntax.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CanonicalFilter {
       get { return canonicalFilter_; }
       set {
@@ -381,6 +397,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OrderBy {
       get { return orderBy_; }
       set {
@@ -400,6 +417,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec> FacetSpecs {
       get { return facetSpecs_; }
     }
@@ -415,6 +433,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// support team if you are interested in using dynamic facet feature.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec DynamicFacetSpec {
       get { return dynamicFacetSpec_; }
       set {
@@ -429,6 +448,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Boost specification to boost certain products.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec BoostSpec {
       get { return boostSpec_; }
       set {
@@ -444,6 +464,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// query expansion will occur.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec QueryExpansionSpec {
       get { return queryExpansionSpec_; }
       set {
@@ -522,6 +543,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> VariantRollupKeys {
       get { return variantRollupKeys_; }
     }
@@ -546,16 +568,19 @@ namespace Google.Cloud.Retail.V2Beta {
     /// "pageCategories" : ["Sales > 2017 Black Friday Deals"].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> PageCategories {
       get { return pageCategories_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SearchRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SearchRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -584,6 +609,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Placement.Length != 0) hash ^= Placement.GetHashCode();
@@ -610,11 +636,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -686,6 +714,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Placement.Length != 0) {
         output.WriteRawTag(10);
@@ -753,6 +782,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Placement.Length != 0) {
@@ -807,6 +837,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SearchRequest other) {
       if (other == null) {
         return;
@@ -872,6 +903,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -969,6 +1001,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1064,6 +1097,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #region Nested types
     /// <summary>Container for nested types declared in the SearchRequest message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// A facet specification to perform faceted search.
@@ -1076,19 +1110,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<FacetSpec> _parser = new pb::MessageParser<FacetSpec>(() => new FacetSpec());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<FacetSpec> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchRequest.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FacetSpec() {
           OnConstruction();
         }
@@ -1096,6 +1134,7 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FacetSpec(FacetSpec other) : this() {
           facetKey_ = other.facetKey_ != null ? other.facetKey_.Clone() : null;
           limit_ = other.limit_;
@@ -1105,6 +1144,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FacetSpec Clone() {
           return new FacetSpec(this);
         }
@@ -1116,6 +1156,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// Required. The facet key specification.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey FacetKey {
           get { return facetKey_; }
           set {
@@ -1134,6 +1175,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// If this field is negative, an INVALID_ARGUMENT is returned.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Limit {
           get { return limit_; }
           set {
@@ -1167,6 +1209,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// is returned.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> ExcludedFilterKeys {
           get { return excludedFilterKeys_; }
         }
@@ -1205,6 +1248,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// false.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool EnableDynamicPosition {
           get { return enableDynamicPosition_; }
           set {
@@ -1213,11 +1257,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as FacetSpec);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(FacetSpec other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1233,6 +1279,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (facetKey_ != null) hash ^= FacetKey.GetHashCode();
@@ -1246,11 +1293,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1276,6 +1325,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (facetKey_ != null) {
             output.WriteRawTag(10);
@@ -1297,6 +1347,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (facetKey_ != null) {
@@ -1316,6 +1367,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(FacetSpec other) {
           if (other == null) {
             return;
@@ -1337,6 +1389,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1373,6 +1426,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1407,6 +1461,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #region Nested types
         /// <summary>Container for nested types declared in the FacetSpec message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Specifies how a facet is computed.
@@ -1419,19 +1474,23 @@ namespace Google.Cloud.Retail.V2Beta {
             private static readonly pb::MessageParser<FacetKey> _parser = new pb::MessageParser<FacetKey>(() => new FacetKey());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<FacetKey> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetKey() {
               OnConstruction();
             }
@@ -1439,6 +1498,7 @@ namespace Google.Cloud.Retail.V2Beta {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetKey(FacetKey other) : this() {
               key_ = other.key_;
               intervals_ = other.intervals_.Clone();
@@ -1451,6 +1511,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetKey Clone() {
               return new FacetKey(this);
             }
@@ -1498,6 +1559,7 @@ namespace Google.Cloud.Retail.V2Beta {
             ///     * "attributes.key"
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Key {
               get { return key_; }
               set {
@@ -1516,6 +1578,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// values. Maximum number of intervals is 30.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.Interval> Intervals {
               get { return intervals_; }
             }
@@ -1553,6 +1616,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// * customFulfillment5
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<string> RestrictedValues {
               get { return restrictedValues_; }
             }
@@ -1570,6 +1634,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// Only supported on textual fields. Maximum is 10.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<string> Prefixes {
               get { return prefixes_; }
             }
@@ -1587,6 +1652,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// Only supported on textual fields. Maximum is 10.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<string> Contains {
               get { return contains_; }
             }
@@ -1615,6 +1681,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// [FacetSpec.FacetKey.restricted_values][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.restricted_values].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string OrderBy {
               get { return orderBy_; }
               set {
@@ -1649,6 +1716,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// to store "123".
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Query {
               get { return query_; }
               set {
@@ -1657,11 +1725,13 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as FacetKey);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(FacetKey other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -1680,6 +1750,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Key.Length != 0) hash ^= Key.GetHashCode();
@@ -1696,11 +1767,13 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -1729,6 +1802,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Key.Length != 0) {
                 output.WriteRawTag(10);
@@ -1753,6 +1827,7 @@ namespace Google.Cloud.Retail.V2Beta {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Key.Length != 0) {
@@ -1775,6 +1850,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(FacetKey other) {
               if (other == null) {
                 return;
@@ -1796,6 +1872,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -1841,6 +1918,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -1899,19 +1977,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<DynamicFacetSpec> _parser = new pb::MessageParser<DynamicFacetSpec>(() => new DynamicFacetSpec());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<DynamicFacetSpec> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchRequest.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DynamicFacetSpec() {
           OnConstruction();
         }
@@ -1919,12 +2001,14 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DynamicFacetSpec(DynamicFacetSpec other) : this() {
           mode_ = other.mode_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DynamicFacetSpec Clone() {
           return new DynamicFacetSpec(this);
         }
@@ -1939,6 +2023,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// if it's unset.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Types.Mode Mode {
           get { return mode_; }
           set {
@@ -1947,11 +2032,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as DynamicFacetSpec);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(DynamicFacetSpec other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1964,6 +2051,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Mode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Types.Mode.Unspecified) hash ^= Mode.GetHashCode();
@@ -1974,11 +2062,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1995,6 +2085,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Mode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Types.Mode.Unspecified) {
             output.WriteRawTag(8);
@@ -2007,6 +2098,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Mode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Types.Mode.Unspecified) {
@@ -2019,6 +2111,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(DynamicFacetSpec other) {
           if (other == null) {
             return;
@@ -2030,6 +2123,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2051,6 +2145,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2070,6 +2165,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #region Nested types
         /// <summary>Container for nested types declared in the DynamicFacetSpec message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Enum to control DynamicFacet mode
@@ -2105,19 +2201,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<BoostSpec> _parser = new pb::MessageParser<BoostSpec>(() => new BoostSpec());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<BoostSpec> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchRequest.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BoostSpec() {
           OnConstruction();
         }
@@ -2125,12 +2225,14 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BoostSpec(BoostSpec other) : this() {
           conditionBoostSpecs_ = other.conditionBoostSpecs_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BoostSpec Clone() {
           return new BoostSpec(this);
         }
@@ -2147,16 +2249,19 @@ namespace Google.Cloud.Retail.V2Beta {
         /// specifications is 10.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Types.ConditionBoostSpec> ConditionBoostSpecs {
           get { return conditionBoostSpecs_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as BoostSpec);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(BoostSpec other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2169,6 +2274,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= conditionBoostSpecs_.GetHashCode();
@@ -2179,11 +2285,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2197,6 +2305,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           conditionBoostSpecs_.WriteTo(ref output, _repeated_conditionBoostSpecs_codec);
           if (_unknownFields != null) {
@@ -2206,6 +2315,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += conditionBoostSpecs_.CalculateSize(_repeated_conditionBoostSpecs_codec);
@@ -2216,6 +2326,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(BoostSpec other) {
           if (other == null) {
             return;
@@ -2225,6 +2336,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2246,6 +2358,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2265,6 +2378,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #region Nested types
         /// <summary>Container for nested types declared in the BoostSpec message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Boost applies to products which match a condition.
@@ -2277,19 +2391,23 @@ namespace Google.Cloud.Retail.V2Beta {
             private static readonly pb::MessageParser<ConditionBoostSpec> _parser = new pb::MessageParser<ConditionBoostSpec>(() => new ConditionBoostSpec());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<ConditionBoostSpec> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ConditionBoostSpec() {
               OnConstruction();
             }
@@ -2297,6 +2415,7 @@ namespace Google.Cloud.Retail.V2Beta {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ConditionBoostSpec(ConditionBoostSpec other) : this() {
               condition_ = other.condition_;
               boost_ = other.boost_;
@@ -2304,6 +2423,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ConditionBoostSpec Clone() {
               return new ConditionBoostSpec(this);
             }
@@ -2326,6 +2446,7 @@ namespace Google.Cloud.Retail.V2Beta {
             ///     ANY("Red","Blue"))
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Condition {
               get { return condition_; }
               set {
@@ -2356,6 +2477,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// ignored.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public float Boost {
               get { return boost_; }
               set {
@@ -2364,11 +2486,13 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as ConditionBoostSpec);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(ConditionBoostSpec other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -2382,6 +2506,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Condition.Length != 0) hash ^= Condition.GetHashCode();
@@ -2393,11 +2518,13 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -2418,6 +2545,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Condition.Length != 0) {
                 output.WriteRawTag(10);
@@ -2434,6 +2562,7 @@ namespace Google.Cloud.Retail.V2Beta {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Condition.Length != 0) {
@@ -2449,6 +2578,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(ConditionBoostSpec other) {
               if (other == null) {
                 return;
@@ -2463,6 +2593,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -2488,6 +2619,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -2527,19 +2659,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<QueryExpansionSpec> _parser = new pb::MessageParser<QueryExpansionSpec>(() => new QueryExpansionSpec());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<QueryExpansionSpec> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchRequest.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public QueryExpansionSpec() {
           OnConstruction();
         }
@@ -2547,6 +2683,7 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public QueryExpansionSpec(QueryExpansionSpec other) : this() {
           condition_ = other.condition_;
           pinUnexpandedResults_ = other.pinUnexpandedResults_;
@@ -2554,6 +2691,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public QueryExpansionSpec Clone() {
           return new QueryExpansionSpec(this);
         }
@@ -2566,6 +2704,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// [Condition.DISABLED][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition Condition {
           get { return condition_; }
           set {
@@ -2582,6 +2721,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// by the expanded results.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool PinUnexpandedResults {
           get { return pinUnexpandedResults_; }
           set {
@@ -2590,11 +2730,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as QueryExpansionSpec);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(QueryExpansionSpec other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2608,6 +2750,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Condition != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition.Unspecified) hash ^= Condition.GetHashCode();
@@ -2619,11 +2762,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2644,6 +2789,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Condition != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition.Unspecified) {
             output.WriteRawTag(8);
@@ -2660,6 +2806,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Condition != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition.Unspecified) {
@@ -2675,6 +2822,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(QueryExpansionSpec other) {
           if (other == null) {
             return;
@@ -2689,6 +2837,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2714,6 +2863,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2737,6 +2887,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #region Nested types
         /// <summary>Container for nested types declared in the QueryExpansionSpec message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Enum describing under which condition query expansion should occur.
@@ -2782,19 +2933,23 @@ namespace Google.Cloud.Retail.V2Beta {
     private static readonly pb::MessageParser<SearchResponse> _parser = new pb::MessageParser<SearchResponse>(() => new SearchResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SearchResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Beta.SearchServiceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchResponse() {
       OnConstruction();
     }
@@ -2802,6 +2957,7 @@ namespace Google.Cloud.Retail.V2Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchResponse(SearchResponse other) : this() {
       results_ = other.results_.Clone();
       facets_ = other.facets_.Clone();
@@ -2815,6 +2971,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchResponse Clone() {
       return new SearchResponse(this);
     }
@@ -2828,6 +2985,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// A list of matched items. The order represents the ranking.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.SearchResult> Results {
       get { return results_; }
     }
@@ -2841,6 +2999,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Results of facets requested by user.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet> Facets {
       get { return facets_; }
     }
@@ -2856,6 +3015,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// matches.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int TotalSize {
       get { return totalSize_; }
       set {
@@ -2870,6 +3030,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// If spell correction applies, the corrected query. Otherwise, empty.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CorrectedQuery {
       get { return correctedQuery_; }
       set {
@@ -2886,6 +3047,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// search, which enables accurate attribution of search model performance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AttributionToken {
       get { return attributionToken_; }
       set {
@@ -2903,6 +3065,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// subsequent pages.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string NextPageToken {
       get { return nextPageToken_; }
       set {
@@ -2917,6 +3080,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Query expansion information for the returned results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.QueryExpansionInfo QueryExpansionInfo {
       get { return queryExpansionInfo_; }
       set {
@@ -2935,6 +3099,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// will be set in the response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RedirectUri {
       get { return redirectUri_; }
       set {
@@ -2943,11 +3108,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SearchResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SearchResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2967,6 +3134,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= results_.GetHashCode();
@@ -2984,11 +3152,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3027,6 +3197,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       results_.WriteTo(ref output, _repeated_results_codec);
       facets_.WriteTo(ref output, _repeated_facets_codec);
@@ -3061,6 +3232,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += results_.CalculateSize(_repeated_results_codec);
@@ -3090,6 +3262,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SearchResponse other) {
       if (other == null) {
         return;
@@ -3121,6 +3294,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3173,6 +3347,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3223,6 +3398,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #region Nested types
     /// <summary>Container for nested types declared in the SearchResponse message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Represents the search results.
@@ -3235,19 +3411,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<SearchResult> _parser = new pb::MessageParser<SearchResult>(() => new SearchResult());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<SearchResult> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SearchResult() {
           OnConstruction();
         }
@@ -3255,6 +3435,7 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SearchResult(SearchResult other) : this() {
           id_ = other.id_;
           product_ = other.product_ != null ? other.product_.Clone() : null;
@@ -3265,6 +3446,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SearchResult Clone() {
           return new SearchResult(this);
         }
@@ -3277,6 +3459,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// [Product][google.cloud.retail.v2beta.Product].
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Id {
           get { return id_; }
           set {
@@ -3304,6 +3487,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// be a match, 5 product variants are returned but order is meaningless.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Retail.V2Beta.Product Product {
           get { return product_; }
           set {
@@ -3320,6 +3504,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// [Product][google.cloud.retail.v2beta.Product]s.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int MatchingVariantCount {
           get { return matchingVariantCount_; }
           set {
@@ -3347,6 +3532,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// "sku1" [ColorInfo][google.cloud.retail.v2beta.ColorInfo] and the query.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.FieldMask> MatchingVariantFields {
           get { return matchingVariantFields_; }
         }
@@ -3390,16 +3576,19 @@ namespace Google.Cloud.Retail.V2Beta {
         /// are 10 variants in this product are available in the store "store1".
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::MapField<string, global::Google.Protobuf.WellKnownTypes.Value> VariantRollupValues {
           get { return variantRollupValues_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as SearchResult);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(SearchResult other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3416,6 +3605,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Id.Length != 0) hash ^= Id.GetHashCode();
@@ -3430,11 +3620,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3461,6 +3653,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Id.Length != 0) {
             output.WriteRawTag(10);
@@ -3483,6 +3676,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Id.Length != 0) {
@@ -3503,6 +3697,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(SearchResult other) {
           if (other == null) {
             return;
@@ -3525,6 +3720,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3565,6 +3761,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3613,19 +3810,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<Facet> _parser = new pb::MessageParser<Facet>(() => new Facet());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Facet> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchResponse.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Facet() {
           OnConstruction();
         }
@@ -3633,6 +3834,7 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Facet(Facet other) : this() {
           key_ = other.key_;
           values_ = other.values_.Clone();
@@ -3641,6 +3843,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Facet Clone() {
           return new Facet(this);
         }
@@ -3653,6 +3856,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// "attributes.attr1".
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Key {
           get { return key_; }
           set {
@@ -3669,6 +3873,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// The facet values for this field.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet.Types.FacetValue> Values {
           get { return values_; }
         }
@@ -3680,6 +3885,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// Whether the facet is dynamically generated.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool DynamicFacet {
           get { return dynamicFacet_; }
           set {
@@ -3688,11 +3894,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Facet);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Facet other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3707,6 +3915,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Key.Length != 0) hash ^= Key.GetHashCode();
@@ -3719,11 +3928,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3745,6 +3956,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Key.Length != 0) {
             output.WriteRawTag(10);
@@ -3762,6 +3974,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Key.Length != 0) {
@@ -3778,6 +3991,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Facet other) {
           if (other == null) {
             return;
@@ -3793,6 +4007,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3822,6 +4037,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3849,6 +4065,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #region Nested types
         /// <summary>Container for nested types declared in the Facet message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// A facet value which contains value names and their count.
@@ -3861,19 +4078,23 @@ namespace Google.Cloud.Retail.V2Beta {
             private static readonly pb::MessageParser<FacetValue> _parser = new pb::MessageParser<FacetValue>(() => new FacetValue());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<FacetValue> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetValue() {
               OnConstruction();
             }
@@ -3881,6 +4102,7 @@ namespace Google.Cloud.Retail.V2Beta {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetValue(FacetValue other) : this() {
               count_ = other.count_;
               switch (other.FacetValueCase) {
@@ -3896,6 +4118,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetValue Clone() {
               return new FacetValue(this);
             }
@@ -3906,6 +4129,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// Text value of a facet, such as "Black" for facet "colorFamilies".
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Value {
               get { return facetValueCase_ == FacetValueOneofCase.Value ? (string) facetValue_ : ""; }
               set {
@@ -3920,6 +4144,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// Interval value for a facet, such as [10, 20) for facet "price".
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Retail.V2Beta.Interval Interval {
               get { return facetValueCase_ == FacetValueOneofCase.Interval ? (global::Google.Cloud.Retail.V2Beta.Interval) facetValue_ : null; }
               set {
@@ -3935,6 +4160,7 @@ namespace Google.Cloud.Retail.V2Beta {
             /// Number of items that have this facet value.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long Count {
               get { return count_; }
               set {
@@ -3951,22 +4177,26 @@ namespace Google.Cloud.Retail.V2Beta {
             }
             private FacetValueOneofCase facetValueCase_ = FacetValueOneofCase.None;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FacetValueOneofCase FacetValueCase {
               get { return facetValueCase_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void ClearFacetValue() {
               facetValueCase_ = FacetValueOneofCase.None;
               facetValue_ = null;
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as FacetValue);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(FacetValue other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3982,6 +4212,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (facetValueCase_ == FacetValueOneofCase.Value) hash ^= Value.GetHashCode();
@@ -3995,11 +4226,13 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -4024,6 +4257,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (facetValueCase_ == FacetValueOneofCase.Value) {
                 output.WriteRawTag(10);
@@ -4044,6 +4278,7 @@ namespace Google.Cloud.Retail.V2Beta {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (facetValueCase_ == FacetValueOneofCase.Value) {
@@ -4062,6 +4297,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(FacetValue other) {
               if (other == null) {
                 return;
@@ -4085,6 +4321,7 @@ namespace Google.Cloud.Retail.V2Beta {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4119,6 +4356,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -4167,19 +4405,23 @@ namespace Google.Cloud.Retail.V2Beta {
         private static readonly pb::MessageParser<QueryExpansionInfo> _parser = new pb::MessageParser<QueryExpansionInfo>(() => new QueryExpansionInfo());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<QueryExpansionInfo> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Retail.V2Beta.SearchResponse.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public QueryExpansionInfo() {
           OnConstruction();
         }
@@ -4187,6 +4429,7 @@ namespace Google.Cloud.Retail.V2Beta {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public QueryExpansionInfo(QueryExpansionInfo other) : this() {
           expandedQuery_ = other.expandedQuery_;
           pinnedResultCount_ = other.pinnedResultCount_;
@@ -4194,6 +4437,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public QueryExpansionInfo Clone() {
           return new QueryExpansionInfo(this);
         }
@@ -4205,6 +4449,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// Bool describing whether query expansion has occurred.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool ExpandedQuery {
           get { return expandedQuery_; }
           set {
@@ -4221,6 +4466,7 @@ namespace Google.Cloud.Retail.V2Beta {
         /// is set to true.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long PinnedResultCount {
           get { return pinnedResultCount_; }
           set {
@@ -4229,11 +4475,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as QueryExpansionInfo);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(QueryExpansionInfo other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4247,6 +4495,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (ExpandedQuery != false) hash ^= ExpandedQuery.GetHashCode();
@@ -4258,11 +4507,13 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4283,6 +4534,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (ExpandedQuery != false) {
             output.WriteRawTag(8);
@@ -4299,6 +4551,7 @@ namespace Google.Cloud.Retail.V2Beta {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (ExpandedQuery != false) {
@@ -4314,6 +4567,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(QueryExpansionInfo other) {
           if (other == null) {
             return;
@@ -4328,6 +4582,7 @@ namespace Google.Cloud.Retail.V2Beta {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4353,6 +4608,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {

@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
     if (account_ != null) {
       output.writeMessage(4, getAccount());
     }
-    if (!getNetworkProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkProfile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, networkProfile_);
     }
     for (int i = 0; i < environmentVariables_.size(); i++) {
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getAccount());
     }
-    if (!getNetworkProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkProfile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, networkProfile_);
     }
     for (int i = 0; i < environmentVariables_.size(); i++) {

@@ -65,7 +65,7 @@ class IosTestLoop extends \Google\Protobuf\Internal\Message
      */
     public function getAppIpa()
     {
-        return isset($this->app_ipa) ? $this->app_ipa : null;
+        return $this->app_ipa;
     }
 
     public function hasAppIpa()

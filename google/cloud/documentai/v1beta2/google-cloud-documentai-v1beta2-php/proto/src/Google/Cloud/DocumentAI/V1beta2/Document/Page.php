@@ -169,7 +169,7 @@ class Page extends \Google\Protobuf\Internal\Message
      */
     public function getDimension()
     {
-        return isset($this->dimension) ? $this->dimension : null;
+        return $this->dimension;
     }
 
     public function hasDimension()
@@ -205,7 +205,7 @@ class Page extends \Google\Protobuf\Internal\Message
      */
     public function getLayout()
     {
-        return isset($this->layout) ? $this->layout : null;
+        return $this->layout;
     }
 
     public function hasLayout()

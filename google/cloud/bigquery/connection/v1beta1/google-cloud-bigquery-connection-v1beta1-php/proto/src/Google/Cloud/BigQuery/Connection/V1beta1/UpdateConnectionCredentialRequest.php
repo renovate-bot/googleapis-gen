@@ -83,7 +83,7 @@ class UpdateConnectionCredentialRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getCredential()
     {
-        return isset($this->credential) ? $this->credential : null;
+        return $this->credential;
     }
 
     public function hasCredential()

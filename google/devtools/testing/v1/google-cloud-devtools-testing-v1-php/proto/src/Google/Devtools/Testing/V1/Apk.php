@@ -55,7 +55,7 @@ class Apk extends \Google\Protobuf\Internal\Message
      */
     public function getLocation()
     {
-        return isset($this->location) ? $this->location : null;
+        return $this->location;
     }
 
     public function hasLocation()

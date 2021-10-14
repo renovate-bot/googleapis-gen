@@ -131,7 +131,7 @@ class ProbingDetails extends \Google\Protobuf\Internal\Message
      */
     public function getVerifyTime()
     {
-        return isset($this->verify_time) ? $this->verify_time : null;
+        return $this->verify_time;
     }
 
     public function hasVerifyTime()
@@ -167,7 +167,7 @@ class ProbingDetails extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -282,7 +282,7 @@ class ProbingDetails extends \Google\Protobuf\Internal\Message
      */
     public function getEndpointInfo()
     {
-        return isset($this->endpoint_info) ? $this->endpoint_info : null;
+        return $this->endpoint_info;
     }
 
     public function hasEndpointInfo()
@@ -320,7 +320,7 @@ class ProbingDetails extends \Google\Protobuf\Internal\Message
      */
     public function getProbingLatency()
     {
-        return isset($this->probing_latency) ? $this->probing_latency : null;
+        return $this->probing_latency;
     }
 
     public function hasProbingLatency()

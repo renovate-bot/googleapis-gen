@@ -105,7 +105,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      */
     public function getResourceSelector()
     {
-        return isset($this->resource_selector) ? $this->resource_selector : null;
+        return $this->resource_selector;
     }
 
     public function hasResourceSelector()
@@ -141,7 +141,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      */
     public function getIdentitySelector()
     {
-        return isset($this->identity_selector) ? $this->identity_selector : null;
+        return $this->identity_selector;
     }
 
     public function hasIdentitySelector()
@@ -178,7 +178,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      */
     public function getAccessSelector()
     {
-        return isset($this->access_selector) ? $this->access_selector : null;
+        return $this->access_selector;
     }
 
     public function hasAccessSelector()

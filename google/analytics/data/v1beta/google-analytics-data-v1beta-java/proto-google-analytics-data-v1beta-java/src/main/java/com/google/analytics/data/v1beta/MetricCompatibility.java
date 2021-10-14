@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    * @return Whether the metricMetadata field is set.
    */
   @java.lang.Override
@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    * @return The metricMetadata.
    */
   @java.lang.Override
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.MetricMetadataOrBuilder getMetricMetadataOrBuilder() {
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return Whether the compatibility field is set.
    */
   @java.lang.Override public boolean hasCompatibility() {
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The enum numeric value on the wire for compatibility.
    */
   @java.lang.Override public int getCompatibilityValue() {
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The compatibility.
    */
   @java.lang.Override public com.google.analytics.data.v1beta.Compatibility getCompatibility() {
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      * @return Whether the metricMetadata field is set.
      */
     public boolean hasMetricMetadata() {
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      * @return The metricMetadata.
      */
     public com.google.analytics.data.v1beta.MetricMetadata getMetricMetadata() {
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder setMetricMetadata(com.google.analytics.data.v1beta.MetricMetadata value) {
       if (metricMetadataBuilder_ == null) {
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder setMetricMetadata(
         com.google.analytics.data.v1beta.MetricMetadata.Builder builderForValue) {
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder mergeMetricMetadata(com.google.analytics.data.v1beta.MetricMetadata value) {
       if (metricMetadataBuilder_ == null) {
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public Builder clearMetricMetadata() {
       if (metricMetadataBuilder_ == null) {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.MetricMetadata.Builder getMetricMetadataBuilder() {
       bitField0_ |= 0x00000001;
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.MetricMetadataOrBuilder getMetricMetadataOrBuilder() {
       if (metricMetadataBuilder_ != null) {
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.analytics.data.v1beta.MetricMetadata, com.google.analytics.data.v1beta.MetricMetadata.Builder, com.google.analytics.data.v1beta.MetricMetadataOrBuilder> 
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return Whether the compatibility field is set.
      */
     @java.lang.Override public boolean hasCompatibility() {
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return The enum numeric value on the wire for compatibility.
      */
     @java.lang.Override public int getCompatibilityValue() {
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @param value The enum numeric value on the wire for compatibility to set.
      * @return This builder for chaining.
      */
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return The compatibility.
      */
     @java.lang.Override
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @param value The compatibility to set.
      * @return This builder for chaining.
      */
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * this metric can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearCompatibility() {

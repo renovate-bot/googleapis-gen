@@ -104,19 +104,23 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     private static readonly pb::MessageParser<MigrationWorkflow> _parser = new pb::MessageParser<MigrationWorkflow>(() => new MigrationWorkflow());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<MigrationWorkflow> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationEntitiesReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationWorkflow() {
       OnConstruction();
     }
@@ -124,6 +128,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationWorkflow(MigrationWorkflow other) : this() {
       name_ = other.name_;
       displayName_ = other.displayName_;
@@ -135,6 +140,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationWorkflow Clone() {
       return new MigrationWorkflow(this);
     }
@@ -149,6 +155,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Example: `projects/123/locations/us/workflows/345`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -164,6 +171,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// a descriptive name. There is no guarantee or enforcement of uniqueness.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DisplayName {
       get { return displayName_; }
       set {
@@ -182,6 +190,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// in a workflow.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationTask> Tasks {
       get { return tasks_; }
     }
@@ -193,6 +202,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Output only. That status of the workflow.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationWorkflow.Types.State State {
       get { return state_; }
       set {
@@ -207,6 +217,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Time when the workflow was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -221,6 +232,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Time when the workflow was last updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp LastUpdateTime {
       get { return lastUpdateTime_; }
       set {
@@ -229,11 +241,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as MigrationWorkflow);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(MigrationWorkflow other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -251,6 +265,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -266,11 +281,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -304,6 +321,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -333,6 +351,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -358,6 +377,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(MigrationWorkflow other) {
       if (other == null) {
         return;
@@ -388,6 +408,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -435,6 +456,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -480,6 +502,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the MigrationWorkflow message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Possible migration workflow states.
@@ -528,19 +551,23 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     private static readonly pb::MessageParser<MigrationTask> _parser = new pb::MessageParser<MigrationTask>(() => new MigrationTask());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<MigrationTask> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationEntitiesReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationTask() {
       OnConstruction();
     }
@@ -548,6 +575,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationTask(MigrationTask other) : this() {
       id_ = other.id_;
       type_ = other.type_;
@@ -560,6 +588,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationTask Clone() {
       return new MigrationTask(this);
     }
@@ -571,6 +600,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Output only. Immutable. The unique identifier for the migration task. The ID is server-generated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Id {
       get { return id_; }
       set {
@@ -585,6 +615,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// The type of the task. This must be a supported task type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Type {
       get { return type_; }
       set {
@@ -600,6 +631,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// details messages and correspond to the Task's type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Any Details {
       get { return details_; }
       set {
@@ -614,6 +646,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Output only. The current state of the task.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationTask.Types.State State {
       get { return state_; }
       set {
@@ -628,6 +661,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Output only. An explanation that may be populated when the task is in FAILED state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.ErrorInfo ProcessingError {
       get { return processingError_; }
       set {
@@ -642,6 +676,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Time when the task was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -656,6 +691,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Time when the task was last updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp LastUpdateTime {
       get { return lastUpdateTime_; }
       set {
@@ -664,11 +700,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as MigrationTask);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(MigrationTask other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -687,6 +725,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
@@ -703,11 +742,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -748,6 +789,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Id.Length != 0) {
         output.WriteRawTag(10);
@@ -784,6 +826,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Id.Length != 0) {
@@ -814,6 +857,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(MigrationTask other) {
       if (other == null) {
         return;
@@ -855,6 +899,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -912,6 +957,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -967,6 +1013,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the MigrationTask message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Possible states of a migration task.
@@ -1021,19 +1068,23 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     private static readonly pb::MessageParser<MigrationSubtask> _parser = new pb::MessageParser<MigrationSubtask>(() => new MigrationSubtask());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<MigrationSubtask> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationEntitiesReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationSubtask() {
       OnConstruction();
     }
@@ -1041,6 +1092,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationSubtask(MigrationSubtask other) : this() {
       name_ = other.name_;
       taskId_ = other.taskId_;
@@ -1056,6 +1108,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MigrationSubtask Clone() {
       return new MigrationSubtask(this);
     }
@@ -1070,6 +1123,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Example: `projects/123/locations/us/workflows/345/subtasks/678`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -1084,6 +1138,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// The unique ID of the task to which this subtask belongs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TaskId {
       get { return taskId_; }
       set {
@@ -1101,6 +1156,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// polling for Subtasks.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Type {
       get { return type_; }
       set {
@@ -1115,6 +1171,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Output only. The current state of the subtask.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.BigQuery.Migration.V2Alpha.MigrationSubtask.Types.State State {
       get { return state_; }
       set {
@@ -1129,6 +1186,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Output only. An explanation that may be populated when the task is in FAILED state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.ErrorInfo ProcessingError {
       get { return processingError_; }
       set {
@@ -1146,6 +1204,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// subtask. Presence of error details does not mean that the subtask failed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.BigQuery.Migration.V2Alpha.ResourceErrorDetail> ResourceErrorDetails {
       get { return resourceErrorDetails_; }
     }
@@ -1160,6 +1219,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// that is higher than the size of `resource_error_details`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ResourceErrorCount {
       get { return resourceErrorCount_; }
       set {
@@ -1174,6 +1234,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Time when the subtask was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -1188,6 +1249,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// Time when the subtask was last updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp LastUpdateTime {
       get { return lastUpdateTime_; }
       set {
@@ -1204,16 +1266,19 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     /// The metrics for the subtask.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.BigQuery.Migration.V2Alpha.TimeSeries> Metrics {
       get { return metrics_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as MigrationSubtask);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(MigrationSubtask other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1235,6 +1300,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -1254,11 +1320,13 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1305,6 +1373,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -1347,6 +1416,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -1382,6 +1452,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(MigrationSubtask other) {
       if (other == null) {
         return;
@@ -1425,6 +1496,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1491,6 +1563,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1555,6 +1628,7 @@ namespace Google.Cloud.BigQuery.Migration.V2Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the MigrationSubtask message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Possible states of a migration subtask.

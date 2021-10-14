@@ -238,13 +238,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(file_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, file_);
     }
     if (line_ != 0L) {
       output.writeInt64(2, line_);
     }
-    if (!getFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(function_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, function_);
     }
     unknownFields.writeTo(output);
@@ -256,14 +256,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(file_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, file_);
     }
     if (line_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, line_);
     }
-    if (!getFunctionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(function_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, function_);
     }
     size += unknownFields.getSerializedSize();

@@ -112,7 +112,7 @@ class RoboStartingIntent extends \Google\Protobuf\Internal\Message
      */
     public function getTimeout()
     {
-        return isset($this->timeout) ? $this->timeout : null;
+        return $this->timeout;
     }
 
     public function hasTimeout()

@@ -83,7 +83,7 @@ class CreateHyperparameterTuningJobRequest extends \Google\Protobuf\Internal\Mes
      */
     public function getHyperparameterTuningJob()
     {
-        return isset($this->hyperparameter_tuning_job) ? $this->hyperparameter_tuning_job : null;
+        return $this->hyperparameter_tuning_job;
     }
 
     public function hasHyperparameterTuningJob()

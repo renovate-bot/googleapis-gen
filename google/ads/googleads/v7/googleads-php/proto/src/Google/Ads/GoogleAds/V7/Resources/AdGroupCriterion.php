@@ -27,7 +27,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -60,7 +60,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 57 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 57 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
@@ -74,7 +74,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>bool negative = 58 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 58 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $negative = null;
     /**
@@ -108,25 +108,25 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *
-     * Generated from protobuf field <code>double bid_modifier = 61;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 61;</code>
      */
     protected $bid_modifier = null;
     /**
      * The CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 62;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 62;</code>
      */
     protected $cpc_bid_micros = null;
     /**
      * The CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 cpm_bid_micros = 63;</code>
+     * Generated from protobuf field <code>optional int64 cpm_bid_micros = 63;</code>
      */
     protected $cpm_bid_micros = null;
     /**
      * The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 64;</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 64;</code>
      */
     protected $cpv_bid_micros = null;
     /**
@@ -134,31 +134,31 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 65;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 65;</code>
      */
     protected $percent_cpc_bid_micros = null;
     /**
      * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpc_bid_micros = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpc_bid_micros = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpc_bid_micros = null;
     /**
      * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpm_bid_micros = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpm_bid_micros = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpm_bid_micros = null;
     /**
      * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpv_bid_micros = 68 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpv_bid_micros = 68 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpv_bid_micros = null;
     /**
      * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>int64 effective_percent_cpc_bid_micros = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_percent_cpc_bid_micros = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_percent_cpc_bid_micros = null;
     /**
@@ -207,13 +207,13 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * URL template for appending params to final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 72;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 72;</code>
      */
     protected $final_url_suffix = null;
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 73;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 73;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -396,7 +396,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCriterionId()
@@ -418,7 +418,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -508,7 +508,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getQualityInfo()
     {
-        return isset($this->quality_info) ? $this->quality_info : null;
+        return $this->quality_info;
     }
 
     public function hasQualityInfo()
@@ -539,7 +539,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 57 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 57 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroup()
@@ -560,7 +560,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 57 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 57 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -603,7 +603,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>bool negative = 58 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 58 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return bool
      */
     public function getNegative()
@@ -626,7 +626,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>bool negative = 58 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 58 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param bool $var
      * @return $this
      */
@@ -752,7 +752,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *
-     * Generated from protobuf field <code>double bid_modifier = 61;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 61;</code>
      * @return float
      */
     public function getBidModifier()
@@ -774,7 +774,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *
-     * Generated from protobuf field <code>double bid_modifier = 61;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 61;</code>
      * @param float $var
      * @return $this
      */
@@ -789,7 +789,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 62;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 62;</code>
      * @return int|string
      */
     public function getCpcBidMicros()
@@ -810,7 +810,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 62;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 62;</code>
      * @param int|string $var
      * @return $this
      */
@@ -825,7 +825,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 cpm_bid_micros = 63;</code>
+     * Generated from protobuf field <code>optional int64 cpm_bid_micros = 63;</code>
      * @return int|string
      */
     public function getCpmBidMicros()
@@ -846,7 +846,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 cpm_bid_micros = 63;</code>
+     * Generated from protobuf field <code>optional int64 cpm_bid_micros = 63;</code>
      * @param int|string $var
      * @return $this
      */
@@ -861,7 +861,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 64;</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 64;</code>
      * @return int|string
      */
     public function getCpvBidMicros()
@@ -882,7 +882,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 64;</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 64;</code>
      * @param int|string $var
      * @return $this
      */
@@ -899,7 +899,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 65;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 65;</code>
      * @return int|string
      */
     public function getPercentCpcBidMicros()
@@ -922,7 +922,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 65;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 65;</code>
      * @param int|string $var
      * @return $this
      */
@@ -937,7 +937,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpc_bid_micros = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpc_bid_micros = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEffectiveCpcBidMicros()
@@ -958,7 +958,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpc_bid_micros = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpc_bid_micros = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -973,7 +973,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpm_bid_micros = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpm_bid_micros = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEffectiveCpmBidMicros()
@@ -994,7 +994,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpm_bid_micros = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpm_bid_micros = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -1009,7 +1009,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpv_bid_micros = 68 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpv_bid_micros = 68 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEffectiveCpvBidMicros()
@@ -1030,7 +1030,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>int64 effective_cpv_bid_micros = 68 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_cpv_bid_micros = 68 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -1045,7 +1045,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>int64 effective_percent_cpc_bid_micros = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_percent_cpc_bid_micros = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEffectivePercentCpcBidMicros()
@@ -1066,7 +1066,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>int64 effective_percent_cpc_bid_micros = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 effective_percent_cpc_bid_micros = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -1190,7 +1190,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getPositionEstimates()
     {
-        return isset($this->position_estimates) ? $this->position_estimates : null;
+        return $this->position_estimates;
     }
 
     public function hasPositionEstimates()
@@ -1275,7 +1275,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * URL template for appending params to final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 72;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 72;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -1296,7 +1296,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * URL template for appending params to final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 72;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 72;</code>
      * @param string $var
      * @return $this
      */
@@ -1311,7 +1311,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 73;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 73;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -1332,7 +1332,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 73;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 73;</code>
      * @param string $var
      * @return $this
      */

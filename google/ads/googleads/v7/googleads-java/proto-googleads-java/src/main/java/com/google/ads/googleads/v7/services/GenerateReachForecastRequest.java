@@ -216,7 +216,7 @@ private static final long serialVersionUID = 0L;
    * Three-character ISO 4217 currency code.
    * </pre>
    *
-   * <code>string currency_code = 9;</code>
+   * <code>optional string currency_code = 9;</code>
    * @return Whether the currencyCode field is set.
    */
   @java.lang.Override
@@ -229,7 +229,7 @@ private static final long serialVersionUID = 0L;
    * Three-character ISO 4217 currency code.
    * </pre>
    *
-   * <code>string currency_code = 9;</code>
+   * <code>optional string currency_code = 9;</code>
    * @return The currencyCode.
    */
   @java.lang.Override
@@ -251,7 +251,7 @@ private static final long serialVersionUID = 0L;
    * Three-character ISO 4217 currency code.
    * </pre>
    *
-   * <code>string currency_code = 9;</code>
+   * <code>optional string currency_code = 9;</code>
    * @return The bytes for currencyCode.
    */
   @java.lang.Override
@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
    * Please use cookie_frequency_cap_setting instead.
    * </pre>
    *
-   * <code>int32 cookie_frequency_cap = 10;</code>
+   * <code>optional int32 cookie_frequency_cap = 10;</code>
    * @return Whether the cookieFrequencyCap field is set.
    */
   @java.lang.Override
@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
    * Please use cookie_frequency_cap_setting instead.
    * </pre>
    *
-   * <code>int32 cookie_frequency_cap = 10;</code>
+   * <code>optional int32 cookie_frequency_cap = 10;</code>
    * @return The cookieFrequencyCap.
    */
   @java.lang.Override
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
    * If not specified, a default of 1 is applied.
    * </pre>
    *
-   * <code>int32 min_effective_frequency = 11;</code>
+   * <code>optional int32 min_effective_frequency = 11;</code>
    * @return Whether the minEffectiveFrequency field is set.
    */
   @java.lang.Override
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
    * If not specified, a default of 1 is applied.
    * </pre>
    *
-   * <code>int32 min_effective_frequency = 11;</code>
+   * <code>optional int32 min_effective_frequency = 11;</code>
    * @return The minEffectiveFrequency.
    */
   @java.lang.Override
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCustomerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, customerId_);
     }
     if (campaignDuration_ != null) {
@@ -597,7 +597,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCustomerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, customerId_);
     }
     if (campaignDuration_ != null) {
@@ -1184,7 +1184,7 @@ private static final long serialVersionUID = 0L;
      * Three-character ISO 4217 currency code.
      * </pre>
      *
-     * <code>string currency_code = 9;</code>
+     * <code>optional string currency_code = 9;</code>
      * @return Whether the currencyCode field is set.
      */
     public boolean hasCurrencyCode() {
@@ -1196,7 +1196,7 @@ private static final long serialVersionUID = 0L;
      * Three-character ISO 4217 currency code.
      * </pre>
      *
-     * <code>string currency_code = 9;</code>
+     * <code>optional string currency_code = 9;</code>
      * @return The currencyCode.
      */
     public java.lang.String getCurrencyCode() {
@@ -1217,7 +1217,7 @@ private static final long serialVersionUID = 0L;
      * Three-character ISO 4217 currency code.
      * </pre>
      *
-     * <code>string currency_code = 9;</code>
+     * <code>optional string currency_code = 9;</code>
      * @return The bytes for currencyCode.
      */
     public com.google.protobuf.ByteString
@@ -1239,7 +1239,7 @@ private static final long serialVersionUID = 0L;
      * Three-character ISO 4217 currency code.
      * </pre>
      *
-     * <code>string currency_code = 9;</code>
+     * <code>optional string currency_code = 9;</code>
      * @param value The currencyCode to set.
      * @return This builder for chaining.
      */
@@ -1259,7 +1259,7 @@ private static final long serialVersionUID = 0L;
      * Three-character ISO 4217 currency code.
      * </pre>
      *
-     * <code>string currency_code = 9;</code>
+     * <code>optional string currency_code = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
@@ -1274,7 +1274,7 @@ private static final long serialVersionUID = 0L;
      * Three-character ISO 4217 currency code.
      * </pre>
      *
-     * <code>string currency_code = 9;</code>
+     * <code>optional string currency_code = 9;</code>
      * @param value The bytes for currencyCode to set.
      * @return This builder for chaining.
      */
@@ -1457,7 +1457,7 @@ private static final long serialVersionUID = 0L;
      * Please use cookie_frequency_cap_setting instead.
      * </pre>
      *
-     * <code>int32 cookie_frequency_cap = 10;</code>
+     * <code>optional int32 cookie_frequency_cap = 10;</code>
      * @return Whether the cookieFrequencyCap field is set.
      */
     @java.lang.Override
@@ -1475,7 +1475,7 @@ private static final long serialVersionUID = 0L;
      * Please use cookie_frequency_cap_setting instead.
      * </pre>
      *
-     * <code>int32 cookie_frequency_cap = 10;</code>
+     * <code>optional int32 cookie_frequency_cap = 10;</code>
      * @return The cookieFrequencyCap.
      */
     @java.lang.Override
@@ -1493,7 +1493,7 @@ private static final long serialVersionUID = 0L;
      * Please use cookie_frequency_cap_setting instead.
      * </pre>
      *
-     * <code>int32 cookie_frequency_cap = 10;</code>
+     * <code>optional int32 cookie_frequency_cap = 10;</code>
      * @param value The cookieFrequencyCap to set.
      * @return This builder for chaining.
      */
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
      * Please use cookie_frequency_cap_setting instead.
      * </pre>
      *
-     * <code>int32 cookie_frequency_cap = 10;</code>
+     * <code>optional int32 cookie_frequency_cap = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearCookieFrequencyCap() {
@@ -1733,7 +1733,7 @@ private static final long serialVersionUID = 0L;
      * If not specified, a default of 1 is applied.
      * </pre>
      *
-     * <code>int32 min_effective_frequency = 11;</code>
+     * <code>optional int32 min_effective_frequency = 11;</code>
      * @return Whether the minEffectiveFrequency field is set.
      */
     @java.lang.Override
@@ -1748,7 +1748,7 @@ private static final long serialVersionUID = 0L;
      * If not specified, a default of 1 is applied.
      * </pre>
      *
-     * <code>int32 min_effective_frequency = 11;</code>
+     * <code>optional int32 min_effective_frequency = 11;</code>
      * @return The minEffectiveFrequency.
      */
     @java.lang.Override
@@ -1763,7 +1763,7 @@ private static final long serialVersionUID = 0L;
      * If not specified, a default of 1 is applied.
      * </pre>
      *
-     * <code>int32 min_effective_frequency = 11;</code>
+     * <code>optional int32 min_effective_frequency = 11;</code>
      * @param value The minEffectiveFrequency to set.
      * @return This builder for chaining.
      */
@@ -1781,7 +1781,7 @@ private static final long serialVersionUID = 0L;
      * If not specified, a default of 1 is applied.
      * </pre>
      *
-     * <code>int32 min_effective_frequency = 11;</code>
+     * <code>optional int32 min_effective_frequency = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearMinEffectiveFrequency() {

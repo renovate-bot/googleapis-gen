@@ -344,7 +344,7 @@ class Service extends \Google\Protobuf\Internal\Message
      */
     public function getTelemetry()
     {
-        return isset($this->telemetry) ? $this->telemetry : null;
+        return $this->telemetry;
     }
 
     public function hasTelemetry()

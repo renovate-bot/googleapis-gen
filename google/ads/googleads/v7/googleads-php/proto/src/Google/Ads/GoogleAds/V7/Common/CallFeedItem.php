@@ -19,21 +19,21 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * The advertiser's phone number to append to the ad.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string phone_number = 7;</code>
+     * Generated from protobuf field <code>optional string phone_number = 7;</code>
      */
     protected $phone_number = null;
     /**
      * Uppercase two-letter country code of the advertiser's phone number.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string country_code = 8;</code>
+     * Generated from protobuf field <code>optional string country_code = 8;</code>
      */
     protected $country_code = null;
     /**
      * Indicates whether call tracking is enabled. By default, call tracking is
      * not enabled.
      *
-     * Generated from protobuf field <code>bool call_tracking_enabled = 9;</code>
+     * Generated from protobuf field <code>optional bool call_tracking_enabled = 9;</code>
      */
     protected $call_tracking_enabled = null;
     /**
@@ -41,14 +41,14 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * default conversion action is used. This field only has effect if
      * call_tracking_enabled is set to true. Otherwise this field is ignored.
      *
-     * Generated from protobuf field <code>string call_conversion_action = 10;</code>
+     * Generated from protobuf field <code>optional string call_conversion_action = 10;</code>
      */
     protected $call_conversion_action = null;
     /**
      * If true, disable call conversion tracking. call_conversion_action should
      * not be set if this is true. Optional.
      *
-     * Generated from protobuf field <code>bool call_conversion_tracking_disabled = 11;</code>
+     * Generated from protobuf field <code>optional bool call_conversion_tracking_disabled = 11;</code>
      */
     protected $call_conversion_tracking_disabled = null;
     /**
@@ -97,7 +97,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * The advertiser's phone number to append to the ad.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string phone_number = 7;</code>
+     * Generated from protobuf field <code>optional string phone_number = 7;</code>
      * @return string
      */
     public function getPhoneNumber()
@@ -119,7 +119,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * The advertiser's phone number to append to the ad.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string phone_number = 7;</code>
+     * Generated from protobuf field <code>optional string phone_number = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -135,7 +135,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * Uppercase two-letter country code of the advertiser's phone number.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string country_code = 8;</code>
+     * Generated from protobuf field <code>optional string country_code = 8;</code>
      * @return string
      */
     public function getCountryCode()
@@ -157,7 +157,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * Uppercase two-letter country code of the advertiser's phone number.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string country_code = 8;</code>
+     * Generated from protobuf field <code>optional string country_code = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * Indicates whether call tracking is enabled. By default, call tracking is
      * not enabled.
      *
-     * Generated from protobuf field <code>bool call_tracking_enabled = 9;</code>
+     * Generated from protobuf field <code>optional bool call_tracking_enabled = 9;</code>
      * @return bool
      */
     public function getCallTrackingEnabled()
@@ -195,7 +195,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * Indicates whether call tracking is enabled. By default, call tracking is
      * not enabled.
      *
-     * Generated from protobuf field <code>bool call_tracking_enabled = 9;</code>
+     * Generated from protobuf field <code>optional bool call_tracking_enabled = 9;</code>
      * @param bool $var
      * @return $this
      */
@@ -212,7 +212,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * default conversion action is used. This field only has effect if
      * call_tracking_enabled is set to true. Otherwise this field is ignored.
      *
-     * Generated from protobuf field <code>string call_conversion_action = 10;</code>
+     * Generated from protobuf field <code>optional string call_conversion_action = 10;</code>
      * @return string
      */
     public function getCallConversionAction()
@@ -235,7 +235,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * default conversion action is used. This field only has effect if
      * call_tracking_enabled is set to true. Otherwise this field is ignored.
      *
-     * Generated from protobuf field <code>string call_conversion_action = 10;</code>
+     * Generated from protobuf field <code>optional string call_conversion_action = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -251,7 +251,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * If true, disable call conversion tracking. call_conversion_action should
      * not be set if this is true. Optional.
      *
-     * Generated from protobuf field <code>bool call_conversion_tracking_disabled = 11;</code>
+     * Generated from protobuf field <code>optional bool call_conversion_tracking_disabled = 11;</code>
      * @return bool
      */
     public function getCallConversionTrackingDisabled()
@@ -273,7 +273,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * If true, disable call conversion tracking. call_conversion_action should
      * not be set if this is true. Optional.
      *
-     * Generated from protobuf field <code>bool call_conversion_tracking_disabled = 11;</code>
+     * Generated from protobuf field <code>optional bool call_conversion_tracking_disabled = 11;</code>
      * @param bool $var
      * @return $this
      */

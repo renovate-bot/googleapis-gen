@@ -84,7 +84,7 @@ class TestSpecification extends \Google\Protobuf\Internal\Message
      */
     public function getTestTimeout()
     {
-        return isset($this->test_timeout) ? $this->test_timeout : null;
+        return $this->test_timeout;
     }
 
     public function hasTestTimeout()

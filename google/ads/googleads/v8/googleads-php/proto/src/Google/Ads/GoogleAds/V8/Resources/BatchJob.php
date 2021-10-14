@@ -28,14 +28,14 @@ class BatchJob extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ID of this batch job.
      *
-     * Generated from protobuf field <code>int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. The next sequence token to use when adding operations. Only set when the
      * batch job status is PENDING.
      *
-     * Generated from protobuf field <code>string next_add_sequence_token = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string next_add_sequence_token = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $next_add_sequence_token = null;
     /**
@@ -54,7 +54,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the batch job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>string long_running_operation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string long_running_operation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $long_running_operation = null;
 
@@ -120,7 +120,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ID of this batch job.
      *
-     * Generated from protobuf field <code>int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -141,7 +141,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
     /**
      * Output only. ID of this batch job.
      *
-     * Generated from protobuf field <code>int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -157,7 +157,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. The next sequence token to use when adding operations. Only set when the
      * batch job status is PENDING.
      *
-     * Generated from protobuf field <code>string next_add_sequence_token = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string next_add_sequence_token = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getNextAddSequenceToken()
@@ -179,7 +179,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. The next sequence token to use when adding operations. Only set when the
      * batch job status is PENDING.
      *
-     * Generated from protobuf field <code>string next_add_sequence_token = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string next_add_sequence_token = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -199,7 +199,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()
@@ -257,7 +257,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the batch job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>string long_running_operation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string long_running_operation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLongRunningOperation()
@@ -279,7 +279,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the batch job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>string long_running_operation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string long_running_operation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

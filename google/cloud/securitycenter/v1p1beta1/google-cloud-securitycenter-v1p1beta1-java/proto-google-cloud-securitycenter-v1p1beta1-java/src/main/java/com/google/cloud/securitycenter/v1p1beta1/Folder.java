@@ -207,10 +207,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResourceFolderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceFolder_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceFolder_);
     }
-    if (!getResourceFolderDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceFolderDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceFolderDisplayName_);
     }
     unknownFields.writeTo(output);
@@ -222,10 +222,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceFolderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceFolder_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceFolder_);
     }
-    if (!getResourceFolderDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceFolderDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceFolderDisplayName_);
     }
     size += unknownFields.getSerializedSize();

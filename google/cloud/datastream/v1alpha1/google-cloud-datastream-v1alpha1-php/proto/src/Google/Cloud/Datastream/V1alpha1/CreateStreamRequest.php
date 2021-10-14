@@ -157,7 +157,7 @@ class CreateStreamRequest extends \Google\Protobuf\Internal\Message
      */
     public function getStream()
     {
-        return isset($this->stream) ? $this->stream : null;
+        return $this->stream;
     }
 
     public function hasStream()

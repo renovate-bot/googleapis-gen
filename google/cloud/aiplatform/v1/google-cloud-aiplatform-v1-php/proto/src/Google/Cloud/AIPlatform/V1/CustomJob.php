@@ -230,7 +230,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getJobSpec()
     {
-        return isset($this->job_spec) ? $this->job_spec : null;
+        return $this->job_spec;
     }
 
     public function hasJobSpec()
@@ -292,7 +292,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -329,7 +329,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -367,7 +367,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -404,7 +404,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -441,7 +441,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -514,7 +514,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()

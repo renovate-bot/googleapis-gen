@@ -53,7 +53,7 @@ class CustomerOperation extends \Google\Protobuf\Internal\Message
      */
     public function getUpdate()
     {
-        return isset($this->update) ? $this->update : null;
+        return $this->update;
     }
 
     public function hasUpdate()
@@ -89,7 +89,7 @@ class CustomerOperation extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

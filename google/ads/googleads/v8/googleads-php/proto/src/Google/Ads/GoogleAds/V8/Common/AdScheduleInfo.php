@@ -41,7 +41,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>int32 start_hour = 6;</code>
+     * Generated from protobuf field <code>optional int32 start_hour = 6;</code>
      */
     protected $start_hour = null;
     /**
@@ -50,7 +50,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>int32 end_hour = 7;</code>
+     * Generated from protobuf field <code>optional int32 end_hour = 7;</code>
      */
     protected $end_hour = null;
     /**
@@ -166,7 +166,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>int32 start_hour = 6;</code>
+     * Generated from protobuf field <code>optional int32 start_hour = 6;</code>
      * @return int
      */
     public function getStartHour()
@@ -190,7 +190,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>int32 start_hour = 6;</code>
+     * Generated from protobuf field <code>optional int32 start_hour = 6;</code>
      * @param int $var
      * @return $this
      */
@@ -208,7 +208,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>int32 end_hour = 7;</code>
+     * Generated from protobuf field <code>optional int32 end_hour = 7;</code>
      * @return int
      */
     public function getEndHour()
@@ -232,7 +232,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>int32 end_hour = 7;</code>
+     * Generated from protobuf field <code>optional int32 end_hour = 7;</code>
      * @param int $var
      * @return $this
      */

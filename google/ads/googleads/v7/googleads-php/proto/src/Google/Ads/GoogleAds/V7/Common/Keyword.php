@@ -18,7 +18,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
     /**
      * The AdGroupCriterion resource name.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 3;</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 3;</code>
      */
     protected $ad_group_criterion = null;
     /**
@@ -48,7 +48,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
     /**
      * The AdGroupCriterion resource name.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 3;</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 3;</code>
      * @return string
      */
     public function getAdGroupCriterion()
@@ -69,7 +69,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
     /**
      * The AdGroupCriterion resource name.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 3;</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -89,7 +89,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
      */
     public function getInfo()
     {
-        return isset($this->info) ? $this->info : null;
+        return $this->info;
     }
 
     public function hasInfo()

@@ -18,31 +18,31 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The city location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string city = 6;</code>
+     * Generated from protobuf field <code>optional string city = 6;</code>
      */
     protected $city = null;
     /**
      * The country location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string country = 7;</code>
+     * Generated from protobuf field <code>optional string country = 7;</code>
      */
     protected $country = null;
     /**
      * The metro location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string metro = 8;</code>
+     * Generated from protobuf field <code>optional string metro = 8;</code>
      */
     protected $metro = null;
     /**
      * The most specific location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string most_specific = 9;</code>
+     * Generated from protobuf field <code>optional string most_specific = 9;</code>
      */
     protected $most_specific = null;
     /**
      * The region location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string region = 10;</code>
+     * Generated from protobuf field <code>optional string region = 10;</code>
      */
     protected $region = null;
 
@@ -72,7 +72,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The city location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string city = 6;</code>
+     * Generated from protobuf field <code>optional string city = 6;</code>
      * @return string
      */
     public function getCity()
@@ -93,7 +93,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The city location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string city = 6;</code>
+     * Generated from protobuf field <code>optional string city = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -108,7 +108,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The country location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string country = 7;</code>
+     * Generated from protobuf field <code>optional string country = 7;</code>
      * @return string
      */
     public function getCountry()
@@ -129,7 +129,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The country location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string country = 7;</code>
+     * Generated from protobuf field <code>optional string country = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The metro location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string metro = 8;</code>
+     * Generated from protobuf field <code>optional string metro = 8;</code>
      * @return string
      */
     public function getMetro()
@@ -165,7 +165,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The metro location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string metro = 8;</code>
+     * Generated from protobuf field <code>optional string metro = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -180,7 +180,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The most specific location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string most_specific = 9;</code>
+     * Generated from protobuf field <code>optional string most_specific = 9;</code>
      * @return string
      */
     public function getMostSpecific()
@@ -201,7 +201,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The most specific location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string most_specific = 9;</code>
+     * Generated from protobuf field <code>optional string most_specific = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -216,7 +216,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The region location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string region = 10;</code>
+     * Generated from protobuf field <code>optional string region = 10;</code>
      * @return string
      */
     public function getRegion()
@@ -237,7 +237,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
     /**
      * The region location criterion associated with the impression.
      *
-     * Generated from protobuf field <code>string region = 10;</code>
+     * Generated from protobuf field <code>optional string region = 10;</code>
      * @param string $var
      * @return $this
      */

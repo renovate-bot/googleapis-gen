@@ -126,7 +126,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      */
     public function getArtifactDestination()
     {
-        return isset($this->artifact_destination) ? $this->artifact_destination : null;
+        return $this->artifact_destination;
     }
 
     public function hasArtifactDestination()
@@ -172,7 +172,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      */
     public function getImageDestination()
     {
-        return isset($this->image_destination) ? $this->image_destination : null;
+        return $this->image_destination;
     }
 
     public function hasImageDestination()

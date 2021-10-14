@@ -85,7 +85,7 @@ class RecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     public function getTotalBilledTime()
     {
-        return isset($this->total_billed_time) ? $this->total_billed_time : null;
+        return $this->total_billed_time;
     }
 
     public function hasTotalBilledTime()

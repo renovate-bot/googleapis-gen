@@ -62,7 +62,7 @@ class UpdateCustomClassRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCustomClass()
     {
-        return isset($this->custom_class) ? $this->custom_class : null;
+        return $this->custom_class;
     }
 
     public function hasCustomClass()
@@ -101,7 +101,7 @@ class UpdateCustomClassRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

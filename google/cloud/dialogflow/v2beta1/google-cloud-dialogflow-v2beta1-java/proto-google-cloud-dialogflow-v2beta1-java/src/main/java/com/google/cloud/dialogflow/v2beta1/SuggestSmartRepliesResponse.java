@@ -268,7 +268,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < smartReplyAnswers_.size(); i++) {
       output.writeMessage(1, smartReplyAnswers_.get(i));
     }
-    if (!getLatestMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, latestMessage_);
     }
     if (contextSize_ != 0) {
@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, smartReplyAnswers_.get(i));
     }
-    if (!getLatestMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, latestMessage_);
     }
     if (contextSize_ != 0) {

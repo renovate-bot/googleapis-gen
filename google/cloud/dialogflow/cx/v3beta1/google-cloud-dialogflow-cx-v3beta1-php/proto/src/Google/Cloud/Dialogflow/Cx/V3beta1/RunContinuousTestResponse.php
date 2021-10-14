@@ -45,7 +45,7 @@ class RunContinuousTestResponse extends \Google\Protobuf\Internal\Message
      */
     public function getContinuousTestResult()
     {
-        return isset($this->continuous_test_result) ? $this->continuous_test_result : null;
+        return $this->continuous_test_result;
     }
 
     public function hasContinuousTestResult()

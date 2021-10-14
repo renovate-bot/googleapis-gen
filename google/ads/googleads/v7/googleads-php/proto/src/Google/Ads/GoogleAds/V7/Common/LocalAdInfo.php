@@ -66,14 +66,14 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * First part of optional text that may appear appended to the url displayed
      * in the ad.
      *
-     * Generated from protobuf field <code>string path1 = 9;</code>
+     * Generated from protobuf field <code>optional string path1 = 9;</code>
      */
     protected $path1 = null;
     /**
      * Second part of optional text that may appear appended to the url displayed
      * in the ad. This field can only be set when path1 is also set.
      *
-     * Generated from protobuf field <code>string path2 = 10;</code>
+     * Generated from protobuf field <code>optional string path2 = 10;</code>
      */
     protected $path2 = null;
 
@@ -301,7 +301,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * First part of optional text that may appear appended to the url displayed
      * in the ad.
      *
-     * Generated from protobuf field <code>string path1 = 9;</code>
+     * Generated from protobuf field <code>optional string path1 = 9;</code>
      * @return string
      */
     public function getPath1()
@@ -323,7 +323,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * First part of optional text that may appear appended to the url displayed
      * in the ad.
      *
-     * Generated from protobuf field <code>string path1 = 9;</code>
+     * Generated from protobuf field <code>optional string path1 = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -339,7 +339,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * Second part of optional text that may appear appended to the url displayed
      * in the ad. This field can only be set when path1 is also set.
      *
-     * Generated from protobuf field <code>string path2 = 10;</code>
+     * Generated from protobuf field <code>optional string path2 = 10;</code>
      * @return string
      */
     public function getPath2()
@@ -361,7 +361,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * Second part of optional text that may appear appended to the url displayed
      * in the ad. This field can only be set when path1 is also set.
      *
-     * Generated from protobuf field <code>string path2 = 10;</code>
+     * Generated from protobuf field <code>optional string path2 = 10;</code>
      * @param string $var
      * @return $this
      */

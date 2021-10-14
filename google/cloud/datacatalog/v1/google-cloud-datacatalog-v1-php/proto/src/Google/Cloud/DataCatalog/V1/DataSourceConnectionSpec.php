@@ -46,7 +46,7 @@ class DataSourceConnectionSpec extends \Google\Protobuf\Internal\Message
      */
     public function getBigqueryConnectionSpec()
     {
-        return isset($this->bigquery_connection_spec) ? $this->bigquery_connection_spec : null;
+        return $this->bigquery_connection_spec;
     }
 
     public function hasBigqueryConnectionSpec()

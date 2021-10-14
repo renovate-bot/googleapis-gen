@@ -61,7 +61,7 @@ class ExportIamPolicyAnalysisRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAnalysisQuery()
     {
-        return isset($this->analysis_query) ? $this->analysis_query : null;
+        return $this->analysis_query;
     }
 
     public function hasAnalysisQuery()
@@ -97,7 +97,7 @@ class ExportIamPolicyAnalysisRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOptions()
     {
-        return isset($this->options) ? $this->options : null;
+        return $this->options;
     }
 
     public function hasOptions()
@@ -133,7 +133,7 @@ class ExportIamPolicyAnalysisRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOutputConfig()
     {
-        return isset($this->output_config) ? $this->output_config : null;
+        return $this->output_config;
     }
 
     public function hasOutputConfig()

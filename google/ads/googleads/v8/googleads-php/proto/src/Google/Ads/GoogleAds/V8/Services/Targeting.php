@@ -19,7 +19,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Required. The ID of the selected location.
      * Plannable locations ID can be obtained from ListPlannableLocations.
      *
-     * Generated from protobuf field <code>string plannable_location_id = 6;</code>
+     * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
      */
     protected $plannable_location_id = null;
     /**
@@ -87,7 +87,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Required. The ID of the selected location.
      * Plannable locations ID can be obtained from ListPlannableLocations.
      *
-     * Generated from protobuf field <code>string plannable_location_id = 6;</code>
+     * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
      * @return string
      */
     public function getPlannableLocationId()
@@ -109,7 +109,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Required. The ID of the selected location.
      * Plannable locations ID can be obtained from ListPlannableLocations.
      *
-     * Generated from protobuf field <code>string plannable_location_id = 6;</code>
+     * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
      * @param string $var
      * @return $this
      */

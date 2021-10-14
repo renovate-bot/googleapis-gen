@@ -18,7 +18,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource to use for the video.
      *
-     * Generated from protobuf field <code>string media_file = 7;</code>
+     * Generated from protobuf field <code>optional string media_file = 7;</code>
      */
     protected $media_file = null;
     protected $format;
@@ -51,7 +51,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource to use for the video.
      *
-     * Generated from protobuf field <code>string media_file = 7;</code>
+     * Generated from protobuf field <code>optional string media_file = 7;</code>
      * @return string
      */
     public function getMediaFile()
@@ -72,7 +72,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource to use for the video.
      *
-     * Generated from protobuf field <code>string media_file = 7;</code>
+     * Generated from protobuf field <code>optional string media_file = 7;</code>
      * @param string $var
      * @return $this
      */

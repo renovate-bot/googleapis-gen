@@ -85,7 +85,7 @@ class MutateCampaignDraftResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignDraft()
     {
-        return isset($this->campaign_draft) ? $this->campaign_draft : null;
+        return $this->campaign_draft;
     }
 
     public function hasCampaignDraft()

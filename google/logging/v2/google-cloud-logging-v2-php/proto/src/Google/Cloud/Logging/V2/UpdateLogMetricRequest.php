@@ -95,7 +95,7 @@ class UpdateLogMetricRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMetric()
     {
-        return isset($this->metric) ? $this->metric : null;
+        return $this->metric;
     }
 
     public function hasMetric()

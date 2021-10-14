@@ -62,7 +62,7 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()
@@ -98,7 +98,7 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      */
     public function getPolicyValidationParameter()
     {
-        return isset($this->policy_validation_parameter) ? $this->policy_validation_parameter : null;
+        return $this->policy_validation_parameter;
     }
 
     public function hasPolicyValidationParameter()

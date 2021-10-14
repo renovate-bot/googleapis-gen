@@ -151,7 +151,7 @@ class DeviceSettings extends \Google\Protobuf\Internal\Message
      */
     public function getBatteryInfo()
     {
-        return isset($this->battery_info) ? $this->battery_info : null;
+        return $this->battery_info;
     }
 
     public function hasBatteryInfo()

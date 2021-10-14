@@ -30,13 +30,13 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>int64 country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_criterion_id = null;
     /**
      * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>bool targeting_location = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool targeting_location = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $targeting_location = null;
 
@@ -94,7 +94,7 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>int64 country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCountryCriterionId()
@@ -115,7 +115,7 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>int64 country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>bool targeting_location = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool targeting_location = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getTargetingLocation()
@@ -151,7 +151,7 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>bool targeting_location = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool targeting_location = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

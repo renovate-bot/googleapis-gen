@@ -45,7 +45,7 @@ class FeaturestoreMonitoringConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSnapshotAnalysis()
     {
-        return isset($this->snapshot_analysis) ? $this->snapshot_analysis : null;
+        return $this->snapshot_analysis;
     }
 
     public function hasSnapshotAnalysis()

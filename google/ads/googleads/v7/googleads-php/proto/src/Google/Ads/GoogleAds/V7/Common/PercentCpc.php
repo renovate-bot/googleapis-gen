@@ -22,7 +22,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * Note: A zero value is interpreted in the same way as having bid_ceiling
      * undefined.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 3;</code>
      */
     protected $cpc_bid_ceiling_micros = null;
     /**
@@ -31,7 +31,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * cpc_bid_ceiling_micros, but the average bid amount for a campaign should
      * not.
      *
-     * Generated from protobuf field <code>bool enhanced_cpc_enabled = 4;</code>
+     * Generated from protobuf field <code>optional bool enhanced_cpc_enabled = 4;</code>
      */
     protected $enhanced_cpc_enabled = null;
 
@@ -64,7 +64,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * Note: A zero value is interpreted in the same way as having bid_ceiling
      * undefined.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 3;</code>
      * @return int|string
      */
     public function getCpcBidCeilingMicros()
@@ -88,7 +88,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * Note: A zero value is interpreted in the same way as having bid_ceiling
      * undefined.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -106,7 +106,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * cpc_bid_ceiling_micros, but the average bid amount for a campaign should
      * not.
      *
-     * Generated from protobuf field <code>bool enhanced_cpc_enabled = 4;</code>
+     * Generated from protobuf field <code>optional bool enhanced_cpc_enabled = 4;</code>
      * @return bool
      */
     public function getEnhancedCpcEnabled()
@@ -130,7 +130,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * cpc_bid_ceiling_micros, but the average bid amount for a campaign should
      * not.
      *
-     * Generated from protobuf field <code>bool enhanced_cpc_enabled = 4;</code>
+     * Generated from protobuf field <code>optional bool enhanced_cpc_enabled = 4;</code>
      * @param bool $var
      * @return $this
      */

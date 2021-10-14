@@ -189,19 +189,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<CreateVehicleRequest> _parser = new pb::MessageParser<CreateVehicleRequest>(() => new CreateVehicleRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CreateVehicleRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateVehicleRequest() {
       OnConstruction();
     }
@@ -209,6 +213,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateVehicleRequest(CreateVehicleRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       parent_ = other.parent_;
@@ -218,6 +223,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateVehicleRequest Clone() {
       return new CreateVehicleRequest(this);
     }
@@ -229,6 +235,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -246,6 +253,7 @@ namespace Maps.Fleetengine.V1 {
     /// this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Parent {
       get { return parent_; }
       set {
@@ -262,6 +270,7 @@ namespace Maps.Fleetengine.V1 {
     /// by the provider.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string VehicleId {
       get { return vehicleId_; }
       set {
@@ -297,6 +306,7 @@ namespace Maps.Fleetengine.V1 {
     /// All other fields will be used if provided.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.Vehicle Vehicle {
       get { return vehicle_; }
       set {
@@ -305,11 +315,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CreateVehicleRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CreateVehicleRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -325,6 +337,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -338,11 +351,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -371,6 +386,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (header_ != null) {
         output.WriteRawTag(10);
@@ -395,6 +411,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -416,6 +433,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CreateVehicleRequest other) {
       if (other == null) {
         return;
@@ -442,6 +460,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -481,6 +500,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -528,19 +548,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<GetVehicleRequest> _parser = new pb::MessageParser<GetVehicleRequest>(() => new GetVehicleRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GetVehicleRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetVehicleRequest() {
       OnConstruction();
     }
@@ -548,6 +572,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetVehicleRequest(GetVehicleRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       name_ = other.name_;
@@ -557,6 +582,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetVehicleRequest Clone() {
       return new GetVehicleRequest(this);
     }
@@ -568,6 +594,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -586,6 +613,7 @@ namespace Maps.Fleetengine.V1 {
     /// this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -604,6 +632,7 @@ namespace Maps.Fleetengine.V1 {
     /// current_route_segment is always retrieved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CurrentRouteSegmentVersion {
       get { return currentRouteSegmentVersion_; }
       set {
@@ -621,6 +650,7 @@ namespace Maps.Fleetengine.V1 {
     /// unspecified, vehicle.waypoints is always retrieved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp WaypointsVersion {
       get { return waypointsVersion_; }
       set {
@@ -629,11 +659,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GetVehicleRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GetVehicleRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -649,6 +681,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -662,11 +695,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -695,6 +730,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (header_ != null) {
         output.WriteRawTag(10);
@@ -719,6 +755,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -740,6 +777,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GetVehicleRequest other) {
       if (other == null) {
         return;
@@ -769,6 +807,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -811,6 +850,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -861,19 +901,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<UpdateVehicleRequest> _parser = new pb::MessageParser<UpdateVehicleRequest>(() => new UpdateVehicleRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UpdateVehicleRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleRequest() {
       OnConstruction();
     }
@@ -881,6 +925,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleRequest(UpdateVehicleRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       name_ = other.name_;
@@ -890,6 +935,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleRequest Clone() {
       return new UpdateVehicleRequest(this);
     }
@@ -901,6 +947,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -923,6 +970,7 @@ namespace Maps.Fleetengine.V1 {
     /// same.  Otherwise it is an Error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -944,6 +992,7 @@ namespace Maps.Fleetengine.V1 {
     /// Furthermore, the name of the vehicle cannot be updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.Vehicle Vehicle {
       get { return vehicle_; }
       set {
@@ -959,6 +1008,7 @@ namespace Maps.Fleetengine.V1 {
     /// The update_mask must contain at least one field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.FieldMask UpdateMask {
       get { return updateMask_; }
       set {
@@ -967,11 +1017,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UpdateVehicleRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UpdateVehicleRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -987,6 +1039,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -1000,11 +1053,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1033,6 +1088,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (header_ != null) {
         output.WriteRawTag(10);
@@ -1057,6 +1113,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -1078,6 +1135,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UpdateVehicleRequest other) {
       if (other == null) {
         return;
@@ -1107,6 +1165,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1149,6 +1208,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1200,19 +1260,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<UpdateVehicleLocationRequest> _parser = new pb::MessageParser<UpdateVehicleLocationRequest>(() => new UpdateVehicleLocationRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UpdateVehicleLocationRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleLocationRequest() {
       OnConstruction();
     }
@@ -1220,6 +1284,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleLocationRequest(UpdateVehicleLocationRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       name_ = other.name_;
@@ -1229,6 +1294,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleLocationRequest Clone() {
       return new UpdateVehicleLocationRequest(this);
     }
@@ -1240,6 +1306,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -1258,6 +1325,7 @@ namespace Maps.Fleetengine.V1 {
     /// this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -1273,6 +1341,7 @@ namespace Maps.Fleetengine.V1 {
     /// subfields are required.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.VehicleLocation CurrentLocation {
       get { return currentLocation_; }
       set {
@@ -1288,6 +1357,7 @@ namespace Maps.Fleetengine.V1 {
     /// if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.VehicleState CurrentState {
       get { return currentState_; }
       set {
@@ -1296,11 +1366,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UpdateVehicleLocationRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UpdateVehicleLocationRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1316,6 +1388,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -1329,11 +1402,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1362,6 +1437,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (header_ != null) {
         output.WriteRawTag(10);
@@ -1386,6 +1462,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -1407,6 +1484,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UpdateVehicleLocationRequest other) {
       if (other == null) {
         return;
@@ -1433,6 +1511,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1472,6 +1551,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1519,19 +1599,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<UpdateVehicleAttributesRequest> _parser = new pb::MessageParser<UpdateVehicleAttributesRequest>(() => new UpdateVehicleAttributesRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UpdateVehicleAttributesRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleAttributesRequest() {
       OnConstruction();
     }
@@ -1539,6 +1623,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleAttributesRequest(UpdateVehicleAttributesRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       name_ = other.name_;
@@ -1547,6 +1632,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleAttributesRequest Clone() {
       return new UpdateVehicleAttributesRequest(this);
     }
@@ -1558,6 +1644,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -1576,6 +1663,7 @@ namespace Maps.Fleetengine.V1 {
     /// this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -1595,16 +1683,19 @@ namespace Maps.Fleetengine.V1 {
     /// exceed 256.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> Attributes {
       get { return attributes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UpdateVehicleAttributesRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UpdateVehicleAttributesRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1619,6 +1710,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -1631,11 +1723,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1657,6 +1751,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (header_ != null) {
         output.WriteRawTag(10);
@@ -1674,6 +1769,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -1690,6 +1786,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UpdateVehicleAttributesRequest other) {
       if (other == null) {
         return;
@@ -1708,6 +1805,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1740,6 +1838,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1780,19 +1879,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<UpdateVehicleAttributesResponse> _parser = new pb::MessageParser<UpdateVehicleAttributesResponse>(() => new UpdateVehicleAttributesResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UpdateVehicleAttributesResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleAttributesResponse() {
       OnConstruction();
     }
@@ -1800,12 +1903,14 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleAttributesResponse(UpdateVehicleAttributesResponse other) : this() {
       attributes_ = other.attributes_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateVehicleAttributesResponse Clone() {
       return new UpdateVehicleAttributesResponse(this);
     }
@@ -1820,16 +1925,19 @@ namespace Maps.Fleetengine.V1 {
     /// altered and untouched attributes.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> Attributes {
       get { return attributes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UpdateVehicleAttributesResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UpdateVehicleAttributesResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1842,6 +1950,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= attributes_.GetHashCode();
@@ -1852,11 +1961,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1870,6 +1981,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       attributes_.WriteTo(ref output, _repeated_attributes_codec);
       if (_unknownFields != null) {
@@ -1879,6 +1991,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += attributes_.CalculateSize(_repeated_attributes_codec);
@@ -1889,6 +2002,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UpdateVehicleAttributesResponse other) {
       if (other == null) {
         return;
@@ -1898,6 +2012,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1919,6 +2034,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1948,19 +2064,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<SearchVehiclesRequest> _parser = new pb::MessageParser<SearchVehiclesRequest>(() => new SearchVehiclesRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SearchVehiclesRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchVehiclesRequest() {
       OnConstruction();
     }
@@ -1968,6 +2088,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchVehiclesRequest(SearchVehiclesRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       parent_ = other.parent_;
@@ -1989,6 +2110,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchVehiclesRequest Clone() {
       return new SearchVehiclesRequest(this);
     }
@@ -2000,6 +2122,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -2017,6 +2140,7 @@ namespace Maps.Fleetengine.V1 {
     /// this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Parent {
       get { return parent_; }
       set {
@@ -2031,6 +2155,7 @@ namespace Maps.Fleetengine.V1 {
     /// Required. The pickup point to search near.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.TerminalLocation PickupPoint {
       get { return pickupPoint_; }
       set {
@@ -2046,6 +2171,7 @@ namespace Maps.Fleetengine.V1 {
     /// trip_types contains TripType.SHARED.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.TerminalLocation DropoffPoint {
       get { return dropoffPoint_; }
       set {
@@ -2062,6 +2188,7 @@ namespace Maps.Fleetengine.V1 {
     /// 400 and 10000 meters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int PickupRadiusMeters {
       get { return pickupRadiusMeters_; }
       set {
@@ -2077,6 +2204,7 @@ namespace Maps.Fleetengine.V1 {
     /// default, the Fleet Engine limits the number to  50.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Count {
       get { return count_; }
       set {
@@ -2094,6 +2222,7 @@ namespace Maps.Fleetengine.V1 {
     /// passengers being considered for a trip.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int MinimumCapacity {
       get { return minimumCapacity_; }
       set {
@@ -2111,6 +2240,7 @@ namespace Maps.Fleetengine.V1 {
     /// one of the specified trip types.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.TripType> TripTypes {
       get { return tripTypes_; }
     }
@@ -2124,6 +2254,7 @@ namespace Maps.Fleetengine.V1 {
     /// set, the server uses five minutes as the default value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration MaximumStaleness {
       get { return maximumStaleness_; }
       set {
@@ -2141,6 +2272,7 @@ namespace Maps.Fleetengine.V1 {
     /// At least one vehicle type must be specified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType> VehicleTypes {
       get { return vehicleTypes_; }
     }
@@ -2172,6 +2304,7 @@ namespace Maps.Fleetengine.V1 {
     /// 1024 characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> RequiredAttributes {
       get { return requiredAttributes_; }
     }
@@ -2189,6 +2322,7 @@ namespace Maps.Fleetengine.V1 {
     /// conjunction/AND operation across the collection of VehicleAttributeList.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttributeList> RequiredOneOfAttributes {
       get { return requiredOneOfAttributes_; }
     }
@@ -2206,6 +2340,7 @@ namespace Maps.Fleetengine.V1 {
     /// operation across the collection of VehicleAttributeList.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttributeList> RequiredOneOfAttributeSets {
       get { return requiredOneOfAttributeSets_; }
     }
@@ -2217,6 +2352,7 @@ namespace Maps.Fleetengine.V1 {
     /// Required. Specifies ordering criterion for results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder OrderBy {
       get { return orderBy_; }
       set {
@@ -2236,6 +2372,7 @@ namespace Maps.Fleetengine.V1 {
     /// Default value is `false`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool IncludeBackToBack {
       get { return includeBackToBack_; }
       set {
@@ -2251,6 +2388,7 @@ namespace Maps.Fleetengine.V1 {
     /// associated with.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TripId {
       get { return tripId_; }
       set {
@@ -2259,11 +2397,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SearchVehiclesRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SearchVehiclesRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2291,6 +2431,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -2316,11 +2457,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2382,6 +2525,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (header_ != null) {
         output.WriteRawTag(10);
@@ -2439,6 +2583,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -2486,6 +2631,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SearchVehiclesRequest other) {
       if (other == null) {
         return;
@@ -2544,6 +2690,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2638,6 +2785,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2730,6 +2878,7 @@ namespace Maps.Fleetengine.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the SearchVehiclesRequest message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Specifies the sort order of the vehicle matches in the response.
@@ -2780,19 +2929,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<SearchVehiclesResponse> _parser = new pb::MessageParser<SearchVehiclesResponse>(() => new SearchVehiclesResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SearchVehiclesResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchVehiclesResponse() {
       OnConstruction();
     }
@@ -2800,12 +2953,14 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchVehiclesResponse(SearchVehiclesResponse other) : this() {
       matches_ = other.matches_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchVehiclesResponse Clone() {
       return new SearchVehiclesResponse(this);
     }
@@ -2831,16 +2986,19 @@ namespace Maps.Fleetengine.V1 {
     /// * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleMatch> Matches {
       get { return matches_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SearchVehiclesResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SearchVehiclesResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2853,6 +3011,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= matches_.GetHashCode();
@@ -2863,11 +3022,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2881,6 +3042,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       matches_.WriteTo(ref output, _repeated_matches_codec);
       if (_unknownFields != null) {
@@ -2890,6 +3052,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += matches_.CalculateSize(_repeated_matches_codec);
@@ -2900,6 +3063,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SearchVehiclesResponse other) {
       if (other == null) {
         return;
@@ -2909,6 +3073,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2930,6 +3095,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2959,19 +3125,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<ListVehiclesRequest> _parser = new pb::MessageParser<ListVehiclesRequest>(() => new ListVehiclesRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListVehiclesRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListVehiclesRequest() {
       OnConstruction();
     }
@@ -2979,6 +3149,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListVehiclesRequest(ListVehiclesRequest other) : this() {
       header_ = other.header_ != null ? other.header_.Clone() : null;
       parent_ = other.parent_;
@@ -2997,6 +3168,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListVehiclesRequest Clone() {
       return new ListVehiclesRequest(this);
     }
@@ -3008,6 +3180,7 @@ namespace Maps.Fleetengine.V1 {
     /// The standard Fleet Engine request header.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.RequestHeader Header {
       get { return header_; }
       set {
@@ -3025,6 +3198,7 @@ namespace Maps.Fleetengine.V1 {
     /// this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Parent {
       get { return parent_; }
       set {
@@ -3040,6 +3214,7 @@ namespace Maps.Fleetengine.V1 {
     /// Default value: 100.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int PageSize {
       get { return pageSize_; }
       set {
@@ -3054,6 +3229,7 @@ namespace Maps.Fleetengine.V1 {
     /// The next_page_token value returned from a previous response, if any.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PageToken {
       get { return pageToken_; }
       set {
@@ -3072,6 +3248,7 @@ namespace Maps.Fleetengine.V1 {
     /// If set, must be greater or equal to 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int? MinimumCapacity {
       get { return minimumCapacity_; }
       set {
@@ -3090,6 +3267,7 @@ namespace Maps.Fleetengine.V1 {
     /// one of the specified trip types.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.TripType> TripTypes {
       get { return tripTypes_; }
     }
@@ -3103,6 +3281,7 @@ namespace Maps.Fleetengine.V1 {
     /// If present, must be a valid positive duration.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration MaximumStaleness {
       get { return maximumStaleness_; }
       set {
@@ -3119,6 +3298,7 @@ namespace Maps.Fleetengine.V1 {
     /// Required. Restrict the search to those vehicles with the specified type categories.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Types.Category> VehicleTypeCategories {
       get { return vehicleTypeCategories_; }
     }
@@ -3150,6 +3330,7 @@ namespace Maps.Fleetengine.V1 {
     /// key:value string length cannot exceed 1024 characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> RequiredAttributes {
       get { return requiredAttributes_; }
     }
@@ -3169,6 +3350,7 @@ namespace Maps.Fleetengine.V1 {
     /// Format: key1:value1|key2:value2|key3:value3...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> RequiredOneOfAttributes {
       get { return requiredOneOfAttributes_; }
     }
@@ -3187,6 +3369,7 @@ namespace Maps.Fleetengine.V1 {
     /// Format: key1:value1|key2:value2|key3:value3...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> RequiredOneOfAttributeSets {
       get { return requiredOneOfAttributeSets_; }
     }
@@ -3198,6 +3381,7 @@ namespace Maps.Fleetengine.V1 {
     /// Restrict the search to only those vehicles that have this vehicle state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.VehicleState VehicleState {
       get { return vehicleState_; }
       set {
@@ -3212,6 +3396,7 @@ namespace Maps.Fleetengine.V1 {
     /// Only return the vehicles with current trip(s).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool OnTripOnly {
       get { return onTripOnly_; }
       set {
@@ -3220,11 +3405,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListVehiclesRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListVehiclesRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3249,6 +3436,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (header_ != null) hash ^= Header.GetHashCode();
@@ -3271,11 +3459,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3324,6 +3514,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Parent.Length != 0) {
         output.WriteRawTag(10);
@@ -3368,6 +3559,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (header_ != null) {
@@ -3406,6 +3598,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListVehiclesRequest other) {
       if (other == null) {
         return;
@@ -3451,6 +3644,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3531,6 +3725,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3619,19 +3814,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<ListVehiclesResponse> _parser = new pb::MessageParser<ListVehiclesResponse>(() => new ListVehiclesResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListVehiclesResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListVehiclesResponse() {
       OnConstruction();
     }
@@ -3639,6 +3838,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListVehiclesResponse(ListVehiclesResponse other) : this() {
       vehicles_ = other.vehicles_.Clone();
       nextPageToken_ = other.nextPageToken_;
@@ -3647,6 +3847,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListVehiclesResponse Clone() {
       return new ListVehiclesResponse(this);
     }
@@ -3662,6 +3863,7 @@ namespace Maps.Fleetengine.V1 {
     /// field in the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle> Vehicles {
       get { return vehicles_; }
     }
@@ -3674,6 +3876,7 @@ namespace Maps.Fleetengine.V1 {
     /// more vehicles in the list.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string NextPageToken {
       get { return nextPageToken_; }
       set {
@@ -3688,6 +3891,7 @@ namespace Maps.Fleetengine.V1 {
     /// Required. Total number of vehicles matching request criteria across all pages.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long TotalSize {
       get { return totalSize_; }
       set {
@@ -3696,11 +3900,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListVehiclesResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListVehiclesResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3715,6 +3921,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= vehicles_.GetHashCode();
@@ -3727,11 +3934,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3753,6 +3962,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       vehicles_.WriteTo(ref output, _repeated_vehicles_codec);
       if (NextPageToken.Length != 0) {
@@ -3770,6 +3980,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += vehicles_.CalculateSize(_repeated_vehicles_codec);
@@ -3786,6 +3997,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListVehiclesResponse other) {
       if (other == null) {
         return;
@@ -3801,6 +4013,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3830,6 +4043,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3867,19 +4081,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<Waypoint> _parser = new pb::MessageParser<Waypoint>(() => new Waypoint());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Waypoint> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Waypoint() {
       OnConstruction();
     }
@@ -3887,6 +4105,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Waypoint(Waypoint other) : this() {
       latLng_ = other.latLng_ != null ? other.latLng_.Clone() : null;
       eta_ = other.eta_ != null ? other.eta_.Clone() : null;
@@ -3894,6 +4113,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Waypoint Clone() {
       return new Waypoint(this);
     }
@@ -3905,6 +4125,7 @@ namespace Maps.Fleetengine.V1 {
     /// The location of this waypoint.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Type.LatLng LatLng {
       get { return latLng_; }
       set {
@@ -3919,6 +4140,7 @@ namespace Maps.Fleetengine.V1 {
     /// The estimated time that the vehicle will arrive at this waypoint.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Eta {
       get { return eta_; }
       set {
@@ -3927,11 +4149,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Waypoint);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Waypoint other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3945,6 +4169,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (latLng_ != null) hash ^= LatLng.GetHashCode();
@@ -3956,11 +4181,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3981,6 +4208,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (latLng_ != null) {
         output.WriteRawTag(10);
@@ -3997,6 +4225,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (latLng_ != null) {
@@ -4012,6 +4241,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Waypoint other) {
       if (other == null) {
         return;
@@ -4032,6 +4262,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4063,6 +4294,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4103,19 +4335,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<VehicleMatch> _parser = new pb::MessageParser<VehicleMatch>(() => new VehicleMatch());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<VehicleMatch> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleMatch() {
       OnConstruction();
     }
@@ -4123,6 +4359,7 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleMatch(VehicleMatch other) : this() {
       vehicle_ = other.vehicle_ != null ? other.vehicle_.Clone() : null;
       vehiclePickupEta_ = other.vehiclePickupEta_ != null ? other.vehiclePickupEta_.Clone() : null;
@@ -4139,6 +4376,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleMatch Clone() {
       return new VehicleMatch(this);
     }
@@ -4150,6 +4388,7 @@ namespace Maps.Fleetengine.V1 {
     /// Required. A vehicle that matches the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.Vehicle Vehicle {
       get { return vehicle_; }
       set {
@@ -4166,6 +4405,7 @@ namespace Maps.Fleetengine.V1 {
     /// vehicle.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp VehiclePickupEta {
       get { return vehiclePickupEta_; }
       set {
@@ -4184,6 +4424,7 @@ namespace Maps.Fleetengine.V1 {
     /// distance for the vehicle.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int? VehiclePickupDistanceMeters {
       get { return vehiclePickupDistanceMeters_; }
       set {
@@ -4202,6 +4443,7 @@ namespace Maps.Fleetengine.V1 {
     /// existing trips.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int? VehiclePickupStraightLineDistanceMeters {
       get { return vehiclePickupStraightLineDistanceMeters_; }
       set {
@@ -4223,6 +4465,7 @@ namespace Maps.Fleetengine.V1 {
     /// the dropoff_point.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp VehicleDropoffEta {
       get { return vehicleDropoffEta_; }
       set {
@@ -4245,6 +4488,7 @@ namespace Maps.Fleetengine.V1 {
     /// dropoff points specified in the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int? VehiclePickupToDropoffDistanceMeters {
       get { return vehiclePickupToDropoffDistanceMeters_; }
       set {
@@ -4261,6 +4505,7 @@ namespace Maps.Fleetengine.V1 {
     /// to the pickup point.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.TripType TripType {
       get { return tripType_; }
       set {
@@ -4281,6 +4526,7 @@ namespace Maps.Fleetengine.V1 {
     /// vehicle.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.Waypoint> VehicleTripsWaypoints {
       get { return vehicleTripsWaypoints_; }
     }
@@ -4292,6 +4538,7 @@ namespace Maps.Fleetengine.V1 {
     /// Type of the vehicle match.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.VehicleMatch.Types.VehicleMatchType VehicleMatchType {
       get { return vehicleMatchType_; }
       set {
@@ -4306,6 +4553,7 @@ namespace Maps.Fleetengine.V1 {
     /// The method the caller requested for sorting vehicle matches.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder RequestedOrderedBy {
       get { return requestedOrderedBy_; }
       set {
@@ -4323,6 +4571,7 @@ namespace Maps.Fleetengine.V1 {
     /// may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder OrderedBy {
       get { return orderedBy_; }
       set {
@@ -4331,11 +4580,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as VehicleMatch);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(VehicleMatch other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4358,6 +4609,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (vehicle_ != null) hash ^= Vehicle.GetHashCode();
@@ -4378,11 +4630,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4433,6 +4687,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (vehicle_ != null) {
         output.WriteRawTag(10);
@@ -4479,6 +4734,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (vehicle_ != null) {
@@ -4519,6 +4775,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(VehicleMatch other) {
       if (other == null) {
         return;
@@ -4573,6 +4830,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4652,6 +4910,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4729,6 +4988,7 @@ namespace Maps.Fleetengine.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the VehicleMatch message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Type of vehicle match.
@@ -4772,19 +5032,23 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::MessageParser<VehicleAttributeList> _parser = new pb::MessageParser<VehicleAttributeList>(() => new VehicleAttributeList());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<VehicleAttributeList> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Maps.Fleetengine.V1.VehicleApiReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleAttributeList() {
       OnConstruction();
     }
@@ -4792,12 +5056,14 @@ namespace Maps.Fleetengine.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleAttributeList(VehicleAttributeList other) : this() {
       attributes_ = other.attributes_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleAttributeList Clone() {
       return new VehicleAttributeList(this);
     }
@@ -4811,16 +5077,19 @@ namespace Maps.Fleetengine.V1 {
     /// A list of attributes in this collection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> Attributes {
       get { return attributes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as VehicleAttributeList);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(VehicleAttributeList other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4833,6 +5102,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= attributes_.GetHashCode();
@@ -4843,11 +5113,13 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4861,6 +5133,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       attributes_.WriteTo(ref output, _repeated_attributes_codec);
       if (_unknownFields != null) {
@@ -4870,6 +5143,7 @@ namespace Maps.Fleetengine.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += attributes_.CalculateSize(_repeated_attributes_codec);
@@ -4880,6 +5154,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(VehicleAttributeList other) {
       if (other == null) {
         return;
@@ -4889,6 +5164,7 @@ namespace Maps.Fleetengine.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4910,6 +5186,7 @@ namespace Maps.Fleetengine.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

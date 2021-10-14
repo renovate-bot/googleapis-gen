@@ -111,7 +111,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      */
     public function getTextAnchor()
     {
-        return isset($this->text_anchor) ? $this->text_anchor : null;
+        return $this->text_anchor;
     }
 
     public function hasTextAnchor()
@@ -253,7 +253,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      */
     public function getPageAnchor()
     {
-        return isset($this->page_anchor) ? $this->page_anchor : null;
+        return $this->page_anchor;
     }
 
     public function hasPageAnchor()
@@ -319,7 +319,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      */
     public function getBoundingPolyForDemoFrontend()
     {
-        return isset($this->bounding_poly_for_demo_frontend) ? $this->bounding_poly_for_demo_frontend : null;
+        return $this->bounding_poly_for_demo_frontend;
     }
 
     public function hasBoundingPolyForDemoFrontend()

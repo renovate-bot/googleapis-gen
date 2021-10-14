@@ -105,7 +105,7 @@ class IosXcTest extends \Google\Protobuf\Internal\Message
      */
     public function getTestsZip()
     {
-        return isset($this->tests_zip) ? $this->tests_zip : null;
+        return $this->tests_zip;
     }
 
     public function hasTestsZip()
@@ -147,7 +147,7 @@ class IosXcTest extends \Google\Protobuf\Internal\Message
      */
     public function getXctestrun()
     {
-        return isset($this->xctestrun) ? $this->xctestrun : null;
+        return $this->xctestrun;
     }
 
     public function hasXctestrun()

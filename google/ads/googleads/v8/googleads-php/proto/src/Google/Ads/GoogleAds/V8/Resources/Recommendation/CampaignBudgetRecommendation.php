@@ -18,13 +18,13 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The current budget amount in micros.
      *
-     * Generated from protobuf field <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $current_budget_amount_micros = null;
     /**
      * Output only. The recommended budget amount in micros.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_amount_micros = null;
     /**
@@ -58,7 +58,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The current budget amount in micros.
      *
-     * Generated from protobuf field <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCurrentBudgetAmountMicros()
@@ -79,7 +79,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The current budget amount in micros.
      *
-     * Generated from protobuf field <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -94,7 +94,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended budget amount in micros.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRecommendedBudgetAmountMicros()
@@ -115,7 +115,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended budget amount in micros.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

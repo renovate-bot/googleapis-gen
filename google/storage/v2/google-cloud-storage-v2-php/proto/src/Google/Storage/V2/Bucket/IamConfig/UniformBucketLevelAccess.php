@@ -89,7 +89,7 @@ class UniformBucketLevelAccess extends \Google\Protobuf\Internal\Message
      */
     public function getLockTime()
     {
-        return isset($this->lock_time) ? $this->lock_time : null;
+        return $this->lock_time;
     }
 
     public function hasLockTime()

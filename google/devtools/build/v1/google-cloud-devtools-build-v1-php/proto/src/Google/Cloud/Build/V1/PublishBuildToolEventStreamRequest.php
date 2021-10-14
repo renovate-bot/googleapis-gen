@@ -74,7 +74,7 @@ class PublishBuildToolEventStreamRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getOrderedBuildEvent()
     {
-        return isset($this->ordered_build_event) ? $this->ordered_build_event : null;
+        return $this->ordered_build_event;
     }
 
     public function hasOrderedBuildEvent()

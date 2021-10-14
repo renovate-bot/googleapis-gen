@@ -257,7 +257,7 @@ class BotSession extends \Google\Protobuf\Internal\Message
      */
     public function getWorker()
     {
-        return isset($this->worker) ? $this->worker : null;
+        return $this->worker;
     }
 
     public function hasWorker()
@@ -328,7 +328,7 @@ class BotSession extends \Google\Protobuf\Internal\Message
      */
     public function getExpireTime()
     {
-        return isset($this->expire_time) ? $this->expire_time : null;
+        return $this->expire_time;
     }
 
     public function hasExpireTime()

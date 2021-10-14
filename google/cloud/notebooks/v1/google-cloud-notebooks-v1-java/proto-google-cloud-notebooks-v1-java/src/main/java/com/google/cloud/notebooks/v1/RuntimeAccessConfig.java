@@ -372,10 +372,10 @@ private static final long serialVersionUID = 0L;
     if (accessType_ != com.google.cloud.notebooks.v1.RuntimeAccessConfig.RuntimeAccessType.RUNTIME_ACCESS_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, accessType_);
     }
-    if (!getRuntimeOwnerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runtimeOwner_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runtimeOwner_);
     }
-    if (!getProxyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proxyUri_);
     }
     unknownFields.writeTo(output);
@@ -391,10 +391,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, accessType_);
     }
-    if (!getRuntimeOwnerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runtimeOwner_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runtimeOwner_);
     }
-    if (!getProxyUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proxyUri_);
     }
     size += unknownFields.getSerializedSize();

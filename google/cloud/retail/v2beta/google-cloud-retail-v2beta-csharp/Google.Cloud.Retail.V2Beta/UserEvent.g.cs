@@ -86,19 +86,23 @@ namespace Google.Cloud.Retail.V2Beta {
     private static readonly pb::MessageParser<UserEvent> _parser = new pb::MessageParser<UserEvent>(() => new UserEvent());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<UserEvent> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Beta.UserEventReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserEvent() {
       OnConstruction();
     }
@@ -106,6 +110,7 @@ namespace Google.Cloud.Retail.V2Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserEvent(UserEvent other) : this() {
       eventType_ = other.eventType_;
       visitorId_ = other.visitorId_;
@@ -131,6 +136,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserEvent Clone() {
       return new UserEvent(this);
     }
@@ -154,6 +160,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// * `shopping-cart-page-view`: User viewing a shopping cart.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EventType {
       get { return eventType_; }
       set {
@@ -180,6 +187,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// for this field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string VisitorId {
       get { return visitorId_; }
       set {
@@ -201,6 +209,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// visitor_id as prefix.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string SessionId {
       get { return sessionId_; }
       set {
@@ -217,6 +226,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// method. Timestamp of when the user event happened.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp EventTime {
       get { return eventTime_; }
       set {
@@ -236,6 +246,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// recommendation models).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ExperimentIds {
       get { return experimentIds_; }
     }
@@ -269,6 +280,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// to this field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AttributionToken {
       get { return attributionToken_; }
       set {
@@ -299,6 +311,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// desired. The end user may have not finished broswing the whole page yet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Beta.ProductDetail> ProductDetails {
       get { return productDetails_; }
     }
@@ -314,6 +327,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// event, it represents the search event happens after clicking completion.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.CompletionDetail CompletionDetail {
       get { return completionDetail_; }
       set {
@@ -338,6 +352,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// search, and etc.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Cloud.Retail.V2Beta.CustomAttribute> Attributes {
       get { return attributes_; }
     }
@@ -353,6 +368,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// `shopping-cart-page-view` events.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CartId {
       get { return cartId_; }
       set {
@@ -370,6 +386,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// this field. Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.PurchaseTransaction PurchaseTransaction {
       get { return purchaseTransaction_; }
       set {
@@ -396,6 +413,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string SearchQuery {
       get { return searchQuery_; }
       set {
@@ -417,6 +435,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// characters. Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Filter {
       get { return filter_; }
       set {
@@ -441,6 +460,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// this field. Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OrderBy {
       get { return orderBy_; }
       set {
@@ -464,6 +484,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// this field. Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Offset {
       get { return offset_; }
       set {
@@ -494,6 +515,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> PageCategories {
       get { return pageCategories_; }
     }
@@ -505,6 +527,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// User information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.UserInfo UserInfo {
       get { return userInfo_; }
       set {
@@ -523,6 +546,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Uri {
       get { return uri_; }
       set {
@@ -540,6 +564,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Tag Manager, this value is filled in automatically.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ReferrerUri {
       get { return referrerUri_; }
       set {
@@ -563,6 +588,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Tag Manager, this value is filled in automatically.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PageViewId {
       get { return pageViewId_; }
       set {
@@ -571,11 +597,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as UserEvent);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(UserEvent other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -607,6 +635,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EventType.Length != 0) hash ^= EventType.GetHashCode();
@@ -636,11 +665,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -721,6 +752,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EventType.Length != 0) {
         output.WriteRawTag(10);
@@ -797,6 +829,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EventType.Length != 0) {
@@ -858,6 +891,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(UserEvent other) {
       if (other == null) {
         return;
@@ -930,6 +964,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1039,6 +1074,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1156,19 +1192,23 @@ namespace Google.Cloud.Retail.V2Beta {
     private static readonly pb::MessageParser<ProductDetail> _parser = new pb::MessageParser<ProductDetail>(() => new ProductDetail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ProductDetail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Beta.UserEventReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductDetail() {
       OnConstruction();
     }
@@ -1176,6 +1216,7 @@ namespace Google.Cloud.Retail.V2Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductDetail(ProductDetail other) : this() {
       product_ = other.product_ != null ? other.product_.Clone() : null;
       Quantity = other.Quantity;
@@ -1183,6 +1224,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProductDetail Clone() {
       return new ProductDetail(this);
     }
@@ -1210,6 +1252,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// lookup after event ingestion.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Beta.Product Product {
       get { return product_; }
       set {
@@ -1229,6 +1272,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// `purchase-complete` event types.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int? Quantity {
       get { return quantity_; }
       set {
@@ -1238,11 +1282,13 @@ namespace Google.Cloud.Retail.V2Beta {
 
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ProductDetail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ProductDetail other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1256,6 +1302,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (product_ != null) hash ^= Product.GetHashCode();
@@ -1267,11 +1314,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1291,6 +1340,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (product_ != null) {
         output.WriteRawTag(10);
@@ -1306,6 +1356,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (product_ != null) {
@@ -1321,6 +1372,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ProductDetail other) {
       if (other == null) {
         return;
@@ -1340,6 +1392,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1371,6 +1424,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1411,19 +1465,23 @@ namespace Google.Cloud.Retail.V2Beta {
     private static readonly pb::MessageParser<CompletionDetail> _parser = new pb::MessageParser<CompletionDetail>(() => new CompletionDetail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CompletionDetail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Beta.UserEventReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompletionDetail() {
       OnConstruction();
     }
@@ -1431,6 +1489,7 @@ namespace Google.Cloud.Retail.V2Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompletionDetail(CompletionDetail other) : this() {
       completionAttributionToken_ = other.completionAttributionToken_;
       selectedSuggestion_ = other.selectedSuggestion_;
@@ -1439,6 +1498,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompletionDetail Clone() {
       return new CompletionDetail(this);
     }
@@ -1451,6 +1511,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// [CompleteQueryResponse.attribution_token][google.cloud.retail.v2beta.CompleteQueryResponse.attribution_token].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CompletionAttributionToken {
       get { return completionAttributionToken_; }
       set {
@@ -1466,6 +1527,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// [CompleteQueryResponse.CompletionResult.suggestion][google.cloud.retail.v2beta.CompleteQueryResponse.CompletionResult.suggestion].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string SelectedSuggestion {
       get { return selectedSuggestion_; }
       set {
@@ -1482,6 +1544,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// position, starting from 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int SelectedPosition {
       get { return selectedPosition_; }
       set {
@@ -1490,11 +1553,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CompletionDetail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CompletionDetail other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1509,6 +1574,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CompletionAttributionToken.Length != 0) hash ^= CompletionAttributionToken.GetHashCode();
@@ -1521,11 +1587,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1550,6 +1618,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CompletionAttributionToken.Length != 0) {
         output.WriteRawTag(10);
@@ -1570,6 +1639,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CompletionAttributionToken.Length != 0) {
@@ -1588,6 +1658,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CompletionDetail other) {
       if (other == null) {
         return;
@@ -1605,6 +1676,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1634,6 +1706,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1671,19 +1744,23 @@ namespace Google.Cloud.Retail.V2Beta {
     private static readonly pb::MessageParser<PurchaseTransaction> _parser = new pb::MessageParser<PurchaseTransaction>(() => new PurchaseTransaction());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PurchaseTransaction> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Beta.UserEventReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PurchaseTransaction() {
       OnConstruction();
     }
@@ -1691,6 +1768,7 @@ namespace Google.Cloud.Retail.V2Beta {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PurchaseTransaction(PurchaseTransaction other) : this() {
       id_ = other.id_;
       revenue_ = other.revenue_;
@@ -1701,6 +1779,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PurchaseTransaction Clone() {
       return new PurchaseTransaction(this);
     }
@@ -1712,6 +1791,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// The transaction ID with a length limit of 128 characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Id {
       get { return id_; }
       set {
@@ -1729,6 +1809,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// calculations.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Revenue {
       get { return revenue_; }
       set {
@@ -1743,6 +1824,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// All the taxes associated with the transaction.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Tax {
       get { return tax_; }
       set {
@@ -1764,6 +1846,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// [cost][google.cloud.retail.v2beta.PurchaseTransaction.cost]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Cost {
       get { return cost_; }
       set {
@@ -1778,6 +1861,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// Required. Currency code. Use three-character ISO-4217 code.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CurrencyCode {
       get { return currencyCode_; }
       set {
@@ -1786,11 +1870,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as PurchaseTransaction);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(PurchaseTransaction other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1807,6 +1893,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
@@ -1821,11 +1908,13 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1858,6 +1947,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Id.Length != 0) {
         output.WriteRawTag(10);
@@ -1886,6 +1976,7 @@ namespace Google.Cloud.Retail.V2Beta {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Id.Length != 0) {
@@ -1910,6 +2001,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(PurchaseTransaction other) {
       if (other == null) {
         return;
@@ -1933,6 +2025,7 @@ namespace Google.Cloud.Retail.V2Beta {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1970,6 +2063,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

@@ -126,7 +126,7 @@ class DeployedFleet extends \Google\Protobuf\Internal\Message
      */
     public function getSpecSource()
     {
-        return isset($this->spec_source) ? $this->spec_source : null;
+        return $this->spec_source;
     }
 
     public function hasSpecSource()
@@ -164,7 +164,7 @@ class DeployedFleet extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()

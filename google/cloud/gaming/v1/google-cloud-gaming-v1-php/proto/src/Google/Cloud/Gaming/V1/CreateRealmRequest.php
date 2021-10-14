@@ -117,7 +117,7 @@ class CreateRealmRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRealm()
     {
-        return isset($this->realm) ? $this->realm : null;
+        return $this->realm;
     }
 
     public function hasRealm()

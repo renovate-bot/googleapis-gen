@@ -53,7 +53,7 @@ class Event extends \Google\Protobuf\Internal\Message
      */
     public function getReportTime()
     {
-        return isset($this->report_time) ? $this->report_time : null;
+        return $this->report_time;
     }
 
     public function hasReportTime()

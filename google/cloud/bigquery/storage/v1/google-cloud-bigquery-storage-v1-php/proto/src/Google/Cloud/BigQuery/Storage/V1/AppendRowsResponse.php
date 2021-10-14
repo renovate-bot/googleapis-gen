@@ -157,7 +157,7 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      */
     public function getUpdatedSchema()
     {
-        return isset($this->updated_schema) ? $this->updated_schema : null;
+        return $this->updated_schema;
     }
 
     public function hasUpdatedSchema()

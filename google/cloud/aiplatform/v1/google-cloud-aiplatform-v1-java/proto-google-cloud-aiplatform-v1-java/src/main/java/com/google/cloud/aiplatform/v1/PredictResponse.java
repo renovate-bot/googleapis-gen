@@ -358,13 +358,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < predictions_.size(); i++) {
       output.writeMessage(1, predictions_.get(i));
     }
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedModelId_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
-    if (!getModelDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelDisplayName_);
     }
     unknownFields.writeTo(output);
@@ -380,13 +380,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, predictions_.get(i));
     }
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedModelId_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
-    if (!getModelDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelDisplayName_);
     }
     size += unknownFields.getSerializedSize();

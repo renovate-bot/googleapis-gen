@@ -61,7 +61,7 @@ class InterpretErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getUnsupportedDetails()
     {
-        return isset($this->unsupported_details) ? $this->unsupported_details : null;
+        return $this->unsupported_details;
     }
 
     public function hasUnsupportedDetails()
@@ -97,7 +97,7 @@ class InterpretErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getIncompleteQueryDetails()
     {
-        return isset($this->incomplete_query_details) ? $this->incomplete_query_details : null;
+        return $this->incomplete_query_details;
     }
 
     public function hasIncompleteQueryDetails()
@@ -133,7 +133,7 @@ class InterpretErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getAmbiguityDetails()
     {
-        return isset($this->ambiguity_details) ? $this->ambiguity_details : null;
+        return $this->ambiguity_details;
     }
 
     public function hasAmbiguityDetails()

@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < collectionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, collectionIds_.getRaw(i));
     }
-    if (!getInputUriPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputUriPrefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, inputUriPrefix_);
     }
     unknownFields.writeTo(output);
@@ -516,7 +516,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getCollectionIdsList().size();
     }
-    if (!getInputUriPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputUriPrefix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, inputUriPrefix_);
     }
     size += unknownFields.getSerializedSize();

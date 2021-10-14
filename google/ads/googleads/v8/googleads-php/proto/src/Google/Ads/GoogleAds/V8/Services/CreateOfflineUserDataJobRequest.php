@@ -90,7 +90,7 @@ class CreateOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getJob()
     {
-        return isset($this->job) ? $this->job : null;
+        return $this->job;
     }
 
     public function hasJob()

@@ -45,7 +45,7 @@ class CreateEntityTypeOperationMetadata extends \Google\Protobuf\Internal\Messag
      */
     public function getGenericMetadata()
     {
-        return isset($this->generic_metadata) ? $this->generic_metadata : null;
+        return $this->generic_metadata;
     }
 
     public function hasGenericMetadata()

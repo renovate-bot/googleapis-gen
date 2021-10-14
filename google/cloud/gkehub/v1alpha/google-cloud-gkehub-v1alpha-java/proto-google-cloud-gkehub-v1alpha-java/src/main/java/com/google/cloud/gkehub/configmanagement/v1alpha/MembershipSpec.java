@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
     if (hierarchyController_ != null) {
       output.writeMessage(4, getHierarchyController());
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
     }
     unknownFields.writeTo(output);
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getHierarchyController());
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
     }
     size += unknownFields.getSerializedSize();

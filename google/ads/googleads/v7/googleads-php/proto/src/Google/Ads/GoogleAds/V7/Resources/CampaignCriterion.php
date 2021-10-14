@@ -26,14 +26,14 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>string campaign = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
      * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -48,13 +48,13 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      * Use 0 to opt out of a Device type.
      *
-     * Generated from protobuf field <code>float bid_modifier = 39;</code>
+     * Generated from protobuf field <code>optional float bid_modifier = 39;</code>
      */
     protected $bid_modifier = null;
     /**
      * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>bool negative = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $negative = null;
     /**
@@ -197,7 +197,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>string campaign = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -218,7 +218,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>string campaign = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -234,7 +234,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCriterionId()
@@ -256,7 +256,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -301,7 +301,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      * Use 0 to opt out of a Device type.
      *
-     * Generated from protobuf field <code>float bid_modifier = 39;</code>
+     * Generated from protobuf field <code>optional float bid_modifier = 39;</code>
      * @return float
      */
     public function getBidModifier()
@@ -324,7 +324,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      * Use 0 to opt out of a Device type.
      *
-     * Generated from protobuf field <code>float bid_modifier = 39;</code>
+     * Generated from protobuf field <code>optional float bid_modifier = 39;</code>
      * @param float $var
      * @return $this
      */
@@ -339,7 +339,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>bool negative = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return bool
      */
     public function getNegative()
@@ -360,7 +360,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>bool negative = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param bool $var
      * @return $this
      */

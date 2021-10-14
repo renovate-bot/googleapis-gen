@@ -56,7 +56,7 @@ class SuggestionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getAnnotatedSuggestion()
     {
-        return isset($this->annotated_suggestion) ? $this->annotated_suggestion : null;
+        return $this->annotated_suggestion;
     }
 
     public function hasAnnotatedSuggestion()

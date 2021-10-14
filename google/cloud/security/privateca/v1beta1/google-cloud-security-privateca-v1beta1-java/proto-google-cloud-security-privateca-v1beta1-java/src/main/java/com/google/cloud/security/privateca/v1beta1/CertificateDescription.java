@@ -835,13 +835,13 @@ private static final long serialVersionUID = 0L;
       if (subject_ != null) {
         output.writeMessage(1, getSubject());
       }
-      if (!getCommonNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commonName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, commonName_);
       }
       if (subjectAltName_ != null) {
         output.writeMessage(3, getSubjectAltName());
       }
-      if (!getHexSerialNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hexSerialNumber_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, hexSerialNumber_);
       }
       if (lifetime_ != null) {
@@ -866,14 +866,14 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSubject());
       }
-      if (!getCommonNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commonName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, commonName_);
       }
       if (subjectAltName_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSubjectAltName());
       }
-      if (!getHexSerialNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hexSerialNumber_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, hexSerialNumber_);
       }
       if (lifetime_ != null) {
@@ -2497,7 +2497,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKeyIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyId_);
       }
       unknownFields.writeTo(output);
@@ -2509,7 +2509,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyId_);
       }
       size += unknownFields.getSerializedSize();
@@ -3115,7 +3115,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSha256HashBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sha256Hash_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sha256Hash_);
       }
       unknownFields.writeTo(output);
@@ -3127,7 +3127,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getSha256HashBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sha256Hash_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sha256Hash_);
       }
       size += unknownFields.getSerializedSize();

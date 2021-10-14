@@ -42,7 +42,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET, FORECASTING_CAMPAIGN_BUDGET, MARGINAL_ROI_CAMPAIGN_BUDGET,
      * MOVE_UNUSED_BUDGET
      *
-     * Generated from protobuf field <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign_budget = null;
     /**
@@ -54,7 +54,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
-     * Generated from protobuf field <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
@@ -63,13 +63,13 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *
-     * Generated from protobuf field <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
      * Output only. Whether the recommendation is dismissed or not.
      *
-     * Generated from protobuf field <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $dismissed = null;
     protected $recommendation;
@@ -215,7 +215,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function getImpact()
     {
-        return isset($this->impact) ? $this->impact : null;
+        return $this->impact;
     }
 
     public function hasImpact()
@@ -251,7 +251,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET, FORECASTING_CAMPAIGN_BUDGET, MARGINAL_ROI_CAMPAIGN_BUDGET,
      * MOVE_UNUSED_BUDGET
      *
-     * Generated from protobuf field <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaignBudget()
@@ -276,7 +276,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET, FORECASTING_CAMPAIGN_BUDGET, MARGINAL_ROI_CAMPAIGN_BUDGET,
      * MOVE_UNUSED_BUDGET
      *
-     * Generated from protobuf field <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -297,7 +297,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
-     * Generated from protobuf field <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -324,7 +324,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
-     * Generated from protobuf field <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -342,7 +342,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *
-     * Generated from protobuf field <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroup()
@@ -366,7 +366,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *
-     * Generated from protobuf field <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -381,7 +381,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the recommendation is dismissed or not.
      *
-     * Generated from protobuf field <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getDismissed()
@@ -402,7 +402,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the recommendation is dismissed or not.
      *
-     * Generated from protobuf field <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

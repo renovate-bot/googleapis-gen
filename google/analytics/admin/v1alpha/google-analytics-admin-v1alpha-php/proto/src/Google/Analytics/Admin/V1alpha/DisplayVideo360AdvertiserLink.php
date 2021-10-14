@@ -188,7 +188,7 @@ class DisplayVideo360AdvertiserLink extends \Google\Protobuf\Internal\Message
      */
     public function getAdsPersonalizationEnabled()
     {
-        return isset($this->ads_personalization_enabled) ? $this->ads_personalization_enabled : null;
+        return $this->ads_personalization_enabled;
     }
 
     public function hasAdsPersonalizationEnabled()
@@ -257,7 +257,7 @@ class DisplayVideo360AdvertiserLink extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignDataSharingEnabled()
     {
-        return isset($this->campaign_data_sharing_enabled) ? $this->campaign_data_sharing_enabled : null;
+        return $this->campaign_data_sharing_enabled;
     }
 
     public function hasCampaignDataSharingEnabled()
@@ -333,7 +333,7 @@ class DisplayVideo360AdvertiserLink extends \Google\Protobuf\Internal\Message
      */
     public function getCostDataSharingEnabled()
     {
-        return isset($this->cost_data_sharing_enabled) ? $this->cost_data_sharing_enabled : null;
+        return $this->cost_data_sharing_enabled;
     }
 
     public function hasCostDataSharingEnabled()

@@ -66,7 +66,7 @@ class CaOptions extends \Google\Protobuf\Internal\Message
      */
     public function getIsCa()
     {
-        return isset($this->is_ca) ? $this->is_ca : null;
+        return $this->is_ca;
     }
 
     public function hasIsCa()
@@ -137,7 +137,7 @@ class CaOptions extends \Google\Protobuf\Internal\Message
      */
     public function getMaxIssuerPathLength()
     {
-        return isset($this->max_issuer_path_length) ? $this->max_issuer_path_length : null;
+        return $this->max_issuer_path_length;
     }
 
     public function hasMaxIssuerPathLength()

@@ -279,7 +279,7 @@ class ConnectivityTest extends \Google\Protobuf\Internal\Message
      */
     public function getSource()
     {
-        return isset($this->source) ? $this->source : null;
+        return $this->source;
     }
 
     public function hasSource()
@@ -344,7 +344,7 @@ class ConnectivityTest extends \Google\Protobuf\Internal\Message
      */
     public function getDestination()
     {
-        return isset($this->destination) ? $this->destination : null;
+        return $this->destination;
     }
 
     public function hasDestination()
@@ -499,7 +499,7 @@ class ConnectivityTest extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -535,7 +535,7 @@ class ConnectivityTest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -573,7 +573,7 @@ class ConnectivityTest extends \Google\Protobuf\Internal\Message
      */
     public function getReachabilityDetails()
     {
-        return isset($this->reachability_details) ? $this->reachability_details : null;
+        return $this->reachability_details;
     }
 
     public function hasReachabilityDetails()
@@ -614,7 +614,7 @@ class ConnectivityTest extends \Google\Protobuf\Internal\Message
      */
     public function getProbingDetails()
     {
-        return isset($this->probing_details) ? $this->probing_details : null;
+        return $this->probing_details;
     }
 
     public function hasProbingDetails()

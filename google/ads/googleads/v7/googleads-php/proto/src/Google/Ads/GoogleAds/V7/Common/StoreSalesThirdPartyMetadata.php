@@ -23,7 +23,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string advertiser_upload_date_time = 7;</code>
+     * Generated from protobuf field <code>optional string advertiser_upload_date_time = 7;</code>
      */
     protected $advertiser_upload_date_time = null;
     /**
@@ -32,7 +32,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double valid_transaction_fraction = 8;</code>
+     * Generated from protobuf field <code>optional double valid_transaction_fraction = 8;</code>
      */
     protected $valid_transaction_fraction = null;
     /**
@@ -41,7 +41,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double partner_match_fraction = 9;</code>
+     * Generated from protobuf field <code>optional double partner_match_fraction = 9;</code>
      */
     protected $partner_match_fraction = null;
     /**
@@ -50,19 +50,19 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double partner_upload_fraction = 10;</code>
+     * Generated from protobuf field <code>optional double partner_upload_fraction = 10;</code>
      */
     protected $partner_upload_fraction = null;
     /**
      * Version of partner IDs to be used for uploads. Required.
      *
-     * Generated from protobuf field <code>string bridge_map_version_id = 11;</code>
+     * Generated from protobuf field <code>optional string bridge_map_version_id = 11;</code>
      */
     protected $bridge_map_version_id = null;
     /**
      * ID of the third party partner updating the transaction feed.
      *
-     * Generated from protobuf field <code>int64 partner_id = 12;</code>
+     * Generated from protobuf field <code>optional int64 partner_id = 12;</code>
      */
     protected $partner_id = null;
 
@@ -107,7 +107,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string advertiser_upload_date_time = 7;</code>
+     * Generated from protobuf field <code>optional string advertiser_upload_date_time = 7;</code>
      * @return string
      */
     public function getAdvertiserUploadDateTime()
@@ -130,7 +130,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string advertiser_upload_date_time = 7;</code>
+     * Generated from protobuf field <code>optional string advertiser_upload_date_time = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -148,7 +148,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double valid_transaction_fraction = 8;</code>
+     * Generated from protobuf field <code>optional double valid_transaction_fraction = 8;</code>
      * @return float
      */
     public function getValidTransactionFraction()
@@ -172,7 +172,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double valid_transaction_fraction = 8;</code>
+     * Generated from protobuf field <code>optional double valid_transaction_fraction = 8;</code>
      * @param float $var
      * @return $this
      */
@@ -190,7 +190,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double partner_match_fraction = 9;</code>
+     * Generated from protobuf field <code>optional double partner_match_fraction = 9;</code>
      * @return float
      */
     public function getPartnerMatchFraction()
@@ -214,7 +214,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double partner_match_fraction = 9;</code>
+     * Generated from protobuf field <code>optional double partner_match_fraction = 9;</code>
      * @param float $var
      * @return $this
      */
@@ -232,7 +232,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double partner_upload_fraction = 10;</code>
+     * Generated from protobuf field <code>optional double partner_upload_fraction = 10;</code>
      * @return float
      */
     public function getPartnerUploadFraction()
@@ -256,7 +256,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double partner_upload_fraction = 10;</code>
+     * Generated from protobuf field <code>optional double partner_upload_fraction = 10;</code>
      * @param float $var
      * @return $this
      */
@@ -271,7 +271,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Version of partner IDs to be used for uploads. Required.
      *
-     * Generated from protobuf field <code>string bridge_map_version_id = 11;</code>
+     * Generated from protobuf field <code>optional string bridge_map_version_id = 11;</code>
      * @return string
      */
     public function getBridgeMapVersionId()
@@ -292,7 +292,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Version of partner IDs to be used for uploads. Required.
      *
-     * Generated from protobuf field <code>string bridge_map_version_id = 11;</code>
+     * Generated from protobuf field <code>optional string bridge_map_version_id = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -307,7 +307,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
     /**
      * ID of the third party partner updating the transaction feed.
      *
-     * Generated from protobuf field <code>int64 partner_id = 12;</code>
+     * Generated from protobuf field <code>optional int64 partner_id = 12;</code>
      * @return int|string
      */
     public function getPartnerId()
@@ -328,7 +328,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
     /**
      * ID of the third party partner updating the transaction feed.
      *
-     * Generated from protobuf field <code>int64 partner_id = 12;</code>
+     * Generated from protobuf field <code>optional int64 partner_id = 12;</code>
      * @param int|string $var
      * @return $this
      */

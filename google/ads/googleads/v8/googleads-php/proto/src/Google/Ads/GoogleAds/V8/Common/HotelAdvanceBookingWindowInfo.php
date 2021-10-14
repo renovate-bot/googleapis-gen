@@ -18,13 +18,13 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     /**
      * Low end of the number of days prior to the stay.
      *
-     * Generated from protobuf field <code>int64 min_days = 3;</code>
+     * Generated from protobuf field <code>optional int64 min_days = 3;</code>
      */
     protected $min_days = null;
     /**
      * High end of the number of days prior to the stay.
      *
-     * Generated from protobuf field <code>int64 max_days = 4;</code>
+     * Generated from protobuf field <code>optional int64 max_days = 4;</code>
      */
     protected $max_days = null;
 
@@ -48,7 +48,7 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     /**
      * Low end of the number of days prior to the stay.
      *
-     * Generated from protobuf field <code>int64 min_days = 3;</code>
+     * Generated from protobuf field <code>optional int64 min_days = 3;</code>
      * @return int|string
      */
     public function getMinDays()
@@ -69,7 +69,7 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     /**
      * Low end of the number of days prior to the stay.
      *
-     * Generated from protobuf field <code>int64 min_days = 3;</code>
+     * Generated from protobuf field <code>optional int64 min_days = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     /**
      * High end of the number of days prior to the stay.
      *
-     * Generated from protobuf field <code>int64 max_days = 4;</code>
+     * Generated from protobuf field <code>optional int64 max_days = 4;</code>
      * @return int|string
      */
     public function getMaxDays()
@@ -105,7 +105,7 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     /**
      * High end of the number of days prior to the stay.
      *
-     * Generated from protobuf field <code>int64 max_days = 4;</code>
+     * Generated from protobuf field <code>optional int64 max_days = 4;</code>
      * @param int|string $var
      * @return $this
      */

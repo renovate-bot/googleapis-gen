@@ -130,7 +130,7 @@ class PlannedProductReachForecast extends \Google\Protobuf\Internal\Message
      */
     public function getPlannedProductForecast()
     {
-        return isset($this->planned_product_forecast) ? $this->planned_product_forecast : null;
+        return $this->planned_product_forecast;
     }
 
     public function hasPlannedProductForecast()

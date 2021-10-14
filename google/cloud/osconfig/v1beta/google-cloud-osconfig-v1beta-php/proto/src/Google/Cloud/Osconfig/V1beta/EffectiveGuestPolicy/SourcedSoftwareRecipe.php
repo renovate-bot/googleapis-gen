@@ -79,7 +79,7 @@ class SourcedSoftwareRecipe extends \Google\Protobuf\Internal\Message
      */
     public function getSoftwareRecipe()
     {
-        return isset($this->software_recipe) ? $this->software_recipe : null;
+        return $this->software_recipe;
     }
 
     public function hasSoftwareRecipe()

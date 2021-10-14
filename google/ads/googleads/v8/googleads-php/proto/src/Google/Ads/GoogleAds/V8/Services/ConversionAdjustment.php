@@ -21,7 +21,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * a conversion action id, validation will ignore the customer id and use the
      * conversion action id as the sole identifier of the conversion action.
      *
-     * Generated from protobuf field <code>string conversion_action = 8;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 8;</code>
      */
     protected $conversion_action = null;
     /**
@@ -29,7 +29,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * conversion_date_time. The timezone must be specified. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string adjustment_date_time = 9;</code>
+     * Generated from protobuf field <code>optional string adjustment_date_time = 9;</code>
      */
     protected $adjustment_date_time = null;
     /**
@@ -65,7 +65,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
      * agent can only be specified in enhancements with user identifiers.
      *
-     * Generated from protobuf field <code>string user_agent = 11;</code>
+     * Generated from protobuf field <code>optional string user_agent = 11;</code>
      */
     protected $user_agent = null;
     protected $conversion_identifier;
@@ -125,7 +125,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * a conversion action id, validation will ignore the customer id and use the
      * conversion action id as the sole identifier of the conversion action.
      *
-     * Generated from protobuf field <code>string conversion_action = 8;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 8;</code>
      * @return string
      */
     public function getConversionAction()
@@ -149,7 +149,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * a conversion action id, validation will ignore the customer id and use the
      * conversion action id as the sole identifier of the conversion action.
      *
-     * Generated from protobuf field <code>string conversion_action = 8;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -166,7 +166,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * conversion_date_time. The timezone must be specified. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string adjustment_date_time = 9;</code>
+     * Generated from protobuf field <code>optional string adjustment_date_time = 9;</code>
      * @return string
      */
     public function getAdjustmentDateTime()
@@ -189,7 +189,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * conversion_date_time. The timezone must be specified. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string adjustment_date_time = 9;</code>
+     * Generated from protobuf field <code>optional string adjustment_date_time = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -241,7 +241,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function getRestatementValue()
     {
-        return isset($this->restatement_value) ? $this->restatement_value : null;
+        return $this->restatement_value;
     }
 
     public function hasRestatementValue()
@@ -313,7 +313,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
      * agent can only be specified in enhancements with user identifiers.
      *
-     * Generated from protobuf field <code>string user_agent = 11;</code>
+     * Generated from protobuf field <code>optional string user_agent = 11;</code>
      * @return string
      */
     public function getUserAgent()
@@ -337,7 +337,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
      * agent can only be specified in enhancements with user identifiers.
      *
-     * Generated from protobuf field <code>string user_agent = 11;</code>
+     * Generated from protobuf field <code>optional string user_agent = 11;</code>
      * @param string $var
      * @return $this
      */

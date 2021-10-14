@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMachineTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, machineType_);
       }
       if (diskSizeGb_ != 0L) {
@@ -348,7 +348,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getMachineTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, machineType_);
       }
       if (diskSizeGb_ != 0L) {
@@ -1264,7 +1264,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPeeredNetworkBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peeredNetwork_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, peeredNetwork_);
       }
       if (egressOption_ != com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig.EgressOption.EGRESS_OPTION_UNSPECIFIED.getNumber()) {
@@ -1279,7 +1279,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getPeeredNetworkBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peeredNetwork_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, peeredNetwork_);
       }
       if (egressOption_ != com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig.EgressOption.EGRESS_OPTION_UNSPECIFIED.getNumber()) {

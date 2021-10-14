@@ -72,7 +72,7 @@ class StreamingAnnotateVideoResponse extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -109,7 +109,7 @@ class StreamingAnnotateVideoResponse extends \Google\Protobuf\Internal\Message
      */
     public function getAnnotationResults()
     {
-        return isset($this->annotation_results) ? $this->annotation_results : null;
+        return $this->annotation_results;
     }
 
     public function hasAnnotationResults()

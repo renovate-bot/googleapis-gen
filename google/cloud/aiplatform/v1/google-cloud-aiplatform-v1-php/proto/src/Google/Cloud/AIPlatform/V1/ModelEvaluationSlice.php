@@ -112,7 +112,7 @@ class ModelEvaluationSlice extends \Google\Protobuf\Internal\Message
      */
     public function getSlice()
     {
-        return isset($this->slice) ? $this->slice : null;
+        return $this->slice;
     }
 
     public function hasSlice()
@@ -181,7 +181,7 @@ class ModelEvaluationSlice extends \Google\Protobuf\Internal\Message
      */
     public function getMetrics()
     {
-        return isset($this->metrics) ? $this->metrics : null;
+        return $this->metrics;
     }
 
     public function hasMetrics()
@@ -218,7 +218,7 @@ class ModelEvaluationSlice extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()

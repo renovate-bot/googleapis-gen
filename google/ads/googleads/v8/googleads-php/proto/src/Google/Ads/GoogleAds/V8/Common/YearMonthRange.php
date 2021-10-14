@@ -54,7 +54,7 @@ class YearMonthRange extends \Google\Protobuf\Internal\Message
      */
     public function getStart()
     {
-        return isset($this->start) ? $this->start : null;
+        return $this->start;
     }
 
     public function hasStart()
@@ -90,7 +90,7 @@ class YearMonthRange extends \Google\Protobuf\Internal\Message
      */
     public function getEnd()
     {
-        return isset($this->end) ? $this->end : null;
+        return $this->end;
     }
 
     public function hasEnd()

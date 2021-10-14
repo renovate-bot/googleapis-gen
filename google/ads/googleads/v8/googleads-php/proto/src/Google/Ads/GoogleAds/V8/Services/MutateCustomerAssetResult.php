@@ -85,7 +85,7 @@ class MutateCustomerAssetResult extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerAsset()
     {
-        return isset($this->customer_asset) ? $this->customer_asset : null;
+        return $this->customer_asset;
     }
 
     public function hasCustomerAsset()

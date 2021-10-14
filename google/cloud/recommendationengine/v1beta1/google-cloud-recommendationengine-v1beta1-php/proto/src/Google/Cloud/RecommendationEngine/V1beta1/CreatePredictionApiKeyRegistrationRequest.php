@@ -83,7 +83,7 @@ class CreatePredictionApiKeyRegistrationRequest extends \Google\Protobuf\Interna
      */
     public function getPredictionApiKeyRegistration()
     {
-        return isset($this->prediction_api_key_registration) ? $this->prediction_api_key_registration : null;
+        return $this->prediction_api_key_registration;
     }
 
     public function hasPredictionApiKeyRegistration()

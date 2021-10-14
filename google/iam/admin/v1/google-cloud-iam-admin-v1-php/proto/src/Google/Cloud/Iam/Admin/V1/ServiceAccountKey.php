@@ -307,7 +307,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      */
     public function getValidAfterTime()
     {
-        return isset($this->valid_after_time) ? $this->valid_after_time : null;
+        return $this->valid_after_time;
     }
 
     public function hasValidAfterTime()
@@ -346,7 +346,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      */
     public function getValidBeforeTime()
     {
-        return isset($this->valid_before_time) ? $this->valid_before_time : null;
+        return $this->valid_before_time;
     }
 
     public function hasValidBeforeTime()

@@ -175,7 +175,7 @@ class ConversionValueRule extends \Google\Protobuf\Internal\Message
      */
     public function getAction()
     {
-        return isset($this->action) ? $this->action : null;
+        return $this->action;
     }
 
     public function hasAction()
@@ -212,7 +212,7 @@ class ConversionValueRule extends \Google\Protobuf\Internal\Message
      */
     public function getGeoLocationCondition()
     {
-        return isset($this->geo_location_condition) ? $this->geo_location_condition : null;
+        return $this->geo_location_condition;
     }
 
     public function hasGeoLocationCondition()
@@ -250,7 +250,7 @@ class ConversionValueRule extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceCondition()
     {
-        return isset($this->device_condition) ? $this->device_condition : null;
+        return $this->device_condition;
     }
 
     public function hasDeviceCondition()
@@ -287,7 +287,7 @@ class ConversionValueRule extends \Google\Protobuf\Internal\Message
      */
     public function getAudienceCondition()
     {
-        return isset($this->audience_condition) ? $this->audience_condition : null;
+        return $this->audience_condition;
     }
 
     public function hasAudienceCondition()

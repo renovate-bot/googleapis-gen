@@ -181,7 +181,7 @@ class MysqlProfile extends \Google\Protobuf\Internal\Message
      */
     public function getSslConfig()
     {
-        return isset($this->ssl_config) ? $this->ssl_config : null;
+        return $this->ssl_config;
     }
 
     public function hasSslConfig()

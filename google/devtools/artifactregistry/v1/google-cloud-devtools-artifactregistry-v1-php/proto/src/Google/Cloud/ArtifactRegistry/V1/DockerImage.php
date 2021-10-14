@@ -268,7 +268,7 @@ class DockerImage extends \Google\Protobuf\Internal\Message
      */
     public function getUploadTime()
     {
-        return isset($this->upload_time) ? $this->upload_time : null;
+        return $this->upload_time;
     }
 
     public function hasUploadTime()
@@ -340,7 +340,7 @@ class DockerImage extends \Google\Protobuf\Internal\Message
      */
     public function getBuildTime()
     {
-        return isset($this->build_time) ? $this->build_time : null;
+        return $this->build_time;
     }
 
     public function hasBuildTime()

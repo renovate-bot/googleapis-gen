@@ -524,10 +524,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(template_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, template_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
     if (scopeCase_ == 4) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, scope_);
     }
-    if (!getTemplateDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(templateDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, templateDisplayName_);
     }
     unknownFields.writeTo(output);
@@ -551,10 +551,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(template_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, template_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.datacatalog.v1.TagField> entry
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
     if (scopeCase_ == 4) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, scope_);
     }
-    if (!getTemplateDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(templateDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, templateDisplayName_);
     }
     size += unknownFields.getSerializedSize();

@@ -83,7 +83,7 @@ class CreateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCatalogItem()
     {
-        return isset($this->catalog_item) ? $this->catalog_item : null;
+        return $this->catalog_item;
     }
 
     public function hasCatalogItem()

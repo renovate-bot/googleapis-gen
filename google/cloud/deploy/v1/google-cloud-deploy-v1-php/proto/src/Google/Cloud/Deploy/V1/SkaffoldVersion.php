@@ -79,7 +79,7 @@ class SkaffoldVersion extends \Google\Protobuf\Internal\Message
      */
     public function getSupportEndDate()
     {
-        return isset($this->support_end_date) ? $this->support_end_date : null;
+        return $this->support_end_date;
     }
 
     public function hasSupportEndDate()

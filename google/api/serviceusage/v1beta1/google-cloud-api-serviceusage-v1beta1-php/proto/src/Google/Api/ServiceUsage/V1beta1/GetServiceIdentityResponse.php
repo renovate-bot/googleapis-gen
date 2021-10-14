@@ -59,7 +59,7 @@ class GetServiceIdentityResponse extends \Google\Protobuf\Internal\Message
      */
     public function getIdentity()
     {
-        return isset($this->identity) ? $this->identity : null;
+        return $this->identity;
     }
 
     public function hasIdentity()

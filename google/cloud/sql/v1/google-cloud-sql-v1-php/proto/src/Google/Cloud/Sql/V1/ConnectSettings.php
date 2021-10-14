@@ -135,7 +135,7 @@ class ConnectSettings extends \Google\Protobuf\Internal\Message
      */
     public function getServerCaCert()
     {
-        return isset($this->server_ca_cert) ? $this->server_ca_cert : null;
+        return $this->server_ca_cert;
     }
 
     public function hasServerCaCert()

@@ -153,7 +153,7 @@ class TimeSeriesDataPoint extends \Google\Protobuf\Internal\Message
      */
     public function getWallTime()
     {
-        return isset($this->wall_time) ? $this->wall_time : null;
+        return $this->wall_time;
     }
 
     public function hasWallTime()

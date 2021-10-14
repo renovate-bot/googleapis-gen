@@ -49,7 +49,7 @@ class AlertStrategy extends \Google\Protobuf\Internal\Message
      */
     public function getNotificationRateLimit()
     {
-        return isset($this->notification_rate_limit) ? $this->notification_rate_limit : null;
+        return $this->notification_rate_limit;
     }
 
     public function hasNotificationRateLimit()

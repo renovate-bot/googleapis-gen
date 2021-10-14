@@ -18,7 +18,7 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
     /**
      * The language constant resource name.
      *
-     * Generated from protobuf field <code>string language_constant = 2;</code>
+     * Generated from protobuf field <code>optional string language_constant = 2;</code>
      */
     protected $language_constant = null;
 
@@ -40,7 +40,7 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
     /**
      * The language constant resource name.
      *
-     * Generated from protobuf field <code>string language_constant = 2;</code>
+     * Generated from protobuf field <code>optional string language_constant = 2;</code>
      * @return string
      */
     public function getLanguageConstant()
@@ -61,7 +61,7 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
     /**
      * The language constant resource name.
      *
-     * Generated from protobuf field <code>string language_constant = 2;</code>
+     * Generated from protobuf field <code>optional string language_constant = 2;</code>
      * @param string $var
      * @return $this
      */

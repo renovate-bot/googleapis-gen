@@ -80,7 +80,7 @@ class ModelDeploymentMonitoringObjectiveConfig extends \Google\Protobuf\Internal
      */
     public function getObjectiveConfig()
     {
-        return isset($this->objective_config) ? $this->objective_config : null;
+        return $this->objective_config;
     }
 
     public function hasObjectiveConfig()

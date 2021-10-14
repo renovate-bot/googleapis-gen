@@ -21,7 +21,7 @@ class DataPartnerLinkIdentifier extends \Google\Protobuf\Internal\Message
      * data partner link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>int64 data_partner_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 data_partner_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $data_partner_id = null;
 
@@ -49,7 +49,7 @@ class DataPartnerLinkIdentifier extends \Google\Protobuf\Internal\Message
      * data partner link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>int64 data_partner_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 data_partner_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getDataPartnerId()
@@ -73,7 +73,7 @@ class DataPartnerLinkIdentifier extends \Google\Protobuf\Internal\Message
      * data partner link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>int64 data_partner_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 data_partner_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */

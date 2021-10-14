@@ -61,7 +61,7 @@ class StopLocation extends \Google\Protobuf\Internal\Message
      */
     public function getPoint()
     {
-        return isset($this->point) ? $this->point : null;
+        return $this->point;
     }
 
     public function hasPoint()
@@ -97,7 +97,7 @@ class StopLocation extends \Google\Protobuf\Internal\Message
      */
     public function getTimestamp()
     {
-        return isset($this->timestamp) ? $this->timestamp : null;
+        return $this->timestamp;
     }
 
     public function hasTimestamp()
@@ -133,7 +133,7 @@ class StopLocation extends \Google\Protobuf\Internal\Message
      */
     public function getStopTime()
     {
-        return isset($this->stop_time) ? $this->stop_time : null;
+        return $this->stop_time;
     }
 
     public function hasStopTime()

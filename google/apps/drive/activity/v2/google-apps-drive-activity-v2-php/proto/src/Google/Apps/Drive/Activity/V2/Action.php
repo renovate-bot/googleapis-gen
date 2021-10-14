@@ -70,7 +70,7 @@ class Action extends \Google\Protobuf\Internal\Message
      */
     public function getDetail()
     {
-        return isset($this->detail) ? $this->detail : null;
+        return $this->detail;
     }
 
     public function hasDetail()
@@ -107,7 +107,7 @@ class Action extends \Google\Protobuf\Internal\Message
      */
     public function getActor()
     {
-        return isset($this->actor) ? $this->actor : null;
+        return $this->actor;
     }
 
     public function hasActor()
@@ -145,7 +145,7 @@ class Action extends \Google\Protobuf\Internal\Message
      */
     public function getTarget()
     {
-        return isset($this->target) ? $this->target : null;
+        return $this->target;
     }
 
     public function hasTarget()

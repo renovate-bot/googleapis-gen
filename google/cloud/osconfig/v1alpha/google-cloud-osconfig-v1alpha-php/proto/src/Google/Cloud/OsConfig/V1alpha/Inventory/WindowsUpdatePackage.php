@@ -333,7 +333,7 @@ class WindowsUpdatePackage extends \Google\Protobuf\Internal\Message
      */
     public function getLastDeploymentChangeTime()
     {
-        return isset($this->last_deployment_change_time) ? $this->last_deployment_change_time : null;
+        return $this->last_deployment_change_time;
     }
 
     public function hasLastDeploymentChangeTime()

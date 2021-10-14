@@ -1289,7 +1289,7 @@ private static final long serialVersionUID = 0L;
      * for details.
      * </pre>
      *
-     * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the targetSpendMicros field is set.
      */
     @java.lang.Deprecated boolean hasTargetSpendMicros();
@@ -1304,7 +1304,7 @@ private static final long serialVersionUID = 0L;
      * for details.
      * </pre>
      *
-     * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The targetSpendMicros.
      */
     @java.lang.Deprecated long getTargetSpendMicros();
@@ -1315,7 +1315,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the cpcBidCeilingMicros field is set.
      */
     boolean hasCpcBidCeilingMicros();
@@ -1325,7 +1325,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cpcBidCeilingMicros.
      */
     long getCpcBidCeilingMicros();
@@ -1437,7 +1437,7 @@ private static final long serialVersionUID = 0L;
      * for details.
      * </pre>
      *
-     * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the targetSpendMicros field is set.
      */
     @java.lang.Override
@@ -1455,7 +1455,7 @@ private static final long serialVersionUID = 0L;
      * for details.
      * </pre>
      *
-     * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The targetSpendMicros.
      */
     @java.lang.Override
@@ -1471,7 +1471,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the cpcBidCeilingMicros field is set.
      */
     @java.lang.Override
@@ -1484,7 +1484,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cpcBidCeilingMicros.
      */
     @java.lang.Override
@@ -1850,7 +1850,7 @@ private static final long serialVersionUID = 0L;
        * for details.
        * </pre>
        *
-       * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the targetSpendMicros field is set.
        */
       @java.lang.Override
@@ -1868,7 +1868,7 @@ private static final long serialVersionUID = 0L;
        * for details.
        * </pre>
        *
-       * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The targetSpendMicros.
        */
       @java.lang.Override
@@ -1886,7 +1886,7 @@ private static final long serialVersionUID = 0L;
        * for details.
        * </pre>
        *
-       * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The targetSpendMicros to set.
        * @return This builder for chaining.
        */
@@ -1907,7 +1907,7 @@ private static final long serialVersionUID = 0L;
        * for details.
        * </pre>
        *
-       * <code>int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       @java.lang.Deprecated public Builder clearTargetSpendMicros() {
@@ -1924,7 +1924,7 @@ private static final long serialVersionUID = 0L;
        * The limit applies to all keywords managed by the strategy.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the cpcBidCeilingMicros field is set.
        */
       @java.lang.Override
@@ -1937,7 +1937,7 @@ private static final long serialVersionUID = 0L;
        * The limit applies to all keywords managed by the strategy.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The cpcBidCeilingMicros.
        */
       @java.lang.Override
@@ -1950,7 +1950,7 @@ private static final long serialVersionUID = 0L;
        * The limit applies to all keywords managed by the strategy.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The cpcBidCeilingMicros to set.
        * @return This builder for chaining.
        */
@@ -1966,7 +1966,7 @@ private static final long serialVersionUID = 0L;
        * The limit applies to all keywords managed by the strategy.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearCpcBidCeilingMicros() {
@@ -2039,7 +2039,7 @@ private static final long serialVersionUID = 0L;
      * based on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the targetCpaMicros field is set.
      */
     boolean hasTargetCpaMicros();
@@ -2050,7 +2050,7 @@ private static final long serialVersionUID = 0L;
      * based on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The targetCpaMicros.
      */
     long getTargetCpaMicros();
@@ -2153,7 +2153,7 @@ private static final long serialVersionUID = 0L;
      * based on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the targetCpaMicros field is set.
      */
     @java.lang.Override
@@ -2167,7 +2167,7 @@ private static final long serialVersionUID = 0L;
      * based on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The targetCpaMicros.
      */
     @java.lang.Override
@@ -2503,7 +2503,7 @@ private static final long serialVersionUID = 0L;
        * based on the currency for the account.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the targetCpaMicros field is set.
        */
       @java.lang.Override
@@ -2517,7 +2517,7 @@ private static final long serialVersionUID = 0L;
        * based on the currency for the account.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The targetCpaMicros.
        */
       @java.lang.Override
@@ -2531,7 +2531,7 @@ private static final long serialVersionUID = 0L;
        * based on the currency for the account.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The targetCpaMicros to set.
        * @return This builder for chaining.
        */
@@ -2548,7 +2548,7 @@ private static final long serialVersionUID = 0L;
        * based on the currency for the account.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetCpaMicros() {
@@ -2639,7 +2639,7 @@ private static final long serialVersionUID = 0L;
      * micros. E.g. 1% equals 10,000.
      * </pre>
      *
-     * <code>int64 location_fraction_micros = 2;</code>
+     * <code>optional int64 location_fraction_micros = 2;</code>
      * @return Whether the locationFractionMicros field is set.
      */
     boolean hasLocationFractionMicros();
@@ -2649,7 +2649,7 @@ private static final long serialVersionUID = 0L;
      * micros. E.g. 1% equals 10,000.
      * </pre>
      *
-     * <code>int64 location_fraction_micros = 2;</code>
+     * <code>optional int64 location_fraction_micros = 2;</code>
      * @return The locationFractionMicros.
      */
     long getLocationFractionMicros();
@@ -2661,7 +2661,7 @@ private static final long serialVersionUID = 0L;
      * and specified in local micros.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the cpcBidCeilingMicros field is set.
      */
     boolean hasCpcBidCeilingMicros();
@@ -2672,7 +2672,7 @@ private static final long serialVersionUID = 0L;
      * and specified in local micros.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cpcBidCeilingMicros.
      */
     long getCpcBidCeilingMicros();
@@ -2814,7 +2814,7 @@ private static final long serialVersionUID = 0L;
      * micros. E.g. 1% equals 10,000.
      * </pre>
      *
-     * <code>int64 location_fraction_micros = 2;</code>
+     * <code>optional int64 location_fraction_micros = 2;</code>
      * @return Whether the locationFractionMicros field is set.
      */
     @java.lang.Override
@@ -2827,7 +2827,7 @@ private static final long serialVersionUID = 0L;
      * micros. E.g. 1% equals 10,000.
      * </pre>
      *
-     * <code>int64 location_fraction_micros = 2;</code>
+     * <code>optional int64 location_fraction_micros = 2;</code>
      * @return The locationFractionMicros.
      */
     @java.lang.Override
@@ -2844,7 +2844,7 @@ private static final long serialVersionUID = 0L;
      * and specified in local micros.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the cpcBidCeilingMicros field is set.
      */
     @java.lang.Override
@@ -2858,7 +2858,7 @@ private static final long serialVersionUID = 0L;
      * and specified in local micros.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cpcBidCeilingMicros.
      */
     @java.lang.Override
@@ -3310,7 +3310,7 @@ private static final long serialVersionUID = 0L;
        * micros. E.g. 1% equals 10,000.
        * </pre>
        *
-       * <code>int64 location_fraction_micros = 2;</code>
+       * <code>optional int64 location_fraction_micros = 2;</code>
        * @return Whether the locationFractionMicros field is set.
        */
       @java.lang.Override
@@ -3323,7 +3323,7 @@ private static final long serialVersionUID = 0L;
        * micros. E.g. 1% equals 10,000.
        * </pre>
        *
-       * <code>int64 location_fraction_micros = 2;</code>
+       * <code>optional int64 location_fraction_micros = 2;</code>
        * @return The locationFractionMicros.
        */
       @java.lang.Override
@@ -3336,7 +3336,7 @@ private static final long serialVersionUID = 0L;
        * micros. E.g. 1% equals 10,000.
        * </pre>
        *
-       * <code>int64 location_fraction_micros = 2;</code>
+       * <code>optional int64 location_fraction_micros = 2;</code>
        * @param value The locationFractionMicros to set.
        * @return This builder for chaining.
        */
@@ -3352,7 +3352,7 @@ private static final long serialVersionUID = 0L;
        * micros. E.g. 1% equals 10,000.
        * </pre>
        *
-       * <code>int64 location_fraction_micros = 2;</code>
+       * <code>optional int64 location_fraction_micros = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLocationFractionMicros() {
@@ -3370,7 +3370,7 @@ private static final long serialVersionUID = 0L;
        * and specified in local micros.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the cpcBidCeilingMicros field is set.
        */
       @java.lang.Override
@@ -3384,7 +3384,7 @@ private static final long serialVersionUID = 0L;
        * and specified in local micros.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The cpcBidCeilingMicros.
        */
       @java.lang.Override
@@ -3398,7 +3398,7 @@ private static final long serialVersionUID = 0L;
        * and specified in local micros.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The cpcBidCeilingMicros to set.
        * @return This builder for chaining.
        */
@@ -3415,7 +3415,7 @@ private static final long serialVersionUID = 0L;
        * and specified in local micros.
        * </pre>
        *
-       * <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearCpcBidCeilingMicros() {
@@ -3486,7 +3486,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      * </pre>
      *
-     * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the targetRoas field is set.
      */
     boolean hasTargetRoas();
@@ -3495,7 +3495,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      * </pre>
      *
-     * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The targetRoas.
      */
     double getTargetRoas();
@@ -3596,7 +3596,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      * </pre>
      *
-     * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the targetRoas field is set.
      */
     @java.lang.Override
@@ -3608,7 +3608,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      * </pre>
      *
-     * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The targetRoas.
      */
     @java.lang.Override
@@ -3943,7 +3943,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The desired revenue (based on conversion data) per unit of spend.
        * </pre>
        *
-       * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the targetRoas field is set.
        */
       @java.lang.Override
@@ -3955,7 +3955,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The desired revenue (based on conversion data) per unit of spend.
        * </pre>
        *
-       * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The targetRoas.
        */
       @java.lang.Override
@@ -3967,7 +3967,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The desired revenue (based on conversion data) per unit of spend.
        * </pre>
        *
-       * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The targetRoas to set.
        * @return This builder for chaining.
        */
@@ -3982,7 +3982,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The desired revenue (based on conversion data) per unit of spend.
        * </pre>
        *
-       * <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetRoas() {
@@ -4582,13 +4582,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
     }
     if (id_ != 0L) {
       output.writeInt64(2, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     if (type_ != com.google.ads.googleads.v8.enums.BiddingStrategyTypeEnum.BiddingStrategyType.UNSPECIFIED.getNumber()) {
@@ -4597,7 +4597,7 @@ private static final long serialVersionUID = 0L;
     if (ownerCustomerId_ != 0L) {
       output.writeInt64(5, ownerCustomerId_);
     }
-    if (!getOwnerDescriptiveNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerDescriptiveName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ownerDescriptiveName_);
     }
     if (schemeCase_ == 7) {
@@ -4627,14 +4627,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
     }
     if (id_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (type_ != com.google.ads.googleads.v8.enums.BiddingStrategyTypeEnum.BiddingStrategyType.UNSPECIFIED.getNumber()) {
@@ -4645,7 +4645,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, ownerCustomerId_);
     }
-    if (!getOwnerDescriptiveNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerDescriptiveName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ownerDescriptiveName_);
     }
     if (schemeCase_ == 7) {

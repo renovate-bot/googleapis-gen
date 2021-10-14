@@ -312,7 +312,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      */
     public function getStorageConfig()
     {
-        return isset($this->storage_config) ? $this->storage_config : null;
+        return $this->storage_config;
     }
 
     public function hasStorageConfig()

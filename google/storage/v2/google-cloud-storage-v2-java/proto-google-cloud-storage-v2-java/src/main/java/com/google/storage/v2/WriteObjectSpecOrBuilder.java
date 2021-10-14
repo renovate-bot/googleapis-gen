@@ -60,7 +60,7 @@ public interface WriteObjectSpecOrBuilder extends
    * succeed only if there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 3;</code>
+   * <code>optional int64 if_generation_match = 3;</code>
    * @return Whether the ifGenerationMatch field is set.
    */
   boolean hasIfGenerationMatch();
@@ -71,7 +71,7 @@ public interface WriteObjectSpecOrBuilder extends
    * succeed only if there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 3;</code>
+   * <code>optional int64 if_generation_match = 3;</code>
    * @return The ifGenerationMatch.
    */
   long getIfGenerationMatch();
@@ -84,7 +84,7 @@ public interface WriteObjectSpecOrBuilder extends
    * there is a live version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 4;</code>
+   * <code>optional int64 if_generation_not_match = 4;</code>
    * @return Whether the ifGenerationNotMatch field is set.
    */
   boolean hasIfGenerationNotMatch();
@@ -96,7 +96,7 @@ public interface WriteObjectSpecOrBuilder extends
    * there is a live version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 4;</code>
+   * <code>optional int64 if_generation_not_match = 4;</code>
    * @return The ifGenerationNotMatch.
    */
   long getIfGenerationNotMatch();
@@ -107,7 +107,7 @@ public interface WriteObjectSpecOrBuilder extends
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 5;</code>
+   * <code>optional int64 if_metageneration_match = 5;</code>
    * @return Whether the ifMetagenerationMatch field is set.
    */
   boolean hasIfMetagenerationMatch();
@@ -117,7 +117,7 @@ public interface WriteObjectSpecOrBuilder extends
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 5;</code>
+   * <code>optional int64 if_metageneration_match = 5;</code>
    * @return The ifMetagenerationMatch.
    */
   long getIfMetagenerationMatch();
@@ -128,7 +128,7 @@ public interface WriteObjectSpecOrBuilder extends
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 6;</code>
+   * <code>optional int64 if_metageneration_not_match = 6;</code>
    * @return Whether the ifMetagenerationNotMatch field is set.
    */
   boolean hasIfMetagenerationNotMatch();
@@ -138,7 +138,7 @@ public interface WriteObjectSpecOrBuilder extends
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 6;</code>
+   * <code>optional int64 if_metageneration_not_match = 6;</code>
    * @return The ifMetagenerationNotMatch.
    */
   long getIfMetagenerationNotMatch();

@@ -56,19 +56,23 @@ namespace Google.Cloud.Automl.V1Beta1 {
     private static readonly pb::MessageParser<RegressionEvaluationMetrics> _parser = new pb::MessageParser<RegressionEvaluationMetrics>(() => new RegressionEvaluationMetrics());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RegressionEvaluationMetrics> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Automl.V1Beta1.RegressionReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegressionEvaluationMetrics() {
       OnConstruction();
     }
@@ -76,6 +80,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegressionEvaluationMetrics(RegressionEvaluationMetrics other) : this() {
       rootMeanSquaredError_ = other.rootMeanSquaredError_;
       meanAbsoluteError_ = other.meanAbsoluteError_;
@@ -86,6 +91,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegressionEvaluationMetrics Clone() {
       return new RegressionEvaluationMetrics(this);
     }
@@ -97,6 +103,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Output only. Root Mean Squared Error (RMSE).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float RootMeanSquaredError {
       get { return rootMeanSquaredError_; }
       set {
@@ -111,6 +118,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Output only. Mean Absolute Error (MAE).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float MeanAbsoluteError {
       get { return meanAbsoluteError_; }
       set {
@@ -126,6 +134,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// values are are positive.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float MeanAbsolutePercentageError {
       get { return meanAbsolutePercentageError_; }
       set {
@@ -140,6 +149,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Output only. R squared.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float RSquared {
       get { return rSquared_; }
       set {
@@ -154,6 +164,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Output only. Root mean squared log error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float RootMeanSquaredLogError {
       get { return rootMeanSquaredLogError_; }
       set {
@@ -162,11 +173,13 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as RegressionEvaluationMetrics);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(RegressionEvaluationMetrics other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -183,6 +196,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (RootMeanSquaredError != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RootMeanSquaredError);
@@ -197,11 +211,13 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -234,6 +250,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (RootMeanSquaredError != 0F) {
         output.WriteRawTag(13);
@@ -262,6 +279,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (RootMeanSquaredError != 0F) {
@@ -286,6 +304,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(RegressionEvaluationMetrics other) {
       if (other == null) {
         return;
@@ -309,6 +328,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -346,6 +366,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

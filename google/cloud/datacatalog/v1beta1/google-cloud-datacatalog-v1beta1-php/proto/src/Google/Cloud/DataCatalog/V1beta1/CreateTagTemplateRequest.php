@@ -126,7 +126,7 @@ class CreateTagTemplateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTagTemplate()
     {
-        return isset($this->tag_template) ? $this->tag_template : null;
+        return $this->tag_template;
     }
 
     public function hasTagTemplate()

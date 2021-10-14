@@ -48,7 +48,7 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
      * more information about what makes an ad viewable and how
      * viewability is measured.
      *
-     * Generated from protobuf field <code>int64 viewable_impressions = 5;</code>
+     * Generated from protobuf field <code>optional int64 viewable_impressions = 5;</code>
      */
     protected $viewable_impressions = null;
 
@@ -197,7 +197,7 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
      * more information about what makes an ad viewable and how
      * viewability is measured.
      *
-     * Generated from protobuf field <code>int64 viewable_impressions = 5;</code>
+     * Generated from protobuf field <code>optional int64 viewable_impressions = 5;</code>
      * @return int|string
      */
     public function getViewableImpressions()
@@ -221,7 +221,7 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
      * more information about what makes an ad viewable and how
      * viewability is measured.
      *
-     * Generated from protobuf field <code>int64 viewable_impressions = 5;</code>
+     * Generated from protobuf field <code>optional int64 viewable_impressions = 5;</code>
      * @param int|string $var
      * @return $this
      */

@@ -117,7 +117,7 @@ class CreateGameServerClusterRequest extends \Google\Protobuf\Internal\Message
      */
     public function getGameServerCluster()
     {
-        return isset($this->game_server_cluster) ? $this->game_server_cluster : null;
+        return $this->game_server_cluster;
     }
 
     public function hasGameServerCluster()

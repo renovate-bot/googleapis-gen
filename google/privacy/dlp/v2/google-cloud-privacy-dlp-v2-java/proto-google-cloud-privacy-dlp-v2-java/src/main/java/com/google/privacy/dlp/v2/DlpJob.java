@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
@@ -901,7 +901,7 @@ private static final long serialVersionUID = 0L;
     if (endTime_ != null) {
       output.writeMessage(8, getEndTime());
     }
-    if (!getJobTriggerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTriggerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, jobTriggerName_);
     }
     for (int i = 0; i < errors_.size(); i++) {
@@ -916,7 +916,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (type_ != com.google.privacy.dlp.v2.DlpJobType.DLP_JOB_TYPE_UNSPECIFIED.getNumber()) {
@@ -947,7 +947,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getEndTime());
     }
-    if (!getJobTriggerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTriggerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, jobTriggerName_);
     }
     for (int i = 0; i < errors_.size(); i++) {

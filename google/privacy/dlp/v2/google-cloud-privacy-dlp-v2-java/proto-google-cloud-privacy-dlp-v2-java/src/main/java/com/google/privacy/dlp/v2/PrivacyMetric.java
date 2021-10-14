@@ -6669,7 +6669,7 @@ private static final long serialVersionUID = 0L;
           if (field_ != null) {
             output.writeMessage(1, getField());
           }
-          if (!getCustomTagBytes().isEmpty()) {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customTag_);
           }
           unknownFields.writeTo(output);
@@ -6685,7 +6685,7 @@ private static final long serialVersionUID = 0L;
             size += com.google.protobuf.CodedOutputStream
               .computeMessageSize(1, getField());
           }
-          if (!getCustomTagBytes().isEmpty()) {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customTag_);
           }
           size += unknownFields.getSerializedSize();
@@ -8728,7 +8728,7 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
@@ -8747,7 +8747,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
@@ -10421,7 +10421,7 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
@@ -10440,7 +10440,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, quasiIds_.get(i));
       }
-      if (!getRegionCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {

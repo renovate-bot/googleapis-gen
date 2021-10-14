@@ -121,7 +121,7 @@ class CreateAlertPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAlertPolicy()
     {
-        return isset($this->alert_policy) ? $this->alert_policy : null;
+        return $this->alert_policy;
     }
 
     public function hasAlertPolicy()

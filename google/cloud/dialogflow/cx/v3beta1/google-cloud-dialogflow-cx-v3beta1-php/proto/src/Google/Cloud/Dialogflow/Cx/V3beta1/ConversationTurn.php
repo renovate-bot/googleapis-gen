@@ -54,7 +54,7 @@ class ConversationTurn extends \Google\Protobuf\Internal\Message
      */
     public function getUserInput()
     {
-        return isset($this->user_input) ? $this->user_input : null;
+        return $this->user_input;
     }
 
     public function hasUserInput()
@@ -90,7 +90,7 @@ class ConversationTurn extends \Google\Protobuf\Internal\Message
      */
     public function getVirtualAgentOutput()
     {
-        return isset($this->virtual_agent_output) ? $this->virtual_agent_output : null;
+        return $this->virtual_agent_output;
     }
 
     public function hasVirtualAgentOutput()

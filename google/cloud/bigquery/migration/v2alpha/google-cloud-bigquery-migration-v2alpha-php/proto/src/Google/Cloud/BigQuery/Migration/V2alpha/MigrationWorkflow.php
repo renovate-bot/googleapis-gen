@@ -210,7 +210,7 @@ class MigrationWorkflow extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -246,7 +246,7 @@ class MigrationWorkflow extends \Google\Protobuf\Internal\Message
      */
     public function getLastUpdateTime()
     {
-        return isset($this->last_update_time) ? $this->last_update_time : null;
+        return $this->last_update_time;
     }
 
     public function hasLastUpdateTime()

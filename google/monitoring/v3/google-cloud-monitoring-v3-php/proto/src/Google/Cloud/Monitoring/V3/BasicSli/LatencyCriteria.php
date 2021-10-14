@@ -48,7 +48,7 @@ class LatencyCriteria extends \Google\Protobuf\Internal\Message
      */
     public function getThreshold()
     {
-        return isset($this->threshold) ? $this->threshold : null;
+        return $this->threshold;
     }
 
     public function hasThreshold()

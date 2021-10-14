@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
    * there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 6;</code>
+   * <code>optional int64 if_generation_match = 6;</code>
    * @return Whether the ifGenerationMatch field is set.
    */
   @java.lang.Override
@@ -347,7 +347,7 @@ private static final long serialVersionUID = 0L;
    * there are no live versions of the object.
    * </pre>
    *
-   * <code>int64 if_generation_match = 6;</code>
+   * <code>optional int64 if_generation_match = 6;</code>
    * @return The ifGenerationMatch.
    */
   @java.lang.Override
@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
    * version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 7;</code>
+   * <code>optional int64 if_generation_not_match = 7;</code>
    * @return Whether the ifGenerationNotMatch field is set.
    */
   @java.lang.Override
@@ -380,7 +380,7 @@ private static final long serialVersionUID = 0L;
    * version of the object.
    * </pre>
    *
-   * <code>int64 if_generation_not_match = 7;</code>
+   * <code>optional int64 if_generation_not_match = 7;</code>
    * @return The ifGenerationNotMatch.
    */
   @java.lang.Override
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 8;</code>
+   * <code>optional int64 if_metageneration_match = 8;</code>
    * @return Whether the ifMetagenerationMatch field is set.
    */
   @java.lang.Override
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
    * metageneration matches the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_match = 8;</code>
+   * <code>optional int64 if_metageneration_match = 8;</code>
    * @return The ifMetagenerationMatch.
    */
   @java.lang.Override
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 9;</code>
+   * <code>optional int64 if_metageneration_not_match = 9;</code>
    * @return Whether the ifMetagenerationNotMatch field is set.
    */
   @java.lang.Override
@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
    * metageneration does not match the given value.
    * </pre>
    *
-   * <code>int64 if_metageneration_not_match = 9;</code>
+   * <code>optional int64 if_metageneration_not_match = 9;</code>
    * @return The ifMetagenerationNotMatch.
    */
   @java.lang.Override
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
    * * may be used to mean "all fields".
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+   * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
    * @return Whether the readMask field is set.
    */
   @java.lang.Override
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
    * * may be used to mean "all fields".
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+   * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
    * @return The readMask.
    */
   @java.lang.Override
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
    * * may be used to mean "all fields".
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+   * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
@@ -586,10 +586,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucket_);
     }
-    if (!getObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, object_);
     }
     if (generation_ != 0L) {
@@ -631,10 +631,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getBucketBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucket_);
     }
-    if (!getObjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(object_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, object_);
     }
     if (generation_ != 0L) {
@@ -1519,7 +1519,7 @@ private static final long serialVersionUID = 0L;
      * there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 6;</code>
+     * <code>optional int64 if_generation_match = 6;</code>
      * @return Whether the ifGenerationMatch field is set.
      */
     @java.lang.Override
@@ -1533,7 +1533,7 @@ private static final long serialVersionUID = 0L;
      * there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 6;</code>
+     * <code>optional int64 if_generation_match = 6;</code>
      * @return The ifGenerationMatch.
      */
     @java.lang.Override
@@ -1547,7 +1547,7 @@ private static final long serialVersionUID = 0L;
      * there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 6;</code>
+     * <code>optional int64 if_generation_match = 6;</code>
      * @param value The ifGenerationMatch to set.
      * @return This builder for chaining.
      */
@@ -1564,7 +1564,7 @@ private static final long serialVersionUID = 0L;
      * there are no live versions of the object.
      * </pre>
      *
-     * <code>int64 if_generation_match = 6;</code>
+     * <code>optional int64 if_generation_match = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfGenerationMatch() {
@@ -1583,7 +1583,7 @@ private static final long serialVersionUID = 0L;
      * version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 7;</code>
+     * <code>optional int64 if_generation_not_match = 7;</code>
      * @return Whether the ifGenerationNotMatch field is set.
      */
     @java.lang.Override
@@ -1598,7 +1598,7 @@ private static final long serialVersionUID = 0L;
      * version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 7;</code>
+     * <code>optional int64 if_generation_not_match = 7;</code>
      * @return The ifGenerationNotMatch.
      */
     @java.lang.Override
@@ -1613,7 +1613,7 @@ private static final long serialVersionUID = 0L;
      * version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 7;</code>
+     * <code>optional int64 if_generation_not_match = 7;</code>
      * @param value The ifGenerationNotMatch to set.
      * @return This builder for chaining.
      */
@@ -1631,7 +1631,7 @@ private static final long serialVersionUID = 0L;
      * version of the object.
      * </pre>
      *
-     * <code>int64 if_generation_not_match = 7;</code>
+     * <code>optional int64 if_generation_not_match = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfGenerationNotMatch() {
@@ -1648,7 +1648,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 8;</code>
+     * <code>optional int64 if_metageneration_match = 8;</code>
      * @return Whether the ifMetagenerationMatch field is set.
      */
     @java.lang.Override
@@ -1661,7 +1661,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 8;</code>
+     * <code>optional int64 if_metageneration_match = 8;</code>
      * @return The ifMetagenerationMatch.
      */
     @java.lang.Override
@@ -1674,7 +1674,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 8;</code>
+     * <code>optional int64 if_metageneration_match = 8;</code>
      * @param value The ifMetagenerationMatch to set.
      * @return This builder for chaining.
      */
@@ -1690,7 +1690,7 @@ private static final long serialVersionUID = 0L;
      * metageneration matches the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_match = 8;</code>
+     * <code>optional int64 if_metageneration_match = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfMetagenerationMatch() {
@@ -1707,7 +1707,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 9;</code>
+     * <code>optional int64 if_metageneration_not_match = 9;</code>
      * @return Whether the ifMetagenerationNotMatch field is set.
      */
     @java.lang.Override
@@ -1720,7 +1720,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 9;</code>
+     * <code>optional int64 if_metageneration_not_match = 9;</code>
      * @return The ifMetagenerationNotMatch.
      */
     @java.lang.Override
@@ -1733,7 +1733,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 9;</code>
+     * <code>optional int64 if_metageneration_not_match = 9;</code>
      * @param value The ifMetagenerationNotMatch to set.
      * @return This builder for chaining.
      */
@@ -1749,7 +1749,7 @@ private static final long serialVersionUID = 0L;
      * metageneration does not match the given value.
      * </pre>
      *
-     * <code>int64 if_metageneration_not_match = 9;</code>
+     * <code>optional int64 if_metageneration_not_match = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearIfMetagenerationNotMatch() {
@@ -2081,7 +2081,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      * @return Whether the readMask field is set.
      */
     public boolean hasReadMask() {
@@ -2096,7 +2096,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      * @return The readMask.
      */
     public com.google.protobuf.FieldMask getReadMask() {
@@ -2115,7 +2115,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     public Builder setReadMask(com.google.protobuf.FieldMask value) {
       if (readMaskBuilder_ == null) {
@@ -2139,7 +2139,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     public Builder setReadMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -2161,7 +2161,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
       if (readMaskBuilder_ == null) {
@@ -2189,7 +2189,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     public Builder clearReadMask() {
       if (readMaskBuilder_ == null) {
@@ -2210,7 +2210,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
       bitField0_ |= 0x00000010;
@@ -2226,7 +2226,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
       if (readMaskBuilder_ != null) {
@@ -2245,7 +2245,7 @@ private static final long serialVersionUID = 0L;
      * * may be used to mean "all fields".
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 

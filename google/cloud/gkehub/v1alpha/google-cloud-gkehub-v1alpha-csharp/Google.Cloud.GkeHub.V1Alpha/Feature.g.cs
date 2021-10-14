@@ -119,19 +119,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<Feature> _parser = new pb::MessageParser<Feature>(() => new Feature());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Feature> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Feature() {
       OnConstruction();
     }
@@ -139,6 +143,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Feature(Feature other) : this() {
       name_ = other.name_;
       labels_ = other.labels_.Clone();
@@ -154,6 +159,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Feature Clone() {
       return new Feature(this);
     }
@@ -166,6 +172,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// `projects/*/locations/*/features/*`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -182,6 +189,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// GCP labels for this Feature.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, string> Labels {
       get { return labels_; }
     }
@@ -193,6 +201,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Output only. State of the Feature resource itself.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.FeatureResourceState ResourceState {
       get { return resourceState_; }
       set {
@@ -208,6 +217,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Hub-wide configuration, this field may be unused.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.CommonFeatureSpec Spec {
       get { return spec_; }
       set {
@@ -240,6 +250,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// mutating a Feature.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Cloud.GkeHub.V1Alpha.MembershipFeatureSpec> MembershipSpecs {
       get { return membershipSpecs_; }
     }
@@ -251,6 +262,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Output only. The Hub-wide Feature state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.CommonFeatureState State {
       get { return state_; }
       set {
@@ -276,6 +288,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// project number.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Cloud.GkeHub.V1Alpha.MembershipFeatureState> MembershipStates {
       get { return membershipStates_; }
     }
@@ -287,6 +300,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Output only. When the Feature resource was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -301,6 +315,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Output only. When the Feature resource was last updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp UpdateTime {
       get { return updateTime_; }
       set {
@@ -315,6 +330,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Output only. When the Feature resource was deleted.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp DeleteTime {
       get { return deleteTime_; }
       set {
@@ -323,11 +339,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Feature);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Feature other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -349,6 +367,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -368,11 +387,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -416,6 +437,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -455,6 +477,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -488,6 +511,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Feature other) {
       if (other == null) {
         return;
@@ -538,6 +562,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -613,6 +638,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -698,19 +724,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<FeatureResourceState> _parser = new pb::MessageParser<FeatureResourceState>(() => new FeatureResourceState());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FeatureResourceState> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureResourceState() {
       OnConstruction();
     }
@@ -718,12 +748,14 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureResourceState(FeatureResourceState other) : this() {
       state_ = other.state_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureResourceState Clone() {
       return new FeatureResourceState(this);
     }
@@ -735,6 +767,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// The current state of the Feature resource in the Hub API.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.FeatureResourceState.Types.State State {
       get { return state_; }
       set {
@@ -743,11 +776,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FeatureResourceState);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FeatureResourceState other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -760,6 +795,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (State != global::Google.Cloud.GkeHub.V1Alpha.FeatureResourceState.Types.State.Unspecified) hash ^= State.GetHashCode();
@@ -770,11 +806,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -791,6 +829,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (State != global::Google.Cloud.GkeHub.V1Alpha.FeatureResourceState.Types.State.Unspecified) {
         output.WriteRawTag(8);
@@ -803,6 +842,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (State != global::Google.Cloud.GkeHub.V1Alpha.FeatureResourceState.Types.State.Unspecified) {
@@ -815,6 +855,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FeatureResourceState other) {
       if (other == null) {
         return;
@@ -826,6 +867,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -847,6 +889,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -866,6 +909,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the FeatureResourceState message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// State describes the lifecycle status of a Feature.
@@ -918,19 +962,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<FeatureState> _parser = new pb::MessageParser<FeatureState>(() => new FeatureState());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FeatureState> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureState() {
       OnConstruction();
     }
@@ -938,6 +986,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureState(FeatureState other) : this() {
       code_ = other.code_;
       description_ = other.description_;
@@ -946,6 +995,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureState Clone() {
       return new FeatureState(this);
     }
@@ -957,6 +1007,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// The high-level, machine-readable status of this Feature.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.FeatureState.Types.Code Code {
       get { return code_; }
       set {
@@ -971,6 +1022,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// A human-readable description of the current status.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -985,6 +1037,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// The time this status and any related Feature-specific details were updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp UpdateTime {
       get { return updateTime_; }
       set {
@@ -993,11 +1046,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FeatureState);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FeatureState other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1012,6 +1067,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Code != global::Google.Cloud.GkeHub.V1Alpha.FeatureState.Types.Code.Unspecified) hash ^= Code.GetHashCode();
@@ -1024,11 +1080,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1053,6 +1111,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Code != global::Google.Cloud.GkeHub.V1Alpha.FeatureState.Types.Code.Unspecified) {
         output.WriteRawTag(8);
@@ -1073,6 +1132,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Code != global::Google.Cloud.GkeHub.V1Alpha.FeatureState.Types.Code.Unspecified) {
@@ -1091,6 +1151,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FeatureState other) {
       if (other == null) {
         return;
@@ -1111,6 +1172,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1143,6 +1205,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1173,6 +1236,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the FeatureState message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Code represents a machine-readable, high-level status of the Feature.
@@ -1218,19 +1282,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<CommonFeatureSpec> _parser = new pb::MessageParser<CommonFeatureSpec>(() => new CommonFeatureSpec());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommonFeatureSpec> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonFeatureSpec() {
       OnConstruction();
     }
@@ -1238,6 +1306,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonFeatureSpec(CommonFeatureSpec other) : this() {
       switch (other.FeatureSpecCase) {
         case FeatureSpecOneofCase.Multiclusteringress:
@@ -1252,6 +1321,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonFeatureSpec Clone() {
       return new CommonFeatureSpec(this);
     }
@@ -1262,6 +1332,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Multicluster Ingress-specific spec.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.MultiClusterIngress.V1Alpha.FeatureSpec Multiclusteringress {
       get { return featureSpecCase_ == FeatureSpecOneofCase.Multiclusteringress ? (global::Google.Cloud.GkeHub.MultiClusterIngress.V1Alpha.FeatureSpec) featureSpec_ : null; }
       set {
@@ -1276,6 +1347,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Cloud Audit Logging-specific spec.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.CloudAuditLogging.V1Alpha.FeatureSpec Cloudauditlogging {
       get { return featureSpecCase_ == FeatureSpecOneofCase.Cloudauditlogging ? (global::Google.Cloud.GkeHub.CloudAuditLogging.V1Alpha.FeatureSpec) featureSpec_ : null; }
       set {
@@ -1293,22 +1365,26 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
     private FeatureSpecOneofCase featureSpecCase_ = FeatureSpecOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureSpecOneofCase FeatureSpecCase {
       get { return featureSpecCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearFeatureSpec() {
       featureSpecCase_ = FeatureSpecOneofCase.None;
       featureSpec_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommonFeatureSpec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommonFeatureSpec other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1323,6 +1399,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (featureSpecCase_ == FeatureSpecOneofCase.Multiclusteringress) hash ^= Multiclusteringress.GetHashCode();
@@ -1335,11 +1412,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1360,6 +1439,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (featureSpecCase_ == FeatureSpecOneofCase.Multiclusteringress) {
         output.WriteRawTag(178, 6);
@@ -1376,6 +1456,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (featureSpecCase_ == FeatureSpecOneofCase.Multiclusteringress) {
@@ -1391,6 +1472,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommonFeatureSpec other) {
       if (other == null) {
         return;
@@ -1414,6 +1496,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1449,6 +1532,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1492,19 +1576,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<CommonFeatureState> _parser = new pb::MessageParser<CommonFeatureState>(() => new CommonFeatureState());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommonFeatureState> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonFeatureState() {
       OnConstruction();
     }
@@ -1512,6 +1600,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonFeatureState(CommonFeatureState other) : this() {
       state_ = other.state_ != null ? other.state_.Clone() : null;
       switch (other.FeatureStateCase) {
@@ -1524,6 +1613,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonFeatureState Clone() {
       return new CommonFeatureState(this);
     }
@@ -1534,6 +1624,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Service Mesh-specific state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.ServiceMesh.V1Alpha.FeatureState Servicemesh {
       get { return featureStateCase_ == FeatureStateOneofCase.Servicemesh ? (global::Google.Cloud.GkeHub.ServiceMesh.V1Alpha.FeatureState) featureState_ : null; }
       set {
@@ -1549,6 +1640,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Output only. The "running state" of the Feature in this Hub.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.FeatureState State {
       get { return state_; }
       set {
@@ -1564,22 +1656,26 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
     private FeatureStateOneofCase featureStateCase_ = FeatureStateOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureStateOneofCase FeatureStateCase {
       get { return featureStateCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearFeatureState() {
       featureStateCase_ = FeatureStateOneofCase.None;
       featureState_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommonFeatureState);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommonFeatureState other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1594,6 +1690,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (featureStateCase_ == FeatureStateOneofCase.Servicemesh) hash ^= Servicemesh.GetHashCode();
@@ -1606,11 +1703,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1631,6 +1730,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (state_ != null) {
         output.WriteRawTag(10);
@@ -1647,6 +1747,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (featureStateCase_ == FeatureStateOneofCase.Servicemesh) {
@@ -1662,6 +1763,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommonFeatureState other) {
       if (other == null) {
         return;
@@ -1685,6 +1787,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1718,6 +1821,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1760,19 +1864,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<MembershipFeatureSpec> _parser = new pb::MessageParser<MembershipFeatureSpec>(() => new MembershipFeatureSpec());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<MembershipFeatureSpec> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MembershipFeatureSpec() {
       OnConstruction();
     }
@@ -1780,6 +1888,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MembershipFeatureSpec(MembershipFeatureSpec other) : this() {
       switch (other.FeatureSpecCase) {
         case FeatureSpecOneofCase.Configmanagement:
@@ -1791,6 +1900,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MembershipFeatureSpec Clone() {
       return new MembershipFeatureSpec(this);
     }
@@ -1801,6 +1911,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Config Management-specific spec.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.ConfigManagement.V1Alpha.MembershipSpec Configmanagement {
       get { return featureSpecCase_ == FeatureSpecOneofCase.Configmanagement ? (global::Google.Cloud.GkeHub.ConfigManagement.V1Alpha.MembershipSpec) featureSpec_ : null; }
       set {
@@ -1817,22 +1928,26 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
     private FeatureSpecOneofCase featureSpecCase_ = FeatureSpecOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureSpecOneofCase FeatureSpecCase {
       get { return featureSpecCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearFeatureSpec() {
       featureSpecCase_ = FeatureSpecOneofCase.None;
       featureSpec_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as MembershipFeatureSpec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(MembershipFeatureSpec other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1846,6 +1961,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (featureSpecCase_ == FeatureSpecOneofCase.Configmanagement) hash ^= Configmanagement.GetHashCode();
@@ -1857,11 +1973,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1878,6 +1996,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (featureSpecCase_ == FeatureSpecOneofCase.Configmanagement) {
         output.WriteRawTag(210, 6);
@@ -1890,6 +2009,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (featureSpecCase_ == FeatureSpecOneofCase.Configmanagement) {
@@ -1902,6 +2022,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(MembershipFeatureSpec other) {
       if (other == null) {
         return;
@@ -1919,6 +2040,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1945,6 +2067,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1980,19 +2103,23 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     private static readonly pb::MessageParser<MembershipFeatureState> _parser = new pb::MessageParser<MembershipFeatureState>(() => new MembershipFeatureState());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<MembershipFeatureState> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.GkeHub.V1Alpha.FeatureReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MembershipFeatureState() {
       OnConstruction();
     }
@@ -2000,6 +2127,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MembershipFeatureState(MembershipFeatureState other) : this() {
       state_ = other.state_ != null ? other.state_.Clone() : null;
       switch (other.FeatureStateCase) {
@@ -2018,6 +2146,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MembershipFeatureState Clone() {
       return new MembershipFeatureState(this);
     }
@@ -2028,6 +2157,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Service Mesh-specific state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.ServiceMesh.V1Alpha.MembershipState Servicemesh {
       get { return featureStateCase_ == FeatureStateOneofCase.Servicemesh ? (global::Google.Cloud.GkeHub.ServiceMesh.V1Alpha.MembershipState) featureState_ : null; }
       set {
@@ -2042,6 +2172,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Metering-specific spec.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.Metering.V1Alpha.MembershipState Metering {
       get { return featureStateCase_ == FeatureStateOneofCase.Metering ? (global::Google.Cloud.GkeHub.Metering.V1Alpha.MembershipState) featureState_ : null; }
       set {
@@ -2056,6 +2187,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// Config Management-specific state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.ConfigManagement.V1Alpha.MembershipState Configmanagement {
       get { return featureStateCase_ == FeatureStateOneofCase.Configmanagement ? (global::Google.Cloud.GkeHub.ConfigManagement.V1Alpha.MembershipState) featureState_ : null; }
       set {
@@ -2071,6 +2203,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     /// The high-level state of this Feature for a single membership.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.GkeHub.V1Alpha.FeatureState State {
       get { return state_; }
       set {
@@ -2088,22 +2221,26 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
     private FeatureStateOneofCase featureStateCase_ = FeatureStateOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureStateOneofCase FeatureStateCase {
       get { return featureStateCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearFeatureState() {
       featureStateCase_ = FeatureStateOneofCase.None;
       featureState_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as MembershipFeatureState);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(MembershipFeatureState other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2120,6 +2257,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (featureStateCase_ == FeatureStateOneofCase.Servicemesh) hash ^= Servicemesh.GetHashCode();
@@ -2134,11 +2272,13 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2167,6 +2307,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (state_ != null) {
         output.WriteRawTag(10);
@@ -2191,6 +2332,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (featureStateCase_ == FeatureStateOneofCase.Servicemesh) {
@@ -2212,6 +2354,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(MembershipFeatureState other) {
       if (other == null) {
         return;
@@ -2247,6 +2390,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2298,6 +2442,7 @@ namespace Google.Cloud.GkeHub.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

@@ -201,19 +201,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     private static readonly pb::MessageParser<Document> _parser = new pb::MessageParser<Document>(() => new Document());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Document> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.DocumentAI.V1Beta2.DocumentReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Document() {
       OnConstruction();
     }
@@ -221,6 +225,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Document(Document other) : this() {
       mimeType_ = other.mimeType_;
       text_ = other.text_;
@@ -244,6 +249,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Document Clone() {
       return new Document(this);
     }
@@ -258,6 +264,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     ///    info.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Uri {
       get { return sourceCase_ == SourceOneofCase.Uri ? (string) source_ : ""; }
       set {
@@ -274,6 +281,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// representation, whereas JSON representations use base64.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString Content {
       get { return sourceCase_ == SourceOneofCase.Content ? (pb::ByteString) source_ : pb::ByteString.Empty; }
       set {
@@ -291,6 +299,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// https://www.iana.org/assignments/media-types/media-types.xhtml.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string MimeType {
       get { return mimeType_; }
       set {
@@ -305,6 +314,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// UTF-8 encoded text in reading order from the document.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Text {
       get { return text_; }
       set {
@@ -321,6 +331,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// Styles for the [Document.text][google.cloud.documentai.v1beta2.Document.text].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Style> TextStyles {
       get { return textStyles_; }
     }
@@ -334,6 +345,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// Visual page layout for the [Document][google.cloud.documentai.v1beta2.Document].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page> Pages {
       get { return pages_; }
     }
@@ -348,6 +360,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// entities in this list may cross shard boundaries.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Entity> Entities {
       get { return entities_; }
     }
@@ -361,6 +374,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// Relationship among [Document.entities][google.cloud.documentai.v1beta2.Document.entities].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.EntityRelation> EntityRelations {
       get { return entityRelations_; }
     }
@@ -373,6 +387,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// document. If the document is not sharded, this message is not specified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.ShardInfo ShardInfo {
       get { return shardInfo_; }
       set {
@@ -389,6 +404,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// [Label][google.cloud.documentai.v1beta2.Document.Label]s for this document.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Label> Labels {
       get { return labels_; }
     }
@@ -400,6 +416,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     /// Any error that occurred while processing this document.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.Status Error {
       get { return error_; }
       set {
@@ -416,22 +433,26 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     }
     private SourceOneofCase sourceCase_ = SourceOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SourceOneofCase SourceCase {
       get { return sourceCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSource() {
       sourceCase_ = SourceOneofCase.None;
       source_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Document);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Document other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -455,6 +476,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (sourceCase_ == SourceOneofCase.Uri) hash ^= Uri.GetHashCode();
@@ -476,11 +498,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -522,6 +546,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (sourceCase_ == SourceOneofCase.Uri) {
         output.WriteRawTag(10);
@@ -559,6 +584,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (sourceCase_ == SourceOneofCase.Uri) {
@@ -591,6 +617,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Document other) {
       if (other == null) {
         return;
@@ -631,6 +658,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -698,6 +726,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -763,6 +792,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Document message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// For a large document, sharding may be performed to produce several
@@ -777,19 +807,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<ShardInfo> _parser = new pb::MessageParser<ShardInfo>(() => new ShardInfo());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ShardInfo> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ShardInfo() {
           OnConstruction();
         }
@@ -797,6 +831,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ShardInfo(ShardInfo other) : this() {
           shardIndex_ = other.shardIndex_;
           shardCount_ = other.shardCount_;
@@ -805,6 +840,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ShardInfo Clone() {
           return new ShardInfo(this);
         }
@@ -816,6 +852,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// The 0-based index of this shard.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long ShardIndex {
           get { return shardIndex_; }
           set {
@@ -830,6 +867,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Total number of shards.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long ShardCount {
           get { return shardCount_; }
           set {
@@ -845,6 +883,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// document global text.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long TextOffset {
           get { return textOffset_; }
           set {
@@ -853,11 +892,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ShardInfo);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ShardInfo other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -872,6 +913,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (ShardIndex != 0L) hash ^= ShardIndex.GetHashCode();
@@ -884,11 +926,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -913,6 +957,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (ShardIndex != 0L) {
             output.WriteRawTag(8);
@@ -933,6 +978,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (ShardIndex != 0L) {
@@ -951,6 +997,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ShardInfo other) {
           if (other == null) {
             return;
@@ -968,6 +1015,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -997,6 +1045,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1037,19 +1086,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<Label> _parser = new pb::MessageParser<Label>(() => new Label());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Label> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Label() {
           OnConstruction();
         }
@@ -1057,6 +1110,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Label(Label other) : this() {
           name_ = other.name_;
           confidence_ = other.confidence_;
@@ -1070,6 +1124,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Label Clone() {
           return new Label(this);
         }
@@ -1084,6 +1139,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// `projects/{project-id}/locations/{location-id}/models/{model-id}`
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string AutomlModel {
           get { return sourceCase_ == SourceOneofCase.AutomlModel ? (string) source_ : ""; }
           set {
@@ -1102,6 +1158,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// field represents the name of the category.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Name {
           get { return name_; }
           set {
@@ -1116,6 +1173,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Confidence score between 0 and 1 for label assignment.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public float Confidence {
           get { return confidence_; }
           set {
@@ -1131,22 +1189,26 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
         private SourceOneofCase sourceCase_ = SourceOneofCase.None;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SourceOneofCase SourceCase {
           get { return sourceCase_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearSource() {
           sourceCase_ = SourceOneofCase.None;
           source_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Label);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Label other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1162,6 +1224,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (sourceCase_ == SourceOneofCase.AutomlModel) hash ^= AutomlModel.GetHashCode();
@@ -1175,11 +1238,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1204,6 +1269,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Name.Length != 0) {
             output.WriteRawTag(10);
@@ -1224,6 +1290,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (sourceCase_ == SourceOneofCase.AutomlModel) {
@@ -1242,6 +1309,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Label other) {
           if (other == null) {
             return;
@@ -1262,6 +1330,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1291,6 +1360,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1329,19 +1399,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<Style> _parser = new pb::MessageParser<Style>(() => new Style());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Style> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Style() {
           OnConstruction();
         }
@@ -1349,6 +1423,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Style(Style other) : this() {
           textAnchor_ = other.textAnchor_ != null ? other.textAnchor_.Clone() : null;
           color_ = other.color_ != null ? other.color_.Clone() : null;
@@ -1361,6 +1436,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Style Clone() {
           return new Style(this);
         }
@@ -1372,6 +1448,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta2.Document.text].
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.TextAnchor TextAnchor {
           get { return textAnchor_; }
           set {
@@ -1386,6 +1463,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Text color.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Type.Color Color {
           get { return color_; }
           set {
@@ -1400,6 +1478,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Text background color.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Type.Color BackgroundColor {
           get { return backgroundColor_; }
           set {
@@ -1415,6 +1494,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// https://www.w3schools.com/cssref/pr_font_weight.asp
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string FontWeight {
           get { return fontWeight_; }
           set {
@@ -1430,6 +1510,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// https://www.w3schools.com/cssref/pr_font_font-style.asp
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string TextStyle {
           get { return textStyle_; }
           set {
@@ -1446,6 +1527,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// https://www.w3schools.com/cssref/pr_text_text-decoration.asp
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string TextDecoration {
           get { return textDecoration_; }
           set {
@@ -1460,6 +1542,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Font size.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Style.Types.FontSize FontSize {
           get { return fontSize_; }
           set {
@@ -1468,11 +1551,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Style);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Style other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1491,6 +1576,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (textAnchor_ != null) hash ^= TextAnchor.GetHashCode();
@@ -1507,11 +1593,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1552,6 +1640,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (textAnchor_ != null) {
             output.WriteRawTag(10);
@@ -1588,6 +1677,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (textAnchor_ != null) {
@@ -1618,6 +1708,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Style other) {
           if (other == null) {
             return;
@@ -1659,6 +1750,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1716,6 +1808,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1771,6 +1864,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #region Nested types
         /// <summary>Container for nested types declared in the Style message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Font size with unit.
@@ -1783,19 +1877,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<FontSize> _parser = new pb::MessageParser<FontSize>(() => new FontSize());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<FontSize> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Style.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FontSize() {
               OnConstruction();
             }
@@ -1803,6 +1901,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FontSize(FontSize other) : this() {
               size_ = other.size_;
               unit_ = other.unit_;
@@ -1810,6 +1909,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FontSize Clone() {
               return new FontSize(this);
             }
@@ -1821,6 +1921,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Font size for the text.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public float Size {
               get { return size_; }
               set {
@@ -1835,6 +1936,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Unit for the font size. Follows CSS naming (in, px, pt, etc.).
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Unit {
               get { return unit_; }
               set {
@@ -1843,11 +1945,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as FontSize);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(FontSize other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -1861,6 +1965,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Size != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Size);
@@ -1872,11 +1977,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -1897,6 +2004,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Size != 0F) {
                 output.WriteRawTag(13);
@@ -1913,6 +2021,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Size != 0F) {
@@ -1928,6 +2037,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(FontSize other) {
               if (other == null) {
                 return;
@@ -1942,6 +2052,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -1967,6 +2078,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -2005,19 +2117,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<Page> _parser = new pb::MessageParser<Page>(() => new Page());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Page> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Page() {
           OnConstruction();
         }
@@ -2025,6 +2141,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Page(Page other) : this() {
           pageNumber_ = other.pageNumber_;
           dimension_ = other.dimension_ != null ? other.dimension_.Clone() : null;
@@ -2041,6 +2158,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Page Clone() {
           return new Page(this);
         }
@@ -2054,6 +2172,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// processing.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int PageNumber {
           get { return pageNumber_; }
           set {
@@ -2068,6 +2187,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Physical dimension of the page.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Dimension Dimension {
           get { return dimension_; }
           set {
@@ -2082,6 +2202,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for the page.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
           get { return layout_; }
           set {
@@ -2098,6 +2219,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// A list of detected languages together with confidence.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
           get { return detectedLanguages_; }
         }
@@ -2113,6 +2235,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// line-spacing and orientation.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Block> Blocks {
           get { return blocks_; }
         }
@@ -2127,6 +2250,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// A collection of lines that a human would perceive as a paragraph.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Paragraph> Paragraphs {
           get { return paragraphs_; }
         }
@@ -2141,6 +2265,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// A collection of tokens that a human would perceive as a line.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Line> Lines {
           get { return lines_; }
         }
@@ -2154,6 +2279,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// A list of visually detected tokens on the page.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token> Tokens {
           get { return tokens_; }
         }
@@ -2168,6 +2294,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// signature etc. on the page.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.VisualElement> VisualElements {
           get { return visualElements_; }
         }
@@ -2181,6 +2308,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// A list of visually detected tables on the page.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Table> Tables {
           get { return tables_; }
         }
@@ -2194,16 +2322,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// A list of visually detected form fields on the page.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.FormField> FormFields {
           get { return formFields_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Page);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Page other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2226,6 +2357,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (PageNumber != 0) hash ^= PageNumber.GetHashCode();
@@ -2246,11 +2378,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2283,6 +2417,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (PageNumber != 0) {
             output.WriteRawTag(8);
@@ -2311,6 +2446,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (PageNumber != 0) {
@@ -2337,6 +2473,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Page other) {
           if (other == null) {
             return;
@@ -2368,6 +2505,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2435,6 +2573,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2500,6 +2639,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #region Nested types
         /// <summary>Container for nested types declared in the Page message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Dimension for the page.
@@ -2512,19 +2652,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Dimension> _parser = new pb::MessageParser<Dimension>(() => new Dimension());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Dimension> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Dimension() {
               OnConstruction();
             }
@@ -2532,6 +2676,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Dimension(Dimension other) : this() {
               width_ = other.width_;
               height_ = other.height_;
@@ -2540,6 +2685,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Dimension Clone() {
               return new Dimension(this);
             }
@@ -2551,6 +2697,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Page width.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public float Width {
               get { return width_; }
               set {
@@ -2565,6 +2712,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Page height.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public float Height {
               get { return height_; }
               set {
@@ -2579,6 +2727,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Dimension unit.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Unit {
               get { return unit_; }
               set {
@@ -2587,11 +2736,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Dimension);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Dimension other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -2606,6 +2757,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Width != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Width);
@@ -2618,11 +2770,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -2647,6 +2801,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Width != 0F) {
                 output.WriteRawTag(13);
@@ -2667,6 +2822,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Width != 0F) {
@@ -2685,6 +2841,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Dimension other) {
               if (other == null) {
                 return;
@@ -2702,6 +2859,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -2731,6 +2889,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -2768,19 +2927,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Layout> _parser = new pb::MessageParser<Layout>(() => new Layout());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Layout> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[1]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Layout() {
               OnConstruction();
             }
@@ -2788,6 +2951,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Layout(Layout other) : this() {
               textAnchor_ = other.textAnchor_ != null ? other.textAnchor_.Clone() : null;
               confidence_ = other.confidence_;
@@ -2798,6 +2962,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Layout Clone() {
               return new Layout(this);
             }
@@ -2809,6 +2974,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta2.Document.text].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.TextAnchor TextAnchor {
               get { return textAnchor_; }
               set {
@@ -2825,6 +2991,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// a visual element, etc. depending on context. Range [0, 1].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public float Confidence {
               get { return confidence_; }
               set {
@@ -2839,6 +3006,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// The bounding polygon for the [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.BoundingPoly BoundingPoly {
               get { return boundingPoly_; }
               set {
@@ -2853,6 +3021,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Detected orientation for the [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout.Types.Orientation Orientation {
               get { return orientation_; }
               set {
@@ -2867,6 +3036,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Optional. This is the identifier used by referencing [PageAnchor][google.cloud.documentai.v1beta2.Document.PageAnchor]s.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Id {
               get { return id_; }
               set {
@@ -2875,11 +3045,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Layout);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Layout other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -2896,6 +3068,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (textAnchor_ != null) hash ^= TextAnchor.GetHashCode();
@@ -2910,11 +3083,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -2947,6 +3122,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (textAnchor_ != null) {
                 output.WriteRawTag(10);
@@ -2975,6 +3151,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (textAnchor_ != null) {
@@ -2999,6 +3176,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Layout other) {
               if (other == null) {
                 return;
@@ -3028,6 +3206,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -3071,6 +3250,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -3112,6 +3292,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #region Nested types
             /// <summary>Container for nested types declared in the Layout message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// Detected human reading orientation.
@@ -3159,19 +3340,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Block> _parser = new pb::MessageParser<Block>(() => new Block());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Block> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[2]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Block() {
               OnConstruction();
             }
@@ -3179,6 +3364,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Block(Block other) : this() {
               layout_ = other.layout_ != null ? other.layout_.Clone() : null;
               detectedLanguages_ = other.detectedLanguages_.Clone();
@@ -3186,6 +3372,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Block Clone() {
               return new Block(this);
             }
@@ -3197,6 +3384,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [Block][google.cloud.documentai.v1beta2.Document.Page.Block].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
               get { return layout_; }
               set {
@@ -3213,16 +3401,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
               get { return detectedLanguages_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Block);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Block other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3236,6 +3427,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -3247,11 +3439,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -3269,6 +3463,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (layout_ != null) {
                 output.WriteRawTag(10);
@@ -3282,6 +3477,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (layout_ != null) {
@@ -3295,6 +3491,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Block other) {
               if (other == null) {
                 return;
@@ -3310,6 +3507,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -3338,6 +3536,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -3374,19 +3573,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Paragraph> _parser = new pb::MessageParser<Paragraph>(() => new Paragraph());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Paragraph> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[3]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Paragraph() {
               OnConstruction();
             }
@@ -3394,6 +3597,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Paragraph(Paragraph other) : this() {
               layout_ = other.layout_ != null ? other.layout_.Clone() : null;
               detectedLanguages_ = other.detectedLanguages_.Clone();
@@ -3401,6 +3605,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Paragraph Clone() {
               return new Paragraph(this);
             }
@@ -3412,6 +3617,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1beta2.Document.Page.Paragraph].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
               get { return layout_; }
               set {
@@ -3428,16 +3634,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
               get { return detectedLanguages_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Paragraph);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Paragraph other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3451,6 +3660,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -3462,11 +3672,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -3484,6 +3696,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (layout_ != null) {
                 output.WriteRawTag(10);
@@ -3497,6 +3710,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (layout_ != null) {
@@ -3510,6 +3724,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Paragraph other) {
               if (other == null) {
                 return;
@@ -3525,6 +3740,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -3553,6 +3769,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -3590,19 +3807,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Line> _parser = new pb::MessageParser<Line>(() => new Line());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Line> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[4]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Line() {
               OnConstruction();
             }
@@ -3610,6 +3831,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Line(Line other) : this() {
               layout_ = other.layout_ != null ? other.layout_.Clone() : null;
               detectedLanguages_ = other.detectedLanguages_.Clone();
@@ -3617,6 +3839,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Line Clone() {
               return new Line(this);
             }
@@ -3628,6 +3851,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [Line][google.cloud.documentai.v1beta2.Document.Page.Line].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
               get { return layout_; }
               set {
@@ -3644,16 +3868,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
               get { return detectedLanguages_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Line);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Line other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3667,6 +3894,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -3678,11 +3906,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -3700,6 +3930,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (layout_ != null) {
                 output.WriteRawTag(10);
@@ -3713,6 +3944,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (layout_ != null) {
@@ -3726,6 +3958,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Line other) {
               if (other == null) {
                 return;
@@ -3741,6 +3974,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -3769,6 +4003,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -3805,19 +4040,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Token> _parser = new pb::MessageParser<Token>(() => new Token());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Token> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[5]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Token() {
               OnConstruction();
             }
@@ -3825,6 +4064,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Token(Token other) : this() {
               layout_ = other.layout_ != null ? other.layout_.Clone() : null;
               detectedBreak_ = other.detectedBreak_ != null ? other.detectedBreak_.Clone() : null;
@@ -3833,6 +4073,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Token Clone() {
               return new Token(this);
             }
@@ -3844,6 +4085,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [Token][google.cloud.documentai.v1beta2.Document.Page.Token].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
               get { return layout_; }
               set {
@@ -3858,6 +4100,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Detected break at the end of a [Token][google.cloud.documentai.v1beta2.Document.Page.Token].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token.Types.DetectedBreak DetectedBreak {
               get { return detectedBreak_; }
               set {
@@ -3874,16 +4117,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
               get { return detectedLanguages_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Token);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Token other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3898,6 +4144,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -3910,11 +4157,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -3936,6 +4185,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (layout_ != null) {
                 output.WriteRawTag(10);
@@ -3953,6 +4203,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (layout_ != null) {
@@ -3969,6 +4220,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Token other) {
               if (other == null) {
                 return;
@@ -3990,6 +4242,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4025,6 +4278,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -4058,6 +4312,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #region Nested types
             /// <summary>Container for nested types declared in the Token message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// Detected break at the end of a [Token][google.cloud.documentai.v1beta2.Document.Page.Token].
@@ -4070,19 +4325,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 private static readonly pb::MessageParser<DetectedBreak> _parser = new pb::MessageParser<DetectedBreak>(() => new DetectedBreak());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<DetectedBreak> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token.Descriptor.NestedTypes[0]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public DetectedBreak() {
                   OnConstruction();
                 }
@@ -4090,12 +4349,14 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public DetectedBreak(DetectedBreak other) : this() {
                   type_ = other.type_;
                   _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public DetectedBreak Clone() {
                   return new DetectedBreak(this);
                 }
@@ -4107,6 +4368,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 /// Detected break type.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token.Types.DetectedBreak.Types.Type Type {
                   get { return type_; }
                   set {
@@ -4115,11 +4377,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as DetectedBreak);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(DetectedBreak other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -4132,6 +4396,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   if (Type != global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token.Types.DetectedBreak.Types.Type.Unspecified) hash ^= Type.GetHashCode();
@@ -4142,11 +4407,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -4163,6 +4430,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   if (Type != global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token.Types.DetectedBreak.Types.Type.Unspecified) {
                     output.WriteRawTag(8);
@@ -4175,6 +4443,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   if (Type != global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Token.Types.DetectedBreak.Types.Type.Unspecified) {
@@ -4187,6 +4456,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(DetectedBreak other) {
                   if (other == null) {
                     return;
@@ -4198,6 +4468,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -4219,6 +4490,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -4238,6 +4510,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 #region Nested types
                 /// <summary>Container for nested types declared in the DetectedBreak message type.</summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static partial class Types {
                   /// <summary>
                   /// Enum to denote the type of break found.
@@ -4283,19 +4556,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<VisualElement> _parser = new pb::MessageParser<VisualElement>(() => new VisualElement());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<VisualElement> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[6]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public VisualElement() {
               OnConstruction();
             }
@@ -4303,6 +4580,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public VisualElement(VisualElement other) : this() {
               layout_ = other.layout_ != null ? other.layout_.Clone() : null;
               type_ = other.type_;
@@ -4311,6 +4589,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public VisualElement Clone() {
               return new VisualElement(this);
             }
@@ -4322,6 +4601,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1beta2.Document.Page.VisualElement].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
               get { return layout_; }
               set {
@@ -4336,6 +4616,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Type of the [VisualElement][google.cloud.documentai.v1beta2.Document.Page.VisualElement].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Type {
               get { return type_; }
               set {
@@ -4352,16 +4633,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
               get { return detectedLanguages_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as VisualElement);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(VisualElement other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -4376,6 +4660,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -4388,11 +4673,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -4414,6 +4701,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (layout_ != null) {
                 output.WriteRawTag(10);
@@ -4431,6 +4719,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (layout_ != null) {
@@ -4447,6 +4736,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(VisualElement other) {
               if (other == null) {
                 return;
@@ -4465,6 +4755,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4497,6 +4788,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -4537,19 +4829,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<Table> _parser = new pb::MessageParser<Table>(() => new Table());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Table> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[7]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Table() {
               OnConstruction();
             }
@@ -4557,6 +4853,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Table(Table other) : this() {
               layout_ = other.layout_ != null ? other.layout_.Clone() : null;
               headerRows_ = other.headerRows_.Clone();
@@ -4566,6 +4863,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Table Clone() {
               return new Table(this);
             }
@@ -4577,6 +4875,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [Table][google.cloud.documentai.v1beta2.Document.Page.Table].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
               get { return layout_; }
               set {
@@ -4593,6 +4892,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Header rows of the table.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Table.Types.TableRow> HeaderRows {
               get { return headerRows_; }
             }
@@ -4606,6 +4906,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Body rows of the table.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Table.Types.TableRow> BodyRows {
               get { return bodyRows_; }
             }
@@ -4619,16 +4920,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
               get { return detectedLanguages_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Table);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Table other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -4644,6 +4948,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -4657,11 +4962,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -4681,6 +4988,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (layout_ != null) {
                 output.WriteRawTag(10);
@@ -4696,6 +5004,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (layout_ != null) {
@@ -4711,6 +5020,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Table other) {
               if (other == null) {
                 return;
@@ -4728,6 +5038,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4764,6 +5075,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -4798,6 +5110,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #region Nested types
             /// <summary>Container for nested types declared in the Table message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// A row of table cells.
@@ -4810,19 +5123,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 private static readonly pb::MessageParser<TableRow> _parser = new pb::MessageParser<TableRow>(() => new TableRow());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<TableRow> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Table.Descriptor.NestedTypes[0]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public TableRow() {
                   OnConstruction();
                 }
@@ -4830,12 +5147,14 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public TableRow(TableRow other) : this() {
                   cells_ = other.cells_.Clone();
                   _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public TableRow Clone() {
                   return new TableRow(this);
                 }
@@ -4849,16 +5168,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 /// Cells that make up this row.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Table.Types.TableCell> Cells {
                   get { return cells_; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as TableRow);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(TableRow other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -4871,6 +5193,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   hash ^= cells_.GetHashCode();
@@ -4881,11 +5204,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -4899,6 +5224,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   cells_.WriteTo(ref output, _repeated_cells_codec);
                   if (_unknownFields != null) {
@@ -4908,6 +5234,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   size += cells_.CalculateSize(_repeated_cells_codec);
@@ -4918,6 +5245,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(TableRow other) {
                   if (other == null) {
                     return;
@@ -4927,6 +5255,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -4948,6 +5277,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -4977,19 +5307,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 private static readonly pb::MessageParser<TableCell> _parser = new pb::MessageParser<TableCell>(() => new TableCell());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<TableCell> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Table.Descriptor.NestedTypes[1]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public TableCell() {
                   OnConstruction();
                 }
@@ -4997,6 +5331,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public TableCell(TableCell other) : this() {
                   layout_ = other.layout_ != null ? other.layout_.Clone() : null;
                   rowSpan_ = other.rowSpan_;
@@ -5006,6 +5341,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public TableCell Clone() {
                   return new TableCell(this);
                 }
@@ -5017,6 +5353,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1beta2.Document.Page.Table.TableCell].
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout Layout {
                   get { return layout_; }
                   set {
@@ -5031,6 +5368,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 /// How many rows this cell spans.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int RowSpan {
                   get { return rowSpan_; }
                   set {
@@ -5045,6 +5383,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 /// How many columns this cell spans.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int ColSpan {
                   get { return colSpan_; }
                   set {
@@ -5061,16 +5400,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 /// A list of detected languages together with confidence.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> DetectedLanguages {
                   get { return detectedLanguages_; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as TableCell);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(TableCell other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -5086,6 +5428,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   if (layout_ != null) hash ^= Layout.GetHashCode();
@@ -5099,11 +5442,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -5129,6 +5474,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   if (layout_ != null) {
                     output.WriteRawTag(10);
@@ -5150,6 +5496,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   if (layout_ != null) {
@@ -5169,6 +5516,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(TableCell other) {
                   if (other == null) {
                     return;
@@ -5190,6 +5538,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -5226,6 +5575,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -5275,19 +5625,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<FormField> _parser = new pb::MessageParser<FormField>(() => new FormField());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<FormField> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[8]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FormField() {
               OnConstruction();
             }
@@ -5295,6 +5649,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FormField(FormField other) : this() {
               fieldName_ = other.fieldName_ != null ? other.fieldName_.Clone() : null;
               fieldValue_ = other.fieldValue_ != null ? other.fieldValue_.Clone() : null;
@@ -5307,6 +5662,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public FormField Clone() {
               return new FormField(this);
             }
@@ -5319,6 +5675,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// `Grand total`, `Phone number`, etc.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout FieldName {
               get { return fieldName_; }
               set {
@@ -5333,6 +5690,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1beta2.Document.Page.FormField] value.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.Layout FieldValue {
               get { return fieldValue_; }
               set {
@@ -5349,6 +5707,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages for name together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> NameDetectedLanguages {
               get { return nameDetectedLanguages_; }
             }
@@ -5362,6 +5721,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// A list of detected languages for value together with confidence.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Types.DetectedLanguage> ValueDetectedLanguages {
               get { return valueDetectedLanguages_; }
             }
@@ -5377,6 +5737,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// - "filled_checkbox"
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string ValueType {
               get { return valueType_; }
               set {
@@ -5391,6 +5752,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// An internal field, created for Labeling UI to export key text.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string CorrectedKeyText {
               get { return correctedKeyText_; }
               set {
@@ -5405,6 +5767,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// An internal field, created for Labeling UI to export value text.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string CorrectedValueText {
               get { return correctedValueText_; }
               set {
@@ -5413,11 +5776,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as FormField);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(FormField other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -5436,6 +5801,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (fieldName_ != null) hash ^= FieldName.GetHashCode();
@@ -5452,11 +5818,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -5491,6 +5859,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (fieldName_ != null) {
                 output.WriteRawTag(10);
@@ -5521,6 +5890,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (fieldName_ != null) {
@@ -5547,6 +5917,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(FormField other) {
               if (other == null) {
                 return;
@@ -5578,6 +5949,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -5629,6 +6001,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -5688,19 +6061,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<DetectedLanguage> _parser = new pb::MessageParser<DetectedLanguage>(() => new DetectedLanguage());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<DetectedLanguage> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.Page.Descriptor.NestedTypes[9]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public DetectedLanguage() {
               OnConstruction();
             }
@@ -5708,6 +6085,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public DetectedLanguage(DetectedLanguage other) : this() {
               languageCode_ = other.languageCode_;
               confidence_ = other.confidence_;
@@ -5715,6 +6093,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public DetectedLanguage Clone() {
               return new DetectedLanguage(this);
             }
@@ -5728,6 +6107,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string LanguageCode {
               get { return languageCode_; }
               set {
@@ -5742,6 +6122,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Confidence of detected language. Range [0, 1].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public float Confidence {
               get { return confidence_; }
               set {
@@ -5750,11 +6131,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as DetectedLanguage);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(DetectedLanguage other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -5768,6 +6151,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (LanguageCode.Length != 0) hash ^= LanguageCode.GetHashCode();
@@ -5779,11 +6163,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -5804,6 +6190,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (LanguageCode.Length != 0) {
                 output.WriteRawTag(10);
@@ -5820,6 +6207,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (LanguageCode.Length != 0) {
@@ -5835,6 +6223,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(DetectedLanguage other) {
               if (other == null) {
                 return;
@@ -5849,6 +6238,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -5874,6 +6264,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -5913,19 +6304,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<Entity> _parser = new pb::MessageParser<Entity>(() => new Entity());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Entity> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Entity() {
           OnConstruction();
         }
@@ -5933,6 +6328,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Entity(Entity other) : this() {
           textAnchor_ = other.textAnchor_ != null ? other.textAnchor_.Clone() : null;
           type_ = other.type_;
@@ -5946,6 +6342,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Entity Clone() {
           return new Entity(this);
         }
@@ -5958,6 +6355,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta2.Document.text].
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.TextAnchor TextAnchor {
           get { return textAnchor_; }
           set {
@@ -5972,6 +6370,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Entity type from a schema e.g. `Address`.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Type {
           get { return type_; }
           set {
@@ -5986,6 +6385,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Text value in the document e.g. `1600 Amphitheatre Pkwy`.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string MentionText {
           get { return mentionText_; }
           set {
@@ -6000,6 +6400,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Deprecated.  Use `id` field instead.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string MentionId {
           get { return mentionId_; }
           set {
@@ -6014,6 +6415,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Optional. Confidence of detected Schema entity. Range [0, 1].
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public float Confidence {
           get { return confidence_; }
           set {
@@ -6029,6 +6431,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// page where it was found.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.PageAnchor PageAnchor {
           get { return pageAnchor_; }
           set {
@@ -6044,6 +6447,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// for this document.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Id {
           get { return id_; }
           set {
@@ -6059,6 +6463,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// the frontend only. Do not use before you talk to ybo@ and lukasr@.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.DocumentAI.V1Beta2.BoundingPoly BoundingPolyForDemoFrontend {
           get { return boundingPolyForDemoFrontend_; }
           set {
@@ -6067,11 +6472,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Entity);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Entity other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -6091,6 +6498,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (textAnchor_ != null) hash ^= TextAnchor.GetHashCode();
@@ -6108,11 +6516,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -6157,6 +6567,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (textAnchor_ != null) {
             output.WriteRawTag(10);
@@ -6197,6 +6608,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (textAnchor_ != null) {
@@ -6230,6 +6642,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Entity other) {
           if (other == null) {
             return;
@@ -6271,6 +6684,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6329,6 +6743,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -6395,19 +6810,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<EntityRelation> _parser = new pb::MessageParser<EntityRelation>(() => new EntityRelation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<EntityRelation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EntityRelation() {
           OnConstruction();
         }
@@ -6415,6 +6834,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EntityRelation(EntityRelation other) : this() {
           subjectId_ = other.subjectId_;
           objectId_ = other.objectId_;
@@ -6423,6 +6843,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EntityRelation Clone() {
           return new EntityRelation(this);
         }
@@ -6434,6 +6855,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Subject entity id.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string SubjectId {
           get { return subjectId_; }
           set {
@@ -6448,6 +6870,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Object entity id.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ObjectId {
           get { return objectId_; }
           set {
@@ -6462,6 +6885,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// Relationship description.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Relation {
           get { return relation_; }
           set {
@@ -6470,11 +6894,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as EntityRelation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(EntityRelation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -6489,6 +6915,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (SubjectId.Length != 0) hash ^= SubjectId.GetHashCode();
@@ -6501,11 +6928,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -6530,6 +6959,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (SubjectId.Length != 0) {
             output.WriteRawTag(10);
@@ -6550,6 +6980,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (SubjectId.Length != 0) {
@@ -6568,6 +6999,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(EntityRelation other) {
           if (other == null) {
             return;
@@ -6585,6 +7017,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6614,6 +7047,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -6651,19 +7085,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<TextAnchor> _parser = new pb::MessageParser<TextAnchor>(() => new TextAnchor());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<TextAnchor> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TextAnchor() {
           OnConstruction();
         }
@@ -6671,12 +7109,14 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TextAnchor(TextAnchor other) : this() {
           textSegments_ = other.textSegments_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TextAnchor Clone() {
           return new TextAnchor(this);
         }
@@ -6690,16 +7130,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// The text segments from the [Document.text][google.cloud.documentai.v1beta2.Document.text].
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.TextAnchor.Types.TextSegment> TextSegments {
           get { return textSegments_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as TextAnchor);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(TextAnchor other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -6712,6 +7155,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= textSegments_.GetHashCode();
@@ -6722,11 +7166,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -6740,6 +7186,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           textSegments_.WriteTo(ref output, _repeated_textSegments_codec);
           if (_unknownFields != null) {
@@ -6749,6 +7196,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += textSegments_.CalculateSize(_repeated_textSegments_codec);
@@ -6759,6 +7207,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(TextAnchor other) {
           if (other == null) {
             return;
@@ -6768,6 +7217,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6789,6 +7239,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -6808,6 +7259,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #region Nested types
         /// <summary>Container for nested types declared in the TextAnchor message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// A text segment in the [Document.text][google.cloud.documentai.v1beta2.Document.text]. The indices may be out of bounds
@@ -6822,19 +7274,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<TextSegment> _parser = new pb::MessageParser<TextSegment>(() => new TextSegment());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<TextSegment> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.TextAnchor.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TextSegment() {
               OnConstruction();
             }
@@ -6842,6 +7298,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TextSegment(TextSegment other) : this() {
               startIndex_ = other.startIndex_;
               endIndex_ = other.endIndex_;
@@ -6849,6 +7306,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TextSegment Clone() {
               return new TextSegment(this);
             }
@@ -6860,6 +7318,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [TextSegment][google.cloud.documentai.v1beta2.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1beta2.Document.text].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long StartIndex {
               get { return startIndex_; }
               set {
@@ -6875,6 +7334,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// [Document.text][google.cloud.documentai.v1beta2.Document.text].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long EndIndex {
               get { return endIndex_; }
               set {
@@ -6883,11 +7343,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as TextSegment);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(TextSegment other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -6901,6 +7363,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (StartIndex != 0L) hash ^= StartIndex.GetHashCode();
@@ -6912,11 +7375,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -6937,6 +7402,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (StartIndex != 0L) {
                 output.WriteRawTag(8);
@@ -6953,6 +7419,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (StartIndex != 0L) {
@@ -6968,6 +7435,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(TextSegment other) {
               if (other == null) {
                 return;
@@ -6982,6 +7450,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -7007,6 +7476,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -7045,19 +7515,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         private static readonly pb::MessageParser<PageAnchor> _parser = new pb::MessageParser<PageAnchor>(() => new PageAnchor());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<PageAnchor> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public PageAnchor() {
           OnConstruction();
         }
@@ -7065,12 +7539,14 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public PageAnchor(PageAnchor other) : this() {
           pageRefs_ = other.pageRefs_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public PageAnchor Clone() {
           return new PageAnchor(this);
         }
@@ -7084,16 +7560,19 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         /// One or more references to visual page elements
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.PageAnchor.Types.PageRef> PageRefs {
           get { return pageRefs_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as PageAnchor);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(PageAnchor other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -7106,6 +7585,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= pageRefs_.GetHashCode();
@@ -7116,11 +7596,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -7134,6 +7616,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           pageRefs_.WriteTo(ref output, _repeated_pageRefs_codec);
           if (_unknownFields != null) {
@@ -7143,6 +7626,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += pageRefs_.CalculateSize(_repeated_pageRefs_codec);
@@ -7153,6 +7637,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(PageAnchor other) {
           if (other == null) {
             return;
@@ -7162,6 +7647,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -7183,6 +7669,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -7202,6 +7689,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
         #region Nested types
         /// <summary>Container for nested types declared in the PageAnchor message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Represents a weak reference to a page element within a document.
@@ -7214,19 +7702,23 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             private static readonly pb::MessageParser<PageRef> _parser = new pb::MessageParser<PageRef>(() => new PageRef());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<PageRef> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.PageAnchor.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public PageRef() {
               OnConstruction();
             }
@@ -7234,6 +7726,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public PageRef(PageRef other) : this() {
               page_ = other.page_;
               layoutType_ = other.layoutType_;
@@ -7242,6 +7735,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public PageRef Clone() {
               return new PageRef(this);
             }
@@ -7253,6 +7747,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// Required. Index into the [Document.pages][google.cloud.documentai.v1beta2.Document.pages] element
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long Page {
               get { return page_; }
               set {
@@ -7268,6 +7763,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// specified the whole page is assumed to be referenced.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.DocumentAI.V1Beta2.Document.Types.PageAnchor.Types.PageRef.Types.LayoutType LayoutType {
               get { return layoutType_; }
               set {
@@ -7284,6 +7780,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             /// specified.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string LayoutId {
               get { return layoutId_; }
               set {
@@ -7292,11 +7789,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as PageRef);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(PageRef other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -7311,6 +7810,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Page != 0L) hash ^= Page.GetHashCode();
@@ -7323,11 +7823,13 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -7352,6 +7854,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Page != 0L) {
                 output.WriteRawTag(8);
@@ -7372,6 +7875,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Page != 0L) {
@@ -7390,6 +7894,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(PageRef other) {
               if (other == null) {
                 return;
@@ -7407,6 +7912,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -7436,6 +7942,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -7463,6 +7970,7 @@ namespace Google.Cloud.DocumentAI.V1Beta2 {
             #region Nested types
             /// <summary>Container for nested types declared in the PageRef message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// The type of layout that is being referenced.

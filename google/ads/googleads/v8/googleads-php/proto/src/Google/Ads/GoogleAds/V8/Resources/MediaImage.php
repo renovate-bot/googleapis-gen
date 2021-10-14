@@ -18,19 +18,19 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Raw image data.
      *
-     * Generated from protobuf field <code>bytes data = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bytes data = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $data = null;
     /**
      * Output only. The url to the full size version of the image.
      *
-     * Generated from protobuf field <code>string full_size_image_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string full_size_image_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $full_size_image_url = null;
     /**
      * Output only. The url to the preview size version of the image.
      *
-     * Generated from protobuf field <code>string preview_size_image_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string preview_size_image_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $preview_size_image_url = null;
 
@@ -56,7 +56,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Raw image data.
      *
-     * Generated from protobuf field <code>bytes data = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bytes data = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getData()
@@ -77,7 +77,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Raw image data.
      *
-     * Generated from protobuf field <code>bytes data = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bytes data = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The url to the full size version of the image.
      *
-     * Generated from protobuf field <code>string full_size_image_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string full_size_image_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getFullSizeImageUrl()
@@ -113,7 +113,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The url to the full size version of the image.
      *
-     * Generated from protobuf field <code>string full_size_image_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string full_size_image_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The url to the preview size version of the image.
      *
-     * Generated from protobuf field <code>string preview_size_image_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string preview_size_image_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPreviewSizeImageUrl()
@@ -149,7 +149,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The url to the preview size version of the image.
      *
-     * Generated from protobuf field <code>string preview_size_image_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string preview_size_image_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

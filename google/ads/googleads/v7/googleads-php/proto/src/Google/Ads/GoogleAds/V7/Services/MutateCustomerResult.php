@@ -82,7 +82,7 @@ class MutateCustomerResult extends \Google\Protobuf\Internal\Message
      */
     public function getCustomer()
     {
-        return isset($this->customer) ? $this->customer : null;
+        return $this->customer;
     }
 
     public function hasCustomer()

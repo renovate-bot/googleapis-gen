@@ -57,7 +57,7 @@ class UpdateRegistrationRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRegistration()
     {
-        return isset($this->registration) ? $this->registration : null;
+        return $this->registration;
     }
 
     public function hasRegistration()
@@ -95,7 +95,7 @@ class UpdateRegistrationRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -115,7 +115,7 @@ class MigrateResourceResponse extends \Google\Protobuf\Internal\Message
      */
     public function getMigratableResource()
     {
-        return isset($this->migratable_resource) ? $this->migratable_resource : null;
+        return $this->migratable_resource;
     }
 
     public function hasMigratableResource()

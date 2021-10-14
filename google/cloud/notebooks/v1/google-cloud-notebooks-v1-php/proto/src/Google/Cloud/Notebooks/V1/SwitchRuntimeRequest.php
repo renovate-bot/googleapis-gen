@@ -117,7 +117,7 @@ class SwitchRuntimeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAcceleratorConfig()
     {
-        return isset($this->accelerator_config) ? $this->accelerator_config : null;
+        return $this->accelerator_config;
     }
 
     public function hasAcceleratorConfig()

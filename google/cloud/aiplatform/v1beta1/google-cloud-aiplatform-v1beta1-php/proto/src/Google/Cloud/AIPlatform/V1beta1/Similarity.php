@@ -56,7 +56,7 @@ class Similarity extends \Google\Protobuf\Internal\Message
      */
     public function getGcsSource()
     {
-        return isset($this->gcs_source) ? $this->gcs_source : null;
+        return $this->gcs_source;
     }
 
     public function hasGcsSource()
@@ -93,7 +93,7 @@ class Similarity extends \Google\Protobuf\Internal\Message
      */
     public function getNearestNeighborSearchConfig()
     {
-        return isset($this->nearest_neighbor_search_config) ? $this->nearest_neighbor_search_config : null;
+        return $this->nearest_neighbor_search_config;
     }
 
     public function hasNearestNeighborSearchConfig()

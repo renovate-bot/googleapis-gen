@@ -24,7 +24,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * Otherwise, it will be treated as a duplicate of the previous restatement
      * and ignored.
      *
-     * Generated from protobuf field <code>double adjusted_value = 3;</code>
+     * Generated from protobuf field <code>optional double adjusted_value = 3;</code>
      */
     protected $adjusted_value = null;
     /**
@@ -33,7 +33,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * the account currency is used. This is the ISO 4217 3-character currency
      * code e.g. USD or EUR.
      *
-     * Generated from protobuf field <code>string currency_code = 4;</code>
+     * Generated from protobuf field <code>optional string currency_code = 4;</code>
      */
     protected $currency_code = null;
 
@@ -72,7 +72,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * Otherwise, it will be treated as a duplicate of the previous restatement
      * and ignored.
      *
-     * Generated from protobuf field <code>double adjusted_value = 3;</code>
+     * Generated from protobuf field <code>optional double adjusted_value = 3;</code>
      * @return float
      */
     public function getAdjustedValue()
@@ -99,7 +99,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * Otherwise, it will be treated as a duplicate of the previous restatement
      * and ignored.
      *
-     * Generated from protobuf field <code>double adjusted_value = 3;</code>
+     * Generated from protobuf field <code>optional double adjusted_value = 3;</code>
      * @param float $var
      * @return $this
      */
@@ -117,7 +117,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * the account currency is used. This is the ISO 4217 3-character currency
      * code e.g. USD or EUR.
      *
-     * Generated from protobuf field <code>string currency_code = 4;</code>
+     * Generated from protobuf field <code>optional string currency_code = 4;</code>
      * @return string
      */
     public function getCurrencyCode()
@@ -141,7 +141,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * the account currency is used. This is the ISO 4217 3-character currency
      * code e.g. USD or EUR.
      *
-     * Generated from protobuf field <code>string currency_code = 4;</code>
+     * Generated from protobuf field <code>optional string currency_code = 4;</code>
      * @param string $var
      * @return $this
      */

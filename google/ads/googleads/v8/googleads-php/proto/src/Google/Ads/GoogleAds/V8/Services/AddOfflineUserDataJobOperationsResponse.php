@@ -55,7 +55,7 @@ class AddOfflineUserDataJobOperationsResponse extends \Google\Protobuf\Internal\
      */
     public function getPartialFailureError()
     {
-        return isset($this->partial_failure_error) ? $this->partial_failure_error : null;
+        return $this->partial_failure_error;
     }
 
     public function hasPartialFailureError()

@@ -18,49 +18,49 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The name of the business.
      *
-     * Generated from protobuf field <code>string business_name = 9;</code>
+     * Generated from protobuf field <code>optional string business_name = 9;</code>
      */
     protected $business_name = null;
     /**
      * Line 1 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_1 = 10;</code>
+     * Generated from protobuf field <code>optional string address_line_1 = 10;</code>
      */
     protected $address_line_1 = null;
     /**
      * Line 2 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_2 = 11;</code>
+     * Generated from protobuf field <code>optional string address_line_2 = 11;</code>
      */
     protected $address_line_2 = null;
     /**
      * City of the business address.
      *
-     * Generated from protobuf field <code>string city = 12;</code>
+     * Generated from protobuf field <code>optional string city = 12;</code>
      */
     protected $city = null;
     /**
      * Province of the business address.
      *
-     * Generated from protobuf field <code>string province = 13;</code>
+     * Generated from protobuf field <code>optional string province = 13;</code>
      */
     protected $province = null;
     /**
      * Postal code of the business address.
      *
-     * Generated from protobuf field <code>string postal_code = 14;</code>
+     * Generated from protobuf field <code>optional string postal_code = 14;</code>
      */
     protected $postal_code = null;
     /**
      * Country code of the business address.
      *
-     * Generated from protobuf field <code>string country_code = 15;</code>
+     * Generated from protobuf field <code>optional string country_code = 15;</code>
      */
     protected $country_code = null;
     /**
      * Phone number of the business.
      *
-     * Generated from protobuf field <code>string phone_number = 16;</code>
+     * Generated from protobuf field <code>optional string phone_number = 16;</code>
      */
     protected $phone_number = null;
 
@@ -96,7 +96,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The name of the business.
      *
-     * Generated from protobuf field <code>string business_name = 9;</code>
+     * Generated from protobuf field <code>optional string business_name = 9;</code>
      * @return string
      */
     public function getBusinessName()
@@ -117,7 +117,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The name of the business.
      *
-     * Generated from protobuf field <code>string business_name = 9;</code>
+     * Generated from protobuf field <code>optional string business_name = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -132,7 +132,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 1 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_1 = 10;</code>
+     * Generated from protobuf field <code>optional string address_line_1 = 10;</code>
      * @return string
      */
     public function getAddressLine1()
@@ -153,7 +153,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 1 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_1 = 10;</code>
+     * Generated from protobuf field <code>optional string address_line_1 = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 2 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_2 = 11;</code>
+     * Generated from protobuf field <code>optional string address_line_2 = 11;</code>
      * @return string
      */
     public function getAddressLine2()
@@ -189,7 +189,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 2 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_2 = 11;</code>
+     * Generated from protobuf field <code>optional string address_line_2 = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -204,7 +204,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * City of the business address.
      *
-     * Generated from protobuf field <code>string city = 12;</code>
+     * Generated from protobuf field <code>optional string city = 12;</code>
      * @return string
      */
     public function getCity()
@@ -225,7 +225,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * City of the business address.
      *
-     * Generated from protobuf field <code>string city = 12;</code>
+     * Generated from protobuf field <code>optional string city = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -240,7 +240,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Province of the business address.
      *
-     * Generated from protobuf field <code>string province = 13;</code>
+     * Generated from protobuf field <code>optional string province = 13;</code>
      * @return string
      */
     public function getProvince()
@@ -261,7 +261,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Province of the business address.
      *
-     * Generated from protobuf field <code>string province = 13;</code>
+     * Generated from protobuf field <code>optional string province = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -276,7 +276,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Postal code of the business address.
      *
-     * Generated from protobuf field <code>string postal_code = 14;</code>
+     * Generated from protobuf field <code>optional string postal_code = 14;</code>
      * @return string
      */
     public function getPostalCode()
@@ -297,7 +297,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Postal code of the business address.
      *
-     * Generated from protobuf field <code>string postal_code = 14;</code>
+     * Generated from protobuf field <code>optional string postal_code = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -312,7 +312,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Country code of the business address.
      *
-     * Generated from protobuf field <code>string country_code = 15;</code>
+     * Generated from protobuf field <code>optional string country_code = 15;</code>
      * @return string
      */
     public function getCountryCode()
@@ -333,7 +333,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Country code of the business address.
      *
-     * Generated from protobuf field <code>string country_code = 15;</code>
+     * Generated from protobuf field <code>optional string country_code = 15;</code>
      * @param string $var
      * @return $this
      */
@@ -348,7 +348,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the business.
      *
-     * Generated from protobuf field <code>string phone_number = 16;</code>
+     * Generated from protobuf field <code>optional string phone_number = 16;</code>
      * @return string
      */
     public function getPhoneNumber()
@@ -369,7 +369,7 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the business.
      *
-     * Generated from protobuf field <code>string phone_number = 16;</code>
+     * Generated from protobuf field <code>optional string phone_number = 16;</code>
      * @param string $var
      * @return $this
      */

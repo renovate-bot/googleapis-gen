@@ -211,7 +211,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      */
     public function getResourceState()
     {
-        return isset($this->resource_state) ? $this->resource_state : null;
+        return $this->resource_state;
     }
 
     public function hasResourceState()
@@ -248,7 +248,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      */
     public function getSpec()
     {
-        return isset($this->spec) ? $this->spec : null;
+        return $this->spec;
     }
 
     public function hasSpec()
@@ -335,7 +335,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : null;
+        return $this->state;
     }
 
     public function hasState()
@@ -409,7 +409,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -445,7 +445,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -481,7 +481,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      */
     public function getDeleteTime()
     {
-        return isset($this->delete_time) ? $this->delete_time : null;
+        return $this->delete_time;
     }
 
     public function hasDeleteTime()

@@ -259,13 +259,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEncryptionAlgorithmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionAlgorithm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, encryptionAlgorithm_);
     }
-    if (!getEncryptionKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, encryptionKey_);
     }
-    if (!getEncryptionKeySha256Bytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKeySha256_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, encryptionKeySha256_);
     }
     unknownFields.writeTo(output);
@@ -277,13 +277,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEncryptionAlgorithmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionAlgorithm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, encryptionAlgorithm_);
     }
-    if (!getEncryptionKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, encryptionKey_);
     }
-    if (!getEncryptionKeySha256Bytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKeySha256_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, encryptionKeySha256_);
     }
     size += unknownFields.getSerializedSize();

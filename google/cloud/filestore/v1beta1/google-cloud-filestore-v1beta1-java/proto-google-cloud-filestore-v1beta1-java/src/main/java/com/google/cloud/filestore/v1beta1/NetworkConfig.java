@@ -532,7 +532,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
     }
     if (getModesList().size() > 0) {
@@ -542,7 +542,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < modes_.size(); i++) {
       output.writeEnumNoTag(modes_.get(i));
     }
-    if (!getReservedIpRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservedIpRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reservedIpRange_);
     }
     for (int i = 0; i < ipAddresses_.size(); i++) {
@@ -557,7 +557,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, network_);
     }
     {
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }modesMemoizedSerializedSize = dataSize;
     }
-    if (!getReservedIpRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservedIpRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reservedIpRange_);
     }
     {

@@ -28,7 +28,7 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The search term.
      *
-     * Generated from protobuf field <code>string search_term = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string search_term = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $search_term = null;
 
@@ -87,7 +87,7 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The search term.
      *
-     * Generated from protobuf field <code>string search_term = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string search_term = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getSearchTerm()
@@ -108,7 +108,7 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The search term.
      *
-     * Generated from protobuf field <code>string search_term = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string search_term = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

@@ -25,7 +25,7 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $app_id = null;
     /**
@@ -86,7 +86,7 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getAppId()
@@ -107,7 +107,7 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

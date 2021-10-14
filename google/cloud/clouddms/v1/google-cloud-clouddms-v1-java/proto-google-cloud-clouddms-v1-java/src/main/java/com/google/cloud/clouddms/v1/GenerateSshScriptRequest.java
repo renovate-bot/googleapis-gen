@@ -379,10 +379,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMigrationJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(migrationJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, migrationJob_);
     }
-    if (!getVmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vm_);
     }
     if (vmPort_ != 0) {
@@ -403,10 +403,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMigrationJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(migrationJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, migrationJob_);
     }
-    if (!getVmBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vm_);
     }
     if (vmPort_ != 0) {

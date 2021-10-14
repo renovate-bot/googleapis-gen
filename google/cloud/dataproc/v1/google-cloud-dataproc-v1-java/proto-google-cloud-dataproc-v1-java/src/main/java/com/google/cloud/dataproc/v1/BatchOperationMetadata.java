@@ -708,10 +708,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getBatchBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batch_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, batch_);
     }
-    if (!getBatchUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, batchUuid_);
     }
     if (createTime_ != null) {
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
     if (operationType_ != com.google.cloud.dataproc.v1.BatchOperationMetadata.BatchOperationType.BATCH_OPERATION_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, operationType_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -744,10 +744,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getBatchBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batch_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, batch_);
     }
-    if (!getBatchUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, batchUuid_);
     }
     if (createTime_ != null) {
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, operationType_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry

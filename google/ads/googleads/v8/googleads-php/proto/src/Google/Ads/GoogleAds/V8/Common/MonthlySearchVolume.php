@@ -18,7 +18,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
     /**
      * The year of the search volume (e.g. 2020).
      *
-     * Generated from protobuf field <code>int64 year = 4;</code>
+     * Generated from protobuf field <code>optional int64 year = 4;</code>
      */
     protected $year = null;
     /**
@@ -32,7 +32,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
      * A null value indicates the search volume is unavailable for
      * that month.
      *
-     * Generated from protobuf field <code>int64 monthly_searches = 5;</code>
+     * Generated from protobuf field <code>optional int64 monthly_searches = 5;</code>
      */
     protected $monthly_searches = null;
 
@@ -60,7 +60,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
     /**
      * The year of the search volume (e.g. 2020).
      *
-     * Generated from protobuf field <code>int64 year = 4;</code>
+     * Generated from protobuf field <code>optional int64 year = 4;</code>
      * @return int|string
      */
     public function getYear()
@@ -81,7 +81,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
     /**
      * The year of the search volume (e.g. 2020).
      *
-     * Generated from protobuf field <code>int64 year = 4;</code>
+     * Generated from protobuf field <code>optional int64 year = 4;</code>
      * @param int|string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
      * A null value indicates the search volume is unavailable for
      * that month.
      *
-     * Generated from protobuf field <code>int64 monthly_searches = 5;</code>
+     * Generated from protobuf field <code>optional int64 monthly_searches = 5;</code>
      * @return int|string
      */
     public function getMonthlySearches()
@@ -147,7 +147,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
      * A null value indicates the search volume is unavailable for
      * that month.
      *
-     * Generated from protobuf field <code>int64 monthly_searches = 5;</code>
+     * Generated from protobuf field <code>optional int64 monthly_searches = 5;</code>
      * @param int|string $var
      * @return $this
      */

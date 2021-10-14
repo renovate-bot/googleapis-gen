@@ -83,7 +83,7 @@ class InstallStatus extends \Google\Protobuf\Internal\Message
      */
     public function getInstalled()
     {
-        return isset($this->installed) ? $this->installed : null;
+        return $this->installed;
     }
 
     public function hasInstalled()

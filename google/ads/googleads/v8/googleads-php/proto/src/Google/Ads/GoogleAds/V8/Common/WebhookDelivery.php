@@ -20,19 +20,19 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * Webhook url specified by advertiser to send the lead.
      *
-     * Generated from protobuf field <code>string advertiser_webhook_url = 4;</code>
+     * Generated from protobuf field <code>optional string advertiser_webhook_url = 4;</code>
      */
     protected $advertiser_webhook_url = null;
     /**
      * Anti-spoofing secret set by the advertiser as part of the webhook payload.
      *
-     * Generated from protobuf field <code>string google_secret = 5;</code>
+     * Generated from protobuf field <code>optional string google_secret = 5;</code>
      */
     protected $google_secret = null;
     /**
      * The schema version that this delivery instance will use.
      *
-     * Generated from protobuf field <code>int64 payload_schema_version = 6;</code>
+     * Generated from protobuf field <code>optional int64 payload_schema_version = 6;</code>
      */
     protected $payload_schema_version = null;
 
@@ -58,7 +58,7 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * Webhook url specified by advertiser to send the lead.
      *
-     * Generated from protobuf field <code>string advertiser_webhook_url = 4;</code>
+     * Generated from protobuf field <code>optional string advertiser_webhook_url = 4;</code>
      * @return string
      */
     public function getAdvertiserWebhookUrl()
@@ -79,7 +79,7 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * Webhook url specified by advertiser to send the lead.
      *
-     * Generated from protobuf field <code>string advertiser_webhook_url = 4;</code>
+     * Generated from protobuf field <code>optional string advertiser_webhook_url = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -94,7 +94,7 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * Anti-spoofing secret set by the advertiser as part of the webhook payload.
      *
-     * Generated from protobuf field <code>string google_secret = 5;</code>
+     * Generated from protobuf field <code>optional string google_secret = 5;</code>
      * @return string
      */
     public function getGoogleSecret()
@@ -115,7 +115,7 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * Anti-spoofing secret set by the advertiser as part of the webhook payload.
      *
-     * Generated from protobuf field <code>string google_secret = 5;</code>
+     * Generated from protobuf field <code>optional string google_secret = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * The schema version that this delivery instance will use.
      *
-     * Generated from protobuf field <code>int64 payload_schema_version = 6;</code>
+     * Generated from protobuf field <code>optional int64 payload_schema_version = 6;</code>
      * @return int|string
      */
     public function getPayloadSchemaVersion()
@@ -151,7 +151,7 @@ class WebhookDelivery extends \Google\Protobuf\Internal\Message
     /**
      * The schema version that this delivery instance will use.
      *
-     * Generated from protobuf field <code>int64 payload_schema_version = 6;</code>
+     * Generated from protobuf field <code>optional int64 payload_schema_version = 6;</code>
      * @param int|string $var
      * @return $this
      */

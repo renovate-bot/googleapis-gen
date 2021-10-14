@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getProductBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(product_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, product_);
       }
       unknownFields.writeTo(output);
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getProductBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(product_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, product_);
       }
       size += unknownFields.getSerializedSize();
@@ -1149,7 +1149,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getEntitlementBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entitlement_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entitlement_);
       }
       if (changeType_ != com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType.CHANGE_TYPE_UNSPECIFIED.getNumber()) {
@@ -1164,7 +1164,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getEntitlementBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entitlement_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entitlement_);
       }
       if (changeType_ != com.google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType.CHANGE_TYPE_UNSPECIFIED.getNumber()) {
@@ -1992,7 +1992,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCustomerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, customer_);
     }
     if (purchaseOptionCase_ == 2) {
@@ -2004,10 +2004,10 @@ private static final long serialVersionUID = 0L;
     if (pageSize_ != 0) {
       output.writeInt32(4, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, pageToken_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
     }
     unknownFields.writeTo(output);
@@ -2019,7 +2019,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCustomerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, customer_);
     }
     if (purchaseOptionCase_ == 2) {
@@ -2034,10 +2034,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, pageToken_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
     }
     size += unknownFields.getSerializedSize();

@@ -219,7 +219,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < stackTraces_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stackTraces_.getRaw(i));
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
     }
     unknownFields.writeTo(output);
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getStackTracesList().size();
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
     }
     size += unknownFields.getSerializedSize();

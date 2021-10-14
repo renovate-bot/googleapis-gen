@@ -26,26 +26,26 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the language constant.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
      *
-     * Generated from protobuf field <code>string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $code = null;
     /**
      * Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
      * etc.
      *
-     * Generated from protobuf field <code>string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
      * Output only. Whether the language is targetable.
      *
-     * Generated from protobuf field <code>bool targetable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool targetable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $targetable = null;
 
@@ -108,7 +108,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the language constant.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -129,7 +129,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the language constant.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
      *
-     * Generated from protobuf field <code>string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCode()
@@ -165,7 +165,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
      *
-     * Generated from protobuf field <code>string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -181,7 +181,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
      * etc.
      *
-     * Generated from protobuf field <code>string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -203,7 +203,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Output only. The full name of the language in English, e.g., "English (US)", "Spanish",
      * etc.
      *
-     * Generated from protobuf field <code>string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -218,7 +218,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the language is targetable.
      *
-     * Generated from protobuf field <code>bool targetable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool targetable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getTargetable()
@@ -239,7 +239,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether the language is targetable.
      *
-     * Generated from protobuf field <code>bool targetable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool targetable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

@@ -22,7 +22,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Approximate number of monthly searches on this query averaged
      * for the past 12 months.
      *
-     * Generated from protobuf field <code>int64 avg_monthly_searches = 7;</code>
+     * Generated from protobuf field <code>optional int64 avg_monthly_searches = 7;</code>
      */
     protected $avg_monthly_searches = null;
     /**
@@ -44,19 +44,19 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * filled divided by the total number of ad slots available. If not enough
      * data is available, null is returned.
      *
-     * Generated from protobuf field <code>int64 competition_index = 8;</code>
+     * Generated from protobuf field <code>optional int64 competition_index = 8;</code>
      */
     protected $competition_index = null;
     /**
      * Top of page bid low range (20th percentile) in micros for the keyword.
      *
-     * Generated from protobuf field <code>int64 low_top_of_page_bid_micros = 9;</code>
+     * Generated from protobuf field <code>optional int64 low_top_of_page_bid_micros = 9;</code>
      */
     protected $low_top_of_page_bid_micros = null;
     /**
      * Top of page bid high range (80th percentile) in micros for the keyword.
      *
-     * Generated from protobuf field <code>int64 high_top_of_page_bid_micros = 10;</code>
+     * Generated from protobuf field <code>optional int64 high_top_of_page_bid_micros = 10;</code>
      */
     protected $high_top_of_page_bid_micros = null;
 
@@ -94,7 +94,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Approximate number of monthly searches on this query averaged
      * for the past 12 months.
      *
-     * Generated from protobuf field <code>int64 avg_monthly_searches = 7;</code>
+     * Generated from protobuf field <code>optional int64 avg_monthly_searches = 7;</code>
      * @return int|string
      */
     public function getAvgMonthlySearches()
@@ -116,7 +116,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * Approximate number of monthly searches on this query averaged
      * for the past 12 months.
      *
-     * Generated from protobuf field <code>int64 avg_monthly_searches = 7;</code>
+     * Generated from protobuf field <code>optional int64 avg_monthly_searches = 7;</code>
      * @param int|string $var
      * @return $this
      */
@@ -187,7 +187,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * filled divided by the total number of ad slots available. If not enough
      * data is available, null is returned.
      *
-     * Generated from protobuf field <code>int64 competition_index = 8;</code>
+     * Generated from protobuf field <code>optional int64 competition_index = 8;</code>
      * @return int|string
      */
     public function getCompetitionIndex()
@@ -212,7 +212,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
      * filled divided by the total number of ad slots available. If not enough
      * data is available, null is returned.
      *
-     * Generated from protobuf field <code>int64 competition_index = 8;</code>
+     * Generated from protobuf field <code>optional int64 competition_index = 8;</code>
      * @param int|string $var
      * @return $this
      */
@@ -227,7 +227,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Top of page bid low range (20th percentile) in micros for the keyword.
      *
-     * Generated from protobuf field <code>int64 low_top_of_page_bid_micros = 9;</code>
+     * Generated from protobuf field <code>optional int64 low_top_of_page_bid_micros = 9;</code>
      * @return int|string
      */
     public function getLowTopOfPageBidMicros()
@@ -248,7 +248,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Top of page bid low range (20th percentile) in micros for the keyword.
      *
-     * Generated from protobuf field <code>int64 low_top_of_page_bid_micros = 9;</code>
+     * Generated from protobuf field <code>optional int64 low_top_of_page_bid_micros = 9;</code>
      * @param int|string $var
      * @return $this
      */
@@ -263,7 +263,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Top of page bid high range (80th percentile) in micros for the keyword.
      *
-     * Generated from protobuf field <code>int64 high_top_of_page_bid_micros = 10;</code>
+     * Generated from protobuf field <code>optional int64 high_top_of_page_bid_micros = 10;</code>
      * @return int|string
      */
     public function getHighTopOfPageBidMicros()
@@ -284,7 +284,7 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Top of page bid high range (80th percentile) in micros for the keyword.
      *
-     * Generated from protobuf field <code>int64 high_top_of_page_bid_micros = 10;</code>
+     * Generated from protobuf field <code>optional int64 high_top_of_page_bid_micros = 10;</code>
      * @param int|string $var
      * @return $this
      */

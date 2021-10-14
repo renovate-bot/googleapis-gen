@@ -19,14 +19,14 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * Resource name of the conversion action associated with this conversion
      * adjustment.
      *
-     * Generated from protobuf field <code>string conversion_action = 7;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 7;</code>
      */
     protected $conversion_action = null;
     /**
      * The date time at which the adjustment occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string adjustment_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string adjustment_date_time = 8;</code>
      */
     protected $adjustment_date_time = null;
     /**
@@ -67,7 +67,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * Resource name of the conversion action associated with this conversion
      * adjustment.
      *
-     * Generated from protobuf field <code>string conversion_action = 7;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 7;</code>
      * @return string
      */
     public function getConversionAction()
@@ -89,7 +89,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * Resource name of the conversion action associated with this conversion
      * adjustment.
      *
-     * Generated from protobuf field <code>string conversion_action = 7;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -105,7 +105,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * The date time at which the adjustment occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string adjustment_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string adjustment_date_time = 8;</code>
      * @return string
      */
     public function getAdjustmentDateTime()
@@ -127,7 +127,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * The date time at which the adjustment occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string adjustment_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string adjustment_date_time = 8;</code>
      * @param string $var
      * @return $this
      */

@@ -81,7 +81,7 @@ class PriceRange extends \Google\Protobuf\Internal\Message
      */
     public function getPrice()
     {
-        return isset($this->price) ? $this->price : null;
+        return $this->price;
     }
 
     public function hasPrice()
@@ -127,7 +127,7 @@ class PriceRange extends \Google\Protobuf\Internal\Message
      */
     public function getOriginalPrice()
     {
-        return isset($this->original_price) ? $this->original_price : null;
+        return $this->original_price;
     }
 
     public function hasOriginalPrice()

@@ -21,7 +21,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * keyword, but the canonical form of multiple keywords.
      * See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
      *
-     * Generated from protobuf field <code>string text = 5;</code>
+     * Generated from protobuf field <code>optional string text = 5;</code>
      */
     protected $text = null;
     /**
@@ -67,7 +67,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * keyword, but the canonical form of multiple keywords.
      * See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
      *
-     * Generated from protobuf field <code>string text = 5;</code>
+     * Generated from protobuf field <code>optional string text = 5;</code>
      * @return string
      */
     public function getText()
@@ -91,7 +91,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * keyword, but the canonical form of multiple keywords.
      * See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
      *
-     * Generated from protobuf field <code>string text = 5;</code>
+     * Generated from protobuf field <code>optional string text = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -111,7 +111,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordIdeaMetrics()
     {
-        return isset($this->keyword_idea_metrics) ? $this->keyword_idea_metrics : null;
+        return $this->keyword_idea_metrics;
     }
 
     public function hasKeywordIdeaMetrics()
@@ -148,7 +148,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordAnnotations()
     {
-        return isset($this->keyword_annotations) ? $this->keyword_annotations : null;
+        return $this->keyword_annotations;
     }
 
     public function hasKeywordAnnotations()

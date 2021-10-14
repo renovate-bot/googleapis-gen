@@ -405,10 +405,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resource_);
     }
-    if (!getDestinationParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationParent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, destinationParent_);
     }
     if (view_ != com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.ANALYSIS_VIEW_UNSPECIFIED.getNumber()) {
@@ -423,10 +423,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resource_);
     }
-    if (!getDestinationParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationParent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, destinationParent_);
     }
     if (view_ != com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.ANALYSIS_VIEW_UNSPECIFIED.getNumber()) {

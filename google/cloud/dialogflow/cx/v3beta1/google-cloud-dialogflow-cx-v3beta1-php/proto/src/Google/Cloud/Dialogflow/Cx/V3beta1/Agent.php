@@ -406,7 +406,7 @@ class Agent extends \Google\Protobuf\Internal\Message
      */
     public function getSpeechToTextSettings()
     {
-        return isset($this->speech_to_text_settings) ? $this->speech_to_text_settings : null;
+        return $this->speech_to_text_settings;
     }
 
     public function hasSpeechToTextSettings()
@@ -569,7 +569,7 @@ class Agent extends \Google\Protobuf\Internal\Message
      */
     public function getAdvancedSettings()
     {
-        return isset($this->advanced_settings) ? $this->advanced_settings : null;
+        return $this->advanced_settings;
     }
 
     public function hasAdvancedSettings()

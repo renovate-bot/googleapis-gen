@@ -85,7 +85,7 @@ class MutateSmartCampaignSettingResult extends \Google\Protobuf\Internal\Message
      */
     public function getSmartCampaignSetting()
     {
-        return isset($this->smart_campaign_setting) ? $this->smart_campaign_setting : null;
+        return $this->smart_campaign_setting;
     }
 
     public function hasSmartCampaignSetting()

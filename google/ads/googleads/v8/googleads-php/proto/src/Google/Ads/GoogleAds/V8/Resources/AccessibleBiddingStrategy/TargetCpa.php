@@ -21,7 +21,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * This target should be greater than or equal to minimum billable unit
      * based on the currency for the account.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_cpa_micros = null;
 
@@ -47,7 +47,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * This target should be greater than or equal to minimum billable unit
      * based on the currency for the account.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getTargetCpaMicros()
@@ -70,7 +70,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * This target should be greater than or equal to minimum billable unit
      * based on the currency for the account.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

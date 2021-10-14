@@ -99,7 +99,7 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -182,7 +182,7 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getVehicle()
     {
-        return isset($this->vehicle) ? $this->vehicle : null;
+        return $this->vehicle;
     }
 
     public function hasVehicle()
@@ -226,7 +226,7 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

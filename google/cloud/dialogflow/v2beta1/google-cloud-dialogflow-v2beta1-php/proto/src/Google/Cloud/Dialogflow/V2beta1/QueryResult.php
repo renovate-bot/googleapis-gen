@@ -438,7 +438,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getParameters()
     {
-        return isset($this->parameters) ? $this->parameters : null;
+        return $this->parameters;
     }
 
     public function hasParameters()
@@ -632,7 +632,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getWebhookPayload()
     {
-        return isset($this->webhook_payload) ? $this->webhook_payload : null;
+        return $this->webhook_payload;
     }
 
     public function hasWebhookPayload()
@@ -703,7 +703,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getIntent()
     {
-        return isset($this->intent) ? $this->intent : null;
+        return $this->intent;
     }
 
     public function hasIntent()
@@ -786,7 +786,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getDiagnosticInfo()
     {
-        return isset($this->diagnostic_info) ? $this->diagnostic_info : null;
+        return $this->diagnostic_info;
     }
 
     public function hasDiagnosticInfo()
@@ -828,7 +828,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getSentimentAnalysisResult()
     {
-        return isset($this->sentiment_analysis_result) ? $this->sentiment_analysis_result : null;
+        return $this->sentiment_analysis_result;
     }
 
     public function hasSentimentAnalysisResult()
@@ -866,7 +866,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getKnowledgeAnswers()
     {
-        return isset($this->knowledge_answers) ? $this->knowledge_answers : null;
+        return $this->knowledge_answers;
     }
 
     public function hasKnowledgeAnswers()

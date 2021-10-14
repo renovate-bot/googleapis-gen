@@ -100,7 +100,7 @@ class ServiceDirectoryConfig extends \Google\Protobuf\Internal\Message
      */
     public function getGenericWebService()
     {
-        return isset($this->generic_web_service) ? $this->generic_web_service : null;
+        return $this->generic_web_service;
     }
 
     public function hasGenericWebService()

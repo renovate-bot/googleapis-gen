@@ -385,7 +385,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPackageNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(packageName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, packageName_);
     }
     if (minSdkVersion_ != 0) {
@@ -394,7 +394,7 @@ private static final long serialVersionUID = 0L;
     if (maxSdkVersion_ != 0) {
       output.writeInt32(3, maxSdkVersion_);
     }
-    if (!getApplicationLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationLabel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, applicationLabel_);
     }
     for (int i = 0; i < intentFilters_.size(); i++) {
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPackageNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(packageName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, packageName_);
     }
     if (minSdkVersion_ != 0) {
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, maxSdkVersion_);
     }
-    if (!getApplicationLabelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationLabel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, applicationLabel_);
     }
     for (int i = 0; i < intentFilters_.size(); i++) {

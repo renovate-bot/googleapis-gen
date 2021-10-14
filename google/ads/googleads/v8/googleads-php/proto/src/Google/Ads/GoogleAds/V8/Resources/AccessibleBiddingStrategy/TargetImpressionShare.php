@@ -27,7 +27,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * The desired fraction of ads to be shown in the targeted location in
      * micros. E.g. 1% equals 10,000.
      *
-     * Generated from protobuf field <code>int64 location_fraction_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 location_fraction_micros = 2;</code>
      */
     protected $location_fraction_micros = null;
     /**
@@ -35,7 +35,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * This is a required field entered by the advertiser that sets the ceiling
      * and specified in local micros.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $cpc_bid_ceiling_micros = null;
 
@@ -91,7 +91,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * The desired fraction of ads to be shown in the targeted location in
      * micros. E.g. 1% equals 10,000.
      *
-     * Generated from protobuf field <code>int64 location_fraction_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 location_fraction_micros = 2;</code>
      * @return int|string
      */
     public function getLocationFractionMicros()
@@ -113,7 +113,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * The desired fraction of ads to be shown in the targeted location in
      * micros. E.g. 1% equals 10,000.
      *
-     * Generated from protobuf field <code>int64 location_fraction_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 location_fraction_micros = 2;</code>
      * @param int|string $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * This is a required field entered by the advertiser that sets the ceiling
      * and specified in local micros.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCpcBidCeilingMicros()
@@ -153,7 +153,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * This is a required field entered by the advertiser that sets the ceiling
      * and specified in local micros.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

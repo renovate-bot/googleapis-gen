@@ -59,7 +59,7 @@ class SplitReadStreamResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPrimaryStream()
     {
-        return isset($this->primary_stream) ? $this->primary_stream : null;
+        return $this->primary_stream;
     }
 
     public function hasPrimaryStream()
@@ -98,7 +98,7 @@ class SplitReadStreamResponse extends \Google\Protobuf\Internal\Message
      */
     public function getRemainderStream()
     {
-        return isset($this->remainder_stream) ? $this->remainder_stream : null;
+        return $this->remainder_stream;
     }
 
     public function hasRemainderStream()

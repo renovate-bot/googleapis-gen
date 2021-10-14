@@ -60,7 +60,7 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
      */
     public function getNextRotationTime()
     {
-        return isset($this->next_rotation_time) ? $this->next_rotation_time : null;
+        return $this->next_rotation_time;
     }
 
     public function hasNextRotationTime()
@@ -99,7 +99,7 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
      */
     public function getRotationPeriod()
     {
-        return isset($this->rotation_period) ? $this->rotation_period : null;
+        return $this->rotation_period;
     }
 
     public function hasRotationPeriod()

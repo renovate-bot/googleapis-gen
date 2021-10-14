@@ -101,7 +101,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getCommon()
     {
-        return isset($this->common) ? $this->common : null;
+        return $this->common;
     }
 
     public function hasCommon()
@@ -137,7 +137,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getGmail()
     {
-        return isset($this->gmail) ? $this->gmail : null;
+        return $this->gmail;
     }
 
     public function hasGmail()
@@ -173,7 +173,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getDrive()
     {
-        return isset($this->drive) ? $this->drive : null;
+        return $this->drive;
     }
 
     public function hasDrive()
@@ -209,7 +209,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getCalendar()
     {
-        return isset($this->calendar) ? $this->calendar : null;
+        return $this->calendar;
     }
 
     public function hasCalendar()
@@ -245,7 +245,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getDocs()
     {
-        return isset($this->docs) ? $this->docs : null;
+        return $this->docs;
     }
 
     public function hasDocs()
@@ -281,7 +281,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getSheets()
     {
-        return isset($this->sheets) ? $this->sheets : null;
+        return $this->sheets;
     }
 
     public function hasSheets()
@@ -317,7 +317,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getSlides()
     {
-        return isset($this->slides) ? $this->slides : null;
+        return $this->slides;
     }
 
     public function hasSlides()
@@ -353,7 +353,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      */
     public function getHttpOptions()
     {
-        return isset($this->http_options) ? $this->http_options : null;
+        return $this->http_options;
     }
 
     public function hasHttpOptions()

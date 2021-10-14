@@ -51,7 +51,7 @@ class SnapshotExport extends \Google\Protobuf\Internal\Message
      */
     public function getSnapshotTime()
     {
-        return isset($this->snapshot_time) ? $this->snapshot_time : null;
+        return $this->snapshot_time;
     }
 
     public function hasSnapshotTime()

@@ -69,7 +69,7 @@ class ObjectTrackingAnnotation extends \Google\Protobuf\Internal\Message
      */
     public function getEntity()
     {
-        return isset($this->entity) ? $this->entity : null;
+        return $this->entity;
     }
 
     public function hasEntity()
@@ -157,7 +157,7 @@ class ObjectTrackingAnnotation extends \Google\Protobuf\Internal\Message
      */
     public function getSegment()
     {
-        return isset($this->segment) ? $this->segment : null;
+        return $this->segment;
     }
 
     public function hasSegment()

@@ -171,7 +171,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -274,7 +274,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     public function getResource()
     {
-        return isset($this->resource) ? $this->resource : null;
+        return $this->resource;
     }
 
     public function hasResource()
@@ -318,7 +318,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     public function getIamPolicy()
     {
-        return isset($this->iam_policy) ? $this->iam_policy : null;
+        return $this->iam_policy;
     }
 
     public function hasIamPolicy()
@@ -494,7 +494,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     public function getRelatedAssets()
     {
-        return isset($this->related_assets) ? $this->related_assets : null;
+        return $this->related_assets;
     }
 
     public function hasRelatedAssets()

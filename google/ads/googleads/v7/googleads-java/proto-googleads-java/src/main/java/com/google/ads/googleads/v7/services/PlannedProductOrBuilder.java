@@ -14,7 +14,7 @@ public interface PlannedProductOrBuilder extends
    * To list the available plannable product codes use ListPlannableProducts.
    * </pre>
    *
-   * <code>string plannable_product_code = 3;</code>
+   * <code>optional string plannable_product_code = 3;</code>
    * @return Whether the plannableProductCode field is set.
    */
   boolean hasPlannableProductCode();
@@ -25,7 +25,7 @@ public interface PlannedProductOrBuilder extends
    * To list the available plannable product codes use ListPlannableProducts.
    * </pre>
    *
-   * <code>string plannable_product_code = 3;</code>
+   * <code>optional string plannable_product_code = 3;</code>
    * @return The plannableProductCode.
    */
   java.lang.String getPlannableProductCode();
@@ -36,7 +36,7 @@ public interface PlannedProductOrBuilder extends
    * To list the available plannable product codes use ListPlannableProducts.
    * </pre>
    *
-   * <code>string plannable_product_code = 3;</code>
+   * <code>optional string plannable_product_code = 3;</code>
    * @return The bytes for plannableProductCode.
    */
   com.google.protobuf.ByteString
@@ -49,7 +49,7 @@ public interface PlannedProductOrBuilder extends
    * E.g. 1 000 000$ = 1 000 000 000 000 micros.
    * </pre>
    *
-   * <code>int64 budget_micros = 4;</code>
+   * <code>optional int64 budget_micros = 4;</code>
    * @return Whether the budgetMicros field is set.
    */
   boolean hasBudgetMicros();
@@ -60,7 +60,7 @@ public interface PlannedProductOrBuilder extends
    * E.g. 1 000 000$ = 1 000 000 000 000 micros.
    * </pre>
    *
-   * <code>int64 budget_micros = 4;</code>
+   * <code>optional int64 budget_micros = 4;</code>
    * @return The budgetMicros.
    */
   long getBudgetMicros();

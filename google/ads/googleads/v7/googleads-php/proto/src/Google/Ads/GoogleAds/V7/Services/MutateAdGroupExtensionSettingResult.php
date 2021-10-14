@@ -85,7 +85,7 @@ class MutateAdGroupExtensionSettingResult extends \Google\Protobuf\Internal\Mess
      */
     public function getAdGroupExtensionSetting()
     {
-        return isset($this->ad_group_extension_setting) ? $this->ad_group_extension_setting : null;
+        return $this->ad_group_extension_setting;
     }
 
     public function hasAdGroupExtensionSetting()

@@ -207,7 +207,7 @@ private static final long serialVersionUID = 0L;
     if (account_ != null) {
       output.writeMessage(1, getAccount());
     }
-    if (!getRedirectUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, redirectUri_);
     }
     unknownFields.writeTo(output);
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getAccount());
     }
-    if (!getRedirectUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, redirectUri_);
     }
     size += unknownFields.getSerializedSize();

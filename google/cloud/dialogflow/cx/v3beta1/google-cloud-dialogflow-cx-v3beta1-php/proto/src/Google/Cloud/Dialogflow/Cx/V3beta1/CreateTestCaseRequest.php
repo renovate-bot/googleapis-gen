@@ -83,7 +83,7 @@ class CreateTestCaseRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTestCase()
     {
-        return isset($this->test_case) ? $this->test_case : null;
+        return $this->test_case;
     }
 
     public function hasTestCase()

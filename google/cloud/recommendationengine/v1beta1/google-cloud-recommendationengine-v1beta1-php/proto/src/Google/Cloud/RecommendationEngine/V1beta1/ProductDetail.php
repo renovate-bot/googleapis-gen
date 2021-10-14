@@ -339,7 +339,7 @@ class ProductDetail extends \Google\Protobuf\Internal\Message
      */
     public function getItemAttributes()
     {
-        return isset($this->item_attributes) ? $this->item_attributes : null;
+        return $this->item_attributes;
     }
 
     public function hasItemAttributes()

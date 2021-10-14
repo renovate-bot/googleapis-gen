@@ -45,7 +45,7 @@ class MutateCustomerUserAccessInvitationResponse extends \Google\Protobuf\Intern
      */
     public function getResult()
     {
-        return isset($this->result) ? $this->result : null;
+        return $this->result;
     }
 
     public function hasResult()

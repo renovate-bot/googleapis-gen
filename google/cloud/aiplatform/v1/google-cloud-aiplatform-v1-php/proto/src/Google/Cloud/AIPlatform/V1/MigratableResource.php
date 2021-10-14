@@ -193,7 +193,7 @@ class MigratableResource extends \Google\Protobuf\Internal\Message
      */
     public function getLastMigrateTime()
     {
-        return isset($this->last_migrate_time) ? $this->last_migrate_time : null;
+        return $this->last_migrate_time;
     }
 
     public function hasLastMigrateTime()
@@ -231,7 +231,7 @@ class MigratableResource extends \Google\Protobuf\Internal\Message
      */
     public function getLastUpdateTime()
     {
-        return isset($this->last_update_time) ? $this->last_update_time : null;
+        return $this->last_update_time;
     }
 
     public function hasLastUpdateTime()

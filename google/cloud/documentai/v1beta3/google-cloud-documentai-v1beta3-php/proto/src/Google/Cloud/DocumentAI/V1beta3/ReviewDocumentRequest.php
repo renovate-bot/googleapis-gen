@@ -137,7 +137,7 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
     public function getDocument()
     {
         @trigger_error('document is deprecated.', E_USER_DEPRECATED);
-        return isset($this->document) ? $this->document : null;
+        return $this->document;
     }
 
     public function hasDocument()

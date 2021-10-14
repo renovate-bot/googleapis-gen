@@ -450,7 +450,7 @@ class NotificationChannel extends \Google\Protobuf\Internal\Message
      */
     public function getEnabled()
     {
-        return isset($this->enabled) ? $this->enabled : null;
+        return $this->enabled;
     }
 
     public function hasEnabled()
@@ -528,7 +528,7 @@ class NotificationChannel extends \Google\Protobuf\Internal\Message
      */
     public function getCreationRecord()
     {
-        return isset($this->creation_record) ? $this->creation_record : null;
+        return $this->creation_record;
     }
 
     public function hasCreationRecord()

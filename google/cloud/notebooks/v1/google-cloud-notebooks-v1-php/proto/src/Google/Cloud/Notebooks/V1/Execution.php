@@ -113,7 +113,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      */
     public function getExecutionTemplate()
     {
-        return isset($this->execution_template) ? $this->execution_template : null;
+        return $this->execution_template;
     }
 
     public function hasExecutionTemplate()
@@ -231,7 +231,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -267,7 +267,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

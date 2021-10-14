@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
     if (documentSentiment_ != null) {
       output.writeMessage(4, getDocumentSentiment());
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, language_);
     }
     for (int i = 0; i < categories_.size(); i++) {
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getDocumentSentiment());
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, language_);
     }
     for (int i = 0; i < categories_.size(); i++) {

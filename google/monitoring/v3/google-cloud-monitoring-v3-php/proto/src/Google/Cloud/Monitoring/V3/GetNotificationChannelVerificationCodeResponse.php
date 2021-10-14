@@ -97,7 +97,7 @@ class GetNotificationChannelVerificationCodeResponse extends \Google\Protobuf\In
      */
     public function getExpireTime()
     {
-        return isset($this->expire_time) ? $this->expire_time : null;
+        return $this->expire_time;
     }
 
     public function hasExpireTime()

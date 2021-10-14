@@ -127,7 +127,7 @@ class MatchIntentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getQueryParams()
     {
-        return isset($this->query_params) ? $this->query_params : null;
+        return $this->query_params;
     }
 
     public function hasQueryParams()
@@ -163,7 +163,7 @@ class MatchIntentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getQueryInput()
     {
-        return isset($this->query_input) ? $this->query_input : null;
+        return $this->query_input;
     }
 
     public function hasQueryInput()

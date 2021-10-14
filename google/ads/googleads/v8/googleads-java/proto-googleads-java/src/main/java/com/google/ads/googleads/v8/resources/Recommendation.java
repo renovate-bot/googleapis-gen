@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad impressions.
      * </pre>
      *
-     * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the impressions field is set.
      */
     boolean hasImpressions();
@@ -1362,7 +1362,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad impressions.
      * </pre>
      *
-     * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The impressions.
      */
     double getImpressions();
@@ -1372,7 +1372,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad clicks.
      * </pre>
      *
-     * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the clicks field is set.
      */
     boolean hasClicks();
@@ -1381,7 +1381,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad clicks.
      * </pre>
      *
-     * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The clicks.
      */
     double getClicks();
@@ -1391,7 +1391,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      * </pre>
      *
-     * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the costMicros field is set.
      */
     boolean hasCostMicros();
@@ -1400,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      * </pre>
      *
-     * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The costMicros.
      */
     long getCostMicros();
@@ -1410,7 +1410,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of conversions.
      * </pre>
      *
-     * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the conversions field is set.
      */
     boolean hasConversions();
@@ -1419,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of conversions.
      * </pre>
      *
-     * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The conversions.
      */
     double getConversions();
@@ -1429,7 +1429,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of video views for a video ad campaign.
      * </pre>
      *
-     * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the videoViews field is set.
      */
     boolean hasVideoViews();
@@ -1438,7 +1438,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of video views for a video ad campaign.
      * </pre>
      *
-     * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The videoViews.
      */
     double getVideoViews();
@@ -1559,7 +1559,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad impressions.
      * </pre>
      *
-     * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the impressions field is set.
      */
     @java.lang.Override
@@ -1571,7 +1571,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad impressions.
      * </pre>
      *
-     * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The impressions.
      */
     @java.lang.Override
@@ -1586,7 +1586,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad clicks.
      * </pre>
      *
-     * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the clicks field is set.
      */
     @java.lang.Override
@@ -1598,7 +1598,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of ad clicks.
      * </pre>
      *
-     * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The clicks.
      */
     @java.lang.Override
@@ -1613,7 +1613,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      * </pre>
      *
-     * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the costMicros field is set.
      */
     @java.lang.Override
@@ -1625,7 +1625,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      * </pre>
      *
-     * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The costMicros.
      */
     @java.lang.Override
@@ -1640,7 +1640,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of conversions.
      * </pre>
      *
-     * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the conversions field is set.
      */
     @java.lang.Override
@@ -1652,7 +1652,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of conversions.
      * </pre>
      *
-     * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The conversions.
      */
     @java.lang.Override
@@ -1667,7 +1667,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of video views for a video ad campaign.
      * </pre>
      *
-     * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the videoViews field is set.
      */
     @java.lang.Override
@@ -1679,7 +1679,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Number of video views for a video ad campaign.
      * </pre>
      *
-     * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The videoViews.
      */
     @java.lang.Override
@@ -2121,7 +2121,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad impressions.
        * </pre>
        *
-       * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the impressions field is set.
        */
       @java.lang.Override
@@ -2133,7 +2133,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad impressions.
        * </pre>
        *
-       * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The impressions.
        */
       @java.lang.Override
@@ -2145,7 +2145,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad impressions.
        * </pre>
        *
-       * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The impressions to set.
        * @return This builder for chaining.
        */
@@ -2160,7 +2160,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad impressions.
        * </pre>
        *
-       * <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearImpressions() {
@@ -2176,7 +2176,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad clicks.
        * </pre>
        *
-       * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the clicks field is set.
        */
       @java.lang.Override
@@ -2188,7 +2188,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad clicks.
        * </pre>
        *
-       * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The clicks.
        */
       @java.lang.Override
@@ -2200,7 +2200,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad clicks.
        * </pre>
        *
-       * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The clicks to set.
        * @return This builder for chaining.
        */
@@ -2215,7 +2215,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of ad clicks.
        * </pre>
        *
-       * <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearClicks() {
@@ -2231,7 +2231,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Cost (in micros) for advertising, in the local currency for the account.
        * </pre>
        *
-       * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the costMicros field is set.
        */
       @java.lang.Override
@@ -2243,7 +2243,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Cost (in micros) for advertising, in the local currency for the account.
        * </pre>
        *
-       * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The costMicros.
        */
       @java.lang.Override
@@ -2255,7 +2255,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Cost (in micros) for advertising, in the local currency for the account.
        * </pre>
        *
-       * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The costMicros to set.
        * @return This builder for chaining.
        */
@@ -2270,7 +2270,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Cost (in micros) for advertising, in the local currency for the account.
        * </pre>
        *
-       * <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearCostMicros() {
@@ -2286,7 +2286,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of conversions.
        * </pre>
        *
-       * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the conversions field is set.
        */
       @java.lang.Override
@@ -2298,7 +2298,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of conversions.
        * </pre>
        *
-       * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The conversions.
        */
       @java.lang.Override
@@ -2310,7 +2310,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of conversions.
        * </pre>
        *
-       * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The conversions to set.
        * @return This builder for chaining.
        */
@@ -2325,7 +2325,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of conversions.
        * </pre>
        *
-       * <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearConversions() {
@@ -2341,7 +2341,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of video views for a video ad campaign.
        * </pre>
        *
-       * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the videoViews field is set.
        */
       @java.lang.Override
@@ -2353,7 +2353,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of video views for a video ad campaign.
        * </pre>
        *
-       * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The videoViews.
        */
       @java.lang.Override
@@ -2365,7 +2365,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of video views for a video ad campaign.
        * </pre>
        *
-       * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The videoViews to set.
        * @return This builder for chaining.
        */
@@ -2380,7 +2380,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Number of video views for a video ad campaign.
        * </pre>
        *
-       * <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearVideoViews() {
@@ -2451,7 +2451,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current budget amount in micros.
      * </pre>
      *
-     * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the currentBudgetAmountMicros field is set.
      */
     boolean hasCurrentBudgetAmountMicros();
@@ -2460,7 +2460,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current budget amount in micros.
      * </pre>
      *
-     * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The currentBudgetAmountMicros.
      */
     long getCurrentBudgetAmountMicros();
@@ -2470,7 +2470,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended budget amount in micros.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedBudgetAmountMicros field is set.
      */
     boolean hasRecommendedBudgetAmountMicros();
@@ -2479,7 +2479,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended budget amount in micros.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedBudgetAmountMicros.
      */
     long getRecommendedBudgetAmountMicros();
@@ -2647,7 +2647,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The budget amount for this option.
        * </pre>
        *
-       * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the budgetAmountMicros field is set.
        */
       boolean hasBudgetAmountMicros();
@@ -2656,7 +2656,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The budget amount for this option.
        * </pre>
        *
-       * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The budgetAmountMicros.
        */
       long getBudgetAmountMicros();
@@ -2799,7 +2799,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The budget amount for this option.
        * </pre>
        *
-       * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the budgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -2811,7 +2811,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The budget amount for this option.
        * </pre>
        *
-       * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The budgetAmountMicros.
        */
       @java.lang.Override
@@ -3215,7 +3215,7 @@ private static final long serialVersionUID = 0L;
          * Output only. The budget amount for this option.
          * </pre>
          *
-         * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return Whether the budgetAmountMicros field is set.
          */
         @java.lang.Override
@@ -3227,7 +3227,7 @@ private static final long serialVersionUID = 0L;
          * Output only. The budget amount for this option.
          * </pre>
          *
-         * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return The budgetAmountMicros.
          */
         @java.lang.Override
@@ -3239,7 +3239,7 @@ private static final long serialVersionUID = 0L;
          * Output only. The budget amount for this option.
          * </pre>
          *
-         * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @param value The budgetAmountMicros to set.
          * @return This builder for chaining.
          */
@@ -3254,7 +3254,7 @@ private static final long serialVersionUID = 0L;
          * Output only. The budget amount for this option.
          * </pre>
          *
-         * <code>int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return This builder for chaining.
          */
         public Builder clearBudgetAmountMicros() {
@@ -3488,7 +3488,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current budget amount in micros.
      * </pre>
      *
-     * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the currentBudgetAmountMicros field is set.
      */
     @java.lang.Override
@@ -3500,7 +3500,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current budget amount in micros.
      * </pre>
      *
-     * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The currentBudgetAmountMicros.
      */
     @java.lang.Override
@@ -3515,7 +3515,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended budget amount in micros.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedBudgetAmountMicros field is set.
      */
     @java.lang.Override
@@ -3527,7 +3527,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended budget amount in micros.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedBudgetAmountMicros.
      */
     @java.lang.Override
@@ -4006,7 +4006,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The current budget amount in micros.
        * </pre>
        *
-       * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the currentBudgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -4018,7 +4018,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The current budget amount in micros.
        * </pre>
        *
-       * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The currentBudgetAmountMicros.
        */
       @java.lang.Override
@@ -4030,7 +4030,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The current budget amount in micros.
        * </pre>
        *
-       * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The currentBudgetAmountMicros to set.
        * @return This builder for chaining.
        */
@@ -4045,7 +4045,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The current budget amount in micros.
        * </pre>
        *
-       * <code>int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 current_budget_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrentBudgetAmountMicros() {
@@ -4061,7 +4061,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended budget amount in micros.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the recommendedBudgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -4073,7 +4073,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended budget amount in micros.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The recommendedBudgetAmountMicros.
        */
       @java.lang.Override
@@ -4085,7 +4085,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended budget amount in micros.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The recommendedBudgetAmountMicros to set.
        * @return This builder for chaining.
        */
@@ -4100,7 +4100,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended budget amount in micros.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRecommendedBudgetAmountMicros() {
@@ -4528,7 +4528,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedCpcBidMicros field is set.
      */
     boolean hasRecommendedCpcBidMicros();
@@ -4537,7 +4537,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedCpcBidMicros.
      */
     long getRecommendedCpcBidMicros();
@@ -4688,7 +4688,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedCpcBidMicros field is set.
      */
     @java.lang.Override
@@ -4700,7 +4700,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended CPC (cost-per-click) bid.
      * </pre>
      *
-     * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedCpcBidMicros.
      */
     @java.lang.Override
@@ -5218,7 +5218,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended CPC (cost-per-click) bid.
        * </pre>
        *
-       * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the recommendedCpcBidMicros field is set.
        */
       @java.lang.Override
@@ -5230,7 +5230,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended CPC (cost-per-click) bid.
        * </pre>
        *
-       * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The recommendedCpcBidMicros.
        */
       @java.lang.Override
@@ -5242,7 +5242,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended CPC (cost-per-click) bid.
        * </pre>
        *
-       * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The recommendedCpcBidMicros to set.
        * @return This builder for chaining.
        */
@@ -5257,7 +5257,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended CPC (cost-per-click) bid.
        * </pre>
        *
-       * <code>int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_cpc_bid_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRecommendedCpcBidMicros() {
@@ -6188,7 +6188,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the creationDate field is set.
      */
     boolean hasCreationDate();
@@ -6198,7 +6198,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The creationDate.
      */
     java.lang.String getCreationDate();
@@ -6208,7 +6208,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for creationDate.
      */
     com.google.protobuf.ByteString
@@ -6221,7 +6221,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the autoApplyDate field is set.
      */
     boolean hasAutoApplyDate();
@@ -6232,7 +6232,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The autoApplyDate.
      */
     java.lang.String getAutoApplyDate();
@@ -6243,7 +6243,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for autoApplyDate.
      */
     com.google.protobuf.ByteString
@@ -6405,7 +6405,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the creationDate field is set.
      */
     @java.lang.Override
@@ -6418,7 +6418,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The creationDate.
      */
     @java.lang.Override
@@ -6440,7 +6440,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for creationDate.
      */
     @java.lang.Override
@@ -6467,7 +6467,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the autoApplyDate field is set.
      */
     @java.lang.Override
@@ -6481,7 +6481,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The autoApplyDate.
      */
     @java.lang.Override
@@ -6504,7 +6504,7 @@ private static final long serialVersionUID = 0L;
      * YYYY-MM-DD format, e.g., 2018-04-17.
      * </pre>
      *
-     * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for autoApplyDate.
      */
     @java.lang.Override
@@ -7059,7 +7059,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the creationDate field is set.
        */
       public boolean hasCreationDate() {
@@ -7071,7 +7071,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The creationDate.
        */
       public java.lang.String getCreationDate() {
@@ -7092,7 +7092,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for creationDate.
        */
       public com.google.protobuf.ByteString
@@ -7114,7 +7114,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The creationDate to set.
        * @return This builder for chaining.
        */
@@ -7134,7 +7134,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreationDate() {
@@ -7149,7 +7149,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string creation_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for creationDate to set.
        * @return This builder for chaining.
        */
@@ -7173,7 +7173,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the autoApplyDate field is set.
        */
       public boolean hasAutoApplyDate() {
@@ -7186,7 +7186,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The autoApplyDate.
        */
       public java.lang.String getAutoApplyDate() {
@@ -7208,7 +7208,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for autoApplyDate.
        */
       public com.google.protobuf.ByteString
@@ -7231,7 +7231,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The autoApplyDate to set.
        * @return This builder for chaining.
        */
@@ -7252,7 +7252,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearAutoApplyDate() {
@@ -7268,7 +7268,7 @@ private static final long serialVersionUID = 0L;
        * YYYY-MM-DD format, e.g., 2018-04-17.
        * </pre>
        *
-       * <code>string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string auto_apply_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for autoApplyDate to set.
        * @return This builder for chaining.
        */
@@ -7345,7 +7345,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The excess budget's resource_name.
      * </pre>
      *
-     * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the excessCampaignBudget field is set.
      */
     boolean hasExcessCampaignBudget();
@@ -7354,7 +7354,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The excess budget's resource_name.
      * </pre>
      *
-     * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The excessCampaignBudget.
      */
     java.lang.String getExcessCampaignBudget();
@@ -7363,7 +7363,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The excess budget's resource_name.
      * </pre>
      *
-     * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for excessCampaignBudget.
      */
     com.google.protobuf.ByteString
@@ -7506,7 +7506,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The excess budget's resource_name.
      * </pre>
      *
-     * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the excessCampaignBudget field is set.
      */
     @java.lang.Override
@@ -7518,7 +7518,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The excess budget's resource_name.
      * </pre>
      *
-     * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The excessCampaignBudget.
      */
     @java.lang.Override
@@ -7539,7 +7539,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The excess budget's resource_name.
      * </pre>
      *
-     * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for excessCampaignBudget.
      */
     @java.lang.Override
@@ -7950,7 +7950,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The excess budget's resource_name.
        * </pre>
        *
-       * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the excessCampaignBudget field is set.
        */
       public boolean hasExcessCampaignBudget() {
@@ -7961,7 +7961,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The excess budget's resource_name.
        * </pre>
        *
-       * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The excessCampaignBudget.
        */
       public java.lang.String getExcessCampaignBudget() {
@@ -7981,7 +7981,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The excess budget's resource_name.
        * </pre>
        *
-       * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for excessCampaignBudget.
        */
       public com.google.protobuf.ByteString
@@ -8002,7 +8002,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The excess budget's resource_name.
        * </pre>
        *
-       * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The excessCampaignBudget to set.
        * @return This builder for chaining.
        */
@@ -8021,7 +8021,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The excess budget's resource_name.
        * </pre>
        *
-       * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearExcessCampaignBudget() {
@@ -8035,7 +8035,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The excess budget's resource_name.
        * </pre>
        *
-       * <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for excessCampaignBudget to set.
        * @return This builder for chaining.
        */
@@ -8312,7 +8312,7 @@ private static final long serialVersionUID = 0L;
      * of using this recommendation in options list.
      * </pre>
      *
-     * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedTargetCpaMicros field is set.
      */
     boolean hasRecommendedTargetCpaMicros();
@@ -8322,7 +8322,7 @@ private static final long serialVersionUID = 0L;
      * of using this recommendation in options list.
      * </pre>
      *
-     * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedTargetCpaMicros.
      */
     long getRecommendedTargetCpaMicros();
@@ -8455,7 +8455,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Average CPA target.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the targetCpaMicros field is set.
        */
       boolean hasTargetCpaMicros();
@@ -8464,7 +8464,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Average CPA target.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The targetCpaMicros.
        */
       long getTargetCpaMicros();
@@ -8477,7 +8477,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the requiredCampaignBudgetAmountMicros field is set.
        */
       boolean hasRequiredCampaignBudgetAmountMicros();
@@ -8489,7 +8489,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The requiredCampaignBudgetAmountMicros.
        */
       long getRequiredCampaignBudgetAmountMicros();
@@ -8668,7 +8668,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Average CPA target.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the targetCpaMicros field is set.
        */
       @java.lang.Override
@@ -8680,7 +8680,7 @@ private static final long serialVersionUID = 0L;
        * Output only. Average CPA target.
        * </pre>
        *
-       * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The targetCpaMicros.
        */
       @java.lang.Override
@@ -8698,7 +8698,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the requiredCampaignBudgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -8713,7 +8713,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The requiredCampaignBudgetAmountMicros.
        */
       @java.lang.Override
@@ -9230,7 +9230,7 @@ private static final long serialVersionUID = 0L;
          * Output only. Average CPA target.
          * </pre>
          *
-         * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return Whether the targetCpaMicros field is set.
          */
         @java.lang.Override
@@ -9242,7 +9242,7 @@ private static final long serialVersionUID = 0L;
          * Output only. Average CPA target.
          * </pre>
          *
-         * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return The targetCpaMicros.
          */
         @java.lang.Override
@@ -9254,7 +9254,7 @@ private static final long serialVersionUID = 0L;
          * Output only. Average CPA target.
          * </pre>
          *
-         * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @param value The targetCpaMicros to set.
          * @return This builder for chaining.
          */
@@ -9269,7 +9269,7 @@ private static final long serialVersionUID = 0L;
          * Output only. Average CPA target.
          * </pre>
          *
-         * <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return This builder for chaining.
          */
         public Builder clearTargetCpaMicros() {
@@ -9288,7 +9288,7 @@ private static final long serialVersionUID = 0L;
          * currency unit.
          * </pre>
          *
-         * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return Whether the requiredCampaignBudgetAmountMicros field is set.
          */
         @java.lang.Override
@@ -9303,7 +9303,7 @@ private static final long serialVersionUID = 0L;
          * currency unit.
          * </pre>
          *
-         * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return The requiredCampaignBudgetAmountMicros.
          */
         @java.lang.Override
@@ -9318,7 +9318,7 @@ private static final long serialVersionUID = 0L;
          * currency unit.
          * </pre>
          *
-         * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @param value The requiredCampaignBudgetAmountMicros to set.
          * @return This builder for chaining.
          */
@@ -9336,7 +9336,7 @@ private static final long serialVersionUID = 0L;
          * currency unit.
          * </pre>
          *
-         * <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          * @return This builder for chaining.
          */
         public Builder clearRequiredCampaignBudgetAmountMicros() {
@@ -9622,7 +9622,7 @@ private static final long serialVersionUID = 0L;
      * of using this recommendation in options list.
      * </pre>
      *
-     * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedTargetCpaMicros field is set.
      */
     @java.lang.Override
@@ -9635,7 +9635,7 @@ private static final long serialVersionUID = 0L;
      * of using this recommendation in options list.
      * </pre>
      *
-     * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedTargetCpaMicros.
      */
     @java.lang.Override
@@ -10336,7 +10336,7 @@ private static final long serialVersionUID = 0L;
        * of using this recommendation in options list.
        * </pre>
        *
-       * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the recommendedTargetCpaMicros field is set.
        */
       @java.lang.Override
@@ -10349,7 +10349,7 @@ private static final long serialVersionUID = 0L;
        * of using this recommendation in options list.
        * </pre>
        *
-       * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The recommendedTargetCpaMicros.
        */
       @java.lang.Override
@@ -10362,7 +10362,7 @@ private static final long serialVersionUID = 0L;
        * of using this recommendation in options list.
        * </pre>
        *
-       * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The recommendedTargetCpaMicros to set.
        * @return This builder for chaining.
        */
@@ -10378,7 +10378,7 @@ private static final long serialVersionUID = 0L;
        * of using this recommendation in options list.
        * </pre>
        *
-       * <code>int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_target_cpa_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRecommendedTargetCpaMicros() {
@@ -11138,7 +11138,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended new budget amount.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedBudgetAmountMicros field is set.
      */
     boolean hasRecommendedBudgetAmountMicros();
@@ -11147,7 +11147,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended new budget amount.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedBudgetAmountMicros.
      */
     long getRecommendedBudgetAmountMicros();
@@ -11247,7 +11247,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended new budget amount.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedBudgetAmountMicros field is set.
      */
     @java.lang.Override
@@ -11259,7 +11259,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The recommended new budget amount.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedBudgetAmountMicros.
      */
     @java.lang.Override
@@ -11592,7 +11592,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended new budget amount.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the recommendedBudgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -11604,7 +11604,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended new budget amount.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The recommendedBudgetAmountMicros.
        */
       @java.lang.Override
@@ -11616,7 +11616,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended new budget amount.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The recommendedBudgetAmountMicros to set.
        * @return This builder for chaining.
        */
@@ -11631,7 +11631,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The recommended new budget amount.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRecommendedBudgetAmountMicros() {
@@ -13894,7 +13894,7 @@ private static final long serialVersionUID = 0L;
      * Only set if the current budget is too high.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedBudgetAmountMicros field is set.
      */
     boolean hasRecommendedBudgetAmountMicros();
@@ -13904,7 +13904,7 @@ private static final long serialVersionUID = 0L;
      * Only set if the current budget is too high.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedBudgetAmountMicros.
      */
     long getRecommendedBudgetAmountMicros();
@@ -14005,7 +14005,7 @@ private static final long serialVersionUID = 0L;
      * Only set if the current budget is too high.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedBudgetAmountMicros field is set.
      */
     @java.lang.Override
@@ -14018,7 +14018,7 @@ private static final long serialVersionUID = 0L;
      * Only set if the current budget is too high.
      * </pre>
      *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedBudgetAmountMicros.
      */
     @java.lang.Override
@@ -14352,7 +14352,7 @@ private static final long serialVersionUID = 0L;
        * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the recommendedBudgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -14365,7 +14365,7 @@ private static final long serialVersionUID = 0L;
        * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The recommendedBudgetAmountMicros.
        */
       @java.lang.Override
@@ -14378,7 +14378,7 @@ private static final long serialVersionUID = 0L;
        * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The recommendedBudgetAmountMicros to set.
        * @return This builder for chaining.
        */
@@ -14394,7 +14394,7 @@ private static final long serialVersionUID = 0L;
        * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRecommendedBudgetAmountMicros() {
@@ -15379,7 +15379,7 @@ private static final long serialVersionUID = 0L;
      * The value is between 0.01 and 1000.0, inclusive.
      * </pre>
      *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedTargetRoas field is set.
      */
     boolean hasRecommendedTargetRoas();
@@ -15389,7 +15389,7 @@ private static final long serialVersionUID = 0L;
      * The value is between 0.01 and 1000.0, inclusive.
      * </pre>
      *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedTargetRoas.
      */
     double getRecommendedTargetRoas();
@@ -15402,7 +15402,7 @@ private static final long serialVersionUID = 0L;
      * currency unit.
      * </pre>
      *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the requiredCampaignBudgetAmountMicros field is set.
      */
     boolean hasRequiredCampaignBudgetAmountMicros();
@@ -15414,7 +15414,7 @@ private static final long serialVersionUID = 0L;
      * currency unit.
      * </pre>
      *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The requiredCampaignBudgetAmountMicros.
      */
     long getRequiredCampaignBudgetAmountMicros();
@@ -15520,7 +15520,7 @@ private static final long serialVersionUID = 0L;
      * The value is between 0.01 and 1000.0, inclusive.
      * </pre>
      *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the recommendedTargetRoas field is set.
      */
     @java.lang.Override
@@ -15533,7 +15533,7 @@ private static final long serialVersionUID = 0L;
      * The value is between 0.01 and 1000.0, inclusive.
      * </pre>
      *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The recommendedTargetRoas.
      */
     @java.lang.Override
@@ -15551,7 +15551,7 @@ private static final long serialVersionUID = 0L;
      * currency unit.
      * </pre>
      *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the requiredCampaignBudgetAmountMicros field is set.
      */
     @java.lang.Override
@@ -15566,7 +15566,7 @@ private static final long serialVersionUID = 0L;
      * currency unit.
      * </pre>
      *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The requiredCampaignBudgetAmountMicros.
      */
     @java.lang.Override
@@ -15927,7 +15927,7 @@ private static final long serialVersionUID = 0L;
        * The value is between 0.01 and 1000.0, inclusive.
        * </pre>
        *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the recommendedTargetRoas field is set.
        */
       @java.lang.Override
@@ -15940,7 +15940,7 @@ private static final long serialVersionUID = 0L;
        * The value is between 0.01 and 1000.0, inclusive.
        * </pre>
        *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The recommendedTargetRoas.
        */
       @java.lang.Override
@@ -15953,7 +15953,7 @@ private static final long serialVersionUID = 0L;
        * The value is between 0.01 and 1000.0, inclusive.
        * </pre>
        *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The recommendedTargetRoas to set.
        * @return This builder for chaining.
        */
@@ -15969,7 +15969,7 @@ private static final long serialVersionUID = 0L;
        * The value is between 0.01 and 1000.0, inclusive.
        * </pre>
        *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRecommendedTargetRoas() {
@@ -15988,7 +15988,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the requiredCampaignBudgetAmountMicros field is set.
        */
       @java.lang.Override
@@ -16003,7 +16003,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The requiredCampaignBudgetAmountMicros.
        */
       @java.lang.Override
@@ -16018,7 +16018,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The requiredCampaignBudgetAmountMicros to set.
        * @return This builder for chaining.
        */
@@ -16036,7 +16036,7 @@ private static final long serialVersionUID = 0L;
        * currency unit.
        * </pre>
        *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearRequiredCampaignBudgetAmountMicros() {
@@ -17212,7 +17212,7 @@ private static final long serialVersionUID = 0L;
    * MOVE_UNUSED_BUDGET
    * </pre>
    *
-   * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the campaignBudget field is set.
    */
   @java.lang.Override
@@ -17228,7 +17228,7 @@ private static final long serialVersionUID = 0L;
    * MOVE_UNUSED_BUDGET
    * </pre>
    *
-   * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The campaignBudget.
    */
   @java.lang.Override
@@ -17253,7 +17253,7 @@ private static final long serialVersionUID = 0L;
    * MOVE_UNUSED_BUDGET
    * </pre>
    *
-   * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for campaignBudget.
    */
   @java.lang.Override
@@ -17284,7 +17284,7 @@ private static final long serialVersionUID = 0L;
    * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
    * </pre>
    *
-   * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the campaign field is set.
    */
   @java.lang.Override
@@ -17302,7 +17302,7 @@ private static final long serialVersionUID = 0L;
    * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
    * </pre>
    *
-   * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The campaign.
    */
   @java.lang.Override
@@ -17329,7 +17329,7 @@ private static final long serialVersionUID = 0L;
    * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
    * </pre>
    *
-   * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for campaign.
    */
   @java.lang.Override
@@ -17357,7 +17357,7 @@ private static final long serialVersionUID = 0L;
    * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
    * </pre>
    *
-   * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the adGroup field is set.
    */
   @java.lang.Override
@@ -17372,7 +17372,7 @@ private static final long serialVersionUID = 0L;
    * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
    * </pre>
    *
-   * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The adGroup.
    */
   @java.lang.Override
@@ -17396,7 +17396,7 @@ private static final long serialVersionUID = 0L;
    * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
    * </pre>
    *
-   * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for adGroup.
    */
   @java.lang.Override
@@ -17421,7 +17421,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Whether the recommendation is dismissed or not.
    * </pre>
    *
-   * <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the dismissed field is set.
    */
   @java.lang.Override
@@ -17433,7 +17433,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Whether the recommendation is dismissed or not.
    * </pre>
    *
-   * <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The dismissed.
    */
   @java.lang.Override
@@ -18229,7 +18229,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
     }
     if (type_ != com.google.ads.googleads.v8.enums.RecommendationTypeEnum.RecommendationType.UNSPECIFIED.getNumber()) {
@@ -18313,7 +18313,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
     }
     if (type_ != com.google.ads.googleads.v8.enums.RecommendationTypeEnum.RecommendationType.UNSPECIFIED.getNumber()) {
@@ -19524,7 +19524,7 @@ private static final long serialVersionUID = 0L;
      * MOVE_UNUSED_BUDGET
      * </pre>
      *
-     * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the campaignBudget field is set.
      */
     public boolean hasCampaignBudget() {
@@ -19539,7 +19539,7 @@ private static final long serialVersionUID = 0L;
      * MOVE_UNUSED_BUDGET
      * </pre>
      *
-     * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The campaignBudget.
      */
     public java.lang.String getCampaignBudget() {
@@ -19563,7 +19563,7 @@ private static final long serialVersionUID = 0L;
      * MOVE_UNUSED_BUDGET
      * </pre>
      *
-     * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for campaignBudget.
      */
     public com.google.protobuf.ByteString
@@ -19588,7 +19588,7 @@ private static final long serialVersionUID = 0L;
      * MOVE_UNUSED_BUDGET
      * </pre>
      *
-     * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The campaignBudget to set.
      * @return This builder for chaining.
      */
@@ -19611,7 +19611,7 @@ private static final long serialVersionUID = 0L;
      * MOVE_UNUSED_BUDGET
      * </pre>
      *
-     * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearCampaignBudget() {
@@ -19629,7 +19629,7 @@ private static final long serialVersionUID = 0L;
      * MOVE_UNUSED_BUDGET
      * </pre>
      *
-     * <code>string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for campaignBudget to set.
      * @return This builder for chaining.
      */
@@ -19657,7 +19657,7 @@ private static final long serialVersionUID = 0L;
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
-     * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the campaign field is set.
      */
     public boolean hasCampaign() {
@@ -19674,7 +19674,7 @@ private static final long serialVersionUID = 0L;
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
-     * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The campaign.
      */
     public java.lang.String getCampaign() {
@@ -19700,7 +19700,7 @@ private static final long serialVersionUID = 0L;
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
-     * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for campaign.
      */
     public com.google.protobuf.ByteString
@@ -19727,7 +19727,7 @@ private static final long serialVersionUID = 0L;
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
-     * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The campaign to set.
      * @return This builder for chaining.
      */
@@ -19752,7 +19752,7 @@ private static final long serialVersionUID = 0L;
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
-     * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearCampaign() {
@@ -19772,7 +19772,7 @@ private static final long serialVersionUID = 0L;
      * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
-     * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for campaign to set.
      * @return This builder for chaining.
      */
@@ -19797,7 +19797,7 @@ private static final long serialVersionUID = 0L;
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
-     * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the adGroup field is set.
      */
     public boolean hasAdGroup() {
@@ -19811,7 +19811,7 @@ private static final long serialVersionUID = 0L;
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
-     * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The adGroup.
      */
     public java.lang.String getAdGroup() {
@@ -19834,7 +19834,7 @@ private static final long serialVersionUID = 0L;
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
-     * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for adGroup.
      */
     public com.google.protobuf.ByteString
@@ -19858,7 +19858,7 @@ private static final long serialVersionUID = 0L;
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
-     * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The adGroup to set.
      * @return This builder for chaining.
      */
@@ -19880,7 +19880,7 @@ private static final long serialVersionUID = 0L;
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
-     * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAdGroup() {
@@ -19897,7 +19897,7 @@ private static final long serialVersionUID = 0L;
      * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
-     * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for adGroup to set.
      * @return This builder for chaining.
      */
@@ -19919,7 +19919,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the recommendation is dismissed or not.
      * </pre>
      *
-     * <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the dismissed field is set.
      */
     @java.lang.Override
@@ -19931,7 +19931,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the recommendation is dismissed or not.
      * </pre>
      *
-     * <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The dismissed.
      */
     @java.lang.Override
@@ -19943,7 +19943,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the recommendation is dismissed or not.
      * </pre>
      *
-     * <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The dismissed to set.
      * @return This builder for chaining.
      */
@@ -19958,7 +19958,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the recommendation is dismissed or not.
      * </pre>
      *
-     * <code>bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dismissed = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearDismissed() {

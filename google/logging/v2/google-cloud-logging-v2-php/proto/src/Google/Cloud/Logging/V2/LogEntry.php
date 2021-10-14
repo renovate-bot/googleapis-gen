@@ -319,7 +319,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     public function getResource()
     {
-        return isset($this->resource) ? $this->resource : null;
+        return $this->resource;
     }
 
     public function hasResource()
@@ -472,7 +472,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     public function getTimestamp()
     {
-        return isset($this->timestamp) ? $this->timestamp : null;
+        return $this->timestamp;
     }
 
     public function hasTimestamp()
@@ -517,7 +517,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     public function getReceiveTimestamp()
     {
-        return isset($this->receive_timestamp) ? $this->receive_timestamp : null;
+        return $this->receive_timestamp;
     }
 
     public function hasReceiveTimestamp()
@@ -622,7 +622,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     public function getHttpRequest()
     {
-        return isset($this->http_request) ? $this->http_request : null;
+        return $this->http_request;
     }
 
     public function hasHttpRequest()
@@ -688,7 +688,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     public function getOperation()
     {
-        return isset($this->operation) ? $this->operation : null;
+        return $this->operation;
     }
 
     public function hasOperation()
@@ -825,7 +825,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     public function getSourceLocation()
     {
-        return isset($this->source_location) ? $this->source_location : null;
+        return $this->source_location;
     }
 
     public function hasSourceLocation()

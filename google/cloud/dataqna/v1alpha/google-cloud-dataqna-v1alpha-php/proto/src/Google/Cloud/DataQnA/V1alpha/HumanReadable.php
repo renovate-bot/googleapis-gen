@@ -53,7 +53,7 @@ class HumanReadable extends \Google\Protobuf\Internal\Message
      */
     public function getGeneratedInterpretation()
     {
-        return isset($this->generated_interpretation) ? $this->generated_interpretation : null;
+        return $this->generated_interpretation;
     }
 
     public function hasGeneratedInterpretation()
@@ -89,7 +89,7 @@ class HumanReadable extends \Google\Protobuf\Internal\Message
      */
     public function getOriginalQuestion()
     {
-        return isset($this->original_question) ? $this->original_question : null;
+        return $this->original_question;
     }
 
     public function hasOriginalQuestion()

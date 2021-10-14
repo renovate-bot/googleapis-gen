@@ -35,7 +35,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>string ad_group = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
@@ -145,7 +145,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>string ad_group = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroup()
@@ -169,7 +169,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>string ad_group = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

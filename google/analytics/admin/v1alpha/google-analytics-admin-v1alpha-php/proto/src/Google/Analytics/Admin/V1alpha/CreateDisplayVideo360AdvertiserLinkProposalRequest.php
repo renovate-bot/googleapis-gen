@@ -79,7 +79,7 @@ class CreateDisplayVideo360AdvertiserLinkProposalRequest extends \Google\Protobu
      */
     public function getDisplayVideo360AdvertiserLinkProposal()
     {
-        return isset($this->display_video_360_advertiser_link_proposal) ? $this->display_video_360_advertiser_link_proposal : null;
+        return $this->display_video_360_advertiser_link_proposal;
     }
 
     public function hasDisplayVideo360AdvertiserLinkProposal()

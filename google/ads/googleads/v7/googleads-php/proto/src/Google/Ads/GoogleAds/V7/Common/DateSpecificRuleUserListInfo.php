@@ -27,7 +27,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * users before end_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
-     * Generated from protobuf field <code>string start_date = 4;</code>
+     * Generated from protobuf field <code>optional string start_date = 4;</code>
      */
     protected $start_date = null;
     /**
@@ -35,7 +35,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
-     * Generated from protobuf field <code>string end_date = 5;</code>
+     * Generated from protobuf field <code>optional string end_date = 5;</code>
      */
     protected $end_date = null;
 
@@ -72,7 +72,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function getRule()
     {
-        return isset($this->rule) ? $this->rule : null;
+        return $this->rule;
     }
 
     public function hasRule()
@@ -106,7 +106,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * users before end_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
-     * Generated from protobuf field <code>string start_date = 4;</code>
+     * Generated from protobuf field <code>optional string start_date = 4;</code>
      * @return string
      */
     public function getStartDate()
@@ -129,7 +129,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * users before end_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
-     * Generated from protobuf field <code>string start_date = 4;</code>
+     * Generated from protobuf field <code>optional string start_date = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +146,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
-     * Generated from protobuf field <code>string end_date = 5;</code>
+     * Generated from protobuf field <code>optional string end_date = 5;</code>
      * @return string
      */
     public function getEndDate()
@@ -169,7 +169,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
-     * Generated from protobuf field <code>string end_date = 5;</code>
+     * Generated from protobuf field <code>optional string end_date = 5;</code>
      * @param string $var
      * @return $this
      */

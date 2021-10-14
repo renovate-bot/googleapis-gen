@@ -21,7 +21,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * A value of 0 indicates that all objects immediately match this
      * condition.
      *
-     * Generated from protobuf field <code>int32 age_days = 1;</code>
+     * Generated from protobuf field <code>optional int32 age_days = 1;</code>
      */
     protected $age_days = null;
     /**
@@ -36,7 +36,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * `true`, this condition matches live objects; if the value
      * is `false`, it matches archived objects.
      *
-     * Generated from protobuf field <code>bool is_live = 3;</code>
+     * Generated from protobuf field <code>optional bool is_live = 3;</code>
      */
     protected $is_live = null;
     /**
@@ -44,7 +44,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * condition is satisfied when there are at least N versions (including
      * the live version) newer than this version of the object.
      *
-     * Generated from protobuf field <code>int32 num_newer_versions = 4;</code>
+     * Generated from protobuf field <code>optional int32 num_newer_versions = 4;</code>
      */
     protected $num_newer_versions = null;
     /**
@@ -61,7 +61,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * object.
      * The value of the field must be a nonnegative integer.
      *
-     * Generated from protobuf field <code>int32 days_since_custom_time = 7;</code>
+     * Generated from protobuf field <code>optional int32 days_since_custom_time = 7;</code>
      */
     protected $days_since_custom_time = null;
     /**
@@ -78,7 +78,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * nonnegative integer. If it's zero, the object version will become
      * eligible for Lifecycle action as soon as it becomes noncurrent.
      *
-     * Generated from protobuf field <code>int32 days_since_noncurrent_time = 9;</code>
+     * Generated from protobuf field <code>optional int32 days_since_noncurrent_time = 9;</code>
      */
     protected $days_since_noncurrent_time = null;
     /**
@@ -147,7 +147,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * A value of 0 indicates that all objects immediately match this
      * condition.
      *
-     * Generated from protobuf field <code>int32 age_days = 1;</code>
+     * Generated from protobuf field <code>optional int32 age_days = 1;</code>
      * @return int
      */
     public function getAgeDays()
@@ -171,7 +171,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * A value of 0 indicates that all objects immediately match this
      * condition.
      *
-     * Generated from protobuf field <code>int32 age_days = 1;</code>
+     * Generated from protobuf field <code>optional int32 age_days = 1;</code>
      * @param int $var
      * @return $this
      */
@@ -192,7 +192,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      */
     public function getCreatedBefore()
     {
-        return isset($this->created_before) ? $this->created_before : null;
+        return $this->created_before;
     }
 
     public function hasCreatedBefore()
@@ -226,7 +226,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * `true`, this condition matches live objects; if the value
      * is `false`, it matches archived objects.
      *
-     * Generated from protobuf field <code>bool is_live = 3;</code>
+     * Generated from protobuf field <code>optional bool is_live = 3;</code>
      * @return bool
      */
     public function getIsLive()
@@ -249,7 +249,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * `true`, this condition matches live objects; if the value
      * is `false`, it matches archived objects.
      *
-     * Generated from protobuf field <code>bool is_live = 3;</code>
+     * Generated from protobuf field <code>optional bool is_live = 3;</code>
      * @param bool $var
      * @return $this
      */
@@ -266,7 +266,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * condition is satisfied when there are at least N versions (including
      * the live version) newer than this version of the object.
      *
-     * Generated from protobuf field <code>int32 num_newer_versions = 4;</code>
+     * Generated from protobuf field <code>optional int32 num_newer_versions = 4;</code>
      * @return int
      */
     public function getNumNewerVersions()
@@ -289,7 +289,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * condition is satisfied when there are at least N versions (including
      * the live version) newer than this version of the object.
      *
-     * Generated from protobuf field <code>int32 num_newer_versions = 4;</code>
+     * Generated from protobuf field <code>optional int32 num_newer_versions = 4;</code>
      * @param int $var
      * @return $this
      */
@@ -338,7 +338,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * object.
      * The value of the field must be a nonnegative integer.
      *
-     * Generated from protobuf field <code>int32 days_since_custom_time = 7;</code>
+     * Generated from protobuf field <code>optional int32 days_since_custom_time = 7;</code>
      * @return int
      */
     public function getDaysSinceCustomTime()
@@ -361,7 +361,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * object.
      * The value of the field must be a nonnegative integer.
      *
-     * Generated from protobuf field <code>int32 days_since_custom_time = 7;</code>
+     * Generated from protobuf field <code>optional int32 days_since_custom_time = 7;</code>
      * @param int $var
      * @return $this
      */
@@ -382,7 +382,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      */
     public function getCustomTimeBefore()
     {
-        return isset($this->custom_time_before) ? $this->custom_time_before : null;
+        return $this->custom_time_before;
     }
 
     public function hasCustomTimeBefore()
@@ -418,7 +418,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * nonnegative integer. If it's zero, the object version will become
      * eligible for Lifecycle action as soon as it becomes noncurrent.
      *
-     * Generated from protobuf field <code>int32 days_since_noncurrent_time = 9;</code>
+     * Generated from protobuf field <code>optional int32 days_since_noncurrent_time = 9;</code>
      * @return int
      */
     public function getDaysSinceNoncurrentTime()
@@ -443,7 +443,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      * nonnegative integer. If it's zero, the object version will become
      * eligible for Lifecycle action as soon as it becomes noncurrent.
      *
-     * Generated from protobuf field <code>int32 days_since_noncurrent_time = 9;</code>
+     * Generated from protobuf field <code>optional int32 days_since_noncurrent_time = 9;</code>
      * @param int $var
      * @return $this
      */
@@ -465,7 +465,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      */
     public function getNoncurrentTimeBefore()
     {
-        return isset($this->noncurrent_time_before) ? $this->noncurrent_time_before : null;
+        return $this->noncurrent_time_before;
     }
 
     public function hasNoncurrentTimeBefore()

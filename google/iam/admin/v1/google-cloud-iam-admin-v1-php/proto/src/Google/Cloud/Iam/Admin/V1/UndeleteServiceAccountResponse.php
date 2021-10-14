@@ -43,7 +43,7 @@ class UndeleteServiceAccountResponse extends \Google\Protobuf\Internal\Message
      */
     public function getRestoredAccount()
     {
-        return isset($this->restored_account) ? $this->restored_account : null;
+        return $this->restored_account;
     }
 
     public function hasRestoredAccount()

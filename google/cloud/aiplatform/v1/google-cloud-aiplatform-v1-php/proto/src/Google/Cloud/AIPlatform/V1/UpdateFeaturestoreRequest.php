@@ -80,7 +80,7 @@ class UpdateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFeaturestore()
     {
-        return isset($this->featurestore) ? $this->featurestore : null;
+        return $this->featurestore;
     }
 
     public function hasFeaturestore()
@@ -128,7 +128,7 @@ class UpdateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -55,7 +55,7 @@ class UpdateGuestPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getGuestPolicy()
     {
-        return isset($this->guest_policy) ? $this->guest_policy : null;
+        return $this->guest_policy;
     }
 
     public function hasGuestPolicy()
@@ -92,7 +92,7 @@ class UpdateGuestPolicyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

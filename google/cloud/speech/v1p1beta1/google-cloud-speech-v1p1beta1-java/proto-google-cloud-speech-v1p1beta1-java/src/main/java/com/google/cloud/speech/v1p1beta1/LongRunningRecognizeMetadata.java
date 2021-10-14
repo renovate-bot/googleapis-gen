@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
     if (lastUpdateTime_ != null) {
       output.writeMessage(3, getLastUpdateTime());
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uri_);
     }
     if (outputConfig_ != null) {
@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getLastUpdateTime());
     }
-    if (!getUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uri_);
     }
     if (outputConfig_ != null) {

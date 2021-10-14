@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getContainerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, containerName_);
     }
     if (locationCase_ == 2) {
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
     if (containerTimestamp_ != null) {
       output.writeMessage(6, getContainerTimestamp());
     }
-    if (!getContainerVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, containerVersion_);
     }
     if (locationCase_ == 8) {
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getContainerNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, containerName_);
     }
     if (locationCase_ == 2) {
@@ -603,7 +603,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getContainerTimestamp());
     }
-    if (!getContainerVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, containerVersion_);
     }
     if (locationCase_ == 8) {

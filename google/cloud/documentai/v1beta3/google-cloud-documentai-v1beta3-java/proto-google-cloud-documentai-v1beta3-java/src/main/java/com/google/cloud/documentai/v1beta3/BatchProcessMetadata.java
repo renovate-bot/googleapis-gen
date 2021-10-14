@@ -853,16 +853,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInputGcsSourceBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputGcsSource_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputGcsSource_);
       }
       if (status_ != null) {
         output.writeMessage(2, getStatus());
       }
-      if (!getOutputGcsDestinationBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputGcsDestination_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputGcsDestination_);
       }
-      if (!getHumanReviewOperationBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReviewOperation_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, humanReviewOperation_);
       }
       if (humanReviewStatus_ != null) {
@@ -877,17 +877,17 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getInputGcsSourceBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputGcsSource_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputGcsSource_);
       }
       if (status_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getStatus());
       }
-      if (!getOutputGcsDestinationBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputGcsDestination_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputGcsDestination_);
       }
-      if (!getHumanReviewOperationBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReviewOperation_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, humanReviewOperation_);
       }
       if (humanReviewStatus_ != null) {
@@ -2152,7 +2152,7 @@ private static final long serialVersionUID = 0L;
     if (state_ != com.google.cloud.documentai.v1beta3.BatchProcessMetadata.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stateMessage_);
     }
     if (createTime_ != null) {
@@ -2177,7 +2177,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stateMessage_);
     }
     if (createTime_ != null) {

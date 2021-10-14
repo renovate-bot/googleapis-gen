@@ -97,7 +97,7 @@ class CreateDashboardRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDashboard()
     {
-        return isset($this->dashboard) ? $this->dashboard : null;
+        return $this->dashboard;
     }
 
     public function hasDashboard()

@@ -292,7 +292,7 @@ class Attribution extends \Google\Protobuf\Internal\Message
      */
     public function getFeatureAttributions()
     {
-        return isset($this->feature_attributions) ? $this->feature_attributions : null;
+        return $this->feature_attributions;
     }
 
     public function hasFeatureAttributions()

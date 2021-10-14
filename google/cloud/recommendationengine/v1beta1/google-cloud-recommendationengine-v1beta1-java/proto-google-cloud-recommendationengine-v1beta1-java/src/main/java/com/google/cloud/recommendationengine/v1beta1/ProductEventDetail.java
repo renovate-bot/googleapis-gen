@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSearchQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchQuery_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, searchQuery_);
     }
     for (int i = 0; i < pageCategories_.size(); i++) {
@@ -593,10 +593,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < productDetails_.size(); i++) {
       output.writeMessage(3, productDetails_.get(i));
     }
-    if (!getListIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, listId_);
     }
-    if (!getCartIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cartId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, cartId_);
     }
     if (purchaseTransaction_ != null) {
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSearchQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchQuery_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, searchQuery_);
     }
     for (int i = 0; i < pageCategories_.size(); i++) {
@@ -622,10 +622,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, productDetails_.get(i));
     }
-    if (!getListIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, listId_);
     }
-    if (!getCartIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cartId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, cartId_);
     }
     if (purchaseTransaction_ != null) {

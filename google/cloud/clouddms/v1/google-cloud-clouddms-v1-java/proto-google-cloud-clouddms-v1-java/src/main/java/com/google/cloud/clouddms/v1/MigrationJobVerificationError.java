@@ -681,10 +681,10 @@ private static final long serialVersionUID = 0L;
     if (errorCode_ != com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.ERROR_CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, errorCode_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
     }
-    if (!getErrorDetailMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorDetailMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorDetailMessage_);
     }
     unknownFields.writeTo(output);
@@ -700,10 +700,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, errorCode_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
     }
-    if (!getErrorDetailMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorDetailMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorDetailMessage_);
     }
     size += unknownFields.getSerializedSize();

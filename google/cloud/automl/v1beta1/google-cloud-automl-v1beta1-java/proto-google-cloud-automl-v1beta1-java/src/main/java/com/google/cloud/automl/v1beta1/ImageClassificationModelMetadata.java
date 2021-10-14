@@ -417,7 +417,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, baseModelId_);
     }
     if (trainBudget_ != 0L) {
@@ -426,10 +426,10 @@ private static final long serialVersionUID = 0L;
     if (trainCost_ != 0L) {
       output.writeInt64(3, trainCost_);
     }
-    if (!getStopReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stopReason_);
     }
-    if (!getModelTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, modelType_);
     }
     if (nodeQps_ != 0D) {
@@ -447,7 +447,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getBaseModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, baseModelId_);
     }
     if (trainBudget_ != 0L) {
@@ -458,10 +458,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, trainCost_);
     }
-    if (!getStopReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopReason_);
     }
-    if (!getModelTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, modelType_);
     }
     if (nodeQps_ != 0D) {

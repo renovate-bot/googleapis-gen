@@ -63,7 +63,7 @@ class Coverage extends \Google\Protobuf\Internal\Message
      */
     public function getRouteGroup()
     {
-        return isset($this->route_group) ? $this->route_group : null;
+        return $this->route_group;
     }
 
     public function hasRouteGroup()

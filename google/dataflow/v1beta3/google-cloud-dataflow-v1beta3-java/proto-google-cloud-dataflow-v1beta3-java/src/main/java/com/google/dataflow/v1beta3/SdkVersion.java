@@ -419,10 +419,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
-    if (!getVersionDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, versionDisplayName_);
     }
     if (sdkSupportStatus_ != com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNKNOWN.getNumber()) {
@@ -437,10 +437,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
     }
-    if (!getVersionDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, versionDisplayName_);
     }
     if (sdkSupportStatus_ != com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNKNOWN.getNumber()) {

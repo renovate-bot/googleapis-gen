@@ -925,7 +925,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (destinationCase_ == 2) {
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(6, getUpdateTime());
     }
-    if (!getDataSourceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSourceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, dataSourceId_);
     }
     if (state_ != com.google.cloud.bigquery.datatransfer.v1.TransferState.TRANSFER_STATE_UNSPECIFIED.getNumber()) {
@@ -958,13 +958,13 @@ private static final long serialVersionUID = 0L;
     if (userId_ != 0L) {
       output.writeInt64(11, userId_);
     }
-    if (!getScheduleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schedule_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, schedule_);
     }
     if (errorStatus_ != null) {
       output.writeMessage(21, getErrorStatus());
     }
-    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, notificationPubsubTopic_);
     }
     if (emailPreferences_ != null) {
@@ -979,7 +979,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (destinationCase_ == 2) {
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getUpdateTime());
     }
-    if (!getDataSourceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSourceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, dataSourceId_);
     }
     if (state_ != com.google.cloud.bigquery.datatransfer.v1.TransferState.TRANSFER_STATE_UNSPECIFIED.getNumber()) {
@@ -1020,14 +1020,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(11, userId_);
     }
-    if (!getScheduleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schedule_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, schedule_);
     }
     if (errorStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(21, getErrorStatus());
     }
-    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, notificationPubsubTopic_);
     }
     if (emailPreferences_ != null) {

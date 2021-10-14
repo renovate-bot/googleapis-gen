@@ -53,7 +53,7 @@ class InvocationAttemptFinished extends \Google\Protobuf\Internal\Message
      */
     public function getInvocationStatus()
     {
-        return isset($this->invocation_status) ? $this->invocation_status : null;
+        return $this->invocation_status;
     }
 
     public function hasInvocationStatus()
@@ -89,7 +89,7 @@ class InvocationAttemptFinished extends \Google\Protobuf\Internal\Message
      */
     public function getDetails()
     {
-        return isset($this->details) ? $this->details : null;
+        return $this->details;
     }
 
     public function hasDetails()

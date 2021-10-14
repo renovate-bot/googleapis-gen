@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDebuggeeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debuggeeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, debuggeeId_);
     }
     if (includeAllUsers_ != false) {
@@ -967,10 +967,10 @@ private static final long serialVersionUID = 0L;
     if (stripResults_ != false) {
       output.writeBool(5, stripResults_);
     }
-    if (!getWaitTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(waitToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, waitToken_);
     }
-    if (!getClientVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, clientVersion_);
     }
     unknownFields.writeTo(output);
@@ -982,7 +982,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDebuggeeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(debuggeeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, debuggeeId_);
     }
     if (includeAllUsers_ != false) {
@@ -1001,10 +1001,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, stripResults_);
     }
-    if (!getWaitTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(waitToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, waitToken_);
     }
-    if (!getClientVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, clientVersion_);
     }
     size += unknownFields.getSerializedSize();

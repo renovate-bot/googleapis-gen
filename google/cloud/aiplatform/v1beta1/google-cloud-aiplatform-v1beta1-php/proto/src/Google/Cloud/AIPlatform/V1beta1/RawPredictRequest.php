@@ -117,7 +117,7 @@ class RawPredictRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHttpBody()
     {
-        return isset($this->http_body) ? $this->http_body : null;
+        return $this->http_body;
     }
 
     public function hasHttpBody()

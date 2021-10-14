@@ -19,7 +19,7 @@ class StoreAttribute extends \Google\Protobuf\Internal\Message
      * Store code from
      * https://support.google.com/business/answer/3370250#storecode
      *
-     * Generated from protobuf field <code>string store_code = 2;</code>
+     * Generated from protobuf field <code>optional string store_code = 2;</code>
      */
     protected $store_code = null;
 
@@ -43,7 +43,7 @@ class StoreAttribute extends \Google\Protobuf\Internal\Message
      * Store code from
      * https://support.google.com/business/answer/3370250#storecode
      *
-     * Generated from protobuf field <code>string store_code = 2;</code>
+     * Generated from protobuf field <code>optional string store_code = 2;</code>
      * @return string
      */
     public function getStoreCode()
@@ -65,7 +65,7 @@ class StoreAttribute extends \Google\Protobuf\Internal\Message
      * Store code from
      * https://support.google.com/business/answer/3370250#storecode
      *
-     * Generated from protobuf field <code>string store_code = 2;</code>
+     * Generated from protobuf field <code>optional string store_code = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -383,10 +383,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getInstanceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
     }
-    if (!getDatabaseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, database_);
     }
     if (type_ != com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.DATABASE_TYPE_UNSPECIFIED.getNumber()) {
@@ -401,10 +401,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
     }
-    if (!getDatabaseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, database_);
     }
     if (type_ != com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec.DatabaseType.DATABASE_TYPE_UNSPECIFIED.getNumber()) {

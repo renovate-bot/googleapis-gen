@@ -440,20 +440,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (algorithm_ != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, algorithm_);
     }
-    if (!getImportJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, importJob_);
     }
     if (wrappedKeyMaterialCase_ == 5) {
       output.writeBytes(
           5, (com.google.protobuf.ByteString) wrappedKeyMaterial_);
     }
-    if (!getCryptoKeyVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cryptoKeyVersion_);
     }
     unknownFields.writeTo(output);
@@ -465,14 +465,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (algorithm_ != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, algorithm_);
     }
-    if (!getImportJobBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, importJob_);
     }
     if (wrappedKeyMaterialCase_ == 5) {
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
         .computeBytesSize(
             5, (com.google.protobuf.ByteString) wrappedKeyMaterial_);
     }
-    if (!getCryptoKeyVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cryptoKeyVersion_);
     }
     size += unknownFields.getSerializedSize();

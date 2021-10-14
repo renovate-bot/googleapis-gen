@@ -129,7 +129,7 @@ class RegisterDomainRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRegistration()
     {
-        return isset($this->registration) ? $this->registration : null;
+        return $this->registration;
     }
 
     public function hasRegistration()
@@ -225,7 +225,7 @@ class RegisterDomainRequest extends \Google\Protobuf\Internal\Message
      */
     public function getYearlyPrice()
     {
-        return isset($this->yearly_price) ? $this->yearly_price : null;
+        return $this->yearly_price;
     }
 
     public function hasYearlyPrice()

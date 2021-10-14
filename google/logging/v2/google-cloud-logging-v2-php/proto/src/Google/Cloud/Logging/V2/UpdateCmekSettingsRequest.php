@@ -140,7 +140,7 @@ class UpdateCmekSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCmekSettings()
     {
-        return isset($this->cmek_settings) ? $this->cmek_settings : null;
+        return $this->cmek_settings;
     }
 
     public function hasCmekSettings()
@@ -183,7 +183,7 @@ class UpdateCmekSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

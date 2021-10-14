@@ -314,7 +314,7 @@ class HttpCheck extends \Google\Protobuf\Internal\Message
      */
     public function getAuthInfo()
     {
-        return isset($this->auth_info) ? $this->auth_info : null;
+        return $this->auth_info;
     }
 
     public function hasAuthInfo()

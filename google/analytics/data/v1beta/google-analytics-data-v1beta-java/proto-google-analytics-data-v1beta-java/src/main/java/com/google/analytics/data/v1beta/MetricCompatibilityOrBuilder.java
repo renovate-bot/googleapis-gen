@@ -14,7 +14,7 @@ public interface MetricCompatibilityOrBuilder extends
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    * @return Whether the metricMetadata field is set.
    */
   boolean hasMetricMetadata();
@@ -25,7 +25,7 @@ public interface MetricCompatibilityOrBuilder extends
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    * @return The metricMetadata.
    */
   com.google.analytics.data.v1beta.MetricMetadata getMetricMetadata();
@@ -36,7 +36,7 @@ public interface MetricCompatibilityOrBuilder extends
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.MetricMetadata metric_metadata = 1;</code>
    */
   com.google.analytics.data.v1beta.MetricMetadataOrBuilder getMetricMetadataOrBuilder();
 
@@ -46,7 +46,7 @@ public interface MetricCompatibilityOrBuilder extends
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return Whether the compatibility field is set.
    */
   boolean hasCompatibility();
@@ -56,7 +56,7 @@ public interface MetricCompatibilityOrBuilder extends
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The enum numeric value on the wire for compatibility.
    */
   int getCompatibilityValue();
@@ -66,7 +66,7 @@ public interface MetricCompatibilityOrBuilder extends
    * this metric can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The compatibility.
    */
   com.google.analytics.data.v1beta.Compatibility getCompatibility();

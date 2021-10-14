@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
    * will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the allowSubjectPassthrough field is set.
    */
   @java.lang.Override
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    * will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The allowSubjectPassthrough.
    */
   @java.lang.Override
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the allowSubjectAltNamesPassthrough field is set.
    */
   @java.lang.Override
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The allowSubjectAltNamesPassthrough.
    */
   @java.lang.Override
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the allowSubjectPassthrough field is set.
      */
     @java.lang.Override
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
      * will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The allowSubjectPassthrough.
      */
     @java.lang.Override
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
      * will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The allowSubjectPassthrough to set.
      * @return This builder for chaining.
      */
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
      * will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowSubjectPassthrough() {
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the allowSubjectAltNamesPassthrough field is set.
      */
     @java.lang.Override
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The allowSubjectAltNamesPassthrough.
      */
     @java.lang.Override
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The allowSubjectAltNamesPassthrough to set.
      * @return This builder for chaining.
      */
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearAllowSubjectAltNamesPassthrough() {

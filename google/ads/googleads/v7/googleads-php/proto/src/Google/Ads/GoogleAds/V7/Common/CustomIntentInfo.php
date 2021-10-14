@@ -19,7 +19,7 @@ class CustomIntentInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CustomInterest resource name.
      *
-     * Generated from protobuf field <code>string custom_intent = 2;</code>
+     * Generated from protobuf field <code>optional string custom_intent = 2;</code>
      */
     protected $custom_intent = null;
 
@@ -41,7 +41,7 @@ class CustomIntentInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CustomInterest resource name.
      *
-     * Generated from protobuf field <code>string custom_intent = 2;</code>
+     * Generated from protobuf field <code>optional string custom_intent = 2;</code>
      * @return string
      */
     public function getCustomIntent()
@@ -62,7 +62,7 @@ class CustomIntentInfo extends \Google\Protobuf\Internal\Message
     /**
      * The CustomInterest resource name.
      *
-     * Generated from protobuf field <code>string custom_intent = 2;</code>
+     * Generated from protobuf field <code>optional string custom_intent = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -19,7 +19,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
     /**
      * Unique ID of the violated policy.
      *
-     * Generated from protobuf field <code>string policy_name = 3;</code>
+     * Generated from protobuf field <code>optional string policy_name = 3;</code>
      */
     protected $policy_name = null;
     /**
@@ -29,7 +29,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      * If not specified for criterion exemptions, the whole policy is implied.
      * Must be specified for ad exemptions.
      *
-     * Generated from protobuf field <code>string violating_text = 4;</code>
+     * Generated from protobuf field <code>optional string violating_text = 4;</code>
      */
     protected $violating_text = null;
 
@@ -57,7 +57,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
     /**
      * Unique ID of the violated policy.
      *
-     * Generated from protobuf field <code>string policy_name = 3;</code>
+     * Generated from protobuf field <code>optional string policy_name = 3;</code>
      * @return string
      */
     public function getPolicyName()
@@ -78,7 +78,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
     /**
      * Unique ID of the violated policy.
      *
-     * Generated from protobuf field <code>string policy_name = 3;</code>
+     * Generated from protobuf field <code>optional string policy_name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -97,7 +97,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      * If not specified for criterion exemptions, the whole policy is implied.
      * Must be specified for ad exemptions.
      *
-     * Generated from protobuf field <code>string violating_text = 4;</code>
+     * Generated from protobuf field <code>optional string violating_text = 4;</code>
      * @return string
      */
     public function getViolatingText()
@@ -122,7 +122,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      * If not specified for criterion exemptions, the whole policy is implied.
      * Must be specified for ad exemptions.
      *
-     * Generated from protobuf field <code>string violating_text = 4;</code>
+     * Generated from protobuf field <code>optional string violating_text = 4;</code>
      * @param string $var
      * @return $this
      */

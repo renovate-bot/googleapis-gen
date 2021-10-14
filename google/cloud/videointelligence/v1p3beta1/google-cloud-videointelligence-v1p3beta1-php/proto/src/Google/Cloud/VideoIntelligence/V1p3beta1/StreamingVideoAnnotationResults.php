@@ -122,7 +122,7 @@ class StreamingVideoAnnotationResults extends \Google\Protobuf\Internal\Message
      */
     public function getExplicitAnnotation()
     {
-        return isset($this->explicit_annotation) ? $this->explicit_annotation : null;
+        return $this->explicit_annotation;
     }
 
     public function hasExplicitAnnotation()

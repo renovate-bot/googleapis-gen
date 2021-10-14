@@ -79,7 +79,7 @@ class CreateBookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBook()
     {
-        return isset($this->book) ? $this->book : null;
+        return $this->book;
     }
 
     public function hasBook()

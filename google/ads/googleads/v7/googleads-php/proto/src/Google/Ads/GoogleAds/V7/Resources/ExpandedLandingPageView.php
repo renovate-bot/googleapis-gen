@@ -27,7 +27,7 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>string expanded_final_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string expanded_final_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $expanded_final_url = null;
 
@@ -83,7 +83,7 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>string expanded_final_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string expanded_final_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getExpandedFinalUrl()
@@ -104,7 +104,7 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>string expanded_final_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string expanded_final_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

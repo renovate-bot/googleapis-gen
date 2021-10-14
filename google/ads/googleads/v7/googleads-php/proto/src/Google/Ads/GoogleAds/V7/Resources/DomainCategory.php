@@ -29,14 +29,14 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The campaign this category is recommended for.
      *
-     * Generated from protobuf field <code>string campaign = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
      * Output only. Recommended category for the website domain. e.g. if you have a website
      * about electronics, the categories could be "cameras", "televisions", etc.
      *
-     * Generated from protobuf field <code>string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $category = null;
     /**
@@ -46,39 +46,39 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * your website that you want Google Ads to find, create ads for,
      * and match searches with.
      *
-     * Generated from protobuf field <code>string language_code = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $language_code = null;
     /**
      * Output only. The domain for the website. The domain can be specified in the
      * DynamicSearchAdsSetting required for dynamic search ads.
      *
-     * Generated from protobuf field <code>string domain = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string domain = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $domain = null;
     /**
      * Output only. Fraction of pages on your site that this category matches.
      *
-     * Generated from protobuf field <code>double coverage_fraction = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double coverage_fraction = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $coverage_fraction = null;
     /**
      * Output only. The position of this category in the set of categories. Lower numbers
      * indicate a better match for the domain. null indicates not recommended.
      *
-     * Generated from protobuf field <code>int64 category_rank = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 category_rank = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $category_rank = null;
     /**
      * Output only. Indicates whether this category has sub-categories.
      *
-     * Generated from protobuf field <code>bool has_children = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_children = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_children = null;
     /**
      * Output only. The recommended cost per click for the category.
      *
-     * Generated from protobuf field <code>int64 recommended_cpc_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_cpc_bid_micros = null;
 
@@ -155,7 +155,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The campaign this category is recommended for.
      *
-     * Generated from protobuf field <code>string campaign = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -176,7 +176,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The campaign this category is recommended for.
      *
-     * Generated from protobuf field <code>string campaign = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -192,7 +192,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. Recommended category for the website domain. e.g. if you have a website
      * about electronics, the categories could be "cameras", "televisions", etc.
      *
-     * Generated from protobuf field <code>string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCategory()
@@ -214,7 +214,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. Recommended category for the website domain. e.g. if you have a website
      * about electronics, the categories could be "cameras", "televisions", etc.
      *
-     * Generated from protobuf field <code>string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string category = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -233,7 +233,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * your website that you want Google Ads to find, create ads for,
      * and match searches with.
      *
-     * Generated from protobuf field <code>string language_code = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLanguageCode()
@@ -258,7 +258,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * your website that you want Google Ads to find, create ads for,
      * and match searches with.
      *
-     * Generated from protobuf field <code>string language_code = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -274,7 +274,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. The domain for the website. The domain can be specified in the
      * DynamicSearchAdsSetting required for dynamic search ads.
      *
-     * Generated from protobuf field <code>string domain = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string domain = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDomain()
@@ -296,7 +296,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. The domain for the website. The domain can be specified in the
      * DynamicSearchAdsSetting required for dynamic search ads.
      *
-     * Generated from protobuf field <code>string domain = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string domain = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -311,7 +311,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Fraction of pages on your site that this category matches.
      *
-     * Generated from protobuf field <code>double coverage_fraction = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double coverage_fraction = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getCoverageFraction()
@@ -332,7 +332,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Fraction of pages on your site that this category matches.
      *
-     * Generated from protobuf field <code>double coverage_fraction = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double coverage_fraction = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */
@@ -348,7 +348,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. The position of this category in the set of categories. Lower numbers
      * indicate a better match for the domain. null indicates not recommended.
      *
-     * Generated from protobuf field <code>int64 category_rank = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 category_rank = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCategoryRank()
@@ -370,7 +370,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. The position of this category in the set of categories. Lower numbers
      * indicate a better match for the domain. null indicates not recommended.
      *
-     * Generated from protobuf field <code>int64 category_rank = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 category_rank = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -385,7 +385,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Indicates whether this category has sub-categories.
      *
-     * Generated from protobuf field <code>bool has_children = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_children = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getHasChildren()
@@ -406,7 +406,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Indicates whether this category has sub-categories.
      *
-     * Generated from protobuf field <code>bool has_children = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_children = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -421,7 +421,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended cost per click for the category.
      *
-     * Generated from protobuf field <code>int64 recommended_cpc_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRecommendedCpcBidMicros()
@@ -442,7 +442,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The recommended cost per click for the category.
      *
-     * Generated from protobuf field <code>int64 recommended_cpc_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_cpc_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

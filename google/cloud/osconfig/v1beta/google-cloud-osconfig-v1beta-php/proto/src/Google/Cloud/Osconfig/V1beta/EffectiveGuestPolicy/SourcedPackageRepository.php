@@ -79,7 +79,7 @@ class SourcedPackageRepository extends \Google\Protobuf\Internal\Message
      */
     public function getPackageRepository()
     {
-        return isset($this->package_repository) ? $this->package_repository : null;
+        return $this->package_repository;
     }
 
     public function hasPackageRepository()

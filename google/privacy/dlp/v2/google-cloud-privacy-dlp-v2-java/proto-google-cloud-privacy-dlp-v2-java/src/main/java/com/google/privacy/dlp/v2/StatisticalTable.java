@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
       if (field_ != null) {
         output.writeMessage(1, getField());
       }
-      if (!getCustomTagBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customTag_);
       }
       unknownFields.writeTo(output);
@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getField());
       }
-      if (!getCustomTagBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTag_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customTag_);
       }
       size += unknownFields.getSerializedSize();

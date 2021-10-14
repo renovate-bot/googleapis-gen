@@ -116,19 +116,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     private static readonly pb::MessageParser<TimeSeriesQuery> _parser = new pb::MessageParser<TimeSeriesQuery>(() => new TimeSeriesQuery());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TimeSeriesQuery> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Monitoring.Dashboard.V1.MetricsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesQuery() {
       OnConstruction();
     }
@@ -136,6 +140,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesQuery(TimeSeriesQuery other) : this() {
       unitOverride_ = other.unitOverride_;
       switch (other.SourceCase) {
@@ -154,6 +159,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesQuery Clone() {
       return new TimeSeriesQuery(this);
     }
@@ -164,6 +170,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Filter parameters to fetch time series.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilter TimeSeriesFilter {
       get { return sourceCase_ == SourceOneofCase.TimeSeriesFilter ? (global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilter) source_ : null; }
       set {
@@ -178,6 +185,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Parameters to fetch a ratio between two time series filters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilterRatio TimeSeriesFilterRatio {
       get { return sourceCase_ == SourceOneofCase.TimeSeriesFilterRatio ? (global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilterRatio) source_ : null; }
       set {
@@ -192,6 +200,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// A query used to fetch time series.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TimeSeriesQueryLanguage {
       get { return sourceCase_ == SourceOneofCase.TimeSeriesQueryLanguage ? (string) source_ : ""; }
       set {
@@ -211,6 +220,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// field in `MetricDescriptor`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string UnitOverride {
       get { return unitOverride_; }
       set {
@@ -228,22 +238,26 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
     private SourceOneofCase sourceCase_ = SourceOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SourceOneofCase SourceCase {
       get { return sourceCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearSource() {
       sourceCase_ = SourceOneofCase.None;
       source_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TimeSeriesQuery);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TimeSeriesQuery other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -260,6 +274,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (sourceCase_ == SourceOneofCase.TimeSeriesFilter) hash ^= TimeSeriesFilter.GetHashCode();
@@ -274,11 +289,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -307,6 +324,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (sourceCase_ == SourceOneofCase.TimeSeriesFilter) {
         output.WriteRawTag(10);
@@ -331,6 +349,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (sourceCase_ == SourceOneofCase.TimeSeriesFilter) {
@@ -352,6 +371,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TimeSeriesQuery other) {
       if (other == null) {
         return;
@@ -381,6 +401,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -424,6 +445,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -478,19 +500,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     private static readonly pb::MessageParser<TimeSeriesFilter> _parser = new pb::MessageParser<TimeSeriesFilter>(() => new TimeSeriesFilter());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TimeSeriesFilter> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Monitoring.Dashboard.V1.MetricsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesFilter() {
       OnConstruction();
     }
@@ -498,6 +524,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesFilter(TimeSeriesFilter other) : this() {
       filter_ = other.filter_;
       aggregation_ = other.aggregation_ != null ? other.aggregation_.Clone() : null;
@@ -515,6 +542,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesFilter Clone() {
       return new TimeSeriesFilter(this);
     }
@@ -527,6 +555,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// that identifies the metric types, resources, and projects to query.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Filter {
       get { return filter_; }
       set {
@@ -543,6 +572,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// data.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.Aggregation Aggregation {
       get { return aggregation_; }
       set {
@@ -557,6 +587,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Apply a second aggregation after `aggregation` is applied.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.Aggregation SecondaryAggregation {
       get { return secondaryAggregation_; }
       set {
@@ -570,6 +601,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Ranking based time series filter.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.PickTimeSeriesFilter PickTimeSeriesFilter {
       get { return outputFilterCase_ == OutputFilterOneofCase.PickTimeSeriesFilter ? (global::Google.Cloud.Monitoring.Dashboard.V1.PickTimeSeriesFilter) outputFilter_ : null; }
       set {
@@ -586,6 +618,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.StatisticalTimeSeriesFilter StatisticalTimeSeriesFilter {
       get { return outputFilterCase_ == OutputFilterOneofCase.StatisticalTimeSeriesFilter ? (global::Google.Cloud.Monitoring.Dashboard.V1.StatisticalTimeSeriesFilter) outputFilter_ : null; }
       set {
@@ -603,22 +636,26 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
     private OutputFilterOneofCase outputFilterCase_ = OutputFilterOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OutputFilterOneofCase OutputFilterCase {
       get { return outputFilterCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOutputFilter() {
       outputFilterCase_ = OutputFilterOneofCase.None;
       outputFilter_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TimeSeriesFilter);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TimeSeriesFilter other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -636,6 +673,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Filter.Length != 0) hash ^= Filter.GetHashCode();
@@ -651,11 +689,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -688,6 +728,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Filter.Length != 0) {
         output.WriteRawTag(10);
@@ -716,6 +757,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Filter.Length != 0) {
@@ -740,6 +782,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TimeSeriesFilter other) {
       if (other == null) {
         return;
@@ -778,6 +821,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -831,6 +875,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -894,19 +939,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     private static readonly pb::MessageParser<TimeSeriesFilterRatio> _parser = new pb::MessageParser<TimeSeriesFilterRatio>(() => new TimeSeriesFilterRatio());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TimeSeriesFilterRatio> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Monitoring.Dashboard.V1.MetricsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesFilterRatio() {
       OnConstruction();
     }
@@ -914,6 +963,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesFilterRatio(TimeSeriesFilterRatio other) : this() {
       numerator_ = other.numerator_ != null ? other.numerator_.Clone() : null;
       denominator_ = other.denominator_ != null ? other.denominator_.Clone() : null;
@@ -931,6 +981,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeSeriesFilterRatio Clone() {
       return new TimeSeriesFilterRatio(this);
     }
@@ -942,6 +993,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// The numerator of the ratio.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilterRatio.Types.RatioPart Numerator {
       get { return numerator_; }
       set {
@@ -956,6 +1008,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// The denominator of the ratio.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilterRatio.Types.RatioPart Denominator {
       get { return denominator_; }
       set {
@@ -970,6 +1023,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Apply a second aggregation after the ratio is computed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.Aggregation SecondaryAggregation {
       get { return secondaryAggregation_; }
       set {
@@ -983,6 +1037,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Ranking based time series filter.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.PickTimeSeriesFilter PickTimeSeriesFilter {
       get { return outputFilterCase_ == OutputFilterOneofCase.PickTimeSeriesFilter ? (global::Google.Cloud.Monitoring.Dashboard.V1.PickTimeSeriesFilter) outputFilter_ : null; }
       set {
@@ -999,6 +1054,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.StatisticalTimeSeriesFilter StatisticalTimeSeriesFilter {
       get { return outputFilterCase_ == OutputFilterOneofCase.StatisticalTimeSeriesFilter ? (global::Google.Cloud.Monitoring.Dashboard.V1.StatisticalTimeSeriesFilter) outputFilter_ : null; }
       set {
@@ -1016,22 +1072,26 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
     private OutputFilterOneofCase outputFilterCase_ = OutputFilterOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OutputFilterOneofCase OutputFilterCase {
       get { return outputFilterCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOutputFilter() {
       outputFilterCase_ = OutputFilterOneofCase.None;
       outputFilter_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TimeSeriesFilterRatio);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TimeSeriesFilterRatio other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1049,6 +1109,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (numerator_ != null) hash ^= Numerator.GetHashCode();
@@ -1064,11 +1125,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1101,6 +1164,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (numerator_ != null) {
         output.WriteRawTag(10);
@@ -1129,6 +1193,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (numerator_ != null) {
@@ -1153,6 +1218,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TimeSeriesFilterRatio other) {
       if (other == null) {
         return;
@@ -1194,6 +1260,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1250,6 +1317,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1304,6 +1372,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the TimeSeriesFilterRatio message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Describes a query to build the numerator or denominator of a
@@ -1317,19 +1386,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         private static readonly pb::MessageParser<RatioPart> _parser = new pb::MessageParser<RatioPart>(() => new RatioPart());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<RatioPart> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesFilterRatio.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RatioPart() {
           OnConstruction();
         }
@@ -1337,6 +1410,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RatioPart(RatioPart other) : this() {
           filter_ = other.filter_;
           aggregation_ = other.aggregation_ != null ? other.aggregation_.Clone() : null;
@@ -1344,6 +1418,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RatioPart Clone() {
           return new RatioPart(this);
         }
@@ -1357,6 +1432,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// identifies the metric types, resources, and projects to query.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Filter {
           get { return filter_; }
           set {
@@ -1373,6 +1449,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// data.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Monitoring.Dashboard.V1.Aggregation Aggregation {
           get { return aggregation_; }
           set {
@@ -1381,11 +1458,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as RatioPart);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(RatioPart other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1399,6 +1478,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Filter.Length != 0) hash ^= Filter.GetHashCode();
@@ -1410,11 +1490,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1435,6 +1517,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Filter.Length != 0) {
             output.WriteRawTag(10);
@@ -1451,6 +1534,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Filter.Length != 0) {
@@ -1466,6 +1550,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(RatioPart other) {
           if (other == null) {
             return;
@@ -1483,6 +1568,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1511,6 +1597,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1552,19 +1639,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     private static readonly pb::MessageParser<Threshold> _parser = new pb::MessageParser<Threshold>(() => new Threshold());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Threshold> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Monitoring.Dashboard.V1.MetricsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Threshold() {
       OnConstruction();
     }
@@ -1572,6 +1663,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Threshold(Threshold other) : this() {
       label_ = other.label_;
       value_ = other.value_;
@@ -1581,6 +1673,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Threshold Clone() {
       return new Threshold(this);
     }
@@ -1592,6 +1685,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// A label for the threshold.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Label {
       get { return label_; }
       set {
@@ -1607,6 +1701,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// of the metric.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Value {
       get { return value_; }
       set {
@@ -1621,6 +1716,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// The state color for this threshold. Color is not allowed in a XyChart.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.Threshold.Types.Color Color {
       get { return color_; }
       set {
@@ -1636,6 +1732,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// XyChart.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.Threshold.Types.Direction Direction {
       get { return direction_; }
       set {
@@ -1644,11 +1741,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Threshold);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Threshold other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1664,6 +1763,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Label.Length != 0) hash ^= Label.GetHashCode();
@@ -1677,11 +1777,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1710,6 +1812,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Label.Length != 0) {
         output.WriteRawTag(10);
@@ -1734,6 +1837,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Label.Length != 0) {
@@ -1755,6 +1859,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Threshold other) {
       if (other == null) {
         return;
@@ -1775,6 +1880,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1808,6 +1914,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1839,6 +1946,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the Threshold message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The color suggests an interpretation to the viewer when actual values cross

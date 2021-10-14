@@ -19,7 +19,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      *
-     * Generated from protobuf field <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_roas = null;
 
@@ -41,7 +41,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      *
-     * Generated from protobuf field <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getTargetRoas()
@@ -62,7 +62,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The desired revenue (based on conversion data) per unit of spend.
      *
-     * Generated from protobuf field <code>double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */

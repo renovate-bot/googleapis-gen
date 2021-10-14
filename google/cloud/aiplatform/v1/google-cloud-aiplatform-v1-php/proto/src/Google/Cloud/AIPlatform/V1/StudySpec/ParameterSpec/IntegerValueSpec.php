@@ -34,7 +34,7 @@ class IntegerValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>int64 default_value = 4;</code>
+     * Generated from protobuf field <code>optional int64 default_value = 4;</code>
      */
     protected $default_value = null;
 
@@ -120,7 +120,7 @@ class IntegerValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>int64 default_value = 4;</code>
+     * Generated from protobuf field <code>optional int64 default_value = 4;</code>
      * @return int|string
      */
     public function getDefaultValue()
@@ -145,7 +145,7 @@ class IntegerValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>int64 default_value = 4;</code>
+     * Generated from protobuf field <code>optional int64 default_value = 4;</code>
      * @param int|string $var
      * @return $this
      */

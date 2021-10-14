@@ -121,7 +121,7 @@ class Drive extends \Google\Protobuf\Internal\Message
      */
     public function getRoot()
     {
-        return isset($this->root) ? $this->root : null;
+        return $this->root;
     }
 
     public function hasRoot()

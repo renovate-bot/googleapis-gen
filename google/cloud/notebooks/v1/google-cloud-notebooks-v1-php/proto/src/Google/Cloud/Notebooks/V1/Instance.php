@@ -689,7 +689,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     public function getAcceleratorConfig()
     {
-        return isset($this->accelerator_config) ? $this->accelerator_config : null;
+        return $this->accelerator_config;
     }
 
     public function hasAcceleratorConfig()
@@ -1046,7 +1046,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     public function getShieldedInstanceConfig()
     {
-        return isset($this->shielded_instance_config) ? $this->shielded_instance_config : null;
+        return $this->shielded_instance_config;
     }
 
     public function hasShieldedInstanceConfig()
@@ -1335,7 +1335,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     public function getReservationAffinity()
     {
-        return isset($this->reservation_affinity) ? $this->reservation_affinity : null;
+        return $this->reservation_affinity;
     }
 
     public function hasReservationAffinity()
@@ -1374,7 +1374,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -1410,7 +1410,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

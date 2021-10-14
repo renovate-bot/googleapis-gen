@@ -318,16 +318,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getAndroidModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, androidModelId_);
     }
-    if (!getAndroidVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, androidVersionId_);
     }
-    if (!getLocaleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locale_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, locale_);
     }
-    if (!getOrientationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orientation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orientation_);
     }
     unknownFields.writeTo(output);
@@ -339,16 +339,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getAndroidModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, androidModelId_);
     }
-    if (!getAndroidVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, androidVersionId_);
     }
-    if (!getLocaleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locale_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, locale_);
     }
-    if (!getOrientationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orientation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orientation_);
     }
     size += unknownFields.getSerializedSize();

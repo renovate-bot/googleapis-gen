@@ -57,7 +57,7 @@ class ScoreMetrics extends \Google\Protobuf\Internal\Message
      */
     public function getOverallMetrics()
     {
-        return isset($this->overall_metrics) ? $this->overall_metrics : null;
+        return $this->overall_metrics;
     }
 
     public function hasOverallMetrics()

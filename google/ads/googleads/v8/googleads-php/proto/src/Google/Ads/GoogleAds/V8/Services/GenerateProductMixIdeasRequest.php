@@ -199,7 +199,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPreferences()
     {
-        return isset($this->preferences) ? $this->preferences : null;
+        return $this->preferences;
     }
 
     public function hasPreferences()

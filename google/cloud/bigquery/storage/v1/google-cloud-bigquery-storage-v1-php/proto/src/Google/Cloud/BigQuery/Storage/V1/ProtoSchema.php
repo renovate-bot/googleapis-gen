@@ -66,7 +66,7 @@ class ProtoSchema extends \Google\Protobuf\Internal\Message
      */
     public function getProtoDescriptor()
     {
-        return isset($this->proto_descriptor) ? $this->proto_descriptor : null;
+        return $this->proto_descriptor;
     }
 
     public function hasProtoDescriptor()

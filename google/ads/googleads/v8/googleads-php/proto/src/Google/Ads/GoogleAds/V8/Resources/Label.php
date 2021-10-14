@@ -26,7 +26,7 @@ class Label extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -34,7 +34,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating a new label.
      * The length of this string should be between 1 and 80, inclusive.
      *
-     * Generated from protobuf field <code>string name = 7;</code>
+     * Generated from protobuf field <code>optional string name = 7;</code>
      */
     protected $name = null;
     /**
@@ -110,7 +110,7 @@ class Label extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -131,7 +131,7 @@ class Label extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -148,7 +148,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating a new label.
      * The length of this string should be between 1 and 80, inclusive.
      *
-     * Generated from protobuf field <code>string name = 7;</code>
+     * Generated from protobuf field <code>optional string name = 7;</code>
      * @return string
      */
     public function getName()
@@ -171,7 +171,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating a new label.
      * The length of this string should be between 1 and 80, inclusive.
      *
-     * Generated from protobuf field <code>string name = 7;</code>
+     * Generated from protobuf field <code>optional string name = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -217,7 +217,7 @@ class Label extends \Google\Protobuf\Internal\Message
      */
     public function getTextLabel()
     {
-        return isset($this->text_label) ? $this->text_label : null;
+        return $this->text_label;
     }
 
     public function hasTextLabel()

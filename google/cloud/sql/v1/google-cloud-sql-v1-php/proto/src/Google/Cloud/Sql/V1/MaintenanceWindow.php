@@ -74,7 +74,7 @@ class MaintenanceWindow extends \Google\Protobuf\Internal\Message
      */
     public function getHour()
     {
-        return isset($this->hour) ? $this->hour : null;
+        return $this->hour;
     }
 
     public function hasHour()
@@ -137,7 +137,7 @@ class MaintenanceWindow extends \Google\Protobuf\Internal\Message
      */
     public function getDay()
     {
-        return isset($this->day) ? $this->day : null;
+        return $this->day;
     }
 
     public function hasDay()

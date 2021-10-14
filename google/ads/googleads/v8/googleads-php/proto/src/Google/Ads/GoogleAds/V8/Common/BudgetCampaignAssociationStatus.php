@@ -18,7 +18,7 @@ class BudgetCampaignAssociationStatus extends \Google\Protobuf\Internal\Message
     /**
      * The campaign resource name.
      *
-     * Generated from protobuf field <code>string campaign = 1;</code>
+     * Generated from protobuf field <code>optional string campaign = 1;</code>
      */
     protected $campaign = null;
     /**
@@ -48,7 +48,7 @@ class BudgetCampaignAssociationStatus extends \Google\Protobuf\Internal\Message
     /**
      * The campaign resource name.
      *
-     * Generated from protobuf field <code>string campaign = 1;</code>
+     * Generated from protobuf field <code>optional string campaign = 1;</code>
      * @return string
      */
     public function getCampaign()
@@ -69,7 +69,7 @@ class BudgetCampaignAssociationStatus extends \Google\Protobuf\Internal\Message
     /**
      * The campaign resource name.
      *
-     * Generated from protobuf field <code>string campaign = 1;</code>
+     * Generated from protobuf field <code>optional string campaign = 1;</code>
      * @param string $var
      * @return $this
      */

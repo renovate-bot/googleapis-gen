@@ -92,7 +92,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      */
     public function getTransactionAttribute()
     {
-        return isset($this->transaction_attribute) ? $this->transaction_attribute : null;
+        return $this->transaction_attribute;
     }
 
     public function hasTransactionAttribute()
@@ -130,7 +130,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      */
     public function getUserAttribute()
     {
-        return isset($this->user_attribute) ? $this->user_attribute : null;
+        return $this->user_attribute;
     }
 
     public function hasUserAttribute()

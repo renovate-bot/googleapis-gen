@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPublicKeyPemBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyPem_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, publicKeyPem_);
     }
     if (signatureAlgorithm_ != com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.SIGNATURE_ALGORITHM_UNSPECIFIED.getNumber()) {
@@ -516,7 +516,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPublicKeyPemBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyPem_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, publicKeyPem_);
     }
     if (signatureAlgorithm_ != com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.SignatureAlgorithm.SIGNATURE_ALGORITHM_UNSPECIFIED.getNumber()) {

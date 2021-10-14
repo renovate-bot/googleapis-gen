@@ -369,7 +369,7 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     public function getShardInfo()
     {
-        return isset($this->shard_info) ? $this->shard_info : null;
+        return $this->shard_info;
     }
 
     public function hasShardInfo()
@@ -432,7 +432,7 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()

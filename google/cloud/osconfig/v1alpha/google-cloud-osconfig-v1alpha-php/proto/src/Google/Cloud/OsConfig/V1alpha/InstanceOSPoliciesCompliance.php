@@ -321,7 +321,7 @@ class InstanceOSPoliciesCompliance extends \Google\Protobuf\Internal\Message
      */
     public function getLastComplianceCheckTime()
     {
-        return isset($this->last_compliance_check_time) ? $this->last_compliance_check_time : null;
+        return $this->last_compliance_check_time;
     }
 
     public function hasLastComplianceCheckTime()

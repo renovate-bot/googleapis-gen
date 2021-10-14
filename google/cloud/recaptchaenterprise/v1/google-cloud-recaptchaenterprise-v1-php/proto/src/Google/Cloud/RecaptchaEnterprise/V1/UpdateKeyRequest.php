@@ -55,7 +55,7 @@ class UpdateKeyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getKey()
     {
-        return isset($this->key) ? $this->key : null;
+        return $this->key;
     }
 
     public function hasKey()
@@ -92,7 +92,7 @@ class UpdateKeyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

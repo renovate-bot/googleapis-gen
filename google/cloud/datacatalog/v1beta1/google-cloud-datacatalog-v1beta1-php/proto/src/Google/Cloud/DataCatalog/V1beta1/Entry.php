@@ -547,7 +547,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     public function getSchema()
     {
-        return isset($this->schema) ? $this->schema : null;
+        return $this->schema;
     }
 
     public function hasSchema()
@@ -586,7 +586,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     public function getSourceSystemTimestamps()
     {
-        return isset($this->source_system_timestamps) ? $this->source_system_timestamps : null;
+        return $this->source_system_timestamps;
     }
 
     public function hasSourceSystemTimestamps()

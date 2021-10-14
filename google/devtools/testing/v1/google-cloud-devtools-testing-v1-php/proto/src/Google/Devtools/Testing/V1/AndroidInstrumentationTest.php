@@ -205,7 +205,7 @@ class AndroidInstrumentationTest extends \Google\Protobuf\Internal\Message
      */
     public function getTestApk()
     {
-        return isset($this->test_apk) ? $this->test_apk : null;
+        return $this->test_apk;
     }
 
     public function hasTestApk()
@@ -409,7 +409,7 @@ class AndroidInstrumentationTest extends \Google\Protobuf\Internal\Message
      */
     public function getShardingOption()
     {
-        return isset($this->sharding_option) ? $this->sharding_option : null;
+        return $this->sharding_option;
     }
 
     public function hasShardingOption()

@@ -426,7 +426,7 @@ class Options extends \Google\Protobuf\Internal\Message
      */
     public function getExecutionTimeout()
     {
-        return isset($this->execution_timeout) ? $this->execution_timeout : null;
+        return $this->execution_timeout;
     }
 
     public function hasExecutionTimeout()

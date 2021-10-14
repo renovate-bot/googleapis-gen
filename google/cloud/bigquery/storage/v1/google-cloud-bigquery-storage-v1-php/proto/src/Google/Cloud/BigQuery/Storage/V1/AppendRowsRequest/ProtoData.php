@@ -66,7 +66,7 @@ class ProtoData extends \Google\Protobuf\Internal\Message
      */
     public function getWriterSchema()
     {
-        return isset($this->writer_schema) ? $this->writer_schema : null;
+        return $this->writer_schema;
     }
 
     public function hasWriterSchema()
@@ -107,7 +107,7 @@ class ProtoData extends \Google\Protobuf\Internal\Message
      */
     public function getRows()
     {
-        return isset($this->rows) ? $this->rows : null;
+        return $this->rows;
     }
 
     public function hasRows()

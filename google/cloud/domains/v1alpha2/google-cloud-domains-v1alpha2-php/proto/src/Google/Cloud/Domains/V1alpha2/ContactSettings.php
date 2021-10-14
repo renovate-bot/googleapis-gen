@@ -113,7 +113,7 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      */
     public function getRegistrantContact()
     {
-        return isset($this->registrant_contact) ? $this->registrant_contact : null;
+        return $this->registrant_contact;
     }
 
     public function hasRegistrantContact()
@@ -154,7 +154,7 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      */
     public function getAdminContact()
     {
-        return isset($this->admin_contact) ? $this->admin_contact : null;
+        return $this->admin_contact;
     }
 
     public function hasAdminContact()
@@ -190,7 +190,7 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      */
     public function getTechnicalContact()
     {
-        return isset($this->technical_contact) ? $this->technical_contact : null;
+        return $this->technical_contact;
     }
 
     public function hasTechnicalContact()

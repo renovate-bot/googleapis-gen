@@ -84,7 +84,7 @@ class Structure extends \Google\Protobuf\Internal\Message
      */
     public function getTraits()
     {
-        return isset($this->traits) ? $this->traits : null;
+        return $this->traits;
     }
 
     public function hasTraits()

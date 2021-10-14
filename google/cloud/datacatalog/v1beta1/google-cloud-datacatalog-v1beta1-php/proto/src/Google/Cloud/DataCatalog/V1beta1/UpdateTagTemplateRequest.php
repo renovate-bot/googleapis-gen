@@ -60,7 +60,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTagTemplate()
     {
-        return isset($this->tag_template) ? $this->tag_template : null;
+        return $this->tag_template;
     }
 
     public function hasTagTemplate()
@@ -99,7 +99,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

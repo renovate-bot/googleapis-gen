@@ -63,7 +63,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * matches the given value. Setting to 0 makes the operation succeed only if
      * there are no live versions of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_match = 6;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_match = 6;</code>
      */
     protected $if_generation_match = null;
     /**
@@ -72,21 +72,21 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * fails. Setting to 0 makes the operation succeed only if there is a live
      * version of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_not_match = 7;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_not_match = 7;</code>
      */
     protected $if_generation_not_match = null;
     /**
      * Makes the operation conditional on whether the object's current
      * metageneration matches the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_match = 8;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_match = 8;</code>
      */
     protected $if_metageneration_match = null;
     /**
      * Makes the operation conditional on whether the object's current
      * metageneration does not match the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_not_match = 9;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_not_match = 9;</code>
      */
     protected $if_metageneration_not_match = null;
     /**
@@ -108,7 +108,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * and metadata.acl.
      * * may be used to mean "all fields".
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * Generated from protobuf field <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      */
     protected $read_mask = null;
 
@@ -334,7 +334,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * matches the given value. Setting to 0 makes the operation succeed only if
      * there are no live versions of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_match = 6;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_match = 6;</code>
      * @return int|string
      */
     public function getIfGenerationMatch()
@@ -357,7 +357,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * matches the given value. Setting to 0 makes the operation succeed only if
      * there are no live versions of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_match = 6;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_match = 6;</code>
      * @param int|string $var
      * @return $this
      */
@@ -375,7 +375,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * fails. Setting to 0 makes the operation succeed only if there is a live
      * version of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_not_match = 7;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_not_match = 7;</code>
      * @return int|string
      */
     public function getIfGenerationNotMatch()
@@ -399,7 +399,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * fails. Setting to 0 makes the operation succeed only if there is a live
      * version of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_not_match = 7;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_not_match = 7;</code>
      * @param int|string $var
      * @return $this
      */
@@ -415,7 +415,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration matches the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_match = 8;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_match = 8;</code>
      * @return int|string
      */
     public function getIfMetagenerationMatch()
@@ -437,7 +437,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration matches the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_match = 8;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_match = 8;</code>
      * @param int|string $var
      * @return $this
      */
@@ -453,7 +453,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration does not match the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_not_match = 9;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_not_match = 9;</code>
      * @return int|string
      */
     public function getIfMetagenerationNotMatch()
@@ -475,7 +475,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration does not match the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_not_match = 9;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_not_match = 9;</code>
      * @param int|string $var
      * @return $this
      */
@@ -495,7 +495,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCommonObjectRequestParams()
     {
-        return isset($this->common_object_request_params) ? $this->common_object_request_params : null;
+        return $this->common_object_request_params;
     }
 
     public function hasCommonObjectRequestParams()
@@ -531,7 +531,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCommonRequestParams()
     {
-        return isset($this->common_request_params) ? $this->common_request_params : null;
+        return $this->common_request_params;
     }
 
     public function hasCommonRequestParams()
@@ -566,12 +566,12 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * and metadata.acl.
      * * may be used to mean "all fields".
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * Generated from protobuf field <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      * @return \Google\Protobuf\FieldMask|null
      */
     public function getReadMask()
     {
-        return isset($this->read_mask) ? $this->read_mask : null;
+        return $this->read_mask;
     }
 
     public function hasReadMask()
@@ -591,7 +591,7 @@ class ReadObjectRequest extends \Google\Protobuf\Internal\Message
      * and metadata.acl.
      * * may be used to mean "all fields".
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask read_mask = 12;</code>
+     * Generated from protobuf field <code>optional .google.protobuf.FieldMask read_mask = 12;</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */

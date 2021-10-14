@@ -178,7 +178,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getQueryResult()
     {
-        return isset($this->query_result) ? $this->query_result : null;
+        return $this->query_result;
     }
 
     public function hasQueryResult()
@@ -242,7 +242,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOriginalDetectIntentRequest()
     {
-        return isset($this->original_detect_intent_request) ? $this->original_detect_intent_request : null;
+        return $this->original_detect_intent_request;
     }
 
     public function hasOriginalDetectIntentRequest()

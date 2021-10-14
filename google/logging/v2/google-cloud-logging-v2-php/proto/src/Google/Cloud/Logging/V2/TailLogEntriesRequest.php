@@ -182,7 +182,7 @@ class TailLogEntriesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBufferWindow()
     {
-        return isset($this->buffer_window) ? $this->buffer_window : null;
+        return $this->buffer_window;
     }
 
     public function hasBufferWindow()

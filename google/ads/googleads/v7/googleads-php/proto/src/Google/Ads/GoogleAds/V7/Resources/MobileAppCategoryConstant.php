@@ -26,13 +26,13 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>int32 id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>string name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
 
@@ -90,7 +90,7 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>int32 id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getId()
@@ -111,7 +111,7 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>int32 id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -126,7 +126,7 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>string name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -147,7 +147,7 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>string name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

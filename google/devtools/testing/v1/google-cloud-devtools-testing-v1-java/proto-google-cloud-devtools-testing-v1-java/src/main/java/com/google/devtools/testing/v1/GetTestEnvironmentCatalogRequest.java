@@ -384,7 +384,7 @@ private static final long serialVersionUID = 0L;
     if (environmentType_ != com.google.devtools.testing.v1.GetTestEnvironmentCatalogRequest.EnvironmentType.ENVIRONMENT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, environmentType_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
     unknownFields.writeTo(output);
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, environmentType_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
     size += unknownFields.getSerializedSize();

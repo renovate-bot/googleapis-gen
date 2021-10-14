@@ -298,13 +298,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCpuManagerPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuManagerPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cpuManagerPolicy_);
     }
     if (cpuCfsQuota_ != null) {
       output.writeMessage(2, getCpuCfsQuota());
     }
-    if (!getCpuCfsQuotaPeriodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuCfsQuotaPeriod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cpuCfsQuotaPeriod_);
     }
     unknownFields.writeTo(output);
@@ -316,14 +316,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCpuManagerPolicyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuManagerPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cpuManagerPolicy_);
     }
     if (cpuCfsQuota_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCpuCfsQuota());
     }
-    if (!getCpuCfsQuotaPeriodBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuCfsQuotaPeriod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cpuCfsQuotaPeriod_);
     }
     size += unknownFields.getSerializedSize();

@@ -86,19 +86,23 @@ namespace Google.Cloud.Automl.V1Beta1 {
     private static readonly pb::MessageParser<Dataset> _parser = new pb::MessageParser<Dataset>(() => new Dataset());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Dataset> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Automl.V1Beta1.DatasetReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Dataset() {
       OnConstruction();
     }
@@ -106,6 +110,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Dataset(Dataset other) : this() {
       name_ = other.name_;
       displayName_ = other.displayName_;
@@ -147,6 +152,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Dataset Clone() {
       return new Dataset(this);
     }
@@ -157,6 +163,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for translation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TranslationDatasetMetadata TranslationDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.TranslationDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.TranslationDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -171,6 +178,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for image classification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.ImageClassificationDatasetMetadata ImageClassificationDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.ImageClassificationDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.ImageClassificationDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -185,6 +193,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for text classification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TextClassificationDatasetMetadata TextClassificationDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.TextClassificationDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.TextClassificationDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -199,6 +208,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for image object detection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.ImageObjectDetectionDatasetMetadata ImageObjectDetectionDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.ImageObjectDetectionDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.ImageObjectDetectionDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -213,6 +223,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for video classification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.VideoClassificationDatasetMetadata VideoClassificationDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.VideoClassificationDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.VideoClassificationDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -227,6 +238,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for video object tracking.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.VideoObjectTrackingDatasetMetadata VideoObjectTrackingDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.VideoObjectTrackingDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.VideoObjectTrackingDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -241,6 +253,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for text extraction.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TextExtractionDatasetMetadata TextExtractionDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.TextExtractionDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.TextExtractionDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -255,6 +268,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for text sentiment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TextSentimentDatasetMetadata TextSentimentDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.TextSentimentDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.TextSentimentDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -269,6 +283,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Metadata for a dataset used for Tables.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TablesDatasetMetadata TablesDatasetMetadata {
       get { return datasetMetadataCase_ == DatasetMetadataOneofCase.TablesDatasetMetadata ? (global::Google.Cloud.Automl.V1Beta1.TablesDatasetMetadata) datasetMetadata_ : null; }
       set {
@@ -285,6 +300,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Form: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -302,6 +318,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// (_), and ASCII digits 0-9.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DisplayName {
       get { return displayName_; }
       set {
@@ -317,6 +334,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// 25000 characters long.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -331,6 +349,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Output only. The number of examples in the dataset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ExampleCount {
       get { return exampleCount_; }
       set {
@@ -345,6 +364,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Output only. Timestamp when this dataset was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -360,6 +380,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// "overwrite" update happens.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Etag {
       get { return etag_; }
       set {
@@ -383,22 +404,26 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
     private DatasetMetadataOneofCase datasetMetadataCase_ = DatasetMetadataOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DatasetMetadataOneofCase DatasetMetadataCase {
       get { return datasetMetadataCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearDatasetMetadata() {
       datasetMetadataCase_ = DatasetMetadataOneofCase.None;
       datasetMetadata_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Dataset);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Dataset other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -426,6 +451,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (datasetMetadataCase_ == DatasetMetadataOneofCase.TranslationDatasetMetadata) hash ^= TranslationDatasetMetadata.GetHashCode();
@@ -451,11 +477,13 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -528,6 +556,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -596,6 +625,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (datasetMetadataCase_ == DatasetMetadataOneofCase.TranslationDatasetMetadata) {
@@ -650,6 +680,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Dataset other) {
       if (other == null) {
         return;
@@ -736,6 +767,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -861,6 +893,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

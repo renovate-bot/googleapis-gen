@@ -135,7 +135,7 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -171,7 +171,7 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -236,7 +236,7 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
      */
     public function getConnectionInfo()
     {
-        return isset($this->connection_info) ? $this->connection_info : null;
+        return $this->connection_info;
     }
 
     public function hasConnectionInfo()

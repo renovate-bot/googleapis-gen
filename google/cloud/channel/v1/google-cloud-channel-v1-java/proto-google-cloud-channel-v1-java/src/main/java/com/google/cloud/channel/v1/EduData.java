@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
     if (instituteSize_ != com.google.cloud.channel.v1.EduData.InstituteSize.INSTITUTE_SIZE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, instituteSize_);
     }
-    if (!getWebsiteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(website_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, website_);
     }
     unknownFields.writeTo(output);
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, instituteSize_);
     }
-    if (!getWebsiteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(website_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, website_);
     }
     size += unknownFields.getSerializedSize();

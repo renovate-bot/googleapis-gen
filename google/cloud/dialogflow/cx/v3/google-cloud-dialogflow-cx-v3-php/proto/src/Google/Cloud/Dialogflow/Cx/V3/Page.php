@@ -225,7 +225,7 @@ class Page extends \Google\Protobuf\Internal\Message
      */
     public function getEntryFulfillment()
     {
-        return isset($this->entry_fulfillment) ? $this->entry_fulfillment : null;
+        return $this->entry_fulfillment;
     }
 
     public function hasEntryFulfillment()
@@ -262,7 +262,7 @@ class Page extends \Google\Protobuf\Internal\Message
      */
     public function getForm()
     {
-        return isset($this->form) ? $this->form : null;
+        return $this->form;
     }
 
     public function hasForm()

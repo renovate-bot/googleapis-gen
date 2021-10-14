@@ -85,7 +85,7 @@ class MutateConversionValueRuleSetResult extends \Google\Protobuf\Internal\Messa
      */
     public function getConversionValueRuleSet()
     {
-        return isset($this->conversion_value_rule_set) ? $this->conversion_value_rule_set : null;
+        return $this->conversion_value_rule_set;
     }
 
     public function hasConversionValueRuleSet()

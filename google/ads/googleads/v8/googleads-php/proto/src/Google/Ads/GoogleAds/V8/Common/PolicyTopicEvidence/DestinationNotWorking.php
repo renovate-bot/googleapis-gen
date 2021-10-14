@@ -19,7 +19,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
     /**
      * The full URL that didn't work.
      *
-     * Generated from protobuf field <code>string expanded_url = 7;</code>
+     * Generated from protobuf field <code>optional string expanded_url = 7;</code>
      */
     protected $expanded_url = null;
     /**
@@ -33,7 +33,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string last_checked_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string last_checked_date_time = 8;</code>
      */
     protected $last_checked_date_time = null;
     protected $reason;
@@ -66,7 +66,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
     /**
      * The full URL that didn't work.
      *
-     * Generated from protobuf field <code>string expanded_url = 7;</code>
+     * Generated from protobuf field <code>optional string expanded_url = 7;</code>
      * @return string
      */
     public function getExpandedUrl()
@@ -87,7 +87,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
     /**
      * The full URL that didn't work.
      *
-     * Generated from protobuf field <code>string expanded_url = 7;</code>
+     * Generated from protobuf field <code>optional string expanded_url = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string last_checked_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string last_checked_date_time = 8;</code>
      * @return string
      */
     public function getLastCheckedDateTime()
@@ -153,7 +153,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string last_checked_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string last_checked_date_time = 8;</code>
      * @param string $var
      * @return $this
      */

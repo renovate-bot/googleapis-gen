@@ -425,22 +425,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phoneNumber_);
     }
-    if (!getIosReceiptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iosReceipt_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, iosReceipt_);
     }
-    if (!getIosSecretBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iosSecret_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, iosSecret_);
     }
-    if (!getRecaptchaTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recaptchaToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, recaptchaToken_);
     }
     if (autoRetrievalInfo_ != null) {
       output.writeMessage(5, getAutoRetrievalInfo());
     }
-    if (!getSafetyNetTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(safetyNetToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, safetyNetToken_);
     }
     unknownFields.writeTo(output);
@@ -452,23 +452,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPhoneNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phoneNumber_);
     }
-    if (!getIosReceiptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iosReceipt_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, iosReceipt_);
     }
-    if (!getIosSecretBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iosSecret_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, iosSecret_);
     }
-    if (!getRecaptchaTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(recaptchaToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, recaptchaToken_);
     }
     if (autoRetrievalInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getAutoRetrievalInfo());
     }
-    if (!getSafetyNetTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(safetyNetToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, safetyNetToken_);
     }
     size += unknownFields.getSerializedSize();

@@ -249,7 +249,7 @@ class ScanConfig extends \Google\Protobuf\Internal\Message
      */
     public function getAuthentication()
     {
-        return isset($this->authentication) ? $this->authentication : null;
+        return $this->authentication;
     }
 
     public function hasAuthentication()
@@ -340,7 +340,7 @@ class ScanConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSchedule()
     {
-        return isset($this->schedule) ? $this->schedule : null;
+        return $this->schedule;
     }
 
     public function hasSchedule()
@@ -404,7 +404,7 @@ class ScanConfig extends \Google\Protobuf\Internal\Message
      */
     public function getLatestRun()
     {
-        return isset($this->latest_run) ? $this->latest_run : null;
+        return $this->latest_run;
     }
 
     public function hasLatestRun()

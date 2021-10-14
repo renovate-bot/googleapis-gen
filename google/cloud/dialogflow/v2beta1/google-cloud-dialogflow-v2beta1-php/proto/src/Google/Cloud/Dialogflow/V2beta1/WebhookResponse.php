@@ -284,7 +284,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPayload()
     {
-        return isset($this->payload) ? $this->payload : null;
+        return $this->payload;
     }
 
     public function hasPayload()
@@ -363,7 +363,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     public function getFollowupEventInput()
     {
-        return isset($this->followup_event_input) ? $this->followup_event_input : null;
+        return $this->followup_event_input;
     }
 
     public function hasFollowupEventInput()

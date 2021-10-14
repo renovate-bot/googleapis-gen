@@ -120,19 +120,23 @@ namespace Google.Devtools.Build.V1 {
     private static readonly pb::MessageParser<BuildEvent> _parser = new pb::MessageParser<BuildEvent>(() => new BuildEvent());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<BuildEvent> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Devtools.Build.V1.BuildEventsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuildEvent() {
       OnConstruction();
     }
@@ -140,6 +144,7 @@ namespace Google.Devtools.Build.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuildEvent(BuildEvent other) : this() {
       eventTime_ = other.eventTime_ != null ? other.eventTime_.Clone() : null;
       switch (other.EventCase) {
@@ -176,6 +181,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuildEvent Clone() {
       return new BuildEvent(this);
     }
@@ -187,6 +193,7 @@ namespace Google.Devtools.Build.V1 {
     /// The timestamp of this event.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp EventTime {
       get { return eventTime_; }
       set {
@@ -200,6 +207,7 @@ namespace Google.Devtools.Build.V1 {
     /// An invocation attempt has started.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.BuildEvent.Types.InvocationAttemptStarted InvocationAttemptStarted {
       get { return eventCase_ == EventOneofCase.InvocationAttemptStarted ? (global::Google.Devtools.Build.V1.BuildEvent.Types.InvocationAttemptStarted) event_ : null; }
       set {
@@ -214,6 +222,7 @@ namespace Google.Devtools.Build.V1 {
     /// An invocation attempt has finished.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.BuildEvent.Types.InvocationAttemptFinished InvocationAttemptFinished {
       get { return eventCase_ == EventOneofCase.InvocationAttemptFinished ? (global::Google.Devtools.Build.V1.BuildEvent.Types.InvocationAttemptFinished) event_ : null; }
       set {
@@ -228,6 +237,7 @@ namespace Google.Devtools.Build.V1 {
     /// The build is enqueued.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.BuildEvent.Types.BuildEnqueued BuildEnqueued {
       get { return eventCase_ == EventOneofCase.BuildEnqueued ? (global::Google.Devtools.Build.V1.BuildEvent.Types.BuildEnqueued) event_ : null; }
       set {
@@ -242,6 +252,7 @@ namespace Google.Devtools.Build.V1 {
     /// The build has finished. Set when the build is terminated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.BuildEvent.Types.BuildFinished BuildFinished {
       get { return eventCase_ == EventOneofCase.BuildFinished ? (global::Google.Devtools.Build.V1.BuildEvent.Types.BuildFinished) event_ : null; }
       set {
@@ -256,6 +267,7 @@ namespace Google.Devtools.Build.V1 {
     /// An event containing printed text.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.BuildEvent.Types.ConsoleOutput ConsoleOutput {
       get { return eventCase_ == EventOneofCase.ConsoleOutput ? (global::Google.Devtools.Build.V1.BuildEvent.Types.ConsoleOutput) event_ : null; }
       set {
@@ -272,6 +284,7 @@ namespace Google.Devtools.Build.V1 {
     /// *** This field does not indicate the WatchBuild RPC is finished. ***
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.BuildEvent.Types.BuildComponentStreamFinished ComponentStreamFinished {
       get { return eventCase_ == EventOneofCase.ComponentStreamFinished ? (global::Google.Devtools.Build.V1.BuildEvent.Types.BuildComponentStreamFinished) event_ : null; }
       set {
@@ -286,6 +299,7 @@ namespace Google.Devtools.Build.V1 {
     /// Structured build event generated by Bazel about its execution progress.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Any BazelEvent {
       get { return eventCase_ == EventOneofCase.BazelEvent ? (global::Google.Protobuf.WellKnownTypes.Any) event_ : null; }
       set {
@@ -301,6 +315,7 @@ namespace Google.Devtools.Build.V1 {
     /// build execution.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Any BuildExecutionEvent {
       get { return eventCase_ == EventOneofCase.BuildExecutionEvent ? (global::Google.Protobuf.WellKnownTypes.Any) event_ : null; }
       set {
@@ -316,6 +331,7 @@ namespace Google.Devtools.Build.V1 {
     /// source fetching.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Any SourceFetchEvent {
       get { return eventCase_ == EventOneofCase.SourceFetchEvent ? (global::Google.Protobuf.WellKnownTypes.Any) event_ : null; }
       set {
@@ -340,22 +356,26 @@ namespace Google.Devtools.Build.V1 {
     }
     private EventOneofCase eventCase_ = EventOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EventOneofCase EventCase {
       get { return eventCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearEvent() {
       eventCase_ = EventOneofCase.None;
       event_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as BuildEvent);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(BuildEvent other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -378,6 +398,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (eventTime_ != null) hash ^= EventTime.GetHashCode();
@@ -398,11 +419,13 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -455,6 +478,7 @@ namespace Google.Devtools.Build.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (eventTime_ != null) {
         output.WriteRawTag(10);
@@ -503,6 +527,7 @@ namespace Google.Devtools.Build.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (eventTime_ != null) {
@@ -542,6 +567,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(BuildEvent other) {
       if (other == null) {
         return;
@@ -613,6 +639,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -718,6 +745,7 @@ namespace Google.Devtools.Build.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -821,6 +849,7 @@ namespace Google.Devtools.Build.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the BuildEvent message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Notification that the build system has attempted to run the build tool.
@@ -833,19 +862,23 @@ namespace Google.Devtools.Build.V1 {
         private static readonly pb::MessageParser<InvocationAttemptStarted> _parser = new pb::MessageParser<InvocationAttemptStarted>(() => new InvocationAttemptStarted());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<InvocationAttemptStarted> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Devtools.Build.V1.BuildEvent.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public InvocationAttemptStarted() {
           OnConstruction();
         }
@@ -853,6 +886,7 @@ namespace Google.Devtools.Build.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public InvocationAttemptStarted(InvocationAttemptStarted other) : this() {
           attemptNumber_ = other.attemptNumber_;
           details_ = other.details_ != null ? other.details_.Clone() : null;
@@ -860,6 +894,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public InvocationAttemptStarted Clone() {
           return new InvocationAttemptStarted(this);
         }
@@ -873,6 +908,7 @@ namespace Google.Devtools.Build.V1 {
         /// invocation attempt replacing the current one a client is processing.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long AttemptNumber {
           get { return attemptNumber_; }
           set {
@@ -887,6 +923,7 @@ namespace Google.Devtools.Build.V1 {
         /// Arbitrary details about the invocation attempt.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Any Details {
           get { return details_; }
           set {
@@ -895,11 +932,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as InvocationAttemptStarted);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(InvocationAttemptStarted other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -913,6 +952,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (AttemptNumber != 0L) hash ^= AttemptNumber.GetHashCode();
@@ -924,11 +964,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -949,6 +991,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (AttemptNumber != 0L) {
             output.WriteRawTag(8);
@@ -965,6 +1008,7 @@ namespace Google.Devtools.Build.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (AttemptNumber != 0L) {
@@ -980,6 +1024,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(InvocationAttemptStarted other) {
           if (other == null) {
             return;
@@ -997,6 +1042,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1025,6 +1071,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1061,19 +1108,23 @@ namespace Google.Devtools.Build.V1 {
         private static readonly pb::MessageParser<InvocationAttemptFinished> _parser = new pb::MessageParser<InvocationAttemptFinished>(() => new InvocationAttemptFinished());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<InvocationAttemptFinished> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Devtools.Build.V1.BuildEvent.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public InvocationAttemptFinished() {
           OnConstruction();
         }
@@ -1081,6 +1132,7 @@ namespace Google.Devtools.Build.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public InvocationAttemptFinished(InvocationAttemptFinished other) : this() {
           invocationStatus_ = other.invocationStatus_ != null ? other.invocationStatus_.Clone() : null;
           details_ = other.details_ != null ? other.details_.Clone() : null;
@@ -1088,6 +1140,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public InvocationAttemptFinished Clone() {
           return new InvocationAttemptFinished(this);
         }
@@ -1099,6 +1152,7 @@ namespace Google.Devtools.Build.V1 {
         /// Final status of the invocation.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Devtools.Build.V1.BuildStatus InvocationStatus {
           get { return invocationStatus_; }
           set {
@@ -1113,6 +1167,7 @@ namespace Google.Devtools.Build.V1 {
         /// Arbitrary details about the invocation attempt.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Any Details {
           get { return details_; }
           set {
@@ -1121,11 +1176,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as InvocationAttemptFinished);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(InvocationAttemptFinished other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1139,6 +1196,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (invocationStatus_ != null) hash ^= InvocationStatus.GetHashCode();
@@ -1150,11 +1208,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1175,6 +1235,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (invocationStatus_ != null) {
             output.WriteRawTag(26);
@@ -1191,6 +1252,7 @@ namespace Google.Devtools.Build.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (invocationStatus_ != null) {
@@ -1206,6 +1268,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(InvocationAttemptFinished other) {
           if (other == null) {
             return;
@@ -1226,6 +1289,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1257,6 +1321,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1296,19 +1361,23 @@ namespace Google.Devtools.Build.V1 {
         private static readonly pb::MessageParser<BuildEnqueued> _parser = new pb::MessageParser<BuildEnqueued>(() => new BuildEnqueued());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<BuildEnqueued> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Devtools.Build.V1.BuildEvent.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildEnqueued() {
           OnConstruction();
         }
@@ -1316,12 +1385,14 @@ namespace Google.Devtools.Build.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildEnqueued(BuildEnqueued other) : this() {
           details_ = other.details_ != null ? other.details_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildEnqueued Clone() {
           return new BuildEnqueued(this);
         }
@@ -1333,6 +1404,7 @@ namespace Google.Devtools.Build.V1 {
         /// Additional details about the Build.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Any Details {
           get { return details_; }
           set {
@@ -1341,11 +1413,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as BuildEnqueued);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(BuildEnqueued other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1358,6 +1432,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (details_ != null) hash ^= Details.GetHashCode();
@@ -1368,11 +1443,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1389,6 +1466,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (details_ != null) {
             output.WriteRawTag(10);
@@ -1401,6 +1479,7 @@ namespace Google.Devtools.Build.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (details_ != null) {
@@ -1413,6 +1492,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(BuildEnqueued other) {
           if (other == null) {
             return;
@@ -1427,6 +1507,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1451,6 +1532,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1485,19 +1567,23 @@ namespace Google.Devtools.Build.V1 {
         private static readonly pb::MessageParser<BuildFinished> _parser = new pb::MessageParser<BuildFinished>(() => new BuildFinished());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<BuildFinished> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Devtools.Build.V1.BuildEvent.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildFinished() {
           OnConstruction();
         }
@@ -1505,6 +1591,7 @@ namespace Google.Devtools.Build.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildFinished(BuildFinished other) : this() {
           status_ = other.status_ != null ? other.status_.Clone() : null;
           details_ = other.details_ != null ? other.details_.Clone() : null;
@@ -1512,6 +1599,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildFinished Clone() {
           return new BuildFinished(this);
         }
@@ -1523,6 +1611,7 @@ namespace Google.Devtools.Build.V1 {
         /// Final status of the build.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Devtools.Build.V1.BuildStatus Status {
           get { return status_; }
           set {
@@ -1537,6 +1626,7 @@ namespace Google.Devtools.Build.V1 {
         /// Additional details about the Build.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Any Details {
           get { return details_; }
           set {
@@ -1545,11 +1635,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as BuildFinished);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(BuildFinished other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1563,6 +1655,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (status_ != null) hash ^= Status.GetHashCode();
@@ -1574,11 +1667,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1599,6 +1694,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (status_ != null) {
             output.WriteRawTag(10);
@@ -1615,6 +1711,7 @@ namespace Google.Devtools.Build.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (status_ != null) {
@@ -1630,6 +1727,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(BuildFinished other) {
           if (other == null) {
             return;
@@ -1650,6 +1748,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1681,6 +1780,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1720,19 +1820,23 @@ namespace Google.Devtools.Build.V1 {
         private static readonly pb::MessageParser<ConsoleOutput> _parser = new pb::MessageParser<ConsoleOutput>(() => new ConsoleOutput());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ConsoleOutput> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Devtools.Build.V1.BuildEvent.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ConsoleOutput() {
           OnConstruction();
         }
@@ -1740,6 +1844,7 @@ namespace Google.Devtools.Build.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ConsoleOutput(ConsoleOutput other) : this() {
           type_ = other.type_;
           switch (other.OutputCase) {
@@ -1755,6 +1860,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ConsoleOutput Clone() {
           return new ConsoleOutput(this);
         }
@@ -1766,6 +1872,7 @@ namespace Google.Devtools.Build.V1 {
         /// The output stream type.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Devtools.Build.V1.ConsoleOutputStream Type {
           get { return type_; }
           set {
@@ -1779,6 +1886,7 @@ namespace Google.Devtools.Build.V1 {
         /// Regular UTF-8 output; normal text.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string TextOutput {
           get { return outputCase_ == OutputOneofCase.TextOutput ? (string) output_ : ""; }
           set {
@@ -1793,6 +1901,7 @@ namespace Google.Devtools.Build.V1 {
         /// Used if the output is not UTF-8 text (for example, a binary proto).
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pb::ByteString BinaryOutput {
           get { return outputCase_ == OutputOneofCase.BinaryOutput ? (pb::ByteString) output_ : pb::ByteString.Empty; }
           set {
@@ -1810,22 +1919,26 @@ namespace Google.Devtools.Build.V1 {
         }
         private OutputOneofCase outputCase_ = OutputOneofCase.None;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public OutputOneofCase OutputCase {
           get { return outputCase_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearOutput() {
           outputCase_ = OutputOneofCase.None;
           output_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ConsoleOutput);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ConsoleOutput other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1841,6 +1954,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Type != global::Google.Devtools.Build.V1.ConsoleOutputStream.Unknown) hash ^= Type.GetHashCode();
@@ -1854,11 +1968,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1883,6 +1999,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Type != global::Google.Devtools.Build.V1.ConsoleOutputStream.Unknown) {
             output.WriteRawTag(8);
@@ -1903,6 +2020,7 @@ namespace Google.Devtools.Build.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Type != global::Google.Devtools.Build.V1.ConsoleOutputStream.Unknown) {
@@ -1921,6 +2039,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ConsoleOutput other) {
           if (other == null) {
             return;
@@ -1941,6 +2060,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1970,6 +2090,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2008,19 +2129,23 @@ namespace Google.Devtools.Build.V1 {
         private static readonly pb::MessageParser<BuildComponentStreamFinished> _parser = new pb::MessageParser<BuildComponentStreamFinished>(() => new BuildComponentStreamFinished());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<BuildComponentStreamFinished> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Devtools.Build.V1.BuildEvent.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildComponentStreamFinished() {
           OnConstruction();
         }
@@ -2028,12 +2153,14 @@ namespace Google.Devtools.Build.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildComponentStreamFinished(BuildComponentStreamFinished other) : this() {
           type_ = other.type_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BuildComponentStreamFinished Clone() {
           return new BuildComponentStreamFinished(this);
         }
@@ -2045,6 +2172,7 @@ namespace Google.Devtools.Build.V1 {
         /// How the event stream finished.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Devtools.Build.V1.BuildEvent.Types.BuildComponentStreamFinished.Types.FinishType Type {
           get { return type_; }
           set {
@@ -2053,11 +2181,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as BuildComponentStreamFinished);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(BuildComponentStreamFinished other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2070,6 +2200,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Type != global::Google.Devtools.Build.V1.BuildEvent.Types.BuildComponentStreamFinished.Types.FinishType.Unspecified) hash ^= Type.GetHashCode();
@@ -2080,11 +2211,13 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2101,6 +2234,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Type != global::Google.Devtools.Build.V1.BuildEvent.Types.BuildComponentStreamFinished.Types.FinishType.Unspecified) {
             output.WriteRawTag(8);
@@ -2113,6 +2247,7 @@ namespace Google.Devtools.Build.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Type != global::Google.Devtools.Build.V1.BuildEvent.Types.BuildComponentStreamFinished.Types.FinishType.Unspecified) {
@@ -2125,6 +2260,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(BuildComponentStreamFinished other) {
           if (other == null) {
             return;
@@ -2136,6 +2272,7 @@ namespace Google.Devtools.Build.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2157,6 +2294,7 @@ namespace Google.Devtools.Build.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2176,6 +2314,7 @@ namespace Google.Devtools.Build.V1 {
         #region Nested types
         /// <summary>Container for nested types declared in the BuildComponentStreamFinished message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// How did the event stream finish.
@@ -2219,19 +2358,23 @@ namespace Google.Devtools.Build.V1 {
     private static readonly pb::MessageParser<StreamId> _parser = new pb::MessageParser<StreamId>(() => new StreamId());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<StreamId> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Devtools.Build.V1.BuildEventsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StreamId() {
       OnConstruction();
     }
@@ -2239,6 +2382,7 @@ namespace Google.Devtools.Build.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StreamId(StreamId other) : this() {
       buildId_ = other.buildId_;
       invocationId_ = other.invocationId_;
@@ -2247,6 +2391,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StreamId Clone() {
       return new StreamId(this);
     }
@@ -2258,6 +2403,7 @@ namespace Google.Devtools.Build.V1 {
     /// The id of a Build message.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BuildId {
       get { return buildId_; }
       set {
@@ -2273,6 +2419,7 @@ namespace Google.Devtools.Build.V1 {
     /// It should be the same as {invocation} (below) during the migration.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string InvocationId {
       get { return invocationId_; }
       set {
@@ -2287,6 +2434,7 @@ namespace Google.Devtools.Build.V1 {
     /// The component that emitted this event.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Devtools.Build.V1.StreamId.Types.BuildComponent Component {
       get { return component_; }
       set {
@@ -2295,11 +2443,13 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as StreamId);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(StreamId other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2314,6 +2464,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (BuildId.Length != 0) hash ^= BuildId.GetHashCode();
@@ -2326,11 +2477,13 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2355,6 +2508,7 @@ namespace Google.Devtools.Build.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (BuildId.Length != 0) {
         output.WriteRawTag(10);
@@ -2375,6 +2529,7 @@ namespace Google.Devtools.Build.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (BuildId.Length != 0) {
@@ -2393,6 +2548,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(StreamId other) {
       if (other == null) {
         return;
@@ -2410,6 +2566,7 @@ namespace Google.Devtools.Build.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2439,6 +2596,7 @@ namespace Google.Devtools.Build.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2466,6 +2624,7 @@ namespace Google.Devtools.Build.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the StreamId message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Which build component generates this event stream. Each build component

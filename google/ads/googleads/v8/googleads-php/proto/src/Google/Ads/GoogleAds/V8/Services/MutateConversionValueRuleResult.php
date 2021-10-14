@@ -85,7 +85,7 @@ class MutateConversionValueRuleResult extends \Google\Protobuf\Internal\Message
      */
     public function getConversionValueRule()
     {
-        return isset($this->conversion_value_rule) ? $this->conversion_value_rule : null;
+        return $this->conversion_value_rule;
     }
 
     public function hasConversionValueRule()

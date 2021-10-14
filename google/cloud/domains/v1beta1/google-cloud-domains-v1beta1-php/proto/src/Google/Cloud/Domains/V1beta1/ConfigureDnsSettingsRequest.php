@@ -113,7 +113,7 @@ class ConfigureDnsSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDnsSettings()
     {
-        return isset($this->dns_settings) ? $this->dns_settings : null;
+        return $this->dns_settings;
     }
 
     public function hasDnsSettings()
@@ -156,7 +156,7 @@ class ConfigureDnsSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

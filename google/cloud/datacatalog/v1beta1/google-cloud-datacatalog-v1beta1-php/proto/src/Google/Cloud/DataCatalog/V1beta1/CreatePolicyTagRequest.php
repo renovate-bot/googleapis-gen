@@ -80,7 +80,7 @@ class CreatePolicyTagRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPolicyTag()
     {
-        return isset($this->policy_tag) ? $this->policy_tag : null;
+        return $this->policy_tag;
     }
 
     public function hasPolicyTag()

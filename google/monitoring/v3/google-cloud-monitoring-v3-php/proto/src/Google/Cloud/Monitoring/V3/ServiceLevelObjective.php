@@ -164,7 +164,7 @@ class ServiceLevelObjective extends \Google\Protobuf\Internal\Message
      */
     public function getServiceLevelIndicator()
     {
-        return isset($this->service_level_indicator) ? $this->service_level_indicator : null;
+        return $this->service_level_indicator;
     }
 
     public function hasServiceLevelIndicator()

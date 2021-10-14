@@ -19,7 +19,7 @@ class SiteSeed extends \Google\Protobuf\Internal\Message
      * The domain name of the site. If the customer requesting the ideas doesn't
      * own the site provided only public information is returned.
      *
-     * Generated from protobuf field <code>string site = 2;</code>
+     * Generated from protobuf field <code>optional string site = 2;</code>
      */
     protected $site = null;
 
@@ -43,7 +43,7 @@ class SiteSeed extends \Google\Protobuf\Internal\Message
      * The domain name of the site. If the customer requesting the ideas doesn't
      * own the site provided only public information is returned.
      *
-     * Generated from protobuf field <code>string site = 2;</code>
+     * Generated from protobuf field <code>optional string site = 2;</code>
      * @return string
      */
     public function getSite()
@@ -65,7 +65,7 @@ class SiteSeed extends \Google\Protobuf\Internal\Message
      * The domain name of the site. If the customer requesting the ideas doesn't
      * own the site provided only public information is returned.
      *
-     * Generated from protobuf field <code>string site = 2;</code>
+     * Generated from protobuf field <code>optional string site = 2;</code>
      * @param string $var
      * @return $this
      */

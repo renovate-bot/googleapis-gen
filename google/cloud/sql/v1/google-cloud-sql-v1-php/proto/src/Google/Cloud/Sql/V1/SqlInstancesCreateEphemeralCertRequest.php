@@ -108,7 +108,7 @@ class SqlInstancesCreateEphemeralCertRequest extends \Google\Protobuf\Internal\M
      */
     public function getBody()
     {
-        return isset($this->body) ? $this->body : null;
+        return $this->body;
     }
 
     public function hasBody()

@@ -18,13 +18,13 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the smart campaign.
      *
-     * Generated from protobuf field <code>string phone_number = 1;</code>
+     * Generated from protobuf field <code>optional string phone_number = 1;</code>
      */
     protected $phone_number = null;
     /**
      * Upper-case, two-letter country code as defined by ISO-3166.
      *
-     * Generated from protobuf field <code>string country_code = 2;</code>
+     * Generated from protobuf field <code>optional string country_code = 2;</code>
      */
     protected $country_code = null;
 
@@ -48,7 +48,7 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the smart campaign.
      *
-     * Generated from protobuf field <code>string phone_number = 1;</code>
+     * Generated from protobuf field <code>optional string phone_number = 1;</code>
      * @return string
      */
     public function getPhoneNumber()
@@ -69,7 +69,7 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the smart campaign.
      *
-     * Generated from protobuf field <code>string phone_number = 1;</code>
+     * Generated from protobuf field <code>optional string phone_number = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     /**
      * Upper-case, two-letter country code as defined by ISO-3166.
      *
-     * Generated from protobuf field <code>string country_code = 2;</code>
+     * Generated from protobuf field <code>optional string country_code = 2;</code>
      * @return string
      */
     public function getCountryCode()
@@ -105,7 +105,7 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     /**
      * Upper-case, two-letter country code as defined by ISO-3166.
      *
-     * Generated from protobuf field <code>string country_code = 2;</code>
+     * Generated from protobuf field <code>optional string country_code = 2;</code>
      * @param string $var
      * @return $this
      */

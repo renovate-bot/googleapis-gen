@@ -19,7 +19,7 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string callout_text = 2;</code>
+     * Generated from protobuf field <code>optional string callout_text = 2;</code>
      */
     protected $callout_text = null;
 
@@ -43,7 +43,7 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string callout_text = 2;</code>
+     * Generated from protobuf field <code>optional string callout_text = 2;</code>
      * @return string
      */
     public function getCalloutText()
@@ -65,7 +65,7 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string callout_text = 2;</code>
+     * Generated from protobuf field <code>optional string callout_text = 2;</code>
      * @param string $var
      * @return $this
      */

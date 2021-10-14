@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
     if (originalIndex_ != null) {
       output.writeMessage(2, getOriginalIndex());
     }
-    if (!getPlaceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, placeId_);
     }
     unknownFields.writeTo(output);
@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getOriginalIndex());
     }
-    if (!getPlaceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, placeId_);
     }
     size += unknownFields.getSerializedSize();

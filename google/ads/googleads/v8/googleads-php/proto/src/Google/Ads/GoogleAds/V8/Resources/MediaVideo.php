@@ -18,7 +18,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>int64 ad_duration_millis = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_duration_millis = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_duration_millis = null;
     /**
@@ -26,7 +26,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * "https://www.youtube.com/watch?v=" to this ID will get the YouTube
      * streaming URL for this video.
      *
-     * Generated from protobuf field <code>string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $youtube_video_id = null;
     /**
@@ -34,14 +34,14 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>string advertising_id_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string advertising_id_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $advertising_id_code = null;
     /**
      * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>string isci_code = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string isci_code = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $isci_code = null;
 
@@ -74,7 +74,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>int64 ad_duration_millis = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_duration_millis = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getAdDurationMillis()
@@ -95,7 +95,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>int64 ad_duration_millis = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_duration_millis = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -112,7 +112,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * "https://www.youtube.com/watch?v=" to this ID will get the YouTube
      * streaming URL for this video.
      *
-     * Generated from protobuf field <code>string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getYoutubeVideoId()
@@ -135,7 +135,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * "https://www.youtube.com/watch?v=" to this ID will get the YouTube
      * streaming URL for this video.
      *
-     * Generated from protobuf field <code>string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -152,7 +152,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>string advertising_id_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string advertising_id_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getAdvertisingIdCode()
@@ -175,7 +175,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>string advertising_id_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string advertising_id_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -191,7 +191,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>string isci_code = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string isci_code = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getIsciCode()
@@ -213,7 +213,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>string isci_code = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string isci_code = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

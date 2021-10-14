@@ -90,7 +90,7 @@ class TableBoundHint extends \Google\Protobuf\Internal\Message
      */
     public function getBoundingBox()
     {
-        return isset($this->bounding_box) ? $this->bounding_box : null;
+        return $this->bounding_box;
     }
 
     public function hasBoundingBox()

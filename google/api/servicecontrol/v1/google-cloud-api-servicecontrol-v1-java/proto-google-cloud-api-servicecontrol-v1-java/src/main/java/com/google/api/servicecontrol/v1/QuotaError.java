@@ -503,10 +503,10 @@ private static final long serialVersionUID = 0L;
     if (code_ != com.google.api.servicecontrol.v1.QuotaError.Code.UNSPECIFIED.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getSubjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subject_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     if (status_ != null) {
@@ -525,10 +525,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getSubjectBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subject_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     if (status_ != null) {

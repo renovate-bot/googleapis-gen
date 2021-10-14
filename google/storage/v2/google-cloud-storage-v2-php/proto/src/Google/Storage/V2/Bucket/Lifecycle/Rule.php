@@ -54,7 +54,7 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     public function getAction()
     {
-        return isset($this->action) ? $this->action : null;
+        return $this->action;
     }
 
     public function hasAction()
@@ -90,7 +90,7 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     public function getCondition()
     {
-        return isset($this->condition) ? $this->condition : null;
+        return $this->condition;
     }
 
     public function hasCondition()

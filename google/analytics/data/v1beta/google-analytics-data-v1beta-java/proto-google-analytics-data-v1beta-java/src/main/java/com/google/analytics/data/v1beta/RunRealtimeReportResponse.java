@@ -703,7 +703,7 @@ private static final long serialVersionUID = 0L;
     if (propertyQuota_ != null) {
       output.writeMessage(8, getPropertyQuota());
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, kind_);
     }
     unknownFields.writeTo(output);
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getPropertyQuota());
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, kind_);
     }
     size += unknownFields.getSerializedSize();

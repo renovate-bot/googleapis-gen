@@ -18,50 +18,50 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The country code in the ad.
      *
-     * Generated from protobuf field <code>string country_code = 13;</code>
+     * Generated from protobuf field <code>optional string country_code = 13;</code>
      */
     protected $country_code = null;
     /**
      * The phone number in the ad.
      *
-     * Generated from protobuf field <code>string phone_number = 14;</code>
+     * Generated from protobuf field <code>optional string phone_number = 14;</code>
      */
     protected $phone_number = null;
     /**
      * The business name in the ad.
      *
-     * Generated from protobuf field <code>string business_name = 15;</code>
+     * Generated from protobuf field <code>optional string business_name = 15;</code>
      */
     protected $business_name = null;
     /**
      * First headline in the ad.
      *
-     * Generated from protobuf field <code>string headline1 = 16;</code>
+     * Generated from protobuf field <code>optional string headline1 = 16;</code>
      */
     protected $headline1 = null;
     /**
      * Second headline in the ad.
      *
-     * Generated from protobuf field <code>string headline2 = 17;</code>
+     * Generated from protobuf field <code>optional string headline2 = 17;</code>
      */
     protected $headline2 = null;
     /**
      * The first line of the ad's description.
      *
-     * Generated from protobuf field <code>string description1 = 18;</code>
+     * Generated from protobuf field <code>optional string description1 = 18;</code>
      */
     protected $description1 = null;
     /**
      * The second line of the ad's description.
      *
-     * Generated from protobuf field <code>string description2 = 19;</code>
+     * Generated from protobuf field <code>optional string description2 = 19;</code>
      */
     protected $description2 = null;
     /**
      * Whether to enable call tracking for the creative. Enabling call
      * tracking also enables call conversions.
      *
-     * Generated from protobuf field <code>bool call_tracked = 20;</code>
+     * Generated from protobuf field <code>optional bool call_tracked = 20;</code>
      */
     protected $call_tracked = null;
     /**
@@ -70,13 +70,13 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * `true`.
      * If `call_tracked` is `false`, this field is ignored.
      *
-     * Generated from protobuf field <code>bool disable_call_conversion = 21;</code>
+     * Generated from protobuf field <code>optional bool disable_call_conversion = 21;</code>
      */
     protected $disable_call_conversion = null;
     /**
      * The URL to be used for phone number verification.
      *
-     * Generated from protobuf field <code>string phone_number_verification_url = 22;</code>
+     * Generated from protobuf field <code>optional string phone_number_verification_url = 22;</code>
      */
     protected $phone_number_verification_url = null;
     /**
@@ -84,7 +84,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * default conversion action is used. This field only has effect if
      * call_tracked is set to true. Otherwise this field is ignored.
      *
-     * Generated from protobuf field <code>string conversion_action = 23;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 23;</code>
      */
     protected $conversion_action = null;
     /**
@@ -142,7 +142,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The country code in the ad.
      *
-     * Generated from protobuf field <code>string country_code = 13;</code>
+     * Generated from protobuf field <code>optional string country_code = 13;</code>
      * @return string
      */
     public function getCountryCode()
@@ -163,7 +163,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The country code in the ad.
      *
-     * Generated from protobuf field <code>string country_code = 13;</code>
+     * Generated from protobuf field <code>optional string country_code = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -178,7 +178,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The phone number in the ad.
      *
-     * Generated from protobuf field <code>string phone_number = 14;</code>
+     * Generated from protobuf field <code>optional string phone_number = 14;</code>
      * @return string
      */
     public function getPhoneNumber()
@@ -199,7 +199,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The phone number in the ad.
      *
-     * Generated from protobuf field <code>string phone_number = 14;</code>
+     * Generated from protobuf field <code>optional string phone_number = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -214,7 +214,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The business name in the ad.
      *
-     * Generated from protobuf field <code>string business_name = 15;</code>
+     * Generated from protobuf field <code>optional string business_name = 15;</code>
      * @return string
      */
     public function getBusinessName()
@@ -235,7 +235,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The business name in the ad.
      *
-     * Generated from protobuf field <code>string business_name = 15;</code>
+     * Generated from protobuf field <code>optional string business_name = 15;</code>
      * @param string $var
      * @return $this
      */
@@ -250,7 +250,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First headline in the ad.
      *
-     * Generated from protobuf field <code>string headline1 = 16;</code>
+     * Generated from protobuf field <code>optional string headline1 = 16;</code>
      * @return string
      */
     public function getHeadline1()
@@ -271,7 +271,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First headline in the ad.
      *
-     * Generated from protobuf field <code>string headline1 = 16;</code>
+     * Generated from protobuf field <code>optional string headline1 = 16;</code>
      * @param string $var
      * @return $this
      */
@@ -286,7 +286,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Second headline in the ad.
      *
-     * Generated from protobuf field <code>string headline2 = 17;</code>
+     * Generated from protobuf field <code>optional string headline2 = 17;</code>
      * @return string
      */
     public function getHeadline2()
@@ -307,7 +307,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Second headline in the ad.
      *
-     * Generated from protobuf field <code>string headline2 = 17;</code>
+     * Generated from protobuf field <code>optional string headline2 = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -322,7 +322,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first line of the ad's description.
      *
-     * Generated from protobuf field <code>string description1 = 18;</code>
+     * Generated from protobuf field <code>optional string description1 = 18;</code>
      * @return string
      */
     public function getDescription1()
@@ -343,7 +343,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first line of the ad's description.
      *
-     * Generated from protobuf field <code>string description1 = 18;</code>
+     * Generated from protobuf field <code>optional string description1 = 18;</code>
      * @param string $var
      * @return $this
      */
@@ -358,7 +358,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second line of the ad's description.
      *
-     * Generated from protobuf field <code>string description2 = 19;</code>
+     * Generated from protobuf field <code>optional string description2 = 19;</code>
      * @return string
      */
     public function getDescription2()
@@ -379,7 +379,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second line of the ad's description.
      *
-     * Generated from protobuf field <code>string description2 = 19;</code>
+     * Generated from protobuf field <code>optional string description2 = 19;</code>
      * @param string $var
      * @return $this
      */
@@ -395,7 +395,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * Whether to enable call tracking for the creative. Enabling call
      * tracking also enables call conversions.
      *
-     * Generated from protobuf field <code>bool call_tracked = 20;</code>
+     * Generated from protobuf field <code>optional bool call_tracked = 20;</code>
      * @return bool
      */
     public function getCallTracked()
@@ -417,7 +417,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * Whether to enable call tracking for the creative. Enabling call
      * tracking also enables call conversions.
      *
-     * Generated from protobuf field <code>bool call_tracked = 20;</code>
+     * Generated from protobuf field <code>optional bool call_tracked = 20;</code>
      * @param bool $var
      * @return $this
      */
@@ -435,7 +435,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * `true`.
      * If `call_tracked` is `false`, this field is ignored.
      *
-     * Generated from protobuf field <code>bool disable_call_conversion = 21;</code>
+     * Generated from protobuf field <code>optional bool disable_call_conversion = 21;</code>
      * @return bool
      */
     public function getDisableCallConversion()
@@ -459,7 +459,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * `true`.
      * If `call_tracked` is `false`, this field is ignored.
      *
-     * Generated from protobuf field <code>bool disable_call_conversion = 21;</code>
+     * Generated from protobuf field <code>optional bool disable_call_conversion = 21;</code>
      * @param bool $var
      * @return $this
      */
@@ -474,7 +474,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The URL to be used for phone number verification.
      *
-     * Generated from protobuf field <code>string phone_number_verification_url = 22;</code>
+     * Generated from protobuf field <code>optional string phone_number_verification_url = 22;</code>
      * @return string
      */
     public function getPhoneNumberVerificationUrl()
@@ -495,7 +495,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The URL to be used for phone number verification.
      *
-     * Generated from protobuf field <code>string phone_number_verification_url = 22;</code>
+     * Generated from protobuf field <code>optional string phone_number_verification_url = 22;</code>
      * @param string $var
      * @return $this
      */
@@ -512,7 +512,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * default conversion action is used. This field only has effect if
      * call_tracked is set to true. Otherwise this field is ignored.
      *
-     * Generated from protobuf field <code>string conversion_action = 23;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 23;</code>
      * @return string
      */
     public function getConversionAction()
@@ -535,7 +535,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * default conversion action is used. This field only has effect if
      * call_tracked is set to true. Otherwise this field is ignored.
      *
-     * Generated from protobuf field <code>string conversion_action = 23;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 23;</code>
      * @param string $var
      * @return $this
      */

@@ -123,7 +123,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      */
     public function getTimeshiftDuration()
     {
-        return isset($this->timeshift_duration) ? $this->timeshift_duration : null;
+        return $this->timeshift_duration;
     }
 
     public function hasTimeshiftDuration()
@@ -189,7 +189,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      */
     public function getXAxis()
     {
-        return isset($this->x_axis) ? $this->x_axis : null;
+        return $this->x_axis;
     }
 
     public function hasXAxis()
@@ -225,7 +225,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      */
     public function getYAxis()
     {
-        return isset($this->y_axis) ? $this->y_axis : null;
+        return $this->y_axis;
     }
 
     public function hasYAxis()
@@ -261,7 +261,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      */
     public function getChartOptions()
     {
-        return isset($this->chart_options) ? $this->chart_options : null;
+        return $this->chart_options;
     }
 
     public function hasChartOptions()

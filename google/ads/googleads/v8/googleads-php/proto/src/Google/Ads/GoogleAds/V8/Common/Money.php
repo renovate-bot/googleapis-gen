@@ -18,13 +18,13 @@ class Money extends \Google\Protobuf\Internal\Message
     /**
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>string currency_code = 3;</code>
+     * Generated from protobuf field <code>optional string currency_code = 3;</code>
      */
     protected $currency_code = null;
     /**
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>int64 amount_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 amount_micros = 4;</code>
      */
     protected $amount_micros = null;
 
@@ -48,7 +48,7 @@ class Money extends \Google\Protobuf\Internal\Message
     /**
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>string currency_code = 3;</code>
+     * Generated from protobuf field <code>optional string currency_code = 3;</code>
      * @return string
      */
     public function getCurrencyCode()
@@ -69,7 +69,7 @@ class Money extends \Google\Protobuf\Internal\Message
     /**
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>string currency_code = 3;</code>
+     * Generated from protobuf field <code>optional string currency_code = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class Money extends \Google\Protobuf\Internal\Message
     /**
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>int64 amount_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 amount_micros = 4;</code>
      * @return int|string
      */
     public function getAmountMicros()
@@ -105,7 +105,7 @@ class Money extends \Google\Protobuf\Internal\Message
     /**
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>int64 amount_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 amount_micros = 4;</code>
      * @param int|string $var
      * @return $this
      */

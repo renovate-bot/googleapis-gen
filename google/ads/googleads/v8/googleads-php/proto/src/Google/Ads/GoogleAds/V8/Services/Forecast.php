@@ -24,7 +24,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * data to be reported. If the minimum number is not met, the on_target_reach
      * value will be rounded to 0.
      *
-     * Generated from protobuf field <code>int64 on_target_reach = 5;</code>
+     * Generated from protobuf field <code>optional int64 on_target_reach = 5;</code>
      */
     protected $on_target_reach = null;
     /**
@@ -36,13 +36,13 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * data to be reported. If the minimum number is not met, the total_reach
      * value will be rounded to 0.
      *
-     * Generated from protobuf field <code>int64 total_reach = 6;</code>
+     * Generated from protobuf field <code>optional int64 total_reach = 6;</code>
      */
     protected $total_reach = null;
     /**
      * Number of ad impressions that exactly matches the Targeting.
      *
-     * Generated from protobuf field <code>int64 on_target_impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 on_target_impressions = 7;</code>
      */
     protected $on_target_impressions = null;
     /**
@@ -50,7 +50,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
-     * Generated from protobuf field <code>int64 total_impressions = 8;</code>
+     * Generated from protobuf field <code>optional int64 total_impressions = 8;</code>
      */
     protected $total_impressions = null;
     /**
@@ -59,7 +59,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * more information about what makes an ad viewable and how
      * viewability is measured.
      *
-     * Generated from protobuf field <code>int64 viewable_impressions = 9;</code>
+     * Generated from protobuf field <code>optional int64 viewable_impressions = 9;</code>
      */
     protected $viewable_impressions = null;
     /**
@@ -126,7 +126,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * data to be reported. If the minimum number is not met, the on_target_reach
      * value will be rounded to 0.
      *
-     * Generated from protobuf field <code>int64 on_target_reach = 5;</code>
+     * Generated from protobuf field <code>optional int64 on_target_reach = 5;</code>
      * @return int|string
      */
     public function getOnTargetReach()
@@ -153,7 +153,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * data to be reported. If the minimum number is not met, the on_target_reach
      * value will be rounded to 0.
      *
-     * Generated from protobuf field <code>int64 on_target_reach = 5;</code>
+     * Generated from protobuf field <code>optional int64 on_target_reach = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -174,7 +174,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * data to be reported. If the minimum number is not met, the total_reach
      * value will be rounded to 0.
      *
-     * Generated from protobuf field <code>int64 total_reach = 6;</code>
+     * Generated from protobuf field <code>optional int64 total_reach = 6;</code>
      * @return int|string
      */
     public function getTotalReach()
@@ -201,7 +201,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * data to be reported. If the minimum number is not met, the total_reach
      * value will be rounded to 0.
      *
-     * Generated from protobuf field <code>int64 total_reach = 6;</code>
+     * Generated from protobuf field <code>optional int64 total_reach = 6;</code>
      * @param int|string $var
      * @return $this
      */
@@ -216,7 +216,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
     /**
      * Number of ad impressions that exactly matches the Targeting.
      *
-     * Generated from protobuf field <code>int64 on_target_impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 on_target_impressions = 7;</code>
      * @return int|string
      */
     public function getOnTargetImpressions()
@@ -237,7 +237,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
     /**
      * Number of ad impressions that exactly matches the Targeting.
      *
-     * Generated from protobuf field <code>int64 on_target_impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 on_target_impressions = 7;</code>
      * @param int|string $var
      * @return $this
      */
@@ -254,7 +254,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
-     * Generated from protobuf field <code>int64 total_impressions = 8;</code>
+     * Generated from protobuf field <code>optional int64 total_impressions = 8;</code>
      * @return int|string
      */
     public function getTotalImpressions()
@@ -277,7 +277,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
-     * Generated from protobuf field <code>int64 total_impressions = 8;</code>
+     * Generated from protobuf field <code>optional int64 total_impressions = 8;</code>
      * @param int|string $var
      * @return $this
      */
@@ -295,7 +295,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * more information about what makes an ad viewable and how
      * viewability is measured.
      *
-     * Generated from protobuf field <code>int64 viewable_impressions = 9;</code>
+     * Generated from protobuf field <code>optional int64 viewable_impressions = 9;</code>
      * @return int|string
      */
     public function getViewableImpressions()
@@ -319,7 +319,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * more information about what makes an ad viewable and how
      * viewability is measured.
      *
-     * Generated from protobuf field <code>int64 viewable_impressions = 9;</code>
+     * Generated from protobuf field <code>optional int64 viewable_impressions = 9;</code>
      * @param int|string $var
      * @return $this
      */

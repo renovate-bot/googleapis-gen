@@ -32,14 +32,14 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * The site tag that adds visitors to your basic remarketing lists and sets
      * new cookies on your domain.
      *
-     * Generated from protobuf field <code>string global_site_tag = 5;</code>
+     * Generated from protobuf field <code>optional string global_site_tag = 5;</code>
      */
     protected $global_site_tag = null;
     /**
      * The event snippet that works with the site tag to track actions that
      * should be counted as conversions.
      *
-     * Generated from protobuf field <code>string event_snippet = 6;</code>
+     * Generated from protobuf field <code>optional string event_snippet = 6;</code>
      */
     protected $event_snippet = null;
 
@@ -125,7 +125,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * The site tag that adds visitors to your basic remarketing lists and sets
      * new cookies on your domain.
      *
-     * Generated from protobuf field <code>string global_site_tag = 5;</code>
+     * Generated from protobuf field <code>optional string global_site_tag = 5;</code>
      * @return string
      */
     public function getGlobalSiteTag()
@@ -147,7 +147,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * The site tag that adds visitors to your basic remarketing lists and sets
      * new cookies on your domain.
      *
-     * Generated from protobuf field <code>string global_site_tag = 5;</code>
+     * Generated from protobuf field <code>optional string global_site_tag = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -163,7 +163,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * The event snippet that works with the site tag to track actions that
      * should be counted as conversions.
      *
-     * Generated from protobuf field <code>string event_snippet = 6;</code>
+     * Generated from protobuf field <code>optional string event_snippet = 6;</code>
      * @return string
      */
     public function getEventSnippet()
@@ -185,7 +185,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * The event snippet that works with the site tag to track actions that
      * should be counted as conversions.
      *
-     * Generated from protobuf field <code>string event_snippet = 6;</code>
+     * Generated from protobuf field <code>optional string event_snippet = 6;</code>
      * @param string $var
      * @return $this
      */

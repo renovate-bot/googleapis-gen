@@ -26,7 +26,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>int64 id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -35,7 +35,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 255, inclusive,
      * in UTF-8 bytes, (trimmed).
      *
-     * Generated from protobuf field <code>string name = 17;</code>
+     * Generated from protobuf field <code>optional string name = 17;</code>
      */
     protected $name = null;
     /**
@@ -72,21 +72,21 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Bidding strategy metrics are reported in this currency.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string effective_currency_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string effective_currency_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_currency_code = null;
     /**
      * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 campaign_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 campaign_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $campaign_count = null;
     /**
      * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 non_removed_campaign_count = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 non_removed_campaign_count = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $non_removed_campaign_count = null;
     protected $scheme;
@@ -197,7 +197,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>int64 id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -218,7 +218,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>int64 id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -236,7 +236,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 255, inclusive,
      * in UTF-8 bytes, (trimmed).
      *
-     * Generated from protobuf field <code>string name = 17;</code>
+     * Generated from protobuf field <code>optional string name = 17;</code>
      * @return string
      */
     public function getName()
@@ -260,7 +260,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 255, inclusive,
      * in UTF-8 bytes, (trimmed).
      *
-     * Generated from protobuf field <code>string name = 17;</code>
+     * Generated from protobuf field <code>optional string name = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -374,7 +374,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Bidding strategy metrics are reported in this currency.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string effective_currency_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string effective_currency_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEffectiveCurrencyCode()
@@ -400,7 +400,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Bidding strategy metrics are reported in this currency.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string effective_currency_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string effective_currency_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -416,7 +416,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 campaign_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 campaign_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCampaignCount()
@@ -438,7 +438,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 campaign_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 campaign_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -454,7 +454,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 non_removed_campaign_count = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 non_removed_campaign_count = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getNonRemovedCampaignCount()
@@ -476,7 +476,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 non_removed_campaign_count = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 non_removed_campaign_count = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

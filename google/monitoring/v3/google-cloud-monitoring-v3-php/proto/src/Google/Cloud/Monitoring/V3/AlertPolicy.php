@@ -296,7 +296,7 @@ class AlertPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getDocumentation()
     {
-        return isset($this->documentation) ? $this->documentation : null;
+        return $this->documentation;
     }
 
     public function hasDocumentation()
@@ -444,7 +444,7 @@ class AlertPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getEnabled()
     {
-        return isset($this->enabled) ? $this->enabled : null;
+        return $this->enabled;
     }
 
     public function hasEnabled()
@@ -520,7 +520,7 @@ class AlertPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getValidity()
     {
-        return isset($this->validity) ? $this->validity : null;
+        return $this->validity;
     }
 
     public function hasValidity()
@@ -600,7 +600,7 @@ class AlertPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getCreationRecord()
     {
-        return isset($this->creation_record) ? $this->creation_record : null;
+        return $this->creation_record;
     }
 
     public function hasCreationRecord()
@@ -638,7 +638,7 @@ class AlertPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getMutationRecord()
     {
-        return isset($this->mutation_record) ? $this->mutation_record : null;
+        return $this->mutation_record;
     }
 
     public function hasMutationRecord()
@@ -675,7 +675,7 @@ class AlertPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getAlertStrategy()
     {
-        return isset($this->alert_strategy) ? $this->alert_strategy : null;
+        return $this->alert_strategy;
     }
 
     public function hasAlertStrategy()

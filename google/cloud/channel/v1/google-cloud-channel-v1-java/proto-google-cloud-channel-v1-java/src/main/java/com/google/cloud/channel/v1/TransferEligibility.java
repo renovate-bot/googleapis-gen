@@ -370,7 +370,7 @@ private static final long serialVersionUID = 0L;
     if (isEligible_ != false) {
       output.writeBool(1, isEligible_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (ineligibilityReason_ != com.google.cloud.channel.v1.TransferEligibility.Reason.REASON_UNSPECIFIED.getNumber()) {
@@ -389,7 +389,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, isEligible_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (ineligibilityReason_ != com.google.cloud.channel.v1.TransferEligibility.Reason.REASON_UNSPECIFIED.getNumber()) {

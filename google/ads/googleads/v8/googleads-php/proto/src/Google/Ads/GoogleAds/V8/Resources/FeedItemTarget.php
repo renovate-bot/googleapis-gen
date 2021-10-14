@@ -26,7 +26,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>string feed_item = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed_item = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed_item = null;
     /**
@@ -38,7 +38,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>int64 feed_item_target_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 feed_item_target_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $feed_item_target_id = null;
     /**
@@ -121,7 +121,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>string feed_item = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed_item = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getFeedItem()
@@ -142,7 +142,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>string feed_item = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string feed_item = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -183,7 +183,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>int64 feed_item_target_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 feed_item_target_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getFeedItemTargetId()
@@ -204,7 +204,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>int64 feed_item_target_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 feed_item_target_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

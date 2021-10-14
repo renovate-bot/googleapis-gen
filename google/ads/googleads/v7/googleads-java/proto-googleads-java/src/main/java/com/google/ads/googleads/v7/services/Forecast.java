@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
    * matches the Targeting.
    * </pre>
    *
-   * <code>int64 on_target_reach = 5;</code>
+   * <code>optional int64 on_target_reach = 5;</code>
    * @return Whether the onTargetReach field is set.
    */
   @java.lang.Override
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
    * matches the Targeting.
    * </pre>
    *
-   * <code>int64 on_target_reach = 5;</code>
+   * <code>optional int64 on_target_reach = 5;</code>
    * @return The onTargetReach.
    */
   @java.lang.Override
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
    * people that may fall outside the specified Targeting.
    * </pre>
    *
-   * <code>int64 total_reach = 6;</code>
+   * <code>optional int64 total_reach = 6;</code>
    * @return Whether the totalReach field is set.
    */
   @java.lang.Override
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
    * people that may fall outside the specified Targeting.
    * </pre>
    *
-   * <code>int64 total_reach = 6;</code>
+   * <code>optional int64 total_reach = 6;</code>
    * @return The totalReach.
    */
   @java.lang.Override
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    * Number of ad impressions that exactly matches the Targeting.
    * </pre>
    *
-   * <code>int64 on_target_impressions = 7;</code>
+   * <code>optional int64 on_target_impressions = 7;</code>
    * @return Whether the onTargetImpressions field is set.
    */
   @java.lang.Override
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
    * Number of ad impressions that exactly matches the Targeting.
    * </pre>
    *
-   * <code>int64 on_target_impressions = 7;</code>
+   * <code>optional int64 on_target_impressions = 7;</code>
    * @return The onTargetImpressions.
    */
   @java.lang.Override
@@ -209,7 +209,7 @@ private static final long serialVersionUID = 0L;
    * signed-in users.
    * </pre>
    *
-   * <code>int64 total_impressions = 8;</code>
+   * <code>optional int64 total_impressions = 8;</code>
    * @return Whether the totalImpressions field is set.
    */
   @java.lang.Override
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
    * signed-in users.
    * </pre>
    *
-   * <code>int64 total_impressions = 8;</code>
+   * <code>optional int64 total_impressions = 8;</code>
    * @return The totalImpressions.
    */
   @java.lang.Override
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
    * viewability is measured.
    * </pre>
    *
-   * <code>int64 viewable_impressions = 9;</code>
+   * <code>optional int64 viewable_impressions = 9;</code>
    * @return Whether the viewableImpressions field is set.
    */
   @java.lang.Override
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
    * viewability is measured.
    * </pre>
    *
-   * <code>int64 viewable_impressions = 9;</code>
+   * <code>optional int64 viewable_impressions = 9;</code>
    * @return The viewableImpressions.
    */
   @java.lang.Override
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_reach = 5;</code>
+     * <code>optional int64 on_target_reach = 5;</code>
      * @return Whether the onTargetReach field is set.
      */
     @java.lang.Override
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_reach = 5;</code>
+     * <code>optional int64 on_target_reach = 5;</code>
      * @return The onTargetReach.
      */
     @java.lang.Override
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      * matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_reach = 5;</code>
+     * <code>optional int64 on_target_reach = 5;</code>
      * @param value The onTargetReach to set.
      * @return This builder for chaining.
      */
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
      * matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_reach = 5;</code>
+     * <code>optional int64 on_target_reach = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearOnTargetReach() {
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
      * people that may fall outside the specified Targeting.
      * </pre>
      *
-     * <code>int64 total_reach = 6;</code>
+     * <code>optional int64 total_reach = 6;</code>
      * @return Whether the totalReach field is set.
      */
     @java.lang.Override
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * people that may fall outside the specified Targeting.
      * </pre>
      *
-     * <code>int64 total_reach = 6;</code>
+     * <code>optional int64 total_reach = 6;</code>
      * @return The totalReach.
      */
     @java.lang.Override
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
      * people that may fall outside the specified Targeting.
      * </pre>
      *
-     * <code>int64 total_reach = 6;</code>
+     * <code>optional int64 total_reach = 6;</code>
      * @param value The totalReach to set.
      * @return This builder for chaining.
      */
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * people that may fall outside the specified Targeting.
      * </pre>
      *
-     * <code>int64 total_reach = 6;</code>
+     * <code>optional int64 total_reach = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalReach() {
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
      * Number of ad impressions that exactly matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_impressions = 7;</code>
+     * <code>optional int64 on_target_impressions = 7;</code>
      * @return Whether the onTargetImpressions field is set.
      */
     @java.lang.Override
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
      * Number of ad impressions that exactly matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_impressions = 7;</code>
+     * <code>optional int64 on_target_impressions = 7;</code>
      * @return The onTargetImpressions.
      */
     @java.lang.Override
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
      * Number of ad impressions that exactly matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_impressions = 7;</code>
+     * <code>optional int64 on_target_impressions = 7;</code>
      * @param value The onTargetImpressions to set.
      * @return This builder for chaining.
      */
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
      * Number of ad impressions that exactly matches the Targeting.
      * </pre>
      *
-     * <code>int64 on_target_impressions = 7;</code>
+     * <code>optional int64 on_target_impressions = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearOnTargetImpressions() {
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      * signed-in users.
      * </pre>
      *
-     * <code>int64 total_impressions = 8;</code>
+     * <code>optional int64 total_impressions = 8;</code>
      * @return Whether the totalImpressions field is set.
      */
     @java.lang.Override
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
      * signed-in users.
      * </pre>
      *
-     * <code>int64 total_impressions = 8;</code>
+     * <code>optional int64 total_impressions = 8;</code>
      * @return The totalImpressions.
      */
     @java.lang.Override
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
      * signed-in users.
      * </pre>
      *
-     * <code>int64 total_impressions = 8;</code>
+     * <code>optional int64 total_impressions = 8;</code>
      * @param value The totalImpressions to set.
      * @return This builder for chaining.
      */
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
      * signed-in users.
      * </pre>
      *
-     * <code>int64 total_impressions = 8;</code>
+     * <code>optional int64 total_impressions = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalImpressions() {
@@ -940,7 +940,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 9;</code>
+     * <code>optional int64 viewable_impressions = 9;</code>
      * @return Whether the viewableImpressions field is set.
      */
     @java.lang.Override
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 9;</code>
+     * <code>optional int64 viewable_impressions = 9;</code>
      * @return The viewableImpressions.
      */
     @java.lang.Override
@@ -970,7 +970,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 9;</code>
+     * <code>optional int64 viewable_impressions = 9;</code>
      * @param value The viewableImpressions to set.
      * @return This builder for chaining.
      */
@@ -988,7 +988,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 9;</code>
+     * <code>optional int64 viewable_impressions = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearViewableImpressions() {

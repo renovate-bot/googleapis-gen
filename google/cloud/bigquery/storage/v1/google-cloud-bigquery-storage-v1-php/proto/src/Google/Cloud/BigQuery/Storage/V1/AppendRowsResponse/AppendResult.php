@@ -48,7 +48,7 @@ class AppendResult extends \Google\Protobuf\Internal\Message
      */
     public function getOffset()
     {
-        return isset($this->offset) ? $this->offset : null;
+        return $this->offset;
     }
 
     public function hasOffset()

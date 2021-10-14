@@ -251,7 +251,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, namespace_);
     }
     if (clusterReferenceCase_ == 7) {
@@ -266,7 +266,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNamespaceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, namespace_);
     }
     if (clusterReferenceCase_ == 7) {

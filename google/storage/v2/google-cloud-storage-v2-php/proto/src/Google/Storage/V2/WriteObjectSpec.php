@@ -32,7 +32,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * generation matches the given value. Setting to 0 makes the operation
      * succeed only if there are no live versions of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_match = 3;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_match = 3;</code>
      */
     protected $if_generation_match = null;
     /**
@@ -41,21 +41,21 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * precondition fails. Setting to 0 makes the operation succeed only if
      * there is a live version of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_not_match = 4;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_not_match = 4;</code>
      */
     protected $if_generation_not_match = null;
     /**
      * Makes the operation conditional on whether the object's current
      * metageneration matches the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_match = 5;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_match = 5;</code>
      */
     protected $if_metageneration_match = null;
     /**
      * Makes the operation conditional on whether the object's current
      * metageneration does not match the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_not_match = 6;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_not_match = 6;</code>
      */
     protected $if_metageneration_not_match = null;
 
@@ -99,7 +99,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      */
     public function getResource()
     {
-        return isset($this->resource) ? $this->resource : null;
+        return $this->resource;
     }
 
     public function hasResource()
@@ -158,7 +158,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * generation matches the given value. Setting to 0 makes the operation
      * succeed only if there are no live versions of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_match = 3;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_match = 3;</code>
      * @return int|string
      */
     public function getIfGenerationMatch()
@@ -181,7 +181,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * generation matches the given value. Setting to 0 makes the operation
      * succeed only if there are no live versions of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_match = 3;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_match = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -199,7 +199,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * precondition fails. Setting to 0 makes the operation succeed only if
      * there is a live version of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_not_match = 4;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_not_match = 4;</code>
      * @return int|string
      */
     public function getIfGenerationNotMatch()
@@ -223,7 +223,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * precondition fails. Setting to 0 makes the operation succeed only if
      * there is a live version of the object.
      *
-     * Generated from protobuf field <code>int64 if_generation_not_match = 4;</code>
+     * Generated from protobuf field <code>optional int64 if_generation_not_match = 4;</code>
      * @param int|string $var
      * @return $this
      */
@@ -239,7 +239,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration matches the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_match = 5;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_match = 5;</code>
      * @return int|string
      */
     public function getIfMetagenerationMatch()
@@ -261,7 +261,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration matches the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_match = 5;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_match = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -277,7 +277,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration does not match the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_not_match = 6;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_not_match = 6;</code>
      * @return int|string
      */
     public function getIfMetagenerationNotMatch()
@@ -299,7 +299,7 @@ class WriteObjectSpec extends \Google\Protobuf\Internal\Message
      * Makes the operation conditional on whether the object's current
      * metageneration does not match the given value.
      *
-     * Generated from protobuf field <code>int64 if_metageneration_not_match = 6;</code>
+     * Generated from protobuf field <code>optional int64 if_metageneration_not_match = 6;</code>
      * @param int|string $var
      * @return $this
      */

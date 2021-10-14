@@ -18,7 +18,7 @@ public interface MinuteRangeOrBuilder extends
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    * @return Whether the startMinutesAgo field is set.
    */
   boolean hasStartMinutesAgo();
@@ -33,7 +33,7 @@ public interface MinuteRangeOrBuilder extends
    * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 start_minutes_ago = 1;</code>
+   * <code>optional int32 start_minutes_ago = 1;</code>
    * @return The startMinutesAgo.
    */
   int getStartMinutesAgo();
@@ -50,7 +50,7 @@ public interface MinuteRangeOrBuilder extends
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    * @return Whether the endMinutesAgo field is set.
    */
   boolean hasEndMinutesAgo();
@@ -66,7 +66,7 @@ public interface MinuteRangeOrBuilder extends
    * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
-   * <code>int32 end_minutes_ago = 2;</code>
+   * <code>optional int32 end_minutes_ago = 2;</code>
    * @return The endMinutesAgo.
    */
   int getEndMinutesAgo();

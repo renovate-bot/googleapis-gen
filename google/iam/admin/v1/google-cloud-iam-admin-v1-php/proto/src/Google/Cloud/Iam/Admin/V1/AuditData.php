@@ -47,7 +47,7 @@ class AuditData extends \Google\Protobuf\Internal\Message
      */
     public function getPermissionDelta()
     {
-        return isset($this->permission_delta) ? $this->permission_delta : null;
+        return $this->permission_delta;
     }
 
     public function hasPermissionDelta()

@@ -215,7 +215,7 @@ class AndroidVersion extends \Google\Protobuf\Internal\Message
      */
     public function getReleaseDate()
     {
-        return isset($this->release_date) ? $this->release_date : null;
+        return $this->release_date;
     }
 
     public function hasReleaseDate()
@@ -251,7 +251,7 @@ class AndroidVersion extends \Google\Protobuf\Internal\Message
      */
     public function getDistribution()
     {
-        return isset($this->distribution) ? $this->distribution : null;
+        return $this->distribution;
     }
 
     public function hasDistribution()

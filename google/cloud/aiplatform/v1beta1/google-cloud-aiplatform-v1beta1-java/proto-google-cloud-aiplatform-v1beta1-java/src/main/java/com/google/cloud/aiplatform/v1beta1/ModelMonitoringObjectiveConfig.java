@@ -821,7 +821,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDataFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataFormat_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dataFormat_);
       }
       if (dataSourceCase_ == 3) {
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
       if (dataSourceCase_ == 5) {
         output.writeMessage(5, (com.google.cloud.aiplatform.v1beta1.BigQuerySource) dataSource_);
       }
-      if (!getTargetFieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetField_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, targetField_);
       }
       if (loggingSamplingStrategy_ != null) {
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getDataFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataFormat_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dataFormat_);
       }
       if (dataSourceCase_ == 3) {
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, (com.google.cloud.aiplatform.v1beta1.BigQuerySource) dataSource_);
       }
-      if (!getTargetFieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetField_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, targetField_);
       }
       if (loggingSamplingStrategy_ != null) {

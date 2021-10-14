@@ -18,92 +18,92 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated bid modifier upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>double bid_modifier = 15;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      */
     protected $bid_modifier = null;
     /**
      * Projected number of biddable conversions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 16;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 16;</code>
      */
     protected $biddable_conversions = null;
     /**
      * Projected total value of biddable conversions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 17;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 17;</code>
      */
     protected $biddable_conversions_value = null;
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 18;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 18;</code>
      */
     protected $clicks = null;
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 19;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 19;</code>
      */
     protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 20;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 20;</code>
      */
     protected $impressions = null;
     /**
      * Projected number of top slot impressions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 21;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 21;</code>
      */
     protected $top_slot_impressions = null;
     /**
      * Projected number of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double parent_biddable_conversions = 22;</code>
+     * Generated from protobuf field <code>optional double parent_biddable_conversions = 22;</code>
      */
     protected $parent_biddable_conversions = null;
     /**
      * Projected total value of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double parent_biddable_conversions_value = 23;</code>
+     * Generated from protobuf field <code>optional double parent_biddable_conversions_value = 23;</code>
      */
     protected $parent_biddable_conversions_value = null;
     /**
      * Projected number of clicks for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_clicks = 24;</code>
+     * Generated from protobuf field <code>optional int64 parent_clicks = 24;</code>
      */
     protected $parent_clicks = null;
     /**
      * Projected cost in micros for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_cost_micros = 25;</code>
+     * Generated from protobuf field <code>optional int64 parent_cost_micros = 25;</code>
      */
     protected $parent_cost_micros = null;
     /**
      * Projected number of impressions for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_impressions = 26;</code>
+     * Generated from protobuf field <code>optional int64 parent_impressions = 26;</code>
      */
     protected $parent_impressions = null;
     /**
      * Projected number of top slot impressions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 parent_top_slot_impressions = 27;</code>
+     * Generated from protobuf field <code>optional int64 parent_top_slot_impressions = 27;</code>
      */
     protected $parent_top_slot_impressions = null;
     /**
      * Projected minimum daily budget that must be available to the parent
      * resource to realize this simulation.
      *
-     * Generated from protobuf field <code>int64 parent_required_budget_micros = 28;</code>
+     * Generated from protobuf field <code>optional int64 parent_required_budget_micros = 28;</code>
      */
     protected $parent_required_budget_micros = null;
 
@@ -158,7 +158,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated bid modifier upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>double bid_modifier = 15;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      * @return float
      */
     public function getBidModifier()
@@ -179,7 +179,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated bid modifier upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>double bid_modifier = 15;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      * @param float $var
      * @return $this
      */
@@ -195,7 +195,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of biddable conversions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 16;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 16;</code>
      * @return float
      */
     public function getBiddableConversions()
@@ -217,7 +217,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of biddable conversions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 16;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 16;</code>
      * @param float $var
      * @return $this
      */
@@ -233,7 +233,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected total value of biddable conversions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 17;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 17;</code>
      * @return float
      */
     public function getBiddableConversionsValue()
@@ -255,7 +255,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected total value of biddable conversions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 17;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 17;</code>
      * @param float $var
      * @return $this
      */
@@ -270,7 +270,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 18;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 18;</code>
      * @return int|string
      */
     public function getClicks()
@@ -291,7 +291,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 18;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 18;</code>
      * @param int|string $var
      * @return $this
      */
@@ -306,7 +306,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 19;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 19;</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -327,7 +327,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 19;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 19;</code>
      * @param int|string $var
      * @return $this
      */
@@ -342,7 +342,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 20;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 20;</code>
      * @return int|string
      */
     public function getImpressions()
@@ -363,7 +363,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 20;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 20;</code>
      * @param int|string $var
      * @return $this
      */
@@ -379,7 +379,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of top slot impressions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 21;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 21;</code>
      * @return int|string
      */
     public function getTopSlotImpressions()
@@ -401,7 +401,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of top slot impressions.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 21;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 21;</code>
      * @param int|string $var
      * @return $this
      */
@@ -417,7 +417,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double parent_biddable_conversions = 22;</code>
+     * Generated from protobuf field <code>optional double parent_biddable_conversions = 22;</code>
      * @return float
      */
     public function getParentBiddableConversions()
@@ -439,7 +439,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double parent_biddable_conversions = 22;</code>
+     * Generated from protobuf field <code>optional double parent_biddable_conversions = 22;</code>
      * @param float $var
      * @return $this
      */
@@ -455,7 +455,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected total value of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double parent_biddable_conversions_value = 23;</code>
+     * Generated from protobuf field <code>optional double parent_biddable_conversions_value = 23;</code>
      * @return float
      */
     public function getParentBiddableConversionsValue()
@@ -477,7 +477,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected total value of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>double parent_biddable_conversions_value = 23;</code>
+     * Generated from protobuf field <code>optional double parent_biddable_conversions_value = 23;</code>
      * @param float $var
      * @return $this
      */
@@ -492,7 +492,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_clicks = 24;</code>
+     * Generated from protobuf field <code>optional int64 parent_clicks = 24;</code>
      * @return int|string
      */
     public function getParentClicks()
@@ -513,7 +513,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_clicks = 24;</code>
+     * Generated from protobuf field <code>optional int64 parent_clicks = 24;</code>
      * @param int|string $var
      * @return $this
      */
@@ -528,7 +528,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_cost_micros = 25;</code>
+     * Generated from protobuf field <code>optional int64 parent_cost_micros = 25;</code>
      * @return int|string
      */
     public function getParentCostMicros()
@@ -549,7 +549,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_cost_micros = 25;</code>
+     * Generated from protobuf field <code>optional int64 parent_cost_micros = 25;</code>
      * @param int|string $var
      * @return $this
      */
@@ -564,7 +564,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_impressions = 26;</code>
+     * Generated from protobuf field <code>optional int64 parent_impressions = 26;</code>
      * @return int|string
      */
     public function getParentImpressions()
@@ -585,7 +585,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions for the parent resource.
      *
-     * Generated from protobuf field <code>int64 parent_impressions = 26;</code>
+     * Generated from protobuf field <code>optional int64 parent_impressions = 26;</code>
      * @param int|string $var
      * @return $this
      */
@@ -601,7 +601,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of top slot impressions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 parent_top_slot_impressions = 27;</code>
+     * Generated from protobuf field <code>optional int64 parent_top_slot_impressions = 27;</code>
      * @return int|string
      */
     public function getParentTopSlotImpressions()
@@ -623,7 +623,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of top slot impressions for the parent resource.
      * Only search advertising channel type supports this field.
      *
-     * Generated from protobuf field <code>int64 parent_top_slot_impressions = 27;</code>
+     * Generated from protobuf field <code>optional int64 parent_top_slot_impressions = 27;</code>
      * @param int|string $var
      * @return $this
      */
@@ -639,7 +639,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected minimum daily budget that must be available to the parent
      * resource to realize this simulation.
      *
-     * Generated from protobuf field <code>int64 parent_required_budget_micros = 28;</code>
+     * Generated from protobuf field <code>optional int64 parent_required_budget_micros = 28;</code>
      * @return int|string
      */
     public function getParentRequiredBudgetMicros()
@@ -661,7 +661,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected minimum daily budget that must be available to the parent
      * resource to realize this simulation.
      *
-     * Generated from protobuf field <code>int64 parent_required_budget_micros = 28;</code>
+     * Generated from protobuf field <code>optional int64 parent_required_budget_micros = 28;</code>
      * @param int|string $var
      * @return $this
      */

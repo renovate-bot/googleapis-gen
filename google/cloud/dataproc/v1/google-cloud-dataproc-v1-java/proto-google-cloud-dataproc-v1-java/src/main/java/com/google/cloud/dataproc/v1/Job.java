@@ -1357,10 +1357,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < statusHistory_.size(); i++) {
       output.writeMessage(13, statusHistory_.get(i));
     }
-    if (!getDriverControlFilesUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverControlFilesUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, driverControlFilesUri_);
     }
-    if (!getDriverOutputResourceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverOutputResourceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, driverOutputResourceUri_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -1375,7 +1375,7 @@ private static final long serialVersionUID = 0L;
     if (typeJobCase_ == 21) {
       output.writeMessage(21, (com.google.cloud.dataproc.v1.SparkRJob) typeJob_);
     }
-    if (!getJobUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobUuid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, jobUuid_);
     }
     if (typeJobCase_ == 23) {
@@ -1437,10 +1437,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, statusHistory_.get(i));
     }
-    if (!getDriverControlFilesUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverControlFilesUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, driverControlFilesUri_);
     }
-    if (!getDriverOutputResourceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(driverOutputResourceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, driverOutputResourceUri_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -1461,7 +1461,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(21, (com.google.cloud.dataproc.v1.SparkRJob) typeJob_);
     }
-    if (!getJobUuidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobUuid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
     }
     if (typeJobCase_ == 23) {

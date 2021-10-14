@@ -21,13 +21,13 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     /**
      * ID of the attribute.
      *
-     * Generated from protobuf field <code>int64 id = 5;</code>
+     * Generated from protobuf field <code>optional int64 id = 5;</code>
      */
     protected $id = null;
     /**
      * The name of the attribute. Required.
      *
-     * Generated from protobuf field <code>string name = 6;</code>
+     * Generated from protobuf field <code>optional string name = 6;</code>
      */
     protected $name = null;
     /**
@@ -42,7 +42,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * that a unique key is not required in a Feed's schema, in which case the
      * FeedItems must be referenced by their feed_item_id.
      *
-     * Generated from protobuf field <code>bool is_part_of_key = 7;</code>
+     * Generated from protobuf field <code>optional bool is_part_of_key = 7;</code>
      */
     protected $is_part_of_key = null;
 
@@ -73,7 +73,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     /**
      * ID of the attribute.
      *
-     * Generated from protobuf field <code>int64 id = 5;</code>
+     * Generated from protobuf field <code>optional int64 id = 5;</code>
      * @return int|string
      */
     public function getId()
@@ -94,7 +94,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     /**
      * ID of the attribute.
      *
-     * Generated from protobuf field <code>int64 id = 5;</code>
+     * Generated from protobuf field <code>optional int64 id = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -109,7 +109,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     /**
      * The name of the attribute. Required.
      *
-     * Generated from protobuf field <code>string name = 6;</code>
+     * Generated from protobuf field <code>optional string name = 6;</code>
      * @return string
      */
     public function getName()
@@ -130,7 +130,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     /**
      * The name of the attribute. Required.
      *
-     * Generated from protobuf field <code>string name = 6;</code>
+     * Generated from protobuf field <code>optional string name = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -174,7 +174,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * that a unique key is not required in a Feed's schema, in which case the
      * FeedItems must be referenced by their feed_item_id.
      *
-     * Generated from protobuf field <code>bool is_part_of_key = 7;</code>
+     * Generated from protobuf field <code>optional bool is_part_of_key = 7;</code>
      * @return bool
      */
     public function getIsPartOfKey()
@@ -198,7 +198,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * that a unique key is not required in a Feed's schema, in which case the
      * FeedItems must be referenced by their feed_item_id.
      *
-     * Generated from protobuf field <code>bool is_part_of_key = 7;</code>
+     * Generated from protobuf field <code>optional bool is_part_of_key = 7;</code>
      * @param bool $var
      * @return $this
      */

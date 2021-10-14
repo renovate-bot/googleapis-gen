@@ -89,7 +89,7 @@ class ProductDetail extends \Google\Protobuf\Internal\Message
      */
     public function getProduct()
     {
-        return isset($this->product) ? $this->product : null;
+        return $this->product;
     }
 
     public function hasProduct()
@@ -138,7 +138,7 @@ class ProductDetail extends \Google\Protobuf\Internal\Message
      */
     public function getQuantity()
     {
-        return isset($this->quantity) ? $this->quantity : null;
+        return $this->quantity;
     }
 
     public function hasQuantity()

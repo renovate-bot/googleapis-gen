@@ -22,7 +22,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>string criterion_name = 3;</code>
+     * Generated from protobuf field <code>optional string criterion_name = 3;</code>
      */
     protected $criterion_name = null;
     /**
@@ -92,7 +92,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>string criterion_name = 3;</code>
+     * Generated from protobuf field <code>optional string criterion_name = 3;</code>
      * @return string
      */
     public function getCriterionName()
@@ -117,7 +117,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * This field is required for CREATE operations and is prohibited on UPDATE
      * operations.
      *
-     * Generated from protobuf field <code>string criterion_name = 3;</code>
+     * Generated from protobuf field <code>optional string criterion_name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -205,7 +205,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      */
     public function getSample()
     {
-        return isset($this->sample) ? $this->sample : null;
+        return $this->sample;
     }
 
     public function hasSample()

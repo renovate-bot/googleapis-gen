@@ -376,7 +376,7 @@ private static final long serialVersionUID = 0L;
     if (elementaryStreamCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.video.transcoder.v1.TextStream) elementaryStream_);
     }
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, key_);
     }
     unknownFields.writeTo(output);
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (com.google.cloud.video.transcoder.v1.TextStream) elementaryStream_);
     }
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, key_);
     }
     size += unknownFields.getSerializedSize();

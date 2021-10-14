@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
     if (kind_ != com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.SPAN_KIND_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     if (startTime_ != null) {
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (startTime_ != null) {

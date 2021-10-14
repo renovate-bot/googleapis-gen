@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
       if (plotType_ != com.google.monitoring.dashboard.v1.XyChart.DataSet.PlotType.PLOT_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, plotType_);
       }
-      if (!getLegendTemplateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(legendTemplate_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, legendTemplate_);
       }
       if (minAlignmentPeriod_ != null) {
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, plotType_);
       }
-      if (!getLegendTemplateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(legendTemplate_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, legendTemplate_);
       }
       if (minAlignmentPeriod_ != null) {
@@ -2104,7 +2104,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getLabelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
       }
       if (scale_ != com.google.monitoring.dashboard.v1.XyChart.Axis.Scale.SCALE_UNSPECIFIED.getNumber()) {
@@ -2119,7 +2119,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getLabelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
       }
       if (scale_ != com.google.monitoring.dashboard.v1.XyChart.Axis.Scale.SCALE_UNSPECIFIED.getNumber()) {

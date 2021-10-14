@@ -83,7 +83,7 @@ class CreateStudyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getStudy()
     {
-        return isset($this->study) ? $this->study : null;
+        return $this->study;
     }
 
     public function hasStudy()

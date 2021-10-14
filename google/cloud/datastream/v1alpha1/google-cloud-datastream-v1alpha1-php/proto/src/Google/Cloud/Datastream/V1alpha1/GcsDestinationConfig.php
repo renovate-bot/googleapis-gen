@@ -164,7 +164,7 @@ class GcsDestinationConfig extends \Google\Protobuf\Internal\Message
      */
     public function getFileRotationInterval()
     {
-        return isset($this->file_rotation_interval) ? $this->file_rotation_interval : null;
+        return $this->file_rotation_interval;
     }
 
     public function hasFileRotationInterval()

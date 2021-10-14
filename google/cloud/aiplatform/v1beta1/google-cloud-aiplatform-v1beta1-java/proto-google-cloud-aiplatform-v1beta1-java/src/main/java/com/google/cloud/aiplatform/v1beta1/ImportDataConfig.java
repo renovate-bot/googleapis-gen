@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
         internalGetDataItemLabels(),
         DataItemLabelsDefaultEntryHolder.defaultEntry,
         2);
-    if (!getImportSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, importSchemaUri_);
     }
     unknownFields.writeTo(output);
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, dataItemLabels__);
     }
-    if (!getImportSchemaUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, importSchemaUri_);
     }
     size += unknownFields.getSerializedSize();

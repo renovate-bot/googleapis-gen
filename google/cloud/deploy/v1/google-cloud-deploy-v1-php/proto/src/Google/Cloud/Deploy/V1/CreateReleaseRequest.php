@@ -159,7 +159,7 @@ class CreateReleaseRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRelease()
     {
-        return isset($this->release) ? $this->release : null;
+        return $this->release;
     }
 
     public function hasRelease()

@@ -330,7 +330,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFulfillmentInfo()
     {
-        return isset($this->fulfillment_info) ? $this->fulfillment_info : null;
+        return $this->fulfillment_info;
     }
 
     public function hasFulfillmentInfo()
@@ -367,7 +367,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getIntentInfo()
     {
-        return isset($this->intent_info) ? $this->intent_info : null;
+        return $this->intent_info;
     }
 
     public function hasIntentInfo()
@@ -403,7 +403,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPageInfo()
     {
-        return isset($this->page_info) ? $this->page_info : null;
+        return $this->page_info;
     }
 
     public function hasPageInfo()
@@ -439,7 +439,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSessionInfo()
     {
-        return isset($this->session_info) ? $this->session_info : null;
+        return $this->session_info;
     }
 
     public function hasSessionInfo()
@@ -505,7 +505,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPayload()
     {
-        return isset($this->payload) ? $this->payload : null;
+        return $this->payload;
     }
 
     public function hasPayload()
@@ -542,7 +542,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSentimentAnalysisResult()
     {
-        return isset($this->sentiment_analysis_result) ? $this->sentiment_analysis_result : null;
+        return $this->sentiment_analysis_result;
     }
 
     public function hasSentimentAnalysisResult()

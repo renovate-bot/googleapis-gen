@@ -89,7 +89,7 @@ class ModelEvaluationExplanationSpec extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationSpec()
     {
-        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+        return $this->explanation_spec;
     }
 
     public function hasExplanationSpec()

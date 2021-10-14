@@ -96,7 +96,7 @@ class UpdateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCatalogItem()
     {
-        return isset($this->catalog_item) ? $this->catalog_item : null;
+        return $this->catalog_item;
     }
 
     public function hasCatalogItem()
@@ -134,7 +134,7 @@ class UpdateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

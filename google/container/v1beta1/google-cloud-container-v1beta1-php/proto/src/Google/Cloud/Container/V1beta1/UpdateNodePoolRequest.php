@@ -459,7 +459,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getWorkloadMetadataConfig()
     {
-        return isset($this->workload_metadata_config) ? $this->workload_metadata_config : null;
+        return $this->workload_metadata_config;
     }
 
     public function hasWorkloadMetadataConfig()
@@ -525,7 +525,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpgradeSettings()
     {
-        return isset($this->upgrade_settings) ? $this->upgrade_settings : null;
+        return $this->upgrade_settings;
     }
 
     public function hasUpgradeSettings()
@@ -563,7 +563,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTags()
     {
-        return isset($this->tags) ? $this->tags : null;
+        return $this->tags;
     }
 
     public function hasTags()
@@ -603,7 +603,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTaints()
     {
-        return isset($this->taints) ? $this->taints : null;
+        return $this->taints;
     }
 
     public function hasTaints()
@@ -643,7 +643,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getLabels()
     {
-        return isset($this->labels) ? $this->labels : null;
+        return $this->labels;
     }
 
     public function hasLabels()
@@ -681,7 +681,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getLinuxNodeConfig()
     {
-        return isset($this->linux_node_config) ? $this->linux_node_config : null;
+        return $this->linux_node_config;
     }
 
     public function hasLinuxNodeConfig()
@@ -717,7 +717,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getKubeletConfig()
     {
-        return isset($this->kubelet_config) ? $this->kubelet_config : null;
+        return $this->kubelet_config;
     }
 
     public function hasKubeletConfig()
@@ -753,7 +753,7 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     public function getGvnic()
     {
-        return isset($this->gvnic) ? $this->gvnic : null;
+        return $this->gvnic;
     }
 
     public function hasGvnic()

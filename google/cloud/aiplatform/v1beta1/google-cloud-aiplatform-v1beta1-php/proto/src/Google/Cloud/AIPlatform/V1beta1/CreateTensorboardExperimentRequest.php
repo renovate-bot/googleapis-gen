@@ -101,7 +101,7 @@ class CreateTensorboardExperimentRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getTensorboardExperiment()
     {
-        return isset($this->tensorboard_experiment) ? $this->tensorboard_experiment : null;
+        return $this->tensorboard_experiment;
     }
 
     public function hasTensorboardExperiment()

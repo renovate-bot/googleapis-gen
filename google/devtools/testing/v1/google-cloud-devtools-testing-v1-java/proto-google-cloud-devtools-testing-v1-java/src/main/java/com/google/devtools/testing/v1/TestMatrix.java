@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTestMatrixIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testMatrixId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, testMatrixId_);
     }
     if (testSpecification_ != null) {
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
     if (resultStorage_ != null) {
       output.writeMessage(6, getResultStorage());
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, projectId_);
     }
     if (state_ != com.google.devtools.testing.v1.TestState.TEST_STATE_UNSPECIFIED.getNumber()) {
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTestMatrixIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testMatrixId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, testMatrixId_);
     }
     if (testSpecification_ != null) {
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getResultStorage());
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, projectId_);
     }
     if (state_ != com.google.devtools.testing.v1.TestState.TEST_STATE_UNSPECIFIED.getNumber()) {

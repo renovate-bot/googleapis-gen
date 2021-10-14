@@ -84,7 +84,7 @@ class DataSet extends \Google\Protobuf\Internal\Message
      */
     public function getTimeSeriesQuery()
     {
-        return isset($this->time_series_query) ? $this->time_series_query : null;
+        return $this->time_series_query;
     }
 
     public function hasTimeSeriesQuery()
@@ -181,7 +181,7 @@ class DataSet extends \Google\Protobuf\Internal\Message
      */
     public function getMinAlignmentPeriod()
     {
-        return isset($this->min_alignment_period) ? $this->min_alignment_period : null;
+        return $this->min_alignment_period;
     }
 
     public function hasMinAlignmentPeriod()

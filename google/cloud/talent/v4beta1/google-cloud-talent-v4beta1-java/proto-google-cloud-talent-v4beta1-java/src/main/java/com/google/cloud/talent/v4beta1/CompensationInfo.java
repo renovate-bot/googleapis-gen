@@ -1262,7 +1262,7 @@ private static final long serialVersionUID = 0L;
       if (compensationAmountCase_ == 4) {
         output.writeMessage(4, (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange) compensationAmount_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
       if (expectedUnitsPerYear_ != null) {
@@ -1293,7 +1293,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange) compensationAmount_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       if (expectedUnitsPerYear_ != null) {

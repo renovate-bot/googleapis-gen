@@ -346,7 +346,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getFeatureValueDomain()
     {
-        return isset($this->feature_value_domain) ? $this->feature_value_domain : null;
+        return $this->feature_value_domain;
     }
 
     public function hasFeatureValueDomain()
@@ -545,7 +545,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getVisualization()
     {
-        return isset($this->visualization) ? $this->visualization : null;
+        return $this->visualization;
     }
 
     public function hasVisualization()

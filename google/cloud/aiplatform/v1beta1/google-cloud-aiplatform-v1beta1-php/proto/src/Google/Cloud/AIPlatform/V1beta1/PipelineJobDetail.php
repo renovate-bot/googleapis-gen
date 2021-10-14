@@ -61,7 +61,7 @@ class PipelineJobDetail extends \Google\Protobuf\Internal\Message
      */
     public function getPipelineContext()
     {
-        return isset($this->pipeline_context) ? $this->pipeline_context : null;
+        return $this->pipeline_context;
     }
 
     public function hasPipelineContext()
@@ -97,7 +97,7 @@ class PipelineJobDetail extends \Google\Protobuf\Internal\Message
      */
     public function getPipelineRunContext()
     {
-        return isset($this->pipeline_run_context) ? $this->pipeline_run_context : null;
+        return $this->pipeline_run_context;
     }
 
     public function hasPipelineRunContext()

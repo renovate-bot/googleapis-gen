@@ -18,7 +18,7 @@ class KeywordPlanWeeklyForecast extends \Google\Protobuf\Internal\Message
     /**
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string start_date = 1;</code>
+     * Generated from protobuf field <code>optional string start_date = 1;</code>
      */
     protected $start_date = null;
     /**
@@ -48,7 +48,7 @@ class KeywordPlanWeeklyForecast extends \Google\Protobuf\Internal\Message
     /**
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string start_date = 1;</code>
+     * Generated from protobuf field <code>optional string start_date = 1;</code>
      * @return string
      */
     public function getStartDate()
@@ -69,7 +69,7 @@ class KeywordPlanWeeklyForecast extends \Google\Protobuf\Internal\Message
     /**
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
-     * Generated from protobuf field <code>string start_date = 1;</code>
+     * Generated from protobuf field <code>optional string start_date = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -89,7 +89,7 @@ class KeywordPlanWeeklyForecast extends \Google\Protobuf\Internal\Message
      */
     public function getForecast()
     {
-        return isset($this->forecast) ? $this->forecast : null;
+        return $this->forecast;
     }
 
     public function hasForecast()

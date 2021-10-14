@@ -233,10 +233,10 @@ private static final long serialVersionUID = 0L;
     if (acceleratorCount_ != 0L) {
       output.writeInt64(1, acceleratorCount_);
     }
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acceleratorType_);
     }
-    if (!getGpuPartitionSizeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gpuPartitionSize_);
     }
     unknownFields.writeTo(output);
@@ -252,10 +252,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, acceleratorCount_);
     }
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acceleratorType_);
     }
-    if (!getGpuPartitionSizeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gpuPartitionSize_);
     }
     size += unknownFields.getSerializedSize();

@@ -18,7 +18,7 @@ class AdVideoAsset extends \Google\Protobuf\Internal\Message
     /**
      * The Asset resource name of this video.
      *
-     * Generated from protobuf field <code>string asset = 2;</code>
+     * Generated from protobuf field <code>optional string asset = 2;</code>
      */
     protected $asset = null;
 
@@ -40,7 +40,7 @@ class AdVideoAsset extends \Google\Protobuf\Internal\Message
     /**
      * The Asset resource name of this video.
      *
-     * Generated from protobuf field <code>string asset = 2;</code>
+     * Generated from protobuf field <code>optional string asset = 2;</code>
      * @return string
      */
     public function getAsset()
@@ -61,7 +61,7 @@ class AdVideoAsset extends \Google\Protobuf\Internal\Message
     /**
      * The Asset resource name of this video.
      *
-     * Generated from protobuf field <code>string asset = 2;</code>
+     * Generated from protobuf field <code>optional string asset = 2;</code>
      * @param string $var
      * @return $this
      */

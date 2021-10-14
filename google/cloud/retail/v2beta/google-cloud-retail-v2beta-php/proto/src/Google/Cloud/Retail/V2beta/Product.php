@@ -1517,7 +1517,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getPriceInfo()
     {
-        return isset($this->price_info) ? $this->price_info : null;
+        return $this->price_info;
     }
 
     public function hasPriceInfo()
@@ -1555,7 +1555,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getRating()
     {
-        return isset($this->rating) ? $this->rating : null;
+        return $this->rating;
     }
 
     public function hasRating()
@@ -1593,7 +1593,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getAvailableTime()
     {
-        return isset($this->available_time) ? $this->available_time : null;
+        return $this->available_time;
     }
 
     public function hasAvailableTime()
@@ -1667,7 +1667,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getAvailableQuantity()
     {
-        return isset($this->available_quantity) ? $this->available_quantity : null;
+        return $this->available_quantity;
     }
 
     public function hasAvailableQuantity()
@@ -1841,7 +1841,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getAudience()
     {
-        return isset($this->audience) ? $this->audience : null;
+        return $this->audience;
     }
 
     public function hasAudience()
@@ -1881,7 +1881,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getColorInfo()
     {
-        return isset($this->color_info) ? $this->color_info : null;
+        return $this->color_info;
     }
 
     public function hasColorInfo()
@@ -2131,7 +2131,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getPublishTime()
     {
-        return isset($this->publish_time) ? $this->publish_time : null;
+        return $this->publish_time;
     }
 
     public function hasPublishTime()
@@ -2217,7 +2217,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     public function getRetrievableFields()
     {
-        return isset($this->retrievable_fields) ? $this->retrievable_fields : null;
+        return $this->retrievable_fields;
     }
 
     public function hasRetrievableFields()

@@ -59,14 +59,14 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Headline of text shown after form submission that describes how the
      * advertiser will follow up with the user.
      *
-     * Generated from protobuf field <code>string post_submit_headline = 15;</code>
+     * Generated from protobuf field <code>optional string post_submit_headline = 15;</code>
      */
     protected $post_submit_headline = null;
     /**
      * Detailed description shown after form submission that describes how the
      * advertiser will follow up with the user.
      *
-     * Generated from protobuf field <code>string post_submit_description = 16;</code>
+     * Generated from protobuf field <code>optional string post_submit_description = 16;</code>
      */
     protected $post_submit_description = null;
     /**
@@ -93,7 +93,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Asset resource name of the background image. The minimum size is 600x314
      * and the aspect ratio must be 1.91:1 (+-1%).
      *
-     * Generated from protobuf field <code>string background_image_asset = 20;</code>
+     * Generated from protobuf field <code>optional string background_image_asset = 20;</code>
      */
     protected $background_image_asset = null;
     /**
@@ -106,7 +106,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Custom disclosure shown along with Google disclaimer on the lead form.
      * Accessible to allowed customers only.
      *
-     * Generated from protobuf field <code>string custom_disclosure = 22;</code>
+     * Generated from protobuf field <code>optional string custom_disclosure = 22;</code>
      */
     protected $custom_disclosure = null;
 
@@ -329,7 +329,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Headline of text shown after form submission that describes how the
      * advertiser will follow up with the user.
      *
-     * Generated from protobuf field <code>string post_submit_headline = 15;</code>
+     * Generated from protobuf field <code>optional string post_submit_headline = 15;</code>
      * @return string
      */
     public function getPostSubmitHeadline()
@@ -351,7 +351,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Headline of text shown after form submission that describes how the
      * advertiser will follow up with the user.
      *
-     * Generated from protobuf field <code>string post_submit_headline = 15;</code>
+     * Generated from protobuf field <code>optional string post_submit_headline = 15;</code>
      * @param string $var
      * @return $this
      */
@@ -367,7 +367,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Detailed description shown after form submission that describes how the
      * advertiser will follow up with the user.
      *
-     * Generated from protobuf field <code>string post_submit_description = 16;</code>
+     * Generated from protobuf field <code>optional string post_submit_description = 16;</code>
      * @return string
      */
     public function getPostSubmitDescription()
@@ -389,7 +389,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Detailed description shown after form submission that describes how the
      * advertiser will follow up with the user.
      *
-     * Generated from protobuf field <code>string post_submit_description = 16;</code>
+     * Generated from protobuf field <code>optional string post_submit_description = 16;</code>
      * @param string $var
      * @return $this
      */
@@ -487,7 +487,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Asset resource name of the background image. The minimum size is 600x314
      * and the aspect ratio must be 1.91:1 (+-1%).
      *
-     * Generated from protobuf field <code>string background_image_asset = 20;</code>
+     * Generated from protobuf field <code>optional string background_image_asset = 20;</code>
      * @return string
      */
     public function getBackgroundImageAsset()
@@ -509,7 +509,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Asset resource name of the background image. The minimum size is 600x314
      * and the aspect ratio must be 1.91:1 (+-1%).
      *
-     * Generated from protobuf field <code>string background_image_asset = 20;</code>
+     * Generated from protobuf field <code>optional string background_image_asset = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -551,7 +551,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Custom disclosure shown along with Google disclaimer on the lead form.
      * Accessible to allowed customers only.
      *
-     * Generated from protobuf field <code>string custom_disclosure = 22;</code>
+     * Generated from protobuf field <code>optional string custom_disclosure = 22;</code>
      * @return string
      */
     public function getCustomDisclosure()
@@ -573,7 +573,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      * Custom disclosure shown along with Google disclaimer on the lead form.
      * Accessible to allowed customers only.
      *
-     * Generated from protobuf field <code>string custom_disclosure = 22;</code>
+     * Generated from protobuf field <code>optional string custom_disclosure = 22;</code>
      * @param string $var
      * @return $this
      */

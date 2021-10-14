@@ -109,7 +109,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getPolicyViolationDetails()
     {
-        return isset($this->policy_violation_details) ? $this->policy_violation_details : null;
+        return $this->policy_violation_details;
     }
 
     public function hasPolicyViolationDetails()
@@ -145,7 +145,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getPolicyFindingDetails()
     {
-        return isset($this->policy_finding_details) ? $this->policy_finding_details : null;
+        return $this->policy_finding_details;
     }
 
     public function hasPolicyFindingDetails()
@@ -182,7 +182,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getQuotaErrorDetails()
     {
-        return isset($this->quota_error_details) ? $this->quota_error_details : null;
+        return $this->quota_error_details;
     }
 
     public function hasQuotaErrorDetails()
@@ -219,7 +219,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getResourceCountDetails()
     {
-        return isset($this->resource_count_details) ? $this->resource_count_details : null;
+        return $this->resource_count_details;
     }
 
     public function hasResourceCountDetails()

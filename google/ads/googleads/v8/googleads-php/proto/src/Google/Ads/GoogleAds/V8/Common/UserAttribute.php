@@ -19,7 +19,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
     /**
      * Advertiser defined lifetime value for the user.
      *
-     * Generated from protobuf field <code>int64 lifetime_value_micros = 1;</code>
+     * Generated from protobuf field <code>optional int64 lifetime_value_micros = 1;</code>
      */
     protected $lifetime_value_micros = null;
     /**
@@ -27,7 +27,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      * a lifetime value bucket is from 1 (low) to 10 (high), except for remove
      * operation where 0 will also be accepted.
      *
-     * Generated from protobuf field <code>int32 lifetime_value_bucket = 2;</code>
+     * Generated from protobuf field <code>optional int32 lifetime_value_bucket = 2;</code>
      */
     protected $lifetime_value_bucket = null;
     /**
@@ -99,7 +99,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
     /**
      * Advertiser defined lifetime value for the user.
      *
-     * Generated from protobuf field <code>int64 lifetime_value_micros = 1;</code>
+     * Generated from protobuf field <code>optional int64 lifetime_value_micros = 1;</code>
      * @return int|string
      */
     public function getLifetimeValueMicros()
@@ -120,7 +120,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
     /**
      * Advertiser defined lifetime value for the user.
      *
-     * Generated from protobuf field <code>int64 lifetime_value_micros = 1;</code>
+     * Generated from protobuf field <code>optional int64 lifetime_value_micros = 1;</code>
      * @param int|string $var
      * @return $this
      */
@@ -137,7 +137,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      * a lifetime value bucket is from 1 (low) to 10 (high), except for remove
      * operation where 0 will also be accepted.
      *
-     * Generated from protobuf field <code>int32 lifetime_value_bucket = 2;</code>
+     * Generated from protobuf field <code>optional int32 lifetime_value_bucket = 2;</code>
      * @return int
      */
     public function getLifetimeValueBucket()
@@ -160,7 +160,7 @@ class UserAttribute extends \Google\Protobuf\Internal\Message
      * a lifetime value bucket is from 1 (low) to 10 (high), except for remove
      * operation where 0 will also be accepted.
      *
-     * Generated from protobuf field <code>int32 lifetime_value_bucket = 2;</code>
+     * Generated from protobuf field <code>optional int32 lifetime_value_bucket = 2;</code>
      * @param int $var
      * @return $this
      */

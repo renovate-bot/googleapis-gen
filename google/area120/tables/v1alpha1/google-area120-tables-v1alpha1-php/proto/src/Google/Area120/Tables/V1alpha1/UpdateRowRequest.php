@@ -63,7 +63,7 @@ class UpdateRowRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRow()
     {
-        return isset($this->row) ? $this->row : null;
+        return $this->row;
     }
 
     public function hasRow()
@@ -99,7 +99,7 @@ class UpdateRowRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

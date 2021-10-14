@@ -85,7 +85,7 @@ class SuggestionFeatureConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSuggestionFeature()
     {
-        return isset($this->suggestion_feature) ? $this->suggestion_feature : null;
+        return $this->suggestion_feature;
     }
 
     public function hasSuggestionFeature()
@@ -153,7 +153,7 @@ class SuggestionFeatureConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSuggestionTriggerSettings()
     {
-        return isset($this->suggestion_trigger_settings) ? $this->suggestion_trigger_settings : null;
+        return $this->suggestion_trigger_settings;
     }
 
     public function hasSuggestionTriggerSettings()
@@ -191,7 +191,7 @@ class SuggestionFeatureConfig extends \Google\Protobuf\Internal\Message
      */
     public function getQueryConfig()
     {
-        return isset($this->query_config) ? $this->query_config : null;
+        return $this->query_config;
     }
 
     public function hasQueryConfig()
@@ -227,7 +227,7 @@ class SuggestionFeatureConfig extends \Google\Protobuf\Internal\Message
      */
     public function getConversationModelConfig()
     {
-        return isset($this->conversation_model_config) ? $this->conversation_model_config : null;
+        return $this->conversation_model_config;
     }
 
     public function hasConversationModelConfig()

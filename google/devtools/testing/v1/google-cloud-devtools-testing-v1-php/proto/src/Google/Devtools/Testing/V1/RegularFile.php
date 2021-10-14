@@ -81,7 +81,7 @@ class RegularFile extends \Google\Protobuf\Internal\Message
      */
     public function getContent()
     {
-        return isset($this->content) ? $this->content : null;
+        return $this->content;
     }
 
     public function hasContent()

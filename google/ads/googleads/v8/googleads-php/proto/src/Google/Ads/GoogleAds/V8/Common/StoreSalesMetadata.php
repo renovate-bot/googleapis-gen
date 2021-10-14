@@ -21,7 +21,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double loyalty_fraction = 5;</code>
+     * Generated from protobuf field <code>optional double loyalty_fraction = 5;</code>
      */
     protected $loyalty_fraction = null;
     /**
@@ -31,7 +31,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * upload half the sales that you are able to associate with a customer, this
      * would be 0.5.
      *
-     * Generated from protobuf field <code>double transaction_upload_fraction = 6;</code>
+     * Generated from protobuf field <code>optional double transaction_upload_fraction = 6;</code>
      */
     protected $transaction_upload_fraction = null;
     /**
@@ -40,7 +40,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * segmentation in reporting.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string custom_key = 7;</code>
+     * Generated from protobuf field <code>optional string custom_key = 7;</code>
      */
     protected $custom_key = null;
     /**
@@ -87,7 +87,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double loyalty_fraction = 5;</code>
+     * Generated from protobuf field <code>optional double loyalty_fraction = 5;</code>
      * @return float
      */
     public function getLoyaltyFraction()
@@ -111,7 +111,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * Required.
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
-     * Generated from protobuf field <code>double loyalty_fraction = 5;</code>
+     * Generated from protobuf field <code>optional double loyalty_fraction = 5;</code>
      * @param float $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * upload half the sales that you are able to associate with a customer, this
      * would be 0.5.
      *
-     * Generated from protobuf field <code>double transaction_upload_fraction = 6;</code>
+     * Generated from protobuf field <code>optional double transaction_upload_fraction = 6;</code>
      * @return float
      */
     public function getTransactionUploadFraction()
@@ -155,7 +155,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * upload half the sales that you are able to associate with a customer, this
      * would be 0.5.
      *
-     * Generated from protobuf field <code>double transaction_upload_fraction = 6;</code>
+     * Generated from protobuf field <code>optional double transaction_upload_fraction = 6;</code>
      * @param float $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * segmentation in reporting.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string custom_key = 7;</code>
+     * Generated from protobuf field <code>optional string custom_key = 7;</code>
      * @return string
      */
     public function getCustomKey()
@@ -197,7 +197,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * segmentation in reporting.
      * Accessible only to customers on the allow-list.
      *
-     * Generated from protobuf field <code>string custom_key = 7;</code>
+     * Generated from protobuf field <code>optional string custom_key = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -217,7 +217,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getThirdPartyMetadata()
     {
-        return isset($this->third_party_metadata) ? $this->third_party_metadata : null;
+        return $this->third_party_metadata;
     }
 
     public function hasThirdPartyMetadata()

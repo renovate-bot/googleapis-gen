@@ -130,7 +130,7 @@ class ListGroupStatsResponse extends \Google\Protobuf\Internal\Message
      */
     public function getTimeRangeBegin()
     {
-        return isset($this->time_range_begin) ? $this->time_range_begin : null;
+        return $this->time_range_begin;
     }
 
     public function hasTimeRangeBegin()

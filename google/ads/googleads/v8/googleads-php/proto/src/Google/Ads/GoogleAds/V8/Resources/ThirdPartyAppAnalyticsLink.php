@@ -29,7 +29,7 @@ class ThirdPartyAppAnalyticsLink extends \Google\Protobuf\Internal\Message
      * setting up app analytics. This is able to be regenerated using regenerate
      * method in the ThirdPartyAppAnalyticsLinkService.
      *
-     * Generated from protobuf field <code>string shareable_link_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string shareable_link_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $shareable_link_id = null;
 
@@ -89,7 +89,7 @@ class ThirdPartyAppAnalyticsLink extends \Google\Protobuf\Internal\Message
      * setting up app analytics. This is able to be regenerated using regenerate
      * method in the ThirdPartyAppAnalyticsLinkService.
      *
-     * Generated from protobuf field <code>string shareable_link_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string shareable_link_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getShareableLinkId()
@@ -112,7 +112,7 @@ class ThirdPartyAppAnalyticsLink extends \Google\Protobuf\Internal\Message
      * setting up app analytics. This is able to be regenerated using regenerate
      * method in the ThirdPartyAppAnalyticsLinkService.
      *
-     * Generated from protobuf field <code>string shareable_link_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string shareable_link_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

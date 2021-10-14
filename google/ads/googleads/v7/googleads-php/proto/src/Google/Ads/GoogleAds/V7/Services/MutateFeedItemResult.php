@@ -82,7 +82,7 @@ class MutateFeedItemResult extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItem()
     {
-        return isset($this->feed_item) ? $this->feed_item : null;
+        return $this->feed_item;
     }
 
     public function hasFeedItem()

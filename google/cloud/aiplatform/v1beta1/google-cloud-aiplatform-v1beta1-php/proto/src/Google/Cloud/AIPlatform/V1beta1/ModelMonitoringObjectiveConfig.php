@@ -72,7 +72,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingDataset()
     {
-        return isset($this->training_dataset) ? $this->training_dataset : null;
+        return $this->training_dataset;
     }
 
     public function hasTrainingDataset()
@@ -109,7 +109,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingPredictionSkewDetectionConfig()
     {
-        return isset($this->training_prediction_skew_detection_config) ? $this->training_prediction_skew_detection_config : null;
+        return $this->training_prediction_skew_detection_config;
     }
 
     public function hasTrainingPredictionSkewDetectionConfig()
@@ -145,7 +145,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
      */
     public function getPredictionDriftDetectionConfig()
     {
-        return isset($this->prediction_drift_detection_config) ? $this->prediction_drift_detection_config : null;
+        return $this->prediction_drift_detection_config;
     }
 
     public function hasPredictionDriftDetectionConfig()
@@ -181,7 +181,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationConfig()
     {
-        return isset($this->explanation_config) ? $this->explanation_config : null;
+        return $this->explanation_config;
     }
 
     public function hasExplanationConfig()

@@ -66,7 +66,7 @@ class OrderedBuildEvent extends \Google\Protobuf\Internal\Message
      */
     public function getStreamId()
     {
-        return isset($this->stream_id) ? $this->stream_id : null;
+        return $this->stream_id;
     }
 
     public function hasStreamId()
@@ -132,7 +132,7 @@ class OrderedBuildEvent extends \Google\Protobuf\Internal\Message
      */
     public function getEvent()
     {
-        return isset($this->event) ? $this->event : null;
+        return $this->event;
     }
 
     public function hasEvent()

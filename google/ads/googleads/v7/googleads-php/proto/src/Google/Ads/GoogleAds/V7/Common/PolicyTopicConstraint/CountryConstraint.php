@@ -20,7 +20,7 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
-     * Generated from protobuf field <code>string country_criterion = 2;</code>
+     * Generated from protobuf field <code>optional string country_criterion = 2;</code>
      */
     protected $country_criterion = null;
 
@@ -44,7 +44,7 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
-     * Generated from protobuf field <code>string country_criterion = 2;</code>
+     * Generated from protobuf field <code>optional string country_criterion = 2;</code>
      * @return string
      */
     public function getCountryCriterion()
@@ -66,7 +66,7 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
-     * Generated from protobuf field <code>string country_criterion = 2;</code>
+     * Generated from protobuf field <code>optional string country_criterion = 2;</code>
      * @param string $var
      * @return $this
      */

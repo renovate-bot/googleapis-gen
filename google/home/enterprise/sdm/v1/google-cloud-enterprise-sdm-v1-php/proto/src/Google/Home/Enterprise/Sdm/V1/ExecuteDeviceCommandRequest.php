@@ -121,7 +121,7 @@ class ExecuteDeviceCommandRequest extends \Google\Protobuf\Internal\Message
      */
     public function getParams()
     {
-        return isset($this->params) ? $this->params : null;
+        return $this->params;
     }
 
     public function hasParams()

@@ -53,7 +53,7 @@ class PipelineCondition extends \Google\Protobuf\Internal\Message
      */
     public function getPipelineReadyCondition()
     {
-        return isset($this->pipeline_ready_condition) ? $this->pipeline_ready_condition : null;
+        return $this->pipeline_ready_condition;
     }
 
     public function hasPipelineReadyCondition()
@@ -89,7 +89,7 @@ class PipelineCondition extends \Google\Protobuf\Internal\Message
      */
     public function getTargetsPresentCondition()
     {
-        return isset($this->targets_present_condition) ? $this->targets_present_condition : null;
+        return $this->targets_present_condition;
     }
 
     public function hasTargetsPresentCondition()

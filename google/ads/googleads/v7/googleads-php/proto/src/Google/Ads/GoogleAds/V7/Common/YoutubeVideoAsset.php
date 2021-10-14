@@ -19,7 +19,7 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      * YouTube video id. This is the 11 character string value used in the
      * YouTube video URL.
      *
-     * Generated from protobuf field <code>string youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>optional string youtube_video_id = 2;</code>
      */
     protected $youtube_video_id = null;
     /**
@@ -51,7 +51,7 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      * YouTube video id. This is the 11 character string value used in the
      * YouTube video URL.
      *
-     * Generated from protobuf field <code>string youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>optional string youtube_video_id = 2;</code>
      * @return string
      */
     public function getYoutubeVideoId()
@@ -73,7 +73,7 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      * YouTube video id. This is the 11 character string value used in the
      * YouTube video URL.
      *
-     * Generated from protobuf field <code>string youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>optional string youtube_video_id = 2;</code>
      * @param string $var
      * @return $this
      */

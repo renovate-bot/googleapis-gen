@@ -286,13 +286,13 @@ private static final long serialVersionUID = 0L;
     if (upgradeable_ != false) {
       output.writeBool(1, upgradeable_);
     }
-    if (!getUpgradeVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, upgradeVersion_);
     }
-    if (!getUpgradeInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeInfo_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, upgradeInfo_);
     }
-    if (!getUpgradeImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeImage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, upgradeImage_);
     }
     unknownFields.writeTo(output);
@@ -308,13 +308,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, upgradeable_);
     }
-    if (!getUpgradeVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, upgradeVersion_);
     }
-    if (!getUpgradeInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeInfo_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, upgradeInfo_);
     }
-    if (!getUpgradeImageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeImage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, upgradeImage_);
     }
     size += unknownFields.getSerializedSize();

@@ -25,7 +25,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
     /**
      * True to enable partial failure for the offline user data job.
      *
-     * Generated from protobuf field <code>bool enable_partial_failure = 4;</code>
+     * Generated from protobuf field <code>optional bool enable_partial_failure = 4;</code>
      */
     protected $enable_partial_failure = null;
     /**
@@ -93,7 +93,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
     /**
      * True to enable partial failure for the offline user data job.
      *
-     * Generated from protobuf field <code>bool enable_partial_failure = 4;</code>
+     * Generated from protobuf field <code>optional bool enable_partial_failure = 4;</code>
      * @return bool
      */
     public function getEnablePartialFailure()
@@ -114,7 +114,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
     /**
      * True to enable partial failure for the offline user data job.
      *
-     * Generated from protobuf field <code>bool enable_partial_failure = 4;</code>
+     * Generated from protobuf field <code>optional bool enable_partial_failure = 4;</code>
      * @param bool $var
      * @return $this
      */

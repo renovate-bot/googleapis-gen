@@ -27,13 +27,13 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the draft.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 draft_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 draft_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $draft_id = null;
     /**
      * Immutable. The base campaign to which the draft belongs.
      *
-     * Generated from protobuf field <code>string base_campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $base_campaign = null;
     /**
@@ -43,7 +43,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 11;</code>
+     * Generated from protobuf field <code>optional string name = 11;</code>
      */
     protected $name = null;
     /**
@@ -51,7 +51,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * changes onto the base campaign.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string draft_campaign = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string draft_campaign = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $draft_campaign = null;
     /**
@@ -64,7 +64,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether there is an experiment based on this draft currently serving.
      *
-     * Generated from protobuf field <code>bool has_experiment_running = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_experiment_running = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_experiment_running = null;
     /**
@@ -72,7 +72,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * for completion of draft promotion. This is only set if the draft promotion
      * is in progress or finished.
      *
-     * Generated from protobuf field <code>string long_running_operation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string long_running_operation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $long_running_operation = null;
 
@@ -151,7 +151,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the draft.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 draft_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 draft_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getDraftId()
@@ -173,7 +173,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the draft.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 draft_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 draft_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -188,7 +188,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The base campaign to which the draft belongs.
      *
-     * Generated from protobuf field <code>string base_campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getBaseCampaign()
@@ -209,7 +209,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The base campaign to which the draft belongs.
      *
-     * Generated from protobuf field <code>string base_campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -228,7 +228,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 11;</code>
+     * Generated from protobuf field <code>optional string name = 11;</code>
      * @return string
      */
     public function getName()
@@ -253,7 +253,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 11;</code>
+     * Generated from protobuf field <code>optional string name = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -270,7 +270,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * changes onto the base campaign.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string draft_campaign = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string draft_campaign = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getDraftCampaign()
@@ -293,7 +293,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * changes onto the base campaign.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string draft_campaign = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string draft_campaign = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -336,7 +336,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether there is an experiment based on this draft currently serving.
      *
-     * Generated from protobuf field <code>bool has_experiment_running = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_experiment_running = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getHasExperimentRunning()
@@ -357,7 +357,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Whether there is an experiment based on this draft currently serving.
      *
-     * Generated from protobuf field <code>bool has_experiment_running = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool has_experiment_running = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -374,7 +374,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * for completion of draft promotion. This is only set if the draft promotion
      * is in progress or finished.
      *
-     * Generated from protobuf field <code>string long_running_operation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string long_running_operation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLongRunningOperation()
@@ -397,7 +397,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * for completion of draft promotion. This is only set if the draft promotion
      * is in progress or finished.
      *
-     * Generated from protobuf field <code>string long_running_operation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string long_running_operation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

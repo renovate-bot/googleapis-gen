@@ -159,7 +159,7 @@ class Error extends \Google\Protobuf\Internal\Message
      */
     public function getErrorTime()
     {
-        return isset($this->error_time) ? $this->error_time : null;
+        return $this->error_time;
     }
 
     public function hasErrorTime()

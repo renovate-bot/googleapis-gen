@@ -25,7 +25,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * Starting V5, the list of de-duped queries will be included in
      * close_variants field.
      *
-     * Generated from protobuf field <code>string search_query = 4;</code>
+     * Generated from protobuf field <code>optional string search_query = 4;</code>
      */
     protected $search_query = null;
     /**
@@ -81,7 +81,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * Starting V5, the list of de-duped queries will be included in
      * close_variants field.
      *
-     * Generated from protobuf field <code>string search_query = 4;</code>
+     * Generated from protobuf field <code>optional string search_query = 4;</code>
      * @return string
      */
     public function getSearchQuery()
@@ -109,7 +109,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * Starting V5, the list of de-duped queries will be included in
      * close_variants field.
      *
-     * Generated from protobuf field <code>string search_query = 4;</code>
+     * Generated from protobuf field <code>optional string search_query = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -158,7 +158,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      */
     public function getKeywordMetrics()
     {
-        return isset($this->keyword_metrics) ? $this->keyword_metrics : null;
+        return $this->keyword_metrics;
     }
 
     public function hasKeywordMetrics()

@@ -65,7 +65,7 @@ class ResourceErrorDetail extends \Google\Protobuf\Internal\Message
      */
     public function getResourceInfo()
     {
-        return isset($this->resource_info) ? $this->resource_info : null;
+        return $this->resource_info;
     }
 
     public function hasResourceInfo()

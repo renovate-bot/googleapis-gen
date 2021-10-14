@@ -322,7 +322,7 @@ class EventDetail extends \Google\Protobuf\Internal\Message
      */
     public function getEventAttributes()
     {
-        return isset($this->event_attributes) ? $this->event_attributes : null;
+        return $this->event_attributes;
     }
 
     public function hasEventAttributes()

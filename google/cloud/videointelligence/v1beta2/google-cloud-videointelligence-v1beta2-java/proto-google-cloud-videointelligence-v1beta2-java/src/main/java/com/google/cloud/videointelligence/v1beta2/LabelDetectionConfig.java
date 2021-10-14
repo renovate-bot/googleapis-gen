@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
     if (stationaryCamera_ != false) {
       output.writeBool(2, stationaryCamera_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
     unknownFields.writeTo(output);
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, stationaryCamera_);
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
     size += unknownFields.getSerializedSize();

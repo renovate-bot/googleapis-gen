@@ -545,13 +545,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (mode_ != com.google.cloud.osconfig.agentendpoint.v1.OSPolicy.Mode.MODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, mode_);
       }
-      if (!getOsPolicyAssignmentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osPolicyAssignment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, osPolicyAssignment_);
       }
       for (int i = 0; i < resources_.size(); i++) {
@@ -566,14 +566,14 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (mode_ != com.google.cloud.osconfig.agentendpoint.v1.OSPolicy.Mode.MODE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, mode_);
       }
-      if (!getOsPolicyAssignmentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(osPolicyAssignment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, osPolicyAssignment_);
       }
       for (int i = 0; i < resources_.size(); i++) {

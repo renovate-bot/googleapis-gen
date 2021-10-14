@@ -51,7 +51,7 @@ class ReadRowsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getReadPosition()
     {
-        return isset($this->read_position) ? $this->read_position : null;
+        return $this->read_position;
     }
 
     public function hasReadPosition()

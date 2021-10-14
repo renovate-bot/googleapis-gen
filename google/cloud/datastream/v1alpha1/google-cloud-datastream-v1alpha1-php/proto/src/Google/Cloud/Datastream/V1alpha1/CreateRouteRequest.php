@@ -141,7 +141,7 @@ class CreateRouteRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRoute()
     {
-        return isset($this->route) ? $this->route : null;
+        return $this->route;
     }
 
     public function hasRoute()

@@ -18,7 +18,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier for this UrlCollection instance.
      *
-     * Generated from protobuf field <code>string url_collection_id = 5;</code>
+     * Generated from protobuf field <code>optional string url_collection_id = 5;</code>
      */
     protected $url_collection_id = null;
     /**
@@ -36,7 +36,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 8;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 8;</code>
      */
     protected $tracking_url_template = null;
 
@@ -64,7 +64,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier for this UrlCollection instance.
      *
-     * Generated from protobuf field <code>string url_collection_id = 5;</code>
+     * Generated from protobuf field <code>optional string url_collection_id = 5;</code>
      * @return string
      */
     public function getUrlCollectionId()
@@ -85,7 +85,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier for this UrlCollection instance.
      *
-     * Generated from protobuf field <code>string url_collection_id = 5;</code>
+     * Generated from protobuf field <code>optional string url_collection_id = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -152,7 +152,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 8;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 8;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -173,7 +173,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 8;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 8;</code>
      * @param string $var
      * @return $this
      */

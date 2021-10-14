@@ -121,7 +121,7 @@ class RbmStandaloneCard extends \Google\Protobuf\Internal\Message
      */
     public function getCardContent()
     {
-        return isset($this->card_content) ? $this->card_content : null;
+        return $this->card_content;
     }
 
     public function hasCardContent()

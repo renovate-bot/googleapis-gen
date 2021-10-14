@@ -26,25 +26,25 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the video.
      *
-     * Generated from protobuf field <code>string id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. The owner channel id of the video.
      *
-     * Generated from protobuf field <code>string channel_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string channel_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $channel_id = null;
     /**
      * Output only. The duration of the video in milliseconds.
      *
-     * Generated from protobuf field <code>int64 duration_millis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 duration_millis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $duration_millis = null;
     /**
      * Output only. The title of the video.
      *
-     * Generated from protobuf field <code>string title = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string title = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $title = null;
 
@@ -106,7 +106,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the video.
      *
-     * Generated from protobuf field <code>string id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getId()
@@ -127,7 +127,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the video.
      *
-     * Generated from protobuf field <code>string id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -142,7 +142,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The owner channel id of the video.
      *
-     * Generated from protobuf field <code>string channel_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string channel_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getChannelId()
@@ -163,7 +163,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The owner channel id of the video.
      *
-     * Generated from protobuf field <code>string channel_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string channel_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -178,7 +178,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The duration of the video in milliseconds.
      *
-     * Generated from protobuf field <code>int64 duration_millis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 duration_millis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getDurationMillis()
@@ -199,7 +199,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The duration of the video in milliseconds.
      *
-     * Generated from protobuf field <code>int64 duration_millis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 duration_millis = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -214,7 +214,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The title of the video.
      *
-     * Generated from protobuf field <code>string title = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string title = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getTitle()
@@ -235,7 +235,7 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The title of the video.
      *
-     * Generated from protobuf field <code>string title = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string title = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

@@ -59,7 +59,7 @@ class MSI extends \Google\Protobuf\Internal\Message
      */
     public function getSource()
     {
-        return isset($this->source) ? $this->source : null;
+        return $this->source;
     }
 
     public function hasSource()

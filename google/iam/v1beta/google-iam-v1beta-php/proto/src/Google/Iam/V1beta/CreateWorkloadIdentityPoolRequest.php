@@ -97,7 +97,7 @@ class CreateWorkloadIdentityPoolRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getWorkloadIdentityPool()
     {
-        return isset($this->workload_identity_pool) ? $this->workload_identity_pool : null;
+        return $this->workload_identity_pool;
     }
 
     public function hasWorkloadIdentityPool()

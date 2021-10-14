@@ -63,7 +63,7 @@ class ReportStateAndNotificationDevice extends \Google\Protobuf\Internal\Message
      */
     public function getStates()
     {
-        return isset($this->states) ? $this->states : null;
+        return $this->states;
     }
 
     public function hasStates()
@@ -103,7 +103,7 @@ class ReportStateAndNotificationDevice extends \Google\Protobuf\Internal\Message
      */
     public function getNotifications()
     {
-        return isset($this->notifications) ? $this->notifications : null;
+        return $this->notifications;
     }
 
     public function hasNotifications()

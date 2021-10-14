@@ -237,10 +237,10 @@ private static final long serialVersionUID = 0L;
     if (corrected_ != false) {
       output.writeBool(1, corrected_);
     }
-    if (!getCorrectedTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, correctedText_);
     }
-    if (!getCorrectedHtmlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedHtml_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, correctedHtml_);
     }
     unknownFields.writeTo(output);
@@ -256,10 +256,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, corrected_);
     }
-    if (!getCorrectedTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, correctedText_);
     }
-    if (!getCorrectedHtmlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correctedHtml_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, correctedHtml_);
     }
     size += unknownFields.getSerializedSize();

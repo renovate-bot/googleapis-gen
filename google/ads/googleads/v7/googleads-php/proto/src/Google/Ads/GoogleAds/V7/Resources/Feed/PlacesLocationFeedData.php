@@ -28,7 +28,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * Email address of a Google My Business account or email address of a
      * manager of the Google My Business account. Required.
      *
-     * Generated from protobuf field <code>string email_address = 7;</code>
+     * Generated from protobuf field <code>optional string email_address = 7;</code>
      */
     protected $email_address = null;
     /**
@@ -45,7 +45,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      *
-     * Generated from protobuf field <code>string business_name_filter = 9;</code>
+     * Generated from protobuf field <code>optional string business_name_filter = 9;</code>
      */
     protected $business_name_filter = null;
     /**
@@ -116,7 +116,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function getOauthInfo()
     {
-        return isset($this->oauth_info) ? $this->oauth_info : null;
+        return $this->oauth_info;
     }
 
     public function hasOauthInfo()
@@ -150,7 +150,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * Email address of a Google My Business account or email address of a
      * manager of the Google My Business account. Required.
      *
-     * Generated from protobuf field <code>string email_address = 7;</code>
+     * Generated from protobuf field <code>optional string email_address = 7;</code>
      * @return string
      */
     public function getEmailAddress()
@@ -172,7 +172,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * Email address of a Google My Business account or email address of a
      * manager of the Google My Business account. Required.
      *
-     * Generated from protobuf field <code>string email_address = 7;</code>
+     * Generated from protobuf field <code>optional string email_address = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -221,7 +221,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      *
-     * Generated from protobuf field <code>string business_name_filter = 9;</code>
+     * Generated from protobuf field <code>optional string business_name_filter = 9;</code>
      * @return string
      */
     public function getBusinessNameFilter()
@@ -244,7 +244,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      *
-     * Generated from protobuf field <code>string business_name_filter = 9;</code>
+     * Generated from protobuf field <code>optional string business_name_filter = 9;</code>
      * @param string $var
      * @return $this
      */

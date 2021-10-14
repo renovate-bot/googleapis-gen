@@ -169,19 +169,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Action> _parser = new pb::MessageParser<Action>(() => new Action());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Action> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Action() {
       OnConstruction();
     }
@@ -189,6 +193,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Action(Action other) : this() {
       detail_ = other.detail_ != null ? other.detail_.Clone() : null;
       actor_ = other.actor_ != null ? other.actor_.Clone() : null;
@@ -206,6 +211,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Action Clone() {
       return new Action(this);
     }
@@ -217,6 +223,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The type and detailed information about the action.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.ActionDetail Detail {
       get { return detail_; }
       set {
@@ -232,6 +239,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// responsible).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Actor Actor {
       get { return actor_; }
       set {
@@ -247,6 +255,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// represents the state of the target immediately after this action occurred.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Target Target {
       get { return target_; }
       set {
@@ -260,6 +269,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The action occurred at this specific time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
       get { return timeCase_ == TimeOneofCase.Timestamp ? (global::Google.Protobuf.WellKnownTypes.Timestamp) time_ : null; }
       set {
@@ -274,6 +284,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The action occurred over this time range.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.TimeRange TimeRange {
       get { return timeCase_ == TimeOneofCase.TimeRange ? (global::Google.Apps.Drive.Activity.V2.TimeRange) time_ : null; }
       set {
@@ -291,22 +302,26 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
     private TimeOneofCase timeCase_ = TimeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimeOneofCase TimeCase {
       get { return timeCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearTime() {
       timeCase_ = TimeOneofCase.None;
       time_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Action);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Action other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -324,6 +339,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (detail_ != null) hash ^= Detail.GetHashCode();
@@ -339,11 +355,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -376,6 +394,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (detail_ != null) {
         output.WriteRawTag(10);
@@ -404,6 +423,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (detail_ != null) {
@@ -428,6 +448,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Action other) {
       if (other == null) {
         return;
@@ -469,6 +490,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -525,6 +547,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -589,19 +612,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<ActionDetail> _parser = new pb::MessageParser<ActionDetail>(() => new ActionDetail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ActionDetail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActionDetail() {
       OnConstruction();
     }
@@ -609,6 +636,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActionDetail(ActionDetail other) : this() {
       switch (other.ActionDetailCase) {
         case ActionDetailOneofCase.Create:
@@ -650,6 +678,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActionDetail Clone() {
       return new ActionDetail(this);
     }
@@ -660,6 +689,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// An object was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Create Create {
       get { return actionDetailCase_ == ActionDetailOneofCase.Create ? (global::Google.Apps.Drive.Activity.V2.Create) actionDetail_ : null; }
       set {
@@ -674,6 +704,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// An object was edited.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Edit Edit {
       get { return actionDetailCase_ == ActionDetailOneofCase.Edit ? (global::Google.Apps.Drive.Activity.V2.Edit) actionDetail_ : null; }
       set {
@@ -688,6 +719,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// An object was moved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Move Move {
       get { return actionDetailCase_ == ActionDetailOneofCase.Move ? (global::Google.Apps.Drive.Activity.V2.Move) actionDetail_ : null; }
       set {
@@ -702,6 +734,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// An object was renamed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Rename Rename {
       get { return actionDetailCase_ == ActionDetailOneofCase.Rename ? (global::Google.Apps.Drive.Activity.V2.Rename) actionDetail_ : null; }
       set {
@@ -716,6 +749,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// An object was deleted.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Delete Delete {
       get { return actionDetailCase_ == ActionDetailOneofCase.Delete ? (global::Google.Apps.Drive.Activity.V2.Delete) actionDetail_ : null; }
       set {
@@ -730,6 +764,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// A deleted object was restored.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Restore Restore {
       get { return actionDetailCase_ == ActionDetailOneofCase.Restore ? (global::Google.Apps.Drive.Activity.V2.Restore) actionDetail_ : null; }
       set {
@@ -744,6 +779,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The permission on an object was changed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.PermissionChange PermissionChange {
       get { return actionDetailCase_ == ActionDetailOneofCase.PermissionChange ? (global::Google.Apps.Drive.Activity.V2.PermissionChange) actionDetail_ : null; }
       set {
@@ -758,6 +794,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// A change about comments was made.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Comment Comment {
       get { return actionDetailCase_ == ActionDetailOneofCase.Comment ? (global::Google.Apps.Drive.Activity.V2.Comment) actionDetail_ : null; }
       set {
@@ -772,6 +809,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// A change happened in data leak prevention status.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.DataLeakPreventionChange DlpChange {
       get { return actionDetailCase_ == ActionDetailOneofCase.DlpChange ? (global::Google.Apps.Drive.Activity.V2.DataLeakPreventionChange) actionDetail_ : null; }
       set {
@@ -786,6 +824,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// An object was referenced in an application outside of Drive/Docs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.ApplicationReference Reference {
       get { return actionDetailCase_ == ActionDetailOneofCase.Reference ? (global::Google.Apps.Drive.Activity.V2.ApplicationReference) actionDetail_ : null; }
       set {
@@ -800,6 +839,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// Settings were changed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.SettingsChange SettingsChange {
       get { return actionDetailCase_ == ActionDetailOneofCase.SettingsChange ? (global::Google.Apps.Drive.Activity.V2.SettingsChange) actionDetail_ : null; }
       set {
@@ -826,22 +866,26 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
     private ActionDetailOneofCase actionDetailCase_ = ActionDetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActionDetailOneofCase ActionDetailCase {
       get { return actionDetailCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearActionDetail() {
       actionDetailCase_ = ActionDetailOneofCase.None;
       actionDetail_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ActionDetail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ActionDetail other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -865,6 +909,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (actionDetailCase_ == ActionDetailOneofCase.Create) hash ^= Create.GetHashCode();
@@ -886,11 +931,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -947,6 +994,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (actionDetailCase_ == ActionDetailOneofCase.Create) {
         output.WriteRawTag(10);
@@ -999,6 +1047,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (actionDetailCase_ == ActionDetailOneofCase.Create) {
@@ -1041,6 +1090,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ActionDetail other) {
       if (other == null) {
         return;
@@ -1118,6 +1168,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1234,6 +1285,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1358,19 +1410,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Create> _parser = new pb::MessageParser<Create>(() => new Create());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Create> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Create() {
       OnConstruction();
     }
@@ -1378,6 +1434,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Create(Create other) : this() {
       switch (other.OriginCase) {
         case OriginOneofCase.New:
@@ -1395,6 +1452,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Create Clone() {
       return new Create(this);
     }
@@ -1406,6 +1464,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// document), not derived from a Drive object or external object.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Create.Types.New New {
       get { return originCase_ == OriginOneofCase.New ? (global::Google.Apps.Drive.Activity.V2.Create.Types.New) origin_ : null; }
       set {
@@ -1421,6 +1480,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// to Drive.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Create.Types.Upload Upload {
       get { return originCase_ == OriginOneofCase.Upload ? (global::Google.Apps.Drive.Activity.V2.Create.Types.Upload) origin_ : null; }
       set {
@@ -1436,6 +1496,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// object.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Create.Types.Copy Copy {
       get { return originCase_ == OriginOneofCase.Copy ? (global::Google.Apps.Drive.Activity.V2.Create.Types.Copy) origin_ : null; }
       set {
@@ -1454,22 +1515,26 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
     private OriginOneofCase originCase_ = OriginOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OriginOneofCase OriginCase {
       get { return originCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearOrigin() {
       originCase_ = OriginOneofCase.None;
       origin_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Create);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Create other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1485,6 +1550,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (originCase_ == OriginOneofCase.New) hash ^= New.GetHashCode();
@@ -1498,11 +1564,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1527,6 +1595,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (originCase_ == OriginOneofCase.New) {
         output.WriteRawTag(10);
@@ -1547,6 +1616,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (originCase_ == OriginOneofCase.New) {
@@ -1565,6 +1635,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Create other) {
       if (other == null) {
         return;
@@ -1594,6 +1665,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1638,6 +1710,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1680,6 +1753,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Create message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// An object was created from scratch.
@@ -1692,19 +1766,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<New> _parser = new pb::MessageParser<New>(() => new New());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<New> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Create.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public New() {
           OnConstruction();
         }
@@ -1712,21 +1790,25 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public New(New other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public New Clone() {
           return new New(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as New);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(New other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1738,6 +1820,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -1747,11 +1830,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1764,6 +1849,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -1772,6 +1858,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -1781,6 +1868,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(New other) {
           if (other == null) {
             return;
@@ -1789,6 +1877,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1806,6 +1895,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1831,19 +1921,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<Upload> _parser = new pb::MessageParser<Upload>(() => new Upload());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Upload> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Create.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Upload() {
           OnConstruction();
         }
@@ -1851,21 +1945,25 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Upload(Upload other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Upload Clone() {
           return new Upload(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Upload);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Upload other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1877,6 +1975,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -1886,11 +1985,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1903,6 +2004,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -1911,6 +2013,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -1920,6 +2023,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Upload other) {
           if (other == null) {
             return;
@@ -1928,6 +2032,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1945,6 +2050,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1970,19 +2076,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<Copy> _parser = new pb::MessageParser<Copy>(() => new Copy());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Copy> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Create.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Copy() {
           OnConstruction();
         }
@@ -1990,12 +2100,14 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Copy(Copy other) : this() {
           originalObject_ = other.originalObject_ != null ? other.originalObject_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Copy Clone() {
           return new Copy(this);
         }
@@ -2007,6 +2119,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The original object.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.TargetReference OriginalObject {
           get { return originalObject_; }
           set {
@@ -2015,11 +2128,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Copy);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Copy other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2032,6 +2147,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (originalObject_ != null) hash ^= OriginalObject.GetHashCode();
@@ -2042,11 +2158,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2063,6 +2181,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (originalObject_ != null) {
             output.WriteRawTag(10);
@@ -2075,6 +2194,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (originalObject_ != null) {
@@ -2087,6 +2207,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Copy other) {
           if (other == null) {
             return;
@@ -2101,6 +2222,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2125,6 +2247,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2162,19 +2285,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Edit> _parser = new pb::MessageParser<Edit>(() => new Edit());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Edit> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Edit() {
       OnConstruction();
     }
@@ -2182,21 +2309,25 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Edit(Edit other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Edit Clone() {
       return new Edit(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Edit);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Edit other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2208,6 +2339,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (_unknownFields != null) {
@@ -2217,11 +2349,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2234,6 +2368,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2242,6 +2377,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (_unknownFields != null) {
@@ -2251,6 +2387,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Edit other) {
       if (other == null) {
         return;
@@ -2259,6 +2396,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2276,6 +2414,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2301,19 +2440,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Move> _parser = new pb::MessageParser<Move>(() => new Move());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Move> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Move() {
       OnConstruction();
     }
@@ -2321,6 +2464,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Move(Move other) : this() {
       addedParents_ = other.addedParents_.Clone();
       removedParents_ = other.removedParents_.Clone();
@@ -2328,6 +2472,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Move Clone() {
       return new Move(this);
     }
@@ -2341,6 +2486,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The added parent object(s).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Apps.Drive.Activity.V2.TargetReference> AddedParents {
       get { return addedParents_; }
     }
@@ -2354,16 +2500,19 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The removed parent object(s).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Apps.Drive.Activity.V2.TargetReference> RemovedParents {
       get { return removedParents_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Move);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Move other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2377,6 +2526,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= addedParents_.GetHashCode();
@@ -2388,11 +2538,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2407,6 +2559,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       addedParents_.WriteTo(ref output, _repeated_addedParents_codec);
       removedParents_.WriteTo(ref output, _repeated_removedParents_codec);
@@ -2417,6 +2570,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += addedParents_.CalculateSize(_repeated_addedParents_codec);
@@ -2428,6 +2582,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Move other) {
       if (other == null) {
         return;
@@ -2438,6 +2593,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2463,6 +2619,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2496,19 +2653,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Rename> _parser = new pb::MessageParser<Rename>(() => new Rename());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Rename> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Rename() {
       OnConstruction();
     }
@@ -2516,6 +2677,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Rename(Rename other) : this() {
       oldTitle_ = other.oldTitle_;
       newTitle_ = other.newTitle_;
@@ -2523,6 +2685,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Rename Clone() {
       return new Rename(this);
     }
@@ -2534,6 +2697,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The previous title of the drive object.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OldTitle {
       get { return oldTitle_; }
       set {
@@ -2548,6 +2712,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The new title of the drive object.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string NewTitle {
       get { return newTitle_; }
       set {
@@ -2556,11 +2721,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Rename);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Rename other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2574,6 +2741,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (OldTitle.Length != 0) hash ^= OldTitle.GetHashCode();
@@ -2585,11 +2753,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2610,6 +2780,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (OldTitle.Length != 0) {
         output.WriteRawTag(10);
@@ -2626,6 +2797,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (OldTitle.Length != 0) {
@@ -2641,6 +2813,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Rename other) {
       if (other == null) {
         return;
@@ -2655,6 +2828,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2680,6 +2854,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2713,19 +2888,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Delete> _parser = new pb::MessageParser<Delete>(() => new Delete());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Delete> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Delete() {
       OnConstruction();
     }
@@ -2733,12 +2912,14 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Delete(Delete other) : this() {
       type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Delete Clone() {
       return new Delete(this);
     }
@@ -2750,6 +2931,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The type of delete action taken.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Delete.Types.Type Type {
       get { return type_; }
       set {
@@ -2758,11 +2940,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Delete);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Delete other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2775,6 +2959,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Type != global::Google.Apps.Drive.Activity.V2.Delete.Types.Type.Unspecified) hash ^= Type.GetHashCode();
@@ -2785,11 +2970,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2806,6 +2993,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Type != global::Google.Apps.Drive.Activity.V2.Delete.Types.Type.Unspecified) {
         output.WriteRawTag(8);
@@ -2818,6 +3006,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Type != global::Google.Apps.Drive.Activity.V2.Delete.Types.Type.Unspecified) {
@@ -2830,6 +3019,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Delete other) {
       if (other == null) {
         return;
@@ -2841,6 +3031,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2862,6 +3053,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2881,6 +3073,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Delete message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type of deletion.
@@ -2916,19 +3109,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Restore> _parser = new pb::MessageParser<Restore>(() => new Restore());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Restore> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Restore() {
       OnConstruction();
     }
@@ -2936,12 +3133,14 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Restore(Restore other) : this() {
       type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Restore Clone() {
       return new Restore(this);
     }
@@ -2953,6 +3152,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The type of restore action taken.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Restore.Types.Type Type {
       get { return type_; }
       set {
@@ -2961,11 +3161,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Restore);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Restore other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2978,6 +3180,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Type != global::Google.Apps.Drive.Activity.V2.Restore.Types.Type.Unspecified) hash ^= Type.GetHashCode();
@@ -2988,11 +3191,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3009,6 +3214,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Type != global::Google.Apps.Drive.Activity.V2.Restore.Types.Type.Unspecified) {
         output.WriteRawTag(8);
@@ -3021,6 +3227,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Type != global::Google.Apps.Drive.Activity.V2.Restore.Types.Type.Unspecified) {
@@ -3033,6 +3240,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Restore other) {
       if (other == null) {
         return;
@@ -3044,6 +3252,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3065,6 +3274,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3084,6 +3294,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Restore message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type of restoration.
@@ -3115,19 +3326,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<PermissionChange> _parser = new pb::MessageParser<PermissionChange>(() => new PermissionChange());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PermissionChange> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PermissionChange() {
       OnConstruction();
     }
@@ -3135,6 +3350,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PermissionChange(PermissionChange other) : this() {
       addedPermissions_ = other.addedPermissions_.Clone();
       removedPermissions_ = other.removedPermissions_.Clone();
@@ -3142,6 +3358,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PermissionChange Clone() {
       return new PermissionChange(this);
     }
@@ -3155,6 +3372,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The set of permissions added by this change.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Apps.Drive.Activity.V2.Permission> AddedPermissions {
       get { return addedPermissions_; }
     }
@@ -3168,16 +3386,19 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The set of permissions removed by this change.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Apps.Drive.Activity.V2.Permission> RemovedPermissions {
       get { return removedPermissions_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as PermissionChange);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(PermissionChange other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3191,6 +3412,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= addedPermissions_.GetHashCode();
@@ -3202,11 +3424,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3221,6 +3445,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       addedPermissions_.WriteTo(ref output, _repeated_addedPermissions_codec);
       removedPermissions_.WriteTo(ref output, _repeated_removedPermissions_codec);
@@ -3231,6 +3456,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += addedPermissions_.CalculateSize(_repeated_addedPermissions_codec);
@@ -3242,6 +3468,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(PermissionChange other) {
       if (other == null) {
         return;
@@ -3252,6 +3479,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3277,6 +3505,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3310,19 +3539,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Permission> _parser = new pb::MessageParser<Permission>(() => new Permission());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Permission> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Permission() {
       OnConstruction();
     }
@@ -3330,6 +3563,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Permission(Permission other) : this() {
       role_ = other.role_;
       allowDiscovery_ = other.allowDiscovery_;
@@ -3352,6 +3586,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Permission Clone() {
       return new Permission(this);
     }
@@ -3366,6 +3601,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// role determines a user's ability to read, write, and comment on items.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Permission.Types.Role Role {
       get { return role_; }
       set {
@@ -3379,6 +3615,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The user to whom this permission applies.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.User User {
       get { return scopeCase_ == ScopeOneofCase.User ? (global::Google.Apps.Drive.Activity.V2.User) scope_ : null; }
       set {
@@ -3393,6 +3630,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The group to whom this permission applies.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Group Group {
       get { return scopeCase_ == ScopeOneofCase.Group ? (global::Google.Apps.Drive.Activity.V2.Group) scope_ : null; }
       set {
@@ -3407,6 +3645,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The domain to whom this permission applies.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Domain Domain {
       get { return scopeCase_ == ScopeOneofCase.Domain ? (global::Google.Apps.Drive.Activity.V2.Domain) scope_ : null; }
       set {
@@ -3421,6 +3660,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// If set, this permission applies to anyone, even logged out users.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Permission.Types.Anyone Anyone {
       get { return scopeCase_ == ScopeOneofCase.Anyone ? (global::Google.Apps.Drive.Activity.V2.Permission.Types.Anyone) scope_ : null; }
       set {
@@ -3437,6 +3677,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// collection) without needing a link to the item.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool AllowDiscovery {
       get { return allowDiscovery_; }
       set {
@@ -3455,22 +3696,26 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
     private ScopeOneofCase scopeCase_ = ScopeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScopeOneofCase ScopeCase {
       get { return scopeCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearScope() {
       scopeCase_ = ScopeOneofCase.None;
       scope_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Permission);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Permission other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3489,6 +3734,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Role != global::Google.Apps.Drive.Activity.V2.Permission.Types.Role.Unspecified) hash ^= Role.GetHashCode();
@@ -3505,11 +3751,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3546,6 +3794,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Role != global::Google.Apps.Drive.Activity.V2.Permission.Types.Role.Unspecified) {
         output.WriteRawTag(8);
@@ -3578,6 +3827,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Role != global::Google.Apps.Drive.Activity.V2.Permission.Types.Role.Unspecified) {
@@ -3605,6 +3855,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Permission other) {
       if (other == null) {
         return;
@@ -3646,6 +3897,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3707,6 +3959,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3766,6 +4019,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Permission message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The [Google Drive permissions
@@ -3822,19 +4076,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<Anyone> _parser = new pb::MessageParser<Anyone>(() => new Anyone());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Anyone> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Permission.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Anyone() {
           OnConstruction();
         }
@@ -3842,21 +4100,25 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Anyone(Anyone other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Anyone Clone() {
           return new Anyone(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Anyone);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Anyone other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3868,6 +4130,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -3877,11 +4140,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3894,6 +4159,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -3902,6 +4168,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -3911,6 +4178,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Anyone other) {
           if (other == null) {
             return;
@@ -3919,6 +4187,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3936,6 +4205,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3966,19 +4236,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<Comment> _parser = new pb::MessageParser<Comment>(() => new Comment());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Comment> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Comment() {
       OnConstruction();
     }
@@ -3986,6 +4260,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Comment(Comment other) : this() {
       mentionedUsers_ = other.mentionedUsers_.Clone();
       switch (other.TypeCase) {
@@ -4004,6 +4279,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Comment Clone() {
       return new Comment(this);
     }
@@ -4014,6 +4290,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// A change on a regular posted comment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Comment.Types.Post Post {
       get { return typeCase_ == TypeOneofCase.Post ? (global::Google.Apps.Drive.Activity.V2.Comment.Types.Post) type_ : null; }
       set {
@@ -4028,6 +4305,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// A change on an assignment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Comment.Types.Assignment Assignment {
       get { return typeCase_ == TypeOneofCase.Assignment ? (global::Google.Apps.Drive.Activity.V2.Comment.Types.Assignment) type_ : null; }
       set {
@@ -4042,6 +4320,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// A change on a suggestion.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.Comment.Types.Suggestion Suggestion {
       get { return typeCase_ == TypeOneofCase.Suggestion ? (global::Google.Apps.Drive.Activity.V2.Comment.Types.Suggestion) type_ : null; }
       set {
@@ -4059,6 +4338,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// Users who are mentioned in this comment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Apps.Drive.Activity.V2.User> MentionedUsers {
       get { return mentionedUsers_; }
     }
@@ -4073,22 +4353,26 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TypeOneofCase TypeCase {
       get { return typeCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearType() {
       typeCase_ = TypeOneofCase.None;
       type_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Comment);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Comment other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4105,6 +4389,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (typeCase_ == TypeOneofCase.Post) hash ^= Post.GetHashCode();
@@ -4119,11 +4404,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4149,6 +4436,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (typeCase_ == TypeOneofCase.Post) {
         output.WriteRawTag(10);
@@ -4170,6 +4458,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (typeCase_ == TypeOneofCase.Post) {
@@ -4189,6 +4478,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Comment other) {
       if (other == null) {
         return;
@@ -4219,6 +4509,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -4267,6 +4558,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4313,6 +4605,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Comment message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// A regular posted comment.
@@ -4325,19 +4618,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<Post> _parser = new pb::MessageParser<Post>(() => new Post());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Post> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Comment.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Post() {
           OnConstruction();
         }
@@ -4345,12 +4642,14 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Post(Post other) : this() {
           subtype_ = other.subtype_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Post Clone() {
           return new Post(this);
         }
@@ -4362,6 +4661,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The sub-type of this event.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.Comment.Types.Post.Types.Subtype Subtype {
           get { return subtype_; }
           set {
@@ -4370,11 +4670,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Post);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Post other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4387,6 +4689,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Post.Types.Subtype.Unspecified) hash ^= Subtype.GetHashCode();
@@ -4397,11 +4700,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4418,6 +4723,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Post.Types.Subtype.Unspecified) {
             output.WriteRawTag(8);
@@ -4430,6 +4736,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Post.Types.Subtype.Unspecified) {
@@ -4442,6 +4749,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Post other) {
           if (other == null) {
             return;
@@ -4453,6 +4761,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4474,6 +4783,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4493,6 +4803,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the Post message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// More detailed information about the change.
@@ -4544,19 +4855,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<Assignment> _parser = new pb::MessageParser<Assignment>(() => new Assignment());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Assignment> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Comment.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Assignment() {
           OnConstruction();
         }
@@ -4564,6 +4879,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Assignment(Assignment other) : this() {
           subtype_ = other.subtype_;
           assignedUser_ = other.assignedUser_ != null ? other.assignedUser_.Clone() : null;
@@ -4571,6 +4887,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Assignment Clone() {
           return new Assignment(this);
         }
@@ -4582,6 +4899,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The sub-type of this event.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.Comment.Types.Assignment.Types.Subtype Subtype {
           get { return subtype_; }
           set {
@@ -4596,6 +4914,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The user to whom the comment was assigned.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.User AssignedUser {
           get { return assignedUser_; }
           set {
@@ -4604,11 +4923,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Assignment);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Assignment other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4622,6 +4943,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Assignment.Types.Subtype.Unspecified) hash ^= Subtype.GetHashCode();
@@ -4633,11 +4955,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4658,6 +4982,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Assignment.Types.Subtype.Unspecified) {
             output.WriteRawTag(8);
@@ -4674,6 +4999,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Assignment.Types.Subtype.Unspecified) {
@@ -4689,6 +5015,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Assignment other) {
           if (other == null) {
             return;
@@ -4706,6 +5033,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4734,6 +5062,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4760,6 +5089,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the Assignment message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// More detailed information about the change.
@@ -4815,19 +5145,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<Suggestion> _parser = new pb::MessageParser<Suggestion>(() => new Suggestion());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Suggestion> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.Comment.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Suggestion() {
           OnConstruction();
         }
@@ -4835,12 +5169,14 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Suggestion(Suggestion other) : this() {
           subtype_ = other.subtype_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Suggestion Clone() {
           return new Suggestion(this);
         }
@@ -4852,6 +5188,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The sub-type of this event.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.Comment.Types.Suggestion.Types.Subtype Subtype {
           get { return subtype_; }
           set {
@@ -4860,11 +5197,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Suggestion);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Suggestion other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4877,6 +5216,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Suggestion.Types.Subtype.Unspecified) hash ^= Subtype.GetHashCode();
@@ -4887,11 +5227,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4908,6 +5250,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Suggestion.Types.Subtype.Unspecified) {
             output.WriteRawTag(8);
@@ -4920,6 +5263,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Subtype != global::Google.Apps.Drive.Activity.V2.Comment.Types.Suggestion.Types.Subtype.Unspecified) {
@@ -4932,6 +5276,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Suggestion other) {
           if (other == null) {
             return;
@@ -4943,6 +5288,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4964,6 +5310,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4983,6 +5330,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the Suggestion message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// More detailed information about the change.
@@ -5047,19 +5395,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<DataLeakPreventionChange> _parser = new pb::MessageParser<DataLeakPreventionChange>(() => new DataLeakPreventionChange());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DataLeakPreventionChange> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLeakPreventionChange() {
       OnConstruction();
     }
@@ -5067,12 +5419,14 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLeakPreventionChange(DataLeakPreventionChange other) : this() {
       type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataLeakPreventionChange Clone() {
       return new DataLeakPreventionChange(this);
     }
@@ -5084,6 +5438,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The type of Data Leak Prevention (DLP) change.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.DataLeakPreventionChange.Types.Type Type {
       get { return type_; }
       set {
@@ -5092,11 +5447,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DataLeakPreventionChange);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DataLeakPreventionChange other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5109,6 +5466,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Type != global::Google.Apps.Drive.Activity.V2.DataLeakPreventionChange.Types.Type.Unspecified) hash ^= Type.GetHashCode();
@@ -5119,11 +5477,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5140,6 +5500,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Type != global::Google.Apps.Drive.Activity.V2.DataLeakPreventionChange.Types.Type.Unspecified) {
         output.WriteRawTag(8);
@@ -5152,6 +5513,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Type != global::Google.Apps.Drive.Activity.V2.DataLeakPreventionChange.Types.Type.Unspecified) {
@@ -5164,6 +5526,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DataLeakPreventionChange other) {
       if (other == null) {
         return;
@@ -5175,6 +5538,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5196,6 +5560,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5215,6 +5580,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the DataLeakPreventionChange message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type of the change.
@@ -5250,19 +5616,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<ApplicationReference> _parser = new pb::MessageParser<ApplicationReference>(() => new ApplicationReference());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ApplicationReference> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplicationReference() {
       OnConstruction();
     }
@@ -5270,12 +5640,14 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplicationReference(ApplicationReference other) : this() {
       type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplicationReference Clone() {
       return new ApplicationReference(this);
     }
@@ -5287,6 +5659,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The reference type corresponding to this event.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Apps.Drive.Activity.V2.ApplicationReference.Types.Type Type {
       get { return type_; }
       set {
@@ -5295,11 +5668,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ApplicationReference);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ApplicationReference other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5312,6 +5687,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Type != global::Google.Apps.Drive.Activity.V2.ApplicationReference.Types.Type.UnspecifiedReferenceType) hash ^= Type.GetHashCode();
@@ -5322,11 +5698,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5343,6 +5721,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Type != global::Google.Apps.Drive.Activity.V2.ApplicationReference.Types.Type.UnspecifiedReferenceType) {
         output.WriteRawTag(8);
@@ -5355,6 +5734,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Type != global::Google.Apps.Drive.Activity.V2.ApplicationReference.Types.Type.UnspecifiedReferenceType) {
@@ -5367,6 +5747,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ApplicationReference other) {
       if (other == null) {
         return;
@@ -5378,6 +5759,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5399,6 +5781,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5418,6 +5801,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the ApplicationReference message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type of the action.
@@ -5453,19 +5837,23 @@ namespace Google.Apps.Drive.Activity.V2 {
     private static readonly pb::MessageParser<SettingsChange> _parser = new pb::MessageParser<SettingsChange>(() => new SettingsChange());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SettingsChange> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Apps.Drive.Activity.V2.ActionReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SettingsChange() {
       OnConstruction();
     }
@@ -5473,12 +5861,14 @@ namespace Google.Apps.Drive.Activity.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SettingsChange(SettingsChange other) : this() {
       restrictionChanges_ = other.restrictionChanges_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SettingsChange Clone() {
       return new SettingsChange(this);
     }
@@ -5492,16 +5882,19 @@ namespace Google.Apps.Drive.Activity.V2 {
     /// The set of changes made to restrictions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Apps.Drive.Activity.V2.SettingsChange.Types.RestrictionChange> RestrictionChanges {
       get { return restrictionChanges_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SettingsChange);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SettingsChange other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5514,6 +5907,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= restrictionChanges_.GetHashCode();
@@ -5524,11 +5918,13 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -5542,6 +5938,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       restrictionChanges_.WriteTo(ref output, _repeated_restrictionChanges_codec);
       if (_unknownFields != null) {
@@ -5551,6 +5948,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += restrictionChanges_.CalculateSize(_repeated_restrictionChanges_codec);
@@ -5561,6 +5959,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SettingsChange other) {
       if (other == null) {
         return;
@@ -5570,6 +5969,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5591,6 +5991,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5610,6 +6011,7 @@ namespace Google.Apps.Drive.Activity.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the SettingsChange message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Information about restriction policy changes to a feature.
@@ -5622,19 +6024,23 @@ namespace Google.Apps.Drive.Activity.V2 {
         private static readonly pb::MessageParser<RestrictionChange> _parser = new pb::MessageParser<RestrictionChange>(() => new RestrictionChange());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<RestrictionChange> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Apps.Drive.Activity.V2.SettingsChange.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RestrictionChange() {
           OnConstruction();
         }
@@ -5642,6 +6048,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RestrictionChange(RestrictionChange other) : this() {
           feature_ = other.feature_;
           newRestriction_ = other.newRestriction_;
@@ -5649,6 +6056,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RestrictionChange Clone() {
           return new RestrictionChange(this);
         }
@@ -5660,6 +6068,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The feature which had a change in restriction policy.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.SettingsChange.Types.RestrictionChange.Types.Feature Feature {
           get { return feature_; }
           set {
@@ -5674,6 +6083,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         /// The restriction in place after the change.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Apps.Drive.Activity.V2.SettingsChange.Types.RestrictionChange.Types.Restriction NewRestriction {
           get { return newRestriction_; }
           set {
@@ -5682,11 +6092,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as RestrictionChange);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(RestrictionChange other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5700,6 +6112,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Feature != global::Google.Apps.Drive.Activity.V2.SettingsChange.Types.RestrictionChange.Types.Feature.Unspecified) hash ^= Feature.GetHashCode();
@@ -5711,11 +6124,13 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5736,6 +6151,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Feature != global::Google.Apps.Drive.Activity.V2.SettingsChange.Types.RestrictionChange.Types.Feature.Unspecified) {
             output.WriteRawTag(8);
@@ -5752,6 +6168,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Feature != global::Google.Apps.Drive.Activity.V2.SettingsChange.Types.RestrictionChange.Types.Feature.Unspecified) {
@@ -5767,6 +6184,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(RestrictionChange other) {
           if (other == null) {
             return;
@@ -5781,6 +6199,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -5806,6 +6225,7 @@ namespace Google.Apps.Drive.Activity.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5829,6 +6249,7 @@ namespace Google.Apps.Drive.Activity.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the RestrictionChange message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// The feature which had changes to its restriction policy.

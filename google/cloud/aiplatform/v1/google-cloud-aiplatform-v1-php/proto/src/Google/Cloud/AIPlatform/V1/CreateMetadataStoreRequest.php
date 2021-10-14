@@ -109,7 +109,7 @@ class CreateMetadataStoreRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMetadataStore()
     {
-        return isset($this->metadata_store) ? $this->metadata_store : null;
+        return $this->metadata_store;
     }
 
     public function hasMetadataStore()

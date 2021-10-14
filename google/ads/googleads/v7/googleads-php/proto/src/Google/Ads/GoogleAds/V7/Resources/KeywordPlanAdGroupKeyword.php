@@ -27,19 +27,19 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>string keyword_plan_ad_group = 8 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan_ad_group = 8 [(.google.api.resource_reference) = {</code>
      */
     protected $keyword_plan_ad_group = null;
     /**
      * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * The keyword text.
      *
-     * Generated from protobuf field <code>string text = 10;</code>
+     * Generated from protobuf field <code>optional string text = 10;</code>
      */
     protected $text = null;
     /**
@@ -55,13 +55,13 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * Not applicable for negative keywords. (negative = true)
      * This field is Optional.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 11;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 11;</code>
      */
     protected $cpc_bid_micros = null;
     /**
      * Immutable. If true, the keyword is negative.
      *
-     * Generated from protobuf field <code>bool negative = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $negative = null;
 
@@ -131,7 +131,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>string keyword_plan_ad_group = 8 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan_ad_group = 8 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getKeywordPlanAdGroup()
@@ -152,7 +152,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>string keyword_plan_ad_group = 8 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan_ad_group = 8 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -167,7 +167,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -188,7 +188,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -203,7 +203,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The keyword text.
      *
-     * Generated from protobuf field <code>string text = 10;</code>
+     * Generated from protobuf field <code>optional string text = 10;</code>
      * @return string
      */
     public function getText()
@@ -224,7 +224,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The keyword text.
      *
-     * Generated from protobuf field <code>string text = 10;</code>
+     * Generated from protobuf field <code>optional string text = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -269,7 +269,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * Not applicable for negative keywords. (negative = true)
      * This field is Optional.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 11;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 11;</code>
      * @return int|string
      */
     public function getCpcBidMicros()
@@ -294,7 +294,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * Not applicable for negative keywords. (negative = true)
      * This field is Optional.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 11;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 11;</code>
      * @param int|string $var
      * @return $this
      */
@@ -309,7 +309,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. If true, the keyword is negative.
      *
-     * Generated from protobuf field <code>bool negative = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return bool
      */
     public function getNegative()
@@ -330,7 +330,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. If true, the keyword is negative.
      *
-     * Generated from protobuf field <code>bool negative = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bool negative = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param bool $var
      * @return $this
      */

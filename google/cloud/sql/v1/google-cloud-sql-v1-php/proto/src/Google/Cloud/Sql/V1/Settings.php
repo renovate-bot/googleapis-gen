@@ -307,7 +307,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getSettingsVersion()
     {
-        return isset($this->settings_version) ? $this->settings_version : null;
+        return $this->settings_version;
     }
 
     public function hasSettingsVersion()
@@ -594,7 +594,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getStorageAutoResizeLimit()
     {
-        return isset($this->storage_auto_resize_limit) ? $this->storage_auto_resize_limit : null;
+        return $this->storage_auto_resize_limit;
     }
 
     public function hasStorageAutoResizeLimit()
@@ -698,7 +698,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getIpConfiguration()
     {
-        return isset($this->ip_configuration) ? $this->ip_configuration : null;
+        return $this->ip_configuration;
     }
 
     public function hasIpConfiguration()
@@ -737,7 +737,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getStorageAutoResize()
     {
-        return isset($this->storage_auto_resize) ? $this->storage_auto_resize : null;
+        return $this->storage_auto_resize;
     }
 
     public function hasStorageAutoResize()
@@ -806,7 +806,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getLocationPreference()
     {
-        return isset($this->location_preference) ? $this->location_preference : null;
+        return $this->location_preference;
     }
 
     public function hasLocationPreference()
@@ -900,7 +900,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getMaintenanceWindow()
     {
-        return isset($this->maintenance_window) ? $this->maintenance_window : null;
+        return $this->maintenance_window;
     }
 
     public function hasMaintenanceWindow()
@@ -937,7 +937,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getBackupConfiguration()
     {
-        return isset($this->backup_configuration) ? $this->backup_configuration : null;
+        return $this->backup_configuration;
     }
 
     public function hasBackupConfiguration()
@@ -974,7 +974,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getDatabaseReplicationEnabled()
     {
-        return isset($this->database_replication_enabled) ? $this->database_replication_enabled : null;
+        return $this->database_replication_enabled;
     }
 
     public function hasDatabaseReplicationEnabled()
@@ -1044,7 +1044,7 @@ class Settings extends \Google\Protobuf\Internal\Message
     public function getCrashSafeReplicationEnabled()
     {
         @trigger_error('crash_safe_replication_enabled is deprecated.', E_USER_DEPRECATED);
-        return isset($this->crash_safe_replication_enabled) ? $this->crash_safe_replication_enabled : null;
+        return $this->crash_safe_replication_enabled;
     }
 
     public function hasCrashSafeReplicationEnabled()
@@ -1118,7 +1118,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getDataDiskSizeGb()
     {
-        return isset($this->data_disk_size_gb) ? $this->data_disk_size_gb : null;
+        return $this->data_disk_size_gb;
     }
 
     public function hasDataDiskSizeGb()
@@ -1181,7 +1181,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getActiveDirectoryConfig()
     {
-        return isset($this->active_directory_config) ? $this->active_directory_config : null;
+        return $this->active_directory_config;
     }
 
     public function hasActiveDirectoryConfig()
@@ -1269,7 +1269,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getInsightsConfig()
     {
-        return isset($this->insights_config) ? $this->insights_config : null;
+        return $this->insights_config;
     }
 
     public function hasInsightsConfig()
@@ -1305,7 +1305,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      */
     public function getSqlServerAuditConfig()
     {
-        return isset($this->sql_server_audit_config) ? $this->sql_server_audit_config : null;
+        return $this->sql_server_audit_config;
     }
 
     public function hasSqlServerAuditConfig()

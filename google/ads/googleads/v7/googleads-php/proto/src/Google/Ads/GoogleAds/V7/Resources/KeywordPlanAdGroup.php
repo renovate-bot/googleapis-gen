@@ -27,13 +27,13 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The keyword plan campaign to which this ad group belongs.
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 6 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 6 [(.google.api.resource_reference) = {</code>
      */
     protected $keyword_plan_campaign = null;
     /**
      * Output only. The ID of the keyword plan ad group.
      *
-     * Generated from protobuf field <code>int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -41,7 +41,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating keyword plan
      * ad group.
      *
-     * Generated from protobuf field <code>string name = 8;</code>
+     * Generated from protobuf field <code>optional string name = 8;</code>
      */
     protected $name = null;
     /**
@@ -49,7 +49,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * biddable keywords under the keyword plan ad group.
      * If not set, will inherit from parent campaign.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 9;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 9;</code>
      */
     protected $cpc_bid_micros = null;
 
@@ -115,7 +115,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The keyword plan campaign to which this ad group belongs.
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 6 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 6 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getKeywordPlanCampaign()
@@ -136,7 +136,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     /**
      * The keyword plan campaign to which this ad group belongs.
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 6 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 6 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the keyword plan ad group.
      *
-     * Generated from protobuf field <code>int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -172,7 +172,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the keyword plan ad group.
      *
-     * Generated from protobuf field <code>int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -189,7 +189,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating keyword plan
      * ad group.
      *
-     * Generated from protobuf field <code>string name = 8;</code>
+     * Generated from protobuf field <code>optional string name = 8;</code>
      * @return string
      */
     public function getName()
@@ -212,7 +212,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating keyword plan
      * ad group.
      *
-     * Generated from protobuf field <code>string name = 8;</code>
+     * Generated from protobuf field <code>optional string name = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -229,7 +229,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * biddable keywords under the keyword plan ad group.
      * If not set, will inherit from parent campaign.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 9;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 9;</code>
      * @return int|string
      */
     public function getCpcBidMicros()
@@ -252,7 +252,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * biddable keywords under the keyword plan ad group.
      * If not set, will inherit from parent campaign.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_micros = 9;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_micros = 9;</code>
      * @param int|string $var
      * @return $this
      */

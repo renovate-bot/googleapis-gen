@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDistributionFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributionFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, distributionFilter_);
     }
     if (range_ != null) {
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDistributionFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributionFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, distributionFilter_);
     }
     if (range_ != null) {

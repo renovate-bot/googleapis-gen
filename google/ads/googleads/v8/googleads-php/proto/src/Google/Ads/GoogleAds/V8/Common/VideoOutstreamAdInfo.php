@@ -19,13 +19,13 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 3;</code>
+     * Generated from protobuf field <code>optional string headline = 3;</code>
      */
     protected $headline = null;
     /**
      * The description line.
      *
-     * Generated from protobuf field <code>string description = 4;</code>
+     * Generated from protobuf field <code>optional string description = 4;</code>
      */
     protected $description = null;
 
@@ -49,7 +49,7 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 3;</code>
+     * Generated from protobuf field <code>optional string headline = 3;</code>
      * @return string
      */
     public function getHeadline()
@@ -70,7 +70,7 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 3;</code>
+     * Generated from protobuf field <code>optional string headline = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -85,7 +85,7 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description line.
      *
-     * Generated from protobuf field <code>string description = 4;</code>
+     * Generated from protobuf field <code>optional string description = 4;</code>
      * @return string
      */
     public function getDescription()
@@ -106,7 +106,7 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description line.
      *
-     * Generated from protobuf field <code>string description = 4;</code>
+     * Generated from protobuf field <code>optional string description = 4;</code>
      * @param string $var
      * @return $this
      */

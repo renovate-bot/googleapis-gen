@@ -90,7 +90,7 @@ class BudgetOption extends \Google\Protobuf\Internal\Message
      */
     public function getMetrics()
     {
-        return isset($this->metrics) ? $this->metrics : null;
+        return $this->metrics;
     }
 
     public function hasMetrics()

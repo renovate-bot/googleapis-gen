@@ -299,7 +299,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getDefinition()
     {
-        return isset($this->definition) ? $this->definition : null;
+        return $this->definition;
     }
 
     public function hasDefinition()
@@ -339,7 +339,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getRolloutConfig()
     {
-        return isset($this->rollout_config) ? $this->rollout_config : null;
+        return $this->rollout_config;
     }
 
     public function hasRolloutConfig()
@@ -379,7 +379,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getRolloutState()
     {
-        return isset($this->rollout_state) ? $this->rollout_state : null;
+        return $this->rollout_state;
     }
 
     public function hasRolloutState()
@@ -443,7 +443,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getResult()
     {
-        return isset($this->result) ? $this->result : null;
+        return $this->result;
     }
 
     public function hasResult()
@@ -479,7 +479,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -515,7 +515,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -551,7 +551,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -587,7 +587,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getLastUpdateTime()
     {
-        return isset($this->last_update_time) ? $this->last_update_time : null;
+        return $this->last_update_time;
     }
 
     public function hasLastUpdateTime()
@@ -625,7 +625,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     public function getExperimentLength()
     {
-        return isset($this->experiment_length) ? $this->experiment_length : null;
+        return $this->experiment_length;
     }
 
     public function hasExperimentLength()

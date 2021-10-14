@@ -84,7 +84,7 @@ class DynamicLocationSetFilter extends \Google\Protobuf\Internal\Message
      */
     public function getBusinessNameFilter()
     {
-        return isset($this->business_name_filter) ? $this->business_name_filter : null;
+        return $this->business_name_filter;
     }
 
     public function hasBusinessNameFilter()

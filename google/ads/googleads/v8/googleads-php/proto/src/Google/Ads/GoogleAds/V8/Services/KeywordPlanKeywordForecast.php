@@ -19,7 +19,7 @@ class KeywordPlanKeywordForecast extends \Google\Protobuf\Internal\Message
      * The resource name of the Keyword Plan keyword related to the forecast.
      * `customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_ad_group_keyword = 3;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_ad_group_keyword = 3;</code>
      */
     protected $keyword_plan_ad_group_keyword = null;
     /**
@@ -51,7 +51,7 @@ class KeywordPlanKeywordForecast extends \Google\Protobuf\Internal\Message
      * The resource name of the Keyword Plan keyword related to the forecast.
      * `customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_ad_group_keyword = 3;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_ad_group_keyword = 3;</code>
      * @return string
      */
     public function getKeywordPlanAdGroupKeyword()
@@ -73,7 +73,7 @@ class KeywordPlanKeywordForecast extends \Google\Protobuf\Internal\Message
      * The resource name of the Keyword Plan keyword related to the forecast.
      * `customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_ad_group_keyword = 3;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_ad_group_keyword = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -93,7 +93,7 @@ class KeywordPlanKeywordForecast extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordForecast()
     {
-        return isset($this->keyword_forecast) ? $this->keyword_forecast : null;
+        return $this->keyword_forecast;
     }
 
     public function hasKeywordForecast()

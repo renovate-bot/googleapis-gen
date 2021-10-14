@@ -134,7 +134,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getAd()
     {
-        return isset($this->ad) ? $this->ad : null;
+        return $this->ad;
     }
 
     public function hasAd()
@@ -170,7 +170,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroup()
     {
-        return isset($this->ad_group) ? $this->ad_group : null;
+        return $this->ad_group;
     }
 
     public function hasAdGroup()
@@ -206,7 +206,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterion()
     {
-        return isset($this->ad_group_criterion) ? $this->ad_group_criterion : null;
+        return $this->ad_group_criterion;
     }
 
     public function hasAdGroupCriterion()
@@ -242,7 +242,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getCampaign()
     {
-        return isset($this->campaign) ? $this->campaign : null;
+        return $this->campaign;
     }
 
     public function hasCampaign()
@@ -278,7 +278,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignBudget()
     {
-        return isset($this->campaign_budget) ? $this->campaign_budget : null;
+        return $this->campaign_budget;
     }
 
     public function hasCampaignBudget()
@@ -314,7 +314,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupBidModifier()
     {
-        return isset($this->ad_group_bid_modifier) ? $this->ad_group_bid_modifier : null;
+        return $this->ad_group_bid_modifier;
     }
 
     public function hasAdGroupBidModifier()
@@ -350,7 +350,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignCriterion()
     {
-        return isset($this->campaign_criterion) ? $this->campaign_criterion : null;
+        return $this->campaign_criterion;
     }
 
     public function hasCampaignCriterion()
@@ -386,7 +386,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getFeed()
     {
-        return isset($this->feed) ? $this->feed : null;
+        return $this->feed;
     }
 
     public function hasFeed()
@@ -422,7 +422,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItem()
     {
-        return isset($this->feed_item) ? $this->feed_item : null;
+        return $this->feed_item;
     }
 
     public function hasFeedItem()
@@ -458,7 +458,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignFeed()
     {
-        return isset($this->campaign_feed) ? $this->campaign_feed : null;
+        return $this->campaign_feed;
     }
 
     public function hasCampaignFeed()
@@ -494,7 +494,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupFeed()
     {
-        return isset($this->ad_group_feed) ? $this->ad_group_feed : null;
+        return $this->ad_group_feed;
     }
 
     public function hasAdGroupFeed()
@@ -530,7 +530,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAd()
     {
-        return isset($this->ad_group_ad) ? $this->ad_group_ad : null;
+        return $this->ad_group_ad;
     }
 
     public function hasAdGroupAd()

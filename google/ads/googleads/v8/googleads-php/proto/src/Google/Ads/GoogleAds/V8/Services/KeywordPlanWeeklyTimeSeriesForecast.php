@@ -19,7 +19,7 @@ class KeywordPlanWeeklyTimeSeriesForecast extends \Google\Protobuf\Internal\Mess
      * The resource name of the Keyword Plan campaign related to the forecast.
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 1;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 1;</code>
      */
     protected $keyword_plan_campaign = null;
     /**
@@ -51,7 +51,7 @@ class KeywordPlanWeeklyTimeSeriesForecast extends \Google\Protobuf\Internal\Mess
      * The resource name of the Keyword Plan campaign related to the forecast.
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 1;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 1;</code>
      * @return string
      */
     public function getKeywordPlanCampaign()
@@ -73,7 +73,7 @@ class KeywordPlanWeeklyTimeSeriesForecast extends \Google\Protobuf\Internal\Mess
      * The resource name of the Keyword Plan campaign related to the forecast.
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
-     * Generated from protobuf field <code>string keyword_plan_campaign = 1;</code>
+     * Generated from protobuf field <code>optional string keyword_plan_campaign = 1;</code>
      * @param string $var
      * @return $this
      */

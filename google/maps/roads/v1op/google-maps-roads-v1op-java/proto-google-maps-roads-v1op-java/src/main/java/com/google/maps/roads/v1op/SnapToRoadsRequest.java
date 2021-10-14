@@ -263,13 +263,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
     }
     if (interpolate_ != false) {
       output.writeBool(2, interpolate_);
     }
-    if (!getAssetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, assetId_);
     }
     if (travelMode_ != com.google.maps.roads.v1op.TravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {
@@ -284,14 +284,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
     }
     if (interpolate_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, interpolate_);
     }
-    if (!getAssetIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, assetId_);
     }
     if (travelMode_ != com.google.maps.roads.v1op.TravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {

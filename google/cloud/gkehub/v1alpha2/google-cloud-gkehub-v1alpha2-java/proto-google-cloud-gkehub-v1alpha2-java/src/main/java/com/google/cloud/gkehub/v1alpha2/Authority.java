@@ -310,13 +310,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIssuerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issuer_);
     }
-    if (!getIdentityProviderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityProvider_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, identityProvider_);
     }
-    if (!getWorkloadIdentityPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workloadIdentityPool_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workloadIdentityPool_);
     }
     if (!oidcJwks_.isEmpty()) {
@@ -331,13 +331,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIssuerBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, issuer_);
     }
-    if (!getIdentityProviderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identityProvider_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, identityProvider_);
     }
-    if (!getWorkloadIdentityPoolBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workloadIdentityPool_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workloadIdentityPool_);
     }
     if (!oidcJwks_.isEmpty()) {

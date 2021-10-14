@@ -19,19 +19,19 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Headline of the teaser.
      *
-     * Generated from protobuf field <code>string headline = 5;</code>
+     * Generated from protobuf field <code>optional string headline = 5;</code>
      */
     protected $headline = null;
     /**
      * Description of the teaser.
      *
-     * Generated from protobuf field <code>string description = 6;</code>
+     * Generated from protobuf field <code>optional string description = 6;</code>
      */
     protected $description = null;
     /**
      * Business name of the advertiser.
      *
-     * Generated from protobuf field <code>string business_name = 7;</code>
+     * Generated from protobuf field <code>optional string business_name = 7;</code>
      */
     protected $business_name = null;
     /**
@@ -39,7 +39,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * JPEG and PNG. The minimum size is 144x144 pixels and the aspect ratio must
      * be 1:1 (+-1%).
      *
-     * Generated from protobuf field <code>string logo_image = 8;</code>
+     * Generated from protobuf field <code>optional string logo_image = 8;</code>
      */
     protected $logo_image = null;
 
@@ -69,7 +69,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Headline of the teaser.
      *
-     * Generated from protobuf field <code>string headline = 5;</code>
+     * Generated from protobuf field <code>optional string headline = 5;</code>
      * @return string
      */
     public function getHeadline()
@@ -90,7 +90,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Headline of the teaser.
      *
-     * Generated from protobuf field <code>string headline = 5;</code>
+     * Generated from protobuf field <code>optional string headline = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -105,7 +105,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Description of the teaser.
      *
-     * Generated from protobuf field <code>string description = 6;</code>
+     * Generated from protobuf field <code>optional string description = 6;</code>
      * @return string
      */
     public function getDescription()
@@ -126,7 +126,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Description of the teaser.
      *
-     * Generated from protobuf field <code>string description = 6;</code>
+     * Generated from protobuf field <code>optional string description = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -141,7 +141,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Business name of the advertiser.
      *
-     * Generated from protobuf field <code>string business_name = 7;</code>
+     * Generated from protobuf field <code>optional string business_name = 7;</code>
      * @return string
      */
     public function getBusinessName()
@@ -162,7 +162,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
     /**
      * Business name of the advertiser.
      *
-     * Generated from protobuf field <code>string business_name = 7;</code>
+     * Generated from protobuf field <code>optional string business_name = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -179,7 +179,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * JPEG and PNG. The minimum size is 144x144 pixels and the aspect ratio must
      * be 1:1 (+-1%).
      *
-     * Generated from protobuf field <code>string logo_image = 8;</code>
+     * Generated from protobuf field <code>optional string logo_image = 8;</code>
      * @return string
      */
     public function getLogoImage()
@@ -202,7 +202,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * JPEG and PNG. The minimum size is 144x144 pixels and the aspect ratio must
      * be 1:1 (+-1%).
      *
-     * Generated from protobuf field <code>string logo_image = 8;</code>
+     * Generated from protobuf field <code>optional string logo_image = 8;</code>
      * @param string $var
      * @return $this
      */

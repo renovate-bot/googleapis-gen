@@ -21,7 +21,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * This target should be greater than or equal to minimum billable unit based
      * on the currency for the account.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 4;</code>
      */
     protected $target_cpa_micros = null;
     /**
@@ -29,7 +29,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      * This should only be set for portfolio bid strategies.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      */
     protected $cpc_bid_ceiling_micros = null;
     /**
@@ -37,7 +37,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      * This should only be set for portfolio bid strategies.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_floor_micros = 6;</code>
      */
     protected $cpc_bid_floor_micros = null;
 
@@ -71,7 +71,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * This target should be greater than or equal to minimum billable unit based
      * on the currency for the account.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 4;</code>
      * @return int|string
      */
     public function getTargetCpaMicros()
@@ -94,7 +94,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * This target should be greater than or equal to minimum billable unit based
      * on the currency for the account.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 4;</code>
      * @param int|string $var
      * @return $this
      */
@@ -111,7 +111,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      * This should only be set for portfolio bid strategies.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @return int|string
      */
     public function getCpcBidCeilingMicros()
@@ -134,7 +134,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      * This should only be set for portfolio bid strategies.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      * This should only be set for portfolio bid strategies.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @return int|string
      */
     public function getCpcBidFloorMicros()
@@ -174,7 +174,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      * This should only be set for portfolio bid strategies.
      *
-     * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @param int|string $var
      * @return $this
      */

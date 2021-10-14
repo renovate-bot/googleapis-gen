@@ -164,7 +164,7 @@ class OSPolicyAssignmentOperationMetadata extends \Google\Protobuf\Internal\Mess
      */
     public function getRolloutStartTime()
     {
-        return isset($this->rollout_start_time) ? $this->rollout_start_time : null;
+        return $this->rollout_start_time;
     }
 
     public function hasRolloutStartTime()
@@ -200,7 +200,7 @@ class OSPolicyAssignmentOperationMetadata extends \Google\Protobuf\Internal\Mess
      */
     public function getRolloutUpdateTime()
     {
-        return isset($this->rollout_update_time) ? $this->rollout_update_time : null;
+        return $this->rollout_update_time;
     }
 
     public function hasRolloutUpdateTime()

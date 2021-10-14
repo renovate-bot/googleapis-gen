@@ -23,7 +23,7 @@ class SqlOutOfDiskReport extends \Google\Protobuf\Internal\Message
      * *  Readers:
      *   *  the proactive database wellness job
      *
-     * Generated from protobuf field <code>.google.cloud.sql.v1.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState sql_out_of_disk_state = 1;</code>
+     * Generated from protobuf field <code>optional .google.cloud.sql.v1.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState sql_out_of_disk_state = 1;</code>
      */
     protected $sql_out_of_disk_state = null;
     /**
@@ -33,7 +33,7 @@ class SqlOutOfDiskReport extends \Google\Protobuf\Internal\Message
      *   *  the proactive database wellness job for OOD.
      * *  Readers:
      *
-     * Generated from protobuf field <code>int32 sql_min_recommended_increase_size_gb = 2;</code>
+     * Generated from protobuf field <code>optional int32 sql_min_recommended_increase_size_gb = 2;</code>
      */
     protected $sql_min_recommended_increase_size_gb = null;
 
@@ -71,7 +71,7 @@ class SqlOutOfDiskReport extends \Google\Protobuf\Internal\Message
      * *  Readers:
      *   *  the proactive database wellness job
      *
-     * Generated from protobuf field <code>.google.cloud.sql.v1.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState sql_out_of_disk_state = 1;</code>
+     * Generated from protobuf field <code>optional .google.cloud.sql.v1.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState sql_out_of_disk_state = 1;</code>
      * @return int
      */
     public function getSqlOutOfDiskState()
@@ -97,7 +97,7 @@ class SqlOutOfDiskReport extends \Google\Protobuf\Internal\Message
      * *  Readers:
      *   *  the proactive database wellness job
      *
-     * Generated from protobuf field <code>.google.cloud.sql.v1.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState sql_out_of_disk_state = 1;</code>
+     * Generated from protobuf field <code>optional .google.cloud.sql.v1.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState sql_out_of_disk_state = 1;</code>
      * @param int $var
      * @return $this
      */
@@ -116,7 +116,7 @@ class SqlOutOfDiskReport extends \Google\Protobuf\Internal\Message
      *   *  the proactive database wellness job for OOD.
      * *  Readers:
      *
-     * Generated from protobuf field <code>int32 sql_min_recommended_increase_size_gb = 2;</code>
+     * Generated from protobuf field <code>optional int32 sql_min_recommended_increase_size_gb = 2;</code>
      * @return int
      */
     public function getSqlMinRecommendedIncreaseSizeGb()
@@ -141,7 +141,7 @@ class SqlOutOfDiskReport extends \Google\Protobuf\Internal\Message
      *   *  the proactive database wellness job for OOD.
      * *  Readers:
      *
-     * Generated from protobuf field <code>int32 sql_min_recommended_increase_size_gb = 2;</code>
+     * Generated from protobuf field <code>optional int32 sql_min_recommended_increase_size_gb = 2;</code>
      * @param int $var
      * @return $this
      */

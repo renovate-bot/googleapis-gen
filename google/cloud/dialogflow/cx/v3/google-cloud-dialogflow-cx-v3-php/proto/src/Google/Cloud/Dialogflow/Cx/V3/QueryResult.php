@@ -188,7 +188,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *           This value may change for the same end-user expression at any time due to a
      *           model retraining or change in implementation.
      *           This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3.QueryResult.match] instead.
-     *     @type \Google\Cloud\Dialogflow\Cx\V3\Match $match
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\PBMatch $match
      *           Intent match result, could be an intent or an event.
      *     @type \Google\Protobuf\Struct $diagnostic_info
      *           The free-form diagnostic info. For example, this field could contain
@@ -427,7 +427,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getParameters()
     {
-        return isset($this->parameters) ? $this->parameters : null;
+        return $this->parameters;
     }
 
     public function hasParameters()
@@ -563,7 +563,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentPage()
     {
-        return isset($this->current_page) ? $this->current_page : null;
+        return $this->current_page;
     }
 
     public function hasCurrentPage()
@@ -605,7 +605,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     public function getIntent()
     {
         @trigger_error('intent is deprecated.', E_USER_DEPRECATED);
-        return isset($this->intent) ? $this->intent : null;
+        return $this->intent;
     }
 
     public function hasIntent()
@@ -686,11 +686,11 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * Intent match result, could be an intent or an event.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Match match = 15;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Match|null
+     * @return \Google\Cloud\Dialogflow\Cx\V3\PBMatch|null
      */
     public function getMatch()
     {
-        return isset($this->match) ? $this->match : null;
+        return $this->match;
     }
 
     public function hasMatch()
@@ -707,12 +707,12 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * Intent match result, could be an intent or an event.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Match match = 15;</code>
-     * @param \Google\Cloud\Dialogflow\Cx\V3\Match $var
+     * @param \Google\Cloud\Dialogflow\Cx\V3\PBMatch $var
      * @return $this
      */
     public function setMatch($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\Match::class);
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\PBMatch::class);
         $this->match = $var;
 
         return $this;
@@ -728,7 +728,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getDiagnosticInfo()
     {
-        return isset($this->diagnostic_info) ? $this->diagnostic_info : null;
+        return $this->diagnostic_info;
     }
 
     public function hasDiagnosticInfo()
@@ -768,7 +768,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     public function getSentimentAnalysisResult()
     {
-        return isset($this->sentiment_analysis_result) ? $this->sentiment_analysis_result : null;
+        return $this->sentiment_analysis_result;
     }
 
     public function hasSentimentAnalysisResult()

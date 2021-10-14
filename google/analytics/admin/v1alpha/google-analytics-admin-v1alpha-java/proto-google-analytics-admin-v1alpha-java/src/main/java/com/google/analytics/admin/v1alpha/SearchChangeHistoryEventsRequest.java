@@ -676,10 +676,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(account_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, account_);
     }
-    if (!getPropertyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(property_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, property_);
     }
     if (getResourceTypeList().size() > 0) {
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     if (pageSize_ != 0) {
       output.writeInt32(8, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pageToken_);
     }
     unknownFields.writeTo(output);
@@ -720,10 +720,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(account_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, account_);
     }
-    if (!getPropertyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(property_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, property_);
     }
     {
@@ -770,7 +770,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, pageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pageToken_);
     }
     size += unknownFields.getSerializedSize();

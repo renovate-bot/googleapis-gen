@@ -1069,7 +1069,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAccountBudget()
     {
-        return isset($this->account_budget) ? $this->account_budget : null;
+        return $this->account_budget;
     }
 
     public function hasAccountBudget()
@@ -1105,7 +1105,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAccountBudgetProposal()
     {
-        return isset($this->account_budget_proposal) ? $this->account_budget_proposal : null;
+        return $this->account_budget_proposal;
     }
 
     public function hasAccountBudgetProposal()
@@ -1141,7 +1141,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAccountLink()
     {
-        return isset($this->account_link) ? $this->account_link : null;
+        return $this->account_link;
     }
 
     public function hasAccountLink()
@@ -1177,7 +1177,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroup()
     {
-        return isset($this->ad_group) ? $this->ad_group : null;
+        return $this->ad_group;
     }
 
     public function hasAdGroup()
@@ -1213,7 +1213,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAd()
     {
-        return isset($this->ad_group_ad) ? $this->ad_group_ad : null;
+        return $this->ad_group_ad;
     }
 
     public function hasAdGroupAd()
@@ -1249,7 +1249,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAdAssetView()
     {
-        return isset($this->ad_group_ad_asset_view) ? $this->ad_group_ad_asset_view : null;
+        return $this->ad_group_ad_asset_view;
     }
 
     public function hasAdGroupAdAssetView()
@@ -1285,7 +1285,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAdLabel()
     {
-        return isset($this->ad_group_ad_label) ? $this->ad_group_ad_label : null;
+        return $this->ad_group_ad_label;
     }
 
     public function hasAdGroupAdLabel()
@@ -1321,7 +1321,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAsset()
     {
-        return isset($this->ad_group_asset) ? $this->ad_group_asset : null;
+        return $this->ad_group_asset;
     }
 
     public function hasAdGroupAsset()
@@ -1357,7 +1357,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAudienceView()
     {
-        return isset($this->ad_group_audience_view) ? $this->ad_group_audience_view : null;
+        return $this->ad_group_audience_view;
     }
 
     public function hasAdGroupAudienceView()
@@ -1393,7 +1393,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupBidModifier()
     {
-        return isset($this->ad_group_bid_modifier) ? $this->ad_group_bid_modifier : null;
+        return $this->ad_group_bid_modifier;
     }
 
     public function hasAdGroupBidModifier()
@@ -1429,7 +1429,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterion()
     {
-        return isset($this->ad_group_criterion) ? $this->ad_group_criterion : null;
+        return $this->ad_group_criterion;
     }
 
     public function hasAdGroupCriterion()
@@ -1465,7 +1465,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterionLabel()
     {
-        return isset($this->ad_group_criterion_label) ? $this->ad_group_criterion_label : null;
+        return $this->ad_group_criterion_label;
     }
 
     public function hasAdGroupCriterionLabel()
@@ -1501,7 +1501,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterionSimulation()
     {
-        return isset($this->ad_group_criterion_simulation) ? $this->ad_group_criterion_simulation : null;
+        return $this->ad_group_criterion_simulation;
     }
 
     public function hasAdGroupCriterionSimulation()
@@ -1537,7 +1537,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupExtensionSetting()
     {
-        return isset($this->ad_group_extension_setting) ? $this->ad_group_extension_setting : null;
+        return $this->ad_group_extension_setting;
     }
 
     public function hasAdGroupExtensionSetting()
@@ -1573,7 +1573,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupFeed()
     {
-        return isset($this->ad_group_feed) ? $this->ad_group_feed : null;
+        return $this->ad_group_feed;
     }
 
     public function hasAdGroupFeed()
@@ -1609,7 +1609,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupLabel()
     {
-        return isset($this->ad_group_label) ? $this->ad_group_label : null;
+        return $this->ad_group_label;
     }
 
     public function hasAdGroupLabel()
@@ -1645,7 +1645,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupSimulation()
     {
-        return isset($this->ad_group_simulation) ? $this->ad_group_simulation : null;
+        return $this->ad_group_simulation;
     }
 
     public function hasAdGroupSimulation()
@@ -1681,7 +1681,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdParameter()
     {
-        return isset($this->ad_parameter) ? $this->ad_parameter : null;
+        return $this->ad_parameter;
     }
 
     public function hasAdParameter()
@@ -1717,7 +1717,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAgeRangeView()
     {
-        return isset($this->age_range_view) ? $this->age_range_view : null;
+        return $this->age_range_view;
     }
 
     public function hasAgeRangeView()
@@ -1753,7 +1753,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAdScheduleView()
     {
-        return isset($this->ad_schedule_view) ? $this->ad_schedule_view : null;
+        return $this->ad_schedule_view;
     }
 
     public function hasAdScheduleView()
@@ -1789,7 +1789,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getDomainCategory()
     {
-        return isset($this->domain_category) ? $this->domain_category : null;
+        return $this->domain_category;
     }
 
     public function hasDomainCategory()
@@ -1825,7 +1825,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAsset()
     {
-        return isset($this->asset) ? $this->asset : null;
+        return $this->asset;
     }
 
     public function hasAsset()
@@ -1861,7 +1861,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAssetFieldTypeView()
     {
-        return isset($this->asset_field_type_view) ? $this->asset_field_type_view : null;
+        return $this->asset_field_type_view;
     }
 
     public function hasAssetFieldTypeView()
@@ -1897,7 +1897,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getBatchJob()
     {
-        return isset($this->batch_job) ? $this->batch_job : null;
+        return $this->batch_job;
     }
 
     public function hasBatchJob()
@@ -1933,7 +1933,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getBiddingDataExclusion()
     {
-        return isset($this->bidding_data_exclusion) ? $this->bidding_data_exclusion : null;
+        return $this->bidding_data_exclusion;
     }
 
     public function hasBiddingDataExclusion()
@@ -1969,7 +1969,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getBiddingSeasonalityAdjustment()
     {
-        return isset($this->bidding_seasonality_adjustment) ? $this->bidding_seasonality_adjustment : null;
+        return $this->bidding_seasonality_adjustment;
     }
 
     public function hasBiddingSeasonalityAdjustment()
@@ -2005,7 +2005,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getBiddingStrategy()
     {
-        return isset($this->bidding_strategy) ? $this->bidding_strategy : null;
+        return $this->bidding_strategy;
     }
 
     public function hasBiddingStrategy()
@@ -2041,7 +2041,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getBiddingStrategySimulation()
     {
-        return isset($this->bidding_strategy_simulation) ? $this->bidding_strategy_simulation : null;
+        return $this->bidding_strategy_simulation;
     }
 
     public function hasBiddingStrategySimulation()
@@ -2077,7 +2077,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getBillingSetup()
     {
-        return isset($this->billing_setup) ? $this->billing_setup : null;
+        return $this->billing_setup;
     }
 
     public function hasBillingSetup()
@@ -2113,7 +2113,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCallView()
     {
-        return isset($this->call_view) ? $this->call_view : null;
+        return $this->call_view;
     }
 
     public function hasCallView()
@@ -2149,7 +2149,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignBudget()
     {
-        return isset($this->campaign_budget) ? $this->campaign_budget : null;
+        return $this->campaign_budget;
     }
 
     public function hasCampaignBudget()
@@ -2185,7 +2185,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaign()
     {
-        return isset($this->campaign) ? $this->campaign : null;
+        return $this->campaign;
     }
 
     public function hasCampaign()
@@ -2221,7 +2221,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignAsset()
     {
-        return isset($this->campaign_asset) ? $this->campaign_asset : null;
+        return $this->campaign_asset;
     }
 
     public function hasCampaignAsset()
@@ -2257,7 +2257,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignAudienceView()
     {
-        return isset($this->campaign_audience_view) ? $this->campaign_audience_view : null;
+        return $this->campaign_audience_view;
     }
 
     public function hasCampaignAudienceView()
@@ -2293,7 +2293,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignBidModifier()
     {
-        return isset($this->campaign_bid_modifier) ? $this->campaign_bid_modifier : null;
+        return $this->campaign_bid_modifier;
     }
 
     public function hasCampaignBidModifier()
@@ -2329,7 +2329,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignCriterion()
     {
-        return isset($this->campaign_criterion) ? $this->campaign_criterion : null;
+        return $this->campaign_criterion;
     }
 
     public function hasCampaignCriterion()
@@ -2365,7 +2365,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignCriterionSimulation()
     {
-        return isset($this->campaign_criterion_simulation) ? $this->campaign_criterion_simulation : null;
+        return $this->campaign_criterion_simulation;
     }
 
     public function hasCampaignCriterionSimulation()
@@ -2401,7 +2401,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignDraft()
     {
-        return isset($this->campaign_draft) ? $this->campaign_draft : null;
+        return $this->campaign_draft;
     }
 
     public function hasCampaignDraft()
@@ -2437,7 +2437,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignExperiment()
     {
-        return isset($this->campaign_experiment) ? $this->campaign_experiment : null;
+        return $this->campaign_experiment;
     }
 
     public function hasCampaignExperiment()
@@ -2473,7 +2473,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignExtensionSetting()
     {
-        return isset($this->campaign_extension_setting) ? $this->campaign_extension_setting : null;
+        return $this->campaign_extension_setting;
     }
 
     public function hasCampaignExtensionSetting()
@@ -2509,7 +2509,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignFeed()
     {
-        return isset($this->campaign_feed) ? $this->campaign_feed : null;
+        return $this->campaign_feed;
     }
 
     public function hasCampaignFeed()
@@ -2545,7 +2545,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignLabel()
     {
-        return isset($this->campaign_label) ? $this->campaign_label : null;
+        return $this->campaign_label;
     }
 
     public function hasCampaignLabel()
@@ -2581,7 +2581,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignSharedSet()
     {
-        return isset($this->campaign_shared_set) ? $this->campaign_shared_set : null;
+        return $this->campaign_shared_set;
     }
 
     public function hasCampaignSharedSet()
@@ -2617,7 +2617,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignSimulation()
     {
-        return isset($this->campaign_simulation) ? $this->campaign_simulation : null;
+        return $this->campaign_simulation;
     }
 
     public function hasCampaignSimulation()
@@ -2653,7 +2653,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCarrierConstant()
     {
-        return isset($this->carrier_constant) ? $this->carrier_constant : null;
+        return $this->carrier_constant;
     }
 
     public function hasCarrierConstant()
@@ -2689,7 +2689,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getChangeEvent()
     {
-        return isset($this->change_event) ? $this->change_event : null;
+        return $this->change_event;
     }
 
     public function hasChangeEvent()
@@ -2725,7 +2725,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getChangeStatus()
     {
-        return isset($this->change_status) ? $this->change_status : null;
+        return $this->change_status;
     }
 
     public function hasChangeStatus()
@@ -2761,7 +2761,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCombinedAudience()
     {
-        return isset($this->combined_audience) ? $this->combined_audience : null;
+        return $this->combined_audience;
     }
 
     public function hasCombinedAudience()
@@ -2797,7 +2797,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getConversionAction()
     {
-        return isset($this->conversion_action) ? $this->conversion_action : null;
+        return $this->conversion_action;
     }
 
     public function hasConversionAction()
@@ -2833,7 +2833,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getConversionCustomVariable()
     {
-        return isset($this->conversion_custom_variable) ? $this->conversion_custom_variable : null;
+        return $this->conversion_custom_variable;
     }
 
     public function hasConversionCustomVariable()
@@ -2869,7 +2869,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getConversionValueRule()
     {
-        return isset($this->conversion_value_rule) ? $this->conversion_value_rule : null;
+        return $this->conversion_value_rule;
     }
 
     public function hasConversionValueRule()
@@ -2905,7 +2905,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getConversionValueRuleSet()
     {
-        return isset($this->conversion_value_rule_set) ? $this->conversion_value_rule_set : null;
+        return $this->conversion_value_rule_set;
     }
 
     public function hasConversionValueRuleSet()
@@ -2941,7 +2941,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getClickView()
     {
-        return isset($this->click_view) ? $this->click_view : null;
+        return $this->click_view;
     }
 
     public function hasClickView()
@@ -2977,7 +2977,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCurrencyConstant()
     {
-        return isset($this->currency_constant) ? $this->currency_constant : null;
+        return $this->currency_constant;
     }
 
     public function hasCurrencyConstant()
@@ -3013,7 +3013,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomAudience()
     {
-        return isset($this->custom_audience) ? $this->custom_audience : null;
+        return $this->custom_audience;
     }
 
     public function hasCustomAudience()
@@ -3049,7 +3049,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomInterest()
     {
-        return isset($this->custom_interest) ? $this->custom_interest : null;
+        return $this->custom_interest;
     }
 
     public function hasCustomInterest()
@@ -3085,7 +3085,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomer()
     {
-        return isset($this->customer) ? $this->customer : null;
+        return $this->customer;
     }
 
     public function hasCustomer()
@@ -3121,7 +3121,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerAsset()
     {
-        return isset($this->customer_asset) ? $this->customer_asset : null;
+        return $this->customer_asset;
     }
 
     public function hasCustomerAsset()
@@ -3157,7 +3157,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getAccessibleBiddingStrategy()
     {
-        return isset($this->accessible_bidding_strategy) ? $this->accessible_bidding_strategy : null;
+        return $this->accessible_bidding_strategy;
     }
 
     public function hasAccessibleBiddingStrategy()
@@ -3193,7 +3193,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerManagerLink()
     {
-        return isset($this->customer_manager_link) ? $this->customer_manager_link : null;
+        return $this->customer_manager_link;
     }
 
     public function hasCustomerManagerLink()
@@ -3229,7 +3229,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerClientLink()
     {
-        return isset($this->customer_client_link) ? $this->customer_client_link : null;
+        return $this->customer_client_link;
     }
 
     public function hasCustomerClientLink()
@@ -3265,7 +3265,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerClient()
     {
-        return isset($this->customer_client) ? $this->customer_client : null;
+        return $this->customer_client;
     }
 
     public function hasCustomerClient()
@@ -3301,7 +3301,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerExtensionSetting()
     {
-        return isset($this->customer_extension_setting) ? $this->customer_extension_setting : null;
+        return $this->customer_extension_setting;
     }
 
     public function hasCustomerExtensionSetting()
@@ -3337,7 +3337,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerFeed()
     {
-        return isset($this->customer_feed) ? $this->customer_feed : null;
+        return $this->customer_feed;
     }
 
     public function hasCustomerFeed()
@@ -3373,7 +3373,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerLabel()
     {
-        return isset($this->customer_label) ? $this->customer_label : null;
+        return $this->customer_label;
     }
 
     public function hasCustomerLabel()
@@ -3409,7 +3409,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerNegativeCriterion()
     {
-        return isset($this->customer_negative_criterion) ? $this->customer_negative_criterion : null;
+        return $this->customer_negative_criterion;
     }
 
     public function hasCustomerNegativeCriterion()
@@ -3445,7 +3445,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerUserAccess()
     {
-        return isset($this->customer_user_access) ? $this->customer_user_access : null;
+        return $this->customer_user_access;
     }
 
     public function hasCustomerUserAccess()
@@ -3481,7 +3481,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerUserAccessInvitation()
     {
-        return isset($this->customer_user_access_invitation) ? $this->customer_user_access_invitation : null;
+        return $this->customer_user_access_invitation;
     }
 
     public function hasCustomerUserAccessInvitation()
@@ -3517,7 +3517,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getDetailPlacementView()
     {
-        return isset($this->detail_placement_view) ? $this->detail_placement_view : null;
+        return $this->detail_placement_view;
     }
 
     public function hasDetailPlacementView()
@@ -3553,7 +3553,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getDetailedDemographic()
     {
-        return isset($this->detailed_demographic) ? $this->detailed_demographic : null;
+        return $this->detailed_demographic;
     }
 
     public function hasDetailedDemographic()
@@ -3589,7 +3589,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getDisplayKeywordView()
     {
-        return isset($this->display_keyword_view) ? $this->display_keyword_view : null;
+        return $this->display_keyword_view;
     }
 
     public function hasDisplayKeywordView()
@@ -3625,7 +3625,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getDistanceView()
     {
-        return isset($this->distance_view) ? $this->distance_view : null;
+        return $this->distance_view;
     }
 
     public function hasDistanceView()
@@ -3661,7 +3661,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getDynamicSearchAdsSearchTermView()
     {
-        return isset($this->dynamic_search_ads_search_term_view) ? $this->dynamic_search_ads_search_term_view : null;
+        return $this->dynamic_search_ads_search_term_view;
     }
 
     public function hasDynamicSearchAdsSearchTermView()
@@ -3697,7 +3697,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getExpandedLandingPageView()
     {
-        return isset($this->expanded_landing_page_view) ? $this->expanded_landing_page_view : null;
+        return $this->expanded_landing_page_view;
     }
 
     public function hasExpandedLandingPageView()
@@ -3733,7 +3733,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getExtensionFeedItem()
     {
-        return isset($this->extension_feed_item) ? $this->extension_feed_item : null;
+        return $this->extension_feed_item;
     }
 
     public function hasExtensionFeedItem()
@@ -3769,7 +3769,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeed()
     {
-        return isset($this->feed) ? $this->feed : null;
+        return $this->feed;
     }
 
     public function hasFeed()
@@ -3805,7 +3805,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItem()
     {
-        return isset($this->feed_item) ? $this->feed_item : null;
+        return $this->feed_item;
     }
 
     public function hasFeedItem()
@@ -3841,7 +3841,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItemSet()
     {
-        return isset($this->feed_item_set) ? $this->feed_item_set : null;
+        return $this->feed_item_set;
     }
 
     public function hasFeedItemSet()
@@ -3877,7 +3877,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItemSetLink()
     {
-        return isset($this->feed_item_set_link) ? $this->feed_item_set_link : null;
+        return $this->feed_item_set_link;
     }
 
     public function hasFeedItemSetLink()
@@ -3913,7 +3913,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItemTarget()
     {
-        return isset($this->feed_item_target) ? $this->feed_item_target : null;
+        return $this->feed_item_target;
     }
 
     public function hasFeedItemTarget()
@@ -3949,7 +3949,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeedMapping()
     {
-        return isset($this->feed_mapping) ? $this->feed_mapping : null;
+        return $this->feed_mapping;
     }
 
     public function hasFeedMapping()
@@ -3985,7 +3985,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getFeedPlaceholderView()
     {
-        return isset($this->feed_placeholder_view) ? $this->feed_placeholder_view : null;
+        return $this->feed_placeholder_view;
     }
 
     public function hasFeedPlaceholderView()
@@ -4021,7 +4021,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getGenderView()
     {
-        return isset($this->gender_view) ? $this->gender_view : null;
+        return $this->gender_view;
     }
 
     public function hasGenderView()
@@ -4057,7 +4057,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getGeoTargetConstant()
     {
-        return isset($this->geo_target_constant) ? $this->geo_target_constant : null;
+        return $this->geo_target_constant;
     }
 
     public function hasGeoTargetConstant()
@@ -4093,7 +4093,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getGeographicView()
     {
-        return isset($this->geographic_view) ? $this->geographic_view : null;
+        return $this->geographic_view;
     }
 
     public function hasGeographicView()
@@ -4129,7 +4129,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getGroupPlacementView()
     {
-        return isset($this->group_placement_view) ? $this->group_placement_view : null;
+        return $this->group_placement_view;
     }
 
     public function hasGroupPlacementView()
@@ -4165,7 +4165,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getHotelGroupView()
     {
-        return isset($this->hotel_group_view) ? $this->hotel_group_view : null;
+        return $this->hotel_group_view;
     }
 
     public function hasHotelGroupView()
@@ -4201,7 +4201,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getHotelPerformanceView()
     {
-        return isset($this->hotel_performance_view) ? $this->hotel_performance_view : null;
+        return $this->hotel_performance_view;
     }
 
     public function hasHotelPerformanceView()
@@ -4237,7 +4237,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getIncomeRangeView()
     {
-        return isset($this->income_range_view) ? $this->income_range_view : null;
+        return $this->income_range_view;
     }
 
     public function hasIncomeRangeView()
@@ -4273,7 +4273,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordView()
     {
-        return isset($this->keyword_view) ? $this->keyword_view : null;
+        return $this->keyword_view;
     }
 
     public function hasKeywordView()
@@ -4309,7 +4309,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlan()
     {
-        return isset($this->keyword_plan) ? $this->keyword_plan : null;
+        return $this->keyword_plan;
     }
 
     public function hasKeywordPlan()
@@ -4345,7 +4345,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlanCampaign()
     {
-        return isset($this->keyword_plan_campaign) ? $this->keyword_plan_campaign : null;
+        return $this->keyword_plan_campaign;
     }
 
     public function hasKeywordPlanCampaign()
@@ -4381,7 +4381,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlanCampaignKeyword()
     {
-        return isset($this->keyword_plan_campaign_keyword) ? $this->keyword_plan_campaign_keyword : null;
+        return $this->keyword_plan_campaign_keyword;
     }
 
     public function hasKeywordPlanCampaignKeyword()
@@ -4417,7 +4417,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlanAdGroup()
     {
-        return isset($this->keyword_plan_ad_group) ? $this->keyword_plan_ad_group : null;
+        return $this->keyword_plan_ad_group;
     }
 
     public function hasKeywordPlanAdGroup()
@@ -4453,7 +4453,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlanAdGroupKeyword()
     {
-        return isset($this->keyword_plan_ad_group_keyword) ? $this->keyword_plan_ad_group_keyword : null;
+        return $this->keyword_plan_ad_group_keyword;
     }
 
     public function hasKeywordPlanAdGroupKeyword()
@@ -4489,7 +4489,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordThemeConstant()
     {
-        return isset($this->keyword_theme_constant) ? $this->keyword_theme_constant : null;
+        return $this->keyword_theme_constant;
     }
 
     public function hasKeywordThemeConstant()
@@ -4525,7 +4525,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getLabel()
     {
-        return isset($this->label) ? $this->label : null;
+        return $this->label;
     }
 
     public function hasLabel()
@@ -4561,7 +4561,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getLandingPageView()
     {
-        return isset($this->landing_page_view) ? $this->landing_page_view : null;
+        return $this->landing_page_view;
     }
 
     public function hasLandingPageView()
@@ -4597,7 +4597,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getLanguageConstant()
     {
-        return isset($this->language_constant) ? $this->language_constant : null;
+        return $this->language_constant;
     }
 
     public function hasLanguageConstant()
@@ -4633,7 +4633,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getLocationView()
     {
-        return isset($this->location_view) ? $this->location_view : null;
+        return $this->location_view;
     }
 
     public function hasLocationView()
@@ -4669,7 +4669,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getManagedPlacementView()
     {
-        return isset($this->managed_placement_view) ? $this->managed_placement_view : null;
+        return $this->managed_placement_view;
     }
 
     public function hasManagedPlacementView()
@@ -4705,7 +4705,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getMediaFile()
     {
-        return isset($this->media_file) ? $this->media_file : null;
+        return $this->media_file;
     }
 
     public function hasMediaFile()
@@ -4741,7 +4741,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getMobileAppCategoryConstant()
     {
-        return isset($this->mobile_app_category_constant) ? $this->mobile_app_category_constant : null;
+        return $this->mobile_app_category_constant;
     }
 
     public function hasMobileAppCategoryConstant()
@@ -4777,7 +4777,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getMobileDeviceConstant()
     {
-        return isset($this->mobile_device_constant) ? $this->mobile_device_constant : null;
+        return $this->mobile_device_constant;
     }
 
     public function hasMobileDeviceConstant()
@@ -4813,7 +4813,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getOfflineUserDataJob()
     {
-        return isset($this->offline_user_data_job) ? $this->offline_user_data_job : null;
+        return $this->offline_user_data_job;
     }
 
     public function hasOfflineUserDataJob()
@@ -4849,7 +4849,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getOperatingSystemVersionConstant()
     {
-        return isset($this->operating_system_version_constant) ? $this->operating_system_version_constant : null;
+        return $this->operating_system_version_constant;
     }
 
     public function hasOperatingSystemVersionConstant()
@@ -4885,7 +4885,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getPaidOrganicSearchTermView()
     {
-        return isset($this->paid_organic_search_term_view) ? $this->paid_organic_search_term_view : null;
+        return $this->paid_organic_search_term_view;
     }
 
     public function hasPaidOrganicSearchTermView()
@@ -4921,7 +4921,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getParentalStatusView()
     {
-        return isset($this->parental_status_view) ? $this->parental_status_view : null;
+        return $this->parental_status_view;
     }
 
     public function hasParentalStatusView()
@@ -4957,7 +4957,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getProductBiddingCategoryConstant()
     {
-        return isset($this->product_bidding_category_constant) ? $this->product_bidding_category_constant : null;
+        return $this->product_bidding_category_constant;
     }
 
     public function hasProductBiddingCategoryConstant()
@@ -4993,7 +4993,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getProductGroupView()
     {
-        return isset($this->product_group_view) ? $this->product_group_view : null;
+        return $this->product_group_view;
     }
 
     public function hasProductGroupView()
@@ -5029,7 +5029,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getRecommendation()
     {
-        return isset($this->recommendation) ? $this->recommendation : null;
+        return $this->recommendation;
     }
 
     public function hasRecommendation()
@@ -5065,7 +5065,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getSearchTermView()
     {
-        return isset($this->search_term_view) ? $this->search_term_view : null;
+        return $this->search_term_view;
     }
 
     public function hasSearchTermView()
@@ -5101,7 +5101,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getSharedCriterion()
     {
-        return isset($this->shared_criterion) ? $this->shared_criterion : null;
+        return $this->shared_criterion;
     }
 
     public function hasSharedCriterion()
@@ -5137,7 +5137,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getSharedSet()
     {
-        return isset($this->shared_set) ? $this->shared_set : null;
+        return $this->shared_set;
     }
 
     public function hasSharedSet()
@@ -5173,7 +5173,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getSmartCampaignSetting()
     {
-        return isset($this->smart_campaign_setting) ? $this->smart_campaign_setting : null;
+        return $this->smart_campaign_setting;
     }
 
     public function hasSmartCampaignSetting()
@@ -5209,7 +5209,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getShoppingPerformanceView()
     {
-        return isset($this->shopping_performance_view) ? $this->shopping_performance_view : null;
+        return $this->shopping_performance_view;
     }
 
     public function hasShoppingPerformanceView()
@@ -5245,7 +5245,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getSmartCampaignSearchTermView()
     {
-        return isset($this->smart_campaign_search_term_view) ? $this->smart_campaign_search_term_view : null;
+        return $this->smart_campaign_search_term_view;
     }
 
     public function hasSmartCampaignSearchTermView()
@@ -5281,7 +5281,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getThirdPartyAppAnalyticsLink()
     {
-        return isset($this->third_party_app_analytics_link) ? $this->third_party_app_analytics_link : null;
+        return $this->third_party_app_analytics_link;
     }
 
     public function hasThirdPartyAppAnalyticsLink()
@@ -5317,7 +5317,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getTopicView()
     {
-        return isset($this->topic_view) ? $this->topic_view : null;
+        return $this->topic_view;
     }
 
     public function hasTopicView()
@@ -5353,7 +5353,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getUserInterest()
     {
-        return isset($this->user_interest) ? $this->user_interest : null;
+        return $this->user_interest;
     }
 
     public function hasUserInterest()
@@ -5389,7 +5389,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getLifeEvent()
     {
-        return isset($this->life_event) ? $this->life_event : null;
+        return $this->life_event;
     }
 
     public function hasLifeEvent()
@@ -5425,7 +5425,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getUserList()
     {
-        return isset($this->user_list) ? $this->user_list : null;
+        return $this->user_list;
     }
 
     public function hasUserList()
@@ -5461,7 +5461,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getUserLocationView()
     {
-        return isset($this->user_location_view) ? $this->user_location_view : null;
+        return $this->user_location_view;
     }
 
     public function hasUserLocationView()
@@ -5497,7 +5497,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getRemarketingAction()
     {
-        return isset($this->remarketing_action) ? $this->remarketing_action : null;
+        return $this->remarketing_action;
     }
 
     public function hasRemarketingAction()
@@ -5533,7 +5533,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getTopicConstant()
     {
-        return isset($this->topic_constant) ? $this->topic_constant : null;
+        return $this->topic_constant;
     }
 
     public function hasTopicConstant()
@@ -5569,7 +5569,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getVideo()
     {
-        return isset($this->video) ? $this->video : null;
+        return $this->video;
     }
 
     public function hasVideo()
@@ -5605,7 +5605,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getWebpageView()
     {
-        return isset($this->webpage_view) ? $this->webpage_view : null;
+        return $this->webpage_view;
     }
 
     public function hasWebpageView()
@@ -5641,7 +5641,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getMetrics()
     {
-        return isset($this->metrics) ? $this->metrics : null;
+        return $this->metrics;
     }
 
     public function hasMetrics()
@@ -5677,7 +5677,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     public function getSegments()
     {
-        return isset($this->segments) ? $this->segments : null;
+        return $this->segments;
     }
 
     public function hasSegments()

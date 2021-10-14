@@ -169,7 +169,7 @@ class ReadRowsResponse extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()
@@ -206,7 +206,7 @@ class ReadRowsResponse extends \Google\Protobuf\Internal\Message
      */
     public function getThrottleStatus()
     {
-        return isset($this->throttle_status) ? $this->throttle_status : null;
+        return $this->throttle_status;
     }
 
     public function hasThrottleStatus()

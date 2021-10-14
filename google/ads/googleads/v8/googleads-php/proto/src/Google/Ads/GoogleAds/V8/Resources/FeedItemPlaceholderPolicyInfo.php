@@ -25,7 +25,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The FeedMapping that contains the placeholder type.
      *
-     * Generated from protobuf field <code>string feed_mapping_resource_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string feed_mapping_resource_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $feed_mapping_resource_name = null;
     /**
@@ -133,7 +133,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The FeedMapping that contains the placeholder type.
      *
-     * Generated from protobuf field <code>string feed_mapping_resource_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string feed_mapping_resource_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getFeedMappingResourceName()
@@ -154,7 +154,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The FeedMapping that contains the placeholder type.
      *
-     * Generated from protobuf field <code>string feed_mapping_resource_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string feed_mapping_resource_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < snappedPoints_.size(); i++) {
       output.writeMessage(1, snappedPoints_.get(i));
     }
-    if (!getWarningMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(warningMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, warningMessage_);
     }
     unknownFields.writeTo(output);
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, snappedPoints_.get(i));
     }
-    if (!getWarningMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(warningMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, warningMessage_);
     }
     size += unknownFields.getSerializedSize();

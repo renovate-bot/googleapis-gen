@@ -100,7 +100,7 @@ class CreateMonitoredProjectRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMonitoredProject()
     {
-        return isset($this->monitored_project) ? $this->monitored_project : null;
+        return $this->monitored_project;
     }
 
     public function hasMonitoredProject()

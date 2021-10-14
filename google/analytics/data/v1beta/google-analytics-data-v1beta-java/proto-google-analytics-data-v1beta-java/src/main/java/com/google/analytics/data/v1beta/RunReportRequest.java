@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getPropertyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(property_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, property_);
     }
     for (int i = 0; i < dimensions_.size(); i++) {
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < orderBys_.size(); i++) {
       output.writeMessage(10, orderBys_.get(i));
     }
-    if (!getCurrencyCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, currencyCode_);
     }
     if (cohortSpec_ != null) {
@@ -963,7 +963,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPropertyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(property_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, property_);
     }
     for (int i = 0; i < dimensions_.size(); i++) {
@@ -1010,7 +1010,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, orderBys_.get(i));
     }
-    if (!getCurrencyCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, currencyCode_);
     }
     if (cohortSpec_ != null) {

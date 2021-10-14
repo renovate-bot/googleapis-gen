@@ -642,7 +642,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getLifecycle()
     {
-        return isset($this->lifecycle) ? $this->lifecycle : null;
+        return $this->lifecycle;
     }
 
     public function hasLifecycle()
@@ -683,7 +683,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -752,7 +752,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -869,7 +869,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getWebsite()
     {
-        return isset($this->website) ? $this->website : null;
+        return $this->website;
     }
 
     public function hasWebsite()
@@ -908,7 +908,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getVersioning()
     {
-        return isset($this->versioning) ? $this->versioning : null;
+        return $this->versioning;
     }
 
     public function hasVersioning()
@@ -945,7 +945,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getLogging()
     {
-        return isset($this->logging) ? $this->logging : null;
+        return $this->logging;
     }
 
     public function hasLogging()
@@ -982,7 +982,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getOwner()
     {
-        return isset($this->owner) ? $this->owner : null;
+        return $this->owner;
     }
 
     public function hasOwner()
@@ -1018,7 +1018,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getEncryption()
     {
-        return isset($this->encryption) ? $this->encryption : null;
+        return $this->encryption;
     }
 
     public function hasEncryption()
@@ -1054,7 +1054,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getBilling()
     {
-        return isset($this->billing) ? $this->billing : null;
+        return $this->billing;
     }
 
     public function hasBilling()
@@ -1098,7 +1098,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getRetentionPolicy()
     {
-        return isset($this->retention_policy) ? $this->retention_policy : null;
+        return $this->retention_policy;
     }
 
     public function hasRetentionPolicy()
@@ -1142,7 +1142,7 @@ class Bucket extends \Google\Protobuf\Internal\Message
      */
     public function getIamConfig()
     {
-        return isset($this->iam_config) ? $this->iam_config : null;
+        return $this->iam_config;
     }
 
     public function hasIamConfig()

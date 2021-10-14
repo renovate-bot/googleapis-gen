@@ -309,16 +309,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCloudSqlIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cloudSqlId_);
     }
     if (settings_ != null) {
       output.writeMessage(2, getSettings());
     }
-    if (!getPrivateIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, privateIp_);
     }
-    if (!getPublicIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, publicIp_);
     }
     unknownFields.writeTo(output);
@@ -330,17 +330,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCloudSqlIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cloudSqlId_);
     }
     if (settings_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getSettings());
     }
-    if (!getPrivateIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, privateIp_);
     }
-    if (!getPublicIpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, publicIp_);
     }
     size += unknownFields.getSerializedSize();

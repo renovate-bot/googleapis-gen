@@ -433,13 +433,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPublicKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, publicKey_);
     }
     if (!signature_.isEmpty()) {
       output.writeBytes(2, signature_);
     }
-    if (!getKeyIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, keyId_);
     }
     if (keyType_ != io.grafeas.v1beta1.build.BuildSignature.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
@@ -454,14 +454,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPublicKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, publicKey_);
     }
     if (!signature_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, signature_);
     }
-    if (!getKeyIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, keyId_);
     }
     if (keyType_ != io.grafeas.v1beta1.build.BuildSignature.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {

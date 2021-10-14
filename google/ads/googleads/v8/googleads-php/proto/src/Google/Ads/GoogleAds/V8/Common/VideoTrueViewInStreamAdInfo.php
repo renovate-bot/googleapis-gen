@@ -22,20 +22,20 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * final URL.
      * Required for TrueView for action campaigns, optional otherwise.
      *
-     * Generated from protobuf field <code>string action_button_label = 4;</code>
+     * Generated from protobuf field <code>optional string action_button_label = 4;</code>
      */
     protected $action_button_label = null;
     /**
      * Additional text displayed with the CTA (call-to-action) button to give
      * context and encourage clicking on the button.
      *
-     * Generated from protobuf field <code>string action_headline = 5;</code>
+     * Generated from protobuf field <code>optional string action_headline = 5;</code>
      */
     protected $action_headline = null;
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
-     * Generated from protobuf field <code>string companion_banner = 6;</code>
+     * Generated from protobuf field <code>optional string companion_banner = 6;</code>
      */
     protected $companion_banner = null;
 
@@ -66,7 +66,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * final URL.
      * Required for TrueView for action campaigns, optional otherwise.
      *
-     * Generated from protobuf field <code>string action_button_label = 4;</code>
+     * Generated from protobuf field <code>optional string action_button_label = 4;</code>
      * @return string
      */
     public function getActionButtonLabel()
@@ -89,7 +89,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * final URL.
      * Required for TrueView for action campaigns, optional otherwise.
      *
-     * Generated from protobuf field <code>string action_button_label = 4;</code>
+     * Generated from protobuf field <code>optional string action_button_label = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -105,7 +105,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * Additional text displayed with the CTA (call-to-action) button to give
      * context and encourage clicking on the button.
      *
-     * Generated from protobuf field <code>string action_headline = 5;</code>
+     * Generated from protobuf field <code>optional string action_headline = 5;</code>
      * @return string
      */
     public function getActionHeadline()
@@ -127,7 +127,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * Additional text displayed with the CTA (call-to-action) button to give
      * context and encourage clicking on the button.
      *
-     * Generated from protobuf field <code>string action_headline = 5;</code>
+     * Generated from protobuf field <code>optional string action_headline = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -142,7 +142,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
-     * Generated from protobuf field <code>string companion_banner = 6;</code>
+     * Generated from protobuf field <code>optional string companion_banner = 6;</code>
      * @return string
      */
     public function getCompanionBanner()
@@ -163,7 +163,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
-     * Generated from protobuf field <code>string companion_banner = 6;</code>
+     * Generated from protobuf field <code>optional string companion_banner = 6;</code>
      * @param string $var
      * @return $this
      */

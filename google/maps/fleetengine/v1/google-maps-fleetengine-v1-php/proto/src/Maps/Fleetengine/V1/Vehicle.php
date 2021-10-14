@@ -410,7 +410,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getLastLocation()
     {
-        return isset($this->last_location) ? $this->last_location : null;
+        return $this->last_location;
     }
 
     public function hasLastLocation()
@@ -531,7 +531,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getVehicleType()
     {
-        return isset($this->vehicle_type) ? $this->vehicle_type : null;
+        return $this->vehicle_type;
     }
 
     public function hasVehicleType()
@@ -568,7 +568,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getLicensePlate()
     {
-        return isset($this->license_plate) ? $this->license_plate : null;
+        return $this->license_plate;
     }
 
     public function hasLicensePlate()
@@ -671,7 +671,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentRouteSegmentVersion()
     {
-        return isset($this->current_route_segment_version) ? $this->current_route_segment_version : null;
+        return $this->current_route_segment_version;
     }
 
     public function hasCurrentRouteSegmentVersion()
@@ -715,7 +715,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentRouteSegmentEndPoint()
     {
-        return isset($this->current_route_segment_end_point) ? $this->current_route_segment_end_point : null;
+        return $this->current_route_segment_end_point;
     }
 
     public function hasCurrentRouteSegmentEndPoint()
@@ -762,7 +762,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingDistanceMeters()
     {
-        return isset($this->remaining_distance_meters) ? $this->remaining_distance_meters : null;
+        return $this->remaining_distance_meters;
     }
 
     public function hasRemainingDistanceMeters()
@@ -849,7 +849,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getEtaToFirstWaypoint()
     {
-        return isset($this->eta_to_first_waypoint) ? $this->eta_to_first_waypoint : null;
+        return $this->eta_to_first_waypoint;
     }
 
     public function hasEtaToFirstWaypoint()
@@ -901,7 +901,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingTimeSeconds()
     {
-        return isset($this->remaining_time_seconds) ? $this->remaining_time_seconds : null;
+        return $this->remaining_time_seconds;
     }
 
     public function hasRemainingTimeSeconds()
@@ -1022,7 +1022,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getWaypointsVersion()
     {
-        return isset($this->waypoints_version) ? $this->waypoints_version : null;
+        return $this->waypoints_version;
     }
 
     public function hasWaypointsVersion()
@@ -1119,7 +1119,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceSettings()
     {
-        return isset($this->device_settings) ? $this->device_settings : null;
+        return $this->device_settings;
     }
 
     public function hasDeviceSettings()

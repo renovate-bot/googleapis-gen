@@ -21,7 +21,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * party app analytics link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>int64 app_analytics_provider_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 app_analytics_provider_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $app_analytics_provider_id = null;
     /**
@@ -37,7 +37,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * party app analytics link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>string app_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string app_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $app_id = null;
     /**
@@ -91,7 +91,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * party app analytics link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>int64 app_analytics_provider_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 app_analytics_provider_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getAppAnalyticsProviderId()
@@ -115,7 +115,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * party app analytics link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>int64 app_analytics_provider_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 app_analytics_provider_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * party app analytics link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>string app_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string app_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getAppId()
@@ -171,7 +171,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * party app analytics link. It is unable to be modified after the creation of
      * the link.
      *
-     * Generated from protobuf field <code>string app_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string app_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

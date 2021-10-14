@@ -62,7 +62,7 @@ class CommandTask extends \Google\Protobuf\Internal\Message
      */
     public function getInputs()
     {
-        return isset($this->inputs) ? $this->inputs : null;
+        return $this->inputs;
     }
 
     public function hasInputs()
@@ -98,7 +98,7 @@ class CommandTask extends \Google\Protobuf\Internal\Message
      */
     public function getExpectedOutputs()
     {
-        return isset($this->expected_outputs) ? $this->expected_outputs : null;
+        return $this->expected_outputs;
     }
 
     public function hasExpectedOutputs()
@@ -134,7 +134,7 @@ class CommandTask extends \Google\Protobuf\Internal\Message
      */
     public function getTimeouts()
     {
-        return isset($this->timeouts) ? $this->timeouts : null;
+        return $this->timeouts;
     }
 
     public function hasTimeouts()

@@ -219,7 +219,7 @@ class TestMatrix extends \Google\Protobuf\Internal\Message
      */
     public function getClientInfo()
     {
-        return isset($this->client_info) ? $this->client_info : null;
+        return $this->client_info;
     }
 
     public function hasClientInfo()
@@ -255,7 +255,7 @@ class TestMatrix extends \Google\Protobuf\Internal\Message
      */
     public function getTestSpecification()
     {
-        return isset($this->test_specification) ? $this->test_specification : null;
+        return $this->test_specification;
     }
 
     public function hasTestSpecification()
@@ -291,7 +291,7 @@ class TestMatrix extends \Google\Protobuf\Internal\Message
      */
     public function getEnvironmentMatrix()
     {
-        return isset($this->environment_matrix) ? $this->environment_matrix : null;
+        return $this->environment_matrix;
     }
 
     public function hasEnvironmentMatrix()
@@ -355,7 +355,7 @@ class TestMatrix extends \Google\Protobuf\Internal\Message
      */
     public function getResultStorage()
     {
-        return isset($this->result_storage) ? $this->result_storage : null;
+        return $this->result_storage;
     }
 
     public function hasResultStorage()
@@ -417,7 +417,7 @@ class TestMatrix extends \Google\Protobuf\Internal\Message
      */
     public function getTimestamp()
     {
-        return isset($this->timestamp) ? $this->timestamp : null;
+        return $this->timestamp;
     }
 
     public function hasTimestamp()

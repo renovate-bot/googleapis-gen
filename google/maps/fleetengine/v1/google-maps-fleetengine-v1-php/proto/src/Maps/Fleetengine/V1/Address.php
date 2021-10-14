@@ -45,7 +45,7 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     public function getFormattedAddress()
     {
-        return isset($this->formatted_address) ? $this->formatted_address : null;
+        return $this->formatted_address;
     }
 
     public function hasFormattedAddress()

@@ -327,7 +327,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < resourceNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceNames_.getRaw(i));
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
     }
     if (bufferWindow_ != null) {
@@ -350,7 +350,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getResourceNamesList().size();
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
     }
     if (bufferWindow_ != null) {

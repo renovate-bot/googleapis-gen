@@ -22,7 +22,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
     /**
      * The IP address of this IP block.
      *
-     * Generated from protobuf field <code>string ip_address = 2;</code>
+     * Generated from protobuf field <code>optional string ip_address = 2;</code>
      */
     protected $ip_address = null;
 
@@ -44,7 +44,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
     /**
      * The IP address of this IP block.
      *
-     * Generated from protobuf field <code>string ip_address = 2;</code>
+     * Generated from protobuf field <code>optional string ip_address = 2;</code>
      * @return string
      */
     public function getIpAddress()
@@ -65,7 +65,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
     /**
      * The IP address of this IP block.
      *
-     * Generated from protobuf field <code>string ip_address = 2;</code>
+     * Generated from protobuf field <code>optional string ip_address = 2;</code>
      * @param string $var
      * @return $this
      */

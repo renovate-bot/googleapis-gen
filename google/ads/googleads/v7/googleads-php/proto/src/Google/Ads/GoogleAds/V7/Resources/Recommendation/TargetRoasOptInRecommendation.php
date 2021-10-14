@@ -19,7 +19,7 @@ class TargetRoasOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommended target ROAS (revenue per unit of spend).
      * The value is between 0.01 and 1000.0, inclusive.
      *
-     * Generated from protobuf field <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_target_roas = null;
     /**
@@ -28,7 +28,7 @@ class TargetRoasOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      *
-     * Generated from protobuf field <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $required_campaign_budget_amount_micros = null;
 
@@ -57,7 +57,7 @@ class TargetRoasOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommended target ROAS (revenue per unit of spend).
      * The value is between 0.01 and 1000.0, inclusive.
      *
-     * Generated from protobuf field <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getRecommendedTargetRoas()
@@ -79,7 +79,7 @@ class TargetRoasOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommended target ROAS (revenue per unit of spend).
      * The value is between 0.01 and 1000.0, inclusive.
      *
-     * Generated from protobuf field <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */
@@ -97,7 +97,7 @@ class TargetRoasOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      *
-     * Generated from protobuf field <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRequiredCampaignBudgetAmountMicros()
@@ -121,7 +121,7 @@ class TargetRoasOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      *
-     * Generated from protobuf field <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

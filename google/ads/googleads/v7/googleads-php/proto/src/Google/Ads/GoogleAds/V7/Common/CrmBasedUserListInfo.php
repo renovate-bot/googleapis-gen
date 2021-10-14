@@ -27,7 +27,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * Required when creating CrmBasedUserList for uploading mobile advertising
      * IDs.
      *
-     * Generated from protobuf field <code>string app_id = 4;</code>
+     * Generated from protobuf field <code>optional string app_id = 4;</code>
      */
     protected $app_id = null;
     /**
@@ -89,7 +89,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * Required when creating CrmBasedUserList for uploading mobile advertising
      * IDs.
      *
-     * Generated from protobuf field <code>string app_id = 4;</code>
+     * Generated from protobuf field <code>optional string app_id = 4;</code>
      * @return string
      */
     public function getAppId()
@@ -119,7 +119,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * Required when creating CrmBasedUserList for uploading mobile advertising
      * IDs.
      *
-     * Generated from protobuf field <code>string app_id = 4;</code>
+     * Generated from protobuf field <code>optional string app_id = 4;</code>
      * @param string $var
      * @return $this
      */

@@ -42,7 +42,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action.
      *
-     * Generated from protobuf field <code>string conversion_action = 113;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 113;</code>
      */
     protected $conversion_action = null;
     /**
@@ -54,7 +54,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Conversion action name.
      *
-     * Generated from protobuf field <code>string conversion_action_name = 114;</code>
+     * Generated from protobuf field <code>optional string conversion_action_name = 114;</code>
      */
     protected $conversion_action_name = null;
     /**
@@ -64,7 +64,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * now and the data as originally stated. Summing the two together results
      * post-adjustment data.
      *
-     * Generated from protobuf field <code>bool conversion_adjustment = 115;</code>
+     * Generated from protobuf field <code>optional bool conversion_adjustment = 115;</code>
      */
     protected $conversion_adjustment = null;
     /**
@@ -91,7 +91,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Date to which metrics apply.
      * yyyy-MM-dd format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>string date = 79;</code>
+     * Generated from protobuf field <code>optional string date = 79;</code>
      */
     protected $date = null;
     /**
@@ -115,92 +115,92 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents an airport.
      *
-     * Generated from protobuf field <code>string geo_target_airport = 116;</code>
+     * Generated from protobuf field <code>optional string geo_target_airport = 116;</code>
      */
     protected $geo_target_airport = null;
     /**
      * Resource name of the geo target constant that represents a canton.
      *
-     * Generated from protobuf field <code>string geo_target_canton = 117;</code>
+     * Generated from protobuf field <code>optional string geo_target_canton = 117;</code>
      */
     protected $geo_target_canton = null;
     /**
      * Resource name of the geo target constant that represents a city.
      *
-     * Generated from protobuf field <code>string geo_target_city = 118;</code>
+     * Generated from protobuf field <code>optional string geo_target_city = 118;</code>
      */
     protected $geo_target_city = null;
     /**
      * Resource name of the geo target constant that represents a country.
      *
-     * Generated from protobuf field <code>string geo_target_country = 119;</code>
+     * Generated from protobuf field <code>optional string geo_target_country = 119;</code>
      */
     protected $geo_target_country = null;
     /**
      * Resource name of the geo target constant that represents a county.
      *
-     * Generated from protobuf field <code>string geo_target_county = 120;</code>
+     * Generated from protobuf field <code>optional string geo_target_county = 120;</code>
      */
     protected $geo_target_county = null;
     /**
      * Resource name of the geo target constant that represents a district.
      *
-     * Generated from protobuf field <code>string geo_target_district = 121;</code>
+     * Generated from protobuf field <code>optional string geo_target_district = 121;</code>
      */
     protected $geo_target_district = null;
     /**
      * Resource name of the geo target constant that represents a metro.
      *
-     * Generated from protobuf field <code>string geo_target_metro = 122;</code>
+     * Generated from protobuf field <code>optional string geo_target_metro = 122;</code>
      */
     protected $geo_target_metro = null;
     /**
      * Resource name of the geo target constant that represents the most
      * specific location.
      *
-     * Generated from protobuf field <code>string geo_target_most_specific_location = 123;</code>
+     * Generated from protobuf field <code>optional string geo_target_most_specific_location = 123;</code>
      */
     protected $geo_target_most_specific_location = null;
     /**
      * Resource name of the geo target constant that represents a postal code.
      *
-     * Generated from protobuf field <code>string geo_target_postal_code = 124;</code>
+     * Generated from protobuf field <code>optional string geo_target_postal_code = 124;</code>
      */
     protected $geo_target_postal_code = null;
     /**
      * Resource name of the geo target constant that represents a province.
      *
-     * Generated from protobuf field <code>string geo_target_province = 125;</code>
+     * Generated from protobuf field <code>optional string geo_target_province = 125;</code>
      */
     protected $geo_target_province = null;
     /**
      * Resource name of the geo target constant that represents a region.
      *
-     * Generated from protobuf field <code>string geo_target_region = 126;</code>
+     * Generated from protobuf field <code>optional string geo_target_region = 126;</code>
      */
     protected $geo_target_region = null;
     /**
      * Resource name of the geo target constant that represents a state.
      *
-     * Generated from protobuf field <code>string geo_target_state = 127;</code>
+     * Generated from protobuf field <code>optional string geo_target_state = 127;</code>
      */
     protected $geo_target_state = null;
     /**
      * Hotel booking window in days.
      *
-     * Generated from protobuf field <code>int64 hotel_booking_window_days = 135;</code>
+     * Generated from protobuf field <code>optional int64 hotel_booking_window_days = 135;</code>
      */
     protected $hotel_booking_window_days = null;
     /**
      * Hotel center ID.
      *
-     * Generated from protobuf field <code>int64 hotel_center_id = 80;</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 80;</code>
      */
     protected $hotel_center_id = null;
     /**
      * Hotel check-in date. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string hotel_check_in_date = 81;</code>
+     * Generated from protobuf field <code>optional string hotel_check_in_date = 81;</code>
      */
     protected $hotel_check_in_date = null;
     /**
@@ -212,19 +212,19 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel city.
      *
-     * Generated from protobuf field <code>string hotel_city = 82;</code>
+     * Generated from protobuf field <code>optional string hotel_city = 82;</code>
      */
     protected $hotel_city = null;
     /**
      * Hotel class.
      *
-     * Generated from protobuf field <code>int32 hotel_class = 83;</code>
+     * Generated from protobuf field <code>optional int32 hotel_class = 83;</code>
      */
     protected $hotel_class = null;
     /**
      * Hotel country.
      *
-     * Generated from protobuf field <code>string hotel_country = 84;</code>
+     * Generated from protobuf field <code>optional string hotel_country = 84;</code>
      */
     protected $hotel_country = null;
     /**
@@ -236,13 +236,13 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel length of stay.
      *
-     * Generated from protobuf field <code>int32 hotel_length_of_stay = 85;</code>
+     * Generated from protobuf field <code>optional int32 hotel_length_of_stay = 85;</code>
      */
     protected $hotel_length_of_stay = null;
     /**
      * Hotel rate rule ID.
      *
-     * Generated from protobuf field <code>string hotel_rate_rule_id = 86;</code>
+     * Generated from protobuf field <code>optional string hotel_rate_rule_id = 86;</code>
      */
     protected $hotel_rate_rule_id = null;
     /**
@@ -260,13 +260,13 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel state.
      *
-     * Generated from protobuf field <code>string hotel_state = 87;</code>
+     * Generated from protobuf field <code>optional string hotel_state = 87;</code>
      */
     protected $hotel_state = null;
     /**
      * Hour of day as a number between 0 and 23, inclusive.
      *
-     * Generated from protobuf field <code>int32 hour = 88;</code>
+     * Generated from protobuf field <code>optional int32 hour = 88;</code>
      */
     protected $hour = null;
     /**
@@ -274,7 +274,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Indicates whether the interaction metrics occurred on the feed item itself
      * or a different extension or ad unit.
      *
-     * Generated from protobuf field <code>bool interaction_on_this_extension = 89;</code>
+     * Generated from protobuf field <code>optional bool interaction_on_this_extension = 89;</code>
      */
     protected $interaction_on_this_extension = null;
     /**
@@ -287,7 +287,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Month as represented by the date of the first day of a month. Formatted as
      * yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string month = 90;</code>
+     * Generated from protobuf field <code>optional string month = 90;</code>
      */
     protected $month = null;
     /**
@@ -299,7 +299,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Partner hotel ID.
      *
-     * Generated from protobuf field <code>string partner_hotel_id = 91;</code>
+     * Generated from protobuf field <code>optional string partner_hotel_id = 91;</code>
      */
     protected $partner_hotel_id = null;
     /**
@@ -311,43 +311,43 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Aggregator ID of the product.
      *
-     * Generated from protobuf field <code>int64 product_aggregator_id = 132;</code>
+     * Generated from protobuf field <code>optional int64 product_aggregator_id = 132;</code>
      */
     protected $product_aggregator_id = null;
     /**
      * Bidding category (level 1) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level1 = 92;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level1 = 92;</code>
      */
     protected $product_bidding_category_level1 = null;
     /**
      * Bidding category (level 2) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level2 = 93;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level2 = 93;</code>
      */
     protected $product_bidding_category_level2 = null;
     /**
      * Bidding category (level 3) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level3 = 94;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level3 = 94;</code>
      */
     protected $product_bidding_category_level3 = null;
     /**
      * Bidding category (level 4) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level4 = 95;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level4 = 95;</code>
      */
     protected $product_bidding_category_level4 = null;
     /**
      * Bidding category (level 5) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level5 = 96;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level5 = 96;</code>
      */
     protected $product_bidding_category_level5 = null;
     /**
      * Brand of the product.
      *
-     * Generated from protobuf field <code>string product_brand = 97;</code>
+     * Generated from protobuf field <code>optional string product_brand = 97;</code>
      */
     protected $product_brand = null;
     /**
@@ -372,97 +372,97 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant for the country of sale of the
      * product.
      *
-     * Generated from protobuf field <code>string product_country = 98;</code>
+     * Generated from protobuf field <code>optional string product_country = 98;</code>
      */
     protected $product_country = null;
     /**
      * Custom attribute 0 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute0 = 99;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute0 = 99;</code>
      */
     protected $product_custom_attribute0 = null;
     /**
      * Custom attribute 1 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute1 = 100;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute1 = 100;</code>
      */
     protected $product_custom_attribute1 = null;
     /**
      * Custom attribute 2 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute2 = 101;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute2 = 101;</code>
      */
     protected $product_custom_attribute2 = null;
     /**
      * Custom attribute 3 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute3 = 102;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute3 = 102;</code>
      */
     protected $product_custom_attribute3 = null;
     /**
      * Custom attribute 4 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute4 = 103;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute4 = 103;</code>
      */
     protected $product_custom_attribute4 = null;
     /**
      * Item ID of the product.
      *
-     * Generated from protobuf field <code>string product_item_id = 104;</code>
+     * Generated from protobuf field <code>optional string product_item_id = 104;</code>
      */
     protected $product_item_id = null;
     /**
      * Resource name of the language constant for the language of the product.
      *
-     * Generated from protobuf field <code>string product_language = 105;</code>
+     * Generated from protobuf field <code>optional string product_language = 105;</code>
      */
     protected $product_language = null;
     /**
      * Merchant ID of the product.
      *
-     * Generated from protobuf field <code>int64 product_merchant_id = 133;</code>
+     * Generated from protobuf field <code>optional int64 product_merchant_id = 133;</code>
      */
     protected $product_merchant_id = null;
     /**
      * Store ID of the product.
      *
-     * Generated from protobuf field <code>string product_store_id = 106;</code>
+     * Generated from protobuf field <code>optional string product_store_id = 106;</code>
      */
     protected $product_store_id = null;
     /**
      * Title of the product.
      *
-     * Generated from protobuf field <code>string product_title = 107;</code>
+     * Generated from protobuf field <code>optional string product_title = 107;</code>
      */
     protected $product_title = null;
     /**
      * Type (level 1) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l1 = 108;</code>
+     * Generated from protobuf field <code>optional string product_type_l1 = 108;</code>
      */
     protected $product_type_l1 = null;
     /**
      * Type (level 2) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l2 = 109;</code>
+     * Generated from protobuf field <code>optional string product_type_l2 = 109;</code>
      */
     protected $product_type_l2 = null;
     /**
      * Type (level 3) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l3 = 110;</code>
+     * Generated from protobuf field <code>optional string product_type_l3 = 110;</code>
      */
     protected $product_type_l3 = null;
     /**
      * Type (level 4) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l4 = 111;</code>
+     * Generated from protobuf field <code>optional string product_type_l4 = 111;</code>
      */
     protected $product_type_l4 = null;
     /**
      * Type (level 5) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l5 = 112;</code>
+     * Generated from protobuf field <code>optional string product_type_l5 = 112;</code>
      */
     protected $product_type_l5 = null;
     /**
@@ -470,7 +470,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Uses the calendar year for quarters, e.g., the second quarter of 2018
      * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string quarter = 128;</code>
+     * Generated from protobuf field <code>optional string quarter = 128;</code>
      */
     protected $quarter = null;
     /**
@@ -512,27 +512,27 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the ad group criterion that represents webpage criterion.
      *
-     * Generated from protobuf field <code>string webpage = 129;</code>
+     * Generated from protobuf field <code>optional string webpage = 129;</code>
      */
     protected $webpage = null;
     /**
      * Week as defined as Monday through Sunday, and represented by the date of
      * Monday. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string week = 130;</code>
+     * Generated from protobuf field <code>optional string week = 130;</code>
      */
     protected $week = null;
     /**
      * Year, formatted as yyyy.
      *
-     * Generated from protobuf field <code>int32 year = 131;</code>
+     * Generated from protobuf field <code>optional int32 year = 131;</code>
      */
     protected $year = null;
     /**
      * iOS Store Kit Ad Network conversion value.
      * Null value means this segment is not applicable, e.g. non-iOS campaign.
      *
-     * Generated from protobuf field <code>int64 sk_ad_network_conversion_value = 137;</code>
+     * Generated from protobuf field <code>optional int64 sk_ad_network_conversion_value = 137;</code>
      */
     protected $sk_ad_network_conversion_value = null;
     /**
@@ -546,7 +546,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * is false, it means the interactions is not on this specific asset but on
      * other parts of the served ad this asset is served with.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.common.AssetInteractionTarget asset_interaction_target = 139;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      */
     protected $asset_interaction_target = null;
 
@@ -821,7 +821,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     public function getBudgetCampaignAssociationStatus()
     {
-        return isset($this->budget_campaign_association_status) ? $this->budget_campaign_association_status : null;
+        return $this->budget_campaign_association_status;
     }
 
     public function hasBudgetCampaignAssociationStatus()
@@ -878,7 +878,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action.
      *
-     * Generated from protobuf field <code>string conversion_action = 113;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 113;</code>
      * @return string
      */
     public function getConversionAction()
@@ -899,7 +899,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action.
      *
-     * Generated from protobuf field <code>string conversion_action = 113;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 113;</code>
      * @param string $var
      * @return $this
      */
@@ -940,7 +940,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Conversion action name.
      *
-     * Generated from protobuf field <code>string conversion_action_name = 114;</code>
+     * Generated from protobuf field <code>optional string conversion_action_name = 114;</code>
      * @return string
      */
     public function getConversionActionName()
@@ -961,7 +961,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Conversion action name.
      *
-     * Generated from protobuf field <code>string conversion_action_name = 114;</code>
+     * Generated from protobuf field <code>optional string conversion_action_name = 114;</code>
      * @param string $var
      * @return $this
      */
@@ -980,7 +980,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * now and the data as originally stated. Summing the two together results
      * post-adjustment data.
      *
-     * Generated from protobuf field <code>bool conversion_adjustment = 115;</code>
+     * Generated from protobuf field <code>optional bool conversion_adjustment = 115;</code>
      * @return bool
      */
     public function getConversionAdjustment()
@@ -1005,7 +1005,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * now and the data as originally stated. Summing the two together results
      * post-adjustment data.
      *
-     * Generated from protobuf field <code>bool conversion_adjustment = 115;</code>
+     * Generated from protobuf field <code>optional bool conversion_adjustment = 115;</code>
      * @param bool $var
      * @return $this
      */
@@ -1103,7 +1103,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Date to which metrics apply.
      * yyyy-MM-dd format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>string date = 79;</code>
+     * Generated from protobuf field <code>optional string date = 79;</code>
      * @return string
      */
     public function getDate()
@@ -1125,7 +1125,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Date to which metrics apply.
      * yyyy-MM-dd format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>string date = 79;</code>
+     * Generated from protobuf field <code>optional string date = 79;</code>
      * @param string $var
      * @return $this
      */
@@ -1218,7 +1218,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents an airport.
      *
-     * Generated from protobuf field <code>string geo_target_airport = 116;</code>
+     * Generated from protobuf field <code>optional string geo_target_airport = 116;</code>
      * @return string
      */
     public function getGeoTargetAirport()
@@ -1239,7 +1239,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents an airport.
      *
-     * Generated from protobuf field <code>string geo_target_airport = 116;</code>
+     * Generated from protobuf field <code>optional string geo_target_airport = 116;</code>
      * @param string $var
      * @return $this
      */
@@ -1254,7 +1254,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a canton.
      *
-     * Generated from protobuf field <code>string geo_target_canton = 117;</code>
+     * Generated from protobuf field <code>optional string geo_target_canton = 117;</code>
      * @return string
      */
     public function getGeoTargetCanton()
@@ -1275,7 +1275,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a canton.
      *
-     * Generated from protobuf field <code>string geo_target_canton = 117;</code>
+     * Generated from protobuf field <code>optional string geo_target_canton = 117;</code>
      * @param string $var
      * @return $this
      */
@@ -1290,7 +1290,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a city.
      *
-     * Generated from protobuf field <code>string geo_target_city = 118;</code>
+     * Generated from protobuf field <code>optional string geo_target_city = 118;</code>
      * @return string
      */
     public function getGeoTargetCity()
@@ -1311,7 +1311,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a city.
      *
-     * Generated from protobuf field <code>string geo_target_city = 118;</code>
+     * Generated from protobuf field <code>optional string geo_target_city = 118;</code>
      * @param string $var
      * @return $this
      */
@@ -1326,7 +1326,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a country.
      *
-     * Generated from protobuf field <code>string geo_target_country = 119;</code>
+     * Generated from protobuf field <code>optional string geo_target_country = 119;</code>
      * @return string
      */
     public function getGeoTargetCountry()
@@ -1347,7 +1347,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a country.
      *
-     * Generated from protobuf field <code>string geo_target_country = 119;</code>
+     * Generated from protobuf field <code>optional string geo_target_country = 119;</code>
      * @param string $var
      * @return $this
      */
@@ -1362,7 +1362,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a county.
      *
-     * Generated from protobuf field <code>string geo_target_county = 120;</code>
+     * Generated from protobuf field <code>optional string geo_target_county = 120;</code>
      * @return string
      */
     public function getGeoTargetCounty()
@@ -1383,7 +1383,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a county.
      *
-     * Generated from protobuf field <code>string geo_target_county = 120;</code>
+     * Generated from protobuf field <code>optional string geo_target_county = 120;</code>
      * @param string $var
      * @return $this
      */
@@ -1398,7 +1398,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a district.
      *
-     * Generated from protobuf field <code>string geo_target_district = 121;</code>
+     * Generated from protobuf field <code>optional string geo_target_district = 121;</code>
      * @return string
      */
     public function getGeoTargetDistrict()
@@ -1419,7 +1419,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a district.
      *
-     * Generated from protobuf field <code>string geo_target_district = 121;</code>
+     * Generated from protobuf field <code>optional string geo_target_district = 121;</code>
      * @param string $var
      * @return $this
      */
@@ -1434,7 +1434,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a metro.
      *
-     * Generated from protobuf field <code>string geo_target_metro = 122;</code>
+     * Generated from protobuf field <code>optional string geo_target_metro = 122;</code>
      * @return string
      */
     public function getGeoTargetMetro()
@@ -1455,7 +1455,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a metro.
      *
-     * Generated from protobuf field <code>string geo_target_metro = 122;</code>
+     * Generated from protobuf field <code>optional string geo_target_metro = 122;</code>
      * @param string $var
      * @return $this
      */
@@ -1471,7 +1471,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents the most
      * specific location.
      *
-     * Generated from protobuf field <code>string geo_target_most_specific_location = 123;</code>
+     * Generated from protobuf field <code>optional string geo_target_most_specific_location = 123;</code>
      * @return string
      */
     public function getGeoTargetMostSpecificLocation()
@@ -1493,7 +1493,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents the most
      * specific location.
      *
-     * Generated from protobuf field <code>string geo_target_most_specific_location = 123;</code>
+     * Generated from protobuf field <code>optional string geo_target_most_specific_location = 123;</code>
      * @param string $var
      * @return $this
      */
@@ -1508,7 +1508,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a postal code.
      *
-     * Generated from protobuf field <code>string geo_target_postal_code = 124;</code>
+     * Generated from protobuf field <code>optional string geo_target_postal_code = 124;</code>
      * @return string
      */
     public function getGeoTargetPostalCode()
@@ -1529,7 +1529,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a postal code.
      *
-     * Generated from protobuf field <code>string geo_target_postal_code = 124;</code>
+     * Generated from protobuf field <code>optional string geo_target_postal_code = 124;</code>
      * @param string $var
      * @return $this
      */
@@ -1544,7 +1544,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a province.
      *
-     * Generated from protobuf field <code>string geo_target_province = 125;</code>
+     * Generated from protobuf field <code>optional string geo_target_province = 125;</code>
      * @return string
      */
     public function getGeoTargetProvince()
@@ -1565,7 +1565,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a province.
      *
-     * Generated from protobuf field <code>string geo_target_province = 125;</code>
+     * Generated from protobuf field <code>optional string geo_target_province = 125;</code>
      * @param string $var
      * @return $this
      */
@@ -1580,7 +1580,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a region.
      *
-     * Generated from protobuf field <code>string geo_target_region = 126;</code>
+     * Generated from protobuf field <code>optional string geo_target_region = 126;</code>
      * @return string
      */
     public function getGeoTargetRegion()
@@ -1601,7 +1601,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a region.
      *
-     * Generated from protobuf field <code>string geo_target_region = 126;</code>
+     * Generated from protobuf field <code>optional string geo_target_region = 126;</code>
      * @param string $var
      * @return $this
      */
@@ -1616,7 +1616,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a state.
      *
-     * Generated from protobuf field <code>string geo_target_state = 127;</code>
+     * Generated from protobuf field <code>optional string geo_target_state = 127;</code>
      * @return string
      */
     public function getGeoTargetState()
@@ -1637,7 +1637,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the geo target constant that represents a state.
      *
-     * Generated from protobuf field <code>string geo_target_state = 127;</code>
+     * Generated from protobuf field <code>optional string geo_target_state = 127;</code>
      * @param string $var
      * @return $this
      */
@@ -1652,7 +1652,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel booking window in days.
      *
-     * Generated from protobuf field <code>int64 hotel_booking_window_days = 135;</code>
+     * Generated from protobuf field <code>optional int64 hotel_booking_window_days = 135;</code>
      * @return int|string
      */
     public function getHotelBookingWindowDays()
@@ -1673,7 +1673,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel booking window in days.
      *
-     * Generated from protobuf field <code>int64 hotel_booking_window_days = 135;</code>
+     * Generated from protobuf field <code>optional int64 hotel_booking_window_days = 135;</code>
      * @param int|string $var
      * @return $this
      */
@@ -1688,7 +1688,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel center ID.
      *
-     * Generated from protobuf field <code>int64 hotel_center_id = 80;</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 80;</code>
      * @return int|string
      */
     public function getHotelCenterId()
@@ -1709,7 +1709,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel center ID.
      *
-     * Generated from protobuf field <code>int64 hotel_center_id = 80;</code>
+     * Generated from protobuf field <code>optional int64 hotel_center_id = 80;</code>
      * @param int|string $var
      * @return $this
      */
@@ -1724,7 +1724,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel check-in date. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string hotel_check_in_date = 81;</code>
+     * Generated from protobuf field <code>optional string hotel_check_in_date = 81;</code>
      * @return string
      */
     public function getHotelCheckInDate()
@@ -1745,7 +1745,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel check-in date. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string hotel_check_in_date = 81;</code>
+     * Generated from protobuf field <code>optional string hotel_check_in_date = 81;</code>
      * @param string $var
      * @return $this
      */
@@ -1786,7 +1786,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel city.
      *
-     * Generated from protobuf field <code>string hotel_city = 82;</code>
+     * Generated from protobuf field <code>optional string hotel_city = 82;</code>
      * @return string
      */
     public function getHotelCity()
@@ -1807,7 +1807,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel city.
      *
-     * Generated from protobuf field <code>string hotel_city = 82;</code>
+     * Generated from protobuf field <code>optional string hotel_city = 82;</code>
      * @param string $var
      * @return $this
      */
@@ -1822,7 +1822,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel class.
      *
-     * Generated from protobuf field <code>int32 hotel_class = 83;</code>
+     * Generated from protobuf field <code>optional int32 hotel_class = 83;</code>
      * @return int
      */
     public function getHotelClass()
@@ -1843,7 +1843,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel class.
      *
-     * Generated from protobuf field <code>int32 hotel_class = 83;</code>
+     * Generated from protobuf field <code>optional int32 hotel_class = 83;</code>
      * @param int $var
      * @return $this
      */
@@ -1858,7 +1858,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel country.
      *
-     * Generated from protobuf field <code>string hotel_country = 84;</code>
+     * Generated from protobuf field <code>optional string hotel_country = 84;</code>
      * @return string
      */
     public function getHotelCountry()
@@ -1879,7 +1879,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel country.
      *
-     * Generated from protobuf field <code>string hotel_country = 84;</code>
+     * Generated from protobuf field <code>optional string hotel_country = 84;</code>
      * @param string $var
      * @return $this
      */
@@ -1920,7 +1920,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel length of stay.
      *
-     * Generated from protobuf field <code>int32 hotel_length_of_stay = 85;</code>
+     * Generated from protobuf field <code>optional int32 hotel_length_of_stay = 85;</code>
      * @return int
      */
     public function getHotelLengthOfStay()
@@ -1941,7 +1941,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel length of stay.
      *
-     * Generated from protobuf field <code>int32 hotel_length_of_stay = 85;</code>
+     * Generated from protobuf field <code>optional int32 hotel_length_of_stay = 85;</code>
      * @param int $var
      * @return $this
      */
@@ -1956,7 +1956,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel rate rule ID.
      *
-     * Generated from protobuf field <code>string hotel_rate_rule_id = 86;</code>
+     * Generated from protobuf field <code>optional string hotel_rate_rule_id = 86;</code>
      * @return string
      */
     public function getHotelRateRuleId()
@@ -1977,7 +1977,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel rate rule ID.
      *
-     * Generated from protobuf field <code>string hotel_rate_rule_id = 86;</code>
+     * Generated from protobuf field <code>optional string hotel_rate_rule_id = 86;</code>
      * @param string $var
      * @return $this
      */
@@ -2044,7 +2044,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel state.
      *
-     * Generated from protobuf field <code>string hotel_state = 87;</code>
+     * Generated from protobuf field <code>optional string hotel_state = 87;</code>
      * @return string
      */
     public function getHotelState()
@@ -2065,7 +2065,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hotel state.
      *
-     * Generated from protobuf field <code>string hotel_state = 87;</code>
+     * Generated from protobuf field <code>optional string hotel_state = 87;</code>
      * @param string $var
      * @return $this
      */
@@ -2080,7 +2080,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hour of day as a number between 0 and 23, inclusive.
      *
-     * Generated from protobuf field <code>int32 hour = 88;</code>
+     * Generated from protobuf field <code>optional int32 hour = 88;</code>
      * @return int
      */
     public function getHour()
@@ -2101,7 +2101,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Hour of day as a number between 0 and 23, inclusive.
      *
-     * Generated from protobuf field <code>int32 hour = 88;</code>
+     * Generated from protobuf field <code>optional int32 hour = 88;</code>
      * @param int $var
      * @return $this
      */
@@ -2118,7 +2118,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Indicates whether the interaction metrics occurred on the feed item itself
      * or a different extension or ad unit.
      *
-     * Generated from protobuf field <code>bool interaction_on_this_extension = 89;</code>
+     * Generated from protobuf field <code>optional bool interaction_on_this_extension = 89;</code>
      * @return bool
      */
     public function getInteractionOnThisExtension()
@@ -2141,7 +2141,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Indicates whether the interaction metrics occurred on the feed item itself
      * or a different extension or ad unit.
      *
-     * Generated from protobuf field <code>bool interaction_on_this_extension = 89;</code>
+     * Generated from protobuf field <code>optional bool interaction_on_this_extension = 89;</code>
      * @param bool $var
      * @return $this
      */
@@ -2161,7 +2161,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     public function getKeyword()
     {
-        return isset($this->keyword) ? $this->keyword : null;
+        return $this->keyword;
     }
 
     public function hasKeyword()
@@ -2193,7 +2193,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Month as represented by the date of the first day of a month. Formatted as
      * yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string month = 90;</code>
+     * Generated from protobuf field <code>optional string month = 90;</code>
      * @return string
      */
     public function getMonth()
@@ -2215,7 +2215,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Month as represented by the date of the first day of a month. Formatted as
      * yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string month = 90;</code>
+     * Generated from protobuf field <code>optional string month = 90;</code>
      * @param string $var
      * @return $this
      */
@@ -2256,7 +2256,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Partner hotel ID.
      *
-     * Generated from protobuf field <code>string partner_hotel_id = 91;</code>
+     * Generated from protobuf field <code>optional string partner_hotel_id = 91;</code>
      * @return string
      */
     public function getPartnerHotelId()
@@ -2277,7 +2277,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Partner hotel ID.
      *
-     * Generated from protobuf field <code>string partner_hotel_id = 91;</code>
+     * Generated from protobuf field <code>optional string partner_hotel_id = 91;</code>
      * @param string $var
      * @return $this
      */
@@ -2318,7 +2318,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Aggregator ID of the product.
      *
-     * Generated from protobuf field <code>int64 product_aggregator_id = 132;</code>
+     * Generated from protobuf field <code>optional int64 product_aggregator_id = 132;</code>
      * @return int|string
      */
     public function getProductAggregatorId()
@@ -2339,7 +2339,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Aggregator ID of the product.
      *
-     * Generated from protobuf field <code>int64 product_aggregator_id = 132;</code>
+     * Generated from protobuf field <code>optional int64 product_aggregator_id = 132;</code>
      * @param int|string $var
      * @return $this
      */
@@ -2354,7 +2354,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 1) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level1 = 92;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level1 = 92;</code>
      * @return string
      */
     public function getProductBiddingCategoryLevel1()
@@ -2375,7 +2375,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 1) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level1 = 92;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level1 = 92;</code>
      * @param string $var
      * @return $this
      */
@@ -2390,7 +2390,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 2) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level2 = 93;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level2 = 93;</code>
      * @return string
      */
     public function getProductBiddingCategoryLevel2()
@@ -2411,7 +2411,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 2) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level2 = 93;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level2 = 93;</code>
      * @param string $var
      * @return $this
      */
@@ -2426,7 +2426,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 3) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level3 = 94;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level3 = 94;</code>
      * @return string
      */
     public function getProductBiddingCategoryLevel3()
@@ -2447,7 +2447,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 3) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level3 = 94;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level3 = 94;</code>
      * @param string $var
      * @return $this
      */
@@ -2462,7 +2462,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 4) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level4 = 95;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level4 = 95;</code>
      * @return string
      */
     public function getProductBiddingCategoryLevel4()
@@ -2483,7 +2483,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 4) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level4 = 95;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level4 = 95;</code>
      * @param string $var
      * @return $this
      */
@@ -2498,7 +2498,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 5) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level5 = 96;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level5 = 96;</code>
      * @return string
      */
     public function getProductBiddingCategoryLevel5()
@@ -2519,7 +2519,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Bidding category (level 5) of the product.
      *
-     * Generated from protobuf field <code>string product_bidding_category_level5 = 96;</code>
+     * Generated from protobuf field <code>optional string product_bidding_category_level5 = 96;</code>
      * @param string $var
      * @return $this
      */
@@ -2534,7 +2534,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Brand of the product.
      *
-     * Generated from protobuf field <code>string product_brand = 97;</code>
+     * Generated from protobuf field <code>optional string product_brand = 97;</code>
      * @return string
      */
     public function getProductBrand()
@@ -2555,7 +2555,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Brand of the product.
      *
-     * Generated from protobuf field <code>string product_brand = 97;</code>
+     * Generated from protobuf field <code>optional string product_brand = 97;</code>
      * @param string $var
      * @return $this
      */
@@ -2649,7 +2649,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant for the country of sale of the
      * product.
      *
-     * Generated from protobuf field <code>string product_country = 98;</code>
+     * Generated from protobuf field <code>optional string product_country = 98;</code>
      * @return string
      */
     public function getProductCountry()
@@ -2671,7 +2671,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant for the country of sale of the
      * product.
      *
-     * Generated from protobuf field <code>string product_country = 98;</code>
+     * Generated from protobuf field <code>optional string product_country = 98;</code>
      * @param string $var
      * @return $this
      */
@@ -2686,7 +2686,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 0 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute0 = 99;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute0 = 99;</code>
      * @return string
      */
     public function getProductCustomAttribute0()
@@ -2707,7 +2707,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 0 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute0 = 99;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute0 = 99;</code>
      * @param string $var
      * @return $this
      */
@@ -2722,7 +2722,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 1 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute1 = 100;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute1 = 100;</code>
      * @return string
      */
     public function getProductCustomAttribute1()
@@ -2743,7 +2743,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 1 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute1 = 100;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute1 = 100;</code>
      * @param string $var
      * @return $this
      */
@@ -2758,7 +2758,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 2 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute2 = 101;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute2 = 101;</code>
      * @return string
      */
     public function getProductCustomAttribute2()
@@ -2779,7 +2779,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 2 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute2 = 101;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute2 = 101;</code>
      * @param string $var
      * @return $this
      */
@@ -2794,7 +2794,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 3 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute3 = 102;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute3 = 102;</code>
      * @return string
      */
     public function getProductCustomAttribute3()
@@ -2815,7 +2815,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 3 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute3 = 102;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute3 = 102;</code>
      * @param string $var
      * @return $this
      */
@@ -2830,7 +2830,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 4 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute4 = 103;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute4 = 103;</code>
      * @return string
      */
     public function getProductCustomAttribute4()
@@ -2851,7 +2851,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Custom attribute 4 of the product.
      *
-     * Generated from protobuf field <code>string product_custom_attribute4 = 103;</code>
+     * Generated from protobuf field <code>optional string product_custom_attribute4 = 103;</code>
      * @param string $var
      * @return $this
      */
@@ -2866,7 +2866,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Item ID of the product.
      *
-     * Generated from protobuf field <code>string product_item_id = 104;</code>
+     * Generated from protobuf field <code>optional string product_item_id = 104;</code>
      * @return string
      */
     public function getProductItemId()
@@ -2887,7 +2887,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Item ID of the product.
      *
-     * Generated from protobuf field <code>string product_item_id = 104;</code>
+     * Generated from protobuf field <code>optional string product_item_id = 104;</code>
      * @param string $var
      * @return $this
      */
@@ -2902,7 +2902,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the language constant for the language of the product.
      *
-     * Generated from protobuf field <code>string product_language = 105;</code>
+     * Generated from protobuf field <code>optional string product_language = 105;</code>
      * @return string
      */
     public function getProductLanguage()
@@ -2923,7 +2923,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the language constant for the language of the product.
      *
-     * Generated from protobuf field <code>string product_language = 105;</code>
+     * Generated from protobuf field <code>optional string product_language = 105;</code>
      * @param string $var
      * @return $this
      */
@@ -2938,7 +2938,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Merchant ID of the product.
      *
-     * Generated from protobuf field <code>int64 product_merchant_id = 133;</code>
+     * Generated from protobuf field <code>optional int64 product_merchant_id = 133;</code>
      * @return int|string
      */
     public function getProductMerchantId()
@@ -2959,7 +2959,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Merchant ID of the product.
      *
-     * Generated from protobuf field <code>int64 product_merchant_id = 133;</code>
+     * Generated from protobuf field <code>optional int64 product_merchant_id = 133;</code>
      * @param int|string $var
      * @return $this
      */
@@ -2974,7 +2974,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Store ID of the product.
      *
-     * Generated from protobuf field <code>string product_store_id = 106;</code>
+     * Generated from protobuf field <code>optional string product_store_id = 106;</code>
      * @return string
      */
     public function getProductStoreId()
@@ -2995,7 +2995,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Store ID of the product.
      *
-     * Generated from protobuf field <code>string product_store_id = 106;</code>
+     * Generated from protobuf field <code>optional string product_store_id = 106;</code>
      * @param string $var
      * @return $this
      */
@@ -3010,7 +3010,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Title of the product.
      *
-     * Generated from protobuf field <code>string product_title = 107;</code>
+     * Generated from protobuf field <code>optional string product_title = 107;</code>
      * @return string
      */
     public function getProductTitle()
@@ -3031,7 +3031,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Title of the product.
      *
-     * Generated from protobuf field <code>string product_title = 107;</code>
+     * Generated from protobuf field <code>optional string product_title = 107;</code>
      * @param string $var
      * @return $this
      */
@@ -3046,7 +3046,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 1) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l1 = 108;</code>
+     * Generated from protobuf field <code>optional string product_type_l1 = 108;</code>
      * @return string
      */
     public function getProductTypeL1()
@@ -3067,7 +3067,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 1) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l1 = 108;</code>
+     * Generated from protobuf field <code>optional string product_type_l1 = 108;</code>
      * @param string $var
      * @return $this
      */
@@ -3082,7 +3082,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 2) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l2 = 109;</code>
+     * Generated from protobuf field <code>optional string product_type_l2 = 109;</code>
      * @return string
      */
     public function getProductTypeL2()
@@ -3103,7 +3103,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 2) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l2 = 109;</code>
+     * Generated from protobuf field <code>optional string product_type_l2 = 109;</code>
      * @param string $var
      * @return $this
      */
@@ -3118,7 +3118,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 3) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l3 = 110;</code>
+     * Generated from protobuf field <code>optional string product_type_l3 = 110;</code>
      * @return string
      */
     public function getProductTypeL3()
@@ -3139,7 +3139,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 3) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l3 = 110;</code>
+     * Generated from protobuf field <code>optional string product_type_l3 = 110;</code>
      * @param string $var
      * @return $this
      */
@@ -3154,7 +3154,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 4) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l4 = 111;</code>
+     * Generated from protobuf field <code>optional string product_type_l4 = 111;</code>
      * @return string
      */
     public function getProductTypeL4()
@@ -3175,7 +3175,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 4) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l4 = 111;</code>
+     * Generated from protobuf field <code>optional string product_type_l4 = 111;</code>
      * @param string $var
      * @return $this
      */
@@ -3190,7 +3190,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 5) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l5 = 112;</code>
+     * Generated from protobuf field <code>optional string product_type_l5 = 112;</code>
      * @return string
      */
     public function getProductTypeL5()
@@ -3211,7 +3211,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Type (level 5) of the product.
      *
-     * Generated from protobuf field <code>string product_type_l5 = 112;</code>
+     * Generated from protobuf field <code>optional string product_type_l5 = 112;</code>
      * @param string $var
      * @return $this
      */
@@ -3228,7 +3228,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Uses the calendar year for quarters, e.g., the second quarter of 2018
      * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string quarter = 128;</code>
+     * Generated from protobuf field <code>optional string quarter = 128;</code>
      * @return string
      */
     public function getQuarter()
@@ -3251,7 +3251,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Uses the calendar year for quarters, e.g., the second quarter of 2018
      * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string quarter = 128;</code>
+     * Generated from protobuf field <code>optional string quarter = 128;</code>
      * @param string $var
      * @return $this
      */
@@ -3408,7 +3408,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the ad group criterion that represents webpage criterion.
      *
-     * Generated from protobuf field <code>string webpage = 129;</code>
+     * Generated from protobuf field <code>optional string webpage = 129;</code>
      * @return string
      */
     public function getWebpage()
@@ -3429,7 +3429,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the ad group criterion that represents webpage criterion.
      *
-     * Generated from protobuf field <code>string webpage = 129;</code>
+     * Generated from protobuf field <code>optional string webpage = 129;</code>
      * @param string $var
      * @return $this
      */
@@ -3445,7 +3445,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Week as defined as Monday through Sunday, and represented by the date of
      * Monday. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string week = 130;</code>
+     * Generated from protobuf field <code>optional string week = 130;</code>
      * @return string
      */
     public function getWeek()
@@ -3467,7 +3467,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Week as defined as Monday through Sunday, and represented by the date of
      * Monday. Formatted as yyyy-MM-dd.
      *
-     * Generated from protobuf field <code>string week = 130;</code>
+     * Generated from protobuf field <code>optional string week = 130;</code>
      * @param string $var
      * @return $this
      */
@@ -3482,7 +3482,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Year, formatted as yyyy.
      *
-     * Generated from protobuf field <code>int32 year = 131;</code>
+     * Generated from protobuf field <code>optional int32 year = 131;</code>
      * @return int
      */
     public function getYear()
@@ -3503,7 +3503,7 @@ class Segments extends \Google\Protobuf\Internal\Message
     /**
      * Year, formatted as yyyy.
      *
-     * Generated from protobuf field <code>int32 year = 131;</code>
+     * Generated from protobuf field <code>optional int32 year = 131;</code>
      * @param int $var
      * @return $this
      */
@@ -3519,7 +3519,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * iOS Store Kit Ad Network conversion value.
      * Null value means this segment is not applicable, e.g. non-iOS campaign.
      *
-     * Generated from protobuf field <code>int64 sk_ad_network_conversion_value = 137;</code>
+     * Generated from protobuf field <code>optional int64 sk_ad_network_conversion_value = 137;</code>
      * @return int|string
      */
     public function getSkAdNetworkConversionValue()
@@ -3541,7 +3541,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * iOS Store Kit Ad Network conversion value.
      * Null value means this segment is not applicable, e.g. non-iOS campaign.
      *
-     * Generated from protobuf field <code>int64 sk_ad_network_conversion_value = 137;</code>
+     * Generated from protobuf field <code>optional int64 sk_ad_network_conversion_value = 137;</code>
      * @param int|string $var
      * @return $this
      */
@@ -3564,12 +3564,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      * is false, it means the interactions is not on this specific asset but on
      * other parts of the served ad this asset is served with.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.common.AssetInteractionTarget asset_interaction_target = 139;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      * @return \Google\Ads\GoogleAds\V8\Common\AssetInteractionTarget|null
      */
     public function getAssetInteractionTarget()
     {
-        return isset($this->asset_interaction_target) ? $this->asset_interaction_target : null;
+        return $this->asset_interaction_target;
     }
 
     public function hasAssetInteractionTarget()
@@ -3593,7 +3593,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * is false, it means the interactions is not on this specific asset but on
      * other parts of the served ad this asset is served with.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.common.AssetInteractionTarget asset_interaction_target = 139;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.common.AssetInteractionTarget asset_interaction_target = 139;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\AssetInteractionTarget $var
      * @return $this
      */

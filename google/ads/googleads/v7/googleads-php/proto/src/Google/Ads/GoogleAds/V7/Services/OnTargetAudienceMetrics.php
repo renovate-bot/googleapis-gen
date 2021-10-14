@@ -22,13 +22,13 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Reference audience size matching the considered targeting for YouTube.
      *
-     * Generated from protobuf field <code>int64 youtube_audience_size = 3;</code>
+     * Generated from protobuf field <code>optional int64 youtube_audience_size = 3;</code>
      */
     protected $youtube_audience_size = null;
     /**
      * Reference audience size matching the considered targeting for Census.
      *
-     * Generated from protobuf field <code>int64 census_audience_size = 4;</code>
+     * Generated from protobuf field <code>optional int64 census_audience_size = 4;</code>
      */
     protected $census_audience_size = null;
 
@@ -52,7 +52,7 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Reference audience size matching the considered targeting for YouTube.
      *
-     * Generated from protobuf field <code>int64 youtube_audience_size = 3;</code>
+     * Generated from protobuf field <code>optional int64 youtube_audience_size = 3;</code>
      * @return int|string
      */
     public function getYoutubeAudienceSize()
@@ -73,7 +73,7 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Reference audience size matching the considered targeting for YouTube.
      *
-     * Generated from protobuf field <code>int64 youtube_audience_size = 3;</code>
+     * Generated from protobuf field <code>optional int64 youtube_audience_size = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Reference audience size matching the considered targeting for Census.
      *
-     * Generated from protobuf field <code>int64 census_audience_size = 4;</code>
+     * Generated from protobuf field <code>optional int64 census_audience_size = 4;</code>
      * @return int|string
      */
     public function getCensusAudienceSize()
@@ -109,7 +109,7 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Reference audience size matching the considered targeting for Census.
      *
-     * Generated from protobuf field <code>int64 census_audience_size = 4;</code>
+     * Generated from protobuf field <code>optional int64 census_audience_size = 4;</code>
      * @param int|string $var
      * @return $this
      */

@@ -80,7 +80,7 @@ class CreateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTaxonomy()
     {
-        return isset($this->taxonomy) ? $this->taxonomy : null;
+        return $this->taxonomy;
     }
 
     public function hasTaxonomy()

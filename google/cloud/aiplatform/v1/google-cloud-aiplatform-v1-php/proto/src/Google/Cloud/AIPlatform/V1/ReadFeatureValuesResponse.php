@@ -59,7 +59,7 @@ class ReadFeatureValuesResponse extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -98,7 +98,7 @@ class ReadFeatureValuesResponse extends \Google\Protobuf\Internal\Message
      */
     public function getEntityView()
     {
-        return isset($this->entity_view) ? $this->entity_view : null;
+        return $this->entity_view;
     }
 
     public function hasEntityView()

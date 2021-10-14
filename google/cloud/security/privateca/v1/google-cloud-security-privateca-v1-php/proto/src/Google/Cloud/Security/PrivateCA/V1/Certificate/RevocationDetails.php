@@ -79,7 +79,7 @@ class RevocationDetails extends \Google\Protobuf\Internal\Message
      */
     public function getRevocationTime()
     {
-        return isset($this->revocation_time) ? $this->revocation_time : null;
+        return $this->revocation_time;
     }
 
     public function hasRevocationTime()

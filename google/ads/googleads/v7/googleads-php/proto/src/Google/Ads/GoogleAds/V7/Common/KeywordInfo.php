@@ -18,7 +18,7 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
     /**
      * The text of the keyword (at most 80 characters and 10 words).
      *
-     * Generated from protobuf field <code>string text = 3;</code>
+     * Generated from protobuf field <code>optional string text = 3;</code>
      */
     protected $text = null;
     /**
@@ -48,7 +48,7 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
     /**
      * The text of the keyword (at most 80 characters and 10 words).
      *
-     * Generated from protobuf field <code>string text = 3;</code>
+     * Generated from protobuf field <code>optional string text = 3;</code>
      * @return string
      */
     public function getText()
@@ -69,7 +69,7 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
     /**
      * The text of the keyword (at most 80 characters and 10 words).
      *
-     * Generated from protobuf field <code>string text = 3;</code>
+     * Generated from protobuf field <code>optional string text = 3;</code>
      * @param string $var
      * @return $this
      */

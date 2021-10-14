@@ -83,7 +83,7 @@ class CreateBatchPredictionJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBatchPredictionJob()
     {
-        return isset($this->batch_prediction_job) ? $this->batch_prediction_job : null;
+        return $this->batch_prediction_job;
     }
 
     public function hasBatchPredictionJob()

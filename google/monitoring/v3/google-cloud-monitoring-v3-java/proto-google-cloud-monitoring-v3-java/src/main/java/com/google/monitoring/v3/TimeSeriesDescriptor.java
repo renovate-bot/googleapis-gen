@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
       if (valueType_ != com.google.api.MetricDescriptor.ValueType.VALUE_TYPE_UNSPECIFIED.getNumber()) {
@@ -483,7 +483,7 @@ private static final long serialVersionUID = 0L;
       if (metricKind_ != com.google.api.MetricDescriptor.MetricKind.METRIC_KIND_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, metricKind_);
       }
-      if (!getUnitBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, unit_);
       }
       unknownFields.writeTo(output);
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
       if (valueType_ != com.google.api.MetricDescriptor.ValueType.VALUE_TYPE_UNSPECIFIED.getNumber()) {
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, metricKind_);
       }
-      if (!getUnitBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, unit_);
       }
       size += unknownFields.getSerializedSize();

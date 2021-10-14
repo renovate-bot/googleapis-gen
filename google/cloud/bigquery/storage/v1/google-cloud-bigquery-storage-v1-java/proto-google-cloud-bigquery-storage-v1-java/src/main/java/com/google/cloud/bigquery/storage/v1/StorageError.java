@@ -482,10 +482,10 @@ private static final long serialVersionUID = 0L;
     if (code_ != com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode.STORAGE_ERROR_CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getEntityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, entity_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessage_);
     }
     unknownFields.writeTo(output);
@@ -501,10 +501,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getEntityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, entity_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMessage_);
     }
     size += unknownFields.getSerializedSize();

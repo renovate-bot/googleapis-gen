@@ -580,7 +580,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getEventTime()
     {
-        return isset($this->event_time) ? $this->event_time : null;
+        return $this->event_time;
     }
 
     public function hasEventTime()
@@ -767,7 +767,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getCompletionDetail()
     {
-        return isset($this->completion_detail) ? $this->completion_detail : null;
+        return $this->completion_detail;
     }
 
     public function hasCompletionDetail()
@@ -878,7 +878,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getPurchaseTransaction()
     {
-        return isset($this->purchase_transaction) ? $this->purchase_transaction : null;
+        return $this->purchase_transaction;
     }
 
     public function hasPurchaseTransaction()
@@ -1120,7 +1120,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      */
     public function getUserInfo()
     {
-        return isset($this->user_info) ? $this->user_info : null;
+        return $this->user_info;
     }
 
     public function hasUserInfo()

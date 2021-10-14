@@ -28,7 +28,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Supported date format is YYYY-MM-DD.
      * Times are reported in the customer's time zone.
      *
-     * Generated from protobuf field <code>string value = 4;</code>
+     * Generated from protobuf field <code>optional string value = 4;</code>
      */
     protected $value = null;
     /**
@@ -36,7 +36,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * offset from now. The value field will override this field when both are
      * present.
      *
-     * Generated from protobuf field <code>int64 offset_in_days = 5;</code>
+     * Generated from protobuf field <code>optional int64 offset_in_days = 5;</code>
      */
     protected $offset_in_days = null;
 
@@ -100,7 +100,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Supported date format is YYYY-MM-DD.
      * Times are reported in the customer's time zone.
      *
-     * Generated from protobuf field <code>string value = 4;</code>
+     * Generated from protobuf field <code>optional string value = 4;</code>
      * @return string
      */
     public function getValue()
@@ -123,7 +123,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Supported date format is YYYY-MM-DD.
      * Times are reported in the customer's time zone.
      *
-     * Generated from protobuf field <code>string value = 4;</code>
+     * Generated from protobuf field <code>optional string value = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * offset from now. The value field will override this field when both are
      * present.
      *
-     * Generated from protobuf field <code>int64 offset_in_days = 5;</code>
+     * Generated from protobuf field <code>optional int64 offset_in_days = 5;</code>
      * @return int|string
      */
     public function getOffsetInDays()
@@ -163,7 +163,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * offset from now. The value field will override this field when both are
      * present.
      *
-     * Generated from protobuf field <code>int64 offset_in_days = 5;</code>
+     * Generated from protobuf field <code>optional int64 offset_in_days = 5;</code>
      * @param int|string $var
      * @return $this
      */

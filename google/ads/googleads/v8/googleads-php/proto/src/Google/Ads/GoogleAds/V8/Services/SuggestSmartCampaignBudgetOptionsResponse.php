@@ -21,19 +21,19 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The lowest budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption low = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption low = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $low = null;
     /**
      * Optional. The recommended budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption recommended = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption recommended = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $recommended = null;
     /**
      * Optional. The highest budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption high = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption high = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $high = null;
 
@@ -59,12 +59,12 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The lowest budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption low = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption low = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse\BudgetOption|null
      */
     public function getLow()
     {
-        return isset($this->low) ? $this->low : null;
+        return $this->low;
     }
 
     public function hasLow()
@@ -80,7 +80,7 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The lowest budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption low = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption low = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse\BudgetOption $var
      * @return $this
      */
@@ -95,12 +95,12 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The recommended budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption recommended = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption recommended = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse\BudgetOption|null
      */
     public function getRecommended()
     {
-        return isset($this->recommended) ? $this->recommended : null;
+        return $this->recommended;
     }
 
     public function hasRecommended()
@@ -116,7 +116,7 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The recommended budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption recommended = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption recommended = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse\BudgetOption $var
      * @return $this
      */
@@ -131,12 +131,12 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The highest budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption high = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption high = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse\BudgetOption|null
      */
     public function getHigh()
     {
-        return isset($this->high) ? $this->high : null;
+        return $this->high;
     }
 
     public function hasHigh()
@@ -152,7 +152,7 @@ class SuggestSmartCampaignBudgetOptionsResponse extends \Google\Protobuf\Interna
     /**
      * Optional. The highest budget option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption high = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption high = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse\BudgetOption $var
      * @return $this
      */

@@ -77,7 +77,7 @@ class QueryTimeSeriesResponse extends \Google\Protobuf\Internal\Message
      */
     public function getTimeSeriesDescriptor()
     {
-        return isset($this->time_series_descriptor) ? $this->time_series_descriptor : null;
+        return $this->time_series_descriptor;
     }
 
     public function hasTimeSeriesDescriptor()

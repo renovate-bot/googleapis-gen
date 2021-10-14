@@ -19,13 +19,13 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      * Average CPA to use for Target CPA bidding strategy. This is a required
      * field.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 3;</code>
      */
     protected $target_cpa_micros = null;
     /**
      * Optional, budget amount to set for the campaign.
      *
-     * Generated from protobuf field <code>int64 new_campaign_budget_amount_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 new_campaign_budget_amount_micros = 4;</code>
      */
     protected $new_campaign_budget_amount_micros = null;
 
@@ -51,7 +51,7 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      * Average CPA to use for Target CPA bidding strategy. This is a required
      * field.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 3;</code>
      * @return int|string
      */
     public function getTargetCpaMicros()
@@ -73,7 +73,7 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      * Average CPA to use for Target CPA bidding strategy. This is a required
      * field.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 3;</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Optional, budget amount to set for the campaign.
      *
-     * Generated from protobuf field <code>int64 new_campaign_budget_amount_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 new_campaign_budget_amount_micros = 4;</code>
      * @return int|string
      */
     public function getNewCampaignBudgetAmountMicros()
@@ -109,7 +109,7 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Optional, budget amount to set for the campaign.
      *
-     * Generated from protobuf field <code>int64 new_campaign_budget_amount_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 new_campaign_budget_amount_micros = 4;</code>
      * @param int|string $var
      * @return $this
      */

@@ -1226,7 +1226,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFieldPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldPath_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldPath_);
       }
       if (transformTypeCase_ == 2) {
@@ -1256,7 +1256,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFieldPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldPath_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldPath_);
       }
       if (transformTypeCase_ == 2) {
@@ -3361,7 +3361,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDocumentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(document_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, document_);
     }
     for (int i = 0; i < fieldTransforms_.size(); i++) {
@@ -3376,7 +3376,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDocumentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(document_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, document_);
     }
     for (int i = 0; i < fieldTransforms_.size(); i++) {

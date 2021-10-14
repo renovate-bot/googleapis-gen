@@ -137,7 +137,7 @@ class CreateTensorboardTimeSeriesRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getTensorboardTimeSeries()
     {
-        return isset($this->tensorboard_time_series) ? $this->tensorboard_time_series : null;
+        return $this->tensorboard_time_series;
     }
 
     public function hasTensorboardTimeSeries()

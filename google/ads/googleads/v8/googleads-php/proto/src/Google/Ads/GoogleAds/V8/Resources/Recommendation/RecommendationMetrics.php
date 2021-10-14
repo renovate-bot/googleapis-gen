@@ -19,31 +19,31 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $impressions = null;
     /**
      * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $clicks = null;
     /**
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $cost_micros = null;
     /**
      * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $conversions = null;
     /**
      * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $video_views = null;
 
@@ -73,7 +73,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getImpressions()
@@ -94,7 +94,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double impressions = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */
@@ -109,7 +109,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getClicks()
@@ -130,7 +130,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double clicks = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */
@@ -145,7 +145,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -166,7 +166,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -181,7 +181,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getConversions()
@@ -202,7 +202,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double conversions = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */
@@ -217,7 +217,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getVideoViews()
@@ -238,7 +238,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double video_views = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */

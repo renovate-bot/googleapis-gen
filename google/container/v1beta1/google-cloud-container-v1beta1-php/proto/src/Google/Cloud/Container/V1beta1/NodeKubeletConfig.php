@@ -144,7 +144,7 @@ class NodeKubeletConfig extends \Google\Protobuf\Internal\Message
      */
     public function getCpuCfsQuota()
     {
-        return isset($this->cpu_cfs_quota) ? $this->cpu_cfs_quota : null;
+        return $this->cpu_cfs_quota;
     }
 
     public function hasCpuCfsQuota()

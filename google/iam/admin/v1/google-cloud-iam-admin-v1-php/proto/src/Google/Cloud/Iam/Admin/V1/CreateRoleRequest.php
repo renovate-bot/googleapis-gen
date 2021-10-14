@@ -189,7 +189,7 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRole()
     {
-        return isset($this->role) ? $this->role : null;
+        return $this->role;
     }
 
     public function hasRole()

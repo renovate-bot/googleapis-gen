@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getKmsKeyVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kmsKeyVersion_);
     }
     if (encryptionType_ != com.google.bigtable.admin.v2.EncryptionInfo.EncryptionType.ENCRYPTION_TYPE_UNSPECIFIED.getNumber()) {
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getKmsKeyVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kmsKeyVersion_);
     }
     if (encryptionType_ != com.google.bigtable.admin.v2.EncryptionInfo.EncryptionType.ENCRYPTION_TYPE_UNSPECIFIED.getNumber()) {

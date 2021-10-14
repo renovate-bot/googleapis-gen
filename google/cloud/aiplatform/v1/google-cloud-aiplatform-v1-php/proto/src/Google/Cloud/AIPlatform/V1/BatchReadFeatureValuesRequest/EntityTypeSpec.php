@@ -96,7 +96,7 @@ class EntityTypeSpec extends \Google\Protobuf\Internal\Message
      */
     public function getFeatureSelector()
     {
-        return isset($this->feature_selector) ? $this->feature_selector : null;
+        return $this->feature_selector;
     }
 
     public function hasFeatureSelector()

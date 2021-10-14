@@ -71,7 +71,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      */
     public function getDocument()
     {
-        return isset($this->document) ? $this->document : null;
+        return $this->document;
     }
 
     public function hasDocument()
@@ -144,7 +144,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      */
     public function getHumanReviewStatus()
     {
-        return isset($this->human_review_status) ? $this->human_review_status : null;
+        return $this->human_review_status;
     }
 
     public function hasHumanReviewStatus()

@@ -231,7 +231,7 @@ class Tensorboard extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()
@@ -323,7 +323,7 @@ class Tensorboard extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -359,7 +359,7 @@ class Tensorboard extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

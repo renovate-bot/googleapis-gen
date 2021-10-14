@@ -30,7 +30,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The radius of the proximity.
      *
-     * Generated from protobuf field <code>double radius = 5;</code>
+     * Generated from protobuf field <code>optional double radius = 5;</code>
      */
     protected $radius = null;
     /**
@@ -75,7 +75,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      */
     public function getGeoPoint()
     {
-        return isset($this->geo_point) ? $this->geo_point : null;
+        return $this->geo_point;
     }
 
     public function hasGeoPoint()
@@ -106,7 +106,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The radius of the proximity.
      *
-     * Generated from protobuf field <code>double radius = 5;</code>
+     * Generated from protobuf field <code>optional double radius = 5;</code>
      * @return float
      */
     public function getRadius()
@@ -127,7 +127,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The radius of the proximity.
      *
-     * Generated from protobuf field <code>double radius = 5;</code>
+     * Generated from protobuf field <code>optional double radius = 5;</code>
      * @param float $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      */
     public function getAddress()
     {
-        return isset($this->address) ? $this->address : null;
+        return $this->address;
     }
 
     public function hasAddress()

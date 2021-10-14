@@ -129,7 +129,7 @@ class ActiveLearningConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSampleConfig()
     {
-        return isset($this->sample_config) ? $this->sample_config : null;
+        return $this->sample_config;
     }
 
     public function hasSampleConfig()
@@ -168,7 +168,7 @@ class ActiveLearningConfig extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingConfig()
     {
-        return isset($this->training_config) ? $this->training_config : null;
+        return $this->training_config;
     }
 
     public function hasTrainingConfig()

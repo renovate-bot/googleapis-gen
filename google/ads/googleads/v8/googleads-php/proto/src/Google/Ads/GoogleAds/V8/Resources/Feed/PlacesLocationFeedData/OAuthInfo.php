@@ -18,19 +18,19 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP method used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_method = 4;</code>
+     * Generated from protobuf field <code>optional string http_method = 4;</code>
      */
     protected $http_method = null;
     /**
      * The HTTP request URL used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_request_url = 5;</code>
+     * Generated from protobuf field <code>optional string http_request_url = 5;</code>
      */
     protected $http_request_url = null;
     /**
      * The HTTP authorization header used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_authorization_header = 6;</code>
+     * Generated from protobuf field <code>optional string http_authorization_header = 6;</code>
      */
     protected $http_authorization_header = null;
 
@@ -56,7 +56,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP method used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_method = 4;</code>
+     * Generated from protobuf field <code>optional string http_method = 4;</code>
      * @return string
      */
     public function getHttpMethod()
@@ -77,7 +77,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP method used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_method = 4;</code>
+     * Generated from protobuf field <code>optional string http_method = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP request URL used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_request_url = 5;</code>
+     * Generated from protobuf field <code>optional string http_request_url = 5;</code>
      * @return string
      */
     public function getHttpRequestUrl()
@@ -113,7 +113,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP request URL used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_request_url = 5;</code>
+     * Generated from protobuf field <code>optional string http_request_url = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP authorization header used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_authorization_header = 6;</code>
+     * Generated from protobuf field <code>optional string http_authorization_header = 6;</code>
      * @return string
      */
     public function getHttpAuthorizationHeader()
@@ -149,7 +149,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     /**
      * The HTTP authorization header used to obtain authorization.
      *
-     * Generated from protobuf field <code>string http_authorization_header = 6;</code>
+     * Generated from protobuf field <code>optional string http_authorization_header = 6;</code>
      * @param string $var
      * @return $this
      */

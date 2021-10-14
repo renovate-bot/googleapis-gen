@@ -53,7 +53,7 @@ class IamConfig extends \Google\Protobuf\Internal\Message
      */
     public function getUniformBucketLevelAccess()
     {
-        return isset($this->uniform_bucket_level_access) ? $this->uniform_bucket_level_access : null;
+        return $this->uniform_bucket_level_access;
     }
 
     public function hasUniformBucketLevelAccess()

@@ -53,7 +53,7 @@ class SecurityHealthAnalyticsSettings extends \Google\Protobuf\Internal\Message
      */
     public function getNonOrgIamMemberSettings()
     {
-        return isset($this->non_org_iam_member_settings) ? $this->non_org_iam_member_settings : null;
+        return $this->non_org_iam_member_settings;
     }
 
     public function hasNonOrgIamMemberSettings()
@@ -89,7 +89,7 @@ class SecurityHealthAnalyticsSettings extends \Google\Protobuf\Internal\Message
      */
     public function getAdminServiceAccountSettings()
     {
-        return isset($this->admin_service_account_settings) ? $this->admin_service_account_settings : null;
+        return $this->admin_service_account_settings;
     }
 
     public function hasAdminServiceAccountSettings()

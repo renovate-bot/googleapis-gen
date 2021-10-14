@@ -73,7 +73,7 @@ class ExecutionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getJobCreationStatus()
     {
-        return isset($this->job_creation_status) ? $this->job_creation_status : null;
+        return $this->job_creation_status;
     }
 
     public function hasJobCreationStatus()
@@ -135,7 +135,7 @@ class ExecutionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -173,7 +173,7 @@ class ExecutionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getBigqueryJob()
     {
-        return isset($this->bigquery_job) ? $this->bigquery_job : null;
+        return $this->bigquery_job;
     }
 
     public function hasBigqueryJob()

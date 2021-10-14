@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
     if (!wrappedKey_.isEmpty()) {
       output.writeBytes(1, wrappedKey_);
     }
-    if (!getCryptoKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cryptoKeyName_);
     }
     unknownFields.writeTo(output);
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(1, wrappedKey_);
     }
-    if (!getCryptoKeyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cryptoKeyName_);
     }
     size += unknownFields.getSerializedSize();

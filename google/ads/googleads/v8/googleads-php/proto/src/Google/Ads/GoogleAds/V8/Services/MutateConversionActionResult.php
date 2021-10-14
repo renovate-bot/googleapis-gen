@@ -85,7 +85,7 @@ class MutateConversionActionResult extends \Google\Protobuf\Internal\Message
      */
     public function getConversionAction()
     {
-        return isset($this->conversion_action) ? $this->conversion_action : null;
+        return $this->conversion_action;
     }
 
     public function hasConversionAction()

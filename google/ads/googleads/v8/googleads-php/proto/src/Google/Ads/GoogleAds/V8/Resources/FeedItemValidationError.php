@@ -26,7 +26,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The description of the validation error.
      *
-     * Generated from protobuf field <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $description = null;
     /**
@@ -42,7 +42,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
      * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
-     * Generated from protobuf field <code>string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $extra_info = null;
 
@@ -103,7 +103,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The description of the validation error.
      *
-     * Generated from protobuf field <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDescription()
@@ -124,7 +124,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The description of the validation error.
      *
-     * Generated from protobuf field <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -171,7 +171,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
      * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
-     * Generated from protobuf field <code>string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getExtraInfo()
@@ -194,7 +194,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
      * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
-     * Generated from protobuf field <code>string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string extra_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

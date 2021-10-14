@@ -346,10 +346,10 @@ private static final long serialVersionUID = 0L;
     if (terminalPointId_ != null) {
       output.writeMessage(2, getTerminalPointId());
     }
-    if (!getAccessPointIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessPointId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, accessPointId_);
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tripId_);
     }
     if (terminalLocationType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
@@ -372,10 +372,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTerminalPointId());
     }
-    if (!getAccessPointIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessPointId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, accessPointId_);
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tripId_);
     }
     if (terminalLocationType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {

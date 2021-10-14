@@ -45,7 +45,7 @@ class GetApkDetailsResponse extends \Google\Protobuf\Internal\Message
      */
     public function getApkDetail()
     {
-        return isset($this->apk_detail) ? $this->apk_detail : null;
+        return $this->apk_detail;
     }
 
     public function hasApkDetail()

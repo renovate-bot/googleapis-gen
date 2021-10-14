@@ -85,7 +85,7 @@ class MutateAdGroupAdResult extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAd()
     {
-        return isset($this->ad_group_ad) ? $this->ad_group_ad : null;
+        return $this->ad_group_ad;
     }
 
     public function hasAdGroupAd()

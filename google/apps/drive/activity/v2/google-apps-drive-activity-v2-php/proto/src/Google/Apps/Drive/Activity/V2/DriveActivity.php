@@ -89,7 +89,7 @@ class DriveActivity extends \Google\Protobuf\Internal\Message
      */
     public function getPrimaryActionDetail()
     {
-        return isset($this->primary_action_detail) ? $this->primary_action_detail : null;
+        return $this->primary_action_detail;
     }
 
     public function hasPrimaryActionDetail()

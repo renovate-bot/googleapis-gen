@@ -100,19 +100,23 @@ namespace Google.Cloud.Retail.V2Alpha {
     private static readonly pb::MessageParser<Product> _parser = new pb::MessageParser<Product>(() => new Product());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Product> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Retail.V2Alpha.ProductReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Product() {
       OnConstruction();
     }
@@ -120,6 +124,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Product(Product other) : this() {
       name_ = other.name_;
       id_ = other.id_;
@@ -165,6 +170,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Product Clone() {
       return new Product(this);
     }
@@ -188,6 +194,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [expiration_date](https://support.google.com/merchants/answer/6324499).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp ExpireTime {
       get { return expirationCase_ == ExpirationOneofCase.ExpireTime ? (global::Google.Protobuf.WellKnownTypes.Timestamp) expiration_ : null; }
       set {
@@ -220,6 +227,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Ttl {
       get { return expirationCase_ == ExpirationOneofCase.Ttl ? (global::Google.Protobuf.WellKnownTypes.Duration) expiration_ : null; }
       set {
@@ -238,6 +246,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// The branch ID must be "default_branch".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -263,6 +272,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Property [Product.sku](https://schema.org/sku).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Id {
       get { return id_; }
       set {
@@ -279,6 +289,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// if unset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Alpha.Product.Types.Type Type {
       get { return type_; }
       set {
@@ -314,6 +325,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// more](/recommendations-ai/docs/catalog#item-group-id).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PrimaryProductId {
       get { return primaryProductId_; }
       set {
@@ -335,6 +347,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Otherwise, an INVALID_ARGUMENT error is return.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> CollectionMemberIds {
       get { return collectionMemberIds_; }
     }
@@ -363,6 +376,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Gtin {
       get { return gtin_; }
       set {
@@ -412,6 +426,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// https://support.google.com/merchants/answer/6324436
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Categories {
       get { return categories_; }
     }
@@ -430,6 +445,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// property [Product.name](https://schema.org/name).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Title {
       get { return title_; }
       set {
@@ -454,6 +470,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// property [Product.brand](https://schema.org/brand).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Brands {
       get { return brands_; }
     }
@@ -472,6 +489,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// schema.org property [Product.description](https://schema.org/description).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -496,6 +514,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// For product search this field is in use. It defaults to "en-US" if unset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string LanguageCode {
       get { return languageCode_; }
       set {
@@ -535,6 +554,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     ///   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, global::Google.Cloud.Retail.V2Alpha.CustomAttribute> Attributes {
       get { return attributes_; }
     }
@@ -560,6 +580,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [custom_label_0–4](https://support.google.com/merchants/answer/6324473).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Tags {
       get { return tags_; }
     }
@@ -574,6 +595,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [price](https://support.google.com/merchants/answer/6324371).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Alpha.PriceInfo PriceInfo {
       get { return priceInfo_; }
       set {
@@ -588,6 +610,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// The rating of this product.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Alpha.Rating Rating {
       get { return rating_; }
       set {
@@ -604,6 +627,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp AvailableTime {
       get { return availableTime_; }
       set {
@@ -624,6 +648,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Schema.org Property [Offer.availability](https://schema.org/availability).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Alpha.Product.Types.Availability Availability {
       get { return availability_; }
       set {
@@ -639,6 +664,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// The available quantity of the item.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int? AvailableQuantity {
       get { return availableQuantity_; }
       set {
@@ -661,6 +687,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.FulfillmentInfo> FulfillmentInfo {
       get { return fulfillmentInfo_; }
     }
@@ -682,6 +709,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// property [Offer.url](https://schema.org/url).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Uri {
       get { return uri_; }
       set {
@@ -705,6 +733,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Schema.org property [Product.image](https://schema.org/image).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.Image> Images {
       get { return images_; }
     }
@@ -717,6 +746,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// car owners, musicians, etc.) of the product.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Alpha.Audience Audience {
       get { return audience_; }
       set {
@@ -735,6 +765,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// property [Product.color](https://schema.org/color).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Retail.V2Alpha.ColorInfo ColorInfo {
       get { return colorInfo_; }
       set {
@@ -768,6 +799,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Schema.org property [Product.size](https://schema.org/size).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Sizes {
       get { return sizes_; }
     }
@@ -789,6 +821,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// property [Product.material](https://schema.org/material).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Materials {
       get { return materials_; }
     }
@@ -812,6 +845,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// property [Product.pattern](https://schema.org/pattern).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Patterns {
       get { return patterns_; }
     }
@@ -836,6 +870,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [Offer.itemCondition](https://schema.org/itemCondition).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Conditions {
       get { return conditions_; }
     }
@@ -850,6 +885,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// per [Product][google.cloud.retail.v2alpha.Product].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.Promotion> Promotions {
       get { return promotions_; }
     }
@@ -866,6 +902,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// search and recommendation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp PublishTime {
       get { return publishTime_; }
       set {
@@ -938,6 +975,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// response payload size and serving latency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.FieldMask RetrievableFields {
       get { return retrievableFields_; }
       set {
@@ -963,6 +1001,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Do not set this field in API requests.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.Product> Variants {
       get { return variants_; }
     }
@@ -976,22 +1015,26 @@ namespace Google.Cloud.Retail.V2Alpha {
     }
     private ExpirationOneofCase expirationCase_ = ExpirationOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExpirationOneofCase ExpirationCase {
       get { return expirationCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearExpiration() {
       expirationCase_ = ExpirationOneofCase.None;
       expiration_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Product);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Product other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1037,6 +1080,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (expirationCase_ == ExpirationOneofCase.ExpireTime) hash ^= ExpireTime.GetHashCode();
@@ -1080,11 +1124,13 @@ namespace Google.Cloud.Retail.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1189,6 +1235,7 @@ namespace Google.Cloud.Retail.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -1289,6 +1336,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (expirationCase_ == ExpirationOneofCase.ExpireTime) {
@@ -1371,6 +1419,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Product other) {
       if (other == null) {
         return;
@@ -1484,6 +1533,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1667,6 +1717,7 @@ namespace Google.Cloud.Retail.V2Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1848,6 +1899,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     #region Nested types
     /// <summary>Container for nested types declared in the Product message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type of this product.

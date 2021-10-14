@@ -26,14 +26,14 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>string shared_set = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string shared_set = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $shared_set = null;
     /**
      * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -113,7 +113,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>string shared_set = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string shared_set = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getSharedSet()
@@ -134,7 +134,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>string shared_set = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string shared_set = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCriterionId()
@@ -172,7 +172,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

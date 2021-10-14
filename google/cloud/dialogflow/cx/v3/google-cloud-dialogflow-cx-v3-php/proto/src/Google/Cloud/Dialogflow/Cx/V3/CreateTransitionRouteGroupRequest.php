@@ -111,7 +111,7 @@ class CreateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getTransitionRouteGroup()
     {
-        return isset($this->transition_route_group) ? $this->transition_route_group : null;
+        return $this->transition_route_group;
     }
 
     public function hasTransitionRouteGroup()

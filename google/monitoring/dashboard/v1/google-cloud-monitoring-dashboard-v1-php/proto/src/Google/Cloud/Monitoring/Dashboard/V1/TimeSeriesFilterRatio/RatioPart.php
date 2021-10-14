@@ -94,7 +94,7 @@ class RatioPart extends \Google\Protobuf\Internal\Message
      */
     public function getAggregation()
     {
-        return isset($this->aggregation) ? $this->aggregation : null;
+        return $this->aggregation;
     }
 
     public function hasAggregation()

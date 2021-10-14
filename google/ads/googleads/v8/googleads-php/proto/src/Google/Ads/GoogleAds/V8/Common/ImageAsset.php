@@ -18,13 +18,13 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     /**
      * The raw bytes data of an image. This field is mutate only.
      *
-     * Generated from protobuf field <code>bytes data = 5;</code>
+     * Generated from protobuf field <code>optional bytes data = 5;</code>
      */
     protected $data = null;
     /**
      * File size of the image asset in bytes.
      *
-     * Generated from protobuf field <code>int64 file_size = 6;</code>
+     * Generated from protobuf field <code>optional int64 file_size = 6;</code>
      */
     protected $file_size = null;
     /**
@@ -64,7 +64,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     /**
      * The raw bytes data of an image. This field is mutate only.
      *
-     * Generated from protobuf field <code>bytes data = 5;</code>
+     * Generated from protobuf field <code>optional bytes data = 5;</code>
      * @return string
      */
     public function getData()
@@ -85,7 +85,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     /**
      * The raw bytes data of an image. This field is mutate only.
      *
-     * Generated from protobuf field <code>bytes data = 5;</code>
+     * Generated from protobuf field <code>optional bytes data = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -100,7 +100,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     /**
      * File size of the image asset in bytes.
      *
-     * Generated from protobuf field <code>int64 file_size = 6;</code>
+     * Generated from protobuf field <code>optional int64 file_size = 6;</code>
      * @return int|string
      */
     public function getFileSize()
@@ -121,7 +121,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     /**
      * File size of the image asset in bytes.
      *
-     * Generated from protobuf field <code>int64 file_size = 6;</code>
+     * Generated from protobuf field <code>optional int64 file_size = 6;</code>
      * @param int|string $var
      * @return $this
      */
@@ -167,7 +167,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
      */
     public function getFullSize()
     {
-        return isset($this->full_size) ? $this->full_size : null;
+        return $this->full_size;
     }
 
     public function hasFullSize()

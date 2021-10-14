@@ -1156,13 +1156,13 @@ public final class StreetViewPublishRpcMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPhotoIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(photoId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, photoId_);
       }
       if (view_ != com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView.BASIC.getNumber()) {
         output.writeEnum(2, view_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
       }
       unknownFields.writeTo(output);
@@ -1174,14 +1174,14 @@ public final class StreetViewPublishRpcMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPhotoIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(photoId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, photoId_);
       }
       if (view_ != com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView.BASIC.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, view_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
       }
       size += unknownFields.getSerializedSize();
@@ -2205,7 +2205,7 @@ public final class StreetViewPublishRpcMessages {
       if (view_ != com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView.BASIC.getNumber()) {
         output.writeEnum(2, view_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
       }
       unknownFields.writeTo(output);
@@ -2229,7 +2229,7 @@ public final class StreetViewPublishRpcMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, view_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
       }
       size += unknownFields.getSerializedSize();
@@ -5412,13 +5412,13 @@ public final class StreetViewPublishRpcMessages {
       if (pageSize_ != 0) {
         output.writeInt32(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
       }
-      if (!getFilterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, languageCode_);
       }
       unknownFields.writeTo(output);
@@ -5438,13 +5438,13 @@ public final class StreetViewPublishRpcMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
       }
-      if (!getFilterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
       }
       size += unknownFields.getSerializedSize();
@@ -6611,7 +6611,7 @@ public final class StreetViewPublishRpcMessages {
       for (int i = 0; i < photos_.size(); i++) {
         output.writeMessage(1, photos_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
       }
       unknownFields.writeTo(output);
@@ -6627,7 +6627,7 @@ public final class StreetViewPublishRpcMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, photos_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -10830,7 +10830,7 @@ public final class StreetViewPublishRpcMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPhotoIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(photoId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, photoId_);
       }
       unknownFields.writeTo(output);
@@ -10842,7 +10842,7 @@ public final class StreetViewPublishRpcMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPhotoIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(photoId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, photoId_);
       }
       size += unknownFields.getSerializedSize();

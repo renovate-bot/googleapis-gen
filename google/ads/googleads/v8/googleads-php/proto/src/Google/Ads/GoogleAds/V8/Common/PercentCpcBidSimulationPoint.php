@@ -21,43 +21,43 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * CPC expressed as fraction of the advertised price for some good or service.
      * The value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 1;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 1;</code>
      */
     protected $percent_cpc_bid_micros = null;
     /**
      * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 2;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 2;</code>
      */
     protected $biddable_conversions = null;
     /**
      * Projected total value of biddable conversions in local currency.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 3;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 3;</code>
      */
     protected $biddable_conversions_value = null;
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 4;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 4;</code>
      */
     protected $clicks = null;
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 5;</code>
      */
     protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 6;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 6;</code>
      */
     protected $impressions = null;
     /**
      * Projected number of top slot impressions.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 7;</code>
      */
     protected $top_slot_impressions = null;
 
@@ -95,7 +95,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * CPC expressed as fraction of the advertised price for some good or service.
      * The value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 1;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 1;</code>
      * @return int|string
      */
     public function getPercentCpcBidMicros()
@@ -118,7 +118,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * CPC expressed as fraction of the advertised price for some good or service.
      * The value stored here is 1,000,000 * [fraction].
      *
-     * Generated from protobuf field <code>int64 percent_cpc_bid_micros = 1;</code>
+     * Generated from protobuf field <code>optional int64 percent_cpc_bid_micros = 1;</code>
      * @param int|string $var
      * @return $this
      */
@@ -133,7 +133,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 2;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 2;</code>
      * @return float
      */
     public function getBiddableConversions()
@@ -154,7 +154,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>double biddable_conversions = 2;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions = 2;</code>
      * @param float $var
      * @return $this
      */
@@ -169,7 +169,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected total value of biddable conversions in local currency.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 3;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 3;</code>
      * @return float
      */
     public function getBiddableConversionsValue()
@@ -190,7 +190,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected total value of biddable conversions in local currency.
      *
-     * Generated from protobuf field <code>double biddable_conversions_value = 3;</code>
+     * Generated from protobuf field <code>optional double biddable_conversions_value = 3;</code>
      * @param float $var
      * @return $this
      */
@@ -205,7 +205,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 4;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 4;</code>
      * @return int|string
      */
     public function getClicks()
@@ -226,7 +226,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 4;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 4;</code>
      * @param int|string $var
      * @return $this
      */
@@ -241,7 +241,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 5;</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -262,7 +262,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -277,7 +277,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 6;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 6;</code>
      * @return int|string
      */
     public function getImpressions()
@@ -298,7 +298,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 6;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 6;</code>
      * @param int|string $var
      * @return $this
      */
@@ -313,7 +313,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of top slot impressions.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 7;</code>
      * @return int|string
      */
     public function getTopSlotImpressions()
@@ -334,7 +334,7 @@ class PercentCpcBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of top slot impressions.
      *
-     * Generated from protobuf field <code>int64 top_slot_impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 top_slot_impressions = 7;</code>
      * @param int|string $var
      * @return $this
      */

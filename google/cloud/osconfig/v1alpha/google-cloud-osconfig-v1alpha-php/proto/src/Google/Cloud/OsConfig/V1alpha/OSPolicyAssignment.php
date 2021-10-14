@@ -265,7 +265,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      */
     public function getInstanceFilter()
     {
-        return isset($this->instance_filter) ? $this->instance_filter : null;
+        return $this->instance_filter;
     }
 
     public function hasInstanceFilter()
@@ -308,7 +308,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      */
     public function getRollout()
     {
-        return isset($this->rollout) ? $this->rollout : null;
+        return $this->rollout;
     }
 
     public function hasRollout()
@@ -381,7 +381,7 @@ class OSPolicyAssignment extends \Google\Protobuf\Internal\Message
      */
     public function getRevisionCreateTime()
     {
-        return isset($this->revision_create_time) ? $this->revision_create_time : null;
+        return $this->revision_create_time;
     }
 
     public function hasRevisionCreateTime()

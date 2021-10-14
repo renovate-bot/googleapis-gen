@@ -45,7 +45,7 @@ class BuildEnqueued extends \Google\Protobuf\Internal\Message
      */
     public function getDetails()
     {
-        return isset($this->details) ? $this->details : null;
+        return $this->details;
     }
 
     public function hasDetails()

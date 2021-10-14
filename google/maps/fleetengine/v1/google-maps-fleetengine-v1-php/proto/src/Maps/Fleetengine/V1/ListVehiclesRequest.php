@@ -213,7 +213,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -338,7 +338,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMinimumCapacity()
     {
-        return isset($this->minimum_capacity) ? $this->minimum_capacity : null;
+        return $this->minimum_capacity;
     }
 
     public function hasMinimumCapacity()
@@ -440,7 +440,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMaximumStaleness()
     {
-        return isset($this->maximum_staleness) ? $this->maximum_staleness : null;
+        return $this->maximum_staleness;
     }
 
     public function hasMaximumStaleness()

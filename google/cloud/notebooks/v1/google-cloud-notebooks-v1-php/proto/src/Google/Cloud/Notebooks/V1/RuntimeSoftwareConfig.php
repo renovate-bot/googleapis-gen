@@ -31,14 +31,14 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      * Verifies core internal services are running.
      * Default: True
      *
-     * Generated from protobuf field <code>bool enable_health_monitoring = 2;</code>
+     * Generated from protobuf field <code>optional bool enable_health_monitoring = 2;</code>
      */
     protected $enable_health_monitoring = null;
     /**
      * Runtime will automatically shutdown after idle_shutdown_time.
      * Default: True
      *
-     * Generated from protobuf field <code>bool idle_shutdown = 3;</code>
+     * Generated from protobuf field <code>optional bool idle_shutdown = 3;</code>
      */
     protected $idle_shutdown = null;
     /**
@@ -134,7 +134,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      * Verifies core internal services are running.
      * Default: True
      *
-     * Generated from protobuf field <code>bool enable_health_monitoring = 2;</code>
+     * Generated from protobuf field <code>optional bool enable_health_monitoring = 2;</code>
      * @return bool
      */
     public function getEnableHealthMonitoring()
@@ -156,7 +156,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      * Verifies core internal services are running.
      * Default: True
      *
-     * Generated from protobuf field <code>bool enable_health_monitoring = 2;</code>
+     * Generated from protobuf field <code>optional bool enable_health_monitoring = 2;</code>
      * @param bool $var
      * @return $this
      */
@@ -172,7 +172,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      * Runtime will automatically shutdown after idle_shutdown_time.
      * Default: True
      *
-     * Generated from protobuf field <code>bool idle_shutdown = 3;</code>
+     * Generated from protobuf field <code>optional bool idle_shutdown = 3;</code>
      * @return bool
      */
     public function getIdleShutdown()
@@ -194,7 +194,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      * Runtime will automatically shutdown after idle_shutdown_time.
      * Default: True
      *
-     * Generated from protobuf field <code>bool idle_shutdown = 3;</code>
+     * Generated from protobuf field <code>optional bool idle_shutdown = 3;</code>
      * @param bool $var
      * @return $this
      */

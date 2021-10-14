@@ -18,7 +18,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The id of the mobile app.
      *
-     * Generated from protobuf field <code>string app_id = 6;</code>
+     * Generated from protobuf field <code>optional string app_id = 6;</code>
      */
     protected $app_id = null;
     /**
@@ -30,19 +30,19 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 7;</code>
+     * Generated from protobuf field <code>optional string headline = 7;</code>
      */
     protected $headline = null;
     /**
      * The first description line of the ad.
      *
-     * Generated from protobuf field <code>string description1 = 8;</code>
+     * Generated from protobuf field <code>optional string description1 = 8;</code>
      */
     protected $description1 = null;
     /**
      * The second description line of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 9;</code>
+     * Generated from protobuf field <code>optional string description2 = 9;</code>
      */
     protected $description2 = null;
 
@@ -72,7 +72,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The id of the mobile app.
      *
-     * Generated from protobuf field <code>string app_id = 6;</code>
+     * Generated from protobuf field <code>optional string app_id = 6;</code>
      * @return string
      */
     public function getAppId()
@@ -93,7 +93,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The id of the mobile app.
      *
-     * Generated from protobuf field <code>string app_id = 6;</code>
+     * Generated from protobuf field <code>optional string app_id = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -134,7 +134,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 7;</code>
+     * Generated from protobuf field <code>optional string headline = 7;</code>
      * @return string
      */
     public function getHeadline()
@@ -155,7 +155,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 7;</code>
+     * Generated from protobuf field <code>optional string headline = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -170,7 +170,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first description line of the ad.
      *
-     * Generated from protobuf field <code>string description1 = 8;</code>
+     * Generated from protobuf field <code>optional string description1 = 8;</code>
      * @return string
      */
     public function getDescription1()
@@ -191,7 +191,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first description line of the ad.
      *
-     * Generated from protobuf field <code>string description1 = 8;</code>
+     * Generated from protobuf field <code>optional string description1 = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -206,7 +206,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second description line of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 9;</code>
+     * Generated from protobuf field <code>optional string description2 = 9;</code>
      * @return string
      */
     public function getDescription2()
@@ -227,7 +227,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second description line of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 9;</code>
+     * Generated from protobuf field <code>optional string description2 = 9;</code>
      * @param string $var
      * @return $this
      */

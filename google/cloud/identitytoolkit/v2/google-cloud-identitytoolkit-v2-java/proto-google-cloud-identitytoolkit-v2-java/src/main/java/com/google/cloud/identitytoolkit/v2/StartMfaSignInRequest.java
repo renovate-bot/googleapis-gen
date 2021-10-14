@@ -355,16 +355,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMfaPendingCredentialBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mfaPendingCredential_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mfaPendingCredential_);
     }
-    if (!getMfaEnrollmentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mfaEnrollmentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mfaEnrollmentId_);
     }
     if (signInInfoCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.identitytoolkit.v2.StartMfaPhoneRequestInfo) signInInfo_);
     }
-    if (!getTenantIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tenantId_);
     }
     unknownFields.writeTo(output);
@@ -376,17 +376,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMfaPendingCredentialBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mfaPendingCredential_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mfaPendingCredential_);
     }
-    if (!getMfaEnrollmentIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mfaEnrollmentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mfaEnrollmentId_);
     }
     if (signInInfoCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.cloud.identitytoolkit.v2.StartMfaPhoneRequestInfo) signInInfo_);
     }
-    if (!getTenantIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, tenantId_);
     }
     size += unknownFields.getSerializedSize();

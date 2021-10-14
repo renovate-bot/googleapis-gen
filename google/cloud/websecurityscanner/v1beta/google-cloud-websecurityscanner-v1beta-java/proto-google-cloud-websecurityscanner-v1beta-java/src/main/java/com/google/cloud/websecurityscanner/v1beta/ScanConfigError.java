@@ -1044,7 +1044,7 @@ private static final long serialVersionUID = 0L;
     if (code_ != com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code.CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fieldName_);
     }
     unknownFields.writeTo(output);
@@ -1060,7 +1060,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getFieldNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fieldName_);
     }
     size += unknownFields.getSerializedSize();

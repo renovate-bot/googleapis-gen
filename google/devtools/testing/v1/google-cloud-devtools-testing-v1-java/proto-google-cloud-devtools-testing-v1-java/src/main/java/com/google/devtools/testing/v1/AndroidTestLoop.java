@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
     if (appUnderTestCase_ == 1) {
       output.writeMessage(1, (com.google.devtools.testing.v1.FileReference) appUnderTest_);
     }
-    if (!getAppPackageIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appPackageId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appPackageId_);
     }
     if (getScenariosList().size() > 0) {
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, (com.google.devtools.testing.v1.FileReference) appUnderTest_);
     }
-    if (!getAppPackageIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appPackageId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appPackageId_);
     }
     {

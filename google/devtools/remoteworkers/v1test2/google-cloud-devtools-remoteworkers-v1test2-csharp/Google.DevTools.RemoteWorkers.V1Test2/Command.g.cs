@@ -107,19 +107,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<CommandTask> _parser = new pb::MessageParser<CommandTask>(() => new CommandTask());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommandTask> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandTask() {
       OnConstruction();
     }
@@ -127,6 +131,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandTask(CommandTask other) : this() {
       inputs_ = other.inputs_ != null ? other.inputs_.Clone() : null;
       expectedOutputs_ = other.expectedOutputs_ != null ? other.expectedOutputs_.Clone() : null;
@@ -135,6 +140,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandTask Clone() {
       return new CommandTask(this);
     }
@@ -146,6 +152,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// The inputs to the task.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Types.Inputs Inputs {
       get { return inputs_; }
       set {
@@ -160,6 +167,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// The expected outputs from the task.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Types.Outputs ExpectedOutputs {
       get { return expectedOutputs_; }
       set {
@@ -174,6 +182,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// The timeouts of this task.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Types.Timeouts Timeouts {
       get { return timeouts_; }
       set {
@@ -182,11 +191,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommandTask);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommandTask other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -201,6 +212,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (inputs_ != null) hash ^= Inputs.GetHashCode();
@@ -213,11 +225,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -242,6 +256,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (inputs_ != null) {
         output.WriteRawTag(10);
@@ -262,6 +277,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (inputs_ != null) {
@@ -280,6 +296,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommandTask other) {
       if (other == null) {
         return;
@@ -306,6 +323,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -344,6 +362,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -380,6 +399,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #region Nested types
     /// <summary>Container for nested types declared in the CommandTask message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Describes the inputs to a shell-style task.
@@ -392,19 +412,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         private static readonly pb::MessageParser<Inputs> _parser = new pb::MessageParser<Inputs>(() => new Inputs());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Inputs> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Inputs() {
           OnConstruction();
         }
@@ -412,6 +436,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Inputs(Inputs other) : this() {
           arguments_ = other.arguments_.Clone();
           files_ = other.files_.Clone();
@@ -422,6 +447,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Inputs Clone() {
           return new Inputs(this);
         }
@@ -444,6 +470,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// since those fields may be interpretted by both the service and the bot.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> Arguments {
           get { return arguments_; }
         }
@@ -465,6 +492,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// that don't (eg, standard header files).
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.DevTools.RemoteWorkers.V1Test2.Digest> Files {
           get { return files_; }
         }
@@ -484,6 +512,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// remote CAS server.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.DevTools.RemoteWorkers.V1Test2.Blob> InlineBlobs {
           get { return inlineBlobs_; }
         }
@@ -497,6 +526,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// All environment variables required by the task.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Types.Inputs.Types.EnvironmentVariable> EnvironmentVariables {
           get { return environmentVariables_; }
         }
@@ -510,6 +540,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// non-empty, then it must exist under "./". Otherwise, "./" will be used.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string WorkingDirectory {
           get { return workingDirectory_; }
           set {
@@ -518,11 +549,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Inputs);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Inputs other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -539,6 +572,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= arguments_.GetHashCode();
@@ -553,11 +587,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -578,6 +614,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           arguments_.WriteTo(ref output, _repeated_arguments_codec);
           files_.WriteTo(ref output, _repeated_files_codec);
@@ -594,6 +631,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += arguments_.CalculateSize(_repeated_arguments_codec);
@@ -610,6 +648,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Inputs other) {
           if (other == null) {
             return;
@@ -625,6 +664,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -662,6 +702,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -697,6 +738,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         #region Nested types
         /// <summary>Container for nested types declared in the Inputs message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// An environment variable required by this task.
@@ -709,19 +751,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             private static readonly pb::MessageParser<EnvironmentVariable> _parser = new pb::MessageParser<EnvironmentVariable>(() => new EnvironmentVariable());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<EnvironmentVariable> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Types.Inputs.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public EnvironmentVariable() {
               OnConstruction();
             }
@@ -729,6 +775,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public EnvironmentVariable(EnvironmentVariable other) : this() {
               name_ = other.name_;
               value_ = other.value_;
@@ -736,6 +783,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public EnvironmentVariable Clone() {
               return new EnvironmentVariable(this);
             }
@@ -747,6 +795,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             /// The envvar name.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Name {
               get { return name_; }
               set {
@@ -761,6 +810,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             /// The envvar value.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Value {
               get { return value_; }
               set {
@@ -769,11 +819,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as EnvironmentVariable);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(EnvironmentVariable other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -787,6 +839,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -798,11 +851,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -823,6 +878,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (Name.Length != 0) {
                 output.WriteRawTag(10);
@@ -839,6 +895,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (Name.Length != 0) {
@@ -854,6 +911,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(EnvironmentVariable other) {
               if (other == null) {
                 return;
@@ -868,6 +926,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -893,6 +952,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -931,19 +991,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         private static readonly pb::MessageParser<Outputs> _parser = new pb::MessageParser<Outputs>(() => new Outputs());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Outputs> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Outputs() {
           OnConstruction();
         }
@@ -951,6 +1015,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Outputs(Outputs other) : this() {
           files_ = other.files_.Clone();
           directories_ = other.directories_.Clone();
@@ -960,6 +1025,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Outputs Clone() {
           return new Outputs(this);
         }
@@ -974,6 +1040,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// MUST be delimited by forward slashes.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> Files {
           get { return files_; }
         }
@@ -988,6 +1055,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// MUST be delimited by forward slashes.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> Directories {
           get { return directories_; }
         }
@@ -1003,6 +1071,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// that must be written via the ByteStream API.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string StdoutDestination {
           get { return stdoutDestination_; }
           set {
@@ -1021,6 +1090,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// that must be written via the ByteStream API.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string StderrDestination {
           get { return stderrDestination_; }
           set {
@@ -1029,11 +1099,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Outputs);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Outputs other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1049,6 +1121,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= files_.GetHashCode();
@@ -1062,11 +1135,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1089,6 +1164,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           files_.WriteTo(ref output, _repeated_files_codec);
           directories_.WriteTo(ref output, _repeated_directories_codec);
@@ -1107,6 +1183,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += files_.CalculateSize(_repeated_files_codec);
@@ -1124,6 +1201,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Outputs other) {
           if (other == null) {
             return;
@@ -1140,6 +1218,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1173,6 +1252,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1214,19 +1294,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         private static readonly pb::MessageParser<Timeouts> _parser = new pb::MessageParser<Timeouts>(() => new Timeouts());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Timeouts> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandTask.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Timeouts() {
           OnConstruction();
         }
@@ -1234,6 +1318,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Timeouts(Timeouts other) : this() {
           execution_ = other.execution_ != null ? other.execution_.Clone() : null;
           idle_ = other.idle_ != null ? other.idle_.Clone() : null;
@@ -1242,6 +1327,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Timeouts Clone() {
           return new Timeouts(this);
         }
@@ -1255,6 +1341,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// will terminate the task if it runs longer than this.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Duration Execution {
           get { return execution_; }
           set {
@@ -1272,6 +1359,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// terminate the task.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Duration Idle {
           get { return idle_; }
           set {
@@ -1291,6 +1379,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         /// SIGKILL on *nix, CTRL_BREAK_EVENT on Windows).
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Duration Shutdown {
           get { return shutdown_; }
           set {
@@ -1299,11 +1388,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Timeouts);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Timeouts other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1318,6 +1409,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (execution_ != null) hash ^= Execution.GetHashCode();
@@ -1330,11 +1422,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1359,6 +1453,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (execution_ != null) {
             output.WriteRawTag(10);
@@ -1379,6 +1474,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (execution_ != null) {
@@ -1397,6 +1493,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Timeouts other) {
           if (other == null) {
             return;
@@ -1423,6 +1520,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1461,6 +1559,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1513,19 +1612,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<CommandOutputs> _parser = new pb::MessageParser<CommandOutputs>(() => new CommandOutputs());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommandOutputs> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandOutputs() {
       OnConstruction();
     }
@@ -1533,6 +1636,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandOutputs(CommandOutputs other) : this() {
       exitCode_ = other.exitCode_;
       outputs_ = other.outputs_ != null ? other.outputs_.Clone() : null;
@@ -1540,6 +1644,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandOutputs Clone() {
       return new CommandOutputs(this);
     }
@@ -1554,6 +1659,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// (zero) is unlikely to be correct unless the status code is OK.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ExitCode {
       get { return exitCode_; }
       set {
@@ -1571,6 +1677,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     ///    * A LUCI-style .isolated file
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.Digest Outputs {
       get { return outputs_; }
       set {
@@ -1579,11 +1686,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommandOutputs);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommandOutputs other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1597,6 +1706,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ExitCode != 0) hash ^= ExitCode.GetHashCode();
@@ -1608,11 +1718,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1633,6 +1745,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ExitCode != 0) {
         output.WriteRawTag(8);
@@ -1649,6 +1762,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ExitCode != 0) {
@@ -1664,6 +1778,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommandOutputs other) {
       if (other == null) {
         return;
@@ -1681,6 +1796,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1709,6 +1825,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1747,19 +1864,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<CommandOverhead> _parser = new pb::MessageParser<CommandOverhead>(() => new CommandOverhead());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommandOverhead> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandOverhead() {
       OnConstruction();
     }
@@ -1767,6 +1888,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandOverhead(CommandOverhead other) : this() {
       duration_ = other.duration_ != null ? other.duration_.Clone() : null;
       overhead_ = other.overhead_ != null ? other.overhead_.Clone() : null;
@@ -1774,6 +1896,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandOverhead Clone() {
       return new CommandOverhead(this);
     }
@@ -1787,6 +1910,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// the RPCs and the bot response time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Duration {
       get { return duration_; }
       set {
@@ -1802,6 +1926,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// uploading/downloading files).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Overhead {
       get { return overhead_; }
       set {
@@ -1810,11 +1935,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommandOverhead);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommandOverhead other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1828,6 +1955,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (duration_ != null) hash ^= Duration.GetHashCode();
@@ -1839,11 +1967,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1864,6 +1994,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (duration_ != null) {
         output.WriteRawTag(10);
@@ -1880,6 +2011,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (duration_ != null) {
@@ -1895,6 +2027,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommandOverhead other) {
       if (other == null) {
         return;
@@ -1915,6 +2048,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1946,6 +2080,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1986,19 +2121,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<CommandResult> _parser = new pb::MessageParser<CommandResult>(() => new CommandResult());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<CommandResult> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandResult() {
       OnConstruction();
     }
@@ -2006,6 +2145,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandResult(CommandResult other) : this() {
       status_ = other.status_ != null ? other.status_.Clone() : null;
       exitCode_ = other.exitCode_;
@@ -2017,6 +2157,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommandResult Clone() {
       return new CommandResult(this);
     }
@@ -2030,6 +2171,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// memory exhaustion, it might have a code of RESOURCE_EXHAUSTED.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.Status Status {
       get { return status_; }
       set {
@@ -2045,6 +2187,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// `status` has a code of OK (otherwise it may simply be unset).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ExitCode {
       get { return exitCode_; }
       set {
@@ -2062,6 +2205,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     ///    * A LUCI-style .isolated file
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.Digest Outputs {
       get { return outputs_; }
       set {
@@ -2079,6 +2223,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Duration {
       get { return duration_; }
       set {
@@ -2095,6 +2240,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Overhead {
       get { return overhead_; }
       set {
@@ -2116,16 +2262,19 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// doesn't know about.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Metadata {
       get { return metadata_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as CommandResult);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(CommandResult other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2143,6 +2292,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (status_ != null) hash ^= Status.GetHashCode();
@@ -2158,11 +2308,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2196,6 +2348,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (status_ != null) {
         output.WriteRawTag(10);
@@ -2225,6 +2378,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (status_ != null) {
@@ -2250,6 +2404,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(CommandResult other) {
       if (other == null) {
         return;
@@ -2286,6 +2441,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2339,6 +2495,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2401,19 +2558,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<FileMetadata> _parser = new pb::MessageParser<FileMetadata>(() => new FileMetadata());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FileMetadata> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FileMetadata() {
       OnConstruction();
     }
@@ -2421,6 +2582,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FileMetadata(FileMetadata other) : this() {
       path_ = other.path_;
       digest_ = other.digest_ != null ? other.digest_.Clone() : null;
@@ -2430,6 +2592,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FileMetadata Clone() {
       return new FileMetadata(this);
     }
@@ -2445,6 +2608,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// root of that directory. All paths MUST be delimited by forward slashes.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Path {
       get { return path_; }
       set {
@@ -2460,6 +2624,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// retrieves the contents from a CAS system is not defined here.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.Digest Digest {
       get { return digest_; }
       set {
@@ -2475,6 +2640,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// listed here.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString Contents {
       get { return contents_; }
       set {
@@ -2489,6 +2655,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// Properties of the file
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool IsExecutable {
       get { return isExecutable_; }
       set {
@@ -2497,11 +2664,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FileMetadata);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FileMetadata other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2517,6 +2686,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Path.Length != 0) hash ^= Path.GetHashCode();
@@ -2530,11 +2700,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2563,6 +2735,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Path.Length != 0) {
         output.WriteRawTag(10);
@@ -2587,6 +2760,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Path.Length != 0) {
@@ -2608,6 +2782,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FileMetadata other) {
       if (other == null) {
         return;
@@ -2631,6 +2806,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2667,6 +2843,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2712,19 +2889,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<DirectoryMetadata> _parser = new pb::MessageParser<DirectoryMetadata>(() => new DirectoryMetadata());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DirectoryMetadata> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DirectoryMetadata() {
       OnConstruction();
     }
@@ -2732,6 +2913,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DirectoryMetadata(DirectoryMetadata other) : this() {
       path_ = other.path_;
       digest_ = other.digest_ != null ? other.digest_.Clone() : null;
@@ -2739,6 +2921,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DirectoryMetadata Clone() {
       return new DirectoryMetadata(this);
     }
@@ -2751,6 +2934,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Path {
       get { return path_; }
       set {
@@ -2766,6 +2950,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// Directory message.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.Digest Digest {
       get { return digest_; }
       set {
@@ -2774,11 +2959,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DirectoryMetadata);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DirectoryMetadata other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2792,6 +2979,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Path.Length != 0) hash ^= Path.GetHashCode();
@@ -2803,11 +2991,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -2828,6 +3018,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Path.Length != 0) {
         output.WriteRawTag(10);
@@ -2844,6 +3035,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Path.Length != 0) {
@@ -2859,6 +3051,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DirectoryMetadata other) {
       if (other == null) {
         return;
@@ -2876,6 +3069,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -2904,6 +3098,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2948,19 +3143,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<Digest> _parser = new pb::MessageParser<Digest>(() => new Digest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Digest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Digest() {
       OnConstruction();
     }
@@ -2968,6 +3167,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Digest(Digest other) : this() {
       hash_ = other.hash_;
       sizeBytes_ = other.sizeBytes_;
@@ -2975,6 +3175,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Digest Clone() {
       return new Digest(this);
     }
@@ -2987,6 +3188,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// using an implementation-defined hash algorithm (eg SHA-256).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Hash {
       get { return hash_; }
       set {
@@ -3004,6 +3206,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// retrieve blobs of content and is included here for this reason.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long SizeBytes {
       get { return sizeBytes_; }
       set {
@@ -3012,11 +3215,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Digest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Digest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3030,6 +3235,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Hash.Length != 0) hash ^= Hash.GetHashCode();
@@ -3041,11 +3247,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3066,6 +3274,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Hash.Length != 0) {
         output.WriteRawTag(10);
@@ -3082,6 +3291,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Hash.Length != 0) {
@@ -3097,6 +3307,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Digest other) {
       if (other == null) {
         return;
@@ -3111,6 +3322,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3136,6 +3348,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3169,19 +3382,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<Blob> _parser = new pb::MessageParser<Blob>(() => new Blob());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Blob> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Blob() {
       OnConstruction();
     }
@@ -3189,6 +3406,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Blob(Blob other) : this() {
       digest_ = other.digest_ != null ? other.digest_.Clone() : null;
       contents_ = other.contents_;
@@ -3196,6 +3414,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Blob Clone() {
       return new Blob(this);
     }
@@ -3207,6 +3426,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// The digest of the blob. This should be verified by the receiver.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.DevTools.RemoteWorkers.V1Test2.Digest Digest {
       get { return digest_; }
       set {
@@ -3221,6 +3441,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// The contents of the blob.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString Contents {
       get { return contents_; }
       set {
@@ -3229,11 +3450,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Blob);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Blob other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3247,6 +3470,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (digest_ != null) hash ^= Digest.GetHashCode();
@@ -3258,11 +3482,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3283,6 +3509,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (digest_ != null) {
         output.WriteRawTag(10);
@@ -3299,6 +3526,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (digest_ != null) {
@@ -3314,6 +3542,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Blob other) {
       if (other == null) {
         return;
@@ -3331,6 +3560,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3359,6 +3589,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3396,19 +3627,23 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     private static readonly pb::MessageParser<Directory> _parser = new pb::MessageParser<Directory>(() => new Directory());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Directory> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.DevTools.RemoteWorkers.V1Test2.CommandReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Directory() {
       OnConstruction();
     }
@@ -3416,6 +3651,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Directory(Directory other) : this() {
       files_ = other.files_.Clone();
       directories_ = other.directories_.Clone();
@@ -3423,6 +3659,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Directory Clone() {
       return new Directory(this);
     }
@@ -3436,6 +3673,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// The files in this directory
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.DevTools.RemoteWorkers.V1Test2.FileMetadata> Files {
       get { return files_; }
     }
@@ -3449,16 +3687,19 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     /// Any subdirectories
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.DevTools.RemoteWorkers.V1Test2.DirectoryMetadata> Directories {
       get { return directories_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Directory);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Directory other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3472,6 +3713,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= files_.GetHashCode();
@@ -3483,11 +3725,13 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -3502,6 +3746,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       files_.WriteTo(ref output, _repeated_files_codec);
       directories_.WriteTo(ref output, _repeated_directories_codec);
@@ -3512,6 +3757,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += files_.CalculateSize(_repeated_files_codec);
@@ -3523,6 +3769,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Directory other) {
       if (other == null) {
         return;
@@ -3533,6 +3780,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -3558,6 +3806,7 @@ namespace Google.DevTools.RemoteWorkers.V1Test2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

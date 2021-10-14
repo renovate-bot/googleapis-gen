@@ -45,7 +45,7 @@ class ReadTensorboardTimeSeriesDataResponse extends \Google\Protobuf\Internal\Me
      */
     public function getTimeSeriesData()
     {
-        return isset($this->time_series_data) ? $this->time_series_data : null;
+        return $this->time_series_data;
     }
 
     public function hasTimeSeriesData()

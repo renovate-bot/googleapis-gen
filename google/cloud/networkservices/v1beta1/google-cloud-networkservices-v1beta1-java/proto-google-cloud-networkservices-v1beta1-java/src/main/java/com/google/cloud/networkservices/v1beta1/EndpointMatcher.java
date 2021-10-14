@@ -724,10 +724,10 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getLabelNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, labelName_);
         }
-        if (!getLabelValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelValue_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, labelValue_);
         }
         unknownFields.writeTo(output);
@@ -739,10 +739,10 @@ private static final long serialVersionUID = 0L;
         if (size != -1) return size;
 
         size = 0;
-        if (!getLabelNameBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, labelName_);
         }
-        if (!getLabelValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelValue_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, labelValue_);
         }
         size += unknownFields.getSerializedSize();

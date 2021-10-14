@@ -34,7 +34,7 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>double default_value = 4;</code>
+     * Generated from protobuf field <code>optional double default_value = 4;</code>
      */
     protected $default_value = null;
 
@@ -120,7 +120,7 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>double default_value = 4;</code>
+     * Generated from protobuf field <code>optional double default_value = 4;</code>
      * @return float
      */
     public function getDefaultValue()
@@ -145,7 +145,7 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>double default_value = 4;</code>
+     * Generated from protobuf field <code>optional double default_value = 4;</code>
      * @param float $var
      * @return $this
      */

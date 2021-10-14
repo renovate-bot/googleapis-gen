@@ -129,7 +129,7 @@ class PublishLifecycleEventRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBuildEvent()
     {
-        return isset($this->build_event) ? $this->build_event : null;
+        return $this->build_event;
     }
 
     public function hasBuildEvent()
@@ -169,7 +169,7 @@ class PublishLifecycleEventRequest extends \Google\Protobuf\Internal\Message
      */
     public function getStreamTimeout()
     {
-        return isset($this->stream_timeout) ? $this->stream_timeout : null;
+        return $this->stream_timeout;
     }
 
     public function hasStreamTimeout()

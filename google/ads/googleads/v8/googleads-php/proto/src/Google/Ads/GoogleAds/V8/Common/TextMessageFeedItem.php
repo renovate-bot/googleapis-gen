@@ -20,33 +20,33 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The business name to prepend to the message text.
      * This field is required.
      *
-     * Generated from protobuf field <code>string business_name = 6;</code>
+     * Generated from protobuf field <code>optional string business_name = 6;</code>
      */
     protected $business_name = null;
     /**
      * Uppercase two-letter country code of the advertiser's phone number.
      * This field is required.
      *
-     * Generated from protobuf field <code>string country_code = 7;</code>
+     * Generated from protobuf field <code>optional string country_code = 7;</code>
      */
     protected $country_code = null;
     /**
      * The advertiser's phone number the message will be sent to. Required.
      *
-     * Generated from protobuf field <code>string phone_number = 8;</code>
+     * Generated from protobuf field <code>optional string phone_number = 8;</code>
      */
     protected $phone_number = null;
     /**
      * The text to show in the ad.
      * This field is required.
      *
-     * Generated from protobuf field <code>string text = 9;</code>
+     * Generated from protobuf field <code>optional string text = 9;</code>
      */
     protected $text = null;
     /**
      * The message extension_text populated in the messaging app.
      *
-     * Generated from protobuf field <code>string extension_text = 10;</code>
+     * Generated from protobuf field <code>optional string extension_text = 10;</code>
      */
     protected $extension_text = null;
 
@@ -80,7 +80,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The business name to prepend to the message text.
      * This field is required.
      *
-     * Generated from protobuf field <code>string business_name = 6;</code>
+     * Generated from protobuf field <code>optional string business_name = 6;</code>
      * @return string
      */
     public function getBusinessName()
@@ -102,7 +102,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The business name to prepend to the message text.
      * This field is required.
      *
-     * Generated from protobuf field <code>string business_name = 6;</code>
+     * Generated from protobuf field <code>optional string business_name = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -118,7 +118,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * Uppercase two-letter country code of the advertiser's phone number.
      * This field is required.
      *
-     * Generated from protobuf field <code>string country_code = 7;</code>
+     * Generated from protobuf field <code>optional string country_code = 7;</code>
      * @return string
      */
     public function getCountryCode()
@@ -140,7 +140,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * Uppercase two-letter country code of the advertiser's phone number.
      * This field is required.
      *
-     * Generated from protobuf field <code>string country_code = 7;</code>
+     * Generated from protobuf field <code>optional string country_code = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -155,7 +155,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The advertiser's phone number the message will be sent to. Required.
      *
-     * Generated from protobuf field <code>string phone_number = 8;</code>
+     * Generated from protobuf field <code>optional string phone_number = 8;</code>
      * @return string
      */
     public function getPhoneNumber()
@@ -176,7 +176,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The advertiser's phone number the message will be sent to. Required.
      *
-     * Generated from protobuf field <code>string phone_number = 8;</code>
+     * Generated from protobuf field <code>optional string phone_number = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -192,7 +192,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The text to show in the ad.
      * This field is required.
      *
-     * Generated from protobuf field <code>string text = 9;</code>
+     * Generated from protobuf field <code>optional string text = 9;</code>
      * @return string
      */
     public function getText()
@@ -214,7 +214,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The text to show in the ad.
      * This field is required.
      *
-     * Generated from protobuf field <code>string text = 9;</code>
+     * Generated from protobuf field <code>optional string text = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -229,7 +229,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The message extension_text populated in the messaging app.
      *
-     * Generated from protobuf field <code>string extension_text = 10;</code>
+     * Generated from protobuf field <code>optional string extension_text = 10;</code>
      * @return string
      */
     public function getExtensionText()
@@ -250,7 +250,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The message extension_text populated in the messaging app.
      *
-     * Generated from protobuf field <code>string extension_text = 10;</code>
+     * Generated from protobuf field <code>optional string extension_text = 10;</code>
      * @param string $var
      * @return $this
      */

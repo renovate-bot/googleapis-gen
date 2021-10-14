@@ -26,7 +26,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
     /**
      * Maximum number of events allowed during the time range by this cap.
      *
-     * Generated from protobuf field <code>int32 cap = 3;</code>
+     * Generated from protobuf field <code>optional int32 cap = 3;</code>
      */
     protected $cap = null;
 
@@ -57,7 +57,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      */
     public function getKey()
     {
-        return isset($this->key) ? $this->key : null;
+        return $this->key;
     }
 
     public function hasKey()
@@ -89,7 +89,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
     /**
      * Maximum number of events allowed during the time range by this cap.
      *
-     * Generated from protobuf field <code>int32 cap = 3;</code>
+     * Generated from protobuf field <code>optional int32 cap = 3;</code>
      * @return int
      */
     public function getCap()
@@ -110,7 +110,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
     /**
      * Maximum number of events allowed during the time range by this cap.
      *
-     * Generated from protobuf field <code>int32 cap = 3;</code>
+     * Generated from protobuf field <code>optional int32 cap = 3;</code>
      * @param int $var
      * @return $this
      */

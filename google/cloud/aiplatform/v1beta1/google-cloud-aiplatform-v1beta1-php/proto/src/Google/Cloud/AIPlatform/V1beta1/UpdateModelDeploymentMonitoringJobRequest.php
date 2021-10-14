@@ -105,7 +105,7 @@ class UpdateModelDeploymentMonitoringJobRequest extends \Google\Protobuf\Interna
      */
     public function getModelDeploymentMonitoringJob()
     {
-        return isset($this->model_deployment_monitoring_job) ? $this->model_deployment_monitoring_job : null;
+        return $this->model_deployment_monitoring_job;
     }
 
     public function hasModelDeploymentMonitoringJob()
@@ -166,7 +166,7 @@ class UpdateModelDeploymentMonitoringJobRequest extends \Google\Protobuf\Interna
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

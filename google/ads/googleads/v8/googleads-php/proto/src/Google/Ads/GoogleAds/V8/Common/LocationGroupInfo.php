@@ -19,7 +19,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Feed specifying locations for targeting.
      * This is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>string feed = 5;</code>
+     * Generated from protobuf field <code>optional string feed = 5;</code>
      */
     protected $feed = null;
     /**
@@ -33,7 +33,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Distance in units specifying the radius around targeted locations.
      * This is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>int64 radius = 7;</code>
+     * Generated from protobuf field <code>optional int64 radius = 7;</code>
      */
     protected $radius = null;
     /**
@@ -89,7 +89,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Feed specifying locations for targeting.
      * This is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>string feed = 5;</code>
+     * Generated from protobuf field <code>optional string feed = 5;</code>
      * @return string
      */
     public function getFeed()
@@ -111,7 +111,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Feed specifying locations for targeting.
      * This is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>string feed = 5;</code>
+     * Generated from protobuf field <code>optional string feed = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -155,7 +155,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Distance in units specifying the radius around targeted locations.
      * This is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>int64 radius = 7;</code>
+     * Generated from protobuf field <code>optional int64 radius = 7;</code>
      * @return int|string
      */
     public function getRadius()
@@ -177,7 +177,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Distance in units specifying the radius around targeted locations.
      * This is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>int64 radius = 7;</code>
+     * Generated from protobuf field <code>optional int64 radius = 7;</code>
      * @param int|string $var
      * @return $this
      */

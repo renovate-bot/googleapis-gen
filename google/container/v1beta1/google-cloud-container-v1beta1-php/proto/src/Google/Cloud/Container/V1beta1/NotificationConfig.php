@@ -45,7 +45,7 @@ class NotificationConfig extends \Google\Protobuf\Internal\Message
      */
     public function getPubsub()
     {
-        return isset($this->pubsub) ? $this->pubsub : null;
+        return $this->pubsub;
     }
 
     public function hasPubsub()

@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
     if (entityType_ != null) {
       output.writeMessage(1, getEntityType());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
     }
     if (updateMask_ != null) {
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getEntityType());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
     }
     if (updateMask_ != null) {

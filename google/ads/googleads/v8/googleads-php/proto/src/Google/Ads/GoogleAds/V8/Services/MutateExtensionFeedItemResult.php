@@ -85,7 +85,7 @@ class MutateExtensionFeedItemResult extends \Google\Protobuf\Internal\Message
      */
     public function getExtensionFeedItem()
     {
-        return isset($this->extension_feed_item) ? $this->extension_feed_item : null;
+        return $this->extension_feed_item;
     }
 
     public function hasExtensionFeedItem()

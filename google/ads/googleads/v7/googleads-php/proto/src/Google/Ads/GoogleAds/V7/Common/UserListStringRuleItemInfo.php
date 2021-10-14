@@ -29,7 +29,7 @@ class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      * tabs, or parentheses. This field is required and must be populated when
      * creating a new string rule item.
      *
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>optional string value = 3;</code>
      */
     protected $value = null;
 
@@ -91,7 +91,7 @@ class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      * tabs, or parentheses. This field is required and must be populated when
      * creating a new string rule item.
      *
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>optional string value = 3;</code>
      * @return string
      */
     public function getValue()
@@ -115,7 +115,7 @@ class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      * tabs, or parentheses. This field is required and must be populated when
      * creating a new string rule item.
      *
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>optional string value = 3;</code>
      * @param string $var
      * @return $this
      */

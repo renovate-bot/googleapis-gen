@@ -77,7 +77,7 @@ class TrafficRule extends \Google\Protobuf\Internal\Message
      */
     public function getDelay()
     {
-        return isset($this->delay) ? $this->delay : null;
+        return $this->delay;
     }
 
     public function hasDelay()

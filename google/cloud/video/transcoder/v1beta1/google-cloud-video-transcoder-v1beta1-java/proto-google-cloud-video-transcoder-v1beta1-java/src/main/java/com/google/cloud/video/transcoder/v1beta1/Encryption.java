@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKeyUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyUri_);
       }
       unknownFields.writeTo(output);
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyUri_);
       }
       size += unknownFields.getSerializedSize();
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKeyUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyUri_);
       }
       unknownFields.writeTo(output);
@@ -949,7 +949,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyUri_);
       }
       size += unknownFields.getSerializedSize();
@@ -1643,10 +1643,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKeyIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyId_);
       }
-      if (!getSchemeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scheme_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, scheme_);
       }
       unknownFields.writeTo(output);
@@ -1658,10 +1658,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyId_);
       }
-      if (!getSchemeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scheme_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, scheme_);
       }
       size += unknownFields.getSerializedSize();
@@ -2496,10 +2496,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
     }
-    if (!getIvBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iv_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, iv_);
     }
     if (encryptionModeCase_ == 3) {
@@ -2520,10 +2520,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
     }
-    if (!getIvBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iv_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, iv_);
     }
     if (encryptionModeCase_ == 3) {

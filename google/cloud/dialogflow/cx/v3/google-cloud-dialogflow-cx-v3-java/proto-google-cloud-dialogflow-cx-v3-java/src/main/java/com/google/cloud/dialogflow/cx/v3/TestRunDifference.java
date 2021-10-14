@@ -367,7 +367,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.cloud.dialogflow.cx.v3.TestRunDifference.DiffType.DIFF_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     unknownFields.writeTo(output);
@@ -383,7 +383,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     size += unknownFields.getSerializedSize();

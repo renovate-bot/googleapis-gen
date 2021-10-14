@@ -2468,7 +2468,7 @@ private static final long serialVersionUID = 0L;
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!getPatternBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pattern_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pattern_);
       }
       if (getGroupIndexesList().size() > 0) {
@@ -2487,7 +2487,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getPatternBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pattern_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pattern_);
       }
       {

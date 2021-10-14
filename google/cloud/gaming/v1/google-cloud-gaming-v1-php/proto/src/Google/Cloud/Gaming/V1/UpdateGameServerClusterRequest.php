@@ -60,7 +60,7 @@ class UpdateGameServerClusterRequest extends \Google\Protobuf\Internal\Message
      */
     public function getGameServerCluster()
     {
-        return isset($this->game_server_cluster) ? $this->game_server_cluster : null;
+        return $this->game_server_cluster;
     }
 
     public function hasGameServerCluster()
@@ -99,7 +99,7 @@ class UpdateGameServerClusterRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -26,7 +26,7 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
      * Keyword text when member_type is KEYWORD or URL string when
      * member_type is URL.
      *
-     * Generated from protobuf field <code>string parameter = 3;</code>
+     * Generated from protobuf field <code>optional string parameter = 3;</code>
      */
     protected $parameter = null;
 
@@ -78,7 +78,7 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
      * Keyword text when member_type is KEYWORD or URL string when
      * member_type is URL.
      *
-     * Generated from protobuf field <code>string parameter = 3;</code>
+     * Generated from protobuf field <code>optional string parameter = 3;</code>
      * @return string
      */
     public function getParameter()
@@ -100,7 +100,7 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
      * Keyword text when member_type is KEYWORD or URL string when
      * member_type is URL.
      *
-     * Generated from protobuf field <code>string parameter = 3;</code>
+     * Generated from protobuf field <code>optional string parameter = 3;</code>
      * @param string $var
      * @return $this
      */

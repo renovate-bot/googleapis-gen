@@ -190,7 +190,7 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -202,7 +202,7 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -1689,10 +1689,10 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
       }
-      if (!getAttestorIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attestorId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attestorId_);
       }
       if (attestor_ != null) {
@@ -1707,10 +1707,10 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
       }
-      if (!getAttestorIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attestorId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attestorId_);
       }
       if (attestor_ != null) {
@@ -2621,7 +2621,7 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -2633,7 +2633,7 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -4074,13 +4074,13 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
       }
       if (pageSize_ != 0) {
         output.writeInt32(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
       }
       unknownFields.writeTo(output);
@@ -4092,14 +4092,14 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getParentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
       }
       if (pageSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, pageSize_);
       }
-      if (!getPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -5006,7 +5006,7 @@ public final class Service {
       for (int i = 0; i < attestors_.size(); i++) {
         output.writeMessage(1, attestors_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
       }
       unknownFields.writeTo(output);
@@ -5022,7 +5022,7 @@ public final class Service {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, attestors_.get(i));
       }
-      if (!getNextPageTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -5998,7 +5998,7 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -6010,7 +6010,7 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -6619,7 +6619,7 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -6631,7 +6631,7 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -7495,16 +7495,16 @@ public final class Service {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAttestorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attestor_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attestor_);
       }
       if (attestation_ != null) {
         output.writeMessage(2, getAttestation());
       }
-      if (!getOccurrenceNoteBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(occurrenceNote_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, occurrenceNote_);
       }
-      if (!getOccurrenceResourceUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(occurrenceResourceUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, occurrenceResourceUri_);
       }
       unknownFields.writeTo(output);
@@ -7516,17 +7516,17 @@ public final class Service {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAttestorBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attestor_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attestor_);
       }
       if (attestation_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getAttestation());
       }
-      if (!getOccurrenceNoteBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(occurrenceNote_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, occurrenceNote_);
       }
-      if (!getOccurrenceResourceUriBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(occurrenceResourceUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, occurrenceResourceUri_);
       }
       size += unknownFields.getSerializedSize();
@@ -8768,7 +8768,7 @@ public final class Service {
       if (result_ != com.google.protos.google.cloud.binaryauthorization.v1.Service.ValidateAttestationOccurrenceResponse.Result.RESULT_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, result_);
       }
-      if (!getDenialReasonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denialReason_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, denialReason_);
       }
       unknownFields.writeTo(output);
@@ -8784,7 +8784,7 @@ public final class Service {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, result_);
       }
-      if (!getDenialReasonBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denialReason_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, denialReason_);
       }
       size += unknownFields.getSerializedSize();

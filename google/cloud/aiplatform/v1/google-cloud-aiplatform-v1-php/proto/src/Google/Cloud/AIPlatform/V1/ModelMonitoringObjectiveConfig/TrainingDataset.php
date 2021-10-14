@@ -254,7 +254,7 @@ class TrainingDataset extends \Google\Protobuf\Internal\Message
      */
     public function getLoggingSamplingStrategy()
     {
-        return isset($this->logging_sampling_strategy) ? $this->logging_sampling_strategy : null;
+        return $this->logging_sampling_strategy;
     }
 
     public function hasLoggingSamplingStrategy()

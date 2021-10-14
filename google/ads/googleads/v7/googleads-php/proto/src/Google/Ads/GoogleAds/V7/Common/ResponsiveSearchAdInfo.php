@@ -40,14 +40,14 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First part of text that may appear appended to the url displayed in the ad.
      *
-     * Generated from protobuf field <code>string path1 = 5;</code>
+     * Generated from protobuf field <code>optional string path1 = 5;</code>
      */
     protected $path1 = null;
     /**
      * Second part of text that may appear appended to the url displayed in the
      * ad. This field can only be set when path1 is also set.
      *
-     * Generated from protobuf field <code>string path2 = 6;</code>
+     * Generated from protobuf field <code>optional string path2 = 6;</code>
      */
     protected $path2 = null;
 
@@ -134,7 +134,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First part of text that may appear appended to the url displayed in the ad.
      *
-     * Generated from protobuf field <code>string path1 = 5;</code>
+     * Generated from protobuf field <code>optional string path1 = 5;</code>
      * @return string
      */
     public function getPath1()
@@ -155,7 +155,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First part of text that may appear appended to the url displayed in the ad.
      *
-     * Generated from protobuf field <code>string path1 = 5;</code>
+     * Generated from protobuf field <code>optional string path1 = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -171,7 +171,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * Second part of text that may appear appended to the url displayed in the
      * ad. This field can only be set when path1 is also set.
      *
-     * Generated from protobuf field <code>string path2 = 6;</code>
+     * Generated from protobuf field <code>optional string path2 = 6;</code>
      * @return string
      */
     public function getPath2()
@@ -193,7 +193,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * Second part of text that may appear appended to the url displayed in the
      * ad. This field can only be set when path1 is also set.
      *
-     * Generated from protobuf field <code>string path2 = 6;</code>
+     * Generated from protobuf field <code>optional string path2 = 6;</code>
      * @param string $var
      * @return $this
      */

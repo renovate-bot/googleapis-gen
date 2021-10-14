@@ -80,7 +80,7 @@ class CreateAccountLinkRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAccountLink()
     {
-        return isset($this->account_link) ? $this->account_link : null;
+        return $this->account_link;
     }
 
     public function hasAccountLink()

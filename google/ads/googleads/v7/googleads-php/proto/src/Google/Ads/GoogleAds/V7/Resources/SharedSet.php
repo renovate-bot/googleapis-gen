@@ -27,7 +27,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -44,7 +44,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 255 UTF-8 bytes,
      * inclusive.
      *
-     * Generated from protobuf field <code>string name = 9;</code>
+     * Generated from protobuf field <code>optional string name = 9;</code>
      */
     protected $name = null;
     /**
@@ -56,13 +56,13 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 member_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 member_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $member_count = null;
     /**
      * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 reference_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 reference_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $reference_count = null;
 
@@ -133,7 +133,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -154,7 +154,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -201,7 +201,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 255 UTF-8 bytes,
      * inclusive.
      *
-     * Generated from protobuf field <code>string name = 9;</code>
+     * Generated from protobuf field <code>optional string name = 9;</code>
      * @return string
      */
     public function getName()
@@ -226,7 +226,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 255 UTF-8 bytes,
      * inclusive.
      *
-     * Generated from protobuf field <code>string name = 9;</code>
+     * Generated from protobuf field <code>optional string name = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -267,7 +267,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 member_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 member_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getMemberCount()
@@ -288,7 +288,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 member_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 member_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -303,7 +303,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 reference_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 reference_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getReferenceCount()
@@ -324,7 +324,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>int64 reference_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 reference_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

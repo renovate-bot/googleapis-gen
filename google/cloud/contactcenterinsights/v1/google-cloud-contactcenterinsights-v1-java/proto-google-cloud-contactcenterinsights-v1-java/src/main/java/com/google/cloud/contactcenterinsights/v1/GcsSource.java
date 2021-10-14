@@ -208,10 +208,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getAudioUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
     }
-    if (!getTranscriptUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transcriptUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, transcriptUri_);
     }
     unknownFields.writeTo(output);
@@ -223,10 +223,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getAudioUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
     }
-    if (!getTranscriptUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transcriptUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, transcriptUri_);
     }
     size += unknownFields.getSerializedSize();

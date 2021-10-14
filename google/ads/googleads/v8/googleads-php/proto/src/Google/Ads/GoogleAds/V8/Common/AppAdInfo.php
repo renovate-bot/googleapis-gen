@@ -89,7 +89,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMandatoryAdText()
     {
-        return isset($this->mandatory_ad_text) ? $this->mandatory_ad_text : null;
+        return $this->mandatory_ad_text;
     }
 
     public function hasMandatoryAdText()

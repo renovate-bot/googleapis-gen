@@ -225,7 +225,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDatabaseNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, databaseName_);
     }
     for (int i = 0; i < mysqlTables_.size(); i++) {
@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDatabaseNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, databaseName_);
     }
     for (int i = 0; i < mysqlTables_.size(); i++) {

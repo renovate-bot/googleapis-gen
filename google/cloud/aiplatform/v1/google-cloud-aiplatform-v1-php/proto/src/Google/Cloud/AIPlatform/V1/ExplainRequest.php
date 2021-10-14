@@ -194,7 +194,7 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
      */
     public function getParameters()
     {
-        return isset($this->parameters) ? $this->parameters : null;
+        return $this->parameters;
     }
 
     public function hasParameters()
@@ -240,7 +240,7 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationSpecOverride()
     {
-        return isset($this->explanation_spec_override) ? $this->explanation_spec_override : null;
+        return $this->explanation_spec_override;
     }
 
     public function hasExplanationSpecOverride()

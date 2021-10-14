@@ -73,7 +73,7 @@ class Contact extends \Google\Protobuf\Internal\Message
      */
     public function getPostalAddress()
     {
-        return isset($this->postal_address) ? $this->postal_address : null;
+        return $this->postal_address;
     }
 
     public function hasPostalAddress()

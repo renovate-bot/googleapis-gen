@@ -53,7 +53,7 @@ class Waypoint extends \Google\Protobuf\Internal\Message
      */
     public function getLatLng()
     {
-        return isset($this->lat_lng) ? $this->lat_lng : null;
+        return $this->lat_lng;
     }
 
     public function hasLatLng()
@@ -89,7 +89,7 @@ class Waypoint extends \Google\Protobuf\Internal\Message
      */
     public function getEta()
     {
-        return isset($this->eta) ? $this->eta : null;
+        return $this->eta;
     }
 
     public function hasEta()

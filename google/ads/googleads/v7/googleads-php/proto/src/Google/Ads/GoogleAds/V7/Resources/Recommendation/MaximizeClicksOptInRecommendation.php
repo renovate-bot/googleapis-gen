@@ -19,7 +19,7 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
      * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_amount_micros = null;
 
@@ -43,7 +43,7 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
      * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRecommendedBudgetAmountMicros()
@@ -65,7 +65,7 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
      * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

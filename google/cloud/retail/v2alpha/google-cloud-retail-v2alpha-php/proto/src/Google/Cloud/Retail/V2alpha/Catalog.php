@@ -135,7 +135,7 @@ class Catalog extends \Google\Protobuf\Internal\Message
      */
     public function getProductLevelConfig()
     {
-        return isset($this->product_level_config) ? $this->product_level_config : null;
+        return $this->product_level_config;
     }
 
     public function hasProductLevelConfig()
@@ -174,7 +174,7 @@ class Catalog extends \Google\Protobuf\Internal\Message
      */
     public function getMerchantCenterLinkingConfig()
     {
-        return isset($this->merchant_center_linking_config) ? $this->merchant_center_linking_config : null;
+        return $this->merchant_center_linking_config;
     }
 
     public function hasMerchantCenterLinkingConfig()

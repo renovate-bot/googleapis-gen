@@ -359,7 +359,7 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      */
     public function getInitializeParams()
     {
-        return isset($this->initialize_params) ? $this->initialize_params : null;
+        return $this->initialize_params;
     }
 
     public function hasInitializeParams()

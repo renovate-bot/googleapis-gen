@@ -501,7 +501,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getPredictSchemata()
     {
-        return isset($this->predict_schemata) ? $this->predict_schemata : null;
+        return $this->predict_schemata;
     }
 
     public function hasPredictSchemata()
@@ -585,7 +585,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()
@@ -681,7 +681,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getContainerSpec()
     {
-        return isset($this->container_spec) ? $this->container_spec : null;
+        return $this->container_spec;
     }
 
     public function hasContainerSpec()
@@ -955,7 +955,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -991,7 +991,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -1073,7 +1073,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationSpec()
     {
-        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+        return $this->explanation_spec;
     }
 
     public function hasExplanationSpec()
@@ -1190,7 +1190,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()

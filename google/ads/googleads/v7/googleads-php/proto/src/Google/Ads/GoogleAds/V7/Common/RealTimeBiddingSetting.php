@@ -19,7 +19,7 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether the campaign is opted in to real-time bidding.
      *
-     * Generated from protobuf field <code>bool opt_in = 2;</code>
+     * Generated from protobuf field <code>optional bool opt_in = 2;</code>
      */
     protected $opt_in = null;
 
@@ -41,7 +41,7 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether the campaign is opted in to real-time bidding.
      *
-     * Generated from protobuf field <code>bool opt_in = 2;</code>
+     * Generated from protobuf field <code>optional bool opt_in = 2;</code>
      * @return bool
      */
     public function getOptIn()
@@ -62,7 +62,7 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether the campaign is opted in to real-time bidding.
      *
-     * Generated from protobuf field <code>bool opt_in = 2;</code>
+     * Generated from protobuf field <code>optional bool opt_in = 2;</code>
      * @param bool $var
      * @return $this
      */

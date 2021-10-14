@@ -345,7 +345,7 @@ class TransferConfig extends \Google\Protobuf\Internal\Message
      */
     public function getParams()
     {
-        return isset($this->params) ? $this->params : null;
+        return $this->params;
     }
 
     public function hasParams()
@@ -432,7 +432,7 @@ class TransferConfig extends \Google\Protobuf\Internal\Message
      */
     public function getScheduleOptions()
     {
-        return isset($this->schedule_options) ? $this->schedule_options : null;
+        return $this->schedule_options;
     }
 
     public function hasScheduleOptions()
@@ -532,7 +532,7 @@ class TransferConfig extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -568,7 +568,7 @@ class TransferConfig extends \Google\Protobuf\Internal\Message
      */
     public function getNextRunTime()
     {
-        return isset($this->next_run_time) ? $this->next_run_time : null;
+        return $this->next_run_time;
     }
 
     public function hasNextRunTime()
@@ -715,7 +715,7 @@ class TransferConfig extends \Google\Protobuf\Internal\Message
      */
     public function getEmailPreferences()
     {
-        return isset($this->email_preferences) ? $this->email_preferences : null;
+        return $this->email_preferences;
     }
 
     public function hasEmailPreferences()

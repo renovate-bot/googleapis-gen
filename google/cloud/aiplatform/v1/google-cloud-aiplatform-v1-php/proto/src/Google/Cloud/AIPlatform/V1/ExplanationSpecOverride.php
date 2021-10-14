@@ -60,7 +60,7 @@ class ExplanationSpecOverride extends \Google\Protobuf\Internal\Message
      */
     public function getParameters()
     {
-        return isset($this->parameters) ? $this->parameters : null;
+        return $this->parameters;
     }
 
     public function hasParameters()
@@ -98,7 +98,7 @@ class ExplanationSpecOverride extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()

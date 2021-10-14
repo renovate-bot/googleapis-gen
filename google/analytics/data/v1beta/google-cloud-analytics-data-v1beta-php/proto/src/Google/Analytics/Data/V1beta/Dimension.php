@@ -121,7 +121,7 @@ class Dimension extends \Google\Protobuf\Internal\Message
      */
     public function getDimensionExpression()
     {
-        return isset($this->dimension_expression) ? $this->dimension_expression : null;
+        return $this->dimension_expression;
     }
 
     public function hasDimensionExpression()

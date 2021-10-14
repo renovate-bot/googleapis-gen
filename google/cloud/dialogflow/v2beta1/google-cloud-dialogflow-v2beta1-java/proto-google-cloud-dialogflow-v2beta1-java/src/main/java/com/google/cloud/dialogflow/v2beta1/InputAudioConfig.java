@@ -586,13 +586,13 @@ private static final long serialVersionUID = 0L;
     if (sampleRateHertz_ != 0) {
       output.writeInt32(2, sampleRateHertz_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
     }
     for (int i = 0; i < phraseHints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phraseHints_.getRaw(i));
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, model_);
     }
     if (singleUtterance_ != false) {
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, sampleRateHertz_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
     }
     {
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPhraseHintsList().size();
     }
-    if (!getModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, model_);
     }
     if (singleUtterance_ != false) {

@@ -157,7 +157,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      */
     public function getPhotoId()
     {
-        return isset($this->photo_id) ? $this->photo_id : null;
+        return $this->photo_id;
     }
 
     public function hasPhotoId()
@@ -196,7 +196,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      */
     public function getUploadReference()
     {
-        return isset($this->upload_reference) ? $this->upload_reference : null;
+        return $this->upload_reference;
     }
 
     public function hasUploadReference()
@@ -319,7 +319,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      */
     public function getPose()
     {
-        return isset($this->pose) ? $this->pose : null;
+        return $this->pose;
     }
 
     public function hasPose()
@@ -385,7 +385,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      */
     public function getCaptureTime()
     {
-        return isset($this->capture_time) ? $this->capture_time : null;
+        return $this->capture_time;
     }
 
     public function hasCaptureTime()

@@ -21,7 +21,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * sent with an invalid, disallowed or missing value, or when
      * this conversion action is configured to always use the default value.
      *
-     * Generated from protobuf field <code>double default_value = 4;</code>
+     * Generated from protobuf field <code>optional double default_value = 4;</code>
      */
     protected $default_value = null;
     /**
@@ -29,7 +29,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * action are sent with an invalid or missing currency code, or when this
      * conversion action is configured to always use the default value.
      *
-     * Generated from protobuf field <code>string default_currency_code = 5;</code>
+     * Generated from protobuf field <code>optional string default_currency_code = 5;</code>
      */
     protected $default_currency_code = null;
     /**
@@ -37,7 +37,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * place of the value and currency code specified in conversion events for
      * this conversion action.
      *
-     * Generated from protobuf field <code>bool always_use_default_value = 6;</code>
+     * Generated from protobuf field <code>optional bool always_use_default_value = 6;</code>
      */
     protected $always_use_default_value = null;
 
@@ -71,7 +71,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * sent with an invalid, disallowed or missing value, or when
      * this conversion action is configured to always use the default value.
      *
-     * Generated from protobuf field <code>double default_value = 4;</code>
+     * Generated from protobuf field <code>optional double default_value = 4;</code>
      * @return float
      */
     public function getDefaultValue()
@@ -94,7 +94,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * sent with an invalid, disallowed or missing value, or when
      * this conversion action is configured to always use the default value.
      *
-     * Generated from protobuf field <code>double default_value = 4;</code>
+     * Generated from protobuf field <code>optional double default_value = 4;</code>
      * @param float $var
      * @return $this
      */
@@ -111,7 +111,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * action are sent with an invalid or missing currency code, or when this
      * conversion action is configured to always use the default value.
      *
-     * Generated from protobuf field <code>string default_currency_code = 5;</code>
+     * Generated from protobuf field <code>optional string default_currency_code = 5;</code>
      * @return string
      */
     public function getDefaultCurrencyCode()
@@ -134,7 +134,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * action are sent with an invalid or missing currency code, or when this
      * conversion action is configured to always use the default value.
      *
-     * Generated from protobuf field <code>string default_currency_code = 5;</code>
+     * Generated from protobuf field <code>optional string default_currency_code = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * place of the value and currency code specified in conversion events for
      * this conversion action.
      *
-     * Generated from protobuf field <code>bool always_use_default_value = 6;</code>
+     * Generated from protobuf field <code>optional bool always_use_default_value = 6;</code>
      * @return bool
      */
     public function getAlwaysUseDefaultValue()
@@ -174,7 +174,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * place of the value and currency code specified in conversion events for
      * this conversion action.
      *
-     * Generated from protobuf field <code>bool always_use_default_value = 6;</code>
+     * Generated from protobuf field <code>optional bool always_use_default_value = 6;</code>
      * @param bool $var
      * @return $this
      */

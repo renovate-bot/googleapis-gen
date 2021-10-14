@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
    * on the currency for the account.
    * </pre>
    *
-   * <code>int64 target_cpa_micros = 4;</code>
+   * <code>optional int64 target_cpa_micros = 4;</code>
    * @return Whether the targetCpaMicros field is set.
    */
   @java.lang.Override
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
    * on the currency for the account.
    * </pre>
    *
-   * <code>int64 target_cpa_micros = 4;</code>
+   * <code>optional int64 target_cpa_micros = 4;</code>
    * @return The targetCpaMicros.
    */
   @java.lang.Override
@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+   * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
    * @return Whether the cpcBidCeilingMicros field is set.
    */
   @java.lang.Override
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+   * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
    * @return The cpcBidCeilingMicros.
    */
   @java.lang.Override
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_floor_micros = 6;</code>
+   * <code>optional int64 cpc_bid_floor_micros = 6;</code>
    * @return Whether the cpcBidFloorMicros field is set.
    */
   @java.lang.Override
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_floor_micros = 6;</code>
+   * <code>optional int64 cpc_bid_floor_micros = 6;</code>
    * @return The cpcBidFloorMicros.
    */
   @java.lang.Override
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
      * on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 4;</code>
+     * <code>optional int64 target_cpa_micros = 4;</code>
      * @return Whether the targetCpaMicros field is set.
      */
     @java.lang.Override
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
      * on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 4;</code>
+     * <code>optional int64 target_cpa_micros = 4;</code>
      * @return The targetCpaMicros.
      */
     @java.lang.Override
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
      * on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 4;</code>
+     * <code>optional int64 target_cpa_micros = 4;</code>
      * @param value The targetCpaMicros to set.
      * @return This builder for chaining.
      */
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * on the currency for the account.
      * </pre>
      *
-     * <code>int64 target_cpa_micros = 4;</code>
+     * <code>optional int64 target_cpa_micros = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetCpaMicros() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @return Whether the cpcBidCeilingMicros field is set.
      */
     @java.lang.Override
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @return The cpcBidCeilingMicros.
      */
     @java.lang.Override
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @param value The cpcBidCeilingMicros to set.
      * @return This builder for chaining.
      */
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+     * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearCpcBidCeilingMicros() {
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_floor_micros = 6;</code>
+     * <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @return Whether the cpcBidFloorMicros field is set.
      */
     @java.lang.Override
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_floor_micros = 6;</code>
+     * <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @return The cpcBidFloorMicros.
      */
     @java.lang.Override
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_floor_micros = 6;</code>
+     * <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @param value The cpcBidFloorMicros to set.
      * @return This builder for chaining.
      */
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
      * The limit applies to all keywords managed by the strategy.
      * </pre>
      *
-     * <code>int64 cpc_bid_floor_micros = 6;</code>
+     * <code>optional int64 cpc_bid_floor_micros = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearCpcBidFloorMicros() {

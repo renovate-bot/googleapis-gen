@@ -18,7 +18,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>bytes data = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bytes data = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $data = null;
     /**
@@ -26,7 +26,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
      * E.g. https://tpc.googlesyndication.com/simgad/123
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $url = null;
 
@@ -52,7 +52,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>bytes data = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bytes data = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getData()
@@ -73,7 +73,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>bytes data = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional bytes data = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -90,7 +90,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
      * E.g. https://tpc.googlesyndication.com/simgad/123
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getUrl()
@@ -113,7 +113,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
      * E.g. https://tpc.googlesyndication.com/simgad/123
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

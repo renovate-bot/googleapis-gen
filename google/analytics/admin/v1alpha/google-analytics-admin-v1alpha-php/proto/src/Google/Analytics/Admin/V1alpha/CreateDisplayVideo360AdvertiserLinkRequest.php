@@ -79,7 +79,7 @@ class CreateDisplayVideo360AdvertiserLinkRequest extends \Google\Protobuf\Intern
      */
     public function getDisplayVideo360AdvertiserLink()
     {
-        return isset($this->display_video_360_advertiser_link) ? $this->display_video_360_advertiser_link : null;
+        return $this->display_video_360_advertiser_link;
     }
 
     public function hasDisplayVideo360AdvertiserLink()

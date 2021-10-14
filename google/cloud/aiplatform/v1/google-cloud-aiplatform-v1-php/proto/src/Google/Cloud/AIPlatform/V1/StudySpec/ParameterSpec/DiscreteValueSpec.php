@@ -32,7 +32,7 @@ class DiscreteValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>double default_value = 3;</code>
+     * Generated from protobuf field <code>optional double default_value = 3;</code>
      */
     protected $default_value = null;
 
@@ -101,7 +101,7 @@ class DiscreteValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>double default_value = 3;</code>
+     * Generated from protobuf field <code>optional double default_value = 3;</code>
      * @return float
      */
     public function getDefaultValue()
@@ -127,7 +127,7 @@ class DiscreteValueSpec extends \Google\Protobuf\Internal\Message
      * Currently only supported by the Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
-     * Generated from protobuf field <code>double default_value = 3;</code>
+     * Generated from protobuf field <code>optional double default_value = 3;</code>
      * @param float $var
      * @return $this
      */

@@ -28,7 +28,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the keyword plan.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -36,7 +36,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating new keyword
      * plans.
      *
-     * Generated from protobuf field <code>string name = 6;</code>
+     * Generated from protobuf field <code>optional string name = 6;</code>
      */
     protected $name = null;
     /**
@@ -104,7 +104,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the keyword plan.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -125,7 +125,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the keyword plan.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -142,7 +142,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating new keyword
      * plans.
      *
-     * Generated from protobuf field <code>string name = 6;</code>
+     * Generated from protobuf field <code>optional string name = 6;</code>
      * @return string
      */
     public function getName()
@@ -165,7 +165,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating new keyword
      * plans.
      *
-     * Generated from protobuf field <code>string name = 6;</code>
+     * Generated from protobuf field <code>optional string name = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      */
     public function getForecastPeriod()
     {
-        return isset($this->forecast_period) ? $this->forecast_period : null;
+        return $this->forecast_period;
     }
 
     public function hasForecastPeriod()

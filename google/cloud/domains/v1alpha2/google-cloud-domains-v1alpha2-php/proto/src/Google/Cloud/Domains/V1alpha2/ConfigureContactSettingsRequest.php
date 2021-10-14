@@ -113,7 +113,7 @@ class ConfigureContactSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getContactSettings()
     {
-        return isset($this->contact_settings) ? $this->contact_settings : null;
+        return $this->contact_settings;
     }
 
     public function hasContactSettings()
@@ -151,7 +151,7 @@ class ConfigureContactSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

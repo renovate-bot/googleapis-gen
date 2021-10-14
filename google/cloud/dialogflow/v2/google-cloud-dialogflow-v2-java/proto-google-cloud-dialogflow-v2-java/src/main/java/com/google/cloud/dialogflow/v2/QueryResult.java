@@ -969,13 +969,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getQueryTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queryText_);
     }
     if (speechRecognitionConfidence_ != 0F) {
       output.writeFloat(2, speechRecognitionConfidence_);
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, action_);
     }
     if (parameters_ != null) {
@@ -984,13 +984,13 @@ private static final long serialVersionUID = 0L;
     if (allRequiredParamsPresent_ != false) {
       output.writeBool(5, allRequiredParamsPresent_);
     }
-    if (!getFulfillmentTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fulfillmentText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fulfillmentText_);
     }
     for (int i = 0; i < fulfillmentMessages_.size(); i++) {
       output.writeMessage(7, fulfillmentMessages_.get(i));
     }
-    if (!getWebhookSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookSource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, webhookSource_);
     }
     if (webhookPayload_ != null) {
@@ -1008,7 +1008,7 @@ private static final long serialVersionUID = 0L;
     if (diagnosticInfo_ != null) {
       output.writeMessage(14, getDiagnosticInfo());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, languageCode_);
     }
     if (sentimentAnalysisResult_ != null) {
@@ -1026,14 +1026,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getQueryTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queryText_);
     }
     if (speechRecognitionConfidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, speechRecognitionConfidence_);
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, action_);
     }
     if (parameters_ != null) {
@@ -1044,14 +1044,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, allRequiredParamsPresent_);
     }
-    if (!getFulfillmentTextBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fulfillmentText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fulfillmentText_);
     }
     for (int i = 0; i < fulfillmentMessages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, fulfillmentMessages_.get(i));
     }
-    if (!getWebhookSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookSource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, webhookSource_);
     }
     if (webhookPayload_ != null) {
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getDiagnosticInfo());
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, languageCode_);
     }
     if (sentimentAnalysisResult_ != null) {

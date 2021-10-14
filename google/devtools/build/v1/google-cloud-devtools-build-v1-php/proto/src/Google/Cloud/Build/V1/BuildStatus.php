@@ -128,7 +128,7 @@ class BuildStatus extends \Google\Protobuf\Internal\Message
      */
     public function getBuildToolExitCode()
     {
-        return isset($this->build_tool_exit_code) ? $this->build_tool_exit_code : null;
+        return $this->build_tool_exit_code;
     }
 
     public function hasBuildToolExitCode()
@@ -194,7 +194,7 @@ class BuildStatus extends \Google\Protobuf\Internal\Message
      */
     public function getDetails()
     {
-        return isset($this->details) ? $this->details : null;
+        return $this->details;
     }
 
     public function hasDetails()

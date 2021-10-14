@@ -18,13 +18,13 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     /**
      * Low end of the number of nights in the stay.
      *
-     * Generated from protobuf field <code>int64 min_nights = 3;</code>
+     * Generated from protobuf field <code>optional int64 min_nights = 3;</code>
      */
     protected $min_nights = null;
     /**
      * High end of the number of nights in the stay.
      *
-     * Generated from protobuf field <code>int64 max_nights = 4;</code>
+     * Generated from protobuf field <code>optional int64 max_nights = 4;</code>
      */
     protected $max_nights = null;
 
@@ -48,7 +48,7 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     /**
      * Low end of the number of nights in the stay.
      *
-     * Generated from protobuf field <code>int64 min_nights = 3;</code>
+     * Generated from protobuf field <code>optional int64 min_nights = 3;</code>
      * @return int|string
      */
     public function getMinNights()
@@ -69,7 +69,7 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     /**
      * Low end of the number of nights in the stay.
      *
-     * Generated from protobuf field <code>int64 min_nights = 3;</code>
+     * Generated from protobuf field <code>optional int64 min_nights = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     /**
      * High end of the number of nights in the stay.
      *
-     * Generated from protobuf field <code>int64 max_nights = 4;</code>
+     * Generated from protobuf field <code>optional int64 max_nights = 4;</code>
      * @return int|string
      */
     public function getMaxNights()
@@ -105,7 +105,7 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     /**
      * High end of the number of nights in the stay.
      *
-     * Generated from protobuf field <code>int64 max_nights = 4;</code>
+     * Generated from protobuf field <code>optional int64 max_nights = 4;</code>
      * @param int|string $var
      * @return $this
      */

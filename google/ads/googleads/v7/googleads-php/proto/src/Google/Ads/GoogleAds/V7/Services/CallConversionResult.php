@@ -19,27 +19,27 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The caller id from which this call was placed. Caller id is expected to be
      * in E.164 format with preceding '+' sign.
      *
-     * Generated from protobuf field <code>string caller_id = 5;</code>
+     * Generated from protobuf field <code>optional string caller_id = 5;</code>
      */
     protected $caller_id = null;
     /**
      * The date time at which the call occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string call_start_date_time = 6;</code>
+     * Generated from protobuf field <code>optional string call_start_date_time = 6;</code>
      */
     protected $call_start_date_time = null;
     /**
      * Resource name of the conversion action associated with this conversion.
      *
-     * Generated from protobuf field <code>string conversion_action = 7;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 7;</code>
      */
     protected $conversion_action = null;
     /**
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string conversion_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string conversion_date_time = 8;</code>
      */
     protected $conversion_date_time = null;
 
@@ -71,7 +71,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The caller id from which this call was placed. Caller id is expected to be
      * in E.164 format with preceding '+' sign.
      *
-     * Generated from protobuf field <code>string caller_id = 5;</code>
+     * Generated from protobuf field <code>optional string caller_id = 5;</code>
      * @return string
      */
     public function getCallerId()
@@ -93,7 +93,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The caller id from which this call was placed. Caller id is expected to be
      * in E.164 format with preceding '+' sign.
      *
-     * Generated from protobuf field <code>string caller_id = 5;</code>
+     * Generated from protobuf field <code>optional string caller_id = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -109,7 +109,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The date time at which the call occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string call_start_date_time = 6;</code>
+     * Generated from protobuf field <code>optional string call_start_date_time = 6;</code>
      * @return string
      */
     public function getCallStartDateTime()
@@ -131,7 +131,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The date time at which the call occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string call_start_date_time = 6;</code>
+     * Generated from protobuf field <code>optional string call_start_date_time = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +146,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action associated with this conversion.
      *
-     * Generated from protobuf field <code>string conversion_action = 7;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 7;</code>
      * @return string
      */
     public function getConversionAction()
@@ -167,7 +167,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of the conversion action associated with this conversion.
      *
-     * Generated from protobuf field <code>string conversion_action = 7;</code>
+     * Generated from protobuf field <code>optional string conversion_action = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -183,7 +183,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string conversion_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string conversion_date_time = 8;</code>
      * @return string
      */
     public function getConversionDateTime()
@@ -205,7 +205,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
-     * Generated from protobuf field <code>string conversion_date_time = 8;</code>
+     * Generated from protobuf field <code>optional string conversion_date_time = 8;</code>
      * @param string $var
      * @return $this
      */

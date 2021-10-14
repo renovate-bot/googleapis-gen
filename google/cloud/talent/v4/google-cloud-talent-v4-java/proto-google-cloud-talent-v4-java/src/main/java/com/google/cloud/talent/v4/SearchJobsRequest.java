@@ -1309,7 +1309,7 @@ private static final long serialVersionUID = 0L;
       if (importanceLevel_ != com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ImportanceLevel.IMPORTANCE_LEVEL_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, importanceLevel_);
       }
-      if (!getRankingExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rankingExpression_);
       }
       unknownFields.writeTo(output);
@@ -1325,7 +1325,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, importanceLevel_);
       }
-      if (!getRankingExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rankingExpression_);
       }
       size += unknownFields.getSerializedSize();
@@ -2993,7 +2993,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (searchMode_ != com.google.cloud.talent.v4.SearchJobsRequest.SearchMode.SEARCH_MODE_UNSPECIFIED.getNumber()) {
@@ -3020,10 +3020,10 @@ private static final long serialVersionUID = 0L;
     if (maxPageSize_ != 0) {
       output.writeInt32(10, maxPageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, pageToken_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, orderBy_);
     }
     if (diversificationLevel_ != com.google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.DIVERSIFICATION_LEVEL_UNSPECIFIED.getNumber()) {
@@ -3047,7 +3047,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (searchMode_ != com.google.cloud.talent.v4.SearchJobsRequest.SearchMode.SEARCH_MODE_UNSPECIFIED.getNumber()) {
@@ -3082,10 +3082,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, maxPageSize_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, pageToken_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, orderBy_);
     }
     if (diversificationLevel_ != com.google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.DIVERSIFICATION_LEVEL_UNSPECIFIED.getNumber()) {

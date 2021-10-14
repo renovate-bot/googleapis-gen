@@ -79,7 +79,7 @@ class PatchTracesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTraces()
     {
-        return isset($this->traces) ? $this->traces : null;
+        return $this->traces;
     }
 
     public function hasTraces()

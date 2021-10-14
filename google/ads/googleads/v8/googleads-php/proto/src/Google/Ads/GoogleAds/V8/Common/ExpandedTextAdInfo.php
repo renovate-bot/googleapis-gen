@@ -18,43 +18,43 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part1 = 8;</code>
+     * Generated from protobuf field <code>optional string headline_part1 = 8;</code>
      */
     protected $headline_part1 = null;
     /**
      * The second part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part2 = 9;</code>
+     * Generated from protobuf field <code>optional string headline_part2 = 9;</code>
      */
     protected $headline_part2 = null;
     /**
      * The third part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part3 = 10;</code>
+     * Generated from protobuf field <code>optional string headline_part3 = 10;</code>
      */
     protected $headline_part3 = null;
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 11;</code>
+     * Generated from protobuf field <code>optional string description = 11;</code>
      */
     protected $description = null;
     /**
      * The second description of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 12;</code>
+     * Generated from protobuf field <code>optional string description2 = 12;</code>
      */
     protected $description2 = null;
     /**
      * The text that can appear alongside the ad's displayed URL.
      *
-     * Generated from protobuf field <code>string path1 = 13;</code>
+     * Generated from protobuf field <code>optional string path1 = 13;</code>
      */
     protected $path1 = null;
     /**
      * Additional text that can appear alongside the ad's displayed URL.
      *
-     * Generated from protobuf field <code>string path2 = 14;</code>
+     * Generated from protobuf field <code>optional string path2 = 14;</code>
      */
     protected $path2 = null;
 
@@ -88,7 +88,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part1 = 8;</code>
+     * Generated from protobuf field <code>optional string headline_part1 = 8;</code>
      * @return string
      */
     public function getHeadlinePart1()
@@ -109,7 +109,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The first part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part1 = 8;</code>
+     * Generated from protobuf field <code>optional string headline_part1 = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part2 = 9;</code>
+     * Generated from protobuf field <code>optional string headline_part2 = 9;</code>
      * @return string
      */
     public function getHeadlinePart2()
@@ -145,7 +145,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part2 = 9;</code>
+     * Generated from protobuf field <code>optional string headline_part2 = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -160,7 +160,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The third part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part3 = 10;</code>
+     * Generated from protobuf field <code>optional string headline_part3 = 10;</code>
      * @return string
      */
     public function getHeadlinePart3()
@@ -181,7 +181,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The third part of the ad's headline.
      *
-     * Generated from protobuf field <code>string headline_part3 = 10;</code>
+     * Generated from protobuf field <code>optional string headline_part3 = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -196,7 +196,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 11;</code>
+     * Generated from protobuf field <code>optional string description = 11;</code>
      * @return string
      */
     public function getDescription()
@@ -217,7 +217,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 11;</code>
+     * Generated from protobuf field <code>optional string description = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -232,7 +232,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second description of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 12;</code>
+     * Generated from protobuf field <code>optional string description2 = 12;</code>
      * @return string
      */
     public function getDescription2()
@@ -253,7 +253,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second description of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 12;</code>
+     * Generated from protobuf field <code>optional string description2 = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -268,7 +268,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The text that can appear alongside the ad's displayed URL.
      *
-     * Generated from protobuf field <code>string path1 = 13;</code>
+     * Generated from protobuf field <code>optional string path1 = 13;</code>
      * @return string
      */
     public function getPath1()
@@ -289,7 +289,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The text that can appear alongside the ad's displayed URL.
      *
-     * Generated from protobuf field <code>string path1 = 13;</code>
+     * Generated from protobuf field <code>optional string path1 = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -304,7 +304,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Additional text that can appear alongside the ad's displayed URL.
      *
-     * Generated from protobuf field <code>string path2 = 14;</code>
+     * Generated from protobuf field <code>optional string path2 = 14;</code>
      * @return string
      */
     public function getPath2()
@@ -325,7 +325,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Additional text that can appear alongside the ad's displayed URL.
      *
-     * Generated from protobuf field <code>string path2 = 14;</code>
+     * Generated from protobuf field <code>optional string path2 = 14;</code>
      * @param string $var
      * @return $this
      */

@@ -121,7 +121,7 @@ class CreateAlertFeedbackRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFeedback()
     {
-        return isset($this->feedback) ? $this->feedback : null;
+        return $this->feedback;
     }
 
     public function hasFeedback()

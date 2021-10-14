@@ -108,7 +108,7 @@ class SqlInstancesRescheduleMaintenanceRequest extends \Google\Protobuf\Internal
      */
     public function getBody()
     {
-        return isset($this->body) ? $this->body : null;
+        return $this->body;
     }
 
     public function hasBody()

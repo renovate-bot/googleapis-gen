@@ -87,7 +87,7 @@ class CheckBuildStageStatusResponse extends \Google\Protobuf\Internal\Message
      */
     public function getStagedBuildArtifact()
     {
-        return isset($this->staged_build_artifact) ? $this->staged_build_artifact : null;
+        return $this->staged_build_artifact;
     }
 
     public function hasStagedBuildArtifact()
@@ -123,7 +123,7 @@ class CheckBuildStageStatusResponse extends \Google\Protobuf\Internal\Message
      */
     public function getSourceBuildArtifact()
     {
-        return isset($this->source_build_artifact) ? $this->source_build_artifact : null;
+        return $this->source_build_artifact;
     }
 
     public function hasSourceBuildArtifact()

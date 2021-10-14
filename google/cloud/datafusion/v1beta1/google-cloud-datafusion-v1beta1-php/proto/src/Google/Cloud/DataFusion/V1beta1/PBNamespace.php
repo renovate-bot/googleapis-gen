@@ -79,7 +79,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      */
     public function getIamPolicy()
     {
-        return isset($this->iam_policy) ? $this->iam_policy : null;
+        return $this->iam_policy;
     }
 
     public function hasIamPolicy()

@@ -18,25 +18,25 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated CPV bid upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 5;</code>
      */
     protected $cpv_bid_micros = null;
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 6;</code>
      */
     protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 7;</code>
      */
     protected $impressions = null;
     /**
      * Projected number of views.
      *
-     * Generated from protobuf field <code>int64 views = 8;</code>
+     * Generated from protobuf field <code>optional int64 views = 8;</code>
      */
     protected $views = null;
 
@@ -64,7 +64,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated CPV bid upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 5;</code>
      * @return int|string
      */
     public function getCpvBidMicros()
@@ -85,7 +85,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * The simulated CPV bid upon which projected metrics are based.
      *
-     * Generated from protobuf field <code>int64 cpv_bid_micros = 5;</code>
+     * Generated from protobuf field <code>optional int64 cpv_bid_micros = 5;</code>
      * @param int|string $var
      * @return $this
      */
@@ -100,7 +100,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 6;</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -121,7 +121,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected cost in micros.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 6;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 6;</code>
      * @param int|string $var
      * @return $this
      */
@@ -136,7 +136,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 7;</code>
      * @return int|string
      */
     public function getImpressions()
@@ -157,7 +157,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of impressions.
      *
-     * Generated from protobuf field <code>int64 impressions = 7;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 7;</code>
      * @param int|string $var
      * @return $this
      */
@@ -172,7 +172,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of views.
      *
-     * Generated from protobuf field <code>int64 views = 8;</code>
+     * Generated from protobuf field <code>optional int64 views = 8;</code>
      * @return int|string
      */
     public function getViews()
@@ -193,7 +193,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Projected number of views.
      *
-     * Generated from protobuf field <code>int64 views = 8;</code>
+     * Generated from protobuf field <code>optional int64 views = 8;</code>
      * @param int|string $var
      * @return $this
      */

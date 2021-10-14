@@ -238,7 +238,7 @@ class Taxonomy extends \Google\Protobuf\Internal\Message
      */
     public function getTaxonomyTimestamps()
     {
-        return isset($this->taxonomy_timestamps) ? $this->taxonomy_timestamps : null;
+        return $this->taxonomy_timestamps;
     }
 
     public function hasTaxonomyTimestamps()

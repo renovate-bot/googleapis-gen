@@ -18,28 +18,28 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     /**
      * Whether ads will be served with google.com search results.
      *
-     * Generated from protobuf field <code>bool target_google_search = 5;</code>
+     * Generated from protobuf field <code>optional bool target_google_search = 5;</code>
      */
     protected $target_google_search = null;
     /**
      * Whether ads will be served on partner sites in the Google Search Network
      * (requires `target_google_search` to also be `true`).
      *
-     * Generated from protobuf field <code>bool target_search_network = 6;</code>
+     * Generated from protobuf field <code>optional bool target_search_network = 6;</code>
      */
     protected $target_search_network = null;
     /**
      * Whether ads will be served on specified placements in the Google Display
      * Network. Placements are specified using the Placement criterion.
      *
-     * Generated from protobuf field <code>bool target_content_network = 7;</code>
+     * Generated from protobuf field <code>optional bool target_content_network = 7;</code>
      */
     protected $target_content_network = null;
     /**
      * Whether ads will be served on the Google Partner Network.
      * This is available only to some select Google partner accounts.
      *
-     * Generated from protobuf field <code>bool target_partner_search_network = 8;</code>
+     * Generated from protobuf field <code>optional bool target_partner_search_network = 8;</code>
      */
     protected $target_partner_search_network = null;
 
@@ -70,7 +70,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     /**
      * Whether ads will be served with google.com search results.
      *
-     * Generated from protobuf field <code>bool target_google_search = 5;</code>
+     * Generated from protobuf field <code>optional bool target_google_search = 5;</code>
      * @return bool
      */
     public function getTargetGoogleSearch()
@@ -91,7 +91,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     /**
      * Whether ads will be served with google.com search results.
      *
-     * Generated from protobuf field <code>bool target_google_search = 5;</code>
+     * Generated from protobuf field <code>optional bool target_google_search = 5;</code>
      * @param bool $var
      * @return $this
      */
@@ -107,7 +107,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served on partner sites in the Google Search Network
      * (requires `target_google_search` to also be `true`).
      *
-     * Generated from protobuf field <code>bool target_search_network = 6;</code>
+     * Generated from protobuf field <code>optional bool target_search_network = 6;</code>
      * @return bool
      */
     public function getTargetSearchNetwork()
@@ -129,7 +129,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served on partner sites in the Google Search Network
      * (requires `target_google_search` to also be `true`).
      *
-     * Generated from protobuf field <code>bool target_search_network = 6;</code>
+     * Generated from protobuf field <code>optional bool target_search_network = 6;</code>
      * @param bool $var
      * @return $this
      */
@@ -145,7 +145,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served on specified placements in the Google Display
      * Network. Placements are specified using the Placement criterion.
      *
-     * Generated from protobuf field <code>bool target_content_network = 7;</code>
+     * Generated from protobuf field <code>optional bool target_content_network = 7;</code>
      * @return bool
      */
     public function getTargetContentNetwork()
@@ -167,7 +167,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served on specified placements in the Google Display
      * Network. Placements are specified using the Placement criterion.
      *
-     * Generated from protobuf field <code>bool target_content_network = 7;</code>
+     * Generated from protobuf field <code>optional bool target_content_network = 7;</code>
      * @param bool $var
      * @return $this
      */
@@ -183,7 +183,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served on the Google Partner Network.
      * This is available only to some select Google partner accounts.
      *
-     * Generated from protobuf field <code>bool target_partner_search_network = 8;</code>
+     * Generated from protobuf field <code>optional bool target_partner_search_network = 8;</code>
      * @return bool
      */
     public function getTargetPartnerSearchNetwork()
@@ -205,7 +205,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served on the Google Partner Network.
      * This is available only to some select Google partner accounts.
      *
-     * Generated from protobuf field <code>bool target_partner_search_network = 8;</code>
+     * Generated from protobuf field <code>optional bool target_partner_search_network = 8;</code>
      * @param bool $var
      * @return $this
      */

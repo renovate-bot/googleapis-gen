@@ -18,7 +18,7 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
     /**
      * The UserInterest resource name.
      *
-     * Generated from protobuf field <code>string user_interest_category = 2;</code>
+     * Generated from protobuf field <code>optional string user_interest_category = 2;</code>
      */
     protected $user_interest_category = null;
 
@@ -40,7 +40,7 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
     /**
      * The UserInterest resource name.
      *
-     * Generated from protobuf field <code>string user_interest_category = 2;</code>
+     * Generated from protobuf field <code>optional string user_interest_category = 2;</code>
      * @return string
      */
     public function getUserInterestCategory()
@@ -61,7 +61,7 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
     /**
      * The UserInterest resource name.
      *
-     * Generated from protobuf field <code>string user_interest_category = 2;</code>
+     * Generated from protobuf field <code>optional string user_interest_category = 2;</code>
      * @param string $var
      * @return $this
      */

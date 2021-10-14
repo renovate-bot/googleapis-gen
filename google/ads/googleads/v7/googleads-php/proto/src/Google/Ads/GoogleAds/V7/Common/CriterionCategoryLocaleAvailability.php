@@ -27,13 +27,13 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     /**
      * Code of the country.
      *
-     * Generated from protobuf field <code>string country_code = 4;</code>
+     * Generated from protobuf field <code>optional string country_code = 4;</code>
      */
     protected $country_code = null;
     /**
      * Code of the language.
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>optional string language_code = 5;</code>
      */
     protected $language_code = null;
 
@@ -94,7 +94,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     /**
      * Code of the country.
      *
-     * Generated from protobuf field <code>string country_code = 4;</code>
+     * Generated from protobuf field <code>optional string country_code = 4;</code>
      * @return string
      */
     public function getCountryCode()
@@ -115,7 +115,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     /**
      * Code of the country.
      *
-     * Generated from protobuf field <code>string country_code = 4;</code>
+     * Generated from protobuf field <code>optional string country_code = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     /**
      * Code of the language.
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>optional string language_code = 5;</code>
      * @return string
      */
     public function getLanguageCode()
@@ -151,7 +151,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     /**
      * Code of the language.
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>optional string language_code = 5;</code>
      * @param string $var
      * @return $this
      */

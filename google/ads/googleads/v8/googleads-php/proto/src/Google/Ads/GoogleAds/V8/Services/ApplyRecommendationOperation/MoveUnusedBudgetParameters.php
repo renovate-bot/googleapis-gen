@@ -19,7 +19,7 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      * Budget amount to move from excess budget to constrained budget. This is
      * a required field.
      *
-     * Generated from protobuf field <code>int64 budget_micros_to_move = 2;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros_to_move = 2;</code>
      */
     protected $budget_micros_to_move = null;
 
@@ -43,7 +43,7 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      * Budget amount to move from excess budget to constrained budget. This is
      * a required field.
      *
-     * Generated from protobuf field <code>int64 budget_micros_to_move = 2;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros_to_move = 2;</code>
      * @return int|string
      */
     public function getBudgetMicrosToMove()
@@ -65,7 +65,7 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      * Budget amount to move from excess budget to constrained budget. This is
      * a required field.
      *
-     * Generated from protobuf field <code>int64 budget_micros_to_move = 2;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros_to_move = 2;</code>
      * @param int|string $var
      * @return $this
      */

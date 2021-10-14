@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getApproverAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(approverAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, approverAccount_);
     }
     if (approvalTime_ != null) {
@@ -506,10 +506,10 @@ private static final long serialVersionUID = 0L;
     if (decision_ != com.google.cloudbuild.v1.ApprovalResult.Decision.DECISION_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, decision_);
     }
-    if (!getCommentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, comment_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, url_);
     }
     unknownFields.writeTo(output);
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getApproverAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(approverAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, approverAccount_);
     }
     if (approvalTime_ != null) {
@@ -532,10 +532,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, decision_);
     }
-    if (!getCommentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, comment_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, url_);
     }
     size += unknownFields.getSerializedSize();

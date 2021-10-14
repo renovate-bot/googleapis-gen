@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (testSpecification_ != null) {
@@ -617,10 +617,10 @@ private static final long serialVersionUID = 0L;
     if (testDetails_ != null) {
       output.writeMessage(8, getTestDetails());
     }
-    if (!getMatrixIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matrixId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, matrixId_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, projectId_);
     }
     if (toolResultsStep_ != null) {
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (testSpecification_ != null) {
@@ -661,10 +661,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getTestDetails());
     }
-    if (!getMatrixIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matrixId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, matrixId_);
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, projectId_);
     }
     if (toolResultsStep_ != null) {

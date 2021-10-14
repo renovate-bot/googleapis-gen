@@ -91,7 +91,7 @@ class CreateMessageRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMessage()
     {
-        return isset($this->message) ? $this->message : null;
+        return $this->message;
     }
 
     public function hasMessage()

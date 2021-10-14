@@ -128,7 +128,7 @@ class PrivateConnection extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -164,7 +164,7 @@ class PrivateConnection extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -278,7 +278,7 @@ class PrivateConnection extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -314,7 +314,7 @@ class PrivateConnection extends \Google\Protobuf\Internal\Message
      */
     public function getVpcPeeringConfig()
     {
-        return isset($this->vpc_peering_config) ? $this->vpc_peering_config : null;
+        return $this->vpc_peering_config;
     }
 
     public function hasVpcPeeringConfig()

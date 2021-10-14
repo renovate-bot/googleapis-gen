@@ -120,7 +120,7 @@ class DeployModelRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDeployedModel()
     {
-        return isset($this->deployed_model) ? $this->deployed_model : null;
+        return $this->deployed_model;
     }
 
     public function hasDeployedModel()

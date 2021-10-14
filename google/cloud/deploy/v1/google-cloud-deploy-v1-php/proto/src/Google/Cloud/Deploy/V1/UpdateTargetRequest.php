@@ -113,7 +113,7 @@ class UpdateTargetRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()
@@ -153,7 +153,7 @@ class UpdateTargetRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTarget()
     {
-        return isset($this->target) ? $this->target : null;
+        return $this->target;
     }
 
     public function hasTarget()

@@ -18,13 +18,13 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 3;</code>
+     * Generated from protobuf field <code>optional string description = 3;</code>
      */
     protected $description = null;
     /**
      * The second description of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 4;</code>
+     * Generated from protobuf field <code>optional string description2 = 4;</code>
      */
     protected $description2 = null;
 
@@ -48,7 +48,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 3;</code>
+     * Generated from protobuf field <code>optional string description = 3;</code>
      * @return string
      */
     public function getDescription()
@@ -69,7 +69,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 3;</code>
+     * Generated from protobuf field <code>optional string description = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second description of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 4;</code>
+     * Generated from protobuf field <code>optional string description2 = 4;</code>
      * @return string
      */
     public function getDescription2()
@@ -105,7 +105,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The second description of the ad.
      *
-     * Generated from protobuf field <code>string description2 = 4;</code>
+     * Generated from protobuf field <code>optional string description2 = 4;</code>
      * @param string $var
      * @return $this
      */

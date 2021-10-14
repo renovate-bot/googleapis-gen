@@ -241,7 +241,7 @@ class Flag extends \Google\Protobuf\Internal\Message
      */
     public function getMinValue()
     {
-        return isset($this->min_value) ? $this->min_value : null;
+        return $this->min_value;
     }
 
     public function hasMinValue()
@@ -304,7 +304,7 @@ class Flag extends \Google\Protobuf\Internal\Message
      */
     public function getMaxValue()
     {
-        return isset($this->max_value) ? $this->max_value : null;
+        return $this->max_value;
     }
 
     public function hasMaxValue()
@@ -368,7 +368,7 @@ class Flag extends \Google\Protobuf\Internal\Message
      */
     public function getRequiresRestart()
     {
-        return isset($this->requires_restart) ? $this->requires_restart : null;
+        return $this->requires_restart;
     }
 
     public function hasRequiresRestart()
@@ -460,7 +460,7 @@ class Flag extends \Google\Protobuf\Internal\Message
      */
     public function getInBeta()
     {
-        return isset($this->in_beta) ? $this->in_beta : null;
+        return $this->in_beta;
     }
 
     public function hasInBeta()

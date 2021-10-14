@@ -134,7 +134,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      */
     public function getLatLngPair()
     {
-        return isset($this->lat_lng_pair) ? $this->lat_lng_pair : null;
+        return $this->lat_lng_pair;
     }
 
     public function hasLatLngPair()
@@ -295,7 +295,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      */
     public function getLevel()
     {
-        return isset($this->level) ? $this->level : null;
+        return $this->level;
     }
 
     public function hasLevel()

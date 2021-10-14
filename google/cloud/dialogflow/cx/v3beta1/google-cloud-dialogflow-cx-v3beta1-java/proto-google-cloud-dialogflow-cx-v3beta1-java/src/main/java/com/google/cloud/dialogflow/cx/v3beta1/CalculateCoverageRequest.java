@@ -352,7 +352,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.cloud.dialogflow.cx.v3beta1.CalculateCoverageRequest.CoverageType.COVERAGE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, type_);
     }
-    if (!getAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, agent_);
     }
     unknownFields.writeTo(output);
@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, type_);
     }
-    if (!getAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, agent_);
     }
     size += unknownFields.getSerializedSize();

@@ -232,7 +232,7 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
      */
     public function getDefaultSnatStatus()
     {
-        return isset($this->default_snat_status) ? $this->default_snat_status : null;
+        return $this->default_snat_status;
     }
 
     public function hasDefaultSnatStatus()
@@ -355,7 +355,7 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
      */
     public function getDnsConfig()
     {
-        return isset($this->dns_config) ? $this->dns_config : null;
+        return $this->dns_config;
     }
 
     public function hasDnsConfig()
@@ -392,7 +392,7 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
      */
     public function getServiceExternalIpsConfig()
     {
-        return isset($this->service_external_ips_config) ? $this->service_external_ips_config : null;
+        return $this->service_external_ips_config;
     }
 
     public function hasServiceExternalIpsConfig()

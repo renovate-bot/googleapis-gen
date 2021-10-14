@@ -85,7 +85,7 @@ class MutateConversionCustomVariableResult extends \Google\Protobuf\Internal\Mes
      */
     public function getConversionCustomVariable()
     {
-        return isset($this->conversion_custom_variable) ? $this->conversion_custom_variable : null;
+        return $this->conversion_custom_variable;
     }
 
     public function hasConversionCustomVariable()

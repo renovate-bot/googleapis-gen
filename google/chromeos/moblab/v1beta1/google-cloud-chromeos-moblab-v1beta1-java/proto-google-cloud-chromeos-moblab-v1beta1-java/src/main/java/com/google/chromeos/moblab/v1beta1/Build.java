@@ -764,13 +764,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getMilestoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(milestone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, milestone_);
     }
-    if (!getBuildVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, buildVersion_);
     }
     if (status_ != com.google.chromeos.moblab.v1beta1.Build.BuildStatus.BUILD_STATUS_UNSPECIFIED.getNumber()) {
@@ -779,10 +779,10 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.chromeos.moblab.v1beta1.Build.BuildType.BUILD_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, type_);
     }
-    if (!getBranchBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(branch_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, branch_);
     }
-    if (!getRwFirmwareVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rwFirmwareVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rwFirmwareVersion_);
     }
     unknownFields.writeTo(output);
@@ -794,13 +794,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getMilestoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(milestone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, milestone_);
     }
-    if (!getBuildVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, buildVersion_);
     }
     if (status_ != com.google.chromeos.moblab.v1beta1.Build.BuildStatus.BUILD_STATUS_UNSPECIFIED.getNumber()) {
@@ -811,10 +811,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, type_);
     }
-    if (!getBranchBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(branch_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, branch_);
     }
-    if (!getRwFirmwareVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rwFirmwareVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rwFirmwareVersion_);
     }
     size += unknownFields.getSerializedSize();

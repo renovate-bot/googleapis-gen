@@ -133,7 +133,7 @@ class CreateCustomClassRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCustomClass()
     {
-        return isset($this->custom_class) ? $this->custom_class : null;
+        return $this->custom_class;
     }
 
     public function hasCustomClass()

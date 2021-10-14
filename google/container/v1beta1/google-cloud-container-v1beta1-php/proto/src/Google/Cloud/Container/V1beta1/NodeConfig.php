@@ -815,7 +815,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getSandboxConfig()
     {
-        return isset($this->sandbox_config) ? $this->sandbox_config : null;
+        return $this->sandbox_config;
     }
 
     public function hasSandboxConfig()
@@ -886,7 +886,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getReservationAffinity()
     {
-        return isset($this->reservation_affinity) ? $this->reservation_affinity : null;
+        return $this->reservation_affinity;
     }
 
     public function hasReservationAffinity()
@@ -993,7 +993,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getWorkloadMetadataConfig()
     {
-        return isset($this->workload_metadata_config) ? $this->workload_metadata_config : null;
+        return $this->workload_metadata_config;
     }
 
     public function hasWorkloadMetadataConfig()
@@ -1095,7 +1095,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getShieldedInstanceConfig()
     {
-        return isset($this->shielded_instance_config) ? $this->shielded_instance_config : null;
+        return $this->shielded_instance_config;
     }
 
     public function hasShieldedInstanceConfig()
@@ -1131,7 +1131,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getLinuxNodeConfig()
     {
-        return isset($this->linux_node_config) ? $this->linux_node_config : null;
+        return $this->linux_node_config;
     }
 
     public function hasLinuxNodeConfig()
@@ -1167,7 +1167,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getKubeletConfig()
     {
-        return isset($this->kubelet_config) ? $this->kubelet_config : null;
+        return $this->kubelet_config;
     }
 
     public function hasKubeletConfig()
@@ -1204,7 +1204,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getEphemeralStorageConfig()
     {
-        return isset($this->ephemeral_storage_config) ? $this->ephemeral_storage_config : null;
+        return $this->ephemeral_storage_config;
     }
 
     public function hasEphemeralStorageConfig()
@@ -1241,7 +1241,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      */
     public function getGvnic()
     {
-        return isset($this->gvnic) ? $this->gvnic : null;
+        return $this->gvnic;
     }
 
     public function hasGvnic()

@@ -25,7 +25,7 @@ class ItemAttribute extends \Google\Protobuf\Internal\Message
     /**
      * ID of the Merchant Center Account.
      *
-     * Generated from protobuf field <code>int64 merchant_id = 2;</code>
+     * Generated from protobuf field <code>optional int64 merchant_id = 2;</code>
      */
     protected $merchant_id = null;
     /**
@@ -110,7 +110,7 @@ class ItemAttribute extends \Google\Protobuf\Internal\Message
     /**
      * ID of the Merchant Center Account.
      *
-     * Generated from protobuf field <code>int64 merchant_id = 2;</code>
+     * Generated from protobuf field <code>optional int64 merchant_id = 2;</code>
      * @return int|string
      */
     public function getMerchantId()
@@ -131,7 +131,7 @@ class ItemAttribute extends \Google\Protobuf\Internal\Message
     /**
      * ID of the Merchant Center Account.
      *
-     * Generated from protobuf field <code>int64 merchant_id = 2;</code>
+     * Generated from protobuf field <code>optional int64 merchant_id = 2;</code>
      * @param int|string $var
      * @return $this
      */

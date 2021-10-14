@@ -409,16 +409,16 @@ private static final long serialVersionUID = 0L;
     if (transferConfig_ != null) {
       output.writeMessage(1, getTransferConfig());
     }
-    if (!getAuthorizationCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, authorizationCode_);
     }
     if (updateMask_ != null) {
       output.writeMessage(4, getUpdateMask());
     }
-    if (!getVersionInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionInfo_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, versionInfo_);
     }
-    if (!getServiceAccountNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceAccountName_);
     }
     unknownFields.writeTo(output);
@@ -434,17 +434,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getTransferConfig());
     }
-    if (!getAuthorizationCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authorizationCode_);
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getUpdateMask());
     }
-    if (!getVersionInfoBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionInfo_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, versionInfo_);
     }
-    if (!getServiceAccountNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceAccountName_);
     }
     size += unknownFields.getSerializedSize();

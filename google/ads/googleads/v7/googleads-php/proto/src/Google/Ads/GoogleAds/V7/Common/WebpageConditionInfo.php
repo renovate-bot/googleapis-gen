@@ -30,7 +30,7 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Argument of webpage targeting condition.
      *
-     * Generated from protobuf field <code>string argument = 4;</code>
+     * Generated from protobuf field <code>optional string argument = 4;</code>
      */
     protected $argument = null;
 
@@ -108,7 +108,7 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Argument of webpage targeting condition.
      *
-     * Generated from protobuf field <code>string argument = 4;</code>
+     * Generated from protobuf field <code>optional string argument = 4;</code>
      * @return string
      */
     public function getArgument()
@@ -129,7 +129,7 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Argument of webpage targeting condition.
      *
-     * Generated from protobuf field <code>string argument = 4;</code>
+     * Generated from protobuf field <code>optional string argument = 4;</code>
      * @param string $var
      * @return $this
      */

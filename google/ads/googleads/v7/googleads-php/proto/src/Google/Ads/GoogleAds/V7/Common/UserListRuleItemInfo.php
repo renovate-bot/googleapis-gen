@@ -25,7 +25,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * referrer URL (name = 'ref_url__').
      * This field must be populated when creating a new rule item.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      */
     protected $name = null;
     protected $rule_item;
@@ -68,7 +68,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * referrer URL (name = 'ref_url__').
      * This field must be populated when creating a new rule item.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      * @return string
      */
     public function getName()
@@ -96,7 +96,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * referrer URL (name = 'ref_url__').
      * This field must be populated when creating a new rule item.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      * @param string $var
      * @return $this
      */

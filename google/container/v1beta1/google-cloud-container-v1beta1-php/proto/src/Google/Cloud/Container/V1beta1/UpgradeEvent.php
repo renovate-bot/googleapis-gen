@@ -140,7 +140,7 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
      */
     public function getOperationStartTime()
     {
-        return isset($this->operation_start_time) ? $this->operation_start_time : null;
+        return $this->operation_start_time;
     }
 
     public function hasOperationStartTime()

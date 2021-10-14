@@ -20,7 +20,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The code associated with the ad product. E.g. Trueview, Bumper
      * To list the available plannable product codes use ListPlannableProducts.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      */
     protected $plannable_product_code = null;
     /**
@@ -28,7 +28,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The value is specified in the selected planning currency_code.
      * E.g. 1 000 000$ = 1 000 000 000 000 micros.
      *
-     * Generated from protobuf field <code>int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      */
     protected $budget_micros = null;
 
@@ -58,7 +58,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The code associated with the ad product. E.g. Trueview, Bumper
      * To list the available plannable product codes use ListPlannableProducts.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @return string
      */
     public function getPlannableProductCode()
@@ -81,7 +81,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The code associated with the ad product. E.g. Trueview, Bumper
      * To list the available plannable product codes use ListPlannableProducts.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -98,7 +98,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The value is specified in the selected planning currency_code.
      * E.g. 1 000 000$ = 1 000 000 000 000 micros.
      *
-     * Generated from protobuf field <code>int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      * @return int|string
      */
     public function getBudgetMicros()
@@ -121,7 +121,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * The value is specified in the selected planning currency_code.
      * E.g. 1 000 000$ = 1 000 000 000 000 micros.
      *
-     * Generated from protobuf field <code>int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      * @param int|string $var
      * @return $this
      */

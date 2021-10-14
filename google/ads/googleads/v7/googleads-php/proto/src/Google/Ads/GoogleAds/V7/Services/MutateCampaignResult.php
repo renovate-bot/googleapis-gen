@@ -82,7 +82,7 @@ class MutateCampaignResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaign()
     {
-        return isset($this->campaign) ? $this->campaign : null;
+        return $this->campaign;
     }
 
     public function hasCampaign()

@@ -85,7 +85,7 @@ class MutateCampaignAssetResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignAsset()
     {
-        return isset($this->campaign_asset) ? $this->campaign_asset : null;
+        return $this->campaign_asset;
     }
 
     public function hasCampaignAsset()

@@ -567,16 +567,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getChannelIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, channelId_);
       }
-      if (!getResourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceId_);
       }
-      if (!getPushUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pushUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pushUrl_);
       }
-      if (!getSubscriberEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscriberEmail_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subscriberEmail_);
       }
       if (creationTime_ != null) {
@@ -591,16 +591,16 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getChannelIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, channelId_);
       }
-      if (!getResourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceId_);
       }
-      if (!getPushUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pushUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pushUrl_);
       }
-      if (!getSubscriberEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscriberEmail_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subscriberEmail_);
       }
       if (creationTime_ != null) {

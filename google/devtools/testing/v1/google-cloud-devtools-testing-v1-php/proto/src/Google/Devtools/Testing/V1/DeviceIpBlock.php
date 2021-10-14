@@ -113,7 +113,7 @@ class DeviceIpBlock extends \Google\Protobuf\Internal\Message
      */
     public function getAddedDate()
     {
-        return isset($this->added_date) ? $this->added_date : null;
+        return $this->added_date;
     }
 
     public function hasAddedDate()

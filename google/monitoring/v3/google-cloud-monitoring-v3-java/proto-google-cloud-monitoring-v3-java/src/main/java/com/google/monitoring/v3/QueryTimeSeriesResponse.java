@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < timeSeriesData_.size(); i++) {
       output.writeMessage(9, timeSeriesData_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, nextPageToken_);
     }
     for (int i = 0; i < partialErrors_.size(); i++) {
@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, timeSeriesData_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, nextPageToken_);
     }
     for (int i = 0; i < partialErrors_.size(); i++) {

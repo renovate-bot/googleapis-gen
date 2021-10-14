@@ -45,7 +45,7 @@ class FeatureSelector extends \Google\Protobuf\Internal\Message
      */
     public function getIdMatcher()
     {
-        return isset($this->id_matcher) ? $this->id_matcher : null;
+        return $this->id_matcher;
     }
 
     public function hasIdMatcher()

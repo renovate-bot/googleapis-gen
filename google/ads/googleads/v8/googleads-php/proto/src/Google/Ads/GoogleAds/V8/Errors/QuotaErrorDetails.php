@@ -117,7 +117,7 @@ class QuotaErrorDetails extends \Google\Protobuf\Internal\Message
      */
     public function getRetryDelay()
     {
-        return isset($this->retry_delay) ? $this->retry_delay : null;
+        return $this->retry_delay;
     }
 
     public function hasRetryDelay()

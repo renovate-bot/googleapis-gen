@@ -28,14 +28,14 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>string merchant_center_account_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string merchant_center_account_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $merchant_center_account_name = null;
     /**
@@ -104,7 +104,7 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -126,7 +126,7 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -142,7 +142,7 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>string merchant_center_account_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string merchant_center_account_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getMerchantCenterAccountName()
@@ -164,7 +164,7 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>string merchant_center_account_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string merchant_center_account_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

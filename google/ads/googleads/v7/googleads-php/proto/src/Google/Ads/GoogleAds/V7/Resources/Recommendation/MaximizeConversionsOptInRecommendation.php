@@ -18,7 +18,7 @@ class MaximizeConversionsOptInRecommendation extends \Google\Protobuf\Internal\M
     /**
      * Output only. The recommended new budget amount.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_amount_micros = null;
 
@@ -40,7 +40,7 @@ class MaximizeConversionsOptInRecommendation extends \Google\Protobuf\Internal\M
     /**
      * Output only. The recommended new budget amount.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRecommendedBudgetAmountMicros()
@@ -61,7 +61,7 @@ class MaximizeConversionsOptInRecommendation extends \Google\Protobuf\Internal\M
     /**
      * Output only. The recommended new budget amount.
      *
-     * Generated from protobuf field <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

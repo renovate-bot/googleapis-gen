@@ -133,7 +133,7 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPhraseSet()
     {
-        return isset($this->phrase_set) ? $this->phrase_set : null;
+        return $this->phrase_set;
     }
 
     public function hasPhraseSet()

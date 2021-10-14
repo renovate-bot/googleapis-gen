@@ -99,7 +99,7 @@ class CreatePipelineJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPipelineJob()
     {
-        return isset($this->pipeline_job) ? $this->pipeline_job : null;
+        return $this->pipeline_job;
     }
 
     public function hasPipelineJob()

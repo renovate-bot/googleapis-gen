@@ -113,7 +113,7 @@ class Shard extends \Google\Protobuf\Internal\Message
      */
     public function getTestTargetsForShard()
     {
-        return isset($this->test_targets_for_shard) ? $this->test_targets_for_shard : null;
+        return $this->test_targets_for_shard;
     }
 
     public function hasTestTargetsForShard()

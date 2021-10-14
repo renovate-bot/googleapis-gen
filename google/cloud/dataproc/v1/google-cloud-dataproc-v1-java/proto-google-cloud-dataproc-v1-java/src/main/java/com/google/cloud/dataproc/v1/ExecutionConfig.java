@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceAccount_);
     }
     if (networkCase_ == 4) {
@@ -462,7 +462,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < networkTags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, networkTags_.getRaw(i));
     }
-    if (!getKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, kmsKey_);
     }
     unknownFields.writeTo(output);
@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceAccount_);
     }
     if (networkCase_ == 4) {
@@ -491,7 +491,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getNetworkTagsList().size();
     }
-    if (!getKmsKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, kmsKey_);
     }
     size += unknownFields.getSerializedSize();

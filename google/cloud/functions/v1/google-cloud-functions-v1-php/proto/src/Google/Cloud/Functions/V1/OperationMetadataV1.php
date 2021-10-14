@@ -145,7 +145,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
      */
     public function getRequest()
     {
-        return isset($this->request) ? $this->request : null;
+        return $this->request;
     }
 
     public function hasRequest()
@@ -209,7 +209,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

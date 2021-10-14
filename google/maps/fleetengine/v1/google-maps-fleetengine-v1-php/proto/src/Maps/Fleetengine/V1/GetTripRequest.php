@@ -107,7 +107,7 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -204,7 +204,7 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentRouteSegmentVersion()
     {
-        return isset($this->current_route_segment_version) ? $this->current_route_segment_version : null;
+        return $this->current_route_segment_version;
     }
 
     public function hasCurrentRouteSegmentVersion()
@@ -246,7 +246,7 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingWaypointsVersion()
     {
-        return isset($this->remaining_waypoints_version) ? $this->remaining_waypoints_version : null;
+        return $this->remaining_waypoints_version;
     }
 
     public function hasRemainingWaypointsVersion()

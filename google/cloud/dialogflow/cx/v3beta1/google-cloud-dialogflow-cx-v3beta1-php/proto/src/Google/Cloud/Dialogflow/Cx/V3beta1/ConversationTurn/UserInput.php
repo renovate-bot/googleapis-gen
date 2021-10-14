@@ -78,7 +78,7 @@ class UserInput extends \Google\Protobuf\Internal\Message
      */
     public function getInput()
     {
-        return isset($this->input) ? $this->input : null;
+        return $this->input;
     }
 
     public function hasInput()
@@ -116,7 +116,7 @@ class UserInput extends \Google\Protobuf\Internal\Message
      */
     public function getInjectedParameters()
     {
-        return isset($this->injected_parameters) ? $this->injected_parameters : null;
+        return $this->injected_parameters;
     }
 
     public function hasInjectedParameters()

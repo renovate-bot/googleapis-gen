@@ -65,7 +65,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getDisruptionBudget()
     {
-        return isset($this->disruption_budget) ? $this->disruption_budget : null;
+        return $this->disruption_budget;
     }
 
     public function hasDisruptionBudget()
@@ -106,7 +106,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      */
     public function getMinWaitDuration()
     {
-        return isset($this->min_wait_duration) ? $this->min_wait_duration : null;
+        return $this->min_wait_duration;
     }
 
     public function hasMinWaitDuration()

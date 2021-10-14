@@ -79,7 +79,7 @@ class FeedAttributeOperation extends \Google\Protobuf\Internal\Message
      */
     public function getValue()
     {
-        return isset($this->value) ? $this->value : null;
+        return $this->value;
     }
 
     public function hasValue()

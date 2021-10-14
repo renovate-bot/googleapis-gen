@@ -505,7 +505,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getPickupPoint()
     {
-        return isset($this->pickup_point) ? $this->pickup_point : null;
+        return $this->pickup_point;
     }
 
     public function hasPickupPoint()
@@ -543,7 +543,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getActualPickupPoint()
     {
-        return isset($this->actual_pickup_point) ? $this->actual_pickup_point : null;
+        return $this->actual_pickup_point;
     }
 
     public function hasActualPickupPoint()
@@ -584,7 +584,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getActualPickupArrivalPoint()
     {
-        return isset($this->actual_pickup_arrival_point) ? $this->actual_pickup_arrival_point : null;
+        return $this->actual_pickup_arrival_point;
     }
 
     public function hasActualPickupArrivalPoint()
@@ -624,7 +624,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getPickupTime()
     {
-        return isset($this->pickup_time) ? $this->pickup_time : null;
+        return $this->pickup_time;
     }
 
     public function hasPickupTime()
@@ -694,7 +694,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getIntermediateDestinationsVersion()
     {
-        return isset($this->intermediate_destinations_version) ? $this->intermediate_destinations_version : null;
+        return $this->intermediate_destinations_version;
     }
 
     public function hasIntermediateDestinationsVersion()
@@ -835,7 +835,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getDropoffPoint()
     {
-        return isset($this->dropoff_point) ? $this->dropoff_point : null;
+        return $this->dropoff_point;
     }
 
     public function hasDropoffPoint()
@@ -873,7 +873,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getActualDropoffPoint()
     {
-        return isset($this->actual_dropoff_point) ? $this->actual_dropoff_point : null;
+        return $this->actual_dropoff_point;
     }
 
     public function hasActualDropoffPoint()
@@ -912,7 +912,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getDropoffTime()
     {
-        return isset($this->dropoff_time) ? $this->dropoff_time : null;
+        return $this->dropoff_time;
     }
 
     public function hasDropoffTime()
@@ -1050,7 +1050,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentRouteSegmentEndPoint()
     {
-        return isset($this->current_route_segment_end_point) ? $this->current_route_segment_end_point : null;
+        return $this->current_route_segment_end_point;
     }
 
     public function hasCurrentRouteSegmentEndPoint()
@@ -1098,7 +1098,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingDistanceMeters()
     {
-        return isset($this->remaining_distance_meters) ? $this->remaining_distance_meters : null;
+        return $this->remaining_distance_meters;
     }
 
     public function hasRemainingDistanceMeters()
@@ -1190,7 +1190,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getEtaToFirstWaypoint()
     {
-        return isset($this->eta_to_first_waypoint) ? $this->eta_to_first_waypoint : null;
+        return $this->eta_to_first_waypoint;
     }
 
     public function hasEtaToFirstWaypoint()
@@ -1235,7 +1235,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingTimeToFirstWaypoint()
     {
-        return isset($this->remaining_time_to_first_waypoint) ? $this->remaining_time_to_first_waypoint : null;
+        return $this->remaining_time_to_first_waypoint;
     }
 
     public function hasRemainingTimeToFirstWaypoint()
@@ -1273,7 +1273,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingWaypointsVersion()
     {
-        return isset($this->remaining_waypoints_version) ? $this->remaining_waypoints_version : null;
+        return $this->remaining_waypoints_version;
     }
 
     public function hasRemainingWaypointsVersion()
@@ -1313,7 +1313,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getRemainingWaypointsRouteVersion()
     {
-        return isset($this->remaining_waypoints_route_version) ? $this->remaining_waypoints_route_version : null;
+        return $this->remaining_waypoints_route_version;
     }
 
     public function hasRemainingWaypointsRouteVersion()
@@ -1382,7 +1382,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     public function getLastLocation()
     {
-        return isset($this->last_location) ? $this->last_location : null;
+        return $this->last_location;
     }
 
     public function hasLastLocation()

@@ -1678,7 +1678,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (inspectConfig_ != null) {
@@ -1693,7 +1693,7 @@ private static final long serialVersionUID = 0L;
     if (byteItem_ != null) {
       output.writeMessage(7, getByteItem());
     }
-    if (!getLocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, locationId_);
     }
     unknownFields.writeTo(output);
@@ -1705,7 +1705,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (inspectConfig_ != null) {
@@ -1724,7 +1724,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getByteItem());
     }
-    if (!getLocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, locationId_);
     }
     size += unknownFields.getSerializedSize();

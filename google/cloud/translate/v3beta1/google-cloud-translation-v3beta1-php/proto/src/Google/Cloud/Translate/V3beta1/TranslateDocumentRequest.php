@@ -265,7 +265,7 @@ class TranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDocumentInputConfig()
     {
-        return isset($this->document_input_config) ? $this->document_input_config : null;
+        return $this->document_input_config;
     }
 
     public function hasDocumentInputConfig()
@@ -305,7 +305,7 @@ class TranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDocumentOutputConfig()
     {
-        return isset($this->document_output_config) ? $this->document_output_config : null;
+        return $this->document_output_config;
     }
 
     public function hasDocumentOutputConfig()
@@ -387,7 +387,7 @@ class TranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getGlossaryConfig()
     {
-        return isset($this->glossary_config) ? $this->glossary_config : null;
+        return $this->glossary_config;
     }
 
     public function hasGlossaryConfig()

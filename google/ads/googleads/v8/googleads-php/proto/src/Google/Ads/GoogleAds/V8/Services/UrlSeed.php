@@ -18,7 +18,7 @@ class UrlSeed extends \Google\Protobuf\Internal\Message
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>optional string url = 2;</code>
      */
     protected $url = null;
 
@@ -40,7 +40,7 @@ class UrlSeed extends \Google\Protobuf\Internal\Message
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>optional string url = 2;</code>
      * @return string
      */
     public function getUrl()
@@ -61,7 +61,7 @@ class UrlSeed extends \Google\Protobuf\Internal\Message
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>optional string url = 2;</code>
      * @param string $var
      * @return $this
      */

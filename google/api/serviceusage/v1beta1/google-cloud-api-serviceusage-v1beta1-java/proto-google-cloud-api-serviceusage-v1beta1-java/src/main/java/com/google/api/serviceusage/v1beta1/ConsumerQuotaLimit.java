@@ -401,10 +401,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unit_);
     }
     if (isPrecise_ != false) {
@@ -413,7 +413,7 @@ private static final long serialVersionUID = 0L;
     if (allowsAdminOverrides_ != false) {
       output.writeBool(7, allowsAdminOverrides_);
     }
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, metric_);
     }
     for (int i = 0; i < quotaBuckets_.size(); i++) {
@@ -428,10 +428,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getUnitBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, unit_);
     }
     if (isPrecise_ != false) {
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, allowsAdminOverrides_);
     }
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, metric_);
     }
     for (int i = 0; i < quotaBuckets_.size(); i++) {

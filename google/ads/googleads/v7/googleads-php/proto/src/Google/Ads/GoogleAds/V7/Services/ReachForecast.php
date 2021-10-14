@@ -89,7 +89,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      */
     public function getForecast()
     {
-        return isset($this->forecast) ? $this->forecast : null;
+        return $this->forecast;
     }
 
     public function hasForecast()

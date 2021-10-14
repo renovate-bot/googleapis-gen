@@ -91,7 +91,7 @@ class ListConnectionsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMaxResults()
     {
-        return isset($this->max_results) ? $this->max_results : null;
+        return $this->max_results;
     }
 
     public function hasMaxResults()

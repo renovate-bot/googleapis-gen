@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
     }
     if (level_ != com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.LEVEL_UNSPECIFIED.getNumber()) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         3);
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, code_);
     }
     unknownFields.writeTo(output);
@@ -530,7 +530,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
     }
     if (level_ != com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.LEVEL_UNSPECIFIED.getNumber()) {
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, metadata__);
     }
-    if (!getCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, code_);
     }
     size += unknownFields.getSerializedSize();

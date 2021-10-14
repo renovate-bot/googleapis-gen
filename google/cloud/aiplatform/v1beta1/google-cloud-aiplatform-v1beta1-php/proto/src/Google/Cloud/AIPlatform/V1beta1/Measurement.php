@@ -67,7 +67,7 @@ class Measurement extends \Google\Protobuf\Internal\Message
      */
     public function getElapsedDuration()
     {
-        return isset($this->elapsed_duration) ? $this->elapsed_duration : null;
+        return $this->elapsed_duration;
     }
 
     public function hasElapsedDuration()

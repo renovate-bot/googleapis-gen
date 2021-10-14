@@ -102,7 +102,7 @@ class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getExclusion()
     {
-        return isset($this->exclusion) ? $this->exclusion : null;
+        return $this->exclusion;
     }
 
     public function hasExclusion()

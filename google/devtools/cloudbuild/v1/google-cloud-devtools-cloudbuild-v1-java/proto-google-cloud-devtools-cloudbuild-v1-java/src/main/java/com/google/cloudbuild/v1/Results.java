@@ -433,7 +433,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < buildStepImages_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, buildStepImages_.getRaw(i));
     }
-    if (!getArtifactManifestBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactManifest_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, artifactManifest_);
     }
     if (numArtifacts_ != 0L) {
@@ -466,7 +466,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getBuildStepImagesList().size();
     }
-    if (!getArtifactManifestBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactManifest_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, artifactManifest_);
     }
     if (numArtifacts_ != 0L) {

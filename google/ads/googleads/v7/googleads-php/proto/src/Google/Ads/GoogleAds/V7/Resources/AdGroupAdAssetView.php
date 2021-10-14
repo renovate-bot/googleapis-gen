@@ -29,13 +29,13 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>string ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_ad = null;
     /**
      * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>string asset = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string asset = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $asset = null;
     /**
@@ -50,7 +50,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      * link once existed but has been removed and is no longer present in the
      * latest version of the ad.
      *
-     * Generated from protobuf field <code>bool enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $enabled = null;
     /**
@@ -137,7 +137,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>string ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroupAd()
@@ -158,7 +158,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>string ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>string asset = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string asset = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAsset()
@@ -194,7 +194,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>string asset = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string asset = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -238,7 +238,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      * link once existed but has been removed and is no longer present in the
      * latest version of the ad.
      *
-     * Generated from protobuf field <code>bool enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getEnabled()
@@ -262,7 +262,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      * link once existed but has been removed and is no longer present in the
      * latest version of the ad.
      *
-     * Generated from protobuf field <code>bool enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool enabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -282,7 +282,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      */
     public function getPolicySummary()
     {
-        return isset($this->policy_summary) ? $this->policy_summary : null;
+        return $this->policy_summary;
     }
 
     public function hasPolicySummary()

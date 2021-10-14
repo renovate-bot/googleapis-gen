@@ -57,7 +57,7 @@ class CreateTimeSeriesError extends \Google\Protobuf\Internal\Message
     public function getTimeSeries()
     {
         @trigger_error('time_series is deprecated.', E_USER_DEPRECATED);
-        return isset($this->time_series) ? $this->time_series : null;
+        return $this->time_series;
     }
 
     public function hasTimeSeries()
@@ -99,7 +99,7 @@ class CreateTimeSeriesError extends \Google\Protobuf\Internal\Message
     public function getStatus()
     {
         @trigger_error('status is deprecated.', E_USER_DEPRECATED);
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()

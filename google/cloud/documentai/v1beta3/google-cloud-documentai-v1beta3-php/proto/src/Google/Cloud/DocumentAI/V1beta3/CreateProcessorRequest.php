@@ -88,7 +88,7 @@ class CreateProcessorRequest extends \Google\Protobuf\Internal\Message
      */
     public function getProcessor()
     {
-        return isset($this->processor) ? $this->processor : null;
+        return $this->processor;
     }
 
     public function hasProcessor()

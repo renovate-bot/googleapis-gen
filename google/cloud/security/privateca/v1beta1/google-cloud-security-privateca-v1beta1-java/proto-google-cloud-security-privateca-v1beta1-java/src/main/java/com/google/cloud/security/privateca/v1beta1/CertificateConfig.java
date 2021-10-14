@@ -456,7 +456,7 @@ private static final long serialVersionUID = 0L;
       if (subject_ != null) {
         output.writeMessage(1, getSubject());
       }
-      if (!getCommonNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commonName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, commonName_);
       }
       if (subjectAltName_ != null) {
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getSubject());
       }
-      if (!getCommonNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(commonName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, commonName_);
       }
       if (subjectAltName_ != null) {

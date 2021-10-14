@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, timeZone_);
     }
     if (geoLocation_ != null) {
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
     if (parameters_ != null) {
       output.writeMessage(5, getParameters());
     }
-    if (!getCurrentPageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentPage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, currentPage_);
     }
     if (disableWebhook_ != false) {
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTimeZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, timeZone_);
     }
     if (geoLocation_ != null) {
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getParameters());
     }
-    if (!getCurrentPageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentPage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, currentPage_);
     }
     if (disableWebhook_ != false) {

@@ -69,7 +69,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      */
     public function getNumerator()
     {
-        return isset($this->numerator) ? $this->numerator : null;
+        return $this->numerator;
     }
 
     public function hasNumerator()
@@ -105,7 +105,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      */
     public function getDenominator()
     {
-        return isset($this->denominator) ? $this->denominator : null;
+        return $this->denominator;
     }
 
     public function hasDenominator()
@@ -141,7 +141,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      */
     public function getSecondaryAggregation()
     {
-        return isset($this->secondary_aggregation) ? $this->secondary_aggregation : null;
+        return $this->secondary_aggregation;
     }
 
     public function hasSecondaryAggregation()

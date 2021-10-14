@@ -20,40 +20,40 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * (Lowercase all characters; Remove any extra spaces before, after, and in
      * between).
      *
-     * Generated from protobuf field <code>string hashed_first_name = 7;</code>
+     * Generated from protobuf field <code>optional string hashed_first_name = 7;</code>
      */
     protected $hashed_first_name = null;
     /**
      * Last name of the user, which is hashed as SHA-256 after normalized (lower
      * case only and no punctuation).
      *
-     * Generated from protobuf field <code>string hashed_last_name = 8;</code>
+     * Generated from protobuf field <code>optional string hashed_last_name = 8;</code>
      */
     protected $hashed_last_name = null;
     /**
      * City of the address. Only accepted for Store Sales and
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string city = 9;</code>
+     * Generated from protobuf field <code>optional string city = 9;</code>
      */
     protected $city = null;
     /**
      * State code of the address. Only accepted for Store Sales and
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string state = 10;</code>
+     * Generated from protobuf field <code>optional string state = 10;</code>
      */
     protected $state = null;
     /**
      * 2-letter country code in ISO-3166-1 alpha-2 of the user's address.
      *
-     * Generated from protobuf field <code>string country_code = 11;</code>
+     * Generated from protobuf field <code>optional string country_code = 11;</code>
      */
     protected $country_code = null;
     /**
      * Postal code of the user's address.
      *
-     * Generated from protobuf field <code>string postal_code = 12;</code>
+     * Generated from protobuf field <code>optional string postal_code = 12;</code>
      */
     protected $postal_code = null;
     /**
@@ -61,7 +61,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * normalization (lower case only). Only accepted for
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string hashed_street_address = 13;</code>
+     * Generated from protobuf field <code>optional string hashed_street_address = 13;</code>
      */
     protected $hashed_street_address = null;
 
@@ -104,7 +104,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * (Lowercase all characters; Remove any extra spaces before, after, and in
      * between).
      *
-     * Generated from protobuf field <code>string hashed_first_name = 7;</code>
+     * Generated from protobuf field <code>optional string hashed_first_name = 7;</code>
      * @return string
      */
     public function getHashedFirstName()
@@ -127,7 +127,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * (Lowercase all characters; Remove any extra spaces before, after, and in
      * between).
      *
-     * Generated from protobuf field <code>string hashed_first_name = 7;</code>
+     * Generated from protobuf field <code>optional string hashed_first_name = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -143,7 +143,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * Last name of the user, which is hashed as SHA-256 after normalized (lower
      * case only and no punctuation).
      *
-     * Generated from protobuf field <code>string hashed_last_name = 8;</code>
+     * Generated from protobuf field <code>optional string hashed_last_name = 8;</code>
      * @return string
      */
     public function getHashedLastName()
@@ -165,7 +165,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * Last name of the user, which is hashed as SHA-256 after normalized (lower
      * case only and no punctuation).
      *
-     * Generated from protobuf field <code>string hashed_last_name = 8;</code>
+     * Generated from protobuf field <code>optional string hashed_last_name = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -181,7 +181,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * City of the address. Only accepted for Store Sales and
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string city = 9;</code>
+     * Generated from protobuf field <code>optional string city = 9;</code>
      * @return string
      */
     public function getCity()
@@ -203,7 +203,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * City of the address. Only accepted for Store Sales and
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string city = 9;</code>
+     * Generated from protobuf field <code>optional string city = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -219,7 +219,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * State code of the address. Only accepted for Store Sales and
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string state = 10;</code>
+     * Generated from protobuf field <code>optional string state = 10;</code>
      * @return string
      */
     public function getState()
@@ -241,7 +241,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * State code of the address. Only accepted for Store Sales and
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string state = 10;</code>
+     * Generated from protobuf field <code>optional string state = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -256,7 +256,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * 2-letter country code in ISO-3166-1 alpha-2 of the user's address.
      *
-     * Generated from protobuf field <code>string country_code = 11;</code>
+     * Generated from protobuf field <code>optional string country_code = 11;</code>
      * @return string
      */
     public function getCountryCode()
@@ -277,7 +277,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * 2-letter country code in ISO-3166-1 alpha-2 of the user's address.
      *
-     * Generated from protobuf field <code>string country_code = 11;</code>
+     * Generated from protobuf field <code>optional string country_code = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -292,7 +292,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Postal code of the user's address.
      *
-     * Generated from protobuf field <code>string postal_code = 12;</code>
+     * Generated from protobuf field <code>optional string postal_code = 12;</code>
      * @return string
      */
     public function getPostalCode()
@@ -313,7 +313,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     /**
      * Postal code of the user's address.
      *
-     * Generated from protobuf field <code>string postal_code = 12;</code>
+     * Generated from protobuf field <code>optional string postal_code = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -330,7 +330,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * normalization (lower case only). Only accepted for
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string hashed_street_address = 13;</code>
+     * Generated from protobuf field <code>optional string hashed_street_address = 13;</code>
      * @return string
      */
     public function getHashedStreetAddress()
@@ -353,7 +353,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * normalization (lower case only). Only accepted for
      * ConversionAdjustmentUploadService.
      *
-     * Generated from protobuf field <code>string hashed_street_address = 13;</code>
+     * Generated from protobuf field <code>optional string hashed_street_address = 13;</code>
      * @param string $var
      * @return $this
      */

@@ -67,7 +67,7 @@ class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFinding()
     {
-        return isset($this->finding) ? $this->finding : null;
+        return $this->finding;
     }
 
     public function hasFinding()
@@ -108,7 +108,7 @@ class UpdateFindingRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -188,7 +188,7 @@ private static final long serialVersionUID = 0L;
    * Default: True
    * </pre>
    *
-   * <code>bool enable_health_monitoring = 2;</code>
+   * <code>optional bool enable_health_monitoring = 2;</code>
    * @return Whether the enableHealthMonitoring field is set.
    */
   @java.lang.Override
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * Default: True
    * </pre>
    *
-   * <code>bool enable_health_monitoring = 2;</code>
+   * <code>optional bool enable_health_monitoring = 2;</code>
    * @return The enableHealthMonitoring.
    */
   @java.lang.Override
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
    * Default: True
    * </pre>
    *
-   * <code>bool idle_shutdown = 3;</code>
+   * <code>optional bool idle_shutdown = 3;</code>
    * @return Whether the idleShutdown field is set.
    */
   @java.lang.Override
@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
    * Default: True
    * </pre>
    *
-   * <code>bool idle_shutdown = 3;</code>
+   * <code>optional bool idle_shutdown = 3;</code>
    * @return The idleShutdown.
    */
   @java.lang.Override
@@ -380,7 +380,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNotebookUpgradeScheduleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookUpgradeSchedule_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, notebookUpgradeSchedule_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -395,10 +395,10 @@ private static final long serialVersionUID = 0L;
     if (installGpuDriver_ != false) {
       output.writeBool(5, installGpuDriver_);
     }
-    if (!getCustomGpuDriverPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customGpuDriverPath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, customGpuDriverPath_);
     }
-    if (!getPostStartupScriptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postStartupScript_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, postStartupScript_);
     }
     unknownFields.writeTo(output);
@@ -410,7 +410,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNotebookUpgradeScheduleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookUpgradeSchedule_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, notebookUpgradeSchedule_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -429,10 +429,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, installGpuDriver_);
     }
-    if (!getCustomGpuDriverPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customGpuDriverPath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, customGpuDriverPath_);
     }
-    if (!getPostStartupScriptBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postStartupScript_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, postStartupScript_);
     }
     size += unknownFields.getSerializedSize();
@@ -910,7 +910,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool enable_health_monitoring = 2;</code>
+     * <code>optional bool enable_health_monitoring = 2;</code>
      * @return Whether the enableHealthMonitoring field is set.
      */
     @java.lang.Override
@@ -923,7 +923,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool enable_health_monitoring = 2;</code>
+     * <code>optional bool enable_health_monitoring = 2;</code>
      * @return The enableHealthMonitoring.
      */
     @java.lang.Override
@@ -936,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool enable_health_monitoring = 2;</code>
+     * <code>optional bool enable_health_monitoring = 2;</code>
      * @param value The enableHealthMonitoring to set.
      * @return This builder for chaining.
      */
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool enable_health_monitoring = 2;</code>
+     * <code>optional bool enable_health_monitoring = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearEnableHealthMonitoring() {
@@ -969,7 +969,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool idle_shutdown = 3;</code>
+     * <code>optional bool idle_shutdown = 3;</code>
      * @return Whether the idleShutdown field is set.
      */
     @java.lang.Override
@@ -982,7 +982,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool idle_shutdown = 3;</code>
+     * <code>optional bool idle_shutdown = 3;</code>
      * @return The idleShutdown.
      */
     @java.lang.Override
@@ -995,7 +995,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool idle_shutdown = 3;</code>
+     * <code>optional bool idle_shutdown = 3;</code>
      * @param value The idleShutdown to set.
      * @return This builder for chaining.
      */
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      * Default: True
      * </pre>
      *
-     * <code>bool idle_shutdown = 3;</code>
+     * <code>optional bool idle_shutdown = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearIdleShutdown() {

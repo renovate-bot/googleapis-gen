@@ -87,7 +87,7 @@ class FinalizeMfaPhoneResponseInfo extends \Google\Protobuf\Internal\Message
      */
     public function getAndroidVerificationProofExpireTime()
     {
-        return isset($this->android_verification_proof_expire_time) ? $this->android_verification_proof_expire_time : null;
+        return $this->android_verification_proof_expire_time;
     }
 
     public function hasAndroidVerificationProofExpireTime()

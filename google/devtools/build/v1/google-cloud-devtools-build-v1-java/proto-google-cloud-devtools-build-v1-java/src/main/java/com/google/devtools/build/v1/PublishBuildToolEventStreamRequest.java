@@ -292,7 +292,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < notificationKeywords_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, notificationKeywords_.getRaw(i));
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, projectId_);
     }
     unknownFields.writeTo(output);
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getNotificationKeywordsList().size();
     }
-    if (!getProjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, projectId_);
     }
     size += unknownFields.getSerializedSize();

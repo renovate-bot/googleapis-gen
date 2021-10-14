@@ -83,7 +83,7 @@ class CreateTrialRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTrial()
     {
-        return isset($this->trial) ? $this->trial : null;
+        return $this->trial;
     }
 
     public function hasTrial()

@@ -188,7 +188,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPointsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(points_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, points_);
     }
     if (travelMode_ != com.google.maps.roads.v1op.TravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPointsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(points_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, points_);
     }
     if (travelMode_ != com.google.maps.roads.v1op.TravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {

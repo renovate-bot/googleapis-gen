@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
     if (loadBalancerType_ != com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.LoadBalancerType.LOAD_BALANCER_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, loadBalancerType_);
     }
-    if (!getHealthCheckUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthCheckUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, healthCheckUri_);
     }
     for (int i = 0; i < backends_.size(); i++) {
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
     if (backendType_ != com.google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.BackendType.BACKEND_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, backendType_);
     }
-    if (!getBackendUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backendUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, backendUri_);
     }
     unknownFields.writeTo(output);
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, loadBalancerType_);
     }
-    if (!getHealthCheckUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthCheckUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, healthCheckUri_);
     }
     for (int i = 0; i < backends_.size(); i++) {
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, backendType_);
     }
-    if (!getBackendUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backendUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, backendUri_);
     }
     size += unknownFields.getSerializedSize();

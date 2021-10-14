@@ -223,7 +223,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     public function getAccessConfig()
     {
-        return isset($this->access_config) ? $this->access_config : null;
+        return $this->access_config;
     }
 
     public function hasAccessConfig()
@@ -259,7 +259,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     public function getSoftwareConfig()
     {
-        return isset($this->software_config) ? $this->software_config : null;
+        return $this->software_config;
     }
 
     public function hasSoftwareConfig()
@@ -296,7 +296,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     public function getMetrics()
     {
-        return isset($this->metrics) ? $this->metrics : null;
+        return $this->metrics;
     }
 
     public function hasMetrics()
@@ -333,7 +333,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -369,7 +369,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

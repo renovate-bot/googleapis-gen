@@ -1230,7 +1230,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
     }
     for (int i = 0; i < companies_.size(); i++) {
@@ -1255,7 +1255,7 @@ private static final long serialVersionUID = 0L;
     if (compensationFilter_ != null) {
       output.writeMessage(7, getCompensationFilter());
     }
-    if (!getCustomAttributeFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customAttributeFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, customAttributeFilter_);
     }
     if (disableSpellCheck_ != false) {
@@ -1277,7 +1277,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < excludedJobs_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, excludedJobs_.getRaw(i));
     }
-    if (!getQueryLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryLanguageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, queryLanguageCode_);
     }
     unknownFields.writeTo(output);
@@ -1289,7 +1289,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
     }
     {
@@ -1332,7 +1332,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getCompensationFilter());
     }
-    if (!getCustomAttributeFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customAttributeFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, customAttributeFilter_);
     }
     if (disableSpellCheck_ != false) {
@@ -1371,7 +1371,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getExcludedJobsList().size();
     }
-    if (!getQueryLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryLanguageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, queryLanguageCode_);
     }
     size += unknownFields.getSerializedSize();

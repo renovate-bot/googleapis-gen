@@ -427,10 +427,10 @@ private static final long serialVersionUID = 0L;
     if (epoch_ != 0) {
       output.writeInt32(1, epoch_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getRevisionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, revision_);
     }
     if (kind_ != io.grafeas.v1beta1.pkg.Version.VersionKind.VERSION_KIND_UNSPECIFIED.getNumber()) {
@@ -449,10 +449,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, epoch_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getRevisionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, revision_);
     }
     if (kind_ != io.grafeas.v1beta1.pkg.Version.VersionKind.VERSION_KIND_UNSPECIFIED.getNumber()) {

@@ -414,7 +414,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getInputConfig()
     {
-        return isset($this->input_config) ? $this->input_config : null;
+        return $this->input_config;
     }
 
     public function hasInputConfig()
@@ -457,7 +457,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getModelParameters()
     {
-        return isset($this->model_parameters) ? $this->model_parameters : null;
+        return $this->model_parameters;
     }
 
     public function hasModelParameters()
@@ -503,7 +503,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getOutputConfig()
     {
-        return isset($this->output_config) ? $this->output_config : null;
+        return $this->output_config;
     }
 
     public function hasOutputConfig()
@@ -550,7 +550,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getDedicatedResources()
     {
-        return isset($this->dedicated_resources) ? $this->dedicated_resources : null;
+        return $this->dedicated_resources;
     }
 
     public function hasDedicatedResources()
@@ -592,7 +592,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getManualBatchTuningParameters()
     {
-        return isset($this->manual_batch_tuning_parameters) ? $this->manual_batch_tuning_parameters : null;
+        return $this->manual_batch_tuning_parameters;
     }
 
     public function hasManualBatchTuningParameters()
@@ -683,7 +683,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationSpec()
     {
-        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+        return $this->explanation_spec;
     }
 
     public function hasExplanationSpec()
@@ -724,7 +724,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getOutputInfo()
     {
-        return isset($this->output_info) ? $this->output_info : null;
+        return $this->output_info;
     }
 
     public function hasOutputInfo()
@@ -787,7 +787,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -860,7 +860,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getResourcesConsumed()
     {
-        return isset($this->resources_consumed) ? $this->resources_consumed : null;
+        return $this->resources_consumed;
     }
 
     public function hasResourcesConsumed()
@@ -900,7 +900,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getCompletionStats()
     {
-        return isset($this->completion_stats) ? $this->completion_stats : null;
+        return $this->completion_stats;
     }
 
     public function hasCompletionStats()
@@ -936,7 +936,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -973,7 +973,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -1011,7 +1011,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -1048,7 +1048,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -1120,7 +1120,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()

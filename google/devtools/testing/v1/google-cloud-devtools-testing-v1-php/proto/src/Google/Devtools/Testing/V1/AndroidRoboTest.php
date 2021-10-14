@@ -335,7 +335,7 @@ class AndroidRoboTest extends \Google\Protobuf\Internal\Message
      */
     public function getRoboScript()
     {
-        return isset($this->robo_script) ? $this->robo_script : null;
+        return $this->robo_script;
     }
 
     public function hasRoboScript()

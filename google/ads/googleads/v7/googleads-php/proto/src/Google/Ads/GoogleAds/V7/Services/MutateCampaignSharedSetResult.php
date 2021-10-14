@@ -85,7 +85,7 @@ class MutateCampaignSharedSetResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignSharedSet()
     {
-        return isset($this->campaign_shared_set) ? $this->campaign_shared_set : null;
+        return $this->campaign_shared_set;
     }
 
     public function hasCampaignSharedSet()

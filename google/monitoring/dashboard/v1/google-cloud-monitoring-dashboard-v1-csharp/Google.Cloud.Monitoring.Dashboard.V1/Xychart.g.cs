@@ -81,19 +81,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     private static readonly pb::MessageParser<XyChart> _parser = new pb::MessageParser<XyChart>(() => new XyChart());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<XyChart> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Monitoring.Dashboard.V1.XychartReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public XyChart() {
       OnConstruction();
     }
@@ -101,6 +105,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public XyChart(XyChart other) : this() {
       dataSets_ = other.dataSets_.Clone();
       timeshiftDuration_ = other.timeshiftDuration_ != null ? other.timeshiftDuration_.Clone() : null;
@@ -112,6 +117,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public XyChart Clone() {
       return new XyChart(this);
     }
@@ -125,6 +131,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Required. The data displayed in this chart.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Types.DataSet> DataSets {
       get { return dataSets_; }
     }
@@ -140,6 +147,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// data sets of LINE plot type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration TimeshiftDuration {
       get { return timeshiftDuration_; }
       set {
@@ -156,6 +164,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Threshold lines drawn horizontally across the chart.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Monitoring.Dashboard.V1.Threshold> Thresholds {
       get { return thresholds_; }
     }
@@ -167,6 +176,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// The properties applied to the X axis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Types.Axis XAxis {
       get { return xAxis_; }
       set {
@@ -181,6 +191,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// The properties applied to the Y axis.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Types.Axis YAxis {
       get { return yAxis_; }
       set {
@@ -195,6 +206,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// Display options for the chart.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.ChartOptions ChartOptions {
       get { return chartOptions_; }
       set {
@@ -203,11 +215,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as XyChart);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(XyChart other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -225,6 +239,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= dataSets_.GetHashCode();
@@ -240,11 +255,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -275,6 +292,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       dataSets_.WriteTo(ref output, _repeated_dataSets_codec);
       if (timeshiftDuration_ != null) {
@@ -301,6 +319,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += dataSets_.CalculateSize(_repeated_dataSets_codec);
@@ -324,6 +343,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(XyChart other) {
       if (other == null) {
         return;
@@ -358,6 +378,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -411,6 +432,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -462,6 +484,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the XyChart message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Groups a time series query definition with charting options.
@@ -474,19 +497,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         private static readonly pb::MessageParser<DataSet> _parser = new pb::MessageParser<DataSet>(() => new DataSet());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<DataSet> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataSet() {
           OnConstruction();
         }
@@ -494,6 +521,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataSet(DataSet other) : this() {
           timeSeriesQuery_ = other.timeSeriesQuery_ != null ? other.timeSeriesQuery_.Clone() : null;
           plotType_ = other.plotType_;
@@ -503,6 +531,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataSet Clone() {
           return new DataSet(this);
         }
@@ -515,6 +544,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// Stackdriver metrics API.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Monitoring.Dashboard.V1.TimeSeriesQuery TimeSeriesQuery {
           get { return timeSeriesQuery_; }
           set {
@@ -529,6 +559,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// How this data should be plotted on the chart.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Types.DataSet.Types.PlotType PlotType {
           get { return plotType_; }
           set {
@@ -545,6 +576,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// which will resolve to the label's value.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string LegendTemplate {
           get { return legendTemplate_; }
           set {
@@ -563,6 +595,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// make sense to fetch and align data at one minute intervals.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Duration MinAlignmentPeriod {
           get { return minAlignmentPeriod_; }
           set {
@@ -571,11 +604,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as DataSet);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(DataSet other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -591,6 +626,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (timeSeriesQuery_ != null) hash ^= TimeSeriesQuery.GetHashCode();
@@ -604,11 +640,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -637,6 +675,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (timeSeriesQuery_ != null) {
             output.WriteRawTag(10);
@@ -661,6 +700,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (timeSeriesQuery_ != null) {
@@ -682,6 +722,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(DataSet other) {
           if (other == null) {
             return;
@@ -708,6 +749,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -747,6 +789,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -784,6 +827,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         #region Nested types
         /// <summary>Container for nested types declared in the DataSet message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// The types of plotting strategies for data sets.
@@ -836,19 +880,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         private static readonly pb::MessageParser<Axis> _parser = new pb::MessageParser<Axis>(() => new Axis());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Axis> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Axis() {
           OnConstruction();
         }
@@ -856,6 +904,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Axis(Axis other) : this() {
           label_ = other.label_;
           scale_ = other.scale_;
@@ -863,6 +912,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Axis Clone() {
           return new Axis(this);
         }
@@ -874,6 +924,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// The label of the axis.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Label {
           get { return label_; }
           set {
@@ -888,6 +939,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         /// The axis scale. By default, a linear scale is used.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Monitoring.Dashboard.V1.XyChart.Types.Axis.Types.Scale Scale {
           get { return scale_; }
           set {
@@ -896,11 +948,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Axis);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Axis other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -914,6 +968,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Label.Length != 0) hash ^= Label.GetHashCode();
@@ -925,11 +980,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -950,6 +1007,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Label.Length != 0) {
             output.WriteRawTag(10);
@@ -966,6 +1024,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Label.Length != 0) {
@@ -981,6 +1040,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Axis other) {
           if (other == null) {
             return;
@@ -995,6 +1055,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1020,6 +1081,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1043,6 +1105,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
         #region Nested types
         /// <summary>Container for nested types declared in the Axis message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Types of scales used in axes.
@@ -1083,19 +1146,23 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     private static readonly pb::MessageParser<ChartOptions> _parser = new pb::MessageParser<ChartOptions>(() => new ChartOptions());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ChartOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Monitoring.Dashboard.V1.XychartReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChartOptions() {
       OnConstruction();
     }
@@ -1103,12 +1170,14 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChartOptions(ChartOptions other) : this() {
       mode_ = other.mode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChartOptions Clone() {
       return new ChartOptions(this);
     }
@@ -1120,6 +1189,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     /// The chart mode.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Monitoring.Dashboard.V1.ChartOptions.Types.Mode Mode {
       get { return mode_; }
       set {
@@ -1128,11 +1198,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ChartOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ChartOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1145,6 +1217,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Mode != global::Google.Cloud.Monitoring.Dashboard.V1.ChartOptions.Types.Mode.Unspecified) hash ^= Mode.GetHashCode();
@@ -1155,11 +1228,13 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1176,6 +1251,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Mode != global::Google.Cloud.Monitoring.Dashboard.V1.ChartOptions.Types.Mode.Unspecified) {
         output.WriteRawTag(8);
@@ -1188,6 +1264,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Mode != global::Google.Cloud.Monitoring.Dashboard.V1.ChartOptions.Types.Mode.Unspecified) {
@@ -1200,6 +1277,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ChartOptions other) {
       if (other == null) {
         return;
@@ -1211,6 +1289,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1232,6 +1311,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1251,6 +1331,7 @@ namespace Google.Cloud.Monitoring.Dashboard.V1 {
     #region Nested types
     /// <summary>Container for nested types declared in the ChartOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Chart mode options.

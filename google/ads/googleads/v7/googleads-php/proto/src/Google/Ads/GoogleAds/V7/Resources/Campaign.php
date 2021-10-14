@@ -26,7 +26,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -36,7 +36,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 58;</code>
+     * Generated from protobuf field <code>optional string name = 58;</code>
      */
     protected $name = null;
     /**
@@ -81,7 +81,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 60;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 60;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -163,13 +163,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $base_campaign = null;
     /**
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>string campaign_budget = 62 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = {</code>
      */
     protected $campaign_budget = null;
     /**
@@ -185,20 +185,20 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The date when campaign started.
      *
-     * Generated from protobuf field <code>string start_date = 63;</code>
+     * Generated from protobuf field <code>optional string start_date = 63;</code>
      */
     protected $start_date = null;
     /**
      * The last day of the campaign.
      *
-     * Generated from protobuf field <code>string end_date = 64;</code>
+     * Generated from protobuf field <code>optional string end_date = 64;</code>
      */
     protected $end_date = null;
     /**
      * Suffix used to append query parameters to landing pages that are served
      * with parallel tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 65;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 65;</code>
      */
     protected $final_url_suffix = null;
     /**
@@ -255,7 +255,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/9061546.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $optimization_score = null;
     /**
@@ -460,7 +460,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -481,7 +481,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -500,7 +500,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 58;</code>
+     * Generated from protobuf field <code>optional string name = 58;</code>
      * @return string
      */
     public function getName()
@@ -525,7 +525,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * It must not contain any null (code point 0x0), NL line feed
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
-     * Generated from protobuf field <code>string name = 58;</code>
+     * Generated from protobuf field <code>optional string name = 58;</code>
      * @param string $var
      * @return $this
      */
@@ -688,7 +688,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 60;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 60;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -709,7 +709,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 60;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 60;</code>
      * @param string $var
      * @return $this
      */
@@ -758,7 +758,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getRealTimeBiddingSetting()
     {
-        return isset($this->real_time_bidding_setting) ? $this->real_time_bidding_setting : null;
+        return $this->real_time_bidding_setting;
     }
 
     public function hasRealTimeBiddingSetting()
@@ -795,7 +795,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getNetworkSettings()
     {
-        return isset($this->network_settings) ? $this->network_settings : null;
+        return $this->network_settings;
     }
 
     public function hasNetworkSettings()
@@ -831,7 +831,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getHotelSetting()
     {
-        return isset($this->hotel_setting) ? $this->hotel_setting : null;
+        return $this->hotel_setting;
     }
 
     public function hasHotelSetting()
@@ -867,7 +867,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getDynamicSearchAdsSetting()
     {
-        return isset($this->dynamic_search_ads_setting) ? $this->dynamic_search_ads_setting : null;
+        return $this->dynamic_search_ads_setting;
     }
 
     public function hasDynamicSearchAdsSetting()
@@ -903,7 +903,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getShoppingSetting()
     {
-        return isset($this->shopping_setting) ? $this->shopping_setting : null;
+        return $this->shopping_setting;
     }
 
     public function hasShoppingSetting()
@@ -939,7 +939,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getTargetingSetting()
     {
-        return isset($this->targeting_setting) ? $this->targeting_setting : null;
+        return $this->targeting_setting;
     }
 
     public function hasTargetingSetting()
@@ -975,7 +975,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getGeoTargetTypeSetting()
     {
-        return isset($this->geo_target_type_setting) ? $this->geo_target_type_setting : null;
+        return $this->geo_target_type_setting;
     }
 
     public function hasGeoTargetTypeSetting()
@@ -1011,7 +1011,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getLocalCampaignSetting()
     {
-        return isset($this->local_campaign_setting) ? $this->local_campaign_setting : null;
+        return $this->local_campaign_setting;
     }
 
     public function hasLocalCampaignSetting()
@@ -1047,7 +1047,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getAppCampaignSetting()
     {
-        return isset($this->app_campaign_setting) ? $this->app_campaign_setting : null;
+        return $this->app_campaign_setting;
     }
 
     public function hasAppCampaignSetting()
@@ -1132,7 +1132,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getBaseCampaign()
@@ -1155,7 +1155,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -1170,7 +1170,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>string campaign_budget = 62 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaignBudget()
@@ -1191,7 +1191,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>string campaign_budget = 62 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -1240,7 +1240,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The date when campaign started.
      *
-     * Generated from protobuf field <code>string start_date = 63;</code>
+     * Generated from protobuf field <code>optional string start_date = 63;</code>
      * @return string
      */
     public function getStartDate()
@@ -1261,7 +1261,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The date when campaign started.
      *
-     * Generated from protobuf field <code>string start_date = 63;</code>
+     * Generated from protobuf field <code>optional string start_date = 63;</code>
      * @param string $var
      * @return $this
      */
@@ -1276,7 +1276,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The last day of the campaign.
      *
-     * Generated from protobuf field <code>string end_date = 64;</code>
+     * Generated from protobuf field <code>optional string end_date = 64;</code>
      * @return string
      */
     public function getEndDate()
@@ -1297,7 +1297,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The last day of the campaign.
      *
-     * Generated from protobuf field <code>string end_date = 64;</code>
+     * Generated from protobuf field <code>optional string end_date = 64;</code>
      * @param string $var
      * @return $this
      */
@@ -1313,7 +1313,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Suffix used to append query parameters to landing pages that are served
      * with parallel tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 65;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 65;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -1335,7 +1335,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Suffix used to append query parameters to landing pages that are served
      * with parallel tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 65;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 65;</code>
      * @param string $var
      * @return $this
      */
@@ -1407,7 +1407,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getVanityPharma()
     {
-        return isset($this->vanity_pharma) ? $this->vanity_pharma : null;
+        return $this->vanity_pharma;
     }
 
     public function hasVanityPharma()
@@ -1444,7 +1444,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getSelectiveOptimization()
     {
-        return isset($this->selective_optimization) ? $this->selective_optimization : null;
+        return $this->selective_optimization;
     }
 
     public function hasSelectiveOptimization()
@@ -1482,7 +1482,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getOptimizationGoalSetting()
     {
-        return isset($this->optimization_goal_setting) ? $this->optimization_goal_setting : null;
+        return $this->optimization_goal_setting;
     }
 
     public function hasOptimizationGoalSetting()
@@ -1519,7 +1519,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingSetting()
     {
-        return isset($this->tracking_setting) ? $this->tracking_setting : null;
+        return $this->tracking_setting;
     }
 
     public function hasTrackingSetting()
@@ -1583,7 +1583,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/9061546.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float
      */
     public function getOptimizationScore()
@@ -1611,7 +1611,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/9061546.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float $var
      * @return $this
      */

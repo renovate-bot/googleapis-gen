@@ -2098,7 +2098,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (vehicleState_ != google.maps.fleetengine.v1.VehicleState.UNKNOWN_VEHICLE_STATE.getNumber()) {
@@ -2147,7 +2147,7 @@ private static final long serialVersionUID = 0L;
     if (etaToFirstWaypoint_ != null) {
       output.writeMessage(19, getEtaToFirstWaypoint());
     }
-    if (!getCurrentRouteSegmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentRouteSegment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, currentRouteSegment_);
     }
     for (int i = 0; i < waypoints_.size(); i++) {
@@ -2177,7 +2177,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (vehicleState_ != google.maps.fleetengine.v1.VehicleState.UNKNOWN_VEHICLE_STATE.getNumber()) {
@@ -2248,7 +2248,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getEtaToFirstWaypoint());
     }
-    if (!getCurrentRouteSegmentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentRouteSegment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, currentRouteSegment_);
     }
     for (int i = 0; i < waypoints_.size(); i++) {

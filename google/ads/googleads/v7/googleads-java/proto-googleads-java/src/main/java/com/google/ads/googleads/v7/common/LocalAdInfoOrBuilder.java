@@ -332,7 +332,7 @@ public interface LocalAdInfoOrBuilder extends
    * in the ad.
    * </pre>
    *
-   * <code>string path1 = 9;</code>
+   * <code>optional string path1 = 9;</code>
    * @return Whether the path1 field is set.
    */
   boolean hasPath1();
@@ -342,7 +342,7 @@ public interface LocalAdInfoOrBuilder extends
    * in the ad.
    * </pre>
    *
-   * <code>string path1 = 9;</code>
+   * <code>optional string path1 = 9;</code>
    * @return The path1.
    */
   java.lang.String getPath1();
@@ -352,7 +352,7 @@ public interface LocalAdInfoOrBuilder extends
    * in the ad.
    * </pre>
    *
-   * <code>string path1 = 9;</code>
+   * <code>optional string path1 = 9;</code>
    * @return The bytes for path1.
    */
   com.google.protobuf.ByteString
@@ -364,7 +364,7 @@ public interface LocalAdInfoOrBuilder extends
    * in the ad. This field can only be set when path1 is also set.
    * </pre>
    *
-   * <code>string path2 = 10;</code>
+   * <code>optional string path2 = 10;</code>
    * @return Whether the path2 field is set.
    */
   boolean hasPath2();
@@ -374,7 +374,7 @@ public interface LocalAdInfoOrBuilder extends
    * in the ad. This field can only be set when path1 is also set.
    * </pre>
    *
-   * <code>string path2 = 10;</code>
+   * <code>optional string path2 = 10;</code>
    * @return The path2.
    */
   java.lang.String getPath2();
@@ -384,7 +384,7 @@ public interface LocalAdInfoOrBuilder extends
    * in the ad. This field can only be set when path1 is also set.
    * </pre>
    *
-   * <code>string path2 = 10;</code>
+   * <code>optional string path2 = 10;</code>
    * @return The bytes for path2.
    */
   com.google.protobuf.ByteString

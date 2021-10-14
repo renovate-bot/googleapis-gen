@@ -55,7 +55,7 @@ class BuildFinished extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()
@@ -91,7 +91,7 @@ class BuildFinished extends \Google\Protobuf\Internal\Message
      */
     public function getDetails()
     {
-        return isset($this->details) ? $this->details : null;
+        return $this->details;
     }
 
     public function hasDetails()

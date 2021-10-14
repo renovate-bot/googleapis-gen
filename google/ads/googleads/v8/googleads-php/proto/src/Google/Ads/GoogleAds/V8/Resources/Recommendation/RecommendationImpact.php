@@ -54,7 +54,7 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
      */
     public function getBaseMetrics()
     {
-        return isset($this->base_metrics) ? $this->base_metrics : null;
+        return $this->base_metrics;
     }
 
     public function hasBaseMetrics()
@@ -90,7 +90,7 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
      */
     public function getPotentialMetrics()
     {
-        return isset($this->potential_metrics) ? $this->potential_metrics : null;
+        return $this->potential_metrics;
     }
 
     public function hasPotentialMetrics()

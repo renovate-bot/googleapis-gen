@@ -259,7 +259,7 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     public function getName()
     {
-        return isset($this->name) ? $this->name : null;
+        return $this->name;
     }
 
     public function hasName()
@@ -381,7 +381,7 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceInfo()
     {
-        return isset($this->device_info) ? $this->device_info : null;
+        return $this->device_info;
     }
 
     public function hasDeviceInfo()
@@ -417,7 +417,7 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     public function getAttributes()
     {
-        return isset($this->attributes) ? $this->attributes : null;
+        return $this->attributes;
     }
 
     public function hasAttributes()
@@ -458,7 +458,7 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     public function getCustomData()
     {
-        return isset($this->custom_data) ? $this->custom_data : null;
+        return $this->custom_data;
     }
 
     public function hasCustomData()

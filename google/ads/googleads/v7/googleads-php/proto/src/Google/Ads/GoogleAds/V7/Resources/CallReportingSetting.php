@@ -19,13 +19,13 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * Enable reporting of phone call events by redirecting them via Google
      * System.
      *
-     * Generated from protobuf field <code>bool call_reporting_enabled = 10;</code>
+     * Generated from protobuf field <code>optional bool call_reporting_enabled = 10;</code>
      */
     protected $call_reporting_enabled = null;
     /**
      * Whether to enable call conversion reporting.
      *
-     * Generated from protobuf field <code>bool call_conversion_reporting_enabled = 11;</code>
+     * Generated from protobuf field <code>optional bool call_conversion_reporting_enabled = 11;</code>
      */
     protected $call_conversion_reporting_enabled = null;
     /**
@@ -33,7 +33,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>string call_conversion_action = 12 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string call_conversion_action = 12 [(.google.api.resource_reference) = {</code>
      */
     protected $call_conversion_action = null;
 
@@ -63,7 +63,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * Enable reporting of phone call events by redirecting them via Google
      * System.
      *
-     * Generated from protobuf field <code>bool call_reporting_enabled = 10;</code>
+     * Generated from protobuf field <code>optional bool call_reporting_enabled = 10;</code>
      * @return bool
      */
     public function getCallReportingEnabled()
@@ -85,7 +85,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * Enable reporting of phone call events by redirecting them via Google
      * System.
      *
-     * Generated from protobuf field <code>bool call_reporting_enabled = 10;</code>
+     * Generated from protobuf field <code>optional bool call_reporting_enabled = 10;</code>
      * @param bool $var
      * @return $this
      */
@@ -100,7 +100,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether to enable call conversion reporting.
      *
-     * Generated from protobuf field <code>bool call_conversion_reporting_enabled = 11;</code>
+     * Generated from protobuf field <code>optional bool call_conversion_reporting_enabled = 11;</code>
      * @return bool
      */
     public function getCallConversionReportingEnabled()
@@ -121,7 +121,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether to enable call conversion reporting.
      *
-     * Generated from protobuf field <code>bool call_conversion_reporting_enabled = 11;</code>
+     * Generated from protobuf field <code>optional bool call_conversion_reporting_enabled = 11;</code>
      * @param bool $var
      * @return $this
      */
@@ -138,7 +138,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>string call_conversion_action = 12 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string call_conversion_action = 12 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCallConversionAction()
@@ -161,7 +161,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>string call_conversion_action = 12 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string call_conversion_action = 12 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

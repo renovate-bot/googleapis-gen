@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < alternatives_.size(); i++) {
       output.writeMessage(1, alternatives_.get(i));
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
     }
     unknownFields.writeTo(output);
@@ -263,7 +263,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, alternatives_.get(i));
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
     }
     size += unknownFields.getSerializedSize();

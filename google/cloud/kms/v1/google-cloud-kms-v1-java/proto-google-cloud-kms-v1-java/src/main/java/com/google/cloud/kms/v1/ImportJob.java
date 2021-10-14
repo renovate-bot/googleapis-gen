@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPemBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pem_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pem_);
       }
       unknownFields.writeTo(output);
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getPemBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pem_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pem_);
       }
       size += unknownFields.getSerializedSize();
@@ -1603,7 +1603,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (importMethod_ != com.google.cloud.kms.v1.ImportJob.ImportMethod.IMPORT_METHOD_UNSPECIFIED.getNumber()) {
@@ -1642,7 +1642,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (importMethod_ != com.google.cloud.kms.v1.ImportJob.ImportMethod.IMPORT_METHOD_UNSPECIFIED.getNumber()) {

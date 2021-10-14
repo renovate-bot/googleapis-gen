@@ -83,7 +83,7 @@ class CreateWebhookRequest extends \Google\Protobuf\Internal\Message
      */
     public function getWebhook()
     {
-        return isset($this->webhook) ? $this->webhook : null;
+        return $this->webhook;
     }
 
     public function hasWebhook()

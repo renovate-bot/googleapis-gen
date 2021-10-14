@@ -109,7 +109,7 @@ class UpdateViewRequest extends \Google\Protobuf\Internal\Message
      */
     public function getView()
     {
-        return isset($this->view) ? $this->view : null;
+        return $this->view;
     }
 
     public function hasView()
@@ -150,7 +150,7 @@ class UpdateViewRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

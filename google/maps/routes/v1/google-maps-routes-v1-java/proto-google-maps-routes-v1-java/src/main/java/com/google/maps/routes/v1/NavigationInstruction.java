@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
     if (maneuver_ != com.google.maps.routes.v1.Maneuver.MANEUVER_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, maneuver_);
     }
-    if (!getInstructionsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instructions_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instructions_);
     }
     unknownFields.writeTo(output);
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, maneuver_);
     }
-    if (!getInstructionsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instructions_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instructions_);
     }
     size += unknownFields.getSerializedSize();

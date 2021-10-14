@@ -20,7 +20,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Topic Constant resource name.
      *
-     * Generated from protobuf field <code>string topic_constant = 3;</code>
+     * Generated from protobuf field <code>optional string topic_constant = 3;</code>
      */
     protected $topic_constant = null;
     /**
@@ -56,7 +56,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Topic Constant resource name.
      *
-     * Generated from protobuf field <code>string topic_constant = 3;</code>
+     * Generated from protobuf field <code>optional string topic_constant = 3;</code>
      * @return string
      */
     public function getTopicConstant()
@@ -77,7 +77,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
     /**
      * The Topic Constant resource name.
      *
-     * Generated from protobuf field <code>string topic_constant = 3;</code>
+     * Generated from protobuf field <code>optional string topic_constant = 3;</code>
      * @param string $var
      * @return $this
      */

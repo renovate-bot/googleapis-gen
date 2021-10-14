@@ -187,7 +187,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      */
     public function getHumanReadable()
     {
-        return isset($this->human_readable) ? $this->human_readable : null;
+        return $this->human_readable;
     }
 
     public function hasHumanReadable()
@@ -224,7 +224,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      */
     public function getInterpretationStructure()
     {
-        return isset($this->interpretation_structure) ? $this->interpretation_structure : null;
+        return $this->interpretation_structure;
     }
 
     public function hasInterpretationStructure()
@@ -261,7 +261,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      */
     public function getDataQuery()
     {
-        return isset($this->data_query) ? $this->data_query : null;
+        return $this->data_query;
     }
 
     public function hasDataQuery()
@@ -298,7 +298,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      */
     public function getExecutionInfo()
     {
-        return isset($this->execution_info) ? $this->execution_info : null;
+        return $this->execution_info;
     }
 
     public function hasExecutionInfo()

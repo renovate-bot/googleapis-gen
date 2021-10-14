@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
       if (allValues_ != com.google.cloud.orgpolicy.v1.Policy.ListPolicy.AllValues.ALL_VALUES_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, allValues_);
       }
-      if (!getSuggestedValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestedValue_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, suggestedValue_);
       }
       if (inheritFromParent_ != false) {
@@ -1035,7 +1035,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, allValues_);
       }
-      if (!getSuggestedValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suggestedValue_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, suggestedValue_);
       }
       if (inheritFromParent_ != false) {
@@ -3733,7 +3733,7 @@ private static final long serialVersionUID = 0L;
     if (version_ != 0) {
       output.writeInt32(1, version_);
     }
-    if (!getConstraintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constraint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, constraint_);
     }
     if (!etag_.isEmpty()) {
@@ -3764,7 +3764,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, version_);
     }
-    if (!getConstraintBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constraint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, constraint_);
     }
     if (!etag_.isEmpty()) {

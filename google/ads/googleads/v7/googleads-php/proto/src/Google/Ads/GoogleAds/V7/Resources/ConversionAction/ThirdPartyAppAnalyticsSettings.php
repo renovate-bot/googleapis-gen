@@ -18,7 +18,7 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The event name of a third-party app analytics conversion.
      *
-     * Generated from protobuf field <code>string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $event_name = null;
     /**
@@ -48,7 +48,7 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The event name of a third-party app analytics conversion.
      *
-     * Generated from protobuf field <code>string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEventName()
@@ -69,7 +69,7 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The event name of a third-party app analytics conversion.
      *
-     * Generated from protobuf field <code>string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

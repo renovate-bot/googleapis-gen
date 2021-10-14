@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
     if (format_ != com.google.cloud.iot.v1.PublicKeyCertificateFormat.UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT.getNumber()) {
       output.writeEnum(1, format_);
     }
-    if (!getCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, certificate_);
     }
     if (x509Details_ != null) {
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, format_);
     }
-    if (!getCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, certificate_);
     }
     if (x509Details_ != null) {

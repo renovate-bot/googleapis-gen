@@ -127,7 +127,7 @@ class SearchCatalogRequest extends \Google\Protobuf\Internal\Message
      */
     public function getScope()
     {
-        return isset($this->scope) ? $this->scope : null;
+        return $this->scope;
     }
 
     public function hasScope()

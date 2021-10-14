@@ -87,7 +87,7 @@ class DeployIndexRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDeployedIndex()
     {
-        return isset($this->deployed_index) ? $this->deployed_index : null;
+        return $this->deployed_index;
     }
 
     public function hasDeployedIndex()

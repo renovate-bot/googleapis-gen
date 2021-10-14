@@ -225,7 +225,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < topics_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, topics_.getRaw(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -245,7 +245,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getTopicsList().size();
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

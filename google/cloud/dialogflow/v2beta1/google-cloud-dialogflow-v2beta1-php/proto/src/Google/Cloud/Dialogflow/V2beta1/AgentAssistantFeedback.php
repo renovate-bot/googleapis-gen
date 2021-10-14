@@ -203,7 +203,7 @@ class AgentAssistantFeedback extends \Google\Protobuf\Internal\Message
      */
     public function getSummarizationFeedback()
     {
-        return isset($this->summarization_feedback) ? $this->summarization_feedback : null;
+        return $this->summarization_feedback;
     }
 
     public function hasSummarizationFeedback()

@@ -90,7 +90,7 @@ class BatchJobResult extends \Google\Protobuf\Internal\Message
      */
     public function getMutateOperationResponse()
     {
-        return isset($this->mutate_operation_response) ? $this->mutate_operation_response : null;
+        return $this->mutate_operation_response;
     }
 
     public function hasMutateOperationResponse()
@@ -127,7 +127,7 @@ class BatchJobResult extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()

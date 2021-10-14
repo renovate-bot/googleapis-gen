@@ -305,7 +305,7 @@ class BucketAccessControl extends \Google\Protobuf\Internal\Message
      */
     public function getProjectTeam()
     {
-        return isset($this->project_team) ? $this->project_team : null;
+        return $this->project_team;
     }
 
     public function hasProjectTeam()

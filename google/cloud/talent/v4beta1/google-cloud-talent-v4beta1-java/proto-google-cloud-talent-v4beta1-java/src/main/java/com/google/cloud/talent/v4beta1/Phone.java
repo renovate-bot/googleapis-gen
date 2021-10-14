@@ -566,10 +566,10 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.google.cloud.talent.v4beta1.Phone.PhoneType.PHONE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, type_);
     }
-    if (!getNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, number_);
     }
-    if (!getWhenAvailableBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(whenAvailable_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, whenAvailable_);
     }
     unknownFields.writeTo(output);
@@ -589,10 +589,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, type_);
     }
-    if (!getNumberBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, number_);
     }
-    if (!getWhenAvailableBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(whenAvailable_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, whenAvailable_);
     }
     size += unknownFields.getSerializedSize();

@@ -84,7 +84,7 @@ class UpdateFeatureRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFeature()
     {
-        return isset($this->feature) ? $this->feature : null;
+        return $this->feature;
     }
 
     public function hasFeature()
@@ -134,7 +134,7 @@ class UpdateFeatureRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

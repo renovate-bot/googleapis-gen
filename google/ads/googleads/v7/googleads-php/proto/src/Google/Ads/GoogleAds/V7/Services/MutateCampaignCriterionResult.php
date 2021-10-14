@@ -85,7 +85,7 @@ class MutateCampaignCriterionResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignCriterion()
     {
-        return isset($this->campaign_criterion) ? $this->campaign_criterion : null;
+        return $this->campaign_criterion;
     }
 
     public function hasCampaignCriterion()

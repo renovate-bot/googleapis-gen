@@ -28,7 +28,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
      * To display and query matching purpose, the keyword theme needs to be
      * localized.
      *
-     * Generated from protobuf field <code>string country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_code = null;
     /**
@@ -36,13 +36,13 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
      * To display and query matching purpose, the keyword theme needs to be
      * localized.
      *
-     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $language_code = null;
     /**
      * Output only. The display name of the keyword theme or sub keyword theme.
      *
-     * Generated from protobuf field <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $display_name = null;
 
@@ -108,7 +108,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
      * To display and query matching purpose, the keyword theme needs to be
      * localized.
      *
-     * Generated from protobuf field <code>string country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCountryCode()
@@ -131,7 +131,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
      * To display and query matching purpose, the keyword theme needs to be
      * localized.
      *
-     * Generated from protobuf field <code>string country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -148,7 +148,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
      * To display and query matching purpose, the keyword theme needs to be
      * localized.
      *
-     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLanguageCode()
@@ -171,7 +171,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
      * To display and query matching purpose, the keyword theme needs to be
      * localized.
      *
-     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -186,7 +186,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The display name of the keyword theme or sub keyword theme.
      *
-     * Generated from protobuf field <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDisplayName()
@@ -207,7 +207,7 @@ class KeywordThemeConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The display name of the keyword theme or sub keyword theme.
      *
-     * Generated from protobuf field <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

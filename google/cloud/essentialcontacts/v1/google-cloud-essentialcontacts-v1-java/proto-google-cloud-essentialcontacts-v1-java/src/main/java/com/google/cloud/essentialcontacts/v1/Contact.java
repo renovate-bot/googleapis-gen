@@ -472,10 +472,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
     }
     if (getNotificationCategorySubscriptionsList().size() > 0) {
@@ -485,7 +485,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < notificationCategorySubscriptions_.size(); i++) {
       output.writeEnumNoTag(notificationCategorySubscriptions_.get(i));
     }
-    if (!getLanguageTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageTag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, languageTag_);
     }
     if (validationState_ != com.google.cloud.essentialcontacts.v1.ValidationState.VALIDATION_STATE_UNSPECIFIED.getNumber()) {
@@ -503,10 +503,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
     }
     {
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }notificationCategorySubscriptionsMemoizedSerializedSize = dataSize;
     }
-    if (!getLanguageTagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageTag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, languageTag_);
     }
     if (validationState_ != com.google.cloud.essentialcontacts.v1.ValidationState.VALIDATION_STATE_UNSPECIFIED.getNumber()) {

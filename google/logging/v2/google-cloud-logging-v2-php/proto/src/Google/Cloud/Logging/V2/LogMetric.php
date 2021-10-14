@@ -373,7 +373,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      */
     public function getMetricDescriptor()
     {
-        return isset($this->metric_descriptor) ? $this->metric_descriptor : null;
+        return $this->metric_descriptor;
     }
 
     public function hasMetricDescriptor()
@@ -533,7 +533,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      */
     public function getBucketOptions()
     {
-        return isset($this->bucket_options) ? $this->bucket_options : null;
+        return $this->bucket_options;
     }
 
     public function hasBucketOptions()
@@ -572,7 +572,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -610,7 +610,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

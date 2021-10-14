@@ -57,19 +57,23 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     private static readonly pb::MessageParser<FindingTypeStats> _parser = new pb::MessageParser<FindingTypeStats>(() => new FindingTypeStats());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<FindingTypeStats> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Websecurityscanner.V1Alpha.FindingTypeStatsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FindingTypeStats() {
       OnConstruction();
     }
@@ -77,6 +81,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FindingTypeStats(FindingTypeStats other) : this() {
       findingType_ = other.findingType_;
       findingCount_ = other.findingCount_;
@@ -84,6 +89,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FindingTypeStats Clone() {
       return new FindingTypeStats(this);
     }
@@ -95,6 +101,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     /// The finding type associated with the stats.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Websecurityscanner.V1Alpha.Finding.Types.FindingType FindingType {
       get { return findingType_; }
       set {
@@ -109,6 +116,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     /// The count of findings belonging to this finding type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int FindingCount {
       get { return findingCount_; }
       set {
@@ -117,11 +125,13 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as FindingTypeStats);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(FindingTypeStats other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -135,6 +145,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (FindingType != global::Google.Cloud.Websecurityscanner.V1Alpha.Finding.Types.FindingType.Unspecified) hash ^= FindingType.GetHashCode();
@@ -146,11 +157,13 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -171,6 +184,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (FindingType != global::Google.Cloud.Websecurityscanner.V1Alpha.Finding.Types.FindingType.Unspecified) {
         output.WriteRawTag(8);
@@ -187,6 +201,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (FindingType != global::Google.Cloud.Websecurityscanner.V1Alpha.Finding.Types.FindingType.Unspecified) {
@@ -202,6 +217,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(FindingTypeStats other) {
       if (other == null) {
         return;
@@ -216,6 +232,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -241,6 +258,7 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

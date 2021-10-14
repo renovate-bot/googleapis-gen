@@ -1100,7 +1100,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, imageUri_);
     }
     for (int i = 0; i < command_.size(); i++) {
@@ -1115,10 +1115,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < ports_.size(); i++) {
       output.writeMessage(5, ports_.get(i));
     }
-    if (!getPredictRouteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictRoute_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, predictRoute_);
     }
-    if (!getHealthRouteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthRoute_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, healthRoute_);
     }
     unknownFields.writeTo(output);
@@ -1130,7 +1130,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, imageUri_);
     }
     {
@@ -1157,10 +1157,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, ports_.get(i));
     }
-    if (!getPredictRouteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictRoute_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, predictRoute_);
     }
-    if (!getHealthRouteBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthRoute_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, healthRoute_);
     }
     size += unknownFields.getSerializedSize();

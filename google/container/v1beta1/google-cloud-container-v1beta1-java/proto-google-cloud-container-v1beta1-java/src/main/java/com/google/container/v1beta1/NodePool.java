@@ -1807,7 +1807,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (config_ != null) {
@@ -1834,10 +1834,10 @@ private static final long serialVersionUID = 0L;
     if (networkConfig_ != null) {
       output.writeMessage(14, getNetworkConfig());
     }
-    if (!getSelfLinkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 101, version_);
     }
     for (int i = 0; i < instanceGroupUrls_.size(); i++) {
@@ -1846,7 +1846,7 @@ private static final long serialVersionUID = 0L;
     if (status_ != com.google.container.v1beta1.NodePool.Status.STATUS_UNSPECIFIED.getNumber()) {
       output.writeEnum(103, status_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104, statusMessage_);
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -1864,7 +1864,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (config_ != null) {
@@ -1903,10 +1903,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getNetworkConfig());
     }
-    if (!getSelfLinkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
-    if (!getVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, version_);
     }
     {
@@ -1921,7 +1921,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(103, status_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104, statusMessage_);
     }
     for (int i = 0; i < conditions_.size(); i++) {

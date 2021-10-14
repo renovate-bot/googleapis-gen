@@ -66,7 +66,7 @@ class Token extends \Google\Protobuf\Internal\Message
      */
     public function getLayout()
     {
-        return isset($this->layout) ? $this->layout : null;
+        return $this->layout;
     }
 
     public function hasLayout()
@@ -104,7 +104,7 @@ class Token extends \Google\Protobuf\Internal\Message
      */
     public function getDetectedBreak()
     {
-        return isset($this->detected_break) ? $this->detected_break : null;
+        return $this->detected_break;
     }
 
     public function hasDetectedBreak()

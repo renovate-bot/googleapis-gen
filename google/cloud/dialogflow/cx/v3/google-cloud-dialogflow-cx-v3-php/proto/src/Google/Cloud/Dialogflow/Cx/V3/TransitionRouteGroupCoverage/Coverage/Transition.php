@@ -55,7 +55,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      */
     public function getTransitionRoute()
     {
-        return isset($this->transition_route) ? $this->transition_route : null;
+        return $this->transition_route;
     }
 
     public function hasTransitionRoute()

@@ -85,7 +85,7 @@ class MutateMediaFileResult extends \Google\Protobuf\Internal\Message
      */
     public function getMediaFile()
     {
-        return isset($this->media_file) ? $this->media_file : null;
+        return $this->media_file;
     }
 
     public function hasMediaFile()

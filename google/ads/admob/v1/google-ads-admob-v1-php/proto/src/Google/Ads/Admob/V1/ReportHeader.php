@@ -69,7 +69,7 @@ class ReportHeader extends \Google\Protobuf\Internal\Message
      */
     public function getDateRange()
     {
-        return isset($this->date_range) ? $this->date_range : null;
+        return $this->date_range;
     }
 
     public function hasDateRange()
@@ -107,7 +107,7 @@ class ReportHeader extends \Google\Protobuf\Internal\Message
      */
     public function getLocalizationSettings()
     {
-        return isset($this->localization_settings) ? $this->localization_settings : null;
+        return $this->localization_settings;
     }
 
     public function hasLocalizationSettings()

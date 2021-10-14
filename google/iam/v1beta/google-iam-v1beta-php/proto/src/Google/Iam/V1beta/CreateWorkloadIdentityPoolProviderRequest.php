@@ -93,7 +93,7 @@ class CreateWorkloadIdentityPoolProviderRequest extends \Google\Protobuf\Interna
      */
     public function getWorkloadIdentityPoolProvider()
     {
-        return isset($this->workload_identity_pool_provider) ? $this->workload_identity_pool_provider : null;
+        return $this->workload_identity_pool_provider;
     }
 
     public function hasWorkloadIdentityPoolProvider()

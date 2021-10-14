@@ -262,10 +262,10 @@ private static final long serialVersionUID = 0L;
     if (createPodRange_ != false) {
       output.writeBool(4, createPodRange_);
     }
-    if (!getPodRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, podRange_);
     }
-    if (!getPodIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podIpv4CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, podIpv4CidrBlock_);
     }
     unknownFields.writeTo(output);
@@ -281,10 +281,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, createPodRange_);
     }
-    if (!getPodRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, podRange_);
     }
-    if (!getPodIpv4CidrBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podIpv4CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, podIpv4CidrBlock_);
     }
     size += unknownFields.getSerializedSize();

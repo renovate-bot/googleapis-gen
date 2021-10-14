@@ -279,7 +279,7 @@ class RemoveFulfillmentPlacesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRemoveTime()
     {
-        return isset($this->remove_time) ? $this->remove_time : null;
+        return $this->remove_time;
     }
 
     public function hasRemoveTime()

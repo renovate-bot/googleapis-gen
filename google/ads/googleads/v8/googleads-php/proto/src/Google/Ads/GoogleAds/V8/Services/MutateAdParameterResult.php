@@ -85,7 +85,7 @@ class MutateAdParameterResult extends \Google\Protobuf\Internal\Message
      */
     public function getAdParameter()
     {
-        return isset($this->ad_parameter) ? $this->ad_parameter : null;
+        return $this->ad_parameter;
     }
 
     public function hasAdParameter()

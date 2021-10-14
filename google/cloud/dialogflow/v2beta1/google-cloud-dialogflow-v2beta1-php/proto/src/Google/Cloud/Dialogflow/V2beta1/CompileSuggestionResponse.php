@@ -75,7 +75,7 @@ class CompileSuggestionResponse extends \Google\Protobuf\Internal\Message
      */
     public function getSuggestion()
     {
-        return isset($this->suggestion) ? $this->suggestion : null;
+        return $this->suggestion;
     }
 
     public function hasSuggestion()

@@ -19,25 +19,25 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The short version of the ad's headline.
      *
-     * Generated from protobuf field <code>string short_headline = 16;</code>
+     * Generated from protobuf field <code>optional string short_headline = 16;</code>
      */
     protected $short_headline = null;
     /**
      * The long version of the ad's headline.
      *
-     * Generated from protobuf field <code>string long_headline = 17;</code>
+     * Generated from protobuf field <code>optional string long_headline = 17;</code>
      */
     protected $long_headline = null;
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 18;</code>
+     * Generated from protobuf field <code>optional string description = 18;</code>
      */
     protected $description = null;
     /**
      * The business name in the ad.
      *
-     * Generated from protobuf field <code>string business_name = 19;</code>
+     * Generated from protobuf field <code>optional string business_name = 19;</code>
      */
     protected $business_name = null;
     /**
@@ -47,7 +47,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The default value is true.
      * Must be true if main_color and accent_color are not set.
      *
-     * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
+     * Generated from protobuf field <code>optional bool allow_flexible_color = 20;</code>
      */
     protected $allow_flexible_color = null;
     /**
@@ -55,7 +55,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string accent_color = 21;</code>
+     * Generated from protobuf field <code>optional string accent_color = 21;</code>
      */
     protected $accent_color = null;
     /**
@@ -63,37 +63,37 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string main_color = 22;</code>
+     * Generated from protobuf field <code>optional string main_color = 22;</code>
      */
     protected $main_color = null;
     /**
      * The call-to-action text for the ad.
      *
-     * Generated from protobuf field <code>string call_to_action_text = 23;</code>
+     * Generated from protobuf field <code>optional string call_to_action_text = 23;</code>
      */
     protected $call_to_action_text = null;
     /**
      * The MediaFile resource name of the logo image used in the ad.
      *
-     * Generated from protobuf field <code>string logo_image = 24;</code>
+     * Generated from protobuf field <code>optional string logo_image = 24;</code>
      */
     protected $logo_image = null;
     /**
      * The MediaFile resource name of the square logo image used in the ad.
      *
-     * Generated from protobuf field <code>string square_logo_image = 25;</code>
+     * Generated from protobuf field <code>optional string square_logo_image = 25;</code>
      */
     protected $square_logo_image = null;
     /**
      * The MediaFile resource name of the marketing image used in the ad.
      *
-     * Generated from protobuf field <code>string marketing_image = 26;</code>
+     * Generated from protobuf field <code>optional string marketing_image = 26;</code>
      */
     protected $marketing_image = null;
     /**
      * The MediaFile resource name of the square marketing image used in the ad.
      *
-     * Generated from protobuf field <code>string square_marketing_image = 27;</code>
+     * Generated from protobuf field <code>optional string square_marketing_image = 27;</code>
      */
     protected $square_marketing_image = null;
     /**
@@ -105,14 +105,14 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Prefix before price. E.g. 'as low as'.
      *
-     * Generated from protobuf field <code>string price_prefix = 28;</code>
+     * Generated from protobuf field <code>optional string price_prefix = 28;</code>
      */
     protected $price_prefix = null;
     /**
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
-     * Generated from protobuf field <code>string promo_text = 29;</code>
+     * Generated from protobuf field <code>optional string promo_text = 29;</code>
      */
     protected $promo_text = null;
 
@@ -171,7 +171,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The short version of the ad's headline.
      *
-     * Generated from protobuf field <code>string short_headline = 16;</code>
+     * Generated from protobuf field <code>optional string short_headline = 16;</code>
      * @return string
      */
     public function getShortHeadline()
@@ -192,7 +192,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The short version of the ad's headline.
      *
-     * Generated from protobuf field <code>string short_headline = 16;</code>
+     * Generated from protobuf field <code>optional string short_headline = 16;</code>
      * @param string $var
      * @return $this
      */
@@ -207,7 +207,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The long version of the ad's headline.
      *
-     * Generated from protobuf field <code>string long_headline = 17;</code>
+     * Generated from protobuf field <code>optional string long_headline = 17;</code>
      * @return string
      */
     public function getLongHeadline()
@@ -228,7 +228,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The long version of the ad's headline.
      *
-     * Generated from protobuf field <code>string long_headline = 17;</code>
+     * Generated from protobuf field <code>optional string long_headline = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -243,7 +243,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 18;</code>
+     * Generated from protobuf field <code>optional string description = 18;</code>
      * @return string
      */
     public function getDescription()
@@ -264,7 +264,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The description of the ad.
      *
-     * Generated from protobuf field <code>string description = 18;</code>
+     * Generated from protobuf field <code>optional string description = 18;</code>
      * @param string $var
      * @return $this
      */
@@ -279,7 +279,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The business name in the ad.
      *
-     * Generated from protobuf field <code>string business_name = 19;</code>
+     * Generated from protobuf field <code>optional string business_name = 19;</code>
      * @return string
      */
     public function getBusinessName()
@@ -300,7 +300,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The business name in the ad.
      *
-     * Generated from protobuf field <code>string business_name = 19;</code>
+     * Generated from protobuf field <code>optional string business_name = 19;</code>
      * @param string $var
      * @return $this
      */
@@ -319,7 +319,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The default value is true.
      * Must be true if main_color and accent_color are not set.
      *
-     * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
+     * Generated from protobuf field <code>optional bool allow_flexible_color = 20;</code>
      * @return bool
      */
     public function getAllowFlexibleColor()
@@ -344,7 +344,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The default value is true.
      * Must be true if main_color and accent_color are not set.
      *
-     * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
+     * Generated from protobuf field <code>optional bool allow_flexible_color = 20;</code>
      * @param bool $var
      * @return $this
      */
@@ -361,7 +361,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string accent_color = 21;</code>
+     * Generated from protobuf field <code>optional string accent_color = 21;</code>
      * @return string
      */
     public function getAccentColor()
@@ -384,7 +384,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string accent_color = 21;</code>
+     * Generated from protobuf field <code>optional string accent_color = 21;</code>
      * @param string $var
      * @return $this
      */
@@ -401,7 +401,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string main_color = 22;</code>
+     * Generated from protobuf field <code>optional string main_color = 22;</code>
      * @return string
      */
     public function getMainColor()
@@ -424,7 +424,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * If one of main_color and accent_color is set, the other is required as
      * well.
      *
-     * Generated from protobuf field <code>string main_color = 22;</code>
+     * Generated from protobuf field <code>optional string main_color = 22;</code>
      * @param string $var
      * @return $this
      */
@@ -439,7 +439,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The call-to-action text for the ad.
      *
-     * Generated from protobuf field <code>string call_to_action_text = 23;</code>
+     * Generated from protobuf field <code>optional string call_to_action_text = 23;</code>
      * @return string
      */
     public function getCallToActionText()
@@ -460,7 +460,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The call-to-action text for the ad.
      *
-     * Generated from protobuf field <code>string call_to_action_text = 23;</code>
+     * Generated from protobuf field <code>optional string call_to_action_text = 23;</code>
      * @param string $var
      * @return $this
      */
@@ -475,7 +475,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the logo image used in the ad.
      *
-     * Generated from protobuf field <code>string logo_image = 24;</code>
+     * Generated from protobuf field <code>optional string logo_image = 24;</code>
      * @return string
      */
     public function getLogoImage()
@@ -496,7 +496,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the logo image used in the ad.
      *
-     * Generated from protobuf field <code>string logo_image = 24;</code>
+     * Generated from protobuf field <code>optional string logo_image = 24;</code>
      * @param string $var
      * @return $this
      */
@@ -511,7 +511,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the square logo image used in the ad.
      *
-     * Generated from protobuf field <code>string square_logo_image = 25;</code>
+     * Generated from protobuf field <code>optional string square_logo_image = 25;</code>
      * @return string
      */
     public function getSquareLogoImage()
@@ -532,7 +532,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the square logo image used in the ad.
      *
-     * Generated from protobuf field <code>string square_logo_image = 25;</code>
+     * Generated from protobuf field <code>optional string square_logo_image = 25;</code>
      * @param string $var
      * @return $this
      */
@@ -547,7 +547,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the marketing image used in the ad.
      *
-     * Generated from protobuf field <code>string marketing_image = 26;</code>
+     * Generated from protobuf field <code>optional string marketing_image = 26;</code>
      * @return string
      */
     public function getMarketingImage()
@@ -568,7 +568,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the marketing image used in the ad.
      *
-     * Generated from protobuf field <code>string marketing_image = 26;</code>
+     * Generated from protobuf field <code>optional string marketing_image = 26;</code>
      * @param string $var
      * @return $this
      */
@@ -583,7 +583,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the square marketing image used in the ad.
      *
-     * Generated from protobuf field <code>string square_marketing_image = 27;</code>
+     * Generated from protobuf field <code>optional string square_marketing_image = 27;</code>
      * @return string
      */
     public function getSquareMarketingImage()
@@ -604,7 +604,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the square marketing image used in the ad.
      *
-     * Generated from protobuf field <code>string square_marketing_image = 27;</code>
+     * Generated from protobuf field <code>optional string square_marketing_image = 27;</code>
      * @param string $var
      * @return $this
      */
@@ -645,7 +645,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Prefix before price. E.g. 'as low as'.
      *
-     * Generated from protobuf field <code>string price_prefix = 28;</code>
+     * Generated from protobuf field <code>optional string price_prefix = 28;</code>
      * @return string
      */
     public function getPricePrefix()
@@ -666,7 +666,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Prefix before price. E.g. 'as low as'.
      *
-     * Generated from protobuf field <code>string price_prefix = 28;</code>
+     * Generated from protobuf field <code>optional string price_prefix = 28;</code>
      * @param string $var
      * @return $this
      */
@@ -682,7 +682,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
-     * Generated from protobuf field <code>string promo_text = 29;</code>
+     * Generated from protobuf field <code>optional string promo_text = 29;</code>
      * @return string
      */
     public function getPromoText()
@@ -704,7 +704,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
-     * Generated from protobuf field <code>string promo_text = 29;</code>
+     * Generated from protobuf field <code>optional string promo_text = 29;</code>
      * @param string $var
      * @return $this
      */

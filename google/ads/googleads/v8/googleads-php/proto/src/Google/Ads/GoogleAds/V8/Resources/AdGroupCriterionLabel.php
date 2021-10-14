@@ -26,13 +26,13 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group criterion to which the label is attached.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_criterion = null;
     /**
      * Immutable. The label assigned to the ad group criterion.
      *
-     * Generated from protobuf field <code>string label = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string label = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $label = null;
 
@@ -90,7 +90,7 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group criterion to which the label is attached.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroupCriterion()
@@ -111,7 +111,7 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group criterion to which the label is attached.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -126,7 +126,7 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The label assigned to the ad group criterion.
      *
-     * Generated from protobuf field <code>string label = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string label = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getLabel()
@@ -147,7 +147,7 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The label assigned to the ad group criterion.
      *
-     * Generated from protobuf field <code>string label = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string label = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

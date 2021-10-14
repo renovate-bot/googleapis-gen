@@ -139,7 +139,7 @@ class CreatePrivateConnectionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPrivateConnection()
     {
-        return isset($this->private_connection) ? $this->private_connection : null;
+        return $this->private_connection;
     }
 
     public function hasPrivateConnection()

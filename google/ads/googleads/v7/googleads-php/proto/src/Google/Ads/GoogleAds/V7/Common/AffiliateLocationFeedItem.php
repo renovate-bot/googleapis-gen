@@ -18,61 +18,61 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The name of the business.
      *
-     * Generated from protobuf field <code>string business_name = 11;</code>
+     * Generated from protobuf field <code>optional string business_name = 11;</code>
      */
     protected $business_name = null;
     /**
      * Line 1 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_1 = 12;</code>
+     * Generated from protobuf field <code>optional string address_line_1 = 12;</code>
      */
     protected $address_line_1 = null;
     /**
      * Line 2 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_2 = 13;</code>
+     * Generated from protobuf field <code>optional string address_line_2 = 13;</code>
      */
     protected $address_line_2 = null;
     /**
      * City of the business address.
      *
-     * Generated from protobuf field <code>string city = 14;</code>
+     * Generated from protobuf field <code>optional string city = 14;</code>
      */
     protected $city = null;
     /**
      * Province of the business address.
      *
-     * Generated from protobuf field <code>string province = 15;</code>
+     * Generated from protobuf field <code>optional string province = 15;</code>
      */
     protected $province = null;
     /**
      * Postal code of the business address.
      *
-     * Generated from protobuf field <code>string postal_code = 16;</code>
+     * Generated from protobuf field <code>optional string postal_code = 16;</code>
      */
     protected $postal_code = null;
     /**
      * Country code of the business address.
      *
-     * Generated from protobuf field <code>string country_code = 17;</code>
+     * Generated from protobuf field <code>optional string country_code = 17;</code>
      */
     protected $country_code = null;
     /**
      * Phone number of the business.
      *
-     * Generated from protobuf field <code>string phone_number = 18;</code>
+     * Generated from protobuf field <code>optional string phone_number = 18;</code>
      */
     protected $phone_number = null;
     /**
      * Id of the retail chain that is advertised as a seller of your product.
      *
-     * Generated from protobuf field <code>int64 chain_id = 19;</code>
+     * Generated from protobuf field <code>optional int64 chain_id = 19;</code>
      */
     protected $chain_id = null;
     /**
      * Name of chain.
      *
-     * Generated from protobuf field <code>string chain_name = 20;</code>
+     * Generated from protobuf field <code>optional string chain_name = 20;</code>
      */
     protected $chain_name = null;
 
@@ -112,7 +112,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The name of the business.
      *
-     * Generated from protobuf field <code>string business_name = 11;</code>
+     * Generated from protobuf field <code>optional string business_name = 11;</code>
      * @return string
      */
     public function getBusinessName()
@@ -133,7 +133,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The name of the business.
      *
-     * Generated from protobuf field <code>string business_name = 11;</code>
+     * Generated from protobuf field <code>optional string business_name = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -148,7 +148,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 1 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_1 = 12;</code>
+     * Generated from protobuf field <code>optional string address_line_1 = 12;</code>
      * @return string
      */
     public function getAddressLine1()
@@ -169,7 +169,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 1 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_1 = 12;</code>
+     * Generated from protobuf field <code>optional string address_line_1 = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -184,7 +184,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 2 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_2 = 13;</code>
+     * Generated from protobuf field <code>optional string address_line_2 = 13;</code>
      * @return string
      */
     public function getAddressLine2()
@@ -205,7 +205,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Line 2 of the business address.
      *
-     * Generated from protobuf field <code>string address_line_2 = 13;</code>
+     * Generated from protobuf field <code>optional string address_line_2 = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -220,7 +220,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * City of the business address.
      *
-     * Generated from protobuf field <code>string city = 14;</code>
+     * Generated from protobuf field <code>optional string city = 14;</code>
      * @return string
      */
     public function getCity()
@@ -241,7 +241,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * City of the business address.
      *
-     * Generated from protobuf field <code>string city = 14;</code>
+     * Generated from protobuf field <code>optional string city = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -256,7 +256,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Province of the business address.
      *
-     * Generated from protobuf field <code>string province = 15;</code>
+     * Generated from protobuf field <code>optional string province = 15;</code>
      * @return string
      */
     public function getProvince()
@@ -277,7 +277,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Province of the business address.
      *
-     * Generated from protobuf field <code>string province = 15;</code>
+     * Generated from protobuf field <code>optional string province = 15;</code>
      * @param string $var
      * @return $this
      */
@@ -292,7 +292,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Postal code of the business address.
      *
-     * Generated from protobuf field <code>string postal_code = 16;</code>
+     * Generated from protobuf field <code>optional string postal_code = 16;</code>
      * @return string
      */
     public function getPostalCode()
@@ -313,7 +313,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Postal code of the business address.
      *
-     * Generated from protobuf field <code>string postal_code = 16;</code>
+     * Generated from protobuf field <code>optional string postal_code = 16;</code>
      * @param string $var
      * @return $this
      */
@@ -328,7 +328,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Country code of the business address.
      *
-     * Generated from protobuf field <code>string country_code = 17;</code>
+     * Generated from protobuf field <code>optional string country_code = 17;</code>
      * @return string
      */
     public function getCountryCode()
@@ -349,7 +349,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Country code of the business address.
      *
-     * Generated from protobuf field <code>string country_code = 17;</code>
+     * Generated from protobuf field <code>optional string country_code = 17;</code>
      * @param string $var
      * @return $this
      */
@@ -364,7 +364,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the business.
      *
-     * Generated from protobuf field <code>string phone_number = 18;</code>
+     * Generated from protobuf field <code>optional string phone_number = 18;</code>
      * @return string
      */
     public function getPhoneNumber()
@@ -385,7 +385,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Phone number of the business.
      *
-     * Generated from protobuf field <code>string phone_number = 18;</code>
+     * Generated from protobuf field <code>optional string phone_number = 18;</code>
      * @param string $var
      * @return $this
      */
@@ -400,7 +400,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Id of the retail chain that is advertised as a seller of your product.
      *
-     * Generated from protobuf field <code>int64 chain_id = 19;</code>
+     * Generated from protobuf field <code>optional int64 chain_id = 19;</code>
      * @return int|string
      */
     public function getChainId()
@@ -421,7 +421,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Id of the retail chain that is advertised as a seller of your product.
      *
-     * Generated from protobuf field <code>int64 chain_id = 19;</code>
+     * Generated from protobuf field <code>optional int64 chain_id = 19;</code>
      * @param int|string $var
      * @return $this
      */
@@ -436,7 +436,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Name of chain.
      *
-     * Generated from protobuf field <code>string chain_name = 20;</code>
+     * Generated from protobuf field <code>optional string chain_name = 20;</code>
      * @return string
      */
     public function getChainName()
@@ -457,7 +457,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Name of chain.
      *
-     * Generated from protobuf field <code>string chain_name = 20;</code>
+     * Generated from protobuf field <code>optional string chain_name = 20;</code>
      * @param string $var
      * @return $this
      */

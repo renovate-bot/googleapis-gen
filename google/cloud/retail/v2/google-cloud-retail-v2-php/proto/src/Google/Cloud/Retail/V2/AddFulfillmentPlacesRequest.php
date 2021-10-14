@@ -295,7 +295,7 @@ class AddFulfillmentPlacesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAddTime()
     {
-        return isset($this->add_time) ? $this->add_time : null;
+        return $this->add_time;
     }
 
     public function hasAddTime()

@@ -73,7 +73,7 @@ class ResultStorage extends \Google\Protobuf\Internal\Message
      */
     public function getGoogleCloudStorage()
     {
-        return isset($this->google_cloud_storage) ? $this->google_cloud_storage : null;
+        return $this->google_cloud_storage;
     }
 
     public function hasGoogleCloudStorage()
@@ -111,7 +111,7 @@ class ResultStorage extends \Google\Protobuf\Internal\Message
      */
     public function getToolResultsHistory()
     {
-        return isset($this->tool_results_history) ? $this->tool_results_history : null;
+        return $this->tool_results_history;
     }
 
     public function hasToolResultsHistory()
@@ -149,7 +149,7 @@ class ResultStorage extends \Google\Protobuf\Internal\Message
      */
     public function getToolResultsExecution()
     {
-        return isset($this->tool_results_execution) ? $this->tool_results_execution : null;
+        return $this->tool_results_execution;
     }
 
     public function hasToolResultsExecution()

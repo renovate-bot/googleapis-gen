@@ -53,7 +53,7 @@ class UpdateIndexEndpointRequest extends \Google\Protobuf\Internal\Message
      */
     public function getIndexEndpoint()
     {
-        return isset($this->index_endpoint) ? $this->index_endpoint : null;
+        return $this->index_endpoint;
     }
 
     public function hasIndexEndpoint()
@@ -89,7 +89,7 @@ class UpdateIndexEndpointRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

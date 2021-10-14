@@ -19,7 +19,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * A freeform description of what the promotion is targeting.
      * This field is required.
      *
-     * Generated from protobuf field <code>string promotion_target = 16;</code>
+     * Generated from protobuf field <code>optional string promotion_target = 16;</code>
      */
     protected $promotion_target = null;
     /**
@@ -31,13 +31,13 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Start date of when the promotion is eligible to be redeemed.
      *
-     * Generated from protobuf field <code>string promotion_start_date = 19;</code>
+     * Generated from protobuf field <code>optional string promotion_start_date = 19;</code>
      */
     protected $promotion_start_date = null;
     /**
      * Last date when the promotion is eligible to be redeemed.
      *
-     * Generated from protobuf field <code>string promotion_end_date = 20;</code>
+     * Generated from protobuf field <code>optional string promotion_end_date = 20;</code>
      */
     protected $promotion_end_date = null;
     /**
@@ -64,7 +64,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 23;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 23;</code>
      */
     protected $tracking_url_template = null;
     /**
@@ -78,14 +78,14 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 24;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 24;</code>
      */
     protected $final_url_suffix = null;
     /**
      * The language of the promotion.
      * Represented as BCP 47 language tag.
      *
-     * Generated from protobuf field <code>string language_code = 25;</code>
+     * Generated from protobuf field <code>optional string language_code = 25;</code>
      */
     protected $language_code = null;
     protected $discount_type;
@@ -149,7 +149,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * A freeform description of what the promotion is targeting.
      * This field is required.
      *
-     * Generated from protobuf field <code>string promotion_target = 16;</code>
+     * Generated from protobuf field <code>optional string promotion_target = 16;</code>
      * @return string
      */
     public function getPromotionTarget()
@@ -171,7 +171,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * A freeform description of what the promotion is targeting.
      * This field is required.
      *
-     * Generated from protobuf field <code>string promotion_target = 16;</code>
+     * Generated from protobuf field <code>optional string promotion_target = 16;</code>
      * @param string $var
      * @return $this
      */
@@ -212,7 +212,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Start date of when the promotion is eligible to be redeemed.
      *
-     * Generated from protobuf field <code>string promotion_start_date = 19;</code>
+     * Generated from protobuf field <code>optional string promotion_start_date = 19;</code>
      * @return string
      */
     public function getPromotionStartDate()
@@ -233,7 +233,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Start date of when the promotion is eligible to be redeemed.
      *
-     * Generated from protobuf field <code>string promotion_start_date = 19;</code>
+     * Generated from protobuf field <code>optional string promotion_start_date = 19;</code>
      * @param string $var
      * @return $this
      */
@@ -248,7 +248,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Last date when the promotion is eligible to be redeemed.
      *
-     * Generated from protobuf field <code>string promotion_end_date = 20;</code>
+     * Generated from protobuf field <code>optional string promotion_end_date = 20;</code>
      * @return string
      */
     public function getPromotionEndDate()
@@ -269,7 +269,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Last date when the promotion is eligible to be redeemed.
      *
-     * Generated from protobuf field <code>string promotion_end_date = 20;</code>
+     * Generated from protobuf field <code>optional string promotion_end_date = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -368,7 +368,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 23;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 23;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -389,7 +389,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 23;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 23;</code>
      * @param string $var
      * @return $this
      */
@@ -433,7 +433,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 24;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 24;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -455,7 +455,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 24;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 24;</code>
      * @param string $var
      * @return $this
      */
@@ -471,7 +471,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * The language of the promotion.
      * Represented as BCP 47 language tag.
      *
-     * Generated from protobuf field <code>string language_code = 25;</code>
+     * Generated from protobuf field <code>optional string language_code = 25;</code>
      * @return string
      */
     public function getLanguageCode()
@@ -493,7 +493,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * The language of the promotion.
      * Represented as BCP 47 language tag.
      *
-     * Generated from protobuf field <code>string language_code = 25;</code>
+     * Generated from protobuf field <code>optional string language_code = 25;</code>
      * @param string $var
      * @return $this
      */

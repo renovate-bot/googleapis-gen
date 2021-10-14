@@ -26,7 +26,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>int64 id = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -34,7 +34,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating new
      * conversion actions.
      *
-     * Generated from protobuf field <code>string name = 22;</code>
+     * Generated from protobuf field <code>optional string name = 22;</code>
      */
     protected $name = null;
     /**
@@ -59,28 +59,28 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $owner_customer = null;
     /**
      * Whether this conversion action should be included in the "conversions"
      * metric.
      *
-     * Generated from protobuf field <code>bool include_in_conversions_metric = 24;</code>
+     * Generated from protobuf field <code>optional bool include_in_conversions_metric = 24;</code>
      */
     protected $include_in_conversions_metric = null;
     /**
      * The maximum number of days that may elapse between an interaction
      * (e.g., a click) and a conversion event.
      *
-     * Generated from protobuf field <code>int64 click_through_lookback_window_days = 25;</code>
+     * Generated from protobuf field <code>optional int64 click_through_lookback_window_days = 25;</code>
      */
     protected $click_through_lookback_window_days = null;
     /**
      * The maximum number of days which may elapse between an impression and a
      * conversion without an interaction.
      *
-     * Generated from protobuf field <code>int64 view_through_lookback_window_days = 26;</code>
+     * Generated from protobuf field <code>optional int64 view_through_lookback_window_days = 26;</code>
      */
     protected $view_through_lookback_window_days = null;
     /**
@@ -113,13 +113,13 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * reported for this conversion action.
      * The value must be between 0 and 10000, inclusive.
      *
-     * Generated from protobuf field <code>int64 phone_call_duration_seconds = 27;</code>
+     * Generated from protobuf field <code>optional int64 phone_call_duration_seconds = 27;</code>
      */
     protected $phone_call_duration_seconds = null;
     /**
      * App ID for an app conversion action.
      *
-     * Generated from protobuf field <code>string app_id = 28;</code>
+     * Generated from protobuf field <code>optional string app_id = 28;</code>
      */
     protected $app_id = null;
     /**
@@ -236,7 +236,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>int64 id = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -257,7 +257,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>int64 id = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -274,7 +274,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating new
      * conversion actions.
      *
-     * Generated from protobuf field <code>string name = 22;</code>
+     * Generated from protobuf field <code>optional string name = 22;</code>
      * @return string
      */
     public function getName()
@@ -297,7 +297,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * This field is required and should not be empty when creating new
      * conversion actions.
      *
-     * Generated from protobuf field <code>string name = 22;</code>
+     * Generated from protobuf field <code>optional string name = 22;</code>
      * @param string $var
      * @return $this
      */
@@ -391,7 +391,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getOwnerCustomer()
@@ -413,7 +413,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -429,7 +429,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Whether this conversion action should be included in the "conversions"
      * metric.
      *
-     * Generated from protobuf field <code>bool include_in_conversions_metric = 24;</code>
+     * Generated from protobuf field <code>optional bool include_in_conversions_metric = 24;</code>
      * @return bool
      */
     public function getIncludeInConversionsMetric()
@@ -451,7 +451,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Whether this conversion action should be included in the "conversions"
      * metric.
      *
-     * Generated from protobuf field <code>bool include_in_conversions_metric = 24;</code>
+     * Generated from protobuf field <code>optional bool include_in_conversions_metric = 24;</code>
      * @param bool $var
      * @return $this
      */
@@ -467,7 +467,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * The maximum number of days that may elapse between an interaction
      * (e.g., a click) and a conversion event.
      *
-     * Generated from protobuf field <code>int64 click_through_lookback_window_days = 25;</code>
+     * Generated from protobuf field <code>optional int64 click_through_lookback_window_days = 25;</code>
      * @return int|string
      */
     public function getClickThroughLookbackWindowDays()
@@ -489,7 +489,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * The maximum number of days that may elapse between an interaction
      * (e.g., a click) and a conversion event.
      *
-     * Generated from protobuf field <code>int64 click_through_lookback_window_days = 25;</code>
+     * Generated from protobuf field <code>optional int64 click_through_lookback_window_days = 25;</code>
      * @param int|string $var
      * @return $this
      */
@@ -505,7 +505,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * The maximum number of days which may elapse between an impression and a
      * conversion without an interaction.
      *
-     * Generated from protobuf field <code>int64 view_through_lookback_window_days = 26;</code>
+     * Generated from protobuf field <code>optional int64 view_through_lookback_window_days = 26;</code>
      * @return int|string
      */
     public function getViewThroughLookbackWindowDays()
@@ -527,7 +527,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * The maximum number of days which may elapse between an impression and a
      * conversion without an interaction.
      *
-     * Generated from protobuf field <code>int64 view_through_lookback_window_days = 26;</code>
+     * Generated from protobuf field <code>optional int64 view_through_lookback_window_days = 26;</code>
      * @param int|string $var
      * @return $this
      */
@@ -548,7 +548,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getValueSettings()
     {
-        return isset($this->value_settings) ? $this->value_settings : null;
+        return $this->value_settings;
     }
 
     public function hasValueSettings()
@@ -611,7 +611,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getAttributionModelSettings()
     {
-        return isset($this->attribution_model_settings) ? $this->attribution_model_settings : null;
+        return $this->attribution_model_settings;
     }
 
     public function hasAttributionModelSettings()
@@ -670,7 +670,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * reported for this conversion action.
      * The value must be between 0 and 10000, inclusive.
      *
-     * Generated from protobuf field <code>int64 phone_call_duration_seconds = 27;</code>
+     * Generated from protobuf field <code>optional int64 phone_call_duration_seconds = 27;</code>
      * @return int|string
      */
     public function getPhoneCallDurationSeconds()
@@ -693,7 +693,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * reported for this conversion action.
      * The value must be between 0 and 10000, inclusive.
      *
-     * Generated from protobuf field <code>int64 phone_call_duration_seconds = 27;</code>
+     * Generated from protobuf field <code>optional int64 phone_call_duration_seconds = 27;</code>
      * @param int|string $var
      * @return $this
      */
@@ -708,7 +708,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * App ID for an app conversion action.
      *
-     * Generated from protobuf field <code>string app_id = 28;</code>
+     * Generated from protobuf field <code>optional string app_id = 28;</code>
      * @return string
      */
     public function getAppId()
@@ -729,7 +729,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * App ID for an app conversion action.
      *
-     * Generated from protobuf field <code>string app_id = 28;</code>
+     * Generated from protobuf field <code>optional string app_id = 28;</code>
      * @param string $var
      * @return $this
      */
@@ -775,7 +775,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getFirebaseSettings()
     {
-        return isset($this->firebase_settings) ? $this->firebase_settings : null;
+        return $this->firebase_settings;
     }
 
     public function hasFirebaseSettings()
@@ -811,7 +811,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getThirdPartyAppAnalyticsSettings()
     {
-        return isset($this->third_party_app_analytics_settings) ? $this->third_party_app_analytics_settings : null;
+        return $this->third_party_app_analytics_settings;
     }
 
     public function hasThirdPartyAppAnalyticsSettings()

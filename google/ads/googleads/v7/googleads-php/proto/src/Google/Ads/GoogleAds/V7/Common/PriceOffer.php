@@ -18,13 +18,13 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     /**
      * Header text of this offer.
      *
-     * Generated from protobuf field <code>string header = 7;</code>
+     * Generated from protobuf field <code>optional string header = 7;</code>
      */
     protected $header = null;
     /**
      * Description text of this offer.
      *
-     * Generated from protobuf field <code>string description = 8;</code>
+     * Generated from protobuf field <code>optional string description = 8;</code>
      */
     protected $description = null;
     /**
@@ -80,7 +80,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     /**
      * Header text of this offer.
      *
-     * Generated from protobuf field <code>string header = 7;</code>
+     * Generated from protobuf field <code>optional string header = 7;</code>
      * @return string
      */
     public function getHeader()
@@ -101,7 +101,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     /**
      * Header text of this offer.
      *
-     * Generated from protobuf field <code>string header = 7;</code>
+     * Generated from protobuf field <code>optional string header = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -116,7 +116,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     /**
      * Description text of this offer.
      *
-     * Generated from protobuf field <code>string description = 8;</code>
+     * Generated from protobuf field <code>optional string description = 8;</code>
      * @return string
      */
     public function getDescription()
@@ -137,7 +137,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     /**
      * Description text of this offer.
      *
-     * Generated from protobuf field <code>string description = 8;</code>
+     * Generated from protobuf field <code>optional string description = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -157,7 +157,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      */
     public function getPrice()
     {
-        return isset($this->price) ? $this->price : null;
+        return $this->price;
     }
 
     public function hasPrice()

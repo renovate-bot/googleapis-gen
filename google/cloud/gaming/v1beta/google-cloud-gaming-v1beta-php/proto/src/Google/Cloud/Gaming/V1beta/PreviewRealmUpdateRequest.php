@@ -72,7 +72,7 @@ class PreviewRealmUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRealm()
     {
-        return isset($this->realm) ? $this->realm : null;
+        return $this->realm;
     }
 
     public function hasRealm()
@@ -113,7 +113,7 @@ class PreviewRealmUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()
@@ -153,7 +153,7 @@ class PreviewRealmUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPreviewTime()
     {
-        return isset($this->preview_time) ? $this->preview_time : null;
+        return $this->preview_time;
     }
 
     public function hasPreviewTime()

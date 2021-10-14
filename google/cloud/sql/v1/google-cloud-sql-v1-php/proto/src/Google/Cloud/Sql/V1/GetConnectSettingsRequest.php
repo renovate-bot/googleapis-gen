@@ -113,7 +113,7 @@ class GetConnectSettingsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getReadTime()
     {
-        return isset($this->read_time) ? $this->read_time : null;
+        return $this->read_time;
     }
 
     public function hasReadTime()

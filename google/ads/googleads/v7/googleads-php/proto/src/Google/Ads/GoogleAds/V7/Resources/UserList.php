@@ -26,7 +26,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -35,20 +35,20 @@ class UserList extends \Google\Protobuf\Internal\Message
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>bool read_only = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool read_only = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $read_only = null;
     /**
      * Name of this user list. Depending on its access_reason, the user list name
      * may not be unique (e.g. if access_reason=SHARED)
      *
-     * Generated from protobuf field <code>string name = 27;</code>
+     * Generated from protobuf field <code>optional string name = 27;</code>
      */
     protected $name = null;
     /**
      * Description of this user list.
      *
-     * Generated from protobuf field <code>string description = 28;</code>
+     * Generated from protobuf field <code>optional string description = 28;</code>
      */
     protected $description = null;
     /**
@@ -63,7 +63,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * An ID from external system. It is used by user list sellers to correlate
      * IDs on their systems.
      *
-     * Generated from protobuf field <code>string integration_code = 29;</code>
+     * Generated from protobuf field <code>optional string integration_code = 29;</code>
      */
     protected $integration_code = null;
     /**
@@ -73,7 +73,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * means no expiration.
      * It'll be ignored for logical_user_list.
      *
-     * Generated from protobuf field <code>int64 membership_life_span = 30;</code>
+     * Generated from protobuf field <code>optional int64 membership_life_span = 30;</code>
      */
     protected $membership_life_span = null;
     /**
@@ -81,7 +81,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 size_for_display = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 size_for_display = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $size_for_display = null;
     /**
@@ -98,7 +98,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 size_for_search = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 size_for_search = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $size_for_search = null;
     /**
@@ -143,14 +143,14 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Indicates if this user list is eligible for Google Search Network.
      *
-     * Generated from protobuf field <code>bool eligible_for_search = 33;</code>
+     * Generated from protobuf field <code>optional bool eligible_for_search = 33;</code>
      */
     protected $eligible_for_search = null;
     /**
      * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>bool eligible_for_display = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool eligible_for_display = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $eligible_for_display = null;
     /**
@@ -159,7 +159,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * to calculate the match rate.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int32 match_rate_percentage = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 match_rate_percentage = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $match_rate_percentage = null;
     protected $user_list;
@@ -292,7 +292,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -313,7 +313,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -331,7 +331,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>bool read_only = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool read_only = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getReadOnly()
@@ -355,7 +355,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>bool read_only = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool read_only = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -371,7 +371,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Name of this user list. Depending on its access_reason, the user list name
      * may not be unique (e.g. if access_reason=SHARED)
      *
-     * Generated from protobuf field <code>string name = 27;</code>
+     * Generated from protobuf field <code>optional string name = 27;</code>
      * @return string
      */
     public function getName()
@@ -393,7 +393,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Name of this user list. Depending on its access_reason, the user list name
      * may not be unique (e.g. if access_reason=SHARED)
      *
-     * Generated from protobuf field <code>string name = 27;</code>
+     * Generated from protobuf field <code>optional string name = 27;</code>
      * @param string $var
      * @return $this
      */
@@ -408,7 +408,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Description of this user list.
      *
-     * Generated from protobuf field <code>string description = 28;</code>
+     * Generated from protobuf field <code>optional string description = 28;</code>
      * @return string
      */
     public function getDescription()
@@ -429,7 +429,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Description of this user list.
      *
-     * Generated from protobuf field <code>string description = 28;</code>
+     * Generated from protobuf field <code>optional string description = 28;</code>
      * @param string $var
      * @return $this
      */
@@ -475,7 +475,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * An ID from external system. It is used by user list sellers to correlate
      * IDs on their systems.
      *
-     * Generated from protobuf field <code>string integration_code = 29;</code>
+     * Generated from protobuf field <code>optional string integration_code = 29;</code>
      * @return string
      */
     public function getIntegrationCode()
@@ -497,7 +497,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * An ID from external system. It is used by user list sellers to correlate
      * IDs on their systems.
      *
-     * Generated from protobuf field <code>string integration_code = 29;</code>
+     * Generated from protobuf field <code>optional string integration_code = 29;</code>
      * @param string $var
      * @return $this
      */
@@ -516,7 +516,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * means no expiration.
      * It'll be ignored for logical_user_list.
      *
-     * Generated from protobuf field <code>int64 membership_life_span = 30;</code>
+     * Generated from protobuf field <code>optional int64 membership_life_span = 30;</code>
      * @return int|string
      */
     public function getMembershipLifeSpan()
@@ -541,7 +541,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * means no expiration.
      * It'll be ignored for logical_user_list.
      *
-     * Generated from protobuf field <code>int64 membership_life_span = 30;</code>
+     * Generated from protobuf field <code>optional int64 membership_life_span = 30;</code>
      * @param int|string $var
      * @return $this
      */
@@ -558,7 +558,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 size_for_display = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 size_for_display = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getSizeForDisplay()
@@ -581,7 +581,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 size_for_display = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 size_for_display = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -629,7 +629,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 size_for_search = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 size_for_search = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getSizeForSearch()
@@ -653,7 +653,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int64 size_for_search = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 size_for_search = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -816,7 +816,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Indicates if this user list is eligible for Google Search Network.
      *
-     * Generated from protobuf field <code>bool eligible_for_search = 33;</code>
+     * Generated from protobuf field <code>optional bool eligible_for_search = 33;</code>
      * @return bool
      */
     public function getEligibleForSearch()
@@ -837,7 +837,7 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Indicates if this user list is eligible for Google Search Network.
      *
-     * Generated from protobuf field <code>bool eligible_for_search = 33;</code>
+     * Generated from protobuf field <code>optional bool eligible_for_search = 33;</code>
      * @param bool $var
      * @return $this
      */
@@ -853,7 +853,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>bool eligible_for_display = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool eligible_for_display = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getEligibleForDisplay()
@@ -875,7 +875,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>bool eligible_for_display = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool eligible_for_display = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -893,7 +893,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * to calculate the match rate.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int32 match_rate_percentage = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 match_rate_percentage = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getMatchRatePercentage()
@@ -917,7 +917,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * to calculate the match rate.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>int32 match_rate_percentage = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 match_rate_percentage = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

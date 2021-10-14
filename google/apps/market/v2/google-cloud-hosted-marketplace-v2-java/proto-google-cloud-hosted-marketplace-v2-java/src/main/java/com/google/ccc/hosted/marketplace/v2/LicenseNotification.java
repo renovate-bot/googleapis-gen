@@ -391,10 +391,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 901, editionId_);
       }
       unknownFields.writeTo(output);
@@ -406,10 +406,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(901, editionId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1145,10 +1145,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 701, editionId_);
       }
       unknownFields.writeTo(output);
@@ -1160,10 +1160,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(701, editionId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1929,10 +1929,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 601, editionId_);
       }
       if (seatCount_ != 0L) {
@@ -1947,10 +1947,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(601, editionId_);
       }
       if (seatCount_ != 0L) {
@@ -2874,16 +2874,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 801, userId_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 802, type_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 803, editionId_);
       }
       unknownFields.writeTo(output);
@@ -2895,16 +2895,16 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getKindBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(801, userId_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(802, type_);
       }
-      if (!getEditionIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(editionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(803, editionId_);
       }
       size += unknownFields.getSerializedSize();
@@ -4063,19 +4063,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getApplicationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, applicationId_);
     }
     if (timestamp_ != 0L) {
       output.writeInt64(3, timestamp_);
     }
-    if (!getCustomerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, customerId_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, kind_);
     }
     for (int i = 0; i < provisions_.size(); i++) {
@@ -4099,20 +4099,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getApplicationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, applicationId_);
     }
     if (timestamp_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, timestamp_);
     }
-    if (!getCustomerIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, customerId_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, kind_);
     }
     for (int i = 0; i < provisions_.size(); i++) {

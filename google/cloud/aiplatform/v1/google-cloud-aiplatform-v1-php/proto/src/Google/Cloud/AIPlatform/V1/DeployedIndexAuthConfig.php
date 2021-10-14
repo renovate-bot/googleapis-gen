@@ -45,7 +45,7 @@ class DeployedIndexAuthConfig extends \Google\Protobuf\Internal\Message
      */
     public function getAuthProvider()
     {
-        return isset($this->auth_provider) ? $this->auth_provider : null;
+        return $this->auth_provider;
     }
 
     public function hasAuthProvider()

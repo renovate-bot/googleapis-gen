@@ -393,7 +393,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getRegistrationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registration_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, registration_);
     }
     if (contactSettings_ != null) {
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRegistrationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registration_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, registration_);
     }
     if (contactSettings_ != null) {

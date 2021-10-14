@@ -77,19 +77,23 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     private static readonly pb::MessageParser<Task> _parser = new pb::MessageParser<Task>(() => new Task());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Task> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Tasks.V2Beta2.TaskReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Task() {
       OnConstruction();
     }
@@ -97,6 +101,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Task(Task other) : this() {
       name_ = other.name_;
       scheduleTime_ = other.scheduleTime_ != null ? other.scheduleTime_.Clone() : null;
@@ -116,6 +121,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Task Clone() {
       return new Task(this);
     }
@@ -146,6 +152,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     ///   hyphens (-), or underscores (_). The maximum length is 500 characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Name {
       get { return name_; }
       set {
@@ -164,6 +171,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Tasks.V2Beta2.AppEngineHttpRequest AppEngineHttpRequest {
       get { return payloadTypeCase_ == PayloadTypeOneofCase.AppEngineHttpRequest ? (global::Google.Cloud.Tasks.V2Beta2.AppEngineHttpRequest) payloadType_ : null; }
       set {
@@ -181,6 +189,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Tasks.V2Beta2.PullMessage PullMessage {
       get { return payloadTypeCase_ == PayloadTypeOneofCase.PullMessage ? (global::Google.Cloud.Tasks.V2Beta2.PullMessage) payloadType_ : null; }
       set {
@@ -205,6 +214,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// `schedule_time` will be truncated to the nearest microsecond.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp ScheduleTime {
       get { return scheduleTime_; }
       set {
@@ -221,6 +231,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// `create_time` will be truncated to the nearest second.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
       get { return createTime_; }
       set {
@@ -235,6 +246,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// Output only. The task status.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Tasks.V2Beta2.TaskStatus Status {
       get { return status_; }
       set {
@@ -250,6 +262,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// been returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Tasks.V2Beta2.Task.Types.View View {
       get { return view_; }
       set {
@@ -266,22 +279,26 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
     private PayloadTypeOneofCase payloadTypeCase_ = PayloadTypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PayloadTypeOneofCase PayloadTypeCase {
       get { return payloadTypeCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearPayloadType() {
       payloadTypeCase_ = PayloadTypeOneofCase.None;
       payloadType_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Task);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Task other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -301,6 +318,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -318,11 +336,13 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -363,6 +383,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -399,6 +420,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -429,6 +451,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Task other) {
       if (other == null) {
         return;
@@ -476,6 +499,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -540,6 +564,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -602,6 +627,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Task message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The view specifies a subset of [Task][google.cloud.tasks.v2beta2.Task] data.
@@ -655,19 +681,23 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     private static readonly pb::MessageParser<TaskStatus> _parser = new pb::MessageParser<TaskStatus>(() => new TaskStatus());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TaskStatus> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Tasks.V2Beta2.TaskReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskStatus() {
       OnConstruction();
     }
@@ -675,6 +705,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskStatus(TaskStatus other) : this() {
       attemptDispatchCount_ = other.attemptDispatchCount_;
       attemptResponseCount_ = other.attemptResponseCount_;
@@ -684,6 +715,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TaskStatus Clone() {
       return new TaskStatus(this);
     }
@@ -698,6 +730,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// received a response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int AttemptDispatchCount {
       get { return attemptDispatchCount_; }
       set {
@@ -714,6 +747,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int AttemptResponseCount {
       get { return attemptResponseCount_; }
       set {
@@ -733,6 +767,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Tasks.V2Beta2.AttemptStatus FirstAttemptStatus {
       get { return firstAttemptStatus_; }
       set {
@@ -749,6 +784,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Tasks.V2Beta2.AttemptStatus LastAttemptStatus {
       get { return lastAttemptStatus_; }
       set {
@@ -757,11 +793,13 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as TaskStatus);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(TaskStatus other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -777,6 +815,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (AttemptDispatchCount != 0) hash ^= AttemptDispatchCount.GetHashCode();
@@ -790,11 +829,13 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -823,6 +864,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AttemptDispatchCount != 0) {
         output.WriteRawTag(8);
@@ -847,6 +889,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (AttemptDispatchCount != 0) {
@@ -868,6 +911,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(TaskStatus other) {
       if (other == null) {
         return;
@@ -894,6 +938,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -933,6 +978,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -980,19 +1026,23 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     private static readonly pb::MessageParser<AttemptStatus> _parser = new pb::MessageParser<AttemptStatus>(() => new AttemptStatus());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AttemptStatus> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Tasks.V2Beta2.TaskReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttemptStatus() {
       OnConstruction();
     }
@@ -1000,6 +1050,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttemptStatus(AttemptStatus other) : this() {
       scheduleTime_ = other.scheduleTime_ != null ? other.scheduleTime_.Clone() : null;
       dispatchTime_ = other.dispatchTime_ != null ? other.dispatchTime_.Clone() : null;
@@ -1009,6 +1060,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttemptStatus Clone() {
       return new AttemptStatus(this);
     }
@@ -1022,6 +1074,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// `schedule_time` will be truncated to the nearest microsecond.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp ScheduleTime {
       get { return scheduleTime_; }
       set {
@@ -1038,6 +1091,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// `dispatch_time` will be truncated to the nearest microsecond.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp DispatchTime {
       get { return dispatchTime_; }
       set {
@@ -1054,6 +1108,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// `response_time` will be truncated to the nearest microsecond.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp ResponseTime {
       get { return responseTime_; }
       set {
@@ -1071,6 +1126,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     /// then the response status is unset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Rpc.Status ResponseStatus {
       get { return responseStatus_; }
       set {
@@ -1079,11 +1135,13 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AttemptStatus);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AttemptStatus other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1099,6 +1157,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (scheduleTime_ != null) hash ^= ScheduleTime.GetHashCode();
@@ -1112,11 +1171,13 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -1145,6 +1206,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (scheduleTime_ != null) {
         output.WriteRawTag(10);
@@ -1169,6 +1231,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (scheduleTime_ != null) {
@@ -1190,6 +1253,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AttemptStatus other) {
       if (other == null) {
         return;
@@ -1222,6 +1286,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1267,6 +1332,7 @@ namespace Google.Cloud.Tasks.V2Beta2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

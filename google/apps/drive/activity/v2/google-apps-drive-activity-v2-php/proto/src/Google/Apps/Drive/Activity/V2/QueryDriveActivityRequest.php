@@ -187,7 +187,7 @@ class QueryDriveActivityRequest extends \Google\Protobuf\Internal\Message
      */
     public function getConsolidationStrategy()
     {
-        return isset($this->consolidation_strategy) ? $this->consolidation_strategy : null;
+        return $this->consolidation_strategy;
     }
 
     public function hasConsolidationStrategy()

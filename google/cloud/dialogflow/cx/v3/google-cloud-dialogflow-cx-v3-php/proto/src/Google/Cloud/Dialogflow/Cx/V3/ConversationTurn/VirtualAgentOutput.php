@@ -107,7 +107,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      */
     public function getSessionParameters()
     {
-        return isset($this->session_parameters) ? $this->session_parameters : null;
+        return $this->session_parameters;
     }
 
     public function hasSessionParameters()
@@ -175,7 +175,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      */
     public function getDiagnosticInfo()
     {
-        return isset($this->diagnostic_info) ? $this->diagnostic_info : null;
+        return $this->diagnostic_info;
     }
 
     public function hasDiagnosticInfo()
@@ -214,7 +214,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      */
     public function getTriggeredIntent()
     {
-        return isset($this->triggered_intent) ? $this->triggered_intent : null;
+        return $this->triggered_intent;
     }
 
     public function hasTriggeredIntent()
@@ -252,7 +252,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentPage()
     {
-        return isset($this->current_page) ? $this->current_page : null;
+        return $this->current_page;
     }
 
     public function hasCurrentPage()
@@ -316,7 +316,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()

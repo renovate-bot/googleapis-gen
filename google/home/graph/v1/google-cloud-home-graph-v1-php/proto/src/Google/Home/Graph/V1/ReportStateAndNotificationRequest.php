@@ -226,7 +226,7 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getPayload()
     {
-        return isset($this->payload) ? $this->payload : null;
+        return $this->payload;
     }
 
     public function hasPayload()

@@ -18,19 +18,19 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 4;</code>
+     * Generated from protobuf field <code>optional string headline = 4;</code>
      */
     protected $headline = null;
     /**
      * First text line for a TrueView video discovery ad.
      *
-     * Generated from protobuf field <code>string description1 = 5;</code>
+     * Generated from protobuf field <code>optional string description1 = 5;</code>
      */
     protected $description1 = null;
     /**
      * Second text line for a TrueView video discovery ad.
      *
-     * Generated from protobuf field <code>string description2 = 6;</code>
+     * Generated from protobuf field <code>optional string description2 = 6;</code>
      */
     protected $description2 = null;
 
@@ -56,7 +56,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 4;</code>
+     * Generated from protobuf field <code>optional string headline = 4;</code>
      * @return string
      */
     public function getHeadline()
@@ -77,7 +77,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The headline of the ad.
      *
-     * Generated from protobuf field <code>string headline = 4;</code>
+     * Generated from protobuf field <code>optional string headline = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First text line for a TrueView video discovery ad.
      *
-     * Generated from protobuf field <code>string description1 = 5;</code>
+     * Generated from protobuf field <code>optional string description1 = 5;</code>
      * @return string
      */
     public function getDescription1()
@@ -113,7 +113,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * First text line for a TrueView video discovery ad.
      *
-     * Generated from protobuf field <code>string description1 = 5;</code>
+     * Generated from protobuf field <code>optional string description1 = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Second text line for a TrueView video discovery ad.
      *
-     * Generated from protobuf field <code>string description2 = 6;</code>
+     * Generated from protobuf field <code>optional string description2 = 6;</code>
      * @return string
      */
     public function getDescription2()
@@ -149,7 +149,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Second text line for a TrueView video discovery ad.
      *
-     * Generated from protobuf field <code>string description2 = 6;</code>
+     * Generated from protobuf field <code>optional string description2 = 6;</code>
      * @param string $var
      * @return $this
      */

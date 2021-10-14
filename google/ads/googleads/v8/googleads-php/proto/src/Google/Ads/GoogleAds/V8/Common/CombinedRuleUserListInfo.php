@@ -75,7 +75,7 @@ class CombinedRuleUserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function getLeftOperand()
     {
-        return isset($this->left_operand) ? $this->left_operand : null;
+        return $this->left_operand;
     }
 
     public function hasLeftOperand()
@@ -115,7 +115,7 @@ class CombinedRuleUserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function getRightOperand()
     {
-        return isset($this->right_operand) ? $this->right_operand : null;
+        return $this->right_operand;
     }
 
     public function hasRightOperand()

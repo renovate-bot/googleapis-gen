@@ -163,7 +163,7 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      */
     public function getMetrics()
     {
-        return isset($this->metrics) ? $this->metrics : null;
+        return $this->metrics;
     }
 
     public function hasMetrics()
@@ -200,7 +200,7 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -270,7 +270,7 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      */
     public function getModelExplanation()
     {
-        return isset($this->model_explanation) ? $this->model_explanation : null;
+        return $this->model_explanation;
     }
 
     public function hasModelExplanation()

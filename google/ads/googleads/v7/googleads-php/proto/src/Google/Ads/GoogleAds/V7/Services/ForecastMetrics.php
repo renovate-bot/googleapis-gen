@@ -18,31 +18,31 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Impressions
      *
-     * Generated from protobuf field <code>double impressions = 7;</code>
+     * Generated from protobuf field <code>optional double impressions = 7;</code>
      */
     protected $impressions = null;
     /**
      * Ctr
      *
-     * Generated from protobuf field <code>double ctr = 8;</code>
+     * Generated from protobuf field <code>optional double ctr = 8;</code>
      */
     protected $ctr = null;
     /**
      * AVG cpc
      *
-     * Generated from protobuf field <code>int64 average_cpc = 9;</code>
+     * Generated from protobuf field <code>optional int64 average_cpc = 9;</code>
      */
     protected $average_cpc = null;
     /**
      * Clicks
      *
-     * Generated from protobuf field <code>double clicks = 10;</code>
+     * Generated from protobuf field <code>optional double clicks = 10;</code>
      */
     protected $clicks = null;
     /**
      * Cost
      *
-     * Generated from protobuf field <code>int64 cost_micros = 11;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 11;</code>
      */
     protected $cost_micros = null;
 
@@ -72,7 +72,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Impressions
      *
-     * Generated from protobuf field <code>double impressions = 7;</code>
+     * Generated from protobuf field <code>optional double impressions = 7;</code>
      * @return float
      */
     public function getImpressions()
@@ -93,7 +93,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Impressions
      *
-     * Generated from protobuf field <code>double impressions = 7;</code>
+     * Generated from protobuf field <code>optional double impressions = 7;</code>
      * @param float $var
      * @return $this
      */
@@ -108,7 +108,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Ctr
      *
-     * Generated from protobuf field <code>double ctr = 8;</code>
+     * Generated from protobuf field <code>optional double ctr = 8;</code>
      * @return float
      */
     public function getCtr()
@@ -129,7 +129,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Ctr
      *
-     * Generated from protobuf field <code>double ctr = 8;</code>
+     * Generated from protobuf field <code>optional double ctr = 8;</code>
      * @param float $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * AVG cpc
      *
-     * Generated from protobuf field <code>int64 average_cpc = 9;</code>
+     * Generated from protobuf field <code>optional int64 average_cpc = 9;</code>
      * @return int|string
      */
     public function getAverageCpc()
@@ -165,7 +165,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * AVG cpc
      *
-     * Generated from protobuf field <code>int64 average_cpc = 9;</code>
+     * Generated from protobuf field <code>optional int64 average_cpc = 9;</code>
      * @param int|string $var
      * @return $this
      */
@@ -180,7 +180,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Clicks
      *
-     * Generated from protobuf field <code>double clicks = 10;</code>
+     * Generated from protobuf field <code>optional double clicks = 10;</code>
      * @return float
      */
     public function getClicks()
@@ -201,7 +201,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Clicks
      *
-     * Generated from protobuf field <code>double clicks = 10;</code>
+     * Generated from protobuf field <code>optional double clicks = 10;</code>
      * @param float $var
      * @return $this
      */
@@ -216,7 +216,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Cost
      *
-     * Generated from protobuf field <code>int64 cost_micros = 11;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 11;</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -237,7 +237,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Cost
      *
-     * Generated from protobuf field <code>int64 cost_micros = 11;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 11;</code>
      * @param int|string $var
      * @return $this
      */

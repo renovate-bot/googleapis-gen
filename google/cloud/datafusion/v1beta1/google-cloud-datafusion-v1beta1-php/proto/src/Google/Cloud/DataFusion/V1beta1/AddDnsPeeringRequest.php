@@ -79,7 +79,7 @@ class AddDnsPeeringRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDnsPeering()
     {
-        return isset($this->dns_peering) ? $this->dns_peering : null;
+        return $this->dns_peering;
     }
 
     public function hasDnsPeering()

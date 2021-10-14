@@ -85,7 +85,7 @@ class MutateAdGroupCriterionResult extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterion()
     {
-        return isset($this->ad_group_criterion) ? $this->ad_group_criterion : null;
+        return $this->ad_group_criterion;
     }
 
     public function hasAdGroupCriterion()

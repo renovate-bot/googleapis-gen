@@ -20,14 +20,14 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * set of the ones returned by ListPlannableProducts when using the same
      * location id.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      */
     protected $plannable_product_code = null;
     /**
      * The value to be allocated for the suggested product in requested currency.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      */
     protected $budget_micros = null;
 
@@ -56,7 +56,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * set of the ones returned by ListPlannableProducts when using the same
      * location id.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @return string
      */
     public function getPlannableProductCode()
@@ -79,7 +79,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * set of the ones returned by ListPlannableProducts when using the same
      * location id.
      *
-     * Generated from protobuf field <code>string plannable_product_code = 3;</code>
+     * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -95,7 +95,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * The value to be allocated for the suggested product in requested currency.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      * @return int|string
      */
     public function getBudgetMicros()
@@ -117,7 +117,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * The value to be allocated for the suggested product in requested currency.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>int64 budget_micros = 4;</code>
+     * Generated from protobuf field <code>optional int64 budget_micros = 4;</code>
      * @param int|string $var
      * @return $this
      */

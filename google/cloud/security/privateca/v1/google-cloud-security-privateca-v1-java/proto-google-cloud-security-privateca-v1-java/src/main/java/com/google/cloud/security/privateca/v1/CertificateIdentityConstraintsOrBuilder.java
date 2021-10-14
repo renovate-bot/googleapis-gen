@@ -50,7 +50,7 @@ public interface CertificateIdentityConstraintsOrBuilder extends
    * will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the allowSubjectPassthrough field is set.
    */
   boolean hasAllowSubjectPassthrough();
@@ -61,7 +61,7 @@ public interface CertificateIdentityConstraintsOrBuilder extends
    * will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The allowSubjectPassthrough.
    */
   boolean getAllowSubjectPassthrough();
@@ -73,7 +73,7 @@ public interface CertificateIdentityConstraintsOrBuilder extends
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the allowSubjectAltNamesPassthrough field is set.
    */
   boolean hasAllowSubjectAltNamesPassthrough();
@@ -84,7 +84,7 @@ public interface CertificateIdentityConstraintsOrBuilder extends
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
    * </pre>
    *
-   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The allowSubjectAltNamesPassthrough.
    */
   boolean getAllowSubjectAltNamesPassthrough();

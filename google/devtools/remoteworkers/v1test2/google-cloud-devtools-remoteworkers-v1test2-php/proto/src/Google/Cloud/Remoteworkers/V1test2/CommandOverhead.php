@@ -63,7 +63,7 @@ class CommandOverhead extends \Google\Protobuf\Internal\Message
      */
     public function getDuration()
     {
-        return isset($this->duration) ? $this->duration : null;
+        return $this->duration;
     }
 
     public function hasDuration()
@@ -102,7 +102,7 @@ class CommandOverhead extends \Google\Protobuf\Internal\Message
      */
     public function getOverhead()
     {
-        return isset($this->overhead) ? $this->overhead : null;
+        return $this->overhead;
     }
 
     public function hasOverhead()

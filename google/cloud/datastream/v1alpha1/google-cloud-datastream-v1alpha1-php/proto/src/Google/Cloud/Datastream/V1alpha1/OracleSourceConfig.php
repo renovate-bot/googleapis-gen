@@ -53,7 +53,7 @@ class OracleSourceConfig extends \Google\Protobuf\Internal\Message
      */
     public function getAllowlist()
     {
-        return isset($this->allowlist) ? $this->allowlist : null;
+        return $this->allowlist;
     }
 
     public function hasAllowlist()
@@ -89,7 +89,7 @@ class OracleSourceConfig extends \Google\Protobuf\Internal\Message
      */
     public function getRejectlist()
     {
-        return isset($this->rejectlist) ? $this->rejectlist : null;
+        return $this->rejectlist;
     }
 
     public function hasRejectlist()

@@ -63,7 +63,7 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTaxonomy()
     {
-        return isset($this->taxonomy) ? $this->taxonomy : null;
+        return $this->taxonomy;
     }
 
     public function hasTaxonomy()
@@ -103,7 +103,7 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

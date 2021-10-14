@@ -85,7 +85,7 @@ class MutateFeedItemTargetResult extends \Google\Protobuf\Internal\Message
      */
     public function getFeedItemTarget()
     {
-        return isset($this->feed_item_target) ? $this->feed_item_target : null;
+        return $this->feed_item_target;
     }
 
     public function hasFeedItemTarget()

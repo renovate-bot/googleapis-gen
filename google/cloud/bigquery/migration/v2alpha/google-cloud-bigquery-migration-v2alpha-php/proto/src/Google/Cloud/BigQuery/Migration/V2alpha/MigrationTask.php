@@ -149,7 +149,7 @@ class MigrationTask extends \Google\Protobuf\Internal\Message
      */
     public function getDetails()
     {
-        return isset($this->details) ? $this->details : null;
+        return $this->details;
     }
 
     public function hasDetails()
@@ -212,7 +212,7 @@ class MigrationTask extends \Google\Protobuf\Internal\Message
      */
     public function getProcessingError()
     {
-        return isset($this->processing_error) ? $this->processing_error : null;
+        return $this->processing_error;
     }
 
     public function hasProcessingError()
@@ -248,7 +248,7 @@ class MigrationTask extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -284,7 +284,7 @@ class MigrationTask extends \Google\Protobuf\Internal\Message
      */
     public function getLastUpdateTime()
     {
-        return isset($this->last_update_time) ? $this->last_update_time : null;
+        return $this->last_update_time;
     }
 
     public function hasLastUpdateTime()

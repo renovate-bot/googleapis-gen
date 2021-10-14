@@ -25,7 +25,7 @@ class ChecksummedData extends \Google\Protobuf\Internal\Message
     /**
      * If set, the CRC32C digest of the content field.
      *
-     * Generated from protobuf field <code>fixed32 crc32c = 2;</code>
+     * Generated from protobuf field <code>optional fixed32 crc32c = 2;</code>
      */
     protected $crc32c = null;
 
@@ -75,7 +75,7 @@ class ChecksummedData extends \Google\Protobuf\Internal\Message
     /**
      * If set, the CRC32C digest of the content field.
      *
-     * Generated from protobuf field <code>fixed32 crc32c = 2;</code>
+     * Generated from protobuf field <code>optional fixed32 crc32c = 2;</code>
      * @return int
      */
     public function getCrc32C()
@@ -96,7 +96,7 @@ class ChecksummedData extends \Google\Protobuf\Internal\Message
     /**
      * If set, the CRC32C digest of the content field.
      *
-     * Generated from protobuf field <code>fixed32 crc32c = 2;</code>
+     * Generated from protobuf field <code>optional fixed32 crc32c = 2;</code>
      * @param int $var
      * @return $this
      */

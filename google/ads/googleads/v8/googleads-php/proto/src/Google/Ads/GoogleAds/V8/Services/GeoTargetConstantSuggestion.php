@@ -21,21 +21,21 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * name=Spain. If locale=es, then name=España. The default locale will be
      * returned if no translation exists for the locale in the request.
      *
-     * Generated from protobuf field <code>string locale = 6;</code>
+     * Generated from protobuf field <code>optional string locale = 6;</code>
      */
     protected $locale = null;
     /**
      * Approximate user population that will be targeted, rounded to the
      * nearest 100.
      *
-     * Generated from protobuf field <code>int64 reach = 7;</code>
+     * Generated from protobuf field <code>optional int64 reach = 7;</code>
      */
     protected $reach = null;
     /**
      * If the request searched by location name, this is the location name that
      * matched the geo target.
      *
-     * Generated from protobuf field <code>string search_term = 8;</code>
+     * Generated from protobuf field <code>optional string search_term = 8;</code>
      */
     protected $search_term = null;
     /**
@@ -85,7 +85,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * name=Spain. If locale=es, then name=España. The default locale will be
      * returned if no translation exists for the locale in the request.
      *
-     * Generated from protobuf field <code>string locale = 6;</code>
+     * Generated from protobuf field <code>optional string locale = 6;</code>
      * @return string
      */
     public function getLocale()
@@ -109,7 +109,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * name=Spain. If locale=es, then name=España. The default locale will be
      * returned if no translation exists for the locale in the request.
      *
-     * Generated from protobuf field <code>string locale = 6;</code>
+     * Generated from protobuf field <code>optional string locale = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -125,7 +125,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * Approximate user population that will be targeted, rounded to the
      * nearest 100.
      *
-     * Generated from protobuf field <code>int64 reach = 7;</code>
+     * Generated from protobuf field <code>optional int64 reach = 7;</code>
      * @return int|string
      */
     public function getReach()
@@ -147,7 +147,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * Approximate user population that will be targeted, rounded to the
      * nearest 100.
      *
-     * Generated from protobuf field <code>int64 reach = 7;</code>
+     * Generated from protobuf field <code>optional int64 reach = 7;</code>
      * @param int|string $var
      * @return $this
      */
@@ -163,7 +163,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * If the request searched by location name, this is the location name that
      * matched the geo target.
      *
-     * Generated from protobuf field <code>string search_term = 8;</code>
+     * Generated from protobuf field <code>optional string search_term = 8;</code>
      * @return string
      */
     public function getSearchTerm()
@@ -185,7 +185,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * If the request searched by location name, this is the location name that
      * matched the geo target.
      *
-     * Generated from protobuf field <code>string search_term = 8;</code>
+     * Generated from protobuf field <code>optional string search_term = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -205,7 +205,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      */
     public function getGeoTargetConstant()
     {
-        return isset($this->geo_target_constant) ? $this->geo_target_constant : null;
+        return $this->geo_target_constant;
     }
 
     public function hasGeoTargetConstant()

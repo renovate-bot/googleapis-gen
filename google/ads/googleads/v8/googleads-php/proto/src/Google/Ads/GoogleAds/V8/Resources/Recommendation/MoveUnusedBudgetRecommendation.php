@@ -18,7 +18,7 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $excess_campaign_budget = null;
     /**
@@ -48,7 +48,7 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getExcessCampaignBudget()
@@ -69,7 +69,7 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string excess_campaign_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -89,7 +89,7 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function getBudgetRecommendation()
     {
-        return isset($this->budget_recommendation) ? $this->budget_recommendation : null;
+        return $this->budget_recommendation;
     }
 
     public function hasBudgetRecommendation()

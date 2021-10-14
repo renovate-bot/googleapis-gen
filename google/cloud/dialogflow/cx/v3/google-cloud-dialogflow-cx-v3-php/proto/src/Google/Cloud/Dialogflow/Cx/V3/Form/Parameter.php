@@ -241,7 +241,7 @@ class Parameter extends \Google\Protobuf\Internal\Message
      */
     public function getFillBehavior()
     {
-        return isset($this->fill_behavior) ? $this->fill_behavior : null;
+        return $this->fill_behavior;
     }
 
     public function hasFillBehavior()
@@ -278,7 +278,7 @@ class Parameter extends \Google\Protobuf\Internal\Message
      */
     public function getDefaultValue()
     {
-        return isset($this->default_value) ? $this->default_value : null;
+        return $this->default_value;
     }
 
     public function hasDefaultValue()

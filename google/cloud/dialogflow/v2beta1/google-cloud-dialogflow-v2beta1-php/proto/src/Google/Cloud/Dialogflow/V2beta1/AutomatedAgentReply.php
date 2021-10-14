@@ -279,7 +279,7 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
      */
     public function getParameters()
     {
-        return isset($this->parameters) ? $this->parameters : null;
+        return $this->parameters;
     }
 
     public function hasParameters()
@@ -319,7 +319,7 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
     public function getCxSessionParameters()
     {
         @trigger_error('cx_session_parameters is deprecated.', E_USER_DEPRECATED);
-        return isset($this->cx_session_parameters) ? $this->cx_session_parameters : null;
+        return $this->cx_session_parameters;
     }
 
     public function hasCxSessionParameters()

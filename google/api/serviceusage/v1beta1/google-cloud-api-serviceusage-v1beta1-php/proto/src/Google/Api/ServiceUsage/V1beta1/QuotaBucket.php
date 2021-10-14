@@ -159,7 +159,7 @@ class QuotaBucket extends \Google\Protobuf\Internal\Message
      */
     public function getProducerOverride()
     {
-        return isset($this->producer_override) ? $this->producer_override : null;
+        return $this->producer_override;
     }
 
     public function hasProducerOverride()
@@ -195,7 +195,7 @@ class QuotaBucket extends \Google\Protobuf\Internal\Message
      */
     public function getConsumerOverride()
     {
-        return isset($this->consumer_override) ? $this->consumer_override : null;
+        return $this->consumer_override;
     }
 
     public function hasConsumerOverride()
@@ -231,7 +231,7 @@ class QuotaBucket extends \Google\Protobuf\Internal\Message
      */
     public function getAdminOverride()
     {
-        return isset($this->admin_override) ? $this->admin_override : null;
+        return $this->admin_override;
     }
 
     public function hasAdminOverride()

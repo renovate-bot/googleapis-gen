@@ -45,7 +45,7 @@ class PurgeArtifactsMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getGenericMetadata()
     {
-        return isset($this->generic_metadata) ? $this->generic_metadata : null;
+        return $this->generic_metadata;
     }
 
     public function hasGenericMetadata()

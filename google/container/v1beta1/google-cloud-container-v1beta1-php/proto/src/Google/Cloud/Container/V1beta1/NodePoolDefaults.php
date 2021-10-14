@@ -45,7 +45,7 @@ class NodePoolDefaults extends \Google\Protobuf\Internal\Message
      */
     public function getNodeConfigDefaults()
     {
-        return isset($this->node_config_defaults) ? $this->node_config_defaults : null;
+        return $this->node_config_defaults;
     }
 
     public function hasNodeConfigDefaults()

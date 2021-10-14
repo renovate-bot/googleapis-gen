@@ -232,7 +232,7 @@ class ListBuildsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getReadMask()
     {
-        return isset($this->read_mask) ? $this->read_mask : null;
+        return $this->read_mask;
     }
 
     public function hasReadMask()
@@ -275,7 +275,7 @@ class ListBuildsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getGroupBy()
     {
-        return isset($this->group_by) ? $this->group_by : null;
+        return $this->group_by;
     }
 
     public function hasGroupBy()

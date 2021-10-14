@@ -79,7 +79,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      */
     public function getErrorCode()
     {
-        return isset($this->error_code) ? $this->error_code : null;
+        return $this->error_code;
     }
 
     public function hasErrorCode()
@@ -141,7 +141,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      */
     public function getTrigger()
     {
-        return isset($this->trigger) ? $this->trigger : null;
+        return $this->trigger;
     }
 
     public function hasTrigger()
@@ -177,7 +177,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      */
     public function getLocation()
     {
-        return isset($this->location) ? $this->location : null;
+        return $this->location;
     }
 
     public function hasLocation()
@@ -214,7 +214,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      */
     public function getDetails()
     {
-        return isset($this->details) ? $this->details : null;
+        return $this->details;
     }
 
     public function hasDetails()

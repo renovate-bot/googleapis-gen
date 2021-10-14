@@ -18,13 +18,13 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Micro degrees for the longitude.
      *
-     * Generated from protobuf field <code>int32 longitude_in_micro_degrees = 3;</code>
+     * Generated from protobuf field <code>optional int32 longitude_in_micro_degrees = 3;</code>
      */
     protected $longitude_in_micro_degrees = null;
     /**
      * Micro degrees for the latitude.
      *
-     * Generated from protobuf field <code>int32 latitude_in_micro_degrees = 4;</code>
+     * Generated from protobuf field <code>optional int32 latitude_in_micro_degrees = 4;</code>
      */
     protected $latitude_in_micro_degrees = null;
 
@@ -48,7 +48,7 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Micro degrees for the longitude.
      *
-     * Generated from protobuf field <code>int32 longitude_in_micro_degrees = 3;</code>
+     * Generated from protobuf field <code>optional int32 longitude_in_micro_degrees = 3;</code>
      * @return int
      */
     public function getLongitudeInMicroDegrees()
@@ -69,7 +69,7 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Micro degrees for the longitude.
      *
-     * Generated from protobuf field <code>int32 longitude_in_micro_degrees = 3;</code>
+     * Generated from protobuf field <code>optional int32 longitude_in_micro_degrees = 3;</code>
      * @param int $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Micro degrees for the latitude.
      *
-     * Generated from protobuf field <code>int32 latitude_in_micro_degrees = 4;</code>
+     * Generated from protobuf field <code>optional int32 latitude_in_micro_degrees = 4;</code>
      * @return int
      */
     public function getLatitudeInMicroDegrees()
@@ -105,7 +105,7 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Micro degrees for the latitude.
      *
-     * Generated from protobuf field <code>int32 latitude_in_micro_degrees = 4;</code>
+     * Generated from protobuf field <code>optional int32 latitude_in_micro_degrees = 4;</code>
      * @param int $var
      * @return $this
      */

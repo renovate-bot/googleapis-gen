@@ -143,7 +143,7 @@ class ImportDocumentsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDocumentTemplate()
     {
-        return isset($this->document_template) ? $this->document_template : null;
+        return $this->document_template;
     }
 
     public function hasDocumentTemplate()

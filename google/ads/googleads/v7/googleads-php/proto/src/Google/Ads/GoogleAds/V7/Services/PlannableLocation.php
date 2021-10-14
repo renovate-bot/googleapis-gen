@@ -19,13 +19,13 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     /**
      * The location identifier.
      *
-     * Generated from protobuf field <code>string id = 4;</code>
+     * Generated from protobuf field <code>optional string id = 4;</code>
      */
     protected $id = null;
     /**
      * The unique location name in english.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      */
     protected $name = null;
     /**
@@ -34,7 +34,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      * country name are returned both via ListPlannableLocations or directly by
      * accessing GeoTargetConstantService with the criterion id.
      *
-     * Generated from protobuf field <code>int64 parent_country_id = 6;</code>
+     * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      */
     protected $parent_country_id = null;
 
@@ -63,7 +63,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     /**
      * The location identifier.
      *
-     * Generated from protobuf field <code>string id = 4;</code>
+     * Generated from protobuf field <code>optional string id = 4;</code>
      * @return string
      */
     public function getId()
@@ -84,7 +84,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     /**
      * The location identifier.
      *
-     * Generated from protobuf field <code>string id = 4;</code>
+     * Generated from protobuf field <code>optional string id = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -99,7 +99,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     /**
      * The unique location name in english.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      * @return string
      */
     public function getName()
@@ -120,7 +120,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     /**
      * The unique location name in english.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -138,7 +138,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      * country name are returned both via ListPlannableLocations or directly by
      * accessing GeoTargetConstantService with the criterion id.
      *
-     * Generated from protobuf field <code>int64 parent_country_id = 6;</code>
+     * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      * @return int|string
      */
     public function getParentCountryId()
@@ -162,7 +162,7 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      * country name are returned both via ListPlannableLocations or directly by
      * accessing GeoTargetConstantService with the criterion id.
      *
-     * Generated from protobuf field <code>int64 parent_country_id = 6;</code>
+     * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      * @param int|string $var
      * @return $this
      */

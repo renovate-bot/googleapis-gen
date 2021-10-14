@@ -19,13 +19,13 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
     /**
      * The associated feed. Required.
      *
-     * Generated from protobuf field <code>int64 feed_id = 3;</code>
+     * Generated from protobuf field <code>optional int64 feed_id = 3;</code>
      */
     protected $feed_id = null;
     /**
      * Id of the referenced feed attribute. Required.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 4;</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 4;</code>
      */
     protected $feed_attribute_id = null;
 
@@ -49,7 +49,7 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
     /**
      * The associated feed. Required.
      *
-     * Generated from protobuf field <code>int64 feed_id = 3;</code>
+     * Generated from protobuf field <code>optional int64 feed_id = 3;</code>
      * @return int|string
      */
     public function getFeedId()
@@ -70,7 +70,7 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
     /**
      * The associated feed. Required.
      *
-     * Generated from protobuf field <code>int64 feed_id = 3;</code>
+     * Generated from protobuf field <code>optional int64 feed_id = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -85,7 +85,7 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
     /**
      * Id of the referenced feed attribute. Required.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 4;</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 4;</code>
      * @return int|string
      */
     public function getFeedAttributeId()
@@ -106,7 +106,7 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
     /**
      * Id of the referenced feed attribute. Required.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 4;</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 4;</code>
      * @param int|string $var
      * @return $this
      */

@@ -87,7 +87,7 @@ class CreateExperimentRequest extends \Google\Protobuf\Internal\Message
      */
     public function getExperiment()
     {
-        return isset($this->experiment) ? $this->experiment : null;
+        return $this->experiment;
     }
 
     public function hasExperiment()

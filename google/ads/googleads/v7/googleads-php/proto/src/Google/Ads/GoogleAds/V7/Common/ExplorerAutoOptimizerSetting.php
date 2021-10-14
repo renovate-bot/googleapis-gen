@@ -20,7 +20,7 @@ class ExplorerAutoOptimizerSetting extends \Google\Protobuf\Internal\Message
     /**
      * Indicates whether the optimizer is turned on.
      *
-     * Generated from protobuf field <code>bool opt_in = 2;</code>
+     * Generated from protobuf field <code>optional bool opt_in = 2;</code>
      */
     protected $opt_in = null;
 
@@ -42,7 +42,7 @@ class ExplorerAutoOptimizerSetting extends \Google\Protobuf\Internal\Message
     /**
      * Indicates whether the optimizer is turned on.
      *
-     * Generated from protobuf field <code>bool opt_in = 2;</code>
+     * Generated from protobuf field <code>optional bool opt_in = 2;</code>
      * @return bool
      */
     public function getOptIn()
@@ -63,7 +63,7 @@ class ExplorerAutoOptimizerSetting extends \Google\Protobuf\Internal\Message
     /**
      * Indicates whether the optimizer is turned on.
      *
-     * Generated from protobuf field <code>bool opt_in = 2;</code>
+     * Generated from protobuf field <code>optional bool opt_in = 2;</code>
      * @param bool $var
      * @return $this
      */

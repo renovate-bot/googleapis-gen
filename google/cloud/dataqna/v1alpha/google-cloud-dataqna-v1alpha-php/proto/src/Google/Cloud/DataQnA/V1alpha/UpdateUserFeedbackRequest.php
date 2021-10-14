@@ -62,7 +62,7 @@ class UpdateUserFeedbackRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUserFeedback()
     {
-        return isset($this->user_feedback) ? $this->user_feedback : null;
+        return $this->user_feedback;
     }
 
     public function hasUserFeedback()
@@ -101,7 +101,7 @@ class UpdateUserFeedbackRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
     if (timeSeconds_ != 0D) {
       output.writeDouble(3, timeSeconds_);
     }
-    if (!getMarkNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(markName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, markName_);
     }
     unknownFields.writeTo(output);
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, timeSeconds_);
     }
-    if (!getMarkNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(markName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, markName_);
     }
     size += unknownFields.getSerializedSize();

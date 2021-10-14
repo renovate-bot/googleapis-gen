@@ -20,7 +20,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
-     * Generated from protobuf field <code>string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_account_id = null;
     /**
@@ -29,7 +29,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
-     * Generated from protobuf field <code>string payments_account_name = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string payments_account_name = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $payments_account_name = null;
     /**
@@ -37,20 +37,20 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
-     * Generated from protobuf field <code>string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $payments_profile_id = null;
     /**
      * Output only. The name of the payments profile associated with the billing setup.
      *
-     * Generated from protobuf field <code>string payments_profile_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_profile_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_profile_name = null;
     /**
      * Output only. A secondary payments profile id present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $secondary_payments_profile_id = null;
 
@@ -90,7 +90,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
-     * Generated from protobuf field <code>string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPaymentsAccountId()
@@ -113,7 +113,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
-     * Generated from protobuf field <code>string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_account_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -131,7 +131,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
-     * Generated from protobuf field <code>string payments_account_name = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string payments_account_name = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getPaymentsAccountName()
@@ -155,7 +155,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
-     * Generated from protobuf field <code>string payments_account_name = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string payments_account_name = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -172,7 +172,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
-     * Generated from protobuf field <code>string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getPaymentsProfileId()
@@ -195,7 +195,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
-     * Generated from protobuf field <code>string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string payments_profile_id = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the payments profile associated with the billing setup.
      *
-     * Generated from protobuf field <code>string payments_profile_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_profile_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPaymentsProfileName()
@@ -231,7 +231,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The name of the payments profile associated with the billing setup.
      *
-     * Generated from protobuf field <code>string payments_profile_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_profile_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -247,7 +247,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * Output only. A secondary payments profile id present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getSecondaryPaymentsProfileId()
@@ -269,7 +269,7 @@ class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      * Output only. A secondary payments profile id present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string secondary_payments_profile_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

@@ -20,13 +20,13 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * GIF, JPEG and PNG. The minimum size is 300x300 pixels and the aspect ratio
      * must be 1:1 (+-1%).
      *
-     * Generated from protobuf field <code>string product_image = 4;</code>
+     * Generated from protobuf field <code>optional string product_image = 4;</code>
      */
     protected $product_image = null;
     /**
      * Description of the product.
      *
-     * Generated from protobuf field <code>string description = 5;</code>
+     * Generated from protobuf field <code>optional string description = 5;</code>
      */
     protected $description = null;
     /**
@@ -62,7 +62,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * GIF, JPEG and PNG. The minimum size is 300x300 pixels and the aspect ratio
      * must be 1:1 (+-1%).
      *
-     * Generated from protobuf field <code>string product_image = 4;</code>
+     * Generated from protobuf field <code>optional string product_image = 4;</code>
      * @return string
      */
     public function getProductImage()
@@ -85,7 +85,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * GIF, JPEG and PNG. The minimum size is 300x300 pixels and the aspect ratio
      * must be 1:1 (+-1%).
      *
-     * Generated from protobuf field <code>string product_image = 4;</code>
+     * Generated from protobuf field <code>optional string product_image = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -100,7 +100,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
     /**
      * Description of the product.
      *
-     * Generated from protobuf field <code>string description = 5;</code>
+     * Generated from protobuf field <code>optional string description = 5;</code>
      * @return string
      */
     public function getDescription()
@@ -121,7 +121,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
     /**
      * Description of the product.
      *
-     * Generated from protobuf field <code>string description = 5;</code>
+     * Generated from protobuf field <code>optional string description = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -141,7 +141,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      */
     public function getDisplayCallToAction()
     {
-        return isset($this->display_call_to_action) ? $this->display_call_to_action : null;
+        return $this->display_call_to_action;
     }
 
     public function hasDisplayCallToAction()

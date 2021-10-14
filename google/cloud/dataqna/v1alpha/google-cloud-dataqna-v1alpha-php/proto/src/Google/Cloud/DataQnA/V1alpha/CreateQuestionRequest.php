@@ -83,7 +83,7 @@ class CreateQuestionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getQuestion()
     {
-        return isset($this->question) ? $this->question : null;
+        return $this->question;
     }
 
     public function hasQuestion()

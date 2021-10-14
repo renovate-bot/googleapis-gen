@@ -18,7 +18,7 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
     /**
      * Asset text.
      *
-     * Generated from protobuf field <code>string text = 4;</code>
+     * Generated from protobuf field <code>optional string text = 4;</code>
      */
     protected $text = null;
     /**
@@ -70,7 +70,7 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
     /**
      * Asset text.
      *
-     * Generated from protobuf field <code>string text = 4;</code>
+     * Generated from protobuf field <code>optional string text = 4;</code>
      * @return string
      */
     public function getText()
@@ -91,7 +91,7 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
     /**
      * Asset text.
      *
-     * Generated from protobuf field <code>string text = 4;</code>
+     * Generated from protobuf field <code>optional string text = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -169,7 +169,7 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
      */
     public function getPolicySummaryInfo()
     {
-        return isset($this->policy_summary_info) ? $this->policy_summary_info : null;
+        return $this->policy_summary_info;
     }
 
     public function hasPolicySummaryInfo()

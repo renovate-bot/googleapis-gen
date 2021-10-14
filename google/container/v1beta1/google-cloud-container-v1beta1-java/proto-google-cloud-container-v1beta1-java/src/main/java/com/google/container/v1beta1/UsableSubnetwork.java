@@ -395,19 +395,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subnetwork_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, network_);
     }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipCidrRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipCidrRange_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       output.writeMessage(4, secondaryIpRanges_.get(i));
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, statusMessage_);
     }
     unknownFields.writeTo(output);
@@ -419,20 +419,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSubnetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subnetwork_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, network_);
     }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipCidrRange_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipCidrRange_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, secondaryIpRanges_.get(i));
     }
-    if (!getStatusMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusMessage_);
     }
     size += unknownFields.getSerializedSize();

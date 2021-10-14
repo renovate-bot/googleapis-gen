@@ -65,7 +65,7 @@ class SplitReadStreamRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOriginalStream()
     {
-        return isset($this->original_stream) ? $this->original_stream : null;
+        return $this->original_stream;
     }
 
     public function hasOriginalStream()

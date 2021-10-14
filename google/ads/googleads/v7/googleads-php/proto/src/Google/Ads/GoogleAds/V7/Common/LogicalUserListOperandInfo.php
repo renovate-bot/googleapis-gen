@@ -18,7 +18,7 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of a user list as an operand.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      */
     protected $user_list = null;
 
@@ -40,7 +40,7 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of a user list as an operand.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      * @return string
      */
     public function getUserList()
@@ -61,7 +61,7 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
     /**
      * Resource name of a user list as an operand.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      * @param string $var
      * @return $this
      */

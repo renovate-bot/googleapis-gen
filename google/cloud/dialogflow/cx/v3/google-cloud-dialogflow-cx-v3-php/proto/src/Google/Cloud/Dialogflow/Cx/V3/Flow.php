@@ -380,7 +380,7 @@ class Flow extends \Google\Protobuf\Internal\Message
      */
     public function getNluSettings()
     {
-        return isset($this->nlu_settings) ? $this->nlu_settings : null;
+        return $this->nlu_settings;
     }
 
     public function hasNluSettings()

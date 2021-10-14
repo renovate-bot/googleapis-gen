@@ -163,7 +163,7 @@ class ContinuousTestResult extends \Google\Protobuf\Internal\Message
      */
     public function getRunTime()
     {
-        return isset($this->run_time) ? $this->run_time : null;
+        return $this->run_time;
     }
 
     public function hasRunTime()

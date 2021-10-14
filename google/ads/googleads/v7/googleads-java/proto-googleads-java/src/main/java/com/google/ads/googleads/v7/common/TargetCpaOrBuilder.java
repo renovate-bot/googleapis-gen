@@ -14,7 +14,7 @@ public interface TargetCpaOrBuilder extends
    * on the currency for the account.
    * </pre>
    *
-   * <code>int64 target_cpa_micros = 4;</code>
+   * <code>optional int64 target_cpa_micros = 4;</code>
    * @return Whether the targetCpaMicros field is set.
    */
   boolean hasTargetCpaMicros();
@@ -25,7 +25,7 @@ public interface TargetCpaOrBuilder extends
    * on the currency for the account.
    * </pre>
    *
-   * <code>int64 target_cpa_micros = 4;</code>
+   * <code>optional int64 target_cpa_micros = 4;</code>
    * @return The targetCpaMicros.
    */
   long getTargetCpaMicros();
@@ -36,7 +36,7 @@ public interface TargetCpaOrBuilder extends
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+   * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
    * @return Whether the cpcBidCeilingMicros field is set.
    */
   boolean hasCpcBidCeilingMicros();
@@ -46,7 +46,7 @@ public interface TargetCpaOrBuilder extends
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_ceiling_micros = 5;</code>
+   * <code>optional int64 cpc_bid_ceiling_micros = 5;</code>
    * @return The cpcBidCeilingMicros.
    */
   long getCpcBidCeilingMicros();
@@ -57,7 +57,7 @@ public interface TargetCpaOrBuilder extends
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_floor_micros = 6;</code>
+   * <code>optional int64 cpc_bid_floor_micros = 6;</code>
    * @return Whether the cpcBidFloorMicros field is set.
    */
   boolean hasCpcBidFloorMicros();
@@ -67,7 +67,7 @@ public interface TargetCpaOrBuilder extends
    * The limit applies to all keywords managed by the strategy.
    * </pre>
    *
-   * <code>int64 cpc_bid_floor_micros = 6;</code>
+   * <code>optional int64 cpc_bid_floor_micros = 6;</code>
    * @return The cpcBidFloorMicros.
    */
   long getCpcBidFloorMicros();

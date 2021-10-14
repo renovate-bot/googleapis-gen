@@ -259,10 +259,10 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAccountEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountEmail_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accountEmail_);
       }
-      if (!getSubjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subjectId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subjectId_);
       }
       unknownFields.writeTo(output);
@@ -274,10 +274,10 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAccountEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountEmail_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accountEmail_);
       }
-      if (!getSubjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subjectId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subjectId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1065,10 +1065,10 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAccessKeyIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessKeyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessKeyId_);
       }
-      if (!getSecretAccessKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretAccessKey_);
       }
       unknownFields.writeTo(output);
@@ -1080,10 +1080,10 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAccessKeyIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessKeyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessKeyId_);
       }
-      if (!getSecretAccessKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretAccessKey_);
       }
       size += unknownFields.getSerializedSize();
@@ -1841,7 +1841,7 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSasTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sasToken_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sasToken_);
       }
       unknownFields.writeTo(output);
@@ -1853,7 +1853,7 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSasTokenBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sasToken_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sasToken_);
       }
       size += unknownFields.getSerializedSize();
@@ -5757,10 +5757,10 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBucketNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucketName_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       unknownFields.writeTo(output);
@@ -5772,10 +5772,10 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBucketNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucketName_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       size += unknownFields.getSerializedSize();
@@ -6800,16 +6800,16 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBucketNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucketName_);
       }
       if (awsAccessKey_ != null) {
         output.writeMessage(2, getAwsAccessKey());
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
-      if (!getRoleArnBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleArn_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleArn_);
       }
       unknownFields.writeTo(output);
@@ -6821,17 +6821,17 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBucketNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucketName_);
       }
       if (awsAccessKey_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getAwsAccessKey());
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
-      if (!getRoleArnBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleArn_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleArn_);
       }
       size += unknownFields.getSerializedSize();
@@ -8165,16 +8165,16 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getStorageAccountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storageAccount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, storageAccount_);
       }
       if (azureCredentials_ != null) {
         output.writeMessage(2, getAzureCredentials());
       }
-      if (!getContainerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(container_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, container_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, path_);
       }
       unknownFields.writeTo(output);
@@ -8186,17 +8186,17 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getStorageAccountBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storageAccount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, storageAccount_);
       }
       if (azureCredentials_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getAzureCredentials());
       }
-      if (!getContainerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(container_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, container_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, path_);
       }
       size += unknownFields.getSerializedSize();
@@ -9272,7 +9272,7 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getListUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, listUrl_);
       }
       unknownFields.writeTo(output);
@@ -9284,7 +9284,7 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getListUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, listUrl_);
       }
       size += unknownFields.getSerializedSize();
@@ -16757,13 +16757,13 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
       }
       if (transferSpec_ != null) {
@@ -16787,7 +16787,7 @@ public final class TransferTypes {
       if (notificationConfig_ != null) {
         output.writeMessage(11, getNotificationConfig());
       }
-      if (!getLatestOperationNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestOperationName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, latestOperationName_);
       }
       unknownFields.writeTo(output);
@@ -16799,13 +16799,13 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
       }
       if (transferSpec_ != null) {
@@ -16836,7 +16836,7 @@ public final class TransferTypes {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getNotificationConfig());
       }
-      if (!getLatestOperationNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestOperationName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, latestOperationName_);
       }
       size += unknownFields.getSerializedSize();
@@ -19151,7 +19151,7 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
       for (int i = 0; i < errorDetails_.size(); i++) {
@@ -19166,7 +19166,7 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
       {
@@ -23648,7 +23648,7 @@ public final class TransferTypes {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!getPubsubTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubsubTopic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pubsubTopic_);
       }
       if (getEventTypesList().size() > 0) {
@@ -23670,7 +23670,7 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPubsubTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pubsubTopic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pubsubTopic_);
       }
       {
@@ -25547,10 +25547,10 @@ public final class TransferTypes {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
       if (transferSpec_ != null) {
@@ -25571,7 +25571,7 @@ public final class TransferTypes {
       for (int i = 0; i < errorBreakdowns_.size(); i++) {
         output.writeMessage(8, errorBreakdowns_.get(i));
       }
-      if (!getTransferJobNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transferJobName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, transferJobName_);
       }
       if (notificationConfig_ != null) {
@@ -25586,10 +25586,10 @@ public final class TransferTypes {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
       if (transferSpec_ != null) {
@@ -25616,7 +25616,7 @@ public final class TransferTypes {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, errorBreakdowns_.get(i));
       }
-      if (!getTransferJobNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transferJobName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, transferJobName_);
       }
       if (notificationConfig_ != null) {

@@ -72,7 +72,7 @@ class SamplePlayableLocationsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAreaFilter()
     {
-        return isset($this->area_filter) ? $this->area_filter : null;
+        return $this->area_filter;
     }
 
     public function hasAreaFilter()

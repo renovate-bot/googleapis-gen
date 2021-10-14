@@ -150,7 +150,7 @@ class SnapshotAnalysis extends \Google\Protobuf\Internal\Message
     public function getMonitoringInterval()
     {
         @trigger_error('monitoring_interval is deprecated.', E_USER_DEPRECATED);
-        return isset($this->monitoring_interval) ? $this->monitoring_interval : null;
+        return $this->monitoring_interval;
     }
 
     public function hasMonitoringInterval()

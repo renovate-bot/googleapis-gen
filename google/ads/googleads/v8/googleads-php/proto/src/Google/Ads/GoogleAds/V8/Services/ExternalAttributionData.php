@@ -19,13 +19,13 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Represents the fraction of the conversion that is attributed to the
      * Google Ads click.
      *
-     * Generated from protobuf field <code>double external_attribution_credit = 3;</code>
+     * Generated from protobuf field <code>optional double external_attribution_credit = 3;</code>
      */
     protected $external_attribution_credit = null;
     /**
      * Specifies the attribution model name.
      *
-     * Generated from protobuf field <code>string external_attribution_model = 4;</code>
+     * Generated from protobuf field <code>optional string external_attribution_model = 4;</code>
      */
     protected $external_attribution_model = null;
 
@@ -51,7 +51,7 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Represents the fraction of the conversion that is attributed to the
      * Google Ads click.
      *
-     * Generated from protobuf field <code>double external_attribution_credit = 3;</code>
+     * Generated from protobuf field <code>optional double external_attribution_credit = 3;</code>
      * @return float
      */
     public function getExternalAttributionCredit()
@@ -73,7 +73,7 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Represents the fraction of the conversion that is attributed to the
      * Google Ads click.
      *
-     * Generated from protobuf field <code>double external_attribution_credit = 3;</code>
+     * Generated from protobuf field <code>optional double external_attribution_credit = 3;</code>
      * @param float $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the attribution model name.
      *
-     * Generated from protobuf field <code>string external_attribution_model = 4;</code>
+     * Generated from protobuf field <code>optional string external_attribution_model = 4;</code>
      * @return string
      */
     public function getExternalAttributionModel()
@@ -109,7 +109,7 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the attribution model name.
      *
-     * Generated from protobuf field <code>string external_attribution_model = 4;</code>
+     * Generated from protobuf field <code>optional string external_attribution_model = 4;</code>
      * @param string $var
      * @return $this
      */

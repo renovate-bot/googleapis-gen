@@ -232,10 +232,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPublicCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicCertificate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, publicCertificate_);
     }
-    if (!getPrivateKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, privateKey_);
     }
     unknownFields.writeTo(output);
@@ -247,10 +247,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPublicCertificateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicCertificate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, publicCertificate_);
     }
-    if (!getPrivateKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, privateKey_);
     }
     size += unknownFields.getSerializedSize();

@@ -1096,10 +1096,10 @@ public final class DeviceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
       for (int i = 0; i < traits_.size(); i++) {
@@ -1111,10 +1111,10 @@ public final class DeviceProto {
       if (willReportState_ != false) {
         output.writeBool(5, willReportState_);
       }
-      if (!getRoomHintBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomHint_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, roomHint_);
       }
-      if (!getStructureHintBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(structureHint_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, structureHint_);
       }
       if (deviceInfo_ != null) {
@@ -1141,10 +1141,10 @@ public final class DeviceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
       }
       {
@@ -1163,10 +1163,10 @@ public final class DeviceProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, willReportState_);
       }
-      if (!getRoomHintBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomHint_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, roomHint_);
       }
-      if (!getStructureHintBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(structureHint_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, structureHint_);
       }
       if (deviceInfo_ != null) {
@@ -3817,7 +3817,7 @@ public final class DeviceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       for (int i = 0; i < nicknames_.size(); i++) {
@@ -3835,7 +3835,7 @@ public final class DeviceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       {
@@ -5019,16 +5019,16 @@ public final class DeviceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getManufacturerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manufacturer_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, manufacturer_);
       }
-      if (!getModelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
       }
-      if (!getHwVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hwVersion_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, hwVersion_);
       }
-      if (!getSwVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swVersion_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, swVersion_);
       }
       unknownFields.writeTo(output);
@@ -5040,16 +5040,16 @@ public final class DeviceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getManufacturerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manufacturer_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, manufacturer_);
       }
-      if (!getModelBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
       }
-      if (!getHwVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hwVersion_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, hwVersion_);
       }
-      if (!getSwVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swVersion_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, swVersion_);
       }
       size += unknownFields.getSerializedSize();
@@ -6043,10 +6043,10 @@ public final class DeviceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAgentIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agentId_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
       }
       unknownFields.writeTo(output);
@@ -6058,10 +6058,10 @@ public final class DeviceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAgentIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agentId_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
       }
       size += unknownFields.getSerializedSize();

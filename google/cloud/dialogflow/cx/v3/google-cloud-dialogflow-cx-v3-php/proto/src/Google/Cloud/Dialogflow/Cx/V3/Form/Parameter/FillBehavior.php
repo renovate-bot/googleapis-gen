@@ -108,7 +108,7 @@ class FillBehavior extends \Google\Protobuf\Internal\Message
      */
     public function getInitialPromptFulfillment()
     {
-        return isset($this->initial_prompt_fulfillment) ? $this->initial_prompt_fulfillment : null;
+        return $this->initial_prompt_fulfillment;
     }
 
     public function hasInitialPromptFulfillment()

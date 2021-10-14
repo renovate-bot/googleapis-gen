@@ -45,7 +45,7 @@ class GenerateEphemeralCertResponse extends \Google\Protobuf\Internal\Message
      */
     public function getEphemeralCert()
     {
-        return isset($this->ephemeral_cert) ? $this->ephemeral_cert : null;
+        return $this->ephemeral_cert;
     }
 
     public function hasEphemeralCert()

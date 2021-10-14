@@ -118,7 +118,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()
@@ -187,7 +187,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      */
     public function getOutputs()
     {
-        return isset($this->outputs) ? $this->outputs : null;
+        return $this->outputs;
     }
 
     public function hasOutputs()
@@ -230,7 +230,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
     public function getDuration()
     {
         @trigger_error('duration is deprecated.', E_USER_DEPRECATED);
-        return isset($this->duration) ? $this->duration : null;
+        return $this->duration;
     }
 
     public function hasDuration()
@@ -275,7 +275,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
     public function getOverhead()
     {
         @trigger_error('overhead is deprecated.', E_USER_DEPRECATED);
-        return isset($this->overhead) ? $this->overhead : null;
+        return $this->overhead;
     }
 
     public function hasOverhead()

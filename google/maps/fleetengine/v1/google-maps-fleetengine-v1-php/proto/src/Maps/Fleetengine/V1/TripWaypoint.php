@@ -114,7 +114,7 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      */
     public function getLocation()
     {
-        return isset($this->location) ? $this->location : null;
+        return $this->location;
     }
 
     public function hasLocation()
@@ -236,7 +236,7 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      */
     public function getDistanceMeters()
     {
-        return isset($this->distance_meters) ? $this->distance_meters : null;
+        return $this->distance_meters;
     }
 
     public function hasDistanceMeters()
@@ -311,7 +311,7 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      */
     public function getEta()
     {
-        return isset($this->eta) ? $this->eta : null;
+        return $this->eta;
     }
 
     public function hasEta()
@@ -351,7 +351,7 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      */
     public function getDuration()
     {
-        return isset($this->duration) ? $this->duration : null;
+        return $this->duration;
     }
 
     public function hasDuration()

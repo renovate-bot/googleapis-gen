@@ -137,7 +137,7 @@ class DetectIntentResponse extends \Google\Protobuf\Internal\Message
      */
     public function getQueryResult()
     {
-        return isset($this->query_result) ? $this->query_result : null;
+        return $this->query_result;
     }
 
     public function hasQueryResult()
@@ -217,7 +217,7 @@ class DetectIntentResponse extends \Google\Protobuf\Internal\Message
      */
     public function getOutputAudioConfig()
     {
-        return isset($this->output_audio_config) ? $this->output_audio_config : null;
+        return $this->output_audio_config;
     }
 
     public function hasOutputAudioConfig()

@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(block_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, block_);
     }
     if (form_ != com.google.devtools.testing.v1.DeviceForm.DEVICE_FORM_UNSPECIFIED.getNumber()) {
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getBlockBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(block_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, block_);
     }
     if (form_ != com.google.devtools.testing.v1.DeviceForm.DEVICE_FORM_UNSPECIFIED.getNumber()) {

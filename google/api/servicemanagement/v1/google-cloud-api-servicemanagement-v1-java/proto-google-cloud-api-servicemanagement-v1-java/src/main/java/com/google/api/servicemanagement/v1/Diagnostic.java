@@ -366,13 +366,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, location_);
     }
     if (kind_ != com.google.api.servicemanagement.v1.Diagnostic.Kind.WARNING.getNumber()) {
       output.writeEnum(2, kind_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
     unknownFields.writeTo(output);
@@ -384,14 +384,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getLocationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, location_);
     }
     if (kind_ != com.google.api.servicemanagement.v1.Diagnostic.Kind.WARNING.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, kind_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
     size += unknownFields.getSerializedSize();

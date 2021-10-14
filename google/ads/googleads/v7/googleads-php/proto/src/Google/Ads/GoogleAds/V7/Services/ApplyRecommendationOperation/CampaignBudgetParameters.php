@@ -19,7 +19,7 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      * New budget amount to set for target budget resource. This is a required
      * field.
      *
-     * Generated from protobuf field <code>int64 new_budget_amount_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 new_budget_amount_micros = 2;</code>
      */
     protected $new_budget_amount_micros = null;
 
@@ -43,7 +43,7 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      * New budget amount to set for target budget resource. This is a required
      * field.
      *
-     * Generated from protobuf field <code>int64 new_budget_amount_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 new_budget_amount_micros = 2;</code>
      * @return int|string
      */
     public function getNewBudgetAmountMicros()
@@ -65,7 +65,7 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      * New budget amount to set for target budget resource. This is a required
      * field.
      *
-     * Generated from protobuf field <code>int64 new_budget_amount_micros = 2;</code>
+     * Generated from protobuf field <code>optional int64 new_budget_amount_micros = 2;</code>
      * @param int|string $var
      * @return $this
      */

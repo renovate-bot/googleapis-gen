@@ -662,10 +662,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getHlsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hls_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, hls_);
       }
-      if (!getDashBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dash_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dash_);
       }
       unknownFields.writeTo(output);
@@ -677,10 +677,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getHlsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hls_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, hls_);
       }
-      if (!getDashBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dash_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dash_);
       }
       size += unknownFields.getSerializedSize();
@@ -1929,13 +1929,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getInputUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputUri_);
     }
-    if (!getOutputUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputUri_);
     }
     if (jobConfigCase_ == 4) {
@@ -1956,7 +1956,7 @@ private static final long serialVersionUID = 0L;
     if (progress_ != null) {
       output.writeMessage(9, getProgress());
     }
-    if (!getFailureReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, failureReason_);
     }
     for (int i = 0; i < failureDetails_.size(); i++) {
@@ -1983,13 +1983,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getInputUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputUri_);
     }
-    if (!getOutputUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputUri_);
     }
     if (jobConfigCase_ == 4) {
@@ -2015,7 +2015,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getProgress());
     }
-    if (!getFailureReasonBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, failureReason_);
     }
     for (int i = 0; i < failureDetails_.size(); i++) {

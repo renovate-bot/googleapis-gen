@@ -26,13 +26,13 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the asset is linked.
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
      * Immutable. The asset which is linked to the campaign.
      *
-     * Generated from protobuf field <code>string asset = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string asset = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $asset = null;
     /**
@@ -108,7 +108,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the asset is linked.
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -129,7 +129,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The campaign to which the asset is linked.
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The asset which is linked to the campaign.
      *
-     * Generated from protobuf field <code>string asset = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string asset = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAsset()
@@ -165,7 +165,7 @@ class CampaignAsset extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The asset which is linked to the campaign.
      *
-     * Generated from protobuf field <code>string asset = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string asset = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

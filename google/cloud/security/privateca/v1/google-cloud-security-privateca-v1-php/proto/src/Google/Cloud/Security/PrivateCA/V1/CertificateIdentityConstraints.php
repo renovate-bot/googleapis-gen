@@ -30,7 +30,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
      * will be discarded.
      *
-     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $allow_subject_passthrough = null;
     /**
@@ -38,7 +38,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      *
-     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $allow_subject_alt_names_passthrough = null;
 
@@ -79,7 +79,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      */
     public function getCelExpression()
     {
-        return isset($this->cel_expression) ? $this->cel_expression : null;
+        return $this->cel_expression;
     }
 
     public function hasCelExpression()
@@ -115,7 +115,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
      * will be discarded.
      *
-     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
      */
     public function getAllowSubjectPassthrough()
@@ -138,7 +138,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
      * will be discarded.
      *
-     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>optional bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var
      * @return $this
      */
@@ -155,7 +155,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      *
-     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
      */
     public function getAllowSubjectAltNamesPassthrough()
@@ -178,7 +178,7 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
      *
-     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>optional bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var
      * @return $this
      */

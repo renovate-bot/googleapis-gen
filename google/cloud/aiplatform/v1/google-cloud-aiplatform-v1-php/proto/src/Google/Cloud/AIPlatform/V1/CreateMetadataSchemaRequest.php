@@ -113,7 +113,7 @@ class CreateMetadataSchemaRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMetadataSchema()
     {
-        return isset($this->metadata_schema) ? $this->metadata_schema : null;
+        return $this->metadata_schema;
     }
 
     public function hasMetadataSchema()

@@ -19,7 +19,7 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      * The header of the snippet.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string header = 3;</code>
+     * Generated from protobuf field <code>optional string header = 3;</code>
      */
     protected $header = null;
     /**
@@ -53,7 +53,7 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      * The header of the snippet.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string header = 3;</code>
+     * Generated from protobuf field <code>optional string header = 3;</code>
      * @return string
      */
     public function getHeader()
@@ -75,7 +75,7 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      * The header of the snippet.
      * This string must not be empty.
      *
-     * Generated from protobuf field <code>string header = 3;</code>
+     * Generated from protobuf field <code>optional string header = 3;</code>
      * @param string $var
      * @return $this
      */

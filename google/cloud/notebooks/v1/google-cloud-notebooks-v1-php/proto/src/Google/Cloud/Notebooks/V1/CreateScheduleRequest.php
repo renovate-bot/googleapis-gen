@@ -117,7 +117,7 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSchedule()
     {
-        return isset($this->schedule) ? $this->schedule : null;
+        return $this->schedule;
     }
 
     public function hasSchedule()

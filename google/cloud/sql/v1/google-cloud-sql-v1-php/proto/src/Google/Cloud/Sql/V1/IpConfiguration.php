@@ -99,7 +99,7 @@ class IpConfiguration extends \Google\Protobuf\Internal\Message
      */
     public function getIpv4Enabled()
     {
-        return isset($this->ipv4_enabled) ? $this->ipv4_enabled : null;
+        return $this->ipv4_enabled;
     }
 
     public function hasIpv4Enabled()
@@ -194,7 +194,7 @@ class IpConfiguration extends \Google\Protobuf\Internal\Message
      */
     public function getRequireSsl()
     {
-        return isset($this->require_ssl) ? $this->require_ssl : null;
+        return $this->require_ssl;
     }
 
     public function hasRequireSsl()

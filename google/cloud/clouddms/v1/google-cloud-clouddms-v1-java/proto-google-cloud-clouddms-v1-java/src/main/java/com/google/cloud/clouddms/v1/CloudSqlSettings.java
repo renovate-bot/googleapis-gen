@@ -1540,7 +1540,7 @@ private static final long serialVersionUID = 0L;
         internalGetUserLabels(),
         UserLabelsDefaultEntryHolder.defaultEntry,
         2);
-    if (!getTierBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tier_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tier_);
     }
     if (storageAutoResizeLimit_ != null) {
@@ -1567,19 +1567,19 @@ private static final long serialVersionUID = 0L;
     if (dataDiskSizeGb_ != null) {
       output.writeMessage(10, getDataDiskSizeGb());
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, zone_);
     }
-    if (!getSourceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, sourceId_);
     }
-    if (!getRootPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootPassword_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, rootPassword_);
     }
     if (rootPasswordSet_ != false) {
       output.writeBool(14, rootPasswordSet_);
     }
-    if (!getCollationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, collation_);
     }
     unknownFields.writeTo(output);
@@ -1605,7 +1605,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, userLabels__);
     }
-    if (!getTierBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tier_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tier_);
     }
     if (storageAutoResizeLimit_ != null) {
@@ -1642,20 +1642,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getDataDiskSizeGb());
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, zone_);
     }
-    if (!getSourceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, sourceId_);
     }
-    if (!getRootPasswordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootPassword_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, rootPassword_);
     }
     if (rootPasswordSet_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(14, rootPasswordSet_);
     }
-    if (!getCollationBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, collation_);
     }
     size += unknownFields.getSerializedSize();

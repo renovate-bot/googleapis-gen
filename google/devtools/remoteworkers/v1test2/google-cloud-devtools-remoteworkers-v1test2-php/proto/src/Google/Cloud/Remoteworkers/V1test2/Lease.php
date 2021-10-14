@@ -187,7 +187,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      */
     public function getPayload()
     {
-        return isset($this->payload) ? $this->payload : null;
+        return $this->payload;
     }
 
     public function hasPayload()
@@ -228,7 +228,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      */
     public function getResult()
     {
-        return isset($this->result) ? $this->result : null;
+        return $this->result;
     }
 
     public function hasResult()
@@ -299,7 +299,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()
@@ -342,7 +342,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      */
     public function getRequirements()
     {
-        return isset($this->requirements) ? $this->requirements : null;
+        return $this->requirements;
     }
 
     public function hasRequirements()
@@ -381,7 +381,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      */
     public function getExpireTime()
     {
-        return isset($this->expire_time) ? $this->expire_time : null;
+        return $this->expire_time;
     }
 
     public function hasExpireTime()
@@ -457,7 +457,7 @@ class Lease extends \Google\Protobuf\Internal\Message
     public function getInlineAssignment()
     {
         @trigger_error('inline_assignment is deprecated.', E_USER_DEPRECATED);
-        return isset($this->inline_assignment) ? $this->inline_assignment : null;
+        return $this->inline_assignment;
     }
 
     public function hasInlineAssignment()

@@ -526,7 +526,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      * Default NodePool settings for the entire cluster. These settings are
      * overridden if specified on the specific NodePool object.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * Generated from protobuf field <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      */
     protected $node_pool_defaults = null;
     /**
@@ -935,7 +935,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
     public function getNodeConfig()
     {
         @trigger_error('node_config is deprecated.', E_USER_DEPRECATED);
-        return isset($this->node_config) ? $this->node_config : null;
+        return $this->node_config;
     }
 
     public function hasNodeConfig()
@@ -988,7 +988,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getMasterAuth()
     {
-        return isset($this->master_auth) ? $this->master_auth : null;
+        return $this->master_auth;
     }
 
     public function hasMasterAuth()
@@ -1178,7 +1178,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getAddonsConfig()
     {
-        return isset($this->addons_config) ? $this->addons_config : null;
+        return $this->addons_config;
     }
 
     public function hasAddonsConfig()
@@ -1408,7 +1408,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getLegacyAbac()
     {
-        return isset($this->legacy_abac) ? $this->legacy_abac : null;
+        return $this->legacy_abac;
     }
 
     public function hasLegacyAbac()
@@ -1444,7 +1444,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getNetworkPolicy()
     {
-        return isset($this->network_policy) ? $this->network_policy : null;
+        return $this->network_policy;
     }
 
     public function hasNetworkPolicy()
@@ -1480,7 +1480,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getIpAllocationPolicy()
     {
-        return isset($this->ip_allocation_policy) ? $this->ip_allocation_policy : null;
+        return $this->ip_allocation_policy;
     }
 
     public function hasIpAllocationPolicy()
@@ -1516,7 +1516,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getMasterAuthorizedNetworksConfig()
     {
-        return isset($this->master_authorized_networks_config) ? $this->master_authorized_networks_config : null;
+        return $this->master_authorized_networks_config;
     }
 
     public function hasMasterAuthorizedNetworksConfig()
@@ -1552,7 +1552,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getMaintenancePolicy()
     {
-        return isset($this->maintenance_policy) ? $this->maintenance_policy : null;
+        return $this->maintenance_policy;
     }
 
     public function hasMaintenancePolicy()
@@ -1588,7 +1588,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getBinaryAuthorization()
     {
-        return isset($this->binary_authorization) ? $this->binary_authorization : null;
+        return $this->binary_authorization;
     }
 
     public function hasBinaryAuthorization()
@@ -1624,7 +1624,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getPodSecurityPolicyConfig()
     {
-        return isset($this->pod_security_policy_config) ? $this->pod_security_policy_config : null;
+        return $this->pod_security_policy_config;
     }
 
     public function hasPodSecurityPolicyConfig()
@@ -1660,7 +1660,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getAutoscaling()
     {
-        return isset($this->autoscaling) ? $this->autoscaling : null;
+        return $this->autoscaling;
     }
 
     public function hasAutoscaling()
@@ -1696,7 +1696,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getNetworkConfig()
     {
-        return isset($this->network_config) ? $this->network_config : null;
+        return $this->network_config;
     }
 
     public function hasNetworkConfig()
@@ -1810,7 +1810,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getDefaultMaxPodsConstraint()
     {
-        return isset($this->default_max_pods_constraint) ? $this->default_max_pods_constraint : null;
+        return $this->default_max_pods_constraint;
     }
 
     public function hasDefaultMaxPodsConstraint()
@@ -1849,7 +1849,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getResourceUsageExportConfig()
     {
-        return isset($this->resource_usage_export_config) ? $this->resource_usage_export_config : null;
+        return $this->resource_usage_export_config;
     }
 
     public function hasResourceUsageExportConfig()
@@ -1886,7 +1886,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getAuthenticatorGroupsConfig()
     {
-        return isset($this->authenticator_groups_config) ? $this->authenticator_groups_config : null;
+        return $this->authenticator_groups_config;
     }
 
     public function hasAuthenticatorGroupsConfig()
@@ -1922,7 +1922,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getPrivateClusterConfig()
     {
-        return isset($this->private_cluster_config) ? $this->private_cluster_config : null;
+        return $this->private_cluster_config;
     }
 
     public function hasPrivateClusterConfig()
@@ -1958,7 +1958,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getVerticalPodAutoscaling()
     {
-        return isset($this->vertical_pod_autoscaling) ? $this->vertical_pod_autoscaling : null;
+        return $this->vertical_pod_autoscaling;
     }
 
     public function hasVerticalPodAutoscaling()
@@ -1994,7 +1994,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getShieldedNodes()
     {
-        return isset($this->shielded_nodes) ? $this->shielded_nodes : null;
+        return $this->shielded_nodes;
     }
 
     public function hasShieldedNodes()
@@ -2030,7 +2030,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getReleaseChannel()
     {
-        return isset($this->release_channel) ? $this->release_channel : null;
+        return $this->release_channel;
     }
 
     public function hasReleaseChannel()
@@ -2067,7 +2067,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getWorkloadIdentityConfig()
     {
-        return isset($this->workload_identity_config) ? $this->workload_identity_config : null;
+        return $this->workload_identity_config;
     }
 
     public function hasWorkloadIdentityConfig()
@@ -2105,7 +2105,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getWorkloadCertificates()
     {
-        return isset($this->workload_certificates) ? $this->workload_certificates : null;
+        return $this->workload_certificates;
     }
 
     public function hasWorkloadCertificates()
@@ -2142,7 +2142,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getClusterTelemetry()
     {
-        return isset($this->cluster_telemetry) ? $this->cluster_telemetry : null;
+        return $this->cluster_telemetry;
     }
 
     public function hasClusterTelemetry()
@@ -2178,7 +2178,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getTpuConfig()
     {
-        return isset($this->tpu_config) ? $this->tpu_config : null;
+        return $this->tpu_config;
     }
 
     public function hasTpuConfig()
@@ -2214,7 +2214,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getNotificationConfig()
     {
-        return isset($this->notification_config) ? $this->notification_config : null;
+        return $this->notification_config;
     }
 
     public function hasNotificationConfig()
@@ -2250,7 +2250,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getConfidentialNodes()
     {
-        return isset($this->confidential_nodes) ? $this->confidential_nodes : null;
+        return $this->confidential_nodes;
     }
 
     public function hasConfidentialNodes()
@@ -2286,7 +2286,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getIdentityServiceConfig()
     {
-        return isset($this->identity_service_config) ? $this->identity_service_config : null;
+        return $this->identity_service_config;
     }
 
     public function hasIdentityServiceConfig()
@@ -2862,7 +2862,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getDatabaseEncryption()
     {
-        return isset($this->database_encryption) ? $this->database_encryption : null;
+        return $this->database_encryption;
     }
 
     public function hasDatabaseEncryption()
@@ -2924,7 +2924,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getMaster()
     {
-        return isset($this->master) ? $this->master : null;
+        return $this->master;
     }
 
     public function hasMaster()
@@ -2960,7 +2960,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getAutopilot()
     {
-        return isset($this->autopilot) ? $this->autopilot : null;
+        return $this->autopilot;
     }
 
     public function hasAutopilot()
@@ -3018,12 +3018,12 @@ class Cluster extends \Google\Protobuf\Internal\Message
      * Default NodePool settings for the entire cluster. These settings are
      * overridden if specified on the specific NodePool object.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * Generated from protobuf field <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      * @return \Google\Cloud\Container\V1beta1\NodePoolDefaults|null
      */
     public function getNodePoolDefaults()
     {
-        return isset($this->node_pool_defaults) ? $this->node_pool_defaults : null;
+        return $this->node_pool_defaults;
     }
 
     public function hasNodePoolDefaults()
@@ -3040,7 +3040,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      * Default NodePool settings for the entire cluster. These settings are
      * overridden if specified on the specific NodePool object.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
+     * Generated from protobuf field <code>optional .google.container.v1beta1.NodePoolDefaults node_pool_defaults = 131;</code>
      * @param \Google\Cloud\Container\V1beta1\NodePoolDefaults $var
      * @return $this
      */
@@ -3060,7 +3060,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getLoggingConfig()
     {
-        return isset($this->logging_config) ? $this->logging_config : null;
+        return $this->logging_config;
     }
 
     public function hasLoggingConfig()
@@ -3096,7 +3096,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     public function getMonitoringConfig()
     {
-        return isset($this->monitoring_config) ? $this->monitoring_config : null;
+        return $this->monitoring_config;
     }
 
     public function hasMonitoringConfig()

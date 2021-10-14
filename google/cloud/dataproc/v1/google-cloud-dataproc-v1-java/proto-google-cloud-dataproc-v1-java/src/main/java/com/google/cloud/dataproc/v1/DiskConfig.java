@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
     if (numLocalSsds_ != 0) {
       output.writeInt32(2, numLocalSsds_);
     }
-    if (!getBootDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bootDiskType_);
     }
     unknownFields.writeTo(output);
@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, numLocalSsds_);
     }
-    if (!getBootDiskTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bootDiskType_);
     }
     size += unknownFields.getSerializedSize();

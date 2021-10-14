@@ -133,7 +133,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
      */
     public function getAddOns()
     {
-        return isset($this->add_ons) ? $this->add_ons : null;
+        return $this->add_ons;
     }
 
     public function hasAddOns()

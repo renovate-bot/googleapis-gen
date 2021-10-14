@@ -113,7 +113,7 @@ class CompleteTrialRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFinalMeasurement()
     {
-        return isset($this->final_measurement) ? $this->final_measurement : null;
+        return $this->final_measurement;
     }
 
     public function hasFinalMeasurement()

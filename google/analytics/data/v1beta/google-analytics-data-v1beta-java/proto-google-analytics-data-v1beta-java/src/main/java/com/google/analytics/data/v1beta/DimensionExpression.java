@@ -305,7 +305,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDimensionNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dimensionName_);
       }
       unknownFields.writeTo(output);
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getDimensionNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dimensionName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dimensionName_);
       }
       size += unknownFields.getSerializedSize();
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < dimensionNames_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dimensionNames_.getRaw(i));
       }
-      if (!getDelimiterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, delimiter_);
       }
       unknownFields.writeTo(output);
@@ -1079,7 +1079,7 @@ private static final long serialVersionUID = 0L;
         size += dataSize;
         size += 1 * getDimensionNamesList().size();
       }
-      if (!getDelimiterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, delimiter_);
       }
       size += unknownFields.getSerializedSize();

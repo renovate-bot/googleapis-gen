@@ -85,7 +85,7 @@ class MutateCustomerFeedResult extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerFeed()
     {
-        return isset($this->customer_feed) ? $this->customer_feed : null;
+        return $this->customer_feed;
     }
 
     public function hasCustomerFeed()

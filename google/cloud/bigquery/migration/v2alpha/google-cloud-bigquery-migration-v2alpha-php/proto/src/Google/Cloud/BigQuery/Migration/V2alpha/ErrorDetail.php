@@ -54,7 +54,7 @@ class ErrorDetail extends \Google\Protobuf\Internal\Message
      */
     public function getLocation()
     {
-        return isset($this->location) ? $this->location : null;
+        return $this->location;
     }
 
     public function hasLocation()
@@ -90,7 +90,7 @@ class ErrorDetail extends \Google\Protobuf\Internal\Message
      */
     public function getErrorInfo()
     {
-        return isset($this->error_info) ? $this->error_info : null;
+        return $this->error_info;
     }
 
     public function hasErrorInfo()

@@ -751,28 +751,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getApplicationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, applicationId_);
     }
-    if (!getApplicationVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, applicationVersion_);
     }
     if (platform_ != com.google.maps.unity.ClientInfo.Platform.PLATFORM_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, platform_);
     }
-    if (!getOperatingSystemBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operatingSystem_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, operatingSystem_);
     }
-    if (!getApiClientBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiClient_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, apiClient_);
     }
-    if (!getDeviceModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deviceModel_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, languageCode_);
     }
-    if (!getOperatingSystemBuildBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operatingSystemBuild_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, operatingSystemBuild_);
     }
     unknownFields.writeTo(output);
@@ -784,29 +784,29 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getApplicationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, applicationId_);
     }
-    if (!getApplicationVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, applicationVersion_);
     }
     if (platform_ != com.google.maps.unity.ClientInfo.Platform.PLATFORM_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, platform_);
     }
-    if (!getOperatingSystemBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operatingSystem_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, operatingSystem_);
     }
-    if (!getApiClientBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiClient_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, apiClient_);
     }
-    if (!getDeviceModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deviceModel_);
     }
-    if (!getLanguageCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, languageCode_);
     }
-    if (!getOperatingSystemBuildBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operatingSystemBuild_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, operatingSystemBuild_);
     }
     size += unknownFields.getSerializedSize();

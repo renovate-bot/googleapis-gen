@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
     if (sourceCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.translate.v3beta1.GcsSource) source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mimeType_);
     }
     unknownFields.writeTo(output);
@@ -330,7 +330,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, (com.google.cloud.translate.v3beta1.GcsSource) source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mimeType_);
     }
     size += unknownFields.getSerializedSize();

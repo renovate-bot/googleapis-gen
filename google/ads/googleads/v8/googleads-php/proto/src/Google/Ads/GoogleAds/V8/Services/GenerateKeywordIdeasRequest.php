@@ -25,7 +25,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>string language = 14;</code>
+     * Generated from protobuf field <code>optional string language = 14;</code>
      */
     protected $language = null;
     /**
@@ -173,7 +173,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>string language = 14;</code>
+     * Generated from protobuf field <code>optional string language = 14;</code>
      * @return string
      */
     public function getLanguage()
@@ -195,7 +195,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>string language = 14;</code>
+     * Generated from protobuf field <code>optional string language = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -393,7 +393,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAggregateMetrics()
     {
-        return isset($this->aggregate_metrics) ? $this->aggregate_metrics : null;
+        return $this->aggregate_metrics;
     }
 
     public function hasAggregateMetrics()
@@ -429,7 +429,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHistoricalMetricsOptions()
     {
-        return isset($this->historical_metrics_options) ? $this->historical_metrics_options : null;
+        return $this->historical_metrics_options;
     }
 
     public function hasHistoricalMetricsOptions()

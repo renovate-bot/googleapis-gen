@@ -505,7 +505,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredAddonsConfig()
     {
-        return isset($this->desired_addons_config) ? $this->desired_addons_config : null;
+        return $this->desired_addons_config;
     }
 
     public function hasDesiredAddonsConfig()
@@ -604,7 +604,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredNodePoolAutoscaling()
     {
-        return isset($this->desired_node_pool_autoscaling) ? $this->desired_node_pool_autoscaling : null;
+        return $this->desired_node_pool_autoscaling;
     }
 
     public function hasDesiredNodePoolAutoscaling()
@@ -679,7 +679,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredMasterAuthorizedNetworksConfig()
     {
-        return isset($this->desired_master_authorized_networks_config) ? $this->desired_master_authorized_networks_config : null;
+        return $this->desired_master_authorized_networks_config;
     }
 
     public function hasDesiredMasterAuthorizedNetworksConfig()
@@ -715,7 +715,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredPodSecurityPolicyConfig()
     {
-        return isset($this->desired_pod_security_policy_config) ? $this->desired_pod_security_policy_config : null;
+        return $this->desired_pod_security_policy_config;
     }
 
     public function hasDesiredPodSecurityPolicyConfig()
@@ -751,7 +751,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredClusterAutoscaling()
     {
-        return isset($this->desired_cluster_autoscaling) ? $this->desired_cluster_autoscaling : null;
+        return $this->desired_cluster_autoscaling;
     }
 
     public function hasDesiredClusterAutoscaling()
@@ -787,7 +787,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredBinaryAuthorization()
     {
-        return isset($this->desired_binary_authorization) ? $this->desired_binary_authorization : null;
+        return $this->desired_binary_authorization;
     }
 
     public function hasDesiredBinaryAuthorization()
@@ -865,7 +865,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredResourceUsageExportConfig()
     {
-        return isset($this->desired_resource_usage_export_config) ? $this->desired_resource_usage_export_config : null;
+        return $this->desired_resource_usage_export_config;
     }
 
     public function hasDesiredResourceUsageExportConfig()
@@ -901,7 +901,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredVerticalPodAutoscaling()
     {
-        return isset($this->desired_vertical_pod_autoscaling) ? $this->desired_vertical_pod_autoscaling : null;
+        return $this->desired_vertical_pod_autoscaling;
     }
 
     public function hasDesiredVerticalPodAutoscaling()
@@ -937,7 +937,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredPrivateClusterConfig()
     {
-        return isset($this->desired_private_cluster_config) ? $this->desired_private_cluster_config : null;
+        return $this->desired_private_cluster_config;
     }
 
     public function hasDesiredPrivateClusterConfig()
@@ -973,7 +973,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredIntraNodeVisibilityConfig()
     {
-        return isset($this->desired_intra_node_visibility_config) ? $this->desired_intra_node_visibility_config : null;
+        return $this->desired_intra_node_visibility_config;
     }
 
     public function hasDesiredIntraNodeVisibilityConfig()
@@ -1009,7 +1009,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredDefaultSnatStatus()
     {
-        return isset($this->desired_default_snat_status) ? $this->desired_default_snat_status : null;
+        return $this->desired_default_snat_status;
     }
 
     public function hasDesiredDefaultSnatStatus()
@@ -1045,7 +1045,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredClusterTelemetry()
     {
-        return isset($this->desired_cluster_telemetry) ? $this->desired_cluster_telemetry : null;
+        return $this->desired_cluster_telemetry;
     }
 
     public function hasDesiredClusterTelemetry()
@@ -1081,7 +1081,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredReleaseChannel()
     {
-        return isset($this->desired_release_channel) ? $this->desired_release_channel : null;
+        return $this->desired_release_channel;
     }
 
     public function hasDesiredReleaseChannel()
@@ -1117,7 +1117,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredTpuConfig()
     {
-        return isset($this->desired_tpu_config) ? $this->desired_tpu_config : null;
+        return $this->desired_tpu_config;
     }
 
     public function hasDesiredTpuConfig()
@@ -1153,7 +1153,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredL4IlbSubsettingConfig()
     {
-        return isset($this->desired_l4ilb_subsetting_config) ? $this->desired_l4ilb_subsetting_config : null;
+        return $this->desired_l4ilb_subsetting_config;
     }
 
     public function hasDesiredL4IlbSubsettingConfig()
@@ -1241,7 +1241,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredNotificationConfig()
     {
-        return isset($this->desired_notification_config) ? $this->desired_notification_config : null;
+        return $this->desired_notification_config;
     }
 
     public function hasDesiredNotificationConfig()
@@ -1319,7 +1319,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredDatabaseEncryption()
     {
-        return isset($this->desired_database_encryption) ? $this->desired_database_encryption : null;
+        return $this->desired_database_encryption;
     }
 
     public function hasDesiredDatabaseEncryption()
@@ -1355,7 +1355,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredWorkloadIdentityConfig()
     {
-        return isset($this->desired_workload_identity_config) ? $this->desired_workload_identity_config : null;
+        return $this->desired_workload_identity_config;
     }
 
     public function hasDesiredWorkloadIdentityConfig()
@@ -1392,7 +1392,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredWorkloadCertificates()
     {
-        return isset($this->desired_workload_certificates) ? $this->desired_workload_certificates : null;
+        return $this->desired_workload_certificates;
     }
 
     public function hasDesiredWorkloadCertificates()
@@ -1429,7 +1429,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredShieldedNodes()
     {
-        return isset($this->desired_shielded_nodes) ? $this->desired_shielded_nodes : null;
+        return $this->desired_shielded_nodes;
     }
 
     public function hasDesiredShieldedNodes()
@@ -1465,7 +1465,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredMaster()
     {
-        return isset($this->desired_master) ? $this->desired_master : null;
+        return $this->desired_master;
     }
 
     public function hasDesiredMaster()
@@ -1501,7 +1501,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredDnsConfig()
     {
-        return isset($this->desired_dns_config) ? $this->desired_dns_config : null;
+        return $this->desired_dns_config;
     }
 
     public function hasDesiredDnsConfig()
@@ -1538,7 +1538,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredServiceExternalIpsConfig()
     {
-        return isset($this->desired_service_external_ips_config) ? $this->desired_service_external_ips_config : null;
+        return $this->desired_service_external_ips_config;
     }
 
     public function hasDesiredServiceExternalIpsConfig()
@@ -1576,7 +1576,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredAuthenticatorGroupsConfig()
     {
-        return isset($this->desired_authenticator_groups_config) ? $this->desired_authenticator_groups_config : null;
+        return $this->desired_authenticator_groups_config;
     }
 
     public function hasDesiredAuthenticatorGroupsConfig()
@@ -1613,7 +1613,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredLoggingConfig()
     {
-        return isset($this->desired_logging_config) ? $this->desired_logging_config : null;
+        return $this->desired_logging_config;
     }
 
     public function hasDesiredLoggingConfig()
@@ -1649,7 +1649,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredMonitoringConfig()
     {
-        return isset($this->desired_monitoring_config) ? $this->desired_monitoring_config : null;
+        return $this->desired_monitoring_config;
     }
 
     public function hasDesiredMonitoringConfig()
@@ -1685,7 +1685,7 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     public function getDesiredIdentityServiceConfig()
     {
-        return isset($this->desired_identity_service_config) ? $this->desired_identity_service_config : null;
+        return $this->desired_identity_service_config;
     }
 
     public function hasDesiredIdentityServiceConfig()

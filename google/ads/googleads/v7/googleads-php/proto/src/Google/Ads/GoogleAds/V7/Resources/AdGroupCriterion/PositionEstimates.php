@@ -19,35 +19,35 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be shown on first
      * page of search results.
      *
-     * Generated from protobuf field <code>int64 first_page_cpc_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 first_page_cpc_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $first_page_cpc_micros = null;
     /**
      * Output only. The estimate of the CPC bid required for ad to be displayed in first
      * position, at the top of the first page of search results.
      *
-     * Generated from protobuf field <code>int64 first_position_cpc_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 first_position_cpc_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $first_position_cpc_micros = null;
     /**
      * Output only. The estimate of the CPC bid required for ad to be displayed at the top
      * of the first page of search results.
      *
-     * Generated from protobuf field <code>int64 top_of_page_cpc_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 top_of_page_cpc_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $top_of_page_cpc_micros = null;
     /**
      * Output only. Estimate of how many clicks per week you might get by changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
-     * Generated from protobuf field <code>int64 estimated_add_clicks_at_first_position_cpc = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 estimated_add_clicks_at_first_position_cpc = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $estimated_add_clicks_at_first_position_cpc = null;
     /**
      * Output only. Estimate of how your cost per week might change when changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
-     * Generated from protobuf field <code>int64 estimated_add_cost_at_first_position_cpc = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 estimated_add_cost_at_first_position_cpc = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $estimated_add_cost_at_first_position_cpc = null;
 
@@ -83,7 +83,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be shown on first
      * page of search results.
      *
-     * Generated from protobuf field <code>int64 first_page_cpc_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 first_page_cpc_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getFirstPageCpcMicros()
@@ -105,7 +105,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be shown on first
      * page of search results.
      *
-     * Generated from protobuf field <code>int64 first_page_cpc_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 first_page_cpc_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -121,7 +121,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be displayed in first
      * position, at the top of the first page of search results.
      *
-     * Generated from protobuf field <code>int64 first_position_cpc_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 first_position_cpc_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getFirstPositionCpcMicros()
@@ -143,7 +143,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be displayed in first
      * position, at the top of the first page of search results.
      *
-     * Generated from protobuf field <code>int64 first_position_cpc_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 first_position_cpc_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -159,7 +159,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be displayed at the top
      * of the first page of search results.
      *
-     * Generated from protobuf field <code>int64 top_of_page_cpc_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 top_of_page_cpc_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getTopOfPageCpcMicros()
@@ -181,7 +181,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. The estimate of the CPC bid required for ad to be displayed at the top
      * of the first page of search results.
      *
-     * Generated from protobuf field <code>int64 top_of_page_cpc_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 top_of_page_cpc_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -197,7 +197,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. Estimate of how many clicks per week you might get by changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
-     * Generated from protobuf field <code>int64 estimated_add_clicks_at_first_position_cpc = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 estimated_add_clicks_at_first_position_cpc = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEstimatedAddClicksAtFirstPositionCpc()
@@ -219,7 +219,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. Estimate of how many clicks per week you might get by changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
-     * Generated from protobuf field <code>int64 estimated_add_clicks_at_first_position_cpc = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 estimated_add_clicks_at_first_position_cpc = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -235,7 +235,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. Estimate of how your cost per week might change when changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
-     * Generated from protobuf field <code>int64 estimated_add_cost_at_first_position_cpc = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 estimated_add_cost_at_first_position_cpc = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getEstimatedAddCostAtFirstPositionCpc()
@@ -257,7 +257,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Output only. Estimate of how your cost per week might change when changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
-     * Generated from protobuf field <code>int64 estimated_add_cost_at_first_position_cpc = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 estimated_add_cost_at_first_position_cpc = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */

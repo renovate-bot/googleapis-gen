@@ -89,7 +89,7 @@ class UpdateBotSessionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBotSession()
     {
-        return isset($this->bot_session) ? $this->bot_session : null;
+        return $this->bot_session;
     }
 
     public function hasBotSession()
@@ -126,7 +126,7 @@ class UpdateBotSessionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

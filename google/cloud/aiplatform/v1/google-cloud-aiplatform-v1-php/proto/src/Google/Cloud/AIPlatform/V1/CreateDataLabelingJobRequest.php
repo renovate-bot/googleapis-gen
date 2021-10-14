@@ -83,7 +83,7 @@ class CreateDataLabelingJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDataLabelingJob()
     {
-        return isset($this->data_labeling_job) ? $this->data_labeling_job : null;
+        return $this->data_labeling_job;
     }
 
     public function hasDataLabelingJob()

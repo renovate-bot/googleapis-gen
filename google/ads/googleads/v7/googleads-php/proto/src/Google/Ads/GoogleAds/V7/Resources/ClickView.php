@@ -31,7 +31,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>string gclid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string gclid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $gclid = null;
     /**
@@ -51,25 +51,25 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>int64 page_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 page_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $page_number = null;
     /**
      * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>string ad_group_ad = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_ad = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_ad = null;
     /**
      * Output only. The associated campaign location target, if one exists.
      *
-     * Generated from protobuf field <code>string campaign_location_target = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_location_target = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign_location_target = null;
     /**
      * Output only. The associated user list, if one exists.
      *
-     * Generated from protobuf field <code>string user_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string user_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $user_list = null;
     /**
@@ -157,7 +157,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>string gclid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string gclid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getGclid()
@@ -178,7 +178,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>string gclid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string gclid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -199,7 +199,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function getAreaOfInterest()
     {
-        return isset($this->area_of_interest) ? $this->area_of_interest : null;
+        return $this->area_of_interest;
     }
 
     public function hasAreaOfInterest()
@@ -237,7 +237,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function getLocationOfPresence()
     {
-        return isset($this->location_of_presence) ? $this->location_of_presence : null;
+        return $this->location_of_presence;
     }
 
     public function hasLocationOfPresence()
@@ -269,7 +269,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>int64 page_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 page_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getPageNumber()
@@ -290,7 +290,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>int64 page_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 page_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -305,7 +305,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>string ad_group_ad = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_ad = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroupAd()
@@ -326,7 +326,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>string ad_group_ad = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_ad = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -341,7 +341,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The associated campaign location target, if one exists.
      *
-     * Generated from protobuf field <code>string campaign_location_target = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_location_target = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaignLocationTarget()
@@ -362,7 +362,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The associated campaign location target, if one exists.
      *
-     * Generated from protobuf field <code>string campaign_location_target = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign_location_target = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -377,7 +377,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The associated user list, if one exists.
      *
-     * Generated from protobuf field <code>string user_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string user_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getUserList()
@@ -398,7 +398,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The associated user list, if one exists.
      *
-     * Generated from protobuf field <code>string user_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string user_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -446,7 +446,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordInfo()
     {
-        return isset($this->keyword_info) ? $this->keyword_info : null;
+        return $this->keyword_info;
     }
 
     public function hasKeywordInfo()

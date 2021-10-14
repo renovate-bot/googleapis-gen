@@ -70,19 +70,23 @@ namespace Google.Maps.PlayableLocations.V3 {
     private static readonly pb::MessageParser<PlayerReport> _parser = new pb::MessageParser<PlayerReport>(() => new PlayerReport());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PlayerReport> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.PlayableLocations.V3.ResourcesReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerReport() {
       OnConstruction();
     }
@@ -90,6 +94,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerReport(PlayerReport other) : this() {
       locationName_ = other.locationName_;
       reasons_ = other.reasons_.Clone();
@@ -99,6 +104,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerReport Clone() {
       return new PlayerReport(this);
     }
@@ -110,6 +116,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// Required. The name of the playable location.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string LocationName {
       get { return locationName_; }
       set {
@@ -126,6 +133,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// Required. One or more reasons why this playable location is considered bad.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Maps.PlayableLocations.V3.PlayerReport.Types.BadLocationReason> Reasons {
       get { return reasons_; }
     }
@@ -138,6 +146,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// considered bad.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ReasonDetails {
       get { return reasonDetails_; }
       set {
@@ -155,6 +164,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string LanguageCode {
       get { return languageCode_; }
       set {
@@ -163,11 +173,13 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as PlayerReport);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(PlayerReport other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -183,6 +195,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (LocationName.Length != 0) hash ^= LocationName.GetHashCode();
@@ -196,11 +209,13 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -226,6 +241,7 @@ namespace Google.Maps.PlayableLocations.V3 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LocationName.Length != 0) {
         output.WriteRawTag(10);
@@ -247,6 +263,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (LocationName.Length != 0) {
@@ -266,6 +283,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(PlayerReport other) {
       if (other == null) {
         return;
@@ -284,6 +302,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -318,6 +337,7 @@ namespace Google.Maps.PlayableLocations.V3 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -350,6 +370,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     #region Nested types
     /// <summary>Container for nested types declared in the PlayerReport message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The reason why the playable location is considered bad.
@@ -401,19 +422,23 @@ namespace Google.Maps.PlayableLocations.V3 {
     private static readonly pb::MessageParser<Impression> _parser = new pb::MessageParser<Impression>(() => new Impression());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Impression> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Maps.PlayableLocations.V3.ResourcesReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Impression() {
       OnConstruction();
     }
@@ -421,6 +446,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Impression(Impression other) : this() {
       locationName_ = other.locationName_;
       impressionType_ = other.impressionType_;
@@ -429,6 +455,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Impression Clone() {
       return new Impression(this);
     }
@@ -440,6 +467,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// Required. The name of the playable location.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string LocationName {
       get { return locationName_; }
       set {
@@ -454,6 +482,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// Required. The type of impression event.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Maps.PlayableLocations.V3.Impression.Types.ImpressionType ImpressionType {
       get { return impressionType_; }
       set {
@@ -477,6 +506,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     /// For example, 1=monster location, 2=powerup location.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int GameObjectType {
       get { return gameObjectType_; }
       set {
@@ -485,11 +515,13 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Impression);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Impression other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -504,6 +536,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (LocationName.Length != 0) hash ^= LocationName.GetHashCode();
@@ -516,11 +549,13 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -545,6 +580,7 @@ namespace Google.Maps.PlayableLocations.V3 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LocationName.Length != 0) {
         output.WriteRawTag(10);
@@ -565,6 +601,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (LocationName.Length != 0) {
@@ -583,6 +620,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Impression other) {
       if (other == null) {
         return;
@@ -600,6 +638,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -629,6 +668,7 @@ namespace Google.Maps.PlayableLocations.V3 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -656,6 +696,7 @@ namespace Google.Maps.PlayableLocations.V3 {
     #region Nested types
     /// <summary>Container for nested types declared in the Impression message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// The type of impression event.

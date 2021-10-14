@@ -126,7 +126,7 @@ class CreateEntryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getEntry()
     {
-        return isset($this->entry) ? $this->entry : null;
+        return $this->entry;
     }
 
     public function hasEntry()

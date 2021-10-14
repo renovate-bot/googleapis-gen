@@ -32,7 +32,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Resource name of ad group criterion which is the parent listing group
      * subdivision. Null for the root group.
      *
-     * Generated from protobuf field <code>string parent_ad_group_criterion = 4;</code>
+     * Generated from protobuf field <code>optional string parent_ad_group_criterion = 4;</code>
      */
     protected $parent_ad_group_criterion = null;
 
@@ -92,7 +92,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCaseValue()
     {
-        return isset($this->case_value) ? $this->case_value : null;
+        return $this->case_value;
     }
 
     public function hasCaseValue()
@@ -125,7 +125,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Resource name of ad group criterion which is the parent listing group
      * subdivision. Null for the root group.
      *
-     * Generated from protobuf field <code>string parent_ad_group_criterion = 4;</code>
+     * Generated from protobuf field <code>optional string parent_ad_group_criterion = 4;</code>
      * @return string
      */
     public function getParentAdGroupCriterion()
@@ -147,7 +147,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Resource name of ad group criterion which is the parent listing group
      * subdivision. Null for the root group.
      *
-     * Generated from protobuf field <code>string parent_ad_group_criterion = 4;</code>
+     * Generated from protobuf field <code>optional string parent_ad_group_criterion = 4;</code>
      * @param string $var
      * @return $this
      */

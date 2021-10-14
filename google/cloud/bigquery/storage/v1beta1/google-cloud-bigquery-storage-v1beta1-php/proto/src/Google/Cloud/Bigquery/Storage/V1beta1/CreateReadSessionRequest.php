@@ -110,7 +110,7 @@ class CreateReadSessionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTableReference()
     {
-        return isset($this->table_reference) ? $this->table_reference : null;
+        return $this->table_reference;
     }
 
     public function hasTableReference()
@@ -176,7 +176,7 @@ class CreateReadSessionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTableModifiers()
     {
-        return isset($this->table_modifiers) ? $this->table_modifiers : null;
+        return $this->table_modifiers;
     }
 
     public function hasTableModifiers()
@@ -248,7 +248,7 @@ class CreateReadSessionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getReadOptions()
     {
-        return isset($this->read_options) ? $this->read_options : null;
+        return $this->read_options;
     }
 
     public function hasReadOptions()

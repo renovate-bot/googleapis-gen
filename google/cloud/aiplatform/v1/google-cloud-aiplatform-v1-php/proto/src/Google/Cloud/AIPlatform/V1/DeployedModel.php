@@ -314,7 +314,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -357,7 +357,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      */
     public function getExplanationSpec()
     {
-        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+        return $this->explanation_spec;
     }
 
     public function hasExplanationSpec()
@@ -508,7 +508,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      */
     public function getPrivateEndpoints()
     {
-        return isset($this->private_endpoints) ? $this->private_endpoints : null;
+        return $this->private_endpoints;
     }
 
     public function hasPrivateEndpoints()

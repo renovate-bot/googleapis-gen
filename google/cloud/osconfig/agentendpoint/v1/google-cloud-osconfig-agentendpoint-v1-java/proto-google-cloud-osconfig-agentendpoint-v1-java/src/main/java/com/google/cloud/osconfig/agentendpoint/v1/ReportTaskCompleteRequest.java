@@ -519,16 +519,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getInstanceIdTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceIdToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceIdToken_);
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskId_);
     }
     if (taskType_ != com.google.cloud.osconfig.agentendpoint.v1.TaskType.TASK_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, taskType_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, errorMessage_);
     }
     if (outputCase_ == 5) {
@@ -549,17 +549,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceIdTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceIdToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceIdToken_);
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskId_);
     }
     if (taskType_ != com.google.cloud.osconfig.agentendpoint.v1.TaskType.TASK_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, taskType_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, errorMessage_);
     }
     if (outputCase_ == 5) {

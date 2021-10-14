@@ -85,7 +85,7 @@ class MutateAdGroupBidModifierResult extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupBidModifier()
     {
-        return isset($this->ad_group_bid_modifier) ? $this->ad_group_bid_modifier : null;
+        return $this->ad_group_bid_modifier;
     }
 
     public function hasAdGroupBidModifier()

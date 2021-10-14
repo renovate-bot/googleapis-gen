@@ -590,10 +590,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getArtifactBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifact_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, artifact_);
     }
-    if (!getExecutionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(execution_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, execution_);
     }
     if (eventTime_ != null) {
@@ -617,10 +617,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getArtifactBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifact_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, artifact_);
     }
-    if (!getExecutionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(execution_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, execution_);
     }
     if (eventTime_ != null) {

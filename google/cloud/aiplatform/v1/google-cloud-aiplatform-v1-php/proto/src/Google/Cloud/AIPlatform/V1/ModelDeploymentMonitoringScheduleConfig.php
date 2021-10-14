@@ -48,7 +48,7 @@ class ModelDeploymentMonitoringScheduleConfig extends \Google\Protobuf\Internal\
      */
     public function getMonitorInterval()
     {
-        return isset($this->monitor_interval) ? $this->monitor_interval : null;
+        return $this->monitor_interval;
     }
 
     public function hasMonitorInterval()

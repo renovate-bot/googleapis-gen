@@ -61,7 +61,7 @@ class StartResumableWriteRequest extends \Google\Protobuf\Internal\Message
      */
     public function getWriteObjectSpec()
     {
-        return isset($this->write_object_spec) ? $this->write_object_spec : null;
+        return $this->write_object_spec;
     }
 
     public function hasWriteObjectSpec()
@@ -97,7 +97,7 @@ class StartResumableWriteRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCommonObjectRequestParams()
     {
-        return isset($this->common_object_request_params) ? $this->common_object_request_params : null;
+        return $this->common_object_request_params;
     }
 
     public function hasCommonObjectRequestParams()
@@ -133,7 +133,7 @@ class StartResumableWriteRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCommonRequestParams()
     {
-        return isset($this->common_request_params) ? $this->common_request_params : null;
+        return $this->common_request_params;
     }
 
     public function hasCommonRequestParams()

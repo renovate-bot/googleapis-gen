@@ -19,7 +19,7 @@ class VideoBumperInStreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
-     * Generated from protobuf field <code>string companion_banner = 2;</code>
+     * Generated from protobuf field <code>optional string companion_banner = 2;</code>
      */
     protected $companion_banner = null;
 
@@ -41,7 +41,7 @@ class VideoBumperInStreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
-     * Generated from protobuf field <code>string companion_banner = 2;</code>
+     * Generated from protobuf field <code>optional string companion_banner = 2;</code>
      * @return string
      */
     public function getCompanionBanner()
@@ -62,7 +62,7 @@ class VideoBumperInStreamAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
-     * Generated from protobuf field <code>string companion_banner = 2;</code>
+     * Generated from protobuf field <code>optional string companion_banner = 2;</code>
      * @param string $var
      * @return $this
      */

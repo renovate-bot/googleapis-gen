@@ -421,13 +421,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificateId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, certificateId_);
     }
     if (sslManagementType_ != com.google.appengine.v1.SslSettings.SslManagementType.SSL_MANAGEMENT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, sslManagementType_);
     }
-    if (!getPendingManagedCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pendingManagedCertificateId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pendingManagedCertificateId_);
     }
     unknownFields.writeTo(output);
@@ -439,14 +439,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(certificateId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, certificateId_);
     }
     if (sslManagementType_ != com.google.appengine.v1.SslSettings.SslManagementType.SSL_MANAGEMENT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, sslManagementType_);
     }
-    if (!getPendingManagedCertificateIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pendingManagedCertificateId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pendingManagedCertificateId_);
     }
     size += unknownFields.getSerializedSize();

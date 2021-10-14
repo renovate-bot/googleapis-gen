@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
     if (crc32C_ != null) {
       output.writeMessage(1, getCrc32C());
     }
-    if (!getMd5HashBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(md5Hash_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, md5Hash_);
     }
     unknownFields.writeTo(output);
@@ -229,7 +229,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getCrc32C());
     }
-    if (!getMd5HashBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(md5Hash_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, md5Hash_);
     }
     size += unknownFields.getSerializedSize();

@@ -19,7 +19,7 @@ class UserListInfo extends \Google\Protobuf\Internal\Message
     /**
      * The User List resource name.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      */
     protected $user_list = null;
 
@@ -41,7 +41,7 @@ class UserListInfo extends \Google\Protobuf\Internal\Message
     /**
      * The User List resource name.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      * @return string
      */
     public function getUserList()
@@ -62,7 +62,7 @@ class UserListInfo extends \Google\Protobuf\Internal\Message
     /**
      * The User List resource name.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      * @param string $var
      * @return $this
      */

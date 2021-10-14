@@ -85,7 +85,7 @@ class MutateCampaignBudgetResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignBudget()
     {
-        return isset($this->campaign_budget) ? $this->campaign_budget : null;
+        return $this->campaign_budget;
     }
 
     public function hasCampaignBudget()

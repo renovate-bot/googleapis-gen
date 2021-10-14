@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
     if (state_ != com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stateMessage_);
     }
     if (createTime_ != null) {
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, state_);
     }
-    if (!getStateMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stateMessage_);
     }
     if (createTime_ != null) {

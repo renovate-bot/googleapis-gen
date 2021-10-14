@@ -24,7 +24,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     /**
      * If field_name is a repeated field, this is the element that failed
      *
-     * Generated from protobuf field <code>int32 index = 3;</code>
+     * Generated from protobuf field <code>optional int32 index = 3;</code>
      */
     protected $index = null;
 
@@ -74,7 +74,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     /**
      * If field_name is a repeated field, this is the element that failed
      *
-     * Generated from protobuf field <code>int32 index = 3;</code>
+     * Generated from protobuf field <code>optional int32 index = 3;</code>
      * @return int
      */
     public function getIndex()
@@ -95,7 +95,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     /**
      * If field_name is a repeated field, this is the element that failed
      *
-     * Generated from protobuf field <code>int32 index = 3;</code>
+     * Generated from protobuf field <code>optional int32 index = 3;</code>
      * @param int $var
      * @return $this
      */

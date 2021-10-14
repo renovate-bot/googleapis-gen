@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < deploymentTestResults_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, deploymentTestResults_.getRaw(i));
       }
-      if (!getExperimentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experiment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, experiment_);
       }
       unknownFields.writeTo(output);
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
         size += dataSize;
         size += 1 * getDeploymentTestResultsList().size();
       }
-      if (!getExperimentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experiment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, experiment_);
       }
       size += unknownFields.getSerializedSize();
@@ -1516,10 +1516,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getFlowVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flowVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flowVersion_);
     }
     if (state_ != com.google.cloud.dialogflow.cx.v3beta1.Deployment.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1543,10 +1543,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getFlowVersionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flowVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flowVersion_);
     }
     if (state_ != com.google.cloud.dialogflow.cx.v3beta1.Deployment.State.STATE_UNSPECIFIED.getNumber()) {

@@ -47,7 +47,7 @@ class SamplingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function getRandomSampleConfig()
     {
-        return isset($this->random_sample_config) ? $this->random_sample_config : null;
+        return $this->random_sample_config;
     }
 
     public function hasRandomSampleConfig()

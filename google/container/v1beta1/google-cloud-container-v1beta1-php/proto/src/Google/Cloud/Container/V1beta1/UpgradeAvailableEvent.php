@@ -135,7 +135,7 @@ class UpgradeAvailableEvent extends \Google\Protobuf\Internal\Message
      */
     public function getReleaseChannel()
     {
-        return isset($this->release_channel) ? $this->release_channel : null;
+        return $this->release_channel;
     }
 
     public function hasReleaseChannel()
@@ -200,7 +200,7 @@ class UpgradeAvailableEvent extends \Google\Protobuf\Internal\Message
      */
     public function getWindowsVersions()
     {
-        return isset($this->windows_versions) ? $this->windows_versions : null;
+        return $this->windows_versions;
     }
 
     public function hasWindowsVersions()

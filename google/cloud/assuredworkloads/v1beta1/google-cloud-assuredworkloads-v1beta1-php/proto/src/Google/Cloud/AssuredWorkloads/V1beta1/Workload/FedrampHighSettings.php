@@ -45,7 +45,7 @@ class FedrampHighSettings extends \Google\Protobuf\Internal\Message
      */
     public function getKmsSettings()
     {
-        return isset($this->kms_settings) ? $this->kms_settings : null;
+        return $this->kms_settings;
     }
 
     public function hasKmsSettings()

@@ -22,7 +22,7 @@ class HistoricalMetricsOptions extends \Google\Protobuf\Internal\Message
      * not available for the entire year_month_range provided, the subset of the
      * year month range for which search volume is available will be returned.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.common.YearMonthRange year_month_range = 1;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.common.YearMonthRange year_month_range = 1;</code>
      */
     protected $year_month_range = null;
 
@@ -52,12 +52,12 @@ class HistoricalMetricsOptions extends \Google\Protobuf\Internal\Message
      * not available for the entire year_month_range provided, the subset of the
      * year month range for which search volume is available will be returned.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.common.YearMonthRange year_month_range = 1;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.common.YearMonthRange year_month_range = 1;</code>
      * @return \Google\Ads\GoogleAds\V8\Common\YearMonthRange|null
      */
     public function getYearMonthRange()
     {
-        return isset($this->year_month_range) ? $this->year_month_range : null;
+        return $this->year_month_range;
     }
 
     public function hasYearMonthRange()
@@ -77,7 +77,7 @@ class HistoricalMetricsOptions extends \Google\Protobuf\Internal\Message
      * not available for the entire year_month_range provided, the subset of the
      * year month range for which search volume is available will be returned.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v8.common.YearMonthRange year_month_range = 1;</code>
+     * Generated from protobuf field <code>optional .google.ads.googleads.v8.common.YearMonthRange year_month_range = 1;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\YearMonthRange $var
      * @return $this
      */

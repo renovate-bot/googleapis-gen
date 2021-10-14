@@ -18,7 +18,7 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * The operating system version constant resource name.
      *
-     * Generated from protobuf field <code>string operating_system_version_constant = 2;</code>
+     * Generated from protobuf field <code>optional string operating_system_version_constant = 2;</code>
      */
     protected $operating_system_version_constant = null;
 
@@ -40,7 +40,7 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * The operating system version constant resource name.
      *
-     * Generated from protobuf field <code>string operating_system_version_constant = 2;</code>
+     * Generated from protobuf field <code>optional string operating_system_version_constant = 2;</code>
      * @return string
      */
     public function getOperatingSystemVersionConstant()
@@ -61,7 +61,7 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * The operating system version constant resource name.
      *
-     * Generated from protobuf field <code>string operating_system_version_constant = 2;</code>
+     * Generated from protobuf field <code>optional string operating_system_version_constant = 2;</code>
      * @param string $var
      * @return $this
      */

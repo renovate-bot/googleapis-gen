@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < unavailable_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unavailable_.getRaw(i));
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, etag_);
     }
     if (targetState_ != null) {
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getUnavailableList().size();
     }
-    if (!getEtagBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, etag_);
     }
     if (targetState_ != null) {

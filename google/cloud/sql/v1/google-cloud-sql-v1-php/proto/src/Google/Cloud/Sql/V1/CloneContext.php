@@ -163,7 +163,7 @@ class CloneContext extends \Google\Protobuf\Internal\Message
      */
     public function getBinLogCoordinates()
     {
-        return isset($this->bin_log_coordinates) ? $this->bin_log_coordinates : null;
+        return $this->bin_log_coordinates;
     }
 
     public function hasBinLogCoordinates()
@@ -202,7 +202,7 @@ class CloneContext extends \Google\Protobuf\Internal\Message
      */
     public function getPointInTime()
     {
-        return isset($this->point_in_time) ? $this->point_in_time : null;
+        return $this->point_in_time;
     }
 
     public function hasPointInTime()

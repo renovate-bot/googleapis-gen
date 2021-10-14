@@ -97,7 +97,7 @@ class CreateWorkloadRequest extends \Google\Protobuf\Internal\Message
      */
     public function getWorkload()
     {
-        return isset($this->workload) ? $this->workload : null;
+        return $this->workload;
     }
 
     public function hasWorkload()

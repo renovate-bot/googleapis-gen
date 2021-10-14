@@ -18,7 +18,7 @@ class KeywordPlanGeoTarget extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the geo target.
      *
-     * Generated from protobuf field <code>string geo_target_constant = 2 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string geo_target_constant = 2 [(.google.api.resource_reference) = {</code>
      */
     protected $geo_target_constant = null;
 
@@ -40,7 +40,7 @@ class KeywordPlanGeoTarget extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the geo target.
      *
-     * Generated from protobuf field <code>string geo_target_constant = 2 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string geo_target_constant = 2 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getGeoTargetConstant()
@@ -61,7 +61,7 @@ class KeywordPlanGeoTarget extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the geo target.
      *
-     * Generated from protobuf field <code>string geo_target_constant = 2 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string geo_target_constant = 2 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

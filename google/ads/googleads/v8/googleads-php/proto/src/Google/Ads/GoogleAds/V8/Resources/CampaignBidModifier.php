@@ -26,20 +26,20 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
      * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
      * The modifier for the bid when the criterion matches.
      *
-     * Generated from protobuf field <code>double bid_modifier = 8;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 8;</code>
      */
     protected $bid_modifier = null;
     protected $criterion;
@@ -103,7 +103,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCampaign()
@@ -124,7 +124,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>string campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCriterionId()
@@ -162,7 +162,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -177,7 +177,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * The modifier for the bid when the criterion matches.
      *
-     * Generated from protobuf field <code>double bid_modifier = 8;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 8;</code>
      * @return float
      */
     public function getBidModifier()
@@ -198,7 +198,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * The modifier for the bid when the criterion matches.
      *
-     * Generated from protobuf field <code>double bid_modifier = 8;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 8;</code>
      * @param float $var
      * @return $this
      */

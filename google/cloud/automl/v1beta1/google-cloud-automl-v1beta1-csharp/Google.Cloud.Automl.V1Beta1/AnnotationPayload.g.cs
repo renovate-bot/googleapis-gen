@@ -75,19 +75,23 @@ namespace Google.Cloud.Automl.V1Beta1 {
     private static readonly pb::MessageParser<AnnotationPayload> _parser = new pb::MessageParser<AnnotationPayload>(() => new AnnotationPayload());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<AnnotationPayload> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Automl.V1Beta1.AnnotationPayloadReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnnotationPayload() {
       OnConstruction();
     }
@@ -95,6 +99,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnnotationPayload(AnnotationPayload other) : this() {
       annotationSpecId_ = other.annotationSpecId_;
       displayName_ = other.displayName_;
@@ -129,6 +134,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnnotationPayload Clone() {
       return new AnnotationPayload(this);
     }
@@ -139,6 +145,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for translation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TranslationAnnotation Translation {
       get { return detailCase_ == DetailOneofCase.Translation ? (global::Google.Cloud.Automl.V1Beta1.TranslationAnnotation) detail_ : null; }
       set {
@@ -153,6 +160,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for content or image classification.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.ClassificationAnnotation Classification {
       get { return detailCase_ == DetailOneofCase.Classification ? (global::Google.Cloud.Automl.V1Beta1.ClassificationAnnotation) detail_ : null; }
       set {
@@ -167,6 +175,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for image object detection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.ImageObjectDetectionAnnotation ImageObjectDetection {
       get { return detailCase_ == DetailOneofCase.ImageObjectDetection ? (global::Google.Cloud.Automl.V1Beta1.ImageObjectDetectionAnnotation) detail_ : null; }
       set {
@@ -182,6 +191,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Returned for Video Classification predictions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.VideoClassificationAnnotation VideoClassification {
       get { return detailCase_ == DetailOneofCase.VideoClassification ? (global::Google.Cloud.Automl.V1Beta1.VideoClassificationAnnotation) detail_ : null; }
       set {
@@ -196,6 +206,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for video object tracking.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.VideoObjectTrackingAnnotation VideoObjectTracking {
       get { return detailCase_ == DetailOneofCase.VideoObjectTracking ? (global::Google.Cloud.Automl.V1Beta1.VideoObjectTrackingAnnotation) detail_ : null; }
       set {
@@ -210,6 +221,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for text extraction.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TextExtractionAnnotation TextExtraction {
       get { return detailCase_ == DetailOneofCase.TextExtraction ? (global::Google.Cloud.Automl.V1Beta1.TextExtractionAnnotation) detail_ : null; }
       set {
@@ -224,6 +236,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for text sentiment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TextSentimentAnnotation TextSentiment {
       get { return detailCase_ == DetailOneofCase.TextSentiment ? (global::Google.Cloud.Automl.V1Beta1.TextSentimentAnnotation) detail_ : null; }
       set {
@@ -238,6 +251,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// Annotation details for Tables.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Automl.V1Beta1.TablesAnnotation Tables {
       get { return detailCase_ == DetailOneofCase.Tables ? (global::Google.Cloud.Automl.V1Beta1.TablesAnnotation) detail_ : null; }
       set {
@@ -255,6 +269,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// ancestor dataset, or the dataset that was used to train the model in use.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string AnnotationSpecId {
       get { return annotationSpecId_; }
       set {
@@ -274,6 +289,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     /// `display_name` between any two model training.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DisplayName {
       get { return displayName_; }
       set {
@@ -296,22 +312,26 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DetailOneofCase DetailCase {
       get { return detailCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearDetail() {
       detailCase_ = DetailOneofCase.None;
       detail_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as AnnotationPayload);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(AnnotationPayload other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -334,6 +354,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (detailCase_ == DetailOneofCase.Translation) hash ^= Translation.GetHashCode();
@@ -354,11 +375,13 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -411,6 +434,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AnnotationSpecId.Length != 0) {
         output.WriteRawTag(10);
@@ -459,6 +483,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (detailCase_ == DetailOneofCase.Translation) {
@@ -498,6 +523,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AnnotationPayload other) {
       if (other == null) {
         return;
@@ -563,6 +589,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -660,6 +687,7 @@ namespace Google.Cloud.Automl.V1Beta1 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

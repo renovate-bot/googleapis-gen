@@ -255,7 +255,7 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -291,7 +291,7 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     public function getSendTime()
     {
-        return isset($this->send_time) ? $this->send_time : null;
+        return $this->send_time;
     }
 
     public function hasSendTime()
@@ -327,7 +327,7 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     public function getMessageAnnotation()
     {
-        return isset($this->message_annotation) ? $this->message_annotation : null;
+        return $this->message_annotation;
     }
 
     public function hasMessageAnnotation()
@@ -363,7 +363,7 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     public function getSentimentAnalysis()
     {
-        return isset($this->sentiment_analysis) ? $this->sentiment_analysis : null;
+        return $this->sentiment_analysis;
     }
 
     public function hasSentimentAnalysis()

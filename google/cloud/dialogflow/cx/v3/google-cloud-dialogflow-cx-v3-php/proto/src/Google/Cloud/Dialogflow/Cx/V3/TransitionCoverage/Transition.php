@@ -76,7 +76,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      */
     public function getSource()
     {
-        return isset($this->source) ? $this->source : null;
+        return $this->source;
     }
 
     public function hasSource()
@@ -138,7 +138,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      */
     public function getTarget()
     {
-        return isset($this->target) ? $this->target : null;
+        return $this->target;
     }
 
     public function hasTarget()

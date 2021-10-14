@@ -313,7 +313,7 @@ private static final long serialVersionUID = 0L;
     if (dependencyEdge_ != null) {
       output.writeMessage(3, getDependencyEdge());
     }
-    if (!getLemmaBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lemma_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lemma_);
     }
     unknownFields.writeTo(output);
@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getDependencyEdge());
     }
-    if (!getLemmaBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lemma_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lemma_);
     }
     size += unknownFields.getSerializedSize();

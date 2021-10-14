@@ -19,14 +19,14 @@ class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string text = 3;</code>
+     * Generated from protobuf field <code>optional string text = 3;</code>
      */
     protected $text = null;
     /**
      * The language of the hotel callout text.
      * IETF BCP 47 compliant language code.
      *
-     * Generated from protobuf field <code>string language_code = 4;</code>
+     * Generated from protobuf field <code>optional string language_code = 4;</code>
      */
     protected $language_code = null;
 
@@ -53,7 +53,7 @@ class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string text = 3;</code>
+     * Generated from protobuf field <code>optional string text = 3;</code>
      * @return string
      */
     public function getText()
@@ -75,7 +75,7 @@ class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
-     * Generated from protobuf field <code>string text = 3;</code>
+     * Generated from protobuf field <code>optional string text = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -91,7 +91,7 @@ class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The language of the hotel callout text.
      * IETF BCP 47 compliant language code.
      *
-     * Generated from protobuf field <code>string language_code = 4;</code>
+     * Generated from protobuf field <code>optional string language_code = 4;</code>
      * @return string
      */
     public function getLanguageCode()
@@ -113,7 +113,7 @@ class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The language of the hotel callout text.
      * IETF BCP 47 compliant language code.
      *
-     * Generated from protobuf field <code>string language_code = 4;</code>
+     * Generated from protobuf field <code>optional string language_code = 4;</code>
      * @param string $var
      * @return $this
      */

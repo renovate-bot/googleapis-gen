@@ -73,7 +73,7 @@ class RetentionPolicy extends \Google\Protobuf\Internal\Message
      */
     public function getEffectiveTime()
     {
-        return isset($this->effective_time) ? $this->effective_time : null;
+        return $this->effective_time;
     }
 
     public function hasEffectiveTime()

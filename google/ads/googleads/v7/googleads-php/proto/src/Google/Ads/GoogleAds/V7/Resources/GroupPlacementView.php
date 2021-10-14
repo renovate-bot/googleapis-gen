@@ -27,20 +27,20 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The automatic placement string at group level, e. g. web domain, mobile
      * app ID, or a YouTube channel ID.
      *
-     * Generated from protobuf field <code>string placement = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string placement = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $placement = null;
     /**
      * Output only. Domain name for websites and YouTube channel name for YouTube channels.
      *
-     * Generated from protobuf field <code>string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $display_name = null;
     /**
      * Output only. URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
-     * Generated from protobuf field <code>string target_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string target_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_url = null;
     /**
@@ -111,7 +111,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The automatic placement string at group level, e. g. web domain, mobile
      * app ID, or a YouTube channel ID.
      *
-     * Generated from protobuf field <code>string placement = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string placement = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPlacement()
@@ -133,7 +133,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. The automatic placement string at group level, e. g. web domain, mobile
      * app ID, or a YouTube channel ID.
      *
-     * Generated from protobuf field <code>string placement = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string placement = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -148,7 +148,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Domain name for websites and YouTube channel name for YouTube channels.
      *
-     * Generated from protobuf field <code>string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDisplayName()
@@ -169,7 +169,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Domain name for websites and YouTube channel name for YouTube channels.
      *
-     * Generated from protobuf field <code>string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
-     * Generated from protobuf field <code>string target_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string target_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getTargetUrl()
@@ -207,7 +207,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
-     * Generated from protobuf field <code>string target_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string target_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < jobs_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobs_.getRaw(i));
     }
-    if (!getProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, profile_);
     }
     unknownFields.writeTo(output);
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getJobsList().size();
     }
-    if (!getProfileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, profile_);
     }
     size += unknownFields.getSerializedSize();

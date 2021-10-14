@@ -123,7 +123,7 @@ class Owner extends \Google\Protobuf\Internal\Message
     public function getTeamDrive()
     {
         @trigger_error('team_drive is deprecated.', E_USER_DEPRECATED);
-        return isset($this->team_drive) ? $this->team_drive : null;
+        return $this->team_drive;
     }
 
     public function hasTeamDrive()
@@ -163,7 +163,7 @@ class Owner extends \Google\Protobuf\Internal\Message
      */
     public function getDomain()
     {
-        return isset($this->domain) ? $this->domain : null;
+        return $this->domain;
     }
 
     public function hasDomain()

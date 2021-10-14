@@ -1279,7 +1279,7 @@ private static final long serialVersionUID = 0L;
     if (header_ != null) {
       output.writeMessage(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parent_);
     }
     if (pickupPoint_ != null) {
@@ -1322,7 +1322,7 @@ private static final long serialVersionUID = 0L;
     if (includeBackToBack_ != false) {
       output.writeBool(18, includeBackToBack_);
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, tripId_);
     }
     for (int i = 0; i < requiredOneOfAttributeSets_.size(); i++) {
@@ -1341,7 +1341,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parent_);
     }
     if (pickupPoint_ != null) {
@@ -1400,7 +1400,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(18, includeBackToBack_);
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, tripId_);
     }
     for (int i = 0; i < requiredOneOfAttributeSets_.size(); i++) {

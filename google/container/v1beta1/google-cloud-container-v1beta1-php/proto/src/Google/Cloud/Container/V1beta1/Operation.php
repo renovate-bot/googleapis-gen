@@ -496,7 +496,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      */
     public function getProgress()
     {
-        return isset($this->progress) ? $this->progress : null;
+        return $this->progress;
     }
 
     public function hasProgress()
@@ -596,7 +596,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()

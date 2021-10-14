@@ -117,7 +117,7 @@ class AsymmetricSignRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDigest()
     {
-        return isset($this->digest) ? $this->digest : null;
+        return $this->digest;
     }
 
     public function hasDigest()
@@ -167,7 +167,7 @@ class AsymmetricSignRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDigestCrc32C()
     {
-        return isset($this->digest_crc32c) ? $this->digest_crc32c : null;
+        return $this->digest_crc32c;
     }
 
     public function hasDigestCrc32C()

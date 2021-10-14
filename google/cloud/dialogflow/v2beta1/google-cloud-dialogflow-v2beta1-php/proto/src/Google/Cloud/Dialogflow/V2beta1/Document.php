@@ -438,7 +438,7 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     public function getLatestReloadStatus()
     {
-        return isset($this->latest_reload_status) ? $this->latest_reload_status : null;
+        return $this->latest_reload_status;
     }
 
     public function hasLatestReloadStatus()

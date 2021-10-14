@@ -20,7 +20,7 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>int32 quality_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 quality_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $quality_score = null;
     /**
@@ -70,7 +70,7 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>int32 quality_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 quality_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getQualityScore()
@@ -93,7 +93,7 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>int32 quality_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int32 quality_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

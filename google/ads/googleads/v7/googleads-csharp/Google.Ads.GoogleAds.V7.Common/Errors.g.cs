@@ -538,19 +538,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<GoogleAdsFailure> _parser = new pb::MessageParser<GoogleAdsFailure>(() => new GoogleAdsFailure());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GoogleAdsFailure> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GoogleAdsFailure() {
       OnConstruction();
     }
@@ -558,6 +562,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GoogleAdsFailure(GoogleAdsFailure other) : this() {
       errors_ = other.errors_.Clone();
       requestId_ = other.requestId_;
@@ -565,6 +570,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GoogleAdsFailure Clone() {
       return new GoogleAdsFailure(this);
     }
@@ -578,6 +584,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The list of errors that occurred.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Errors.GoogleAdsError> Errors {
       get { return errors_; }
     }
@@ -589,6 +596,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The unique id of the request that is used for debugging purposes.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RequestId {
       get { return requestId_; }
       set {
@@ -597,11 +605,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GoogleAdsFailure);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GoogleAdsFailure other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -615,6 +625,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= errors_.GetHashCode();
@@ -626,11 +637,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -648,6 +661,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       errors_.WriteTo(ref output, _repeated_errors_codec);
       if (RequestId.Length != 0) {
@@ -661,6 +675,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += errors_.CalculateSize(_repeated_errors_codec);
@@ -674,6 +689,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GoogleAdsFailure other) {
       if (other == null) {
         return;
@@ -686,6 +702,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -711,6 +728,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -744,19 +762,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<GoogleAdsError> _parser = new pb::MessageParser<GoogleAdsError>(() => new GoogleAdsError());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GoogleAdsError> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GoogleAdsError() {
       OnConstruction();
     }
@@ -764,6 +786,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GoogleAdsError(GoogleAdsError other) : this() {
       errorCode_ = other.errorCode_ != null ? other.errorCode_.Clone() : null;
       message_ = other.message_;
@@ -774,6 +797,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GoogleAdsError Clone() {
       return new GoogleAdsError(this);
     }
@@ -785,6 +809,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An enum value that indicates which error occurred.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ErrorCode ErrorCode {
       get { return errorCode_; }
       set {
@@ -799,6 +824,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// A human-readable description of the error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Message {
       get { return message_; }
       set {
@@ -813,6 +839,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The value that triggered the error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Common.Value Trigger {
       get { return trigger_; }
       set {
@@ -827,6 +854,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Describes the part of the request proto that caused the error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ErrorLocation Location {
       get { return location_; }
       set {
@@ -842,6 +870,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// error codes do not include details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ErrorDetails Details {
       get { return details_; }
       set {
@@ -850,11 +879,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GoogleAdsError);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GoogleAdsError other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -871,6 +902,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (errorCode_ != null) hash ^= ErrorCode.GetHashCode();
@@ -885,11 +917,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -922,6 +956,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (errorCode_ != null) {
         output.WriteRawTag(10);
@@ -950,6 +985,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (errorCode_ != null) {
@@ -974,6 +1010,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GoogleAdsError other) {
       if (other == null) {
         return;
@@ -1009,6 +1046,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1058,6 +1096,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1115,19 +1154,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<ErrorCode> _parser = new pb::MessageParser<ErrorCode>(() => new ErrorCode());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ErrorCode> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorCode() {
       OnConstruction();
     }
@@ -1135,6 +1178,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorCode(ErrorCode other) : this() {
       switch (other.ErrorCodeCase) {
         case ErrorCodeOneofCase.RequestError:
@@ -1500,6 +1544,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorCode Clone() {
       return new ErrorCode(this);
     }
@@ -1510,6 +1555,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error caused by the request
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.RequestErrorEnum.Types.RequestError RequestError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.RequestError ? (global::Google.Ads.GoogleAds.V7.Errors.RequestErrorEnum.Types.RequestError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.RequestErrorEnum.Types.RequestError.Unspecified; }
       set {
@@ -1524,6 +1570,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a Bidding Strategy mutate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.BiddingStrategyErrorEnum.Types.BiddingStrategyError BiddingStrategyError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.BiddingStrategyError ? (global::Google.Ads.GoogleAds.V7.Errors.BiddingStrategyErrorEnum.Types.BiddingStrategyError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.BiddingStrategyErrorEnum.Types.BiddingStrategyError.Unspecified; }
       set {
@@ -1538,6 +1585,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a URL field mutate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.UrlFieldErrorEnum.Types.UrlFieldError UrlFieldError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.UrlFieldError ? (global::Google.Ads.GoogleAds.V7.Errors.UrlFieldErrorEnum.Types.UrlFieldError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.UrlFieldErrorEnum.Types.UrlFieldError.Unspecified; }
       set {
@@ -1552,6 +1600,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a list operation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ListOperationErrorEnum.Types.ListOperationError ListOperationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ListOperationError ? (global::Google.Ads.GoogleAds.V7.Errors.ListOperationErrorEnum.Types.ListOperationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ListOperationErrorEnum.Types.ListOperationError.Unspecified; }
       set {
@@ -1566,6 +1615,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with an AWQL query
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.QueryErrorEnum.Types.QueryError QueryError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.QueryError ? (global::Google.Ads.GoogleAds.V7.Errors.QueryErrorEnum.Types.QueryError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.QueryErrorEnum.Types.QueryError.Unspecified; }
       set {
@@ -1580,6 +1630,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a mutate
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.MutateErrorEnum.Types.MutateError MutateError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.MutateError ? (global::Google.Ads.GoogleAds.V7.Errors.MutateErrorEnum.Types.MutateError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.MutateErrorEnum.Types.MutateError.Unspecified; }
       set {
@@ -1594,6 +1645,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a field mask
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FieldMaskErrorEnum.Types.FieldMaskError FieldMaskError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FieldMaskError ? (global::Google.Ads.GoogleAds.V7.Errors.FieldMaskErrorEnum.Types.FieldMaskError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FieldMaskErrorEnum.Types.FieldMaskError.Unspecified; }
       set {
@@ -1608,6 +1660,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error encountered when trying to authorize a user.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AuthorizationErrorEnum.Types.AuthorizationError AuthorizationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AuthorizationError ? (global::Google.Ads.GoogleAds.V7.Errors.AuthorizationErrorEnum.Types.AuthorizationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AuthorizationErrorEnum.Types.AuthorizationError.Unspecified; }
       set {
@@ -1622,6 +1675,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An unexpected server-side error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.InternalErrorEnum.Types.InternalError InternalError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.InternalError ? (global::Google.Ads.GoogleAds.V7.Errors.InternalErrorEnum.Types.InternalError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.InternalErrorEnum.Types.InternalError.Unspecified; }
       set {
@@ -1636,6 +1690,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with the amonut of quota remaining.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorEnum.Types.QuotaError QuotaError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.QuotaError ? (global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorEnum.Types.QuotaError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorEnum.Types.QuotaError.Unspecified; }
       set {
@@ -1650,6 +1705,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with an Ad Group Ad mutate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdErrorEnum.Types.AdError AdError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdError ? (global::Google.Ads.GoogleAds.V7.Errors.AdErrorEnum.Types.AdError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdErrorEnum.Types.AdError.Unspecified; }
       set {
@@ -1664,6 +1720,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with an Ad Group mutate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdGroupErrorEnum.Types.AdGroupError AdGroupError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdGroupError ? (global::Google.Ads.GoogleAds.V7.Errors.AdGroupErrorEnum.Types.AdGroupError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdGroupErrorEnum.Types.AdGroupError.Unspecified; }
       set {
@@ -1678,6 +1735,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a Campaign Budget mutate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignBudgetErrorEnum.Types.CampaignBudgetError CampaignBudgetError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignBudgetError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignBudgetErrorEnum.Types.CampaignBudgetError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignBudgetErrorEnum.Types.CampaignBudgetError.Unspecified; }
       set {
@@ -1692,6 +1750,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// An error with a Campaign mutate.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignErrorEnum.Types.CampaignError CampaignError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignErrorEnum.Types.CampaignError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignErrorEnum.Types.CampaignError.Unspecified; }
       set {
@@ -1706,6 +1765,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Indicates failure to properly authenticate user.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AuthenticationErrorEnum.Types.AuthenticationError AuthenticationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AuthenticationError ? (global::Google.Ads.GoogleAds.V7.Errors.AuthenticationErrorEnum.Types.AuthenticationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AuthenticationErrorEnum.Types.AuthenticationError.Unspecified; }
       set {
@@ -1720,6 +1780,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Indicates failure to properly authenticate user.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdGroupCriterionErrorEnum.Types.AdGroupCriterionError AdGroupCriterionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdGroupCriterionError ? (global::Google.Ads.GoogleAds.V7.Errors.AdGroupCriterionErrorEnum.Types.AdGroupCriterionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdGroupCriterionErrorEnum.Types.AdGroupCriterionError.Unspecified; }
       set {
@@ -1734,6 +1795,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the ad customizer error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdCustomizerErrorEnum.Types.AdCustomizerError AdCustomizerError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdCustomizerError ? (global::Google.Ads.GoogleAds.V7.Errors.AdCustomizerErrorEnum.Types.AdCustomizerError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdCustomizerErrorEnum.Types.AdCustomizerError.Unspecified; }
       set {
@@ -1748,6 +1810,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the ad group ad error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdGroupAdErrorEnum.Types.AdGroupAdError AdGroupAdError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdGroupAdError ? (global::Google.Ads.GoogleAds.V7.Errors.AdGroupAdErrorEnum.Types.AdGroupAdError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdGroupAdErrorEnum.Types.AdGroupAdError.Unspecified; }
       set {
@@ -1762,6 +1825,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the ad sharing error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdSharingErrorEnum.Types.AdSharingError AdSharingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdSharingError ? (global::Google.Ads.GoogleAds.V7.Errors.AdSharingErrorEnum.Types.AdSharingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdSharingErrorEnum.Types.AdSharingError.Unspecified; }
       set {
@@ -1776,6 +1840,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the adx error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdxErrorEnum.Types.AdxError AdxError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdxError ? (global::Google.Ads.GoogleAds.V7.Errors.AdxErrorEnum.Types.AdxError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdxErrorEnum.Types.AdxError.Unspecified; }
       set {
@@ -1790,6 +1855,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the asset error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AssetErrorEnum.Types.AssetError AssetError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AssetError ? (global::Google.Ads.GoogleAds.V7.Errors.AssetErrorEnum.Types.AssetError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AssetErrorEnum.Types.AssetError.Unspecified; }
       set {
@@ -1804,6 +1870,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the bidding errors
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.BiddingErrorEnum.Types.BiddingError BiddingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.BiddingError ? (global::Google.Ads.GoogleAds.V7.Errors.BiddingErrorEnum.Types.BiddingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.BiddingErrorEnum.Types.BiddingError.Unspecified; }
       set {
@@ -1818,6 +1885,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the campaign criterion error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignCriterionErrorEnum.Types.CampaignCriterionError CampaignCriterionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignCriterionError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignCriterionErrorEnum.Types.CampaignCriterionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignCriterionErrorEnum.Types.CampaignCriterionError.Unspecified; }
       set {
@@ -1832,6 +1900,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the collection size error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CollectionSizeErrorEnum.Types.CollectionSizeError CollectionSizeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CollectionSizeError ? (global::Google.Ads.GoogleAds.V7.Errors.CollectionSizeErrorEnum.Types.CollectionSizeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CollectionSizeErrorEnum.Types.CollectionSizeError.Unspecified; }
       set {
@@ -1846,6 +1915,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the country code error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CountryCodeErrorEnum.Types.CountryCodeError CountryCodeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CountryCodeError ? (global::Google.Ads.GoogleAds.V7.Errors.CountryCodeErrorEnum.Types.CountryCodeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CountryCodeErrorEnum.Types.CountryCodeError.Unspecified; }
       set {
@@ -1860,6 +1930,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the criterion error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CriterionErrorEnum.Types.CriterionError CriterionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CriterionError ? (global::Google.Ads.GoogleAds.V7.Errors.CriterionErrorEnum.Types.CriterionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CriterionErrorEnum.Types.CriterionError.Unspecified; }
       set {
@@ -1874,6 +1945,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the customer error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomerErrorEnum.Types.CustomerError CustomerError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomerError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomerErrorEnum.Types.CustomerError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomerErrorEnum.Types.CustomerError.Unspecified; }
       set {
@@ -1888,6 +1960,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the date error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.DateErrorEnum.Types.DateError DateError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.DateError ? (global::Google.Ads.GoogleAds.V7.Errors.DateErrorEnum.Types.DateError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.DateErrorEnum.Types.DateError.Unspecified; }
       set {
@@ -1902,6 +1975,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the date range error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.DateRangeErrorEnum.Types.DateRangeError DateRangeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.DateRangeError ? (global::Google.Ads.GoogleAds.V7.Errors.DateRangeErrorEnum.Types.DateRangeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.DateRangeErrorEnum.Types.DateRangeError.Unspecified; }
       set {
@@ -1916,6 +1990,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the distinct error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.DistinctErrorEnum.Types.DistinctError DistinctError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.DistinctError ? (global::Google.Ads.GoogleAds.V7.Errors.DistinctErrorEnum.Types.DistinctError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.DistinctErrorEnum.Types.DistinctError.Unspecified; }
       set {
@@ -1930,6 +2005,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed attribute reference error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedAttributeReferenceErrorEnum.Types.FeedAttributeReferenceError FeedAttributeReferenceError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedAttributeReferenceError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedAttributeReferenceErrorEnum.Types.FeedAttributeReferenceError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedAttributeReferenceErrorEnum.Types.FeedAttributeReferenceError.Unspecified; }
       set {
@@ -1944,6 +2020,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the function error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FunctionErrorEnum.Types.FunctionError FunctionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FunctionError ? (global::Google.Ads.GoogleAds.V7.Errors.FunctionErrorEnum.Types.FunctionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FunctionErrorEnum.Types.FunctionError.Unspecified; }
       set {
@@ -1958,6 +2035,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the function parsing error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FunctionParsingErrorEnum.Types.FunctionParsingError FunctionParsingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FunctionParsingError ? (global::Google.Ads.GoogleAds.V7.Errors.FunctionParsingErrorEnum.Types.FunctionParsingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FunctionParsingErrorEnum.Types.FunctionParsingError.Unspecified; }
       set {
@@ -1972,6 +2050,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the id error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.IdErrorEnum.Types.IdError IdError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.IdError ? (global::Google.Ads.GoogleAds.V7.Errors.IdErrorEnum.Types.IdError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.IdErrorEnum.Types.IdError.Unspecified; }
       set {
@@ -1986,6 +2065,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the image error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ImageErrorEnum.Types.ImageError ImageError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ImageError ? (global::Google.Ads.GoogleAds.V7.Errors.ImageErrorEnum.Types.ImageError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ImageErrorEnum.Types.ImageError.Unspecified; }
       set {
@@ -2000,6 +2080,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the language code error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.LanguageCodeErrorEnum.Types.LanguageCodeError LanguageCodeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.LanguageCodeError ? (global::Google.Ads.GoogleAds.V7.Errors.LanguageCodeErrorEnum.Types.LanguageCodeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.LanguageCodeErrorEnum.Types.LanguageCodeError.Unspecified; }
       set {
@@ -2014,6 +2095,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the media bundle error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.MediaBundleErrorEnum.Types.MediaBundleError MediaBundleError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.MediaBundleError ? (global::Google.Ads.GoogleAds.V7.Errors.MediaBundleErrorEnum.Types.MediaBundleError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.MediaBundleErrorEnum.Types.MediaBundleError.Unspecified; }
       set {
@@ -2028,6 +2110,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for media uploading errors.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.MediaUploadErrorEnum.Types.MediaUploadError MediaUploadError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.MediaUploadError ? (global::Google.Ads.GoogleAds.V7.Errors.MediaUploadErrorEnum.Types.MediaUploadError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.MediaUploadErrorEnum.Types.MediaUploadError.Unspecified; }
       set {
@@ -2042,6 +2125,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the media file error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.MediaFileErrorEnum.Types.MediaFileError MediaFileError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.MediaFileError ? (global::Google.Ads.GoogleAds.V7.Errors.MediaFileErrorEnum.Types.MediaFileError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.MediaFileErrorEnum.Types.MediaFileError.Unspecified; }
       set {
@@ -2056,6 +2140,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the multiplier error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.MultiplierErrorEnum.Types.MultiplierError MultiplierError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.MultiplierError ? (global::Google.Ads.GoogleAds.V7.Errors.MultiplierErrorEnum.Types.MultiplierError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.MultiplierErrorEnum.Types.MultiplierError.Unspecified; }
       set {
@@ -2070,6 +2155,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the new resource creation error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.NewResourceCreationErrorEnum.Types.NewResourceCreationError NewResourceCreationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.NewResourceCreationError ? (global::Google.Ads.GoogleAds.V7.Errors.NewResourceCreationErrorEnum.Types.NewResourceCreationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.NewResourceCreationErrorEnum.Types.NewResourceCreationError.Unspecified; }
       set {
@@ -2084,6 +2170,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the not empty error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.NotEmptyErrorEnum.Types.NotEmptyError NotEmptyError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.NotEmptyError ? (global::Google.Ads.GoogleAds.V7.Errors.NotEmptyErrorEnum.Types.NotEmptyError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.NotEmptyErrorEnum.Types.NotEmptyError.Unspecified; }
       set {
@@ -2098,6 +2185,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the null error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.NullErrorEnum.Types.NullError NullError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.NullError ? (global::Google.Ads.GoogleAds.V7.Errors.NullErrorEnum.Types.NullError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.NullErrorEnum.Types.NullError.Unspecified; }
       set {
@@ -2112,6 +2200,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the operator error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.OperatorErrorEnum.Types.OperatorError OperatorError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.OperatorError ? (global::Google.Ads.GoogleAds.V7.Errors.OperatorErrorEnum.Types.OperatorError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.OperatorErrorEnum.Types.OperatorError.Unspecified; }
       set {
@@ -2126,6 +2215,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the range error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.RangeErrorEnum.Types.RangeError RangeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.RangeError ? (global::Google.Ads.GoogleAds.V7.Errors.RangeErrorEnum.Types.RangeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.RangeErrorEnum.Types.RangeError.Unspecified; }
       set {
@@ -2140,6 +2230,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for error in applying a recommendation
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.RecommendationErrorEnum.Types.RecommendationError RecommendationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.RecommendationError ? (global::Google.Ads.GoogleAds.V7.Errors.RecommendationErrorEnum.Types.RecommendationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.RecommendationErrorEnum.Types.RecommendationError.Unspecified; }
       set {
@@ -2154,6 +2245,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the region code error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.RegionCodeErrorEnum.Types.RegionCodeError RegionCodeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.RegionCodeError ? (global::Google.Ads.GoogleAds.V7.Errors.RegionCodeErrorEnum.Types.RegionCodeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.RegionCodeErrorEnum.Types.RegionCodeError.Unspecified; }
       set {
@@ -2168,6 +2260,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the setting error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.SettingErrorEnum.Types.SettingError SettingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.SettingError ? (global::Google.Ads.GoogleAds.V7.Errors.SettingErrorEnum.Types.SettingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.SettingErrorEnum.Types.SettingError.Unspecified; }
       set {
@@ -2182,6 +2275,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the string format error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.StringFormatErrorEnum.Types.StringFormatError StringFormatError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.StringFormatError ? (global::Google.Ads.GoogleAds.V7.Errors.StringFormatErrorEnum.Types.StringFormatError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.StringFormatErrorEnum.Types.StringFormatError.Unspecified; }
       set {
@@ -2196,6 +2290,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the string length error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.StringLengthErrorEnum.Types.StringLengthError StringLengthError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.StringLengthError ? (global::Google.Ads.GoogleAds.V7.Errors.StringLengthErrorEnum.Types.StringLengthError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.StringLengthErrorEnum.Types.StringLengthError.Unspecified; }
       set {
@@ -2210,6 +2305,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the operation access denied error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.OperationAccessDeniedErrorEnum.Types.OperationAccessDeniedError OperationAccessDeniedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.OperationAccessDeniedError ? (global::Google.Ads.GoogleAds.V7.Errors.OperationAccessDeniedErrorEnum.Types.OperationAccessDeniedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.OperationAccessDeniedErrorEnum.Types.OperationAccessDeniedError.Unspecified; }
       set {
@@ -2224,6 +2320,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the resource access denied error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ResourceAccessDeniedErrorEnum.Types.ResourceAccessDeniedError ResourceAccessDeniedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ResourceAccessDeniedError ? (global::Google.Ads.GoogleAds.V7.Errors.ResourceAccessDeniedErrorEnum.Types.ResourceAccessDeniedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ResourceAccessDeniedErrorEnum.Types.ResourceAccessDeniedError.Unspecified; }
       set {
@@ -2238,6 +2335,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the resource count limit exceeded error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ResourceCountLimitExceededErrorEnum.Types.ResourceCountLimitExceededError ResourceCountLimitExceededError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ResourceCountLimitExceededError ? (global::Google.Ads.GoogleAds.V7.Errors.ResourceCountLimitExceededErrorEnum.Types.ResourceCountLimitExceededError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ResourceCountLimitExceededErrorEnum.Types.ResourceCountLimitExceededError.Unspecified; }
       set {
@@ -2252,6 +2350,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for YouTube video registration errors.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.YoutubeVideoRegistrationErrorEnum.Types.YoutubeVideoRegistrationError YoutubeVideoRegistrationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.YoutubeVideoRegistrationError ? (global::Google.Ads.GoogleAds.V7.Errors.YoutubeVideoRegistrationErrorEnum.Types.YoutubeVideoRegistrationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.YoutubeVideoRegistrationErrorEnum.Types.YoutubeVideoRegistrationError.Unspecified; }
       set {
@@ -2266,6 +2365,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the ad group bid modifier error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdGroupBidModifierErrorEnum.Types.AdGroupBidModifierError AdGroupBidModifierError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdGroupBidModifierError ? (global::Google.Ads.GoogleAds.V7.Errors.AdGroupBidModifierErrorEnum.Types.AdGroupBidModifierError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdGroupBidModifierErrorEnum.Types.AdGroupBidModifierError.Unspecified; }
       set {
@@ -2280,6 +2380,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the context error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ContextErrorEnum.Types.ContextError ContextError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ContextError ? (global::Google.Ads.GoogleAds.V7.Errors.ContextErrorEnum.Types.ContextError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ContextErrorEnum.Types.ContextError.Unspecified; }
       set {
@@ -2294,6 +2395,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the field error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FieldErrorEnum.Types.FieldError FieldError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FieldError ? (global::Google.Ads.GoogleAds.V7.Errors.FieldErrorEnum.Types.FieldError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FieldErrorEnum.Types.FieldError.Unspecified; }
       set {
@@ -2308,6 +2410,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the shared set error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.SharedSetErrorEnum.Types.SharedSetError SharedSetError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.SharedSetError ? (global::Google.Ads.GoogleAds.V7.Errors.SharedSetErrorEnum.Types.SharedSetError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.SharedSetErrorEnum.Types.SharedSetError.Unspecified; }
       set {
@@ -2322,6 +2425,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the shared criterion error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.SharedCriterionErrorEnum.Types.SharedCriterionError SharedCriterionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.SharedCriterionError ? (global::Google.Ads.GoogleAds.V7.Errors.SharedCriterionErrorEnum.Types.SharedCriterionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.SharedCriterionErrorEnum.Types.SharedCriterionError.Unspecified; }
       set {
@@ -2336,6 +2440,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the campaign shared set error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignSharedSetErrorEnum.Types.CampaignSharedSetError CampaignSharedSetError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignSharedSetError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignSharedSetErrorEnum.Types.CampaignSharedSetError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignSharedSetErrorEnum.Types.CampaignSharedSetError.Unspecified; }
       set {
@@ -2350,6 +2455,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the conversion action error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ConversionActionErrorEnum.Types.ConversionActionError ConversionActionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ConversionActionError ? (global::Google.Ads.GoogleAds.V7.Errors.ConversionActionErrorEnum.Types.ConversionActionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ConversionActionErrorEnum.Types.ConversionActionError.Unspecified; }
       set {
@@ -2364,6 +2470,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the conversion adjustment upload error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ConversionAdjustmentUploadErrorEnum.Types.ConversionAdjustmentUploadError ConversionAdjustmentUploadError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ConversionAdjustmentUploadError ? (global::Google.Ads.GoogleAds.V7.Errors.ConversionAdjustmentUploadErrorEnum.Types.ConversionAdjustmentUploadError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ConversionAdjustmentUploadErrorEnum.Types.ConversionAdjustmentUploadError.Unspecified; }
       set {
@@ -2378,6 +2485,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the conversion custom variable error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ConversionCustomVariableErrorEnum.Types.ConversionCustomVariableError ConversionCustomVariableError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ConversionCustomVariableError ? (global::Google.Ads.GoogleAds.V7.Errors.ConversionCustomVariableErrorEnum.Types.ConversionCustomVariableError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ConversionCustomVariableErrorEnum.Types.ConversionCustomVariableError.Unspecified; }
       set {
@@ -2392,6 +2500,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the conversion upload error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ConversionUploadErrorEnum.Types.ConversionUploadError ConversionUploadError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ConversionUploadError ? (global::Google.Ads.GoogleAds.V7.Errors.ConversionUploadErrorEnum.Types.ConversionUploadError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ConversionUploadErrorEnum.Types.ConversionUploadError.Unspecified; }
       set {
@@ -2406,6 +2515,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the header error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.HeaderErrorEnum.Types.HeaderError HeaderError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.HeaderError ? (global::Google.Ads.GoogleAds.V7.Errors.HeaderErrorEnum.Types.HeaderError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.HeaderErrorEnum.Types.HeaderError.Unspecified; }
       set {
@@ -2420,6 +2530,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the database error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.DatabaseErrorEnum.Types.DatabaseError DatabaseError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.DatabaseError ? (global::Google.Ads.GoogleAds.V7.Errors.DatabaseErrorEnum.Types.DatabaseError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.DatabaseErrorEnum.Types.DatabaseError.Unspecified; }
       set {
@@ -2434,6 +2545,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the policy finding error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PolicyFindingErrorEnum.Types.PolicyFindingError PolicyFindingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.PolicyFindingError ? (global::Google.Ads.GoogleAds.V7.Errors.PolicyFindingErrorEnum.Types.PolicyFindingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.PolicyFindingErrorEnum.Types.PolicyFindingError.Unspecified; }
       set {
@@ -2448,6 +2560,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for enum error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.EnumErrorEnum.Types.EnumError EnumError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.EnumError ? (global::Google.Ads.GoogleAds.V7.Errors.EnumErrorEnum.Types.EnumError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.EnumErrorEnum.Types.EnumError.Unspecified; }
       set {
@@ -2462,6 +2575,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for keyword plan error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanErrorEnum.Types.KeywordPlanError KeywordPlanError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.KeywordPlanError ? (global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanErrorEnum.Types.KeywordPlanError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanErrorEnum.Types.KeywordPlanError.Unspecified; }
       set {
@@ -2476,6 +2590,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for keyword plan campaign error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanCampaignErrorEnum.Types.KeywordPlanCampaignError KeywordPlanCampaignError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.KeywordPlanCampaignError ? (global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanCampaignErrorEnum.Types.KeywordPlanCampaignError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanCampaignErrorEnum.Types.KeywordPlanCampaignError.Unspecified; }
       set {
@@ -2490,6 +2605,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for keyword plan campaign keyword error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanCampaignKeywordErrorEnum.Types.KeywordPlanCampaignKeywordError KeywordPlanCampaignKeywordError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.KeywordPlanCampaignKeywordError ? (global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanCampaignKeywordErrorEnum.Types.KeywordPlanCampaignKeywordError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanCampaignKeywordErrorEnum.Types.KeywordPlanCampaignKeywordError.Unspecified; }
       set {
@@ -2504,6 +2620,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for keyword plan ad group error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanAdGroupErrorEnum.Types.KeywordPlanAdGroupError KeywordPlanAdGroupError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.KeywordPlanAdGroupError ? (global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanAdGroupErrorEnum.Types.KeywordPlanAdGroupError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanAdGroupErrorEnum.Types.KeywordPlanAdGroupError.Unspecified; }
       set {
@@ -2518,6 +2635,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for keyword plan ad group keyword error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanAdGroupKeywordErrorEnum.Types.KeywordPlanAdGroupKeywordError KeywordPlanAdGroupKeywordError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.KeywordPlanAdGroupKeywordError ? (global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanAdGroupKeywordErrorEnum.Types.KeywordPlanAdGroupKeywordError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanAdGroupKeywordErrorEnum.Types.KeywordPlanAdGroupKeywordError.Unspecified; }
       set {
@@ -2532,6 +2650,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for keyword idea error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanIdeaErrorEnum.Types.KeywordPlanIdeaError KeywordPlanIdeaError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.KeywordPlanIdeaError ? (global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanIdeaErrorEnum.Types.KeywordPlanIdeaError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.KeywordPlanIdeaErrorEnum.Types.KeywordPlanIdeaError.Unspecified; }
       set {
@@ -2546,6 +2665,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for account budget proposal errors.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AccountBudgetProposalErrorEnum.Types.AccountBudgetProposalError AccountBudgetProposalError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AccountBudgetProposalError ? (global::Google.Ads.GoogleAds.V7.Errors.AccountBudgetProposalErrorEnum.Types.AccountBudgetProposalError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AccountBudgetProposalErrorEnum.Types.AccountBudgetProposalError.Unspecified; }
       set {
@@ -2560,6 +2680,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the user list error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.UserListErrorEnum.Types.UserListError UserListError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.UserListError ? (global::Google.Ads.GoogleAds.V7.Errors.UserListErrorEnum.Types.UserListError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.UserListErrorEnum.Types.UserListError.Unspecified; }
       set {
@@ -2574,6 +2695,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the change event error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ChangeEventErrorEnum.Types.ChangeEventError ChangeEventError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ChangeEventError ? (global::Google.Ads.GoogleAds.V7.Errors.ChangeEventErrorEnum.Types.ChangeEventError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ChangeEventErrorEnum.Types.ChangeEventError.Unspecified; }
       set {
@@ -2588,6 +2710,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the change status error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ChangeStatusErrorEnum.Types.ChangeStatusError ChangeStatusError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ChangeStatusError ? (global::Google.Ads.GoogleAds.V7.Errors.ChangeStatusErrorEnum.Types.ChangeStatusError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ChangeStatusErrorEnum.Types.ChangeStatusError.Unspecified; }
       set {
@@ -2602,6 +2725,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedErrorEnum.Types.FeedError FeedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedErrorEnum.Types.FeedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedErrorEnum.Types.FeedError.Unspecified; }
       set {
@@ -2616,6 +2740,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the geo target constant suggestion error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.GeoTargetConstantSuggestionErrorEnum.Types.GeoTargetConstantSuggestionError GeoTargetConstantSuggestionError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.GeoTargetConstantSuggestionError ? (global::Google.Ads.GoogleAds.V7.Errors.GeoTargetConstantSuggestionErrorEnum.Types.GeoTargetConstantSuggestionError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.GeoTargetConstantSuggestionErrorEnum.Types.GeoTargetConstantSuggestionError.Unspecified; }
       set {
@@ -2630,6 +2755,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the campaign draft error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignDraftErrorEnum.Types.CampaignDraftError CampaignDraftError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignDraftError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignDraftErrorEnum.Types.CampaignDraftError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignDraftErrorEnum.Types.CampaignDraftError.Unspecified; }
       set {
@@ -2644,6 +2770,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed item error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedItemErrorEnum.Types.FeedItemError FeedItemError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedItemError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedItemErrorEnum.Types.FeedItemError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedItemErrorEnum.Types.FeedItemError.Unspecified; }
       set {
@@ -2658,6 +2785,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reason for the label error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.LabelErrorEnum.Types.LabelError LabelError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.LabelError ? (global::Google.Ads.GoogleAds.V7.Errors.LabelErrorEnum.Types.LabelError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.LabelErrorEnum.Types.LabelError.Unspecified; }
       set {
@@ -2672,6 +2800,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the billing setup error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.BillingSetupErrorEnum.Types.BillingSetupError BillingSetupError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.BillingSetupError ? (global::Google.Ads.GoogleAds.V7.Errors.BillingSetupErrorEnum.Types.BillingSetupError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.BillingSetupErrorEnum.Types.BillingSetupError.Unspecified; }
       set {
@@ -2686,6 +2815,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the customer client link error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomerClientLinkErrorEnum.Types.CustomerClientLinkError CustomerClientLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomerClientLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomerClientLinkErrorEnum.Types.CustomerClientLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomerClientLinkErrorEnum.Types.CustomerClientLinkError.Unspecified; }
       set {
@@ -2700,6 +2830,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the customer manager link error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomerManagerLinkErrorEnum.Types.CustomerManagerLinkError CustomerManagerLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomerManagerLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomerManagerLinkErrorEnum.Types.CustomerManagerLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomerManagerLinkErrorEnum.Types.CustomerManagerLinkError.Unspecified; }
       set {
@@ -2714,6 +2845,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed mapping error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedMappingErrorEnum.Types.FeedMappingError FeedMappingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedMappingError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedMappingErrorEnum.Types.FeedMappingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedMappingErrorEnum.Types.FeedMappingError.Unspecified; }
       set {
@@ -2728,6 +2860,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the customer feed error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomerFeedErrorEnum.Types.CustomerFeedError CustomerFeedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomerFeedError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomerFeedErrorEnum.Types.CustomerFeedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomerFeedErrorEnum.Types.CustomerFeedError.Unspecified; }
       set {
@@ -2742,6 +2875,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the ad group feed error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdGroupFeedErrorEnum.Types.AdGroupFeedError AdGroupFeedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdGroupFeedError ? (global::Google.Ads.GoogleAds.V7.Errors.AdGroupFeedErrorEnum.Types.AdGroupFeedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdGroupFeedErrorEnum.Types.AdGroupFeedError.Unspecified; }
       set {
@@ -2756,6 +2890,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the campaign feed error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignFeedErrorEnum.Types.CampaignFeedError CampaignFeedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignFeedError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignFeedErrorEnum.Types.CampaignFeedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignFeedErrorEnum.Types.CampaignFeedError.Unspecified; }
       set {
@@ -2770,6 +2905,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the custom interest error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomInterestErrorEnum.Types.CustomInterestError CustomInterestError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomInterestError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomInterestErrorEnum.Types.CustomInterestError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomInterestErrorEnum.Types.CustomInterestError.Unspecified; }
       set {
@@ -2784,6 +2920,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the campaign experiment error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CampaignExperimentErrorEnum.Types.CampaignExperimentError CampaignExperimentError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CampaignExperimentError ? (global::Google.Ads.GoogleAds.V7.Errors.CampaignExperimentErrorEnum.Types.CampaignExperimentError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CampaignExperimentErrorEnum.Types.CampaignExperimentError.Unspecified; }
       set {
@@ -2798,6 +2935,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the extension feed item error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ExtensionFeedItemErrorEnum.Types.ExtensionFeedItemError ExtensionFeedItemError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ExtensionFeedItemError ? (global::Google.Ads.GoogleAds.V7.Errors.ExtensionFeedItemErrorEnum.Types.ExtensionFeedItemError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ExtensionFeedItemErrorEnum.Types.ExtensionFeedItemError.Unspecified; }
       set {
@@ -2812,6 +2950,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the ad parameter error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AdParameterErrorEnum.Types.AdParameterError AdParameterError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AdParameterError ? (global::Google.Ads.GoogleAds.V7.Errors.AdParameterErrorEnum.Types.AdParameterError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AdParameterErrorEnum.Types.AdParameterError.Unspecified; }
       set {
@@ -2826,6 +2965,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed item validation error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedItemValidationErrorEnum.Types.FeedItemValidationError FeedItemValidationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedItemValidationError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedItemValidationErrorEnum.Types.FeedItemValidationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedItemValidationErrorEnum.Types.FeedItemValidationError.Unspecified; }
       set {
@@ -2840,6 +2980,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the extension setting error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ExtensionSettingErrorEnum.Types.ExtensionSettingError ExtensionSettingError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ExtensionSettingError ? (global::Google.Ads.GoogleAds.V7.Errors.ExtensionSettingErrorEnum.Types.ExtensionSettingError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ExtensionSettingErrorEnum.Types.ExtensionSettingError.Unspecified; }
       set {
@@ -2854,6 +2995,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed item set error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedItemSetErrorEnum.Types.FeedItemSetError FeedItemSetError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedItemSetError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedItemSetErrorEnum.Types.FeedItemSetError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedItemSetErrorEnum.Types.FeedItemSetError.Unspecified; }
       set {
@@ -2868,6 +3010,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed item set link error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedItemSetLinkErrorEnum.Types.FeedItemSetLinkError FeedItemSetLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedItemSetLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedItemSetLinkErrorEnum.Types.FeedItemSetLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedItemSetLinkErrorEnum.Types.FeedItemSetLinkError.Unspecified; }
       set {
@@ -2882,6 +3025,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the feed item target error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.FeedItemTargetErrorEnum.Types.FeedItemTargetError FeedItemTargetError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.FeedItemTargetError ? (global::Google.Ads.GoogleAds.V7.Errors.FeedItemTargetErrorEnum.Types.FeedItemTargetError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.FeedItemTargetErrorEnum.Types.FeedItemTargetError.Unspecified; }
       set {
@@ -2896,6 +3040,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the policy violation error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PolicyViolationErrorEnum.Types.PolicyViolationError PolicyViolationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.PolicyViolationError ? (global::Google.Ads.GoogleAds.V7.Errors.PolicyViolationErrorEnum.Types.PolicyViolationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.PolicyViolationErrorEnum.Types.PolicyViolationError.Unspecified; }
       set {
@@ -2910,6 +3055,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the mutate job error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PartialFailureErrorEnum.Types.PartialFailureError PartialFailureError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.PartialFailureError ? (global::Google.Ads.GoogleAds.V7.Errors.PartialFailureErrorEnum.Types.PartialFailureError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.PartialFailureErrorEnum.Types.PartialFailureError.Unspecified; }
       set {
@@ -2924,6 +3070,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the policy validation parameter error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PolicyValidationParameterErrorEnum.Types.PolicyValidationParameterError PolicyValidationParameterError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.PolicyValidationParameterError ? (global::Google.Ads.GoogleAds.V7.Errors.PolicyValidationParameterErrorEnum.Types.PolicyValidationParameterError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.PolicyValidationParameterErrorEnum.Types.PolicyValidationParameterError.Unspecified; }
       set {
@@ -2938,6 +3085,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the size limit error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.SizeLimitErrorEnum.Types.SizeLimitError SizeLimitError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.SizeLimitError ? (global::Google.Ads.GoogleAds.V7.Errors.SizeLimitErrorEnum.Types.SizeLimitError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.SizeLimitErrorEnum.Types.SizeLimitError.Unspecified; }
       set {
@@ -2952,6 +3100,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the offline user data job error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.OfflineUserDataJobErrorEnum.Types.OfflineUserDataJobError OfflineUserDataJobError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.OfflineUserDataJobError ? (global::Google.Ads.GoogleAds.V7.Errors.OfflineUserDataJobErrorEnum.Types.OfflineUserDataJobError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.OfflineUserDataJobErrorEnum.Types.OfflineUserDataJobError.Unspecified; }
       set {
@@ -2966,6 +3115,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the not allowlisted error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.NotAllowlistedErrorEnum.Types.NotAllowlistedError NotAllowlistedError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.NotAllowlistedError ? (global::Google.Ads.GoogleAds.V7.Errors.NotAllowlistedErrorEnum.Types.NotAllowlistedError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.NotAllowlistedErrorEnum.Types.NotAllowlistedError.Unspecified; }
       set {
@@ -2980,6 +3130,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the manager link error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ManagerLinkErrorEnum.Types.ManagerLinkError ManagerLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ManagerLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.ManagerLinkErrorEnum.Types.ManagerLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ManagerLinkErrorEnum.Types.ManagerLinkError.Unspecified; }
       set {
@@ -2994,6 +3145,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the currency code error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CurrencyCodeErrorEnum.Types.CurrencyCodeError CurrencyCodeError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CurrencyCodeError ? (global::Google.Ads.GoogleAds.V7.Errors.CurrencyCodeErrorEnum.Types.CurrencyCodeError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CurrencyCodeErrorEnum.Types.CurrencyCodeError.Unspecified; }
       set {
@@ -3008,6 +3160,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the access invitation error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AccessInvitationErrorEnum.Types.AccessInvitationError AccessInvitationError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AccessInvitationError ? (global::Google.Ads.GoogleAds.V7.Errors.AccessInvitationErrorEnum.Types.AccessInvitationError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AccessInvitationErrorEnum.Types.AccessInvitationError.Unspecified; }
       set {
@@ -3022,6 +3175,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the reach plan error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ReachPlanErrorEnum.Types.ReachPlanError ReachPlanError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ReachPlanError ? (global::Google.Ads.GoogleAds.V7.Errors.ReachPlanErrorEnum.Types.ReachPlanError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ReachPlanErrorEnum.Types.ReachPlanError.Unspecified; }
       set {
@@ -3036,6 +3190,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the invoice error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.InvoiceErrorEnum.Types.InvoiceError InvoiceError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.InvoiceError ? (global::Google.Ads.GoogleAds.V7.Errors.InvoiceErrorEnum.Types.InvoiceError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.InvoiceErrorEnum.Types.InvoiceError.Unspecified; }
       set {
@@ -3050,6 +3205,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for errors in payments accounts service
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PaymentsAccountErrorEnum.Types.PaymentsAccountError PaymentsAccountError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.PaymentsAccountError ? (global::Google.Ads.GoogleAds.V7.Errors.PaymentsAccountErrorEnum.Types.PaymentsAccountError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.PaymentsAccountErrorEnum.Types.PaymentsAccountError.Unspecified; }
       set {
@@ -3064,6 +3220,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the time zone error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.TimeZoneErrorEnum.Types.TimeZoneError TimeZoneError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.TimeZoneError ? (global::Google.Ads.GoogleAds.V7.Errors.TimeZoneErrorEnum.Types.TimeZoneError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.TimeZoneErrorEnum.Types.TimeZoneError.Unspecified; }
       set {
@@ -3078,6 +3235,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the asset link error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AssetLinkErrorEnum.Types.AssetLinkError AssetLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AssetLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.AssetLinkErrorEnum.Types.AssetLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AssetLinkErrorEnum.Types.AssetLinkError.Unspecified; }
       set {
@@ -3092,6 +3250,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the user data error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.UserDataErrorEnum.Types.UserDataError UserDataError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.UserDataError ? (global::Google.Ads.GoogleAds.V7.Errors.UserDataErrorEnum.Types.UserDataError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.UserDataErrorEnum.Types.UserDataError.Unspecified; }
       set {
@@ -3106,6 +3265,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the batch job error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.BatchJobErrorEnum.Types.BatchJobError BatchJobError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.BatchJobError ? (global::Google.Ads.GoogleAds.V7.Errors.BatchJobErrorEnum.Types.BatchJobError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.BatchJobErrorEnum.Types.BatchJobError.Unspecified; }
       set {
@@ -3120,6 +3280,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the account link status change error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.AccountLinkErrorEnum.Types.AccountLinkError AccountLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.AccountLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.AccountLinkErrorEnum.Types.AccountLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.AccountLinkErrorEnum.Types.AccountLinkError.Unspecified; }
       set {
@@ -3134,6 +3295,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the third party app analytics link mutate error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ThirdPartyAppAnalyticsLinkErrorEnum.Types.ThirdPartyAppAnalyticsLinkError ThirdPartyAppAnalyticsLinkError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.ThirdPartyAppAnalyticsLinkError ? (global::Google.Ads.GoogleAds.V7.Errors.ThirdPartyAppAnalyticsLinkErrorEnum.Types.ThirdPartyAppAnalyticsLinkError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.ThirdPartyAppAnalyticsLinkErrorEnum.Types.ThirdPartyAppAnalyticsLinkError.Unspecified; }
       set {
@@ -3148,6 +3310,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the customer user access mutate error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomerUserAccessErrorEnum.Types.CustomerUserAccessError CustomerUserAccessError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomerUserAccessError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomerUserAccessErrorEnum.Types.CustomerUserAccessError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomerUserAccessErrorEnum.Types.CustomerUserAccessError.Unspecified; }
       set {
@@ -3162,6 +3325,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The reasons for the custom audience error
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.CustomAudienceErrorEnum.Types.CustomAudienceError CustomAudienceError {
       get { return errorCodeCase_ == ErrorCodeOneofCase.CustomAudienceError ? (global::Google.Ads.GoogleAds.V7.Errors.CustomAudienceErrorEnum.Types.CustomAudienceError) errorCode_ : global::Google.Ads.GoogleAds.V7.Errors.CustomAudienceErrorEnum.Types.CustomAudienceError.Unspecified; }
       set {
@@ -3296,22 +3460,26 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
     private ErrorCodeOneofCase errorCodeCase_ = ErrorCodeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorCodeOneofCase ErrorCodeCase {
       get { return errorCodeCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearErrorCode() {
       errorCodeCase_ = ErrorCodeOneofCase.None;
       errorCode_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ErrorCode);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ErrorCode other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3443,6 +3611,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (errorCodeCase_ == ErrorCodeOneofCase.RequestError) hash ^= RequestError.GetHashCode();
@@ -3572,11 +3741,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -4065,6 +4236,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (errorCodeCase_ == ErrorCodeOneofCase.RequestError) {
         output.WriteRawTag(8);
@@ -4549,6 +4721,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (errorCodeCase_ == ErrorCodeOneofCase.RequestError) {
@@ -4915,6 +5088,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ErrorCode other) {
       if (other == null) {
         return;
@@ -5283,6 +5457,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -5895,6 +6070,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6515,19 +6691,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<ErrorLocation> _parser = new pb::MessageParser<ErrorLocation>(() => new ErrorLocation());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ErrorLocation> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorLocation() {
       OnConstruction();
     }
@@ -6535,12 +6715,14 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorLocation(ErrorLocation other) : this() {
       fieldPathElements_ = other.fieldPathElements_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorLocation Clone() {
       return new ErrorLocation(this);
     }
@@ -6554,16 +6736,19 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// A field path that indicates which field was invalid in the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Errors.ErrorLocation.Types.FieldPathElement> FieldPathElements {
       get { return fieldPathElements_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ErrorLocation);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ErrorLocation other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6576,6 +6761,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= fieldPathElements_.GetHashCode();
@@ -6586,11 +6772,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -6604,6 +6792,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       fieldPathElements_.WriteTo(ref output, _repeated_fieldPathElements_codec);
       if (_unknownFields != null) {
@@ -6613,6 +6802,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += fieldPathElements_.CalculateSize(_repeated_fieldPathElements_codec);
@@ -6623,6 +6813,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ErrorLocation other) {
       if (other == null) {
         return;
@@ -6632,6 +6823,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -6653,6 +6845,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6672,6 +6865,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #region Nested types
     /// <summary>Container for nested types declared in the ErrorLocation message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// A part of a field path.
@@ -6685,19 +6879,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<FieldPathElement> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorLocation.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FieldPathElement() {
           OnConstruction();
         }
@@ -6705,6 +6903,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FieldPathElement(FieldPathElement other) : this() {
           _hasBits0 = other._hasBits0;
           fieldName_ = other.fieldName_;
@@ -6713,6 +6912,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public FieldPathElement Clone() {
           return new FieldPathElement(this);
         }
@@ -6724,6 +6924,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         /// The name of a field or a oneof
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string FieldName {
           get { return fieldName_; }
           set {
@@ -6738,6 +6939,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         /// If field_name is a repeated field, this is the element that failed
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Index {
           get { if ((_hasBits0 & 1) != 0) { return index_; } else { return 0; } }
           set {
@@ -6747,21 +6949,25 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         }
         /// <summary>Gets whether the "index" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool HasIndex {
           get { return (_hasBits0 & 1) != 0; }
         }
         /// <summary>Clears the value of the "index" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearIndex() {
           _hasBits0 &= ~1;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as FieldPathElement);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(FieldPathElement other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -6775,6 +6981,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (FieldName.Length != 0) hash ^= FieldName.GetHashCode();
@@ -6786,11 +6993,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -6811,6 +7020,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (FieldName.Length != 0) {
             output.WriteRawTag(10);
@@ -6827,6 +7037,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (FieldName.Length != 0) {
@@ -6842,6 +7053,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(FieldPathElement other) {
           if (other == null) {
             return;
@@ -6856,6 +7068,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6881,6 +7094,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -6919,19 +7133,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<ErrorDetails> _parser = new pb::MessageParser<ErrorDetails>(() => new ErrorDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ErrorDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorDetails() {
       OnConstruction();
     }
@@ -6939,6 +7157,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorDetails(ErrorDetails other) : this() {
       unpublishedErrorCode_ = other.unpublishedErrorCode_;
       policyViolationDetails_ = other.policyViolationDetails_ != null ? other.policyViolationDetails_.Clone() : null;
@@ -6949,6 +7168,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ErrorDetails Clone() {
       return new ErrorDetails(this);
     }
@@ -6961,6 +7181,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// when the error code is not published in the client specified version.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string UnpublishedErrorCode {
       get { return unpublishedErrorCode_; }
       set {
@@ -6975,6 +7196,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Describes an ad policy violation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PolicyViolationDetails PolicyViolationDetails {
       get { return policyViolationDetails_; }
       set {
@@ -6989,6 +7211,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Describes policy violation findings.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.PolicyFindingDetails PolicyFindingDetails {
       get { return policyFindingDetails_; }
       set {
@@ -7004,6 +7227,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// rate bucket name and the retry delay.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorDetails QuotaErrorDetails {
       get { return quotaErrorDetails_; }
       set {
@@ -7018,6 +7242,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Details for a resource count limit exceeded error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.ResourceCountDetails ResourceCountDetails {
       get { return resourceCountDetails_; }
       set {
@@ -7026,11 +7251,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ErrorDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ErrorDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7047,6 +7274,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (UnpublishedErrorCode.Length != 0) hash ^= UnpublishedErrorCode.GetHashCode();
@@ -7061,11 +7289,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7098,6 +7328,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (UnpublishedErrorCode.Length != 0) {
         output.WriteRawTag(10);
@@ -7126,6 +7357,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (UnpublishedErrorCode.Length != 0) {
@@ -7150,6 +7382,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ErrorDetails other) {
       if (other == null) {
         return;
@@ -7185,6 +7418,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7234,6 +7468,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7293,19 +7528,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<PolicyViolationDetails> _parser = new pb::MessageParser<PolicyViolationDetails>(() => new PolicyViolationDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PolicyViolationDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolicyViolationDetails() {
       OnConstruction();
     }
@@ -7313,6 +7552,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolicyViolationDetails(PolicyViolationDetails other) : this() {
       externalPolicyDescription_ = other.externalPolicyDescription_;
       key_ = other.key_ != null ? other.key_.Clone() : null;
@@ -7322,6 +7562,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolicyViolationDetails Clone() {
       return new PolicyViolationDetails(this);
     }
@@ -7333,6 +7574,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Human readable description of policy violation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ExternalPolicyDescription {
       get { return externalPolicyDescription_; }
       set {
@@ -7348,6 +7590,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// If policy is exemptible, this key may be used to request exemption.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Common.PolicyViolationKey Key {
       get { return key_; }
       set {
@@ -7362,6 +7605,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Human readable name of the policy.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ExternalPolicyName {
       get { return externalPolicyName_; }
       set {
@@ -7376,6 +7620,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Whether user can file an exemption request for this violation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool IsExemptible {
       get { return isExemptible_; }
       set {
@@ -7384,11 +7629,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as PolicyViolationDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(PolicyViolationDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7404,6 +7651,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ExternalPolicyDescription.Length != 0) hash ^= ExternalPolicyDescription.GetHashCode();
@@ -7417,11 +7665,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7450,6 +7700,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ExternalPolicyDescription.Length != 0) {
         output.WriteRawTag(18);
@@ -7474,6 +7725,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ExternalPolicyDescription.Length != 0) {
@@ -7495,6 +7747,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(PolicyViolationDetails other) {
       if (other == null) {
         return;
@@ -7518,6 +7771,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7554,6 +7808,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7600,19 +7855,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<PolicyFindingDetails> _parser = new pb::MessageParser<PolicyFindingDetails>(() => new PolicyFindingDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PolicyFindingDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolicyFindingDetails() {
       OnConstruction();
     }
@@ -7620,12 +7879,14 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolicyFindingDetails(PolicyFindingDetails other) : this() {
       policyTopicEntries_ = other.policyTopicEntries_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolicyFindingDetails Clone() {
       return new PolicyFindingDetails(this);
     }
@@ -7641,16 +7902,19 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// saved (among any other entries the resource may also have).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.PolicyTopicEntry> PolicyTopicEntries {
       get { return policyTopicEntries_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as PolicyFindingDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(PolicyFindingDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7663,6 +7927,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= policyTopicEntries_.GetHashCode();
@@ -7673,11 +7938,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7691,6 +7958,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       policyTopicEntries_.WriteTo(ref output, _repeated_policyTopicEntries_codec);
       if (_unknownFields != null) {
@@ -7700,6 +7968,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += policyTopicEntries_.CalculateSize(_repeated_policyTopicEntries_codec);
@@ -7710,6 +7979,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(PolicyFindingDetails other) {
       if (other == null) {
         return;
@@ -7719,6 +7989,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7740,6 +8011,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7769,19 +8041,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<QuotaErrorDetails> _parser = new pb::MessageParser<QuotaErrorDetails>(() => new QuotaErrorDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<QuotaErrorDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuotaErrorDetails() {
       OnConstruction();
     }
@@ -7789,6 +8065,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuotaErrorDetails(QuotaErrorDetails other) : this() {
       rateScope_ = other.rateScope_;
       rateName_ = other.rateName_;
@@ -7797,6 +8074,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuotaErrorDetails Clone() {
       return new QuotaErrorDetails(this);
     }
@@ -7808,6 +8086,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The rate scope of the quota limit.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorDetails.Types.QuotaRateScope RateScope {
       get { return rateScope_; }
       set {
@@ -7823,6 +8102,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Examples are "Get requests for standard access" or "Requests per account".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string RateName {
       get { return rateName_; }
       set {
@@ -7837,6 +8117,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// Backoff period that customers should wait before sending next request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration RetryDelay {
       get { return retryDelay_; }
       set {
@@ -7845,11 +8126,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as QuotaErrorDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(QuotaErrorDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7864,6 +8147,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (RateScope != global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorDetails.Types.QuotaRateScope.Unspecified) hash ^= RateScope.GetHashCode();
@@ -7876,11 +8160,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -7905,6 +8191,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (RateScope != global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorDetails.Types.QuotaRateScope.Unspecified) {
         output.WriteRawTag(8);
@@ -7925,6 +8212,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (RateScope != global::Google.Ads.GoogleAds.V7.Errors.QuotaErrorDetails.Types.QuotaRateScope.Unspecified) {
@@ -7943,6 +8231,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(QuotaErrorDetails other) {
       if (other == null) {
         return;
@@ -7963,6 +8252,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -7995,6 +8285,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8025,6 +8316,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #region Nested types
     /// <summary>Container for nested types declared in the QuotaErrorDetails message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Enum of possible scopes that quota buckets belong to.
@@ -8064,19 +8356,23 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     private static readonly pb::MessageParser<ResourceCountDetails> _parser = new pb::MessageParser<ResourceCountDetails>(() => new ResourceCountDetails());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ResourceCountDetails> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Ads.GoogleAds.V7.Errors.ErrorsReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResourceCountDetails() {
       OnConstruction();
     }
@@ -8084,6 +8380,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResourceCountDetails(ResourceCountDetails other) : this() {
       enclosingId_ = other.enclosingId_;
       enclosingResource_ = other.enclosingResource_;
@@ -8094,6 +8391,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResourceCountDetails Clone() {
       return new ResourceCountDetails(this);
     }
@@ -8106,6 +8404,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// External customer ID if the limit is for a customer.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnclosingId {
       get { return enclosingId_; }
       set {
@@ -8121,6 +8420,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// exceeded.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string EnclosingResource {
       get { return enclosingResource_; }
       set {
@@ -8135,6 +8435,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The limit which was exceeded.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Limit {
       get { return limit_; }
       set {
@@ -8149,6 +8450,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The resource limit type which was exceeded.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Ads.GoogleAds.V7.Enums.ResourceLimitTypeEnum.Types.ResourceLimitType LimitType {
       get { return limitType_; }
       set {
@@ -8163,6 +8465,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     /// The count of existing entities.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ExistingCount {
       get { return existingCount_; }
       set {
@@ -8171,11 +8474,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ResourceCountDetails);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ResourceCountDetails other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8192,6 +8497,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (EnclosingId.Length != 0) hash ^= EnclosingId.GetHashCode();
@@ -8206,11 +8512,13 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -8243,6 +8551,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EnclosingId.Length != 0) {
         output.WriteRawTag(10);
@@ -8271,6 +8580,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (EnclosingId.Length != 0) {
@@ -8295,6 +8605,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ResourceCountDetails other) {
       if (other == null) {
         return;
@@ -8318,6 +8629,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -8355,6 +8667,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

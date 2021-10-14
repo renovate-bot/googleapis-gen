@@ -54,7 +54,7 @@ class PublishBuildToolEventStreamResponse extends \Google\Protobuf\Internal\Mess
      */
     public function getStreamId()
     {
-        return isset($this->stream_id) ? $this->stream_id : null;
+        return $this->stream_id;
     }
 
     public function hasStreamId()

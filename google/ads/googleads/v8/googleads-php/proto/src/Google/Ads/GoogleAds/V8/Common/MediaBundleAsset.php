@@ -21,7 +21,7 @@ class MediaBundleAsset extends \Google\Protobuf\Internal\Message
      * format, see the documentation of the ad field where you plan on using the
      * MediaBundleAsset. This field is mutate only.
      *
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>optional bytes data = 2;</code>
      */
     protected $data = null;
 
@@ -49,7 +49,7 @@ class MediaBundleAsset extends \Google\Protobuf\Internal\Message
      * format, see the documentation of the ad field where you plan on using the
      * MediaBundleAsset. This field is mutate only.
      *
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>optional bytes data = 2;</code>
      * @return string
      */
     public function getData()
@@ -73,7 +73,7 @@ class MediaBundleAsset extends \Google\Protobuf\Internal\Message
      * format, see the documentation of the ad field where you plan on using the
      * MediaBundleAsset. This field is mutate only.
      *
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>optional bytes data = 2;</code>
      * @param string $var
      * @return $this
      */

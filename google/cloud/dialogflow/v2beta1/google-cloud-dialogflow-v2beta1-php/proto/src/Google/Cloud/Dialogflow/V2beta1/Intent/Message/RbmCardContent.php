@@ -132,7 +132,7 @@ class RbmCardContent extends \Google\Protobuf\Internal\Message
      */
     public function getMedia()
     {
-        return isset($this->media) ? $this->media : null;
+        return $this->media;
     }
 
     public function hasMedia()

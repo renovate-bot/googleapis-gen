@@ -83,7 +83,7 @@ class CreateIndexEndpointRequest extends \Google\Protobuf\Internal\Message
      */
     public function getIndexEndpoint()
     {
-        return isset($this->index_endpoint) ? $this->index_endpoint : null;
+        return $this->index_endpoint;
     }
 
     public function hasIndexEndpoint()

@@ -18,7 +18,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>optional string url = 3;</code>
      */
     protected $url = null;
     /**
@@ -48,7 +48,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>optional string url = 3;</code>
      * @return string
      */
     public function getUrl()
@@ -69,7 +69,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>optional string url = 3;</code>
      * @param string $var
      * @return $this
      */

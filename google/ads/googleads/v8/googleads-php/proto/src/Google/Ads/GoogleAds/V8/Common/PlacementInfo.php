@@ -20,7 +20,7 @@ class PlacementInfo extends \Google\Protobuf\Internal\Message
      * URL of the placement.
      * For example, "http://www.domain.com".
      *
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>optional string url = 2;</code>
      */
     protected $url = null;
 
@@ -44,7 +44,7 @@ class PlacementInfo extends \Google\Protobuf\Internal\Message
      * URL of the placement.
      * For example, "http://www.domain.com".
      *
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>optional string url = 2;</code>
      * @return string
      */
     public function getUrl()
@@ -66,7 +66,7 @@ class PlacementInfo extends \Google\Protobuf\Internal\Message
      * URL of the placement.
      * For example, "http://www.domain.com".
      *
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>optional string url = 2;</code>
      * @param string $var
      * @return $this
      */

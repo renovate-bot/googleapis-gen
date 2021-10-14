@@ -135,7 +135,7 @@ class CreateBucketRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBucket()
     {
-        return isset($this->bucket) ? $this->bucket : null;
+        return $this->bucket;
     }
 
     public function hasBucket()

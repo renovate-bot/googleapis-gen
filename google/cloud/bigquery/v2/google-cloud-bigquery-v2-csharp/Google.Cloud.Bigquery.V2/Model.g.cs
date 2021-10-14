@@ -388,19 +388,23 @@ namespace Google.Cloud.Bigquery.V2 {
     private static readonly pb::MessageParser<Model> _parser = new pb::MessageParser<Model>(() => new Model());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Model> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Bigquery.V2.ModelReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Model() {
       OnConstruction();
     }
@@ -408,6 +412,7 @@ namespace Google.Cloud.Bigquery.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Model(Model other) : this() {
       etag_ = other.etag_;
       modelReference_ = other.modelReference_ != null ? other.modelReference_.Clone() : null;
@@ -428,6 +433,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Model Clone() {
       return new Model(this);
     }
@@ -439,6 +445,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Output only. A hash of this resource.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Etag {
       get { return etag_; }
       set {
@@ -453,6 +460,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Unique identifier for this model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Bigquery.V2.ModelReference ModelReference {
       get { return modelReference_; }
       set {
@@ -467,6 +475,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Output only. The time when this model was created, in millisecs since the epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CreationTime {
       get { return creationTime_; }
       set {
@@ -481,6 +490,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Output only. The time when this model was last modified, in millisecs since the epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long LastModifiedTime {
       get { return lastModifiedTime_; }
       set {
@@ -495,6 +505,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Optional. A user-friendly description of this model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -509,6 +520,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Optional. A descriptive name for this model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FriendlyName {
       get { return friendlyName_; }
       set {
@@ -530,6 +542,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// label in the list must have a different key.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<string, string> Labels {
       get { return labels_; }
     }
@@ -545,6 +558,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// expirationTime on newly created models.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ExpirationTime {
       get { return expirationTime_; }
       set {
@@ -560,6 +574,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// is inherited from the dataset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Location {
       get { return location_; }
       set {
@@ -577,6 +592,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// for an already encrypted model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Bigquery.V2.EncryptionConfiguration EncryptionConfiguration {
       get { return encryptionConfiguration_; }
       set {
@@ -591,6 +607,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Output only. Type of the model resource.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Bigquery.V2.Model.Types.ModelType ModelType {
       get { return modelType_; }
       set {
@@ -607,6 +624,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Output only. Information for all training runs in increasing order of start_time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun> TrainingRuns {
       get { return trainingRuns_; }
     }
@@ -620,6 +638,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Output only. Input feature columns that were used to train this model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.StandardSqlField> FeatureColumns {
       get { return featureColumns_; }
     }
@@ -634,6 +653,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// The output of the model will have a "predicted_" prefix to these columns.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.StandardSqlField> LabelColumns {
       get { return labelColumns_; }
     }
@@ -646,6 +666,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long BestTrialId {
       get { return bestTrialId_; }
       set {
@@ -654,11 +675,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Model);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Model other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -685,6 +708,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (Etag.Length != 0) hash ^= Etag.GetHashCode();
@@ -709,11 +733,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -774,6 +800,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Etag.Length != 0) {
         output.WriteRawTag(10);
@@ -830,6 +857,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (Etag.Length != 0) {
@@ -876,6 +904,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Model other) {
       if (other == null) {
         return;
@@ -927,6 +956,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -1010,6 +1040,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1091,6 +1122,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #region Nested types
     /// <summary>Container for nested types declared in the Model message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Indicates the type of the Model.
@@ -1584,19 +1616,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<SeasonalPeriod> _parser = new pb::MessageParser<SeasonalPeriod>(() => new SeasonalPeriod());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<SeasonalPeriod> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SeasonalPeriod() {
           OnConstruction();
         }
@@ -1604,21 +1640,25 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SeasonalPeriod(SeasonalPeriod other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SeasonalPeriod Clone() {
           return new SeasonalPeriod(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as SeasonalPeriod);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(SeasonalPeriod other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1630,6 +1670,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -1639,11 +1680,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1656,6 +1699,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -1664,6 +1708,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -1673,6 +1718,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(SeasonalPeriod other) {
           if (other == null) {
             return;
@@ -1681,6 +1727,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1698,6 +1745,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1713,6 +1761,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the SeasonalPeriod message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           public enum SeasonalPeriodType {
             [pbr::OriginalName("SEASONAL_PERIOD_TYPE_UNSPECIFIED")] Unspecified = 0,
@@ -1755,19 +1804,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<KmeansEnums> _parser = new pb::MessageParser<KmeansEnums>(() => new KmeansEnums());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<KmeansEnums> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KmeansEnums() {
           OnConstruction();
         }
@@ -1775,21 +1828,25 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KmeansEnums(KmeansEnums other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public KmeansEnums Clone() {
           return new KmeansEnums(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as KmeansEnums);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(KmeansEnums other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1801,6 +1858,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (_unknownFields != null) {
@@ -1810,11 +1868,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -1827,6 +1887,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -1835,6 +1896,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (_unknownFields != null) {
@@ -1844,6 +1906,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(KmeansEnums other) {
           if (other == null) {
             return;
@@ -1852,6 +1915,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -1869,6 +1933,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1884,6 +1949,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the KmeansEnums message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Indicates the method used to initialize the centroids for KMeans
@@ -1926,19 +1992,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<RegressionMetrics> _parser = new pb::MessageParser<RegressionMetrics>(() => new RegressionMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<RegressionMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RegressionMetrics() {
           OnConstruction();
         }
@@ -1946,6 +2016,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RegressionMetrics(RegressionMetrics other) : this() {
           MeanAbsoluteError = other.MeanAbsoluteError;
           MeanSquaredError = other.MeanSquaredError;
@@ -1956,6 +2027,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RegressionMetrics Clone() {
           return new RegressionMetrics(this);
         }
@@ -1968,6 +2040,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Mean absolute error.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MeanAbsoluteError {
           get { return meanAbsoluteError_; }
           set {
@@ -1984,6 +2057,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Mean squared error.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MeanSquaredError {
           get { return meanSquaredError_; }
           set {
@@ -2000,6 +2074,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Mean squared log error.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MeanSquaredLogError {
           get { return meanSquaredLogError_; }
           set {
@@ -2016,6 +2091,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Median absolute error.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MedianAbsoluteError {
           get { return medianAbsoluteError_; }
           set {
@@ -2032,6 +2108,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// R^2 score. This corresponds to r2_score in ML.EVALUATE.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? RSquared {
           get { return rSquared_; }
           set {
@@ -2041,11 +2118,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as RegressionMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(RegressionMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2062,6 +2141,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (meanAbsoluteError_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(MeanAbsoluteError);
@@ -2076,11 +2156,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2108,6 +2190,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (meanAbsoluteError_ != null) {
             _single_meanAbsoluteError_codec.WriteTagAndValue(ref output, MeanAbsoluteError);
@@ -2131,6 +2214,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (meanAbsoluteError_ != null) {
@@ -2155,6 +2239,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(RegressionMetrics other) {
           if (other == null) {
             return;
@@ -2188,6 +2273,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2240,6 +2326,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2305,19 +2392,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<AggregateClassificationMetrics> _parser = new pb::MessageParser<AggregateClassificationMetrics>(() => new AggregateClassificationMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<AggregateClassificationMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public AggregateClassificationMetrics() {
           OnConstruction();
         }
@@ -2325,6 +2416,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public AggregateClassificationMetrics(AggregateClassificationMetrics other) : this() {
           Precision = other.Precision;
           Recall = other.Recall;
@@ -2337,6 +2429,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public AggregateClassificationMetrics Clone() {
           return new AggregateClassificationMetrics(this);
         }
@@ -2351,6 +2444,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// metric treating each class as a binary classifier.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? Precision {
           get { return precision_; }
           set {
@@ -2368,6 +2462,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// positive prediction. For multiclass this is a macro-averaged metric.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? Recall {
           get { return recall_; }
           set {
@@ -2385,6 +2480,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// multiclass this is a micro-averaged metric.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? Accuracy {
           get { return accuracy_; }
           set {
@@ -2404,6 +2500,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// threshold.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? Threshold {
           get { return threshold_; }
           set {
@@ -2421,6 +2518,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// this is a macro-averaged metric.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? F1Score {
           get { return f1Score_; }
           set {
@@ -2437,6 +2535,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Logarithmic Loss. For multiclass this is a macro-averaged metric.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? LogLoss {
           get { return logLoss_; }
           set {
@@ -2454,6 +2553,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// metric.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? RocAuc {
           get { return rocAuc_; }
           set {
@@ -2463,11 +2563,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as AggregateClassificationMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(AggregateClassificationMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2486,6 +2588,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (precision_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(Precision);
@@ -2502,11 +2605,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2540,6 +2645,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (precision_ != null) {
             _single_precision_codec.WriteTagAndValue(ref output, Precision);
@@ -2569,6 +2675,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (precision_ != null) {
@@ -2599,6 +2706,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(AggregateClassificationMetrics other) {
           if (other == null) {
             return;
@@ -2642,6 +2750,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -2708,6 +2817,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -2782,19 +2892,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<BinaryClassificationMetrics> _parser = new pb::MessageParser<BinaryClassificationMetrics>(() => new BinaryClassificationMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<BinaryClassificationMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BinaryClassificationMetrics() {
           OnConstruction();
         }
@@ -2802,6 +2916,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BinaryClassificationMetrics(BinaryClassificationMetrics other) : this() {
           aggregateClassificationMetrics_ = other.aggregateClassificationMetrics_ != null ? other.aggregateClassificationMetrics_.Clone() : null;
           binaryConfusionMatrixList_ = other.binaryConfusionMatrixList_.Clone();
@@ -2811,6 +2926,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BinaryClassificationMetrics Clone() {
           return new BinaryClassificationMetrics(this);
         }
@@ -2822,6 +2938,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Aggregate classification metrics.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.AggregateClassificationMetrics AggregateClassificationMetrics {
           get { return aggregateClassificationMetrics_; }
           set {
@@ -2838,6 +2955,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Binary confusion matrix at multiple thresholds.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.BinaryClassificationMetrics.Types.BinaryConfusionMatrix> BinaryConfusionMatrixList {
           get { return binaryConfusionMatrixList_; }
         }
@@ -2849,6 +2967,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Label representing the positive class.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string PositiveLabel {
           get { return positiveLabel_; }
           set {
@@ -2863,6 +2982,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Label representing the negative class.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string NegativeLabel {
           get { return negativeLabel_; }
           set {
@@ -2871,11 +2991,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as BinaryClassificationMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(BinaryClassificationMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2891,6 +3013,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (aggregateClassificationMetrics_ != null) hash ^= AggregateClassificationMetrics.GetHashCode();
@@ -2904,11 +3027,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -2934,6 +3059,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (aggregateClassificationMetrics_ != null) {
             output.WriteRawTag(10);
@@ -2955,6 +3081,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (aggregateClassificationMetrics_ != null) {
@@ -2974,6 +3101,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(BinaryClassificationMetrics other) {
           if (other == null) {
             return;
@@ -2995,6 +3123,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3031,6 +3160,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3065,6 +3195,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the BinaryClassificationMetrics message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Confusion matrix for binary classification models.
@@ -3077,19 +3208,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<BinaryConfusionMatrix> _parser = new pb::MessageParser<BinaryConfusionMatrix>(() => new BinaryConfusionMatrix());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<BinaryConfusionMatrix> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.BinaryClassificationMetrics.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public BinaryConfusionMatrix() {
               OnConstruction();
             }
@@ -3097,6 +3232,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public BinaryConfusionMatrix(BinaryConfusionMatrix other) : this() {
               PositiveClassThreshold = other.PositiveClassThreshold;
               TruePositives = other.TruePositives;
@@ -3111,6 +3247,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public BinaryConfusionMatrix Clone() {
               return new BinaryConfusionMatrix(this);
             }
@@ -3123,6 +3260,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Threshold value used when computing each of the following metric.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? PositiveClassThreshold {
               get { return positiveClassThreshold_; }
               set {
@@ -3139,6 +3277,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Number of true samples predicted as true.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long? TruePositives {
               get { return truePositives_; }
               set {
@@ -3155,6 +3294,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Number of false samples predicted as true.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long? FalsePositives {
               get { return falsePositives_; }
               set {
@@ -3171,6 +3311,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Number of true samples predicted as false.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long? TrueNegatives {
               get { return trueNegatives_; }
               set {
@@ -3187,6 +3328,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Number of false samples predicted as false.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long? FalseNegatives {
               get { return falseNegatives_; }
               set {
@@ -3204,6 +3346,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// labels.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? Precision {
               get { return precision_; }
               set {
@@ -3221,6 +3364,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// prediction.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? Recall {
               get { return recall_; }
               set {
@@ -3237,6 +3381,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The equally weighted average of recall and precision.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? F1Score {
               get { return f1Score_; }
               set {
@@ -3253,6 +3398,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The fraction of predictions given the correct label.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? Accuracy {
               get { return accuracy_; }
               set {
@@ -3262,11 +3408,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as BinaryConfusionMatrix);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(BinaryConfusionMatrix other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3287,6 +3435,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (positiveClassThreshold_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(PositiveClassThreshold);
@@ -3305,11 +3454,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -3349,6 +3500,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (positiveClassThreshold_ != null) {
                 _single_positiveClassThreshold_codec.WriteTagAndValue(ref output, PositiveClassThreshold);
@@ -3384,6 +3536,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (positiveClassThreshold_ != null) {
@@ -3420,6 +3573,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(BinaryConfusionMatrix other) {
               if (other == null) {
                 return;
@@ -3473,6 +3627,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -3553,6 +3708,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -3646,19 +3802,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<MultiClassClassificationMetrics> _parser = new pb::MessageParser<MultiClassClassificationMetrics>(() => new MultiClassClassificationMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MultiClassClassificationMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MultiClassClassificationMetrics() {
           OnConstruction();
         }
@@ -3666,6 +3826,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MultiClassClassificationMetrics(MultiClassClassificationMetrics other) : this() {
           aggregateClassificationMetrics_ = other.aggregateClassificationMetrics_ != null ? other.aggregateClassificationMetrics_.Clone() : null;
           confusionMatrixList_ = other.confusionMatrixList_.Clone();
@@ -3673,6 +3834,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MultiClassClassificationMetrics Clone() {
           return new MultiClassClassificationMetrics(this);
         }
@@ -3684,6 +3846,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Aggregate classification metrics.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.AggregateClassificationMetrics AggregateClassificationMetrics {
           get { return aggregateClassificationMetrics_; }
           set {
@@ -3700,16 +3863,19 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Confusion matrix at different thresholds.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix> ConfusionMatrixList {
           get { return confusionMatrixList_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as MultiClassClassificationMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(MultiClassClassificationMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3723,6 +3889,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (aggregateClassificationMetrics_ != null) hash ^= AggregateClassificationMetrics.GetHashCode();
@@ -3734,11 +3901,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -3756,6 +3925,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (aggregateClassificationMetrics_ != null) {
             output.WriteRawTag(10);
@@ -3769,6 +3939,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (aggregateClassificationMetrics_ != null) {
@@ -3782,6 +3953,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(MultiClassClassificationMetrics other) {
           if (other == null) {
             return;
@@ -3797,6 +3969,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -3825,6 +3998,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3851,6 +4025,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the MultiClassClassificationMetrics message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Confusion matrix for multi-class classification models.
@@ -3863,19 +4038,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<ConfusionMatrix> _parser = new pb::MessageParser<ConfusionMatrix>(() => new ConfusionMatrix());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<ConfusionMatrix> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ConfusionMatrix() {
               OnConstruction();
             }
@@ -3883,6 +4062,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ConfusionMatrix(ConfusionMatrix other) : this() {
               ConfidenceThreshold = other.ConfidenceThreshold;
               rows_ = other.rows_.Clone();
@@ -3890,6 +4070,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ConfusionMatrix Clone() {
               return new ConfusionMatrix(this);
             }
@@ -3903,6 +4084,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// confusion matrix.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? ConfidenceThreshold {
               get { return confidenceThreshold_; }
               set {
@@ -3920,16 +4102,19 @@ namespace Google.Cloud.Bigquery.V2 {
             /// One row per actual label.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix.Types.Row> Rows {
               get { return rows_; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as ConfusionMatrix);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(ConfusionMatrix other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -3943,6 +4128,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (confidenceThreshold_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(ConfidenceThreshold);
@@ -3954,11 +4140,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -3975,6 +4163,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (confidenceThreshold_ != null) {
                 _single_confidenceThreshold_codec.WriteTagAndValue(ref output, ConfidenceThreshold);
@@ -3987,6 +4176,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (confidenceThreshold_ != null) {
@@ -4000,6 +4190,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(ConfusionMatrix other) {
               if (other == null) {
                 return;
@@ -4014,6 +4205,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4042,6 +4234,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -4068,6 +4261,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #region Nested types
             /// <summary>Container for nested types declared in the ConfusionMatrix message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// A single entry in the confusion matrix.
@@ -4080,19 +4274,23 @@ namespace Google.Cloud.Bigquery.V2 {
                 private static readonly pb::MessageParser<Entry> _parser = new pb::MessageParser<Entry>(() => new Entry());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<Entry> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix.Descriptor.NestedTypes[0]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public Entry() {
                   OnConstruction();
                 }
@@ -4100,6 +4298,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public Entry(Entry other) : this() {
                   predictedLabel_ = other.predictedLabel_;
                   ItemCount = other.ItemCount;
@@ -4107,6 +4306,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public Entry Clone() {
                   return new Entry(this);
                 }
@@ -4120,6 +4320,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// confidence threshold.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public string PredictedLabel {
                   get { return predictedLabel_; }
                   set {
@@ -4135,6 +4336,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// Number of items being predicted as this label.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public long? ItemCount {
                   get { return itemCount_; }
                   set {
@@ -4144,11 +4346,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as Entry);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(Entry other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -4162,6 +4366,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   if (PredictedLabel.Length != 0) hash ^= PredictedLabel.GetHashCode();
@@ -4173,11 +4378,13 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -4197,6 +4404,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   if (PredictedLabel.Length != 0) {
                     output.WriteRawTag(10);
@@ -4212,6 +4420,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   if (PredictedLabel.Length != 0) {
@@ -4227,6 +4436,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(Entry other) {
                   if (other == null) {
                     return;
@@ -4243,6 +4453,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -4271,6 +4482,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -4307,19 +4519,23 @@ namespace Google.Cloud.Bigquery.V2 {
                 private static readonly pb::MessageParser<Row> _parser = new pb::MessageParser<Row>(() => new Row());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<Row> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix.Descriptor.NestedTypes[1]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public Row() {
                   OnConstruction();
                 }
@@ -4327,6 +4543,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public Row(Row other) : this() {
                   actualLabel_ = other.actualLabel_;
                   entries_ = other.entries_.Clone();
@@ -4334,6 +4551,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public Row Clone() {
                   return new Row(this);
                 }
@@ -4345,6 +4563,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// The original label of this row.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public string ActualLabel {
                   get { return actualLabel_; }
                   set {
@@ -4361,16 +4580,19 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// Info describing predicted label distribution.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix.Types.Entry> Entries {
                   get { return entries_; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as Row);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(Row other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -4384,6 +4606,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   if (ActualLabel.Length != 0) hash ^= ActualLabel.GetHashCode();
@@ -4395,11 +4618,13 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -4417,6 +4642,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   if (ActualLabel.Length != 0) {
                     output.WriteRawTag(10);
@@ -4430,6 +4656,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   if (ActualLabel.Length != 0) {
@@ -4443,6 +4670,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(Row other) {
                   if (other == null) {
                     return;
@@ -4455,6 +4683,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -4480,6 +4709,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -4523,19 +4753,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<ClusteringMetrics> _parser = new pb::MessageParser<ClusteringMetrics>(() => new ClusteringMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ClusteringMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ClusteringMetrics() {
           OnConstruction();
         }
@@ -4543,6 +4777,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ClusteringMetrics(ClusteringMetrics other) : this() {
           DaviesBouldinIndex = other.DaviesBouldinIndex;
           MeanSquaredDistance = other.MeanSquaredDistance;
@@ -4551,6 +4786,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ClusteringMetrics Clone() {
           return new ClusteringMetrics(this);
         }
@@ -4563,6 +4799,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Davies-Bouldin index.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? DaviesBouldinIndex {
           get { return daviesBouldinIndex_; }
           set {
@@ -4579,6 +4816,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Mean of squared distances between each sample to its cluster centroid.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MeanSquaredDistance {
           get { return meanSquaredDistance_; }
           set {
@@ -4596,16 +4834,19 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Information for all clusters.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster> Clusters {
           get { return clusters_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ClusteringMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ClusteringMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4620,6 +4861,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (daviesBouldinIndex_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(DaviesBouldinIndex);
@@ -4632,11 +4874,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -4656,6 +4900,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (daviesBouldinIndex_ != null) {
             _single_daviesBouldinIndex_codec.WriteTagAndValue(ref output, DaviesBouldinIndex);
@@ -4671,6 +4916,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (daviesBouldinIndex_ != null) {
@@ -4687,6 +4933,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ClusteringMetrics other) {
           if (other == null) {
             return;
@@ -4706,6 +4953,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -4741,6 +4989,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4774,6 +5023,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the ClusteringMetrics message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Message containing the information about one cluster.
@@ -4786,19 +5036,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<Cluster> _parser = new pb::MessageParser<Cluster>(() => new Cluster());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Cluster> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Cluster() {
               OnConstruction();
             }
@@ -4806,6 +5060,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Cluster(Cluster other) : this() {
               centroidId_ = other.centroidId_;
               featureValues_ = other.featureValues_.Clone();
@@ -4814,6 +5069,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Cluster Clone() {
               return new Cluster(this);
             }
@@ -4825,6 +5081,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Centroid id.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long CentroidId {
               get { return centroidId_; }
               set {
@@ -4841,6 +5098,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Values of highly variant features for this cluster.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue> FeatureValues {
               get { return featureValues_; }
             }
@@ -4853,6 +5111,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Count of training data rows that were assigned to this cluster.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long? Count {
               get { return count_; }
               set {
@@ -4862,11 +5121,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Cluster);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Cluster other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -4881,6 +5142,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (CentroidId != 0L) hash ^= CentroidId.GetHashCode();
@@ -4893,11 +5155,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -4918,6 +5182,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (CentroidId != 0L) {
                 output.WriteRawTag(8);
@@ -4934,6 +5199,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (CentroidId != 0L) {
@@ -4950,6 +5216,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Cluster other) {
               if (other == null) {
                 return;
@@ -4967,6 +5234,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -4999,6 +5267,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -5029,6 +5298,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #region Nested types
             /// <summary>Container for nested types declared in the Cluster message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// Representative value of a single feature within the cluster.
@@ -5041,19 +5311,23 @@ namespace Google.Cloud.Bigquery.V2 {
                 private static readonly pb::MessageParser<FeatureValue> _parser = new pb::MessageParser<FeatureValue>(() => new FeatureValue());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<FeatureValue> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Descriptor.NestedTypes[0]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public FeatureValue() {
                   OnConstruction();
                 }
@@ -5061,6 +5335,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public FeatureValue(FeatureValue other) : this() {
                   featureColumn_ = other.featureColumn_;
                   switch (other.ValueCase) {
@@ -5076,6 +5351,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public FeatureValue Clone() {
                   return new FeatureValue(this);
                 }
@@ -5087,6 +5363,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// The feature column name.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public string FeatureColumn {
                   get { return featureColumn_; }
                   set {
@@ -5102,6 +5379,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// feature.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public double? NumericalValue {
                   get { return valueCase_ == ValueOneofCase.NumericalValue ? (double?) value_ : (double?) null; }
                   set {
@@ -5116,6 +5394,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// The categorical feature value.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue CategoricalValue {
                   get { return valueCase_ == ValueOneofCase.CategoricalValue ? (global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue) value_ : null; }
                   set {
@@ -5133,22 +5412,26 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
                 private ValueOneofCase valueCase_ = ValueOneofCase.None;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ValueOneofCase ValueCase {
                   get { return valueCase_; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void ClearValue() {
                   valueCase_ = ValueOneofCase.None;
                   value_ = null;
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as FeatureValue);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(FeatureValue other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -5164,6 +5447,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   if (FeatureColumn.Length != 0) hash ^= FeatureColumn.GetHashCode();
@@ -5177,11 +5461,13 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -5205,6 +5491,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   if (FeatureColumn.Length != 0) {
                     output.WriteRawTag(10);
@@ -5224,6 +5511,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   if (FeatureColumn.Length != 0) {
@@ -5242,6 +5530,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(FeatureValue other) {
                   if (other == null) {
                     return;
@@ -5265,6 +5554,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -5299,6 +5589,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -5331,6 +5622,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #region Nested types
                 /// <summary>Container for nested types declared in the FeatureValue message type.</summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static partial class Types {
                   /// <summary>
                   /// Representative value of a categorical feature.
@@ -5343,19 +5635,23 @@ namespace Google.Cloud.Bigquery.V2 {
                     private static readonly pb::MessageParser<CategoricalValue> _parser = new pb::MessageParser<CategoricalValue>(() => new CategoricalValue());
                     private pb::UnknownFieldSet _unknownFields;
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static pb::MessageParser<CategoricalValue> Parser { get { return _parser; } }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static pbr::MessageDescriptor Descriptor {
                       get { return global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Descriptor.NestedTypes[0]; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     pbr::MessageDescriptor pb::IMessage.Descriptor {
                       get { return Descriptor; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public CategoricalValue() {
                       OnConstruction();
                     }
@@ -5363,12 +5659,14 @@ namespace Google.Cloud.Bigquery.V2 {
                     partial void OnConstruction();
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public CategoricalValue(CategoricalValue other) : this() {
                       categoryCounts_ = other.categoryCounts_.Clone();
                       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public CategoricalValue Clone() {
                       return new CategoricalValue(this);
                     }
@@ -5385,16 +5683,19 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// aggregate counts of remaining categories.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue.Types.CategoryCount> CategoryCounts {
                       get { return categoryCounts_; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override bool Equals(object other) {
                       return Equals(other as CategoricalValue);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool Equals(CategoricalValue other) {
                       if (ReferenceEquals(other, null)) {
                         return false;
@@ -5407,6 +5708,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override int GetHashCode() {
                       int hash = 1;
                       hash ^= categoryCounts_.GetHashCode();
@@ -5417,11 +5719,13 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override string ToString() {
                       return pb::JsonFormatter.ToDiagnosticString(this);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void WriteTo(pb::CodedOutputStream output) {
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                       output.WriteRawMessage(this);
@@ -5435,6 +5739,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                       categoryCounts_.WriteTo(ref output, _repeated_categoryCounts_codec);
                       if (_unknownFields != null) {
@@ -5444,6 +5749,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     #endif
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public int CalculateSize() {
                       int size = 0;
                       size += categoryCounts_.CalculateSize(_repeated_categoryCounts_codec);
@@ -5454,6 +5760,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void MergeFrom(CategoricalValue other) {
                       if (other == null) {
                         return;
@@ -5463,6 +5770,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void MergeFrom(pb::CodedInputStream input) {
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                       input.ReadRawMessage(this);
@@ -5484,6 +5792,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                       uint tag;
                       while ((tag = input.ReadTag()) != 0) {
@@ -5503,6 +5812,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     #region Nested types
                     /// <summary>Container for nested types declared in the CategoricalValue message type.</summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static partial class Types {
                       /// <summary>
                       /// Represents the count of a single category within the cluster.
@@ -5515,19 +5825,23 @@ namespace Google.Cloud.Bigquery.V2 {
                         private static readonly pb::MessageParser<CategoryCount> _parser = new pb::MessageParser<CategoryCount>(() => new CategoryCount());
                         private pb::UnknownFieldSet _unknownFields;
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public static pb::MessageParser<CategoryCount> Parser { get { return _parser; } }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public static pbr::MessageDescriptor Descriptor {
                           get { return global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue.Descriptor.NestedTypes[0]; }
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         pbr::MessageDescriptor pb::IMessage.Descriptor {
                           get { return Descriptor; }
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public CategoryCount() {
                           OnConstruction();
                         }
@@ -5535,6 +5849,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         partial void OnConstruction();
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public CategoryCount(CategoryCount other) : this() {
                           category_ = other.category_;
                           Count = other.Count;
@@ -5542,6 +5857,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public CategoryCount Clone() {
                           return new CategoryCount(this);
                         }
@@ -5553,6 +5869,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         /// The name of category.
                         /// </summary>
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public string Category {
                           get { return category_; }
                           set {
@@ -5569,6 +5886,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         /// cluster.
                         /// </summary>
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public long? Count {
                           get { return count_; }
                           set {
@@ -5578,11 +5896,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public override bool Equals(object other) {
                           return Equals(other as CategoryCount);
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public bool Equals(CategoryCount other) {
                           if (ReferenceEquals(other, null)) {
                             return false;
@@ -5596,6 +5916,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public override int GetHashCode() {
                           int hash = 1;
                           if (Category.Length != 0) hash ^= Category.GetHashCode();
@@ -5607,11 +5928,13 @@ namespace Google.Cloud.Bigquery.V2 {
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public override string ToString() {
                           return pb::JsonFormatter.ToDiagnosticString(this);
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public void WriteTo(pb::CodedOutputStream output) {
                         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                           output.WriteRawMessage(this);
@@ -5631,6 +5954,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                           if (Category.Length != 0) {
                             output.WriteRawTag(10);
@@ -5646,6 +5970,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         #endif
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public int CalculateSize() {
                           int size = 0;
                           if (Category.Length != 0) {
@@ -5661,6 +5986,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public void MergeFrom(CategoryCount other) {
                           if (other == null) {
                             return;
@@ -5677,6 +6003,7 @@ namespace Google.Cloud.Bigquery.V2 {
                         }
 
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         public void MergeFrom(pb::CodedInputStream input) {
                         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                           input.ReadRawMessage(this);
@@ -5705,6 +6032,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                           uint tag;
                           while ((tag = input.ReadTag()) != 0) {
@@ -5762,19 +6090,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<RankingMetrics> _parser = new pb::MessageParser<RankingMetrics>(() => new RankingMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<RankingMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RankingMetrics() {
           OnConstruction();
         }
@@ -5782,6 +6114,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RankingMetrics(RankingMetrics other) : this() {
           MeanAveragePrecision = other.MeanAveragePrecision;
           MeanSquaredError = other.MeanSquaredError;
@@ -5791,6 +6124,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public RankingMetrics Clone() {
           return new RankingMetrics(this);
         }
@@ -5804,6 +6138,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// then averages all the precisions across all the users.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MeanAveragePrecision {
           get { return meanAveragePrecision_; }
           set {
@@ -5823,6 +6158,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// depending on if the rating exists or not.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? MeanSquaredError {
           get { return meanSquaredError_; }
           set {
@@ -5841,6 +6177,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// original ratings.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? NormalizedDiscountedCumulativeGain {
           get { return normalizedDiscountedCumulativeGain_; }
           set {
@@ -5858,6 +6195,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// from the predicted confidence and dividing it by the original rank.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double? AverageRank {
           get { return averageRank_; }
           set {
@@ -5867,11 +6205,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as RankingMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(RankingMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5887,6 +6227,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (meanAveragePrecision_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(MeanAveragePrecision);
@@ -5900,11 +6241,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -5929,6 +6272,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (meanAveragePrecision_ != null) {
             _single_meanAveragePrecision_codec.WriteTagAndValue(ref output, MeanAveragePrecision);
@@ -5949,6 +6293,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (meanAveragePrecision_ != null) {
@@ -5970,6 +6315,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(RankingMetrics other) {
           if (other == null) {
             return;
@@ -5998,6 +6344,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6043,6 +6390,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -6096,19 +6444,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<ArimaForecastingMetrics> _parser = new pb::MessageParser<ArimaForecastingMetrics>(() => new ArimaForecastingMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ArimaForecastingMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaForecastingMetrics() {
           OnConstruction();
         }
@@ -6116,6 +6468,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaForecastingMetrics(ArimaForecastingMetrics other) : this() {
           nonSeasonalOrder_ = other.nonSeasonalOrder_.Clone();
           arimaFittingMetrics_ = other.arimaFittingMetrics_.Clone();
@@ -6127,6 +6480,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaForecastingMetrics Clone() {
           return new ArimaForecastingMetrics(this);
         }
@@ -6141,6 +6495,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder> NonSeasonalOrder {
           get { return nonSeasonalOrder_; }
         }
@@ -6155,6 +6510,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ArimaFittingMetrics> ArimaFittingMetrics {
           get { return arimaFittingMetrics_; }
         }
@@ -6170,6 +6526,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
           get { return seasonalPeriods_; }
         }
@@ -6185,6 +6542,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<bool> HasDrift {
           get { return hasDrift_; }
         }
@@ -6199,6 +6557,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> TimeSeriesId {
           get { return timeSeriesId_; }
         }
@@ -6213,16 +6572,19 @@ namespace Google.Cloud.Bigquery.V2 {
         /// auto-arima and the large-scale case.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Types.ArimaSingleModelForecastingMetrics> ArimaSingleModelForecastingMetrics {
           get { return arimaSingleModelForecastingMetrics_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ArimaForecastingMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ArimaForecastingMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -6240,6 +6602,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= nonSeasonalOrder_.GetHashCode();
@@ -6255,11 +6618,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -6278,6 +6643,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           nonSeasonalOrder_.WriteTo(ref output, _repeated_nonSeasonalOrder_codec);
           arimaFittingMetrics_.WriteTo(ref output, _repeated_arimaFittingMetrics_codec);
@@ -6292,6 +6658,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += nonSeasonalOrder_.CalculateSize(_repeated_nonSeasonalOrder_codec);
@@ -6307,6 +6674,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ArimaForecastingMetrics other) {
           if (other == null) {
             return;
@@ -6321,6 +6689,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -6364,6 +6733,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -6405,6 +6775,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the ArimaForecastingMetrics message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Model evaluation metrics for a single ARIMA forecasting model.
@@ -6417,19 +6788,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<ArimaSingleModelForecastingMetrics> _parser = new pb::MessageParser<ArimaSingleModelForecastingMetrics>(() => new ArimaSingleModelForecastingMetrics());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<ArimaSingleModelForecastingMetrics> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ArimaSingleModelForecastingMetrics() {
               OnConstruction();
             }
@@ -6437,6 +6812,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ArimaSingleModelForecastingMetrics(ArimaSingleModelForecastingMetrics other) : this() {
               nonSeasonalOrder_ = other.nonSeasonalOrder_ != null ? other.nonSeasonalOrder_.Clone() : null;
               arimaFittingMetrics_ = other.arimaFittingMetrics_ != null ? other.arimaFittingMetrics_.Clone() : null;
@@ -6451,6 +6827,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ArimaSingleModelForecastingMetrics Clone() {
               return new ArimaSingleModelForecastingMetrics(this);
             }
@@ -6462,6 +6839,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Non-seasonal order.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder NonSeasonalOrder {
               get { return nonSeasonalOrder_; }
               set {
@@ -6476,6 +6854,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Arima fitting metrics.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.ArimaFittingMetrics ArimaFittingMetrics {
               get { return arimaFittingMetrics_; }
               set {
@@ -6491,6 +6870,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// is not 1.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool HasDrift {
               get { return hasDrift_; }
               set {
@@ -6508,6 +6888,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// training option was used.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string TimeSeriesId {
               get { return timeSeriesId_; }
               set {
@@ -6529,6 +6910,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// time_series_id_columns.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<string> TimeSeriesIds {
               get { return timeSeriesIds_; }
             }
@@ -6543,6 +6925,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// for one time series.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
               get { return seasonalPeriods_; }
             }
@@ -6555,6 +6938,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// If true, holiday_effect is a part of time series decomposition result.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? HasHolidayEffect {
               get { return hasHolidayEffect_; }
               set {
@@ -6571,6 +6955,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// If true, spikes_and_dips is a part of time series decomposition result.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? HasSpikesAndDips {
               get { return hasSpikesAndDips_; }
               set {
@@ -6587,6 +6972,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// If true, step_changes is a part of time series decomposition result.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? HasStepChanges {
               get { return hasStepChanges_; }
               set {
@@ -6596,11 +6982,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as ArimaSingleModelForecastingMetrics);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(ArimaSingleModelForecastingMetrics other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -6621,6 +7009,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (nonSeasonalOrder_ != null) hash ^= NonSeasonalOrder.GetHashCode();
@@ -6639,11 +7028,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -6683,6 +7074,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (nonSeasonalOrder_ != null) {
                 output.WriteRawTag(10);
@@ -6718,6 +7110,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (nonSeasonalOrder_ != null) {
@@ -6750,6 +7143,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(ArimaSingleModelForecastingMetrics other) {
               if (other == null) {
                 return;
@@ -6793,6 +7187,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -6862,6 +7257,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -6946,19 +7342,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<EvaluationMetrics> _parser = new pb::MessageParser<EvaluationMetrics>(() => new EvaluationMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<EvaluationMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[9]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EvaluationMetrics() {
           OnConstruction();
         }
@@ -6966,6 +7366,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EvaluationMetrics(EvaluationMetrics other) : this() {
           switch (other.MetricsCase) {
             case MetricsOneofCase.RegressionMetrics:
@@ -6992,6 +7393,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public EvaluationMetrics Clone() {
           return new EvaluationMetrics(this);
         }
@@ -7003,6 +7405,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// factorization models.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.RegressionMetrics RegressionMetrics {
           get { return metricsCase_ == MetricsOneofCase.RegressionMetrics ? (global::Google.Cloud.Bigquery.V2.Model.Types.RegressionMetrics) metrics_ : null; }
           set {
@@ -7017,6 +7420,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Populated for binary classification/classifier models.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.BinaryClassificationMetrics BinaryClassificationMetrics {
           get { return metricsCase_ == MetricsOneofCase.BinaryClassificationMetrics ? (global::Google.Cloud.Bigquery.V2.Model.Types.BinaryClassificationMetrics) metrics_ : null; }
           set {
@@ -7031,6 +7435,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Populated for multi-class classification/classifier models.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics MultiClassClassificationMetrics {
           get { return metricsCase_ == MetricsOneofCase.MultiClassClassificationMetrics ? (global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics) metrics_ : null; }
           set {
@@ -7045,6 +7450,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Populated for clustering models.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics ClusteringMetrics {
           get { return metricsCase_ == MetricsOneofCase.ClusteringMetrics ? (global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics) metrics_ : null; }
           set {
@@ -7059,6 +7465,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Populated for implicit feedback type matrix factorization models.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.RankingMetrics RankingMetrics {
           get { return metricsCase_ == MetricsOneofCase.RankingMetrics ? (global::Google.Cloud.Bigquery.V2.Model.Types.RankingMetrics) metrics_ : null; }
           set {
@@ -7073,6 +7480,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Populated for ARIMA models.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics ArimaForecastingMetrics {
           get { return metricsCase_ == MetricsOneofCase.ArimaForecastingMetrics ? (global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics) metrics_ : null; }
           set {
@@ -7094,22 +7502,26 @@ namespace Google.Cloud.Bigquery.V2 {
         }
         private MetricsOneofCase metricsCase_ = MetricsOneofCase.None;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MetricsOneofCase MetricsCase {
           get { return metricsCase_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearMetrics() {
           metricsCase_ = MetricsOneofCase.None;
           metrics_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as EvaluationMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(EvaluationMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -7128,6 +7540,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (metricsCase_ == MetricsOneofCase.RegressionMetrics) hash ^= RegressionMetrics.GetHashCode();
@@ -7144,11 +7557,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -7185,6 +7600,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (metricsCase_ == MetricsOneofCase.RegressionMetrics) {
             output.WriteRawTag(10);
@@ -7217,6 +7633,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (metricsCase_ == MetricsOneofCase.RegressionMetrics) {
@@ -7244,6 +7661,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(EvaluationMetrics other) {
           if (other == null) {
             return;
@@ -7291,6 +7709,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -7362,6 +7781,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -7442,19 +7862,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<DataSplitResult> _parser = new pb::MessageParser<DataSplitResult>(() => new DataSplitResult());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<DataSplitResult> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[10]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataSplitResult() {
           OnConstruction();
         }
@@ -7462,6 +7886,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataSplitResult(DataSplitResult other) : this() {
           trainingTable_ = other.trainingTable_ != null ? other.trainingTable_.Clone() : null;
           evaluationTable_ = other.evaluationTable_ != null ? other.evaluationTable_.Clone() : null;
@@ -7469,6 +7894,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataSplitResult Clone() {
           return new DataSplitResult(this);
         }
@@ -7480,6 +7906,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Table reference of the training data after split.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.TableReference TrainingTable {
           get { return trainingTable_; }
           set {
@@ -7494,6 +7921,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Table reference of the evaluation data after split.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.TableReference EvaluationTable {
           get { return evaluationTable_; }
           set {
@@ -7502,11 +7930,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as DataSplitResult);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(DataSplitResult other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -7520,6 +7950,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (trainingTable_ != null) hash ^= TrainingTable.GetHashCode();
@@ -7531,11 +7962,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -7556,6 +7989,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (trainingTable_ != null) {
             output.WriteRawTag(10);
@@ -7572,6 +8006,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (trainingTable_ != null) {
@@ -7587,6 +8022,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(DataSplitResult other) {
           if (other == null) {
             return;
@@ -7607,6 +8043,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -7638,6 +8075,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -7677,19 +8115,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<ArimaOrder> _parser = new pb::MessageParser<ArimaOrder>(() => new ArimaOrder());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ArimaOrder> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[11]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaOrder() {
           OnConstruction();
         }
@@ -7697,6 +8139,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaOrder(ArimaOrder other) : this() {
           p_ = other.p_;
           d_ = other.d_;
@@ -7705,6 +8148,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaOrder Clone() {
           return new ArimaOrder(this);
         }
@@ -7716,6 +8160,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Order of the autoregressive part.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long P {
           get { return p_; }
           set {
@@ -7730,6 +8175,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Order of the differencing part.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long D {
           get { return d_; }
           set {
@@ -7744,6 +8190,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Order of the moving-average part.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long Q {
           get { return q_; }
           set {
@@ -7752,11 +8199,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ArimaOrder);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ArimaOrder other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -7771,6 +8220,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (P != 0L) hash ^= P.GetHashCode();
@@ -7783,11 +8233,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -7812,6 +8264,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (P != 0L) {
             output.WriteRawTag(8);
@@ -7832,6 +8285,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (P != 0L) {
@@ -7850,6 +8304,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ArimaOrder other) {
           if (other == null) {
             return;
@@ -7867,6 +8322,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -7896,6 +8352,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -7933,19 +8390,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<ArimaFittingMetrics> _parser = new pb::MessageParser<ArimaFittingMetrics>(() => new ArimaFittingMetrics());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ArimaFittingMetrics> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[12]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaFittingMetrics() {
           OnConstruction();
         }
@@ -7953,6 +8414,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaFittingMetrics(ArimaFittingMetrics other) : this() {
           logLikelihood_ = other.logLikelihood_;
           aic_ = other.aic_;
@@ -7961,6 +8423,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ArimaFittingMetrics Clone() {
           return new ArimaFittingMetrics(this);
         }
@@ -7972,6 +8435,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Log-likelihood.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double LogLikelihood {
           get { return logLikelihood_; }
           set {
@@ -7986,6 +8450,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// AIC.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Aic {
           get { return aic_; }
           set {
@@ -8000,6 +8465,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Variance.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public double Variance {
           get { return variance_; }
           set {
@@ -8008,11 +8474,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as ArimaFittingMetrics);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(ArimaFittingMetrics other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -8027,6 +8495,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (LogLikelihood != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(LogLikelihood);
@@ -8039,11 +8508,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -8068,6 +8539,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (LogLikelihood != 0D) {
             output.WriteRawTag(9);
@@ -8088,6 +8560,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (LogLikelihood != 0D) {
@@ -8106,6 +8579,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(ArimaFittingMetrics other) {
           if (other == null) {
             return;
@@ -8123,6 +8597,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -8152,6 +8627,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -8190,19 +8666,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<GlobalExplanation> _parser = new pb::MessageParser<GlobalExplanation>(() => new GlobalExplanation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<GlobalExplanation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[13]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GlobalExplanation() {
           OnConstruction();
         }
@@ -8210,6 +8690,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GlobalExplanation(GlobalExplanation other) : this() {
           explanations_ = other.explanations_.Clone();
           classLabel_ = other.classLabel_;
@@ -8217,6 +8698,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public GlobalExplanation Clone() {
           return new GlobalExplanation(this);
         }
@@ -8231,6 +8713,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// attribution in descending order.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation.Types.Explanation> Explanations {
           get { return explanations_; }
         }
@@ -8244,6 +8727,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// descending order.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ClassLabel {
           get { return classLabel_; }
           set {
@@ -8252,11 +8736,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as GlobalExplanation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(GlobalExplanation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -8270,6 +8756,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= explanations_.GetHashCode();
@@ -8281,11 +8768,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -8303,6 +8792,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           explanations_.WriteTo(ref output, _repeated_explanations_codec);
           if (ClassLabel.Length != 0) {
@@ -8316,6 +8806,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += explanations_.CalculateSize(_repeated_explanations_codec);
@@ -8329,6 +8820,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(GlobalExplanation other) {
           if (other == null) {
             return;
@@ -8341,6 +8833,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -8366,6 +8859,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -8389,6 +8883,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the GlobalExplanation message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Explanation for a single feature.
@@ -8401,19 +8896,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<Explanation> _parser = new pb::MessageParser<Explanation>(() => new Explanation());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<Explanation> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Explanation() {
               OnConstruction();
             }
@@ -8421,6 +8920,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Explanation(Explanation other) : this() {
               featureName_ = other.featureName_;
               Attribution = other.Attribution;
@@ -8428,6 +8928,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public Explanation Clone() {
               return new Explanation(this);
             }
@@ -8441,6 +8942,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// feature name will always be truncated to first 120 characters.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string FeatureName {
               get { return featureName_; }
               set {
@@ -8456,6 +8958,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Attribution of feature.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? Attribution {
               get { return attribution_; }
               set {
@@ -8465,11 +8968,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as Explanation);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(Explanation other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -8483,6 +8988,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (FeatureName.Length != 0) hash ^= FeatureName.GetHashCode();
@@ -8494,11 +9000,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -8518,6 +9026,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (FeatureName.Length != 0) {
                 output.WriteRawTag(10);
@@ -8533,6 +9042,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (FeatureName.Length != 0) {
@@ -8548,6 +9058,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(Explanation other) {
               if (other == null) {
                 return;
@@ -8564,6 +9075,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -8592,6 +9104,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -8633,19 +9146,23 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::MessageParser<TrainingRun> _parser = new pb::MessageParser<TrainingRun>(() => new TrainingRun());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<TrainingRun> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Cloud.Bigquery.V2.Model.Descriptor.NestedTypes[14]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TrainingRun() {
           OnConstruction();
         }
@@ -8653,6 +9170,7 @@ namespace Google.Cloud.Bigquery.V2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TrainingRun(TrainingRun other) : this() {
           trainingOptions_ = other.trainingOptions_ != null ? other.trainingOptions_.Clone() : null;
           startTime_ = other.startTime_ != null ? other.startTime_.Clone() : null;
@@ -8664,6 +9182,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TrainingRun Clone() {
           return new TrainingRun(this);
         }
@@ -8676,6 +9195,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// user specified and default options that were used.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.TrainingOptions TrainingOptions {
           get { return trainingOptions_; }
           set {
@@ -8690,6 +9210,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// The start time of this training run.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Protobuf.WellKnownTypes.Timestamp StartTime {
           get { return startTime_; }
           set {
@@ -8706,6 +9227,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Output of each iteration run, results.size() &lt;= max_iterations.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult> Results {
           get { return results_; }
         }
@@ -8718,6 +9240,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// end of training.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.EvaluationMetrics EvaluationMetrics {
           get { return evaluationMetrics_; }
           set {
@@ -8733,6 +9256,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// actually split.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Google.Cloud.Bigquery.V2.Model.Types.DataSplitResult DataSplitResult {
           get { return dataSplitResult_; }
           set {
@@ -8751,16 +9275,19 @@ namespace Google.Cloud.Bigquery.V2 {
         /// is only one entry in the list.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation> GlobalExplanations {
           get { return globalExplanations_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as TrainingRun);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(TrainingRun other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -8778,6 +9305,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (trainingOptions_ != null) hash ^= TrainingOptions.GetHashCode();
@@ -8793,11 +9321,13 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
@@ -8828,6 +9358,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (trainingOptions_ != null) {
             output.WriteRawTag(10);
@@ -8854,6 +9385,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (trainingOptions_ != null) {
@@ -8877,6 +9409,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(TrainingRun other) {
           if (other == null) {
             return;
@@ -8911,6 +9444,7 @@ namespace Google.Cloud.Bigquery.V2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           input.ReadRawMessage(this);
@@ -8964,6 +9498,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -9015,6 +9550,7 @@ namespace Google.Cloud.Bigquery.V2 {
         #region Nested types
         /// <summary>Container for nested types declared in the TrainingRun message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
           /// Options used in model training.
@@ -9027,19 +9563,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<TrainingOptions> _parser = new pb::MessageParser<TrainingOptions>(() => new TrainingOptions());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<TrainingOptions> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TrainingOptions() {
               OnConstruction();
             }
@@ -9047,6 +9587,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TrainingOptions(TrainingOptions other) : this() {
               maxIterations_ = other.maxIterations_;
               lossType_ = other.lossType_;
@@ -9099,6 +9640,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public TrainingOptions Clone() {
               return new TrainingOptions(this);
             }
@@ -9111,6 +9653,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// training algorithms.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long MaxIterations {
               get { return maxIterations_; }
               set {
@@ -9125,6 +9668,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Type of loss function used during training run.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.LossType LossType {
               get { return lossType_; }
               set {
@@ -9139,6 +9683,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Learning rate in training. Used only for iterative training algorithms.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double LearnRate {
               get { return learnRate_; }
               set {
@@ -9154,6 +9699,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// L1 regularization coefficient.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? L1Regularization {
               get { return l1Regularization_; }
               set {
@@ -9170,6 +9716,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// L2 regularization coefficient.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? L2Regularization {
               get { return l2Regularization_; }
               set {
@@ -9188,6 +9735,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// algorithms.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? MinRelativeProgress {
               get { return minRelativeProgress_; }
               set {
@@ -9204,6 +9752,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Whether to train a model from the last checkpoint.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? WarmStart {
               get { return warmStart_; }
               set {
@@ -9222,6 +9771,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// training algorithms.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? EarlyStop {
               get { return earlyStop_; }
               set {
@@ -9239,6 +9789,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Name of input label columns in training data.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<string> InputLabelColumns {
               get { return inputLabelColumns_; }
             }
@@ -9250,6 +9801,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The data split type for training and evaluation, e.g. RANDOM.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.DataSplitMethod DataSplitMethod {
               get { return dataSplitMethod_; }
               set {
@@ -9267,6 +9819,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Default value is 0.2.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double DataSplitEvalFraction {
               get { return dataSplitEvalFraction_; }
               set {
@@ -9290,6 +9843,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string DataSplitColumn {
               get { return dataSplitColumn_; }
               set {
@@ -9304,6 +9858,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The strategy to determine learn rate for the current iteration.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.LearnRateStrategy LearnRateStrategy {
               get { return learnRateStrategy_; }
               set {
@@ -9319,6 +9874,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// strategy.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double InitialLearnRate {
               get { return initialLearnRate_; }
               set {
@@ -9336,6 +9892,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// training data. Only applicable for classification models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::MapField<string, double> LabelClassWeights {
               get { return labelClassWeights_; }
             }
@@ -9347,6 +9904,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// User column specified for matrix factorization models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string UserColumn {
               get { return userColumn_; }
               set {
@@ -9361,6 +9919,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Item column specified for matrix factorization models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string ItemColumn {
               get { return itemColumn_; }
               set {
@@ -9375,6 +9934,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Distance type for clustering models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.DistanceType DistanceType {
               get { return distanceType_; }
               set {
@@ -9389,6 +9949,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Number of clusters for clustering models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long NumClusters {
               get { return numClusters_; }
               set {
@@ -9404,6 +9965,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// applicable for imported models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string ModelUri {
               get { return modelUri_; }
               set {
@@ -9418,6 +9980,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Optimization strategy for training linear regression models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.OptimizationStrategy OptimizationStrategy {
               get { return optimizationStrategy_; }
               set {
@@ -9434,6 +9997,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Hidden units for dnn models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<long> HiddenUnits {
               get { return hiddenUnits_; }
             }
@@ -9445,6 +10009,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Batch size for dnn models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long BatchSize {
               get { return batchSize_; }
               set {
@@ -9460,6 +10025,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Dropout probability for dnn models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? Dropout {
               get { return dropout_; }
               set {
@@ -9475,6 +10041,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Maximum depth of a tree for boosted tree models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long MaxTreeDepth {
               get { return maxTreeDepth_; }
               set {
@@ -9490,6 +10057,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// overfitting for boosted tree models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double Subsample {
               get { return subsample_; }
               set {
@@ -9505,6 +10073,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Minimum split loss for boosted tree models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? MinSplitLoss {
               get { return minSplitLoss_; }
               set {
@@ -9520,6 +10089,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Num factors specified for matrix factorization models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long NumFactors {
               get { return numFactors_; }
               set {
@@ -9535,6 +10105,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// factorization.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.FeedbackType FeedbackType {
               get { return feedbackType_; }
               set {
@@ -9551,6 +10122,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// specified.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? WalsAlpha {
               get { return walsAlpha_; }
               set {
@@ -9566,6 +10138,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The method used to initialize the centroids for kmeans algorithm.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.KmeansEnums.Types.KmeansInitializationMethod KmeansInitializationMethod {
               get { return kmeansInitializationMethod_; }
               set {
@@ -9581,6 +10154,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// when kmeans_initialization_method is CUSTOM.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string KmeansInitializationColumn {
               get { return kmeansInitializationColumn_; }
               set {
@@ -9595,6 +10169,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Column to be designated as time series timestamp for ARIMA model.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string TimeSeriesTimestampColumn {
               get { return timeSeriesTimestampColumn_; }
               set {
@@ -9609,6 +10184,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Column to be designated as time series data for ARIMA model.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string TimeSeriesDataColumn {
               get { return timeSeriesDataColumn_; }
               set {
@@ -9623,6 +10199,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Whether to enable auto ARIMA or not.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool AutoArima {
               get { return autoArima_; }
               set {
@@ -9639,6 +10216,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// the MA order.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder NonSeasonalOrder {
               get { return nonSeasonalOrder_; }
               set {
@@ -9653,6 +10231,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The data frequency of a time series.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.DataFrequency DataFrequency {
               get { return dataFrequency_; }
               set {
@@ -9667,6 +10246,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Include drift when fitting an ARIMA model.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool IncludeDrift {
               get { return includeDrift_; }
               set {
@@ -9683,6 +10263,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// effects modeling is enabled.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.HolidayRegion HolidayRegion {
               get { return holidayRegion_; }
               set {
@@ -9697,6 +10278,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The time series id column that was used during ARIMA model training.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string TimeSeriesIdColumn {
               get { return timeSeriesIdColumn_; }
               set {
@@ -9713,6 +10295,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The time series id columns that were used during ARIMA model training.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<string> TimeSeriesIdColumns {
               get { return timeSeriesIdColumns_; }
             }
@@ -9724,6 +10307,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The number of periods ahead that need to be forecasted.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long Horizon {
               get { return horizon_; }
               set {
@@ -9741,6 +10325,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// When true, the output feature name is A.b.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool PreserveInputStructs {
               get { return preserveInputStructs_; }
               set {
@@ -9755,6 +10340,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// The max value of non-seasonal p and q.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long AutoArimaMaxOrder {
               get { return autoArimaMaxOrder_; }
               set {
@@ -9770,6 +10356,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// If true, perform decompose time series and save the results.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? DecomposeTimeSeries {
               get { return decomposeTimeSeries_; }
               set {
@@ -9786,6 +10373,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// If true, clean spikes and dips in the input time series.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? CleanSpikesAndDips {
               get { return cleanSpikesAndDips_; }
               set {
@@ -9803,6 +10391,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// series.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool? AdjustStepChanges {
               get { return adjustStepChanges_; }
               set {
@@ -9812,11 +10401,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as TrainingOptions);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(TrainingOptions other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -9875,6 +10466,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (MaxIterations != 0L) hash ^= MaxIterations.GetHashCode();
@@ -9931,11 +10523,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -10113,6 +10707,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (MaxIterations != 0L) {
                 output.WriteRawTag(8);
@@ -10286,6 +10881,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (MaxIterations != 0L) {
@@ -10428,6 +11024,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(TrainingOptions other) {
               if (other == null) {
                 return;
@@ -10594,6 +11191,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -10836,6 +11434,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -11086,19 +11685,23 @@ namespace Google.Cloud.Bigquery.V2 {
             private static readonly pb::MessageParser<IterationResult> _parser = new pb::MessageParser<IterationResult>(() => new IterationResult());
             private pb::UnknownFieldSet _unknownFields;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<IterationResult> Parser { get { return _parser; } }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
               get { return global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Descriptor.NestedTypes[1]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             pbr::MessageDescriptor pb::IMessage.Descriptor {
               get { return Descriptor; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public IterationResult() {
               OnConstruction();
             }
@@ -11106,6 +11709,7 @@ namespace Google.Cloud.Bigquery.V2 {
             partial void OnConstruction();
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public IterationResult(IterationResult other) : this() {
               Index = other.Index;
               DurationMs = other.DurationMs;
@@ -11118,6 +11722,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public IterationResult Clone() {
               return new IterationResult(this);
             }
@@ -11130,6 +11735,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Index of the iteration, 0 based.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int? Index {
               get { return index_; }
               set {
@@ -11146,6 +11752,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Time taken to run the iteration in milliseconds.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public long? DurationMs {
               get { return durationMs_; }
               set {
@@ -11162,6 +11769,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Loss computed on the training data at the end of iteration.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? TrainingLoss {
               get { return trainingLoss_; }
               set {
@@ -11178,6 +11786,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Loss computed on the eval data at the end of iteration.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double? EvalLoss {
               get { return evalLoss_; }
               set {
@@ -11193,6 +11802,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Learn rate used for this iteration.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public double LearnRate {
               get { return learnRate_; }
               set {
@@ -11209,6 +11819,7 @@ namespace Google.Cloud.Bigquery.V2 {
             /// Information about top clusters for clustering models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ClusterInfo> ClusterInfos {
               get { return clusterInfos_; }
             }
@@ -11217,6 +11828,7 @@ namespace Google.Cloud.Bigquery.V2 {
             public const int ArimaResultFieldNumber = 9;
             private global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult arimaResult_;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult ArimaResult {
               get { return arimaResult_; }
               set {
@@ -11225,11 +11837,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override bool Equals(object other) {
               return Equals(other as IterationResult);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public bool Equals(IterationResult other) {
               if (ReferenceEquals(other, null)) {
                 return false;
@@ -11248,6 +11862,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
               if (index_ != null) hash ^= Index.GetHashCode();
@@ -11264,11 +11879,13 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override string ToString() {
               return pb::JsonFormatter.ToDiagnosticString(this);
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void WriteTo(pb::CodedOutputStream output) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
@@ -11302,6 +11919,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
               if (index_ != null) {
                 _single_index_codec.WriteTagAndValue(ref output, Index);
@@ -11331,6 +11949,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #endif
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
               if (index_ != null) {
@@ -11359,6 +11978,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(IterationResult other) {
               if (other == null) {
                 return;
@@ -11397,6 +12017,7 @@ namespace Google.Cloud.Bigquery.V2 {
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public void MergeFrom(pb::CodedInputStream input) {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               input.ReadRawMessage(this);
@@ -11457,6 +12078,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
               uint tag;
               while ((tag = input.ReadTag()) != 0) {
@@ -11515,6 +12137,7 @@ namespace Google.Cloud.Bigquery.V2 {
             #region Nested types
             /// <summary>Container for nested types declared in the IterationResult message type.</summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static partial class Types {
               /// <summary>
               /// Information about a single cluster for clustering model.
@@ -11527,19 +12150,23 @@ namespace Google.Cloud.Bigquery.V2 {
                 private static readonly pb::MessageParser<ClusterInfo> _parser = new pb::MessageParser<ClusterInfo>(() => new ClusterInfo());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<ClusterInfo> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Descriptor.NestedTypes[0]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ClusterInfo() {
                   OnConstruction();
                 }
@@ -11547,6 +12174,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ClusterInfo(ClusterInfo other) : this() {
                   centroidId_ = other.centroidId_;
                   ClusterRadius = other.ClusterRadius;
@@ -11555,6 +12183,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ClusterInfo Clone() {
                   return new ClusterInfo(this);
                 }
@@ -11566,6 +12195,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// Centroid id.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public long CentroidId {
                   get { return centroidId_; }
                   set {
@@ -11582,6 +12212,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// to each point assigned to the cluster.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public double? ClusterRadius {
                   get { return clusterRadius_; }
                   set {
@@ -11598,6 +12229,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// Cluster size, the total number of points assigned to the cluster.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public long? ClusterSize {
                   get { return clusterSize_; }
                   set {
@@ -11607,11 +12239,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as ClusterInfo);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(ClusterInfo other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -11626,6 +12260,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   if (CentroidId != 0L) hash ^= CentroidId.GetHashCode();
@@ -11638,11 +12273,13 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -11665,6 +12302,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   if (CentroidId != 0L) {
                     output.WriteRawTag(8);
@@ -11683,6 +12321,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   if (CentroidId != 0L) {
@@ -11701,6 +12340,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(ClusterInfo other) {
                   if (other == null) {
                     return;
@@ -11722,6 +12362,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -11757,6 +12398,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -11801,19 +12443,23 @@ namespace Google.Cloud.Bigquery.V2 {
                 private static readonly pb::MessageParser<ArimaResult> _parser = new pb::MessageParser<ArimaResult>(() => new ArimaResult());
                 private pb::UnknownFieldSet _unknownFields;
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pb::MessageParser<ArimaResult> Parser { get { return _parser; } }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static pbr::MessageDescriptor Descriptor {
                   get { return global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Descriptor.NestedTypes[1]; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 pbr::MessageDescriptor pb::IMessage.Descriptor {
                   get { return Descriptor; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ArimaResult() {
                   OnConstruction();
                 }
@@ -11821,6 +12467,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 partial void OnConstruction();
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ArimaResult(ArimaResult other) : this() {
                   arimaModelInfo_ = other.arimaModelInfo_.Clone();
                   seasonalPeriods_ = other.seasonalPeriods_.Clone();
@@ -11828,6 +12475,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public ArimaResult Clone() {
                   return new ArimaResult(this);
                 }
@@ -11842,6 +12490,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// fitted in auto-arima. For non-auto-arima model, its size is one.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaModelInfo> ArimaModelInfo {
                   get { return arimaModelInfo_; }
                 }
@@ -11856,16 +12505,19 @@ namespace Google.Cloud.Bigquery.V2 {
                 /// one time series.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
                   get { return seasonalPeriods_; }
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override bool Equals(object other) {
                   return Equals(other as ArimaResult);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public bool Equals(ArimaResult other) {
                   if (ReferenceEquals(other, null)) {
                     return false;
@@ -11879,6 +12531,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override int GetHashCode() {
                   int hash = 1;
                   hash ^= arimaModelInfo_.GetHashCode();
@@ -11890,11 +12543,13 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public override string ToString() {
                   return pb::JsonFormatter.ToDiagnosticString(this);
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void WriteTo(pb::CodedOutputStream output) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   output.WriteRawMessage(this);
@@ -11909,6 +12564,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                   arimaModelInfo_.WriteTo(ref output, _repeated_arimaModelInfo_codec);
                   seasonalPeriods_.WriteTo(ref output, _repeated_seasonalPeriods_codec);
@@ -11919,6 +12575,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #endif
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public int CalculateSize() {
                   int size = 0;
                   size += arimaModelInfo_.CalculateSize(_repeated_arimaModelInfo_codec);
@@ -11930,6 +12587,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(ArimaResult other) {
                   if (other == null) {
                     return;
@@ -11940,6 +12598,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 }
 
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public void MergeFrom(pb::CodedInputStream input) {
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                   input.ReadRawMessage(this);
@@ -11966,6 +12625,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                 #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                   uint tag;
                   while ((tag = input.ReadTag()) != 0) {
@@ -11990,6 +12650,7 @@ namespace Google.Cloud.Bigquery.V2 {
                 #region Nested types
                 /// <summary>Container for nested types declared in the ArimaResult message type.</summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                 public static partial class Types {
                   /// <summary>
                   /// Arima coefficients.
@@ -12002,19 +12663,23 @@ namespace Google.Cloud.Bigquery.V2 {
                     private static readonly pb::MessageParser<ArimaCoefficients> _parser = new pb::MessageParser<ArimaCoefficients>(() => new ArimaCoefficients());
                     private pb::UnknownFieldSet _unknownFields;
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static pb::MessageParser<ArimaCoefficients> Parser { get { return _parser; } }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static pbr::MessageDescriptor Descriptor {
                       get { return global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Descriptor.NestedTypes[0]; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     pbr::MessageDescriptor pb::IMessage.Descriptor {
                       get { return Descriptor; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public ArimaCoefficients() {
                       OnConstruction();
                     }
@@ -12022,6 +12687,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     partial void OnConstruction();
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public ArimaCoefficients(ArimaCoefficients other) : this() {
                       autoRegressiveCoefficients_ = other.autoRegressiveCoefficients_.Clone();
                       movingAverageCoefficients_ = other.movingAverageCoefficients_.Clone();
@@ -12030,6 +12696,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public ArimaCoefficients Clone() {
                       return new ArimaCoefficients(this);
                     }
@@ -12043,6 +12710,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// Auto-regressive coefficients, an array of double.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public pbc::RepeatedField<double> AutoRegressiveCoefficients {
                       get { return autoRegressiveCoefficients_; }
                     }
@@ -12056,6 +12724,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// Moving-average coefficients, an array of double.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public pbc::RepeatedField<double> MovingAverageCoefficients {
                       get { return movingAverageCoefficients_; }
                     }
@@ -12067,6 +12736,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// Intercept coefficient, just a double not an array.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public double InterceptCoefficient {
                       get { return interceptCoefficient_; }
                       set {
@@ -12075,11 +12745,13 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override bool Equals(object other) {
                       return Equals(other as ArimaCoefficients);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool Equals(ArimaCoefficients other) {
                       if (ReferenceEquals(other, null)) {
                         return false;
@@ -12094,6 +12766,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override int GetHashCode() {
                       int hash = 1;
                       hash ^= autoRegressiveCoefficients_.GetHashCode();
@@ -12106,11 +12779,13 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override string ToString() {
                       return pb::JsonFormatter.ToDiagnosticString(this);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void WriteTo(pb::CodedOutputStream output) {
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                       output.WriteRawMessage(this);
@@ -12129,6 +12804,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                       autoRegressiveCoefficients_.WriteTo(ref output, _repeated_autoRegressiveCoefficients_codec);
                       movingAverageCoefficients_.WriteTo(ref output, _repeated_movingAverageCoefficients_codec);
@@ -12143,6 +12819,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     #endif
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public int CalculateSize() {
                       int size = 0;
                       size += autoRegressiveCoefficients_.CalculateSize(_repeated_autoRegressiveCoefficients_codec);
@@ -12157,6 +12834,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void MergeFrom(ArimaCoefficients other) {
                       if (other == null) {
                         return;
@@ -12170,6 +12848,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void MergeFrom(pb::CodedInputStream input) {
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                       input.ReadRawMessage(this);
@@ -12201,6 +12880,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                       uint tag;
                       while ((tag = input.ReadTag()) != 0) {
@@ -12240,19 +12920,23 @@ namespace Google.Cloud.Bigquery.V2 {
                     private static readonly pb::MessageParser<ArimaModelInfo> _parser = new pb::MessageParser<ArimaModelInfo>(() => new ArimaModelInfo());
                     private pb::UnknownFieldSet _unknownFields;
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static pb::MessageParser<ArimaModelInfo> Parser { get { return _parser; } }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public static pbr::MessageDescriptor Descriptor {
                       get { return global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Descriptor.NestedTypes[1]; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     pbr::MessageDescriptor pb::IMessage.Descriptor {
                       get { return Descriptor; }
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public ArimaModelInfo() {
                       OnConstruction();
                     }
@@ -12260,6 +12944,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     partial void OnConstruction();
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public ArimaModelInfo(ArimaModelInfo other) : this() {
                       nonSeasonalOrder_ = other.nonSeasonalOrder_ != null ? other.nonSeasonalOrder_.Clone() : null;
                       arimaCoefficients_ = other.arimaCoefficients_ != null ? other.arimaCoefficients_.Clone() : null;
@@ -12275,6 +12960,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public ArimaModelInfo Clone() {
                       return new ArimaModelInfo(this);
                     }
@@ -12286,6 +12972,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// Non-seasonal order.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder NonSeasonalOrder {
                       get { return nonSeasonalOrder_; }
                       set {
@@ -12300,6 +12987,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// Arima coefficients.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaCoefficients ArimaCoefficients {
                       get { return arimaCoefficients_; }
                       set {
@@ -12314,6 +13002,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// Arima fitting metrics.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public global::Google.Cloud.Bigquery.V2.Model.Types.ArimaFittingMetrics ArimaFittingMetrics {
                       get { return arimaFittingMetrics_; }
                       set {
@@ -12329,6 +13018,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// when d is not 1.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool HasDrift {
                       get { return hasDrift_; }
                       set {
@@ -12346,6 +13036,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// training option was used.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public string TimeSeriesId {
                       get { return timeSeriesId_; }
                       set {
@@ -12367,6 +13058,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// time_series_id_columns.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public pbc::RepeatedField<string> TimeSeriesIds {
                       get { return timeSeriesIds_; }
                     }
@@ -12381,6 +13073,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// for one time series.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
                       get { return seasonalPeriods_; }
                     }
@@ -12394,6 +13087,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// result.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool? HasHolidayEffect {
                       get { return hasHolidayEffect_; }
                       set {
@@ -12411,6 +13105,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// result.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool? HasSpikesAndDips {
                       get { return hasSpikesAndDips_; }
                       set {
@@ -12428,6 +13123,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     /// result.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool? HasStepChanges {
                       get { return hasStepChanges_; }
                       set {
@@ -12437,11 +13133,13 @@ namespace Google.Cloud.Bigquery.V2 {
 
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override bool Equals(object other) {
                       return Equals(other as ArimaModelInfo);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public bool Equals(ArimaModelInfo other) {
                       if (ReferenceEquals(other, null)) {
                         return false;
@@ -12463,6 +13161,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override int GetHashCode() {
                       int hash = 1;
                       if (nonSeasonalOrder_ != null) hash ^= NonSeasonalOrder.GetHashCode();
@@ -12482,11 +13181,13 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public override string ToString() {
                       return pb::JsonFormatter.ToDiagnosticString(this);
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void WriteTo(pb::CodedOutputStream output) {
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                       output.WriteRawMessage(this);
@@ -12530,6 +13231,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
                       if (nonSeasonalOrder_ != null) {
                         output.WriteRawTag(10);
@@ -12569,6 +13271,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     #endif
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public int CalculateSize() {
                       int size = 0;
                       if (nonSeasonalOrder_ != null) {
@@ -12604,6 +13307,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void MergeFrom(ArimaModelInfo other) {
                       if (other == null) {
                         return;
@@ -12653,6 +13357,7 @@ namespace Google.Cloud.Bigquery.V2 {
                     }
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     public void MergeFrom(pb::CodedInputStream input) {
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                       input.ReadRawMessage(this);
@@ -12729,6 +13434,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
                     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
                     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
                       uint tag;
                       while ((tag = input.ReadTag()) != 0) {
@@ -12830,19 +13536,23 @@ namespace Google.Cloud.Bigquery.V2 {
     private static readonly pb::MessageParser<GetModelRequest> _parser = new pb::MessageParser<GetModelRequest>(() => new GetModelRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GetModelRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Bigquery.V2.ModelReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetModelRequest() {
       OnConstruction();
     }
@@ -12850,6 +13560,7 @@ namespace Google.Cloud.Bigquery.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetModelRequest(GetModelRequest other) : this() {
       projectId_ = other.projectId_;
       datasetId_ = other.datasetId_;
@@ -12858,6 +13569,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetModelRequest Clone() {
       return new GetModelRequest(this);
     }
@@ -12869,6 +13581,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Project ID of the requested model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProjectId {
       get { return projectId_; }
       set {
@@ -12883,6 +13596,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Dataset ID of the requested model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DatasetId {
       get { return datasetId_; }
       set {
@@ -12897,6 +13611,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Model ID of the requested model.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ModelId {
       get { return modelId_; }
       set {
@@ -12905,11 +13620,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as GetModelRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(GetModelRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -12924,6 +13641,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ProjectId.Length != 0) hash ^= ProjectId.GetHashCode();
@@ -12936,11 +13654,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -12965,6 +13685,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ProjectId.Length != 0) {
         output.WriteRawTag(10);
@@ -12985,6 +13706,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ProjectId.Length != 0) {
@@ -13003,6 +13725,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(GetModelRequest other) {
       if (other == null) {
         return;
@@ -13020,6 +13743,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -13049,6 +13773,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -13083,19 +13808,23 @@ namespace Google.Cloud.Bigquery.V2 {
     private static readonly pb::MessageParser<PatchModelRequest> _parser = new pb::MessageParser<PatchModelRequest>(() => new PatchModelRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<PatchModelRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Bigquery.V2.ModelReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PatchModelRequest() {
       OnConstruction();
     }
@@ -13103,6 +13832,7 @@ namespace Google.Cloud.Bigquery.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PatchModelRequest(PatchModelRequest other) : this() {
       projectId_ = other.projectId_;
       datasetId_ = other.datasetId_;
@@ -13112,6 +13842,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PatchModelRequest Clone() {
       return new PatchModelRequest(this);
     }
@@ -13123,6 +13854,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Project ID of the model to patch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProjectId {
       get { return projectId_; }
       set {
@@ -13137,6 +13869,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Dataset ID of the model to patch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DatasetId {
       get { return datasetId_; }
       set {
@@ -13151,6 +13884,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Model ID of the model to patch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ModelId {
       get { return modelId_; }
       set {
@@ -13167,6 +13901,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// To clear a field, explicitly set to default value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Cloud.Bigquery.V2.Model Model {
       get { return model_; }
       set {
@@ -13175,11 +13910,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as PatchModelRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(PatchModelRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -13195,6 +13932,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ProjectId.Length != 0) hash ^= ProjectId.GetHashCode();
@@ -13208,11 +13946,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -13241,6 +13981,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ProjectId.Length != 0) {
         output.WriteRawTag(10);
@@ -13265,6 +14006,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ProjectId.Length != 0) {
@@ -13286,6 +14028,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(PatchModelRequest other) {
       if (other == null) {
         return;
@@ -13309,6 +14052,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -13345,6 +14089,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -13386,19 +14131,23 @@ namespace Google.Cloud.Bigquery.V2 {
     private static readonly pb::MessageParser<DeleteModelRequest> _parser = new pb::MessageParser<DeleteModelRequest>(() => new DeleteModelRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeleteModelRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Bigquery.V2.ModelReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeleteModelRequest() {
       OnConstruction();
     }
@@ -13406,6 +14155,7 @@ namespace Google.Cloud.Bigquery.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeleteModelRequest(DeleteModelRequest other) : this() {
       projectId_ = other.projectId_;
       datasetId_ = other.datasetId_;
@@ -13414,6 +14164,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeleteModelRequest Clone() {
       return new DeleteModelRequest(this);
     }
@@ -13425,6 +14176,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Project ID of the model to delete.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProjectId {
       get { return projectId_; }
       set {
@@ -13439,6 +14191,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Dataset ID of the model to delete.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DatasetId {
       get { return datasetId_; }
       set {
@@ -13453,6 +14206,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Model ID of the model to delete.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ModelId {
       get { return modelId_; }
       set {
@@ -13461,11 +14215,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DeleteModelRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DeleteModelRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -13480,6 +14236,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ProjectId.Length != 0) hash ^= ProjectId.GetHashCode();
@@ -13492,11 +14249,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -13521,6 +14280,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ProjectId.Length != 0) {
         output.WriteRawTag(10);
@@ -13541,6 +14301,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ProjectId.Length != 0) {
@@ -13559,6 +14320,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DeleteModelRequest other) {
       if (other == null) {
         return;
@@ -13576,6 +14338,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -13605,6 +14368,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -13639,19 +14403,23 @@ namespace Google.Cloud.Bigquery.V2 {
     private static readonly pb::MessageParser<ListModelsRequest> _parser = new pb::MessageParser<ListModelsRequest>(() => new ListModelsRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListModelsRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Bigquery.V2.ModelReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListModelsRequest() {
       OnConstruction();
     }
@@ -13659,6 +14427,7 @@ namespace Google.Cloud.Bigquery.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListModelsRequest(ListModelsRequest other) : this() {
       projectId_ = other.projectId_;
       datasetId_ = other.datasetId_;
@@ -13668,6 +14437,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListModelsRequest Clone() {
       return new ListModelsRequest(this);
     }
@@ -13679,6 +14449,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Project ID of the models to list.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ProjectId {
       get { return projectId_; }
       set {
@@ -13693,6 +14464,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Required. Dataset ID of the models to list.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DatasetId {
       get { return datasetId_; }
       set {
@@ -13709,6 +14481,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// Leverage the page tokens to iterate through the entire collection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint? MaxResults {
       get { return maxResults_; }
       set {
@@ -13725,6 +14498,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// results
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PageToken {
       get { return pageToken_; }
       set {
@@ -13733,11 +14507,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListModelsRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListModelsRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -13753,6 +14529,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ProjectId.Length != 0) hash ^= ProjectId.GetHashCode();
@@ -13766,11 +14543,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -13798,6 +14577,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ProjectId.Length != 0) {
         output.WriteRawTag(10);
@@ -13821,6 +14601,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ProjectId.Length != 0) {
@@ -13842,6 +14623,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListModelsRequest other) {
       if (other == null) {
         return;
@@ -13864,6 +14646,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -13900,6 +14683,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -13941,19 +14725,23 @@ namespace Google.Cloud.Bigquery.V2 {
     private static readonly pb::MessageParser<ListModelsResponse> _parser = new pb::MessageParser<ListModelsResponse>(() => new ListModelsResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListModelsResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Cloud.Bigquery.V2.ModelReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListModelsResponse() {
       OnConstruction();
     }
@@ -13961,6 +14749,7 @@ namespace Google.Cloud.Bigquery.V2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListModelsResponse(ListModelsResponse other) : this() {
       models_ = other.models_.Clone();
       nextPageToken_ = other.nextPageToken_;
@@ -13968,6 +14757,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListModelsResponse Clone() {
       return new ListModelsResponse(this);
     }
@@ -13983,6 +14773,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// labels.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model> Models {
       get { return models_; }
     }
@@ -13994,6 +14785,7 @@ namespace Google.Cloud.Bigquery.V2 {
     /// A token to request the next page of results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string NextPageToken {
       get { return nextPageToken_; }
       set {
@@ -14002,11 +14794,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListModelsResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListModelsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -14020,6 +14814,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= models_.GetHashCode();
@@ -14031,11 +14826,13 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
@@ -14053,6 +14850,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       models_.WriteTo(ref output, _repeated_models_codec);
       if (NextPageToken.Length != 0) {
@@ -14066,6 +14864,7 @@ namespace Google.Cloud.Bigquery.V2 {
     #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += models_.CalculateSize(_repeated_models_codec);
@@ -14079,6 +14878,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListModelsResponse other) {
       if (other == null) {
         return;
@@ -14091,6 +14891,7 @@ namespace Google.Cloud.Bigquery.V2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       input.ReadRawMessage(this);
@@ -14116,6 +14917,7 @@ namespace Google.Cloud.Bigquery.V2 {
 
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

@@ -309,7 +309,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getAttestation()
     {
-        return isset($this->attestation) ? $this->attestation : null;
+        return $this->attestation;
     }
 
     public function hasAttestation()
@@ -348,7 +348,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -385,7 +385,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getGenerateTime()
     {
-        return isset($this->generate_time) ? $this->generate_time : null;
+        return $this->generate_time;
     }
 
     public function hasGenerateTime()
@@ -424,7 +424,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getDestroyTime()
     {
-        return isset($this->destroy_time) ? $this->destroy_time : null;
+        return $this->destroy_time;
     }
 
     public function hasDestroyTime()
@@ -464,7 +464,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getDestroyEventTime()
     {
-        return isset($this->destroy_event_time) ? $this->destroy_event_time : null;
+        return $this->destroy_event_time;
     }
 
     public function hasDestroyEventTime()
@@ -533,7 +533,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getImportTime()
     {
-        return isset($this->import_time) ? $this->import_time : null;
+        return $this->import_time;
     }
 
     public function hasImportTime()
@@ -602,7 +602,7 @@ class CryptoKeyVersion extends \Google\Protobuf\Internal\Message
      */
     public function getExternalProtectionLevelOptions()
     {
-        return isset($this->external_protection_level_options) ? $this->external_protection_level_options : null;
+        return $this->external_protection_level_options;
     }
 
     public function hasExternalProtectionLevelOptions()

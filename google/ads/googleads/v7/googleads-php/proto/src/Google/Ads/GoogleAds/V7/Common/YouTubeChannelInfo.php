@@ -18,7 +18,7 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
     /**
      * The YouTube uploader channel id or the channel code of a YouTube channel.
      *
-     * Generated from protobuf field <code>string channel_id = 2;</code>
+     * Generated from protobuf field <code>optional string channel_id = 2;</code>
      */
     protected $channel_id = null;
 
@@ -40,7 +40,7 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
     /**
      * The YouTube uploader channel id or the channel code of a YouTube channel.
      *
-     * Generated from protobuf field <code>string channel_id = 2;</code>
+     * Generated from protobuf field <code>optional string channel_id = 2;</code>
      * @return string
      */
     public function getChannelId()
@@ -61,7 +61,7 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
     /**
      * The YouTube uploader channel id or the channel code of a YouTube channel.
      *
-     * Generated from protobuf field <code>string channel_id = 2;</code>
+     * Generated from protobuf field <code>optional string channel_id = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -18,7 +18,7 @@ class HotelClassInfo extends \Google\Protobuf\Internal\Message
     /**
      * Long value of the hotel class.
      *
-     * Generated from protobuf field <code>int64 value = 2;</code>
+     * Generated from protobuf field <code>optional int64 value = 2;</code>
      */
     protected $value = null;
 
@@ -40,7 +40,7 @@ class HotelClassInfo extends \Google\Protobuf\Internal\Message
     /**
      * Long value of the hotel class.
      *
-     * Generated from protobuf field <code>int64 value = 2;</code>
+     * Generated from protobuf field <code>optional int64 value = 2;</code>
      * @return int|string
      */
     public function getValue()
@@ -61,7 +61,7 @@ class HotelClassInfo extends \Google\Protobuf\Internal\Message
     /**
      * Long value of the hotel class.
      *
-     * Generated from protobuf field <code>int64 value = 2;</code>
+     * Generated from protobuf field <code>optional int64 value = 2;</code>
      * @param int|string $var
      * @return $this
      */

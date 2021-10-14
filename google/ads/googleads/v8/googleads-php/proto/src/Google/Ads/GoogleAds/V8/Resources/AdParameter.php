@@ -31,13 +31,13 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_criterion = null;
     /**
      * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>int64 parameter_index = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 parameter_index = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $parameter_index = null;
     /**
@@ -55,7 +55,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *  - Can use '/' between two numbers. For example 4/1 and 0.95/0.45 are
      *    valid.
      *
-     * Generated from protobuf field <code>string insertion_text = 7;</code>
+     * Generated from protobuf field <code>optional string insertion_text = 7;</code>
      */
     protected $insertion_text = null;
 
@@ -127,7 +127,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroupCriterion()
@@ -148,7 +148,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>string ad_group_criterion = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group_criterion = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -163,7 +163,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>int64 parameter_index = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 parameter_index = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string
      */
     public function getParameterIndex()
@@ -184,7 +184,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>int64 parameter_index = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional int64 parameter_index = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string $var
      * @return $this
      */
@@ -211,7 +211,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *  - Can use '/' between two numbers. For example 4/1 and 0.95/0.45 are
      *    valid.
      *
-     * Generated from protobuf field <code>string insertion_text = 7;</code>
+     * Generated from protobuf field <code>optional string insertion_text = 7;</code>
      * @return string
      */
     public function getInsertionText()
@@ -244,7 +244,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *  - Can use '/' between two numbers. For example 4/1 and 0.95/0.45 are
      *    valid.
      *
-     * Generated from protobuf field <code>string insertion_text = 7;</code>
+     * Generated from protobuf field <code>optional string insertion_text = 7;</code>
      * @param string $var
      * @return $this
      */

@@ -72,7 +72,7 @@ class UpdateTensorboardExperimentRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()
@@ -115,7 +115,7 @@ class UpdateTensorboardExperimentRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getTensorboardExperiment()
     {
-        return isset($this->tensorboard_experiment) ? $this->tensorboard_experiment : null;
+        return $this->tensorboard_experiment;
     }
 
     public function hasTensorboardExperiment()

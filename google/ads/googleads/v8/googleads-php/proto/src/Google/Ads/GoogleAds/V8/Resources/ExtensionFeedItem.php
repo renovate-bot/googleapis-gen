@@ -26,7 +26,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -42,7 +42,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string start_date_time = 26;</code>
+     * Generated from protobuf field <code>optional string start_date_time = 26;</code>
      */
     protected $start_date_time = null;
     /**
@@ -51,7 +51,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string end_date_time = 27;</code>
+     * Generated from protobuf field <code>optional string end_date_time = 27;</code>
      */
     protected $end_date_time = null;
     /**
@@ -71,7 +71,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>string targeted_geo_target_constant = 30 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string targeted_geo_target_constant = 30 [(.google.api.resource_reference) = {</code>
      */
     protected $targeted_geo_target_constant = null;
     /**
@@ -199,7 +199,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -220,7 +220,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -266,7 +266,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string start_date_time = 26;</code>
+     * Generated from protobuf field <code>optional string start_date_time = 26;</code>
      * @return string
      */
     public function getStartDateTime()
@@ -290,7 +290,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string start_date_time = 26;</code>
+     * Generated from protobuf field <code>optional string start_date_time = 26;</code>
      * @param string $var
      * @return $this
      */
@@ -308,7 +308,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string end_date_time = 27;</code>
+     * Generated from protobuf field <code>optional string end_date_time = 27;</code>
      * @return string
      */
     public function getEndDateTime()
@@ -332,7 +332,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
-     * Generated from protobuf field <code>string end_date_time = 27;</code>
+     * Generated from protobuf field <code>optional string end_date_time = 27;</code>
      * @param string $var
      * @return $this
      */
@@ -403,7 +403,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>string targeted_geo_target_constant = 30 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string targeted_geo_target_constant = 30 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getTargetedGeoTargetConstant()
@@ -424,7 +424,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>string targeted_geo_target_constant = 30 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string targeted_geo_target_constant = 30 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -444,7 +444,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTargetedKeyword()
     {
-        return isset($this->targeted_keyword) ? $this->targeted_keyword : null;
+        return $this->targeted_keyword;
     }
 
     public function hasTargetedKeyword()

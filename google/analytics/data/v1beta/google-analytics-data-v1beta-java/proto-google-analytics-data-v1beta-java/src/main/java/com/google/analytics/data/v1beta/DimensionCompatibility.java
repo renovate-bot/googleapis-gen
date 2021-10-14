@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    * @return Whether the dimensionMetadata field is set.
    */
   @java.lang.Override
@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    * @return The dimensionMetadata.
    */
   @java.lang.Override
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
    * like the UI name and description.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+   * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.DimensionMetadataOrBuilder getDimensionMetadataOrBuilder() {
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return Whether the compatibility field is set.
    */
   @java.lang.Override public boolean hasCompatibility() {
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The enum numeric value on the wire for compatibility.
    */
   @java.lang.Override public int getCompatibilityValue() {
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * this dimension can be successfully added to the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+   * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
    * @return The compatibility.
    */
   @java.lang.Override public com.google.analytics.data.v1beta.Compatibility getCompatibility() {
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      * @return Whether the dimensionMetadata field is set.
      */
     public boolean hasDimensionMetadata() {
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      * @return The dimensionMetadata.
      */
     public com.google.analytics.data.v1beta.DimensionMetadata getDimensionMetadata() {
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder setDimensionMetadata(com.google.analytics.data.v1beta.DimensionMetadata value) {
       if (dimensionMetadataBuilder_ == null) {
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder setDimensionMetadata(
         com.google.analytics.data.v1beta.DimensionMetadata.Builder builderForValue) {
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder mergeDimensionMetadata(com.google.analytics.data.v1beta.DimensionMetadata value) {
       if (dimensionMetadataBuilder_ == null) {
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public Builder clearDimensionMetadata() {
       if (dimensionMetadataBuilder_ == null) {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.DimensionMetadata.Builder getDimensionMetadataBuilder() {
       bitField0_ |= 0x00000001;
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     public com.google.analytics.data.v1beta.DimensionMetadataOrBuilder getDimensionMetadataOrBuilder() {
       if (dimensionMetadataBuilder_ != null) {
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
      * like the UI name and description.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
+     * <code>optional .google.analytics.data.v1beta.DimensionMetadata dimension_metadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.analytics.data.v1beta.DimensionMetadata, com.google.analytics.data.v1beta.DimensionMetadata.Builder, com.google.analytics.data.v1beta.DimensionMetadataOrBuilder> 
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return Whether the compatibility field is set.
      */
     @java.lang.Override public boolean hasCompatibility() {
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return The enum numeric value on the wire for compatibility.
      */
     @java.lang.Override public int getCompatibilityValue() {
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @param value The enum numeric value on the wire for compatibility to set.
      * @return This builder for chaining.
      */
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return The compatibility.
      */
     @java.lang.Override
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @param value The compatibility to set.
      * @return This builder for chaining.
      */
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * this dimension can be successfully added to the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
+     * <code>optional .google.analytics.data.v1beta.Compatibility compatibility = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearCompatibility() {

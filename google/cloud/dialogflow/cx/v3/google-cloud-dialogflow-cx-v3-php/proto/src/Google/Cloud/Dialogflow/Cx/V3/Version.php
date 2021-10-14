@@ -177,7 +177,7 @@ class Version extends \Google\Protobuf\Internal\Message
      */
     public function getNluSettings()
     {
-        return isset($this->nlu_settings) ? $this->nlu_settings : null;
+        return $this->nlu_settings;
     }
 
     public function hasNluSettings()
@@ -213,7 +213,7 @@ class Version extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()

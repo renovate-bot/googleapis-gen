@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
     if (details_ != null) {
       output.writeMessage(2, getDetails());
     }
-    if (!getFinalInvocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finalInvocationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, finalInvocationId_);
     }
     if (buildToolExitCode_ != null) {
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getDetails());
     }
-    if (!getFinalInvocationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finalInvocationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, finalInvocationId_);
     }
     if (buildToolExitCode_ != null) {

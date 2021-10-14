@@ -26,20 +26,20 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
      * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
      * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_code = null;
 
@@ -100,7 +100,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -121,7 +121,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -136,7 +136,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -157,7 +157,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -173,7 +173,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCountryCode()
@@ -195,7 +195,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string country_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

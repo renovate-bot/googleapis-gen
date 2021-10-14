@@ -83,7 +83,7 @@ class CreateTrainingPipelineRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTrainingPipeline()
     {
-        return isset($this->training_pipeline) ? $this->training_pipeline : null;
+        return $this->training_pipeline;
     }
 
     public function hasTrainingPipeline()

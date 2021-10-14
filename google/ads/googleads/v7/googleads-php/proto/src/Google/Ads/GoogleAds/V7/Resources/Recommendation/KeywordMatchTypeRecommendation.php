@@ -53,7 +53,7 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function getKeyword()
     {
-        return isset($this->keyword) ? $this->keyword : null;
+        return $this->keyword;
     }
 
     public function hasKeyword()

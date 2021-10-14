@@ -26,7 +26,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
      * be between 3:1 and 5:1 (+-1%).
      *
-     * Generated from protobuf field <code>string header_image = 10;</code>
+     * Generated from protobuf field <code>optional string header_image = 10;</code>
      */
     protected $header_image = null;
     /**
@@ -35,19 +35,19 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * of 600x314 pixels and aspect ratio of 600:314 (+-1%) or square with a
      * minimum size of 300x300 pixels and aspect ratio of 1:1 (+-1%)
      *
-     * Generated from protobuf field <code>string marketing_image = 11;</code>
+     * Generated from protobuf field <code>optional string marketing_image = 11;</code>
      */
     protected $marketing_image = null;
     /**
      * Headline of the marketing image.
      *
-     * Generated from protobuf field <code>string marketing_image_headline = 12;</code>
+     * Generated from protobuf field <code>optional string marketing_image_headline = 12;</code>
      */
     protected $marketing_image_headline = null;
     /**
      * Description of the marketing image.
      *
-     * Generated from protobuf field <code>string marketing_image_description = 13;</code>
+     * Generated from protobuf field <code>optional string marketing_image_description = 13;</code>
      */
     protected $marketing_image_description = null;
     /**
@@ -113,7 +113,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getTeaser()
     {
-        return isset($this->teaser) ? $this->teaser : null;
+        return $this->teaser;
     }
 
     public function hasTeaser()
@@ -146,7 +146,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
      * be between 3:1 and 5:1 (+-1%).
      *
-     * Generated from protobuf field <code>string header_image = 10;</code>
+     * Generated from protobuf field <code>optional string header_image = 10;</code>
      * @return string
      */
     public function getHeaderImage()
@@ -169,7 +169,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
      * be between 3:1 and 5:1 (+-1%).
      *
-     * Generated from protobuf field <code>string header_image = 10;</code>
+     * Generated from protobuf field <code>optional string header_image = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -187,7 +187,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * of 600x314 pixels and aspect ratio of 600:314 (+-1%) or square with a
      * minimum size of 300x300 pixels and aspect ratio of 1:1 (+-1%)
      *
-     * Generated from protobuf field <code>string marketing_image = 11;</code>
+     * Generated from protobuf field <code>optional string marketing_image = 11;</code>
      * @return string
      */
     public function getMarketingImage()
@@ -211,7 +211,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * of 600x314 pixels and aspect ratio of 600:314 (+-1%) or square with a
      * minimum size of 300x300 pixels and aspect ratio of 1:1 (+-1%)
      *
-     * Generated from protobuf field <code>string marketing_image = 11;</code>
+     * Generated from protobuf field <code>optional string marketing_image = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -226,7 +226,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Headline of the marketing image.
      *
-     * Generated from protobuf field <code>string marketing_image_headline = 12;</code>
+     * Generated from protobuf field <code>optional string marketing_image_headline = 12;</code>
      * @return string
      */
     public function getMarketingImageHeadline()
@@ -247,7 +247,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Headline of the marketing image.
      *
-     * Generated from protobuf field <code>string marketing_image_headline = 12;</code>
+     * Generated from protobuf field <code>optional string marketing_image_headline = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -262,7 +262,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Description of the marketing image.
      *
-     * Generated from protobuf field <code>string marketing_image_description = 13;</code>
+     * Generated from protobuf field <code>optional string marketing_image_description = 13;</code>
      * @return string
      */
     public function getMarketingImageDescription()
@@ -283,7 +283,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Description of the marketing image.
      *
-     * Generated from protobuf field <code>string marketing_image_description = 13;</code>
+     * Generated from protobuf field <code>optional string marketing_image_description = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -303,7 +303,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMarketingImageDisplayCallToAction()
     {
-        return isset($this->marketing_image_display_call_to_action) ? $this->marketing_image_display_call_to_action : null;
+        return $this->marketing_image_display_call_to_action;
     }
 
     public function hasMarketingImageDisplayCallToAction()

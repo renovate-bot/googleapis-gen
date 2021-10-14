@@ -24,7 +24,7 @@ class KeywordPlanDeviceSearches extends \Google\Protobuf\Internal\Message
     /**
      * The total searches for the device.
      *
-     * Generated from protobuf field <code>int64 search_count = 2;</code>
+     * Generated from protobuf field <code>optional int64 search_count = 2;</code>
      */
     protected $search_count = null;
 
@@ -74,7 +74,7 @@ class KeywordPlanDeviceSearches extends \Google\Protobuf\Internal\Message
     /**
      * The total searches for the device.
      *
-     * Generated from protobuf field <code>int64 search_count = 2;</code>
+     * Generated from protobuf field <code>optional int64 search_count = 2;</code>
      * @return int|string
      */
     public function getSearchCount()
@@ -95,7 +95,7 @@ class KeywordPlanDeviceSearches extends \Google\Protobuf\Internal\Message
     /**
      * The total searches for the device.
      *
-     * Generated from protobuf field <code>int64 search_count = 2;</code>
+     * Generated from protobuf field <code>optional int64 search_count = 2;</code>
      * @param int|string $var
      * @return $this
      */

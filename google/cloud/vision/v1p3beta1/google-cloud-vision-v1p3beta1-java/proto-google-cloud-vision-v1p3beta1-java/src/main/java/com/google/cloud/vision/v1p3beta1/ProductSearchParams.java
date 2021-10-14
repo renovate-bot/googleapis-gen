@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCatalogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(catalogName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, catalogName_);
     }
     if (category_ != com.google.cloud.vision.v1p3beta1.ProductSearchCategory.PRODUCT_SEARCH_CATEGORY_UNSPECIFIED.getNumber()) {
@@ -604,16 +604,16 @@ private static final long serialVersionUID = 0L;
     if (view_ != com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.BASIC.getNumber()) {
       output.writeEnum(4, view_);
     }
-    if (!getProductCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, productCategory_);
     }
-    if (!getProductSetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productSet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, productSet_);
     }
     for (int i = 0; i < productCategories_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, productCategories_.getRaw(i));
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filter_);
     }
     if (boundingPoly_ != null) {
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCatalogNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(catalogName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, catalogName_);
     }
     if (category_ != com.google.cloud.vision.v1p3beta1.ProductSearchCategory.PRODUCT_SEARCH_CATEGORY_UNSPECIFIED.getNumber()) {
@@ -643,10 +643,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, view_);
     }
-    if (!getProductCategoryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, productCategory_);
     }
-    if (!getProductSetBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productSet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, productSet_);
     }
     {
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getProductCategoriesList().size();
     }
-    if (!getFilterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filter_);
     }
     if (boundingPoly_ != null) {

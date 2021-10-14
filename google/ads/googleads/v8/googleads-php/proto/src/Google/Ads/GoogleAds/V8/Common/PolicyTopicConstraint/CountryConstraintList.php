@@ -18,7 +18,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     /**
      * Total number of countries targeted by the resource.
      *
-     * Generated from protobuf field <code>int32 total_targeted_countries = 3;</code>
+     * Generated from protobuf field <code>optional int32 total_targeted_countries = 3;</code>
      */
     protected $total_targeted_countries = null;
     /**
@@ -48,7 +48,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     /**
      * Total number of countries targeted by the resource.
      *
-     * Generated from protobuf field <code>int32 total_targeted_countries = 3;</code>
+     * Generated from protobuf field <code>optional int32 total_targeted_countries = 3;</code>
      * @return int
      */
     public function getTotalTargetedCountries()
@@ -69,7 +69,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     /**
      * Total number of countries targeted by the resource.
      *
-     * Generated from protobuf field <code>int32 total_targeted_countries = 3;</code>
+     * Generated from protobuf field <code>optional int32 total_targeted_countries = 3;</code>
      * @param int $var
      * @return $this
      */

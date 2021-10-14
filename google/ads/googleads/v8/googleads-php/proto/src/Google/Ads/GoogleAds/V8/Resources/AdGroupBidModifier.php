@@ -26,14 +26,14 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which this criterion belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
      * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -41,7 +41,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
      * Use 0 to opt out of a Device type.
      *
-     * Generated from protobuf field <code>double bid_modifier = 15;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      */
     protected $bid_modifier = null;
     /**
@@ -51,7 +51,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * corresponding base ad group, then this field will be null.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>string base_ad_group = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_ad_group = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $base_ad_group = null;
     /**
@@ -143,7 +143,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which this criterion belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAdGroup()
@@ -164,7 +164,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The ad group to which this criterion belongs.
      *
-     * Generated from protobuf field <code>string ad_group = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string ad_group = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -180,7 +180,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getCriterionId()
@@ -202,7 +202,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>int64 criterion_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 criterion_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -219,7 +219,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
      * Use 0 to opt out of a Device type.
      *
-     * Generated from protobuf field <code>double bid_modifier = 15;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      * @return float
      */
     public function getBidModifier()
@@ -242,7 +242,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
      * Use 0 to opt out of a Device type.
      *
-     * Generated from protobuf field <code>double bid_modifier = 15;</code>
+     * Generated from protobuf field <code>optional double bid_modifier = 15;</code>
      * @param float $var
      * @return $this
      */
@@ -261,7 +261,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * corresponding base ad group, then this field will be null.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>string base_ad_group = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_ad_group = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getBaseAdGroup()
@@ -286,7 +286,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * corresponding base ad group, then this field will be null.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>string base_ad_group = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>optional string base_ad_group = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

@@ -157,7 +157,7 @@ class TextLocator extends \Google\Protobuf\Internal\Message
      */
     public function getStartPosition()
     {
-        return isset($this->start_position) ? $this->start_position : null;
+        return $this->start_position;
     }
 
     public function hasStartPosition()
@@ -193,7 +193,7 @@ class TextLocator extends \Google\Protobuf\Internal\Message
      */
     public function getEndPosition()
     {
-        return isset($this->end_position) ? $this->end_position : null;
+        return $this->end_position;
     }
 
     public function hasEndPosition()
@@ -232,7 +232,7 @@ class TextLocator extends \Google\Protobuf\Internal\Message
      */
     public function getNestedLocator()
     {
-        return isset($this->nested_locator) ? $this->nested_locator : null;
+        return $this->nested_locator;
     }
 
     public function hasNestedLocator()

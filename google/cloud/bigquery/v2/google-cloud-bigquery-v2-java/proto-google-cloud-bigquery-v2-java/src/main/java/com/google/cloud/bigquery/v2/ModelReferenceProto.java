@@ -340,13 +340,13 @@ public final class ModelReferenceProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
       }
-      if (!getDatasetIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, datasetId_);
       }
-      if (!getModelIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelId_);
       }
       unknownFields.writeTo(output);
@@ -358,13 +358,13 @@ public final class ModelReferenceProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getProjectIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
       }
-      if (!getDatasetIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, datasetId_);
       }
-      if (!getModelIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelId_);
       }
       size += unknownFields.getSerializedSize();

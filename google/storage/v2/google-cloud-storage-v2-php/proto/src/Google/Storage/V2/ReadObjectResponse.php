@@ -88,7 +88,7 @@ class ReadObjectResponse extends \Google\Protobuf\Internal\Message
      */
     public function getChecksummedData()
     {
-        return isset($this->checksummed_data) ? $this->checksummed_data : null;
+        return $this->checksummed_data;
     }
 
     public function hasChecksummedData()
@@ -129,7 +129,7 @@ class ReadObjectResponse extends \Google\Protobuf\Internal\Message
      */
     public function getObjectChecksums()
     {
-        return isset($this->object_checksums) ? $this->object_checksums : null;
+        return $this->object_checksums;
     }
 
     public function hasObjectChecksums()
@@ -169,7 +169,7 @@ class ReadObjectResponse extends \Google\Protobuf\Internal\Message
      */
     public function getContentRange()
     {
-        return isset($this->content_range) ? $this->content_range : null;
+        return $this->content_range;
     }
 
     public function hasContentRange()
@@ -208,7 +208,7 @@ class ReadObjectResponse extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()

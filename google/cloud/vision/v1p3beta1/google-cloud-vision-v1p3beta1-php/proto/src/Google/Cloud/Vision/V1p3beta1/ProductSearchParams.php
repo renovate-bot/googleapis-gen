@@ -241,7 +241,7 @@ class ProductSearchParams extends \Google\Protobuf\Internal\Message
      */
     public function getNormalizedBoundingPoly()
     {
-        return isset($this->normalized_bounding_poly) ? $this->normalized_bounding_poly : null;
+        return $this->normalized_bounding_poly;
     }
 
     public function hasNormalizedBoundingPoly()
@@ -280,7 +280,7 @@ class ProductSearchParams extends \Google\Protobuf\Internal\Message
      */
     public function getBoundingPoly()
     {
-        return isset($this->bounding_poly) ? $this->bounding_poly : null;
+        return $this->bounding_poly;
     }
 
     public function hasBoundingPoly()

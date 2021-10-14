@@ -19,68 +19,68 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percent of your ad impressions that are shown as the very first ad
      * above the organic search results.
      *
-     * Generated from protobuf field <code>double absolute_top_impression_percentage = 183;</code>
+     * Generated from protobuf field <code>optional double absolute_top_impression_percentage = 183;</code>
      */
     protected $absolute_top_impression_percentage = null;
     /**
      * Average cost of viewable impressions (`active_view_impressions`).
      *
-     * Generated from protobuf field <code>double active_view_cpm = 184;</code>
+     * Generated from protobuf field <code>optional double active_view_cpm = 184;</code>
      */
     protected $active_view_cpm = null;
     /**
      * Active view measurable clicks divided by active view viewable impressions.
      * This metric is reported only for display network.
      *
-     * Generated from protobuf field <code>double active_view_ctr = 185;</code>
+     * Generated from protobuf field <code>optional double active_view_ctr = 185;</code>
      */
     protected $active_view_ctr = null;
     /**
      * A measurement of how often your ad has become viewable on a Display
      * Network site.
      *
-     * Generated from protobuf field <code>int64 active_view_impressions = 186;</code>
+     * Generated from protobuf field <code>optional int64 active_view_impressions = 186;</code>
      */
     protected $active_view_impressions = null;
     /**
      * The ratio of impressions that could be measured by Active View over the
      * number of served impressions.
      *
-     * Generated from protobuf field <code>double active_view_measurability = 187;</code>
+     * Generated from protobuf field <code>optional double active_view_measurability = 187;</code>
      */
     protected $active_view_measurability = null;
     /**
      * The cost of the impressions you received that were measurable by Active
      * View.
      *
-     * Generated from protobuf field <code>int64 active_view_measurable_cost_micros = 188;</code>
+     * Generated from protobuf field <code>optional int64 active_view_measurable_cost_micros = 188;</code>
      */
     protected $active_view_measurable_cost_micros = null;
     /**
      * The number of times your ads are appearing on placements in positions
      * where they can be seen.
      *
-     * Generated from protobuf field <code>int64 active_view_measurable_impressions = 189;</code>
+     * Generated from protobuf field <code>optional int64 active_view_measurable_impressions = 189;</code>
      */
     protected $active_view_measurable_impressions = null;
     /**
      * The percentage of time when your ad appeared on an Active View enabled site
      * (measurable impressions) and was viewable (viewable impressions).
      *
-     * Generated from protobuf field <code>double active_view_viewability = 190;</code>
+     * Generated from protobuf field <code>optional double active_view_viewability = 190;</code>
      */
     protected $active_view_viewability = null;
     /**
      * All conversions from interactions (as oppose to view through conversions)
      * divided by the number of ad interactions.
      *
-     * Generated from protobuf field <code>double all_conversions_from_interactions_rate = 191;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_interactions_rate = 191;</code>
      */
     protected $all_conversions_from_interactions_rate = null;
     /**
      * The value of all conversions.
      *
-     * Generated from protobuf field <code>double all_conversions_value = 192;</code>
+     * Generated from protobuf field <code>optional double all_conversions_value = 192;</code>
      */
     protected $all_conversions_value = null;
     /**
@@ -96,7 +96,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric.
      *
-     * Generated from protobuf field <code>double all_conversions = 193;</code>
+     * Generated from protobuf field <code>optional double all_conversions = 193;</code>
      */
     protected $all_conversions = null;
     /**
@@ -113,7 +113,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The value of all conversions divided by the total cost of ad interactions
      * (such as clicks for text ads or views for video ads).
      *
-     * Generated from protobuf field <code>double all_conversions_value_per_cost = 194;</code>
+     * Generated from protobuf field <code>optional double all_conversions_value_per_cost = 194;</code>
      */
     protected $all_conversions_value_per_cost = null;
     /**
@@ -122,7 +122,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_click_to_call = 195;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_click_to_call = 195;</code>
      */
     protected $all_conversions_from_click_to_call = null;
     /**
@@ -130,14 +130,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_directions = 196;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_directions = 196;</code>
      */
     protected $all_conversions_from_directions = null;
     /**
      * The value of all conversions from interactions divided by the total number
      * of interactions.
      *
-     * Generated from protobuf field <code>double all_conversions_from_interactions_value_per_interaction = 197;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_interactions_value_per_interaction = 197;</code>
      */
     protected $all_conversions_from_interactions_value_per_interaction = null;
     /**
@@ -145,14 +145,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_menu = 198;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_menu = 198;</code>
      */
     protected $all_conversions_from_menu = null;
     /**
      * The number of times people placed an order at a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_order = 199;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_order = 199;</code>
      */
     protected $all_conversions_from_order = null;
     /**
@@ -160,14 +160,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * location for a store) that occurred after people clicked an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_other_engagement = 200;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_other_engagement = 200;</code>
      */
     protected $all_conversions_from_other_engagement = null;
     /**
      * Estimated number of times people visited a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_store_visit = 201;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_store_visit = 201;</code>
      */
     protected $all_conversions_from_store_visit = null;
     /**
@@ -175,21 +175,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_store_website = 202;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_store_website = 202;</code>
      */
     protected $all_conversions_from_store_website = null;
     /**
      * The average amount you pay per interaction. This amount is the total cost
      * of your ads divided by the total number of interactions.
      *
-     * Generated from protobuf field <code>double average_cost = 203;</code>
+     * Generated from protobuf field <code>optional double average_cost = 203;</code>
      */
     protected $average_cost = null;
     /**
      * The total cost of all clicks divided by the total number of clicks
      * received.
      *
-     * Generated from protobuf field <code>double average_cpc = 204;</code>
+     * Generated from protobuf field <code>optional double average_cpc = 204;</code>
      */
     protected $average_cpc = null;
     /**
@@ -197,13 +197,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * amount is the total cost of all ad engagements divided by the total number
      * of ad engagements.
      *
-     * Generated from protobuf field <code>double average_cpe = 205;</code>
+     * Generated from protobuf field <code>optional double average_cpe = 205;</code>
      */
     protected $average_cpe = null;
     /**
      * Average cost-per-thousand impressions (CPM).
      *
-     * Generated from protobuf field <code>double average_cpm = 206;</code>
+     * Generated from protobuf field <code>optional double average_cpm = 206;</code>
      */
     protected $average_cpm = null;
     /**
@@ -211,46 +211,46 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average CPV is defined by the total cost of all ad views divided by
      * the number of views.
      *
-     * Generated from protobuf field <code>double average_cpv = 207;</code>
+     * Generated from protobuf field <code>optional double average_cpv = 207;</code>
      */
     protected $average_cpv = null;
     /**
      * Average number of pages viewed per session.
      *
-     * Generated from protobuf field <code>double average_page_views = 208;</code>
+     * Generated from protobuf field <code>optional double average_page_views = 208;</code>
      */
     protected $average_page_views = null;
     /**
      * Total duration of all sessions (in seconds) / number of sessions. Imported
      * from Google Analytics.
      *
-     * Generated from protobuf field <code>double average_time_on_site = 209;</code>
+     * Generated from protobuf field <code>optional double average_time_on_site = 209;</code>
      */
     protected $average_time_on_site = null;
     /**
      * An indication of how other advertisers are bidding on similar products.
      *
-     * Generated from protobuf field <code>double benchmark_average_max_cpc = 210;</code>
+     * Generated from protobuf field <code>optional double benchmark_average_max_cpc = 210;</code>
      */
     protected $benchmark_average_max_cpc = null;
     /**
      * An indication on how other advertisers' Shopping ads for similar products
      * are performing based on how often people who see their ad click on it.
      *
-     * Generated from protobuf field <code>double benchmark_ctr = 211;</code>
+     * Generated from protobuf field <code>optional double benchmark_ctr = 211;</code>
      */
     protected $benchmark_ctr = null;
     /**
      * Percentage of clicks where the user only visited a single page on your
      * site. Imported from Google Analytics.
      *
-     * Generated from protobuf field <code>double bounce_rate = 212;</code>
+     * Generated from protobuf field <code>optional double bounce_rate = 212;</code>
      */
     protected $bounce_rate = null;
     /**
      * The number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 131;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 131;</code>
      */
     protected $clicks = null;
     /**
@@ -258,7 +258,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results was clicked. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 combined_clicks = 156;</code>
+     * Generated from protobuf field <code>optional int64 combined_clicks = 156;</code>
      */
     protected $combined_clicks = null;
     /**
@@ -267,7 +267,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * help page at https://support.google.com/google-ads/answer/3097241 for
      * details.
      *
-     * Generated from protobuf field <code>double combined_clicks_per_query = 157;</code>
+     * Generated from protobuf field <code>optional double combined_clicks_per_query = 157;</code>
      */
     protected $combined_clicks_per_query = null;
     /**
@@ -275,7 +275,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results or showed one of your text ads. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 combined_queries = 158;</code>
+     * Generated from protobuf field <code>optional int64 combined_queries = 158;</code>
      */
     protected $combined_queries = null;
     /**
@@ -284,7 +284,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content budget lost impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double content_budget_lost_impression_share = 159;</code>
+     * Generated from protobuf field <code>optional double content_budget_lost_impression_share = 159;</code>
      */
     protected $content_budget_lost_impression_share = null;
     /**
@@ -293,7 +293,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double content_impression_share = 160;</code>
+     * Generated from protobuf field <code>optional double content_impression_share = 160;</code>
      */
     protected $content_impression_share = null;
     /**
@@ -303,14 +303,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * browser that did not previously click an ad from an appropriate
      * advertiser). The date/time is in the customer's time zone.
      *
-     * Generated from protobuf field <code>string conversion_last_received_request_date_time = 161;</code>
+     * Generated from protobuf field <code>optional string conversion_last_received_request_date_time = 161;</code>
      */
     protected $conversion_last_received_request_date_time = null;
     /**
      * The date of the most recent conversion for this conversion action. The date
      * is in the customer's time zone.
      *
-     * Generated from protobuf field <code>string conversion_last_conversion_date = 162;</code>
+     * Generated from protobuf field <code>optional string conversion_last_conversion_date = 162;</code>
      */
     protected $conversion_last_conversion_date = null;
     /**
@@ -319,7 +319,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content rank lost impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double content_rank_lost_impression_share = 163;</code>
+     * Generated from protobuf field <code>optional double content_rank_lost_impression_share = 163;</code>
      */
     protected $content_rank_lost_impression_share = null;
     /**
@@ -329,7 +329,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double conversions_from_interactions_rate = 164;</code>
+     * Generated from protobuf field <code>optional double conversions_from_interactions_rate = 164;</code>
      */
     protected $conversions_from_interactions_rate = null;
     /**
@@ -338,7 +338,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions_value = 165;</code>
+     * Generated from protobuf field <code>optional double conversions_value = 165;</code>
      */
     protected $conversions_value = null;
     /**
@@ -359,7 +359,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * is set to true. If you use conversion-based bidding, your bid strategies
      * will optimize for these conversions.
      *
-     * Generated from protobuf field <code>double conversions_value_per_cost = 166;</code>
+     * Generated from protobuf field <code>optional double conversions_value_per_cost = 166;</code>
      */
     protected $conversions_value_per_cost = null;
     /**
@@ -369,7 +369,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions_from_interactions_value_per_interaction = 167;</code>
+     * Generated from protobuf field <code>optional double conversions_from_interactions_value_per_interaction = 167;</code>
      */
     protected $conversions_from_interactions_value_per_interaction = null;
     /**
@@ -378,7 +378,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions = 168;</code>
+     * Generated from protobuf field <code>optional double conversions = 168;</code>
      */
     protected $conversions = null;
     /**
@@ -397,13 +397,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      * (CPM) costs during this period.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 169;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 169;</code>
      */
     protected $cost_micros = null;
     /**
      * The cost of ad interactions divided by all conversions.
      *
-     * Generated from protobuf field <code>double cost_per_all_conversions = 170;</code>
+     * Generated from protobuf field <code>optional double cost_per_all_conversions = 170;</code>
      */
     protected $cost_per_all_conversions = null;
     /**
@@ -412,7 +412,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double cost_per_conversion = 171;</code>
+     * Generated from protobuf field <code>optional double cost_per_conversion = 171;</code>
      */
     protected $cost_per_conversion = null;
     /**
@@ -422,7 +422,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double cost_per_current_model_attributed_conversion = 172;</code>
+     * Generated from protobuf field <code>optional double cost_per_current_model_attributed_conversion = 172;</code>
      */
     protected $cost_per_current_model_attributed_conversion = null;
     /**
@@ -430,14 +430,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * then converts on a different device or browser.
      * Cross-device conversions are already included in all_conversions.
      *
-     * Generated from protobuf field <code>double cross_device_conversions = 173;</code>
+     * Generated from protobuf field <code>optional double cross_device_conversions = 173;</code>
      */
     protected $cross_device_conversions = null;
     /**
      * The number of clicks your ad receives (Clicks) divided by the number
      * of times your ad is shown (Impressions).
      *
-     * Generated from protobuf field <code>double ctr = 174;</code>
+     * Generated from protobuf field <code>optional double ctr = 174;</code>
      */
     protected $ctr = null;
     /**
@@ -447,7 +447,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions = 175;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions = 175;</code>
      */
     protected $current_model_attributed_conversions = null;
     /**
@@ -458,7 +458,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_from_interactions_rate = 176;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_from_interactions_rate = 176;</code>
      */
     protected $current_model_attributed_conversions_from_interactions_rate = null;
     /**
@@ -468,7 +468,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_from_interactions_value_per_interaction = 177;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_from_interactions_value_per_interaction = 177;</code>
      */
     protected $current_model_attributed_conversions_from_interactions_value_per_interaction = null;
     /**
@@ -477,7 +477,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_value = 178;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_value = 178;</code>
      */
     protected $current_model_attributed_conversions_value = null;
     /**
@@ -487,14 +487,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_value_per_cost = 179;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_value_per_cost = 179;</code>
      */
     protected $current_model_attributed_conversions_value_per_cost = null;
     /**
      * How often people engage with your ad after it's shown to them. This is the
      * number of ad expansions divided by the number of times your ad is shown.
      *
-     * Generated from protobuf field <code>double engagement_rate = 180;</code>
+     * Generated from protobuf field <code>optional double engagement_rate = 180;</code>
      */
     protected $engagement_rate = null;
     /**
@@ -502,27 +502,27 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An engagement occurs when a viewer expands your Lightbox ad. Also, in the
      * future, other ad types may support engagement metrics.
      *
-     * Generated from protobuf field <code>int64 engagements = 181;</code>
+     * Generated from protobuf field <code>optional int64 engagements = 181;</code>
      */
     protected $engagements = null;
     /**
      * Average lead value based on clicks.
      *
-     * Generated from protobuf field <code>double hotel_average_lead_value_micros = 213;</code>
+     * Generated from protobuf field <code>optional double hotel_average_lead_value_micros = 213;</code>
      */
     protected $hotel_average_lead_value_micros = null;
     /**
      * The average price difference between the price offered by reporting hotel
      * advertiser and the cheapest price offered by the competing advertiser.
      *
-     * Generated from protobuf field <code>double hotel_price_difference_percentage = 214;</code>
+     * Generated from protobuf field <code>optional double hotel_price_difference_percentage = 214;</code>
      */
     protected $hotel_price_difference_percentage = null;
     /**
      * The number of impressions that hotel partners could have had given their
      * feed performance.
      *
-     * Generated from protobuf field <code>int64 hotel_eligible_impressions = 215;</code>
+     * Generated from protobuf field <code>optional int64 hotel_eligible_impressions = 215;</code>
      */
     protected $hotel_eligible_impressions = null;
     /**
@@ -540,7 +540,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The historical quality score.
      *
-     * Generated from protobuf field <code>int64 historical_quality_score = 216;</code>
+     * Generated from protobuf field <code>optional int64 historical_quality_score = 216;</code>
      */
     protected $historical_quality_score = null;
     /**
@@ -552,35 +552,35 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times the ad was forwarded to someone else as a message.
      *
-     * Generated from protobuf field <code>int64 gmail_forwards = 217;</code>
+     * Generated from protobuf field <code>optional int64 gmail_forwards = 217;</code>
      */
     protected $gmail_forwards = null;
     /**
      * The number of times someone has saved your Gmail ad to their inbox as a
      * message.
      *
-     * Generated from protobuf field <code>int64 gmail_saves = 218;</code>
+     * Generated from protobuf field <code>optional int64 gmail_saves = 218;</code>
      */
     protected $gmail_saves = null;
     /**
      * The number of clicks to the landing page on the expanded state of Gmail
      * ads.
      *
-     * Generated from protobuf field <code>int64 gmail_secondary_clicks = 219;</code>
+     * Generated from protobuf field <code>optional int64 gmail_secondary_clicks = 219;</code>
      */
     protected $gmail_secondary_clicks = null;
     /**
      * The number of times a store's location-based ad was shown.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>int64 impressions_from_store_reach = 220;</code>
+     * Generated from protobuf field <code>optional int64 impressions_from_store_reach = 220;</code>
      */
     protected $impressions_from_store_reach = null;
     /**
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
      *
-     * Generated from protobuf field <code>int64 impressions = 221;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 221;</code>
      */
     protected $impressions = null;
     /**
@@ -588,7 +588,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * This is the number of interactions divided by the number of times your ad
      * is shown.
      *
-     * Generated from protobuf field <code>double interaction_rate = 222;</code>
+     * Generated from protobuf field <code>optional double interaction_rate = 222;</code>
      */
     protected $interaction_rate = null;
     /**
@@ -596,7 +596,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An interaction is the main user action associated with an ad format-clicks
      * for text and shopping ads, views for video ads, and so on.
      *
-     * Generated from protobuf field <code>int64 interactions = 223;</code>
+     * Generated from protobuf field <code>optional int64 interactions = 223;</code>
      */
     protected $interactions = null;
     /**
@@ -609,26 +609,26 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of clicks filtered out of your total number of clicks
      * (filtered + non-filtered clicks) during the reporting period.
      *
-     * Generated from protobuf field <code>double invalid_click_rate = 224;</code>
+     * Generated from protobuf field <code>optional double invalid_click_rate = 224;</code>
      */
     protected $invalid_click_rate = null;
     /**
      * Number of clicks Google considers illegitimate and doesn't charge you for.
      *
-     * Generated from protobuf field <code>int64 invalid_clicks = 225;</code>
+     * Generated from protobuf field <code>optional int64 invalid_clicks = 225;</code>
      */
     protected $invalid_clicks = null;
     /**
      * Number of message chats initiated for Click To Message impressions that
      * were message tracking eligible.
      *
-     * Generated from protobuf field <code>int64 message_chats = 226;</code>
+     * Generated from protobuf field <code>optional int64 message_chats = 226;</code>
      */
     protected $message_chats = null;
     /**
      * Number of Click To Message impressions that were message tracking eligible.
      *
-     * Generated from protobuf field <code>int64 message_impressions = 227;</code>
+     * Generated from protobuf field <code>optional int64 message_impressions = 227;</code>
      */
     protected $message_impressions = null;
     /**
@@ -638,13 +638,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * a messaging option and message tracking enabled.
      * Note that this rate can be more than 1.0 for a given message impression.
      *
-     * Generated from protobuf field <code>double message_chat_rate = 228;</code>
+     * Generated from protobuf field <code>optional double message_chat_rate = 228;</code>
      */
     protected $message_chat_rate = null;
     /**
      * The percentage of mobile clicks that go to a mobile-friendly page.
      *
-     * Generated from protobuf field <code>double mobile_friendly_clicks_percentage = 229;</code>
+     * Generated from protobuf field <code>optional double mobile_friendly_clicks_percentage = 229;</code>
      */
     protected $mobile_friendly_clicks_percentage = null;
     /**
@@ -652,7 +652,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results for a particular query. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 organic_clicks = 230;</code>
+     * Generated from protobuf field <code>optional int64 organic_clicks = 230;</code>
      */
     protected $organic_clicks = null;
     /**
@@ -661,7 +661,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * returned pages from your site (organic_queries). See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>double organic_clicks_per_query = 231;</code>
+     * Generated from protobuf field <code>optional double organic_clicks_per_query = 231;</code>
      */
     protected $organic_clicks_per_query = null;
     /**
@@ -669,7 +669,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * help page at https://support.google.com/google-ads/answer/3097241 for
      * details.
      *
-     * Generated from protobuf field <code>int64 organic_impressions = 232;</code>
+     * Generated from protobuf field <code>optional int64 organic_impressions = 232;</code>
      */
     protected $organic_impressions = null;
     /**
@@ -678,7 +678,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * your site's listing in the unpaid results (organic_queries). See the help
      * page at https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>double organic_impressions_per_query = 233;</code>
+     * Generated from protobuf field <code>optional double organic_impressions_per_query = 233;</code>
      */
     protected $organic_impressions_per_query = null;
     /**
@@ -686,33 +686,33 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * unpaid results. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 organic_queries = 234;</code>
+     * Generated from protobuf field <code>optional int64 organic_queries = 234;</code>
      */
     protected $organic_queries = null;
     /**
      * Percentage of first-time sessions (from people who had never visited your
      * site before). Imported from Google Analytics.
      *
-     * Generated from protobuf field <code>double percent_new_visitors = 235;</code>
+     * Generated from protobuf field <code>optional double percent_new_visitors = 235;</code>
      */
     protected $percent_new_visitors = null;
     /**
      * Number of offline phone calls.
      *
-     * Generated from protobuf field <code>int64 phone_calls = 236;</code>
+     * Generated from protobuf field <code>optional int64 phone_calls = 236;</code>
      */
     protected $phone_calls = null;
     /**
      * Number of offline phone impressions.
      *
-     * Generated from protobuf field <code>int64 phone_impressions = 237;</code>
+     * Generated from protobuf field <code>optional int64 phone_impressions = 237;</code>
      */
     protected $phone_impressions = null;
     /**
      * Number of phone calls received (phone_calls) divided by the number of
      * times your phone number is shown (phone_impressions).
      *
-     * Generated from protobuf field <code>double phone_through_rate = 238;</code>
+     * Generated from protobuf field <code>optional double phone_through_rate = 238;</code>
      */
     protected $phone_through_rate = null;
     /**
@@ -720,7 +720,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * all advertisers on the websites that show your ads. Measures how your ads
      * perform on Display Network sites compared to other ads on the same sites.
      *
-     * Generated from protobuf field <code>double relative_ctr = 239;</code>
+     * Generated from protobuf field <code>optional double relative_ctr = 239;</code>
      */
     protected $relative_ctr = null;
     /**
@@ -729,7 +729,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_absolute_top_impression_share = 136;</code>
+     * Generated from protobuf field <code>optional double search_absolute_top_impression_share = 136;</code>
      */
     protected $search_absolute_top_impression_share = null;
     /**
@@ -738,7 +738,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost absolute top impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_absolute_top_impression_share = 137;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_absolute_top_impression_share = 137;</code>
      */
     protected $search_budget_lost_absolute_top_impression_share = null;
     /**
@@ -747,7 +747,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_impression_share = 138;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_impression_share = 138;</code>
      */
     protected $search_budget_lost_impression_share = null;
     /**
@@ -756,7 +756,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost top impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_top_impression_share = 139;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_top_impression_share = 139;</code>
      */
     protected $search_budget_lost_top_impression_share = null;
     /**
@@ -765,7 +765,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search click share is reported in the range of 0.1 to 1. Any value
      * below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_click_share = 140;</code>
+     * Generated from protobuf field <code>optional double search_click_share = 140;</code>
      */
     protected $search_click_share = null;
     /**
@@ -776,7 +776,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * impression share is reported in the range of 0.1 to 1. Any value below 0.1
      * is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_exact_match_impression_share = 141;</code>
+     * Generated from protobuf field <code>optional double search_exact_match_impression_share = 141;</code>
      */
     protected $search_exact_match_impression_share = null;
     /**
@@ -785,7 +785,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_impression_share = 142;</code>
+     * Generated from protobuf field <code>optional double search_impression_share = 142;</code>
      */
     protected $search_impression_share = null;
     /**
@@ -794,7 +794,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost absolute top impression share is reported in the
      * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_absolute_top_impression_share = 143;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_absolute_top_impression_share = 143;</code>
      */
     protected $search_rank_lost_absolute_top_impression_share = null;
     /**
@@ -803,7 +803,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_impression_share = 144;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_impression_share = 144;</code>
      */
     protected $search_rank_lost_impression_share = null;
     /**
@@ -812,7 +812,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost top impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_top_impression_share = 145;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_top_impression_share = 145;</code>
      */
     protected $search_rank_lost_top_impression_share = null;
     /**
@@ -822,34 +822,34 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search top impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_top_impression_share = 146;</code>
+     * Generated from protobuf field <code>optional double search_top_impression_share = 146;</code>
      */
     protected $search_top_impression_share = null;
     /**
      * A measure of how quickly your page loads after clicks on your mobile ads.
      * The score is a range from 1 to 10, 10 being the fastest.
      *
-     * Generated from protobuf field <code>int64 speed_score = 147;</code>
+     * Generated from protobuf field <code>optional int64 speed_score = 147;</code>
      */
     protected $speed_score = null;
     /**
      * The percent of your ad impressions that are shown anywhere above the
      * organic search results.
      *
-     * Generated from protobuf field <code>double top_impression_percentage = 148;</code>
+     * Generated from protobuf field <code>optional double top_impression_percentage = 148;</code>
      */
     protected $top_impression_percentage = null;
     /**
      * The percentage of ad clicks to Accelerated Mobile Pages (AMP) landing pages
      * that reach a valid AMP page.
      *
-     * Generated from protobuf field <code>double valid_accelerated_mobile_pages_clicks_percentage = 149;</code>
+     * Generated from protobuf field <code>optional double valid_accelerated_mobile_pages_clicks_percentage = 149;</code>
      */
     protected $valid_accelerated_mobile_pages_clicks_percentage = null;
     /**
      * The value of all conversions divided by the number of all conversions.
      *
-     * Generated from protobuf field <code>double value_per_all_conversions = 150;</code>
+     * Generated from protobuf field <code>optional double value_per_all_conversions = 150;</code>
      */
     protected $value_per_all_conversions = null;
     /**
@@ -858,7 +858,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion date. Details for the by_conversion_date columns are available
      * at https://support.google.com/google-ads/answer/9549009.
      *
-     * Generated from protobuf field <code>double value_per_all_conversions_by_conversion_date = 244;</code>
+     * Generated from protobuf field <code>optional double value_per_all_conversions_by_conversion_date = 244;</code>
      */
     protected $value_per_all_conversions_by_conversion_date = null;
     /**
@@ -867,7 +867,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * is set to true. If you use conversion-based bidding, your bid strategies
      * will optimize for these conversions.
      *
-     * Generated from protobuf field <code>double value_per_conversion = 151;</code>
+     * Generated from protobuf field <code>optional double value_per_conversion = 151;</code>
      */
     protected $value_per_conversion = null;
     /**
@@ -879,7 +879,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * by_conversion_date columns are available at
      * https://support.google.com/google-ads/answer/9549009.
      *
-     * Generated from protobuf field <code>double value_per_conversions_by_conversion_date = 245;</code>
+     * Generated from protobuf field <code>optional double value_per_conversions_by_conversion_date = 245;</code>
      */
     protected $value_per_conversions_by_conversion_date = null;
     /**
@@ -889,31 +889,31 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double value_per_current_model_attributed_conversion = 152;</code>
+     * Generated from protobuf field <code>optional double value_per_current_model_attributed_conversion = 152;</code>
      */
     protected $value_per_current_model_attributed_conversion = null;
     /**
      * Percentage of impressions where the viewer watched all of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p100_rate = 132;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p100_rate = 132;</code>
      */
     protected $video_quartile_p100_rate = null;
     /**
      * Percentage of impressions where the viewer watched 25% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p25_rate = 133;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p25_rate = 133;</code>
      */
     protected $video_quartile_p25_rate = null;
     /**
      * Percentage of impressions where the viewer watched 50% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p50_rate = 134;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p50_rate = 134;</code>
      */
     protected $video_quartile_p50_rate = null;
     /**
      * Percentage of impressions where the viewer watched 75% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p75_rate = 135;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p75_rate = 135;</code>
      */
     protected $video_quartile_p75_rate = null;
     /**
@@ -921,13 +921,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * of impressions, including thumbnail impressions for TrueView in-display
      * ads.
      *
-     * Generated from protobuf field <code>double video_view_rate = 153;</code>
+     * Generated from protobuf field <code>optional double video_view_rate = 153;</code>
      */
     protected $video_view_rate = null;
     /**
      * The number of times your video ads were viewed.
      *
-     * Generated from protobuf field <code>int64 video_views = 154;</code>
+     * Generated from protobuf field <code>optional int64 video_views = 154;</code>
      */
     protected $video_views = null;
     /**
@@ -936,7 +936,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * completes a conversion on your site without interacting with (e.g.,
      * clicking on) another ad.
      *
-     * Generated from protobuf field <code>int64 view_through_conversions = 155;</code>
+     * Generated from protobuf field <code>optional int64 view_through_conversions = 155;</code>
      */
     protected $view_through_conversions = null;
     /**
@@ -1417,7 +1417,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percent of your ad impressions that are shown as the very first ad
      * above the organic search results.
      *
-     * Generated from protobuf field <code>double absolute_top_impression_percentage = 183;</code>
+     * Generated from protobuf field <code>optional double absolute_top_impression_percentage = 183;</code>
      * @return float
      */
     public function getAbsoluteTopImpressionPercentage()
@@ -1439,7 +1439,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percent of your ad impressions that are shown as the very first ad
      * above the organic search results.
      *
-     * Generated from protobuf field <code>double absolute_top_impression_percentage = 183;</code>
+     * Generated from protobuf field <code>optional double absolute_top_impression_percentage = 183;</code>
      * @param float $var
      * @return $this
      */
@@ -1454,7 +1454,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average cost of viewable impressions (`active_view_impressions`).
      *
-     * Generated from protobuf field <code>double active_view_cpm = 184;</code>
+     * Generated from protobuf field <code>optional double active_view_cpm = 184;</code>
      * @return float
      */
     public function getActiveViewCpm()
@@ -1475,7 +1475,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average cost of viewable impressions (`active_view_impressions`).
      *
-     * Generated from protobuf field <code>double active_view_cpm = 184;</code>
+     * Generated from protobuf field <code>optional double active_view_cpm = 184;</code>
      * @param float $var
      * @return $this
      */
@@ -1491,7 +1491,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Active view measurable clicks divided by active view viewable impressions.
      * This metric is reported only for display network.
      *
-     * Generated from protobuf field <code>double active_view_ctr = 185;</code>
+     * Generated from protobuf field <code>optional double active_view_ctr = 185;</code>
      * @return float
      */
     public function getActiveViewCtr()
@@ -1513,7 +1513,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Active view measurable clicks divided by active view viewable impressions.
      * This metric is reported only for display network.
      *
-     * Generated from protobuf field <code>double active_view_ctr = 185;</code>
+     * Generated from protobuf field <code>optional double active_view_ctr = 185;</code>
      * @param float $var
      * @return $this
      */
@@ -1529,7 +1529,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * A measurement of how often your ad has become viewable on a Display
      * Network site.
      *
-     * Generated from protobuf field <code>int64 active_view_impressions = 186;</code>
+     * Generated from protobuf field <code>optional int64 active_view_impressions = 186;</code>
      * @return int|string
      */
     public function getActiveViewImpressions()
@@ -1551,7 +1551,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * A measurement of how often your ad has become viewable on a Display
      * Network site.
      *
-     * Generated from protobuf field <code>int64 active_view_impressions = 186;</code>
+     * Generated from protobuf field <code>optional int64 active_view_impressions = 186;</code>
      * @param int|string $var
      * @return $this
      */
@@ -1567,7 +1567,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The ratio of impressions that could be measured by Active View over the
      * number of served impressions.
      *
-     * Generated from protobuf field <code>double active_view_measurability = 187;</code>
+     * Generated from protobuf field <code>optional double active_view_measurability = 187;</code>
      * @return float
      */
     public function getActiveViewMeasurability()
@@ -1589,7 +1589,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The ratio of impressions that could be measured by Active View over the
      * number of served impressions.
      *
-     * Generated from protobuf field <code>double active_view_measurability = 187;</code>
+     * Generated from protobuf field <code>optional double active_view_measurability = 187;</code>
      * @param float $var
      * @return $this
      */
@@ -1605,7 +1605,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The cost of the impressions you received that were measurable by Active
      * View.
      *
-     * Generated from protobuf field <code>int64 active_view_measurable_cost_micros = 188;</code>
+     * Generated from protobuf field <code>optional int64 active_view_measurable_cost_micros = 188;</code>
      * @return int|string
      */
     public function getActiveViewMeasurableCostMicros()
@@ -1627,7 +1627,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The cost of the impressions you received that were measurable by Active
      * View.
      *
-     * Generated from protobuf field <code>int64 active_view_measurable_cost_micros = 188;</code>
+     * Generated from protobuf field <code>optional int64 active_view_measurable_cost_micros = 188;</code>
      * @param int|string $var
      * @return $this
      */
@@ -1643,7 +1643,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times your ads are appearing on placements in positions
      * where they can be seen.
      *
-     * Generated from protobuf field <code>int64 active_view_measurable_impressions = 189;</code>
+     * Generated from protobuf field <code>optional int64 active_view_measurable_impressions = 189;</code>
      * @return int|string
      */
     public function getActiveViewMeasurableImpressions()
@@ -1665,7 +1665,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times your ads are appearing on placements in positions
      * where they can be seen.
      *
-     * Generated from protobuf field <code>int64 active_view_measurable_impressions = 189;</code>
+     * Generated from protobuf field <code>optional int64 active_view_measurable_impressions = 189;</code>
      * @param int|string $var
      * @return $this
      */
@@ -1681,7 +1681,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of time when your ad appeared on an Active View enabled site
      * (measurable impressions) and was viewable (viewable impressions).
      *
-     * Generated from protobuf field <code>double active_view_viewability = 190;</code>
+     * Generated from protobuf field <code>optional double active_view_viewability = 190;</code>
      * @return float
      */
     public function getActiveViewViewability()
@@ -1703,7 +1703,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of time when your ad appeared on an Active View enabled site
      * (measurable impressions) and was viewable (viewable impressions).
      *
-     * Generated from protobuf field <code>double active_view_viewability = 190;</code>
+     * Generated from protobuf field <code>optional double active_view_viewability = 190;</code>
      * @param float $var
      * @return $this
      */
@@ -1719,7 +1719,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * All conversions from interactions (as oppose to view through conversions)
      * divided by the number of ad interactions.
      *
-     * Generated from protobuf field <code>double all_conversions_from_interactions_rate = 191;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_interactions_rate = 191;</code>
      * @return float
      */
     public function getAllConversionsFromInteractionsRate()
@@ -1741,7 +1741,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * All conversions from interactions (as oppose to view through conversions)
      * divided by the number of ad interactions.
      *
-     * Generated from protobuf field <code>double all_conversions_from_interactions_rate = 191;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_interactions_rate = 191;</code>
      * @param float $var
      * @return $this
      */
@@ -1756,7 +1756,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions.
      *
-     * Generated from protobuf field <code>double all_conversions_value = 192;</code>
+     * Generated from protobuf field <code>optional double all_conversions_value = 192;</code>
      * @return float
      */
     public function getAllConversionsValue()
@@ -1777,7 +1777,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions.
      *
-     * Generated from protobuf field <code>double all_conversions_value = 192;</code>
+     * Generated from protobuf field <code>optional double all_conversions_value = 192;</code>
      * @param float $var
      * @return $this
      */
@@ -1825,7 +1825,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric.
      *
-     * Generated from protobuf field <code>double all_conversions = 193;</code>
+     * Generated from protobuf field <code>optional double all_conversions = 193;</code>
      * @return float
      */
     public function getAllConversions()
@@ -1847,7 +1847,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric.
      *
-     * Generated from protobuf field <code>double all_conversions = 193;</code>
+     * Generated from protobuf field <code>optional double all_conversions = 193;</code>
      * @param float $var
      * @return $this
      */
@@ -1897,7 +1897,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The value of all conversions divided by the total cost of ad interactions
      * (such as clicks for text ads or views for video ads).
      *
-     * Generated from protobuf field <code>double all_conversions_value_per_cost = 194;</code>
+     * Generated from protobuf field <code>optional double all_conversions_value_per_cost = 194;</code>
      * @return float
      */
     public function getAllConversionsValuePerCost()
@@ -1919,7 +1919,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The value of all conversions divided by the total cost of ad interactions
      * (such as clicks for text ads or views for video ads).
      *
-     * Generated from protobuf field <code>double all_conversions_value_per_cost = 194;</code>
+     * Generated from protobuf field <code>optional double all_conversions_value_per_cost = 194;</code>
      * @param float $var
      * @return $this
      */
@@ -1937,7 +1937,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_click_to_call = 195;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_click_to_call = 195;</code>
      * @return float
      */
     public function getAllConversionsFromClickToCall()
@@ -1961,7 +1961,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_click_to_call = 195;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_click_to_call = 195;</code>
      * @param float $var
      * @return $this
      */
@@ -1978,7 +1978,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_directions = 196;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_directions = 196;</code>
      * @return float
      */
     public function getAllConversionsFromDirections()
@@ -2001,7 +2001,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_directions = 196;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_directions = 196;</code>
      * @param float $var
      * @return $this
      */
@@ -2017,7 +2017,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The value of all conversions from interactions divided by the total number
      * of interactions.
      *
-     * Generated from protobuf field <code>double all_conversions_from_interactions_value_per_interaction = 197;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_interactions_value_per_interaction = 197;</code>
      * @return float
      */
     public function getAllConversionsFromInteractionsValuePerInteraction()
@@ -2039,7 +2039,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The value of all conversions from interactions divided by the total number
      * of interactions.
      *
-     * Generated from protobuf field <code>double all_conversions_from_interactions_value_per_interaction = 197;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_interactions_value_per_interaction = 197;</code>
      * @param float $var
      * @return $this
      */
@@ -2056,7 +2056,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_menu = 198;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_menu = 198;</code>
      * @return float
      */
     public function getAllConversionsFromMenu()
@@ -2079,7 +2079,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_menu = 198;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_menu = 198;</code>
      * @param float $var
      * @return $this
      */
@@ -2095,7 +2095,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times people placed an order at a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_order = 199;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_order = 199;</code>
      * @return float
      */
     public function getAllConversionsFromOrder()
@@ -2117,7 +2117,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times people placed an order at a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_order = 199;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_order = 199;</code>
      * @param float $var
      * @return $this
      */
@@ -2134,7 +2134,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * location for a store) that occurred after people clicked an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_other_engagement = 200;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_other_engagement = 200;</code>
      * @return float
      */
     public function getAllConversionsFromOtherEngagement()
@@ -2157,7 +2157,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * location for a store) that occurred after people clicked an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_other_engagement = 200;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_other_engagement = 200;</code>
      * @param float $var
      * @return $this
      */
@@ -2173,7 +2173,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Estimated number of times people visited a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_store_visit = 201;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_store_visit = 201;</code>
      * @return float
      */
     public function getAllConversionsFromStoreVisit()
@@ -2195,7 +2195,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Estimated number of times people visited a store after clicking an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_store_visit = 201;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_store_visit = 201;</code>
      * @param float $var
      * @return $this
      */
@@ -2212,7 +2212,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_store_website = 202;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_store_website = 202;</code>
      * @return float
      */
     public function getAllConversionsFromStoreWebsite()
@@ -2235,7 +2235,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * an ad.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>double all_conversions_from_store_website = 202;</code>
+     * Generated from protobuf field <code>optional double all_conversions_from_store_website = 202;</code>
      * @param float $var
      * @return $this
      */
@@ -2251,7 +2251,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average amount you pay per interaction. This amount is the total cost
      * of your ads divided by the total number of interactions.
      *
-     * Generated from protobuf field <code>double average_cost = 203;</code>
+     * Generated from protobuf field <code>optional double average_cost = 203;</code>
      * @return float
      */
     public function getAverageCost()
@@ -2273,7 +2273,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average amount you pay per interaction. This amount is the total cost
      * of your ads divided by the total number of interactions.
      *
-     * Generated from protobuf field <code>double average_cost = 203;</code>
+     * Generated from protobuf field <code>optional double average_cost = 203;</code>
      * @param float $var
      * @return $this
      */
@@ -2289,7 +2289,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total cost of all clicks divided by the total number of clicks
      * received.
      *
-     * Generated from protobuf field <code>double average_cpc = 204;</code>
+     * Generated from protobuf field <code>optional double average_cpc = 204;</code>
      * @return float
      */
     public function getAverageCpc()
@@ -2311,7 +2311,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The total cost of all clicks divided by the total number of clicks
      * received.
      *
-     * Generated from protobuf field <code>double average_cpc = 204;</code>
+     * Generated from protobuf field <code>optional double average_cpc = 204;</code>
      * @param float $var
      * @return $this
      */
@@ -2328,7 +2328,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * amount is the total cost of all ad engagements divided by the total number
      * of ad engagements.
      *
-     * Generated from protobuf field <code>double average_cpe = 205;</code>
+     * Generated from protobuf field <code>optional double average_cpe = 205;</code>
      * @return float
      */
     public function getAverageCpe()
@@ -2351,7 +2351,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * amount is the total cost of all ad engagements divided by the total number
      * of ad engagements.
      *
-     * Generated from protobuf field <code>double average_cpe = 205;</code>
+     * Generated from protobuf field <code>optional double average_cpe = 205;</code>
      * @param float $var
      * @return $this
      */
@@ -2366,7 +2366,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average cost-per-thousand impressions (CPM).
      *
-     * Generated from protobuf field <code>double average_cpm = 206;</code>
+     * Generated from protobuf field <code>optional double average_cpm = 206;</code>
      * @return float
      */
     public function getAverageCpm()
@@ -2387,7 +2387,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average cost-per-thousand impressions (CPM).
      *
-     * Generated from protobuf field <code>double average_cpm = 206;</code>
+     * Generated from protobuf field <code>optional double average_cpm = 206;</code>
      * @param float $var
      * @return $this
      */
@@ -2404,7 +2404,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average CPV is defined by the total cost of all ad views divided by
      * the number of views.
      *
-     * Generated from protobuf field <code>double average_cpv = 207;</code>
+     * Generated from protobuf field <code>optional double average_cpv = 207;</code>
      * @return float
      */
     public function getAverageCpv()
@@ -2427,7 +2427,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average CPV is defined by the total cost of all ad views divided by
      * the number of views.
      *
-     * Generated from protobuf field <code>double average_cpv = 207;</code>
+     * Generated from protobuf field <code>optional double average_cpv = 207;</code>
      * @param float $var
      * @return $this
      */
@@ -2442,7 +2442,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average number of pages viewed per session.
      *
-     * Generated from protobuf field <code>double average_page_views = 208;</code>
+     * Generated from protobuf field <code>optional double average_page_views = 208;</code>
      * @return float
      */
     public function getAveragePageViews()
@@ -2463,7 +2463,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average number of pages viewed per session.
      *
-     * Generated from protobuf field <code>double average_page_views = 208;</code>
+     * Generated from protobuf field <code>optional double average_page_views = 208;</code>
      * @param float $var
      * @return $this
      */
@@ -2479,7 +2479,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Total duration of all sessions (in seconds) / number of sessions. Imported
      * from Google Analytics.
      *
-     * Generated from protobuf field <code>double average_time_on_site = 209;</code>
+     * Generated from protobuf field <code>optional double average_time_on_site = 209;</code>
      * @return float
      */
     public function getAverageTimeOnSite()
@@ -2501,7 +2501,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Total duration of all sessions (in seconds) / number of sessions. Imported
      * from Google Analytics.
      *
-     * Generated from protobuf field <code>double average_time_on_site = 209;</code>
+     * Generated from protobuf field <code>optional double average_time_on_site = 209;</code>
      * @param float $var
      * @return $this
      */
@@ -2516,7 +2516,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * An indication of how other advertisers are bidding on similar products.
      *
-     * Generated from protobuf field <code>double benchmark_average_max_cpc = 210;</code>
+     * Generated from protobuf field <code>optional double benchmark_average_max_cpc = 210;</code>
      * @return float
      */
     public function getBenchmarkAverageMaxCpc()
@@ -2537,7 +2537,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * An indication of how other advertisers are bidding on similar products.
      *
-     * Generated from protobuf field <code>double benchmark_average_max_cpc = 210;</code>
+     * Generated from protobuf field <code>optional double benchmark_average_max_cpc = 210;</code>
      * @param float $var
      * @return $this
      */
@@ -2553,7 +2553,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An indication on how other advertisers' Shopping ads for similar products
      * are performing based on how often people who see their ad click on it.
      *
-     * Generated from protobuf field <code>double benchmark_ctr = 211;</code>
+     * Generated from protobuf field <code>optional double benchmark_ctr = 211;</code>
      * @return float
      */
     public function getBenchmarkCtr()
@@ -2575,7 +2575,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An indication on how other advertisers' Shopping ads for similar products
      * are performing based on how often people who see their ad click on it.
      *
-     * Generated from protobuf field <code>double benchmark_ctr = 211;</code>
+     * Generated from protobuf field <code>optional double benchmark_ctr = 211;</code>
      * @param float $var
      * @return $this
      */
@@ -2591,7 +2591,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Percentage of clicks where the user only visited a single page on your
      * site. Imported from Google Analytics.
      *
-     * Generated from protobuf field <code>double bounce_rate = 212;</code>
+     * Generated from protobuf field <code>optional double bounce_rate = 212;</code>
      * @return float
      */
     public function getBounceRate()
@@ -2613,7 +2613,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Percentage of clicks where the user only visited a single page on your
      * site. Imported from Google Analytics.
      *
-     * Generated from protobuf field <code>double bounce_rate = 212;</code>
+     * Generated from protobuf field <code>optional double bounce_rate = 212;</code>
      * @param float $var
      * @return $this
      */
@@ -2628,7 +2628,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 131;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 131;</code>
      * @return int|string
      */
     public function getClicks()
@@ -2649,7 +2649,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of clicks.
      *
-     * Generated from protobuf field <code>int64 clicks = 131;</code>
+     * Generated from protobuf field <code>optional int64 clicks = 131;</code>
      * @param int|string $var
      * @return $this
      */
@@ -2666,7 +2666,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results was clicked. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 combined_clicks = 156;</code>
+     * Generated from protobuf field <code>optional int64 combined_clicks = 156;</code>
      * @return int|string
      */
     public function getCombinedClicks()
@@ -2689,7 +2689,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results was clicked. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 combined_clicks = 156;</code>
+     * Generated from protobuf field <code>optional int64 combined_clicks = 156;</code>
      * @param int|string $var
      * @return $this
      */
@@ -2707,7 +2707,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * help page at https://support.google.com/google-ads/answer/3097241 for
      * details.
      *
-     * Generated from protobuf field <code>double combined_clicks_per_query = 157;</code>
+     * Generated from protobuf field <code>optional double combined_clicks_per_query = 157;</code>
      * @return float
      */
     public function getCombinedClicksPerQuery()
@@ -2731,7 +2731,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * help page at https://support.google.com/google-ads/answer/3097241 for
      * details.
      *
-     * Generated from protobuf field <code>double combined_clicks_per_query = 157;</code>
+     * Generated from protobuf field <code>optional double combined_clicks_per_query = 157;</code>
      * @param float $var
      * @return $this
      */
@@ -2748,7 +2748,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results or showed one of your text ads. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 combined_queries = 158;</code>
+     * Generated from protobuf field <code>optional int64 combined_queries = 158;</code>
      * @return int|string
      */
     public function getCombinedQueries()
@@ -2771,7 +2771,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results or showed one of your text ads. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 combined_queries = 158;</code>
+     * Generated from protobuf field <code>optional int64 combined_queries = 158;</code>
      * @param int|string $var
      * @return $this
      */
@@ -2789,7 +2789,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content budget lost impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double content_budget_lost_impression_share = 159;</code>
+     * Generated from protobuf field <code>optional double content_budget_lost_impression_share = 159;</code>
      * @return float
      */
     public function getContentBudgetLostImpressionShare()
@@ -2813,7 +2813,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content budget lost impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double content_budget_lost_impression_share = 159;</code>
+     * Generated from protobuf field <code>optional double content_budget_lost_impression_share = 159;</code>
      * @param float $var
      * @return $this
      */
@@ -2831,7 +2831,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double content_impression_share = 160;</code>
+     * Generated from protobuf field <code>optional double content_impression_share = 160;</code>
      * @return float
      */
     public function getContentImpressionShare()
@@ -2855,7 +2855,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double content_impression_share = 160;</code>
+     * Generated from protobuf field <code>optional double content_impression_share = 160;</code>
      * @param float $var
      * @return $this
      */
@@ -2874,7 +2874,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * browser that did not previously click an ad from an appropriate
      * advertiser). The date/time is in the customer's time zone.
      *
-     * Generated from protobuf field <code>string conversion_last_received_request_date_time = 161;</code>
+     * Generated from protobuf field <code>optional string conversion_last_received_request_date_time = 161;</code>
      * @return string
      */
     public function getConversionLastReceivedRequestDateTime()
@@ -2899,7 +2899,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * browser that did not previously click an ad from an appropriate
      * advertiser). The date/time is in the customer's time zone.
      *
-     * Generated from protobuf field <code>string conversion_last_received_request_date_time = 161;</code>
+     * Generated from protobuf field <code>optional string conversion_last_received_request_date_time = 161;</code>
      * @param string $var
      * @return $this
      */
@@ -2915,7 +2915,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The date of the most recent conversion for this conversion action. The date
      * is in the customer's time zone.
      *
-     * Generated from protobuf field <code>string conversion_last_conversion_date = 162;</code>
+     * Generated from protobuf field <code>optional string conversion_last_conversion_date = 162;</code>
      * @return string
      */
     public function getConversionLastConversionDate()
@@ -2937,7 +2937,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The date of the most recent conversion for this conversion action. The date
      * is in the customer's time zone.
      *
-     * Generated from protobuf field <code>string conversion_last_conversion_date = 162;</code>
+     * Generated from protobuf field <code>optional string conversion_last_conversion_date = 162;</code>
      * @param string $var
      * @return $this
      */
@@ -2955,7 +2955,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content rank lost impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double content_rank_lost_impression_share = 163;</code>
+     * Generated from protobuf field <code>optional double content_rank_lost_impression_share = 163;</code>
      * @return float
      */
     public function getContentRankLostImpressionShare()
@@ -2979,7 +2979,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Content rank lost impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double content_rank_lost_impression_share = 163;</code>
+     * Generated from protobuf field <code>optional double content_rank_lost_impression_share = 163;</code>
      * @param float $var
      * @return $this
      */
@@ -2998,7 +2998,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double conversions_from_interactions_rate = 164;</code>
+     * Generated from protobuf field <code>optional double conversions_from_interactions_rate = 164;</code>
      * @return float
      */
     public function getConversionsFromInteractionsRate()
@@ -3023,7 +3023,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double conversions_from_interactions_rate = 164;</code>
+     * Generated from protobuf field <code>optional double conversions_from_interactions_rate = 164;</code>
      * @param float $var
      * @return $this
      */
@@ -3041,7 +3041,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions_value = 165;</code>
+     * Generated from protobuf field <code>optional double conversions_value = 165;</code>
      * @return float
      */
     public function getConversionsValue()
@@ -3065,7 +3065,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions_value = 165;</code>
+     * Generated from protobuf field <code>optional double conversions_value = 165;</code>
      * @param float $var
      * @return $this
      */
@@ -3121,7 +3121,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * is set to true. If you use conversion-based bidding, your bid strategies
      * will optimize for these conversions.
      *
-     * Generated from protobuf field <code>double conversions_value_per_cost = 166;</code>
+     * Generated from protobuf field <code>optional double conversions_value_per_cost = 166;</code>
      * @return float
      */
     public function getConversionsValuePerCost()
@@ -3145,7 +3145,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * is set to true. If you use conversion-based bidding, your bid strategies
      * will optimize for these conversions.
      *
-     * Generated from protobuf field <code>double conversions_value_per_cost = 166;</code>
+     * Generated from protobuf field <code>optional double conversions_value_per_cost = 166;</code>
      * @param float $var
      * @return $this
      */
@@ -3164,7 +3164,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions_from_interactions_value_per_interaction = 167;</code>
+     * Generated from protobuf field <code>optional double conversions_from_interactions_value_per_interaction = 167;</code>
      * @return float
      */
     public function getConversionsFromInteractionsValuePerInteraction()
@@ -3189,7 +3189,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions_from_interactions_value_per_interaction = 167;</code>
+     * Generated from protobuf field <code>optional double conversions_from_interactions_value_per_interaction = 167;</code>
      * @param float $var
      * @return $this
      */
@@ -3207,7 +3207,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions = 168;</code>
+     * Generated from protobuf field <code>optional double conversions = 168;</code>
      * @return float
      */
     public function getConversions()
@@ -3231,7 +3231,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double conversions = 168;</code>
+     * Generated from protobuf field <code>optional double conversions = 168;</code>
      * @param float $var
      * @return $this
      */
@@ -3285,7 +3285,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      * (CPM) costs during this period.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 169;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 169;</code>
      * @return int|string
      */
     public function getCostMicros()
@@ -3307,7 +3307,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      * (CPM) costs during this period.
      *
-     * Generated from protobuf field <code>int64 cost_micros = 169;</code>
+     * Generated from protobuf field <code>optional int64 cost_micros = 169;</code>
      * @param int|string $var
      * @return $this
      */
@@ -3322,7 +3322,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by all conversions.
      *
-     * Generated from protobuf field <code>double cost_per_all_conversions = 170;</code>
+     * Generated from protobuf field <code>optional double cost_per_all_conversions = 170;</code>
      * @return float
      */
     public function getCostPerAllConversions()
@@ -3343,7 +3343,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by all conversions.
      *
-     * Generated from protobuf field <code>double cost_per_all_conversions = 170;</code>
+     * Generated from protobuf field <code>optional double cost_per_all_conversions = 170;</code>
      * @param float $var
      * @return $this
      */
@@ -3361,7 +3361,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double cost_per_conversion = 171;</code>
+     * Generated from protobuf field <code>optional double cost_per_conversion = 171;</code>
      * @return float
      */
     public function getCostPerConversion()
@@ -3385,7 +3385,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double cost_per_conversion = 171;</code>
+     * Generated from protobuf field <code>optional double cost_per_conversion = 171;</code>
      * @param float $var
      * @return $this
      */
@@ -3404,7 +3404,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double cost_per_current_model_attributed_conversion = 172;</code>
+     * Generated from protobuf field <code>optional double cost_per_current_model_attributed_conversion = 172;</code>
      * @return float
      */
     public function getCostPerCurrentModelAttributedConversion()
@@ -3429,7 +3429,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double cost_per_current_model_attributed_conversion = 172;</code>
+     * Generated from protobuf field <code>optional double cost_per_current_model_attributed_conversion = 172;</code>
      * @param float $var
      * @return $this
      */
@@ -3446,7 +3446,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * then converts on a different device or browser.
      * Cross-device conversions are already included in all_conversions.
      *
-     * Generated from protobuf field <code>double cross_device_conversions = 173;</code>
+     * Generated from protobuf field <code>optional double cross_device_conversions = 173;</code>
      * @return float
      */
     public function getCrossDeviceConversions()
@@ -3469,7 +3469,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * then converts on a different device or browser.
      * Cross-device conversions are already included in all_conversions.
      *
-     * Generated from protobuf field <code>double cross_device_conversions = 173;</code>
+     * Generated from protobuf field <code>optional double cross_device_conversions = 173;</code>
      * @param float $var
      * @return $this
      */
@@ -3485,7 +3485,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of clicks your ad receives (Clicks) divided by the number
      * of times your ad is shown (Impressions).
      *
-     * Generated from protobuf field <code>double ctr = 174;</code>
+     * Generated from protobuf field <code>optional double ctr = 174;</code>
      * @return float
      */
     public function getCtr()
@@ -3507,7 +3507,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of clicks your ad receives (Clicks) divided by the number
      * of times your ad is shown (Impressions).
      *
-     * Generated from protobuf field <code>double ctr = 174;</code>
+     * Generated from protobuf field <code>optional double ctr = 174;</code>
      * @param float $var
      * @return $this
      */
@@ -3526,7 +3526,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions = 175;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions = 175;</code>
      * @return float
      */
     public function getCurrentModelAttributedConversions()
@@ -3551,7 +3551,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions = 175;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions = 175;</code>
      * @param float $var
      * @return $this
      */
@@ -3571,7 +3571,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_from_interactions_rate = 176;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_from_interactions_rate = 176;</code>
      * @return float
      */
     public function getCurrentModelAttributedConversionsFromInteractionsRate()
@@ -3597,7 +3597,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_from_interactions_rate = 176;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_from_interactions_rate = 176;</code>
      * @param float $var
      * @return $this
      */
@@ -3616,7 +3616,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_from_interactions_value_per_interaction = 177;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_from_interactions_value_per_interaction = 177;</code>
      * @return float
      */
     public function getCurrentModelAttributedConversionsFromInteractionsValuePerInteraction()
@@ -3641,7 +3641,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_from_interactions_value_per_interaction = 177;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_from_interactions_value_per_interaction = 177;</code>
      * @param float $var
      * @return $this
      */
@@ -3659,7 +3659,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_value = 178;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_value = 178;</code>
      * @return float
      */
     public function getCurrentModelAttributedConversionsValue()
@@ -3683,7 +3683,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * true. If you use conversion-based bidding, your bid strategies will
      * optimize for these conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_value = 178;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_value = 178;</code>
      * @param float $var
      * @return $this
      */
@@ -3702,7 +3702,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_value_per_cost = 179;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_value_per_cost = 179;</code>
      * @return float
      */
     public function getCurrentModelAttributedConversionsValuePerCost()
@@ -3727,7 +3727,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double current_model_attributed_conversions_value_per_cost = 179;</code>
+     * Generated from protobuf field <code>optional double current_model_attributed_conversions_value_per_cost = 179;</code>
      * @param float $var
      * @return $this
      */
@@ -3743,7 +3743,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * How often people engage with your ad after it's shown to them. This is the
      * number of ad expansions divided by the number of times your ad is shown.
      *
-     * Generated from protobuf field <code>double engagement_rate = 180;</code>
+     * Generated from protobuf field <code>optional double engagement_rate = 180;</code>
      * @return float
      */
     public function getEngagementRate()
@@ -3765,7 +3765,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * How often people engage with your ad after it's shown to them. This is the
      * number of ad expansions divided by the number of times your ad is shown.
      *
-     * Generated from protobuf field <code>double engagement_rate = 180;</code>
+     * Generated from protobuf field <code>optional double engagement_rate = 180;</code>
      * @param float $var
      * @return $this
      */
@@ -3782,7 +3782,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An engagement occurs when a viewer expands your Lightbox ad. Also, in the
      * future, other ad types may support engagement metrics.
      *
-     * Generated from protobuf field <code>int64 engagements = 181;</code>
+     * Generated from protobuf field <code>optional int64 engagements = 181;</code>
      * @return int|string
      */
     public function getEngagements()
@@ -3805,7 +3805,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An engagement occurs when a viewer expands your Lightbox ad. Also, in the
      * future, other ad types may support engagement metrics.
      *
-     * Generated from protobuf field <code>int64 engagements = 181;</code>
+     * Generated from protobuf field <code>optional int64 engagements = 181;</code>
      * @param int|string $var
      * @return $this
      */
@@ -3820,7 +3820,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average lead value based on clicks.
      *
-     * Generated from protobuf field <code>double hotel_average_lead_value_micros = 213;</code>
+     * Generated from protobuf field <code>optional double hotel_average_lead_value_micros = 213;</code>
      * @return float
      */
     public function getHotelAverageLeadValueMicros()
@@ -3841,7 +3841,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Average lead value based on clicks.
      *
-     * Generated from protobuf field <code>double hotel_average_lead_value_micros = 213;</code>
+     * Generated from protobuf field <code>optional double hotel_average_lead_value_micros = 213;</code>
      * @param float $var
      * @return $this
      */
@@ -3857,7 +3857,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average price difference between the price offered by reporting hotel
      * advertiser and the cheapest price offered by the competing advertiser.
      *
-     * Generated from protobuf field <code>double hotel_price_difference_percentage = 214;</code>
+     * Generated from protobuf field <code>optional double hotel_price_difference_percentage = 214;</code>
      * @return float
      */
     public function getHotelPriceDifferencePercentage()
@@ -3879,7 +3879,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The average price difference between the price offered by reporting hotel
      * advertiser and the cheapest price offered by the competing advertiser.
      *
-     * Generated from protobuf field <code>double hotel_price_difference_percentage = 214;</code>
+     * Generated from protobuf field <code>optional double hotel_price_difference_percentage = 214;</code>
      * @param float $var
      * @return $this
      */
@@ -3895,7 +3895,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of impressions that hotel partners could have had given their
      * feed performance.
      *
-     * Generated from protobuf field <code>int64 hotel_eligible_impressions = 215;</code>
+     * Generated from protobuf field <code>optional int64 hotel_eligible_impressions = 215;</code>
      * @return int|string
      */
     public function getHotelEligibleImpressions()
@@ -3917,7 +3917,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of impressions that hotel partners could have had given their
      * feed performance.
      *
-     * Generated from protobuf field <code>int64 hotel_eligible_impressions = 215;</code>
+     * Generated from protobuf field <code>optional int64 hotel_eligible_impressions = 215;</code>
      * @param int|string $var
      * @return $this
      */
@@ -3984,7 +3984,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The historical quality score.
      *
-     * Generated from protobuf field <code>int64 historical_quality_score = 216;</code>
+     * Generated from protobuf field <code>optional int64 historical_quality_score = 216;</code>
      * @return int|string
      */
     public function getHistoricalQualityScore()
@@ -4005,7 +4005,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The historical quality score.
      *
-     * Generated from protobuf field <code>int64 historical_quality_score = 216;</code>
+     * Generated from protobuf field <code>optional int64 historical_quality_score = 216;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4046,7 +4046,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times the ad was forwarded to someone else as a message.
      *
-     * Generated from protobuf field <code>int64 gmail_forwards = 217;</code>
+     * Generated from protobuf field <code>optional int64 gmail_forwards = 217;</code>
      * @return int|string
      */
     public function getGmailForwards()
@@ -4067,7 +4067,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times the ad was forwarded to someone else as a message.
      *
-     * Generated from protobuf field <code>int64 gmail_forwards = 217;</code>
+     * Generated from protobuf field <code>optional int64 gmail_forwards = 217;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4083,7 +4083,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times someone has saved your Gmail ad to their inbox as a
      * message.
      *
-     * Generated from protobuf field <code>int64 gmail_saves = 218;</code>
+     * Generated from protobuf field <code>optional int64 gmail_saves = 218;</code>
      * @return int|string
      */
     public function getGmailSaves()
@@ -4105,7 +4105,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times someone has saved your Gmail ad to their inbox as a
      * message.
      *
-     * Generated from protobuf field <code>int64 gmail_saves = 218;</code>
+     * Generated from protobuf field <code>optional int64 gmail_saves = 218;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4121,7 +4121,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of clicks to the landing page on the expanded state of Gmail
      * ads.
      *
-     * Generated from protobuf field <code>int64 gmail_secondary_clicks = 219;</code>
+     * Generated from protobuf field <code>optional int64 gmail_secondary_clicks = 219;</code>
      * @return int|string
      */
     public function getGmailSecondaryClicks()
@@ -4143,7 +4143,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of clicks to the landing page on the expanded state of Gmail
      * ads.
      *
-     * Generated from protobuf field <code>int64 gmail_secondary_clicks = 219;</code>
+     * Generated from protobuf field <code>optional int64 gmail_secondary_clicks = 219;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4159,7 +4159,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times a store's location-based ad was shown.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>int64 impressions_from_store_reach = 220;</code>
+     * Generated from protobuf field <code>optional int64 impressions_from_store_reach = 220;</code>
      * @return int|string
      */
     public function getImpressionsFromStoreReach()
@@ -4181,7 +4181,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The number of times a store's location-based ad was shown.
      * This metric applies to feed items only.
      *
-     * Generated from protobuf field <code>int64 impressions_from_store_reach = 220;</code>
+     * Generated from protobuf field <code>optional int64 impressions_from_store_reach = 220;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4197,7 +4197,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
      *
-     * Generated from protobuf field <code>int64 impressions = 221;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 221;</code>
      * @return int|string
      */
     public function getImpressions()
@@ -4219,7 +4219,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
      *
-     * Generated from protobuf field <code>int64 impressions = 221;</code>
+     * Generated from protobuf field <code>optional int64 impressions = 221;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4236,7 +4236,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * This is the number of interactions divided by the number of times your ad
      * is shown.
      *
-     * Generated from protobuf field <code>double interaction_rate = 222;</code>
+     * Generated from protobuf field <code>optional double interaction_rate = 222;</code>
      * @return float
      */
     public function getInteractionRate()
@@ -4259,7 +4259,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * This is the number of interactions divided by the number of times your ad
      * is shown.
      *
-     * Generated from protobuf field <code>double interaction_rate = 222;</code>
+     * Generated from protobuf field <code>optional double interaction_rate = 222;</code>
      * @param float $var
      * @return $this
      */
@@ -4276,7 +4276,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An interaction is the main user action associated with an ad format-clicks
      * for text and shopping ads, views for video ads, and so on.
      *
-     * Generated from protobuf field <code>int64 interactions = 223;</code>
+     * Generated from protobuf field <code>optional int64 interactions = 223;</code>
      * @return int|string
      */
     public function getInteractions()
@@ -4299,7 +4299,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * An interaction is the main user action associated with an ad format-clicks
      * for text and shopping ads, views for video ads, and so on.
      *
-     * Generated from protobuf field <code>int64 interactions = 223;</code>
+     * Generated from protobuf field <code>optional int64 interactions = 223;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4341,7 +4341,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of clicks filtered out of your total number of clicks
      * (filtered + non-filtered clicks) during the reporting period.
      *
-     * Generated from protobuf field <code>double invalid_click_rate = 224;</code>
+     * Generated from protobuf field <code>optional double invalid_click_rate = 224;</code>
      * @return float
      */
     public function getInvalidClickRate()
@@ -4363,7 +4363,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of clicks filtered out of your total number of clicks
      * (filtered + non-filtered clicks) during the reporting period.
      *
-     * Generated from protobuf field <code>double invalid_click_rate = 224;</code>
+     * Generated from protobuf field <code>optional double invalid_click_rate = 224;</code>
      * @param float $var
      * @return $this
      */
@@ -4378,7 +4378,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of clicks Google considers illegitimate and doesn't charge you for.
      *
-     * Generated from protobuf field <code>int64 invalid_clicks = 225;</code>
+     * Generated from protobuf field <code>optional int64 invalid_clicks = 225;</code>
      * @return int|string
      */
     public function getInvalidClicks()
@@ -4399,7 +4399,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of clicks Google considers illegitimate and doesn't charge you for.
      *
-     * Generated from protobuf field <code>int64 invalid_clicks = 225;</code>
+     * Generated from protobuf field <code>optional int64 invalid_clicks = 225;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4415,7 +4415,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Number of message chats initiated for Click To Message impressions that
      * were message tracking eligible.
      *
-     * Generated from protobuf field <code>int64 message_chats = 226;</code>
+     * Generated from protobuf field <code>optional int64 message_chats = 226;</code>
      * @return int|string
      */
     public function getMessageChats()
@@ -4437,7 +4437,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Number of message chats initiated for Click To Message impressions that
      * were message tracking eligible.
      *
-     * Generated from protobuf field <code>int64 message_chats = 226;</code>
+     * Generated from protobuf field <code>optional int64 message_chats = 226;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4452,7 +4452,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of Click To Message impressions that were message tracking eligible.
      *
-     * Generated from protobuf field <code>int64 message_impressions = 227;</code>
+     * Generated from protobuf field <code>optional int64 message_impressions = 227;</code>
      * @return int|string
      */
     public function getMessageImpressions()
@@ -4473,7 +4473,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of Click To Message impressions that were message tracking eligible.
      *
-     * Generated from protobuf field <code>int64 message_impressions = 227;</code>
+     * Generated from protobuf field <code>optional int64 message_impressions = 227;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4492,7 +4492,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * a messaging option and message tracking enabled.
      * Note that this rate can be more than 1.0 for a given message impression.
      *
-     * Generated from protobuf field <code>double message_chat_rate = 228;</code>
+     * Generated from protobuf field <code>optional double message_chat_rate = 228;</code>
      * @return float
      */
     public function getMessageChatRate()
@@ -4517,7 +4517,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * a messaging option and message tracking enabled.
      * Note that this rate can be more than 1.0 for a given message impression.
      *
-     * Generated from protobuf field <code>double message_chat_rate = 228;</code>
+     * Generated from protobuf field <code>optional double message_chat_rate = 228;</code>
      * @param float $var
      * @return $this
      */
@@ -4532,7 +4532,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of mobile clicks that go to a mobile-friendly page.
      *
-     * Generated from protobuf field <code>double mobile_friendly_clicks_percentage = 229;</code>
+     * Generated from protobuf field <code>optional double mobile_friendly_clicks_percentage = 229;</code>
      * @return float
      */
     public function getMobileFriendlyClicksPercentage()
@@ -4553,7 +4553,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of mobile clicks that go to a mobile-friendly page.
      *
-     * Generated from protobuf field <code>double mobile_friendly_clicks_percentage = 229;</code>
+     * Generated from protobuf field <code>optional double mobile_friendly_clicks_percentage = 229;</code>
      * @param float $var
      * @return $this
      */
@@ -4570,7 +4570,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results for a particular query. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 organic_clicks = 230;</code>
+     * Generated from protobuf field <code>optional int64 organic_clicks = 230;</code>
      * @return int|string
      */
     public function getOrganicClicks()
@@ -4593,7 +4593,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * results for a particular query. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 organic_clicks = 230;</code>
+     * Generated from protobuf field <code>optional int64 organic_clicks = 230;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4611,7 +4611,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * returned pages from your site (organic_queries). See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>double organic_clicks_per_query = 231;</code>
+     * Generated from protobuf field <code>optional double organic_clicks_per_query = 231;</code>
      * @return float
      */
     public function getOrganicClicksPerQuery()
@@ -4635,7 +4635,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * returned pages from your site (organic_queries). See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>double organic_clicks_per_query = 231;</code>
+     * Generated from protobuf field <code>optional double organic_clicks_per_query = 231;</code>
      * @param float $var
      * @return $this
      */
@@ -4652,7 +4652,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * help page at https://support.google.com/google-ads/answer/3097241 for
      * details.
      *
-     * Generated from protobuf field <code>int64 organic_impressions = 232;</code>
+     * Generated from protobuf field <code>optional int64 organic_impressions = 232;</code>
      * @return int|string
      */
     public function getOrganicImpressions()
@@ -4675,7 +4675,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * help page at https://support.google.com/google-ads/answer/3097241 for
      * details.
      *
-     * Generated from protobuf field <code>int64 organic_impressions = 232;</code>
+     * Generated from protobuf field <code>optional int64 organic_impressions = 232;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4693,7 +4693,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * your site's listing in the unpaid results (organic_queries). See the help
      * page at https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>double organic_impressions_per_query = 233;</code>
+     * Generated from protobuf field <code>optional double organic_impressions_per_query = 233;</code>
      * @return float
      */
     public function getOrganicImpressionsPerQuery()
@@ -4717,7 +4717,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * your site's listing in the unpaid results (organic_queries). See the help
      * page at https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>double organic_impressions_per_query = 233;</code>
+     * Generated from protobuf field <code>optional double organic_impressions_per_query = 233;</code>
      * @param float $var
      * @return $this
      */
@@ -4734,7 +4734,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * unpaid results. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 organic_queries = 234;</code>
+     * Generated from protobuf field <code>optional int64 organic_queries = 234;</code>
      * @return int|string
      */
     public function getOrganicQueries()
@@ -4757,7 +4757,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * unpaid results. See the help page at
      * https://support.google.com/google-ads/answer/3097241 for details.
      *
-     * Generated from protobuf field <code>int64 organic_queries = 234;</code>
+     * Generated from protobuf field <code>optional int64 organic_queries = 234;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4773,7 +4773,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Percentage of first-time sessions (from people who had never visited your
      * site before). Imported from Google Analytics.
      *
-     * Generated from protobuf field <code>double percent_new_visitors = 235;</code>
+     * Generated from protobuf field <code>optional double percent_new_visitors = 235;</code>
      * @return float
      */
     public function getPercentNewVisitors()
@@ -4795,7 +4795,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Percentage of first-time sessions (from people who had never visited your
      * site before). Imported from Google Analytics.
      *
-     * Generated from protobuf field <code>double percent_new_visitors = 235;</code>
+     * Generated from protobuf field <code>optional double percent_new_visitors = 235;</code>
      * @param float $var
      * @return $this
      */
@@ -4810,7 +4810,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of offline phone calls.
      *
-     * Generated from protobuf field <code>int64 phone_calls = 236;</code>
+     * Generated from protobuf field <code>optional int64 phone_calls = 236;</code>
      * @return int|string
      */
     public function getPhoneCalls()
@@ -4831,7 +4831,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of offline phone calls.
      *
-     * Generated from protobuf field <code>int64 phone_calls = 236;</code>
+     * Generated from protobuf field <code>optional int64 phone_calls = 236;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4846,7 +4846,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of offline phone impressions.
      *
-     * Generated from protobuf field <code>int64 phone_impressions = 237;</code>
+     * Generated from protobuf field <code>optional int64 phone_impressions = 237;</code>
      * @return int|string
      */
     public function getPhoneImpressions()
@@ -4867,7 +4867,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Number of offline phone impressions.
      *
-     * Generated from protobuf field <code>int64 phone_impressions = 237;</code>
+     * Generated from protobuf field <code>optional int64 phone_impressions = 237;</code>
      * @param int|string $var
      * @return $this
      */
@@ -4883,7 +4883,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Number of phone calls received (phone_calls) divided by the number of
      * times your phone number is shown (phone_impressions).
      *
-     * Generated from protobuf field <code>double phone_through_rate = 238;</code>
+     * Generated from protobuf field <code>optional double phone_through_rate = 238;</code>
      * @return float
      */
     public function getPhoneThroughRate()
@@ -4905,7 +4905,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Number of phone calls received (phone_calls) divided by the number of
      * times your phone number is shown (phone_impressions).
      *
-     * Generated from protobuf field <code>double phone_through_rate = 238;</code>
+     * Generated from protobuf field <code>optional double phone_through_rate = 238;</code>
      * @param float $var
      * @return $this
      */
@@ -4922,7 +4922,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * all advertisers on the websites that show your ads. Measures how your ads
      * perform on Display Network sites compared to other ads on the same sites.
      *
-     * Generated from protobuf field <code>double relative_ctr = 239;</code>
+     * Generated from protobuf field <code>optional double relative_ctr = 239;</code>
      * @return float
      */
     public function getRelativeCtr()
@@ -4945,7 +4945,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * all advertisers on the websites that show your ads. Measures how your ads
      * perform on Display Network sites compared to other ads on the same sites.
      *
-     * Generated from protobuf field <code>double relative_ctr = 239;</code>
+     * Generated from protobuf field <code>optional double relative_ctr = 239;</code>
      * @param float $var
      * @return $this
      */
@@ -4963,7 +4963,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_absolute_top_impression_share = 136;</code>
+     * Generated from protobuf field <code>optional double search_absolute_top_impression_share = 136;</code>
      * @return float
      */
     public function getSearchAbsoluteTopImpressionShare()
@@ -4987,7 +4987,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_absolute_top_impression_share = 136;</code>
+     * Generated from protobuf field <code>optional double search_absolute_top_impression_share = 136;</code>
      * @param float $var
      * @return $this
      */
@@ -5005,7 +5005,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost absolute top impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_absolute_top_impression_share = 137;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_absolute_top_impression_share = 137;</code>
      * @return float
      */
     public function getSearchBudgetLostAbsoluteTopImpressionShare()
@@ -5029,7 +5029,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost absolute top impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_absolute_top_impression_share = 137;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_absolute_top_impression_share = 137;</code>
      * @param float $var
      * @return $this
      */
@@ -5047,7 +5047,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_impression_share = 138;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_impression_share = 138;</code>
      * @return float
      */
     public function getSearchBudgetLostImpressionShare()
@@ -5071,7 +5071,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_impression_share = 138;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_impression_share = 138;</code>
      * @param float $var
      * @return $this
      */
@@ -5089,7 +5089,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost top impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_top_impression_share = 139;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_top_impression_share = 139;</code>
      * @return float
      */
     public function getSearchBudgetLostTopImpressionShare()
@@ -5113,7 +5113,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * budget lost top impression share is reported in the range of 0 to 0.9. Any
      * value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_budget_lost_top_impression_share = 139;</code>
+     * Generated from protobuf field <code>optional double search_budget_lost_top_impression_share = 139;</code>
      * @param float $var
      * @return $this
      */
@@ -5131,7 +5131,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search click share is reported in the range of 0.1 to 1. Any value
      * below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_click_share = 140;</code>
+     * Generated from protobuf field <code>optional double search_click_share = 140;</code>
      * @return float
      */
     public function getSearchClickShare()
@@ -5155,7 +5155,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search click share is reported in the range of 0.1 to 1. Any value
      * below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_click_share = 140;</code>
+     * Generated from protobuf field <code>optional double search_click_share = 140;</code>
      * @param float $var
      * @return $this
      */
@@ -5175,7 +5175,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * impression share is reported in the range of 0.1 to 1. Any value below 0.1
      * is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_exact_match_impression_share = 141;</code>
+     * Generated from protobuf field <code>optional double search_exact_match_impression_share = 141;</code>
      * @return float
      */
     public function getSearchExactMatchImpressionShare()
@@ -5201,7 +5201,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * impression share is reported in the range of 0.1 to 1. Any value below 0.1
      * is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_exact_match_impression_share = 141;</code>
+     * Generated from protobuf field <code>optional double search_exact_match_impression_share = 141;</code>
      * @param float $var
      * @return $this
      */
@@ -5219,7 +5219,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_impression_share = 142;</code>
+     * Generated from protobuf field <code>optional double search_impression_share = 142;</code>
      * @return float
      */
     public function getSearchImpressionShare()
@@ -5243,7 +5243,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_impression_share = 142;</code>
+     * Generated from protobuf field <code>optional double search_impression_share = 142;</code>
      * @param float $var
      * @return $this
      */
@@ -5261,7 +5261,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost absolute top impression share is reported in the
      * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_absolute_top_impression_share = 143;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_absolute_top_impression_share = 143;</code>
      * @return float
      */
     public function getSearchRankLostAbsoluteTopImpressionShare()
@@ -5285,7 +5285,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost absolute top impression share is reported in the
      * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_absolute_top_impression_share = 143;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_absolute_top_impression_share = 143;</code>
      * @param float $var
      * @return $this
      */
@@ -5303,7 +5303,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_impression_share = 144;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_impression_share = 144;</code>
      * @return float
      */
     public function getSearchRankLostImpressionShare()
@@ -5327,7 +5327,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost impression share is reported in the range of 0 to
      * 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_impression_share = 144;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_impression_share = 144;</code>
      * @param float $var
      * @return $this
      */
@@ -5345,7 +5345,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost top impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_top_impression_share = 145;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_top_impression_share = 145;</code>
      * @return float
      */
     public function getSearchRankLostTopImpressionShare()
@@ -5369,7 +5369,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search rank lost top impression share is reported in the range of 0
      * to 0.9. Any value above 0.9 is reported as 0.9001.
      *
-     * Generated from protobuf field <code>double search_rank_lost_top_impression_share = 145;</code>
+     * Generated from protobuf field <code>optional double search_rank_lost_top_impression_share = 145;</code>
      * @param float $var
      * @return $this
      */
@@ -5388,7 +5388,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search top impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_top_impression_share = 146;</code>
+     * Generated from protobuf field <code>optional double search_top_impression_share = 146;</code>
      * @return float
      */
     public function getSearchTopImpressionShare()
@@ -5413,7 +5413,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Note: Search top impression share is reported in the range of 0.1 to 1. Any
      * value below 0.1 is reported as 0.0999.
      *
-     * Generated from protobuf field <code>double search_top_impression_share = 146;</code>
+     * Generated from protobuf field <code>optional double search_top_impression_share = 146;</code>
      * @param float $var
      * @return $this
      */
@@ -5429,7 +5429,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * A measure of how quickly your page loads after clicks on your mobile ads.
      * The score is a range from 1 to 10, 10 being the fastest.
      *
-     * Generated from protobuf field <code>int64 speed_score = 147;</code>
+     * Generated from protobuf field <code>optional int64 speed_score = 147;</code>
      * @return int|string
      */
     public function getSpeedScore()
@@ -5451,7 +5451,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * A measure of how quickly your page loads after clicks on your mobile ads.
      * The score is a range from 1 to 10, 10 being the fastest.
      *
-     * Generated from protobuf field <code>int64 speed_score = 147;</code>
+     * Generated from protobuf field <code>optional int64 speed_score = 147;</code>
      * @param int|string $var
      * @return $this
      */
@@ -5467,7 +5467,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percent of your ad impressions that are shown anywhere above the
      * organic search results.
      *
-     * Generated from protobuf field <code>double top_impression_percentage = 148;</code>
+     * Generated from protobuf field <code>optional double top_impression_percentage = 148;</code>
      * @return float
      */
     public function getTopImpressionPercentage()
@@ -5489,7 +5489,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percent of your ad impressions that are shown anywhere above the
      * organic search results.
      *
-     * Generated from protobuf field <code>double top_impression_percentage = 148;</code>
+     * Generated from protobuf field <code>optional double top_impression_percentage = 148;</code>
      * @param float $var
      * @return $this
      */
@@ -5505,7 +5505,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of ad clicks to Accelerated Mobile Pages (AMP) landing pages
      * that reach a valid AMP page.
      *
-     * Generated from protobuf field <code>double valid_accelerated_mobile_pages_clicks_percentage = 149;</code>
+     * Generated from protobuf field <code>optional double valid_accelerated_mobile_pages_clicks_percentage = 149;</code>
      * @return float
      */
     public function getValidAcceleratedMobilePagesClicksPercentage()
@@ -5527,7 +5527,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * The percentage of ad clicks to Accelerated Mobile Pages (AMP) landing pages
      * that reach a valid AMP page.
      *
-     * Generated from protobuf field <code>double valid_accelerated_mobile_pages_clicks_percentage = 149;</code>
+     * Generated from protobuf field <code>optional double valid_accelerated_mobile_pages_clicks_percentage = 149;</code>
      * @param float $var
      * @return $this
      */
@@ -5542,7 +5542,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions divided by the number of all conversions.
      *
-     * Generated from protobuf field <code>double value_per_all_conversions = 150;</code>
+     * Generated from protobuf field <code>optional double value_per_all_conversions = 150;</code>
      * @return float
      */
     public function getValuePerAllConversions()
@@ -5563,7 +5563,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of all conversions divided by the number of all conversions.
      *
-     * Generated from protobuf field <code>double value_per_all_conversions = 150;</code>
+     * Generated from protobuf field <code>optional double value_per_all_conversions = 150;</code>
      * @param float $var
      * @return $this
      */
@@ -5581,7 +5581,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion date. Details for the by_conversion_date columns are available
      * at https://support.google.com/google-ads/answer/9549009.
      *
-     * Generated from protobuf field <code>double value_per_all_conversions_by_conversion_date = 244;</code>
+     * Generated from protobuf field <code>optional double value_per_all_conversions_by_conversion_date = 244;</code>
      * @return float
      */
     public function getValuePerAllConversionsByConversionDate()
@@ -5605,7 +5605,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion date. Details for the by_conversion_date columns are available
      * at https://support.google.com/google-ads/answer/9549009.
      *
-     * Generated from protobuf field <code>double value_per_all_conversions_by_conversion_date = 244;</code>
+     * Generated from protobuf field <code>optional double value_per_all_conversions_by_conversion_date = 244;</code>
      * @param float $var
      * @return $this
      */
@@ -5623,7 +5623,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * is set to true. If you use conversion-based bidding, your bid strategies
      * will optimize for these conversions.
      *
-     * Generated from protobuf field <code>double value_per_conversion = 151;</code>
+     * Generated from protobuf field <code>optional double value_per_conversion = 151;</code>
      * @return float
      */
     public function getValuePerConversion()
@@ -5647,7 +5647,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * is set to true. If you use conversion-based bidding, your bid strategies
      * will optimize for these conversions.
      *
-     * Generated from protobuf field <code>double value_per_conversion = 151;</code>
+     * Generated from protobuf field <code>optional double value_per_conversion = 151;</code>
      * @param float $var
      * @return $this
      */
@@ -5668,7 +5668,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * by_conversion_date columns are available at
      * https://support.google.com/google-ads/answer/9549009.
      *
-     * Generated from protobuf field <code>double value_per_conversions_by_conversion_date = 245;</code>
+     * Generated from protobuf field <code>optional double value_per_conversions_by_conversion_date = 245;</code>
      * @return float
      */
     public function getValuePerConversionsByConversionDate()
@@ -5695,7 +5695,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * by_conversion_date columns are available at
      * https://support.google.com/google-ads/answer/9549009.
      *
-     * Generated from protobuf field <code>double value_per_conversions_by_conversion_date = 245;</code>
+     * Generated from protobuf field <code>optional double value_per_conversions_by_conversion_date = 245;</code>
      * @param float $var
      * @return $this
      */
@@ -5714,7 +5714,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double value_per_current_model_attributed_conversion = 152;</code>
+     * Generated from protobuf field <code>optional double value_per_current_model_attributed_conversion = 152;</code>
      * @return float
      */
     public function getValuePerCurrentModelAttributedConversion()
@@ -5739,7 +5739,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * conversion-based bidding, your bid strategies will optimize for these
      * conversions.
      *
-     * Generated from protobuf field <code>double value_per_current_model_attributed_conversion = 152;</code>
+     * Generated from protobuf field <code>optional double value_per_current_model_attributed_conversion = 152;</code>
      * @param float $var
      * @return $this
      */
@@ -5754,7 +5754,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched all of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p100_rate = 132;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p100_rate = 132;</code>
      * @return float
      */
     public function getVideoQuartileP100Rate()
@@ -5775,7 +5775,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched all of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p100_rate = 132;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p100_rate = 132;</code>
      * @param float $var
      * @return $this
      */
@@ -5790,7 +5790,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched 25% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p25_rate = 133;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p25_rate = 133;</code>
      * @return float
      */
     public function getVideoQuartileP25Rate()
@@ -5811,7 +5811,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched 25% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p25_rate = 133;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p25_rate = 133;</code>
      * @param float $var
      * @return $this
      */
@@ -5826,7 +5826,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched 50% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p50_rate = 134;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p50_rate = 134;</code>
      * @return float
      */
     public function getVideoQuartileP50Rate()
@@ -5847,7 +5847,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched 50% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p50_rate = 134;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p50_rate = 134;</code>
      * @param float $var
      * @return $this
      */
@@ -5862,7 +5862,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched 75% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p75_rate = 135;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p75_rate = 135;</code>
      * @return float
      */
     public function getVideoQuartileP75Rate()
@@ -5883,7 +5883,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Percentage of impressions where the viewer watched 75% of your video.
      *
-     * Generated from protobuf field <code>double video_quartile_p75_rate = 135;</code>
+     * Generated from protobuf field <code>optional double video_quartile_p75_rate = 135;</code>
      * @param float $var
      * @return $this
      */
@@ -5900,7 +5900,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * of impressions, including thumbnail impressions for TrueView in-display
      * ads.
      *
-     * Generated from protobuf field <code>double video_view_rate = 153;</code>
+     * Generated from protobuf field <code>optional double video_view_rate = 153;</code>
      * @return float
      */
     public function getVideoViewRate()
@@ -5923,7 +5923,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * of impressions, including thumbnail impressions for TrueView in-display
      * ads.
      *
-     * Generated from protobuf field <code>double video_view_rate = 153;</code>
+     * Generated from protobuf field <code>optional double video_view_rate = 153;</code>
      * @param float $var
      * @return $this
      */
@@ -5938,7 +5938,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times your video ads were viewed.
      *
-     * Generated from protobuf field <code>int64 video_views = 154;</code>
+     * Generated from protobuf field <code>optional int64 video_views = 154;</code>
      * @return int|string
      */
     public function getVideoViews()
@@ -5959,7 +5959,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The number of times your video ads were viewed.
      *
-     * Generated from protobuf field <code>int64 video_views = 154;</code>
+     * Generated from protobuf field <code>optional int64 video_views = 154;</code>
      * @param int|string $var
      * @return $this
      */
@@ -5977,7 +5977,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * completes a conversion on your site without interacting with (e.g.,
      * clicking on) another ad.
      *
-     * Generated from protobuf field <code>int64 view_through_conversions = 155;</code>
+     * Generated from protobuf field <code>optional int64 view_through_conversions = 155;</code>
      * @return int|string
      */
     public function getViewThroughConversions()
@@ -6001,7 +6001,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * completes a conversion on your site without interacting with (e.g.,
      * clicking on) another ad.
      *
-     * Generated from protobuf field <code>int64 view_through_conversions = 155;</code>
+     * Generated from protobuf field <code>optional int64 view_through_conversions = 155;</code>
      * @param int|string $var
      * @return $this
      */

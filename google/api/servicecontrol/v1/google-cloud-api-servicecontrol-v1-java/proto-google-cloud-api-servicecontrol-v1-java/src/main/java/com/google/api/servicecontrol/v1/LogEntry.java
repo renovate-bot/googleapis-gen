@@ -888,13 +888,13 @@ private static final long serialVersionUID = 0L;
     if (payloadCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, payload_);
     }
-    if (!getInsertIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insertId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, insertId_);
     }
     if (payloadCase_ == 6) {
       output.writeMessage(6, (com.google.protobuf.Struct) payload_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, name_);
     }
     if (timestamp_ != null) {
@@ -912,7 +912,7 @@ private static final long serialVersionUID = 0L;
     if (httpRequest_ != null) {
       output.writeMessage(14, getHttpRequest());
     }
-    if (!getTraceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trace_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, trace_);
     }
     if (operation_ != null) {
@@ -937,14 +937,14 @@ private static final long serialVersionUID = 0L;
     if (payloadCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, payload_);
     }
-    if (!getInsertIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(insertId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, insertId_);
     }
     if (payloadCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.google.protobuf.Struct) payload_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, name_);
     }
     if (timestamp_ != null) {
@@ -969,7 +969,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getHttpRequest());
     }
-    if (!getTraceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trace_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, trace_);
     }
     if (operation_ != null) {

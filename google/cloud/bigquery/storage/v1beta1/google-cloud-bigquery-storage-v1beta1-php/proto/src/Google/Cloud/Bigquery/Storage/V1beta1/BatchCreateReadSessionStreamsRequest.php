@@ -61,7 +61,7 @@ class BatchCreateReadSessionStreamsRequest extends \Google\Protobuf\Internal\Mes
      */
     public function getSession()
     {
-        return isset($this->session) ? $this->session : null;
+        return $this->session;
     }
 
     public function hasSession()

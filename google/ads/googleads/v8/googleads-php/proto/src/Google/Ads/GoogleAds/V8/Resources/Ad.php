@@ -26,7 +26,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>int64 id = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -53,13 +53,13 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 43;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 43;</code>
      */
     protected $tracking_url_template = null;
     /**
      * The suffix to use when constructing a final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 44;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 44;</code>
      */
     protected $final_url_suffix = null;
     /**
@@ -73,7 +73,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The URL that appears in the ad description for some ad formats.
      *
-     * Generated from protobuf field <code>string display_url = 45;</code>
+     * Generated from protobuf field <code>optional string display_url = 45;</code>
      */
     protected $display_url = null;
     /**
@@ -88,7 +88,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>bool added_by_google_ads = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool added_by_google_ads = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $added_by_google_ads = null;
     /**
@@ -115,7 +115,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * field is currently only supported for DisplayUploadAd, ImageAd,
      * ShoppingComparisonListingAd and VideoAd.
      *
-     * Generated from protobuf field <code>string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $name = null;
     /**
@@ -269,7 +269,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>int64 id = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getId()
@@ -290,7 +290,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>int64 id = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 id = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -389,7 +389,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 43;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 43;</code>
      * @return string
      */
     public function getTrackingUrlTemplate()
@@ -410,7 +410,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The URL template for constructing a tracking URL.
      *
-     * Generated from protobuf field <code>string tracking_url_template = 43;</code>
+     * Generated from protobuf field <code>optional string tracking_url_template = 43;</code>
      * @param string $var
      * @return $this
      */
@@ -425,7 +425,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The suffix to use when constructing a final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 44;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 44;</code>
      * @return string
      */
     public function getFinalUrlSuffix()
@@ -446,7 +446,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The suffix to use when constructing a final URL.
      *
-     * Generated from protobuf field <code>string final_url_suffix = 44;</code>
+     * Generated from protobuf field <code>optional string final_url_suffix = 44;</code>
      * @param string $var
      * @return $this
      */
@@ -491,7 +491,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The URL that appears in the ad description for some ad formats.
      *
-     * Generated from protobuf field <code>string display_url = 45;</code>
+     * Generated from protobuf field <code>optional string display_url = 45;</code>
      * @return string
      */
     public function getDisplayUrl()
@@ -512,7 +512,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The URL that appears in the ad description for some ad formats.
      *
-     * Generated from protobuf field <code>string display_url = 45;</code>
+     * Generated from protobuf field <code>optional string display_url = 45;</code>
      * @param string $var
      * @return $this
      */
@@ -556,7 +556,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>bool added_by_google_ads = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool added_by_google_ads = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getAddedByGoogleAds()
@@ -580,7 +580,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>bool added_by_google_ads = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional bool added_by_google_ads = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */
@@ -662,7 +662,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * field is currently only supported for DisplayUploadAd, ImageAd,
      * ShoppingComparisonListingAd and VideoAd.
      *
-     * Generated from protobuf field <code>string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getName()
@@ -686,7 +686,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * field is currently only supported for DisplayUploadAd, ImageAd,
      * ShoppingComparisonListingAd and VideoAd.
      *
-     * Generated from protobuf field <code>string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string name = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

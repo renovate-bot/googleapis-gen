@@ -85,7 +85,7 @@ class MutateCampaignExperimentResult extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignExperiment()
     {
-        return isset($this->campaign_experiment) ? $this->campaign_experiment : null;
+        return $this->campaign_experiment;
     }
 
     public function hasCampaignExperiment()

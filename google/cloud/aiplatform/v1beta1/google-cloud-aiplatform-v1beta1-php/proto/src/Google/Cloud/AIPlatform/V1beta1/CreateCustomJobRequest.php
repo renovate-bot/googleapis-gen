@@ -83,7 +83,7 @@ class CreateCustomJobRequest extends \Google\Protobuf\Internal\Message
      */
     public function getCustomJob()
     {
-        return isset($this->custom_job) ? $this->custom_job : null;
+        return $this->custom_job;
     }
 
     public function hasCustomJob()

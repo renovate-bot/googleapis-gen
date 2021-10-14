@@ -85,7 +85,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     public function getFulfillmentResponse()
     {
-        return isset($this->fulfillment_response) ? $this->fulfillment_response : null;
+        return $this->fulfillment_response;
     }
 
     public function hasFulfillmentResponse()
@@ -123,7 +123,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPageInfo()
     {
-        return isset($this->page_info) ? $this->page_info : null;
+        return $this->page_info;
     }
 
     public function hasPageInfo()
@@ -161,7 +161,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     public function getSessionInfo()
     {
-        return isset($this->session_info) ? $this->session_info : null;
+        return $this->session_info;
     }
 
     public function hasSessionInfo()
@@ -198,7 +198,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPayload()
     {
-        return isset($this->payload) ? $this->payload : null;
+        return $this->payload;
     }
 
     public function hasPayload()

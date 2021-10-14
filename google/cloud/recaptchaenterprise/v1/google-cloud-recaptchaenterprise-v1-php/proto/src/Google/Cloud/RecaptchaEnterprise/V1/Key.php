@@ -264,7 +264,7 @@ class Key extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -300,7 +300,7 @@ class Key extends \Google\Protobuf\Internal\Message
      */
     public function getTestingOptions()
     {
-        return isset($this->testing_options) ? $this->testing_options : null;
+        return $this->testing_options;
     }
 
     public function hasTestingOptions()

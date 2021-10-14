@@ -257,7 +257,7 @@ class ListIndexEndpointsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getReadMask()
     {
-        return isset($this->read_mask) ? $this->read_mask : null;
+        return $this->read_mask;
     }
 
     public function hasReadMask()

@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < contacts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contacts_.getRaw(i));
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resource_);
     }
     if (notificationCategory_ != com.google.cloud.essentialcontacts.v1.NotificationCategory.NOTIFICATION_CATEGORY_UNSPECIFIED.getNumber()) {
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getContactsList().size();
     }
-    if (!getResourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resource_);
     }
     if (notificationCategory_ != com.google.cloud.essentialcontacts.v1.NotificationCategory.NOTIFICATION_CATEGORY_UNSPECIFIED.getNumber()) {

@@ -117,7 +117,7 @@ class CreateExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     public function getExecution()
     {
-        return isset($this->execution) ? $this->execution : null;
+        return $this->execution;
     }
 
     public function hasExecution()

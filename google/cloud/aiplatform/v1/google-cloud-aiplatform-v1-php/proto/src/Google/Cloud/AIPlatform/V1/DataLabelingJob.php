@@ -468,7 +468,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getInputs()
     {
-        return isset($this->inputs) ? $this->inputs : null;
+        return $this->inputs;
     }
 
     public function hasInputs()
@@ -559,7 +559,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getCurrentSpend()
     {
-        return isset($this->current_spend) ? $this->current_spend : null;
+        return $this->current_spend;
     }
 
     public function hasCurrentSpend()
@@ -596,7 +596,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -632,7 +632,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -669,7 +669,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -777,7 +777,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()
@@ -818,7 +818,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      */
     public function getActiveLearningConfig()
     {
-        return isset($this->active_learning_config) ? $this->active_learning_config : null;
+        return $this->active_learning_config;
     }
 
     public function hasActiveLearningConfig()

@@ -85,7 +85,7 @@ class MutateCampaignExtensionSettingResult extends \Google\Protobuf\Internal\Mes
      */
     public function getCampaignExtensionSetting()
     {
-        return isset($this->campaign_extension_setting) ? $this->campaign_extension_setting : null;
+        return $this->campaign_extension_setting;
     }
 
     public function hasCampaignExtensionSetting()

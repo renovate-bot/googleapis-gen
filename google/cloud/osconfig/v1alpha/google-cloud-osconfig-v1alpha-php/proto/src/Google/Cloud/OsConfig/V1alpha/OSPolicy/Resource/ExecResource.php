@@ -87,7 +87,7 @@ class ExecResource extends \Google\Protobuf\Internal\Message
      */
     public function getValidate()
     {
-        return isset($this->validate) ? $this->validate : null;
+        return $this->validate;
     }
 
     public function hasValidate()
@@ -128,7 +128,7 @@ class ExecResource extends \Google\Protobuf\Internal\Message
      */
     public function getEnforce()
     {
-        return isset($this->enforce) ? $this->enforce : null;
+        return $this->enforce;
     }
 
     public function hasEnforce()

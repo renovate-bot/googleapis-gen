@@ -77,7 +77,7 @@ class Point extends \Google\Protobuf\Internal\Message
      */
     public function getInterval()
     {
-        return isset($this->interval) ? $this->interval : null;
+        return $this->interval;
     }
 
     public function hasInterval()
@@ -121,7 +121,7 @@ class Point extends \Google\Protobuf\Internal\Message
      */
     public function getValue()
     {
-        return isset($this->value) ? $this->value : null;
+        return $this->value;
     }
 
     public function hasValue()

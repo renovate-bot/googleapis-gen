@@ -19,14 +19,14 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad skippable.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool is_skippable = 6;</code>
+     * Generated from protobuf field <code>optional bool is_skippable = 6;</code>
      */
     protected $is_skippable = null;
     /**
      * True if ad start with sound.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool starts_with_sound = 7;</code>
+     * Generated from protobuf field <code>optional bool starts_with_sound = 7;</code>
      */
     protected $starts_with_sound = null;
     /**
@@ -40,7 +40,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad will only show on the top content.
      * If not set, default is false.
      *
-     * Generated from protobuf field <code>bool top_content_only = 8;</code>
+     * Generated from protobuf field <code>optional bool top_content_only = 8;</code>
      */
     protected $top_content_only = null;
     /**
@@ -48,7 +48,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * and not subject to an auction.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool has_guaranteed_price = 9;</code>
+     * Generated from protobuf field <code>optional bool has_guaranteed_price = 9;</code>
      */
     protected $has_guaranteed_price = null;
 
@@ -85,7 +85,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad skippable.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool is_skippable = 6;</code>
+     * Generated from protobuf field <code>optional bool is_skippable = 6;</code>
      * @return bool
      */
     public function getIsSkippable()
@@ -107,7 +107,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad skippable.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool is_skippable = 6;</code>
+     * Generated from protobuf field <code>optional bool is_skippable = 6;</code>
      * @param bool $var
      * @return $this
      */
@@ -123,7 +123,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad start with sound.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool starts_with_sound = 7;</code>
+     * Generated from protobuf field <code>optional bool starts_with_sound = 7;</code>
      * @return bool
      */
     public function getStartsWithSound()
@@ -145,7 +145,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad start with sound.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool starts_with_sound = 7;</code>
+     * Generated from protobuf field <code>optional bool starts_with_sound = 7;</code>
      * @param bool $var
      * @return $this
      */
@@ -189,7 +189,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad will only show on the top content.
      * If not set, default is false.
      *
-     * Generated from protobuf field <code>bool top_content_only = 8;</code>
+     * Generated from protobuf field <code>optional bool top_content_only = 8;</code>
      * @return bool
      */
     public function getTopContentOnly()
@@ -211,7 +211,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * True if ad will only show on the top content.
      * If not set, default is false.
      *
-     * Generated from protobuf field <code>bool top_content_only = 8;</code>
+     * Generated from protobuf field <code>optional bool top_content_only = 8;</code>
      * @param bool $var
      * @return $this
      */
@@ -228,7 +228,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * and not subject to an auction.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool has_guaranteed_price = 9;</code>
+     * Generated from protobuf field <code>optional bool has_guaranteed_price = 9;</code>
      * @return bool
      */
     public function getHasGuaranteedPrice()
@@ -251,7 +251,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * and not subject to an auction.
      * If not set, default is any value.
      *
-     * Generated from protobuf field <code>bool has_guaranteed_price = 9;</code>
+     * Generated from protobuf field <code>optional bool has_guaranteed_price = 9;</code>
      * @param bool $var
      * @return $this
      */

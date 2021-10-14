@@ -56,7 +56,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      */
     public function getMeasurementTime()
     {
-        return isset($this->measurement_time) ? $this->measurement_time : null;
+        return $this->measurement_time;
     }
 
     public function hasMeasurementTime()

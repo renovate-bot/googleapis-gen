@@ -82,7 +82,7 @@ class MutateCustomerNegativeCriteriaResult extends \Google\Protobuf\Internal\Mes
      */
     public function getCustomerNegativeCriterion()
     {
-        return isset($this->customer_negative_criterion) ? $this->customer_negative_criterion : null;
+        return $this->customer_negative_criterion;
     }
 
     public function hasCustomerNegativeCriterion()

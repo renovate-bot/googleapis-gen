@@ -194,7 +194,7 @@ public final class StreetViewPublishResources {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUploadUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uploadUrl_);
       }
       unknownFields.writeTo(output);
@@ -206,7 +206,7 @@ public final class StreetViewPublishResources {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUploadUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uploadUrl_);
       }
       size += unknownFields.getSerializedSize();
@@ -816,7 +816,7 @@ public final class StreetViewPublishResources {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       unknownFields.writeTo(output);
@@ -828,7 +828,7 @@ public final class StreetViewPublishResources {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       size += unknownFields.getSerializedSize();
@@ -1473,7 +1473,7 @@ public final class StreetViewPublishResources {
       if (number_ != 0D) {
         output.writeDouble(1, number_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
       unknownFields.writeTo(output);
@@ -1489,7 +1489,7 @@ public final class StreetViewPublishResources {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, number_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
       size += unknownFields.getSerializedSize();
@@ -3866,13 +3866,13 @@ public final class StreetViewPublishResources {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPlaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, placeId_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
       }
       unknownFields.writeTo(output);
@@ -3884,13 +3884,13 @@ public final class StreetViewPublishResources {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPlaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, placeId_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
       }
       size += unknownFields.getSerializedSize();
@@ -6692,7 +6692,7 @@ public final class StreetViewPublishResources {
       if (uploadReference_ != null) {
         output.writeMessage(2, getUploadReference());
       }
-      if (!getDownloadUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downloadUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, downloadUrl_);
       }
       if (pose_ != null) {
@@ -6707,13 +6707,13 @@ public final class StreetViewPublishResources {
       for (int i = 0; i < places_.size(); i++) {
         output.writeMessage(7, places_.get(i));
       }
-      if (!getThumbnailUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbnailUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, thumbnailUrl_);
       }
       if (viewCount_ != 0L) {
         output.writeInt64(10, viewCount_);
       }
-      if (!getShareLinkBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareLink_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, shareLink_);
       }
       if (transferStatus_ != com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.TransferStatus.TRANSFER_STATUS_UNKNOWN.getNumber()) {
@@ -6739,7 +6739,7 @@ public final class StreetViewPublishResources {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getUploadReference());
       }
-      if (!getDownloadUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downloadUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, downloadUrl_);
       }
       if (pose_ != null) {
@@ -6758,14 +6758,14 @@ public final class StreetViewPublishResources {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, places_.get(i));
       }
-      if (!getThumbnailUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbnailUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, thumbnailUrl_);
       }
       if (viewCount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(10, viewCount_);
       }
-      if (!getShareLinkBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareLink_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, shareLink_);
       }
       if (transferStatus_ != com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.TransferStatus.TRANSFER_STATUS_UNKNOWN.getNumber()) {

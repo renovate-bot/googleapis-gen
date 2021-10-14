@@ -200,7 +200,7 @@ class StartMfaPhoneRequestInfo extends \Google\Protobuf\Internal\Message
      */
     public function getAutoRetrievalInfo()
     {
-        return isset($this->auto_retrieval_info) ? $this->auto_retrieval_info : null;
+        return $this->auto_retrieval_info;
     }
 
     public function hasAutoRetrievalInfo()

@@ -125,7 +125,7 @@ class CreateViewRequest extends \Google\Protobuf\Internal\Message
      */
     public function getView()
     {
-        return isset($this->view) ? $this->view : null;
+        return $this->view;
     }
 
     public function hasView()

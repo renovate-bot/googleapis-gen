@@ -123,7 +123,7 @@ class RolloutStep extends \Google\Protobuf\Internal\Message
      */
     public function getMinDuration()
     {
-        return isset($this->min_duration) ? $this->min_duration : null;
+        return $this->min_duration;
     }
 
     public function hasMinDuration()

@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
      * Whether ads will be served with google.com search results.
      * </pre>
      *
-     * <code>bool target_google_search = 5;</code>
+     * <code>optional bool target_google_search = 5;</code>
      * @return Whether the targetGoogleSearch field is set.
      */
     boolean hasTargetGoogleSearch();
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      * Whether ads will be served with google.com search results.
      * </pre>
      *
-     * <code>bool target_google_search = 5;</code>
+     * <code>optional bool target_google_search = 5;</code>
      * @return The targetGoogleSearch.
      */
     boolean getTargetGoogleSearch();
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
      * (requires `target_google_search` to also be `true`).
      * </pre>
      *
-     * <code>bool target_search_network = 6;</code>
+     * <code>optional bool target_search_network = 6;</code>
      * @return Whether the targetSearchNetwork field is set.
      */
     boolean hasTargetSearchNetwork();
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * (requires `target_google_search` to also be `true`).
      * </pre>
      *
-     * <code>bool target_search_network = 6;</code>
+     * <code>optional bool target_search_network = 6;</code>
      * @return The targetSearchNetwork.
      */
     boolean getTargetSearchNetwork();
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
      * Network. Placements are specified using the Placement criterion.
      * </pre>
      *
-     * <code>bool target_content_network = 7;</code>
+     * <code>optional bool target_content_network = 7;</code>
      * @return Whether the targetContentNetwork field is set.
      */
     boolean hasTargetContentNetwork();
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * Network. Placements are specified using the Placement criterion.
      * </pre>
      *
-     * <code>bool target_content_network = 7;</code>
+     * <code>optional bool target_content_network = 7;</code>
      * @return The targetContentNetwork.
      */
     boolean getTargetContentNetwork();
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
      * This is available only to some select Google partner accounts.
      * </pre>
      *
-     * <code>bool target_partner_search_network = 8;</code>
+     * <code>optional bool target_partner_search_network = 8;</code>
      * @return Whether the targetPartnerSearchNetwork field is set.
      */
     boolean hasTargetPartnerSearchNetwork();
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
      * This is available only to some select Google partner accounts.
      * </pre>
      *
-     * <code>bool target_partner_search_network = 8;</code>
+     * <code>optional bool target_partner_search_network = 8;</code>
      * @return The targetPartnerSearchNetwork.
      */
     boolean getTargetPartnerSearchNetwork();
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
      * Whether ads will be served with google.com search results.
      * </pre>
      *
-     * <code>bool target_google_search = 5;</code>
+     * <code>optional bool target_google_search = 5;</code>
      * @return Whether the targetGoogleSearch field is set.
      */
     @java.lang.Override
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
      * Whether ads will be served with google.com search results.
      * </pre>
      *
-     * <code>bool target_google_search = 5;</code>
+     * <code>optional bool target_google_search = 5;</code>
      * @return The targetGoogleSearch.
      */
     @java.lang.Override
@@ -847,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * (requires `target_google_search` to also be `true`).
      * </pre>
      *
-     * <code>bool target_search_network = 6;</code>
+     * <code>optional bool target_search_network = 6;</code>
      * @return Whether the targetSearchNetwork field is set.
      */
     @java.lang.Override
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
      * (requires `target_google_search` to also be `true`).
      * </pre>
      *
-     * <code>bool target_search_network = 6;</code>
+     * <code>optional bool target_search_network = 6;</code>
      * @return The targetSearchNetwork.
      */
     @java.lang.Override
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      * Network. Placements are specified using the Placement criterion.
      * </pre>
      *
-     * <code>bool target_content_network = 7;</code>
+     * <code>optional bool target_content_network = 7;</code>
      * @return Whether the targetContentNetwork field is set.
      */
     @java.lang.Override
@@ -889,7 +889,7 @@ private static final long serialVersionUID = 0L;
      * Network. Placements are specified using the Placement criterion.
      * </pre>
      *
-     * <code>bool target_content_network = 7;</code>
+     * <code>optional bool target_content_network = 7;</code>
      * @return The targetContentNetwork.
      */
     @java.lang.Override
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
      * This is available only to some select Google partner accounts.
      * </pre>
      *
-     * <code>bool target_partner_search_network = 8;</code>
+     * <code>optional bool target_partner_search_network = 8;</code>
      * @return Whether the targetPartnerSearchNetwork field is set.
      */
     @java.lang.Override
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * This is available only to some select Google partner accounts.
      * </pre>
      *
-     * <code>bool target_partner_search_network = 8;</code>
+     * <code>optional bool target_partner_search_network = 8;</code>
      * @return The targetPartnerSearchNetwork.
      */
     @java.lang.Override
@@ -1329,7 +1329,7 @@ private static final long serialVersionUID = 0L;
        * Whether ads will be served with google.com search results.
        * </pre>
        *
-       * <code>bool target_google_search = 5;</code>
+       * <code>optional bool target_google_search = 5;</code>
        * @return Whether the targetGoogleSearch field is set.
        */
       @java.lang.Override
@@ -1341,7 +1341,7 @@ private static final long serialVersionUID = 0L;
        * Whether ads will be served with google.com search results.
        * </pre>
        *
-       * <code>bool target_google_search = 5;</code>
+       * <code>optional bool target_google_search = 5;</code>
        * @return The targetGoogleSearch.
        */
       @java.lang.Override
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
        * Whether ads will be served with google.com search results.
        * </pre>
        *
-       * <code>bool target_google_search = 5;</code>
+       * <code>optional bool target_google_search = 5;</code>
        * @param value The targetGoogleSearch to set.
        * @return This builder for chaining.
        */
@@ -1368,7 +1368,7 @@ private static final long serialVersionUID = 0L;
        * Whether ads will be served with google.com search results.
        * </pre>
        *
-       * <code>bool target_google_search = 5;</code>
+       * <code>optional bool target_google_search = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetGoogleSearch() {
@@ -1385,7 +1385,7 @@ private static final long serialVersionUID = 0L;
        * (requires `target_google_search` to also be `true`).
        * </pre>
        *
-       * <code>bool target_search_network = 6;</code>
+       * <code>optional bool target_search_network = 6;</code>
        * @return Whether the targetSearchNetwork field is set.
        */
       @java.lang.Override
@@ -1398,7 +1398,7 @@ private static final long serialVersionUID = 0L;
        * (requires `target_google_search` to also be `true`).
        * </pre>
        *
-       * <code>bool target_search_network = 6;</code>
+       * <code>optional bool target_search_network = 6;</code>
        * @return The targetSearchNetwork.
        */
       @java.lang.Override
@@ -1411,7 +1411,7 @@ private static final long serialVersionUID = 0L;
        * (requires `target_google_search` to also be `true`).
        * </pre>
        *
-       * <code>bool target_search_network = 6;</code>
+       * <code>optional bool target_search_network = 6;</code>
        * @param value The targetSearchNetwork to set.
        * @return This builder for chaining.
        */
@@ -1427,7 +1427,7 @@ private static final long serialVersionUID = 0L;
        * (requires `target_google_search` to also be `true`).
        * </pre>
        *
-       * <code>bool target_search_network = 6;</code>
+       * <code>optional bool target_search_network = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetSearchNetwork() {
@@ -1444,7 +1444,7 @@ private static final long serialVersionUID = 0L;
        * Network. Placements are specified using the Placement criterion.
        * </pre>
        *
-       * <code>bool target_content_network = 7;</code>
+       * <code>optional bool target_content_network = 7;</code>
        * @return Whether the targetContentNetwork field is set.
        */
       @java.lang.Override
@@ -1457,7 +1457,7 @@ private static final long serialVersionUID = 0L;
        * Network. Placements are specified using the Placement criterion.
        * </pre>
        *
-       * <code>bool target_content_network = 7;</code>
+       * <code>optional bool target_content_network = 7;</code>
        * @return The targetContentNetwork.
        */
       @java.lang.Override
@@ -1470,7 +1470,7 @@ private static final long serialVersionUID = 0L;
        * Network. Placements are specified using the Placement criterion.
        * </pre>
        *
-       * <code>bool target_content_network = 7;</code>
+       * <code>optional bool target_content_network = 7;</code>
        * @param value The targetContentNetwork to set.
        * @return This builder for chaining.
        */
@@ -1486,7 +1486,7 @@ private static final long serialVersionUID = 0L;
        * Network. Placements are specified using the Placement criterion.
        * </pre>
        *
-       * <code>bool target_content_network = 7;</code>
+       * <code>optional bool target_content_network = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetContentNetwork() {
@@ -1503,7 +1503,7 @@ private static final long serialVersionUID = 0L;
        * This is available only to some select Google partner accounts.
        * </pre>
        *
-       * <code>bool target_partner_search_network = 8;</code>
+       * <code>optional bool target_partner_search_network = 8;</code>
        * @return Whether the targetPartnerSearchNetwork field is set.
        */
       @java.lang.Override
@@ -1516,7 +1516,7 @@ private static final long serialVersionUID = 0L;
        * This is available only to some select Google partner accounts.
        * </pre>
        *
-       * <code>bool target_partner_search_network = 8;</code>
+       * <code>optional bool target_partner_search_network = 8;</code>
        * @return The targetPartnerSearchNetwork.
        */
       @java.lang.Override
@@ -1529,7 +1529,7 @@ private static final long serialVersionUID = 0L;
        * This is available only to some select Google partner accounts.
        * </pre>
        *
-       * <code>bool target_partner_search_network = 8;</code>
+       * <code>optional bool target_partner_search_network = 8;</code>
        * @param value The targetPartnerSearchNetwork to set.
        * @return This builder for chaining.
        */
@@ -1545,7 +1545,7 @@ private static final long serialVersionUID = 0L;
        * This is available only to some select Google partner accounts.
        * </pre>
        *
-       * <code>bool target_partner_search_network = 8;</code>
+       * <code>optional bool target_partner_search_network = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetPartnerSearchNetwork() {
@@ -1616,7 +1616,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The linked Hotel Center account.
      * </pre>
      *
-     * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the hotelCenterId field is set.
      */
     boolean hasHotelCenterId();
@@ -1625,7 +1625,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The linked Hotel Center account.
      * </pre>
      *
-     * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The hotelCenterId.
      */
     long getHotelCenterId();
@@ -1725,7 +1725,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The linked Hotel Center account.
      * </pre>
      *
-     * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the hotelCenterId field is set.
      */
     @java.lang.Override
@@ -1737,7 +1737,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The linked Hotel Center account.
      * </pre>
      *
-     * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The hotelCenterId.
      */
     @java.lang.Override
@@ -2070,7 +2070,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. The linked Hotel Center account.
        * </pre>
        *
-       * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return Whether the hotelCenterId field is set.
        */
       @java.lang.Override
@@ -2082,7 +2082,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. The linked Hotel Center account.
        * </pre>
        *
-       * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return The hotelCenterId.
        */
       @java.lang.Override
@@ -2094,7 +2094,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. The linked Hotel Center account.
        * </pre>
        *
-       * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @param value The hotelCenterId to set.
        * @return This builder for chaining.
        */
@@ -2109,7 +2109,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. The linked Hotel Center account.
        * </pre>
        *
-       * <code>int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 hotel_center_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return This builder for chaining.
        */
       public Builder clearHotelCenterId() {
@@ -2222,7 +2222,7 @@ private static final long serialVersionUID = 0L;
      * Whether the campaign uses advertiser supplied URLs exclusively.
      * </pre>
      *
-     * <code>bool use_supplied_urls_only = 8;</code>
+     * <code>optional bool use_supplied_urls_only = 8;</code>
      * @return Whether the useSuppliedUrlsOnly field is set.
      */
     boolean hasUseSuppliedUrlsOnly();
@@ -2231,7 +2231,7 @@ private static final long serialVersionUID = 0L;
      * Whether the campaign uses advertiser supplied URLs exclusively.
      * </pre>
      *
-     * <code>bool use_supplied_urls_only = 8;</code>
+     * <code>optional bool use_supplied_urls_only = 8;</code>
      * @return The useSuppliedUrlsOnly.
      */
     boolean getUseSuppliedUrlsOnly();
@@ -2493,7 +2493,7 @@ private static final long serialVersionUID = 0L;
      * Whether the campaign uses advertiser supplied URLs exclusively.
      * </pre>
      *
-     * <code>bool use_supplied_urls_only = 8;</code>
+     * <code>optional bool use_supplied_urls_only = 8;</code>
      * @return Whether the useSuppliedUrlsOnly field is set.
      */
     @java.lang.Override
@@ -2505,7 +2505,7 @@ private static final long serialVersionUID = 0L;
      * Whether the campaign uses advertiser supplied URLs exclusively.
      * </pre>
      *
-     * <code>bool use_supplied_urls_only = 8;</code>
+     * <code>optional bool use_supplied_urls_only = 8;</code>
      * @return The useSuppliedUrlsOnly.
      */
     @java.lang.Override
@@ -2578,10 +2578,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDomainNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domainName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, domainName_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, languageCode_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -2599,10 +2599,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getDomainNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domainName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, domainName_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, languageCode_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -3154,7 +3154,7 @@ private static final long serialVersionUID = 0L;
        * Whether the campaign uses advertiser supplied URLs exclusively.
        * </pre>
        *
-       * <code>bool use_supplied_urls_only = 8;</code>
+       * <code>optional bool use_supplied_urls_only = 8;</code>
        * @return Whether the useSuppliedUrlsOnly field is set.
        */
       @java.lang.Override
@@ -3166,7 +3166,7 @@ private static final long serialVersionUID = 0L;
        * Whether the campaign uses advertiser supplied URLs exclusively.
        * </pre>
        *
-       * <code>bool use_supplied_urls_only = 8;</code>
+       * <code>optional bool use_supplied_urls_only = 8;</code>
        * @return The useSuppliedUrlsOnly.
        */
       @java.lang.Override
@@ -3178,7 +3178,7 @@ private static final long serialVersionUID = 0L;
        * Whether the campaign uses advertiser supplied URLs exclusively.
        * </pre>
        *
-       * <code>bool use_supplied_urls_only = 8;</code>
+       * <code>optional bool use_supplied_urls_only = 8;</code>
        * @param value The useSuppliedUrlsOnly to set.
        * @return This builder for chaining.
        */
@@ -3193,7 +3193,7 @@ private static final long serialVersionUID = 0L;
        * Whether the campaign uses advertiser supplied URLs exclusively.
        * </pre>
        *
-       * <code>bool use_supplied_urls_only = 8;</code>
+       * <code>optional bool use_supplied_urls_only = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearUseSuppliedUrlsOnly() {
@@ -3410,7 +3410,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The url used for dynamic tracking.
      * </pre>
      *
-     * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the trackingUrl field is set.
      */
     boolean hasTrackingUrl();
@@ -3419,7 +3419,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The url used for dynamic tracking.
      * </pre>
      *
-     * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The trackingUrl.
      */
     java.lang.String getTrackingUrl();
@@ -3428,7 +3428,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The url used for dynamic tracking.
      * </pre>
      *
-     * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for trackingUrl.
      */
     com.google.protobuf.ByteString
@@ -3531,7 +3531,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The url used for dynamic tracking.
      * </pre>
      *
-     * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the trackingUrl field is set.
      */
     @java.lang.Override
@@ -3543,7 +3543,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The url used for dynamic tracking.
      * </pre>
      *
-     * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The trackingUrl.
      */
     @java.lang.Override
@@ -3564,7 +3564,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The url used for dynamic tracking.
      * </pre>
      *
-     * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for trackingUrl.
      */
     @java.lang.Override
@@ -3907,7 +3907,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The url used for dynamic tracking.
        * </pre>
        *
-       * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the trackingUrl field is set.
        */
       public boolean hasTrackingUrl() {
@@ -3918,7 +3918,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The url used for dynamic tracking.
        * </pre>
        *
-       * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The trackingUrl.
        */
       public java.lang.String getTrackingUrl() {
@@ -3938,7 +3938,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The url used for dynamic tracking.
        * </pre>
        *
-       * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for trackingUrl.
        */
       public com.google.protobuf.ByteString
@@ -3959,7 +3959,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The url used for dynamic tracking.
        * </pre>
        *
-       * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The trackingUrl to set.
        * @return This builder for chaining.
        */
@@ -3978,7 +3978,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The url used for dynamic tracking.
        * </pre>
        *
-       * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearTrackingUrl() {
@@ -3992,7 +3992,7 @@ private static final long serialVersionUID = 0L;
        * Output only. The url used for dynamic tracking.
        * </pre>
        *
-       * <code>string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional string tracking_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for trackingUrl to set.
        * @return This builder for chaining.
        */
@@ -4071,7 +4071,7 @@ private static final long serialVersionUID = 0L;
      * Shopping campaigns.
      * </pre>
      *
-     * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the merchantId field is set.
      */
     boolean hasMerchantId();
@@ -4082,7 +4082,7 @@ private static final long serialVersionUID = 0L;
      * Shopping campaigns.
      * </pre>
      *
-     * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The merchantId.
      */
     long getMerchantId();
@@ -4095,7 +4095,7 @@ private static final long serialVersionUID = 0L;
      * to 'ZZ' if set.
      * </pre>
      *
-     * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the salesCountry field is set.
      */
     boolean hasSalesCountry();
@@ -4107,7 +4107,7 @@ private static final long serialVersionUID = 0L;
      * to 'ZZ' if set.
      * </pre>
      *
-     * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The salesCountry.
      */
     java.lang.String getSalesCountry();
@@ -4119,7 +4119,7 @@ private static final long serialVersionUID = 0L;
      * to 'ZZ' if set.
      * </pre>
      *
-     * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for salesCountry.
      */
     com.google.protobuf.ByteString
@@ -4135,7 +4135,7 @@ private static final long serialVersionUID = 0L;
      * 3 if set.
      * </pre>
      *
-     * <code>int32 campaign_priority = 7;</code>
+     * <code>optional int32 campaign_priority = 7;</code>
      * @return Whether the campaignPriority field is set.
      */
     boolean hasCampaignPriority();
@@ -4149,7 +4149,7 @@ private static final long serialVersionUID = 0L;
      * 3 if set.
      * </pre>
      *
-     * <code>int32 campaign_priority = 7;</code>
+     * <code>optional int32 campaign_priority = 7;</code>
      * @return The campaignPriority.
      */
     int getCampaignPriority();
@@ -4159,7 +4159,7 @@ private static final long serialVersionUID = 0L;
      * Whether to include local products.
      * </pre>
      *
-     * <code>bool enable_local = 8;</code>
+     * <code>optional bool enable_local = 8;</code>
      * @return Whether the enableLocal field is set.
      */
     boolean hasEnableLocal();
@@ -4168,7 +4168,7 @@ private static final long serialVersionUID = 0L;
      * Whether to include local products.
      * </pre>
      *
-     * <code>bool enable_local = 8;</code>
+     * <code>optional bool enable_local = 8;</code>
      * @return The enableLocal.
      */
     boolean getEnableLocal();
@@ -4289,7 +4289,7 @@ private static final long serialVersionUID = 0L;
      * Shopping campaigns.
      * </pre>
      *
-     * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the merchantId field is set.
      */
     @java.lang.Override
@@ -4303,7 +4303,7 @@ private static final long serialVersionUID = 0L;
      * Shopping campaigns.
      * </pre>
      *
-     * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The merchantId.
      */
     @java.lang.Override
@@ -4321,7 +4321,7 @@ private static final long serialVersionUID = 0L;
      * to 'ZZ' if set.
      * </pre>
      *
-     * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the salesCountry field is set.
      */
     @java.lang.Override
@@ -4336,7 +4336,7 @@ private static final long serialVersionUID = 0L;
      * to 'ZZ' if set.
      * </pre>
      *
-     * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The salesCountry.
      */
     @java.lang.Override
@@ -4360,7 +4360,7 @@ private static final long serialVersionUID = 0L;
      * to 'ZZ' if set.
      * </pre>
      *
-     * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for salesCountry.
      */
     @java.lang.Override
@@ -4390,7 +4390,7 @@ private static final long serialVersionUID = 0L;
      * 3 if set.
      * </pre>
      *
-     * <code>int32 campaign_priority = 7;</code>
+     * <code>optional int32 campaign_priority = 7;</code>
      * @return Whether the campaignPriority field is set.
      */
     @java.lang.Override
@@ -4407,7 +4407,7 @@ private static final long serialVersionUID = 0L;
      * 3 if set.
      * </pre>
      *
-     * <code>int32 campaign_priority = 7;</code>
+     * <code>optional int32 campaign_priority = 7;</code>
      * @return The campaignPriority.
      */
     @java.lang.Override
@@ -4422,7 +4422,7 @@ private static final long serialVersionUID = 0L;
      * Whether to include local products.
      * </pre>
      *
-     * <code>bool enable_local = 8;</code>
+     * <code>optional bool enable_local = 8;</code>
      * @return Whether the enableLocal field is set.
      */
     @java.lang.Override
@@ -4434,7 +4434,7 @@ private static final long serialVersionUID = 0L;
      * Whether to include local products.
      * </pre>
      *
-     * <code>bool enable_local = 8;</code>
+     * <code>optional bool enable_local = 8;</code>
      * @return The enableLocal.
      */
     @java.lang.Override
@@ -4848,7 +4848,7 @@ private static final long serialVersionUID = 0L;
        * Shopping campaigns.
        * </pre>
        *
-       * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return Whether the merchantId field is set.
        */
       @java.lang.Override
@@ -4862,7 +4862,7 @@ private static final long serialVersionUID = 0L;
        * Shopping campaigns.
        * </pre>
        *
-       * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return The merchantId.
        */
       @java.lang.Override
@@ -4876,7 +4876,7 @@ private static final long serialVersionUID = 0L;
        * Shopping campaigns.
        * </pre>
        *
-       * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @param value The merchantId to set.
        * @return This builder for chaining.
        */
@@ -4893,7 +4893,7 @@ private static final long serialVersionUID = 0L;
        * Shopping campaigns.
        * </pre>
        *
-       * <code>int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional int64 merchant_id = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return This builder for chaining.
        */
       public Builder clearMerchantId() {
@@ -4912,7 +4912,7 @@ private static final long serialVersionUID = 0L;
        * to 'ZZ' if set.
        * </pre>
        *
-       * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return Whether the salesCountry field is set.
        */
       public boolean hasSalesCountry() {
@@ -4926,7 +4926,7 @@ private static final long serialVersionUID = 0L;
        * to 'ZZ' if set.
        * </pre>
        *
-       * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return The salesCountry.
        */
       public java.lang.String getSalesCountry() {
@@ -4949,7 +4949,7 @@ private static final long serialVersionUID = 0L;
        * to 'ZZ' if set.
        * </pre>
        *
-       * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return The bytes for salesCountry.
        */
       public com.google.protobuf.ByteString
@@ -4973,7 +4973,7 @@ private static final long serialVersionUID = 0L;
        * to 'ZZ' if set.
        * </pre>
        *
-       * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @param value The salesCountry to set.
        * @return This builder for chaining.
        */
@@ -4995,7 +4995,7 @@ private static final long serialVersionUID = 0L;
        * to 'ZZ' if set.
        * </pre>
        *
-       * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return This builder for chaining.
        */
       public Builder clearSalesCountry() {
@@ -5012,7 +5012,7 @@ private static final long serialVersionUID = 0L;
        * to 'ZZ' if set.
        * </pre>
        *
-       * <code>string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @param value The bytes for salesCountry to set.
        * @return This builder for chaining.
        */
@@ -5039,7 +5039,7 @@ private static final long serialVersionUID = 0L;
        * 3 if set.
        * </pre>
        *
-       * <code>int32 campaign_priority = 7;</code>
+       * <code>optional int32 campaign_priority = 7;</code>
        * @return Whether the campaignPriority field is set.
        */
       @java.lang.Override
@@ -5056,7 +5056,7 @@ private static final long serialVersionUID = 0L;
        * 3 if set.
        * </pre>
        *
-       * <code>int32 campaign_priority = 7;</code>
+       * <code>optional int32 campaign_priority = 7;</code>
        * @return The campaignPriority.
        */
       @java.lang.Override
@@ -5073,7 +5073,7 @@ private static final long serialVersionUID = 0L;
        * 3 if set.
        * </pre>
        *
-       * <code>int32 campaign_priority = 7;</code>
+       * <code>optional int32 campaign_priority = 7;</code>
        * @param value The campaignPriority to set.
        * @return This builder for chaining.
        */
@@ -5093,7 +5093,7 @@ private static final long serialVersionUID = 0L;
        * 3 if set.
        * </pre>
        *
-       * <code>int32 campaign_priority = 7;</code>
+       * <code>optional int32 campaign_priority = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCampaignPriority() {
@@ -5109,7 +5109,7 @@ private static final long serialVersionUID = 0L;
        * Whether to include local products.
        * </pre>
        *
-       * <code>bool enable_local = 8;</code>
+       * <code>optional bool enable_local = 8;</code>
        * @return Whether the enableLocal field is set.
        */
       @java.lang.Override
@@ -5121,7 +5121,7 @@ private static final long serialVersionUID = 0L;
        * Whether to include local products.
        * </pre>
        *
-       * <code>bool enable_local = 8;</code>
+       * <code>optional bool enable_local = 8;</code>
        * @return The enableLocal.
        */
       @java.lang.Override
@@ -5133,7 +5133,7 @@ private static final long serialVersionUID = 0L;
        * Whether to include local products.
        * </pre>
        *
-       * <code>bool enable_local = 8;</code>
+       * <code>optional bool enable_local = 8;</code>
        * @param value The enableLocal to set.
        * @return This builder for chaining.
        */
@@ -5148,7 +5148,7 @@ private static final long serialVersionUID = 0L;
        * Whether to include local products.
        * </pre>
        *
-       * <code>bool enable_local = 8;</code>
+       * <code>optional bool enable_local = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableLocal() {
@@ -5952,7 +5952,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. A string that uniquely identifies a mobile application.
      * </pre>
      *
-     * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the appId field is set.
      */
     boolean hasAppId();
@@ -5961,7 +5961,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. A string that uniquely identifies a mobile application.
      * </pre>
      *
-     * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The appId.
      */
     java.lang.String getAppId();
@@ -5970,7 +5970,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. A string that uniquely identifies a mobile application.
      * </pre>
      *
-     * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for appId.
      */
     com.google.protobuf.ByteString
@@ -6135,7 +6135,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. A string that uniquely identifies a mobile application.
      * </pre>
      *
-     * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the appId field is set.
      */
     @java.lang.Override
@@ -6147,7 +6147,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. A string that uniquely identifies a mobile application.
      * </pre>
      *
-     * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The appId.
      */
     @java.lang.Override
@@ -6168,7 +6168,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. A string that uniquely identifies a mobile application.
      * </pre>
      *
-     * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for appId.
      */
     @java.lang.Override
@@ -6649,7 +6649,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. A string that uniquely identifies a mobile application.
        * </pre>
        *
-       * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return Whether the appId field is set.
        */
       public boolean hasAppId() {
@@ -6660,7 +6660,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. A string that uniquely identifies a mobile application.
        * </pre>
        *
-       * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return The appId.
        */
       public java.lang.String getAppId() {
@@ -6680,7 +6680,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. A string that uniquely identifies a mobile application.
        * </pre>
        *
-       * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return The bytes for appId.
        */
       public com.google.protobuf.ByteString
@@ -6701,7 +6701,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. A string that uniquely identifies a mobile application.
        * </pre>
        *
-       * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @param value The appId to set.
        * @return This builder for chaining.
        */
@@ -6720,7 +6720,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. A string that uniquely identifies a mobile application.
        * </pre>
        *
-       * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @return This builder for chaining.
        */
       public Builder clearAppId() {
@@ -6734,7 +6734,7 @@ private static final long serialVersionUID = 0L;
        * Immutable. A string that uniquely identifies a mobile application.
        * </pre>
        *
-       * <code>string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       * <code>optional string app_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
        * @param value The bytes for appId to set.
        * @return This builder for chaining.
        */
@@ -9818,7 +9818,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ID of the campaign.
    * </pre>
    *
-   * <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the id field is set.
    */
   @java.lang.Override
@@ -9830,7 +9830,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ID of the campaign.
    * </pre>
    *
-   * <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The id.
    */
   @java.lang.Override
@@ -9849,7 +9849,7 @@ private static final long serialVersionUID = 0L;
    * (code point 0xA) or carriage return (code point 0xD) characters.
    * </pre>
    *
-   * <code>string name = 58;</code>
+   * <code>optional string name = 58;</code>
    * @return Whether the name field is set.
    */
   @java.lang.Override
@@ -9865,7 +9865,7 @@ private static final long serialVersionUID = 0L;
    * (code point 0xA) or carriage return (code point 0xD) characters.
    * </pre>
    *
-   * <code>string name = 58;</code>
+   * <code>optional string name = 58;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -9890,7 +9890,7 @@ private static final long serialVersionUID = 0L;
    * (code point 0xA) or carriage return (code point 0xD) characters.
    * </pre>
    *
-   * <code>string name = 58;</code>
+   * <code>optional string name = 58;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -10068,7 +10068,7 @@ private static final long serialVersionUID = 0L;
    * The URL template for constructing a tracking URL.
    * </pre>
    *
-   * <code>string tracking_url_template = 60;</code>
+   * <code>optional string tracking_url_template = 60;</code>
    * @return Whether the trackingUrlTemplate field is set.
    */
   @java.lang.Override
@@ -10080,7 +10080,7 @@ private static final long serialVersionUID = 0L;
    * The URL template for constructing a tracking URL.
    * </pre>
    *
-   * <code>string tracking_url_template = 60;</code>
+   * <code>optional string tracking_url_template = 60;</code>
    * @return The trackingUrlTemplate.
    */
   @java.lang.Override
@@ -10101,7 +10101,7 @@ private static final long serialVersionUID = 0L;
    * The URL template for constructing a tracking URL.
    * </pre>
    *
-   * <code>string tracking_url_template = 60;</code>
+   * <code>optional string tracking_url_template = 60;</code>
    * @return The bytes for trackingUrlTemplate.
    */
   @java.lang.Override
@@ -10616,7 +10616,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the baseCampaign field is set.
    */
   @java.lang.Override
@@ -10630,7 +10630,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The baseCampaign.
    */
   @java.lang.Override
@@ -10653,7 +10653,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for baseCampaign.
    */
   @java.lang.Override
@@ -10678,7 +10678,7 @@ private static final long serialVersionUID = 0L;
    * The budget of the campaign.
    * </pre>
    *
-   * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
    * @return Whether the campaignBudget field is set.
    */
   @java.lang.Override
@@ -10690,7 +10690,7 @@ private static final long serialVersionUID = 0L;
    * The budget of the campaign.
    * </pre>
    *
-   * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
    * @return The campaignBudget.
    */
   @java.lang.Override
@@ -10711,7 +10711,7 @@ private static final long serialVersionUID = 0L;
    * The budget of the campaign.
    * </pre>
    *
-   * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+   * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for campaignBudget.
    */
   @java.lang.Override
@@ -10771,7 +10771,7 @@ private static final long serialVersionUID = 0L;
    * The date when campaign started.
    * </pre>
    *
-   * <code>string start_date = 63;</code>
+   * <code>optional string start_date = 63;</code>
    * @return Whether the startDate field is set.
    */
   @java.lang.Override
@@ -10783,7 +10783,7 @@ private static final long serialVersionUID = 0L;
    * The date when campaign started.
    * </pre>
    *
-   * <code>string start_date = 63;</code>
+   * <code>optional string start_date = 63;</code>
    * @return The startDate.
    */
   @java.lang.Override
@@ -10804,7 +10804,7 @@ private static final long serialVersionUID = 0L;
    * The date when campaign started.
    * </pre>
    *
-   * <code>string start_date = 63;</code>
+   * <code>optional string start_date = 63;</code>
    * @return The bytes for startDate.
    */
   @java.lang.Override
@@ -10829,7 +10829,7 @@ private static final long serialVersionUID = 0L;
    * The last day of the campaign.
    * </pre>
    *
-   * <code>string end_date = 64;</code>
+   * <code>optional string end_date = 64;</code>
    * @return Whether the endDate field is set.
    */
   @java.lang.Override
@@ -10841,7 +10841,7 @@ private static final long serialVersionUID = 0L;
    * The last day of the campaign.
    * </pre>
    *
-   * <code>string end_date = 64;</code>
+   * <code>optional string end_date = 64;</code>
    * @return The endDate.
    */
   @java.lang.Override
@@ -10862,7 +10862,7 @@ private static final long serialVersionUID = 0L;
    * The last day of the campaign.
    * </pre>
    *
-   * <code>string end_date = 64;</code>
+   * <code>optional string end_date = 64;</code>
    * @return The bytes for endDate.
    */
   @java.lang.Override
@@ -10888,7 +10888,7 @@ private static final long serialVersionUID = 0L;
    * with parallel tracking.
    * </pre>
    *
-   * <code>string final_url_suffix = 65;</code>
+   * <code>optional string final_url_suffix = 65;</code>
    * @return Whether the finalUrlSuffix field is set.
    */
   @java.lang.Override
@@ -10901,7 +10901,7 @@ private static final long serialVersionUID = 0L;
    * with parallel tracking.
    * </pre>
    *
-   * <code>string final_url_suffix = 65;</code>
+   * <code>optional string final_url_suffix = 65;</code>
    * @return The finalUrlSuffix.
    */
   @java.lang.Override
@@ -10923,7 +10923,7 @@ private static final long serialVersionUID = 0L;
    * with parallel tracking.
    * </pre>
    *
-   * <code>string final_url_suffix = 65;</code>
+   * <code>optional string final_url_suffix = 65;</code>
    * @return The bytes for finalUrlSuffix.
    */
   @java.lang.Override
@@ -11227,7 +11227,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the optimizationScore field is set.
    */
   @java.lang.Override
@@ -11246,7 +11246,7 @@ private static final long serialVersionUID = 0L;
    * This field is read-only.
    * </pre>
    *
-   * <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The optimizationScore.
    */
   @java.lang.Override
@@ -11976,7 +11976,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
     }
     if (status_ != com.google.ads.googleads.v7.enums.CampaignStatusEnum.CampaignStatus.UNSPECIFIED.getNumber()) {
@@ -12136,7 +12136,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
     }
     if (status_ != com.google.ads.googleads.v7.enums.CampaignStatusEnum.CampaignStatus.UNSPECIFIED.getNumber()) {
@@ -13705,7 +13705,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the campaign.
      * </pre>
      *
-     * <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the id field is set.
      */
     @java.lang.Override
@@ -13717,7 +13717,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the campaign.
      * </pre>
      *
-     * <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The id.
      */
     @java.lang.Override
@@ -13729,7 +13729,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the campaign.
      * </pre>
      *
-     * <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -13744,7 +13744,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ID of the campaign.
      * </pre>
      *
-     * <code>int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 id = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -13764,7 +13764,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 58;</code>
+     * <code>optional string name = 58;</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
@@ -13779,7 +13779,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 58;</code>
+     * <code>optional string name = 58;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -13803,7 +13803,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 58;</code>
+     * <code>optional string name = 58;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -13828,7 +13828,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 58;</code>
+     * <code>optional string name = 58;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -13851,7 +13851,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 58;</code>
+     * <code>optional string name = 58;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -13869,7 +13869,7 @@ private static final long serialVersionUID = 0L;
      * (code point 0xA) or carriage return (code point 0xD) characters.
      * </pre>
      *
-     * <code>string name = 58;</code>
+     * <code>optional string name = 58;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -14306,7 +14306,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 60;</code>
+     * <code>optional string tracking_url_template = 60;</code>
      * @return Whether the trackingUrlTemplate field is set.
      */
     public boolean hasTrackingUrlTemplate() {
@@ -14317,7 +14317,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 60;</code>
+     * <code>optional string tracking_url_template = 60;</code>
      * @return The trackingUrlTemplate.
      */
     public java.lang.String getTrackingUrlTemplate() {
@@ -14337,7 +14337,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 60;</code>
+     * <code>optional string tracking_url_template = 60;</code>
      * @return The bytes for trackingUrlTemplate.
      */
     public com.google.protobuf.ByteString
@@ -14358,7 +14358,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 60;</code>
+     * <code>optional string tracking_url_template = 60;</code>
      * @param value The trackingUrlTemplate to set.
      * @return This builder for chaining.
      */
@@ -14377,7 +14377,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 60;</code>
+     * <code>optional string tracking_url_template = 60;</code>
      * @return This builder for chaining.
      */
     public Builder clearTrackingUrlTemplate() {
@@ -14391,7 +14391,7 @@ private static final long serialVersionUID = 0L;
      * The URL template for constructing a tracking URL.
      * </pre>
      *
-     * <code>string tracking_url_template = 60;</code>
+     * <code>optional string tracking_url_template = 60;</code>
      * @param value The bytes for trackingUrlTemplate to set.
      * @return This builder for chaining.
      */
@@ -16369,7 +16369,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the baseCampaign field is set.
      */
     public boolean hasBaseCampaign() {
@@ -16382,7 +16382,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The baseCampaign.
      */
     public java.lang.String getBaseCampaign() {
@@ -16404,7 +16404,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for baseCampaign.
      */
     public com.google.protobuf.ByteString
@@ -16427,7 +16427,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The baseCampaign to set.
      * @return This builder for chaining.
      */
@@ -16448,7 +16448,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearBaseCampaign() {
@@ -16464,7 +16464,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+     * <code>optional string base_campaign = 56 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for baseCampaign to set.
      * @return This builder for chaining.
      */
@@ -16486,7 +16486,7 @@ private static final long serialVersionUID = 0L;
      * The budget of the campaign.
      * </pre>
      *
-     * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
      * @return Whether the campaignBudget field is set.
      */
     public boolean hasCampaignBudget() {
@@ -16497,7 +16497,7 @@ private static final long serialVersionUID = 0L;
      * The budget of the campaign.
      * </pre>
      *
-     * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
      * @return The campaignBudget.
      */
     public java.lang.String getCampaignBudget() {
@@ -16517,7 +16517,7 @@ private static final long serialVersionUID = 0L;
      * The budget of the campaign.
      * </pre>
      *
-     * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for campaignBudget.
      */
     public com.google.protobuf.ByteString
@@ -16538,7 +16538,7 @@ private static final long serialVersionUID = 0L;
      * The budget of the campaign.
      * </pre>
      *
-     * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
      * @param value The campaignBudget to set.
      * @return This builder for chaining.
      */
@@ -16557,7 +16557,7 @@ private static final long serialVersionUID = 0L;
      * The budget of the campaign.
      * </pre>
      *
-     * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearCampaignBudget() {
@@ -16571,7 +16571,7 @@ private static final long serialVersionUID = 0L;
      * The budget of the campaign.
      * </pre>
      *
-     * <code>string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
+     * <code>optional string campaign_budget = 62 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for campaignBudget to set.
      * @return This builder for chaining.
      */
@@ -16687,7 +16687,7 @@ private static final long serialVersionUID = 0L;
      * The date when campaign started.
      * </pre>
      *
-     * <code>string start_date = 63;</code>
+     * <code>optional string start_date = 63;</code>
      * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
@@ -16698,7 +16698,7 @@ private static final long serialVersionUID = 0L;
      * The date when campaign started.
      * </pre>
      *
-     * <code>string start_date = 63;</code>
+     * <code>optional string start_date = 63;</code>
      * @return The startDate.
      */
     public java.lang.String getStartDate() {
@@ -16718,7 +16718,7 @@ private static final long serialVersionUID = 0L;
      * The date when campaign started.
      * </pre>
      *
-     * <code>string start_date = 63;</code>
+     * <code>optional string start_date = 63;</code>
      * @return The bytes for startDate.
      */
     public com.google.protobuf.ByteString
@@ -16739,7 +16739,7 @@ private static final long serialVersionUID = 0L;
      * The date when campaign started.
      * </pre>
      *
-     * <code>string start_date = 63;</code>
+     * <code>optional string start_date = 63;</code>
      * @param value The startDate to set.
      * @return This builder for chaining.
      */
@@ -16758,7 +16758,7 @@ private static final long serialVersionUID = 0L;
      * The date when campaign started.
      * </pre>
      *
-     * <code>string start_date = 63;</code>
+     * <code>optional string start_date = 63;</code>
      * @return This builder for chaining.
      */
     public Builder clearStartDate() {
@@ -16772,7 +16772,7 @@ private static final long serialVersionUID = 0L;
      * The date when campaign started.
      * </pre>
      *
-     * <code>string start_date = 63;</code>
+     * <code>optional string start_date = 63;</code>
      * @param value The bytes for startDate to set.
      * @return This builder for chaining.
      */
@@ -16794,7 +16794,7 @@ private static final long serialVersionUID = 0L;
      * The last day of the campaign.
      * </pre>
      *
-     * <code>string end_date = 64;</code>
+     * <code>optional string end_date = 64;</code>
      * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
@@ -16805,7 +16805,7 @@ private static final long serialVersionUID = 0L;
      * The last day of the campaign.
      * </pre>
      *
-     * <code>string end_date = 64;</code>
+     * <code>optional string end_date = 64;</code>
      * @return The endDate.
      */
     public java.lang.String getEndDate() {
@@ -16825,7 +16825,7 @@ private static final long serialVersionUID = 0L;
      * The last day of the campaign.
      * </pre>
      *
-     * <code>string end_date = 64;</code>
+     * <code>optional string end_date = 64;</code>
      * @return The bytes for endDate.
      */
     public com.google.protobuf.ByteString
@@ -16846,7 +16846,7 @@ private static final long serialVersionUID = 0L;
      * The last day of the campaign.
      * </pre>
      *
-     * <code>string end_date = 64;</code>
+     * <code>optional string end_date = 64;</code>
      * @param value The endDate to set.
      * @return This builder for chaining.
      */
@@ -16865,7 +16865,7 @@ private static final long serialVersionUID = 0L;
      * The last day of the campaign.
      * </pre>
      *
-     * <code>string end_date = 64;</code>
+     * <code>optional string end_date = 64;</code>
      * @return This builder for chaining.
      */
     public Builder clearEndDate() {
@@ -16879,7 +16879,7 @@ private static final long serialVersionUID = 0L;
      * The last day of the campaign.
      * </pre>
      *
-     * <code>string end_date = 64;</code>
+     * <code>optional string end_date = 64;</code>
      * @param value The bytes for endDate to set.
      * @return This builder for chaining.
      */
@@ -16902,7 +16902,7 @@ private static final long serialVersionUID = 0L;
      * with parallel tracking.
      * </pre>
      *
-     * <code>string final_url_suffix = 65;</code>
+     * <code>optional string final_url_suffix = 65;</code>
      * @return Whether the finalUrlSuffix field is set.
      */
     public boolean hasFinalUrlSuffix() {
@@ -16914,7 +16914,7 @@ private static final long serialVersionUID = 0L;
      * with parallel tracking.
      * </pre>
      *
-     * <code>string final_url_suffix = 65;</code>
+     * <code>optional string final_url_suffix = 65;</code>
      * @return The finalUrlSuffix.
      */
     public java.lang.String getFinalUrlSuffix() {
@@ -16935,7 +16935,7 @@ private static final long serialVersionUID = 0L;
      * with parallel tracking.
      * </pre>
      *
-     * <code>string final_url_suffix = 65;</code>
+     * <code>optional string final_url_suffix = 65;</code>
      * @return The bytes for finalUrlSuffix.
      */
     public com.google.protobuf.ByteString
@@ -16957,7 +16957,7 @@ private static final long serialVersionUID = 0L;
      * with parallel tracking.
      * </pre>
      *
-     * <code>string final_url_suffix = 65;</code>
+     * <code>optional string final_url_suffix = 65;</code>
      * @param value The finalUrlSuffix to set.
      * @return This builder for chaining.
      */
@@ -16977,7 +16977,7 @@ private static final long serialVersionUID = 0L;
      * with parallel tracking.
      * </pre>
      *
-     * <code>string final_url_suffix = 65;</code>
+     * <code>optional string final_url_suffix = 65;</code>
      * @return This builder for chaining.
      */
     public Builder clearFinalUrlSuffix() {
@@ -16992,7 +16992,7 @@ private static final long serialVersionUID = 0L;
      * with parallel tracking.
      * </pre>
      *
-     * <code>string final_url_suffix = 65;</code>
+     * <code>optional string final_url_suffix = 65;</code>
      * @param value The bytes for finalUrlSuffix to set.
      * @return This builder for chaining.
      */
@@ -18119,7 +18119,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the optimizationScore field is set.
      */
     @java.lang.Override
@@ -18138,7 +18138,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The optimizationScore.
      */
     @java.lang.Override
@@ -18157,7 +18157,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The optimizationScore to set.
      * @return This builder for chaining.
      */
@@ -18179,7 +18179,7 @@ private static final long serialVersionUID = 0L;
      * This field is read-only.
      * </pre>
      *
-     * <code>double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional double optimization_score = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearOptimizationScore() {

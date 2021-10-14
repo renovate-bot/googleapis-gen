@@ -53,7 +53,7 @@ class UpdateWorkloadIdentityPoolProviderRequest extends \Google\Protobuf\Interna
      */
     public function getWorkloadIdentityPoolProvider()
     {
-        return isset($this->workload_identity_pool_provider) ? $this->workload_identity_pool_provider : null;
+        return $this->workload_identity_pool_provider;
     }
 
     public function hasWorkloadIdentityPoolProvider()
@@ -89,7 +89,7 @@ class UpdateWorkloadIdentityPoolProviderRequest extends \Google\Protobuf\Interna
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

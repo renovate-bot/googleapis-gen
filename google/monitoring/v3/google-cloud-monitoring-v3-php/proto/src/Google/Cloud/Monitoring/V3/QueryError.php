@@ -56,7 +56,7 @@ class QueryError extends \Google\Protobuf\Internal\Message
      */
     public function getLocator()
     {
-        return isset($this->locator) ? $this->locator : null;
+        return $this->locator;
     }
 
     public function hasLocator()

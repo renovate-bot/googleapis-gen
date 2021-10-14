@@ -91,7 +91,7 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAggregateMetrics()
     {
-        return isset($this->aggregate_metrics) ? $this->aggregate_metrics : null;
+        return $this->aggregate_metrics;
     }
 
     public function hasAggregateMetrics()
@@ -127,7 +127,7 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHistoricalMetricsOptions()
     {
-        return isset($this->historical_metrics_options) ? $this->historical_metrics_options : null;
+        return $this->historical_metrics_options;
     }
 
     public function hasHistoricalMetricsOptions()

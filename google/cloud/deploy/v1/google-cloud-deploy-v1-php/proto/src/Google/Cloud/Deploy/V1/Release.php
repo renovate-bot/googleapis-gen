@@ -365,7 +365,7 @@ class Release extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -401,7 +401,7 @@ class Release extends \Google\Protobuf\Internal\Message
      */
     public function getRenderStartTime()
     {
-        return isset($this->render_start_time) ? $this->render_start_time : null;
+        return $this->render_start_time;
     }
 
     public function hasRenderStartTime()
@@ -437,7 +437,7 @@ class Release extends \Google\Protobuf\Internal\Message
      */
     public function getRenderEndTime()
     {
-        return isset($this->render_end_time) ? $this->render_end_time : null;
+        return $this->render_end_time;
     }
 
     public function hasRenderEndTime()
@@ -551,7 +551,7 @@ class Release extends \Google\Protobuf\Internal\Message
      */
     public function getDeliveryPipelineSnapshot()
     {
-        return isset($this->delivery_pipeline_snapshot) ? $this->delivery_pipeline_snapshot : null;
+        return $this->delivery_pipeline_snapshot;
     }
 
     public function hasDeliveryPipelineSnapshot()

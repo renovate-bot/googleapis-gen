@@ -24,7 +24,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Output only. Average CPA target.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_cpa_micros = null;
     /**
@@ -33,7 +33,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      *
-     * Generated from protobuf field <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $required_campaign_budget_amount_micros = null;
     /**
@@ -96,7 +96,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Output only. Average CPA target.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getTargetCpaMicros()
@@ -117,7 +117,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Output only. Average CPA target.
      *
-     * Generated from protobuf field <code>int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 target_cpa_micros = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -135,7 +135,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      *
-     * Generated from protobuf field <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getRequiredCampaignBudgetAmountMicros()
@@ -159,7 +159,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      *
-     * Generated from protobuf field <code>int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 required_campaign_budget_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -179,7 +179,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      */
     public function getImpact()
     {
-        return isset($this->impact) ? $this->impact : null;
+        return $this->impact;
     }
 
     public function hasImpact()

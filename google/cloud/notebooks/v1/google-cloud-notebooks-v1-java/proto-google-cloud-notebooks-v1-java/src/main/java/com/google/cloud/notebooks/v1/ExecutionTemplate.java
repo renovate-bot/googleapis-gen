@@ -1673,7 +1673,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getClusterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cluster_);
       }
       unknownFields.writeTo(output);
@@ -1685,7 +1685,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getClusterBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cluster_);
       }
       size += unknownFields.getSerializedSize();
@@ -2857,7 +2857,7 @@ private static final long serialVersionUID = 0L;
     if (scaleTier_ != com.google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier.SCALE_TIER_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, scaleTier_);
     }
-    if (!getMasterTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, masterType_);
     }
     if (acceleratorConfig_ != null) {
@@ -2869,22 +2869,22 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         4);
-    if (!getInputNotebookFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputNotebookFile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputNotebookFile_);
     }
-    if (!getContainerImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerImageUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, containerImageUri_);
     }
-    if (!getOutputNotebookFolderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputNotebookFolder_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, outputNotebookFolder_);
     }
-    if (!getParamsYamlFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramsYamlFile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, paramsYamlFile_);
     }
-    if (!getParametersBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameters_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parameters_);
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, serviceAccount_);
     }
     if (jobType_ != com.google.cloud.notebooks.v1.ExecutionTemplate.JobType.JOB_TYPE_UNSPECIFIED.getNumber()) {
@@ -2906,7 +2906,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, scaleTier_);
     }
-    if (!getMasterTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, masterType_);
     }
     if (acceleratorConfig_ != null) {
@@ -2923,22 +2923,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, labels__);
     }
-    if (!getInputNotebookFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputNotebookFile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inputNotebookFile_);
     }
-    if (!getContainerImageUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerImageUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, containerImageUri_);
     }
-    if (!getOutputNotebookFolderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputNotebookFolder_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, outputNotebookFolder_);
     }
-    if (!getParamsYamlFileBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramsYamlFile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, paramsYamlFile_);
     }
-    if (!getParametersBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameters_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parameters_);
     }
-    if (!getServiceAccountBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, serviceAccount_);
     }
     if (jobType_ != com.google.cloud.notebooks.v1.ExecutionTemplate.JobType.JOB_TYPE_UNSPECIFIED.getNumber()) {

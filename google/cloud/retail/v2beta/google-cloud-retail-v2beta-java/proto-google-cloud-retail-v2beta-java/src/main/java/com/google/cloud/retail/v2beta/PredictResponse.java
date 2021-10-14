@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       com.google.protobuf.GeneratedMessageV3
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry
@@ -1399,7 +1399,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < results_.size(); i++) {
       output.writeMessage(1, results_.get(i));
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attributionToken_);
     }
     for (int i = 0; i < missingIds_.size(); i++) {
@@ -1421,7 +1421,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, results_.get(i));
     }
-    if (!getAttributionTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributionToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attributionToken_);
     }
     {

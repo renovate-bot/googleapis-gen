@@ -153,7 +153,7 @@ class TableReadOptions extends \Google\Protobuf\Internal\Message
      */
     public function getArrowSerializationOptions()
     {
-        return isset($this->arrow_serialization_options) ? $this->arrow_serialization_options : null;
+        return $this->arrow_serialization_options;
     }
 
     public function hasArrowSerializationOptions()

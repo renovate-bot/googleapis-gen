@@ -18,21 +18,21 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     /**
      * Id of the feed attribute for which the value is associated with.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 11;</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 11;</code>
      */
     protected $feed_attribute_id = null;
     /**
      * Int64 value. Should be set if feed_attribute_id refers to a feed attribute
      * of type INT64.
      *
-     * Generated from protobuf field <code>int64 integer_value = 12;</code>
+     * Generated from protobuf field <code>optional int64 integer_value = 12;</code>
      */
     protected $integer_value = null;
     /**
      * Bool value. Should be set if feed_attribute_id refers to a feed attribute
      * of type BOOLEAN.
      *
-     * Generated from protobuf field <code>bool boolean_value = 13;</code>
+     * Generated from protobuf field <code>optional bool boolean_value = 13;</code>
      */
     protected $boolean_value = null;
     /**
@@ -42,14 +42,14 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * length is 2076 characters. For DATE_TIME the string must be in the format
      * "YYYYMMDD HHMMSS".
      *
-     * Generated from protobuf field <code>string string_value = 14;</code>
+     * Generated from protobuf field <code>optional string string_value = 14;</code>
      */
     protected $string_value = null;
     /**
      * Double value. Should be set if feed_attribute_id refers to a feed attribute
      * of type DOUBLE.
      *
-     * Generated from protobuf field <code>double double_value = 15;</code>
+     * Generated from protobuf field <code>optional double double_value = 15;</code>
      */
     protected $double_value = null;
     /**
@@ -148,7 +148,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     /**
      * Id of the feed attribute for which the value is associated with.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 11;</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 11;</code>
      * @return int|string
      */
     public function getFeedAttributeId()
@@ -169,7 +169,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     /**
      * Id of the feed attribute for which the value is associated with.
      *
-     * Generated from protobuf field <code>int64 feed_attribute_id = 11;</code>
+     * Generated from protobuf field <code>optional int64 feed_attribute_id = 11;</code>
      * @param int|string $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Int64 value. Should be set if feed_attribute_id refers to a feed attribute
      * of type INT64.
      *
-     * Generated from protobuf field <code>int64 integer_value = 12;</code>
+     * Generated from protobuf field <code>optional int64 integer_value = 12;</code>
      * @return int|string
      */
     public function getIntegerValue()
@@ -207,7 +207,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Int64 value. Should be set if feed_attribute_id refers to a feed attribute
      * of type INT64.
      *
-     * Generated from protobuf field <code>int64 integer_value = 12;</code>
+     * Generated from protobuf field <code>optional int64 integer_value = 12;</code>
      * @param int|string $var
      * @return $this
      */
@@ -223,7 +223,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Bool value. Should be set if feed_attribute_id refers to a feed attribute
      * of type BOOLEAN.
      *
-     * Generated from protobuf field <code>bool boolean_value = 13;</code>
+     * Generated from protobuf field <code>optional bool boolean_value = 13;</code>
      * @return bool
      */
     public function getBooleanValue()
@@ -245,7 +245,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Bool value. Should be set if feed_attribute_id refers to a feed attribute
      * of type BOOLEAN.
      *
-     * Generated from protobuf field <code>bool boolean_value = 13;</code>
+     * Generated from protobuf field <code>optional bool boolean_value = 13;</code>
      * @param bool $var
      * @return $this
      */
@@ -264,7 +264,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * length is 2076 characters. For DATE_TIME the string must be in the format
      * "YYYYMMDD HHMMSS".
      *
-     * Generated from protobuf field <code>string string_value = 14;</code>
+     * Generated from protobuf field <code>optional string string_value = 14;</code>
      * @return string
      */
     public function getStringValue()
@@ -289,7 +289,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * length is 2076 characters. For DATE_TIME the string must be in the format
      * "YYYYMMDD HHMMSS".
      *
-     * Generated from protobuf field <code>string string_value = 14;</code>
+     * Generated from protobuf field <code>optional string string_value = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -305,7 +305,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Double value. Should be set if feed_attribute_id refers to a feed attribute
      * of type DOUBLE.
      *
-     * Generated from protobuf field <code>double double_value = 15;</code>
+     * Generated from protobuf field <code>optional double double_value = 15;</code>
      * @return float
      */
     public function getDoubleValue()
@@ -327,7 +327,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Double value. Should be set if feed_attribute_id refers to a feed attribute
      * of type DOUBLE.
      *
-     * Generated from protobuf field <code>double double_value = 15;</code>
+     * Generated from protobuf field <code>optional double double_value = 15;</code>
      * @param float $var
      * @return $this
      */
@@ -348,7 +348,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      */
     public function getPriceValue()
     {
-        return isset($this->price_value) ? $this->price_value : null;
+        return $this->price_value;
     }
 
     public function hasPriceValue()

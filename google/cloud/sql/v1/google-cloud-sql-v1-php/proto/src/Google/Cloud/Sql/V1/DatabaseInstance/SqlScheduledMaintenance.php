@@ -35,7 +35,7 @@ class SqlScheduledMaintenance extends \Google\Protobuf\Internal\Message
     /**
      * Maintenance cannot be rescheduled to start beyond this deadline.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_deadline_time = 4;</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp schedule_deadline_time = 4;</code>
      */
     protected $schedule_deadline_time = null;
 
@@ -67,7 +67,7 @@ class SqlScheduledMaintenance extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -150,12 +150,12 @@ class SqlScheduledMaintenance extends \Google\Protobuf\Internal\Message
     /**
      * Maintenance cannot be rescheduled to start beyond this deadline.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_deadline_time = 4;</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp schedule_deadline_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getScheduleDeadlineTime()
     {
-        return isset($this->schedule_deadline_time) ? $this->schedule_deadline_time : null;
+        return $this->schedule_deadline_time;
     }
 
     public function hasScheduleDeadlineTime()
@@ -171,7 +171,7 @@ class SqlScheduledMaintenance extends \Google\Protobuf\Internal\Message
     /**
      * Maintenance cannot be rescheduled to start beyond this deadline.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_deadline_time = 4;</code>
+     * Generated from protobuf field <code>optional .google.protobuf.Timestamp schedule_deadline_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

@@ -265,7 +265,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -301,7 +301,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -337,7 +337,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -373,7 +373,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -409,7 +409,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getPipelineSpec()
     {
-        return isset($this->pipeline_spec) ? $this->pipeline_spec : null;
+        return $this->pipeline_spec;
     }
 
     public function hasPipelineSpec()
@@ -471,7 +471,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getJobDetail()
     {
-        return isset($this->job_detail) ? $this->job_detail : null;
+        return $this->job_detail;
     }
 
     public function hasJobDetail()
@@ -508,7 +508,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -579,7 +579,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getRuntimeConfig()
     {
-        return isset($this->runtime_config) ? $this->runtime_config : null;
+        return $this->runtime_config;
     }
 
     public function hasRuntimeConfig()
@@ -616,7 +616,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      */
     public function getEncryptionSpec()
     {
-        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+        return $this->encryption_spec;
     }
 
     public function hasEncryptionSpec()

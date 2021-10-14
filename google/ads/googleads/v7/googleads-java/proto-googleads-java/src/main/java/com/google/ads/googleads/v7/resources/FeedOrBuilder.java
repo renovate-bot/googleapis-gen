@@ -37,7 +37,7 @@ public interface FeedOrBuilder extends
    * This field is read-only.
    * </pre>
    *
-   * <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the id field is set.
    */
   boolean hasId();
@@ -47,7 +47,7 @@ public interface FeedOrBuilder extends
    * This field is read-only.
    * </pre>
    *
-   * <code>int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The id.
    */
   long getId();
@@ -57,7 +57,7 @@ public interface FeedOrBuilder extends
    * Immutable. Name of the feed. Required.
    * </pre>
    *
-   * <code>string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
@@ -66,7 +66,7 @@ public interface FeedOrBuilder extends
    * Immutable. Name of the feed. Required.
    * </pre>
    *
-   * <code>string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -75,7 +75,7 @@ public interface FeedOrBuilder extends
    * Immutable. Name of the feed. Required.
    * </pre>
    *
-   * <code>string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string name = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

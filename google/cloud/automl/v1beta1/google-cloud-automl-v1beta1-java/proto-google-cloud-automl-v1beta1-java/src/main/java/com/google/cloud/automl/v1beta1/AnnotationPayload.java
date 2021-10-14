@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getAnnotationSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotationSpecId_);
     }
     if (detailCase_ == 2) {
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
     if (detailCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
     if (detailCase_ == 6) {
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getAnnotationSpecIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, annotationSpecId_);
     }
     if (detailCase_ == 2) {
@@ -784,7 +784,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
     }
     if (detailCase_ == 6) {

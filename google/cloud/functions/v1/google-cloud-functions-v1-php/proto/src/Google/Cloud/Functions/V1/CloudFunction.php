@@ -593,7 +593,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      */
     public function getTimeout()
     {
-        return isset($this->timeout) ? $this->timeout : null;
+        return $this->timeout;
     }
 
     public function hasTimeout()
@@ -687,7 +687,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()

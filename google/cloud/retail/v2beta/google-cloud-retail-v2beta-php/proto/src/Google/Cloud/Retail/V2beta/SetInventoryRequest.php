@@ -175,7 +175,7 @@ class SetInventoryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getInventory()
     {
-        return isset($this->inventory) ? $this->inventory : null;
+        return $this->inventory;
     }
 
     public function hasInventory()
@@ -243,7 +243,7 @@ class SetInventoryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSetMask()
     {
-        return isset($this->set_mask) ? $this->set_mask : null;
+        return $this->set_mask;
     }
 
     public function hasSetMask()
@@ -285,7 +285,7 @@ class SetInventoryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSetTime()
     {
-        return isset($this->set_time) ? $this->set_time : null;
+        return $this->set_time;
     }
 
     public function hasSetTime()

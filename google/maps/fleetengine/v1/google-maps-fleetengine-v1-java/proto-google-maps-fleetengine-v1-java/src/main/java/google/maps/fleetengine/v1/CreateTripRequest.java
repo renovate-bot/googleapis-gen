@@ -385,13 +385,13 @@ private static final long serialVersionUID = 0L;
     if (header_ != null) {
       output.writeMessage(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parent_);
     }
     if (trip_ != null) {
       output.writeMessage(4, getTrip());
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tripId_);
     }
     unknownFields.writeTo(output);
@@ -407,14 +407,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parent_);
     }
     if (trip_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getTrip());
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, tripId_);
     }
     size += unknownFields.getSerializedSize();

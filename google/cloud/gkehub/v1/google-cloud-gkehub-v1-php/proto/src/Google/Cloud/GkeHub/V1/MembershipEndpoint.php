@@ -54,7 +54,7 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      */
     public function getGkeCluster()
     {
-        return isset($this->gke_cluster) ? $this->gke_cluster : null;
+        return $this->gke_cluster;
     }
 
     public function hasGkeCluster()
@@ -90,7 +90,7 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      */
     public function getKubernetesMetadata()
     {
-        return isset($this->kubernetes_metadata) ? $this->kubernetes_metadata : null;
+        return $this->kubernetes_metadata;
     }
 
     public function hasKubernetesMetadata()

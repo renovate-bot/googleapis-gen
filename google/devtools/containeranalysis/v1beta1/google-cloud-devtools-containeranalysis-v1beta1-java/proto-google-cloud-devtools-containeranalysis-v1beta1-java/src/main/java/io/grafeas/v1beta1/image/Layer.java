@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
     if (directive_ != io.grafeas.v1beta1.image.Layer.Directive.DIRECTIVE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, directive_);
     }
-    if (!getArgumentsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(arguments_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, arguments_);
     }
     unknownFields.writeTo(output);
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, directive_);
     }
-    if (!getArgumentsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(arguments_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, arguments_);
     }
     size += unknownFields.getSerializedSize();

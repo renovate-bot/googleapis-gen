@@ -135,7 +135,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      */
     public function getServiceAccount()
     {
-        return isset($this->service_account) ? $this->service_account : null;
+        return $this->service_account;
     }
 
     public function hasServiceAccount()

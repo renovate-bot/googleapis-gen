@@ -45,7 +45,7 @@ class DeleteProcessorMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getCommonMetadata()
     {
-        return isset($this->common_metadata) ? $this->common_metadata : null;
+        return $this->common_metadata;
     }
 
     public function hasCommonMetadata()

@@ -31,13 +31,13 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * and "2-com.labpixies.colordrips" for Android.
      * This field is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>string app_id = 4;</code>
+     * Generated from protobuf field <code>optional string app_id = 4;</code>
      */
     protected $app_id = null;
     /**
      * Name of this mobile application.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      */
     protected $name = null;
 
@@ -87,7 +87,7 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * and "2-com.labpixies.colordrips" for Android.
      * This field is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>string app_id = 4;</code>
+     * Generated from protobuf field <code>optional string app_id = 4;</code>
      * @return string
      */
     public function getAppId()
@@ -121,7 +121,7 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * and "2-com.labpixies.colordrips" for Android.
      * This field is required and must be set in CREATE operations.
      *
-     * Generated from protobuf field <code>string app_id = 4;</code>
+     * Generated from protobuf field <code>optional string app_id = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -136,7 +136,7 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Name of this mobile application.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      * @return string
      */
     public function getName()
@@ -157,7 +157,7 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Name of this mobile application.
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>optional string name = 5;</code>
      * @param string $var
      * @return $this
      */

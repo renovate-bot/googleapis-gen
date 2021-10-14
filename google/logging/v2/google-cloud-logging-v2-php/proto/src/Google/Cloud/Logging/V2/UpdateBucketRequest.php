@@ -129,7 +129,7 @@ class UpdateBucketRequest extends \Google\Protobuf\Internal\Message
      */
     public function getBucket()
     {
-        return isset($this->bucket) ? $this->bucket : null;
+        return $this->bucket;
     }
 
     public function hasBucket()
@@ -170,7 +170,7 @@ class UpdateBucketRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

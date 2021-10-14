@@ -19,7 +19,7 @@ class CustomerMatchUserListMetadata extends \Google\Protobuf\Internal\Message
      * The resource name of remarketing list to update data.
      * Required for job of CUSTOMER_MATCH_USER_LIST type.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      */
     protected $user_list = null;
 
@@ -43,7 +43,7 @@ class CustomerMatchUserListMetadata extends \Google\Protobuf\Internal\Message
      * The resource name of remarketing list to update data.
      * Required for job of CUSTOMER_MATCH_USER_LIST type.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      * @return string
      */
     public function getUserList()
@@ -65,7 +65,7 @@ class CustomerMatchUserListMetadata extends \Google\Protobuf\Internal\Message
      * The resource name of remarketing list to update data.
      * Required for job of CUSTOMER_MATCH_USER_LIST type.
      *
-     * Generated from protobuf field <code>string user_list = 2;</code>
+     * Generated from protobuf field <code>optional string user_list = 2;</code>
      * @param string $var
      * @return $this
      */

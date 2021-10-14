@@ -182,7 +182,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     public function getVehicle()
     {
-        return isset($this->vehicle) ? $this->vehicle : null;
+        return $this->vehicle;
     }
 
     public function hasVehicle()
@@ -220,7 +220,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     public function getVehiclePickupEta()
     {
-        return isset($this->vehicle_pickup_eta) ? $this->vehicle_pickup_eta : null;
+        return $this->vehicle_pickup_eta;
     }
 
     public function hasVehiclePickupEta()
@@ -261,7 +261,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     public function getVehiclePickupDistanceMeters()
     {
-        return isset($this->vehicle_pickup_distance_meters) ? $this->vehicle_pickup_distance_meters : null;
+        return $this->vehicle_pickup_distance_meters;
     }
 
     public function hasVehiclePickupDistanceMeters()
@@ -335,7 +335,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     public function getVehiclePickupStraightLineDistanceMeters()
     {
-        return isset($this->vehicle_pickup_straight_line_distance_meters) ? $this->vehicle_pickup_straight_line_distance_meters : null;
+        return $this->vehicle_pickup_straight_line_distance_meters;
     }
 
     public function hasVehiclePickupStraightLineDistanceMeters()
@@ -410,7 +410,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     public function getVehicleDropoffEta()
     {
-        return isset($this->vehicle_dropoff_eta) ? $this->vehicle_dropoff_eta : null;
+        return $this->vehicle_dropoff_eta;
     }
 
     public function hasVehicleDropoffEta()
@@ -459,7 +459,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     public function getVehiclePickupToDropoffDistanceMeters()
     {
-        return isset($this->vehicle_pickup_to_dropoff_distance_meters) ? $this->vehicle_pickup_to_dropoff_distance_meters : null;
+        return $this->vehicle_pickup_to_dropoff_distance_meters;
     }
 
     public function hasVehiclePickupToDropoffDistanceMeters()

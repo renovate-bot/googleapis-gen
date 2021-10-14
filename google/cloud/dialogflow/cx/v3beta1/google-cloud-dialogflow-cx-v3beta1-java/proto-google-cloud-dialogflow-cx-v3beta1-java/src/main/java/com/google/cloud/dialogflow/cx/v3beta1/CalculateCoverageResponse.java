@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
     if (coverageTypeCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage) coverageType_);
     }
-    if (!getAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, agent_);
     }
     if (coverageTypeCase_ == 6) {
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage) coverageType_);
     }
-    if (!getAgentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, agent_);
     }
     if (coverageTypeCase_ == 6) {

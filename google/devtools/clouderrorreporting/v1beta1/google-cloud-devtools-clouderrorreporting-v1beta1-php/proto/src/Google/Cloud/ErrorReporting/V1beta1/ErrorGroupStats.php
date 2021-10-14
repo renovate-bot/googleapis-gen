@@ -164,7 +164,7 @@ class ErrorGroupStats extends \Google\Protobuf\Internal\Message
      */
     public function getGroup()
     {
-        return isset($this->group) ? $this->group : null;
+        return $this->group;
     }
 
     public function hasGroup()
@@ -312,7 +312,7 @@ class ErrorGroupStats extends \Google\Protobuf\Internal\Message
      */
     public function getFirstSeenTime()
     {
-        return isset($this->first_seen_time) ? $this->first_seen_time : null;
+        return $this->first_seen_time;
     }
 
     public function hasFirstSeenTime()
@@ -352,7 +352,7 @@ class ErrorGroupStats extends \Google\Protobuf\Internal\Message
      */
     public function getLastSeenTime()
     {
-        return isset($this->last_seen_time) ? $this->last_seen_time : null;
+        return $this->last_seen_time;
     }
 
     public function hasLastSeenTime()
@@ -452,7 +452,7 @@ class ErrorGroupStats extends \Google\Protobuf\Internal\Message
      */
     public function getRepresentative()
     {
-        return isset($this->representative) ? $this->representative : null;
+        return $this->representative;
     }
 
     public function hasRepresentative()

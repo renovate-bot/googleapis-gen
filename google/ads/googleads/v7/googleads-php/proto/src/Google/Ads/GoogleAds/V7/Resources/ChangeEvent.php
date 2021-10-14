@@ -323,7 +323,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      */
     public function getOldResource()
     {
-        return isset($this->old_resource) ? $this->old_resource : null;
+        return $this->old_resource;
     }
 
     public function hasOldResource()
@@ -359,7 +359,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      */
     public function getNewResource()
     {
-        return isset($this->new_resource) ? $this->new_resource : null;
+        return $this->new_resource;
     }
 
     public function hasNewResource()
@@ -421,7 +421,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      */
     public function getChangedFields()
     {
-        return isset($this->changed_fields) ? $this->changed_fields : null;
+        return $this->changed_fields;
     }
 
     public function hasChangedFields()

@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * viewability is measured.
    * </pre>
    *
-   * <code>int64 viewable_impressions = 5;</code>
+   * <code>optional int64 viewable_impressions = 5;</code>
    * @return Whether the viewableImpressions field is set.
    */
   @java.lang.Override
@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
    * viewability is measured.
    * </pre>
    *
-   * <code>int64 viewable_impressions = 5;</code>
+   * <code>optional int64 viewable_impressions = 5;</code>
    * @return The viewableImpressions.
    */
   @java.lang.Override
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 5;</code>
+     * <code>optional int64 viewable_impressions = 5;</code>
      * @return Whether the viewableImpressions field is set.
      */
     @java.lang.Override
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 5;</code>
+     * <code>optional int64 viewable_impressions = 5;</code>
      * @return The viewableImpressions.
      */
     @java.lang.Override
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 5;</code>
+     * <code>optional int64 viewable_impressions = 5;</code>
      * @param value The viewableImpressions to set.
      * @return This builder for chaining.
      */
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
      * viewability is measured.
      * </pre>
      *
-     * <code>int64 viewable_impressions = 5;</code>
+     * <code>optional int64 viewable_impressions = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearViewableImpressions() {

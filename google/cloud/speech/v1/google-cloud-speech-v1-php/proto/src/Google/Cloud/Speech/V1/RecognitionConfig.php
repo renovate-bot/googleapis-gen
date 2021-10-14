@@ -681,7 +681,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getDiarizationConfig()
     {
-        return isset($this->diarization_config) ? $this->diarization_config : null;
+        return $this->diarization_config;
     }
 
     public function hasDiarizationConfig()
@@ -724,7 +724,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()

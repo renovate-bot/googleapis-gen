@@ -263,7 +263,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The name of the artifact.
    * </pre>
    *
-   * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the name field is set.
    */
   @java.lang.Override
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The name of the artifact.
    * </pre>
    *
-   * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The name of the artifact.
    * </pre>
    *
-   * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -349,7 +349,7 @@ private static final long serialVersionUID = 0L;
    * queries.
    * </pre>
    *
-   * <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the selectable field is set.
    */
   @java.lang.Override
@@ -362,7 +362,7 @@ private static final long serialVersionUID = 0L;
    * queries.
    * </pre>
    *
-   * <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The selectable.
    */
   @java.lang.Override
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
    * queries.
    * </pre>
    *
-   * <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the filterable field is set.
    */
   @java.lang.Override
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
    * queries.
    * </pre>
    *
-   * <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The filterable.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
    * queries.
    * </pre>
    *
-   * <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the sortable field is set.
    */
   @java.lang.Override
@@ -420,7 +420,7 @@ private static final long serialVersionUID = 0L;
    * queries.
    * </pre>
    *
-   * <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The sortable.
    */
   @java.lang.Override
@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The URL of proto describing the artifact's data type.
    * </pre>
    *
-   * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the typeUrl field is set.
    */
   @java.lang.Override
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The URL of proto describing the artifact's data type.
    * </pre>
    *
-   * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The typeUrl.
    */
   @java.lang.Override
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The URL of proto describing the artifact's data type.
    * </pre>
    *
-   * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for typeUrl.
    */
   @java.lang.Override
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Whether the field artifact is repeated.
    * </pre>
    *
-   * <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the isRepeated field is set.
    */
   @java.lang.Override
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Whether the field artifact is repeated.
    * </pre>
    *
-   * <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The isRepeated.
    */
   @java.lang.Override
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
     }
     if (category_ != com.google.ads.googleads.v8.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory.UNSPECIFIED.getNumber()) {
@@ -930,7 +930,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResourceNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceName_);
     }
     if (category_ != com.google.ads.googleads.v8.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory.UNSPECIFIED.getNumber()) {
@@ -1645,7 +1645,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The name of the artifact.
      * </pre>
      *
-     * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
@@ -1656,7 +1656,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The name of the artifact.
      * </pre>
      *
-     * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1676,7 +1676,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The name of the artifact.
      * </pre>
      *
-     * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1697,7 +1697,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The name of the artifact.
      * </pre>
      *
-     * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1716,7 +1716,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The name of the artifact.
      * </pre>
      *
-     * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1730,7 +1730,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The name of the artifact.
      * </pre>
      *
-     * <code>string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string name = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1827,7 +1827,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the selectable field is set.
      */
     @java.lang.Override
@@ -1840,7 +1840,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The selectable.
      */
     @java.lang.Override
@@ -1853,7 +1853,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The selectable to set.
      * @return This builder for chaining.
      */
@@ -1869,7 +1869,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool selectable = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearSelectable() {
@@ -1886,7 +1886,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the filterable field is set.
      */
     @java.lang.Override
@@ -1899,7 +1899,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The filterable.
      */
     @java.lang.Override
@@ -1912,7 +1912,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The filterable to set.
      * @return This builder for chaining.
      */
@@ -1928,7 +1928,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool filterable = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearFilterable() {
@@ -1945,7 +1945,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the sortable field is set.
      */
     @java.lang.Override
@@ -1958,7 +1958,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The sortable.
      */
     @java.lang.Override
@@ -1971,7 +1971,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The sortable to set.
      * @return This builder for chaining.
      */
@@ -1987,7 +1987,7 @@ private static final long serialVersionUID = 0L;
      * queries.
      * </pre>
      *
-     * <code>bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool sortable = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearSortable() {
@@ -2965,7 +2965,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The URL of proto describing the artifact's data type.
      * </pre>
      *
-     * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the typeUrl field is set.
      */
     public boolean hasTypeUrl() {
@@ -2976,7 +2976,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The URL of proto describing the artifact's data type.
      * </pre>
      *
-     * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The typeUrl.
      */
     public java.lang.String getTypeUrl() {
@@ -2996,7 +2996,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The URL of proto describing the artifact's data type.
      * </pre>
      *
-     * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for typeUrl.
      */
     public com.google.protobuf.ByteString
@@ -3017,7 +3017,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The URL of proto describing the artifact's data type.
      * </pre>
      *
-     * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The typeUrl to set.
      * @return This builder for chaining.
      */
@@ -3036,7 +3036,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The URL of proto describing the artifact's data type.
      * </pre>
      *
-     * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearTypeUrl() {
@@ -3050,7 +3050,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The URL of proto describing the artifact's data type.
      * </pre>
      *
-     * <code>string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string type_url = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for typeUrl to set.
      * @return This builder for chaining.
      */
@@ -3072,7 +3072,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the field artifact is repeated.
      * </pre>
      *
-     * <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the isRepeated field is set.
      */
     @java.lang.Override
@@ -3084,7 +3084,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the field artifact is repeated.
      * </pre>
      *
-     * <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The isRepeated.
      */
     @java.lang.Override
@@ -3096,7 +3096,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the field artifact is repeated.
      * </pre>
      *
-     * <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The isRepeated to set.
      * @return This builder for chaining.
      */
@@ -3111,7 +3111,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Whether the field artifact is repeated.
      * </pre>
      *
-     * <code>bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool is_repeated = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsRepeated() {

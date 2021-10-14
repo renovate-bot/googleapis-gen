@@ -85,7 +85,7 @@ class MutateCustomerExtensionSettingResult extends \Google\Protobuf\Internal\Mes
      */
     public function getCustomerExtensionSetting()
     {
-        return isset($this->customer_extension_setting) ? $this->customer_extension_setting : null;
+        return $this->customer_extension_setting;
     }
 
     public function hasCustomerExtensionSetting()

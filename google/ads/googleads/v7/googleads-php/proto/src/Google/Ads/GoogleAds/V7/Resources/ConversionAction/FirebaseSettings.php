@@ -18,13 +18,13 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The event name of a Firebase conversion.
      *
-     * Generated from protobuf field <code>string event_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string event_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $event_name = null;
     /**
      * Output only. The Firebase project ID of the conversion.
      *
-     * Generated from protobuf field <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $project_id = null;
 
@@ -48,7 +48,7 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The event name of a Firebase conversion.
      *
-     * Generated from protobuf field <code>string event_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string event_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEventName()
@@ -69,7 +69,7 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The event name of a Firebase conversion.
      *
-     * Generated from protobuf field <code>string event_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string event_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -84,7 +84,7 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The Firebase project ID of the conversion.
      *
-     * Generated from protobuf field <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getProjectId()
@@ -105,7 +105,7 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The Firebase project ID of the conversion.
      *
-     * Generated from protobuf field <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

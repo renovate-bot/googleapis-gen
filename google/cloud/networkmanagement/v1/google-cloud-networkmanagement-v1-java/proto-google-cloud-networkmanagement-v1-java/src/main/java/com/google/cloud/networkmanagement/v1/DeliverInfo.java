@@ -384,7 +384,7 @@ private static final long serialVersionUID = 0L;
     if (target_ != com.google.cloud.networkmanagement.v1.DeliverInfo.Target.TARGET_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, target_);
     }
-    if (!getResourceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceUri_);
     }
     unknownFields.writeTo(output);
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, target_);
     }
-    if (!getResourceUriBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceUri_);
     }
     size += unknownFields.getSerializedSize();

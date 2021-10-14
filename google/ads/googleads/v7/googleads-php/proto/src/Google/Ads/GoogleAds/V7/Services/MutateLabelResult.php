@@ -82,7 +82,7 @@ class MutateLabelResult extends \Google\Protobuf\Internal\Message
      */
     public function getLabel()
     {
-        return isset($this->label) ? $this->label : null;
+        return $this->label;
     }
 
     public function hasLabel()

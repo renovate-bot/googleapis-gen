@@ -46,7 +46,7 @@ class Impersonation extends \Google\Protobuf\Internal\Message
      */
     public function getImpersonatedUser()
     {
-        return isset($this->impersonated_user) ? $this->impersonated_user : null;
+        return $this->impersonated_user;
     }
 
     public function hasImpersonatedUser()

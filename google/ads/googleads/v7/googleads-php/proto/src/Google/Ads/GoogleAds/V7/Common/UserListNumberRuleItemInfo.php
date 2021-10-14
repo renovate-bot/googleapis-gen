@@ -28,7 +28,7 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      * This field is required and must be populated when creating a new number
      * rule item.
      *
-     * Generated from protobuf field <code>double value = 3;</code>
+     * Generated from protobuf field <code>optional double value = 3;</code>
      */
     protected $value = null;
 
@@ -88,7 +88,7 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      * This field is required and must be populated when creating a new number
      * rule item.
      *
-     * Generated from protobuf field <code>double value = 3;</code>
+     * Generated from protobuf field <code>optional double value = 3;</code>
      * @return float
      */
     public function getValue()
@@ -111,7 +111,7 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      * This field is required and must be populated when creating a new number
      * rule item.
      *
-     * Generated from protobuf field <code>double value = 3;</code>
+     * Generated from protobuf field <code>optional double value = 3;</code>
      * @param float $var
      * @return $this
      */

@@ -87,7 +87,7 @@ class GcsFileSpec extends \Google\Protobuf\Internal\Message
      */
     public function getGcsTimestamps()
     {
-        return isset($this->gcs_timestamps) ? $this->gcs_timestamps : null;
+        return $this->gcs_timestamps;
     }
 
     public function hasGcsTimestamps()

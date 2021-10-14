@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>bool searchable = 3;</code>
+   * <code>optional bool searchable = 3;</code>
    * @return Whether the searchable field is set.
    */
   @java.lang.Override
@@ -299,7 +299,7 @@ private static final long serialVersionUID = 0L;
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>bool searchable = 3;</code>
+   * <code>optional bool searchable = 3;</code>
    * @return The searchable.
    */
   @java.lang.Override
@@ -322,7 +322,7 @@ private static final long serialVersionUID = 0L;
    * for more details.
    * </pre>
    *
-   * <code>bool indexable = 4;</code>
+   * <code>optional bool indexable = 4;</code>
    * @return Whether the indexable field is set.
    */
   @java.lang.Override
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
    * for more details.
    * </pre>
    *
-   * <code>bool indexable = 4;</code>
+   * <code>optional bool indexable = 4;</code>
    * @return The indexable.
    */
   @java.lang.Override
@@ -1140,7 +1140,7 @@ private static final long serialVersionUID = 0L;
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      * @return Whether the searchable field is set.
      */
     @java.lang.Override
@@ -1156,7 +1156,7 @@ private static final long serialVersionUID = 0L;
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      * @return The searchable.
      */
     @java.lang.Override
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      * @param value The searchable to set.
      * @return This builder for chaining.
      */
@@ -1191,7 +1191,7 @@ private static final long serialVersionUID = 0L;
      * set. Otherwise, a INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>bool searchable = 3;</code>
+     * <code>optional bool searchable = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearSearchable() {
@@ -1215,7 +1215,7 @@ private static final long serialVersionUID = 0L;
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      * @return Whether the indexable field is set.
      */
     @java.lang.Override
@@ -1235,7 +1235,7 @@ private static final long serialVersionUID = 0L;
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      * @return The indexable.
      */
     @java.lang.Override
@@ -1255,7 +1255,7 @@ private static final long serialVersionUID = 0L;
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      * @param value The indexable to set.
      * @return This builder for chaining.
      */
@@ -1278,7 +1278,7 @@ private static final long serialVersionUID = 0L;
      * for more details.
      * </pre>
      *
-     * <code>bool indexable = 4;</code>
+     * <code>optional bool indexable = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearIndexable() {

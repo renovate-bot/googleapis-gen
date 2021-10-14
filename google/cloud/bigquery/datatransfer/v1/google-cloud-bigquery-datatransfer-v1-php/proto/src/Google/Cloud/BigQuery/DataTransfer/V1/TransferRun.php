@@ -220,7 +220,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getScheduleTime()
     {
-        return isset($this->schedule_time) ? $this->schedule_time : null;
+        return $this->schedule_time;
     }
 
     public function hasScheduleTime()
@@ -257,7 +257,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getRunTime()
     {
-        return isset($this->run_time) ? $this->run_time : null;
+        return $this->run_time;
     }
 
     public function hasRunTime()
@@ -294,7 +294,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getErrorStatus()
     {
-        return isset($this->error_status) ? $this->error_status : null;
+        return $this->error_status;
     }
 
     public function hasErrorStatus()
@@ -331,7 +331,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getStartTime()
     {
-        return isset($this->start_time) ? $this->start_time : null;
+        return $this->start_time;
     }
 
     public function hasStartTime()
@@ -369,7 +369,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getEndTime()
     {
-        return isset($this->end_time) ? $this->end_time : null;
+        return $this->end_time;
     }
 
     public function hasEndTime()
@@ -406,7 +406,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -445,7 +445,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getParams()
     {
-        return isset($this->params) ? $this->params : null;
+        return $this->params;
     }
 
     public function hasParams()
@@ -661,7 +661,7 @@ class TransferRun extends \Google\Protobuf\Internal\Message
      */
     public function getEmailPreferences()
     {
-        return isset($this->email_preferences) ? $this->email_preferences : null;
+        return $this->email_preferences;
     }
 
     public function hasEmailPreferences()

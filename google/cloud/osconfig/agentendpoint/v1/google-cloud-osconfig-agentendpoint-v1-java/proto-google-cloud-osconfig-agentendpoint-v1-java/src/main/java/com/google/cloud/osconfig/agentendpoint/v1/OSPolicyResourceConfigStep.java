@@ -562,7 +562,7 @@ private static final long serialVersionUID = 0L;
     if (outcome_ != com.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceConfigStep.Outcome.OUTCOME_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, outcome_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessage_);
     }
     unknownFields.writeTo(output);
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, outcome_);
     }
-    if (!getErrorMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMessage_);
     }
     size += unknownFields.getSerializedSize();

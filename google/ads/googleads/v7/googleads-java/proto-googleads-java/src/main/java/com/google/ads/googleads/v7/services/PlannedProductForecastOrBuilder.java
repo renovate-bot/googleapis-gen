@@ -58,7 +58,7 @@ public interface PlannedProductForecastOrBuilder extends
    * viewability is measured.
    * </pre>
    *
-   * <code>int64 viewable_impressions = 5;</code>
+   * <code>optional int64 viewable_impressions = 5;</code>
    * @return Whether the viewableImpressions field is set.
    */
   boolean hasViewableImpressions();
@@ -70,7 +70,7 @@ public interface PlannedProductForecastOrBuilder extends
    * viewability is measured.
    * </pre>
    *
-   * <code>int64 viewable_impressions = 5;</code>
+   * <code>optional int64 viewable_impressions = 5;</code>
    * @return The viewableImpressions.
    */
   long getViewableImpressions();

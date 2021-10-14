@@ -140,7 +140,7 @@ class ExportFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDestination()
     {
-        return isset($this->destination) ? $this->destination : null;
+        return $this->destination;
     }
 
     public function hasDestination()
@@ -176,7 +176,7 @@ class ExportFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getFeatureSelector()
     {
-        return isset($this->feature_selector) ? $this->feature_selector : null;
+        return $this->feature_selector;
     }
 
     public function hasFeatureSelector()

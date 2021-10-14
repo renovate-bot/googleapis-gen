@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
     if (usage_ != com.google.cloud.talent.v4beta1.ContactInfoUsage.CONTACT_INFO_USAGE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, usage_);
     }
-    if (!getEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(emailAddress_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, emailAddress_);
     }
     unknownFields.writeTo(output);
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, usage_);
     }
-    if (!getEmailAddressBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(emailAddress_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, emailAddress_);
     }
     size += unknownFields.getSerializedSize();

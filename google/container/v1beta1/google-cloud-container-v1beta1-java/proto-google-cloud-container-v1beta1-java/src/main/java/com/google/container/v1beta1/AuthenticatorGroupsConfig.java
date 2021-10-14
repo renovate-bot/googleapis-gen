@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
-    if (!getSecurityGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securityGroup_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, securityGroup_);
     }
     unknownFields.writeTo(output);
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, enabled_);
     }
-    if (!getSecurityGroupBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securityGroup_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, securityGroup_);
     }
     size += unknownFields.getSerializedSize();

@@ -212,7 +212,7 @@ class Object extends \Google\Protobuf\Internal\Message
      * should be taken from the parent bucket's "default_event_based_hold" field.
      * In a response, this field will always be set to true or false.
      *
-     * Generated from protobuf field <code>bool event_based_hold = 23;</code>
+     * Generated from protobuf field <code>optional bool event_based_hold = 23;</code>
      */
     protected $event_based_hold = null;
     /**
@@ -714,7 +714,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getDeleteTime()
     {
-        return isset($this->delete_time) ? $this->delete_time : null;
+        return $this->delete_time;
     }
 
     public function hasDeleteTime()
@@ -787,7 +787,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -857,7 +857,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getChecksums()
     {
-        return isset($this->checksums) ? $this->checksums : null;
+        return $this->checksums;
     }
 
     public function hasChecksums()
@@ -895,7 +895,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -964,7 +964,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateStorageClassTime()
     {
-        return isset($this->update_storage_class_time) ? $this->update_storage_class_time : null;
+        return $this->update_storage_class_time;
     }
 
     public function hasUpdateStorageClassTime()
@@ -1044,7 +1044,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getRetentionExpireTime()
     {
-        return isset($this->retention_expire_time) ? $this->retention_expire_time : null;
+        return $this->retention_expire_time;
     }
 
     public function hasRetentionExpireTime()
@@ -1117,7 +1117,7 @@ class Object extends \Google\Protobuf\Internal\Message
      * should be taken from the parent bucket's "default_event_based_hold" field.
      * In a response, this field will always be set to true or false.
      *
-     * Generated from protobuf field <code>bool event_based_hold = 23;</code>
+     * Generated from protobuf field <code>optional bool event_based_hold = 23;</code>
      * @return bool
      */
     public function getEventBasedHold()
@@ -1147,7 +1147,7 @@ class Object extends \Google\Protobuf\Internal\Message
      * should be taken from the parent bucket's "default_event_based_hold" field.
      * In a response, this field will always be set to true or false.
      *
-     * Generated from protobuf field <code>bool event_based_hold = 23;</code>
+     * Generated from protobuf field <code>optional bool event_based_hold = 23;</code>
      * @param bool $var
      * @return $this
      */
@@ -1169,7 +1169,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getOwner()
     {
-        return isset($this->owner) ? $this->owner : null;
+        return $this->owner;
     }
 
     public function hasOwner()
@@ -1208,7 +1208,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerEncryption()
     {
-        return isset($this->customer_encryption) ? $this->customer_encryption : null;
+        return $this->customer_encryption;
     }
 
     public function hasCustomerEncryption()
@@ -1245,7 +1245,7 @@ class Object extends \Google\Protobuf\Internal\Message
      */
     public function getCustomTime()
     {
-        return isset($this->custom_time) ? $this->custom_time : null;
+        return $this->custom_time;
     }
 
     public function hasCustomTime()

@@ -101,7 +101,7 @@ class CommandOutputs extends \Google\Protobuf\Internal\Message
      */
     public function getOutputs()
     {
-        return isset($this->outputs) ? $this->outputs : null;
+        return $this->outputs;
     }
 
     public function hasOutputs()

@@ -623,7 +623,7 @@ public interface ObjectOrBuilder extends
    * In a response, this field will always be set to true or false.
    * </pre>
    *
-   * <code>bool event_based_hold = 23;</code>
+   * <code>optional bool event_based_hold = 23;</code>
    * @return Whether the eventBasedHold field is set.
    */
   boolean hasEventBasedHold();
@@ -641,7 +641,7 @@ public interface ObjectOrBuilder extends
    * In a response, this field will always be set to true or false.
    * </pre>
    *
-   * <code>bool event_based_hold = 23;</code>
+   * <code>optional bool event_based_hold = 23;</code>
    * @return The eventBasedHold.
    */
   boolean getEventBasedHold();

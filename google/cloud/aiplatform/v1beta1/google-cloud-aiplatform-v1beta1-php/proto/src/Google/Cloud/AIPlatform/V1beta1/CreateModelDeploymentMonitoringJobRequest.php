@@ -84,7 +84,7 @@ class CreateModelDeploymentMonitoringJobRequest extends \Google\Protobuf\Interna
      */
     public function getModelDeploymentMonitoringJob()
     {
-        return isset($this->model_deployment_monitoring_job) ? $this->model_deployment_monitoring_job : null;
+        return $this->model_deployment_monitoring_job;
     }
 
     public function hasModelDeploymentMonitoringJob()

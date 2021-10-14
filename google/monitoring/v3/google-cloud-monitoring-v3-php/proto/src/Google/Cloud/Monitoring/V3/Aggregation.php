@@ -195,7 +195,7 @@ class Aggregation extends \Google\Protobuf\Internal\Message
      */
     public function getAlignmentPeriod()
     {
-        return isset($this->alignment_period) ? $this->alignment_period : null;
+        return $this->alignment_period;
     }
 
     public function hasAlignmentPeriod()

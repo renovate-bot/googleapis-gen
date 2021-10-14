@@ -111,7 +111,7 @@ class Assessment extends \Google\Protobuf\Internal\Message
      */
     public function getEvent()
     {
-        return isset($this->event) ? $this->event : null;
+        return $this->event;
     }
 
     public function hasEvent()
@@ -177,7 +177,7 @@ class Assessment extends \Google\Protobuf\Internal\Message
      */
     public function getTokenProperties()
     {
-        return isset($this->token_properties) ? $this->token_properties : null;
+        return $this->token_properties;
     }
 
     public function hasTokenProperties()

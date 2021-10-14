@@ -13,7 +13,7 @@ public interface TargetingOrBuilder extends
    * Plannable locations ID can be obtained from ListPlannableLocations.
    * </pre>
    *
-   * <code>string plannable_location_id = 6;</code>
+   * <code>optional string plannable_location_id = 6;</code>
    * @return Whether the plannableLocationId field is set.
    */
   boolean hasPlannableLocationId();
@@ -23,7 +23,7 @@ public interface TargetingOrBuilder extends
    * Plannable locations ID can be obtained from ListPlannableLocations.
    * </pre>
    *
-   * <code>string plannable_location_id = 6;</code>
+   * <code>optional string plannable_location_id = 6;</code>
    * @return The plannableLocationId.
    */
   java.lang.String getPlannableLocationId();
@@ -33,7 +33,7 @@ public interface TargetingOrBuilder extends
    * Plannable locations ID can be obtained from ListPlannableLocations.
    * </pre>
    *
-   * <code>string plannable_location_id = 6;</code>
+   * <code>optional string plannable_location_id = 6;</code>
    * @return The bytes for plannableLocationId.
    */
   com.google.protobuf.ByteString

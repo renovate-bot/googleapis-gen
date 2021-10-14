@@ -29,7 +29,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the invoice. It appears on the invoice PDF as "Invoice number".
      *
-     * Generated from protobuf field <code>string id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -42,7 +42,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of this invoice’s billing setup.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string billing_setup = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $billing_setup = null;
     /**
@@ -50,7 +50,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
      * "Billing Account Number".
      *
-     * Generated from protobuf field <code>string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_account_id = null;
     /**
@@ -58,20 +58,20 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
      * "Billing ID".
      *
-     * Generated from protobuf field <code>string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_profile_id = null;
     /**
      * Output only. The issue date in yyyy-mm-dd format. It appears on the invoice PDF as
      * either "Issue date" or "Invoice date".
      *
-     * Generated from protobuf field <code>string issue_date = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string issue_date = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $issue_date = null;
     /**
      * Output only. The due date in yyyy-mm-dd format.
      *
-     * Generated from protobuf field <code>string due_date = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string due_date = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $due_date = null;
     /**
@@ -84,7 +84,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The currency code. All costs are returned in this currency. A subset of the
      * currency codes derived from the ISO 4217 standard is supported.
      *
-     * Generated from protobuf field <code>string currency_code = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string currency_code = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $currency_code = null;
     /**
@@ -131,7 +131,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
      * longer included.
      *
-     * Generated from protobuf field <code>int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $subtotal_amount_micros = null;
     /**
@@ -139,7 +139,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * AccountBudgetSummary tax amounts, plus taxes not associated with a specific
      * account budget.
      *
-     * Generated from protobuf field <code>int64 tax_amount_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 tax_amount_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $tax_amount_micros = null;
     /**
@@ -149,7 +149,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * also added as it is no longer already included in
      * Invoice.tax_amount_micros.
      *
-     * Generated from protobuf field <code>int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $total_amount_micros = null;
     /**
@@ -159,7 +159,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Invoice resource names have the form:
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
-     * Generated from protobuf field <code>string corrected_invoice = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string corrected_invoice = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $corrected_invoice = null;
     /**
@@ -178,7 +178,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The URL to a PDF copy of the invoice. Users need to pass in their OAuth
      * token to request the PDF with this URL.
      *
-     * Generated from protobuf field <code>string pdf_url = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string pdf_url = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $pdf_url = null;
     /**
@@ -316,7 +316,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the invoice. It appears on the invoice PDF as "Invoice number".
      *
-     * Generated from protobuf field <code>string id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getId()
@@ -337,7 +337,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The ID of the invoice. It appears on the invoice PDF as "Invoice number".
      *
-     * Generated from protobuf field <code>string id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string id = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -379,7 +379,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of this invoice’s billing setup.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string billing_setup = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getBillingSetup()
@@ -401,7 +401,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of this invoice’s billing setup.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string billing_setup = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -418,7 +418,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
      * "Billing Account Number".
      *
-     * Generated from protobuf field <code>string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPaymentsAccountId()
@@ -441,7 +441,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
      * "Billing Account Number".
      *
-     * Generated from protobuf field <code>string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_account_id = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -458,7 +458,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
      * "Billing ID".
      *
-     * Generated from protobuf field <code>string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPaymentsProfileId()
@@ -481,7 +481,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
      * "Billing ID".
      *
-     * Generated from protobuf field <code>string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string payments_profile_id = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -497,7 +497,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The issue date in yyyy-mm-dd format. It appears on the invoice PDF as
      * either "Issue date" or "Invoice date".
      *
-     * Generated from protobuf field <code>string issue_date = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string issue_date = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getIssueDate()
@@ -519,7 +519,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The issue date in yyyy-mm-dd format. It appears on the invoice PDF as
      * either "Issue date" or "Invoice date".
      *
-     * Generated from protobuf field <code>string issue_date = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string issue_date = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -534,7 +534,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The due date in yyyy-mm-dd format.
      *
-     * Generated from protobuf field <code>string due_date = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string due_date = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDueDate()
@@ -555,7 +555,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The due date in yyyy-mm-dd format.
      *
-     * Generated from protobuf field <code>string due_date = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string due_date = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -575,7 +575,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getServiceDateRange()
     {
-        return isset($this->service_date_range) ? $this->service_date_range : null;
+        return $this->service_date_range;
     }
 
     public function hasServiceDateRange()
@@ -607,7 +607,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The currency code. All costs are returned in this currency. A subset of the
      * currency codes derived from the ISO 4217 standard is supported.
      *
-     * Generated from protobuf field <code>string currency_code = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string currency_code = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCurrencyCode()
@@ -629,7 +629,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The currency code. All costs are returned in this currency. A subset of the
      * currency codes derived from the ISO 4217 standard is supported.
      *
-     * Generated from protobuf field <code>string currency_code = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string currency_code = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -805,7 +805,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
      * longer included.
      *
-     * Generated from protobuf field <code>int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getSubtotalAmountMicros()
@@ -831,7 +831,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Starting with v6, the Invoice.regulatory_costs_subtotal_amount_micros is no
      * longer included.
      *
-     * Generated from protobuf field <code>int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 subtotal_amount_micros = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -848,7 +848,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * AccountBudgetSummary tax amounts, plus taxes not associated with a specific
      * account budget.
      *
-     * Generated from protobuf field <code>int64 tax_amount_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 tax_amount_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getTaxAmountMicros()
@@ -871,7 +871,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * AccountBudgetSummary tax amounts, plus taxes not associated with a specific
      * account budget.
      *
-     * Generated from protobuf field <code>int64 tax_amount_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 tax_amount_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -890,7 +890,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * also added as it is no longer already included in
      * Invoice.tax_amount_micros.
      *
-     * Generated from protobuf field <code>int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getTotalAmountMicros()
@@ -915,7 +915,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * also added as it is no longer already included in
      * Invoice.tax_amount_micros.
      *
-     * Generated from protobuf field <code>int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 total_amount_micros = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -934,7 +934,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Invoice resource names have the form:
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
-     * Generated from protobuf field <code>string corrected_invoice = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string corrected_invoice = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getCorrectedInvoice()
@@ -959,7 +959,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Invoice resource names have the form:
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
-     * Generated from protobuf field <code>string corrected_invoice = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string corrected_invoice = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -1013,7 +1013,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The URL to a PDF copy of the invoice. Users need to pass in their OAuth
      * token to request the PDF with this URL.
      *
-     * Generated from protobuf field <code>string pdf_url = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string pdf_url = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getPdfUrl()
@@ -1035,7 +1035,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The URL to a PDF copy of the invoice. Users need to pass in their OAuth
      * token to request the PDF with this URL.
      *
-     * Generated from protobuf field <code>string pdf_url = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string pdf_url = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

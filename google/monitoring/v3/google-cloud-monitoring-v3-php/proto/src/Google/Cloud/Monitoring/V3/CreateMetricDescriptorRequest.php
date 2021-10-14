@@ -94,7 +94,7 @@ class CreateMetricDescriptorRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMetricDescriptor()
     {
-        return isset($this->metric_descriptor) ? $this->metric_descriptor : null;
+        return $this->metric_descriptor;
     }
 
     public function hasMetricDescriptor()

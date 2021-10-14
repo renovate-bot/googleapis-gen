@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     if (endOffset_ != null) {
       output.writeMessage(2, getEndOffset());
     }
-    if (!getWordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
     }
     if (confidence_ != 0F) {
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getEndOffset());
     }
-    if (!getWordBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
     }
     if (confidence_ != 0F) {

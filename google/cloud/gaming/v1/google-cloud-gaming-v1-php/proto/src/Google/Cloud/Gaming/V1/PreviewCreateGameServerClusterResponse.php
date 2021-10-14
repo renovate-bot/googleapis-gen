@@ -90,7 +90,7 @@ class PreviewCreateGameServerClusterResponse extends \Google\Protobuf\Internal\M
      */
     public function getTargetState()
     {
-        return isset($this->target_state) ? $this->target_state : null;
+        return $this->target_state;
     }
 
     public function hasTargetState()
@@ -127,7 +127,7 @@ class PreviewCreateGameServerClusterResponse extends \Google\Protobuf\Internal\M
      */
     public function getClusterState()
     {
-        return isset($this->cluster_state) ? $this->cluster_state : null;
+        return $this->cluster_state;
     }
 
     public function hasClusterState()

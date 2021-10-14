@@ -31,7 +31,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether the campaign uses advertiser supplied URLs exclusively.
      *
-     * Generated from protobuf field <code>bool use_supplied_urls_only = 8;</code>
+     * Generated from protobuf field <code>optional bool use_supplied_urls_only = 8;</code>
      */
     protected $use_supplied_urls_only = null;
     /**
@@ -120,7 +120,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether the campaign uses advertiser supplied URLs exclusively.
      *
-     * Generated from protobuf field <code>bool use_supplied_urls_only = 8;</code>
+     * Generated from protobuf field <code>optional bool use_supplied_urls_only = 8;</code>
      * @return bool
      */
     public function getUseSuppliedUrlsOnly()
@@ -141,7 +141,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     /**
      * Whether the campaign uses advertiser supplied URLs exclusively.
      *
-     * Generated from protobuf field <code>bool use_supplied_urls_only = 8;</code>
+     * Generated from protobuf field <code>optional bool use_supplied_urls_only = 8;</code>
      * @param bool $var
      * @return $this
      */

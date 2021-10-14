@@ -225,7 +225,7 @@ class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getInterval()
     {
-        return isset($this->interval) ? $this->interval : null;
+        return $this->interval;
     }
 
     public function hasInterval()
@@ -266,7 +266,7 @@ class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getAggregation()
     {
-        return isset($this->aggregation) ? $this->aggregation : null;
+        return $this->aggregation;
     }
 
     public function hasAggregation()
@@ -306,7 +306,7 @@ class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSecondaryAggregation()
     {
-        return isset($this->secondary_aggregation) ? $this->secondary_aggregation : null;
+        return $this->secondary_aggregation;
     }
 
     public function hasSecondaryAggregation()

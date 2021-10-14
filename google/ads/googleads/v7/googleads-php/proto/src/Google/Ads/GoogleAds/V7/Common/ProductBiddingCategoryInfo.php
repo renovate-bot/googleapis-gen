@@ -20,14 +20,14 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436
      *
-     * Generated from protobuf field <code>int64 id = 4;</code>
+     * Generated from protobuf field <code>optional int64 id = 4;</code>
      */
     protected $id = null;
     /**
      * Two-letter upper-case country code of the product bidding category. It must
      * match the campaign.shopping_setting.sales_country field.
      *
-     * Generated from protobuf field <code>string country_code = 5;</code>
+     * Generated from protobuf field <code>optional string country_code = 5;</code>
      */
     protected $country_code = null;
     /**
@@ -64,7 +64,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436
      *
-     * Generated from protobuf field <code>int64 id = 4;</code>
+     * Generated from protobuf field <code>optional int64 id = 4;</code>
      * @return int|string
      */
     public function getId()
@@ -87,7 +87,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436
      *
-     * Generated from protobuf field <code>int64 id = 4;</code>
+     * Generated from protobuf field <code>optional int64 id = 4;</code>
      * @param int|string $var
      * @return $this
      */
@@ -103,7 +103,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * Two-letter upper-case country code of the product bidding category. It must
      * match the campaign.shopping_setting.sales_country field.
      *
-     * Generated from protobuf field <code>string country_code = 5;</code>
+     * Generated from protobuf field <code>optional string country_code = 5;</code>
      * @return string
      */
     public function getCountryCode()
@@ -125,7 +125,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * Two-letter upper-case country code of the product bidding category. It must
      * match the campaign.shopping_setting.sales_country field.
      *
-     * Generated from protobuf field <code>string country_code = 5;</code>
+     * Generated from protobuf field <code>optional string country_code = 5;</code>
      * @param string $var
      * @return $this
      */

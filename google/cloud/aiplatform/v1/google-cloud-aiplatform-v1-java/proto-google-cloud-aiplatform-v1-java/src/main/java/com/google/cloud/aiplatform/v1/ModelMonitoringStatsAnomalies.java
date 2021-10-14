@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFeatureDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, featureDisplayName_);
       }
       if (threshold_ != null) {
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getFeatureDisplayNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, featureDisplayName_);
       }
       if (threshold_ != null) {
@@ -1935,7 +1935,7 @@ private static final long serialVersionUID = 0L;
     if (objective_ != com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType.MODEL_DEPLOYMENT_MONITORING_OBJECTIVE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, objective_);
     }
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedModelId_);
     }
     if (anomalyCount_ != 0) {
@@ -1957,7 +1957,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, objective_);
     }
-    if (!getDeployedModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployedModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedModelId_);
     }
     if (anomalyCount_ != 0) {

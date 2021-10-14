@@ -1121,7 +1121,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTargetDomainNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetDomainName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, targetDomainName_);
     }
     if (trustType_ != com.google.cloud.managedidentities.v1beta1.Trust.TrustType.TRUST_TYPE_UNSPECIFIED.getNumber()) {
@@ -1136,7 +1136,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < targetDnsIpAddresses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, targetDnsIpAddresses_.getRaw(i));
     }
-    if (!getTrustHandshakeSecretBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trustHandshakeSecret_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, trustHandshakeSecret_);
     }
     if (createTime_ != null) {
@@ -1148,7 +1148,7 @@ private static final long serialVersionUID = 0L;
     if (state_ != com.google.cloud.managedidentities.v1beta1.Trust.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(9, state_);
     }
-    if (!getStateDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, stateDescription_);
     }
     if (lastTrustHeartbeatTime_ != null) {
@@ -1163,7 +1163,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTargetDomainNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetDomainName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, targetDomainName_);
     }
     if (trustType_ != com.google.cloud.managedidentities.v1beta1.Trust.TrustType.TRUST_TYPE_UNSPECIFIED.getNumber()) {
@@ -1186,7 +1186,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getTargetDnsIpAddressesList().size();
     }
-    if (!getTrustHandshakeSecretBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trustHandshakeSecret_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, trustHandshakeSecret_);
     }
     if (createTime_ != null) {
@@ -1201,7 +1201,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, state_);
     }
-    if (!getStateDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, stateDescription_);
     }
     if (lastTrustHeartbeatTime_ != null) {

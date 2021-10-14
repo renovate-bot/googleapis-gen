@@ -217,7 +217,7 @@ class MetricAbsence extends \Google\Protobuf\Internal\Message
      */
     public function getDuration()
     {
-        return isset($this->duration) ? $this->duration : null;
+        return $this->duration;
     }
 
     public function hasDuration()
@@ -262,7 +262,7 @@ class MetricAbsence extends \Google\Protobuf\Internal\Message
      */
     public function getTrigger()
     {
-        return isset($this->trigger) ? $this->trigger : null;
+        return $this->trigger;
     }
 
     public function hasTrigger()

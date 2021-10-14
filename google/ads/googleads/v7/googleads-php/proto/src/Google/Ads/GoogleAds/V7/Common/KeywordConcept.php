@@ -79,7 +79,7 @@ class KeywordConcept extends \Google\Protobuf\Internal\Message
      */
     public function getConceptGroup()
     {
-        return isset($this->concept_group) ? $this->concept_group : null;
+        return $this->concept_group;
     }
 
     public function hasConceptGroup()

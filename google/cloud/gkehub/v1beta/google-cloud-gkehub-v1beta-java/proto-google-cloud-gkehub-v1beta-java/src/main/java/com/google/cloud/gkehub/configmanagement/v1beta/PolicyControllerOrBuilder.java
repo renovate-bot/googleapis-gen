@@ -24,7 +24,7 @@ public interface PolicyControllerOrBuilder extends
    * Installs the default template library along with Policy Controller.
    * </pre>
    *
-   * <code>bool template_library_installed = 2;</code>
+   * <code>optional bool template_library_installed = 2;</code>
    * @return Whether the templateLibraryInstalled field is set.
    */
   boolean hasTemplateLibraryInstalled();
@@ -33,7 +33,7 @@ public interface PolicyControllerOrBuilder extends
    * Installs the default template library along with Policy Controller.
    * </pre>
    *
-   * <code>bool template_library_installed = 2;</code>
+   * <code>optional bool template_library_installed = 2;</code>
    * @return The templateLibraryInstalled.
    */
   boolean getTemplateLibraryInstalled();
@@ -44,7 +44,7 @@ public interface PolicyControllerOrBuilder extends
    * When set to 0, this disables audit functionality altogether.
    * </pre>
    *
-   * <code>int64 audit_interval_seconds = 3;</code>
+   * <code>optional int64 audit_interval_seconds = 3;</code>
    * @return Whether the auditIntervalSeconds field is set.
    */
   boolean hasAuditIntervalSeconds();
@@ -54,7 +54,7 @@ public interface PolicyControllerOrBuilder extends
    * When set to 0, this disables audit functionality altogether.
    * </pre>
    *
-   * <code>int64 audit_interval_seconds = 3;</code>
+   * <code>optional int64 audit_interval_seconds = 3;</code>
    * @return The auditIntervalSeconds.
    */
   long getAuditIntervalSeconds();

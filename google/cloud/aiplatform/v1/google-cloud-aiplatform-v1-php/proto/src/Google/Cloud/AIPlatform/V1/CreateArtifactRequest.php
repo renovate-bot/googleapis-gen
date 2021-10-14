@@ -111,7 +111,7 @@ class CreateArtifactRequest extends \Google\Protobuf\Internal\Message
      */
     public function getArtifact()
     {
-        return isset($this->artifact) ? $this->artifact : null;
+        return $this->artifact;
     }
 
     public function hasArtifact()

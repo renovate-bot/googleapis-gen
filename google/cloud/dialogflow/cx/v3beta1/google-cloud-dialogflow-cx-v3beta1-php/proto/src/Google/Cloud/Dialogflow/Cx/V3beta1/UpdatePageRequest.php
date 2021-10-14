@@ -97,7 +97,7 @@ class UpdatePageRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPage()
     {
-        return isset($this->page) ? $this->page : null;
+        return $this->page;
     }
 
     public function hasPage()
@@ -194,7 +194,7 @@ class UpdatePageRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateMask()
     {
-        return isset($this->update_mask) ? $this->update_mask : null;
+        return $this->update_mask;
     }
 
     public function hasUpdateMask()

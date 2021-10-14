@@ -113,7 +113,7 @@ class CreateVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -228,7 +228,7 @@ class CreateVehicleRequest extends \Google\Protobuf\Internal\Message
      */
     public function getVehicle()
     {
-        return isset($this->vehicle) ? $this->vehicle : null;
+        return $this->vehicle;
     }
 
     public function hasVehicle()

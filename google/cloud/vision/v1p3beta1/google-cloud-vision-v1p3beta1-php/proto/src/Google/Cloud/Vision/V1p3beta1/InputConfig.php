@@ -55,7 +55,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      */
     public function getGcsSource()
     {
-        return isset($this->gcs_source) ? $this->gcs_source : null;
+        return $this->gcs_source;
     }
 
     public function hasGcsSource()

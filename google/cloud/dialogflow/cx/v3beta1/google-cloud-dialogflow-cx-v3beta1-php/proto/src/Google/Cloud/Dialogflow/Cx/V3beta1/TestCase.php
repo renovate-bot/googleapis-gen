@@ -233,7 +233,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      */
     public function getTestConfig()
     {
-        return isset($this->test_config) ? $this->test_config : null;
+        return $this->test_config;
     }
 
     public function hasTestConfig()
@@ -299,7 +299,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      */
     public function getCreationTime()
     {
-        return isset($this->creation_time) ? $this->creation_time : null;
+        return $this->creation_time;
     }
 
     public function hasCreationTime()
@@ -335,7 +335,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      */
     public function getLastTestResult()
     {
-        return isset($this->last_test_result) ? $this->last_test_result : null;
+        return $this->last_test_result;
     }
 
     public function hasLastTestResult()

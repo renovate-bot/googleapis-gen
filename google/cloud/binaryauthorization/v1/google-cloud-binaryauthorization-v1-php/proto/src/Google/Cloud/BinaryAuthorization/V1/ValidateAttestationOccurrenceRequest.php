@@ -117,7 +117,7 @@ class ValidateAttestationOccurrenceRequest extends \Google\Protobuf\Internal\Mes
      */
     public function getAttestation()
     {
-        return isset($this->attestation) ? $this->attestation : null;
+        return $this->attestation;
     }
 
     public function hasAttestation()

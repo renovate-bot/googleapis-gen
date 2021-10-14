@@ -295,7 +295,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : null;
+        return $this->state;
     }
 
     public function hasState()
@@ -331,7 +331,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      */
     public function getCreateTime()
     {
-        return isset($this->create_time) ? $this->create_time : null;
+        return $this->create_time;
     }
 
     public function hasCreateTime()
@@ -367,7 +367,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateTime()
     {
-        return isset($this->update_time) ? $this->update_time : null;
+        return $this->update_time;
     }
 
     public function hasUpdateTime()
@@ -403,7 +403,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      */
     public function getDeleteTime()
     {
-        return isset($this->delete_time) ? $this->delete_time : null;
+        return $this->delete_time;
     }
 
     public function hasDeleteTime()
@@ -476,7 +476,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      */
     public function getLastConnectionTime()
     {
-        return isset($this->last_connection_time) ? $this->last_connection_time : null;
+        return $this->last_connection_time;
     }
 
     public function hasLastConnectionTime()
@@ -547,7 +547,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      */
     public function getAuthority()
     {
-        return isset($this->authority) ? $this->authority : null;
+        return $this->authority;
     }
 
     public function hasAuthority()

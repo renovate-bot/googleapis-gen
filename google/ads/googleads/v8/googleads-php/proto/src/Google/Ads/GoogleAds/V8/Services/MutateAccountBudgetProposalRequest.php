@@ -90,7 +90,7 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getOperation()
     {
-        return isset($this->operation) ? $this->operation : null;
+        return $this->operation;
     }
 
     public function hasOperation()

@@ -60,7 +60,7 @@ class AdvancedSettings extends \Google\Protobuf\Internal\Message
      */
     public function getLoggingSettings()
     {
-        return isset($this->logging_settings) ? $this->logging_settings : null;
+        return $this->logging_settings;
     }
 
     public function hasLoggingSettings()

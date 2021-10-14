@@ -169,7 +169,7 @@ class EntryGroup extends \Google\Protobuf\Internal\Message
      */
     public function getDataCatalogTimestamps()
     {
-        return isset($this->data_catalog_timestamps) ? $this->data_catalog_timestamps : null;
+        return $this->data_catalog_timestamps;
     }
 
     public function hasDataCatalogTimestamps()

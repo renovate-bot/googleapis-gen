@@ -147,7 +147,7 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
      */
     public function getMetric()
     {
-        return isset($this->metric) ? $this->metric : null;
+        return $this->metric;
     }
 
     public function hasMetric()
@@ -187,7 +187,7 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
      */
     public function getResource()
     {
-        return isset($this->resource) ? $this->resource : null;
+        return $this->resource;
     }
 
     public function hasResource()
@@ -228,7 +228,7 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
      */
     public function getMetadata()
     {
-        return isset($this->metadata) ? $this->metadata : null;
+        return $this->metadata;
     }
 
     public function hasMetadata()

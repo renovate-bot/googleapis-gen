@@ -575,16 +575,16 @@ public final class AdMobResourcesProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getPublisherIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publisherId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, publisherId_);
       }
-      if (!getReportingTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportingTimeZone_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reportingTimeZone_);
       }
-      if (!getCurrencyCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currencyCode_);
       }
       unknownFields.writeTo(output);
@@ -596,16 +596,16 @@ public final class AdMobResourcesProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getPublisherIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publisherId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publisherId_);
       }
-      if (!getReportingTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportingTimeZone_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reportingTimeZone_);
       }
-      if (!getCurrencyCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currencyCode_);
       }
       size += unknownFields.getSerializedSize();
@@ -4985,7 +4985,7 @@ public final class AdMobResourcesProto {
       if (maxReportRows_ != 0) {
         output.writeInt32(7, maxReportRows_);
       }
-      if (!getTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, timeZone_);
       }
       unknownFields.writeTo(output);
@@ -5041,7 +5041,7 @@ public final class AdMobResourcesProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, maxReportRows_);
       }
-      if (!getTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, timeZone_);
       }
       size += unknownFields.getSerializedSize();
@@ -10768,7 +10768,7 @@ public final class AdMobResourcesProto {
       if (maxReportRows_ != 0) {
         output.writeInt32(7, maxReportRows_);
       }
-      if (!getTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, timeZone_);
       }
       unknownFields.writeTo(output);
@@ -10824,7 +10824,7 @@ public final class AdMobResourcesProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, maxReportRows_);
       }
-      if (!getTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, timeZone_);
       }
       size += unknownFields.getSerializedSize();
@@ -13435,10 +13435,10 @@ public final class AdMobResourcesProto {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
         }
-        if (!getDisplayLabelBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayLabel_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayLabel_);
         }
         unknownFields.writeTo(output);
@@ -13450,10 +13450,10 @@ public final class AdMobResourcesProto {
         if (size != -1) return size;
 
         size = 0;
-        if (!getValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
         }
-        if (!getDisplayLabelBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayLabel_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayLabel_);
         }
         size += unknownFields.getSerializedSize();
@@ -16303,7 +16303,7 @@ public final class AdMobResourcesProto {
       if (type_ != com.google.ads.admob.v1.AdMobResourcesProto.ReportWarning.Type.TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, type_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
       }
       unknownFields.writeTo(output);
@@ -16319,7 +16319,7 @@ public final class AdMobResourcesProto {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
       size += unknownFields.getSerializedSize();
@@ -17181,7 +17181,7 @@ public final class AdMobResourcesProto {
       if (localizationSettings_ != null) {
         output.writeMessage(2, getLocalizationSettings());
       }
-      if (!getReportingTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportingTimeZone_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reportingTimeZone_);
       }
       unknownFields.writeTo(output);
@@ -17201,7 +17201,7 @@ public final class AdMobResourcesProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getLocalizationSettings());
       }
-      if (!getReportingTimeZoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportingTimeZone_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reportingTimeZone_);
       }
       size += unknownFields.getSerializedSize();
@@ -20269,10 +20269,10 @@ public final class AdMobResourcesProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCurrencyCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, currencyCode_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
       }
       unknownFields.writeTo(output);
@@ -20284,10 +20284,10 @@ public final class AdMobResourcesProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCurrencyCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, currencyCode_);
       }
-      if (!getLanguageCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
       }
       size += unknownFields.getSerializedSize();

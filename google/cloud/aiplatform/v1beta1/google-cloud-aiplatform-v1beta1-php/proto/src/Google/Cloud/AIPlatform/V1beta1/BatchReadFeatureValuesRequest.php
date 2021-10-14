@@ -236,7 +236,7 @@ class BatchReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDestination()
     {
-        return isset($this->destination) ? $this->destination : null;
+        return $this->destination;
     }
 
     public function hasDestination()

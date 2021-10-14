@@ -46,7 +46,7 @@ class SuggestSmartCampaignAdResponse extends \Google\Protobuf\Internal\Message
      */
     public function getAdInfo()
     {
-        return isset($this->ad_info) ? $this->ad_info : null;
+        return $this->ad_info;
     }
 
     public function hasAdInfo()

@@ -37,7 +37,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>int64 ad_group_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_group_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_group_id = null;
     /**
@@ -55,13 +55,13 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string start_date = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string start_date = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $start_date = null;
     /**
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>string end_date = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string end_date = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $end_date = null;
     protected $point_list;
@@ -134,7 +134,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>int64 ad_group_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_group_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getAdGroupId()
@@ -155,7 +155,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>int64 ad_group_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional int64 ad_group_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -222,7 +222,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string start_date = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string start_date = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getStartDate()
@@ -243,7 +243,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>string start_date = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string start_date = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -258,7 +258,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>string end_date = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string end_date = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getEndDate()
@@ -279,7 +279,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>string end_date = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>optional string end_date = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */

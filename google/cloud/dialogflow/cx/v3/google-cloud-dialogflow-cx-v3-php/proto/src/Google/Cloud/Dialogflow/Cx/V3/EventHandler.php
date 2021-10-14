@@ -140,7 +140,7 @@ class EventHandler extends \Google\Protobuf\Internal\Message
      */
     public function getTriggerFulfillment()
     {
-        return isset($this->trigger_fulfillment) ? $this->trigger_fulfillment : null;
+        return $this->trigger_fulfillment;
     }
 
     public function hasTriggerFulfillment()

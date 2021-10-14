@@ -251,7 +251,7 @@ class SearchVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()
@@ -319,7 +319,7 @@ class SearchVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getPickupPoint()
     {
-        return isset($this->pickup_point) ? $this->pickup_point : null;
+        return $this->pickup_point;
     }
 
     public function hasPickupPoint()
@@ -356,7 +356,7 @@ class SearchVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDropoffPoint()
     {
-        return isset($this->dropoff_point) ? $this->dropoff_point : null;
+        return $this->dropoff_point;
     }
 
     public function hasDropoffPoint()
@@ -513,7 +513,7 @@ class SearchVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMaximumStaleness()
     {
-        return isset($this->maximum_staleness) ? $this->maximum_staleness : null;
+        return $this->maximum_staleness;
     }
 
     public function hasMaximumStaleness()

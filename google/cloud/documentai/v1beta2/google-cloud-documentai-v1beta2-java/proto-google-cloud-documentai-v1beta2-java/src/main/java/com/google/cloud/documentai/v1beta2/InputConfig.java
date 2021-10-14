@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
     if (sourceCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.documentai.v1beta2.GcsSource) source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
     if (sourceCase_ == 3) {
@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, (com.google.cloud.documentai.v1beta2.GcsSource) source_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
     }
     if (sourceCase_ == 3) {
