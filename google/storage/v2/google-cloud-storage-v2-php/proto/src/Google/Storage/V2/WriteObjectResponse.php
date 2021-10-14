@@ -23,7 +23,7 @@ class WriteObjectResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $committed_size
+     *     @type int|string $persisted_size
      *           The total number of bytes that have been processed for the given object
      *           from all `WriteObject` calls. Only set if the upload has not finalized.
      *     @type \Google\Storage\V2\Object $resource
@@ -40,15 +40,15 @@ class WriteObjectResponse extends \Google\Protobuf\Internal\Message
      * The total number of bytes that have been processed for the given object
      * from all `WriteObject` calls. Only set if the upload has not finalized.
      *
-     * Generated from protobuf field <code>int64 committed_size = 1;</code>
+     * Generated from protobuf field <code>int64 persisted_size = 1;</code>
      * @return int|string
      */
-    public function getCommittedSize()
+    public function getPersistedSize()
     {
         return $this->readOneof(1);
     }
 
-    public function hasCommittedSize()
+    public function hasPersistedSize()
     {
         return $this->hasOneof(1);
     }
@@ -57,11 +57,11 @@ class WriteObjectResponse extends \Google\Protobuf\Internal\Message
      * The total number of bytes that have been processed for the given object
      * from all `WriteObject` calls. Only set if the upload has not finalized.
      *
-     * Generated from protobuf field <code>int64 committed_size = 1;</code>
+     * Generated from protobuf field <code>int64 persisted_size = 1;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setCommittedSize($var)
+    public function setPersistedSize($var)
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(1, $var);

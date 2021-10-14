@@ -320,7 +320,7 @@ class WriteObjectRequest(proto.Message):
 
             In the first ``WriteObjectRequest`` of a ``WriteObject()``
             action, it indicates the initial offset for the ``Write()``
-            call. The value **must** be equal to the ``committed_size``
+            call. The value **must** be equal to the ``persisted_size``
             that a call to ``QueryWriteStatus()`` would return (0 if
             this is the first write to the object).
 
@@ -399,7 +399,7 @@ class WriteObjectResponse(proto.Message):
     r"""Response message for WriteObject.
 
     Attributes:
-        committed_size (int):
+        persisted_size (int):
             The total number of bytes that have been processed for the
             given object from all ``WriteObject`` calls. Only set if the
             upload has not finalized.
@@ -409,7 +409,7 @@ class WriteObjectResponse(proto.Message):
             finalized.
     """
 
-    committed_size = proto.Field(
+    persisted_size = proto.Field(
         proto.INT64,
         number=1,
         oneof='write_status',
@@ -458,7 +458,7 @@ class QueryWriteStatusResponse(proto.Message):
     r"""Response object for ``QueryWriteStatus``.
 
     Attributes:
-        committed_size (int):
+        persisted_size (int):
             The total number of bytes that have been processed for the
             given object from all ``WriteObject`` calls. This is the
             correct value for the 'write_offset' field to use when
@@ -470,7 +470,7 @@ class QueryWriteStatusResponse(proto.Message):
             finalized.
     """
 
-    committed_size = proto.Field(
+    persisted_size = proto.Field(
         proto.INT64,
         number=1,
         oneof='write_status',
@@ -828,6 +828,7 @@ class Bucket(proto.Message):
             r"""Public Access Prevention config values."""
             PUBLIC_ACCESS_PREVENTION_UNSPECIFIED = 0
             ENFORCED = 1
+            INHERITED = 2
 
         class UniformBucketLevelAccess(proto.Message):
             r"""Settings for Uniform Bucket level access.
@@ -1519,17 +1520,18 @@ class Object(proto.Message):
         Attributes:
             encryption_algorithm (str):
                 The encryption algorithm.
-            key_sha256 (str):
+            key_sha256_bytes (bytes):
                 SHA256 hash value of the encryption key.
+                In raw bytes format (not base64-encoded).
         """
 
         encryption_algorithm = proto.Field(
             proto.STRING,
             number=1,
         )
-        key_sha256 = proto.Field(
-            proto.STRING,
-            number=2,
+        key_sha256_bytes = proto.Field(
+            proto.BYTES,
+            number=3,
         )
 
     name = proto.Field(

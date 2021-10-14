@@ -58,7 +58,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.storage.v2.WriteObjectResponse" do
       oneof :write_status do
-        optional :committed_size, :int64, 1
+        optional :persisted_size, :int64, 1
         optional :resource, :message, 2, "google.storage.v2.Object"
       end
     end
@@ -69,7 +69,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.storage.v2.QueryWriteStatusResponse" do
       oneof :write_status do
-        optional :committed_size, :int64, 1
+        optional :persisted_size, :int64, 1
         optional :resource, :message, 2, "google.storage.v2.Object"
       end
     end
@@ -161,6 +161,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_enum "google.storage.v2.Bucket.IamConfig.PublicAccessPrevention" do
       value :PUBLIC_ACCESS_PREVENTION_UNSPECIFIED, 0
       value :ENFORCED, 1
+      value :INHERITED, 2
     end
     add_message "google.storage.v2.Bucket.Lifecycle" do
       repeated :rule, :message, 1, "google.storage.v2.Bucket.Lifecycle.Rule"
@@ -247,7 +248,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.storage.v2.Object.CustomerEncryption" do
       optional :encryption_algorithm, :string, 1
-      optional :key_sha256, :string, 2
+      optional :key_sha256_bytes, :bytes, 3
     end
     add_message "google.storage.v2.ObjectAccessControl" do
       optional :role, :string, 1

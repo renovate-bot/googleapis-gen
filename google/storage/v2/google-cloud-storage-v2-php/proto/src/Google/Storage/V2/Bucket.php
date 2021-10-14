@@ -216,7 +216,8 @@ class Bucket extends \Google\Protobuf\Internal\Message
      * Attempting to update this field after bucket is created will result in an
      * error.
      *
-     * Generated from protobuf field <code>repeated string zone_affinity = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>repeated string zone_affinity = 24 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * @deprecated
      */
     private $zone_affinity;
     /**
@@ -1176,11 +1177,13 @@ class Bucket extends \Google\Protobuf\Internal\Message
      * Attempting to update this field after bucket is created will result in an
      * error.
      *
-     * Generated from protobuf field <code>repeated string zone_affinity = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>repeated string zone_affinity = 24 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getZoneAffinity()
     {
+        @trigger_error('zone_affinity is deprecated.', E_USER_DEPRECATED);
         return $this->zone_affinity;
     }
 
@@ -1191,12 +1194,14 @@ class Bucket extends \Google\Protobuf\Internal\Message
      * Attempting to update this field after bucket is created will result in an
      * error.
      *
-     * Generated from protobuf field <code>repeated string zone_affinity = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>repeated string zone_affinity = 24 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setZoneAffinity($var)
     {
+        @trigger_error('zone_affinity is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->zone_affinity = $arr;
 

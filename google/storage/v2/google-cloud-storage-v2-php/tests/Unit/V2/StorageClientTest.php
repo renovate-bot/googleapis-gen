@@ -81,9 +81,9 @@ class StorageClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $committedSize = 1907158756;
+        $persistedSize = 1469978803;
         $expectedResponse = new QueryWriteStatusResponse();
-        $expectedResponse->setCommittedSize($committedSize);
+        $expectedResponse->setPersistedSize($persistedSize);
         $transport->addResponse($expectedResponse);
         // Mock request
         $uploadId = 'uploadId1239095321';

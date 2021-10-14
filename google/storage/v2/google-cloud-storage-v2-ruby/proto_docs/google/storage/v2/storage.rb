@@ -161,7 +161,7 @@ module Google
       #
       #     In the first `WriteObjectRequest` of a `WriteObject()` action, it
       #     indicates the initial offset for the `Write()` call. The value **must** be
-      #     equal to the `committed_size` that a call to `QueryWriteStatus()` would
+      #     equal to the `persisted_size` that a call to `QueryWriteStatus()` would
       #     return (0 if this is the first write to the object).
       #
       #     On subsequent calls, this value **must** be no larger than the sum of the
@@ -199,7 +199,7 @@ module Google
       end
 
       # Response message for WriteObject.
-      # @!attribute [rw] committed_size
+      # @!attribute [rw] persisted_size
       #   @return [::Integer]
       #     The total number of bytes that have been processed for the given object
       #     from all `WriteObject` calls. Only set if the upload has not finalized.
@@ -229,7 +229,7 @@ module Google
       end
 
       # Response object for `QueryWriteStatus`.
-      # @!attribute [rw] committed_size
+      # @!attribute [rw] persisted_size
       #   @return [::Integer]
       #     The total number of bytes that have been processed for the given object
       #     from all `WriteObject` calls. This is the correct value for the
@@ -597,15 +597,17 @@ module Google
 
           # Public Access Prevention config values.
           module PublicAccessPrevention
-            # Does not prevent access from being granted to public members 'allUsers'
-            # or 'allAuthenticatedUsers'. This setting may be enforced by Org Policy
-            # at the project/folder/organization level.
+            # No specified PublicAccessPrevention.
             PUBLIC_ACCESS_PREVENTION_UNSPECIFIED = 0
 
             # Prevents access from being granted to public members 'allUsers' and
             # 'allAuthenticatedUsers'. Prevents attempts to grant new access to
             # public members.
             ENFORCED = 1
+
+            # This setting is inherited from Org Policy. Does not prevent access from
+            # being granted to public members 'allUsers' or 'allAuthenticatedUsers'.
+            INHERITED = 2
           end
         end
 
@@ -1002,9 +1004,10 @@ module Google
         # @!attribute [rw] encryption_algorithm
         #   @return [::String]
         #     The encryption algorithm.
-        # @!attribute [rw] key_sha256
+        # @!attribute [rw] key_sha256_bytes
         #   @return [::String]
         #     SHA256 hash value of the encryption key.
+        #     In raw bytes format (not base64-encoded).
         class CustomerEncryption
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

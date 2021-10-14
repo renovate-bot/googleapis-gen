@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
   public enum WriteStatusCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    COMMITTED_SIZE(1),
+    PERSISTED_SIZE(1),
     RESOURCE(2),
     WRITESTATUS_NOT_SET(0);
     private final int value;
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
 
     public static WriteStatusCase forNumber(int value) {
       switch (value) {
-        case 1: return COMMITTED_SIZE;
+        case 1: return PERSISTED_SIZE;
         case 2: return RESOURCE;
         case 0: return WRITESTATUS_NOT_SET;
         default: return null;
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
         writeStatusCase_);
   }
 
-  public static final int COMMITTED_SIZE_FIELD_NUMBER = 1;
+  public static final int PERSISTED_SIZE_FIELD_NUMBER = 1;
   /**
    * <pre>
    * The total number of bytes that have been processed for the given object
@@ -153,11 +153,11 @@ private static final long serialVersionUID = 0L;
    * Only set if the upload has not finalized.
    * </pre>
    *
-   * <code>int64 committed_size = 1;</code>
-   * @return Whether the committedSize field is set.
+   * <code>int64 persisted_size = 1;</code>
+   * @return Whether the persistedSize field is set.
    */
   @java.lang.Override
-  public boolean hasCommittedSize() {
+  public boolean hasPersistedSize() {
     return writeStatusCase_ == 1;
   }
   /**
@@ -168,11 +168,11 @@ private static final long serialVersionUID = 0L;
    * Only set if the upload has not finalized.
    * </pre>
    *
-   * <code>int64 committed_size = 1;</code>
-   * @return The committedSize.
+   * <code>int64 persisted_size = 1;</code>
+   * @return The persistedSize.
    */
   @java.lang.Override
-  public long getCommittedSize() {
+  public long getPersistedSize() {
     if (writeStatusCase_ == 1) {
       return (java.lang.Long) writeStatus_;
     }
@@ -282,8 +282,8 @@ private static final long serialVersionUID = 0L;
     if (!getWriteStatusCase().equals(other.getWriteStatusCase())) return false;
     switch (writeStatusCase_) {
       case 1:
-        if (getCommittedSize()
-            != other.getCommittedSize()) return false;
+        if (getPersistedSize()
+            != other.getPersistedSize()) return false;
         break;
       case 2:
         if (!getResource()
@@ -305,9 +305,9 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (writeStatusCase_) {
       case 1:
-        hash = (37 * hash) + COMMITTED_SIZE_FIELD_NUMBER;
+        hash = (37 * hash) + PERSISTED_SIZE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getCommittedSize());
+            getPersistedSize());
         break;
       case 2:
         hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
@@ -541,8 +541,8 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.storage.v2.QueryWriteStatusResponse other) {
       if (other == com.google.storage.v2.QueryWriteStatusResponse.getDefaultInstance()) return this;
       switch (other.getWriteStatusCase()) {
-        case COMMITTED_SIZE: {
-          setCommittedSize(other.getCommittedSize());
+        case PERSISTED_SIZE: {
+          setPersistedSize(other.getPersistedSize());
           break;
         }
         case RESOURCE: {
@@ -605,10 +605,10 @@ private static final long serialVersionUID = 0L;
      * Only set if the upload has not finalized.
      * </pre>
      *
-     * <code>int64 committed_size = 1;</code>
-     * @return Whether the committedSize field is set.
+     * <code>int64 persisted_size = 1;</code>
+     * @return Whether the persistedSize field is set.
      */
-    public boolean hasCommittedSize() {
+    public boolean hasPersistedSize() {
       return writeStatusCase_ == 1;
     }
     /**
@@ -619,10 +619,10 @@ private static final long serialVersionUID = 0L;
      * Only set if the upload has not finalized.
      * </pre>
      *
-     * <code>int64 committed_size = 1;</code>
-     * @return The committedSize.
+     * <code>int64 persisted_size = 1;</code>
+     * @return The persistedSize.
      */
-    public long getCommittedSize() {
+    public long getPersistedSize() {
       if (writeStatusCase_ == 1) {
         return (java.lang.Long) writeStatus_;
       }
@@ -636,11 +636,11 @@ private static final long serialVersionUID = 0L;
      * Only set if the upload has not finalized.
      * </pre>
      *
-     * <code>int64 committed_size = 1;</code>
-     * @param value The committedSize to set.
+     * <code>int64 persisted_size = 1;</code>
+     * @param value The persistedSize to set.
      * @return This builder for chaining.
      */
-    public Builder setCommittedSize(long value) {
+    public Builder setPersistedSize(long value) {
       writeStatusCase_ = 1;
       writeStatus_ = value;
       onChanged();
@@ -654,10 +654,10 @@ private static final long serialVersionUID = 0L;
      * Only set if the upload has not finalized.
      * </pre>
      *
-     * <code>int64 committed_size = 1;</code>
+     * <code>int64 persisted_size = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCommittedSize() {
+    public Builder clearPersistedSize() {
       if (writeStatusCase_ == 1) {
         writeStatusCase_ = 0;
         writeStatus_ = null;

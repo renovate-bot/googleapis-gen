@@ -23,10 +23,11 @@ class CustomerEncryption extends \Google\Protobuf\Internal\Message
     protected $encryption_algorithm = '';
     /**
      * SHA256 hash value of the encryption key.
+     * In raw bytes format (not base64-encoded).
      *
-     * Generated from protobuf field <code>string key_sha256 = 2;</code>
+     * Generated from protobuf field <code>bytes key_sha256_bytes = 3;</code>
      */
-    protected $key_sha256 = '';
+    protected $key_sha256_bytes = '';
 
     /**
      * Constructor.
@@ -36,8 +37,9 @@ class CustomerEncryption extends \Google\Protobuf\Internal\Message
      *
      *     @type string $encryption_algorithm
      *           The encryption algorithm.
-     *     @type string $key_sha256
+     *     @type string $key_sha256_bytes
      *           SHA256 hash value of the encryption key.
+     *           In raw bytes format (not base64-encoded).
      * }
      */
     public function __construct($data = NULL) {
@@ -73,26 +75,28 @@ class CustomerEncryption extends \Google\Protobuf\Internal\Message
 
     /**
      * SHA256 hash value of the encryption key.
+     * In raw bytes format (not base64-encoded).
      *
-     * Generated from protobuf field <code>string key_sha256 = 2;</code>
+     * Generated from protobuf field <code>bytes key_sha256_bytes = 3;</code>
      * @return string
      */
-    public function getKeySha256()
+    public function getKeySha256Bytes()
     {
-        return $this->key_sha256;
+        return $this->key_sha256_bytes;
     }
 
     /**
      * SHA256 hash value of the encryption key.
+     * In raw bytes format (not base64-encoded).
      *
-     * Generated from protobuf field <code>string key_sha256 = 2;</code>
+     * Generated from protobuf field <code>bytes key_sha256_bytes = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setKeySha256($var)
+    public function setKeySha256Bytes($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->key_sha256 = $var;
+        GPBUtil::checkString($var, False);
+        $this->key_sha256_bytes = $var;
 
         return $this;
     }

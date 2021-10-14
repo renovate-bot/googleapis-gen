@@ -15,10 +15,10 @@ public interface QueryWriteStatusResponseOrBuilder extends
    * Only set if the upload has not finalized.
    * </pre>
    *
-   * <code>int64 committed_size = 1;</code>
-   * @return Whether the committedSize field is set.
+   * <code>int64 persisted_size = 1;</code>
+   * @return Whether the persistedSize field is set.
    */
-  boolean hasCommittedSize();
+  boolean hasPersistedSize();
   /**
    * <pre>
    * The total number of bytes that have been processed for the given object
@@ -27,10 +27,10 @@ public interface QueryWriteStatusResponseOrBuilder extends
    * Only set if the upload has not finalized.
    * </pre>
    *
-   * <code>int64 committed_size = 1;</code>
-   * @return The committedSize.
+   * <code>int64 persisted_size = 1;</code>
+   * @return The persistedSize.
    */
-  long getCommittedSize();
+  long getPersistedSize();
 
   /**
    * <pre>

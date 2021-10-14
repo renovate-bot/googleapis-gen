@@ -583,7 +583,7 @@ def test_write_object(transport: str = 'grpc', request_type=storage.WriteObjectR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.WriteObjectResponse(
-            committed_size=1504,
+            persisted_size=1517,
         )
         response = client.write_object(iter(requests))
 
@@ -739,7 +739,7 @@ def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryW
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.QueryWriteStatusResponse(
-            committed_size=1504,
+            persisted_size=1517,
         )
         response = client.query_write_status(request)
 

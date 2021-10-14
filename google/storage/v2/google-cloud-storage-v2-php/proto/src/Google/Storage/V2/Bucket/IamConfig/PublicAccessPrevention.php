@@ -14,9 +14,7 @@ use UnexpectedValueException;
 class PublicAccessPrevention
 {
     /**
-     * Does not prevent access from being granted to public members 'allUsers'
-     * or 'allAuthenticatedUsers'. This setting may be enforced by Org Policy
-     * at the project/folder/organization level.
+     * No specified PublicAccessPrevention.
      *
      * Generated from protobuf enum <code>PUBLIC_ACCESS_PREVENTION_UNSPECIFIED = 0;</code>
      */
@@ -29,10 +27,18 @@ class PublicAccessPrevention
      * Generated from protobuf enum <code>ENFORCED = 1;</code>
      */
     const ENFORCED = 1;
+    /**
+     * This setting is inherited from Org Policy. Does not prevent access from
+     * being granted to public members 'allUsers' or 'allAuthenticatedUsers'.
+     *
+     * Generated from protobuf enum <code>INHERITED = 2;</code>
+     */
+    const INHERITED = 2;
 
     private static $valueToName = [
         self::PUBLIC_ACCESS_PREVENTION_UNSPECIFIED => 'PUBLIC_ACCESS_PREVENTION_UNSPECIFIED',
         self::ENFORCED => 'ENFORCED',
+        self::INHERITED => 'INHERITED',
     ];
 
     public static function name($value)
