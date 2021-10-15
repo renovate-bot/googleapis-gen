@@ -1,0 +1,83 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.tpu.v2alpha1",
+  "libraryPackage": "::Google::Cloud::Tpu::V2alpha1",
+  "services": {
+    "Tpu": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Tpu::V2alpha1::Tpu::Client",
+          "rpcs": {
+            "ListNodes": {
+              "methods": [
+                "list_nodes"
+              ]
+            },
+            "GetNode": {
+              "methods": [
+                "get_node"
+              ]
+            },
+            "CreateNode": {
+              "methods": [
+                "create_node"
+              ]
+            },
+            "DeleteNode": {
+              "methods": [
+                "delete_node"
+              ]
+            },
+            "StopNode": {
+              "methods": [
+                "stop_node"
+              ]
+            },
+            "StartNode": {
+              "methods": [
+                "start_node"
+              ]
+            },
+            "UpdateNode": {
+              "methods": [
+                "update_node"
+              ]
+            },
+            "GenerateServiceIdentity": {
+              "methods": [
+                "generate_service_identity"
+              ]
+            },
+            "ListAcceleratorTypes": {
+              "methods": [
+                "list_accelerator_types"
+              ]
+            },
+            "GetAcceleratorType": {
+              "methods": [
+                "get_accelerator_type"
+              ]
+            },
+            "ListRuntimeVersions": {
+              "methods": [
+                "list_runtime_versions"
+              ]
+            },
+            "GetRuntimeVersion": {
+              "methods": [
+                "get_runtime_version"
+              ]
+            },
+            "GetGuestAttributes": {
+              "methods": [
+                "get_guest_attributes"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
