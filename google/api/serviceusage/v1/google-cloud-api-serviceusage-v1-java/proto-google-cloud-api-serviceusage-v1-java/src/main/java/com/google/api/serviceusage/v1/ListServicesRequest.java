@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Requested size of the next page of data.
    * Requested page size cannot exceed 200.
-   *  If not set, the default page size is 50.
+   * If not set, the default page size is 50.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Requested size of the next page of data.
      * Requested page size cannot exceed 200.
-     *  If not set, the default page size is 50.
+     * If not set, the default page size is 50.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -755,7 +755,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Requested size of the next page of data.
      * Requested page size cannot exceed 200.
-     *  If not set, the default page size is 50.
+     * If not set, the default page size is 50.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Requested size of the next page of data.
      * Requested page size cannot exceed 200.
-     *  If not set, the default page size is 50.
+     * If not set, the default page size is 50.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

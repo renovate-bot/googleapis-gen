@@ -29,7 +29,7 @@ function main() {
   /**
    *  Requested size of the next page of data.
    *  Requested page size cannot exceed 200.
-   *   If not set, the default page size is 50.
+   *  If not set, the default page size is 50.
    */
   // const pageSize = 1234
   /**

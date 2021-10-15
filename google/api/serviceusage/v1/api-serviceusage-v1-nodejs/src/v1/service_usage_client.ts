@@ -869,7 +869,7 @@ export class ServiceUsageClient {
  * @param {number} request.pageSize
  *   Requested size of the next page of data.
  *   Requested page size cannot exceed 200.
- *    If not set, the default page size is 50.
+ *   If not set, the default page size is 50.
  * @param {string} request.pageToken
  *   Token identifying which result to start with, which is returned by a
  *   previous list call.
@@ -937,7 +937,7 @@ export class ServiceUsageClient {
  * @param {number} request.pageSize
  *   Requested size of the next page of data.
  *   Requested page size cannot exceed 200.
- *    If not set, the default page size is 50.
+ *   If not set, the default page size is 50.
  * @param {string} request.pageToken
  *   Token identifying which result to start with, which is returned by a
  *   previous list call.
@@ -993,7 +993,7 @@ export class ServiceUsageClient {
  * @param {number} request.pageSize
  *   Requested size of the next page of data.
  *   Requested page size cannot exceed 200.
- *    If not set, the default page size is 50.
+ *   If not set, the default page size is 50.
  * @param {string} request.pageToken
  *   Token identifying which result to start with, which is returned by a
  *   previous list call.
