@@ -886,7 +886,7 @@ class OsConfigServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-osconfig",
+            "google-cloud-os-config",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
