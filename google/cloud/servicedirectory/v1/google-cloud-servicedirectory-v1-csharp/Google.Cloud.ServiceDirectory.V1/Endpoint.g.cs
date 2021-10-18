@@ -109,7 +109,7 @@ namespace Google.Cloud.ServiceDirectory.V1 {
     private string name_ = "";
     /// <summary>
     /// Immutable. The resource name for the endpoint in the format
-    /// 'projects/*/locations/*/namespaces/*/services/*/endpoints/*'.
+    /// `projects/*/locations/*/namespaces/*/services/*/endpoints/*`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
