@@ -33,11 +33,19 @@ class Frequency
      * Generated from protobuf enum <code>MONTHLY = 2;</code>
      */
     const MONTHLY = 2;
+    /**
+     * Indicates that the frequency should be expressed in terms of
+     * days.
+     *
+     * Generated from protobuf enum <code>DAILY = 3;</code>
+     */
+    const DAILY = 3;
 
     private static $valueToName = [
         self::FREQUENCY_UNSPECIFIED => 'FREQUENCY_UNSPECIFIED',
         self::WEEKLY => 'WEEKLY',
         self::MONTHLY => 'MONTHLY',
+        self::DAILY => 'DAILY',
     ];
 
     public static function name($value)

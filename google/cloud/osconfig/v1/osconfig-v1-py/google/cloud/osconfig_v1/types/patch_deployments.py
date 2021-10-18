@@ -201,6 +201,7 @@ class RecurringSchedule(proto.Message):
         FREQUENCY_UNSPECIFIED = 0
         WEEKLY = 1
         MONTHLY = 2
+        DAILY = 3
 
     time_zone = proto.Field(
         proto.MESSAGE,

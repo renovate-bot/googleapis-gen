@@ -46,7 +46,7 @@ namespace Google.Cloud.Osconfig.V1Beta {
             "b3RvYnVmLlRpbWVzdGFtcEID4EEDEjoKEWxhc3RfZXhlY3V0ZV90aW1lGAog",
             "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEID4EEDQgoKCHNjaGVk",
             "dWxlIkgKD09uZVRpbWVTY2hlZHVsZRI1CgxleGVjdXRlX3RpbWUYASABKAsy",
-            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgPgQQIihwUKEVJlY3Vycmlu",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgPgQQIikgUKEVJlY3Vycmlu",
             "Z1NjaGVkdWxlEi0KCXRpbWVfem9uZRgBIAEoCzIVLmdvb2dsZS50eXBlLlRp",
             "bWVab25lQgPgQQISMwoKc3RhcnRfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90",
             "b2J1Zi5UaW1lc3RhbXBCA+BBARIxCghlbmRfdGltZRgDIAEoCzIaLmdvb2ds",
@@ -59,29 +59,30 @@ namespace Google.Cloud.Osconfig.V1Beta {
             "MWJldGEuTW9udGhseVNjaGVkdWxlQgPgQQJIABI6ChFsYXN0X2V4ZWN1dGVf",
             "dGltZRgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BBAxI6",
             "ChFuZXh0X2V4ZWN1dGVfdGltZRgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
-            "aW1lc3RhbXBCA+BBAyI/CglGcmVxdWVuY3kSGQoVRlJFUVVFTkNZX1VOU1BF",
-            "Q0lGSUVEEAASCgoGV0VFS0xZEAESCwoHTU9OVEhMWRACQhEKD3NjaGVkdWxl",
-            "X2NvbmZpZyJCCg5XZWVrbHlTY2hlZHVsZRIwCgtkYXlfb2Zfd2VlaxgBIAEo",
-            "DjIWLmdvb2dsZS50eXBlLkRheU9mV2Vla0ID4EECIosBCg9Nb250aGx5U2No",
-            "ZWR1bGUSTgoRd2Vla19kYXlfb2ZfbW9udGgYASABKAsyLC5nb29nbGUuY2xv",
-            "dWQub3Njb25maWcudjFiZXRhLldlZWtEYXlPZk1vbnRoQgPgQQJIABIYCglt",
-            "b250aF9kYXkYAiABKAVCA+BBAkgAQg4KDGRheV9vZl9tb250aCJdCg5XZWVr",
-            "RGF5T2ZNb250aBIZCgx3ZWVrX29yZGluYWwYASABKAVCA+BBAhIwCgtkYXlf",
-            "b2Zfd2VlaxgCIAEoDjIWLmdvb2dsZS50eXBlLkRheU9mV2Vla0ID4EECIqMB",
-            "ChxDcmVhdGVQYXRjaERlcGxveW1lbnRSZXF1ZXN0EhMKBnBhcmVudBgBIAEo",
-            "CUID4EECEiAKE3BhdGNoX2RlcGxveW1lbnRfaWQYAiABKAlCA+BBAhJMChBw",
-            "YXRjaF9kZXBsb3ltZW50GAMgASgLMi0uZ29vZ2xlLmNsb3VkLm9zY29uZmln",
-            "LnYxYmV0YS5QYXRjaERlcGxveW1lbnRCA+BBAiIuChlHZXRQYXRjaERlcGxv",
-            "eW1lbnRSZXF1ZXN0EhEKBG5hbWUYASABKAlCA+BBAiJjChtMaXN0UGF0Y2hE",
-            "ZXBsb3ltZW50c1JlcXVlc3QSEwoGcGFyZW50GAEgASgJQgPgQQISFgoJcGFn",
-            "ZV9zaXplGAIgASgFQgPgQQESFwoKcGFnZV90b2tlbhgDIAEoCUID4EEBIoEB",
-            "ChxMaXN0UGF0Y2hEZXBsb3ltZW50c1Jlc3BvbnNlEkgKEXBhdGNoX2RlcGxv",
-            "eW1lbnRzGAEgAygLMi0uZ29vZ2xlLmNsb3VkLm9zY29uZmlnLnYxYmV0YS5Q",
-            "YXRjaERlcGxveW1lbnQSFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIjEKHERl",
-            "bGV0ZVBhdGNoRGVwbG95bWVudFJlcXVlc3QSEQoEbmFtZRgBIAEoCUID4EEC",
-            "QnoKIGNvbS5nb29nbGUuY2xvdWQub3Njb25maWcudjFiZXRhQhBQYXRjaERl",
-            "cGxveW1lbnRzWkRnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVh",
-            "cGlzL2Nsb3VkL29zY29uZmlnL3YxYmV0YTtvc2NvbmZpZ2IGcHJvdG8z"));
+            "aW1lc3RhbXBCA+BBAyJKCglGcmVxdWVuY3kSGQoVRlJFUVVFTkNZX1VOU1BF",
+            "Q0lGSUVEEAASCgoGV0VFS0xZEAESCwoHTU9OVEhMWRACEgkKBURBSUxZEANC",
+            "EQoPc2NoZWR1bGVfY29uZmlnIkIKDldlZWtseVNjaGVkdWxlEjAKC2RheV9v",
+            "Zl93ZWVrGAEgASgOMhYuZ29vZ2xlLnR5cGUuRGF5T2ZXZWVrQgPgQQIiiwEK",
+            "D01vbnRobHlTY2hlZHVsZRJOChF3ZWVrX2RheV9vZl9tb250aBgBIAEoCzIs",
+            "Lmdvb2dsZS5jbG91ZC5vc2NvbmZpZy52MWJldGEuV2Vla0RheU9mTW9udGhC",
+            "A+BBAkgAEhgKCW1vbnRoX2RheRgCIAEoBUID4EECSABCDgoMZGF5X29mX21v",
+            "bnRoIl0KDldlZWtEYXlPZk1vbnRoEhkKDHdlZWtfb3JkaW5hbBgBIAEoBUID",
+            "4EECEjAKC2RheV9vZl93ZWVrGAIgASgOMhYuZ29vZ2xlLnR5cGUuRGF5T2ZX",
+            "ZWVrQgPgQQIiowEKHENyZWF0ZVBhdGNoRGVwbG95bWVudFJlcXVlc3QSEwoG",
+            "cGFyZW50GAEgASgJQgPgQQISIAoTcGF0Y2hfZGVwbG95bWVudF9pZBgCIAEo",
+            "CUID4EECEkwKEHBhdGNoX2RlcGxveW1lbnQYAyABKAsyLS5nb29nbGUuY2xv",
+            "dWQub3Njb25maWcudjFiZXRhLlBhdGNoRGVwbG95bWVudEID4EECIi4KGUdl",
+            "dFBhdGNoRGVwbG95bWVudFJlcXVlc3QSEQoEbmFtZRgBIAEoCUID4EECImMK",
+            "G0xpc3RQYXRjaERlcGxveW1lbnRzUmVxdWVzdBITCgZwYXJlbnQYASABKAlC",
+            "A+BBAhIWCglwYWdlX3NpemUYAiABKAVCA+BBARIXCgpwYWdlX3Rva2VuGAMg",
+            "ASgJQgPgQQEigQEKHExpc3RQYXRjaERlcGxveW1lbnRzUmVzcG9uc2USSAoR",
+            "cGF0Y2hfZGVwbG95bWVudHMYASADKAsyLS5nb29nbGUuY2xvdWQub3Njb25m",
+            "aWcudjFiZXRhLlBhdGNoRGVwbG95bWVudBIXCg9uZXh0X3BhZ2VfdG9rZW4Y",
+            "AiABKAkiMQocRGVsZXRlUGF0Y2hEZXBsb3ltZW50UmVxdWVzdBIRCgRuYW1l",
+            "GAEgASgJQgPgQQJCegogY29tLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy52MWJl",
+            "dGFCEFBhdGNoRGVwbG95bWVudHNaRGdvb2dsZS5nb2xhbmcub3JnL2dlbnBy",
+            "b3RvL2dvb2dsZWFwaXMvY2xvdWQvb3Njb25maWcvdjFiZXRhO29zY29uZmln",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Osconfig.V1Beta.PatchJobsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Type.DatetimeReflection.Descriptor, global::Google.Type.DayofweekReflection.Descriptor, global::Google.Type.TimeofdayReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -1643,6 +1644,11 @@ namespace Google.Cloud.Osconfig.V1Beta {
         /// months.
         /// </summary>
         [pbr::OriginalName("MONTHLY")] Monthly = 2,
+        /// <summary>
+        /// Indicates that the frequency should be expressed in terms of
+        /// days.
+        /// </summary>
+        [pbr::OriginalName("DAILY")] Daily = 3,
       }
 
     }
