@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-security-privateca documentation build configuration file
+# google-cloud-private-ca documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-security-privateca"
+project = u"google-cloud-private-ca"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-security-privateca-doc"
+htmlhelp_basename = "google-cloud-private-ca-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-security-privateca.tex",
-        u"google-cloud-security-privateca Documentation",
+        "google-cloud-private-ca.tex",
+        u"google-cloud-private-ca Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-security-privateca",
+        "google-cloud-private-ca",
         u"Google Cloud Security Privateca Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-security-privateca",
-        u"google-cloud-security-privateca Documentation",
+        "google-cloud-private-ca",
+        u"google-cloud-private-ca Documentation",
         author,
-        "google-cloud-security-privateca",
+        "google-cloud-private-ca",
         "GAPIC library for Google Cloud Security Privateca API",
         "APIs",
     )
