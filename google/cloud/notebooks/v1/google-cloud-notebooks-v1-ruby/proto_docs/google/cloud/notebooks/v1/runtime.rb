@@ -178,7 +178,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # An Local attached disk resource.
+        # A Local attached disk resource.
         # @!attribute [r] auto_delete
         #   @return [::Boolean]
         #     Optional. Output only. Specifies whether the disk will be auto-deleted when the
@@ -224,8 +224,9 @@ module Google
         #     in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
         #     performance characteristics of SCSI over NVMe, see Local SSD performance.
         #     Valid values:
-        #         NVME
-        #         SCSI
+        #
+        #     * NVME
+        #     * SCSI
         # @!attribute [r] kind
         #   @return [::String]
         #     Output only. Type of the resource. Always compute#attachedDisk for attached disks.
@@ -237,8 +238,9 @@ module Google
         #     The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
         #     not specified, the default is to attach the disk in READ_WRITE mode.
         #     Valid values:
-        #         READ_ONLY
-        #         READ_WRITE
+        #
+        #     * READ_ONLY
+        #     * READ_WRITE
         # @!attribute [rw] source
         #   @return [::String]
         #     Specifies a valid partial or full URL to an existing Persistent Disk
@@ -248,8 +250,9 @@ module Google
         #     Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
         #     specified, the default is PERSISTENT.
         #     Valid values:
-        #         PERSISTENT
-        #         SCRATCH
+        #
+        #     * PERSISTENT
+        #     * SCRATCH
         class LocalDisk
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -382,7 +385,7 @@ module Google
         #     Default: True
         # @!attribute [rw] idle_shutdown_timeout
         #   @return [::Integer]
-        #     Time in minutes to wait before shuting down runtime. Default: 180 minutes
+        #     Time in minutes to wait before shutting down runtime. Default: 180 minutes
         # @!attribute [rw] install_gpu_driver
         #   @return [::Boolean]
         #     Install Nvidia Driver automatically.

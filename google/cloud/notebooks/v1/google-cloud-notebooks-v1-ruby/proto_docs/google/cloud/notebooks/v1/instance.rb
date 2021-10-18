@@ -270,8 +270,9 @@ module Google
           #     SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
           #     performance.
           #     Valid values:
-          #         NVME
-          #         SCSI
+          #
+          #     * NVME
+          #     * SCSI
           # @!attribute [rw] kind
           #   @return [::String]
           #     Type of the resource. Always compute#attachedDisk for attached
@@ -286,8 +287,9 @@ module Google
           #     The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
           #     not specified, the default is to attach the disk in READ_WRITE mode.
           #     Valid values:
-          #         READ_ONLY
-          #         READ_WRITE
+          #
+          #     * READ_ONLY
+          #     * READ_WRITE
           # @!attribute [rw] source
           #   @return [::String]
           #     Indicates a valid partial or full URL to an existing Persistent Disk
@@ -296,8 +298,9 @@ module Google
           #   @return [::String]
           #     Indicates the type of the disk, either SCRATCH or PERSISTENT.
           #     Valid values:
-          #         PERSISTENT
-          #         SCRATCH
+          #
+          #     * PERSISTENT
+          #     * SCRATCH
           class Disk
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -308,12 +311,13 @@ module Google
             #     The ID of a supported feature. Read  Enabling guest operating system
             #     features to see a list of available options.
             #     Valid values:
-            #         FEATURE_TYPE_UNSPECIFIED
-            #         MULTI_IP_SUBNET
-            #         SECURE_BOOT
-            #         UEFI_COMPATIBLE
-            #         VIRTIO_SCSI_MULTIQUEUE
-            #         WINDOWS
+            #
+            #     * FEATURE_TYPE_UNSPECIFIED
+            #     * MULTI_IP_SUBNET
+            #     * SECURE_BOOT
+            #     * UEFI_COMPATIBLE
+            #     * VIRTIO_SCSI_MULTIQUEUE
+            #     * WINDOWS
             class GuestOsFeature
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods

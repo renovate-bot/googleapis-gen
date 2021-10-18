@@ -71,8 +71,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *     NVME
-     *     SCSI
+     * * NVME
+     * * SCSI
      *
      * Generated from protobuf field <code>string interface = 7;</code>
      */
@@ -96,8 +96,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      * not specified, the default is to attach the disk in READ_WRITE mode.
      * Valid values:
-     *     READ_ONLY
-     *     READ_WRITE
+     * * READ_ONLY
+     * * READ_WRITE
      *
      * Generated from protobuf field <code>string mode = 10;</code>
      */
@@ -112,8 +112,8 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Indicates the type of the disk, either SCRATCH or PERSISTENT.
      * Valid values:
-     *     PERSISTENT
-     *     SCRATCH
+     * * PERSISTENT
+     * * SCRATCH
      *
      * Generated from protobuf field <code>string type = 12;</code>
      */
@@ -157,8 +157,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      *           SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      *           performance.
      *           Valid values:
-     *               NVME
-     *               SCSI
+     *           * NVME
+     *           * SCSI
      *     @type string $kind
      *           Type of the resource. Always compute#attachedDisk for attached
      *           disks.
@@ -170,16 +170,16 @@ class Disk extends \Google\Protobuf\Internal\Message
      *           The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      *           not specified, the default is to attach the disk in READ_WRITE mode.
      *           Valid values:
-     *               READ_ONLY
-     *               READ_WRITE
+     *           * READ_ONLY
+     *           * READ_WRITE
      *     @type string $source
      *           Indicates a valid partial or full URL to an existing Persistent Disk
      *           resource.
      *     @type string $type
      *           Indicates the type of the disk, either SCRATCH or PERSISTENT.
      *           Valid values:
-     *               PERSISTENT
-     *               SCRATCH
+     *           * PERSISTENT
+     *           * SCRATCH
      * }
      */
     public function __construct($data = NULL) {
@@ -375,8 +375,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *     NVME
-     *     SCSI
+     * * NVME
+     * * SCSI
      *
      * Generated from protobuf field <code>string interface = 7;</code>
      * @return string
@@ -394,8 +394,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *     NVME
-     *     SCSI
+     * * NVME
+     * * SCSI
      *
      * Generated from protobuf field <code>string interface = 7;</code>
      * @param string $var
@@ -471,8 +471,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      * not specified, the default is to attach the disk in READ_WRITE mode.
      * Valid values:
-     *     READ_ONLY
-     *     READ_WRITE
+     * * READ_ONLY
+     * * READ_WRITE
      *
      * Generated from protobuf field <code>string mode = 10;</code>
      * @return string
@@ -486,8 +486,8 @@ class Disk extends \Google\Protobuf\Internal\Message
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      * not specified, the default is to attach the disk in READ_WRITE mode.
      * Valid values:
-     *     READ_ONLY
-     *     READ_WRITE
+     * * READ_ONLY
+     * * READ_WRITE
      *
      * Generated from protobuf field <code>string mode = 10;</code>
      * @param string $var
@@ -532,8 +532,8 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Indicates the type of the disk, either SCRATCH or PERSISTENT.
      * Valid values:
-     *     PERSISTENT
-     *     SCRATCH
+     * * PERSISTENT
+     * * SCRATCH
      *
      * Generated from protobuf field <code>string type = 12;</code>
      * @return string
@@ -546,8 +546,8 @@ class Disk extends \Google\Protobuf\Internal\Message
     /**
      * Indicates the type of the disk, either SCRATCH or PERSISTENT.
      * Valid values:
-     *     PERSISTENT
-     *     SCRATCH
+     * * PERSISTENT
+     * * SCRATCH
      *
      * Generated from protobuf field <code>string type = 12;</code>
      * @param string $var

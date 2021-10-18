@@ -176,8 +176,8 @@ public interface LocalDiskOrBuilder extends
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
-   *     NVME
-   *     SCSI
+   * * NVME
+   * * SCSI
    * </pre>
    *
    * <code>string interface = 7;</code>
@@ -192,8 +192,8 @@ public interface LocalDiskOrBuilder extends
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
-   *     NVME
-   *     SCSI
+   * * NVME
+   * * SCSI
    * </pre>
    *
    * <code>string interface = 7;</code>
@@ -268,8 +268,8 @@ public interface LocalDiskOrBuilder extends
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
    * not specified, the default is to attach the disk in READ_WRITE mode.
    * Valid values:
-   *     READ_ONLY
-   *     READ_WRITE
+   * * READ_ONLY
+   * * READ_WRITE
    * </pre>
    *
    * <code>string mode = 10;</code>
@@ -281,8 +281,8 @@ public interface LocalDiskOrBuilder extends
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
    * not specified, the default is to attach the disk in READ_WRITE mode.
    * Valid values:
-   *     READ_ONLY
-   *     READ_WRITE
+   * * READ_ONLY
+   * * READ_WRITE
    * </pre>
    *
    * <code>string mode = 10;</code>
@@ -318,8 +318,8 @@ public interface LocalDiskOrBuilder extends
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
    * specified, the default is PERSISTENT.
    * Valid values:
-   *     PERSISTENT
-   *     SCRATCH
+   * * PERSISTENT
+   * * SCRATCH
    * </pre>
    *
    * <code>string type = 12;</code>
@@ -331,8 +331,8 @@ public interface LocalDiskOrBuilder extends
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
    * specified, the default is PERSISTENT.
    * Valid values:
-   *     PERSISTENT
-   *     SCRATCH
+   * * PERSISTENT
+   * * SCRATCH
    * </pre>
    *
    * <code>string type = 12;</code>

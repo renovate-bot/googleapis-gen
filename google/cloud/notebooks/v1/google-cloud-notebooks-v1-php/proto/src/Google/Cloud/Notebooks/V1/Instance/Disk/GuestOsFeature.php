@@ -19,12 +19,12 @@ class GuestOsFeature extends \Google\Protobuf\Internal\Message
      * The ID of a supported feature. Read  Enabling guest operating system
      * features to see a list of available options.
      * Valid values:
-     *     FEATURE_TYPE_UNSPECIFIED
-     *     MULTI_IP_SUBNET
-     *     SECURE_BOOT
-     *     UEFI_COMPATIBLE
-     *     VIRTIO_SCSI_MULTIQUEUE
-     *     WINDOWS
+     * * FEATURE_TYPE_UNSPECIFIED
+     * * MULTI_IP_SUBNET
+     * * SECURE_BOOT
+     * * UEFI_COMPATIBLE
+     * * VIRTIO_SCSI_MULTIQUEUE
+     * * WINDOWS
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
@@ -40,12 +40,12 @@ class GuestOsFeature extends \Google\Protobuf\Internal\Message
      *           The ID of a supported feature. Read  Enabling guest operating system
      *           features to see a list of available options.
      *           Valid values:
-     *               FEATURE_TYPE_UNSPECIFIED
-     *               MULTI_IP_SUBNET
-     *               SECURE_BOOT
-     *               UEFI_COMPATIBLE
-     *               VIRTIO_SCSI_MULTIQUEUE
-     *               WINDOWS
+     *           * FEATURE_TYPE_UNSPECIFIED
+     *           * MULTI_IP_SUBNET
+     *           * SECURE_BOOT
+     *           * UEFI_COMPATIBLE
+     *           * VIRTIO_SCSI_MULTIQUEUE
+     *           * WINDOWS
      * }
      */
     public function __construct($data = NULL) {
@@ -57,12 +57,12 @@ class GuestOsFeature extends \Google\Protobuf\Internal\Message
      * The ID of a supported feature. Read  Enabling guest operating system
      * features to see a list of available options.
      * Valid values:
-     *     FEATURE_TYPE_UNSPECIFIED
-     *     MULTI_IP_SUBNET
-     *     SECURE_BOOT
-     *     UEFI_COMPATIBLE
-     *     VIRTIO_SCSI_MULTIQUEUE
-     *     WINDOWS
+     * * FEATURE_TYPE_UNSPECIFIED
+     * * MULTI_IP_SUBNET
+     * * SECURE_BOOT
+     * * UEFI_COMPATIBLE
+     * * VIRTIO_SCSI_MULTIQUEUE
+     * * WINDOWS
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @return string
@@ -76,12 +76,12 @@ class GuestOsFeature extends \Google\Protobuf\Internal\Message
      * The ID of a supported feature. Read  Enabling guest operating system
      * features to see a list of available options.
      * Valid values:
-     *     FEATURE_TYPE_UNSPECIFIED
-     *     MULTI_IP_SUBNET
-     *     SECURE_BOOT
-     *     UEFI_COMPATIBLE
-     *     VIRTIO_SCSI_MULTIQUEUE
-     *     WINDOWS
+     * * FEATURE_TYPE_UNSPECIFIED
+     * * MULTI_IP_SUBNET
+     * * SECURE_BOOT
+     * * UEFI_COMPATIBLE
+     * * VIRTIO_SCSI_MULTIQUEUE
+     * * WINDOWS
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @param string $var

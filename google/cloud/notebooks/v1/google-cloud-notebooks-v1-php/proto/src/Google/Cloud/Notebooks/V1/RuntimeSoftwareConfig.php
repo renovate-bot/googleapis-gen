@@ -42,7 +42,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      */
     protected $idle_shutdown = null;
     /**
-     * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     * Time in minutes to wait before shutting down runtime. Default: 180 minutes
      *
      * Generated from protobuf field <code>int32 idle_shutdown_timeout = 4;</code>
      */
@@ -85,7 +85,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      *           Runtime will automatically shutdown after idle_shutdown_time.
      *           Default: True
      *     @type int $idle_shutdown_timeout
-     *           Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     *           Time in minutes to wait before shutting down runtime. Default: 180 minutes
      *     @type bool $install_gpu_driver
      *           Install Nvidia Driver automatically.
      *     @type string $custom_gpu_driver_path
@@ -207,7 +207,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     * Time in minutes to wait before shutting down runtime. Default: 180 minutes
      *
      * Generated from protobuf field <code>int32 idle_shutdown_timeout = 4;</code>
      * @return int
@@ -218,7 +218,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     * Time in minutes to wait before shutting down runtime. Default: 180 minutes
      *
      * Generated from protobuf field <code>int32 idle_shutdown_timeout = 4;</code>
      * @param int $var

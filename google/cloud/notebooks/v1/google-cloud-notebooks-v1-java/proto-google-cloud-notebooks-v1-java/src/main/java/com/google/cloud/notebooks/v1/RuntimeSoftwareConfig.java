@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
   private int idleShutdownTimeout_;
   /**
    * <pre>
-   * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+   * Time in minutes to wait before shutting down runtime. Default: 180 minutes
    * </pre>
    *
    * <code>int32 idle_shutdown_timeout = 4;</code>
@@ -1024,7 +1024,7 @@ private static final long serialVersionUID = 0L;
     private int idleShutdownTimeout_ ;
     /**
      * <pre>
-     * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     * Time in minutes to wait before shutting down runtime. Default: 180 minutes
      * </pre>
      *
      * <code>int32 idle_shutdown_timeout = 4;</code>
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     * Time in minutes to wait before shutting down runtime. Default: 180 minutes
      * </pre>
      *
      * <code>int32 idle_shutdown_timeout = 4;</code>
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time in minutes to wait before shuting down runtime. Default: 180 minutes
+     * Time in minutes to wait before shutting down runtime. Default: 180 minutes
      * </pre>
      *
      * <code>int32 idle_shutdown_timeout = 4;</code>

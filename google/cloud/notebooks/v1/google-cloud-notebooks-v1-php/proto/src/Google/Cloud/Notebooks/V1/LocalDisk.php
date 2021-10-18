@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An Local attached disk resource.
+ * A Local attached disk resource.
  *
  * Generated from protobuf message <code>google.cloud.notebooks.v1.LocalDisk</code>
  */
@@ -75,8 +75,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     *     NVME
-     *     SCSI
+     * * NVME
+     * * SCSI
      *
      * Generated from protobuf field <code>string interface = 7;</code>
      */
@@ -97,8 +97,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      * not specified, the default is to attach the disk in READ_WRITE mode.
      * Valid values:
-     *     READ_ONLY
-     *     READ_WRITE
+     * * READ_ONLY
+     * * READ_WRITE
      *
      * Generated from protobuf field <code>string mode = 10;</code>
      */
@@ -114,8 +114,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
      * specified, the default is PERSISTENT.
      * Valid values:
-     *     PERSISTENT
-     *     SCRATCH
+     * * PERSISTENT
+     * * SCRATCH
      *
      * Generated from protobuf field <code>string type = 12;</code>
      */
@@ -163,8 +163,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      *           in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      *           performance characteristics of SCSI over NVMe, see Local SSD performance.
      *           Valid values:
-     *               NVME
-     *               SCSI
+     *           * NVME
+     *           * SCSI
      *     @type string $kind
      *           Output only. Type of the resource. Always compute#attachedDisk for attached disks.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $licenses
@@ -173,8 +173,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      *           The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      *           not specified, the default is to attach the disk in READ_WRITE mode.
      *           Valid values:
-     *               READ_ONLY
-     *               READ_WRITE
+     *           * READ_ONLY
+     *           * READ_WRITE
      *     @type string $source
      *           Specifies a valid partial or full URL to an existing Persistent Disk
      *           resource.
@@ -182,8 +182,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      *           Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
      *           specified, the default is PERSISTENT.
      *           Valid values:
-     *               PERSISTENT
-     *               SCRATCH
+     *           * PERSISTENT
+     *           * SCRATCH
      * }
      */
     public function __construct($data = NULL) {
@@ -398,8 +398,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     *     NVME
-     *     SCSI
+     * * NVME
+     * * SCSI
      *
      * Generated from protobuf field <code>string interface = 7;</code>
      * @return string
@@ -416,8 +416,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     *     NVME
-     *     SCSI
+     * * NVME
+     * * SCSI
      *
      * Generated from protobuf field <code>string interface = 7;</code>
      * @param string $var
@@ -487,8 +487,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      * not specified, the default is to attach the disk in READ_WRITE mode.
      * Valid values:
-     *     READ_ONLY
-     *     READ_WRITE
+     * * READ_ONLY
+     * * READ_WRITE
      *
      * Generated from protobuf field <code>string mode = 10;</code>
      * @return string
@@ -502,8 +502,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
      * not specified, the default is to attach the disk in READ_WRITE mode.
      * Valid values:
-     *     READ_ONLY
-     *     READ_WRITE
+     * * READ_ONLY
+     * * READ_WRITE
      *
      * Generated from protobuf field <code>string mode = 10;</code>
      * @param string $var
@@ -549,8 +549,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
      * specified, the default is PERSISTENT.
      * Valid values:
-     *     PERSISTENT
-     *     SCRATCH
+     * * PERSISTENT
+     * * SCRATCH
      *
      * Generated from protobuf field <code>string type = 12;</code>
      * @return string
@@ -564,8 +564,8 @@ class LocalDisk extends \Google\Protobuf\Internal\Message
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
      * specified, the default is PERSISTENT.
      * Valid values:
-     *     PERSISTENT
-     *     SCRATCH
+     * * PERSISTENT
+     * * SCRATCH
      *
      * Generated from protobuf field <code>string type = 12;</code>
      * @param string $var
