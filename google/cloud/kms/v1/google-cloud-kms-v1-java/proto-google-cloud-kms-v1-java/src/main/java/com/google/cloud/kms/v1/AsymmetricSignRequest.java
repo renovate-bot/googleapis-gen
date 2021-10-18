@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private AsymmetricSignRequest() {
     name_ = "";
+    data_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -81,6 +82,24 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(digestCrc32C_);
               digestCrc32C_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+
+            data_ = input.readBytes();
+            break;
+          }
+          case 58: {
+            com.google.protobuf.Int64Value.Builder subBuilder = null;
+            if (dataCrc32C_ != null) {
+              subBuilder = dataCrc32C_.toBuilder();
+            }
+            dataCrc32C_ = input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(dataCrc32C_);
+              dataCrc32C_ = subBuilder.buildPartial();
             }
 
             break;
@@ -167,12 +186,12 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.kms.v1.Digest digest_;
   /**
    * <pre>
-   * Required. The digest of the data to sign. The digest must be produced with
+   * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the digest field is set.
    */
   @java.lang.Override
@@ -181,12 +200,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The digest of the data to sign. The digest must be produced with
+   * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The digest.
    */
   @java.lang.Override
@@ -195,12 +214,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The digest of the data to sign. The digest must be produced with
+   * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
    * </pre>
    *
-   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder() {
@@ -281,6 +300,97 @@ private static final long serialVersionUID = 0L;
     return getDigestCrc32C();
   }
 
+  public static final int DATA_FIELD_NUMBER = 6;
+  private com.google.protobuf.ByteString data_;
+  /**
+   * <pre>
+   * Optional. This field will only be honored for RAW_PKCS1 keys.
+   * The data to sign. A digest is computed over the data that will be signed,
+   * PKCS #1 padding is applied to the digest directly and then encrypted.
+   * </pre>
+   *
+   * <code>bytes data = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The data.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getData() {
+    return data_;
+  }
+
+  public static final int DATA_CRC32C_FIELD_NUMBER = 7;
+  private com.google.protobuf.Int64Value dataCrc32C_;
+  /**
+   * <pre>
+   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+   * fails. If you receive a checksum error, your client should verify that
+   * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+   * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the dataCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataCrc32C() {
+    return dataCrc32C_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+   * fails. If you receive a checksum error, your client should verify that
+   * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+   * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The dataCrc32c.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getDataCrc32C() {
+    return dataCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : dataCrc32C_;
+  }
+  /**
+   * <pre>
+   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+   * fails. If you receive a checksum error, your client should verify that
+   * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+   * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getDataCrc32COrBuilder() {
+    return getDataCrc32C();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -304,6 +414,12 @@ private static final long serialVersionUID = 0L;
     if (digestCrc32C_ != null) {
       output.writeMessage(4, getDigestCrc32C());
     }
+    if (!data_.isEmpty()) {
+      output.writeBytes(6, data_);
+    }
+    if (dataCrc32C_ != null) {
+      output.writeMessage(7, getDataCrc32C());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -323,6 +439,14 @@ private static final long serialVersionUID = 0L;
     if (digestCrc32C_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getDigestCrc32C());
+    }
+    if (!data_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(6, data_);
+    }
+    if (dataCrc32C_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getDataCrc32C());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -351,6 +475,13 @@ private static final long serialVersionUID = 0L;
       if (!getDigestCrc32C()
           .equals(other.getDigestCrc32C())) return false;
     }
+    if (!getData()
+        .equals(other.getData())) return false;
+    if (hasDataCrc32C() != other.hasDataCrc32C()) return false;
+    if (hasDataCrc32C()) {
+      if (!getDataCrc32C()
+          .equals(other.getDataCrc32C())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -371,6 +502,12 @@ private static final long serialVersionUID = 0L;
     if (hasDigestCrc32C()) {
       hash = (37 * hash) + DIGEST_CRC32C_FIELD_NUMBER;
       hash = (53 * hash) + getDigestCrc32C().hashCode();
+    }
+    hash = (37 * hash) + DATA_FIELD_NUMBER;
+    hash = (53 * hash) + getData().hashCode();
+    if (hasDataCrc32C()) {
+      hash = (37 * hash) + DATA_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + getDataCrc32C().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -523,6 +660,14 @@ private static final long serialVersionUID = 0L;
         digestCrc32C_ = null;
         digestCrc32CBuilder_ = null;
       }
+      data_ = com.google.protobuf.ByteString.EMPTY;
+
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32C_ = null;
+      } else {
+        dataCrc32C_ = null;
+        dataCrc32CBuilder_ = null;
+      }
       return this;
     }
 
@@ -559,6 +704,12 @@ private static final long serialVersionUID = 0L;
         result.digestCrc32C_ = digestCrc32C_;
       } else {
         result.digestCrc32C_ = digestCrc32CBuilder_.build();
+      }
+      result.data_ = data_;
+      if (dataCrc32CBuilder_ == null) {
+        result.dataCrc32C_ = dataCrc32C_;
+      } else {
+        result.dataCrc32C_ = dataCrc32CBuilder_.build();
       }
       onBuilt();
       return result;
@@ -617,6 +768,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDigestCrc32C()) {
         mergeDigestCrc32C(other.getDigestCrc32C());
+      }
+      if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+        setData(other.getData());
+      }
+      if (other.hasDataCrc32C()) {
+        mergeDataCrc32C(other.getDataCrc32C());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -748,12 +905,12 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.kms.v1.Digest, com.google.cloud.kms.v1.Digest.Builder, com.google.cloud.kms.v1.DigestOrBuilder> digestBuilder_;
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the digest field is set.
      */
     public boolean hasDigest() {
@@ -761,12 +918,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The digest.
      */
     public com.google.cloud.kms.v1.Digest getDigest() {
@@ -778,12 +935,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDigest(com.google.cloud.kms.v1.Digest value) {
       if (digestBuilder_ == null) {
@@ -800,12 +957,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDigest(
         com.google.cloud.kms.v1.Digest.Builder builderForValue) {
@@ -820,12 +977,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeDigest(com.google.cloud.kms.v1.Digest value) {
       if (digestBuilder_ == null) {
@@ -844,12 +1001,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDigest() {
       if (digestBuilder_ == null) {
@@ -864,12 +1021,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.kms.v1.Digest.Builder getDigestBuilder() {
       
@@ -878,12 +1035,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder() {
       if (digestBuilder_ != null) {
@@ -895,12 +1052,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The digest of the data to sign. The digest must be produced with
+     * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * </pre>
      *
-     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.kms.v1.Digest, com.google.cloud.kms.v1.Digest.Builder, com.google.cloud.kms.v1.DigestOrBuilder> 
@@ -1177,6 +1334,321 @@ private static final long serialVersionUID = 0L;
         digestCrc32C_ = null;
       }
       return digestCrc32CBuilder_;
+    }
+
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Optional. This field will only be honored for RAW_PKCS1 keys.
+     * The data to sign. A digest is computed over the data that will be signed,
+     * PKCS #1 padding is applied to the digest directly and then encrypted.
+     * </pre>
+     *
+     * <code>bytes data = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+    /**
+     * <pre>
+     * Optional. This field will only be honored for RAW_PKCS1 keys.
+     * The data to sign. A digest is computed over the data that will be signed,
+     * PKCS #1 padding is applied to the digest directly and then encrypted.
+     * </pre>
+     *
+     * <code>bytes data = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
+     */
+    public Builder setData(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      data_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. This field will only be honored for RAW_PKCS1 keys.
+     * The data to sign. A digest is computed over the data that will be signed,
+     * PKCS #1 padding is applied to the digest directly and then encrypted.
+     * </pre>
+     *
+     * <code>bytes data = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearData() {
+      
+      data_ = getDefaultInstance().getData();
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Int64Value dataCrc32C_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder> dataCrc32CBuilder_;
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the dataCrc32c field is set.
+     */
+    public boolean hasDataCrc32C() {
+      return dataCrc32CBuilder_ != null || dataCrc32C_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The dataCrc32c.
+     */
+    public com.google.protobuf.Int64Value getDataCrc32C() {
+      if (dataCrc32CBuilder_ == null) {
+        return dataCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : dataCrc32C_;
+      } else {
+        return dataCrc32CBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDataCrc32C(com.google.protobuf.Int64Value value) {
+      if (dataCrc32CBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataCrc32C_ = value;
+        onChanged();
+      } else {
+        dataCrc32CBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDataCrc32C(
+        com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32C_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataCrc32CBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeDataCrc32C(com.google.protobuf.Int64Value value) {
+      if (dataCrc32CBuilder_ == null) {
+        if (dataCrc32C_ != null) {
+          dataCrc32C_ =
+            com.google.protobuf.Int64Value.newBuilder(dataCrc32C_).mergeFrom(value).buildPartial();
+        } else {
+          dataCrc32C_ = value;
+        }
+        onChanged();
+      } else {
+        dataCrc32CBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearDataCrc32C() {
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32C_ = null;
+        onChanged();
+      } else {
+        dataCrc32C_ = null;
+        dataCrc32CBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Int64Value.Builder getDataCrc32CBuilder() {
+      
+      onChanged();
+      return getDataCrc32CFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getDataCrc32COrBuilder() {
+      if (dataCrc32CBuilder_ != null) {
+        return dataCrc32CBuilder_.getMessageOrBuilder();
+      } else {
+        return dataCrc32C_ == null ?
+            com.google.protobuf.Int64Value.getDefaultInstance() : dataCrc32C_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     * received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     * fails. If you receive a checksum error, your client should verify that
+     * CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     * [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
+     * number of retries. A persistent mismatch may indicate an issue in your
+     * computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value data_crc32c = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder> 
+        getDataCrc32CFieldBuilder() {
+      if (dataCrc32CBuilder_ == null) {
+        dataCrc32CBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder>(
+                getDataCrc32C(),
+                getParentForChildren(),
+                isClean());
+        dataCrc32C_ = null;
+      }
+      return dataCrc32CBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

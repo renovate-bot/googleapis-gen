@@ -6258,6 +6258,7 @@ def test_asymmetric_sign(transport: str = 'grpc', request_type=service.Asymmetri
             signature=b'signature_blob',
             verified_digest_crc32c=True,
             name='name_value',
+            verified_data_crc32c=True,
             protection_level=resources.ProtectionLevel.SOFTWARE,
         )
         response = client.asymmetric_sign(request)
@@ -6272,6 +6273,7 @@ def test_asymmetric_sign(transport: str = 'grpc', request_type=service.Asymmetri
     assert response.signature == b'signature_blob'
     assert response.verified_digest_crc32c is True
     assert response.name == 'name_value'
+    assert response.verified_data_crc32c is True
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
 
 
@@ -6317,6 +6319,7 @@ async def test_asymmetric_sign_async(transport: str = 'grpc_asyncio', request_ty
             signature=b'signature_blob',
             verified_digest_crc32c=True,
             name='name_value',
+            verified_data_crc32c=True,
             protection_level=resources.ProtectionLevel.SOFTWARE,
         ))
         response = await client.asymmetric_sign(request)
@@ -6331,6 +6334,7 @@ async def test_asymmetric_sign_async(transport: str = 'grpc_asyncio', request_ty
     assert response.signature == b'signature_blob'
     assert response.verified_digest_crc32c is True
     assert response.name == 'name_value'
+    assert response.verified_data_crc32c is True
     assert response.protection_level == resources.ProtectionLevel.SOFTWARE
 
 

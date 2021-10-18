@@ -527,20 +527,20 @@ class KeyManagementServiceGapicClient
      * $keyManagementServiceClient = new KeyManagementServiceClient();
      * try {
      *     $formattedName = $keyManagementServiceClient->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
-     *     $digest = new Digest();
-     *     $response = $keyManagementServiceClient->asymmetricSign($formattedName, $digest);
+     *     $response = $keyManagementServiceClient->asymmetricSign($formattedName);
      * } finally {
      *     $keyManagementServiceClient->close();
      * }
      * ```
      *
      * @param string $name         Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
-     * @param Digest $digest       Required. The digest of the data to sign. The digest must be produced with
-     *                             the same digest algorithm as specified by the key version's
-     *                             [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      * @param array  $optionalArgs {
      *     Optional.
      *
+     *     @type Digest $digest
+     *           Optional. The digest of the data to sign. The digest must be produced with
+     *           the same digest algorithm as specified by the key version's
+     *           [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
      *     @type Int64Value $digestCrc32c
      *           Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
      *           specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
@@ -549,6 +549,24 @@ class KeyManagementServiceGapicClient
      *           fails. If you receive a checksum error, your client should verify that
      *           CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
      *           [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+     *           number of retries. A persistent mismatch may indicate an issue in your
+     *           computation of the CRC32C checksum.
+     *           Note: This field is defined as int64 for reasons of compatibility across
+     *           different languages. However, it is a non-negative integer, which will
+     *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     *           that support this type.
+     *     @type string $data
+     *           Optional. This field will only be honored for RAW_PKCS1 keys.
+     *           The data to sign. A digest is computed over the data that will be signed,
+     *           PKCS #1 padding is applied to the digest directly and then encrypted.
+     *     @type Int64Value $dataCrc32c
+     *           Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]. If
+     *           specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     *           received [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data] using this checksum.
+     *           [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     *           fails. If you receive a checksum error, your client should verify that
+     *           CRC32C([AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]) is equal to
+     *           [AsymmetricSignRequest.data_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.data_crc32c], and if so, perform a limited
      *           number of retries. A persistent mismatch may indicate an issue in your
      *           computation of the CRC32C checksum.
      *           Note: This field is defined as int64 for reasons of compatibility across
@@ -566,15 +584,26 @@ class KeyManagementServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function asymmetricSign($name, $digest, array $optionalArgs = [])
+    public function asymmetricSign($name, array $optionalArgs = [])
     {
         $request = new AsymmetricSignRequest();
         $requestParamHeaders = [];
         $request->setName($name);
-        $request->setDigest($digest);
         $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['digest'])) {
+            $request->setDigest($optionalArgs['digest']);
+        }
+
         if (isset($optionalArgs['digestCrc32c'])) {
             $request->setDigestCrc32c($optionalArgs['digestCrc32c']);
+        }
+
+        if (isset($optionalArgs['data'])) {
+            $request->setData($optionalArgs['data']);
+        }
+
+        if (isset($optionalArgs['dataCrc32c'])) {
+            $request->setDataCrc32c($optionalArgs['dataCrc32c']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

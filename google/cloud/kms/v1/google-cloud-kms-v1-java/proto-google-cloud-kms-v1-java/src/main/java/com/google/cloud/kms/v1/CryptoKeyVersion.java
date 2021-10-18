@@ -348,6 +348,30 @@ private static final long serialVersionUID = 0L;
     RSA_SIGN_PKCS1_4096_SHA512(16),
     /**
      * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_2048 = 28;</code>
+     */
+    RSA_SIGN_RAW_PKCS1_2048(28),
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_3072 = 29;</code>
+     */
+    RSA_SIGN_RAW_PKCS1_3072(29),
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_4096 = 30;</code>
+     */
+    RSA_SIGN_RAW_PKCS1_4096(30),
+    /**
+     * <pre>
      * RSAES-OAEP 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -528,6 +552,30 @@ private static final long serialVersionUID = 0L;
     public static final int RSA_SIGN_PKCS1_4096_SHA512_VALUE = 16;
     /**
      * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 2048 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_2048 = 28;</code>
+     */
+    public static final int RSA_SIGN_RAW_PKCS1_2048_VALUE = 28;
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 3072 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_3072 = 29;</code>
+     */
+    public static final int RSA_SIGN_RAW_PKCS1_3072_VALUE = 29;
+    /**
+     * <pre>
+     * RSASSA-PKCS1-v1_5 signing without encoding, with a 4096 bit key.
+     * </pre>
+     *
+     * <code>RSA_SIGN_RAW_PKCS1_4096 = 30;</code>
+     */
+    public static final int RSA_SIGN_RAW_PKCS1_4096_VALUE = 30;
+    /**
+     * <pre>
      * RSAES-OAEP 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -659,6 +707,9 @@ private static final long serialVersionUID = 0L;
         case 6: return RSA_SIGN_PKCS1_3072_SHA256;
         case 7: return RSA_SIGN_PKCS1_4096_SHA256;
         case 16: return RSA_SIGN_PKCS1_4096_SHA512;
+        case 28: return RSA_SIGN_RAW_PKCS1_2048;
+        case 29: return RSA_SIGN_RAW_PKCS1_3072;
+        case 30: return RSA_SIGN_RAW_PKCS1_4096;
         case 8: return RSA_DECRYPT_OAEP_2048_SHA256;
         case 9: return RSA_DECRYPT_OAEP_3072_SHA256;
         case 10: return RSA_DECRYPT_OAEP_4096_SHA256;
