@@ -421,7 +421,7 @@ class LookupServiceClient(metaclass=LookupServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-servicedirectory",
+            "google-cloud-service-directory",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
