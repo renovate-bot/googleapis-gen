@@ -95,8 +95,8 @@ class DeliveryPipeline(proto.Message):
             user and by Google Cloud Deploy. Labels must meet the
             following constraints: Each resource is limited to 64
             labels. Keys must conform to the regexp:
-            [a-zA-Z][a-zA-Z0-9_-]{0,62} Values must conform to the
-            regexp: [a-zA-Z0-9_-]{0,63} Both keys and values are
+            ``[a-zA-Z][a-zA-Z0-9_-]{0,62}``. Values must conform to the
+            regexp: ``[a-zA-Z0-9_-]{0,63}``. Both keys and values are
             additionally constrained to be <= 128 bytes in size.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. Time at which the pipeline was
@@ -613,8 +613,8 @@ class Target(proto.Message):
             both the user and by Google Cloud Deploy. Labels must meet
             the following constraints: Each resource is limited to 64
             labels. Keys must conform to the regexp:
-            [a-zA-Z][a-zA-Z0-9_-]{0,62} Values must conform to the
-            regexp: [a-zA-Z0-9_-]{0,63} Both keys and values are
+            ``[a-zA-Z][a-zA-Z0-9_-]{0,62}``. Values must conform to the
+            regexp: ``[a-zA-Z0-9_-]{0,63}``. Both keys and values are
             additionally constrained to be <= 128 bytes in size.
         require_approval (bool):
             Optional. Whether or not the ``Target`` requires approval.
@@ -1130,8 +1130,8 @@ class Release(proto.Message):
             user and by Google Cloud Deploy. Labels must meet the
             following constraints: Each resource is limited to 64
             labels. Keys must conform to the regexp:
-            [a-zA-Z][a-zA-Z0-9_-]{0,62} Values must conform to the
-            regexp: [a-zA-Z0-9_-]{0,63} Both keys and values are
+            ``[a-zA-Z][a-zA-Z0-9_-]{0,62}``. Values must conform to the
+            regexp: ``[a-zA-Z0-9_-]{0,63}``. Both keys and values are
             additionally constrained to be <= 128 bytes in size.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. Time at which the ``Release`` was created.
@@ -1544,8 +1544,8 @@ class Rollout(proto.Message):
             user and by Google Cloud Deploy. Labels must meet the
             following constraints: Each resource is limited to 64
             labels. Keys must conform to the regexp:
-            [a-zA-Z][a-zA-Z0-9_-]{0,62} Values must conform to the
-            regexp: [a-zA-Z0-9_-]{0,63} Both keys and values are
+            ``[a-zA-Z][a-zA-Z0-9_-]{0,62}``. Values must conform to the
+            regexp: ``[a-zA-Z0-9_-]{0,63}``. Both keys and values are
             additionally constrained to be <= 128 bytes in size.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. Time at which the ``Rollout`` was created.
