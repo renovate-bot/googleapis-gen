@@ -748,7 +748,6 @@ module Google
             end
 
             # The configuration settings for Cloud Composer maintenance window.
-            #
             # The following example:
             #
             #    {

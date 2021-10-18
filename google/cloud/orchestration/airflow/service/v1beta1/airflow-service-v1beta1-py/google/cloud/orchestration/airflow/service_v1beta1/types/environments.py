@@ -1101,8 +1101,7 @@ class EncryptionConfig(proto.Message):
 
 class MaintenanceWindow(proto.Message):
     r"""The configuration settings for Cloud Composer maintenance
-    window.
-    The following example:
+    window. The following example:
 
        {
          "startTime":"2019-08-01T01:00:00Z"

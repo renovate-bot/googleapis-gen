@@ -6035,7 +6035,6 @@ namespace Google.Cloud.Orchestration.Airflow.Service.V1Beta1 {
 
   /// <summary>
   /// The configuration settings for Cloud Composer maintenance window.
-  ///
   /// The following example:
   ///
   ///    {
