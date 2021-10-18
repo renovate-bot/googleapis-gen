@@ -32,6 +32,7 @@ private static final long serialVersionUID = 0L;
     facetSpecs_ = java.util.Collections.emptyList();
     variantRollupKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     pageCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    searchMode_ = 0;
   }
 
   @java.lang.Override
@@ -202,6 +203,12 @@ private static final long serialVersionUID = 0L;
             canonicalFilter_ = s;
             break;
           }
+          case 248: {
+            int rawValue = input.readEnum();
+
+            searchMode_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -241,6 +248,181 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.retail.v2.SearchServiceProto.internal_static_google_cloud_retail_v2_SearchRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.retail.v2.SearchRequest.class, com.google.cloud.retail.v2.SearchRequest.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * The search mode of each search request.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2.SearchRequest.SearchMode}
+   */
+  public enum SearchMode
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Default value. In this case both product search and faceted search will
+     * be performed. Both [SearchResponse.SearchResult] and
+     * [SearchResponse.Facet] will be returned.
+     * </pre>
+     *
+     * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
+     */
+    SEARCH_MODE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Only product search will be performed. The faceted search will be
+     * disabled.
+     * Only [SearchResponse.SearchResult] will be returned.
+     * [SearchResponse.Facet] will not be returned, even if
+     * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+     * or
+     * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2.SearchRequest.dynamic_facet_spec]
+     * is set.
+     * </pre>
+     *
+     * <code>PRODUCT_SEARCH_ONLY = 1;</code>
+     */
+    PRODUCT_SEARCH_ONLY(1),
+    /**
+     * <pre>
+     * Only faceted search will be performed. The product search will be
+     * disabled.
+     * When in this mode, one or both of [SearchRequest.facet_spec][] and
+     * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2.SearchRequest.dynamic_facet_spec]
+     * should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
+     * [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
+     * will not be returned.
+     * </pre>
+     *
+     * <code>FACETED_SEARCH_ONLY = 2;</code>
+     */
+    FACETED_SEARCH_ONLY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Default value. In this case both product search and faceted search will
+     * be performed. Both [SearchResponse.SearchResult] and
+     * [SearchResponse.Facet] will be returned.
+     * </pre>
+     *
+     * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SEARCH_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Only product search will be performed. The faceted search will be
+     * disabled.
+     * Only [SearchResponse.SearchResult] will be returned.
+     * [SearchResponse.Facet] will not be returned, even if
+     * [SearchRequest.facet_specs][google.cloud.retail.v2.SearchRequest.facet_specs]
+     * or
+     * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2.SearchRequest.dynamic_facet_spec]
+     * is set.
+     * </pre>
+     *
+     * <code>PRODUCT_SEARCH_ONLY = 1;</code>
+     */
+    public static final int PRODUCT_SEARCH_ONLY_VALUE = 1;
+    /**
+     * <pre>
+     * Only faceted search will be performed. The product search will be
+     * disabled.
+     * When in this mode, one or both of [SearchRequest.facet_spec][] and
+     * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2.SearchRequest.dynamic_facet_spec]
+     * should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
+     * [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
+     * will not be returned.
+     * </pre>
+     *
+     * <code>FACETED_SEARCH_ONLY = 2;</code>
+     */
+    public static final int FACETED_SEARCH_ONLY_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SearchMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SearchMode forNumber(int value) {
+      switch (value) {
+        case 0: return SEARCH_MODE_UNSPECIFIED;
+        case 1: return PRODUCT_SEARCH_ONLY;
+        case 2: return FACETED_SEARCH_ONLY;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SearchMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SearchMode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SearchMode>() {
+            public SearchMode findValueByNumber(int number) {
+              return SearchMode.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.retail.v2.SearchRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SearchMode[] VALUES = values();
+
+    public static SearchMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SearchMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.SearchRequest.SearchMode)
   }
 
   public interface FacetSpecOrBuilder extends
@@ -569,6 +751,7 @@ private static final long serialVersionUID = 0L;
        *     * "rating"
        *     * "ratingCount"
        *     * "attributes.key"
+       *     * "inventory(place_id,price)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -611,6 +794,7 @@ private static final long serialVersionUID = 0L;
        *     * "rating"
        *     * "ratingCount"
        *     * "attributes.key"
+       *     * "inventory(place_id,price)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1177,6 +1361,7 @@ private static final long serialVersionUID = 0L;
        *     * "rating"
        *     * "ratingCount"
        *     * "attributes.key"
+       *     * "inventory(place_id,price)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1231,6 +1416,7 @@ private static final long serialVersionUID = 0L;
        *     * "rating"
        *     * "ratingCount"
        *     * "attributes.key"
+       *     * "inventory(place_id,price)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2250,6 +2436,7 @@ private static final long serialVersionUID = 0L;
          *     * "rating"
          *     * "ratingCount"
          *     * "attributes.key"
+         *     * "inventory(place_id,price)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2303,6 +2490,7 @@ private static final long serialVersionUID = 0L;
          *     * "rating"
          *     * "ratingCount"
          *     * "attributes.key"
+         *     * "inventory(place_id,price)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2357,6 +2545,7 @@ private static final long serialVersionUID = 0L;
          *     * "rating"
          *     * "ratingCount"
          *     * "attributes.key"
+         *     * "inventory(place_id,price)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2409,6 +2598,7 @@ private static final long serialVersionUID = 0L;
          *     * "rating"
          *     * "ratingCount"
          *     * "attributes.key"
+         *     * "inventory(place_id,price)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2456,6 +2646,7 @@ private static final long serialVersionUID = 0L;
          *     * "rating"
          *     * "ratingCount"
          *     * "attributes.key"
+         *     * "inventory(place_id,price)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8491,10 +8682,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The resource name of the search engine placement, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the set of models that will be used to make
-   * the search.
-   * We currently support one placement with the following ID:
-   * * `default_search`.
+   * This field is used to identify the serving configuration name and the set
+   * of models that will be used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8517,10 +8706,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The resource name of the search engine placement, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the set of models that will be used to make
-   * the search.
-   * We currently support one placement with the following ID:
-   * * `default_search`.
+   * This field is used to identify the serving configuration name and the set
+   * of models that will be used to make the search.
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8839,7 +9026,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive.
+   * expression is case-sensitive. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -8863,7 +9051,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive.
+   * expression is case-sensitive. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -8951,7 +9140,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive.
+   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+   * more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -8975,7 +9166,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive.
+   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+   * more details at this [user
+   * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -9118,7 +9311,13 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.retail.v2.SearchRequest.BoostSpec boostSpec_;
   /**
    * <pre>
-   * Boost specification to boost certain products.
+   * Boost specification to boost certain products. See more details at this
+   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * [SearchRequest.boost_spec] are set, the boost conditions from both places
+   * are evaluated. If a search request matches multiple boost conditions,
+   * the final boost score is equal to the sum of the boost scores from all
+   * matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -9130,7 +9329,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Boost specification to boost certain products.
+   * Boost specification to boost certain products. See more details at this
+   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * [SearchRequest.boost_spec] are set, the boost conditions from both places
+   * are evaluated. If a search request matches multiple boost conditions,
+   * the final boost score is equal to the sum of the boost scores from all
+   * matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -9142,7 +9347,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Boost specification to boost certain products.
+   * Boost specification to boost certain products. See more details at this
+   * [user guide](https://cloud.google.com/retail/docs/boosting).
+   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * [SearchRequest.boost_spec] are set, the boost conditions from both places
+   * are evaluated. If a search request matches multiple boost conditions,
+   * the final boost score is equal to the sum of the boost scores from all
+   * matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -9157,7 +9368,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion will occur. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -9170,7 +9382,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion will occur. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -9183,7 +9396,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion will occur. See more details at this [user
+   * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -9214,6 +9428,7 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9282,6 +9497,7 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9349,6 +9565,7 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9417,6 +9634,7 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * inventory(place_id,price)
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9555,6 +9773,35 @@ private static final long serialVersionUID = 0L;
     return pageCategories_.getByteString(index);
   }
 
+  public static final int SEARCH_MODE_FIELD_NUMBER = 31;
+  private int searchMode_;
+  /**
+   * <pre>
+   * The search mode of the search request. If not specified, a single search
+   * request triggers both product search and faceted search.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+   * @return The enum numeric value on the wire for searchMode.
+   */
+  @java.lang.Override public int getSearchModeValue() {
+    return searchMode_;
+  }
+  /**
+   * <pre>
+   * The search mode of the search request. If not specified, a single search
+   * request triggers both product search and faceted search.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+   * @return The searchMode.
+   */
+  @java.lang.Override public com.google.cloud.retail.v2.SearchRequest.SearchMode getSearchMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.retail.v2.SearchRequest.SearchMode result = com.google.cloud.retail.v2.SearchRequest.SearchMode.valueOf(searchMode_);
+    return result == null ? com.google.cloud.retail.v2.SearchRequest.SearchMode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -9619,6 +9866,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, canonicalFilter_);
+    }
+    if (searchMode_ != com.google.cloud.retail.v2.SearchRequest.SearchMode.SEARCH_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(31, searchMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -9697,6 +9947,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, canonicalFilter_);
     }
+    if (searchMode_ != com.google.cloud.retail.v2.SearchRequest.SearchMode.SEARCH_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(31, searchMode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9758,6 +10012,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getVariantRollupKeysList())) return false;
     if (!getPageCategoriesList()
         .equals(other.getPageCategoriesList())) return false;
+    if (searchMode_ != other.searchMode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -9817,6 +10072,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PAGE_CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getPageCategoriesList().hashCode();
     }
+    hash = (37 * hash) + SEARCH_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + searchMode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -10010,6 +10267,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       pageCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      searchMode_ = 0;
+
       return this;
     }
 
@@ -10086,6 +10345,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.pageCategories_ = pageCategories_;
+      result.searchMode_ = searchMode_;
       onBuilt();
       return result;
     }
@@ -10230,6 +10490,9 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.searchMode_ != 0) {
+        setSearchModeValue(other.getSearchModeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -10265,10 +10528,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the search engine placement, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the set of models that will be used to make
-     * the search.
-     * We currently support one placement with the following ID:
-     * * `default_search`.
+     * This field is used to identify the serving configuration name and the set
+     * of models that will be used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10290,10 +10551,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the search engine placement, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the set of models that will be used to make
-     * the search.
-     * We currently support one placement with the following ID:
-     * * `default_search`.
+     * This field is used to identify the serving configuration name and the set
+     * of models that will be used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10316,10 +10575,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the search engine placement, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the set of models that will be used to make
-     * the search.
-     * We currently support one placement with the following ID:
-     * * `default_search`.
+     * This field is used to identify the serving configuration name and the set
+     * of models that will be used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10340,10 +10597,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the search engine placement, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the set of models that will be used to make
-     * the search.
-     * We currently support one placement with the following ID:
-     * * `default_search`.
+     * This field is used to identify the serving configuration name and the set
+     * of models that will be used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10359,10 +10614,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the search engine placement, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the set of models that will be used to make
-     * the search.
-     * We currently support one placement with the following ID:
-     * * `default_search`.
+     * This field is used to identify the serving configuration name and the set
+     * of models that will be used to make the search.
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11115,7 +11368,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive.
+     * expression is case-sensitive. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11138,7 +11392,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive.
+     * expression is case-sensitive. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11162,7 +11417,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive.
+     * expression is case-sensitive. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11184,7 +11440,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive.
+     * expression is case-sensitive. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11201,7 +11458,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive.
+     * expression is case-sensitive. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11357,7 +11615,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive.
+     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     * more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11380,7 +11640,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive.
+     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     * more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11404,7 +11666,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive.
+     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     * more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11426,7 +11690,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive.
+     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     * more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11443,7 +11709,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive.
+     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     * more details at this [user
+     * guide](https://cloud.google.com/retail/docs/filter-and-order#order).
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11998,7 +12266,13 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.retail.v2.SearchRequest.BoostSpec, com.google.cloud.retail.v2.SearchRequest.BoostSpec.Builder, com.google.cloud.retail.v2.SearchRequest.BoostSpecOrBuilder> boostSpecBuilder_;
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12009,7 +12283,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12024,7 +12304,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12044,7 +12330,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12062,7 +12354,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12084,7 +12382,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12102,7 +12406,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12114,7 +12424,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12129,7 +12445,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products.
+     * Boost specification to boost certain products. See more details at this
+     * [user guide](https://cloud.google.com/retail/docs/boosting).
+     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * [SearchRequest.boost_spec] are set, the boost conditions from both places
+     * are evaluated. If a search request matches multiple boost conditions,
+     * the final boost score is equal to the sum of the boost scores from all
+     * matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12154,7 +12476,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12166,7 +12489,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12182,7 +12506,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12203,7 +12528,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12222,7 +12548,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12245,7 +12572,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12264,7 +12592,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12277,7 +12606,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12293,7 +12623,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur.
+     * query expansion will occur. See more details at this [user
+     * guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12338,6 +12669,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12406,6 +12738,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12473,6 +12806,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12541,6 +12875,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12610,6 +12945,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12686,6 +13022,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12761,6 +13098,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12834,6 +13172,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12904,6 +13243,7 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * inventory(place_id,price)
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -13185,6 +13525,85 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensurePageCategoriesIsMutable();
       pageCategories_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int searchMode_ = 0;
+    /**
+     * <pre>
+     * The search mode of the search request. If not specified, a single search
+     * request triggers both product search and faceted search.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+     * @return The enum numeric value on the wire for searchMode.
+     */
+    @java.lang.Override public int getSearchModeValue() {
+      return searchMode_;
+    }
+    /**
+     * <pre>
+     * The search mode of the search request. If not specified, a single search
+     * request triggers both product search and faceted search.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+     * @param value The enum numeric value on the wire for searchMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchModeValue(int value) {
+      
+      searchMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The search mode of the search request. If not specified, a single search
+     * request triggers both product search and faceted search.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+     * @return The searchMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.SearchRequest.SearchMode getSearchMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2.SearchRequest.SearchMode result = com.google.cloud.retail.v2.SearchRequest.SearchMode.valueOf(searchMode_);
+      return result == null ? com.google.cloud.retail.v2.SearchRequest.SearchMode.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The search mode of the search request. If not specified, a single search
+     * request triggers both product search and faceted search.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+     * @param value The searchMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchMode(com.google.cloud.retail.v2.SearchRequest.SearchMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      searchMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The search mode of the search request. If not specified, a single search
+     * request triggers both product search and faceted search.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.SearchMode search_mode = 31;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchMode() {
+      
+      searchMode_ = 0;
       onChanged();
       return this;
     }

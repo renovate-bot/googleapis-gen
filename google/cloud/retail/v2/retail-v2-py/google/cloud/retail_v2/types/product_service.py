@@ -403,7 +403,7 @@ class SetInventoryRequest(proto.Message):
             found, the inventory update will still be processed and
             retained for at most 1 day until the
             [Product][google.cloud.retail.v2.Product] is created. If set
-            to false, an INVALID_ARGUMENT error is returned if the
+            to false, a NOT_FOUND error is returned if the
             [Product][google.cloud.retail.v2.Product] is not found.
     """
 
@@ -507,7 +507,7 @@ class AddFulfillmentPlacesRequest(proto.Message):
             fulfillment information will still be processed and retained
             for at most 1 day and processed once the
             [Product][google.cloud.retail.v2.Product] is created. If set
-            to false, an INVALID_ARGUMENT error is returned if the
+            to false, a NOT_FOUND error is returned if the
             [Product][google.cloud.retail.v2.Product] is not found.
     """
 
@@ -543,8 +543,8 @@ class AddFulfillmentPlacesMetadata(proto.Message):
 
 
 class AddFulfillmentPlacesResponse(proto.Message):
-    r"""Response of the RemoveFulfillmentPlacesRequest. Currently empty
-    because there is no meaningful response populated from the
+    r"""Response of the AddFulfillmentPlacesRequest. Currently empty because
+    there is no meaningful response populated from the
     [AddFulfillmentPlaces][] method.
 
     """
@@ -608,7 +608,7 @@ class RemoveFulfillmentPlacesRequest(proto.Message):
             fulfillment information will still be processed and retained
             for at most 1 day and processed once the
             [Product][google.cloud.retail.v2.Product] is created. If set
-            to false, an INVALID_ARGUMENT error is returned if the
+            to false, a NOT_FOUND error is returned if the
             [Product][google.cloud.retail.v2.Product] is not found.
     """
 

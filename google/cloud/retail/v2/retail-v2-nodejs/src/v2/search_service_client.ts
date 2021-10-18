@@ -338,12 +338,8 @@ export class SearchServiceClient {
  * @param {string} request.placement
  *   Required. The resource name of the search engine placement, such as
  *   `projects/* /locations/global/catalogs/default_catalog/placements/default_search`.
- *   This field is used to identify the set of models that will be used to make
- *   the search.
- *
- *   We currently support one placement with the following ID:
- *
- *   * `default_search`.
+ *   This field is used to identify the serving configuration name and the set
+ *   of models that will be used to make the search.
  * @param {string} request.branch
  *   The branch resource name, such as
  *   `projects/* /locations/global/catalogs/default_catalog/branches/0`.
@@ -390,7 +386,8 @@ export class SearchServiceClient {
  * @param {string} request.filter
  *   The filter syntax consists of an expression language for constructing a
  *   predicate from one or more fields of the products being filtered. Filter
- *   expression is case-sensitive.
+ *   expression is case-sensitive. See more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
  *
  *   If this field is unrecognizable, an INVALID_ARGUMENT is returned.
  * @param {string} request.canonicalFilter
@@ -406,7 +403,9 @@ export class SearchServiceClient {
  * @param {string} request.orderBy
  *   The order in which products are returned. Products can be ordered by
  *   a field in an {@link google.cloud.retail.v2.Product|Product} object. Leave it
- *   unset if ordered by relevance. OrderBy expression is case-sensitive.
+ *   unset if ordered by relevance. OrderBy expression is case-sensitive. See
+ *   more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/filter-and-order#order).
  *
  *   If this field is unrecognizable, an INVALID_ARGUMENT is returned.
  * @param {number[]} request.facetSpecs
@@ -421,10 +420,18 @@ export class SearchServiceClient {
  *   This feature requires additional allowlisting. Contact Retail Search
  *   support team if you are interested in using dynamic facet feature.
  * @param {google.cloud.retail.v2.SearchRequest.BoostSpec} request.boostSpec
- *   Boost specification to boost certain products.
+ *   Boost specification to boost certain products. See more details at this
+ *   [user guide](https://cloud.google.com/retail/docs/boosting).
+ *
+ *   Notice that if both {@link |ServingConfig.boost_control_ids} and
+ *   [SearchRequest.boost_spec] are set, the boost conditions from both places
+ *   are evaluated. If a search request matches multiple boost conditions,
+ *   the final boost score is equal to the sum of the boost scores from all
+ *   matched boost conditions.
  * @param {google.cloud.retail.v2.SearchRequest.QueryExpansionSpec} request.queryExpansionSpec
  *   The query expansion specification that specifies the conditions under which
- *   query expansion will occur.
+ *   query expansion will occur. See more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
  * @param {string[]} request.variantRollupKeys
  *   The keys to fetch and rollup the matching
  *   {@link google.cloud.retail.v2.Product.Type.VARIANT|variant}
@@ -446,6 +453,7 @@ export class SearchServiceClient {
  *   * price
  *   * originalPrice
  *   * discount
+ *   * inventory(place_id,price)
  *   * attributes.key, where key is any key in the
  *     {@link google.cloud.retail.v2.Product.attributes|Product.attributes} map.
  *   * pickupInStore.id, where id is any
@@ -500,6 +508,9 @@ export class SearchServiceClient {
  *   Category pages include special pages such as sales or promotions. For
  *   instance, a special sale page may have the category hierarchy:
  *   "pageCategories" : ["Sales > 2017 Black Friday Deals"].
+ * @param {google.cloud.retail.v2.SearchRequest.SearchMode} request.searchMode
+ *   The search mode of the search request. If not specified, a single search
+ *   request triggers both product search and faceted search.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -556,12 +567,8 @@ export class SearchServiceClient {
  * @param {string} request.placement
  *   Required. The resource name of the search engine placement, such as
  *   `projects/* /locations/global/catalogs/default_catalog/placements/default_search`.
- *   This field is used to identify the set of models that will be used to make
- *   the search.
- *
- *   We currently support one placement with the following ID:
- *
- *   * `default_search`.
+ *   This field is used to identify the serving configuration name and the set
+ *   of models that will be used to make the search.
  * @param {string} request.branch
  *   The branch resource name, such as
  *   `projects/* /locations/global/catalogs/default_catalog/branches/0`.
@@ -608,7 +615,8 @@ export class SearchServiceClient {
  * @param {string} request.filter
  *   The filter syntax consists of an expression language for constructing a
  *   predicate from one or more fields of the products being filtered. Filter
- *   expression is case-sensitive.
+ *   expression is case-sensitive. See more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
  *
  *   If this field is unrecognizable, an INVALID_ARGUMENT is returned.
  * @param {string} request.canonicalFilter
@@ -624,7 +632,9 @@ export class SearchServiceClient {
  * @param {string} request.orderBy
  *   The order in which products are returned. Products can be ordered by
  *   a field in an {@link google.cloud.retail.v2.Product|Product} object. Leave it
- *   unset if ordered by relevance. OrderBy expression is case-sensitive.
+ *   unset if ordered by relevance. OrderBy expression is case-sensitive. See
+ *   more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/filter-and-order#order).
  *
  *   If this field is unrecognizable, an INVALID_ARGUMENT is returned.
  * @param {number[]} request.facetSpecs
@@ -639,10 +649,18 @@ export class SearchServiceClient {
  *   This feature requires additional allowlisting. Contact Retail Search
  *   support team if you are interested in using dynamic facet feature.
  * @param {google.cloud.retail.v2.SearchRequest.BoostSpec} request.boostSpec
- *   Boost specification to boost certain products.
+ *   Boost specification to boost certain products. See more details at this
+ *   [user guide](https://cloud.google.com/retail/docs/boosting).
+ *
+ *   Notice that if both {@link |ServingConfig.boost_control_ids} and
+ *   [SearchRequest.boost_spec] are set, the boost conditions from both places
+ *   are evaluated. If a search request matches multiple boost conditions,
+ *   the final boost score is equal to the sum of the boost scores from all
+ *   matched boost conditions.
  * @param {google.cloud.retail.v2.SearchRequest.QueryExpansionSpec} request.queryExpansionSpec
  *   The query expansion specification that specifies the conditions under which
- *   query expansion will occur.
+ *   query expansion will occur. See more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
  * @param {string[]} request.variantRollupKeys
  *   The keys to fetch and rollup the matching
  *   {@link google.cloud.retail.v2.Product.Type.VARIANT|variant}
@@ -664,6 +682,7 @@ export class SearchServiceClient {
  *   * price
  *   * originalPrice
  *   * discount
+ *   * inventory(place_id,price)
  *   * attributes.key, where key is any key in the
  *     {@link google.cloud.retail.v2.Product.attributes|Product.attributes} map.
  *   * pickupInStore.id, where id is any
@@ -718,6 +737,9 @@ export class SearchServiceClient {
  *   Category pages include special pages such as sales or promotions. For
  *   instance, a special sale page may have the category hierarchy:
  *   "pageCategories" : ["Sales > 2017 Black Friday Deals"].
+ * @param {google.cloud.retail.v2.SearchRequest.SearchMode} request.searchMode
+ *   The search mode of the search request. If not specified, a single search
+ *   request triggers both product search and faceted search.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Stream}
@@ -762,12 +784,8 @@ export class SearchServiceClient {
  * @param {string} request.placement
  *   Required. The resource name of the search engine placement, such as
  *   `projects/* /locations/global/catalogs/default_catalog/placements/default_search`.
- *   This field is used to identify the set of models that will be used to make
- *   the search.
- *
- *   We currently support one placement with the following ID:
- *
- *   * `default_search`.
+ *   This field is used to identify the serving configuration name and the set
+ *   of models that will be used to make the search.
  * @param {string} request.branch
  *   The branch resource name, such as
  *   `projects/* /locations/global/catalogs/default_catalog/branches/0`.
@@ -814,7 +832,8 @@ export class SearchServiceClient {
  * @param {string} request.filter
  *   The filter syntax consists of an expression language for constructing a
  *   predicate from one or more fields of the products being filtered. Filter
- *   expression is case-sensitive.
+ *   expression is case-sensitive. See more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
  *
  *   If this field is unrecognizable, an INVALID_ARGUMENT is returned.
  * @param {string} request.canonicalFilter
@@ -830,7 +849,9 @@ export class SearchServiceClient {
  * @param {string} request.orderBy
  *   The order in which products are returned. Products can be ordered by
  *   a field in an {@link google.cloud.retail.v2.Product|Product} object. Leave it
- *   unset if ordered by relevance. OrderBy expression is case-sensitive.
+ *   unset if ordered by relevance. OrderBy expression is case-sensitive. See
+ *   more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/filter-and-order#order).
  *
  *   If this field is unrecognizable, an INVALID_ARGUMENT is returned.
  * @param {number[]} request.facetSpecs
@@ -845,10 +866,18 @@ export class SearchServiceClient {
  *   This feature requires additional allowlisting. Contact Retail Search
  *   support team if you are interested in using dynamic facet feature.
  * @param {google.cloud.retail.v2.SearchRequest.BoostSpec} request.boostSpec
- *   Boost specification to boost certain products.
+ *   Boost specification to boost certain products. See more details at this
+ *   [user guide](https://cloud.google.com/retail/docs/boosting).
+ *
+ *   Notice that if both {@link |ServingConfig.boost_control_ids} and
+ *   [SearchRequest.boost_spec] are set, the boost conditions from both places
+ *   are evaluated. If a search request matches multiple boost conditions,
+ *   the final boost score is equal to the sum of the boost scores from all
+ *   matched boost conditions.
  * @param {google.cloud.retail.v2.SearchRequest.QueryExpansionSpec} request.queryExpansionSpec
  *   The query expansion specification that specifies the conditions under which
- *   query expansion will occur.
+ *   query expansion will occur. See more details at this [user
+ *   guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
  * @param {string[]} request.variantRollupKeys
  *   The keys to fetch and rollup the matching
  *   {@link google.cloud.retail.v2.Product.Type.VARIANT|variant}
@@ -870,6 +899,7 @@ export class SearchServiceClient {
  *   * price
  *   * originalPrice
  *   * discount
+ *   * inventory(place_id,price)
  *   * attributes.key, where key is any key in the
  *     {@link google.cloud.retail.v2.Product.attributes|Product.attributes} map.
  *   * pickupInStore.id, where id is any
@@ -924,6 +954,9 @@ export class SearchServiceClient {
  *   Category pages include special pages such as sales or promotions. For
  *   instance, a special sale page may have the category hierarchy:
  *   "pageCategories" : ["Sales > 2017 Black Friday Deals"].
+ * @param {google.cloud.retail.v2.SearchRequest.SearchMode} request.searchMode
+ *   The search mode of the search request. If not specified, a single search
+ *   request triggers both product search and faceted search.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Object}

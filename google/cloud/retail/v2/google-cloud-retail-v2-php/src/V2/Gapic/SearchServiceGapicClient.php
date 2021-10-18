@@ -40,6 +40,7 @@ use Google\Cloud\Retail\V2\SearchRequest\DynamicFacetSpec;
 use Google\Cloud\Retail\V2\SearchRequest\FacetSpec;
 use Google\Cloud\Retail\V2\SearchRequest\QueryExpansionSpec;
 use Google\Cloud\Retail\V2\SearchResponse;
+
 use Google\Cloud\Retail\V2\UserInfo;
 
 /**
@@ -309,12 +310,8 @@ class SearchServiceGapicClient
      *
      * @param string $placement    Required. The resource name of the search engine placement, such as
      *                             `projects/&#42;/locations/global/catalogs/default_catalog/placements/default_search`.
-     *                             This field is used to identify the set of models that will be used to make
-     *                             the search.
-     *
-     *                             We currently support one placement with the following ID:
-     *
-     *                             * `default_search`.
+     *                             This field is used to identify the serving configuration name and the set
+     *                             of models that will be used to make the search.
      * @param string $visitorId    Required. A unique identifier for tracking visitors. For example, this
      *                             could be implemented with an HTTP cookie, which should be able to uniquely
      *                             identify a visitor on a single device. This unique identifier should not
@@ -355,7 +352,8 @@ class SearchServiceGapicClient
      *     @type string $filter
      *           The filter syntax consists of an expression language for constructing a
      *           predicate from one or more fields of the products being filtered. Filter
-     *           expression is case-sensitive.
+     *           expression is case-sensitive. See more details at this [user
+     *           guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
      *
      *           If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      *     @type string $canonicalFilter
@@ -371,7 +369,9 @@ class SearchServiceGapicClient
      *     @type string $orderBy
      *           The order in which products are returned. Products can be ordered by
      *           a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     *           unset if ordered by relevance. OrderBy expression is case-sensitive.
+     *           unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     *           more details at this [user
+     *           guide](https://cloud.google.com/retail/docs/filter-and-order#order).
      *
      *           If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      *     @type FacetSpec[] $facetSpecs
@@ -386,10 +386,18 @@ class SearchServiceGapicClient
      *           This feature requires additional allowlisting. Contact Retail Search
      *           support team if you are interested in using dynamic facet feature.
      *     @type BoostSpec $boostSpec
-     *           Boost specification to boost certain products.
+     *           Boost specification to boost certain products. See more details at this
+     *           [user guide](https://cloud.google.com/retail/docs/boosting).
+     *
+     *           Notice that if both [ServingConfig.boost_control_ids][] and
+     *           [SearchRequest.boost_spec] are set, the boost conditions from both places
+     *           are evaluated. If a search request matches multiple boost conditions,
+     *           the final boost score is equal to the sum of the boost scores from all
+     *           matched boost conditions.
      *     @type QueryExpansionSpec $queryExpansionSpec
      *           The query expansion specification that specifies the conditions under which
-     *           query expansion will occur.
+     *           query expansion will occur. See more details at this [user
+     *           guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
      *     @type string[] $variantRollupKeys
      *           The keys to fetch and rollup the matching
      *           [variant][google.cloud.retail.v2.Product.Type.VARIANT]
@@ -411,6 +419,7 @@ class SearchServiceGapicClient
      *           * price
      *           * originalPrice
      *           * discount
+     *           * inventory(place_id,price)
      *           * attributes.key, where key is any key in the
      *           [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
      *           * pickupInStore.id, where id is any
@@ -465,6 +474,10 @@ class SearchServiceGapicClient
      *           Category pages include special pages such as sales or promotions. For
      *           instance, a special sale page may have the category hierarchy:
      *           "pageCategories" : ["Sales > 2017 Black Friday Deals"].
+     *     @type int $searchMode
+     *           The search mode of the search request. If not specified, a single search
+     *           request triggers both product search and faceted search.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Retail\V2\SearchRequest\SearchMode}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -541,6 +554,10 @@ class SearchServiceGapicClient
 
         if (isset($optionalArgs['pageCategories'])) {
             $request->setPageCategories($optionalArgs['pageCategories']);
+        }
+
+        if (isset($optionalArgs['searchMode'])) {
+            $request->setSearchMode($optionalArgs['searchMode']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

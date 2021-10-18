@@ -34,6 +34,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :relevance_threshold, :enum, 15, "google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold"
       repeated :variant_rollup_keys, :string, 17
       repeated :page_categories, :string, 23
+      optional :search_mode, :enum, 31, "google.cloud.retail.v2alpha.SearchRequest.SearchMode"
     end
     add_message "google.cloud.retail.v2alpha.SearchRequest.FacetSpec" do
       optional :facet_key, :message, 1, "google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey"
@@ -80,6 +81,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :MEDIUM, 2
       value :LOW, 3
       value :LOWEST, 4
+    end
+    add_enum "google.cloud.retail.v2alpha.SearchRequest.SearchMode" do
+      value :SEARCH_MODE_UNSPECIFIED, 0
+      value :PRODUCT_SEARCH_ONLY, 1
+      value :FACETED_SEARCH_ONLY, 2
     end
     add_message "google.cloud.retail.v2alpha.SearchResponse" do
       repeated :results, :message, 1, "google.cloud.retail.v2alpha.SearchResponse.SearchResult"
@@ -131,6 +137,7 @@ module Google
         SearchRequest::QueryExpansionSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec").msgclass
         SearchRequest::QueryExpansionSpec::Condition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec.Condition").enummodule
         SearchRequest::RelevanceThreshold = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold").enummodule
+        SearchRequest::SearchMode = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchRequest.SearchMode").enummodule
         SearchResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchResponse").msgclass
         SearchResponse::SearchResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchResponse.SearchResult").msgclass
         SearchResponse::Facet = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SearchResponse.Facet").msgclass

@@ -19,6 +19,10 @@ public interface ProductOrBuilder extends
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
    * and
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] must be later
+   * than [available_time][google.cloud.retail.v2.Product.available_time] and
+   * [publish_time][google.cloud.retail.v2.Product.publish_time], otherwise an
+   * INVALID_ARGUMENT error is thrown.
    * Google Merchant Center property
    * [expiration_date](https://support.google.com/merchants/answer/6324499).
    * </pre>
@@ -39,6 +43,10 @@ public interface ProductOrBuilder extends
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
    * and
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] must be later
+   * than [available_time][google.cloud.retail.v2.Product.available_time] and
+   * [publish_time][google.cloud.retail.v2.Product.publish_time], otherwise an
+   * INVALID_ARGUMENT error is thrown.
    * Google Merchant Center property
    * [expiration_date](https://support.google.com/merchants/answer/6324499).
    * </pre>
@@ -59,6 +67,10 @@ public interface ProductOrBuilder extends
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
    * and
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] must be later
+   * than [available_time][google.cloud.retail.v2.Product.available_time] and
+   * [publish_time][google.cloud.retail.v2.Product.publish_time], otherwise an
+   * INVALID_ARGUMENT error is thrown.
    * Google Merchant Center property
    * [expiration_date](https://support.google.com/merchants/answer/6324499).
    * </pre>
@@ -70,12 +82,12 @@ public interface ProductOrBuilder extends
   /**
    * <pre>
    * Input only. The TTL (time to live) of the product.
-   * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
-   * is set as current timestamp plus
-   * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
-   * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
-   * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
-   * when retrieving the [Product][google.cloud.retail.v2.Product].
+   * If it is set, it must be a non-negative value, and
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
+   * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
+   * derived [expire_time][google.cloud.retail.v2.Product.expire_time] is
+   * returned in the output and [ttl][google.cloud.retail.v2.Product.ttl] is
+   * left blank when retrieving the [Product][google.cloud.retail.v2.Product].
    * If it is set, the product is not available for
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
    * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
@@ -92,12 +104,12 @@ public interface ProductOrBuilder extends
   /**
    * <pre>
    * Input only. The TTL (time to live) of the product.
-   * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
-   * is set as current timestamp plus
-   * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
-   * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
-   * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
-   * when retrieving the [Product][google.cloud.retail.v2.Product].
+   * If it is set, it must be a non-negative value, and
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
+   * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
+   * derived [expire_time][google.cloud.retail.v2.Product.expire_time] is
+   * returned in the output and [ttl][google.cloud.retail.v2.Product.ttl] is
+   * left blank when retrieving the [Product][google.cloud.retail.v2.Product].
    * If it is set, the product is not available for
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
    * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
@@ -114,12 +126,12 @@ public interface ProductOrBuilder extends
   /**
    * <pre>
    * Input only. The TTL (time to live) of the product.
-   * If it is set, [expire_time][google.cloud.retail.v2.Product.expire_time]
-   * is set as current timestamp plus
-   * [ttl][google.cloud.retail.v2.Product.ttl]. The derived
-   * [expire_time][google.cloud.retail.v2.Product.expire_time] is returned in
-   * the output and [ttl][google.cloud.retail.v2.Product.ttl] is left blank
-   * when retrieving the [Product][google.cloud.retail.v2.Product].
+   * If it is set, it must be a non-negative value, and
+   * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
+   * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
+   * derived [expire_time][google.cloud.retail.v2.Product.expire_time] is
+   * returned in the output and [ttl][google.cloud.retail.v2.Product.ttl] is
+   * left blank when retrieving the [Product][google.cloud.retail.v2.Product].
    * If it is set, the product is not available for
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
    * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl].
@@ -137,7 +149,6 @@ public interface ProductOrBuilder extends
    * <pre>
    * Immutable. Full resource name of the product, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
-   * The branch ID must be "default_branch".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -148,7 +159,6 @@ public interface ProductOrBuilder extends
    * <pre>
    * Immutable. Full resource name of the product, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
-   * The branch ID must be "default_branch".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

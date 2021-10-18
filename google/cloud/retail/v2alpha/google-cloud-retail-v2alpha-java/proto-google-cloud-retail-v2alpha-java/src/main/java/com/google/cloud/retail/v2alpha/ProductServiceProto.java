@@ -102,123 +102,124 @@ public final class ProductServiceProto {
       "rvice.proto\022\033google.cloud.retail.v2alpha" +
       "\032\034google/api/annotations.proto\032\027google/a" +
       "pi/client.proto\032\037google/api/field_behavi" +
-      "or.proto\032\031google/api/resource.proto\032/goo" +
-      "gle/cloud/retail/v2alpha/export_config.p" +
-      "roto\032/google/cloud/retail/v2alpha/import" +
-      "_config.proto\032)google/cloud/retail/v2alp" +
-      "ha/product.proto\032.google/cloud/retail/v2" +
-      "alpha/purge_config.proto\032#google/longrun" +
-      "ning/operations.proto\032\033google/protobuf/e" +
-      "mpty.proto\032 google/protobuf/field_mask.p" +
-      "roto\032\037google/protobuf/timestamp.proto\"\241\001" +
-      "\n\024CreateProductRequest\0224\n\006parent\030\001 \001(\tB$" +
-      "\340A\002\372A\036\n\034retail.googleapis.com/Branch\022:\n\007" +
-      "product\030\002 \001(\0132$.google.cloud.retail.v2al" +
-      "pha.ProductB\003\340A\002\022\027\n\nproduct_id\030\003 \001(\tB\003\340A" +
-      "\002\"H\n\021GetProductRequest\0223\n\004name\030\001 \001(\tB%\340A" +
-      "\002\372A\037\n\035retail.googleapis.com/Product\"\232\001\n\024" +
-      "UpdateProductRequest\022:\n\007product\030\001 \001(\0132$." +
-      "google.cloud.retail.v2alpha.ProductB\003\340A\002" +
-      "\022/\n\013update_mask\030\002 \001(\0132\032.google.protobuf." +
-      "FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"K\n\024Dele" +
-      "teProductRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035" +
-      "retail.googleapis.com/Product\"\315\001\n\023ListPr" +
-      "oductsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034r" +
-      "etail.googleapis.com/Branch\022\021\n\tpage_size" +
-      "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001" +
-      "(\t\022-\n\tread_mask\030\005 \001(\0132\032.google.protobuf." +
-      "FieldMask\022\032\n\022require_total_size\030\006 \001(\010\"{\n" +
-      "\024ListProductsResponse\0226\n\010products\030\001 \003(\0132" +
-      "$.google.cloud.retail.v2alpha.Product\022\027\n" +
-      "\017next_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001" +
-      "(\005\"\306\001\n\023SetInventoryRequest\022<\n\tinventory\030" +
-      "\001 \001(\0132$.google.cloud.retail.v2alpha.Prod" +
-      "uctB\003\340A\002\022,\n\010set_mask\030\002 \001(\0132\032.google.prot" +
-      "obuf.FieldMask\022,\n\010set_time\030\003 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022\025\n\rallow_missing\030\004 " +
-      "\001(\010\"\026\n\024SetInventoryMetadata\"\026\n\024SetInvent" +
-      "oryResponse\"\305\001\n\033AddFulfillmentPlacesRequ" +
-      "est\0226\n\007product\030\001 \001(\tB%\340A\002\372A\037\n\035retail.goo" +
-      "gleapis.com/Product\022\021\n\004type\030\002 \001(\tB\003\340A\002\022\026" +
-      "\n\tplace_ids\030\003 \003(\tB\003\340A\002\022,\n\010add_time\030\004 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022\025\n\rallow_mi" +
-      "ssing\030\005 \001(\010\"\036\n\034AddFulfillmentPlacesMetad" +
-      "ata\"\036\n\034AddFulfillmentPlacesResponse\"\313\001\n\036" +
-      "RemoveFulfillmentPlacesRequest\0226\n\007produc" +
-      "t\030\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com/P" +
-      "roduct\022\021\n\004type\030\002 \001(\tB\003\340A\002\022\026\n\tplace_ids\030\003" +
-      " \003(\tB\003\340A\002\022/\n\013remove_time\030\004 \001(\0132\032.google." +
-      "protobuf.Timestamp\022\025\n\rallow_missing\030\005 \001(" +
-      "\010\"!\n\037RemoveFulfillmentPlacesMetadata\"!\n\037" +
-      "RemoveFulfillmentPlacesResponse2\245\023\n\016Prod" +
-      "uctService\022\336\001\n\rCreateProduct\0221.google.cl" +
-      "oud.retail.v2alpha.CreateProductRequest\032" +
-      "$.google.cloud.retail.v2alpha.Product\"t\202" +
-      "\323\344\223\002R\"G/v2alpha/{parent=projects/*/locat" +
-      "ions/*/catalogs/*/branches/*}/products:\007" +
-      "product\332A\031parent,product,product_id\022\273\001\n\n" +
-      "GetProduct\022..google.cloud.retail.v2alpha" +
-      ".GetProductRequest\032$.google.cloud.retail" +
-      ".v2alpha.Product\"W\202\323\344\223\002J\022H/v2alpha/{name" +
-      "=projects/*/locations/*/catalogs/*/branc" +
-      "hes/*/products/**}\332A\004name\022\315\001\n\014ListProduc" +
-      "ts\0220.google.cloud.retail.v2alpha.ListPro" +
-      "ductsRequest\0321.google.cloud.retail.v2alp" +
-      "ha.ListProductsResponse\"X\202\323\344\223\002I\022G/v2alph" +
-      "a/{parent=projects/*/locations/*/catalog" +
-      "s/*/branches/*}/products\332A\006parent\022\341\001\n\rUp" +
-      "dateProduct\0221.google.cloud.retail.v2alph" +
-      "a.UpdateProductRequest\032$.google.cloud.re" +
-      "tail.v2alpha.Product\"w\202\323\344\223\002[2P/v2alpha/{" +
-      "product.name=projects/*/locations/*/cata" +
-      "logs/*/branches/*/products/**}:\007product\332" +
-      "A\023product,update_mask\022\263\001\n\rDeleteProduct\022" +
-      "1.google.cloud.retail.v2alpha.DeleteProd" +
-      "uctRequest\032\026.google.protobuf.Empty\"W\202\323\344\223" +
-      "\002J*H/v2alpha/{name=projects/*/locations/" +
-      "*/catalogs/*/branches/*/products/**}\332A\004n" +
-      "ame\022\242\002\n\016ImportProducts\0222.google.cloud.re" +
-      "tail.v2alpha.ImportProductsRequest\032\035.goo" +
-      "gle.longrunning.Operation\"\274\001\202\323\344\223\002S\"N/v2a" +
-      "lpha/{parent=projects/*/locations/*/cata" +
-      "logs/*/branches/*}/products:import:\001*\312A`" +
-      "\n2google.cloud.retail.v2alpha.ImportProd" +
-      "uctsResponse\022*google.cloud.retail.v2alph" +
-      "a.ImportMetadata\022\310\002\n\014SetInventory\0220.goog" +
-      "le.cloud.retail.v2alpha.SetInventoryRequ" +
-      "est\032\035.google.longrunning.Operation\"\346\001\202\323\344" +
-      "\223\002d\"_/v2alpha/{inventory.name=projects/*" +
-      "/locations/*/catalogs/*/branches/*/produ" +
-      "cts/**}:setInventory:\001*\332A\022inventory,set_" +
-      "mask\312Ad\n0google.cloud.retail.v2alpha.Set" +
-      "InventoryResponse\0220google.cloud.retail.v" +
-      "2alpha.SetInventoryMetadata\022\336\002\n\024AddFulfi" +
-      "llmentPlaces\0228.google.cloud.retail.v2alp" +
-      "ha.AddFulfillmentPlacesRequest\032\035.google." +
-      "longrunning.Operation\"\354\001\202\323\344\223\002e\"`/v2alpha" +
-      "/{product=projects/*/locations/*/catalog" +
-      "s/*/branches/*/products/**}:addFulfillme" +
-      "ntPlaces:\001*\332A\007product\312At\n8google.cloud.r" +
-      "etail.v2alpha.AddFulfillmentPlacesRespon" +
-      "se\0228google.cloud.retail.v2alpha.AddFulfi" +
-      "llmentPlacesMetadata\022\355\002\n\027RemoveFulfillme" +
-      "ntPlaces\022;.google.cloud.retail.v2alpha.R" +
-      "emoveFulfillmentPlacesRequest\032\035.google.l" +
-      "ongrunning.Operation\"\365\001\202\323\344\223\002h\"c/v2alpha/" +
-      "{product=projects/*/locations/*/catalogs" +
-      "/*/branches/*/products/**}:removeFulfill" +
-      "mentPlaces:\001*\332A\007product\312Az\n;google.cloud" +
-      ".retail.v2alpha.RemoveFulfillmentPlacesR" +
-      "esponse\022;google.cloud.retail.v2alpha.Rem" +
-      "oveFulfillmentPlacesMetadata\032I\312A\025retail." +
-      "googleapis.com\322A.https://www.googleapis." +
-      "com/auth/cloud-platformB\341\001\n\037com.google.c" +
-      "loud.retail.v2alphaB\023ProductServiceProto" +
-      "P\001ZAgoogle.golang.org/genproto/googleapi" +
-      "s/cloud/retail/v2alpha;retail\242\002\006RETAIL\252\002" +
-      "\033Google.Cloud.Retail.V2Alpha\312\002\033Google\\Cl" +
-      "oud\\Retail\\V2alpha\352\002\036Google::Cloud::Reta" +
-      "il::V2alphab\006proto3"
+      "or.proto\032\031google/api/resource.proto\032(goo" +
+      "gle/cloud/retail/v2alpha/common.proto\032/g" +
+      "oogle/cloud/retail/v2alpha/export_config" +
+      ".proto\032/google/cloud/retail/v2alpha/impo" +
+      "rt_config.proto\032)google/cloud/retail/v2a" +
+      "lpha/product.proto\032.google/cloud/retail/" +
+      "v2alpha/purge_config.proto\032#google/longr" +
+      "unning/operations.proto\032\033google/protobuf" +
+      "/empty.proto\032 google/protobuf/field_mask" +
+      ".proto\032\037google/protobuf/timestamp.proto\"" +
+      "\241\001\n\024CreateProductRequest\0224\n\006parent\030\001 \001(\t" +
+      "B$\340A\002\372A\036\n\034retail.googleapis.com/Branch\022:" +
+      "\n\007product\030\002 \001(\0132$.google.cloud.retail.v2" +
+      "alpha.ProductB\003\340A\002\022\027\n\nproduct_id\030\003 \001(\tB\003" +
+      "\340A\002\"H\n\021GetProductRequest\0223\n\004name\030\001 \001(\tB%" +
+      "\340A\002\372A\037\n\035retail.googleapis.com/Product\"\232\001" +
+      "\n\024UpdateProductRequest\022:\n\007product\030\001 \001(\0132" +
+      "$.google.cloud.retail.v2alpha.ProductB\003\340" +
+      "A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protobu" +
+      "f.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\"K\n\024De" +
+      "leteProductRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037" +
+      "\n\035retail.googleapis.com/Product\"\315\001\n\023List" +
+      "ProductsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n" +
+      "\034retail.googleapis.com/Branch\022\021\n\tpage_si" +
+      "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004" +
+      " \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.google.protobu" +
+      "f.FieldMask\022\032\n\022require_total_size\030\006 \001(\010\"" +
+      "{\n\024ListProductsResponse\0226\n\010products\030\001 \003(" +
+      "\0132$.google.cloud.retail.v2alpha.Product\022" +
+      "\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003" +
+      " \001(\005\"\306\001\n\023SetInventoryRequest\022<\n\tinventor" +
+      "y\030\001 \001(\0132$.google.cloud.retail.v2alpha.Pr" +
+      "oductB\003\340A\002\022,\n\010set_mask\030\002 \001(\0132\032.google.pr" +
+      "otobuf.FieldMask\022,\n\010set_time\030\003 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022\025\n\rallow_missing\030" +
+      "\004 \001(\010\"\026\n\024SetInventoryMetadata\"\026\n\024SetInve" +
+      "ntoryResponse\"\305\001\n\033AddFulfillmentPlacesRe" +
+      "quest\0226\n\007product\030\001 \001(\tB%\340A\002\372A\037\n\035retail.g" +
+      "oogleapis.com/Product\022\021\n\004type\030\002 \001(\tB\003\340A\002" +
+      "\022\026\n\tplace_ids\030\003 \003(\tB\003\340A\002\022,\n\010add_time\030\004 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022\025\n\rallow_" +
+      "missing\030\005 \001(\010\"\036\n\034AddFulfillmentPlacesMet" +
+      "adata\"\036\n\034AddFulfillmentPlacesResponse\"\313\001" +
+      "\n\036RemoveFulfillmentPlacesRequest\0226\n\007prod" +
+      "uct\030\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com" +
+      "/Product\022\021\n\004type\030\002 \001(\tB\003\340A\002\022\026\n\tplace_ids" +
+      "\030\003 \003(\tB\003\340A\002\022/\n\013remove_time\030\004 \001(\0132\032.googl" +
+      "e.protobuf.Timestamp\022\025\n\rallow_missing\030\005 " +
+      "\001(\010\"!\n\037RemoveFulfillmentPlacesMetadata\"!" +
+      "\n\037RemoveFulfillmentPlacesResponse2\245\023\n\016Pr" +
+      "oductService\022\336\001\n\rCreateProduct\0221.google." +
+      "cloud.retail.v2alpha.CreateProductReques" +
+      "t\032$.google.cloud.retail.v2alpha.Product\"" +
+      "t\202\323\344\223\002R\"G/v2alpha/{parent=projects/*/loc" +
+      "ations/*/catalogs/*/branches/*}/products" +
+      ":\007product\332A\031parent,product,product_id\022\273\001" +
+      "\n\nGetProduct\022..google.cloud.retail.v2alp" +
+      "ha.GetProductRequest\032$.google.cloud.reta" +
+      "il.v2alpha.Product\"W\202\323\344\223\002J\022H/v2alpha/{na" +
+      "me=projects/*/locations/*/catalogs/*/bra" +
+      "nches/*/products/**}\332A\004name\022\315\001\n\014ListProd" +
+      "ucts\0220.google.cloud.retail.v2alpha.ListP" +
+      "roductsRequest\0321.google.cloud.retail.v2a" +
+      "lpha.ListProductsResponse\"X\202\323\344\223\002I\022G/v2al" +
+      "pha/{parent=projects/*/locations/*/catal" +
+      "ogs/*/branches/*}/products\332A\006parent\022\341\001\n\r" +
+      "UpdateProduct\0221.google.cloud.retail.v2al" +
+      "pha.UpdateProductRequest\032$.google.cloud." +
+      "retail.v2alpha.Product\"w\202\323\344\223\002[2P/v2alpha" +
+      "/{product.name=projects/*/locations/*/ca" +
+      "talogs/*/branches/*/products/**}:\007produc" +
+      "t\332A\023product,update_mask\022\263\001\n\rDeleteProduc" +
+      "t\0221.google.cloud.retail.v2alpha.DeletePr" +
+      "oductRequest\032\026.google.protobuf.Empty\"W\202\323" +
+      "\344\223\002J*H/v2alpha/{name=projects/*/location" +
+      "s/*/catalogs/*/branches/*/products/**}\332A" +
+      "\004name\022\242\002\n\016ImportProducts\0222.google.cloud." +
+      "retail.v2alpha.ImportProductsRequest\032\035.g" +
+      "oogle.longrunning.Operation\"\274\001\202\323\344\223\002S\"N/v" +
+      "2alpha/{parent=projects/*/locations/*/ca" +
+      "talogs/*/branches/*}/products:import:\001*\312" +
+      "A`\n2google.cloud.retail.v2alpha.ImportPr" +
+      "oductsResponse\022*google.cloud.retail.v2al" +
+      "pha.ImportMetadata\022\310\002\n\014SetInventory\0220.go" +
+      "ogle.cloud.retail.v2alpha.SetInventoryRe" +
+      "quest\032\035.google.longrunning.Operation\"\346\001\202" +
+      "\323\344\223\002d\"_/v2alpha/{inventory.name=projects" +
+      "/*/locations/*/catalogs/*/branches/*/pro" +
+      "ducts/**}:setInventory:\001*\332A\022inventory,se" +
+      "t_mask\312Ad\n0google.cloud.retail.v2alpha.S" +
+      "etInventoryResponse\0220google.cloud.retail" +
+      ".v2alpha.SetInventoryMetadata\022\336\002\n\024AddFul" +
+      "fillmentPlaces\0228.google.cloud.retail.v2a" +
+      "lpha.AddFulfillmentPlacesRequest\032\035.googl" +
+      "e.longrunning.Operation\"\354\001\202\323\344\223\002e\"`/v2alp" +
+      "ha/{product=projects/*/locations/*/catal" +
+      "ogs/*/branches/*/products/**}:addFulfill" +
+      "mentPlaces:\001*\332A\007product\312At\n8google.cloud" +
+      ".retail.v2alpha.AddFulfillmentPlacesResp" +
+      "onse\0228google.cloud.retail.v2alpha.AddFul" +
+      "fillmentPlacesMetadata\022\355\002\n\027RemoveFulfill" +
+      "mentPlaces\022;.google.cloud.retail.v2alpha" +
+      ".RemoveFulfillmentPlacesRequest\032\035.google" +
+      ".longrunning.Operation\"\365\001\202\323\344\223\002h\"c/v2alph" +
+      "a/{product=projects/*/locations/*/catalo" +
+      "gs/*/branches/*/products/**}:removeFulfi" +
+      "llmentPlaces:\001*\332A\007product\312Az\n;google.clo" +
+      "ud.retail.v2alpha.RemoveFulfillmentPlace" +
+      "sResponse\022;google.cloud.retail.v2alpha.R" +
+      "emoveFulfillmentPlacesMetadata\032I\312A\025retai" +
+      "l.googleapis.com\322A.https://www.googleapi" +
+      "s.com/auth/cloud-platformB\341\001\n\037com.google" +
+      ".cloud.retail.v2alphaB\023ProductServicePro" +
+      "toP\001ZAgoogle.golang.org/genproto/googlea" +
+      "pis/cloud/retail/v2alpha;retail\242\002\006RETAIL" +
+      "\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033Google\\" +
+      "Cloud\\Retail\\V2alpha\352\002\036Google::Cloud::Re" +
+      "tail::V2alphab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -227,6 +228,7 @@ public final class ProductServiceProto {
           com.google.api.ClientProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.retail.v2alpha.CommonProto.getDescriptor(),
           com.google.cloud.retail.v2alpha.ExportConfigProto.getDescriptor(),
           com.google.cloud.retail.v2alpha.ImportConfigProto.getDescriptor(),
           com.google.cloud.retail.v2alpha.ProductProto.getDescriptor(),
@@ -341,6 +343,7 @@ public final class ProductServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.retail.v2alpha.CommonProto.getDescriptor();
     com.google.cloud.retail.v2alpha.ExportConfigProto.getDescriptor();
     com.google.cloud.retail.v2alpha.ImportConfigProto.getDescriptor();
     com.google.cloud.retail.v2alpha.ProductProto.getDescriptor();

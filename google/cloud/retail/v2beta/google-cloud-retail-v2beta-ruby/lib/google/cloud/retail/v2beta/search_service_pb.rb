@@ -33,6 +33,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :query_expansion_spec, :message, 14, "google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec"
       repeated :variant_rollup_keys, :string, 17
       repeated :page_categories, :string, 23
+      optional :search_mode, :enum, 31, "google.cloud.retail.v2beta.SearchRequest.SearchMode"
     end
     add_message "google.cloud.retail.v2beta.SearchRequest.FacetSpec" do
       optional :facet_key, :message, 1, "google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey"
@@ -72,6 +73,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :CONDITION_UNSPECIFIED, 0
       value :DISABLED, 1
       value :AUTO, 3
+    end
+    add_enum "google.cloud.retail.v2beta.SearchRequest.SearchMode" do
+      value :SEARCH_MODE_UNSPECIFIED, 0
+      value :PRODUCT_SEARCH_ONLY, 1
+      value :FACETED_SEARCH_ONLY, 2
     end
     add_message "google.cloud.retail.v2beta.SearchResponse" do
       repeated :results, :message, 1, "google.cloud.retail.v2beta.SearchResponse.SearchResult"
@@ -122,6 +128,7 @@ module Google
         SearchRequest::BoostSpec::ConditionBoostSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchRequest.BoostSpec.ConditionBoostSpec").msgclass
         SearchRequest::QueryExpansionSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec").msgclass
         SearchRequest::QueryExpansionSpec::Condition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.Condition").enummodule
+        SearchRequest::SearchMode = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchRequest.SearchMode").enummodule
         SearchResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchResponse").msgclass
         SearchResponse::SearchResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchResponse.SearchResult").msgclass
         SearchResponse::Facet = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2beta.SearchResponse.Facet").msgclass

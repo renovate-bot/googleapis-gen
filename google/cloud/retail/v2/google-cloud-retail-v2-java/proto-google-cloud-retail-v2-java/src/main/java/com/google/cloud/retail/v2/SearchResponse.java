@@ -4958,7 +4958,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      * </pre>
      *
@@ -5079,7 +5080,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      * </pre>
      *
@@ -5464,7 +5466,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Number of pinned results. This field will only be set when expansion
-       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
        * is set to true.
        * </pre>
        *
@@ -5478,7 +5481,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Number of pinned results. This field will only be set when expansion
-       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
        * is set to true.
        * </pre>
        *
@@ -5495,7 +5499,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Number of pinned results. This field will only be set when expansion
-       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
        * is set to true.
        * </pre>
        *

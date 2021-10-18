@@ -37,13 +37,19 @@ module Google
         #     and
         #     {::Google::Cloud::Retail::V2beta::ProductService::Client#list_products ProductService.ListProducts}.
         #
+        #     {::Google::Cloud::Retail::V2beta::Product#expire_time expire_time} must be
+        #     later than
+        #     {::Google::Cloud::Retail::V2beta::Product#available_time available_time} and
+        #     {::Google::Cloud::Retail::V2beta::Product#publish_time publish_time},
+        #     otherwise an INVALID_ARGUMENT error is thrown.
+        #
         #     Google Merchant Center property
         #     [expiration_date](https://support.google.com/merchants/answer/6324499).
         # @!attribute [rw] ttl
         #   @return [::Google::Protobuf::Duration]
         #     Input only. The TTL (time to live) of the product.
         #
-        #     If it is set,
+        #     If it is set, it must be a non-negative value, and
         #     {::Google::Cloud::Retail::V2beta::Product#expire_time expire_time} is set as
         #     current timestamp plus {::Google::Cloud::Retail::V2beta::Product#ttl ttl}. The
         #     derived {::Google::Cloud::Retail::V2beta::Product#expire_time expire_time} is
@@ -63,8 +69,6 @@ module Google
         #   @return [::String]
         #     Immutable. Full resource name of the product, such as
         #     `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
-        #
-        #     The branch ID must be "default_branch".
         # @!attribute [rw] id
         #   @return [::String]
         #     Immutable. {::Google::Cloud::Retail::V2beta::Product Product} identifier, which

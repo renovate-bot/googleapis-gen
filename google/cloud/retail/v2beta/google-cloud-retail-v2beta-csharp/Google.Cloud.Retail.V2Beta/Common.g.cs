@@ -398,7 +398,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// it is expected to have only 1 color. May consider using single "Mixed"
     /// instead of multiple values.
     ///
-    /// A maximum of 5 colors are allowed. Each value must be a UTF-8 encoded
+    /// A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
     /// string with a length limit of 128 characters. Otherwise, an
     /// INVALID_ARGUMENT error is returned.
     ///
@@ -1002,8 +1002,8 @@ namespace Google.Cloud.Retail.V2Beta {
     /// or the region IDs for
     /// [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2beta.FulfillmentInfo.type].
     ///
-    /// A maximum of 2000 values are allowed. Each value must be a string with a
-    /// length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+    /// A maximum of 3000 values are allowed. Each value must be a string with a
+    /// length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
     /// "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

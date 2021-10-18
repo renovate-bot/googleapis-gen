@@ -957,7 +957,7 @@ export class ProductServiceClient {
  *   name {@link google.cloud.retail.v2beta.Product.name|Product.name} is not found,
  *   the inventory update will still be processed and retained for at most 1 day
  *   until the {@link google.cloud.retail.v2beta.Product|Product} is created. If set
- *   to false, an INVALID_ARGUMENT error is returned if the
+ *   to false, a NOT_FOUND error is returned if the
  *   {@link google.cloud.retail.v2beta.Product|Product} is not found.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1119,7 +1119,7 @@ export class ProductServiceClient {
  *   not found, the fulfillment information will still be processed and retained
  *   for at most 1 day and processed once the
  *   {@link google.cloud.retail.v2beta.Product|Product} is created. If set to false,
- *   an INVALID_ARGUMENT error is returned if the
+ *   a NOT_FOUND error is returned if the
  *   {@link google.cloud.retail.v2beta.Product|Product} is not found.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1276,7 +1276,7 @@ export class ProductServiceClient {
  *   not found, the fulfillment information will still be processed and retained
  *   for at most 1 day and processed once the
  *   {@link google.cloud.retail.v2beta.Product|Product} is created. If set to false,
- *   an INVALID_ARGUMENT error is returned if the
+ *   a NOT_FOUND error is returned if the
  *   {@link google.cloud.retail.v2beta.Product|Product} is not found.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.

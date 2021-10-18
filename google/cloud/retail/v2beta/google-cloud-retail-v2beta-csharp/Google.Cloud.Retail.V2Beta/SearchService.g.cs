@@ -33,7 +33,7 @@ namespace Google.Cloud.Retail.V2Beta {
             "cHJvdG8aIGdvb2dsZS9wcm90b2J1Zi9maWVsZF9tYXNrLnByb3RvGhxnb29n",
             "bGUvcHJvdG9idWYvc3RydWN0LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGlt",
             "ZXN0YW1wLnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8i",
-            "sQwKDVNlYXJjaFJlcXVlc3QSFgoJcGxhY2VtZW50GAEgASgJQgPgQQISMQoG",
+            "2Q0KDVNlYXJjaFJlcXVlc3QSFgoJcGxhY2VtZW50GAEgASgJQgPgQQISMQoG",
             "YnJhbmNoGAIgASgJQiH6QR4KHHJldGFpbC5nb29nbGVhcGlzLmNvbS9CcmFu",
             "Y2gSDQoFcXVlcnkYAyABKAkSFwoKdmlzaXRvcl9pZBgEIAEoCUID4EECEjcK",
             "CXVzZXJfaW5mbxgFIAEoCzIkLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
@@ -48,69 +48,73 @@ namespace Google.Cloud.Retail.V2Beta {
             "WgoUcXVlcnlfZXhwYW5zaW9uX3NwZWMYDiABKAsyPC5nb29nbGUuY2xvdWQu",
             "cmV0YWlsLnYyYmV0YS5TZWFyY2hSZXF1ZXN0LlF1ZXJ5RXhwYW5zaW9uU3Bl",
             "YxIbChN2YXJpYW50X3JvbGx1cF9rZXlzGBEgAygJEhcKD3BhZ2VfY2F0ZWdv",
-            "cmllcxgXIAMoCRrnAgoJRmFjZXRTcGVjElQKCWZhY2V0X2tleRgBIAEoCzI8",
-            "Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlcXVlc3QuRmFj",
-            "ZXRTcGVjLkZhY2V0S2V5QgPgQQISDQoFbGltaXQYAiABKAUSHAoUZXhjbHVk",
-            "ZWRfZmlsdGVyX2tleXMYAyADKAkSHwoXZW5hYmxlX2R5bmFtaWNfcG9zaXRp",
-            "b24YBCABKAgatQEKCEZhY2V0S2V5EhAKA2tleRgBIAEoCUID4EECEjcKCWlu",
-            "dGVydmFscxgCIAMoCzIkLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLklu",
-            "dGVydmFsEhkKEXJlc3RyaWN0ZWRfdmFsdWVzGAMgAygJEhAKCHByZWZpeGVz",
-            "GAggAygJEhAKCGNvbnRhaW5zGAkgAygJEhAKCG9yZGVyX2J5GAQgASgJEg0K",
-            "BXF1ZXJ5GAUgASgJGpoBChBEeW5hbWljRmFjZXRTcGVjEk0KBG1vZGUYASAB",
-            "KA4yPy5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5TZWFyY2hSZXF1ZXN0",
-            "LkR5bmFtaWNGYWNldFNwZWMuTW9kZSI3CgRNb2RlEhQKEE1PREVfVU5TUEVD",
-            "SUZJRUQQABIMCghESVNBQkxFRBABEgsKB0VOQUJMRUQQAhqqAQoJQm9vc3RT",
-            "cGVjEmUKFWNvbmRpdGlvbl9ib29zdF9zcGVjcxgBIAMoCzJGLmdvb2dsZS5j",
-            "bG91ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlcXVlc3QuQm9vc3RTcGVjLkNv",
-            "bmRpdGlvbkJvb3N0U3BlYxo2ChJDb25kaXRpb25Cb29zdFNwZWMSEQoJY29u",
-            "ZGl0aW9uGAEgASgJEg0KBWJvb3N0GAIgASgCGs8BChJRdWVyeUV4cGFuc2lv",
-            "blNwZWMSWQoJY29uZGl0aW9uGAEgASgOMkYuZ29vZ2xlLmNsb3VkLnJldGFp",
-            "bC52MmJldGEuU2VhcmNoUmVxdWVzdC5RdWVyeUV4cGFuc2lvblNwZWMuQ29u",
-            "ZGl0aW9uEh4KFnBpbl91bmV4cGFuZGVkX3Jlc3VsdHMYAiABKAgiPgoJQ29u",
-            "ZGl0aW9uEhkKFUNPTkRJVElPTl9VTlNQRUNJRklFRBAAEgwKCERJU0FCTEVE",
-            "EAESCAoEQVVUTxADIrQJCg5TZWFyY2hSZXNwb25zZRJICgdyZXN1bHRzGAEg",
-            "AygLMjcuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuU2VhcmNoUmVzcG9u",
-            "c2UuU2VhcmNoUmVzdWx0EkAKBmZhY2V0cxgCIAMoCzIwLmdvb2dsZS5jbG91",
-            "ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlc3BvbnNlLkZhY2V0EhIKCnRvdGFs",
-            "X3NpemUYAyABKAUSFwoPY29ycmVjdGVkX3F1ZXJ5GAQgASgJEhkKEWF0dHJp",
-            "YnV0aW9uX3Rva2VuGAUgASgJEhcKD25leHRfcGFnZV90b2tlbhgGIAEoCRJb",
-            "ChRxdWVyeV9leHBhbnNpb25faW5mbxgHIAEoCzI9Lmdvb2dsZS5jbG91ZC5y",
-            "ZXRhaWwudjJiZXRhLlNlYXJjaFJlc3BvbnNlLlF1ZXJ5RXhwYW5zaW9uSW5m",
-            "bxIUCgxyZWRpcmVjdF91cmkYCiABKAkahAQKDFNlYXJjaFJlc3VsdBIKCgJp",
-            "ZBgBIAEoCRI0Cgdwcm9kdWN0GAIgASgLMiMuZ29vZ2xlLmNsb3VkLnJldGFp",
-            "bC52MmJldGEuUHJvZHVjdBIeChZtYXRjaGluZ192YXJpYW50X2NvdW50GAMg",
-            "ASgFEnMKF21hdGNoaW5nX3ZhcmlhbnRfZmllbGRzGAQgAygLMlIuZ29vZ2xl",
+            "cmllcxgXIAMoCRJJCgtzZWFyY2hfbW9kZRgfIAEoDjI0Lmdvb2dsZS5jbG91",
+            "ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlcXVlc3QuU2VhcmNoTW9kZRrnAgoJ",
+            "RmFjZXRTcGVjElQKCWZhY2V0X2tleRgBIAEoCzI8Lmdvb2dsZS5jbG91ZC5y",
+            "ZXRhaWwudjJiZXRhLlNlYXJjaFJlcXVlc3QuRmFjZXRTcGVjLkZhY2V0S2V5",
+            "QgPgQQISDQoFbGltaXQYAiABKAUSHAoUZXhjbHVkZWRfZmlsdGVyX2tleXMY",
+            "AyADKAkSHwoXZW5hYmxlX2R5bmFtaWNfcG9zaXRpb24YBCABKAgatQEKCEZh",
+            "Y2V0S2V5EhAKA2tleRgBIAEoCUID4EECEjcKCWludGVydmFscxgCIAMoCzIk",
+            "Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLkludGVydmFsEhkKEXJlc3Ry",
+            "aWN0ZWRfdmFsdWVzGAMgAygJEhAKCHByZWZpeGVzGAggAygJEhAKCGNvbnRh",
+            "aW5zGAkgAygJEhAKCG9yZGVyX2J5GAQgASgJEg0KBXF1ZXJ5GAUgASgJGpoB",
+            "ChBEeW5hbWljRmFjZXRTcGVjEk0KBG1vZGUYASABKA4yPy5nb29nbGUuY2xv",
+            "dWQucmV0YWlsLnYyYmV0YS5TZWFyY2hSZXF1ZXN0LkR5bmFtaWNGYWNldFNw",
+            "ZWMuTW9kZSI3CgRNb2RlEhQKEE1PREVfVU5TUEVDSUZJRUQQABIMCghESVNB",
+            "QkxFRBABEgsKB0VOQUJMRUQQAhqqAQoJQm9vc3RTcGVjEmUKFWNvbmRpdGlv",
+            "bl9ib29zdF9zcGVjcxgBIAMoCzJGLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJi",
+            "ZXRhLlNlYXJjaFJlcXVlc3QuQm9vc3RTcGVjLkNvbmRpdGlvbkJvb3N0U3Bl",
+            "Yxo2ChJDb25kaXRpb25Cb29zdFNwZWMSEQoJY29uZGl0aW9uGAEgASgJEg0K",
+            "BWJvb3N0GAIgASgCGs8BChJRdWVyeUV4cGFuc2lvblNwZWMSWQoJY29uZGl0",
+            "aW9uGAEgASgOMkYuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuU2VhcmNo",
+            "UmVxdWVzdC5RdWVyeUV4cGFuc2lvblNwZWMuQ29uZGl0aW9uEh4KFnBpbl91",
+            "bmV4cGFuZGVkX3Jlc3VsdHMYAiABKAgiPgoJQ29uZGl0aW9uEhkKFUNPTkRJ",
+            "VElPTl9VTlNQRUNJRklFRBAAEgwKCERJU0FCTEVEEAESCAoEQVVUTxADIlsK",
+            "ClNlYXJjaE1vZGUSGwoXU0VBUkNIX01PREVfVU5TUEVDSUZJRUQQABIXChNQ",
+            "Uk9EVUNUX1NFQVJDSF9PTkxZEAESFwoTRkFDRVRFRF9TRUFSQ0hfT05MWRAC",
+            "IrQJCg5TZWFyY2hSZXNwb25zZRJICgdyZXN1bHRzGAEgAygLMjcuZ29vZ2xl",
             "LmNsb3VkLnJldGFpbC52MmJldGEuU2VhcmNoUmVzcG9uc2UuU2VhcmNoUmVz",
-            "dWx0Lk1hdGNoaW5nVmFyaWFudEZpZWxkc0VudHJ5Em8KFXZhcmlhbnRfcm9s",
-            "bHVwX3ZhbHVlcxgFIAMoCzJQLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
-            "LlNlYXJjaFJlc3BvbnNlLlNlYXJjaFJlc3VsdC5WYXJpYW50Um9sbHVwVmFs",
-            "dWVzRW50cnkaWAoaTWF0Y2hpbmdWYXJpYW50RmllbGRzRW50cnkSCwoDa2V5",
-            "GAEgASgJEikKBXZhbHVlGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxk",
-            "TWFzazoCOAEaUgoYVmFyaWFudFJvbGx1cFZhbHVlc0VudHJ5EgsKA2tleRgB",
-            "IAEoCRIlCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZToC",
-            "OAEa7wEKBUZhY2V0EgsKA2tleRgBIAEoCRJLCgZ2YWx1ZXMYAiADKAsyOy5n",
-            "b29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5TZWFyY2hSZXNwb25zZS5GYWNl",
-            "dC5GYWNldFZhbHVlEhUKDWR5bmFtaWNfZmFjZXQYAyABKAgadQoKRmFjZXRW",
-            "YWx1ZRIPCgV2YWx1ZRgBIAEoCUgAEjgKCGludGVydmFsGAIgASgLMiQuZ29v",
-            "Z2xlLmNsb3VkLnJldGFpbC52MmJldGEuSW50ZXJ2YWxIABINCgVjb3VudBgD",
-            "IAEoA0INCgtmYWNldF92YWx1ZRpJChJRdWVyeUV4cGFuc2lvbkluZm8SFgoO",
-            "ZXhwYW5kZWRfcXVlcnkYASABKAgSGwoTcGlubmVkX3Jlc3VsdF9jb3VudBgC",
-            "IAEoAzKSAgoNU2VhcmNoU2VydmljZRK1AQoGU2VhcmNoEikuZ29vZ2xlLmNs",
-            "b3VkLnJldGFpbC52MmJldGEuU2VhcmNoUmVxdWVzdBoqLmdvb2dsZS5jbG91",
-            "ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlc3BvbnNlIlSC0+STAk4iSS92MmJl",
-            "dGEve3BsYWNlbWVudD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2NhdGFsb2dz",
-            "LyovcGxhY2VtZW50cy8qfTpzZWFyY2g6ASoaScpBFXJldGFpbC5nb29nbGVh",
-            "cGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xv",
-            "dWQtcGxhdGZvcm1C2wEKHmNvbS5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0",
-            "YUISU2VhcmNoU2VydmljZVByb3RvUAFaQGdvb2dsZS5nb2xhbmcub3JnL2dl",
-            "bnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvcmV0YWlsL3YyYmV0YTtyZXRhaWyi",
-            "AgZSRVRBSUyqAhpHb29nbGUuQ2xvdWQuUmV0YWlsLlYyQmV0YcoCGkdvb2ds",
-            "ZVxDbG91ZFxSZXRhaWxcVjJiZXRh6gIdR29vZ2xlOjpDbG91ZDo6UmV0YWls",
-            "OjpWMmJldGFiBnByb3RvMw=="));
+            "dWx0EkAKBmZhY2V0cxgCIAMoCzIwLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJi",
+            "ZXRhLlNlYXJjaFJlc3BvbnNlLkZhY2V0EhIKCnRvdGFsX3NpemUYAyABKAUS",
+            "FwoPY29ycmVjdGVkX3F1ZXJ5GAQgASgJEhkKEWF0dHJpYnV0aW9uX3Rva2Vu",
+            "GAUgASgJEhcKD25leHRfcGFnZV90b2tlbhgGIAEoCRJbChRxdWVyeV9leHBh",
+            "bnNpb25faW5mbxgHIAEoCzI9Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
+            "LlNlYXJjaFJlc3BvbnNlLlF1ZXJ5RXhwYW5zaW9uSW5mbxIUCgxyZWRpcmVj",
+            "dF91cmkYCiABKAkahAQKDFNlYXJjaFJlc3VsdBIKCgJpZBgBIAEoCRI0Cgdw",
+            "cm9kdWN0GAIgASgLMiMuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuUHJv",
+            "ZHVjdBIeChZtYXRjaGluZ192YXJpYW50X2NvdW50GAMgASgFEnMKF21hdGNo",
+            "aW5nX3ZhcmlhbnRfZmllbGRzGAQgAygLMlIuZ29vZ2xlLmNsb3VkLnJldGFp",
+            "bC52MmJldGEuU2VhcmNoUmVzcG9uc2UuU2VhcmNoUmVzdWx0Lk1hdGNoaW5n",
+            "VmFyaWFudEZpZWxkc0VudHJ5Em8KFXZhcmlhbnRfcm9sbHVwX3ZhbHVlcxgF",
+            "IAMoCzJQLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlc3Bv",
+            "bnNlLlNlYXJjaFJlc3VsdC5WYXJpYW50Um9sbHVwVmFsdWVzRW50cnkaWAoa",
+            "TWF0Y2hpbmdWYXJpYW50RmllbGRzRW50cnkSCwoDa2V5GAEgASgJEikKBXZh",
+            "bHVlGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFzazoCOAEaUgoY",
+            "VmFyaWFudFJvbGx1cFZhbHVlc0VudHJ5EgsKA2tleRgBIAEoCRIlCgV2YWx1",
+            "ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZToCOAEa7wEKBUZhY2V0",
+            "EgsKA2tleRgBIAEoCRJLCgZ2YWx1ZXMYAiADKAsyOy5nb29nbGUuY2xvdWQu",
+            "cmV0YWlsLnYyYmV0YS5TZWFyY2hSZXNwb25zZS5GYWNldC5GYWNldFZhbHVl",
+            "EhUKDWR5bmFtaWNfZmFjZXQYAyABKAgadQoKRmFjZXRWYWx1ZRIPCgV2YWx1",
+            "ZRgBIAEoCUgAEjgKCGludGVydmFsGAIgASgLMiQuZ29vZ2xlLmNsb3VkLnJl",
+            "dGFpbC52MmJldGEuSW50ZXJ2YWxIABINCgVjb3VudBgDIAEoA0INCgtmYWNl",
+            "dF92YWx1ZRpJChJRdWVyeUV4cGFuc2lvbkluZm8SFgoOZXhwYW5kZWRfcXVl",
+            "cnkYASABKAgSGwoTcGlubmVkX3Jlc3VsdF9jb3VudBgCIAEoAzKSAgoNU2Vh",
+            "cmNoU2VydmljZRK1AQoGU2VhcmNoEikuZ29vZ2xlLmNsb3VkLnJldGFpbC52",
+            "MmJldGEuU2VhcmNoUmVxdWVzdBoqLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJi",
+            "ZXRhLlNlYXJjaFJlc3BvbnNlIlSC0+STAk4iSS92MmJldGEve3BsYWNlbWVu",
+            "dD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2NhdGFsb2dzLyovcGxhY2VtZW50",
+            "cy8qfTpzZWFyY2g6ASoaScpBFXJldGFpbC5nb29nbGVhcGlzLmNvbdJBLmh0",
+            "dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm1C",
+            "2wEKHmNvbS5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YUISU2VhcmNoU2Vy",
+            "dmljZVByb3RvUAFaQGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
+            "ZWFwaXMvY2xvdWQvcmV0YWlsL3YyYmV0YTtyZXRhaWyiAgZSRVRBSUyqAhpH",
+            "b29nbGUuQ2xvdWQuUmV0YWlsLlYyQmV0YcoCGkdvb2dsZVxDbG91ZFxSZXRh",
+            "aWxcVjJiZXRh6gIdR29vZ2xlOjpDbG91ZDo6UmV0YWlsOjpWMmJldGFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor, global::Google.Cloud.Retail.V2Beta.ProductReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest), global::Google.Cloud.Retail.V2Beta.SearchRequest.Parser, new[]{ "Placement", "Branch", "Query", "VisitorId", "UserInfo", "PageSize", "PageToken", "Offset", "Filter", "CanonicalFilter", "OrderBy", "FacetSpecs", "DynamicFacetSpec", "BoostSpec", "QueryExpansionSpec", "VariantRollupKeys", "PageCategories" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Parser, new[]{ "FacetKey", "Limit", "ExcludedFilterKeys", "EnableDynamicPosition" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey.Parser, new[]{ "Key", "Intervals", "RestrictedValues", "Prefixes", "Contains", "OrderBy", "Query" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest), global::Google.Cloud.Retail.V2Beta.SearchRequest.Parser, new[]{ "Placement", "Branch", "Query", "VisitorId", "UserInfo", "PageSize", "PageToken", "Offset", "Filter", "CanonicalFilter", "OrderBy", "FacetSpecs", "DynamicFacetSpec", "BoostSpec", "QueryExpansionSpec", "VariantRollupKeys", "PageCategories", "SearchMode" }, null, new[]{ typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Parser, new[]{ "FacetKey", "Limit", "ExcludedFilterKeys", "EnableDynamicPosition" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey.Parser, new[]{ "Key", "Intervals", "RestrictedValues", "Prefixes", "Contains", "OrderBy", "Query" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Parser, new[]{ "Mode" }, null, new[]{ typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Types.Mode) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Parser, new[]{ "ConditionBoostSpecs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Types.ConditionBoostSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Types.ConditionBoostSpec.Parser, new[]{ "Condition", "Boost" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Parser, new[]{ "Condition", "PinUnexpandedResults" }, null, new[]{ typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition) }, null, null)}),
@@ -179,6 +183,7 @@ namespace Google.Cloud.Retail.V2Beta {
       queryExpansionSpec_ = other.queryExpansionSpec_ != null ? other.queryExpansionSpec_.Clone() : null;
       variantRollupKeys_ = other.variantRollupKeys_.Clone();
       pageCategories_ = other.pageCategories_.Clone();
+      searchMode_ = other.searchMode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -194,12 +199,8 @@ namespace Google.Cloud.Retail.V2Beta {
     /// <summary>
     /// Required. The resource name of the search engine placement, such as
     /// `projects/*/locations/global/catalogs/default_catalog/placements/default_search`.
-    /// This field is used to identify the set of models that will be used to make
-    /// the search.
-    ///
-    /// We currently support one placement with the following ID:
-    ///
-    /// * `default_search`.
+    /// This field is used to identify the serving configuration name and the set
+    /// of models that will be used to make the search.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -350,7 +351,8 @@ namespace Google.Cloud.Retail.V2Beta {
     /// <summary>
     /// The filter syntax consists of an expression language for constructing a
     /// predicate from one or more fields of the products being filtered. Filter
-    /// expression is case-sensitive.
+    /// expression is case-sensitive. See more details at this [user
+    /// guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -392,7 +394,9 @@ namespace Google.Cloud.Retail.V2Beta {
     /// <summary>
     /// The order in which products are returned. Products can be ordered by
     /// a field in an [Product][google.cloud.retail.v2beta.Product] object. Leave
-    /// it unset if ordered by relevance. OrderBy expression is case-sensitive.
+    /// it unset if ordered by relevance. OrderBy expression is case-sensitive. See
+    /// more details at this [user
+    /// guide](https://cloud.google.com/retail/docs/filter-and-order#order).
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -445,7 +449,14 @@ namespace Google.Cloud.Retail.V2Beta {
     public const int BoostSpecFieldNumber = 13;
     private global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec boostSpec_;
     /// <summary>
-    /// Boost specification to boost certain products.
+    /// Boost specification to boost certain products. See more details at this
+    /// [user guide](https://cloud.google.com/retail/docs/boosting).
+    ///
+    /// Notice that if both [ServingConfig.boost_control_ids][] and
+    /// [SearchRequest.boost_spec] are set, the boost conditions from both places
+    /// are evaluated. If a search request matches multiple boost conditions,
+    /// the final boost score is equal to the sum of the boost scores from all
+    /// matched boost conditions.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -461,7 +472,8 @@ namespace Google.Cloud.Retail.V2Beta {
     private global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec queryExpansionSpec_;
     /// <summary>
     /// The query expansion specification that specifies the conditions under which
-    /// query expansion will occur.
+    /// query expansion will occur. See more details at this [user
+    /// guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -500,6 +512,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// * price
     /// * originalPrice
     /// * discount
+    /// * inventory(place_id,price)
     /// * attributes.key, where key is any key in the
     ///   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
     /// * pickupInStore.id, where id is any
@@ -573,6 +586,22 @@ namespace Google.Cloud.Retail.V2Beta {
       get { return pageCategories_; }
     }
 
+    /// <summary>Field number for the "search_mode" field.</summary>
+    public const int SearchModeFieldNumber = 31;
+    private global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode searchMode_ = global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode.Unspecified;
+    /// <summary>
+    /// The search mode of the search request. If not specified, a single search
+    /// request triggers both product search and faceted search.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode SearchMode {
+      get { return searchMode_; }
+      set {
+        searchMode_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -605,6 +634,7 @@ namespace Google.Cloud.Retail.V2Beta {
       if (!object.Equals(QueryExpansionSpec, other.QueryExpansionSpec)) return false;
       if(!variantRollupKeys_.Equals(other.variantRollupKeys_)) return false;
       if(!pageCategories_.Equals(other.pageCategories_)) return false;
+      if (SearchMode != other.SearchMode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -629,6 +659,7 @@ namespace Google.Cloud.Retail.V2Beta {
       if (queryExpansionSpec_ != null) hash ^= QueryExpansionSpec.GetHashCode();
       hash ^= variantRollupKeys_.GetHashCode();
       hash ^= pageCategories_.GetHashCode();
+      if (SearchMode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode.Unspecified) hash ^= SearchMode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -706,6 +737,10 @@ namespace Google.Cloud.Retail.V2Beta {
         output.WriteRawTag(226, 1);
         output.WriteString(CanonicalFilter);
       }
+      if (SearchMode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode.Unspecified) {
+        output.WriteRawTag(248, 1);
+        output.WriteEnum((int) SearchMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -775,6 +810,10 @@ namespace Google.Cloud.Retail.V2Beta {
         output.WriteRawTag(226, 1);
         output.WriteString(CanonicalFilter);
       }
+      if (SearchMode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode.Unspecified) {
+        output.WriteRawTag(248, 1);
+        output.WriteEnum((int) SearchMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -830,6 +869,9 @@ namespace Google.Cloud.Retail.V2Beta {
       }
       size += variantRollupKeys_.CalculateSize(_repeated_variantRollupKeys_codec);
       size += pageCategories_.CalculateSize(_repeated_pageCategories_codec);
+      if (SearchMode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode.Unspecified) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) SearchMode);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -899,6 +941,9 @@ namespace Google.Cloud.Retail.V2Beta {
       }
       variantRollupKeys_.Add(other.variantRollupKeys_);
       pageCategories_.Add(other.pageCategories_);
+      if (other.SearchMode != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode.Unspecified) {
+        SearchMode = other.SearchMode;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -992,6 +1037,10 @@ namespace Google.Cloud.Retail.V2Beta {
           }
           case 226: {
             CanonicalFilter = input.ReadString();
+            break;
+          }
+          case 248: {
+            SearchMode = (global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode) input.ReadEnum();
             break;
           }
         }
@@ -1089,6 +1138,10 @@ namespace Google.Cloud.Retail.V2Beta {
             CanonicalFilter = input.ReadString();
             break;
           }
+          case 248: {
+            SearchMode = (global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.SearchMode) input.ReadEnum();
+            break;
+          }
         }
       }
     }
@@ -1099,6 +1152,41 @@ namespace Google.Cloud.Retail.V2Beta {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
+      /// <summary>
+      /// The search mode of each search request.
+      /// </summary>
+      public enum SearchMode {
+        /// <summary>
+        /// Default value. In this case both product search and faceted search will
+        /// be performed. Both [SearchResponse.SearchResult] and
+        /// [SearchResponse.Facet] will be returned.
+        /// </summary>
+        [pbr::OriginalName("SEARCH_MODE_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// Only product search will be performed. The faceted search will be
+        /// disabled.
+        ///
+        /// Only [SearchResponse.SearchResult] will be returned.
+        /// [SearchResponse.Facet] will not be returned, even if
+        /// [SearchRequest.facet_specs][google.cloud.retail.v2beta.SearchRequest.facet_specs]
+        /// or
+        /// [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec]
+        /// is set.
+        /// </summary>
+        [pbr::OriginalName("PRODUCT_SEARCH_ONLY")] ProductSearchOnly = 1,
+        /// <summary>
+        /// Only faceted search will be performed. The product search will be
+        /// disabled.
+        ///
+        /// When in this mode, one or both of [SearchRequest.facet_spec][] and
+        /// [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec]
+        /// should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
+        /// [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
+        /// will not be returned.
+        /// </summary>
+        [pbr::OriginalName("FACETED_SEARCH_ONLY")] FacetedSearchOnly = 2,
+      }
+
       /// <summary>
       /// A facet specification to perform faceted search.
       /// </summary>
@@ -1557,6 +1645,7 @@ namespace Google.Cloud.Retail.V2Beta {
             ///     * "rating"
             ///     * "ratingCount"
             ///     * "attributes.key"
+            ///     * "inventory(place_id,price)"
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4462,7 +4551,8 @@ namespace Google.Cloud.Retail.V2Beta {
         private long pinnedResultCount_;
         /// <summary>
         /// Number of pinned results. This field will only be set when expansion
-        /// happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+        /// happens and
+        /// [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
         /// is set to true.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

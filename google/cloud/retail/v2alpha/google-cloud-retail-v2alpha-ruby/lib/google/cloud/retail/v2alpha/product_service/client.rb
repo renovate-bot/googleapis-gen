@@ -880,7 +880,7 @@ module Google
             #     name {::Google::Cloud::Retail::V2alpha::Product#name Product.name} is not found,
             #     the inventory update will still be processed and retained for at most 1 day
             #     until the {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set
-            #     to false, an INVALID_ARGUMENT error is returned if the
+            #     to false, a NOT_FOUND error is returned if the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1016,7 +1016,7 @@ module Google
             #     not found, the fulfillment information will still be processed and retained
             #     for at most 1 day and processed once the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
-            #     an INVALID_ARGUMENT error is returned if the
+            #     a NOT_FOUND error is returned if the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -1147,7 +1147,7 @@ module Google
             #     not found, the fulfillment information will still be processed and retained
             #     for at most 1 day and processed once the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
-            #     an INVALID_ARGUMENT error is returned if the
+            #     a NOT_FOUND error is returned if the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
             #
             # @yield [response, operation] Access the result along with the RPC operation

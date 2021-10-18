@@ -5,7 +5,7 @@ package com.google.cloud.retail.v2alpha;
 
 /**
  * <pre>
- * Response of the RemoveFulfillmentPlacesRequest.  Currently empty because
+ * Response of the AddFulfillmentPlacesRequest.  Currently empty because
  * there is no meaningful response populated from the [AddFulfillmentPlaces][]
  * method.
  * </pre>
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Response of the RemoveFulfillmentPlacesRequest.  Currently empty because
+   * Response of the AddFulfillmentPlacesRequest.  Currently empty because
    * there is no meaningful response populated from the [AddFulfillmentPlaces][]
    * method.
    * </pre>

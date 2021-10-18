@@ -94,7 +94,7 @@ public interface ColorInfoOrBuilder extends
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 5 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -113,7 +113,7 @@ public interface ColorInfoOrBuilder extends
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 5 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -131,7 +131,7 @@ public interface ColorInfoOrBuilder extends
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 5 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -150,7 +150,7 @@ public interface ColorInfoOrBuilder extends
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 5 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property

@@ -24,7 +24,8 @@ class QueryExpansionInfo extends \Google\Protobuf\Internal\Message
     protected $expanded_query = false;
     /**
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      *
      * Generated from protobuf field <code>int64 pinned_result_count = 2;</code>
@@ -41,7 +42,8 @@ class QueryExpansionInfo extends \Google\Protobuf\Internal\Message
      *           Bool describing whether query expansion has occurred.
      *     @type int|string $pinned_result_count
      *           Number of pinned results. This field will only be set when expansion
-     *           happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     *           happens and
+     *           [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      *           is set to true.
      * }
      */
@@ -78,7 +80,8 @@ class QueryExpansionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      *
      * Generated from protobuf field <code>int64 pinned_result_count = 2;</code>
@@ -91,7 +94,8 @@ class QueryExpansionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of pinned results. This field will only be set when expansion
-     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
      * is set to true.
      *
      * Generated from protobuf field <code>int64 pinned_result_count = 2;</code>

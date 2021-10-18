@@ -495,7 +495,7 @@ class ProductServiceGapicClient
      *           not found, the fulfillment information will still be processed and retained
      *           for at most 1 day and processed once the
      *           [Product][google.cloud.retail.v2alpha.Product] is created. If set to false,
-     *           an INVALID_ARGUMENT error is returned if the
+     *           a NOT_FOUND error is returned if the
      *           [Product][google.cloud.retail.v2alpha.Product] is not found.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
@@ -1086,7 +1086,7 @@ class ProductServiceGapicClient
      *           not found, the fulfillment information will still be processed and retained
      *           for at most 1 day and processed once the
      *           [Product][google.cloud.retail.v2alpha.Product] is created. If set to false,
-     *           an INVALID_ARGUMENT error is returned if the
+     *           a NOT_FOUND error is returned if the
      *           [Product][google.cloud.retail.v2alpha.Product] is not found.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
@@ -1256,7 +1256,7 @@ class ProductServiceGapicClient
      *           name [Product.name][google.cloud.retail.v2alpha.Product.name] is not found,
      *           the inventory update will still be processed and retained for at most 1 day
      *           until the [Product][google.cloud.retail.v2alpha.Product] is created. If set
-     *           to false, an INVALID_ARGUMENT error is returned if the
+     *           to false, a NOT_FOUND error is returned if the
      *           [Product][google.cloud.retail.v2alpha.Product] is not found.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a

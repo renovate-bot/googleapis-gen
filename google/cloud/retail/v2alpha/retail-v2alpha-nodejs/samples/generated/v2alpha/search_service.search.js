@@ -23,10 +23,8 @@ function main(placement, visitorId) {
   /**
    *  Required. The resource name of the search engine placement, such as
    *  `projects/* /locations/global/catalogs/default_catalog/placements/default_search`.
-   *  This field is used to identify the set of models that will be used to make
-   *  the search.
-   *  We currently support one placement with the following ID:
-   *  * `default_search`.
+   *  This field is used to identify the serving configuration name and the set
+   *  of models that will be used to make the search.
    */
   // const placement = 'abc123'
   /**
@@ -85,7 +83,8 @@ function main(placement, visitorId) {
   /**
    *  The filter syntax consists of an expression language for constructing a
    *  predicate from one or more fields of the products being filtered. Filter
-   *  expression is case-sensitive.
+   *  expression is case-sensitive. See more details at this [user
+   *  guide](https://cloud.google.com/retail/docs/filter-and-order#filter).
    *  If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    */
   // const filter = 'abc123'
@@ -104,7 +103,9 @@ function main(placement, visitorId) {
   /**
    *  The order in which products are returned. Products can be ordered by
    *  a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-   *  it unset if ordered by relevance. OrderBy expression is case-sensitive.
+   *  it unset if ordered by relevance. OrderBy expression is case-sensitive. See
+   *  more details at this [user
+   *  guide](https://cloud.google.com/retail/docs/filter-and-order#order).
    *  If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    */
   // const orderBy = 'abc123'
@@ -122,12 +123,20 @@ function main(placement, visitorId) {
    */
   // const dynamicFacetSpec = ''
   /**
-   *  Boost specification to boost certain products.
+   *  Boost specification to boost certain products. See more details at this
+   *  [user guide](https://cloud.google.com/retail/docs/boosting).
+   *  Notice that if both
+   *  [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
+   *  and [SearchRequest.boost_spec] are set, the boost conditions from both
+   *  places are evaluated. If a search request matches multiple boost
+   *  conditions, the final boost score is equal to the sum of the boost scores
+   *  from all matched boost conditions.
    */
   // const boostSpec = ''
   /**
    *  The query expansion specification that specifies the conditions under which
-   *  query expansion will occur..
+   *  query expansion will occur. See more details at this [user
+   *  guide](https://cloud.google.com/retail/docs/result-size#query_expansion).
    */
   // const queryExpansionSpec = ''
   /**
@@ -135,7 +144,8 @@ function main(placement, visitorId) {
    *  Defaults to
    *  [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
    *  which means only the most relevant results are shown, and the least number
-   *  of results are returned.
+   *  of results are returned. See more details at this [user
+   *  guide](https://cloud.google.com/retail/docs/result-size#relevance_thresholding).
    */
   // const relevanceThreshold = ''
   /**
@@ -158,6 +168,7 @@ function main(placement, visitorId) {
    *  * price
    *  * originalPrice
    *  * discount
+   *  * inventory(place_id,price)
    *  * attributes.key, where key is any key in the
    *    [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
    *  * pickupInStore.id, where id is any
@@ -222,6 +233,11 @@ function main(placement, visitorId) {
    *  "pageCategories" : ["Sales > 2017 Black Friday Deals"].
    */
   // const pageCategories = 'abc123'
+  /**
+   *  The search mode of the search request. If not specified, a single search
+   *  request triggers both product search and faceted search.
+   */
+  // const searchMode = ''
 
   // Imports the Retail library
   const {SearchServiceClient} = require('@google-cloud/retail').v2alpha;

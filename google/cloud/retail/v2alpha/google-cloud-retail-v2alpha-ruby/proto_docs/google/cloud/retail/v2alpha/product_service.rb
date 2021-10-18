@@ -316,7 +316,7 @@ module Google
         #     name {::Google::Cloud::Retail::V2alpha::Product#name Product.name} is not found,
         #     the inventory update will still be processed and retained for at most 1 day
         #     until the {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set
-        #     to false, an INVALID_ARGUMENT error is returned if the
+        #     to false, a NOT_FOUND error is returned if the
         #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
         class SetInventoryRequest
           include ::Google::Protobuf::MessageExts
@@ -398,7 +398,7 @@ module Google
         #     not found, the fulfillment information will still be processed and retained
         #     for at most 1 day and processed once the
         #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
-        #     an INVALID_ARGUMENT error is returned if the
+        #     a NOT_FOUND error is returned if the
         #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
         class AddFulfillmentPlacesRequest
           include ::Google::Protobuf::MessageExts
@@ -413,7 +413,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response of the RemoveFulfillmentPlacesRequest.  Currently empty because
+        # Response of the AddFulfillmentPlacesRequest.  Currently empty because
         # there is no meaningful response populated from the [AddFulfillmentPlaces][]
         # method.
         class AddFulfillmentPlacesResponse
@@ -475,7 +475,7 @@ module Google
         #     not found, the fulfillment information will still be processed and retained
         #     for at most 1 day and processed once the
         #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
-        #     an INVALID_ARGUMENT error is returned if the
+        #     a NOT_FOUND error is returned if the
         #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
         class RemoveFulfillmentPlacesRequest
           include ::Google::Protobuf::MessageExts

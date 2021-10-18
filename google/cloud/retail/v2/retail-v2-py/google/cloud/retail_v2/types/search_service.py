@@ -40,12 +40,9 @@ class SearchRequest(proto.Message):
             Required. The resource name of the search engine placement,
             such as
             ``projects/*/locations/global/catalogs/default_catalog/placements/default_search``.
-            This field is used to identify the set of models that will
-            be used to make the search.
-
-            We currently support one placement with the following ID:
-
-            -  ``default_search``.
+            This field is used to identify the serving configuration
+            name and the set of models that will be used to make the
+            search.
         branch (str):
             The branch resource name, such as
             ``projects/*/locations/global/catalogs/default_catalog/branches/0``.
@@ -98,7 +95,8 @@ class SearchRequest(proto.Message):
             The filter syntax consists of an expression language for
             constructing a predicate from one or more fields of the
             products being filtered. Filter expression is
-            case-sensitive.
+            case-sensitive. See more details at this `user
+            guide <https://cloud.google.com/retail/docs/filter-and-order#filter>`__.
 
             If this field is unrecognizable, an INVALID_ARGUMENT is
             returned.
@@ -120,7 +118,8 @@ class SearchRequest(proto.Message):
             ordered by a field in an
             [Product][google.cloud.retail.v2.Product] object. Leave it
             unset if ordered by relevance. OrderBy expression is
-            case-sensitive.
+            case-sensitive. See more details at this `user
+            guide <https://cloud.google.com/retail/docs/filter-and-order#order>`__.
 
             If this field is unrecognizable, an INVALID_ARGUMENT is
             returned.
@@ -138,12 +137,21 @@ class SearchRequest(proto.Message):
             Contact Retail Search support team if you are
             interested in using dynamic facet feature.
         boost_spec (google.cloud.retail_v2.types.SearchRequest.BoostSpec):
-            Boost specification to boost certain
-            products.
+            Boost specification to boost certain products. See more
+            details at this `user
+            guide <https://cloud.google.com/retail/docs/boosting>`__.
+
+            Notice that if both [ServingConfig.boost_control_ids][] and
+            [SearchRequest.boost_spec] are set, the boost conditions
+            from both places are evaluated. If a search request matches
+            multiple boost conditions, the final boost score is equal to
+            the sum of the boost scores from all matched boost
+            conditions.
         query_expansion_spec (google.cloud.retail_v2.types.SearchRequest.QueryExpansionSpec):
-            The query expansion specification that
-            specifies the conditions under which query
-            expansion will occur.
+            The query expansion specification that specifies the
+            conditions under which query expansion will occur. See more
+            details at this `user
+            guide <https://cloud.google.com/retail/docs/result-size#query_expansion>`__.
         variant_rollup_keys (Sequence[str]):
             The keys to fetch and rollup the matching
             [variant][google.cloud.retail.v2.Product.Type.VARIANT]
@@ -169,6 +177,7 @@ class SearchRequest(proto.Message):
             -  price
             -  originalPrice
             -  discount
+            -  inventory(place_id,price)
             -  attributes.key, where key is any key in the
                [Product.attributes][google.cloud.retail.v2.Product.attributes]
                map.
@@ -234,7 +243,16 @@ class SearchRequest(proto.Message):
             promotions. For instance, a special sale page may have the
             category hierarchy: "pageCategories" : ["Sales > 2017 Black
             Friday Deals"].
+        search_mode (google.cloud.retail_v2.types.SearchRequest.SearchMode):
+            The search mode of the search request. If not
+            specified, a single search request triggers both
+            product search and faceted search.
     """
+    class SearchMode(proto.Enum):
+        r"""The search mode of each search request."""
+        SEARCH_MODE_UNSPECIFIED = 0
+        PRODUCT_SEARCH_ONLY = 1
+        FACETED_SEARCH_ONLY = 2
 
     class FacetSpec(proto.Message):
         r"""A facet specification to perform faceted search.
@@ -349,7 +367,8 @@ class SearchRequest(proto.Message):
                        -  "discount"
                        -  "rating"
                        -  "ratingCount"
-                       -  "attributes.key".
+                       -  "attributes.key"
+                       -  "inventory(place_id,price)".
                 intervals (Sequence[google.cloud.retail_v2.types.Interval]):
                     Set only if values should be bucketized into
                     intervals. Must be set for facets with numerical
@@ -684,6 +703,11 @@ class SearchRequest(proto.Message):
         proto.STRING,
         number=23,
     )
+    search_mode = proto.Field(
+        proto.ENUM,
+        number=31,
+        enum=SearchMode,
+    )
 
 
 class SearchResponse(proto.Message):
@@ -904,7 +928,7 @@ class SearchResponse(proto.Message):
             pinned_result_count (int):
                 Number of pinned results. This field will only be set when
                 expansion happens and
-                [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+                [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
                 is set to true.
         """
 

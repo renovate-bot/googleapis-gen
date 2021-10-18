@@ -969,7 +969,7 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.cloud.retail_v2alpha.types.AddFulfillmentPlacesResponse` Response of the RemoveFulfillmentPlacesRequest. Currently empty because
+                The result type for the operation will be :class:`google.cloud.retail_v2alpha.types.AddFulfillmentPlacesResponse` Response of the AddFulfillmentPlacesRequest. Currently empty because
                    there is no meaningful response populated from the
                    [AddFulfillmentPlaces][] method.
 

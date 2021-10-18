@@ -190,6 +190,12 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// and
     /// [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
     ///
+    /// [expire_time][google.cloud.retail.v2alpha.Product.expire_time] must be
+    /// later than
+    /// [available_time][google.cloud.retail.v2alpha.Product.available_time] and
+    /// [publish_time][google.cloud.retail.v2alpha.Product.publish_time],
+    /// otherwise an INVALID_ARGUMENT error is thrown.
+    ///
     /// Google Merchant Center property
     /// [expiration_date](https://support.google.com/merchants/answer/6324499).
     /// </summary>
@@ -208,7 +214,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// <summary>
     /// Input only. The TTL (time to live) of the product.
     ///
-    /// If it is set,
+    /// If it is set, it must be a non-negative value, and
     /// [expire_time][google.cloud.retail.v2alpha.Product.expire_time] is set as
     /// current timestamp plus [ttl][google.cloud.retail.v2alpha.Product.ttl].
     /// The derived
@@ -242,8 +248,6 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// <summary>
     /// Immutable. Full resource name of the product, such as
     /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
-    ///
-    /// The branch ID must be "default_branch".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

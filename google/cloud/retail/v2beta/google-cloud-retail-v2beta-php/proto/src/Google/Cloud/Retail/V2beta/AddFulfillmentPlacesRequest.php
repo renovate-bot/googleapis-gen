@@ -77,7 +77,7 @@ class AddFulfillmentPlacesRequest extends \Google\Protobuf\Internal\Message
      * not found, the fulfillment information will still be processed and retained
      * for at most 1 day and processed once the
      * [Product][google.cloud.retail.v2beta.Product] is created. If set to false,
-     * an INVALID_ARGUMENT error is returned if the
+     * a NOT_FOUND error is returned if the
      * [Product][google.cloud.retail.v2beta.Product] is not found.
      *
      * Generated from protobuf field <code>bool allow_missing = 5;</code>
@@ -136,7 +136,7 @@ class AddFulfillmentPlacesRequest extends \Google\Protobuf\Internal\Message
      *           not found, the fulfillment information will still be processed and retained
      *           for at most 1 day and processed once the
      *           [Product][google.cloud.retail.v2beta.Product] is created. If set to false,
-     *           an INVALID_ARGUMENT error is returned if the
+     *           a NOT_FOUND error is returned if the
      *           [Product][google.cloud.retail.v2beta.Product] is not found.
      * }
      */
@@ -330,7 +330,7 @@ class AddFulfillmentPlacesRequest extends \Google\Protobuf\Internal\Message
      * not found, the fulfillment information will still be processed and retained
      * for at most 1 day and processed once the
      * [Product][google.cloud.retail.v2beta.Product] is created. If set to false,
-     * an INVALID_ARGUMENT error is returned if the
+     * a NOT_FOUND error is returned if the
      * [Product][google.cloud.retail.v2beta.Product] is not found.
      *
      * Generated from protobuf field <code>bool allow_missing = 5;</code>
@@ -346,7 +346,7 @@ class AddFulfillmentPlacesRequest extends \Google\Protobuf\Internal\Message
      * not found, the fulfillment information will still be processed and retained
      * for at most 1 day and processed once the
      * [Product][google.cloud.retail.v2beta.Product] is created. If set to false,
-     * an INVALID_ARGUMENT error is returned if the
+     * a NOT_FOUND error is returned if the
      * [Product][google.cloud.retail.v2beta.Product] is not found.
      *
      * Generated from protobuf field <code>bool allow_missing = 5;</code>

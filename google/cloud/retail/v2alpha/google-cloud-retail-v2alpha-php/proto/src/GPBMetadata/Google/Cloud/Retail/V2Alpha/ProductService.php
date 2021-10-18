@@ -18,6 +18,7 @@ class ProductService
         \GPBMetadata\Google\Api\Client::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Cloud\Retail\V2Alpha\Common::initOnce();
         \GPBMetadata\Google\Cloud\Retail\V2Alpha\ExportConfig::initOnce();
         \GPBMetadata\Google\Cloud\Retail\V2Alpha\ImportConfig::initOnce();
         \GPBMetadata\Google\Cloud\Retail\V2Alpha\Product::initOnce();
@@ -28,8 +29,8 @@ class ProductService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-µ%
-1google/cloud/retail/v2alpha/product_service.protogoogle.cloud.retail.v2alphagoogle/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto/google/cloud/retail/v2alpha/export_config.proto/google/cloud/retail/v2alpha/import_config.proto)google/cloud/retail/v2alpha/product.proto.google/cloud/retail/v2alpha/purge_config.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"¡
+ß%
+1google/cloud/retail/v2alpha/product_service.protogoogle.cloud.retail.v2alphagoogle/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto(google/cloud/retail/v2alpha/common.proto/google/cloud/retail/v2alpha/export_config.proto/google/cloud/retail/v2alpha/import_config.proto)google/cloud/retail/v2alpha/product.proto.google/cloud/retail/v2alpha/purge_config.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"¡
 CreateProductRequest4
 parent (	B$àAúA
 retail.googleapis.com/Branch:
