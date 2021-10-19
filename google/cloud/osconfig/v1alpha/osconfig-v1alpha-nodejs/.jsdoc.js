@@ -43,7 +43,7 @@ module.exports = {
     copyright: 'Copyright 2021 Google LLC',
     includeDate: false,
     sourceFiles: false,
-    systemName: '@google-cloud/osconfig',
+    systemName: '@google-cloud/os-config',
     theme: 'lumen',
     default: {
       outputSourceFiles: false

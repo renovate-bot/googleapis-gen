@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/osconfig",
+  "name": "@google-cloud/os-config",
   "version": "0.1.0",
   "description": "Osconfig client for Node.js",
   "repository": "googleapis/nodejs-osconfig",

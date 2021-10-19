@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const osconfig = require('@google-cloud/osconfig');
+const osconfig = require('@google-cloud/os-config');
 
 function main() {
   const osConfigZonalServiceClient = new osconfig.OsConfigZonalServiceClient();

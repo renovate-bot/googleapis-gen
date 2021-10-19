@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {OsConfigZonalServiceClient} from '@google-cloud/osconfig';
+import {OsConfigZonalServiceClient} from '@google-cloud/os-config';
 
 // check that the client class type name can be used
 function doStuffWithOsConfigZonalServiceClient(client: OsConfigZonalServiceClient) {
