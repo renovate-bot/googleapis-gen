@@ -17,6 +17,7 @@
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
     using Google.Cloud.Bigtable.Admin.V2;
+    using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
@@ -38,6 +39,7 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
                 State = Instance.Types.State.NotKnown,
                 Type = Instance.Types.Type.Unspecified,
                 Labels = { { "", "" }, },
+                CreateTime = new Timestamp(),
             };
             // Make the request
             Instance response = await bigtableInstanceAdminClient.UpdateInstanceAsync(request);
