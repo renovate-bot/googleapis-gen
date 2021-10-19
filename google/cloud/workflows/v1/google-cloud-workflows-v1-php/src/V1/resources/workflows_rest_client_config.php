@@ -2,6 +2,30 @@
 
 return [
     'interfaces' => [
+        'google.cloud.location.Locations' => [
+            'GetLocation' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListLocations' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*}/locations',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'google.cloud.workflows.v1.Workflows' => [
             'CreateWorkflow' => [
                 'method' => 'post',
@@ -59,6 +83,41 @@ return [
                     'workflow.name' => [
                         'getters' => [
                             'getWorkflow',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'google.longrunning.Operations' => [
+            'DeleteOperation' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/operations/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetOperation' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/operations/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListOperations' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*}/operations',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
                             'getName',
                         ],
                     ],

@@ -17,8 +17,8 @@
 // Package workflows is an auto-generated package for the
 // Workflows API.
 //
-// Orchestrate Workflows that invoke Google Cloud APIs, SaaS APIs or private
-// API endpoints.
+// Manage workflow definitions. To execute workflows and manage executions,
+// see the Workflows Executions API.
 //
 // Example usage
 //
