@@ -16,10 +16,13 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {AutoscalingPolicyServiceClient, ClusterControllerClient, JobControllerClient, WorkflowTemplateServiceClient} from '@google-cloud/dataproc';
+import {AutoscalingPolicyServiceClient, BatchControllerClient, ClusterControllerClient, JobControllerClient, WorkflowTemplateServiceClient} from '@google-cloud/dataproc';
 
 // check that the client class type name can be used
 function doStuffWithAutoscalingPolicyServiceClient(client: AutoscalingPolicyServiceClient) {
+  client.close();
+}
+function doStuffWithBatchControllerClient(client: BatchControllerClient) {
   client.close();
 }
 function doStuffWithClusterControllerClient(client: ClusterControllerClient) {
@@ -36,6 +39,9 @@ function main() {
   // check that the client instance can be created
   const autoscalingPolicyServiceClient = new AutoscalingPolicyServiceClient();
   doStuffWithAutoscalingPolicyServiceClient(autoscalingPolicyServiceClient);
+  // check that the client instance can be created
+  const batchControllerClient = new BatchControllerClient();
+  doStuffWithBatchControllerClient(batchControllerClient);
   // check that the client instance can be created
   const clusterControllerClient = new ClusterControllerClient();
   doStuffWithClusterControllerClient(clusterControllerClient);

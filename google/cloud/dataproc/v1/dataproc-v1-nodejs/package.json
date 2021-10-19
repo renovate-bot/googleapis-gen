@@ -22,6 +22,7 @@
     "google dataproc",
     "dataproc",
     "autoscaling policy service",
+    "batch controller",
     "cluster controller",
     "job controller",
     "workflow template service"

@@ -16,6 +16,8 @@
 
 from google.cloud.dataproc_v1.services.autoscaling_policy_service.client import AutoscalingPolicyServiceClient
 from google.cloud.dataproc_v1.services.autoscaling_policy_service.async_client import AutoscalingPolicyServiceAsyncClient
+from google.cloud.dataproc_v1.services.batch_controller.client import BatchControllerClient
+from google.cloud.dataproc_v1.services.batch_controller.async_client import BatchControllerAsyncClient
 from google.cloud.dataproc_v1.services.cluster_controller.client import ClusterControllerClient
 from google.cloud.dataproc_v1.services.cluster_controller.async_client import ClusterControllerAsyncClient
 from google.cloud.dataproc_v1.services.job_controller.client import JobControllerClient
@@ -33,6 +35,16 @@ from google.cloud.dataproc_v1.types.autoscaling_policies import InstanceGroupAut
 from google.cloud.dataproc_v1.types.autoscaling_policies import ListAutoscalingPoliciesRequest
 from google.cloud.dataproc_v1.types.autoscaling_policies import ListAutoscalingPoliciesResponse
 from google.cloud.dataproc_v1.types.autoscaling_policies import UpdateAutoscalingPolicyRequest
+from google.cloud.dataproc_v1.types.batches import Batch
+from google.cloud.dataproc_v1.types.batches import CreateBatchRequest
+from google.cloud.dataproc_v1.types.batches import DeleteBatchRequest
+from google.cloud.dataproc_v1.types.batches import GetBatchRequest
+from google.cloud.dataproc_v1.types.batches import ListBatchesRequest
+from google.cloud.dataproc_v1.types.batches import ListBatchesResponse
+from google.cloud.dataproc_v1.types.batches import PySparkBatch
+from google.cloud.dataproc_v1.types.batches import SparkBatch
+from google.cloud.dataproc_v1.types.batches import SparkRBatch
+from google.cloud.dataproc_v1.types.batches import SparkSqlBatch
 from google.cloud.dataproc_v1.types.clusters import AcceleratorConfig
 from google.cloud.dataproc_v1.types.clusters import AutoscalingConfig
 from google.cloud.dataproc_v1.types.clusters import Cluster
@@ -126,6 +138,8 @@ from google.cloud.dataproc_v1.types.workflow_templates import WorkflowTemplatePl
 
 __all__ = ('AutoscalingPolicyServiceClient',
     'AutoscalingPolicyServiceAsyncClient',
+    'BatchControllerClient',
+    'BatchControllerAsyncClient',
     'ClusterControllerClient',
     'ClusterControllerAsyncClient',
     'JobControllerClient',
@@ -142,6 +156,16 @@ __all__ = ('AutoscalingPolicyServiceClient',
     'ListAutoscalingPoliciesRequest',
     'ListAutoscalingPoliciesResponse',
     'UpdateAutoscalingPolicyRequest',
+    'Batch',
+    'CreateBatchRequest',
+    'DeleteBatchRequest',
+    'GetBatchRequest',
+    'ListBatchesRequest',
+    'ListBatchesResponse',
+    'PySparkBatch',
+    'SparkBatch',
+    'SparkRBatch',
+    'SparkSqlBatch',
     'AcceleratorConfig',
     'AutoscalingConfig',
     'Cluster',
