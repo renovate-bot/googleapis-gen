@@ -153,8 +153,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
-   * For example, if only the labels are being updated, the `update_mask` would
-   * be `"labels"`.
+   * For example, if only the labels are being updated, the `update_mask` is
+   * `"labels"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -167,8 +167,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
-   * For example, if only the labels are being updated, the `update_mask` would
-   * be `"labels"`.
+   * For example, if only the labels are being updated, the `update_mask` is
+   * `"labels"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -181,8 +181,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
-   * For example, if only the labels are being updated, the `update_mask` would
-   * be `"labels"`.
+   * For example, if only the labels are being updated, the `update_mask` is
+   * `"labels"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -702,8 +702,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -715,8 +715,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -732,8 +732,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -754,8 +754,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -774,8 +774,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -798,8 +798,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -818,8 +818,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -832,8 +832,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -849,8 +849,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The field mask describing which fields to update as a comma-separated list.
-     * For example, if only the labels are being updated, the `update_mask` would
-     * be `"labels"`.
+     * For example, if only the labels are being updated, the `update_mask` is
+     * `"labels"`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

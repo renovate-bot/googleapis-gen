@@ -31,7 +31,7 @@ class Issue
      * verify the email address, follow the
      * instructions in the email the `registrant_contact` receives following
      * registration. If you do not complete email verification within
-     * 14 days of registration, the domain is suspended. To resend the
+     * 15 days of registration, the domain is suspended. To resend the
      * verification email, call ConfigureContactSettings and provide the current
      * `registrant_contact.email`.
      *

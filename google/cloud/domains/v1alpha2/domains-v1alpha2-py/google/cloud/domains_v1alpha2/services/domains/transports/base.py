@@ -163,6 +163,16 @@ class DomainsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.retrieve_transfer_parameters: gapic_v1.method.wrap_method(
+                self.retrieve_transfer_parameters,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.transfer_domain: gapic_v1.method.wrap_method(
+                self.transfer_domain,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.list_registrations: gapic_v1.method.wrap_method(
                 self.list_registrations,
                 default_timeout=None,
@@ -250,6 +260,24 @@ class DomainsTransport(abc.ABC):
     @property
     def register_domain(self) -> Callable[
             [domains.RegisterDomainRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def retrieve_transfer_parameters(self) -> Callable[
+            [domains.RetrieveTransferParametersRequest],
+            Union[
+                domains.RetrieveTransferParametersResponse,
+                Awaitable[domains.RetrieveTransferParametersResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def transfer_domain(self) -> Callable[
+            [domains.TransferDomainRequest],
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]

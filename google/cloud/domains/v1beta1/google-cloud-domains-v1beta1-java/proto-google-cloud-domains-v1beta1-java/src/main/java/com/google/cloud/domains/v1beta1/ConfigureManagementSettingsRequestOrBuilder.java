@@ -60,7 +60,7 @@ public interface ConfigureManagementSettingsRequestOrBuilder extends
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
    * For example, if only the transfer lock is being updated, the `update_mask`
-   * would be `"transfer_lock_state"`.
+   * is `"transfer_lock_state"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,7 +71,7 @@ public interface ConfigureManagementSettingsRequestOrBuilder extends
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
    * For example, if only the transfer lock is being updated, the `update_mask`
-   * would be `"transfer_lock_state"`.
+   * is `"transfer_lock_state"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -82,7 +82,7 @@ public interface ConfigureManagementSettingsRequestOrBuilder extends
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
    * For example, if only the transfer lock is being updated, the `update_mask`
-   * would be `"transfer_lock_state"`.
+   * is `"transfer_lock_state"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>

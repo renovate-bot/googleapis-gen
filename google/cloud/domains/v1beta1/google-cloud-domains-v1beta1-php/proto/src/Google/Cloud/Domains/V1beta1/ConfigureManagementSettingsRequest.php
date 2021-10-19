@@ -31,7 +31,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The field mask describing which fields to update as a comma-separated list.
      * For example, if only the transfer lock is being updated, the `update_mask`
-     * would be `"transfer_lock_state"`.
+     * is `"transfer_lock_state"`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -51,7 +51,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. The field mask describing which fields to update as a comma-separated list.
      *           For example, if only the transfer lock is being updated, the `update_mask`
-     *           would be `"transfer_lock_state"`.
+     *           is `"transfer_lock_state"`.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,7 +126,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The field mask describing which fields to update as a comma-separated list.
      * For example, if only the transfer lock is being updated, the `update_mask`
-     * would be `"transfer_lock_state"`.
+     * is `"transfer_lock_state"`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -149,7 +149,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The field mask describing which fields to update as a comma-separated list.
      * For example, if only the transfer lock is being updated, the `update_mask`
-     * would be `"transfer_lock_state"`.
+     * is `"transfer_lock_state"`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var

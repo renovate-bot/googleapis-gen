@@ -28,8 +28,8 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      * Required. The registrant contact for the `Registration`.
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
-     * *Warning: For new `Registration`s, the registrant will receive an email
-     * confirmation that they must complete within 14 days to avoid domain
+     * *Warning: For new `Registration`s, the registrant receives an email
+     * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1beta1.ContactSettings.Contact registrant_contact = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -60,8 +60,8 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      *           Required. The registrant contact for the `Registration`.
      *           *Caution: Anyone with access to this email address, phone number,
      *           and/or postal address can take control of the domain.*
-     *           *Warning: For new `Registration`s, the registrant will receive an email
-     *           confirmation that they must complete within 14 days to avoid domain
+     *           *Warning: For new `Registration`s, the registrant receives an email
+     *           confirmation that they must complete within 15 days to avoid domain
      *           suspension.*
      *     @type \Google\Cloud\Domains\V1beta1\ContactSettings\Contact $admin_contact
      *           Required. The administrative contact for the `Registration`.
@@ -104,8 +104,8 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      * Required. The registrant contact for the `Registration`.
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
-     * *Warning: For new `Registration`s, the registrant will receive an email
-     * confirmation that they must complete within 14 days to avoid domain
+     * *Warning: For new `Registration`s, the registrant receives an email
+     * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1beta1.ContactSettings.Contact registrant_contact = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -130,8 +130,8 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      * Required. The registrant contact for the `Registration`.
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
-     * *Warning: For new `Registration`s, the registrant will receive an email
-     * confirmation that they must complete within 14 days to avoid domain
+     * *Warning: For new `Registration`s, the registrant receives an email
+     * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1beta1.ContactSettings.Contact registrant_contact = 2 [(.google.api.field_behavior) = REQUIRED];</code>

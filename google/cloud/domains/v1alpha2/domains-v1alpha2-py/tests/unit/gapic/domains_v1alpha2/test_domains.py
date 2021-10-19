@@ -1103,6 +1103,486 @@ async def test_register_domain_flattened_error_async():
         )
 
 
+def test_retrieve_transfer_parameters(transport: str = 'grpc', request_type=domains.RetrieveTransferParametersRequest):
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = domains.RetrieveTransferParametersResponse(
+        )
+        response = client.retrieve_transfer_parameters(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == domains.RetrieveTransferParametersRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, domains.RetrieveTransferParametersResponse)
+
+
+def test_retrieve_transfer_parameters_from_dict():
+    test_retrieve_transfer_parameters(request_type=dict)
+
+
+def test_retrieve_transfer_parameters_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        client.retrieve_transfer_parameters()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == domains.RetrieveTransferParametersRequest()
+
+
+@pytest.mark.asyncio
+async def test_retrieve_transfer_parameters_async(transport: str = 'grpc_asyncio', request_type=domains.RetrieveTransferParametersRequest):
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(domains.RetrieveTransferParametersResponse(
+        ))
+        response = await client.retrieve_transfer_parameters(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == domains.RetrieveTransferParametersRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, domains.RetrieveTransferParametersResponse)
+
+
+@pytest.mark.asyncio
+async def test_retrieve_transfer_parameters_async_from_dict():
+    await test_retrieve_transfer_parameters_async(request_type=dict)
+
+
+def test_retrieve_transfer_parameters_field_headers():
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = domains.RetrieveTransferParametersRequest()
+
+    request.location = 'location/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        call.return_value = domains.RetrieveTransferParametersResponse()
+        client.retrieve_transfer_parameters(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'location=location/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_retrieve_transfer_parameters_field_headers_async():
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = domains.RetrieveTransferParametersRequest()
+
+    request.location = 'location/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(domains.RetrieveTransferParametersResponse())
+        await client.retrieve_transfer_parameters(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'location=location/value',
+    ) in kw['metadata']
+
+
+def test_retrieve_transfer_parameters_flattened():
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = domains.RetrieveTransferParametersResponse()
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.retrieve_transfer_parameters(
+            location='location_value',
+            domain_name='domain_name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0].location == 'location_value'
+        assert args[0].domain_name == 'domain_name_value'
+
+
+def test_retrieve_transfer_parameters_flattened_error():
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.retrieve_transfer_parameters(
+            domains.RetrieveTransferParametersRequest(),
+            location='location_value',
+            domain_name='domain_name_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_retrieve_transfer_parameters_flattened_async():
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_transfer_parameters),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = domains.RetrieveTransferParametersResponse()
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(domains.RetrieveTransferParametersResponse())
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.retrieve_transfer_parameters(
+            location='location_value',
+            domain_name='domain_name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0].location == 'location_value'
+        assert args[0].domain_name == 'domain_name_value'
+
+
+@pytest.mark.asyncio
+async def test_retrieve_transfer_parameters_flattened_error_async():
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.retrieve_transfer_parameters(
+            domains.RetrieveTransferParametersRequest(),
+            location='location_value',
+            domain_name='domain_name_value',
+        )
+
+
+def test_transfer_domain(transport: str = 'grpc', request_type=domains.TransferDomainRequest):
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/spam')
+        response = client.transfer_domain(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == domains.TransferDomainRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, future.Future)
+
+
+def test_transfer_domain_from_dict():
+    test_transfer_domain(request_type=dict)
+
+
+def test_transfer_domain_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        client.transfer_domain()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == domains.TransferDomainRequest()
+
+
+@pytest.mark.asyncio
+async def test_transfer_domain_async(transport: str = 'grpc_asyncio', request_type=domains.TransferDomainRequest):
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        response = await client.transfer_domain(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == domains.TransferDomainRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, future.Future)
+
+
+@pytest.mark.asyncio
+async def test_transfer_domain_async_from_dict():
+    await test_transfer_domain_async(request_type=dict)
+
+
+def test_transfer_domain_field_headers():
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = domains.TransferDomainRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        client.transfer_domain(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_transfer_domain_field_headers_async():
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = domains.TransferDomainRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+        await client.transfer_domain(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+def test_transfer_domain_flattened():
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.transfer_domain(
+            parent='parent_value',
+            registration=domains.Registration(name='name_value'),
+            yearly_price=money_pb2.Money(currency_code='currency_code_value'),
+            authorization_code=domains.AuthorizationCode(code='code_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0].parent == 'parent_value'
+        assert args[0].registration == domains.Registration(name='name_value')
+        assert args[0].yearly_price == money_pb2.Money(currency_code='currency_code_value')
+        assert args[0].authorization_code == domains.AuthorizationCode(code='code_value')
+
+
+def test_transfer_domain_flattened_error():
+    client = DomainsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.transfer_domain(
+            domains.TransferDomainRequest(),
+            parent='parent_value',
+            registration=domains.Registration(name='name_value'),
+            yearly_price=money_pb2.Money(currency_code='currency_code_value'),
+            authorization_code=domains.AuthorizationCode(code='code_value'),
+        )
+
+
+@pytest.mark.asyncio
+async def test_transfer_domain_flattened_async():
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.transfer_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.transfer_domain(
+            parent='parent_value',
+            registration=domains.Registration(name='name_value'),
+            yearly_price=money_pb2.Money(currency_code='currency_code_value'),
+            authorization_code=domains.AuthorizationCode(code='code_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0].parent == 'parent_value'
+        assert args[0].registration == domains.Registration(name='name_value')
+        assert args[0].yearly_price == money_pb2.Money(currency_code='currency_code_value')
+        assert args[0].authorization_code == domains.AuthorizationCode(code='code_value')
+
+
+@pytest.mark.asyncio
+async def test_transfer_domain_flattened_error_async():
+    client = DomainsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.transfer_domain(
+            domains.TransferDomainRequest(),
+            parent='parent_value',
+            registration=domains.Registration(name='name_value'),
+            yearly_price=money_pb2.Money(currency_code='currency_code_value'),
+            authorization_code=domains.AuthorizationCode(code='code_value'),
+        )
+
+
 def test_list_registrations(transport: str = 'grpc', request_type=domains.ListRegistrationsRequest):
     client = DomainsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -3743,6 +4223,8 @@ def test_domains_base_transport():
         'search_domains',
         'retrieve_register_parameters',
         'register_domain',
+        'retrieve_transfer_parameters',
+        'transfer_domain',
         'list_registrations',
         'get_registration',
         'update_registration',

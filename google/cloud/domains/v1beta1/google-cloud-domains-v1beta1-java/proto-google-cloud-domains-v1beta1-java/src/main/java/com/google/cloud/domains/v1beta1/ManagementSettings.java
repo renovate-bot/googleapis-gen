@@ -118,8 +118,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The domain is automatically renewed each year .
-     * To disable automatic renewals, export the domain by calling
-     * `ExportRegistration` .
+     * To disable automatic renewals, delete the resource by calling
+     * `DeleteRegistration` or export it by calling `ExportRegistration`.
      * </pre>
      *
      * <code>AUTOMATIC_RENEWAL = 1;</code>
@@ -151,8 +151,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The domain is automatically renewed each year .
-     * To disable automatic renewals, export the domain by calling
-     * `ExportRegistration` .
+     * To disable automatic renewals, delete the resource by calling
+     * `DeleteRegistration` or export it by calling `ExportRegistration`.
      * </pre>
      *
      * <code>AUTOMATIC_RENEWAL = 1;</code>

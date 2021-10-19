@@ -11,11 +11,17 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * The `Registration` resource facilitates managing and configuring domain name
  * registrations.
+ * There are several ways to create a new `Registration` resource:
  * To create a new `Registration` resource, find a suitable domain name by
  * calling the `SearchDomains` method with a query to see available domain name
  * options. After choosing a name, call `RetrieveRegisterParameters` to
  * ensure availability and obtain information like pricing, which is needed to
  * build a call to `RegisterDomain`.
+ * Another way to create a new `Registration` is to transfer an existing
+ * domain from another registrar. First, go to the current registrar to unlock
+ * the domain for transfer and retrieve the domain's transfer authorization
+ * code. Then call `RetrieveTransferParameters` to confirm that the domain is
+ * unlocked and to get values needed to build a call to `TransferDomain`.
  *
  * Generated from protobuf message <code>google.cloud.domains.v1beta1.Registration</code>
  */
@@ -94,7 +100,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      *
@@ -148,7 +154,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      *           `contact_settings` field that change its `registrant_contact` or `privacy`
      *           fields require email confirmation by the `registrant_contact`
      *           before taking effect. This field is set only if there are pending updates
-     *           to the `contact_settings` that have not yet been confirmed. To confirm the
+     *           to the `contact_settings` that have not been confirmed. To confirm the
      *           changes, the `registrant_contact` must follow the instructions in the
      *           email they receive.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $supported_privacy
@@ -492,7 +498,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      *
@@ -519,7 +525,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * `contact_settings` field that change its `registrant_contact` or `privacy`
      * fields require email confirmation by the `registrant_contact`
      * before taking effect. This field is set only if there are pending updates
-     * to the `contact_settings` that have not yet been confirmed. To confirm the
+     * to the `contact_settings` that have not been confirmed. To confirm the
      * changes, the `registrant_contact` must follow the instructions in the
      * email they receive.
      *

@@ -3232,6 +3232,22 @@ private static final long serialVersionUID = 0L;
       ALGORITHM_UNSPECIFIED(0),
       /**
        * <pre>
+       * RSA/MD5. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>RSAMD5 = 1;</code>
+       */
+      RSAMD5(1),
+      /**
+       * <pre>
+       * Diffie-Hellman. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>DH = 2;</code>
+       */
+      DH(2),
+      /**
+       * <pre>
        * DSA/SHA1. Not recommended for new deployments.
        * </pre>
        *
@@ -3326,6 +3342,30 @@ private static final long serialVersionUID = 0L;
        * <code>ED448 = 16;</code>
        */
       ED448(16),
+      /**
+       * <pre>
+       * Reserved for Indirect Keys. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>INDIRECT = 252;</code>
+       */
+      INDIRECT(252),
+      /**
+       * <pre>
+       * Private algorithm. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>PRIVATEDNS = 253;</code>
+       */
+      PRIVATEDNS(253),
+      /**
+       * <pre>
+       * Private algorithm OID. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>PRIVATEOID = 254;</code>
+       */
+      PRIVATEOID(254),
       UNRECOGNIZED(-1),
       ;
 
@@ -3337,6 +3377,22 @@ private static final long serialVersionUID = 0L;
        * <code>ALGORITHM_UNSPECIFIED = 0;</code>
        */
       public static final int ALGORITHM_UNSPECIFIED_VALUE = 0;
+      /**
+       * <pre>
+       * RSA/MD5. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>RSAMD5 = 1;</code>
+       */
+      public static final int RSAMD5_VALUE = 1;
+      /**
+       * <pre>
+       * Diffie-Hellman. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>DH = 2;</code>
+       */
+      public static final int DH_VALUE = 2;
       /**
        * <pre>
        * DSA/SHA1. Not recommended for new deployments.
@@ -3433,6 +3489,30 @@ private static final long serialVersionUID = 0L;
        * <code>ED448 = 16;</code>
        */
       public static final int ED448_VALUE = 16;
+      /**
+       * <pre>
+       * Reserved for Indirect Keys. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>INDIRECT = 252;</code>
+       */
+      public static final int INDIRECT_VALUE = 252;
+      /**
+       * <pre>
+       * Private algorithm. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>PRIVATEDNS = 253;</code>
+       */
+      public static final int PRIVATEDNS_VALUE = 253;
+      /**
+       * <pre>
+       * Private algorithm OID. Cannot be used for new deployments.
+       * </pre>
+       *
+       * <code>PRIVATEOID = 254;</code>
+       */
+      public static final int PRIVATEOID_VALUE = 254;
 
 
       public final int getNumber() {
@@ -3460,6 +3540,8 @@ private static final long serialVersionUID = 0L;
       public static Algorithm forNumber(int value) {
         switch (value) {
           case 0: return ALGORITHM_UNSPECIFIED;
+          case 1: return RSAMD5;
+          case 2: return DH;
           case 3: return DSA;
           case 4: return ECC;
           case 5: return RSASHA1;
@@ -3472,6 +3554,9 @@ private static final long serialVersionUID = 0L;
           case 14: return ECDSAP384SHA384;
           case 15: return ED25519;
           case 16: return ED448;
+          case 252: return INDIRECT;
+          case 253: return PRIVATEDNS;
+          case 254: return PRIVATEOID;
           default: return null;
         }
       }

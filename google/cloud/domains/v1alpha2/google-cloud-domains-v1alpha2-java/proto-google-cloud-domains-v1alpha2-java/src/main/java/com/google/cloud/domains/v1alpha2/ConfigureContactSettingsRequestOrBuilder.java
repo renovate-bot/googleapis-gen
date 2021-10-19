@@ -60,7 +60,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
    * For example, if only the registrant contact is being updated, the
-   * `update_mask` would be `"registrant_contact"`.
+   * `update_mask` is `"registrant_contact"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,7 +71,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
    * For example, if only the registrant contact is being updated, the
-   * `update_mask` would be `"registrant_contact"`.
+   * `update_mask` is `"registrant_contact"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -82,7 +82,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
    * <pre>
    * Required. The field mask describing which fields to update as a comma-separated list.
    * For example, if only the registrant contact is being updated, the
-   * `update_mask` would be `"registrant_contact"`.
+   * `update_mask` is `"registrant_contact"`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,7 +92,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in `contact_settings`.
+   * needed here depend on the values specified in `contact_settings`.
    * </pre>
    *
    * <code>repeated .google.cloud.domains.v1alpha2.ContactNotice contact_notices = 4;</code>
@@ -102,7 +102,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in `contact_settings`.
+   * needed here depend on the values specified in `contact_settings`.
    * </pre>
    *
    * <code>repeated .google.cloud.domains.v1alpha2.ContactNotice contact_notices = 4;</code>
@@ -112,7 +112,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in `contact_settings`.
+   * needed here depend on the values specified in `contact_settings`.
    * </pre>
    *
    * <code>repeated .google.cloud.domains.v1alpha2.ContactNotice contact_notices = 4;</code>
@@ -123,7 +123,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in `contact_settings`.
+   * needed here depend on the values specified in `contact_settings`.
    * </pre>
    *
    * <code>repeated .google.cloud.domains.v1alpha2.ContactNotice contact_notices = 4;</code>
@@ -134,7 +134,7 @@ public interface ConfigureContactSettingsRequestOrBuilder extends
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in `contact_settings`.
+   * needed here depend on the values specified in `contact_settings`.
    * </pre>
    *
    * <code>repeated .google.cloud.domains.v1alpha2.ContactNotice contact_notices = 4;</code>

@@ -361,7 +361,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -376,7 +376,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -405,7 +405,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -420,7 +420,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The list of contact notices that the caller acknowledges. The notices
-   * required here depend on the values specified in
+   * needed here depend on the values specified in
    * `registration.contact_settings`.
    * </pre>
    *
@@ -482,7 +482,7 @@ private static final long serialVersionUID = 0L;
   private boolean validateOnly_;
   /**
    * <pre>
-   * When true, only validation will be performed, without actually registering
+   * When true, only validation is performed, without actually registering
    * the domain. Follows:
    * https://cloud.google.com/apis/design/design_patterns#request_validation
    * </pre>
@@ -1431,7 +1431,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1445,7 +1445,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1458,7 +1458,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1472,7 +1472,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1494,7 +1494,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1534,7 +1534,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1550,7 +1550,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1564,7 +1564,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1578,7 +1578,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1597,7 +1597,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1614,7 +1614,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The list of contact notices that the caller acknowledges. The notices
-     * required here depend on the values specified in
+     * needed here depend on the values specified in
      * `registration.contact_settings`.
      * </pre>
      *
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
     private boolean validateOnly_ ;
     /**
      * <pre>
-     * When true, only validation will be performed, without actually registering
+     * When true, only validation is performed, without actually registering
      * the domain. Follows:
      * https://cloud.google.com/apis/design/design_patterns#request_validation
      * </pre>
@@ -1822,7 +1822,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When true, only validation will be performed, without actually registering
+     * When true, only validation is performed, without actually registering
      * the domain. Follows:
      * https://cloud.google.com/apis/design/design_patterns#request_validation
      * </pre>
@@ -1839,7 +1839,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When true, only validation will be performed, without actually registering
+     * When true, only validation is performed, without actually registering
      * the domain. Follows:
      * https://cloud.google.com/apis/design/design_patterns#request_validation
      * </pre>

@@ -37,6 +37,9 @@ __protobuf__ = proto.module(
         'RetrieveRegisterParametersRequest',
         'RetrieveRegisterParametersResponse',
         'RegisterDomainRequest',
+        'RetrieveTransferParametersRequest',
+        'RetrieveTransferParametersResponse',
+        'TransferDomainRequest',
         'ListRegistrationsRequest',
         'ListRegistrationsResponse',
         'GetRegistrationRequest',
@@ -49,6 +52,7 @@ __protobuf__ = proto.module(
         'RetrieveAuthorizationCodeRequest',
         'ResetAuthorizationCodeRequest',
         'RegisterParameters',
+        'TransferParameters',
         'AuthorizationCode',
         'OperationMetadata',
     },
@@ -94,12 +98,22 @@ class Registration(proto.Message):
     r"""The ``Registration`` resource facilitates managing and configuring
     domain name registrations.
 
+    There are several ways to create a new ``Registration`` resource:
+
     To create a new ``Registration`` resource, find a suitable domain
     name by calling the ``SearchDomains`` method with a query to see
     available domain name options. After choosing a name, call
     ``RetrieveRegisterParameters`` to ensure availability and obtain
     information like pricing, which is needed to build a call to
     ``RegisterDomain``.
+
+    Another way to create a new ``Registration`` is to transfer an
+    existing domain from another registrar. First, go to the current
+    registrar to unlock the domain for transfer and retrieve the
+    domain's transfer authorization code. Then call
+    ``RetrieveTransferParameters`` to confirm that the domain is
+    unlocked and to get values needed to build a call to
+    ``TransferDomain``.
 
     Attributes:
         name (str):
@@ -145,7 +159,7 @@ class Registration(proto.Message):
             require email confirmation by the ``registrant_contact``
             before taking effect. This field is set only if there are
             pending updates to the ``contact_settings`` that have not
-            yet been confirmed. To confirm the changes, the
+            been confirmed. To confirm the changes, the
             ``registrant_contact`` must follow the instructions in the
             email they receive.
         supported_privacy (Sequence[google.cloud.domains_v1alpha2.types.ContactPrivacy]):
@@ -158,6 +172,8 @@ class Registration(proto.Message):
         STATE_UNSPECIFIED = 0
         REGISTRATION_PENDING = 1
         REGISTRATION_FAILED = 2
+        TRANSFER_PENDING = 3
+        TRANSFER_FAILED = 4
         ACTIVE = 6
         SUSPENDED = 7
         EXPORTED = 8
@@ -368,6 +384,8 @@ class DnsSettings(proto.Message):
             algorithms are not supported for particular domains.
             """
             ALGORITHM_UNSPECIFIED = 0
+            RSAMD5 = 1
+            DH = 2
             DSA = 3
             ECC = 4
             RSASHA1 = 5
@@ -380,6 +398,9 @@ class DnsSettings(proto.Message):
             ECDSAP384SHA384 = 14
             ED25519 = 15
             ED448 = 16
+            INDIRECT = 252
+            PRIVATEDNS = 253
+            PRIVATEOID = 254
 
         class DigestType(proto.Enum):
             r"""List of hash functions that may have been used to generate a
@@ -483,9 +504,9 @@ class ContactSettings(proto.Message):
             number, and/or postal address can take control of the
             domain.*
 
-            *Warning: For new ``Registration``\ s, the registrant will
-            receive an email confirmation that they must complete within
-            14 days to avoid domain suspension.*
+            *Warning: For new ``Registration``\ s, the registrant
+            receives an email confirmation that they must complete
+            within 15 days to avoid domain suspension.*
         admin_contact (google.cloud.domains_v1alpha2.types.ContactSettings.Contact):
             Required. The administrative contact for the
             ``Registration``.
@@ -640,7 +661,7 @@ class RegisterDomainRequest(proto.Message):
             acknowledgement.
         contact_notices (Sequence[google.cloud.domains_v1alpha2.types.ContactNotice]):
             The list of contact notices that the caller acknowledges.
-            The notices required here depend on the values specified in
+            The notices needed here depend on the values specified in
             ``registration.contact_settings``.
         yearly_price (google.type.money_pb2.Money):
             Required. Yearly price to register or renew
@@ -648,8 +669,8 @@ class RegisterDomainRequest(proto.Message):
             can be obtained from RetrieveRegisterParameters
             or SearchDomains calls.
         validate_only (bool):
-            When true, only validation will be performed, without
-            actually registering the domain. Follows:
+            When true, only validation is performed, without actually
+            registering the domain. Follows:
             https://cloud.google.com/apis/design/design_patterns#request_validation
     """
 
@@ -676,6 +697,108 @@ class RegisterDomainRequest(proto.Message):
         proto.MESSAGE,
         number=5,
         message=money_pb2.Money,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+
+
+class RetrieveTransferParametersRequest(proto.Message):
+    r"""Request for the ``RetrieveTransferParameters`` method.
+
+    Attributes:
+        domain_name (str):
+            Required. The domain name. Unicode domain
+            names must be expressed in Punycode format.
+        location (str):
+            Required. The location. Must be in the format
+            ``projects/*/locations/*``.
+    """
+
+    domain_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class RetrieveTransferParametersResponse(proto.Message):
+    r"""Response for the ``RetrieveTransferParameters`` method.
+
+    Attributes:
+        transfer_parameters (google.cloud.domains_v1alpha2.types.TransferParameters):
+            Parameters to use when calling the ``TransferDomain``
+            method.
+    """
+
+    transfer_parameters = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message='TransferParameters',
+    )
+
+
+class TransferDomainRequest(proto.Message):
+    r"""Request for the ``TransferDomain`` method.
+
+    Attributes:
+        parent (str):
+            Required. The parent resource of the ``Registration``. Must
+            be in the format ``projects/*/locations/*``.
+        registration (google.cloud.domains_v1alpha2.types.Registration):
+            Required. The complete ``Registration`` resource to be
+            created.
+
+            You can leave ``registration.dns_settings`` unset to import
+            the domain's current DNS configuration from its current
+            registrar. Use this option only if you are sure that the
+            domain's current DNS service does not cease upon transfer,
+            as is often the case for DNS services provided for free by
+            the registrar.
+        contact_notices (Sequence[google.cloud.domains_v1alpha2.types.ContactNotice]):
+            The list of contact notices that you acknowledge. The
+            notices needed here depend on the values specified in
+            ``registration.contact_settings``.
+        yearly_price (google.type.money_pb2.Money):
+            Required. Acknowledgement of the price to transfer or renew
+            the domain for one year. Call ``RetrieveTransferParameters``
+            to obtain the price, which you must acknowledge.
+        authorization_code (google.cloud.domains_v1alpha2.types.AuthorizationCode):
+            The domain's transfer authorization code. You
+            can obtain this from the domain's current
+            registrar.
+        validate_only (bool):
+            Validate the request without actually
+            transferring the domain.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    registration = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='Registration',
+    )
+    contact_notices = proto.RepeatedField(
+        proto.ENUM,
+        number=3,
+        enum='ContactNotice',
+    )
+    yearly_price = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=money_pb2.Money,
+    )
+    authorization_code = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message='AuthorizationCode',
     )
     validate_only = proto.Field(
         proto.BOOL,
@@ -788,8 +911,7 @@ class UpdateRegistrationRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. The field mask describing which fields to update
             as a comma-separated list. For example, if only the labels
-            are being updated, the ``update_mask`` would be
-            ``"labels"``.
+            are being updated, the ``update_mask`` is ``"labels"``.
     """
 
     registration = proto.Field(
@@ -817,7 +939,7 @@ class ConfigureManagementSettingsRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. The field mask describing which fields to update
             as a comma-separated list. For example, if only the transfer
-            lock is being updated, the ``update_mask`` would be
+            lock is being updated, the ``update_mask`` is
             ``"transfer_lock_state"``.
     """
 
@@ -851,14 +973,14 @@ class ConfigureDnsSettingsRequest(proto.Message):
             Required. The field mask describing which fields to update
             as a comma-separated list. For example, if only the name
             servers are being updated for an existing Custom DNS
-            configuration, the ``update_mask`` would be
+            configuration, the ``update_mask`` is
             ``"custom_dns.name_servers"``.
 
             When changing the DNS provider from one type to another,
             pass the new provider's field name as part of the field
             mask. For example, when changing from a Google Domains DNS
             configuration to a Custom DNS configuration, the
-            ``update_mask`` would be ``"custom_dns"``. //
+            ``update_mask`` is ``"custom_dns"``. //
         validate_only (bool):
             Validate the request without actually
             updating the DNS settings.
@@ -897,11 +1019,11 @@ class ConfigureContactSettingsRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. The field mask describing which fields to update
             as a comma-separated list. For example, if only the
-            registrant contact is being updated, the ``update_mask``
-            would be ``"registrant_contact"``.
+            registrant contact is being updated, the ``update_mask`` is
+            ``"registrant_contact"``.
         contact_notices (Sequence[google.cloud.domains_v1alpha2.types.ContactNotice]):
             The list of contact notices that the caller acknowledges.
-            The notices required here depend on the values specified in
+            The notices needed here depend on the values specified in
             ``contact_settings``.
         validate_only (bool):
             Validate the request without actually
@@ -1047,6 +1169,62 @@ class RegisterParameters(proto.Message):
     yearly_price = proto.Field(
         proto.MESSAGE,
         number=5,
+        message=money_pb2.Money,
+    )
+
+
+class TransferParameters(proto.Message):
+    r"""Parameters required to transfer a domain from another
+    registrar.
+
+    Attributes:
+        domain_name (str):
+            The domain name. Unicode domain names are
+            expressed in Punycode format.
+        current_registrar (str):
+            The registrar that currently manages the
+            domain.
+        name_servers (Sequence[str]):
+            The name servers that currently store the
+            configuration of the domain.
+        transfer_lock_state (google.cloud.domains_v1alpha2.types.TransferLockState):
+            Indicates whether the domain is protected by a transfer
+            lock. For a transfer to succeed, this must show
+            ``UNLOCKED``. To unlock a domain, go to its current
+            registrar.
+        supported_privacy (Sequence[google.cloud.domains_v1alpha2.types.ContactPrivacy]):
+            Contact privacy options that the domain
+            supports.
+        yearly_price (google.type.money_pb2.Money):
+            Price to transfer or renew the domain for one
+            year.
+    """
+
+    domain_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    current_registrar = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    name_servers = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    transfer_lock_state = proto.Field(
+        proto.ENUM,
+        number=4,
+        enum='TransferLockState',
+    )
+    supported_privacy = proto.RepeatedField(
+        proto.ENUM,
+        number=5,
+        enum='ContactPrivacy',
+    )
+    yearly_price = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=money_pb2.Money,
     )
 

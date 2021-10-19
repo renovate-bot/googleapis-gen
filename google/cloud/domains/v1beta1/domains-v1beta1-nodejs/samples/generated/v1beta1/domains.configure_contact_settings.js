@@ -32,12 +32,12 @@ function main(registration, updateMask) {
   /**
    *  Required. The field mask describing which fields to update as a comma-separated list.
    *  For example, if only the registrant contact is being updated, the
-   *  `update_mask` would be `"registrant_contact"`.
+   *  `update_mask` is `"registrant_contact"`.
    */
   // const updateMask = ''
   /**
    *  The list of contact notices that the caller acknowledges. The notices
-   *  required here depend on the values specified in `contact_settings`.
+   *  needed here depend on the values specified in `contact_settings`.
    */
   // const contactNotices = 1234
   /**

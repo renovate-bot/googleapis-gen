@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Domains V1alpha2 API
+--title=Cloud Domains V1alpha2 API
 --exclude _pb\.rb$
 --format yaml
 --template-path ../template

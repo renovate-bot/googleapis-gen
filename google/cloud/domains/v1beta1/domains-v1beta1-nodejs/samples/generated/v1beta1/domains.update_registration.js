@@ -26,8 +26,8 @@ function main(updateMask) {
   // const registration = ''
   /**
    *  Required. The field mask describing which fields to update as a comma-separated list.
-   *  For example, if only the labels are being updated, the `update_mask` would
-   *  be `"labels"`.
+   *  For example, if only the labels are being updated, the `update_mask` is
+   *  `"labels"`.
    */
   // const updateMask = ''
 

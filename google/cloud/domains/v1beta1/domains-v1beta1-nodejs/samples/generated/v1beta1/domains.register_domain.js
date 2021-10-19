@@ -36,7 +36,7 @@ function main(parent, registration, yearlyPrice) {
   // const domainNotices = 1234
   /**
    *  The list of contact notices that the caller acknowledges. The notices
-   *  required here depend on the values specified in
+   *  needed here depend on the values specified in
    *  `registration.contact_settings`.
    */
   // const contactNotices = 1234
@@ -47,7 +47,7 @@ function main(parent, registration, yearlyPrice) {
    */
   // const yearlyPrice = ''
   /**
-   *  When true, only validation will be performed, without actually registering
+   *  When true, only validation is performed, without actually registering
    *  the domain. Follows:
    *  https://cloud.google.com/apis/design/design_patterns#request_validation
    */

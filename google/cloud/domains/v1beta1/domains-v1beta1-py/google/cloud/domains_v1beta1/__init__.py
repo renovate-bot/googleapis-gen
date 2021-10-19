@@ -37,8 +37,12 @@ from .types.domains import ResetAuthorizationCodeRequest
 from .types.domains import RetrieveAuthorizationCodeRequest
 from .types.domains import RetrieveRegisterParametersRequest
 from .types.domains import RetrieveRegisterParametersResponse
+from .types.domains import RetrieveTransferParametersRequest
+from .types.domains import RetrieveTransferParametersResponse
 from .types.domains import SearchDomainsRequest
 from .types.domains import SearchDomainsResponse
+from .types.domains import TransferDomainRequest
+from .types.domains import TransferParameters
 from .types.domains import UpdateRegistrationRequest
 from .types.domains import ContactNotice
 from .types.domains import ContactPrivacy
@@ -71,8 +75,12 @@ __all__ = (
 'RetrieveAuthorizationCodeRequest',
 'RetrieveRegisterParametersRequest',
 'RetrieveRegisterParametersResponse',
+'RetrieveTransferParametersRequest',
+'RetrieveTransferParametersResponse',
 'SearchDomainsRequest',
 'SearchDomainsResponse',
+'TransferDomainRequest',
 'TransferLockState',
+'TransferParameters',
 'UpdateRegistrationRequest',
 )
