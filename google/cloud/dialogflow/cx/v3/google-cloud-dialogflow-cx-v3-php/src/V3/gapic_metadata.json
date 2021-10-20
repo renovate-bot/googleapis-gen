@@ -186,6 +186,25 @@
                 }
             }
         },
+        "Changelogs": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ChangelogsGapicClient",
+                    "rpcs": {
+                        "GetChangelog": {
+                            "methods": [
+                                "getChangelog"
+                            ]
+                        },
+                        "ListChangelogs": {
+                            "methods": [
+                                "listChangelogs"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "Deployments": {
             "clients": {
                 "grpc": {
