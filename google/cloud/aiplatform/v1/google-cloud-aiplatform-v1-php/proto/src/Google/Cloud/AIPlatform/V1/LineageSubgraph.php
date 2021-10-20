@@ -19,13 +19,13 @@ class LineageSubgraph extends \Google\Protobuf\Internal\Message
     /**
      * The Artifact nodes in the subgraph.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     private $artifacts;
     /**
      * The Execution nodes in the subgraph.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     private $executions;
     /**
@@ -57,7 +57,7 @@ class LineageSubgraph extends \Google\Protobuf\Internal\Message
     /**
      * The Artifact nodes in the subgraph.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getArtifacts()
@@ -68,7 +68,7 @@ class LineageSubgraph extends \Google\Protobuf\Internal\Message
     /**
      * The Artifact nodes in the subgraph.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      * @param \Google\Cloud\AIPlatform\V1\Artifact[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -83,7 +83,7 @@ class LineageSubgraph extends \Google\Protobuf\Internal\Message
     /**
      * The Execution nodes in the subgraph.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExecutions()
@@ -94,7 +94,7 @@ class LineageSubgraph extends \Google\Protobuf\Internal\Message
     /**
      * The Execution nodes in the subgraph.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      * @param \Google\Cloud\AIPlatform\V1\Execution[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

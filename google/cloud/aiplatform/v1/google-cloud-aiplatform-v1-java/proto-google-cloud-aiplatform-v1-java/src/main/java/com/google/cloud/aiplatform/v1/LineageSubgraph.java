@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.aiplatform.v1.Artifact> getArtifactsList() {
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.aiplatform.v1.ArtifactOrBuilder> 
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public int getArtifactsCount() {
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.Artifact getArtifacts(int index) {
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * The Artifact nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ArtifactOrBuilder getArtifactsOrBuilder(
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.aiplatform.v1.Execution> getExecutionsList() {
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.aiplatform.v1.ExecutionOrBuilder> 
@@ -215,7 +215,7 @@ private static final long serialVersionUID = 0L;
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public int getExecutionsCount() {
@@ -226,7 +226,7 @@ private static final long serialVersionUID = 0L;
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.Execution getExecutions(int index) {
@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
    * The Execution nodes in the subgraph.
    * </pre>
    *
-   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ExecutionOrBuilder getExecutionsOrBuilder(
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Artifact> getArtifactsList() {
       if (artifactsBuilder_ == null) {
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public int getArtifactsCount() {
       if (artifactsBuilder_ == null) {
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact getArtifacts(int index) {
       if (artifactsBuilder_ == null) {
@@ -821,7 +821,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder setArtifacts(
         int index, com.google.cloud.aiplatform.v1.Artifact value) {
@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder setArtifacts(
         int index, com.google.cloud.aiplatform.v1.Artifact.Builder builderForValue) {
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(com.google.cloud.aiplatform.v1.Artifact value) {
       if (artifactsBuilder_ == null) {
@@ -880,7 +880,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(
         int index, com.google.cloud.aiplatform.v1.Artifact value) {
@@ -901,7 +901,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(
         com.google.cloud.aiplatform.v1.Artifact.Builder builderForValue) {
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addArtifacts(
         int index, com.google.cloud.aiplatform.v1.Artifact.Builder builderForValue) {
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder addAllArtifacts(
         java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Artifact> values) {
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder clearArtifacts() {
       if (artifactsBuilder_ == null) {
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public Builder removeArtifacts(int index) {
       if (artifactsBuilder_ == null) {
@@ -990,7 +990,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact.Builder getArtifactsBuilder(
         int index) {
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.ArtifactOrBuilder getArtifactsOrBuilder(
         int index) {
@@ -1015,7 +1015,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public java.util.List<? extends com.google.cloud.aiplatform.v1.ArtifactOrBuilder> 
          getArtifactsOrBuilderList() {
@@ -1030,7 +1030,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact.Builder addArtifactsBuilder() {
       return getArtifactsFieldBuilder().addBuilder(
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public com.google.cloud.aiplatform.v1.Artifact.Builder addArtifactsBuilder(
         int index) {
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
      * The Artifact nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Artifact artifacts = 1;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Artifact.Builder> 
          getArtifactsBuilderList() {
@@ -1091,7 +1091,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Execution> getExecutionsList() {
       if (executionsBuilder_ == null) {
@@ -1105,7 +1105,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public int getExecutionsCount() {
       if (executionsBuilder_ == null) {
@@ -1119,7 +1119,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution getExecutions(int index) {
       if (executionsBuilder_ == null) {
@@ -1133,7 +1133,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder setExecutions(
         int index, com.google.cloud.aiplatform.v1.Execution value) {
@@ -1154,7 +1154,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder setExecutions(
         int index, com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(com.google.cloud.aiplatform.v1.Execution value) {
       if (executionsBuilder_ == null) {
@@ -1192,7 +1192,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(
         int index, com.google.cloud.aiplatform.v1.Execution value) {
@@ -1213,7 +1213,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(
         com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addExecutions(
         int index, com.google.cloud.aiplatform.v1.Execution.Builder builderForValue) {
@@ -1249,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder addAllExecutions(
         java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.Execution> values) {
@@ -1268,7 +1268,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder clearExecutions() {
       if (executionsBuilder_ == null) {
@@ -1285,7 +1285,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public Builder removeExecutions(int index) {
       if (executionsBuilder_ == null) {
@@ -1302,7 +1302,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder getExecutionsBuilder(
         int index) {
@@ -1313,7 +1313,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.ExecutionOrBuilder getExecutionsOrBuilder(
         int index) {
@@ -1327,7 +1327,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public java.util.List<? extends com.google.cloud.aiplatform.v1.ExecutionOrBuilder> 
          getExecutionsOrBuilderList() {
@@ -1342,7 +1342,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder addExecutionsBuilder() {
       return getExecutionsFieldBuilder().addBuilder(
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public com.google.cloud.aiplatform.v1.Execution.Builder addExecutionsBuilder(
         int index) {
@@ -1365,7 +1365,7 @@ private static final long serialVersionUID = 0L;
      * The Execution nodes in the subgraph.
      * </pre>
      *
-     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>repeated .google.cloud.aiplatform.v1.Execution executions = 2;</code>
      */
     public java.util.List<com.google.cloud.aiplatform.v1.Execution.Builder> 
          getExecutionsBuilderList() {

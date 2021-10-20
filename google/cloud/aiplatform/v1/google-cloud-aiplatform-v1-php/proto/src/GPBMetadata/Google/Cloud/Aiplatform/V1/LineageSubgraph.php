@@ -14,21 +14,18 @@ class LineageSubgraph
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1\Artifact::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1\Event::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1\Execution::initOnce();
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ý
-1google/cloud/aiplatform/v1/lineage_subgraph.protogoogle.cloud.aiplatform.v1)google/cloud/aiplatform/v1/artifact.proto&google/cloud/aiplatform/v1/event.proto*google/cloud/aiplatform/v1/execution.protogoogle/api/annotations.proto"‹
-LineageSubgraph`
-	artifacts (2$.google.cloud.aiplatform.v1.ArtifactB\'úA$
-"aiplatform.googleapis.com/Artifactc
+ß
+1google/cloud/aiplatform/v1/lineage_subgraph.protogoogle.cloud.aiplatform.v1&google/cloud/aiplatform/v1/event.proto*google/cloud/aiplatform/v1/execution.protogoogle/api/annotations.proto"¸
+LineageSubgraph7
+	artifacts (2$.google.cloud.aiplatform.v1.Artifact9
 
-executions (2%.google.cloud.aiplatform.v1.ExecutionB(úA%
-#aiplatform.googleapis.com/Execution1
+executions (2%.google.cloud.aiplatform.v1.Execution1
 events (2!.google.cloud.aiplatform.v1.EventBØ
 com.google.cloud.aiplatform.v1BLineageSubgraphProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
