@@ -19,6 +19,8 @@
 import * as v3beta1 from './v3beta1';
 const AgentsClient = v3beta1.AgentsClient;
 type AgentsClient = v3beta1.AgentsClient;
+const ChangelogsClient = v3beta1.ChangelogsClient;
+type ChangelogsClient = v3beta1.ChangelogsClient;
 const DeploymentsClient = v3beta1.DeploymentsClient;
 type DeploymentsClient = v3beta1.DeploymentsClient;
 const EntityTypesClient = v3beta1.EntityTypesClient;
@@ -47,7 +49,7 @@ const VersionsClient = v3beta1.VersionsClient;
 type VersionsClient = v3beta1.VersionsClient;
 const WebhooksClient = v3beta1.WebhooksClient;
 type WebhooksClient = v3beta1.WebhooksClient;
-export {v3beta1, AgentsClient, DeploymentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient};
-export default {v3beta1, AgentsClient, DeploymentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient};
+export {v3beta1, AgentsClient, ChangelogsClient, DeploymentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient};
+export default {v3beta1, AgentsClient, ChangelogsClient, DeploymentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient};
 import * as protos from '../protos/protos';
 export {protos}
