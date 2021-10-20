@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/assuredworkloads",
+  "name": "@google-cloud/assured-workloads",
   "version": "0.1.0",
   "description": "Assuredworkloads client for Node.js",
   "repository": "googleapis/nodejs-assuredworkloads",

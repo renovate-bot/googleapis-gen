@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const assuredworkloads = require('@google-cloud/assuredworkloads');
+const assuredworkloads = require('@google-cloud/assured-workloads');
 
 function main() {
   const assuredWorkloadsServiceClient = new assuredworkloads.AssuredWorkloadsServiceClient();

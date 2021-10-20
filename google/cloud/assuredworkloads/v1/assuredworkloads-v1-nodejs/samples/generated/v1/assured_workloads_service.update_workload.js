@@ -33,7 +33,7 @@ function main(workload, updateMask) {
   // const updateMask = ''
 
   // Imports the Assuredworkloads library
-  const {AssuredWorkloadsServiceClient} = require('@google-cloud/assuredworkloads').v1;
+  const {AssuredWorkloadsServiceClient} = require('@google-cloud/assured-workloads').v1;
 
   // Instantiates a client
   const assuredworkloadsClient = new AssuredWorkloadsServiceClient();
