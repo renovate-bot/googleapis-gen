@@ -12,9 +12,9 @@ use Google\Protobuf\Internal\GPBUtil;
  * DockerImage represents a docker artifact.
  * The following fields are returned as untyped metadata in the Version
  * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
- *   - imageSizeBytes
- *   - mediaType
- *   - buildTime
+ * * imageSizeBytes
+ * * mediaType
+ * * buildTime
  *
  * Generated from protobuf message <code>google.devtools.artifactregistry.v1.DockerImage</code>
  */

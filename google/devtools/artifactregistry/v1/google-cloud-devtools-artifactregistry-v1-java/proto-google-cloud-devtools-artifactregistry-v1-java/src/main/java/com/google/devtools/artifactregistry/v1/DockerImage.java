@@ -8,9 +8,9 @@ package com.google.devtools.artifactregistry.v1;
  * DockerImage represents a docker artifact.
  * The following fields are returned as untyped metadata in the Version
  * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
- *   - imageSizeBytes
- *   - mediaType
- *   - buildTime
+ * * imageSizeBytes
+ * * mediaType
+ * * buildTime
  * </pre>
  *
  * Protobuf type {@code google.devtools.artifactregistry.v1.DockerImage}
@@ -717,9 +717,9 @@ private static final long serialVersionUID = 0L;
    * DockerImage represents a docker artifact.
    * The following fields are returned as untyped metadata in the Version
    * resource, using camelcase keys (i.e. metadata.imageSizeBytes):
-   *   - imageSizeBytes
-   *   - mediaType
-   *   - buildTime
+   * * imageSizeBytes
+   * * mediaType
+   * * buildTime
    * </pre>
    *
    * Protobuf type {@code google.devtools.artifactregistry.v1.DockerImage}
