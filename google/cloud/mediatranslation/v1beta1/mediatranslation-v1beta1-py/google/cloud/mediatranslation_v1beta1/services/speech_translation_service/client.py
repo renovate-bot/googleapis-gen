@@ -389,7 +389,7 @@ class SpeechTranslationServiceClient(metaclass=SpeechTranslationServiceClientMet
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-mediatranslation",
+            "google-cloud-media-translation",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
