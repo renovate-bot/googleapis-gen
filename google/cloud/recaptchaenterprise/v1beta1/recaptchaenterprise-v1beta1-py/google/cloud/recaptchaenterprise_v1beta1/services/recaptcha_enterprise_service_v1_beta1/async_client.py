@@ -603,7 +603,7 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-recaptchaenterprise",
+            "google-cloud-recaptcha-enterprise",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
