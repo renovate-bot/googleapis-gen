@@ -789,8 +789,8 @@ public class BuildServiceClient implements BackgroundResource {
    * is determined by evaluating the following rules in order until one is true. If none are true,
    * then there is no stable build and it will return an empty response.
    *
-   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
-   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * <p>Evaluation rules: 1. Stable channel build with label “Live” 2. Beta channel build with label
+   * “Live” 3. Dev channel build with label “Live” 4. Most recent stable channel build with build
    * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
    * build with build status Pass
    *
@@ -821,8 +821,8 @@ public class BuildServiceClient implements BackgroundResource {
    * is determined by evaluating the following rules in order until one is true. If none are true,
    * then there is no stable build and it will return an empty response.
    *
-   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
-   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * <p>Evaluation rules: 1. Stable channel build with label “Live” 2. Beta channel build with label
+   * “Live” 3. Dev channel build with label “Live” 4. Most recent stable channel build with build
    * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
    * build with build status Pass
    *
@@ -851,8 +851,8 @@ public class BuildServiceClient implements BackgroundResource {
    * is determined by evaluating the following rules in order until one is true. If none are true,
    * then there is no stable build and it will return an empty response.
    *
-   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
-   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * <p>Evaluation rules: 1. Stable channel build with label “Live” 2. Beta channel build with label
+   * “Live” 3. Dev channel build with label “Live” 4. Most recent stable channel build with build
    * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
    * build with build status Pass
    *
@@ -881,8 +881,8 @@ public class BuildServiceClient implements BackgroundResource {
    * is determined by evaluating the following rules in order until one is true. If none are true,
    * then there is no stable build and it will return an empty response.
    *
-   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
-   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * <p>Evaluation rules: 1. Stable channel build with label “Live” 2. Beta channel build with label
+   * “Live” 3. Dev channel build with label “Live” 4. Most recent stable channel build with build
    * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
    * build with build status Pass
    *
