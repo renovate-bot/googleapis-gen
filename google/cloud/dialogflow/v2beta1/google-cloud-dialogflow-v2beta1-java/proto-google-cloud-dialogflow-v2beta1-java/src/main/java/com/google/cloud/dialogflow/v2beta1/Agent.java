@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
     TIER_UNSPECIFIED(0),
     /**
      * <pre>
-     * Standard tier.
+     * Trial Edition, previously known as Standard Edition.
      * </pre>
      *
      * <code>TIER_STANDARD = 1;</code>
@@ -516,7 +516,7 @@ private static final long serialVersionUID = 0L;
     TIER_STANDARD(1),
     /**
      * <pre>
-     * Enterprise tier (Essentials).
+     * Essentials Edition, previously known as Enterprise Essential Edition.
      * </pre>
      *
      * <code>TIER_ENTERPRISE = 2;</code>
@@ -524,11 +524,13 @@ private static final long serialVersionUID = 0L;
     TIER_ENTERPRISE(2),
     /**
      * <pre>
-     * Enterprise tier (Plus).
+     * Essentials Edition (same as TIER_ENTERPRISE), previously known as
+     * Enterprise Plus Edition.
      * </pre>
      *
-     * <code>TIER_ENTERPRISE_PLUS = 3;</code>
+     * <code>TIER_ENTERPRISE_PLUS = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     TIER_ENTERPRISE_PLUS(3),
     UNRECOGNIZED(-1),
     ;
@@ -543,7 +545,7 @@ private static final long serialVersionUID = 0L;
     public static final int TIER_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Standard tier.
+     * Trial Edition, previously known as Standard Edition.
      * </pre>
      *
      * <code>TIER_STANDARD = 1;</code>
@@ -551,7 +553,7 @@ private static final long serialVersionUID = 0L;
     public static final int TIER_STANDARD_VALUE = 1;
     /**
      * <pre>
-     * Enterprise tier (Essentials).
+     * Essentials Edition, previously known as Enterprise Essential Edition.
      * </pre>
      *
      * <code>TIER_ENTERPRISE = 2;</code>
@@ -559,12 +561,13 @@ private static final long serialVersionUID = 0L;
     public static final int TIER_ENTERPRISE_VALUE = 2;
     /**
      * <pre>
-     * Enterprise tier (Plus).
+     * Essentials Edition (same as TIER_ENTERPRISE), previously known as
+     * Enterprise Plus Edition.
      * </pre>
      *
-     * <code>TIER_ENTERPRISE_PLUS = 3;</code>
+     * <code>TIER_ENTERPRISE_PLUS = 3 [deprecated = true];</code>
      */
-    public static final int TIER_ENTERPRISE_PLUS_VALUE = 3;
+    @java.lang.Deprecated public static final int TIER_ENTERPRISE_PLUS_VALUE = 3;
 
 
     public final int getNumber() {
