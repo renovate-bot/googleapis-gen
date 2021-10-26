@@ -3119,11 +3119,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3135,11 +3135,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3150,11 +3150,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3166,11 +3166,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3500,11 +3500,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3518,11 +3518,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3535,11 +3535,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3553,11 +3553,11 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional. Contains valid, fully-qualified host names. Glob patterns are also
        * supported. To allow an explicit wildcard certificate, escape with
-       * backlash (i.e. "&#92;*").
-       * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-       * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-       * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-       * 'foo.bar.com'.
+       * backlash (i.e. `&#92;*`).
+       * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+       * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+       * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+       * `foo.bar.com`.
        * </pre>
        *
        * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4253,11 +4253,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4271,11 +4271,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4288,11 +4288,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4306,11 +4306,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4325,11 +4325,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4351,11 +4351,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4376,11 +4376,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4399,11 +4399,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4419,11 +4419,11 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Optional. Contains valid, fully-qualified host names. Glob patterns are also
          * supported. To allow an explicit wildcard certificate, escape with
-         * backlash (i.e. "&#92;*").
-         * E.g. for globbed entries: '*bar.com' will allow foo.bar.com, but not
-         * *.bar.com, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
-         * E.g. for wildcard entries: '&#92;*.bar.com' will allow '*.bar.com', but not
-         * 'foo.bar.com'.
+         * backlash (i.e. `&#92;*`).
+         * E.g. for globbed entries: `*bar.com` will allow `foo.bar.com`, but not
+         * `*.bar.com`, unless the [allow_globbing_dns_wildcards][google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy.AllowedSubjectAltNames.allow_globbing_dns_wildcards] field is set.
+         * E.g. for wildcard entries: `&#92;*.bar.com` will allow `*.bar.com`, but not
+         * `foo.bar.com`.
          * </pre>
          *
          * <code>repeated string allowed_dns_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
