@@ -946,7 +946,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-gaming",
+            "google-cloud-game-servers",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

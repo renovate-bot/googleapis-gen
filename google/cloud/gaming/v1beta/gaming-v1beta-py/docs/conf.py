@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-gaming documentation build configuration file
+# google-cloud-game-servers documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-gaming"
+project = u"google-cloud-game-servers"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-gaming-doc"
+htmlhelp_basename = "google-cloud-game-servers-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-gaming.tex",
-        u"google-cloud-gaming Documentation",
+        "google-cloud-game-servers.tex",
+        u"google-cloud-game-servers Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-gaming",
+        "google-cloud-game-servers",
         u"Google Cloud Gaming Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-gaming",
-        u"google-cloud-gaming Documentation",
+        "google-cloud-game-servers",
+        u"google-cloud-game-servers Documentation",
         author,
-        "google-cloud-gaming",
+        "google-cloud-game-servers",
         "GAPIC library for Google Cloud Gaming API",
         "APIs",
     )
