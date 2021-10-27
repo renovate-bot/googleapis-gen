@@ -1003,8 +1003,9 @@ namespace Google.Cloud.Retail.V2Beta {
     /// [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2beta.FulfillmentInfo.type].
     ///
     /// A maximum of 3000 values are allowed. Each value must be a string with a
-    /// length limit of 30 characters, matching the pattern [a-zA-Z0-9_-]+, such as
-    /// "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
+    /// length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
+    /// as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
+    /// returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3306,7 +3307,7 @@ namespace Google.Cloud.Retail.V2Beta {
     /// ID of the promotion. For example, "free gift".
     ///
     /// The value value must be a UTF-8 encoded string with a length limit of 128
-    /// characters, and match the pattern: [a-zA-Z][a-zA-Z0-9_]*. For example,
+    /// characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
     /// id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
     /// returned.
     ///

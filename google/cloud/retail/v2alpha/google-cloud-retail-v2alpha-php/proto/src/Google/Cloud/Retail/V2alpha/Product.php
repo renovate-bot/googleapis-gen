@@ -197,7 +197,7 @@ class Product extends \Google\Protobuf\Internal\Message
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
      * * For indexable attribute, the key must match the pattern:
-     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+     *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.retail.v2alpha.CustomAttribute> attributes = 12;</code>
      */
@@ -631,7 +631,7 @@ class Product extends \Google\Protobuf\Internal\Message
      *           * The key must be a UTF-8 encoded string with a length limit of 128
      *             characters.
      *           * For indexable attribute, the key must match the pattern:
-     *             [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+     *             `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tags
      *           Custom tags associated with the product.
      *           At most 250 values are allowed per
@@ -1434,7 +1434,7 @@ class Product extends \Google\Protobuf\Internal\Message
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
      * * For indexable attribute, the key must match the pattern:
-     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+     *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.retail.v2alpha.CustomAttribute> attributes = 12;</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -1463,7 +1463,7 @@ class Product extends \Google\Protobuf\Internal\Message
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
      * * For indexable attribute, the key must match the pattern:
-     *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
+     *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.retail.v2alpha.CustomAttribute> attributes = 12;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var

@@ -148,13 +148,13 @@ public interface CompleteQueryRequestOrBuilder extends
    * <pre>
    * The device type context for completion suggestions.
    * It is useful to apply different suggestions on different device types, e.g.
-   * DESKTOP, MOBILE. If it is empty, the suggestions are across all device
+   * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
    * Supported formats:
-   * * UNKNOWN_DEVICE_TYPE
-   * * DESKTOP
-   * * MOBILE
-   * * A customized string starts with OTHER_, e.g. OTHER_IPHONE.
+   * * `UNKNOWN_DEVICE_TYPE`
+   * * `DESKTOP`
+   * * `MOBILE`
+   * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
    * </pre>
    *
    * <code>string device_type = 4;</code>
@@ -165,13 +165,13 @@ public interface CompleteQueryRequestOrBuilder extends
    * <pre>
    * The device type context for completion suggestions.
    * It is useful to apply different suggestions on different device types, e.g.
-   * DESKTOP, MOBILE. If it is empty, the suggestions are across all device
+   * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
    * Supported formats:
-   * * UNKNOWN_DEVICE_TYPE
-   * * DESKTOP
-   * * MOBILE
-   * * A customized string starts with OTHER_, e.g. OTHER_IPHONE.
+   * * `UNKNOWN_DEVICE_TYPE`
+   * * `DESKTOP`
+   * * `MOBILE`
+   * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
    * </pre>
    *
    * <code>string device_type = 4;</code>

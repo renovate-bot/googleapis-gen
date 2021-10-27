@@ -272,7 +272,7 @@ private static final long serialVersionUID = 0L;
    * Duplicate IDs will be automatically ignored.
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
-   * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+   * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
    * Duplicate IDs will be automatically ignored.
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
-   * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+   * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
    * Duplicate IDs will be automatically ignored.
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
-   * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+   * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
    * Duplicate IDs will be automatically ignored.
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
-   * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+   * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1134,7 +1134,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1158,7 +1158,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1181,7 +1181,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1205,7 +1205,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1230,7 +1230,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1262,7 +1262,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1293,7 +1293,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1322,7 +1322,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
@@ -1348,7 +1348,7 @@ private static final long serialVersionUID = 0L;
      * Duplicate IDs will be automatically ignored.
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
-     * the pattern [a-zA-Z0-9_-]+, such as "store1" or "REGION-2". Otherwise, an
+     * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after

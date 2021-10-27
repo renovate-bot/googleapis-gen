@@ -55,13 +55,13 @@ class CompleteQueryRequest extends \Google\Protobuf\Internal\Message
     /**
      * The device type context for completion suggestions.
      * It is useful to apply different suggestions on different device types, e.g.
-     * DESKTOP, MOBILE. If it is empty, the suggestions are across all device
+     * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
-     * * UNKNOWN_DEVICE_TYPE
-     * * DESKTOP
-     * * MOBILE
-     * * A customized string starts with OTHER_, e.g. OTHER_IPHONE.
+     * * `UNKNOWN_DEVICE_TYPE`
+     * * `DESKTOP`
+     * * `MOBILE`
+     * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      *
      * Generated from protobuf field <code>string device_type = 4;</code>
      */
@@ -122,13 +122,13 @@ class CompleteQueryRequest extends \Google\Protobuf\Internal\Message
      *     @type string $device_type
      *           The device type context for completion suggestions.
      *           It is useful to apply different suggestions on different device types, e.g.
-     *           DESKTOP, MOBILE. If it is empty, the suggestions are across all device
+     *           `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      *           types.
      *           Supported formats:
-     *           * UNKNOWN_DEVICE_TYPE
-     *           * DESKTOP
-     *           * MOBILE
-     *           * A customized string starts with OTHER_, e.g. OTHER_IPHONE.
+     *           * `UNKNOWN_DEVICE_TYPE`
+     *           * `DESKTOP`
+     *           * `MOBILE`
+     *           * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      *     @type string $dataset
      *           Determines which dataset to use for fetching completion. "user-data" will
      *           use the imported dataset through
@@ -286,13 +286,13 @@ class CompleteQueryRequest extends \Google\Protobuf\Internal\Message
     /**
      * The device type context for completion suggestions.
      * It is useful to apply different suggestions on different device types, e.g.
-     * DESKTOP, MOBILE. If it is empty, the suggestions are across all device
+     * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
-     * * UNKNOWN_DEVICE_TYPE
-     * * DESKTOP
-     * * MOBILE
-     * * A customized string starts with OTHER_, e.g. OTHER_IPHONE.
+     * * `UNKNOWN_DEVICE_TYPE`
+     * * `DESKTOP`
+     * * `MOBILE`
+     * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      *
      * Generated from protobuf field <code>string device_type = 4;</code>
      * @return string
@@ -305,13 +305,13 @@ class CompleteQueryRequest extends \Google\Protobuf\Internal\Message
     /**
      * The device type context for completion suggestions.
      * It is useful to apply different suggestions on different device types, e.g.
-     * DESKTOP, MOBILE. If it is empty, the suggestions are across all device
+     * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
-     * * UNKNOWN_DEVICE_TYPE
-     * * DESKTOP
-     * * MOBILE
-     * * A customized string starts with OTHER_, e.g. OTHER_IPHONE.
+     * * `UNKNOWN_DEVICE_TYPE`
+     * * `DESKTOP`
+     * * `MOBILE`
+     * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      *
      * Generated from protobuf field <code>string device_type = 4;</code>
      * @param string $var
