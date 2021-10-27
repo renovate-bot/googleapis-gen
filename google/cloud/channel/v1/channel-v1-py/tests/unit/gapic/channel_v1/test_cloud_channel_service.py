@@ -8438,9 +8438,28 @@ def test_cloud_channel_service_grpc_lro_async_client():
     assert transport.operations_client is transport.operations_client
 
 
-def test_customer_path():
+def test_channel_partner_link_path():
     account = "squid"
-    customer = "clam"
+    channel_partner_link = "clam"
+    expected = "accounts/{account}/channelPartnerLinks/{channel_partner_link}".format(account=account, channel_partner_link=channel_partner_link, )
+    actual = CloudChannelServiceClient.channel_partner_link_path(account, channel_partner_link)
+    assert expected == actual
+
+
+def test_parse_channel_partner_link_path():
+    expected = {
+        "account": "whelk",
+        "channel_partner_link": "octopus",
+    }
+    path = CloudChannelServiceClient.channel_partner_link_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = CloudChannelServiceClient.parse_channel_partner_link_path(path)
+    assert expected == actual
+
+def test_customer_path():
+    account = "oyster"
+    customer = "nudibranch"
     expected = "accounts/{account}/customers/{customer}".format(account=account, customer=customer, )
     actual = CloudChannelServiceClient.customer_path(account, customer)
     assert expected == actual
@@ -8448,8 +8467,8 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-        "account": "whelk",
-        "customer": "octopus",
+        "account": "cuttlefish",
+        "customer": "mussel",
     }
     path = CloudChannelServiceClient.customer_path(**expected)
 
@@ -8458,9 +8477,9 @@ def test_parse_customer_path():
     assert expected == actual
 
 def test_entitlement_path():
-    account = "oyster"
-    customer = "nudibranch"
-    entitlement = "cuttlefish"
+    account = "winkle"
+    customer = "nautilus"
+    entitlement = "scallop"
     expected = "accounts/{account}/customers/{customer}/entitlements/{entitlement}".format(account=account, customer=customer, entitlement=entitlement, )
     actual = CloudChannelServiceClient.entitlement_path(account, customer, entitlement)
     assert expected == actual
@@ -8468,9 +8487,9 @@ def test_entitlement_path():
 
 def test_parse_entitlement_path():
     expected = {
-        "account": "mussel",
-        "customer": "winkle",
-        "entitlement": "nautilus",
+        "account": "abalone",
+        "customer": "squid",
+        "entitlement": "clam",
     }
     path = CloudChannelServiceClient.entitlement_path(**expected)
 
@@ -8479,8 +8498,8 @@ def test_parse_entitlement_path():
     assert expected == actual
 
 def test_offer_path():
-    account = "scallop"
-    offer = "abalone"
+    account = "whelk"
+    offer = "octopus"
     expected = "accounts/{account}/offers/{offer}".format(account=account, offer=offer, )
     actual = CloudChannelServiceClient.offer_path(account, offer)
     assert expected == actual
@@ -8488,8 +8507,8 @@ def test_offer_path():
 
 def test_parse_offer_path():
     expected = {
-        "account": "squid",
-        "offer": "clam",
+        "account": "oyster",
+        "offer": "nudibranch",
     }
     path = CloudChannelServiceClient.offer_path(**expected)
 
@@ -8498,7 +8517,7 @@ def test_parse_offer_path():
     assert expected == actual
 
 def test_product_path():
-    product = "whelk"
+    product = "cuttlefish"
     expected = "products/{product}".format(product=product, )
     actual = CloudChannelServiceClient.product_path(product)
     assert expected == actual
@@ -8506,7 +8525,7 @@ def test_product_path():
 
 def test_parse_product_path():
     expected = {
-        "product": "octopus",
+        "product": "mussel",
     }
     path = CloudChannelServiceClient.product_path(**expected)
 
@@ -8515,8 +8534,8 @@ def test_parse_product_path():
     assert expected == actual
 
 def test_sku_path():
-    product = "oyster"
-    sku = "nudibranch"
+    product = "winkle"
+    sku = "nautilus"
     expected = "products/{product}/skus/{sku}".format(product=product, sku=sku, )
     actual = CloudChannelServiceClient.sku_path(product, sku)
     assert expected == actual
@@ -8524,8 +8543,8 @@ def test_sku_path():
 
 def test_parse_sku_path():
     expected = {
-        "product": "cuttlefish",
-        "sku": "mussel",
+        "product": "scallop",
+        "sku": "abalone",
     }
     path = CloudChannelServiceClient.sku_path(**expected)
 
@@ -8534,7 +8553,7 @@ def test_parse_sku_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "winkle"
+    billing_account = "squid"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CloudChannelServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -8542,7 +8561,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+        "billing_account": "clam",
     }
     path = CloudChannelServiceClient.common_billing_account_path(**expected)
 
@@ -8551,7 +8570,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "scallop"
+    folder = "whelk"
     expected = "folders/{folder}".format(folder=folder, )
     actual = CloudChannelServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -8559,7 +8578,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+        "folder": "octopus",
     }
     path = CloudChannelServiceClient.common_folder_path(**expected)
 
@@ -8568,7 +8587,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "squid"
+    organization = "oyster"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CloudChannelServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -8576,7 +8595,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+        "organization": "nudibranch",
     }
     path = CloudChannelServiceClient.common_organization_path(**expected)
 
@@ -8585,7 +8604,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "whelk"
+    project = "cuttlefish"
     expected = "projects/{project}".format(project=project, )
     actual = CloudChannelServiceClient.common_project_path(project)
     assert expected == actual
@@ -8593,7 +8612,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+        "project": "mussel",
     }
     path = CloudChannelServiceClient.common_project_path(**expected)
 
@@ -8602,8 +8621,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "oyster"
-    location = "nudibranch"
+    project = "winkle"
+    location = "nautilus"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CloudChannelServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -8611,8 +8630,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+        "project": "scallop",
+        "location": "abalone",
     }
     path = CloudChannelServiceClient.common_location_path(**expected)
 
