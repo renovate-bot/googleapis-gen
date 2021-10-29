@@ -28,8 +28,8 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.devtools.cloudbuild_v1.services.cloud_build import pagers
-from google.devtools.cloudbuild_v1.types import cloudbuild
+from google.cloud.devtools.cloudbuild_v1.services.cloud_build import pagers
+from google.cloud.devtools.cloudbuild_v1.types import cloudbuild
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -190,14 +190,14 @@ class CloudBuildAsyncClient:
         build status (such as ``SUCCESS`` or ``FAILURE``).
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.CreateBuildRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.CreateBuildRequest`):
                 The request object. Request to create a new build.
             project_id (:class:`str`):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            build (:class:`google.devtools.cloudbuild_v1.types.Build`):
+            build (:class:`google.cloud.devtools.cloudbuild_v1.types.Build`):
                 Required. Build resource to create.
                 This corresponds to the ``build`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -213,8 +213,8 @@ class CloudBuildAsyncClient:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -299,7 +299,7 @@ class CloudBuildAsyncClient:
         information.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.GetBuildRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.GetBuildRequest`):
                 The request object. Request to get a build.
             project_id (:class:`str`):
                 Required. ID of the project.
@@ -318,7 +318,7 @@ class CloudBuildAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.Build:
+            google.cloud.devtools.cloudbuild_v1.types.Build:
                 A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
@@ -401,7 +401,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         may have finished successfully or unsuccessfully.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.ListBuildsRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildsRequest`):
                 The request object. Request to list builds.
             project_id (:class:`str`):
                 Required. ID of the project.
@@ -422,7 +422,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildsAsyncPager:
+            google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildsAsyncPager:
                 Response including listed builds.
                 Iterating over this object will yield
                 results and resolve additional pages
@@ -493,7 +493,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Cancels a build in progress.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.CancelBuildRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.CancelBuildRequest`):
                 The request object. Request to cancel an ongoing build.
             project_id (:class:`str`):
                 Required. ID of the project.
@@ -512,7 +512,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.Build:
+            google.cloud.devtools.cloudbuild_v1.types.Build:
                 A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
@@ -615,7 +615,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            settings.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.RetryBuildRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.RetryBuildRequest`):
                 The request object. Specifies a build to retry.
             project_id (:class:`str`):
                 Required. ID of the project.
@@ -640,8 +640,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -726,7 +726,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         If rejected, the returned LRO will be immediately done.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.ApproveBuildRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.ApproveBuildRequest`):
                 The request object. Request to approve or reject a
                 pending build.
             name (:class:`str`):
@@ -736,7 +736,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            approval_result (:class:`google.devtools.cloudbuild_v1.types.ApprovalResult`):
+            approval_result (:class:`google.cloud.devtools.cloudbuild_v1.types.ApprovalResult`):
                 Approval decision and metadata.
                 This corresponds to the ``approval_result`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -752,8 +752,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -844,7 +844,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         This API is experimental.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.CreateBuildTriggerRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.CreateBuildTriggerRequest`):
                 The request object. Request to create a new
                 `BuildTrigger`.
             project_id (:class:`str`):
@@ -854,7 +854,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``project_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            trigger (:class:`google.devtools.cloudbuild_v1.types.BuildTrigger`):
+            trigger (:class:`google.cloud.devtools.cloudbuild_v1.types.BuildTrigger`):
                 Required. ``BuildTrigger`` to create.
                 This corresponds to the ``trigger`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -866,7 +866,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.BuildTrigger:
+            google.cloud.devtools.cloudbuild_v1.types.BuildTrigger:
                 Configuration for an automated build
                 in response to source repository
                 changes.
@@ -922,7 +922,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         This API is experimental.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.GetBuildTriggerRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.GetBuildTriggerRequest`):
                 The request object. Returns the `BuildTrigger` with the
                 specified ID.
             project_id (:class:`str`):
@@ -946,7 +946,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.BuildTrigger:
+            google.cloud.devtools.cloudbuild_v1.types.BuildTrigger:
                 Configuration for an automated build
                 in response to source repository
                 changes.
@@ -1008,7 +1008,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         This API is experimental.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.ListBuildTriggersRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersRequest`):
                 The request object. Request to list existing
                 `BuildTriggers`.
             project_id (:class:`str`):
@@ -1025,7 +1025,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildTriggersAsyncPager:
+            google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildTriggersAsyncPager:
                 Response containing existing BuildTriggers.
 
                 Iterating over this object will yield results and
@@ -1096,7 +1096,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         This API is experimental.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.DeleteBuildTriggerRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.DeleteBuildTriggerRequest`):
                 The request object. Request to delete a `BuildTrigger`.
             project_id (:class:`str`):
                 Required. ID of the project that owns
@@ -1171,7 +1171,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         This API is experimental.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.UpdateBuildTriggerRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.UpdateBuildTriggerRequest`):
                 The request object. Request to update an existing
                 `BuildTrigger`.
             project_id (:class:`str`):
@@ -1186,7 +1186,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``trigger_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            trigger (:class:`google.devtools.cloudbuild_v1.types.BuildTrigger`):
+            trigger (:class:`google.cloud.devtools.cloudbuild_v1.types.BuildTrigger`):
                 Required. ``BuildTrigger`` to update.
                 This corresponds to the ``trigger`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1198,7 +1198,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.BuildTrigger:
+            google.cloud.devtools.cloudbuild_v1.types.BuildTrigger:
                 Configuration for an automated build
                 in response to source repository
                 changes.
@@ -1255,7 +1255,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Runs a ``BuildTrigger`` at a particular source revision.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.RunBuildTriggerRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.RunBuildTriggerRequest`):
                 The request object. Specifies a build trigger to run and
                 the source to use.
             project_id (:class:`str`):
@@ -1268,7 +1268,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``trigger_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            source (:class:`google.devtools.cloudbuild_v1.types.RepoSource`):
+            source (:class:`google.cloud.devtools.cloudbuild_v1.types.RepoSource`):
                 Source to build against this trigger.
                 This corresponds to the ``source`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1284,8 +1284,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -1367,7 +1367,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         receives a webhook request targeted at a specific trigger.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookRequest`):
                 The request object. ReceiveTriggerWebhookRequest
                 [Experimental] is the request object accepted by the
                 ReceiveTriggerWebhook method.
@@ -1378,7 +1378,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookResponse:
+            google.cloud.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookResponse:
                 ReceiveTriggerWebhookResponse [Experimental] is the response object for the
                    ReceiveTriggerWebhook method.
 
@@ -1418,7 +1418,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Creates a ``WorkerPool``.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.CreateWorkerPoolRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.CreateWorkerPoolRequest`):
                 The request object. Request to create a new
                 `WorkerPool`.
             parent (:class:`str`):
@@ -1429,7 +1429,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            worker_pool (:class:`google.devtools.cloudbuild_v1.types.WorkerPool`):
+            worker_pool (:class:`google.cloud.devtools.cloudbuild_v1.types.WorkerPool`):
                 Required. ``WorkerPool`` resource to create.
                 This corresponds to the ``worker_pool`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1456,7 +1456,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.WorkerPool`
+                :class:`google.cloud.devtools.cloudbuild_v1.types.WorkerPool`
                 Configuration for a WorkerPool.
 
                    Cloud Build owns and maintains a pool of workers for
@@ -1539,7 +1539,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Returns details of a ``WorkerPool``.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.GetWorkerPoolRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.GetWorkerPoolRequest`):
                 The request object. Request to get a `WorkerPool` with
                 the specified name.
             name (:class:`str`):
@@ -1557,7 +1557,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.WorkerPool:
+            google.cloud.devtools.cloudbuild_v1.types.WorkerPool:
                 Configuration for a WorkerPool.
 
                    Cloud Build owns and maintains a pool of workers for
@@ -1635,7 +1635,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Deletes a ``WorkerPool``.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.DeleteWorkerPoolRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.DeleteWorkerPoolRequest`):
                 The request object. Request to delete a `WorkerPool`.
             name (:class:`str`):
                 Required. The name of the ``WorkerPool`` to delete.
@@ -1732,9 +1732,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Updates a ``WorkerPool``.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.UpdateWorkerPoolRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.UpdateWorkerPoolRequest`):
                 The request object. Request to update a `WorkerPool`.
-            worker_pool (:class:`google.devtools.cloudbuild_v1.types.WorkerPool`):
+            worker_pool (:class:`google.cloud.devtools.cloudbuild_v1.types.WorkerPool`):
                 Required. The ``WorkerPool`` to update.
 
                 The ``name`` field is used to identify the
@@ -1762,7 +1762,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.WorkerPool`
+                :class:`google.cloud.devtools.cloudbuild_v1.types.WorkerPool`
                 Configuration for a WorkerPool.
 
                    Cloud Build owns and maintains a pool of workers for
@@ -1843,7 +1843,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Lists ``WorkerPool``\ s.
 
         Args:
-            request (:class:`google.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest`):
+            request (:class:`google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest`):
                 The request object. Request to list `WorkerPool`s.
             parent (:class:`str`):
                 Required. The parent of the collection of
@@ -1860,7 +1860,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.services.cloud_build.pagers.ListWorkerPoolsAsyncPager:
+            google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers.ListWorkerPoolsAsyncPager:
                 Response containing existing WorkerPools.
 
                 Iterating over this object will yield results and
@@ -1934,7 +1934,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-devtools-cloudbuild",
+            "google-cloud-build",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

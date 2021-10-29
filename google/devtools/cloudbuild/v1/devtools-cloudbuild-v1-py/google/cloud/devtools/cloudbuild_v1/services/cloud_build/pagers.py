@@ -15,14 +15,14 @@
 #
 from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
-from google.devtools.cloudbuild_v1.types import cloudbuild
+from google.cloud.devtools.cloudbuild_v1.types import cloudbuild
 
 
 class ListBuildsPager:
     """A pager for iterating through ``list_builds`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.cloudbuild_v1.types.ListBuildsResponse` object, and
+    :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``builds`` field.
 
@@ -31,7 +31,7 @@ class ListBuildsPager:
     through the ``builds`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.cloudbuild_v1.types.ListBuildsResponse`
+    All the usual :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -46,9 +46,9 @@ class ListBuildsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.cloudbuild_v1.types.ListBuildsRequest):
+            request (google.cloud.devtools.cloudbuild_v1.types.ListBuildsRequest):
                 The initial request object.
-            response (google.devtools.cloudbuild_v1.types.ListBuildsResponse):
+            response (google.cloud.devtools.cloudbuild_v1.types.ListBuildsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -81,7 +81,7 @@ class ListBuildsAsyncPager:
     """A pager for iterating through ``list_builds`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.cloudbuild_v1.types.ListBuildsResponse` object, and
+    :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``builds`` field.
 
@@ -90,7 +90,7 @@ class ListBuildsAsyncPager:
     through the ``builds`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.cloudbuild_v1.types.ListBuildsResponse`
+    All the usual :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -105,9 +105,9 @@ class ListBuildsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.cloudbuild_v1.types.ListBuildsRequest):
+            request (google.cloud.devtools.cloudbuild_v1.types.ListBuildsRequest):
                 The initial request object.
-            response (google.devtools.cloudbuild_v1.types.ListBuildsResponse):
+            response (google.cloud.devtools.cloudbuild_v1.types.ListBuildsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -144,7 +144,7 @@ class ListBuildTriggersPager:
     """A pager for iterating through ``list_build_triggers`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.cloudbuild_v1.types.ListBuildTriggersResponse` object, and
+    :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``triggers`` field.
 
@@ -153,7 +153,7 @@ class ListBuildTriggersPager:
     through the ``triggers`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.cloudbuild_v1.types.ListBuildTriggersResponse`
+    All the usual :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -168,9 +168,9 @@ class ListBuildTriggersPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.cloudbuild_v1.types.ListBuildTriggersRequest):
+            request (google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersRequest):
                 The initial request object.
-            response (google.devtools.cloudbuild_v1.types.ListBuildTriggersResponse):
+            response (google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -203,7 +203,7 @@ class ListBuildTriggersAsyncPager:
     """A pager for iterating through ``list_build_triggers`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.cloudbuild_v1.types.ListBuildTriggersResponse` object, and
+    :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``triggers`` field.
 
@@ -212,7 +212,7 @@ class ListBuildTriggersAsyncPager:
     through the ``triggers`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.cloudbuild_v1.types.ListBuildTriggersResponse`
+    All the usual :class:`google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -227,9 +227,9 @@ class ListBuildTriggersAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.cloudbuild_v1.types.ListBuildTriggersRequest):
+            request (google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersRequest):
                 The initial request object.
-            response (google.devtools.cloudbuild_v1.types.ListBuildTriggersResponse):
+            response (google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -266,7 +266,7 @@ class ListWorkerPoolsPager:
     """A pager for iterating through ``list_worker_pools`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse` object, and
+    :class:`google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``worker_pools`` field.
 
@@ -275,7 +275,7 @@ class ListWorkerPoolsPager:
     through the ``worker_pools`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse`
+    All the usual :class:`google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -290,9 +290,9 @@ class ListWorkerPoolsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest):
+            request (google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest):
                 The initial request object.
-            response (google.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse):
+            response (google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -325,7 +325,7 @@ class ListWorkerPoolsAsyncPager:
     """A pager for iterating through ``list_worker_pools`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse` object, and
+    :class:`google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``worker_pools`` field.
 
@@ -334,7 +334,7 @@ class ListWorkerPoolsAsyncPager:
     through the ``worker_pools`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse`
+    All the usual :class:`google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -349,9 +349,9 @@ class ListWorkerPoolsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest):
+            request (google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest):
                 The initial request object.
-            response (google.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse):
+            response (google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.

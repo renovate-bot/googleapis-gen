@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/devtools/cloudbuild_v1/',
+        '--cov=google/cloud/devtools/cloudbuild_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

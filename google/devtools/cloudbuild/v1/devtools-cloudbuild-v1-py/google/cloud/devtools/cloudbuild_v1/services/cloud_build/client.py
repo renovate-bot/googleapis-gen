@@ -32,8 +32,8 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.devtools.cloudbuild_v1.services.cloud_build import pagers
-from google.devtools.cloudbuild_v1.types import cloudbuild
+from google.cloud.devtools.cloudbuild_v1.services.cloud_build import pagers
+from google.cloud.devtools.cloudbuild_v1.types import cloudbuild
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -450,14 +450,14 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         build status (such as ``SUCCESS`` or ``FAILURE``).
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.CreateBuildRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.CreateBuildRequest, dict]):
                 The request object. Request to create a new build.
             project_id (str):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            build (google.devtools.cloudbuild_v1.types.Build):
+            build (google.cloud.devtools.cloudbuild_v1.types.Build):
                 Required. Build resource to create.
                 This corresponds to the ``build`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -473,8 +473,8 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -559,7 +559,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         information.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.GetBuildRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.GetBuildRequest, dict]):
                 The request object. Request to get a build.
             project_id (str):
                 Required. ID of the project.
@@ -578,7 +578,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.Build:
+            google.cloud.devtools.cloudbuild_v1.types.Build:
                 A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
@@ -654,7 +654,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         may have finished successfully or unsuccessfully.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.ListBuildsRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.ListBuildsRequest, dict]):
                 The request object. Request to list builds.
             project_id (str):
                 Required. ID of the project.
@@ -675,7 +675,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildsPager:
+            google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildsPager:
                 Response including listed builds.
                 Iterating over this object will yield
                 results and resolve additional pages
@@ -739,7 +739,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Cancels a build in progress.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.CancelBuildRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.CancelBuildRequest, dict]):
                 The request object. Request to cancel an ongoing build.
             project_id (str):
                 Required. ID of the project.
@@ -758,7 +758,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.Build:
+            google.cloud.devtools.cloudbuild_v1.types.Build:
                 A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
@@ -861,7 +861,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
            settings.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.RetryBuildRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.RetryBuildRequest, dict]):
                 The request object. Specifies a build to retry.
             project_id (str):
                 Required. ID of the project.
@@ -886,8 +886,8 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -972,7 +972,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         If rejected, the returned LRO will be immediately done.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.ApproveBuildRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.ApproveBuildRequest, dict]):
                 The request object. Request to approve or reject a
                 pending build.
             name (str):
@@ -982,7 +982,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            approval_result (google.devtools.cloudbuild_v1.types.ApprovalResult):
+            approval_result (google.cloud.devtools.cloudbuild_v1.types.ApprovalResult):
                 Approval decision and metadata.
                 This corresponds to the ``approval_result`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -998,8 +998,8 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -1090,7 +1090,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         This API is experimental.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.CreateBuildTriggerRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.CreateBuildTriggerRequest, dict]):
                 The request object. Request to create a new
                 `BuildTrigger`.
             project_id (str):
@@ -1100,7 +1100,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 This corresponds to the ``project_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            trigger (google.devtools.cloudbuild_v1.types.BuildTrigger):
+            trigger (google.cloud.devtools.cloudbuild_v1.types.BuildTrigger):
                 Required. ``BuildTrigger`` to create.
                 This corresponds to the ``trigger`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1112,7 +1112,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.BuildTrigger:
+            google.cloud.devtools.cloudbuild_v1.types.BuildTrigger:
                 Configuration for an automated build
                 in response to source repository
                 changes.
@@ -1168,7 +1168,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         This API is experimental.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.GetBuildTriggerRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.GetBuildTriggerRequest, dict]):
                 The request object. Returns the `BuildTrigger` with the
                 specified ID.
             project_id (str):
@@ -1192,7 +1192,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.BuildTrigger:
+            google.cloud.devtools.cloudbuild_v1.types.BuildTrigger:
                 Configuration for an automated build
                 in response to source repository
                 changes.
@@ -1247,7 +1247,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         This API is experimental.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.ListBuildTriggersRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.ListBuildTriggersRequest, dict]):
                 The request object. Request to list existing
                 `BuildTriggers`.
             project_id (str):
@@ -1264,7 +1264,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildTriggersPager:
+            google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers.ListBuildTriggersPager:
                 Response containing existing BuildTriggers.
 
                 Iterating over this object will yield results and
@@ -1328,7 +1328,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         This API is experimental.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.DeleteBuildTriggerRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.DeleteBuildTriggerRequest, dict]):
                 The request object. Request to delete a `BuildTrigger`.
             project_id (str):
                 Required. ID of the project that owns
@@ -1396,7 +1396,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         This API is experimental.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.UpdateBuildTriggerRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.UpdateBuildTriggerRequest, dict]):
                 The request object. Request to update an existing
                 `BuildTrigger`.
             project_id (str):
@@ -1411,7 +1411,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 This corresponds to the ``trigger_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            trigger (google.devtools.cloudbuild_v1.types.BuildTrigger):
+            trigger (google.cloud.devtools.cloudbuild_v1.types.BuildTrigger):
                 Required. ``BuildTrigger`` to update.
                 This corresponds to the ``trigger`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1423,7 +1423,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.BuildTrigger:
+            google.cloud.devtools.cloudbuild_v1.types.BuildTrigger:
                 Configuration for an automated build
                 in response to source repository
                 changes.
@@ -1480,7 +1480,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Runs a ``BuildTrigger`` at a particular source revision.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.RunBuildTriggerRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.RunBuildTriggerRequest, dict]):
                 The request object. Specifies a build trigger to run and
                 the source to use.
             project_id (str):
@@ -1493,7 +1493,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 This corresponds to the ``trigger_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            source (google.devtools.cloudbuild_v1.types.RepoSource):
+            source (google.cloud.devtools.cloudbuild_v1.types.RepoSource):
                 Source to build against this trigger.
                 This corresponds to the ``source`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1509,8 +1509,8 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.Build` A
-                build resource in the Cloud Build API.
+                :class:`google.cloud.devtools.cloudbuild_v1.types.Build`
+                A build resource in the Cloud Build API.
 
                    At a high level, a Build describes where to find
                    source code, how to build it (for example, the
@@ -1592,7 +1592,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         receives a webhook request targeted at a specific trigger.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookRequest, dict]):
                 The request object. ReceiveTriggerWebhookRequest
                 [Experimental] is the request object accepted by the
                 ReceiveTriggerWebhook method.
@@ -1603,7 +1603,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookResponse:
+            google.cloud.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookResponse:
                 ReceiveTriggerWebhookResponse [Experimental] is the response object for the
                    ReceiveTriggerWebhook method.
 
@@ -1644,7 +1644,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Creates a ``WorkerPool``.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.CreateWorkerPoolRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.CreateWorkerPoolRequest, dict]):
                 The request object. Request to create a new
                 `WorkerPool`.
             parent (str):
@@ -1655,7 +1655,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            worker_pool (google.devtools.cloudbuild_v1.types.WorkerPool):
+            worker_pool (google.cloud.devtools.cloudbuild_v1.types.WorkerPool):
                 Required. ``WorkerPool`` resource to create.
                 This corresponds to the ``worker_pool`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1682,7 +1682,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.WorkerPool`
+                :class:`google.cloud.devtools.cloudbuild_v1.types.WorkerPool`
                 Configuration for a WorkerPool.
 
                    Cloud Build owns and maintains a pool of workers for
@@ -1765,7 +1765,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Returns details of a ``WorkerPool``.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.GetWorkerPoolRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.GetWorkerPoolRequest, dict]):
                 The request object. Request to get a `WorkerPool` with
                 the specified name.
             name (str):
@@ -1783,7 +1783,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.types.WorkerPool:
+            google.cloud.devtools.cloudbuild_v1.types.WorkerPool:
                 Configuration for a WorkerPool.
 
                    Cloud Build owns and maintains a pool of workers for
@@ -1854,7 +1854,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Deletes a ``WorkerPool``.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.DeleteWorkerPoolRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.DeleteWorkerPoolRequest, dict]):
                 The request object. Request to delete a `WorkerPool`.
             name (str):
                 Required. The name of the ``WorkerPool`` to delete.
@@ -1951,9 +1951,9 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Updates a ``WorkerPool``.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.UpdateWorkerPoolRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.UpdateWorkerPoolRequest, dict]):
                 The request object. Request to update a `WorkerPool`.
-            worker_pool (google.devtools.cloudbuild_v1.types.WorkerPool):
+            worker_pool (google.cloud.devtools.cloudbuild_v1.types.WorkerPool):
                 Required. The ``WorkerPool`` to update.
 
                 The ``name`` field is used to identify the
@@ -1981,7 +1981,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.devtools.cloudbuild_v1.types.WorkerPool`
+                :class:`google.cloud.devtools.cloudbuild_v1.types.WorkerPool`
                 Configuration for a WorkerPool.
 
                    Cloud Build owns and maintains a pool of workers for
@@ -2062,7 +2062,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         r"""Lists ``WorkerPool``\ s.
 
         Args:
-            request (Union[google.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest, dict]):
+            request (Union[google.cloud.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest, dict]):
                 The request object. Request to list `WorkerPool`s.
             parent (str):
                 Required. The parent of the collection of
@@ -2079,7 +2079,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.cloudbuild_v1.services.cloud_build.pagers.ListWorkerPoolsPager:
+            google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers.ListWorkerPoolsPager:
                 Response containing existing WorkerPools.
 
                 Iterating over this object will yield results and
@@ -2155,7 +2155,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-devtools-cloudbuild",
+            "google-cloud-build",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

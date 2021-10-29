@@ -27,14 +27,14 @@ from google.api_core import operations_v1  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
-from google.devtools.cloudbuild_v1.types import cloudbuild
+from google.cloud.devtools.cloudbuild_v1.types import cloudbuild
 from google.longrunning import operations_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-devtools-cloudbuild',
+            'google-cloud-build',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

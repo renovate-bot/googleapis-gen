@@ -26,7 +26,7 @@ import packaging.version
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
-from google.devtools.cloudbuild_v1.types import cloudbuild
+from google.cloud.devtools.cloudbuild_v1.types import cloudbuild
 from google.longrunning import operations_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
 from .base import CloudBuildTransport, DEFAULT_CLIENT_INFO
