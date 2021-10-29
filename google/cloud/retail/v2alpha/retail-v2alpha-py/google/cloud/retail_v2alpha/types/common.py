@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
         'Rating',
         'UserInfo',
         'Promotion',
+        'LocalInventory',
     },
 )
 
@@ -632,6 +633,53 @@ class Promotion(proto.Message):
     promotion_id = proto.Field(
         proto.STRING,
         number=1,
+    )
+
+
+class LocalInventory(proto.Message):
+    r"""The inventory information at a place (e.g. a store)
+    identified by a place ID.
+
+    Attributes:
+        place_id (str):
+            The place ID for the current set of inventory
+            information.
+        price_info (google.cloud.retail_v2alpha.types.PriceInfo):
+            Product price and cost information.
+
+            Google Merchant Center property
+            `price <https://support.google.com/merchants/answer/6324371>`__.
+        attributes (Sequence[google.cloud.retail_v2alpha.types.LocalInventory.AttributesEntry]):
+            Additional local inventory attributes, for example, store
+            name, promotion tags, etc.
+
+            -  At most 5 values are allowed. Otherwise, an
+               INVALID_ARGUMENT error is returned.
+            -  The key must be a UTF-8 encoded string with a length
+               limit of 10 characters.
+            -  The key must match the pattern:
+               ``[a-zA-Z0-9][a-zA-Z0-9_]*``. For example, key0LikeThis
+               or KEY_1_LIKE_THIS.
+            -  The attribute values must be of the same type (text or
+               number).
+            -  The max number of values per attribute is 10.
+            -  For text values, the length limit is 10 UTF-8 characters.
+    """
+
+    place_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    price_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='PriceInfo',
+    )
+    attributes = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=3,
+        message='CustomAttribute',
     )
 
 

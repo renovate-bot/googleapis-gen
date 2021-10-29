@@ -75,6 +75,36 @@ public final class ProductServiceProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_AddFulfillmentPlacesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -144,82 +174,115 @@ public final class ProductServiceProto {
       "\022\026\n\tplace_ids\030\003 \003(\tB\003\340A\002\022,\n\010add_time\030\004 \001" +
       "(\0132\032.google.protobuf.Timestamp\022\025\n\rallow_" +
       "missing\030\005 \001(\010\"\036\n\034AddFulfillmentPlacesMet" +
-      "adata\"\036\n\034AddFulfillmentPlacesResponse\"\313\001" +
-      "\n\036RemoveFulfillmentPlacesRequest\0226\n\007prod" +
-      "uct\030\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com" +
-      "/Product\022\021\n\004type\030\002 \001(\tB\003\340A\002\022\026\n\tplace_ids" +
-      "\030\003 \003(\tB\003\340A\002\022/\n\013remove_time\030\004 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022\025\n\rallow_missing\030\005 " +
-      "\001(\010\"!\n\037RemoveFulfillmentPlacesMetadata\"!" +
-      "\n\037RemoveFulfillmentPlacesResponse2\245\023\n\016Pr" +
-      "oductService\022\336\001\n\rCreateProduct\0221.google." +
-      "cloud.retail.v2alpha.CreateProductReques" +
-      "t\032$.google.cloud.retail.v2alpha.Product\"" +
-      "t\202\323\344\223\002R\"G/v2alpha/{parent=projects/*/loc" +
-      "ations/*/catalogs/*/branches/*}/products" +
-      ":\007product\332A\031parent,product,product_id\022\273\001" +
-      "\n\nGetProduct\022..google.cloud.retail.v2alp" +
-      "ha.GetProductRequest\032$.google.cloud.reta" +
-      "il.v2alpha.Product\"W\202\323\344\223\002J\022H/v2alpha/{na" +
-      "me=projects/*/locations/*/catalogs/*/bra" +
-      "nches/*/products/**}\332A\004name\022\315\001\n\014ListProd" +
-      "ucts\0220.google.cloud.retail.v2alpha.ListP" +
-      "roductsRequest\0321.google.cloud.retail.v2a" +
-      "lpha.ListProductsResponse\"X\202\323\344\223\002I\022G/v2al" +
-      "pha/{parent=projects/*/locations/*/catal" +
-      "ogs/*/branches/*}/products\332A\006parent\022\341\001\n\r" +
-      "UpdateProduct\0221.google.cloud.retail.v2al" +
-      "pha.UpdateProductRequest\032$.google.cloud." +
-      "retail.v2alpha.Product\"w\202\323\344\223\002[2P/v2alpha" +
-      "/{product.name=projects/*/locations/*/ca" +
-      "talogs/*/branches/*/products/**}:\007produc" +
-      "t\332A\023product,update_mask\022\263\001\n\rDeleteProduc" +
-      "t\0221.google.cloud.retail.v2alpha.DeletePr" +
-      "oductRequest\032\026.google.protobuf.Empty\"W\202\323" +
-      "\344\223\002J*H/v2alpha/{name=projects/*/location" +
-      "s/*/catalogs/*/branches/*/products/**}\332A" +
-      "\004name\022\242\002\n\016ImportProducts\0222.google.cloud." +
-      "retail.v2alpha.ImportProductsRequest\032\035.g" +
-      "oogle.longrunning.Operation\"\274\001\202\323\344\223\002S\"N/v" +
-      "2alpha/{parent=projects/*/locations/*/ca" +
-      "talogs/*/branches/*}/products:import:\001*\312" +
-      "A`\n2google.cloud.retail.v2alpha.ImportPr" +
-      "oductsResponse\022*google.cloud.retail.v2al" +
-      "pha.ImportMetadata\022\310\002\n\014SetInventory\0220.go" +
-      "ogle.cloud.retail.v2alpha.SetInventoryRe" +
-      "quest\032\035.google.longrunning.Operation\"\346\001\202" +
-      "\323\344\223\002d\"_/v2alpha/{inventory.name=projects" +
-      "/*/locations/*/catalogs/*/branches/*/pro" +
-      "ducts/**}:setInventory:\001*\332A\022inventory,se" +
-      "t_mask\312Ad\n0google.cloud.retail.v2alpha.S" +
-      "etInventoryResponse\0220google.cloud.retail" +
-      ".v2alpha.SetInventoryMetadata\022\336\002\n\024AddFul" +
-      "fillmentPlaces\0228.google.cloud.retail.v2a" +
-      "lpha.AddFulfillmentPlacesRequest\032\035.googl" +
-      "e.longrunning.Operation\"\354\001\202\323\344\223\002e\"`/v2alp" +
-      "ha/{product=projects/*/locations/*/catal" +
-      "ogs/*/branches/*/products/**}:addFulfill" +
-      "mentPlaces:\001*\332A\007product\312At\n8google.cloud" +
-      ".retail.v2alpha.AddFulfillmentPlacesResp" +
-      "onse\0228google.cloud.retail.v2alpha.AddFul" +
-      "fillmentPlacesMetadata\022\355\002\n\027RemoveFulfill" +
-      "mentPlaces\022;.google.cloud.retail.v2alpha" +
-      ".RemoveFulfillmentPlacesRequest\032\035.google" +
-      ".longrunning.Operation\"\365\001\202\323\344\223\002h\"c/v2alph" +
-      "a/{product=projects/*/locations/*/catalo" +
-      "gs/*/branches/*/products/**}:removeFulfi" +
-      "llmentPlaces:\001*\332A\007product\312Az\n;google.clo" +
-      "ud.retail.v2alpha.RemoveFulfillmentPlace" +
-      "sResponse\022;google.cloud.retail.v2alpha.R" +
-      "emoveFulfillmentPlacesMetadata\032I\312A\025retai" +
-      "l.googleapis.com\322A.https://www.googleapi" +
-      "s.com/auth/cloud-platformB\341\001\n\037com.google" +
-      ".cloud.retail.v2alphaB\023ProductServicePro" +
-      "toP\001ZAgoogle.golang.org/genproto/googlea" +
-      "pis/cloud/retail/v2alpha;retail\242\002\006RETAIL" +
-      "\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033Google\\" +
-      "Cloud\\Retail\\V2alpha\352\002\036Google::Cloud::Re" +
-      "tail::V2alphab\006proto3"
+      "adata\"\036\n\034AddFulfillmentPlacesResponse\"\224\002" +
+      "\n\032AddLocalInventoriesRequest\0226\n\007product\030" +
+      "\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com/Pro" +
+      "duct\022K\n\021local_inventories\030\002 \003(\0132+.google" +
+      ".cloud.retail.v2alpha.LocalInventoryB\003\340A" +
+      "\002\022,\n\010add_mask\030\004 \001(\0132\032.google.protobuf.Fi" +
+      "eldMask\022,\n\010add_time\030\005 \001(\0132\032.google.proto" +
+      "buf.Timestamp\022\025\n\rallow_missing\030\006 \001(\010\"\035\n\033" +
+      "AddLocalInventoriesMetadata\"\035\n\033AddLocalI" +
+      "nventoriesResponse\"\267\001\n\035RemoveLocalInvent" +
+      "oriesRequest\0226\n\007product\030\001 \001(\tB%\340A\002\372A\037\n\035r" +
+      "etail.googleapis.com/Product\022\026\n\tplace_id" +
+      "s\030\002 \003(\tB\003\340A\002\022/\n\013remove_time\030\005 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\025\n\rallow_missing\030\003" +
+      " \001(\010\" \n\036RemoveLocalInventoriesMetadata\" " +
+      "\n\036RemoveLocalInventoriesResponse\"\313\001\n\036Rem" +
+      "oveFulfillmentPlacesRequest\0226\n\007product\030\001" +
+      " \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com/Prod" +
+      "uct\022\021\n\004type\030\002 \001(\tB\003\340A\002\022\026\n\tplace_ids\030\003 \003(" +
+      "\tB\003\340A\002\022/\n\013remove_time\030\004 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022\025\n\rallow_missing\030\005 \001(\010\"!" +
+      "\n\037RemoveFulfillmentPlacesMetadata\"!\n\037Rem" +
+      "oveFulfillmentPlacesResponse2\354\030\n\016Product" +
+      "Service\022\336\001\n\rCreateProduct\0221.google.cloud" +
+      ".retail.v2alpha.CreateProductRequest\032$.g" +
+      "oogle.cloud.retail.v2alpha.Product\"t\202\323\344\223" +
+      "\002R\"G/v2alpha/{parent=projects/*/location" +
+      "s/*/catalogs/*/branches/*}/products:\007pro" +
+      "duct\332A\031parent,product,product_id\022\273\001\n\nGet" +
+      "Product\022..google.cloud.retail.v2alpha.Ge" +
+      "tProductRequest\032$.google.cloud.retail.v2" +
+      "alpha.Product\"W\202\323\344\223\002J\022H/v2alpha/{name=pr" +
+      "ojects/*/locations/*/catalogs/*/branches" +
+      "/*/products/**}\332A\004name\022\315\001\n\014ListProducts\022" +
+      "0.google.cloud.retail.v2alpha.ListProduc" +
+      "tsRequest\0321.google.cloud.retail.v2alpha." +
+      "ListProductsResponse\"X\202\323\344\223\002I\022G/v2alpha/{" +
+      "parent=projects/*/locations/*/catalogs/*" +
+      "/branches/*}/products\332A\006parent\022\341\001\n\rUpdat" +
+      "eProduct\0221.google.cloud.retail.v2alpha.U" +
+      "pdateProductRequest\032$.google.cloud.retai" +
+      "l.v2alpha.Product\"w\202\323\344\223\002[2P/v2alpha/{pro" +
+      "duct.name=projects/*/locations/*/catalog" +
+      "s/*/branches/*/products/**}:\007product\332A\023p" +
+      "roduct,update_mask\022\263\001\n\rDeleteProduct\0221.g" +
+      "oogle.cloud.retail.v2alpha.DeleteProduct" +
+      "Request\032\026.google.protobuf.Empty\"W\202\323\344\223\002J*" +
+      "H/v2alpha/{name=projects/*/locations/*/c" +
+      "atalogs/*/branches/*/products/**}\332A\004name" +
+      "\022\242\002\n\016ImportProducts\0222.google.cloud.retai" +
+      "l.v2alpha.ImportProductsRequest\032\035.google" +
+      ".longrunning.Operation\"\274\001\202\323\344\223\002S\"N/v2alph" +
+      "a/{parent=projects/*/locations/*/catalog" +
+      "s/*/branches/*}/products:import:\001*\312A`\n2g" +
+      "oogle.cloud.retail.v2alpha.ImportProduct" +
+      "sResponse\022*google.cloud.retail.v2alpha.I" +
+      "mportMetadata\022\310\002\n\014SetInventory\0220.google." +
+      "cloud.retail.v2alpha.SetInventoryRequest" +
+      "\032\035.google.longrunning.Operation\"\346\001\202\323\344\223\002d" +
+      "\"_/v2alpha/{inventory.name=projects/*/lo" +
+      "cations/*/catalogs/*/branches/*/products" +
+      "/**}:setInventory:\001*\332A\022inventory,set_mas" +
+      "k\312Ad\n0google.cloud.retail.v2alpha.SetInv" +
+      "entoryResponse\0220google.cloud.retail.v2al" +
+      "pha.SetInventoryMetadata\022\336\002\n\024AddFulfillm" +
+      "entPlaces\0228.google.cloud.retail.v2alpha." +
+      "AddFulfillmentPlacesRequest\032\035.google.lon" +
+      "grunning.Operation\"\354\001\202\323\344\223\002e\"`/v2alpha/{p" +
+      "roduct=projects/*/locations/*/catalogs/*" +
+      "/branches/*/products/**}:addFulfillmentP" +
+      "laces:\001*\332A\007product\312At\n8google.cloud.reta" +
+      "il.v2alpha.AddFulfillmentPlacesResponse\022" +
+      "8google.cloud.retail.v2alpha.AddFulfillm" +
+      "entPlacesMetadata\022\355\002\n\027RemoveFulfillmentP" +
+      "laces\022;.google.cloud.retail.v2alpha.Remo" +
+      "veFulfillmentPlacesRequest\032\035.google.long" +
+      "running.Operation\"\365\001\202\323\344\223\002h\"c/v2alpha/{pr" +
+      "oduct=projects/*/locations/*/catalogs/*/" +
+      "branches/*/products/**}:removeFulfillmen" +
+      "tPlaces:\001*\332A\007product\312Az\n;google.cloud.re" +
+      "tail.v2alpha.RemoveFulfillmentPlacesResp" +
+      "onse\022;google.cloud.retail.v2alpha.Remove" +
+      "FulfillmentPlacesMetadata\022\331\002\n\023AddLocalIn" +
+      "ventories\0227.google.cloud.retail.v2alpha." +
+      "AddLocalInventoriesRequest\032\035.google.long" +
+      "running.Operation\"\351\001\202\323\344\223\002d\"_/v2alpha/{pr" +
+      "oduct=projects/*/locations/*/catalogs/*/" +
+      "branches/*/products/**}:addLocalInventor" +
+      "ies:\001*\332A\007product\312Ar\n7google.cloud.retail" +
+      ".v2alpha.AddLocalInventoriesResponse\0227go" +
+      "ogle.cloud.retail.v2alpha.AddLocalInvent" +
+      "oriesMetadata\022\350\002\n\026RemoveLocalInventories" +
+      "\022:.google.cloud.retail.v2alpha.RemoveLoc" +
+      "alInventoriesRequest\032\035.google.longrunnin" +
+      "g.Operation\"\362\001\202\323\344\223\002g\"b/v2alpha/{product=" +
+      "projects/*/locations/*/catalogs/*/branch" +
+      "es/*/products/**}:removeLocalInventories" +
+      ":\001*\332A\007product\312Ax\n:google.cloud.retail.v2" +
+      "alpha.RemoveLocalInventoriesResponse\022:go" +
+      "ogle.cloud.retail.v2alpha.RemoveLocalInv" +
+      "entoriesMetadata\032I\312A\025retail.googleapis.c" +
+      "om\322A.https://www.googleapis.com/auth/clo" +
+      "ud-platformB\341\001\n\037com.google.cloud.retail." +
+      "v2alphaB\023ProductServiceProtoP\001ZAgoogle.g" +
+      "olang.org/genproto/googleapis/cloud/reta" +
+      "il/v2alpha;retail\242\002\006RETAIL\252\002\033Google.Clou" +
+      "d.Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V" +
+      "2alpha\352\002\036Google::Cloud::Retail::V2alphab" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -310,20 +373,56 @@ public final class ProductServiceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2alpha_AddFulfillmentPlacesResponse_descriptor,
         new java.lang.String[] { });
-    internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest_descriptor =
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesRequest_descriptor,
+        new java.lang.String[] { "Product", "LocalInventories", "AddMask", "AddTime", "AllowMissing", });
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesMetadata_descriptor,
+        new java.lang.String[] { });
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_AddLocalInventoriesResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesRequest_descriptor,
+        new java.lang.String[] { "Product", "PlaceIds", "RemoveTime", "AllowMissing", });
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesMetadata_descriptor,
+        new java.lang.String[] { });
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_RemoveLocalInventoriesResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest_descriptor,
         new java.lang.String[] { "Product", "Type", "PlaceIds", "RemoveTime", "AllowMissing", });
     internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesMetadata_descriptor,
         new java.lang.String[] { });
     internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesResponse_descriptor,

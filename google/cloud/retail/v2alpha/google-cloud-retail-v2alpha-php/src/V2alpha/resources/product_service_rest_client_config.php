@@ -15,6 +15,18 @@ return [
                     ],
                 ],
             ],
+            'AddLocalInventories' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:addLocalInventories',
+                'body' => '*',
+                'placeholders' => [
+                    'product' => [
+                        'getters' => [
+                            'getProduct',
+                        ],
+                    ],
+                ],
+            ],
             'CreateProduct' => [
                 'method' => 'post',
                 'uriTemplate' => '/v2alpha/{parent=projects/*/locations/*/catalogs/*/branches/*}/products',
@@ -78,6 +90,18 @@ return [
             'RemoveFulfillmentPlaces' => [
                 'method' => 'post',
                 'uriTemplate' => '/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:removeFulfillmentPlaces',
+                'body' => '*',
+                'placeholders' => [
+                    'product' => [
+                        'getters' => [
+                            'getProduct',
+                        ],
+                    ],
+                ],
+            ],
+            'RemoveLocalInventories' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:removeLocalInventories',
                 'body' => '*',
                 'placeholders' => [
                     'product' => [

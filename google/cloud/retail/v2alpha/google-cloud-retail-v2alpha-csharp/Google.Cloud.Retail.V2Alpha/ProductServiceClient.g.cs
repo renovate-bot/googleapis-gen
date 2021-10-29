@@ -59,6 +59,10 @@ namespace Google.Cloud.Retail.V2Alpha
             AddFulfillmentPlacesOperationsSettings = existing.AddFulfillmentPlacesOperationsSettings.Clone();
             RemoveFulfillmentPlacesSettings = existing.RemoveFulfillmentPlacesSettings;
             RemoveFulfillmentPlacesOperationsSettings = existing.RemoveFulfillmentPlacesOperationsSettings.Clone();
+            AddLocalInventoriesSettings = existing.AddLocalInventoriesSettings;
+            AddLocalInventoriesOperationsSettings = existing.AddLocalInventoriesOperationsSettings.Clone();
+            RemoveLocalInventoriesSettings = existing.RemoveLocalInventoriesSettings;
+            RemoveLocalInventoriesOperationsSettings = existing.RemoveLocalInventoriesOperationsSettings.Clone();
             OnCopy(existing);
         }
 
@@ -322,6 +326,85 @@ namespace Google.Cloud.Retail.V2Alpha
         /// </list>
         /// </remarks>
         public lro::OperationsSettings RemoveFulfillmentPlacesOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ProductServiceClient.AddLocalInventories</c> and <c>ProductServiceClient.AddLocalInventoriesAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 30000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 30 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings AddLocalInventoriesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 2147483647, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>ProductServiceClient.AddLocalInventories</c> and
+        /// <c>ProductServiceClient.AddLocalInventoriesAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings AddLocalInventoriesOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ProductServiceClient.RemoveLocalInventories</c> and <c>ProductServiceClient.RemoveLocalInventoriesAsync</c>
+        /// .
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 30000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 30 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings RemoveLocalInventoriesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 2147483647, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>ProductServiceClient.RemoveLocalInventories</c> and
+        /// <c>ProductServiceClient.RemoveLocalInventoriesAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings RemoveLocalInventoriesOperationsSettings { get; set; } = new lro::OperationsSettings
         {
             DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
         };
@@ -2509,6 +2592,702 @@ namespace Google.Cloud.Retail.V2Alpha
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<lro::Operation<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata>> RemoveFulfillmentPlacesAsync(ProductName product, st::CancellationToken cancellationToken) =>
             RemoveFulfillmentPlacesAsync(product, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata> AddLocalInventories(AddLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(AddLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(AddLocalInventoriesRequest request, st::CancellationToken cancellationToken) =>
+            AddLocalInventoriesAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>AddLocalInventories</c>.</summary>
+        public virtual lro::OperationsClient AddLocalInventoriesOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of <c>AddLocalInventories</c>
+        /// .
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata> PollOnceAddLocalInventories(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), AddLocalInventoriesOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>AddLocalInventories</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> PollOnceAddLocalInventoriesAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), AddLocalInventoriesOperationsClient, callSettings);
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata> AddLocalInventories(string product, gaxgrpc::CallSettings callSettings = null) =>
+            AddLocalInventories(new AddLocalInventoriesRequest
+            {
+                Product = gax::GaxPreconditions.CheckNotNullOrEmpty(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(string product, gaxgrpc::CallSettings callSettings = null) =>
+            AddLocalInventoriesAsync(new AddLocalInventoriesRequest
+            {
+                Product = gax::GaxPreconditions.CheckNotNullOrEmpty(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(string product, st::CancellationToken cancellationToken) =>
+            AddLocalInventoriesAsync(product, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata> AddLocalInventories(ProductName product, gaxgrpc::CallSettings callSettings = null) =>
+            AddLocalInventories(new AddLocalInventoriesRequest
+            {
+                ProductAsProductName = gax::GaxPreconditions.CheckNotNull(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(ProductName product, gaxgrpc::CallSettings callSettings = null) =>
+            AddLocalInventoriesAsync(new AddLocalInventoriesRequest
+            {
+                ProductAsProductName = gax::GaxPreconditions.CheckNotNull(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(ProductName product, st::CancellationToken cancellationToken) =>
+            AddLocalInventoriesAsync(product, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata> RemoveLocalInventories(RemoveLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(RemoveLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(RemoveLocalInventoriesRequest request, st::CancellationToken cancellationToken) =>
+            RemoveLocalInventoriesAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>RemoveLocalInventories</c>.</summary>
+        public virtual lro::OperationsClient RemoveLocalInventoriesOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>RemoveLocalInventories</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata> PollOnceRemoveLocalInventories(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), RemoveLocalInventoriesOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>RemoveLocalInventories</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> PollOnceRemoveLocalInventoriesAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), RemoveLocalInventoriesOperationsClient, callSettings);
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata> RemoveLocalInventories(string product, gaxgrpc::CallSettings callSettings = null) =>
+            RemoveLocalInventories(new RemoveLocalInventoriesRequest
+            {
+                Product = gax::GaxPreconditions.CheckNotNullOrEmpty(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(string product, gaxgrpc::CallSettings callSettings = null) =>
+            RemoveLocalInventoriesAsync(new RemoveLocalInventoriesRequest
+            {
+                Product = gax::GaxPreconditions.CheckNotNullOrEmpty(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(string product, st::CancellationToken cancellationToken) =>
+            RemoveLocalInventoriesAsync(product, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata> RemoveLocalInventories(ProductName product, gaxgrpc::CallSettings callSettings = null) =>
+            RemoveLocalInventories(new RemoveLocalInventoriesRequest
+            {
+                ProductAsProductName = gax::GaxPreconditions.CheckNotNull(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(ProductName product, gaxgrpc::CallSettings callSettings = null) =>
+            RemoveLocalInventoriesAsync(new RemoveLocalInventoriesRequest
+            {
+                ProductAsProductName = gax::GaxPreconditions.CheckNotNull(product, nameof(product)),
+            }, callSettings);
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="product">
+        /// Required. Full resource name of
+        /// [Product][google.cloud.retail.v2alpha.Product], such as
+        /// `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        /// 
+        /// If the caller does not have permission to access the
+        /// [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
+        /// not it exists, a PERMISSION_DENIED error is returned.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(ProductName product, st::CancellationToken cancellationToken) =>
+            RemoveLocalInventoriesAsync(product, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
     }
 
     /// <summary>ProductService client wrapper implementation, for convenient use.</summary>
@@ -2536,6 +3315,10 @@ namespace Google.Cloud.Retail.V2Alpha
 
         private readonly gaxgrpc::ApiCall<RemoveFulfillmentPlacesRequest, lro::Operation> _callRemoveFulfillmentPlaces;
 
+        private readonly gaxgrpc::ApiCall<AddLocalInventoriesRequest, lro::Operation> _callAddLocalInventories;
+
+        private readonly gaxgrpc::ApiCall<RemoveLocalInventoriesRequest, lro::Operation> _callRemoveLocalInventories;
+
         /// <summary>
         /// Constructs a client wrapper for the ProductService service, with the specified gRPC client and settings.
         /// </summary>
@@ -2550,6 +3333,8 @@ namespace Google.Cloud.Retail.V2Alpha
             SetInventoryOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.SetInventoryOperationsSettings);
             AddFulfillmentPlacesOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.AddFulfillmentPlacesOperationsSettings);
             RemoveFulfillmentPlacesOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.RemoveFulfillmentPlacesOperationsSettings);
+            AddLocalInventoriesOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.AddLocalInventoriesOperationsSettings);
+            RemoveLocalInventoriesOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.RemoveLocalInventoriesOperationsSettings);
             _callCreateProduct = clientHelper.BuildApiCall<CreateProductRequest, Product>(grpcClient.CreateProductAsync, grpcClient.CreateProduct, effectiveSettings.CreateProductSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callCreateProduct);
             Modify_CreateProductApiCall(ref _callCreateProduct);
@@ -2577,6 +3362,12 @@ namespace Google.Cloud.Retail.V2Alpha
             _callRemoveFulfillmentPlaces = clientHelper.BuildApiCall<RemoveFulfillmentPlacesRequest, lro::Operation>(grpcClient.RemoveFulfillmentPlacesAsync, grpcClient.RemoveFulfillmentPlaces, effectiveSettings.RemoveFulfillmentPlacesSettings).WithGoogleRequestParam("product", request => request.Product);
             Modify_ApiCall(ref _callRemoveFulfillmentPlaces);
             Modify_RemoveFulfillmentPlacesApiCall(ref _callRemoveFulfillmentPlaces);
+            _callAddLocalInventories = clientHelper.BuildApiCall<AddLocalInventoriesRequest, lro::Operation>(grpcClient.AddLocalInventoriesAsync, grpcClient.AddLocalInventories, effectiveSettings.AddLocalInventoriesSettings).WithGoogleRequestParam("product", request => request.Product);
+            Modify_ApiCall(ref _callAddLocalInventories);
+            Modify_AddLocalInventoriesApiCall(ref _callAddLocalInventories);
+            _callRemoveLocalInventories = clientHelper.BuildApiCall<RemoveLocalInventoriesRequest, lro::Operation>(grpcClient.RemoveLocalInventoriesAsync, grpcClient.RemoveLocalInventories, effectiveSettings.RemoveLocalInventoriesSettings).WithGoogleRequestParam("product", request => request.Product);
+            Modify_ApiCall(ref _callRemoveLocalInventories);
+            Modify_RemoveLocalInventoriesApiCall(ref _callRemoveLocalInventories);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
         }
 
@@ -2600,6 +3391,10 @@ namespace Google.Cloud.Retail.V2Alpha
 
         partial void Modify_RemoveFulfillmentPlacesApiCall(ref gaxgrpc::ApiCall<RemoveFulfillmentPlacesRequest, lro::Operation> call);
 
+        partial void Modify_AddLocalInventoriesApiCall(ref gaxgrpc::ApiCall<AddLocalInventoriesRequest, lro::Operation> call);
+
+        partial void Modify_RemoveLocalInventoriesApiCall(ref gaxgrpc::ApiCall<RemoveLocalInventoriesRequest, lro::Operation> call);
+
         partial void OnConstruction(ProductService.ProductServiceClient grpcClient, ProductServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>The underlying gRPC ProductService client</summary>
@@ -2622,6 +3417,10 @@ namespace Google.Cloud.Retail.V2Alpha
         partial void Modify_AddFulfillmentPlacesRequest(ref AddFulfillmentPlacesRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_RemoveFulfillmentPlacesRequest(ref RemoveFulfillmentPlacesRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_AddLocalInventoriesRequest(ref AddLocalInventoriesRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_RemoveLocalInventoriesRequest(ref RemoveLocalInventoriesRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Creates a [Product][google.cloud.retail.v2alpha.Product].
@@ -2999,6 +3798,140 @@ namespace Google.Cloud.Retail.V2Alpha
         {
             Modify_RemoveFulfillmentPlacesRequest(ref request, ref callSettings);
             return new lro::Operation<RemoveFulfillmentPlacesResponse, RemoveFulfillmentPlacesMetadata>(await _callRemoveFulfillmentPlaces.Async(request, callSettings).ConfigureAwait(false), RemoveFulfillmentPlacesOperationsClient);
+        }
+
+        /// <summary>The long-running operations client for <c>AddLocalInventories</c>.</summary>
+        public override lro::OperationsClient AddLocalInventoriesOperationsClient { get; }
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata> AddLocalInventories(AddLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_AddLocalInventoriesRequest(ref request, ref callSettings);
+            return new lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>(_callAddLocalInventories.Sync(request, callSettings), AddLocalInventoriesOperationsClient);
+        }
+
+        /// <summary>
+        /// Updates local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+        /// respecting the last update timestamps of each inventory field.
+        /// 
+        /// This process is asynchronous and does not require the
+        /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+        /// inventory information. If the request is valid, the update will be enqueued
+        /// and processed downstream. As a consequence, when a response is returned,
+        /// updates are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be modified using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>> AddLocalInventoriesAsync(AddLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_AddLocalInventoriesRequest(ref request, ref callSettings);
+            return new lro::Operation<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>(await _callAddLocalInventories.Async(request, callSettings).ConfigureAwait(false), AddLocalInventoriesOperationsClient);
+        }
+
+        /// <summary>The long-running operations client for <c>RemoveLocalInventories</c>.</summary>
+        public override lro::OperationsClient RemoveLocalInventoriesOperationsClient { get; }
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata> RemoveLocalInventories(RemoveLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_RemoveLocalInventoriesRequest(ref request, ref callSettings);
+            return new lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>(_callRemoveLocalInventories.Sync(request, callSettings), RemoveLocalInventoriesOperationsClient);
+        }
+
+        /// <summary>
+        /// Remove local inventory information for a
+        /// [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+        /// removal timestamp.
+        /// 
+        /// This process is asynchronous. If the request is valid, the removal will be
+        /// enqueued and processed downstream. As a consequence, when a response is
+        /// returned, removals are not immediately manifested in the
+        /// [Product][google.cloud.retail.v2alpha.Product] queried by
+        /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+        /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+        /// 
+        /// Store inventory information can only be removed using this method.
+        /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        /// and
+        /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        /// has no effect on local inventories.
+        /// 
+        /// This feature is only available for users who have Retail Search enabled.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// Cloud sales if you are interested in using Retail Search.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>> RemoveLocalInventoriesAsync(RemoveLocalInventoriesRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_RemoveLocalInventoriesRequest(ref request, ref callSettings);
+            return new lro::Operation<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>(await _callRemoveLocalInventories.Async(request, callSettings).ConfigureAwait(false), RemoveLocalInventoriesOperationsClient);
         }
     }
 

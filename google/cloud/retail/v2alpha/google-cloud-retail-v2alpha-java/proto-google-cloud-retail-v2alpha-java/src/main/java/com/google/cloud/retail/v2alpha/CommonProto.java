@@ -69,6 +69,16 @@ public final class CommonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_Promotion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_LocalInventory_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_LocalInventory_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -109,13 +119,19 @@ public final class CommonProto {
       "\003(\005\"`\n\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n\nip_a" +
       "ddress\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\033\n\023dire" +
       "ct_user_request\030\004 \001(\010\"!\n\tPromotion\022\024\n\014pr" +
-      "omotion_id\030\001 \001(\tB\331\001\n\037com.google.cloud.re" +
-      "tail.v2alphaB\013CommonProtoP\001ZAgoogle.gola" +
-      "ng.org/genproto/googleapis/cloud/retail/" +
-      "v2alpha;retail\242\002\006RETAIL\252\002\033Google.Cloud.R" +
-      "etail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2al" +
-      "pha\352\002\036Google::Cloud::Retail::V2alphab\006pr" +
-      "oto3"
+      "omotion_id\030\001 \001(\t\"\220\002\n\016LocalInventory\022\020\n\010p" +
+      "lace_id\030\001 \001(\t\022:\n\nprice_info\030\002 \001(\0132&.goog" +
+      "le.cloud.retail.v2alpha.PriceInfo\022O\n\natt" +
+      "ributes\030\003 \003(\0132;.google.cloud.retail.v2al" +
+      "pha.LocalInventory.AttributesEntry\032_\n\017At" +
+      "tributesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(" +
+      "\0132,.google.cloud.retail.v2alpha.CustomAt" +
+      "tribute:\0028\001B\331\001\n\037com.google.cloud.retail." +
+      "v2alphaB\013CommonProtoP\001ZAgoogle.golang.or" +
+      "g/genproto/googleapis/cloud/retail/v2alp" +
+      "ha;retail\242\002\006RETAIL\252\002\033Google.Cloud.Retail" +
+      ".V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002" +
+      "\036Google::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -190,6 +206,18 @@ public final class CommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2alpha_Promotion_descriptor,
         new java.lang.String[] { "PromotionId", });
+    internal_static_google_cloud_retail_v2alpha_LocalInventory_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_retail_v2alpha_LocalInventory_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_LocalInventory_descriptor,
+        new java.lang.String[] { "PlaceId", "PriceInfo", "Attributes", });
+    internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_descriptor =
+      internal_static_google_cloud_retail_v2alpha_LocalInventory_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

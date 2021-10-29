@@ -15,6 +15,7 @@
 #
 import proto  # type: ignore
 
+from google.cloud.retail_v2alpha.types import common
 from google.cloud.retail_v2alpha.types import product as gcr_product
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -35,6 +36,12 @@ __protobuf__ = proto.module(
         'AddFulfillmentPlacesRequest',
         'AddFulfillmentPlacesMetadata',
         'AddFulfillmentPlacesResponse',
+        'AddLocalInventoriesRequest',
+        'AddLocalInventoriesMetadata',
+        'AddLocalInventoriesResponse',
+        'RemoveLocalInventoriesRequest',
+        'RemoveLocalInventoriesMetadata',
+        'RemoveLocalInventoriesResponse',
         'RemoveFulfillmentPlacesRequest',
         'RemoveFulfillmentPlacesMetadata',
         'RemoveFulfillmentPlacesResponse',
@@ -582,6 +589,167 @@ class AddFulfillmentPlacesResponse(proto.Message):
     r"""Response of the AddFulfillmentPlacesRequest. Currently empty because
     there is no meaningful response populated from the
     [AddFulfillmentPlaces][] method.
+
+    """
+
+
+class AddLocalInventoriesRequest(proto.Message):
+    r"""Request message for [AddLocalInventories][] method.
+
+    Attributes:
+        product (str):
+            Required. Full resource name of
+            [Product][google.cloud.retail.v2alpha.Product], such as
+            ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
+
+            If the caller does not have permission to access the
+            [Product][google.cloud.retail.v2alpha.Product], regardless
+            of whether or not it exists, a PERMISSION_DENIED error is
+            returned.
+        local_inventories (Sequence[google.cloud.retail_v2alpha.types.LocalInventory]):
+            Required. A list of inventory information at
+            difference places. Each place is identified by
+            its place ID. At most 1000 inventories are
+            allowed per request.
+        add_mask (google.protobuf.field_mask_pb2.FieldMask):
+            Indicates which inventory fields in the provided list of
+            [LocalInventory][google.cloud.retail.v2alpha.LocalInventory]
+            to update. The field is updated to the provided value.
+
+            If a field is set while the place does not have a previous
+            local inventory, the local inventory at that store is
+            created.
+
+            If a field is set while the value of that field is not
+            provided, the original field value, if it exists, is
+            deleted.
+
+            If the mask is not set or set with empty paths, all
+            inventory fields will be updated.
+
+            If an unsupported or unknown field is provided, an
+            INVALID_ARGUMENT error is returned and the entire update
+            will be ignored.
+        add_time (google.protobuf.timestamp_pb2.Timestamp):
+            The time when the inventory updates are
+            issued. Used to prevent out-of-order updates on
+            local inventory fields. If not provided, the
+            internal system time will be used.
+        allow_missing (bool):
+            If set to true, and the
+            [Product][google.cloud.retail.v2alpha.Product] is not found,
+            the local inventory will still be processed and retained for
+            at most 1 day and processed once the
+            [Product][google.cloud.retail.v2alpha.Product] is created.
+            If set to false, an INVALID_ARGUMENT error is returned if
+            the [Product][google.cloud.retail.v2alpha.Product] is not
+            found.
+    """
+
+    product = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    local_inventories = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
+        message=common.LocalInventory,
+    )
+    add_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=field_mask_pb2.FieldMask,
+    )
+    add_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=timestamp_pb2.Timestamp,
+    )
+    allow_missing = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+
+
+class AddLocalInventoriesMetadata(proto.Message):
+    r"""Metadata related to the progress of the AddLocalInventories
+    operation. Currently empty because there is no meaningful metadata
+    populated from the [AddLocalInventories][] method.
+
+    """
+
+
+class AddLocalInventoriesResponse(proto.Message):
+    r"""Response of the [AddLocalInventories][] API. Currently empty because
+    there is no meaningful response populated from the
+    [AddLocalInventories][] method.
+
+    """
+
+
+class RemoveLocalInventoriesRequest(proto.Message):
+    r"""Request message for [RemoveLocalInventories][] method.
+
+    Attributes:
+        product (str):
+            Required. Full resource name of
+            [Product][google.cloud.retail.v2alpha.Product], such as
+            ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
+
+            If the caller does not have permission to access the
+            [Product][google.cloud.retail.v2alpha.Product], regardless
+            of whether or not it exists, a PERMISSION_DENIED error is
+            returned.
+        place_ids (Sequence[str]):
+            Required. A list of place IDs to have their
+            inventory deleted. At most 1000 place IDs are
+            allowed per request.
+        remove_time (google.protobuf.timestamp_pb2.Timestamp):
+            The time when the inventory deletions are
+            issued. Used to prevent out-of-order updates and
+            deletions on local inventory fields. If not
+            provided, the internal system time will be used.
+        allow_missing (bool):
+            If set to true, and the
+            [Product][google.cloud.retail.v2alpha.Product] is not found,
+            the local inventory removal request will still be processed
+            and retained for at most 1 day and processed once the
+            [Product][google.cloud.retail.v2alpha.Product] is created.
+            If set to false, a NOT_FOUND error is returned if the
+            [Product][google.cloud.retail.v2alpha.Product] is not found.
+    """
+
+    product = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    place_ids = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    remove_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=timestamp_pb2.Timestamp,
+    )
+    allow_missing = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+
+
+class RemoveLocalInventoriesMetadata(proto.Message):
+    r"""Metadata related to the progress of the RemoveLocalInventories
+    operation. Currently empty because there is no meaningful metadata
+    populated from the [RemoveLocalInventories][] method.
+
+    """
+
+
+class RemoveLocalInventoriesResponse(proto.Message):
+    r"""Response of the [RemoveLocalInventories][] API. Currently empty
+    because there is no meaningful response populated from the
+    [RemoveLocalInventories][] method.
 
     """
 

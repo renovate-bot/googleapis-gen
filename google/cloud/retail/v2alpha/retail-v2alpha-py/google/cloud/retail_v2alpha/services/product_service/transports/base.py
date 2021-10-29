@@ -204,6 +204,16 @@ initial=0.1,maximum=300.0,multiplier=1.3,                    predicate=retries.i
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.add_local_inventories: gapic_v1.method.wrap_method(
+                self.add_local_inventories,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.remove_local_inventories: gapic_v1.method.wrap_method(
+                self.remove_local_inventories,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     def close(self):
@@ -295,6 +305,24 @@ initial=0.1,maximum=300.0,multiplier=1.3,                    predicate=retries.i
     @property
     def remove_fulfillment_places(self) -> Callable[
             [product_service.RemoveFulfillmentPlacesRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def add_local_inventories(self) -> Callable[
+            [product_service.AddLocalInventoriesRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def remove_local_inventories(self) -> Callable[
+            [product_service.RemoveLocalInventoriesRequest],
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]

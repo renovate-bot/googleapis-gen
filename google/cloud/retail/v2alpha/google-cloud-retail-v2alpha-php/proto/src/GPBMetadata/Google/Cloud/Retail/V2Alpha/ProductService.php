@@ -29,7 +29,7 @@ class ProductService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ß%
+ù/
 1google/cloud/retail/v2alpha/product_service.protogoogle.cloud.retail.v2alphagoogle/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto(google/cloud/retail/v2alpha/common.proto/google/cloud/retail/v2alpha/export_config.proto/google/cloud/retail/v2alpha/import_config.proto)google/cloud/retail/v2alpha/product.proto.google/cloud/retail/v2alpha/purge_config.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"¡
 CreateProductRequest4
 parent (	B$àAúA
@@ -76,7 +76,24 @@ total_size ("Æ
 add_time (2.google.protobuf.Timestamp
 allow_missing ("
 AddFulfillmentPlacesMetadata"
-AddFulfillmentPlacesResponse"Ë
+AddFulfillmentPlacesResponse"”
+AddLocalInventoriesRequest6
+product (	B%àAúA
+retail.googleapis.com/ProductK
+local_inventories (2+.google.cloud.retail.v2alpha.LocalInventoryBàA,
+add_mask (2.google.protobuf.FieldMask,
+add_time (2.google.protobuf.Timestamp
+allow_missing ("
+AddLocalInventoriesMetadata"
+AddLocalInventoriesResponse"·
+RemoveLocalInventoriesRequest6
+product (	B%àAúA
+retail.googleapis.com/Product
+	place_ids (	BàA/
+remove_time (2.google.protobuf.Timestamp
+allow_missing (" 
+RemoveLocalInventoriesMetadata" 
+RemoveLocalInventoriesResponse"Ë
 RemoveFulfillmentPlacesRequest6
 product (	B%àAúA
 retail.googleapis.com/Product
@@ -85,7 +102,7 @@ total_size ("Æ
 remove_time (2.google.protobuf.Timestamp
 allow_missing ("!
 RemoveFulfillmentPlacesMetadata"!
-RemoveFulfillmentPlacesResponse2¥
+RemoveFulfillmentPlacesResponse2ì
 ProductServiceÞ
 CreateProduct1.google.cloud.retail.v2alpha.CreateProductRequest$.google.cloud.retail.v2alpha.Product"t‚Óä“R"G/v2alpha/{parent=projects/*/locations/*/catalogs/*/branches/*}/products:productÚAparent,product,product_id»
 
@@ -100,7 +117,11 @@ GetProduct..google.cloud.retail.v2alpha.GetProductRequest$.google.cloud.retail
 AddFulfillmentPlaces8.google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.google.longrunning.Operation"ì‚Óä“e"`/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:addFulfillmentPlaces:*ÚAproductÊAt
 8google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse8google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadataí
 RemoveFulfillmentPlaces;.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest.google.longrunning.Operation"õ‚Óä“h"c/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:removeFulfillmentPlaces:*ÚAproductÊAz
-;google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse;google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadataIÊAretail.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBá
+;google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse;google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadataÙ
+AddLocalInventories7.google.cloud.retail.v2alpha.AddLocalInventoriesRequest.google.longrunning.Operation"é‚Óä“d"_/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:addLocalInventories:*ÚAproductÊAr
+7google.cloud.retail.v2alpha.AddLocalInventoriesResponse7google.cloud.retail.v2alpha.AddLocalInventoriesMetadataè
+RemoveLocalInventories:.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest.google.longrunning.Operation"ò‚Óä“g"b/v2alpha/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:removeLocalInventories:*ÚAproductÊAx
+:google.cloud.retail.v2alpha.RemoveLocalInventoriesResponse:google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadataIÊAretail.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBá
 com.google.cloud.retail.v2alphaBProductServiceProtoPZAgoogle.golang.org/genproto/googleapis/cloud/retail/v2alpha;retail¢RETAILªGoogle.Cloud.Retail.V2AlphaÊGoogle\\Cloud\\Retail\\V2alphaêGoogle::Cloud::Retail::V2alphabproto3'
         , true);
 

@@ -1133,6 +1133,239 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         # Done; return the response.
         return response
 
+    async def add_local_inventories(self,
+            request: product_service.AddLocalInventoriesRequest = None,
+            *,
+            product: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Updates local inventory information for a
+        [Product][google.cloud.retail.v2alpha.Product] at a list of
+        places, while respecting the last update timestamps of each
+        inventory field.
+
+        This process is asynchronous and does not require the
+        [Product][google.cloud.retail.v2alpha.Product] to exist before
+        updating inventory information. If the request is valid, the
+        update will be enqueued and processed downstream. As a
+        consequence, when a response is returned, updates are not
+        immediately manifested in the
+        [Product][google.cloud.retail.v2alpha.Product] queried by
+        [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
+        or
+        [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+
+        Store inventory information can only be modified using this
+        method.
+        [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        and
+        [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        has no effect on local inventories.
+
+        This feature is only available for users who have Retail Search
+        enabled. Please submit a form
+        `here <https://cloud.google.com/contact>`__ to contact Cloud
+        sales if you are interested in using Retail Search.
+
+        Args:
+            request (:class:`google.cloud.retail_v2alpha.types.AddLocalInventoriesRequest`):
+                The request object. Request message for
+                [AddLocalInventories][] method.
+            product (:class:`str`):
+                Required. Full resource name of
+                [Product][google.cloud.retail.v2alpha.Product], such as
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
+
+                If the caller does not have permission to access the
+                [Product][google.cloud.retail.v2alpha.Product],
+                regardless of whether or not it exists, a
+                PERMISSION_DENIED error is returned.
+
+                This corresponds to the ``product`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be :class:`google.cloud.retail_v2alpha.types.AddLocalInventoriesResponse` Response of the [AddLocalInventories][] API. Currently empty because
+                   there is no meaningful response populated from the
+                   [AddLocalInventories][] method.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([product])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = product_service.AddLocalInventoriesRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if product is not None:
+            request.product = product
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.add_local_inventories,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("product", request.product),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            product_service.AddLocalInventoriesResponse,
+            metadata_type=product_service.AddLocalInventoriesMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    async def remove_local_inventories(self,
+            request: product_service.RemoveLocalInventoriesRequest = None,
+            *,
+            product: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Remove local inventory information for a
+        [Product][google.cloud.retail.v2alpha.Product] at a list of
+        places at a removal timestamp.
+
+        This process is asynchronous. If the request is valid, the
+        removal will be enqueued and processed downstream. As a
+        consequence, when a response is returned, removals are not
+        immediately manifested in the
+        [Product][google.cloud.retail.v2alpha.Product] queried by
+        [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
+        or
+        [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+
+        Store inventory information can only be removed using this
+        method.
+        [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+        and
+        [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+        has no effect on local inventories.
+
+        This feature is only available for users who have Retail Search
+        enabled. Please submit a form
+        `here <https://cloud.google.com/contact>`__ to contact Cloud
+        sales if you are interested in using Retail Search.
+
+        Args:
+            request (:class:`google.cloud.retail_v2alpha.types.RemoveLocalInventoriesRequest`):
+                The request object. Request message for
+                [RemoveLocalInventories][] method.
+            product (:class:`str`):
+                Required. Full resource name of
+                [Product][google.cloud.retail.v2alpha.Product], such as
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
+
+                If the caller does not have permission to access the
+                [Product][google.cloud.retail.v2alpha.Product],
+                regardless of whether or not it exists, a
+                PERMISSION_DENIED error is returned.
+
+                This corresponds to the ``product`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be :class:`google.cloud.retail_v2alpha.types.RemoveLocalInventoriesResponse` Response of the [RemoveLocalInventories][] API. Currently empty because
+                   there is no meaningful response populated from the
+                   [RemoveLocalInventories][] method.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([product])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = product_service.RemoveLocalInventoriesRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if product is not None:
+            request.product = product
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.remove_local_inventories,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("product", request.product),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            product_service.RemoveLocalInventoriesResponse,
+            metadata_type=product_service.RemoveLocalInventoriesMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
     async def __aenter__(self):
         return self
 

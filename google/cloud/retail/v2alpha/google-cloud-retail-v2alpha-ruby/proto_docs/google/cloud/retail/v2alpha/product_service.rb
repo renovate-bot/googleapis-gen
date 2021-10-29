@@ -421,6 +421,120 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # Request message for [AddLocalInventories][] method.
+        # @!attribute [rw] product
+        #   @return [::String]
+        #     Required. Full resource name of
+        #     {::Google::Cloud::Retail::V2alpha::Product Product}, such as
+        #     `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        #
+        #     If the caller does not have permission to access the
+        #     {::Google::Cloud::Retail::V2alpha::Product Product}, regardless of whether or
+        #     not it exists, a PERMISSION_DENIED error is returned.
+        # @!attribute [rw] local_inventories
+        #   @return [::Array<::Google::Cloud::Retail::V2alpha::LocalInventory>]
+        #     Required. A list of inventory information at difference places. Each place
+        #     is identified by its place ID. At most 1000 inventories are allowed per
+        #     request.
+        # @!attribute [rw] add_mask
+        #   @return [::Google::Protobuf::FieldMask]
+        #     Indicates which inventory fields in the provided list of
+        #     {::Google::Cloud::Retail::V2alpha::LocalInventory LocalInventory} to update. The
+        #     field is updated to the provided value.
+        #
+        #     If a field is set while the place does not have a previous local inventory,
+        #     the local inventory at that store is created.
+        #
+        #     If a field is set while the value of that field is not provided, the
+        #     original field value, if it exists, is deleted.
+        #
+        #     If the mask is not set or set with empty paths, all inventory fields will
+        #     be updated.
+        #
+        #     If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
+        #     is returned and the entire update will be ignored.
+        # @!attribute [rw] add_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The time when the inventory updates are issued. Used to prevent
+        #     out-of-order updates on local inventory fields. If not provided, the
+        #     internal system time will be used.
+        # @!attribute [rw] allow_missing
+        #   @return [::Boolean]
+        #     If set to true, and the {::Google::Cloud::Retail::V2alpha::Product Product} is
+        #     not found, the local inventory will still be processed and retained for at
+        #     most 1 day and processed once the
+        #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
+        #     an INVALID_ARGUMENT error is returned if the
+        #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
+        class AddLocalInventoriesRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata related to the progress of the AddLocalInventories operation.
+        # Currently empty because there is no meaningful metadata populated from the
+        # [AddLocalInventories][] method.
+        class AddLocalInventoriesMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response of the [AddLocalInventories][] API.  Currently empty because
+        # there is no meaningful response populated from the [AddLocalInventories][]
+        # method.
+        class AddLocalInventoriesResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for [RemoveLocalInventories][] method.
+        # @!attribute [rw] product
+        #   @return [::String]
+        #     Required. Full resource name of
+        #     {::Google::Cloud::Retail::V2alpha::Product Product}, such as
+        #     `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+        #
+        #     If the caller does not have permission to access the
+        #     {::Google::Cloud::Retail::V2alpha::Product Product}, regardless of whether or
+        #     not it exists, a PERMISSION_DENIED error is returned.
+        # @!attribute [rw] place_ids
+        #   @return [::Array<::String>]
+        #     Required. A list of place IDs to have their inventory deleted.
+        #     At most 1000 place IDs are allowed per request.
+        # @!attribute [rw] remove_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The time when the inventory deletions are issued. Used to prevent
+        #     out-of-order updates and deletions on local inventory fields. If not
+        #     provided, the internal system time will be used.
+        # @!attribute [rw] allow_missing
+        #   @return [::Boolean]
+        #     If set to true, and the {::Google::Cloud::Retail::V2alpha::Product Product} is
+        #     not found, the local inventory removal request will still be processed and
+        #     retained for at most 1 day and processed once the
+        #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
+        #     a NOT_FOUND error is returned if the
+        #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
+        class RemoveLocalInventoriesRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata related to the progress of the RemoveLocalInventories operation.
+        # Currently empty because there is no meaningful metadata populated from the
+        # [RemoveLocalInventories][] method.
+        class RemoveLocalInventoriesMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response of the [RemoveLocalInventories][] API.  Currently empty because
+        # there is no meaningful response populated from the [RemoveLocalInventories][]
+        # method.
+        class RemoveLocalInventoriesResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request message for [RemoveFulfillmentPlaces][] method.
         # @!attribute [rw] product
         #   @return [::String]

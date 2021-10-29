@@ -68,6 +68,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.retail.v2alpha.Promotion" do
       optional :promotion_id, :string, 1
     end
+    add_message "google.cloud.retail.v2alpha.LocalInventory" do
+      optional :place_id, :string, 1
+      optional :price_info, :message, 2, "google.cloud.retail.v2alpha.PriceInfo"
+      map :attributes, :string, :message, 3, "google.cloud.retail.v2alpha.CustomAttribute"
+    end
   end
 end
 
@@ -86,6 +91,7 @@ module Google
         Rating = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.Rating").msgclass
         UserInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.UserInfo").msgclass
         Promotion = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.Promotion").msgclass
+        LocalInventory = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.LocalInventory").msgclass
       end
     end
   end

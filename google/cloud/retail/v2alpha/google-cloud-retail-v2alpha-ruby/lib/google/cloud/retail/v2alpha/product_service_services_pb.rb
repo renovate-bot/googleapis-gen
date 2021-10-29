@@ -127,6 +127,50 @@ module Google
             # Please submit a form [here](https://cloud.google.com/contact) to contact
             # cloud sales if you are interested in using Retail Search.
             rpc :RemoveFulfillmentPlaces, ::Google::Cloud::Retail::V2alpha::RemoveFulfillmentPlacesRequest, ::Google::Longrunning::Operation
+            # Updates local inventory information for a
+            # [Product][google.cloud.retail.v2alpha.Product] at a list of places, while
+            # respecting the last update timestamps of each inventory field.
+            #
+            # This process is asynchronous and does not require the
+            # [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+            # inventory information. If the request is valid, the update will be enqueued
+            # and processed downstream. As a consequence, when a response is returned,
+            # updates are not immediately manifested in the
+            # [Product][google.cloud.retail.v2alpha.Product] queried by
+            # [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+            # [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+            #
+            # Store inventory information can only be modified using this method.
+            # [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+            # and
+            # [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+            # has no effect on local inventories.
+            #
+            # This feature is only available for users who have Retail Search enabled.
+            # Please submit a form [here](https://cloud.google.com/contact) to contact
+            # Cloud sales if you are interested in using Retail Search.
+            rpc :AddLocalInventories, ::Google::Cloud::Retail::V2alpha::AddLocalInventoriesRequest, ::Google::Longrunning::Operation
+            # Remove local inventory information for a
+            # [Product][google.cloud.retail.v2alpha.Product] at a list of places at a
+            # removal timestamp.
+            #
+            # This process is asynchronous. If the request is valid, the removal will be
+            # enqueued and processed downstream. As a consequence, when a response is
+            # returned, removals are not immediately manifested in the
+            # [Product][google.cloud.retail.v2alpha.Product] queried by
+            # [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+            # [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+            #
+            # Store inventory information can only be removed using this method.
+            # [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+            # and
+            # [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+            # has no effect on local inventories.
+            #
+            # This feature is only available for users who have Retail Search enabled.
+            # Please submit a form [here](https://cloud.google.com/contact) to contact
+            # Cloud sales if you are interested in using Retail Search.
+            rpc :RemoveLocalInventories, ::Google::Cloud::Retail::V2alpha::RemoveLocalInventoriesRequest, ::Google::Longrunning::Operation
           end
 
           Stub = Service.rpc_stub_class

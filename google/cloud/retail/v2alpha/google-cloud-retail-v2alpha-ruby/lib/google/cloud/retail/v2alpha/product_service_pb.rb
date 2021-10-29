@@ -68,6 +68,27 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse" do
     end
+    add_message "google.cloud.retail.v2alpha.AddLocalInventoriesRequest" do
+      optional :product, :string, 1
+      repeated :local_inventories, :message, 2, "google.cloud.retail.v2alpha.LocalInventory"
+      optional :add_mask, :message, 4, "google.protobuf.FieldMask"
+      optional :add_time, :message, 5, "google.protobuf.Timestamp"
+      optional :allow_missing, :bool, 6
+    end
+    add_message "google.cloud.retail.v2alpha.AddLocalInventoriesMetadata" do
+    end
+    add_message "google.cloud.retail.v2alpha.AddLocalInventoriesResponse" do
+    end
+    add_message "google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest" do
+      optional :product, :string, 1
+      repeated :place_ids, :string, 2
+      optional :remove_time, :message, 5, "google.protobuf.Timestamp"
+      optional :allow_missing, :bool, 3
+    end
+    add_message "google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata" do
+    end
+    add_message "google.cloud.retail.v2alpha.RemoveLocalInventoriesResponse" do
+    end
     add_message "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest" do
       optional :product, :string, 1
       optional :type, :string, 2
@@ -98,6 +119,12 @@ module Google
         AddFulfillmentPlacesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest").msgclass
         AddFulfillmentPlacesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadata").msgclass
         AddFulfillmentPlacesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse").msgclass
+        AddLocalInventoriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddLocalInventoriesRequest").msgclass
+        AddLocalInventoriesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddLocalInventoriesMetadata").msgclass
+        AddLocalInventoriesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddLocalInventoriesResponse").msgclass
+        RemoveLocalInventoriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest").msgclass
+        RemoveLocalInventoriesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata").msgclass
+        RemoveLocalInventoriesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveLocalInventoriesResponse").msgclass
         RemoveFulfillmentPlacesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest").msgclass
         RemoveFulfillmentPlacesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadata").msgclass
         RemoveFulfillmentPlacesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse").msgclass

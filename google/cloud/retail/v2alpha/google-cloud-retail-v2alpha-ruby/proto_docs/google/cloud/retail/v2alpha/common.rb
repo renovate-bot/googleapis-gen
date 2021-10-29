@@ -441,6 +441,44 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
+
+        # The inventory information at a place (e.g. a store) identified
+        # by a place ID.
+        # @!attribute [rw] place_id
+        #   @return [::String]
+        #     The place ID for the current set of inventory information.
+        # @!attribute [rw] price_info
+        #   @return [::Google::Cloud::Retail::V2alpha::PriceInfo]
+        #     Product price and cost information.
+        #
+        #     Google Merchant Center property
+        #     [price](https://support.google.com/merchants/answer/6324371).
+        # @!attribute [rw] attributes
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Retail::V2alpha::CustomAttribute}]
+        #     Additional local inventory attributes, for example, store name, promotion
+        #     tags, etc.
+        #     * At most 5 values are allowed. Otherwise, an INVALID_ARGUMENT error is
+        #       returned.
+        #     * The key must be a UTF-8 encoded string with a length limit of 10
+        #       characters.
+        #     * The key must match the pattern: `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example,
+        #       key0LikeThis or KEY_1_LIKE_THIS.
+        #     * The attribute values must be of the same type (text or number).
+        #     * The max number of values per attribute is 10.
+        #     * For text values, the length limit is 10 UTF-8 characters.
+        class LocalInventory
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::Google::Cloud::Retail::V2alpha::CustomAttribute]
+          class AttributesEntry
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+        end
       end
     end
   end

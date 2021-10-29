@@ -47,6 +47,9 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2alpha.AddLocalInventoriesMetadata;
+import com.google.cloud.retail.v2alpha.AddLocalInventoriesRequest;
+import com.google.cloud.retail.v2alpha.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2alpha.CreateProductRequest;
 import com.google.cloud.retail.v2alpha.DeleteProductRequest;
 import com.google.cloud.retail.v2alpha.GetProductRequest;
@@ -59,6 +62,9 @@ import com.google.cloud.retail.v2alpha.Product;
 import com.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata;
+import com.google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest;
+import com.google.cloud.retail.v2alpha.RemoveLocalInventoriesResponse;
 import com.google.cloud.retail.v2alpha.SetInventoryMetadata;
 import com.google.cloud.retail.v2alpha.SetInventoryRequest;
 import com.google.cloud.retail.v2alpha.SetInventoryResponse;
@@ -138,6 +144,17 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           RemoveFulfillmentPlacesRequest, RemoveFulfillmentPlacesResponse,
           RemoveFulfillmentPlacesMetadata>
       removeFulfillmentPlacesOperationSettings;
+  private final UnaryCallSettings<AddLocalInventoriesRequest, Operation>
+      addLocalInventoriesSettings;
+  private final OperationCallSettings<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationSettings;
+  private final UnaryCallSettings<RemoveLocalInventoriesRequest, Operation>
+      removeLocalInventoriesSettings;
+  private final OperationCallSettings<
+          RemoveLocalInventoriesRequest, RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationSettings;
 
   private static final PagedListDescriptor<ListProductsRequest, ListProductsResponse, Product>
       LIST_PRODUCTS_PAGE_STR_DESC =
@@ -266,6 +283,32 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     return removeFulfillmentPlacesOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to addLocalInventories. */
+  public UnaryCallSettings<AddLocalInventoriesRequest, Operation> addLocalInventoriesSettings() {
+    return addLocalInventoriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addLocalInventories. */
+  public OperationCallSettings<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationSettings() {
+    return addLocalInventoriesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeLocalInventories. */
+  public UnaryCallSettings<RemoveLocalInventoriesRequest, Operation>
+      removeLocalInventoriesSettings() {
+    return removeLocalInventoriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeLocalInventories. */
+  public OperationCallSettings<
+          RemoveLocalInventoriesRequest, RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationSettings() {
+    return removeLocalInventoriesOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -357,6 +400,12 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     removeFulfillmentPlacesSettings = settingsBuilder.removeFulfillmentPlacesSettings().build();
     removeFulfillmentPlacesOperationSettings =
         settingsBuilder.removeFulfillmentPlacesOperationSettings().build();
+    addLocalInventoriesSettings = settingsBuilder.addLocalInventoriesSettings().build();
+    addLocalInventoriesOperationSettings =
+        settingsBuilder.addLocalInventoriesOperationSettings().build();
+    removeLocalInventoriesSettings = settingsBuilder.removeLocalInventoriesSettings().build();
+    removeLocalInventoriesOperationSettings =
+        settingsBuilder.removeLocalInventoriesOperationSettings().build();
   }
 
   /** Builder for ProductServiceStubSettings. */
@@ -389,6 +438,17 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
             RemoveFulfillmentPlacesRequest, RemoveFulfillmentPlacesResponse,
             RemoveFulfillmentPlacesMetadata>
         removeFulfillmentPlacesOperationSettings;
+    private final UnaryCallSettings.Builder<AddLocalInventoriesRequest, Operation>
+        addLocalInventoriesSettings;
+    private final OperationCallSettings.Builder<
+            AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+        addLocalInventoriesOperationSettings;
+    private final UnaryCallSettings.Builder<RemoveLocalInventoriesRequest, Operation>
+        removeLocalInventoriesSettings;
+    private final OperationCallSettings.Builder<
+            RemoveLocalInventoriesRequest, RemoveLocalInventoriesResponse,
+            RemoveLocalInventoriesMetadata>
+        removeLocalInventoriesOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -458,6 +518,10 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       addFulfillmentPlacesOperationSettings = OperationCallSettings.newBuilder();
       removeFulfillmentPlacesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeFulfillmentPlacesOperationSettings = OperationCallSettings.newBuilder();
+      addLocalInventoriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addLocalInventoriesOperationSettings = OperationCallSettings.newBuilder();
+      removeLocalInventoriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeLocalInventoriesOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -469,7 +533,9 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               importProductsSettings,
               setInventorySettings,
               addFulfillmentPlacesSettings,
-              removeFulfillmentPlacesSettings);
+              removeFulfillmentPlacesSettings,
+              addLocalInventoriesSettings,
+              removeLocalInventoriesSettings);
       initDefaults(this);
     }
 
@@ -491,6 +557,12 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
       removeFulfillmentPlacesSettings = settings.removeFulfillmentPlacesSettings.toBuilder();
       removeFulfillmentPlacesOperationSettings =
           settings.removeFulfillmentPlacesOperationSettings.toBuilder();
+      addLocalInventoriesSettings = settings.addLocalInventoriesSettings.toBuilder();
+      addLocalInventoriesOperationSettings =
+          settings.addLocalInventoriesOperationSettings.toBuilder();
+      removeLocalInventoriesSettings = settings.removeLocalInventoriesSettings.toBuilder();
+      removeLocalInventoriesOperationSettings =
+          settings.removeLocalInventoriesOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -502,7 +574,9 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               importProductsSettings,
               setInventorySettings,
               addFulfillmentPlacesSettings,
-              removeFulfillmentPlacesSettings);
+              removeFulfillmentPlacesSettings,
+              addLocalInventoriesSettings,
+              removeLocalInventoriesSettings);
     }
 
     private static Builder createDefault() {
@@ -561,6 +635,16 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
 
       builder
           .removeFulfillmentPlacesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .addLocalInventoriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .removeLocalInventoriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -652,6 +736,58 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   RemoveFulfillmentPlacesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .addLocalInventoriesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddLocalInventoriesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AddLocalInventoriesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AddLocalInventoriesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .removeLocalInventoriesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveLocalInventoriesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RemoveLocalInventoriesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  RemoveLocalInventoriesMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -766,6 +902,37 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
             RemoveFulfillmentPlacesMetadata>
         removeFulfillmentPlacesOperationSettings() {
       return removeFulfillmentPlacesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addLocalInventories. */
+    public UnaryCallSettings.Builder<AddLocalInventoriesRequest, Operation>
+        addLocalInventoriesSettings() {
+      return addLocalInventoriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addLocalInventories. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+        addLocalInventoriesOperationSettings() {
+      return addLocalInventoriesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeLocalInventories. */
+    public UnaryCallSettings.Builder<RemoveLocalInventoriesRequest, Operation>
+        removeLocalInventoriesSettings() {
+      return removeLocalInventoriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeLocalInventories. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RemoveLocalInventoriesRequest, RemoveLocalInventoriesResponse,
+            RemoveLocalInventoriesMetadata>
+        removeLocalInventoriesOperationSettings() {
+      return removeLocalInventoriesOperationSettings;
     }
 
     @Override

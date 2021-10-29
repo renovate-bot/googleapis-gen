@@ -43,6 +43,7 @@ from google.cloud.retail_v2alpha.types.common import CustomAttribute
 from google.cloud.retail_v2alpha.types.common import FulfillmentInfo
 from google.cloud.retail_v2alpha.types.common import Image
 from google.cloud.retail_v2alpha.types.common import Interval
+from google.cloud.retail_v2alpha.types.common import LocalInventory
 from google.cloud.retail_v2alpha.types.common import PriceInfo
 from google.cloud.retail_v2alpha.types.common import Promotion
 from google.cloud.retail_v2alpha.types.common import Rating
@@ -75,6 +76,9 @@ from google.cloud.retail_v2alpha.types.product import Product
 from google.cloud.retail_v2alpha.types.product_service import AddFulfillmentPlacesMetadata
 from google.cloud.retail_v2alpha.types.product_service import AddFulfillmentPlacesRequest
 from google.cloud.retail_v2alpha.types.product_service import AddFulfillmentPlacesResponse
+from google.cloud.retail_v2alpha.types.product_service import AddLocalInventoriesMetadata
+from google.cloud.retail_v2alpha.types.product_service import AddLocalInventoriesRequest
+from google.cloud.retail_v2alpha.types.product_service import AddLocalInventoriesResponse
 from google.cloud.retail_v2alpha.types.product_service import CreateProductRequest
 from google.cloud.retail_v2alpha.types.product_service import DeleteProductRequest
 from google.cloud.retail_v2alpha.types.product_service import GetProductRequest
@@ -83,6 +87,9 @@ from google.cloud.retail_v2alpha.types.product_service import ListProductsRespon
 from google.cloud.retail_v2alpha.types.product_service import RemoveFulfillmentPlacesMetadata
 from google.cloud.retail_v2alpha.types.product_service import RemoveFulfillmentPlacesRequest
 from google.cloud.retail_v2alpha.types.product_service import RemoveFulfillmentPlacesResponse
+from google.cloud.retail_v2alpha.types.product_service import RemoveLocalInventoriesMetadata
+from google.cloud.retail_v2alpha.types.product_service import RemoveLocalInventoriesRequest
+from google.cloud.retail_v2alpha.types.product_service import RemoveLocalInventoriesResponse
 from google.cloud.retail_v2alpha.types.product_service import SetInventoryMetadata
 from google.cloud.retail_v2alpha.types.product_service import SetInventoryRequest
 from google.cloud.retail_v2alpha.types.product_service import SetInventoryResponse
@@ -130,6 +137,7 @@ __all__ = ('CatalogServiceClient',
     'FulfillmentInfo',
     'Image',
     'Interval',
+    'LocalInventory',
     'PriceInfo',
     'Promotion',
     'Rating',
@@ -162,6 +170,9 @@ __all__ = ('CatalogServiceClient',
     'AddFulfillmentPlacesMetadata',
     'AddFulfillmentPlacesRequest',
     'AddFulfillmentPlacesResponse',
+    'AddLocalInventoriesMetadata',
+    'AddLocalInventoriesRequest',
+    'AddLocalInventoriesResponse',
     'CreateProductRequest',
     'DeleteProductRequest',
     'GetProductRequest',
@@ -170,6 +181,9 @@ __all__ = ('CatalogServiceClient',
     'RemoveFulfillmentPlacesMetadata',
     'RemoveFulfillmentPlacesRequest',
     'RemoveFulfillmentPlacesResponse',
+    'RemoveLocalInventoriesMetadata',
+    'RemoveLocalInventoriesRequest',
+    'RemoveLocalInventoriesResponse',
     'SetInventoryMetadata',
     'SetInventoryRequest',
     'SetInventoryResponse',
