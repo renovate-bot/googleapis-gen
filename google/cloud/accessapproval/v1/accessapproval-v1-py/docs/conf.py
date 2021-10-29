@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-accessapproval documentation build configuration file
+# google-cloud-access-approval documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-accessapproval"
+project = u"google-cloud-access-approval"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-accessapproval-doc"
+htmlhelp_basename = "google-cloud-access-approval-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-accessapproval.tex",
-        u"google-cloud-accessapproval Documentation",
+        "google-cloud-access-approval.tex",
+        u"google-cloud-access-approval Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-accessapproval",
+        "google-cloud-access-approval",
         u"Google Cloud Accessapproval Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-accessapproval",
-        u"google-cloud-accessapproval Documentation",
+        "google-cloud-access-approval",
+        u"google-cloud-access-approval Documentation",
         author,
-        "google-cloud-accessapproval",
+        "google-cloud-access-approval",
         "GAPIC library for Google Cloud Accessapproval API",
         "APIs",
     )

@@ -739,7 +739,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-accessapproval",
+            "google-cloud-access-approval",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
