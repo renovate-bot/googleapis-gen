@@ -366,7 +366,7 @@ class SearchJobsRequest(proto.Message):
             Data types:
 
             -  Histogram facet: facet names with format
-               [a-zA-Z][a-zA-Z0-9_]+.
+               ``[a-zA-Z][a-zA-Z0-9_]+``.
             -  String: string like "any string with backslash escape for
                quote(")."
             -  Number: whole number and floating point number like 10,
