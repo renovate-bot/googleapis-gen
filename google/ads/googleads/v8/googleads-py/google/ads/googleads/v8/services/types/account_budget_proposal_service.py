@@ -82,6 +82,13 @@ class AccountBudgetProposalOperation(proto.Message):
     r"""A single operation to propose the creation of a new account-
     evel budget or edit/end/remove an existing one.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which budget fields
@@ -99,12 +106,14 @@ class AccountBudgetProposalOperation(proto.Message):
             budget scheduled to start in the future.
             No resource name is expected for the new
             proposal.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed proposal
             is expected, in this format:
 
             ``customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}``
             A request may be cancelled iff it is pending.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -149,17 +151,17 @@ class IDSAsyncClient:
         )
 
     async def list_endpoints(self,
-            request: ids.ListEndpointsRequest = None,
+            request: Union[ids.ListEndpointsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEndpointsAsyncPager:
         r"""Lists Endpoints in a given project and location.
 
         Args:
-            request (:class:`google.cloud.ids_v1.types.ListEndpointsRequest`):
+            request (Union[google.cloud.ids_v1.types.ListEndpointsRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -239,17 +241,17 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def get_endpoint(self,
-            request: ids.GetEndpointRequest = None,
+            request: Union[ids.GetEndpointRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ids.Endpoint:
         r"""Gets details of a single Endpoint.
 
         Args:
-            request (:class:`google.cloud.ids_v1.types.GetEndpointRequest`):
+            request (Union[google.cloud.ids_v1.types.GetEndpointRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the endpoint to retrieve. Format:
@@ -321,12 +323,12 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def create_endpoint(self,
-            request: ids.CreateEndpointRequest = None,
+            request: Union[ids.CreateEndpointRequest, dict] = None,
             *,
             parent: str = None,
             endpoint: ids.Endpoint = None,
             endpoint_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -334,7 +336,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         location.
 
         Args:
-            request (:class:`google.cloud.ids_v1.types.CreateEndpointRequest`):
+            request (Union[google.cloud.ids_v1.types.CreateEndpointRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The endpoint's parent.
@@ -426,17 +428,17 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def delete_endpoint(self,
-            request: ids.DeleteEndpointRequest = None,
+            request: Union[ids.DeleteEndpointRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single Endpoint.
 
         Args:
-            request (:class:`google.cloud.ids_v1.types.DeleteEndpointRequest`):
+            request (Union[google.cloud.ids_v1.types.DeleteEndpointRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the endpoint to

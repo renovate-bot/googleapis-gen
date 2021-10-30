@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.trace_v1.services.trace_service import pagers
 from google.cloud.trace_v1.types import trace
@@ -149,10 +151,10 @@ class TraceServiceAsyncClient:
         )
 
     async def list_traces(self,
-            request: trace.ListTracesRequest = None,
+            request: Union[trace.ListTracesRequest, dict] = None,
             *,
             project_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTracesAsyncPager:
@@ -160,7 +162,7 @@ class TraceServiceAsyncClient:
         filter conditions.
 
         Args:
-            request (:class:`google.cloud.trace_v1.types.ListTracesRequest`):
+            request (Union[google.cloud.trace_v1.types.ListTracesRequest, dict]):
                 The request object. The request message for the
                 `ListTraces` method. All fields are required unless
                 specified.
@@ -236,18 +238,18 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
         return response
 
     async def get_trace(self,
-            request: trace.GetTraceRequest = None,
+            request: Union[trace.GetTraceRequest, dict] = None,
             *,
             project_id: str = None,
             trace_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trace.Trace:
         r"""Gets a single trace by its ID.
 
         Args:
-            request (:class:`google.cloud.trace_v1.types.GetTraceRequest`):
+            request (Union[google.cloud.trace_v1.types.GetTraceRequest, dict]):
                 The request object. The request message for the
                 `GetTrace` method.
             project_id (:class:`str`):
@@ -321,11 +323,11 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
         return response
 
     async def patch_traces(self,
-            request: trace.PatchTracesRequest = None,
+            request: Union[trace.PatchTracesRequest, dict] = None,
             *,
             project_id: str = None,
             traces: trace.Traces = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -338,7 +340,7 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
         a new trace is created.
 
         Args:
-            request (:class:`google.cloud.trace_v1.types.PatchTracesRequest`):
+            request (Union[google.cloud.trace_v1.types.PatchTracesRequest, dict]):
                 The request object. The request message for the
                 `PatchTraces` method.
             project_id (:class:`str`):

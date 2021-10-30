@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import custom_interest_status
 from google.ads.googleads.v7.enums.types import custom_interest_type
 from google.ads.googleads.v7.resources.types import custom_interest
@@ -339,7 +341,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
             request: Union[custom_interest_service.GetCustomInterestRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> custom_interest.CustomInterest:
@@ -418,7 +420,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[custom_interest_service.CustomInterestOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> custom_interest_service.MutateCustomInterestsResponse:

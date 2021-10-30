@@ -20,12 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 import warnings
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.bigquery_reservation_v1.services.reservation_service import pagers
 from google.cloud.bigquery_reservation_v1.types import reservation
@@ -173,19 +175,19 @@ class ReservationServiceAsyncClient:
         )
 
     async def create_reservation(self,
-            request: gcbr_reservation.CreateReservationRequest = None,
+            request: Union[gcbr_reservation.CreateReservationRequest, dict] = None,
             *,
             parent: str = None,
             reservation: gcbr_reservation.Reservation = None,
             reservation_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcbr_reservation.Reservation:
         r"""Creates a new reservation resource.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.CreateReservationRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.CreateReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1.ReservationService.CreateReservation].
             parent (:class:`str`):
@@ -270,10 +272,10 @@ class ReservationServiceAsyncClient:
         return response
 
     async def list_reservations(self,
-            request: reservation.ListReservationsRequest = None,
+            request: Union[reservation.ListReservationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListReservationsAsyncPager:
@@ -281,7 +283,7 @@ class ReservationServiceAsyncClient:
         specified location.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.ListReservationsRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.ListReservationsRequest, dict]):
                 The request object. The request for
                 [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
             parent (:class:`str`):
@@ -365,17 +367,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_reservation(self,
-            request: reservation.GetReservationRequest = None,
+            request: Union[reservation.GetReservationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.Reservation:
         r"""Returns information about the reservation.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.GetReservationRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.GetReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
             name (:class:`str`):
@@ -448,10 +450,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_reservation(self,
-            request: reservation.DeleteReservationRequest = None,
+            request: Union[reservation.DeleteReservationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -460,7 +462,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         assignments.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.DeleteReservationRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.DeleteReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
             name (:class:`str`):
@@ -524,18 +526,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def update_reservation(self,
-            request: gcbr_reservation.UpdateReservationRequest = None,
+            request: Union[gcbr_reservation.UpdateReservationRequest, dict] = None,
             *,
             reservation: gcbr_reservation.Reservation = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcbr_reservation.Reservation:
         r"""Updates an existing reservation resource.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.UpdateReservationRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.UpdateReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1.ReservationService.UpdateReservation].
             reservation (:class:`google.cloud.bigquery_reservation_v1.types.Reservation`):
@@ -607,18 +609,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_capacity_commitment(self,
-            request: reservation.CreateCapacityCommitmentRequest = None,
+            request: Union[reservation.CreateCapacityCommitmentRequest, dict] = None,
             *,
             parent: str = None,
             capacity_commitment: reservation.CapacityCommitment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.CapacityCommitment:
         r"""Creates a new capacity commitment resource.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.CreateCapacityCommitmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.CreateCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.CreateCapacityCommitment].
             parent (:class:`str`):
@@ -704,10 +706,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_capacity_commitments(self,
-            request: reservation.ListCapacityCommitmentsRequest = None,
+            request: Union[reservation.ListCapacityCommitmentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCapacityCommitmentsAsyncPager:
@@ -715,7 +717,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         project.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.ListCapacityCommitmentsRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.ListCapacityCommitmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.ListCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.ListCapacityCommitments].
             parent (:class:`str`):
@@ -799,17 +801,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_capacity_commitment(self,
-            request: reservation.GetCapacityCommitmentRequest = None,
+            request: Union[reservation.GetCapacityCommitmentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.CapacityCommitment:
         r"""Returns information about the capacity commitment.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.GetCapacityCommitmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.GetCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
             name (:class:`str`):
@@ -894,10 +896,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_capacity_commitment(self,
-            request: reservation.DeleteCapacityCommitmentRequest = None,
+            request: Union[reservation.DeleteCapacityCommitmentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -906,7 +908,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         error code ``google.rpc.Code.FAILED_PRECONDITION``.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.DeleteCapacityCommitmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.DeleteCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
             name (:class:`str`):
@@ -970,11 +972,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def update_capacity_commitment(self,
-            request: reservation.UpdateCapacityCommitmentRequest = None,
+            request: Union[reservation.UpdateCapacityCommitmentRequest, dict] = None,
             *,
             capacity_commitment: reservation.CapacityCommitment = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.CapacityCommitment:
@@ -988,7 +990,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ``google.rpc.Code.FAILED_PRECONDITION``.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.UpdateCapacityCommitmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.UpdateCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.UpdateCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateCapacityCommitment].
             capacity_commitment (:class:`google.cloud.bigquery_reservation_v1.types.CapacityCommitment`):
@@ -1074,11 +1076,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def split_capacity_commitment(self,
-            request: reservation.SplitCapacityCommitmentRequest = None,
+            request: Union[reservation.SplitCapacityCommitmentRequest, dict] = None,
             *,
             name: str = None,
             slot_count: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.SplitCapacityCommitmentResponse:
@@ -1093,7 +1095,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ``FLEX`` and then delete it.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.SplitCapacityCommitmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.SplitCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
             name (:class:`str`):
@@ -1167,11 +1169,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def merge_capacity_commitments(self,
-            request: reservation.MergeCapacityCommitmentsRequest = None,
+            request: Union[reservation.MergeCapacityCommitmentsRequest, dict] = None,
             *,
             parent: str = None,
             capacity_commitment_ids: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.CapacityCommitment:
@@ -1187,7 +1189,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ``google.rpc.Code.FAILED_PRECONDITION``.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.MergeCapacityCommitmentsRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.MergeCapacityCommitmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
             parent (:class:`str`):
@@ -1278,11 +1280,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_assignment(self,
-            request: reservation.CreateAssignmentRequest = None,
+            request: Union[reservation.CreateAssignmentRequest, dict] = None,
             *,
             parent: str = None,
             assignment: reservation.Assignment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.Assignment:
@@ -1326,7 +1328,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         the assignment does not match location of the reservation.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.CreateAssignmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.CreateAssignmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
                 Note: "bigquery.reservationAssignments.create"
@@ -1402,10 +1404,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_assignments(self,
-            request: reservation.ListAssignmentsRequest = None,
+            request: Union[reservation.ListAssignmentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAssignmentsAsyncPager:
@@ -1433,7 +1435,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         **Note** "-" cannot be used for projects nor locations.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.ListAssignmentsRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.ListAssignmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1.ReservationService.ListAssignments].
             parent (:class:`str`):
@@ -1522,10 +1524,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_assignment(self,
-            request: reservation.DeleteAssignmentRequest = None,
+            request: Union[reservation.DeleteAssignmentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1547,7 +1549,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ``project2`` will switch to use on-demand mode.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.DeleteAssignmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.DeleteAssignmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteAssignment].
                 Note: "bigquery.reservationAssignments.delete"
@@ -1612,11 +1614,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def search_assignments(self,
-            request: reservation.SearchAssignmentsRequest = None,
+            request: Union[reservation.SearchAssignmentsRequest, dict] = None,
             *,
             parent: str = None,
             query: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchAssignmentsAsyncPager:
@@ -1647,7 +1649,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         **Note** "-" cannot be used for projects nor locations.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.SearchAssignmentsRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.SearchAssignmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.SearchAssignments][google.cloud.bigquery.reservation.v1.ReservationService.SearchAssignments].
                 Note: "bigquery.reservationAssignments.search"
@@ -1751,11 +1753,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def search_all_assignments(self,
-            request: reservation.SearchAllAssignmentsRequest = None,
+            request: Union[reservation.SearchAllAssignmentsRequest, dict] = None,
             *,
             parent: str = None,
             query: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchAllAssignmentsAsyncPager:
@@ -1784,7 +1786,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            ``projects/*/locations/*reservations/*``.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.SearchAllAssignmentsRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.SearchAllAssignmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.SearchAllAssignments][google.cloud.bigquery.reservation.v1.ReservationService.SearchAllAssignments].
                 Note: "bigquery.reservationAssignments.search"
@@ -1878,11 +1880,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def move_assignment(self,
-            request: reservation.MoveAssignmentRequest = None,
+            request: Union[reservation.MoveAssignmentRequest, dict] = None,
             *,
             name: str = None,
             destination_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.Assignment:
@@ -1893,7 +1895,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         reservation.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.MoveAssignmentRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.MoveAssignmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1.ReservationService.MoveAssignment].
                 **Note**: "bigquery.reservationAssignments.create"
@@ -1974,17 +1976,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_bi_reservation(self,
-            request: reservation.GetBiReservationRequest = None,
+            request: Union[reservation.GetBiReservationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.BiReservation:
         r"""Retrieves a BI reservation.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.GetBiReservationRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.GetBiReservationRequest, dict]):
                 The request object. A request to get a singleton BI
                 reservation.
             name (:class:`str`):
@@ -2055,11 +2057,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_bi_reservation(self,
-            request: reservation.UpdateBiReservationRequest = None,
+            request: Union[reservation.UpdateBiReservationRequest, dict] = None,
             *,
             bi_reservation: reservation.BiReservation = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reservation.BiReservation:
@@ -2073,7 +2075,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         must be set to 0.
 
         Args:
-            request (:class:`google.cloud.bigquery_reservation_v1.types.UpdateBiReservationRequest`):
+            request (Union[google.cloud.bigquery_reservation_v1.types.UpdateBiReservationRequest, dict]):
                 The request object. A request to update a BI
                 reservation.
             bi_reservation (:class:`google.cloud.bigquery_reservation_v1.types.BiReservation`):

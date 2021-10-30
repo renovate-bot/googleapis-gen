@@ -36,6 +36,13 @@ class AccountLink(proto.Message):
     r"""Represents the data sharing connection between a Google Ads
     account and another account
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. Resource name of the account link. AccountLink
@@ -44,16 +51,20 @@ class AccountLink(proto.Message):
         account_link_id (int):
             Output only. The ID of the link.
             This field is read only.
+            This field is a member of `oneof`_ ``_account_link_id``.
         status (google.ads.googleads.v8.enums.types.AccountLinkStatusEnum.AccountLinkStatus):
             The status of the link.
         type_ (google.ads.googleads.v8.enums.types.LinkedAccountTypeEnum.LinkedAccountType):
             Output only. The type of the linked account.
         third_party_app_analytics (google.ads.googleads.v8.resources.types.ThirdPartyAppAnalyticsLinkIdentifier):
             Immutable. A third party app analytics link.
+            This field is a member of `oneof`_ ``linked_account``.
         data_partner (google.ads.googleads.v8.resources.types.DataPartnerLinkIdentifier):
             Output only. Data partner link.
+            This field is a member of `oneof`_ ``linked_account``.
         google_ads (google.ads.googleads.v8.resources.types.GoogleAdsLinkIdentifier):
             Output only. Google Ads link.
+            This field is a member of `oneof`_ ``linked_account``.
     """
 
     resource_name = proto.Field(
@@ -105,6 +116,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
             creating a new third party app analytics link.
             It is unable to be modified after the creation
             of the link.
+            This field is a member of `oneof`_ ``_app_analytics_provider_id``.
         app_id (str):
             Immutable. A string that uniquely identifies
             a mobile application from which the data was
@@ -121,6 +133,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
             This field should not be empty when creating a
             new third party app analytics link. It is unable
             to be modified after the creation of the link.
+            This field is a member of `oneof`_ ``_app_id``.
         app_vendor (google.ads.googleads.v8.enums.types.MobileAppVendorEnum.MobileAppVendor):
             Immutable. The vendor of the app.
             This field should not be empty when creating a
@@ -155,6 +168,7 @@ class DataPartnerLinkIdentifier(proto.Message):
             should not be empty when creating a new data
             partner link. It is unable to be modified after
             the creation of the link.
+            This field is a member of `oneof`_ ``_data_partner_id``.
     """
 
     data_partner_id = proto.Field(
@@ -174,6 +188,7 @@ class GoogleAdsLinkIdentifier(proto.Message):
             not be empty when creating a new Google Ads
             link. It is unable to be modified after the
             creation of the link.
+            This field is a member of `oneof`_ ``_customer``.
     """
 
     customer = proto.Field(

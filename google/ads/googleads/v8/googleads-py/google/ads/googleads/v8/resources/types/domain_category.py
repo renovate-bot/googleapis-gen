@@ -41,11 +41,13 @@ class DomainCategory(proto.Message):
         campaign (str):
             Output only. The campaign this category is
             recommended for.
+            This field is a member of `oneof`_ ``_campaign``.
         category (str):
             Output only. Recommended category for the
             website domain. e.g. if you have a website about
             electronics, the categories could be "cameras",
             "televisions", etc.
+            This field is a member of `oneof`_ ``_category``.
         language_code (str):
             Output only. The language code specifying the
             language of the website. e.g. "en" for English.
@@ -54,25 +56,31 @@ class DomainCategory(proto.Message):
             search ads. This is the language of the pages
             from your website that you want Google Ads to
             find, create ads for, and match searches with.
+            This field is a member of `oneof`_ ``_language_code``.
         domain (str):
             Output only. The domain for the website. The
             domain can be specified in the
             DynamicSearchAdsSetting required for dynamic
             search ads.
+            This field is a member of `oneof`_ ``_domain``.
         coverage_fraction (float):
             Output only. Fraction of pages on your site
             that this category matches.
+            This field is a member of `oneof`_ ``_coverage_fraction``.
         category_rank (int):
             Output only. The position of this category in
             the set of categories. Lower numbers indicate a
             better match for the domain. null indicates not
             recommended.
+            This field is a member of `oneof`_ ``_category_rank``.
         has_children (bool):
             Output only. Indicates whether this category
             has sub-categories.
+            This field is a member of `oneof`_ ``_has_children``.
         recommended_cpc_bid_micros (int):
             Output only. The recommended cost per click
             for the category.
+            This field is a member of `oneof`_ ``_recommended_cpc_bid_micros``.
     """
 
     resource_name = proto.Field(

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api import monitored_resource_pb2  # type: ignore
 from google.cloud.monitoring_v3.services.uptime_check_service import pagers
 from google.cloud.monitoring_v3.types import uptime
@@ -347,7 +349,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
             request: Union[uptime_service.ListUptimeCheckConfigsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUptimeCheckConfigsPager:
@@ -441,7 +443,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
             request: Union[uptime_service.GetUptimeCheckConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> uptime.UptimeCheckConfig:
@@ -522,7 +524,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
             *,
             parent: str = None,
             uptime_check_config: uptime.UptimeCheckConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> uptime.UptimeCheckConfig:
@@ -612,7 +614,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
             request: Union[uptime_service.UpdateUptimeCheckConfigRequest, dict] = None,
             *,
             uptime_check_config: uptime.UptimeCheckConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> uptime.UptimeCheckConfig:
@@ -703,7 +705,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
             request: Union[uptime_service.DeleteUptimeCheckConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -775,7 +777,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
     def list_uptime_check_ips(self,
             request: Union[uptime_service.ListUptimeCheckIpsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUptimeCheckIpsPager:

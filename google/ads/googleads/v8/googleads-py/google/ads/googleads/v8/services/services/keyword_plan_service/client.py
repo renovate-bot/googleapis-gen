@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import keyword_plan_common
 from google.ads.googleads.v8.resources.types import keyword_plan
 from google.ads.googleads.v8.services.types import keyword_plan_service
@@ -339,7 +341,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             request: Union[keyword_plan_service.GetKeywordPlanRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan.KeywordPlan:
@@ -421,7 +423,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[keyword_plan_service.KeywordPlanOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_service.MutateKeywordPlansResponse:
@@ -512,7 +514,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             request: Union[keyword_plan_service.GenerateForecastCurveRequest, dict] = None,
             *,
             keyword_plan: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_service.GenerateForecastCurveResponse:
@@ -596,7 +598,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             request: Union[keyword_plan_service.GenerateForecastTimeSeriesRequest, dict] = None,
             *,
             keyword_plan: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_service.GenerateForecastTimeSeriesResponse:
@@ -681,7 +683,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             request: Union[keyword_plan_service.GenerateForecastMetricsRequest, dict] = None,
             *,
             keyword_plan: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_service.GenerateForecastMetricsResponse:
@@ -760,7 +762,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             request: Union[keyword_plan_service.GenerateHistoricalMetricsRequest, dict] = None,
             *,
             keyword_plan: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_service.GenerateHistoricalMetricsResponse:

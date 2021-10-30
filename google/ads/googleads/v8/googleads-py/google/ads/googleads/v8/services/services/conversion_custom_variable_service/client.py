@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import conversion_custom_variable_status
 from google.ads.googleads.v8.resources.types import conversion_custom_variable
 from google.ads.googleads.v8.services.types import conversion_custom_variable_service
@@ -349,7 +351,7 @@ class ConversionCustomVariableServiceClient(metaclass=ConversionCustomVariableSe
             request: Union[conversion_custom_variable_service.GetConversionCustomVariableRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_custom_variable.ConversionCustomVariable:
@@ -431,7 +433,7 @@ class ConversionCustomVariableServiceClient(metaclass=ConversionCustomVariableSe
             *,
             customer_id: str = None,
             operations: Sequence[conversion_custom_variable_service.ConversionCustomVariableOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_custom_variable_service.MutateConversionCustomVariablesResponse:

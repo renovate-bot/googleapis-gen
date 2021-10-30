@@ -20,12 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 import warnings
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api.serviceusage_v1beta1.services.service_usage import pagers
 from google.api.serviceusage_v1beta1.types import resources
@@ -150,9 +152,9 @@ class ServiceUsageAsyncClient:
         )
 
     async def enable_service(self,
-            request: serviceusage.EnableServiceRequest = None,
+            request: Union[serviceusage.EnableServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -161,7 +163,7 @@ class ServiceUsageAsyncClient:
         Operation response type: ``google.protobuf.Empty``
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.EnableServiceRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.EnableServiceRequest, dict]):
                 The request object. Request message for the
                 `EnableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -231,9 +233,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def disable_service(self,
-            request: serviceusage.DisableServiceRequest = None,
+            request: Union[serviceusage.DisableServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -249,7 +251,7 @@ class ServiceUsageAsyncClient:
         Operation response type: ``google.protobuf.Empty``
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.DisableServiceRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.DisableServiceRequest, dict]):
                 The request object. Request message for the
                 `DisableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -319,9 +321,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def get_service(self,
-            request: serviceusage.GetServiceRequest = None,
+            request: Union[serviceusage.GetServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Service:
@@ -329,7 +331,7 @@ class ServiceUsageAsyncClient:
         for a given service.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.GetServiceRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.GetServiceRequest, dict]):
                 The request object. Request message for the `GetService`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -378,9 +380,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def list_services(self,
-            request: serviceusage.ListServicesRequest = None,
+            request: Union[serviceusage.ListServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesAsyncPager:
@@ -394,7 +396,7 @@ class ServiceUsageAsyncClient:
         enabled on the project.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.ListServicesRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.ListServicesRequest, dict]):
                 The request object. Request message for the
                 `ListServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -454,9 +456,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def batch_enable_services(self,
-            request: serviceusage.BatchEnableServicesRequest = None,
+            request: Union[serviceusage.BatchEnableServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -467,7 +469,7 @@ class ServiceUsageAsyncClient:
         Operation response type: ``google.protobuf.Empty``
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.BatchEnableServicesRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.BatchEnableServicesRequest, dict]):
                 The request object. Request message for the
                 `BatchEnableServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -537,9 +539,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def list_consumer_quota_metrics(self,
-            request: serviceusage.ListConsumerQuotaMetricsRequest = None,
+            request: Union[serviceusage.ListConsumerQuotaMetricsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConsumerQuotaMetricsAsyncPager:
@@ -552,7 +554,7 @@ class ServiceUsageAsyncClient:
         overrides applied to the limit.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.ListConsumerQuotaMetricsRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.ListConsumerQuotaMetricsRequest, dict]):
                 The request object. Request message for
                 ListConsumerQuotaMetrics
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -610,9 +612,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def get_consumer_quota_metric(self,
-            request: serviceusage.GetConsumerQuotaMetricRequest = None,
+            request: Union[serviceusage.GetConsumerQuotaMetricRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConsumerQuotaMetric:
@@ -620,7 +622,7 @@ class ServiceUsageAsyncClient:
         specific quota metric
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.GetConsumerQuotaMetricRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.GetConsumerQuotaMetricRequest, dict]):
                 The request object. Request message for
                 GetConsumerQuotaMetric
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -666,9 +668,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def get_consumer_quota_limit(self,
-            request: serviceusage.GetConsumerQuotaLimitRequest = None,
+            request: Union[serviceusage.GetConsumerQuotaLimitRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConsumerQuotaLimit:
@@ -676,7 +678,7 @@ class ServiceUsageAsyncClient:
         specific quota limit.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.GetConsumerQuotaLimitRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.GetConsumerQuotaLimitRequest, dict]):
                 The request object. Request message for
                 GetConsumerQuotaLimit
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -722,9 +724,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def create_admin_override(self,
-            request: serviceusage.CreateAdminOverrideRequest = None,
+            request: Union[serviceusage.CreateAdminOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -737,7 +739,7 @@ class ServiceUsageAsyncClient:
         folder or organization.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.CreateAdminOverrideRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.CreateAdminOverrideRequest, dict]):
                 The request object. Request message for
                 CreateAdminOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -794,16 +796,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def update_admin_override(self,
-            request: serviceusage.UpdateAdminOverrideRequest = None,
+            request: Union[serviceusage.UpdateAdminOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates an admin override.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.UpdateAdminOverrideRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.UpdateAdminOverrideRequest, dict]):
                 The request object. Request message for
                 UpdateAdminOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -860,16 +862,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def delete_admin_override(self,
-            request: serviceusage.DeleteAdminOverrideRequest = None,
+            request: Union[serviceusage.DeleteAdminOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes an admin override.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.DeleteAdminOverrideRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.DeleteAdminOverrideRequest, dict]):
                 The request object. Request message for
                 DeleteAdminOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -936,16 +938,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def list_admin_overrides(self,
-            request: serviceusage.ListAdminOverridesRequest = None,
+            request: Union[serviceusage.ListAdminOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAdminOverridesAsyncPager:
         r"""Lists all admin overrides on this limit.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.ListAdminOverridesRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.ListAdminOverridesRequest, dict]):
                 The request object. Request message for
                 ListAdminOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1003,9 +1005,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def import_admin_overrides(self,
-            request: serviceusage.ImportAdminOverridesRequest = None,
+            request: Union[serviceusage.ImportAdminOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1015,7 +1017,7 @@ class ServiceUsageAsyncClient:
         override message should not be set.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.ImportAdminOverridesRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.ImportAdminOverridesRequest, dict]):
                 The request object. Request message for
                 ImportAdminOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1072,9 +1074,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def create_consumer_override(self,
-            request: serviceusage.CreateConsumerOverrideRequest = None,
+            request: Union[serviceusage.CreateConsumerOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1086,7 +1088,7 @@ class ServiceUsageAsyncClient:
         the default limit of the service.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.CreateConsumerOverrideRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.CreateConsumerOverrideRequest, dict]):
                 The request object. Request message for
                 CreateConsumerOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1143,16 +1145,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def update_consumer_override(self,
-            request: serviceusage.UpdateConsumerOverrideRequest = None,
+            request: Union[serviceusage.UpdateConsumerOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates a consumer override.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.UpdateConsumerOverrideRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.UpdateConsumerOverrideRequest, dict]):
                 The request object. Request message for
                 UpdateConsumerOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1209,16 +1211,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def delete_consumer_override(self,
-            request: serviceusage.DeleteConsumerOverrideRequest = None,
+            request: Union[serviceusage.DeleteConsumerOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a consumer override.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.DeleteConsumerOverrideRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.DeleteConsumerOverrideRequest, dict]):
                 The request object. Request message for
                 DeleteConsumerOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1285,16 +1287,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def list_consumer_overrides(self,
-            request: serviceusage.ListConsumerOverridesRequest = None,
+            request: Union[serviceusage.ListConsumerOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConsumerOverridesAsyncPager:
         r"""Lists all consumer overrides on this limit.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.ListConsumerOverridesRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.ListConsumerOverridesRequest, dict]):
                 The request object. Request message for
                 ListConsumerOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1352,9 +1354,9 @@ class ServiceUsageAsyncClient:
         return response
 
     async def import_consumer_overrides(self,
-            request: serviceusage.ImportConsumerOverridesRequest = None,
+            request: Union[serviceusage.ImportConsumerOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1364,7 +1366,7 @@ class ServiceUsageAsyncClient:
         override message should not be set.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.ImportConsumerOverridesRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.ImportConsumerOverridesRequest, dict]):
                 The request object. Request message for
                 ImportConsumerOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1421,16 +1423,16 @@ class ServiceUsageAsyncClient:
         return response
 
     async def generate_service_identity(self,
-            request: serviceusage.GenerateServiceIdentityRequest = None,
+            request: Union[serviceusage.GenerateServiceIdentityRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Generates service identity for service.
 
         Args:
-            request (:class:`google.api.serviceusage_v1beta1.types.GenerateServiceIdentityRequest`):
+            request (Union[google.api.serviceusage_v1beta1.types.GenerateServiceIdentityRequest, dict]):
                 The request object. Request message for generating
                 service identity.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
 from google.protobuf import duration_pb2  # type: ignore
@@ -369,7 +371,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             topic: str = None,
             push_config: pubsub.PushConfig = None,
             ack_deadline_seconds: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Subscription:
@@ -514,7 +516,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             request: Union[pubsub.GetSubscriptionRequest, dict] = None,
             *,
             subscription: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Subscription:
@@ -586,7 +588,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
     def update_subscription(self,
             request: Union[pubsub.UpdateSubscriptionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Subscription:
@@ -643,7 +645,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             request: Union[pubsub.ListSubscriptionsRequest, dict] = None,
             *,
             project: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSubscriptionsPager:
@@ -729,7 +731,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             request: Union[pubsub.DeleteSubscriptionRequest, dict] = None,
             *,
             subscription: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -802,7 +804,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             subscription: str = None,
             ack_ids: Sequence[str] = None,
             ack_deadline_seconds: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -899,7 +901,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             *,
             subscription: str = None,
             ack_ids: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -984,7 +986,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             subscription: str = None,
             return_immediately: bool = None,
             max_messages: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.PullResponse:
@@ -1086,7 +1088,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
     def streaming_pull(self,
             requests: Iterator[pubsub.StreamingPullRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[pubsub.StreamingPullResponse]:
@@ -1139,7 +1141,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             *,
             subscription: str = None,
             push_config: pubsub.PushConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1225,7 +1227,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             request: Union[pubsub.GetSnapshotRequest, dict] = None,
             *,
             snapshot: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Snapshot:
@@ -1309,7 +1311,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             request: Union[pubsub.ListSnapshotsRequest, dict] = None,
             *,
             project: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSnapshotsPager:
@@ -1400,7 +1402,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             *,
             name: str = None,
             subscription: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Snapshot:
@@ -1518,7 +1520,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
     def update_snapshot(self,
             request: Union[pubsub.UpdateSnapshotRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Snapshot:
@@ -1585,7 +1587,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
             request: Union[pubsub.DeleteSnapshotRequest, dict] = None,
             *,
             snapshot: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1659,7 +1661,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
     def seek(self,
             request: Union[pubsub.SeekRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.SeekResponse:
@@ -1734,7 +1736,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
         self,
         request: iam_policy_pb2.SetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -1844,7 +1846,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
         self,
         request: iam_policy_pb2.GetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -1955,7 +1957,7 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
         self,
         request: iam_policy_pb2.TestIamPermissionsRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:

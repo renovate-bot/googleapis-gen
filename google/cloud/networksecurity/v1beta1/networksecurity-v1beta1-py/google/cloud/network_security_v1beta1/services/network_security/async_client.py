@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -161,10 +163,10 @@ class NetworkSecurityAsyncClient:
         )
 
     async def list_authorization_policies(self,
-            request: authorization_policy.ListAuthorizationPoliciesRequest = None,
+            request: Union[authorization_policy.ListAuthorizationPoliciesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAuthorizationPoliciesAsyncPager:
@@ -172,7 +174,7 @@ class NetworkSecurityAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.ListAuthorizationPoliciesRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.ListAuthorizationPoliciesRequest, dict]):
                 The request object. Request used with the
                 ListAuthorizationPolicies method.
             parent (:class:`str`):
@@ -250,17 +252,17 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def get_authorization_policy(self,
-            request: authorization_policy.GetAuthorizationPolicyRequest = None,
+            request: Union[authorization_policy.GetAuthorizationPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> authorization_policy.AuthorizationPolicy:
         r"""Gets details of a single AuthorizationPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.GetAuthorizationPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.GetAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 GetAuthorizationPolicy method.
             name (:class:`str`):
@@ -331,12 +333,12 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def create_authorization_policy(self,
-            request: gcn_authorization_policy.CreateAuthorizationPolicyRequest = None,
+            request: Union[gcn_authorization_policy.CreateAuthorizationPolicyRequest, dict] = None,
             *,
             parent: str = None,
             authorization_policy: gcn_authorization_policy.AuthorizationPolicy = None,
             authorization_policy_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -344,7 +346,7 @@ class NetworkSecurityAsyncClient:
         and location.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.CreateAuthorizationPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.CreateAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 CreateAuthorizationPolicy method.
             parent (:class:`str`):
@@ -444,11 +446,11 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def update_authorization_policy(self,
-            request: gcn_authorization_policy.UpdateAuthorizationPolicyRequest = None,
+            request: Union[gcn_authorization_policy.UpdateAuthorizationPolicyRequest, dict] = None,
             *,
             authorization_policy: gcn_authorization_policy.AuthorizationPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -456,7 +458,7 @@ class NetworkSecurityAsyncClient:
         AuthorizationPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.UpdateAuthorizationPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.UpdateAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 UpdateAuthorizationPolicy method.
             authorization_policy (:class:`google.cloud.network_security_v1beta1.types.AuthorizationPolicy`):
@@ -548,17 +550,17 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def delete_authorization_policy(self,
-            request: authorization_policy.DeleteAuthorizationPolicyRequest = None,
+            request: Union[authorization_policy.DeleteAuthorizationPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single AuthorizationPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.DeleteAuthorizationPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.DeleteAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 DeleteAuthorizationPolicy method.
             name (:class:`str`):
@@ -645,10 +647,10 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def list_server_tls_policies(self,
-            request: server_tls_policy.ListServerTlsPoliciesRequest = None,
+            request: Union[server_tls_policy.ListServerTlsPoliciesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServerTlsPoliciesAsyncPager:
@@ -656,7 +658,7 @@ class NetworkSecurityAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.ListServerTlsPoliciesRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.ListServerTlsPoliciesRequest, dict]):
                 The request object. Request used by the
                 ListServerTlsPolicies method.
             parent (:class:`str`):
@@ -734,17 +736,17 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def get_server_tls_policy(self,
-            request: server_tls_policy.GetServerTlsPolicyRequest = None,
+            request: Union[server_tls_policy.GetServerTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> server_tls_policy.ServerTlsPolicy:
         r"""Gets details of a single ServerTlsPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.GetServerTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.GetServerTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 GetServerTlsPolicy method.
             name (:class:`str`):
@@ -815,12 +817,12 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def create_server_tls_policy(self,
-            request: gcn_server_tls_policy.CreateServerTlsPolicyRequest = None,
+            request: Union[gcn_server_tls_policy.CreateServerTlsPolicyRequest, dict] = None,
             *,
             parent: str = None,
             server_tls_policy: gcn_server_tls_policy.ServerTlsPolicy = None,
             server_tls_policy_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -828,7 +830,7 @@ class NetworkSecurityAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.CreateServerTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.CreateServerTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 CreateServerTlsPolicy method.
             parent (:class:`str`):
@@ -928,18 +930,18 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def update_server_tls_policy(self,
-            request: gcn_server_tls_policy.UpdateServerTlsPolicyRequest = None,
+            request: Union[gcn_server_tls_policy.UpdateServerTlsPolicyRequest, dict] = None,
             *,
             server_tls_policy: gcn_server_tls_policy.ServerTlsPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single ServerTlsPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.UpdateServerTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.UpdateServerTlsPolicyRequest, dict]):
                 The request object. Request used by
                 UpdateServerTlsPolicy method.
             server_tls_policy (:class:`google.cloud.network_security_v1beta1.types.ServerTlsPolicy`):
@@ -1031,17 +1033,17 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def delete_server_tls_policy(self,
-            request: server_tls_policy.DeleteServerTlsPolicyRequest = None,
+            request: Union[server_tls_policy.DeleteServerTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single ServerTlsPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.DeleteServerTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.DeleteServerTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 DeleteServerTlsPolicy method.
             name (:class:`str`):
@@ -1128,10 +1130,10 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def list_client_tls_policies(self,
-            request: client_tls_policy.ListClientTlsPoliciesRequest = None,
+            request: Union[client_tls_policy.ListClientTlsPoliciesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListClientTlsPoliciesAsyncPager:
@@ -1139,7 +1141,7 @@ class NetworkSecurityAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.ListClientTlsPoliciesRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.ListClientTlsPoliciesRequest, dict]):
                 The request object. Request used by the
                 ListClientTlsPolicies method.
             parent (:class:`str`):
@@ -1217,17 +1219,17 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def get_client_tls_policy(self,
-            request: client_tls_policy.GetClientTlsPolicyRequest = None,
+            request: Union[client_tls_policy.GetClientTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> client_tls_policy.ClientTlsPolicy:
         r"""Gets details of a single ClientTlsPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.GetClientTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.GetClientTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 GetClientTlsPolicy method.
             name (:class:`str`):
@@ -1297,12 +1299,12 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def create_client_tls_policy(self,
-            request: gcn_client_tls_policy.CreateClientTlsPolicyRequest = None,
+            request: Union[gcn_client_tls_policy.CreateClientTlsPolicyRequest, dict] = None,
             *,
             parent: str = None,
             client_tls_policy: gcn_client_tls_policy.ClientTlsPolicy = None,
             client_tls_policy_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1310,7 +1312,7 @@ class NetworkSecurityAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.CreateClientTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.CreateClientTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 CreateClientTlsPolicy method.
             parent (:class:`str`):
@@ -1409,18 +1411,18 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def update_client_tls_policy(self,
-            request: gcn_client_tls_policy.UpdateClientTlsPolicyRequest = None,
+            request: Union[gcn_client_tls_policy.UpdateClientTlsPolicyRequest, dict] = None,
             *,
             client_tls_policy: gcn_client_tls_policy.ClientTlsPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single ClientTlsPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.UpdateClientTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.UpdateClientTlsPolicyRequest, dict]):
                 The request object. Request used by
                 UpdateClientTlsPolicy method.
             client_tls_policy (:class:`google.cloud.network_security_v1beta1.types.ClientTlsPolicy`):
@@ -1511,17 +1513,17 @@ class NetworkSecurityAsyncClient:
         return response
 
     async def delete_client_tls_policy(self,
-            request: client_tls_policy.DeleteClientTlsPolicyRequest = None,
+            request: Union[client_tls_policy.DeleteClientTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single ClientTlsPolicy.
 
         Args:
-            request (:class:`google.cloud.network_security_v1beta1.types.DeleteClientTlsPolicyRequest`):
+            request (Union[google.cloud.network_security_v1beta1.types.DeleteClientTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 DeleteClientTlsPolicy method.
             name (:class:`str`):

@@ -41,9 +41,11 @@ class UserLocationView(proto.Message):
             ``customers/{customer_id}/userLocationViews/{country_criterion_id}~{targeting_location}``
         country_criterion_id (int):
             Output only. Criterion Id for the country.
+            This field is a member of `oneof`_ ``_country_criterion_id``.
         targeting_location (bool):
             Output only. Indicates whether location was
             targeted or not.
+            This field is a member of `oneof`_ ``_targeting_location``.
     """
 
     resource_name = proto.Field(

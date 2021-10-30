@@ -600,13 +600,22 @@ class DeleteFeedRequest(proto.Message):
 class OutputConfig(proto.Message):
     r"""Output configuration for export assets destination.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_destination (google.cloud.asset_v1.types.GcsDestination):
             Destination on Cloud Storage.
+            This field is a member of `oneof`_ ``destination``.
         bigquery_destination (google.cloud.asset_v1.types.BigQueryDestination):
             Destination on BigQuery. The output table
             stores the fields in asset proto as columns in
             BigQuery.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     gcs_destination = proto.Field(
@@ -626,9 +635,12 @@ class OutputConfig(proto.Message):
 class OutputResult(proto.Message):
     r"""Output result of export assets.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_result (google.cloud.asset_v1.types.GcsOutputResult):
             Export result on Cloud Storage.
+            This field is a member of `oneof`_ ``result``.
     """
 
     gcs_result = proto.Field(
@@ -657,6 +669,13 @@ class GcsOutputResult(proto.Message):
 class GcsDestination(proto.Message):
     r"""A Cloud Storage location.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         uri (str):
             The uri of the Cloud Storage object. It's the same uri that
@@ -669,6 +688,7 @@ class GcsDestination(proto.Message):
             there is no
             `hold <https://cloud.google.com/storage/docs/object-holds>`__,
             it will be overwritten with the exported result.
+            This field is a member of `oneof`_ ``object_uri``.
         uri_prefix (str):
             The uri prefix of all generated Cloud Storage objects.
             Example: "gs://bucket_name/object_name_prefix". Each object
@@ -679,6 +699,7 @@ class GcsDestination(proto.Message):
             compute.googleapis.com/Disk assets. An INVALID_ARGUMENT
             error will be returned if file with the same name
             "gs://bucket_name/object_name_prefix" already exists.
+            This field is a member of `oneof`_ ``object_uri``.
     """
 
     uri = proto.Field(
@@ -839,9 +860,12 @@ class PubsubDestination(proto.Message):
 class FeedOutputConfig(proto.Message):
     r"""Output configuration for asset feed destination.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         pubsub_destination (google.cloud.asset_v1.types.PubsubDestination):
             Destination on Pub/Sub.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     pubsub_destination = proto.Field(
@@ -1568,12 +1592,15 @@ class IamPolicyAnalysisQuery(proto.Message):
     class ConditionContext(proto.Message):
         r"""The IAM conditions context.
 
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             access_time (google.protobuf.timestamp_pb2.Timestamp):
                 The hypothetical access timestamp to evaluate IAM
                 conditions. Note that this value must not be earlier than
                 the current time; otherwise, an INVALID_ARGUMENT error will
                 be returned.
+                This field is a member of `oneof`_ ``TimeContext``.
         """
 
         access_time = proto.Field(
@@ -1728,11 +1755,20 @@ class IamPolicyAnalysisOutputConfig(proto.Message):
     r"""Output configuration for export IAM policy analysis
     destination.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_destination (google.cloud.asset_v1.types.IamPolicyAnalysisOutputConfig.GcsDestination):
             Destination on Cloud Storage.
+            This field is a member of `oneof`_ ``destination``.
         bigquery_destination (google.cloud.asset_v1.types.IamPolicyAnalysisOutputConfig.BigQueryDestination):
             Destination on BigQuery.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     class GcsDestination(proto.Message):
@@ -1939,6 +1975,13 @@ class AnalyzeMoveResponse(proto.Message):
 class MoveAnalysis(proto.Message):
     r"""A message to group the analysis information.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         display_name (str):
             The user friendly display name of the
@@ -1946,9 +1989,11 @@ class MoveAnalysis(proto.Message):
         analysis (google.cloud.asset_v1.types.MoveAnalysisResult):
             Analysis result of moving the target
             resource.
+            This field is a member of `oneof`_ ``result``.
         error (google.rpc.status_pb2.Status):
             Description of error encountered when
             performing the analysis.
+            This field is a member of `oneof`_ ``result``.
     """
 
     display_name = proto.Field(

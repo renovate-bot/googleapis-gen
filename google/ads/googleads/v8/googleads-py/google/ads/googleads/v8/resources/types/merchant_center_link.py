@@ -40,9 +40,11 @@ class MerchantCenterLink(proto.Message):
         id (int):
             Output only. The ID of the Merchant Center
             account. This field is readonly.
+            This field is a member of `oneof`_ ``_id``.
         merchant_center_account_name (str):
             Output only. The name of the Merchant Center
             account. This field is readonly.
+            This field is a member of `oneof`_ ``_merchant_center_account_name``.
         status (google.ads.googleads.v8.enums.types.MerchantCenterLinkStatusEnum.MerchantCenterLinkStatus):
             The status of the link.
     """

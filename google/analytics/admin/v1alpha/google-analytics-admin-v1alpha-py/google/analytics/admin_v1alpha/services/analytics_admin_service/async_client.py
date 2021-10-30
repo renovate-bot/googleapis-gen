@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.analytics.admin_v1alpha.services.analytics_admin_service import pagers
 from google.analytics.admin_v1alpha.types import analytics_admin
@@ -187,17 +189,17 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def get_account(self,
-            request: analytics_admin.GetAccountRequest = None,
+            request: Union[analytics_admin.GetAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Account:
         r"""Lookup for a single Account.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetAccountRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetAccountRequest, dict]):
                 The request object. Request message for GetAccount RPC.
             name (:class:`str`):
                 Required. The name of the account to
@@ -262,9 +264,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_accounts(self,
-            request: analytics_admin.ListAccountsRequest = None,
+            request: Union[analytics_admin.ListAccountsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccountsAsyncPager:
@@ -275,7 +277,7 @@ class AnalyticsAdminServiceAsyncClient:
         relevant accounts are found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListAccountsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListAccountsRequest, dict]):
                 The request object. Request message for ListAccounts
                 RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -324,10 +326,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_account(self,
-            request: analytics_admin.DeleteAccountRequest = None,
+            request: Union[analytics_admin.DeleteAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -344,7 +346,7 @@ class AnalyticsAdminServiceAsyncClient:
         Returns an error if the target is not found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteAccountRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteAccountRequest, dict]):
                 The request object. Request message for DeleteAccount
                 RPC.
             name (:class:`str`):
@@ -401,18 +403,18 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def update_account(self,
-            request: analytics_admin.UpdateAccountRequest = None,
+            request: Union[analytics_admin.UpdateAccountRequest, dict] = None,
             *,
             account: resources.Account = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Account:
         r"""Updates an account.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateAccountRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateAccountRequest, dict]):
                 The request object. Request message for UpdateAccount
                 RPC.
             account (:class:`google.analytics.admin_v1alpha.types.Account`):
@@ -489,16 +491,16 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def provision_account_ticket(self,
-            request: analytics_admin.ProvisionAccountTicketRequest = None,
+            request: Union[analytics_admin.ProvisionAccountTicketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.ProvisionAccountTicketResponse:
         r"""Requests a ticket for creating an account.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ProvisionAccountTicketRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ProvisionAccountTicketRequest, dict]):
                 The request object. Request message for
                 ProvisionAccountTicket RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -536,9 +538,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_account_summaries(self,
-            request: analytics_admin.ListAccountSummariesRequest = None,
+            request: Union[analytics_admin.ListAccountSummariesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccountSummariesAsyncPager:
@@ -546,7 +548,7 @@ class AnalyticsAdminServiceAsyncClient:
         caller.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListAccountSummariesRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListAccountSummariesRequest, dict]):
                 The request object. Request message for
                 ListAccountSummaries RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -596,17 +598,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_property(self,
-            request: analytics_admin.GetPropertyRequest = None,
+            request: Union[analytics_admin.GetPropertyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
         r"""Lookup for a single "GA4" Property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetPropertyRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetPropertyRequest, dict]):
                 The request object. Request message for GetProperty RPC.
             name (:class:`str`):
                 Required. The name of the property to lookup. Format:
@@ -670,9 +672,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_properties(self,
-            request: analytics_admin.ListPropertiesRequest = None,
+            request: Union[analytics_admin.ListPropertiesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPropertiesAsyncPager:
@@ -685,7 +687,7 @@ class AnalyticsAdminServiceAsyncClient:
         relevant properties are found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListPropertiesRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListPropertiesRequest, dict]):
                 The request object. Request message for ListProperties
                 RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -735,10 +737,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_property(self,
-            request: analytics_admin.CreatePropertyRequest = None,
+            request: Union[analytics_admin.CreatePropertyRequest, dict] = None,
             *,
             property: resources.Property = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
@@ -746,7 +748,7 @@ class AnalyticsAdminServiceAsyncClient:
         and attributes.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreatePropertyRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreatePropertyRequest, dict]):
                 The request object. Request message for CreateProperty
                 RPC.
             property (:class:`google.analytics.admin_v1alpha.types.Property`):
@@ -804,10 +806,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_property(self,
-            request: analytics_admin.DeletePropertyRequest = None,
+            request: Union[analytics_admin.DeletePropertyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
@@ -825,7 +827,7 @@ class AnalyticsAdminServiceAsyncClient:
         an GA4 Property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeletePropertyRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeletePropertyRequest, dict]):
                 The request object. Request message for DeleteProperty
                 RPC.
             name (:class:`str`):
@@ -891,18 +893,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_property(self,
-            request: analytics_admin.UpdatePropertyRequest = None,
+            request: Union[analytics_admin.UpdatePropertyRequest, dict] = None,
             *,
             property: resources.Property = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
         r"""Updates a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdatePropertyRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdatePropertyRequest, dict]):
                 The request object. Request message for UpdateProperty
                 RPC.
             property (:class:`google.analytics.admin_v1alpha.types.Property`):
@@ -980,10 +982,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_user_link(self,
-            request: analytics_admin.GetUserLinkRequest = None,
+            request: Union[analytics_admin.GetUserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UserLink:
@@ -991,7 +993,7 @@ class AnalyticsAdminServiceAsyncClient:
         property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetUserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetUserLinkRequest, dict]):
                 The request object. Request message for GetUserLink RPC.
             name (:class:`str`):
                 Required. Example format:
@@ -1056,9 +1058,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def batch_get_user_links(self,
-            request: analytics_admin.BatchGetUserLinksRequest = None,
+            request: Union[analytics_admin.BatchGetUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.BatchGetUserLinksResponse:
@@ -1066,7 +1068,7 @@ class AnalyticsAdminServiceAsyncClient:
         account or property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.BatchGetUserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.BatchGetUserLinksRequest, dict]):
                 The request object. Request message for
                 BatchGetUserLinks RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1112,17 +1114,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_user_links(self,
-            request: analytics_admin.ListUserLinksRequest = None,
+            request: Union[analytics_admin.ListUserLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUserLinksAsyncPager:
         r"""Lists all user links on an account or property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListUserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListUserLinksRequest, dict]):
                 The request object. Request message for ListUserLinks
                 RPC.
             parent (:class:`str`):
@@ -1199,9 +1201,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def audit_user_links(self,
-            request: analytics_admin.AuditUserLinksRequest = None,
+            request: Union[analytics_admin.AuditUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.AuditUserLinksAsyncPager:
@@ -1218,7 +1220,7 @@ class AnalyticsAdminServiceAsyncClient:
         in the GA or GMP UIs.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.AuditUserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.AuditUserLinksRequest, dict]):
                 The request object. Request message for AuditUserLinks
                 RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1276,11 +1278,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_user_link(self,
-            request: analytics_admin.CreateUserLinkRequest = None,
+            request: Union[analytics_admin.CreateUserLinkRequest, dict] = None,
             *,
             parent: str = None,
             user_link: resources.UserLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UserLink:
@@ -1291,7 +1293,7 @@ class AnalyticsAdminServiceAsyncClient:
         permissions specified in the new UserLink.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateUserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateUserLinkRequest, dict]):
                 The request object. Request message for CreateUserLink
                 RPC.
                 Users can have multiple email addresses associated with
@@ -1372,9 +1374,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def batch_create_user_links(self,
-            request: analytics_admin.BatchCreateUserLinksRequest = None,
+            request: Union[analytics_admin.BatchCreateUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.BatchCreateUserLinksResponse:
@@ -1384,7 +1386,7 @@ class AnalyticsAdminServiceAsyncClient:
         created, none of the UserLinks will be created.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.BatchCreateUserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.BatchCreateUserLinksRequest, dict]):
                 The request object. Request message for
                 BatchCreateUserLinks RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1430,17 +1432,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_user_link(self,
-            request: analytics_admin.UpdateUserLinkRequest = None,
+            request: Union[analytics_admin.UpdateUserLinkRequest, dict] = None,
             *,
             user_link: resources.UserLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UserLink:
         r"""Updates a user link on an account or property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateUserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateUserLinkRequest, dict]):
                 The request object. Request message for UpdateUserLink
                 RPC.
             user_link (:class:`google.analytics.admin_v1alpha.types.UserLink`):
@@ -1504,9 +1506,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def batch_update_user_links(self,
-            request: analytics_admin.BatchUpdateUserLinksRequest = None,
+            request: Union[analytics_admin.BatchUpdateUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.BatchUpdateUserLinksResponse:
@@ -1514,7 +1516,7 @@ class AnalyticsAdminServiceAsyncClient:
         account or property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.BatchUpdateUserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.BatchUpdateUserLinksRequest, dict]):
                 The request object. Request message for
                 BatchUpdateUserLinks RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1560,17 +1562,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_user_link(self,
-            request: analytics_admin.DeleteUserLinkRequest = None,
+            request: Union[analytics_admin.DeleteUserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a user link on an account or property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteUserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteUserLinkRequest, dict]):
                 The request object. Request message for DeleteUserLink
                 RPC.
             name (:class:`str`):
@@ -1626,9 +1628,9 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def batch_delete_user_links(self,
-            request: analytics_admin.BatchDeleteUserLinksRequest = None,
+            request: Union[analytics_admin.BatchDeleteUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1636,7 +1638,7 @@ class AnalyticsAdminServiceAsyncClient:
         account or property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.BatchDeleteUserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.BatchDeleteUserLinksRequest, dict]):
                 The request object. Request message for
                 BatchDeleteUserLinks RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1673,17 +1675,17 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def get_web_data_stream(self,
-            request: analytics_admin.GetWebDataStreamRequest = None,
+            request: Union[analytics_admin.GetWebDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.WebDataStream:
         r"""Lookup for a single WebDataStream
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetWebDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetWebDataStreamRequest, dict]):
                 The request object. Request message for GetWebDataStream
                 RPC.
             name (:class:`str`):
@@ -1750,17 +1752,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_web_data_stream(self,
-            request: analytics_admin.DeleteWebDataStreamRequest = None,
+            request: Union[analytics_admin.DeleteWebDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a web stream on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteWebDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteWebDataStreamRequest, dict]):
                 The request object. Request message for
                 DeleteWebDataStream RPC.
             name (:class:`str`):
@@ -1818,18 +1820,18 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def update_web_data_stream(self,
-            request: analytics_admin.UpdateWebDataStreamRequest = None,
+            request: Union[analytics_admin.UpdateWebDataStreamRequest, dict] = None,
             *,
             web_data_stream: resources.WebDataStream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.WebDataStream:
         r"""Updates a web stream on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateWebDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateWebDataStreamRequest, dict]):
                 The request object. Request message for
                 UpdateWebDataStream RPC.
             web_data_stream (:class:`google.analytics.admin_v1alpha.types.WebDataStream`):
@@ -1906,11 +1908,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_web_data_stream(self,
-            request: analytics_admin.CreateWebDataStreamRequest = None,
+            request: Union[analytics_admin.CreateWebDataStreamRequest, dict] = None,
             *,
             parent: str = None,
             web_data_stream: resources.WebDataStream = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.WebDataStream:
@@ -1918,7 +1920,7 @@ class AnalyticsAdminServiceAsyncClient:
         attributes.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateWebDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateWebDataStreamRequest, dict]):
                 The request object. Request message for
                 CreateWebDataStream RPC.
             parent (:class:`str`):
@@ -1991,10 +1993,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_web_data_streams(self,
-            request: analytics_admin.ListWebDataStreamsRequest = None,
+            request: Union[analytics_admin.ListWebDataStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWebDataStreamsAsyncPager:
@@ -2005,7 +2007,7 @@ class AnalyticsAdminServiceAsyncClient:
         data streams are found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListWebDataStreamsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListWebDataStreamsRequest, dict]):
                 The request object. Request message for
                 ListWebDataStreams RPC.
             parent (:class:`str`):
@@ -2084,17 +2086,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_ios_app_data_stream(self,
-            request: analytics_admin.GetIosAppDataStreamRequest = None,
+            request: Union[analytics_admin.GetIosAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IosAppDataStream:
         r"""Lookup for a single IosAppDataStream
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetIosAppDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetIosAppDataStreamRequest, dict]):
                 The request object. Request message for
                 GetIosAppDataStream RPC.
             name (:class:`str`):
@@ -2161,17 +2163,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_ios_app_data_stream(self,
-            request: analytics_admin.DeleteIosAppDataStreamRequest = None,
+            request: Union[analytics_admin.DeleteIosAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes an iOS app stream on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteIosAppDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteIosAppDataStreamRequest, dict]):
                 The request object. Request message for
                 DeleteIosAppDataStream RPC.
             name (:class:`str`):
@@ -2229,18 +2231,18 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def update_ios_app_data_stream(self,
-            request: analytics_admin.UpdateIosAppDataStreamRequest = None,
+            request: Union[analytics_admin.UpdateIosAppDataStreamRequest, dict] = None,
             *,
             ios_app_data_stream: resources.IosAppDataStream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IosAppDataStream:
         r"""Updates an iOS app stream on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateIosAppDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateIosAppDataStreamRequest, dict]):
                 The request object. Request message for
                 UpdateIosAppDataStream RPC.
             ios_app_data_stream (:class:`google.analytics.admin_v1alpha.types.IosAppDataStream`):
@@ -2318,10 +2320,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_ios_app_data_streams(self,
-            request: analytics_admin.ListIosAppDataStreamsRequest = None,
+            request: Union[analytics_admin.ListIosAppDataStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIosAppDataStreamsAsyncPager:
@@ -2332,7 +2334,7 @@ class AnalyticsAdminServiceAsyncClient:
         iOS app data streams are found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListIosAppDataStreamsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListIosAppDataStreamsRequest, dict]):
                 The request object. Request message for
                 ListIosAppDataStreams RPC.
             parent (:class:`str`):
@@ -2411,17 +2413,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_android_app_data_stream(self,
-            request: analytics_admin.GetAndroidAppDataStreamRequest = None,
+            request: Union[analytics_admin.GetAndroidAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.AndroidAppDataStream:
         r"""Lookup for a single AndroidAppDataStream
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetAndroidAppDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetAndroidAppDataStreamRequest, dict]):
                 The request object. Request message for
                 GetAndroidAppDataStream RPC.
             name (:class:`str`):
@@ -2488,17 +2490,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_android_app_data_stream(self,
-            request: analytics_admin.DeleteAndroidAppDataStreamRequest = None,
+            request: Union[analytics_admin.DeleteAndroidAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes an android app stream on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteAndroidAppDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteAndroidAppDataStreamRequest, dict]):
                 The request object. Request message for
                 DeleteAndroidAppDataStream RPC.
             name (:class:`str`):
@@ -2556,18 +2558,18 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def update_android_app_data_stream(self,
-            request: analytics_admin.UpdateAndroidAppDataStreamRequest = None,
+            request: Union[analytics_admin.UpdateAndroidAppDataStreamRequest, dict] = None,
             *,
             android_app_data_stream: resources.AndroidAppDataStream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.AndroidAppDataStream:
         r"""Updates an android app stream on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateAndroidAppDataStreamRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateAndroidAppDataStreamRequest, dict]):
                 The request object. Request message for
                 UpdateAndroidAppDataStream RPC.
             android_app_data_stream (:class:`google.analytics.admin_v1alpha.types.AndroidAppDataStream`):
@@ -2645,10 +2647,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_android_app_data_streams(self,
-            request: analytics_admin.ListAndroidAppDataStreamsRequest = None,
+            request: Union[analytics_admin.ListAndroidAppDataStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAndroidAppDataStreamsAsyncPager:
@@ -2659,7 +2661,7 @@ class AnalyticsAdminServiceAsyncClient:
         android app streams are found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListAndroidAppDataStreamsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListAndroidAppDataStreamsRequest, dict]):
                 The request object. Request message for
                 ListAndroidAppDataStreams RPC.
             parent (:class:`str`):
@@ -2738,10 +2740,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_enhanced_measurement_settings(self,
-            request: analytics_admin.GetEnhancedMeasurementSettingsRequest = None,
+            request: Union[analytics_admin.GetEnhancedMeasurementSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.EnhancedMeasurementSettings:
@@ -2750,7 +2752,7 @@ class AnalyticsAdminServiceAsyncClient:
         enhanced measurement for these settings to take effect.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetEnhancedMeasurementSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetEnhancedMeasurementSettingsRequest, dict]):
                 The request object. Request message for
                 GetEnhancedMeasurementSettings RPC.
             name (:class:`str`):
@@ -2819,11 +2821,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_enhanced_measurement_settings(self,
-            request: analytics_admin.UpdateEnhancedMeasurementSettingsRequest = None,
+            request: Union[analytics_admin.UpdateEnhancedMeasurementSettingsRequest, dict] = None,
             *,
             enhanced_measurement_settings: resources.EnhancedMeasurementSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.EnhancedMeasurementSettings:
@@ -2832,7 +2834,7 @@ class AnalyticsAdminServiceAsyncClient:
         enhanced measurement for these settings to take effect.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateEnhancedMeasurementSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateEnhancedMeasurementSettingsRequest, dict]):
                 The request object. Request message for
                 UpdateEnhancedMeasurementSettings RPC.
             enhanced_measurement_settings (:class:`google.analytics.admin_v1alpha.types.EnhancedMeasurementSettings`):
@@ -2911,11 +2913,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_firebase_link(self,
-            request: analytics_admin.CreateFirebaseLinkRequest = None,
+            request: Union[analytics_admin.CreateFirebaseLinkRequest, dict] = None,
             *,
             parent: str = None,
             firebase_link: resources.FirebaseLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.FirebaseLink:
@@ -2923,7 +2925,7 @@ class AnalyticsAdminServiceAsyncClient:
         Properties can have at most one FirebaseLink.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateFirebaseLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateFirebaseLinkRequest, dict]):
                 The request object. Request message for
                 CreateFirebaseLink RPC
             parent (:class:`str`):
@@ -2997,17 +2999,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_firebase_link(self,
-            request: analytics_admin.DeleteFirebaseLinkRequest = None,
+            request: Union[analytics_admin.DeleteFirebaseLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a FirebaseLink on a property
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteFirebaseLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteFirebaseLinkRequest, dict]):
                 The request object. Request message for
                 DeleteFirebaseLink RPC
             name (:class:`str`):
@@ -3064,10 +3066,10 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def list_firebase_links(self,
-            request: analytics_admin.ListFirebaseLinksRequest = None,
+            request: Union[analytics_admin.ListFirebaseLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFirebaseLinksAsyncPager:
@@ -3075,7 +3077,7 @@ class AnalyticsAdminServiceAsyncClient:
         Properties can have at most one FirebaseLink.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListFirebaseLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListFirebaseLinksRequest, dict]):
                 The request object. Request message for
                 ListFirebaseLinks RPC
             parent (:class:`str`):
@@ -3152,10 +3154,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_global_site_tag(self,
-            request: analytics_admin.GetGlobalSiteTagRequest = None,
+            request: Union[analytics_admin.GetGlobalSiteTagRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GlobalSiteTag:
@@ -3163,7 +3165,7 @@ class AnalyticsAdminServiceAsyncClient:
         Site Tags are immutable singletons.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetGlobalSiteTagRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetGlobalSiteTagRequest, dict]):
                 The request object. Request message for GetGlobalSiteTag
                 RPC.
             name (:class:`str`):
@@ -3233,18 +3235,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_google_ads_link(self,
-            request: analytics_admin.CreateGoogleAdsLinkRequest = None,
+            request: Union[analytics_admin.CreateGoogleAdsLinkRequest, dict] = None,
             *,
             parent: str = None,
             google_ads_link: resources.GoogleAdsLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleAdsLink:
         r"""Creates a GoogleAdsLink.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateGoogleAdsLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateGoogleAdsLinkRequest, dict]):
                 The request object. Request message for
                 CreateGoogleAdsLink RPC
             parent (:class:`str`):
@@ -3318,18 +3320,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_google_ads_link(self,
-            request: analytics_admin.UpdateGoogleAdsLinkRequest = None,
+            request: Union[analytics_admin.UpdateGoogleAdsLinkRequest, dict] = None,
             *,
             google_ads_link: resources.GoogleAdsLink = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleAdsLink:
         r"""Updates a GoogleAdsLink on a property
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateGoogleAdsLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateGoogleAdsLinkRequest, dict]):
                 The request object. Request message for
                 UpdateGoogleAdsLink RPC
             google_ads_link (:class:`google.analytics.admin_v1alpha.types.GoogleAdsLink`):
@@ -3404,17 +3406,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_google_ads_link(self,
-            request: analytics_admin.DeleteGoogleAdsLinkRequest = None,
+            request: Union[analytics_admin.DeleteGoogleAdsLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a GoogleAdsLink on a property
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteGoogleAdsLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteGoogleAdsLinkRequest, dict]):
                 The request object. Request message for
                 DeleteGoogleAdsLink RPC.
             name (:class:`str`):
@@ -3470,17 +3472,17 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def list_google_ads_links(self,
-            request: analytics_admin.ListGoogleAdsLinksRequest = None,
+            request: Union[analytics_admin.ListGoogleAdsLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGoogleAdsLinksAsyncPager:
         r"""Lists GoogleAdsLinks on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListGoogleAdsLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListGoogleAdsLinksRequest, dict]):
                 The request object. Request message for
                 ListGoogleAdsLinks RPC.
             parent (:class:`str`):
@@ -3557,10 +3559,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_data_sharing_settings(self,
-            request: analytics_admin.GetDataSharingSettingsRequest = None,
+            request: Union[analytics_admin.GetDataSharingSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DataSharingSettings:
@@ -3568,7 +3570,7 @@ class AnalyticsAdminServiceAsyncClient:
         Data sharing settings are singletons.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetDataSharingSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetDataSharingSettingsRequest, dict]):
                 The request object. Request message for
                 GetDataSharingSettings RPC.
             name (:class:`str`):
@@ -3637,17 +3639,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_measurement_protocol_secret(self,
-            request: analytics_admin.GetMeasurementProtocolSecretRequest = None,
+            request: Union[analytics_admin.GetMeasurementProtocolSecretRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.MeasurementProtocolSecret:
         r"""Lookup for a single "GA4" MeasurementProtocolSecret.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetMeasurementProtocolSecretRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetMeasurementProtocolSecretRequest, dict]):
                 The request object. Request message for
                 GetMeasurementProtocolSecret RPC.
             name (:class:`str`):
@@ -3716,10 +3718,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_measurement_protocol_secrets(self,
-            request: analytics_admin.ListMeasurementProtocolSecretsRequest = None,
+            request: Union[analytics_admin.ListMeasurementProtocolSecretsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMeasurementProtocolSecretsAsyncPager:
@@ -3727,7 +3729,7 @@ class AnalyticsAdminServiceAsyncClient:
         specified parent Property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListMeasurementProtocolSecretsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListMeasurementProtocolSecretsRequest, dict]):
                 The request object. Request message for
                 ListMeasurementProtocolSecret RPC
             parent (:class:`str`):
@@ -3808,18 +3810,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_measurement_protocol_secret(self,
-            request: analytics_admin.CreateMeasurementProtocolSecretRequest = None,
+            request: Union[analytics_admin.CreateMeasurementProtocolSecretRequest, dict] = None,
             *,
             parent: str = None,
             measurement_protocol_secret: resources.MeasurementProtocolSecret = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.MeasurementProtocolSecret:
         r"""Creates a measurement protocol secret.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateMeasurementProtocolSecretRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateMeasurementProtocolSecretRequest, dict]):
                 The request object. Request message for
                 CreateMeasurementProtocolSecret RPC
             parent (:class:`str`):
@@ -3897,17 +3899,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_measurement_protocol_secret(self,
-            request: analytics_admin.DeleteMeasurementProtocolSecretRequest = None,
+            request: Union[analytics_admin.DeleteMeasurementProtocolSecretRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes target MeasurementProtocolSecret.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteMeasurementProtocolSecretRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteMeasurementProtocolSecretRequest, dict]):
                 The request object. Request message for
                 DeleteMeasurementProtocolSecret RPC
             name (:class:`str`):
@@ -3968,18 +3970,18 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def update_measurement_protocol_secret(self,
-            request: analytics_admin.UpdateMeasurementProtocolSecretRequest = None,
+            request: Union[analytics_admin.UpdateMeasurementProtocolSecretRequest, dict] = None,
             *,
             measurement_protocol_secret: resources.MeasurementProtocolSecret = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.MeasurementProtocolSecret:
         r"""Updates a measurement protocol secret.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateMeasurementProtocolSecretRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateMeasurementProtocolSecretRequest, dict]):
                 The request object. Request message for
                 UpdateMeasurementProtocolSecret RPC
             measurement_protocol_secret (:class:`google.analytics.admin_v1alpha.types.MeasurementProtocolSecret`):
@@ -4053,9 +4055,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def search_change_history_events(self,
-            request: analytics_admin.SearchChangeHistoryEventsRequest = None,
+            request: Union[analytics_admin.SearchChangeHistoryEventsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchChangeHistoryEventsAsyncPager:
@@ -4063,7 +4065,7 @@ class AnalyticsAdminServiceAsyncClient:
         children given the specified set of filters.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.SearchChangeHistoryEventsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.SearchChangeHistoryEventsRequest, dict]):
                 The request object. Request message for
                 SearchChangeHistoryEvents RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -4121,17 +4123,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_google_signals_settings(self,
-            request: analytics_admin.GetGoogleSignalsSettingsRequest = None,
+            request: Union[analytics_admin.GetGoogleSignalsSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleSignalsSettings:
         r"""Lookup for Google Signals settings for a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetGoogleSignalsSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetGoogleSignalsSettingsRequest, dict]):
                 The request object. Request message for
                 GetGoogleSignalsSettings RPC
             name (:class:`str`):
@@ -4197,18 +4199,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_google_signals_settings(self,
-            request: analytics_admin.UpdateGoogleSignalsSettingsRequest = None,
+            request: Union[analytics_admin.UpdateGoogleSignalsSettingsRequest, dict] = None,
             *,
             google_signals_settings: resources.GoogleSignalsSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleSignalsSettings:
         r"""Updates Google Signals settings for a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateGoogleSignalsSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateGoogleSignalsSettingsRequest, dict]):
                 The request object. Request message for
                 UpdateGoogleSignalsSettings RPC
             google_signals_settings (:class:`google.analytics.admin_v1alpha.types.GoogleSignalsSettings`):
@@ -4285,11 +4287,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_conversion_event(self,
-            request: analytics_admin.CreateConversionEventRequest = None,
+            request: Union[analytics_admin.CreateConversionEventRequest, dict] = None,
             *,
             parent: str = None,
             conversion_event: resources.ConversionEvent = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConversionEvent:
@@ -4297,7 +4299,7 @@ class AnalyticsAdminServiceAsyncClient:
         attributes.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateConversionEventRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateConversionEventRequest, dict]):
                 The request object. Request message for
                 CreateConversionEvent RPC
             parent (:class:`str`):
@@ -4373,17 +4375,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_conversion_event(self,
-            request: analytics_admin.GetConversionEventRequest = None,
+            request: Union[analytics_admin.GetConversionEventRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConversionEvent:
         r"""Retrieve a single conversion event.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetConversionEventRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetConversionEventRequest, dict]):
                 The request object. Request message for
                 GetConversionEvent RPC
             name (:class:`str`):
@@ -4450,17 +4452,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_conversion_event(self,
-            request: analytics_admin.DeleteConversionEventRequest = None,
+            request: Union[analytics_admin.DeleteConversionEventRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a conversion event in a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteConversionEventRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteConversionEventRequest, dict]):
                 The request object. Request message for
                 DeleteConversionEvent RPC
             name (:class:`str`):
@@ -4518,10 +4520,10 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def list_conversion_events(self,
-            request: analytics_admin.ListConversionEventsRequest = None,
+            request: Union[analytics_admin.ListConversionEventsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConversionEventsAsyncPager:
@@ -4530,7 +4532,7 @@ class AnalyticsAdminServiceAsyncClient:
         Returns an empty list if no conversion events are found.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListConversionEventsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListConversionEventsRequest, dict]):
                 The request object. Request message for
                 ListConversionEvents RPC
             parent (:class:`str`):
@@ -4608,17 +4610,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_display_video360_advertiser_link(self,
-            request: analytics_admin.GetDisplayVideo360AdvertiserLinkRequest = None,
+            request: Union[analytics_admin.GetDisplayVideo360AdvertiserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLink:
         r"""Look up a single DisplayVideo360AdvertiserLink
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetDisplayVideo360AdvertiserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetDisplayVideo360AdvertiserLinkRequest, dict]):
                 The request object. Request message for
                 GetDisplayVideo360AdvertiserLink RPC.
             name (:class:`str`):
@@ -4685,10 +4687,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_display_video360_advertiser_links(self,
-            request: analytics_admin.ListDisplayVideo360AdvertiserLinksRequest = None,
+            request: Union[analytics_admin.ListDisplayVideo360AdvertiserLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDisplayVideo360AdvertiserLinksAsyncPager:
@@ -4696,7 +4698,7 @@ class AnalyticsAdminServiceAsyncClient:
         property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListDisplayVideo360AdvertiserLinksRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListDisplayVideo360AdvertiserLinksRequest, dict]):
                 The request object. Request message for
                 ListDisplayVideo360AdvertiserLinks RPC.
             parent (:class:`str`):
@@ -4773,11 +4775,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_display_video360_advertiser_link(self,
-            request: analytics_admin.CreateDisplayVideo360AdvertiserLinkRequest = None,
+            request: Union[analytics_admin.CreateDisplayVideo360AdvertiserLinkRequest, dict] = None,
             *,
             parent: str = None,
             display_video_360_advertiser_link: resources.DisplayVideo360AdvertiserLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLink:
@@ -4789,7 +4791,7 @@ class AnalyticsAdminServiceAsyncClient:
         instead seek to create a DisplayVideo360LinkProposal.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateDisplayVideo360AdvertiserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateDisplayVideo360AdvertiserLinkRequest, dict]):
                 The request object. Request message for
                 CreateDisplayVideo360AdvertiserLink RPC.
             parent (:class:`str`):
@@ -4863,10 +4865,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_display_video360_advertiser_link(self,
-            request: analytics_admin.DeleteDisplayVideo360AdvertiserLinkRequest = None,
+            request: Union[analytics_admin.DeleteDisplayVideo360AdvertiserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -4874,7 +4876,7 @@ class AnalyticsAdminServiceAsyncClient:
         property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteDisplayVideo360AdvertiserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteDisplayVideo360AdvertiserLinkRequest, dict]):
                 The request object. Request message for
                 DeleteDisplayVideo360AdvertiserLink RPC.
             name (:class:`str`):
@@ -4932,11 +4934,11 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def update_display_video360_advertiser_link(self,
-            request: analytics_admin.UpdateDisplayVideo360AdvertiserLinkRequest = None,
+            request: Union[analytics_admin.UpdateDisplayVideo360AdvertiserLinkRequest, dict] = None,
             *,
             display_video_360_advertiser_link: resources.DisplayVideo360AdvertiserLink = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLink:
@@ -4944,7 +4946,7 @@ class AnalyticsAdminServiceAsyncClient:
         property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateDisplayVideo360AdvertiserLinkRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateDisplayVideo360AdvertiserLinkRequest, dict]):
                 The request object. Request message for
                 UpdateDisplayVideo360AdvertiserLink RPC.
             display_video_360_advertiser_link (:class:`google.analytics.admin_v1alpha.types.DisplayVideo360AdvertiserLink`):
@@ -5020,10 +5022,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_display_video360_advertiser_link_proposal(self,
-            request: analytics_admin.GetDisplayVideo360AdvertiserLinkProposalRequest = None,
+            request: Union[analytics_admin.GetDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLinkProposal:
@@ -5031,7 +5033,7 @@ class AnalyticsAdminServiceAsyncClient:
         DisplayVideo360AdvertiserLinkProposal.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetDisplayVideo360AdvertiserLinkProposalRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetDisplayVideo360AdvertiserLinkProposalRequest, dict]):
                 The request object. Request message for
                 GetDisplayVideo360AdvertiserLinkProposal RPC.
             name (:class:`str`):
@@ -5105,10 +5107,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_display_video360_advertiser_link_proposals(self,
-            request: analytics_admin.ListDisplayVideo360AdvertiserLinkProposalsRequest = None,
+            request: Union[analytics_admin.ListDisplayVideo360AdvertiserLinkProposalsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDisplayVideo360AdvertiserLinkProposalsAsyncPager:
@@ -5116,7 +5118,7 @@ class AnalyticsAdminServiceAsyncClient:
         property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListDisplayVideo360AdvertiserLinkProposalsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListDisplayVideo360AdvertiserLinkProposalsRequest, dict]):
                 The request object. Request message for
                 ListDisplayVideo360AdvertiserLinkProposals RPC.
             parent (:class:`str`):
@@ -5193,18 +5195,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_display_video360_advertiser_link_proposal(self,
-            request: analytics_admin.CreateDisplayVideo360AdvertiserLinkProposalRequest = None,
+            request: Union[analytics_admin.CreateDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
             parent: str = None,
             display_video_360_advertiser_link_proposal: resources.DisplayVideo360AdvertiserLinkProposal = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLinkProposal:
         r"""Creates a DisplayVideo360AdvertiserLinkProposal.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateDisplayVideo360AdvertiserLinkProposalRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateDisplayVideo360AdvertiserLinkProposalRequest, dict]):
                 The request object. Request message for
                 CreateDisplayVideo360AdvertiserLinkProposal RPC.
             parent (:class:`str`):
@@ -5286,10 +5288,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def delete_display_video360_advertiser_link_proposal(self,
-            request: analytics_admin.DeleteDisplayVideo360AdvertiserLinkProposalRequest = None,
+            request: Union[analytics_admin.DeleteDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -5297,7 +5299,7 @@ class AnalyticsAdminServiceAsyncClient:
         property. This can only be used on cancelled proposals.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.DeleteDisplayVideo360AdvertiserLinkProposalRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.DeleteDisplayVideo360AdvertiserLinkProposalRequest, dict]):
                 The request object. Request message for
                 DeleteDisplayVideo360AdvertiserLinkProposal RPC.
             name (:class:`str`):
@@ -5355,9 +5357,9 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def approve_display_video360_advertiser_link_proposal(self,
-            request: analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalRequest = None,
+            request: Union[analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalResponse:
@@ -5367,7 +5369,7 @@ class AnalyticsAdminServiceAsyncClient:
         created.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ApproveDisplayVideo360AdvertiserLinkProposalRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ApproveDisplayVideo360AdvertiserLinkProposalRequest, dict]):
                 The request object. Request message for
                 ApproveDisplayVideo360AdvertiserLinkProposal RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -5414,9 +5416,9 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def cancel_display_video360_advertiser_link_proposal(self,
-            request: analytics_admin.CancelDisplayVideo360AdvertiserLinkProposalRequest = None,
+            request: Union[analytics_admin.CancelDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLinkProposal:
@@ -5428,7 +5430,7 @@ class AnalyticsAdminServiceAsyncClient:
         eventually be deleted automatically.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CancelDisplayVideo360AdvertiserLinkProposalRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CancelDisplayVideo360AdvertiserLinkProposalRequest, dict]):
                 The request object. Request message for
                 CancelDisplayVideo360AdvertiserLinkProposal RPC.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -5481,18 +5483,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_custom_dimension(self,
-            request: analytics_admin.CreateCustomDimensionRequest = None,
+            request: Union[analytics_admin.CreateCustomDimensionRequest, dict] = None,
             *,
             parent: str = None,
             custom_dimension: resources.CustomDimension = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomDimension:
         r"""Creates a CustomDimension.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateCustomDimensionRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateCustomDimensionRequest, dict]):
                 The request object. Request message for
                 CreateCustomDimension RPC.
             parent (:class:`str`):
@@ -5564,18 +5566,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_custom_dimension(self,
-            request: analytics_admin.UpdateCustomDimensionRequest = None,
+            request: Union[analytics_admin.UpdateCustomDimensionRequest, dict] = None,
             *,
             custom_dimension: resources.CustomDimension = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomDimension:
         r"""Updates a CustomDimension on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateCustomDimensionRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateCustomDimensionRequest, dict]):
                 The request object. Request message for
                 UpdateCustomDimension RPC.
             custom_dimension (:class:`google.analytics.admin_v1alpha.types.CustomDimension`):
@@ -5647,17 +5649,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_custom_dimensions(self,
-            request: analytics_admin.ListCustomDimensionsRequest = None,
+            request: Union[analytics_admin.ListCustomDimensionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCustomDimensionsAsyncPager:
         r"""Lists CustomDimensions on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListCustomDimensionsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListCustomDimensionsRequest, dict]):
                 The request object. Request message for
                 ListCustomDimensions RPC.
             parent (:class:`str`):
@@ -5734,17 +5736,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def archive_custom_dimension(self,
-            request: analytics_admin.ArchiveCustomDimensionRequest = None,
+            request: Union[analytics_admin.ArchiveCustomDimensionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Archives a CustomDimension on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ArchiveCustomDimensionRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ArchiveCustomDimensionRequest, dict]):
                 The request object. Request message for
                 ArchiveCustomDimension RPC.
             name (:class:`str`):
@@ -5802,17 +5804,17 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def get_custom_dimension(self,
-            request: analytics_admin.GetCustomDimensionRequest = None,
+            request: Union[analytics_admin.GetCustomDimensionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomDimension:
         r"""Lookup for a single CustomDimension.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetCustomDimensionRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetCustomDimensionRequest, dict]):
                 The request object. Request message for
                 GetCustomDimension RPC.
             name (:class:`str`):
@@ -5876,18 +5878,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def create_custom_metric(self,
-            request: analytics_admin.CreateCustomMetricRequest = None,
+            request: Union[analytics_admin.CreateCustomMetricRequest, dict] = None,
             *,
             parent: str = None,
             custom_metric: resources.CustomMetric = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomMetric:
         r"""Creates a CustomMetric.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.CreateCustomMetricRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.CreateCustomMetricRequest, dict]):
                 The request object. Request message for
                 CreateCustomMetric RPC.
             parent (:class:`str`):
@@ -5957,18 +5959,18 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_custom_metric(self,
-            request: analytics_admin.UpdateCustomMetricRequest = None,
+            request: Union[analytics_admin.UpdateCustomMetricRequest, dict] = None,
             *,
             custom_metric: resources.CustomMetric = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomMetric:
         r"""Updates a CustomMetric on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateCustomMetricRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateCustomMetricRequest, dict]):
                 The request object. Request message for
                 UpdateCustomMetric RPC.
             custom_metric (:class:`google.analytics.admin_v1alpha.types.CustomMetric`):
@@ -6040,17 +6042,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def list_custom_metrics(self,
-            request: analytics_admin.ListCustomMetricsRequest = None,
+            request: Union[analytics_admin.ListCustomMetricsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCustomMetricsAsyncPager:
         r"""Lists CustomMetrics on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ListCustomMetricsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ListCustomMetricsRequest, dict]):
                 The request object. Request message for
                 ListCustomMetrics RPC.
             parent (:class:`str`):
@@ -6127,17 +6129,17 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def archive_custom_metric(self,
-            request: analytics_admin.ArchiveCustomMetricRequest = None,
+            request: Union[analytics_admin.ArchiveCustomMetricRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Archives a CustomMetric on a property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.ArchiveCustomMetricRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.ArchiveCustomMetricRequest, dict]):
                 The request object. Request message for
                 ArchiveCustomMetric RPC.
             name (:class:`str`):
@@ -6194,17 +6196,17 @@ class AnalyticsAdminServiceAsyncClient:
         )
 
     async def get_custom_metric(self,
-            request: analytics_admin.GetCustomMetricRequest = None,
+            request: Union[analytics_admin.GetCustomMetricRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomMetric:
         r"""Lookup for a single CustomMetric.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetCustomMetricRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetCustomMetricRequest, dict]):
                 The request object. Request message for GetCustomMetric
                 RPC.
             name (:class:`str`):
@@ -6268,10 +6270,10 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def get_data_retention_settings(self,
-            request: analytics_admin.GetDataRetentionSettingsRequest = None,
+            request: Union[analytics_admin.GetDataRetentionSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DataRetentionSettings:
@@ -6279,7 +6281,7 @@ class AnalyticsAdminServiceAsyncClient:
         this property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.GetDataRetentionSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.GetDataRetentionSettingsRequest, dict]):
                 The request object. Request message for
                 GetDataRetentionSettings RPC.
             name (:class:`str`):
@@ -6347,11 +6349,11 @@ class AnalyticsAdminServiceAsyncClient:
         return response
 
     async def update_data_retention_settings(self,
-            request: analytics_admin.UpdateDataRetentionSettingsRequest = None,
+            request: Union[analytics_admin.UpdateDataRetentionSettingsRequest, dict] = None,
             *,
             data_retention_settings: resources.DataRetentionSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DataRetentionSettings:
@@ -6359,7 +6361,7 @@ class AnalyticsAdminServiceAsyncClient:
         this property.
 
         Args:
-            request (:class:`google.analytics.admin_v1alpha.types.UpdateDataRetentionSettingsRequest`):
+            request (Union[google.analytics.admin_v1alpha.types.UpdateDataRetentionSettingsRequest, dict]):
                 The request object. Request message for
                 UpdateDataRetentionSettings RPC.
             data_retention_settings (:class:`google.analytics.admin_v1alpha.types.DataRetentionSettings`):

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.resources.types import income_range_view
 from google.ads.googleads.v8.services.types import income_range_view_service
 from .transports.base import IncomeRangeViewServiceTransport, DEFAULT_CLIENT_INFO
@@ -337,7 +339,7 @@ class IncomeRangeViewServiceClient(metaclass=IncomeRangeViewServiceClientMeta):
             request: Union[income_range_view_service.GetIncomeRangeViewRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> income_range_view.IncomeRangeView:

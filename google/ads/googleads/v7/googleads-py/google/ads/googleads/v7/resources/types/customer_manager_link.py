@@ -38,9 +38,11 @@ class CustomerManagerLink(proto.Message):
         manager_customer (str):
             Output only. The manager customer linked to
             the customer.
+            This field is a member of `oneof`_ ``_manager_customer``.
         manager_link_id (int):
             Output only. ID of the customer-manager link.
             This field is read only.
+            This field is a member of `oneof`_ ``_manager_link_id``.
         status (google.ads.googleads.v7.enums.types.ManagerLinkStatusEnum.ManagerLinkStatus):
             Status of the link between the customer and
             the manager.

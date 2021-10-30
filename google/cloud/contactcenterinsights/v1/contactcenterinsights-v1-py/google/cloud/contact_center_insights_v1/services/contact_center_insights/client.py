@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.contact_center_insights_v1.services.contact_center_insights import pagers
@@ -413,7 +415,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             parent: str = None,
             conversation: resources.Conversation = None,
             conversation_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Conversation:
@@ -510,7 +512,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             conversation: resources.Conversation = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Conversation:
@@ -590,7 +592,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.GetConversationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Conversation:
@@ -662,7 +664,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.ListConversationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConversationsPager:
@@ -748,7 +750,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.DeleteConversationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -815,7 +817,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             parent: str = None,
             analysis: resources.Analysis = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -908,7 +910,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.GetAnalysisRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Analysis:
@@ -980,7 +982,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.ListAnalysesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAnalysesPager:
@@ -1065,7 +1067,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.DeleteAnalysisRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1130,7 +1132,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.ExportInsightsDataRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1217,7 +1219,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             parent: str = None,
             issue_model: resources.IssueModel = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1311,7 +1313,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             issue_model: resources.IssueModel = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IssueModel:
@@ -1391,7 +1393,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.GetIssueModelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IssueModel:
@@ -1463,7 +1465,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.ListIssueModelsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> contact_center_insights.ListIssueModelsResponse:
@@ -1535,7 +1537,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.DeleteIssueModelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1631,7 +1633,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.DeployIssueModelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1717,7 +1719,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.UndeployIssueModelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1805,7 +1807,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.GetIssueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Issue:
@@ -1877,7 +1879,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.ListIssuesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> contact_center_insights.ListIssuesResponse:
@@ -1950,7 +1952,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             issue: resources.Issue = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Issue:
@@ -2029,7 +2031,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.CalculateIssueModelStatsRequest, dict] = None,
             *,
             issue_model: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> contact_center_insights.CalculateIssueModelStatsResponse:
@@ -2105,7 +2107,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             parent: str = None,
             phrase_matcher: resources.PhraseMatcher = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.PhraseMatcher:
@@ -2189,7 +2191,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.GetPhraseMatcherRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.PhraseMatcher:
@@ -2262,7 +2264,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.ListPhraseMatchersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPhraseMatchersPager:
@@ -2348,7 +2350,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.DeletePhraseMatcherRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2414,7 +2416,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.CalculateStatsRequest, dict] = None,
             *,
             location: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> contact_center_insights.CalculateStatsResponse:
@@ -2489,7 +2491,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             request: Union[contact_center_insights.GetSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Settings:
@@ -2563,7 +2565,7 @@ class ContactCenterInsightsClient(metaclass=ContactCenterInsightsClientMeta):
             *,
             settings: resources.Settings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Settings:

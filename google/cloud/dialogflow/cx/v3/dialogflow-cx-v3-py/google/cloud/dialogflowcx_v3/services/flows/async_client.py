@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -164,11 +166,11 @@ class FlowsAsyncClient:
         )
 
     async def create_flow(self,
-            request: gcdc_flow.CreateFlowRequest = None,
+            request: Union[gcdc_flow.CreateFlowRequest, dict] = None,
             *,
             parent: str = None,
             flow: gcdc_flow.Flow = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_flow.Flow:
@@ -179,7 +181,7 @@ class FlowsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.CreateFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.CreateFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.CreateFlow][google.cloud.dialogflow.cx.v3.Flows.CreateFlow].
             parent (:class:`str`):
@@ -272,17 +274,17 @@ class FlowsAsyncClient:
         return response
 
     async def delete_flow(self,
-            request: flow.DeleteFlowRequest = None,
+            request: Union[flow.DeleteFlowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a specified flow.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.DeleteFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.DeleteFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3.Flows.DeleteFlow].
             name (:class:`str`):
@@ -338,17 +340,17 @@ class FlowsAsyncClient:
         )
 
     async def list_flows(self,
-            request: flow.ListFlowsRequest = None,
+            request: Union[flow.ListFlowsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFlowsAsyncPager:
         r"""Returns the list of all flows in the specified agent.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ListFlowsRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ListFlowsRequest, dict]):
                 The request object. The request message for
                 [Flows.ListFlows][google.cloud.dialogflow.cx.v3.Flows.ListFlows].
             parent (:class:`str`):
@@ -425,17 +427,17 @@ class FlowsAsyncClient:
         return response
 
     async def get_flow(self,
-            request: flow.GetFlowRequest = None,
+            request: Union[flow.GetFlowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> flow.Flow:
         r"""Retrieves the specified flow.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.GetFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetFlowRequest, dict]):
                 The request object. The response message for
                 [Flows.GetFlow][google.cloud.dialogflow.cx.v3.Flows.GetFlow].
             name (:class:`str`):
@@ -521,11 +523,11 @@ class FlowsAsyncClient:
         return response
 
     async def update_flow(self,
-            request: gcdc_flow.UpdateFlowRequest = None,
+            request: Union[gcdc_flow.UpdateFlowRequest, dict] = None,
             *,
             flow: gcdc_flow.Flow = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_flow.Flow:
@@ -536,7 +538,7 @@ class FlowsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.UpdateFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.UpdateFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.UpdateFlow][google.cloud.dialogflow.cx.v3.Flows.UpdateFlow].
             flow (:class:`google.cloud.dialogflowcx_v3.types.Flow`):
@@ -630,10 +632,10 @@ class FlowsAsyncClient:
         return response
 
     async def train_flow(self,
-            request: flow.TrainFlowRequest = None,
+            request: Union[flow.TrainFlowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -655,7 +657,7 @@ class FlowsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.TrainFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.TrainFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.TrainFlow][google.cloud.dialogflow.cx.v3.Flows.TrainFlow].
             name (:class:`str`):
@@ -741,9 +743,9 @@ class FlowsAsyncClient:
         return response
 
     async def validate_flow(self,
-            request: flow.ValidateFlowRequest = None,
+            request: Union[flow.ValidateFlowRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> flow.FlowValidationResult:
@@ -753,7 +755,7 @@ class FlowsAsyncClient:
         results.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ValidateFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ValidateFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.ValidateFlow][google.cloud.dialogflow.cx.v3.Flows.ValidateFlow].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -799,10 +801,10 @@ class FlowsAsyncClient:
         return response
 
     async def get_flow_validation_result(self,
-            request: flow.GetFlowValidationResultRequest = None,
+            request: Union[flow.GetFlowValidationResultRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> flow.FlowValidationResult:
@@ -810,7 +812,7 @@ class FlowsAsyncClient:
         validation is performed when ValidateFlow is called.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.GetFlowValidationResultRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetFlowValidationResultRequest, dict]):
                 The request object. The request message for
                 [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3.Flows.GetFlowValidationResult].
             name (:class:`str`):
@@ -875,9 +877,9 @@ class FlowsAsyncClient:
         return response
 
     async def import_flow(self,
-            request: flow.ImportFlowRequest = None,
+            request: Union[flow.ImportFlowRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -899,7 +901,7 @@ class FlowsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ImportFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ImportFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.ImportFlow][google.cloud.dialogflow.cx.v3.Flows.ImportFlow].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -957,9 +959,9 @@ class FlowsAsyncClient:
         return response
 
     async def export_flow(self,
-            request: flow.ExportFlowRequest = None,
+            request: Union[flow.ExportFlowRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -979,7 +981,7 @@ class FlowsAsyncClient:
         flow references will also be exported.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ExportFlowRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ExportFlowRequest, dict]):
                 The request object. The request message for
                 [Flows.ExportFlow][google.cloud.dialogflow.cx.v3.Flows.ExportFlow].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

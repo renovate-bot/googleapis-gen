@@ -44,12 +44,15 @@ class ProductBiddingCategoryConstant(proto.Message):
             This ID is equivalent to the google_product_category ID as
             described in this article:
             https://support.google.com/merchants/answer/6324436.
+            This field is a member of `oneof`_ ``_id``.
         country_code (str):
             Output only. Two-letter upper-case country
             code of the product bidding category.
+            This field is a member of `oneof`_ ``_country_code``.
         product_bidding_category_constant_parent (str):
             Output only. Resource name of the parent
             product bidding category.
+            This field is a member of `oneof`_ ``_product_bidding_category_constant_parent``.
         level (google.ads.googleads.v7.enums.types.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel):
             Output only. Level of the product bidding
             category.
@@ -59,9 +62,11 @@ class ProductBiddingCategoryConstant(proto.Message):
         language_code (str):
             Output only. Language code of the product
             bidding category.
+            This field is a member of `oneof`_ ``_language_code``.
         localized_name (str):
             Output only. Display value of the product bidding category
             localized according to language_code.
+            This field is a member of `oneof`_ ``_localized_name``.
     """
 
     resource_name = proto.Field(

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.osconfig_v1.services.os_config_service import pagers
 from google.cloud.osconfig_v1.types import patch_deployments
@@ -156,9 +158,9 @@ class OsConfigServiceAsyncClient:
         )
 
     async def execute_patch_job(self,
-            request: patch_jobs.ExecutePatchJobRequest = None,
+            request: Union[patch_jobs.ExecutePatchJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> patch_jobs.PatchJob:
@@ -166,7 +168,7 @@ class OsConfigServiceAsyncClient:
         job.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.ExecutePatchJobRequest`):
+            request (Union[google.cloud.osconfig_v1.types.ExecutePatchJobRequest, dict]):
                 The request object. A request message to initiate
                 patching across Compute Engine instances.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -220,10 +222,10 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def get_patch_job(self,
-            request: patch_jobs.GetPatchJobRequest = None,
+            request: Union[patch_jobs.GetPatchJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> patch_jobs.PatchJob:
@@ -232,7 +234,7 @@ class OsConfigServiceAsyncClient:
         of completed jobs.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.GetPatchJobRequest`):
+            request (Union[google.cloud.osconfig_v1.types.GetPatchJobRequest, dict]):
                 The request object. Request to get an active or
                 completed patch job.
             name (:class:`str`):
@@ -305,9 +307,9 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def cancel_patch_job(self,
-            request: patch_jobs.CancelPatchJobRequest = None,
+            request: Union[patch_jobs.CancelPatchJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> patch_jobs.PatchJob:
@@ -315,7 +317,7 @@ class OsConfigServiceAsyncClient:
         Canceled patch jobs cannot be restarted.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.CancelPatchJobRequest`):
+            request (Union[google.cloud.osconfig_v1.types.CancelPatchJobRequest, dict]):
                 The request object. Message for canceling a patch job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -368,17 +370,17 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def list_patch_jobs(self,
-            request: patch_jobs.ListPatchJobsRequest = None,
+            request: Union[patch_jobs.ListPatchJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPatchJobsAsyncPager:
         r"""Get a list of patch jobs.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.ListPatchJobsRequest`):
+            request (Union[google.cloud.osconfig_v1.types.ListPatchJobsRequest, dict]):
                 The request object. A request message for listing patch
                 jobs.
             parent (:class:`str`):
@@ -453,17 +455,17 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def list_patch_job_instance_details(self,
-            request: patch_jobs.ListPatchJobInstanceDetailsRequest = None,
+            request: Union[patch_jobs.ListPatchJobInstanceDetailsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPatchJobInstanceDetailsAsyncPager:
         r"""Get a list of instance details for a given patch job.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.ListPatchJobInstanceDetailsRequest`):
+            request (Union[google.cloud.osconfig_v1.types.ListPatchJobInstanceDetailsRequest, dict]):
                 The request object. Request to list details for all
                 instances that are part of a patch job.
             parent (:class:`str`):
@@ -540,19 +542,19 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def create_patch_deployment(self,
-            request: patch_deployments.CreatePatchDeploymentRequest = None,
+            request: Union[patch_deployments.CreatePatchDeploymentRequest, dict] = None,
             *,
             parent: str = None,
             patch_deployment: patch_deployments.PatchDeployment = None,
             patch_deployment_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> patch_deployments.PatchDeployment:
         r"""Create an OS Config patch deployment.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.CreatePatchDeploymentRequest`):
+            request (Union[google.cloud.osconfig_v1.types.CreatePatchDeploymentRequest, dict]):
                 The request object. A request message for creating a
                 patch deployment.
             parent (:class:`str`):
@@ -646,17 +648,17 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def get_patch_deployment(self,
-            request: patch_deployments.GetPatchDeploymentRequest = None,
+            request: Union[patch_deployments.GetPatchDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> patch_deployments.PatchDeployment:
         r"""Get an OS Config patch deployment.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.GetPatchDeploymentRequest`):
+            request (Union[google.cloud.osconfig_v1.types.GetPatchDeploymentRequest, dict]):
                 The request object. A request message for retrieving a
                 patch deployment.
             name (:class:`str`):
@@ -725,17 +727,17 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def list_patch_deployments(self,
-            request: patch_deployments.ListPatchDeploymentsRequest = None,
+            request: Union[patch_deployments.ListPatchDeploymentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPatchDeploymentsAsyncPager:
         r"""Get a page of OS Config patch deployments.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.ListPatchDeploymentsRequest`):
+            request (Union[google.cloud.osconfig_v1.types.ListPatchDeploymentsRequest, dict]):
                 The request object. A request message for listing patch
                 deployments.
             parent (:class:`str`):
@@ -812,17 +814,17 @@ class OsConfigServiceAsyncClient:
         return response
 
     async def delete_patch_deployment(self,
-            request: patch_deployments.DeletePatchDeploymentRequest = None,
+            request: Union[patch_deployments.DeletePatchDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Delete an OS Config patch deployment.
 
         Args:
-            request (:class:`google.cloud.osconfig_v1.types.DeletePatchDeploymentRequest`):
+            request (Union[google.cloud.osconfig_v1.types.DeletePatchDeploymentRequest, dict]):
                 The request object. A request message for deleting a
                 patch deployment.
             name (:class:`str`):

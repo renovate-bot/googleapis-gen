@@ -250,11 +250,20 @@ class PropertyOrder(proto.Message):
 class Filter(proto.Message):
     r"""A holder for any type of filter.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         composite_filter (google.cloud.datastore_v1.types.CompositeFilter):
             A composite filter.
+            This field is a member of `oneof`_ ``filter_type``.
         property_filter (google.cloud.datastore_v1.types.PropertyFilter):
             A filter on a property.
+            This field is a member of `oneof`_ ``filter_type``.
     """
 
     composite_filter = proto.Field(
@@ -391,12 +400,21 @@ class GqlQuery(proto.Message):
 class GqlQueryParameter(proto.Message):
     r"""A binding parameter for a GQL query.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         value (google.cloud.datastore_v1.types.Value):
             A value parameter.
+            This field is a member of `oneof`_ ``parameter_type``.
         cursor (bytes):
             A query cursor. Query cursors are returned in
             query result batches.
+            This field is a member of `oneof`_ ``parameter_type``.
     """
 
     value = proto.Field(

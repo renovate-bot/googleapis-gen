@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.appengine_admin_v1.services.services import pagers
@@ -330,7 +332,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
     def list_services(self,
             request: Union[appengine.ListServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesPager:
@@ -397,7 +399,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
     def get_service(self,
             request: Union[appengine.GetServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.Service:
@@ -464,7 +466,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
     def update_service(self,
             request: Union[appengine.UpdateServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -537,7 +539,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
     def delete_service(self,
             request: Union[appengine.DeleteServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:

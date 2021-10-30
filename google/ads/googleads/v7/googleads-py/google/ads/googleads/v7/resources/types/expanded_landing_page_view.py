@@ -39,6 +39,7 @@ class ExpandedLandingPageView(proto.Message):
         expanded_final_url (str):
             Output only. The final URL that clicks are
             directed to.
+            This field is a member of `oneof`_ ``_expanded_final_url``.
     """
 
     resource_name = proto.Field(

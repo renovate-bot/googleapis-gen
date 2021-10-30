@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import criteria
 from google.ads.googleads.v8.enums.types import criterion_type
 from google.ads.googleads.v8.resources.types import customer_negative_criterion
@@ -340,7 +342,7 @@ class CustomerNegativeCriterionServiceClient(metaclass=CustomerNegativeCriterion
             request: Union[customer_negative_criterion_service.GetCustomerNegativeCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_negative_criterion.CustomerNegativeCriterion:
@@ -419,7 +421,7 @@ class CustomerNegativeCriterionServiceClient(metaclass=CustomerNegativeCriterion
             *,
             customer_id: str = None,
             operations: Sequence[customer_negative_criterion_service.CustomerNegativeCriterionOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_negative_criterion_service.MutateCustomerNegativeCriteriaResponse:

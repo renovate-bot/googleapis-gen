@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import extension_setting_device
 from google.ads.googleads.v8.enums.types import extension_type
 from google.ads.googleads.v8.resources.types import ad_group_extension_setting
@@ -360,7 +362,7 @@ class AdGroupExtensionSettingServiceClient(metaclass=AdGroupExtensionSettingServ
             request: Union[ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_extension_setting.AdGroupExtensionSetting:
@@ -437,7 +439,7 @@ class AdGroupExtensionSettingServiceClient(metaclass=AdGroupExtensionSettingServ
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_extension_setting_service.AdGroupExtensionSettingOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse:

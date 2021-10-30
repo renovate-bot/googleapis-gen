@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.resources.types import expanded_landing_page_view
 from google.ads.googleads.v8.services.types import expanded_landing_page_view_service
 from .transports.base import ExpandedLandingPageViewServiceTransport, DEFAULT_CLIENT_INFO
@@ -337,7 +339,7 @@ class ExpandedLandingPageViewServiceClient(metaclass=ExpandedLandingPageViewServ
             request: Union[expanded_landing_page_view_service.GetExpandedLandingPageViewRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> expanded_landing_page_view.ExpandedLandingPageView:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, AsyncIterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
@@ -148,9 +150,9 @@ class StorageAsyncClient:
         )
 
     async def delete_bucket_access_control(self,
-            request: storage.DeleteBucketAccessControlRequest = None,
+            request: Union[storage.DeleteBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -158,7 +160,7 @@ class StorageAsyncClient:
         entity on the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteBucketAccessControlRequest`):
+            request (Union[google.storage_v1.types.DeleteBucketAccessControlRequest, dict]):
                 The request object. Request message for
                 DeleteBucketAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -187,9 +189,9 @@ class StorageAsyncClient:
         )
 
     async def get_bucket_access_control(self,
-            request: storage.GetBucketAccessControlRequest = None,
+            request: Union[storage.GetBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
@@ -197,7 +199,7 @@ class StorageAsyncClient:
         specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.GetBucketAccessControlRequest`):
+            request (Union[google.storage_v1.types.GetBucketAccessControlRequest, dict]):
                 The request object. Request message for
                 GetBucketAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -233,16 +235,16 @@ class StorageAsyncClient:
         return response
 
     async def insert_bucket_access_control(self,
-            request: storage.InsertBucketAccessControlRequest = None,
+            request: Union[storage.InsertBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
         r"""Creates a new ACL entry on the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.InsertBucketAccessControlRequest`):
+            request (Union[google.storage_v1.types.InsertBucketAccessControlRequest, dict]):
                 The request object. Request message for
                 InsertBucketAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -278,16 +280,16 @@ class StorageAsyncClient:
         return response
 
     async def list_bucket_access_controls(self,
-            request: storage.ListBucketAccessControlsRequest = None,
+            request: Union[storage.ListBucketAccessControlsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListBucketAccessControlsResponse:
         r"""Retrieves ACL entries on the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.ListBucketAccessControlsRequest`):
+            request (Union[google.storage_v1.types.ListBucketAccessControlsRequest, dict]):
                 The request object. Request message for
                 ListBucketAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -325,9 +327,9 @@ class StorageAsyncClient:
         return response
 
     async def update_bucket_access_control(self,
-            request: storage.UpdateBucketAccessControlRequest = None,
+            request: Union[storage.UpdateBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
@@ -337,7 +339,7 @@ class StorageAsyncClient:
         values.
 
         Args:
-            request (:class:`google.storage_v1.types.UpdateBucketAccessControlRequest`):
+            request (Union[google.storage_v1.types.UpdateBucketAccessControlRequest, dict]):
                 The request object. Request for
                 UpdateBucketAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -373,16 +375,16 @@ class StorageAsyncClient:
         return response
 
     async def patch_bucket_access_control(self,
-            request: storage.PatchBucketAccessControlRequest = None,
+            request: Union[storage.PatchBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
         r"""Updates an ACL entry on the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.PatchBucketAccessControlRequest`):
+            request (Union[google.storage_v1.types.PatchBucketAccessControlRequest, dict]):
                 The request object. Request for
                 PatchBucketAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -418,16 +420,16 @@ class StorageAsyncClient:
         return response
 
     async def delete_bucket(self,
-            request: storage.DeleteBucketRequest = None,
+            request: Union[storage.DeleteBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Permanently deletes an empty bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteBucketRequest`):
+            request (Union[google.storage_v1.types.DeleteBucketRequest, dict]):
                 The request object. Request message for DeleteBucket.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -455,16 +457,16 @@ class StorageAsyncClient:
         )
 
     async def get_bucket(self,
-            request: storage.GetBucketRequest = None,
+            request: Union[storage.GetBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
         r"""Returns metadata for the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.GetBucketRequest`):
+            request (Union[google.storage_v1.types.GetBucketRequest, dict]):
                 The request object. Request message for GetBucket.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -499,16 +501,16 @@ class StorageAsyncClient:
         return response
 
     async def insert_bucket(self,
-            request: storage.InsertBucketRequest = None,
+            request: Union[storage.InsertBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
         r"""Creates a new bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.InsertBucketRequest`):
+            request (Union[google.storage_v1.types.InsertBucketRequest, dict]):
                 The request object. Request message for InsertBucket.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -543,9 +545,9 @@ class StorageAsyncClient:
         return response
 
     async def list_channels(self,
-            request: storage.ListChannelsRequest = None,
+            request: Union[storage.ListChannelsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListChannelsResponse:
@@ -553,7 +555,7 @@ class StorageAsyncClient:
         this bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.ListChannelsRequest`):
+            request (Union[google.storage_v1.types.ListChannelsRequest, dict]):
                 The request object. Request message for ListChannels.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -590,16 +592,16 @@ class StorageAsyncClient:
         return response
 
     async def list_buckets(self,
-            request: storage.ListBucketsRequest = None,
+            request: Union[storage.ListBucketsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBucketsAsyncPager:
         r"""Retrieves a list of buckets for a given project.
 
         Args:
-            request (:class:`google.storage_v1.types.ListBucketsRequest`):
+            request (Union[google.storage_v1.types.ListBucketsRequest, dict]):
                 The request object. Request message for ListBuckets.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -648,16 +650,16 @@ class StorageAsyncClient:
         return response
 
     async def lock_bucket_retention_policy(self,
-            request: storage.LockRetentionPolicyRequest = None,
+            request: Union[storage.LockRetentionPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
         r"""Locks retention policy on a bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.LockRetentionPolicyRequest`):
+            request (Union[google.storage_v1.types.LockRetentionPolicyRequest, dict]):
                 The request object. Request message for
                 LockRetentionPolicy.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -693,16 +695,16 @@ class StorageAsyncClient:
         return response
 
     async def get_bucket_iam_policy(self,
-            request: storage.GetIamPolicyRequest = None,
+            request: Union[storage.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
         r"""Gets the IAM policy for the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.GetIamPolicyRequest`):
+            request (Union[google.storage_v1.types.GetIamPolicyRequest, dict]):
                 The request object. A wrapper around the IAM get policy
                 request to support our common_request_params.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -793,16 +795,16 @@ class StorageAsyncClient:
         return response
 
     async def set_bucket_iam_policy(self,
-            request: storage.SetIamPolicyRequest = None,
+            request: Union[storage.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
         r"""Updates an IAM policy for the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.SetIamPolicyRequest`):
+            request (Union[google.storage_v1.types.SetIamPolicyRequest, dict]):
                 The request object. A wrapper around the IAM set policy
                 request to support our common_request_params.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -893,9 +895,9 @@ class StorageAsyncClient:
         return response
 
     async def test_bucket_iam_permissions(self,
-            request: storage.TestIamPermissionsRequest = None,
+            request: Union[storage.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -903,7 +905,7 @@ class StorageAsyncClient:
         which, if any, are held by the caller.
 
         Args:
-            request (:class:`google.storage_v1.types.TestIamPermissionsRequest`):
+            request (Union[google.storage_v1.types.TestIamPermissionsRequest, dict]):
                 The request object. A wrapper around the IAM test iam
                 permissions request to support our
                 common_request_params.
@@ -940,9 +942,9 @@ class StorageAsyncClient:
         return response
 
     async def patch_bucket(self,
-            request: storage.PatchBucketRequest = None,
+            request: Union[storage.PatchBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -951,7 +953,7 @@ class StorageAsyncClient:
         changes may take time to propagate.
 
         Args:
-            request (:class:`google.storage_v1.types.PatchBucketRequest`):
+            request (Union[google.storage_v1.types.PatchBucketRequest, dict]):
                 The request object. Request for PatchBucket method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -986,9 +988,9 @@ class StorageAsyncClient:
         return response
 
     async def update_bucket(self,
-            request: storage.UpdateBucketRequest = None,
+            request: Union[storage.UpdateBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -1001,7 +1003,7 @@ class StorageAsyncClient:
         take time to propagate.
 
         Args:
-            request (:class:`google.storage_v1.types.UpdateBucketRequest`):
+            request (Union[google.storage_v1.types.UpdateBucketRequest, dict]):
                 The request object. Request for UpdateBucket method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1036,9 +1038,9 @@ class StorageAsyncClient:
         return response
 
     async def stop_channel(self,
-            request: storage.StopChannelRequest = None,
+            request: Union[storage.StopChannelRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1049,7 +1051,7 @@ class StorageAsyncClient:
         DeleteNotification.
 
         Args:
-            request (:class:`google.storage_v1.types.StopChannelRequest`):
+            request (Union[google.storage_v1.types.StopChannelRequest, dict]):
                 The request object. Request message for StopChannel.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1077,9 +1079,9 @@ class StorageAsyncClient:
         )
 
     async def delete_default_object_access_control(self,
-            request: storage.DeleteDefaultObjectAccessControlRequest = None,
+            request: Union[storage.DeleteDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1087,7 +1089,7 @@ class StorageAsyncClient:
         the specified entity on the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteDefaultObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.DeleteDefaultObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 DeleteDefaultObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1116,9 +1118,9 @@ class StorageAsyncClient:
         )
 
     async def get_default_object_access_control(self,
-            request: storage.GetDefaultObjectAccessControlRequest = None,
+            request: Union[storage.GetDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1126,7 +1128,7 @@ class StorageAsyncClient:
         specified entity on the specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.GetDefaultObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.GetDefaultObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 GetDefaultObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1162,9 +1164,9 @@ class StorageAsyncClient:
         return response
 
     async def insert_default_object_access_control(self,
-            request: storage.InsertDefaultObjectAccessControlRequest = None,
+            request: Union[storage.InsertDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1172,7 +1174,7 @@ class StorageAsyncClient:
         specified bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.InsertDefaultObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.InsertDefaultObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 InsertDefaultObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1208,9 +1210,9 @@ class StorageAsyncClient:
         return response
 
     async def list_default_object_access_controls(self,
-            request: storage.ListDefaultObjectAccessControlsRequest = None,
+            request: Union[storage.ListDefaultObjectAccessControlsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListObjectAccessControlsResponse:
@@ -1218,7 +1220,7 @@ class StorageAsyncClient:
         bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.ListDefaultObjectAccessControlsRequest`):
+            request (Union[google.storage_v1.types.ListDefaultObjectAccessControlsRequest, dict]):
                 The request object. Request message for
                 ListDefaultObjectAccessControls.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1256,9 +1258,9 @@ class StorageAsyncClient:
         return response
 
     async def patch_default_object_access_control(self,
-            request: storage.PatchDefaultObjectAccessControlRequest = None,
+            request: Union[storage.PatchDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1266,7 +1268,7 @@ class StorageAsyncClient:
         bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.PatchDefaultObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.PatchDefaultObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 PatchDefaultObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1302,9 +1304,9 @@ class StorageAsyncClient:
         return response
 
     async def update_default_object_access_control(self,
-            request: storage.UpdateDefaultObjectAccessControlRequest = None,
+            request: Union[storage.UpdateDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1314,7 +1316,7 @@ class StorageAsyncClient:
         values.
 
         Args:
-            request (:class:`google.storage_v1.types.UpdateDefaultObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.UpdateDefaultObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 UpdateDefaultObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1350,9 +1352,9 @@ class StorageAsyncClient:
         return response
 
     async def delete_notification(self,
-            request: storage.DeleteNotificationRequest = None,
+            request: Union[storage.DeleteNotificationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1362,7 +1364,7 @@ class StorageAsyncClient:
         instead.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteNotificationRequest`):
+            request (Union[google.storage_v1.types.DeleteNotificationRequest, dict]):
                 The request object. Request message for
                 DeleteNotification.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1391,16 +1393,16 @@ class StorageAsyncClient:
         )
 
     async def get_notification(self,
-            request: storage.GetNotificationRequest = None,
+            request: Union[storage.GetNotificationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Notification:
         r"""View a notification configuration.
 
         Args:
-            request (:class:`google.storage_v1.types.GetNotificationRequest`):
+            request (Union[google.storage_v1.types.GetNotificationRequest, dict]):
                 The request object. Request message for GetNotification.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1437,9 +1439,9 @@ class StorageAsyncClient:
         return response
 
     async def insert_notification(self,
-            request: storage.InsertNotificationRequest = None,
+            request: Union[storage.InsertNotificationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Notification:
@@ -1450,7 +1452,7 @@ class StorageAsyncClient:
         notifications.
 
         Args:
-            request (:class:`google.storage_v1.types.InsertNotificationRequest`):
+            request (Union[google.storage_v1.types.InsertNotificationRequest, dict]):
                 The request object. Request message for
                 InsertNotification.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1488,9 +1490,9 @@ class StorageAsyncClient:
         return response
 
     async def list_notifications(self,
-            request: storage.ListNotificationsRequest = None,
+            request: Union[storage.ListNotificationsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListNotificationsResponse:
@@ -1498,7 +1500,7 @@ class StorageAsyncClient:
         given bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.ListNotificationsRequest`):
+            request (Union[google.storage_v1.types.ListNotificationsRequest, dict]):
                 The request object. Request message for
                 ListNotifications.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1536,9 +1538,9 @@ class StorageAsyncClient:
         return response
 
     async def delete_object_access_control(self,
-            request: storage.DeleteObjectAccessControlRequest = None,
+            request: Union[storage.DeleteObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1546,7 +1548,7 @@ class StorageAsyncClient:
         entity on the specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.DeleteObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 DeleteObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1575,9 +1577,9 @@ class StorageAsyncClient:
         )
 
     async def get_object_access_control(self,
-            request: storage.GetObjectAccessControlRequest = None,
+            request: Union[storage.GetObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1585,7 +1587,7 @@ class StorageAsyncClient:
         specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.GetObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.GetObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 GetObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1621,16 +1623,16 @@ class StorageAsyncClient:
         return response
 
     async def insert_object_access_control(self,
-            request: storage.InsertObjectAccessControlRequest = None,
+            request: Union[storage.InsertObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
         r"""Creates a new ACL entry on the specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.InsertObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.InsertObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 InsertObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1666,16 +1668,16 @@ class StorageAsyncClient:
         return response
 
     async def list_object_access_controls(self,
-            request: storage.ListObjectAccessControlsRequest = None,
+            request: Union[storage.ListObjectAccessControlsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListObjectAccessControlsResponse:
         r"""Retrieves ACL entries on the specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.ListObjectAccessControlsRequest`):
+            request (Union[google.storage_v1.types.ListObjectAccessControlsRequest, dict]):
                 The request object. Request message for
                 ListObjectAccessControls.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1713,9 +1715,9 @@ class StorageAsyncClient:
         return response
 
     async def patch_object_access_control(self,
-            request: storage.PatchObjectAccessControlRequest = None,
+            request: Union[storage.PatchObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1724,7 +1726,7 @@ class StorageAsyncClient:
         the object_access_control object. Other fields are unaffected.
 
         Args:
-            request (:class:`google.storage_v1.types.PatchObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.PatchObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 PatchObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1760,16 +1762,16 @@ class StorageAsyncClient:
         return response
 
     async def update_object_access_control(self,
-            request: storage.UpdateObjectAccessControlRequest = None,
+            request: Union[storage.UpdateObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
         r"""Updates an ACL entry on the specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.UpdateObjectAccessControlRequest`):
+            request (Union[google.storage_v1.types.UpdateObjectAccessControlRequest, dict]):
                 The request object. Request message for
                 UpdateObjectAccessControl.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1805,9 +1807,9 @@ class StorageAsyncClient:
         return response
 
     async def compose_object(self,
-            request: storage.ComposeObjectRequest = None,
+            request: Union[storage.ComposeObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -1815,7 +1817,7 @@ class StorageAsyncClient:
         object in the same bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.ComposeObjectRequest`):
+            request (Union[google.storage_v1.types.ComposeObjectRequest, dict]):
                 The request object. Request message for ComposeObject.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1850,9 +1852,9 @@ class StorageAsyncClient:
         return response
 
     async def copy_object(self,
-            request: storage.CopyObjectRequest = None,
+            request: Union[storage.CopyObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -1860,7 +1862,7 @@ class StorageAsyncClient:
         Optionally overrides metadata.
 
         Args:
-            request (:class:`google.storage_v1.types.CopyObjectRequest`):
+            request (Union[google.storage_v1.types.CopyObjectRequest, dict]):
                 The request object. Request message for CopyObject.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1895,9 +1897,9 @@ class StorageAsyncClient:
         return response
 
     async def delete_object(self,
-            request: storage.DeleteObjectRequest = None,
+            request: Union[storage.DeleteObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1906,7 +1908,7 @@ class StorageAsyncClient:
         ``generation`` parameter is used.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteObjectRequest`):
+            request (Union[google.storage_v1.types.DeleteObjectRequest, dict]):
                 The request object. Message for deleting an object.
                 Either `bucket` and `object` *or* `upload_id` **must**
                 be set (but not both).
@@ -1936,16 +1938,16 @@ class StorageAsyncClient:
         )
 
     async def get_object(self,
-            request: storage.GetObjectRequest = None,
+            request: Union[storage.GetObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
         r"""Retrieves an object's metadata.
 
         Args:
-            request (:class:`google.storage_v1.types.GetObjectRequest`):
+            request (Union[google.storage_v1.types.GetObjectRequest, dict]):
                 The request object. Request message for GetObject.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1980,16 +1982,16 @@ class StorageAsyncClient:
         return response
 
     def get_object_media(self,
-            request: storage.GetObjectMediaRequest = None,
+            request: Union[storage.GetObjectMediaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[storage.GetObjectMediaResponse]]:
         r"""Reads an object's data.
 
         Args:
-            request (:class:`google.storage_v1.types.GetObjectMediaRequest`):
+            request (Union[google.storage_v1.types.GetObjectMediaRequest, dict]):
                 The request object. Request message for GetObjectMedia.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2026,7 +2028,7 @@ class StorageAsyncClient:
     async def insert_object(self,
             requests: AsyncIterator[storage.InsertObjectRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2091,16 +2093,16 @@ class StorageAsyncClient:
         return response
 
     async def list_objects(self,
-            request: storage.ListObjectsRequest = None,
+            request: Union[storage.ListObjectsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListObjectsAsyncPager:
         r"""Retrieves a list of objects matching the criteria.
 
         Args:
-            request (:class:`google.storage_v1.types.ListObjectsRequest`):
+            request (Union[google.storage_v1.types.ListObjectsRequest, dict]):
                 The request object. Request message for ListObjects.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2149,9 +2151,9 @@ class StorageAsyncClient:
         return response
 
     async def rewrite_object(self,
-            request: storage.RewriteObjectRequest = None,
+            request: Union[storage.RewriteObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.RewriteResponse:
@@ -2159,7 +2161,7 @@ class StorageAsyncClient:
         Optionally overrides metadata.
 
         Args:
-            request (:class:`google.storage_v1.types.RewriteObjectRequest`):
+            request (Union[google.storage_v1.types.RewriteObjectRequest, dict]):
                 The request object. Request message for RewriteObject.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2194,9 +2196,9 @@ class StorageAsyncClient:
         return response
 
     async def start_resumable_write(self,
-            request: storage.StartResumableWriteRequest = None,
+            request: Union[storage.StartResumableWriteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.StartResumableWriteResponse:
@@ -2205,7 +2207,7 @@ class StorageAsyncClient:
         operation becomes invalid, are service-dependent.
 
         Args:
-            request (:class:`google.storage_v1.types.StartResumableWriteRequest`):
+            request (Union[google.storage_v1.types.StartResumableWriteRequest, dict]):
                 The request object. Request message StartResumableWrite.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2242,9 +2244,9 @@ class StorageAsyncClient:
         return response
 
     async def query_write_status(self,
-            request: storage.QueryWriteStatusRequest = None,
+            request: Union[storage.QueryWriteStatusRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.QueryWriteStatusResponse:
@@ -2265,7 +2267,7 @@ class StorageAsyncClient:
         non-decreasing.
 
         Args:
-            request (:class:`google.storage_v1.types.QueryWriteStatusRequest`):
+            request (Union[google.storage_v1.types.QueryWriteStatusRequest, dict]):
                 The request object. Request object for
                 `ByteStream.QueryWriteStatus`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2301,16 +2303,16 @@ class StorageAsyncClient:
         return response
 
     async def patch_object(self,
-            request: storage.PatchObjectRequest = None,
+            request: Union[storage.PatchObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
         r"""Updates an object's metadata.
 
         Args:
-            request (:class:`google.storage_v1.types.PatchObjectRequest`):
+            request (Union[google.storage_v1.types.PatchObjectRequest, dict]):
                 The request object. Request message for PatchObject.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2345,9 +2347,9 @@ class StorageAsyncClient:
         return response
 
     async def update_object(self,
-            request: storage.UpdateObjectRequest = None,
+            request: Union[storage.UpdateObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2357,7 +2359,7 @@ class StorageAsyncClient:
         fields to their default values.
 
         Args:
-            request (:class:`google.storage_v1.types.UpdateObjectRequest`):
+            request (Union[google.storage_v1.types.UpdateObjectRequest, dict]):
                 The request object. Request message for UpdateObject.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2392,16 +2394,16 @@ class StorageAsyncClient:
         return response
 
     async def get_object_iam_policy(self,
-            request: storage.GetIamPolicyRequest = None,
+            request: Union[storage.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
         r"""Gets the IAM policy for the specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.GetIamPolicyRequest`):
+            request (Union[google.storage_v1.types.GetIamPolicyRequest, dict]):
                 The request object. A wrapper around the IAM get policy
                 request to support our common_request_params.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2492,16 +2494,16 @@ class StorageAsyncClient:
         return response
 
     async def set_object_iam_policy(self,
-            request: storage.SetIamPolicyRequest = None,
+            request: Union[storage.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
         r"""Updates an IAM policy for the specified object.
 
         Args:
-            request (:class:`google.storage_v1.types.SetIamPolicyRequest`):
+            request (Union[google.storage_v1.types.SetIamPolicyRequest, dict]):
                 The request object. A wrapper around the IAM set policy
                 request to support our common_request_params.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2592,9 +2594,9 @@ class StorageAsyncClient:
         return response
 
     async def test_object_iam_permissions(self,
-            request: storage.TestIamPermissionsRequest = None,
+            request: Union[storage.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -2602,7 +2604,7 @@ class StorageAsyncClient:
         which, if any, are held by the caller.
 
         Args:
-            request (:class:`google.storage_v1.types.TestIamPermissionsRequest`):
+            request (Union[google.storage_v1.types.TestIamPermissionsRequest, dict]):
                 The request object. A wrapper around the IAM test iam
                 permissions request to support our
                 common_request_params.
@@ -2639,16 +2641,16 @@ class StorageAsyncClient:
         return response
 
     async def watch_all_objects(self,
-            request: storage.WatchAllObjectsRequest = None,
+            request: Union[storage.WatchAllObjectsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Channel:
         r"""Watch for changes on all objects in a bucket.
 
         Args:
-            request (:class:`google.storage_v1.types.WatchAllObjectsRequest`):
+            request (Union[google.storage_v1.types.WatchAllObjectsRequest, dict]):
                 The request object. Request message for WatchAllObjects.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2685,9 +2687,9 @@ class StorageAsyncClient:
         return response
 
     async def get_service_account(self,
-            request: storage.GetProjectServiceAccountRequest = None,
+            request: Union[storage.GetProjectServiceAccountRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ServiceAccount:
@@ -2695,7 +2697,7 @@ class StorageAsyncClient:
         Storage service account.
 
         Args:
-            request (:class:`google.storage_v1.types.GetProjectServiceAccountRequest`):
+            request (Union[google.storage_v1.types.GetProjectServiceAccountRequest, dict]):
                 The request object. Request message for
                 GetProjectServiceAccount.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2733,16 +2735,16 @@ class StorageAsyncClient:
         return response
 
     async def create_hmac_key(self,
-            request: storage.CreateHmacKeyRequest = None,
+            request: Union[storage.CreateHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.CreateHmacKeyResponse:
         r"""Creates a new HMAC key for the given service account.
 
         Args:
-            request (:class:`google.storage_v1.types.CreateHmacKeyRequest`):
+            request (Union[google.storage_v1.types.CreateHmacKeyRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2779,9 +2781,9 @@ class StorageAsyncClient:
         return response
 
     async def delete_hmac_key(self,
-            request: storage.DeleteHmacKeyRequest = None,
+            request: Union[storage.DeleteHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2789,7 +2791,7 @@ class StorageAsyncClient:
         state.
 
         Args:
-            request (:class:`google.storage_v1.types.DeleteHmacKeyRequest`):
+            request (Union[google.storage_v1.types.DeleteHmacKeyRequest, dict]):
                 The request object. Request object to delete a given
                 HMAC key.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2818,16 +2820,16 @@ class StorageAsyncClient:
         )
 
     async def get_hmac_key(self,
-            request: storage.GetHmacKeyRequest = None,
+            request: Union[storage.GetHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.HmacKeyMetadata:
         r"""Gets an existing HMAC key metadata for the given id.
 
         Args:
-            request (:class:`google.storage_v1.types.GetHmacKeyRequest`):
+            request (Union[google.storage_v1.types.GetHmacKeyRequest, dict]):
                 The request object. Request object to get metadata on a
                 given HMAC key.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2865,9 +2867,9 @@ class StorageAsyncClient:
         return response
 
     async def list_hmac_keys(self,
-            request: storage.ListHmacKeysRequest = None,
+            request: Union[storage.ListHmacKeysRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListHmacKeysAsyncPager:
@@ -2875,7 +2877,7 @@ class StorageAsyncClient:
         additional filters provided.
 
         Args:
-            request (:class:`google.storage_v1.types.ListHmacKeysRequest`):
+            request (Union[google.storage_v1.types.ListHmacKeysRequest, dict]):
                 The request object. Request to fetch a list of HMAC keys
                 under a given project.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2925,9 +2927,9 @@ class StorageAsyncClient:
         return response
 
     async def update_hmac_key(self,
-            request: storage.UpdateHmacKeyRequest = None,
+            request: Union[storage.UpdateHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.HmacKeyMetadata:
@@ -2935,7 +2937,7 @@ class StorageAsyncClient:
         INACTIVE.
 
         Args:
-            request (:class:`google.storage_v1.types.UpdateHmacKeyRequest`):
+            request (Union[google.storage_v1.types.UpdateHmacKeyRequest, dict]):
                 The request object. Request object to update an HMAC key
                 state.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

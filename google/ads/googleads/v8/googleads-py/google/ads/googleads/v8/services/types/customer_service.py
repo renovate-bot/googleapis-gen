@@ -110,6 +110,7 @@ class CreateCustomerClientRequest(proto.Message):
             Email address of the user who should be
             invited on the created client customer.
             Accessible only to customers on the allow-list.
+            This field is a member of `oneof`_ ``_email_address``.
         access_role (google.ads.googleads.v8.enums.types.AccessRoleEnum.AccessRole):
             The proposed role of user on the created
             client customer. Accessible only to customers on

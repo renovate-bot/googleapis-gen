@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.tag_values import pagers
@@ -342,7 +344,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             request: Union[tag_values.ListTagValuesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTagValuesPager:
@@ -420,7 +422,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             request: Union[tag_values.GetTagValueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tag_values.TagValue:
@@ -499,7 +501,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             request: Union[tag_values.CreateTagValueRequest, dict] = None,
             *,
             tag_value: tag_values.TagValue = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -583,7 +585,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             *,
             tag_value: tag_values.TagValue = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -680,7 +682,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             request: Union[tag_values.DeleteTagValueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -768,7 +770,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -903,7 +905,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1037,7 +1039,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

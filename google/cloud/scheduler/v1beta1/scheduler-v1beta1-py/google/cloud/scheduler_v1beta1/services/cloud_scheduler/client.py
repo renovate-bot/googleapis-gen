@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.scheduler_v1beta1.services.cloud_scheduler import pagers
 from google.cloud.scheduler_v1beta1.types import cloudscheduler
 from google.cloud.scheduler_v1beta1.types import job
@@ -356,7 +358,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             request: Union[cloudscheduler.ListJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListJobsPager:
@@ -444,7 +446,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             request: Union[cloudscheduler.GetJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> job.Job:
@@ -521,7 +523,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             *,
             parent: str = None,
             job: gcs_job.Job = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_job.Job:
@@ -614,7 +616,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             *,
             job: gcs_job.Job = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_job.Job:
@@ -715,7 +717,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             request: Union[cloudscheduler.DeleteJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -782,7 +784,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             request: Union[cloudscheduler.PauseJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> job.Job:
@@ -869,7 +871,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             request: Union[cloudscheduler.ResumeJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> job.Job:
@@ -955,7 +957,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
             request: Union[cloudscheduler.RunJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> job.Job:

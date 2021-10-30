@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -159,19 +161,19 @@ class ProductServiceAsyncClient:
         )
 
     async def create_product(self,
-            request: product_service.CreateProductRequest = None,
+            request: Union[product_service.CreateProductRequest, dict] = None,
             *,
             parent: str = None,
             product: gcr_product.Product = None,
             product_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcr_product.Product:
         r"""Creates a [Product][google.cloud.retail.v2beta.Product].
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.CreateProductRequest`):
+            request (Union[google.cloud.retail_v2beta.types.CreateProductRequest, dict]):
                 The request object. Request message for
                 [CreateProduct][] method.
             parent (:class:`str`):
@@ -272,17 +274,17 @@ class ProductServiceAsyncClient:
         return response
 
     async def get_product(self,
-            request: product_service.GetProductRequest = None,
+            request: Union[product_service.GetProductRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product.Product:
         r"""Gets a [Product][google.cloud.retail.v2beta.Product].
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.GetProductRequest`):
+            request (Union[google.cloud.retail_v2beta.types.GetProductRequest, dict]):
                 The request object. Request message for [GetProduct][]
                 method.
             name (:class:`str`):
@@ -358,17 +360,17 @@ class ProductServiceAsyncClient:
         return response
 
     async def list_products(self,
-            request: product_service.ListProductsRequest = None,
+            request: Union[product_service.ListProductsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductsAsyncPager:
         r"""Gets a list of [Product][google.cloud.retail.v2beta.Product]s.
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.ListProductsRequest`):
+            request (Union[google.cloud.retail_v2beta.types.ListProductsRequest, dict]):
                 The request object. Request message for
                 [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
                 method.
@@ -454,18 +456,18 @@ class ProductServiceAsyncClient:
         return response
 
     async def update_product(self,
-            request: product_service.UpdateProductRequest = None,
+            request: Union[product_service.UpdateProductRequest, dict] = None,
             *,
             product: gcr_product.Product = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcr_product.Product:
         r"""Updates a [Product][google.cloud.retail.v2beta.Product].
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.UpdateProductRequest`):
+            request (Union[google.cloud.retail_v2beta.types.UpdateProductRequest, dict]):
                 The request object. Request message for
                 [UpdateProduct][] method.
             product (:class:`google.cloud.retail_v2beta.types.Product`):
@@ -555,17 +557,17 @@ class ProductServiceAsyncClient:
         return response
 
     async def delete_product(self,
-            request: product_service.DeleteProductRequest = None,
+            request: Union[product_service.DeleteProductRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a [Product][google.cloud.retail.v2beta.Product].
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.DeleteProductRequest`):
+            request (Union[google.cloud.retail_v2beta.types.DeleteProductRequest, dict]):
                 The request object. Request message for
                 [DeleteProduct][] method.
             name (:class:`str`):
@@ -645,9 +647,9 @@ class ProductServiceAsyncClient:
         )
 
     async def import_products(self,
-            request: import_config.ImportProductsRequest = None,
+            request: Union[import_config.ImportProductsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -662,7 +664,7 @@ class ProductServiceAsyncClient:
         successfully updated.
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.ImportProductsRequest`):
+            request (Union[google.cloud.retail_v2beta.types.ImportProductsRequest, dict]):
                 The request object. Request message for Import methods.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -728,11 +730,11 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def set_inventory(self,
-            request: product_service.SetInventoryRequest = None,
+            request: Union[product_service.SetInventoryRequest, dict] = None,
             *,
             inventory: product.Product = None,
             set_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -785,7 +787,7 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         sales if you are interested in using Retail Search.
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.SetInventoryRequest`):
+            request (Union[google.cloud.retail_v2beta.types.SetInventoryRequest, dict]):
                 The request object. Request message for [SetInventory][]
                 method.
             inventory (:class:`google.cloud.retail_v2beta.types.Product`):
@@ -915,10 +917,10 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def add_fulfillment_places(self,
-            request: product_service.AddFulfillmentPlacesRequest = None,
+            request: Union[product_service.AddFulfillmentPlacesRequest, dict] = None,
             *,
             product: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -942,7 +944,7 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         sales if you are interested in using Retail Search.
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.AddFulfillmentPlacesRequest`):
+            request (Union[google.cloud.retail_v2beta.types.AddFulfillmentPlacesRequest, dict]):
                 The request object. Request message for
                 [AddFulfillmentPlaces][] method.
             product (:class:`str`):
@@ -1024,10 +1026,10 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def remove_fulfillment_places(self,
-            request: product_service.RemoveFulfillmentPlacesRequest = None,
+            request: Union[product_service.RemoveFulfillmentPlacesRequest, dict] = None,
             *,
             product: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1051,7 +1053,7 @@ initial=0.1,maximum=300.0,multiplier=1.3,                predicate=retries.if_ex
         sales if you are interested in using Retail Search.
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.RemoveFulfillmentPlacesRequest`):
+            request (Union[google.cloud.retail_v2beta.types.RemoveFulfillmentPlacesRequest, dict]):
                 The request object. Request message for
                 [RemoveFulfillmentPlaces][] method.
             product (:class:`str`):

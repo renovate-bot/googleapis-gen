@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.tasks_v2.services.cloud_tasks import pagers
 from google.cloud.tasks_v2.types import cloudtasks
@@ -159,10 +161,10 @@ class CloudTasksAsyncClient:
         )
 
     async def list_queues(self,
-            request: cloudtasks.ListQueuesRequest = None,
+            request: Union[cloudtasks.ListQueuesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListQueuesAsyncPager:
@@ -170,7 +172,7 @@ class CloudTasksAsyncClient:
         Queues are returned in lexicographical order.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.ListQueuesRequest`):
+            request (Union[google.cloud.tasks_v2.types.ListQueuesRequest, dict]):
                 The request object. Request message for
                 [ListQueues][google.cloud.tasks.v2.CloudTasks.ListQueues].
             parent (:class:`str`):
@@ -254,17 +256,17 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_queue(self,
-            request: cloudtasks.GetQueueRequest = None,
+            request: Union[cloudtasks.GetQueueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> queue.Queue:
         r"""Gets a queue.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.GetQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.GetQueueRequest, dict]):
                 The request object. Request message for
                 [GetQueue][google.cloud.tasks.v2.CloudTasks.GetQueue].
             name (:class:`str`):
@@ -340,11 +342,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_queue(self,
-            request: cloudtasks.CreateQueueRequest = None,
+            request: Union[cloudtasks.CreateQueueRequest, dict] = None,
             *,
             parent: str = None,
             queue: gct_queue.Queue = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_queue.Queue:
@@ -361,7 +363,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         before using this method.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.CreateQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.CreateQueueRequest, dict]):
                 The request object. Request message for
                 [CreateQueue][google.cloud.tasks.v2.CloudTasks.CreateQueue].
             parent (:class:`str`):
@@ -446,11 +448,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_queue(self,
-            request: cloudtasks.UpdateQueueRequest = None,
+            request: Union[cloudtasks.UpdateQueueRequest, dict] = None,
             *,
             queue: gct_queue.Queue = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_queue.Queue:
@@ -470,7 +472,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         before using this method.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.UpdateQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.UpdateQueueRequest, dict]):
                 The request object. Request message for
                 [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue].
             queue (:class:`google.cloud.tasks_v2.types.Queue`):
@@ -558,10 +560,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_queue(self,
-            request: cloudtasks.DeleteQueueRequest = None,
+            request: Union[cloudtasks.DeleteQueueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -579,7 +581,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         before using this method.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.DeleteQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.DeleteQueueRequest, dict]):
                 The request object. Request message for
                 [DeleteQueue][google.cloud.tasks.v2.CloudTasks.DeleteQueue].
             name (:class:`str`):
@@ -642,10 +644,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def purge_queue(self,
-            request: cloudtasks.PurgeQueueRequest = None,
+            request: Union[cloudtasks.PurgeQueueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> queue.Queue:
@@ -657,7 +659,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         effect. A purge is irreversible.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.PurgeQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.PurgeQueueRequest, dict]):
                 The request object. Request message for
                 [PurgeQueue][google.cloud.tasks.v2.CloudTasks.PurgeQueue].
             name (:class:`str`):
@@ -726,10 +728,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def pause_queue(self,
-            request: cloudtasks.PauseQueueRequest = None,
+            request: Union[cloudtasks.PauseQueueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> queue.Queue:
@@ -743,7 +745,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         [PAUSED][google.cloud.tasks.v2.Queue.State.PAUSED].
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.PauseQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.PauseQueueRequest, dict]):
                 The request object. Request message for
                 [PauseQueue][google.cloud.tasks.v2.CloudTasks.PauseQueue].
             name (:class:`str`):
@@ -812,10 +814,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def resume_queue(self,
-            request: cloudtasks.ResumeQueueRequest = None,
+            request: Union[cloudtasks.ResumeQueueRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> queue.Queue:
@@ -836,7 +838,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         Risks <https://cloud.google.com/tasks/docs/manage-cloud-task-scaling>`__.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.ResumeQueueRequest`):
+            request (Union[google.cloud.tasks_v2.types.ResumeQueueRequest, dict]):
                 The request object. Request message for
                 [ResumeQueue][google.cloud.tasks.v2.CloudTasks.ResumeQueue].
             name (:class:`str`):
@@ -905,10 +907,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -923,7 +925,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         -  ``cloudtasks.queues.getIamPolicy``
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -1050,10 +1052,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1072,7 +1074,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         -  ``cloudtasks.queues.setIamPolicy``
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -1192,11 +1194,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -1211,7 +1213,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         warning.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
@@ -1292,10 +1294,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_tasks(self,
-            request: cloudtasks.ListTasksRequest = None,
+            request: Union[cloudtasks.ListTasksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTasksAsyncPager:
@@ -1311,7 +1313,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         at any time.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.ListTasksRequest`):
+            request (Union[google.cloud.tasks_v2.types.ListTasksRequest, dict]):
                 The request object. Request message for listing tasks
                 using
                 [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks].
@@ -1396,17 +1398,17 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_task(self,
-            request: cloudtasks.GetTaskRequest = None,
+            request: Union[cloudtasks.GetTaskRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> task.Task:
         r"""Gets a task.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.GetTaskRequest`):
+            request (Union[google.cloud.tasks_v2.types.GetTaskRequest, dict]):
                 The request object. Request message for getting a task
                 using
                 [GetTask][google.cloud.tasks.v2.CloudTasks.GetTask].
@@ -1477,11 +1479,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_task(self,
-            request: cloudtasks.CreateTaskRequest = None,
+            request: Union[cloudtasks.CreateTaskRequest, dict] = None,
             *,
             parent: str = None,
             task: gct_task.Task = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_task.Task:
@@ -1493,7 +1495,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         -  The maximum task size is 100KB.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.CreateTaskRequest`):
+            request (Union[google.cloud.tasks_v2.types.CreateTaskRequest, dict]):
                 The request object. Request message for
                 [CreateTask][google.cloud.tasks.v2.CloudTasks.CreateTask].
             parent (:class:`str`):
@@ -1606,10 +1608,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_task(self,
-            request: cloudtasks.DeleteTaskRequest = None,
+            request: Union[cloudtasks.DeleteTaskRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1619,7 +1621,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         or permanently failed.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.DeleteTaskRequest`):
+            request (Union[google.cloud.tasks_v2.types.DeleteTaskRequest, dict]):
                 The request object. Request message for deleting a task
                 using
                 [DeleteTask][google.cloud.tasks.v2.CloudTasks.DeleteTask].
@@ -1683,10 +1685,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def run_task(self,
-            request: cloudtasks.RunTaskRequest = None,
+            request: Union[cloudtasks.RunTaskRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> task.Task:
@@ -1719,7 +1721,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         task that has already succeeded or permanently failed.
 
         Args:
-            request (:class:`google.cloud.tasks_v2.types.RunTaskRequest`):
+            request (Union[google.cloud.tasks_v2.types.RunTaskRequest, dict]):
                 The request object. Request message for forcing a task
                 to run now using
                 [RunTask][google.cloud.tasks.v2.CloudTasks.RunTask].

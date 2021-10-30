@@ -42,9 +42,11 @@ class AdParameter(proto.Message):
         ad_group_criterion (str):
             Immutable. The ad group criterion that this
             ad parameter belongs to.
+            This field is a member of `oneof`_ ``_ad_group_criterion``.
         parameter_index (int):
             Immutable. The unique index of this ad
             parameter. Must be either 1 or 2.
+            This field is a member of `oneof`_ ``_parameter_index``.
         insertion_text (str):
             Numeric value to insert into the ad text. The
             following restrictions  apply:
@@ -62,6 +64,7 @@ class AdParameter(proto.Message):
             -10.99 and 25+ are valid.  - Can use '/' between
             two numbers. For example 4/1 and 0.95/0.45 are
             valid.
+            This field is a member of `oneof`_ ``_insertion_text``.
     """
 
     resource_name = proto.Field(

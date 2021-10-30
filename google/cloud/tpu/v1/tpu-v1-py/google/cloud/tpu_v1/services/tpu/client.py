@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.tpu_v1.services.tpu import pagers
@@ -363,7 +365,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.ListNodesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNodesPager:
@@ -448,7 +450,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.GetNodeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_tpu.Node:
@@ -521,7 +523,7 @@ class TpuClient(metaclass=TpuClientMeta):
             parent: str = None,
             node: cloud_tpu.Node = None,
             node_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -618,7 +620,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.DeleteNodeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -700,7 +702,7 @@ class TpuClient(metaclass=TpuClientMeta):
     def reimage_node(self,
             request: Union[cloud_tpu.ReimageNodeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -766,7 +768,7 @@ class TpuClient(metaclass=TpuClientMeta):
     def stop_node(self,
             request: Union[cloud_tpu.StopNodeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -832,7 +834,7 @@ class TpuClient(metaclass=TpuClientMeta):
     def start_node(self,
             request: Union[cloud_tpu.StartNodeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -899,7 +901,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.ListTensorFlowVersionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorFlowVersionsPager:
@@ -984,7 +986,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.GetTensorFlowVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_tpu.TensorFlowVersion:
@@ -1057,7 +1059,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.ListAcceleratorTypesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAcceleratorTypesPager:
@@ -1142,7 +1144,7 @@ class TpuClient(metaclass=TpuClientMeta):
             request: Union[cloud_tpu.GetAcceleratorTypeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_tpu.AcceleratorType:

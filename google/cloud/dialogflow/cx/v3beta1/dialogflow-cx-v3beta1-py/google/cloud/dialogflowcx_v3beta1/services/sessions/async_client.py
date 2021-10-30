@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, AsyncIterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.dialogflowcx_v3beta1.types import audio_config
 from google.cloud.dialogflowcx_v3beta1.types import page
@@ -166,9 +168,9 @@ class SessionsAsyncClient:
         )
 
     async def detect_intent(self,
-            request: session.DetectIntentRequest = None,
+            request: Union[session.DetectIntentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> session.DetectIntentResponse:
@@ -182,7 +184,7 @@ class SessionsAsyncClient:
         environments <https://cloud.google.com/dialogflow/cx/docs/concept/version>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3beta1.types.DetectIntentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3beta1.types.DetectIntentRequest, dict]):
                 The request object. The request to detect user's intent.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -235,7 +237,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
     def streaming_detect_intent(self,
             requests: AsyncIterator[session.StreamingDetectIntentRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[session.StreamingDetectIntentResponse]]:
@@ -347,9 +349,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def match_intent(self,
-            request: session.MatchIntentRequest = None,
+            request: Union[session.MatchIntentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> session.MatchIntentResponse:
@@ -357,7 +359,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         change the session status.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3beta1.types.MatchIntentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3beta1.types.MatchIntentRequest, dict]):
                 The request object. Request of [MatchIntent][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -400,9 +402,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def fulfill_intent(self,
-            request: session.FulfillIntentRequest = None,
+            request: Union[session.FulfillIntentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> session.FulfillIntentResponse:
@@ -415,7 +417,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Otherwise, the behavior is undefined.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3beta1.types.FulfillIntentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3beta1.types.FulfillIntentRequest, dict]):
                 The request object. Request of [FulfillIntent][]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

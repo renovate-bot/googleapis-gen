@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.devtools.remoteworkers_v1.types import bots
 from google.devtools.remoteworkers_v1.types import worker
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -369,7 +371,7 @@ class BotsClient(metaclass=BotsClientMeta):
             *,
             parent: str = None,
             bot_session: bots.BotSession = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bots.BotSession:
@@ -464,7 +466,7 @@ class BotsClient(metaclass=BotsClientMeta):
             name: str = None,
             bot_session: bots.BotSession = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bots.BotSession:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.bigquery.storage_v1beta1.types import arrow
 from google.cloud.bigquery.storage_v1beta1.types import avro
@@ -153,12 +155,12 @@ class BigQueryStorageAsyncClient:
         )
 
     async def create_read_session(self,
-            request: storage.CreateReadSessionRequest = None,
+            request: Union[storage.CreateReadSessionRequest, dict] = None,
             *,
             table_reference: gcbs_table_reference.TableReference = None,
             parent: str = None,
             requested_streams: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.ReadSession:
@@ -178,7 +180,7 @@ class BigQueryStorageAsyncClient:
         caller.
 
         Args:
-            request (:class:`google.cloud.bigquery.storage_v1beta1.types.CreateReadSessionRequest`):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.CreateReadSessionRequest, dict]):
                 The request object. Creates a new read session, which
                 may include additional options such as requested
                 parallelism, projection filters and constraints.
@@ -277,10 +279,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     def read_rows(self,
-            request: storage.ReadRowsRequest = None,
+            request: Union[storage.ReadRowsRequest, dict] = None,
             *,
             read_position: storage.StreamPosition = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[storage.ReadRowsResponse]]:
@@ -298,7 +300,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         read data.
 
         Args:
-            request (:class:`google.cloud.bigquery.storage_v1beta1.types.ReadRowsRequest`):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.ReadRowsRequest, dict]):
                 The request object. Requesting row data via `ReadRows`
                 must provide Stream position information.
             read_position (:class:`google.cloud.bigquery.storage_v1beta1.types.StreamPosition`):
@@ -372,11 +374,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_create_read_session_streams(self,
-            request: storage.BatchCreateReadSessionStreamsRequest = None,
+            request: Union[storage.BatchCreateReadSessionStreamsRequest, dict] = None,
             *,
             session: storage.ReadSession = None,
             requested_streams: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.BatchCreateReadSessionStreamsResponse:
@@ -386,7 +388,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         workers.
 
         Args:
-            request (:class:`google.cloud.bigquery.storage_v1beta1.types.BatchCreateReadSessionStreamsRequest`):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.BatchCreateReadSessionStreamsRequest, dict]):
                 The request object. Information needed to request
                 additional streams for an established read session.
             session (:class:`google.cloud.bigquery.storage_v1beta1.types.ReadSession`):
@@ -472,10 +474,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def finalize_stream(self,
-            request: storage.FinalizeStreamRequest = None,
+            request: Union[storage.FinalizeStreamRequest, dict] = None,
             *,
             stream: storage.Stream = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -498,7 +500,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         been called on the given Stream.
 
         Args:
-            request (:class:`google.cloud.bigquery.storage_v1beta1.types.FinalizeStreamRequest`):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.FinalizeStreamRequest, dict]):
                 The request object. Request information for invoking
                 `FinalizeStream`.
             stream (:class:`google.cloud.bigquery.storage_v1beta1.types.Stream`):
@@ -559,10 +561,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def split_read_stream(self,
-            request: storage.SplitReadStreamRequest = None,
+            request: Union[storage.SplitReadStreamRequest, dict] = None,
             *,
             original_stream: storage.Stream = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.SplitReadStreamResponse:
@@ -582,7 +584,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         This method is guaranteed to be idempotent.
 
         Args:
-            request (:class:`google.cloud.bigquery.storage_v1beta1.types.SplitReadStreamRequest`):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.SplitReadStreamRequest, dict]):
                 The request object. Request information for
                 `SplitReadStream`.
             original_stream (:class:`google.cloud.bigquery.storage_v1beta1.types.Stream`):

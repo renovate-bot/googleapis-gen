@@ -205,11 +205,15 @@ class NetworkReportSpec(proto.Message):
         r"""Describes which report rows to match based on their dimension
         values.
 
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             matches_any (google.ads.admob_v1.types.StringList):
                 Matches a row if its value for the specified
                 dimension is in one of the values specified in
                 this condition.
+                This field is a member of `oneof`_ ``operator``.
             dimension (google.ads.admob_v1.types.NetworkReportSpec.Dimension):
                 Applies the filter criterion to the specified
                 dimension.
@@ -230,11 +234,20 @@ class NetworkReportSpec(proto.Message):
     class SortCondition(proto.Message):
         r"""Sorting direction to be applied on a dimension or a metric.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             dimension (google.ads.admob_v1.types.NetworkReportSpec.Dimension):
                 Sort by the specified dimension.
+                This field is a member of `oneof`_ ``sort_on``.
             metric (google.ads.admob_v1.types.NetworkReportSpec.Metric):
                 Sort by the specified metric.
+                This field is a member of `oneof`_ ``sort_on``.
             order (google.ads.admob_v1.types.SortOrder):
                 Sorting order of the dimension or metric.
         """
@@ -418,11 +431,15 @@ class MediationReportSpec(proto.Message):
         r"""Describes which report rows to match based on their dimension
         values.
 
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             matches_any (google.ads.admob_v1.types.StringList):
                 Matches a row if its value for the specified
                 dimension is in one of the values specified in
                 this condition.
+                This field is a member of `oneof`_ ``operator``.
             dimension (google.ads.admob_v1.types.MediationReportSpec.Dimension):
                 Applies the filter criterion to the specified
                 dimension.
@@ -443,11 +460,20 @@ class MediationReportSpec(proto.Message):
     class SortCondition(proto.Message):
         r"""Sorting direction to be applied on a dimension or a metric.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             dimension (google.ads.admob_v1.types.MediationReportSpec.Dimension):
                 Sort by the specified dimension.
+                This field is a member of `oneof`_ ``sort_on``.
             metric (google.ads.admob_v1.types.MediationReportSpec.Metric):
                 Sort by the specified metric.
+                This field is a member of `oneof`_ ``sort_on``.
             order (google.ads.admob_v1.types.SortOrder):
                 Sorting order of the dimension or metric.
         """
@@ -549,18 +575,28 @@ class ReportRow(proto.Message):
     class MetricValue(proto.Message):
         r"""Representation of a metric value.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             integer_value (int):
                 Metric integer value.
+                This field is a member of `oneof`_ ``value``.
             double_value (float):
                 Double precision (approximate) decimal
                 values. Rates are from 0 to 1.
+                This field is a member of `oneof`_ ``value``.
             micros_value (int):
                 Amount in micros. One million is equivalent
                 to one unit. Currency value is in the unit (USD,
                 EUR or other) specified by the request. For
                 example, $6.50 whould be represented as 6500000
                 micros.
+                This field is a member of `oneof`_ ``value``.
         """
 
         integer_value = proto.Field(

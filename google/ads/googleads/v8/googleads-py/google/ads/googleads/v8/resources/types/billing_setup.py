@@ -32,6 +32,13 @@ class BillingSetup(proto.Message):
     r"""A billing setup, which associates a payments account and an
     advertiser. A billing setup is specific to one advertiser.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the billing setup.
@@ -40,6 +47,7 @@ class BillingSetup(proto.Message):
             ``customers/{customer_id}/billingSetups/{billing_setup_id}``
         id (int):
             Output only. The ID of the billing setup.
+            This field is a member of `oneof`_ ``_id``.
         status (google.ads.googleads.v8.enums.types.BillingSetupStatusEnum.BillingSetupStatus):
             Output only. The status of the billing setup.
         payments_account (str):
@@ -52,6 +60,7 @@ class BillingSetup(proto.Message):
             existing payments account (and then payments_account_info
             should not be set). When getting a billing setup, this and
             payments_account_info will be populated.
+            This field is a member of `oneof`_ ``_payments_account``.
         payments_account_info (google.ads.googleads.v8.resources.types.BillingSetup.PaymentsAccountInfo):
             Immutable. The payments account information associated with
             this billing setup. When setting up billing, this is used to
@@ -62,15 +71,19 @@ class BillingSetup(proto.Message):
             Immutable. The start date time in yyyy-MM-dd
             or yyyy-MM-dd HH:mm:ss format. Only a future
             time is allowed.
+            This field is a member of `oneof`_ ``start_time``.
         start_time_type (google.ads.googleads.v8.enums.types.TimeTypeEnum.TimeType):
             Immutable. The start time as a type. Only NOW
             is allowed.
+            This field is a member of `oneof`_ ``start_time``.
         end_date_time (str):
             Output only. The end date time in yyyy-MM-dd
             or yyyy-MM-dd HH:mm:ss format.
+            This field is a member of `oneof`_ ``end_time``.
         end_time_type (google.ads.googleads.v8.enums.types.TimeTypeEnum.TimeType):
             Output only. The end time as a type.  The
             only possible value is FOREVER.
+            This field is a member of `oneof`_ ``end_time``.
     """
 
     class PaymentsAccountInfo(proto.Message):
@@ -83,6 +96,7 @@ class BillingSetup(proto.Message):
                 setup.
                 This must be passed as a string with dashes,
                 e.g. "1234-5678-9012-3456".
+                This field is a member of `oneof`_ ``_payments_account_id``.
             payments_account_name (str):
                 Immutable. The name of the payments account
                 associated with the billing setup.
@@ -92,20 +106,24 @@ class BillingSetup(proto.Message):
 
                 This name will be printed in the monthly
                 invoices.
+                This field is a member of `oneof`_ ``_payments_account_name``.
             payments_profile_id (str):
                 Immutable. A 12 digit id used to identify the
                 payments profile associated with the billing
                 setup.
                 This must be passed in as a string with dashes,
                 e.g. "1234-5678-9012".
+                This field is a member of `oneof`_ ``_payments_profile_id``.
             payments_profile_name (str):
                 Output only. The name of the payments profile
                 associated with the billing setup.
+                This field is a member of `oneof`_ ``_payments_profile_name``.
             secondary_payments_profile_id (str):
                 Output only. A secondary payments profile id
                 present in uncommon situations, e.g. when a
                 sequential liability agreement has been
                 arranged.
+                This field is a member of `oneof`_ ``_secondary_payments_profile_id``.
         """
 
         payments_account_id = proto.Field(

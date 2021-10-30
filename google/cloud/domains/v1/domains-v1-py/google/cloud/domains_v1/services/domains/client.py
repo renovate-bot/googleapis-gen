@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.domains_v1.services.domains import pagers
@@ -345,7 +347,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             *,
             location: str = None,
             query: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domains.SearchDomainsResponse:
@@ -433,7 +435,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             *,
             location: str = None,
             domain_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domains.RetrieveRegisterParametersResponse:
@@ -520,7 +522,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             parent: str = None,
             registration: domains.Registration = None,
             yearly_price: money_pb2.Money = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -660,7 +662,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             *,
             location: str = None,
             domain_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domains.RetrieveTransferParametersResponse:
@@ -750,7 +752,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             registration: domains.Registration = None,
             yearly_price: money_pb2.Money = None,
             authorization_code: domains.AuthorizationCode = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -915,7 +917,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             request: Union[domains.ListRegistrationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRegistrationsPager:
@@ -1002,7 +1004,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             request: Union[domains.GetRegistrationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domains.Registration:
@@ -1098,7 +1100,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             *,
             registration: domains.Registration = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1222,7 +1224,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             registration: str = None,
             management_settings: domains.ManagementSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1348,7 +1350,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             registration: str = None,
             dns_settings: domains.DnsSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1481,7 +1483,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             registration: str = None,
             contact_settings: domains.ContactSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1606,7 +1608,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             request: Union[domains.ExportRegistrationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1720,7 +1722,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             request: Union[domains.DeleteRegistrationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1837,7 +1839,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             request: Union[domains.RetrieveAuthorizationCodeRequest, dict] = None,
             *,
             registration: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domains.AuthorizationCode:
@@ -1915,7 +1917,7 @@ class DomainsClient(metaclass=DomainsClientMeta):
             request: Union[domains.ResetAuthorizationCodeRequest, dict] = None,
             *,
             registration: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domains.AuthorizationCode:

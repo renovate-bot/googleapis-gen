@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -156,16 +158,16 @@ class BuildServiceAsyncClient:
         )
 
     async def list_build_targets(self,
-            request: build_service.ListBuildTargetsRequest = None,
+            request: Union[build_service.ListBuildTargetsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBuildTargetsAsyncPager:
         r"""Lists all build targets that a user has access to.
 
         Args:
-            request (:class:`google.chromeos.moblab_v1beta1.types.ListBuildTargetsRequest`):
+            request (Union[google.chromeos.moblab_v1beta1.types.ListBuildTargetsRequest, dict]):
                 The request object. Request message for listing build
                 targets.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -215,17 +217,17 @@ class BuildServiceAsyncClient:
         return response
 
     async def list_models(self,
-            request: build_service.ListModelsRequest = None,
+            request: Union[build_service.ListModelsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListModelsAsyncPager:
         r"""Lists all models for the given build target.
 
         Args:
-            request (:class:`google.chromeos.moblab_v1beta1.types.ListModelsRequest`):
+            request (Union[google.chromeos.moblab_v1beta1.types.ListModelsRequest, dict]):
                 The request object. Request message for listing models.
             parent (:class:`str`):
                 Required. The full resource name of
@@ -300,10 +302,10 @@ class BuildServiceAsyncClient:
         return response
 
     async def list_builds(self,
-            request: build_service.ListBuildsRequest = None,
+            request: Union[build_service.ListBuildsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBuildsAsyncPager:
@@ -312,7 +314,7 @@ class BuildServiceAsyncClient:
         versions.
 
         Args:
-            request (:class:`google.chromeos.moblab_v1beta1.types.ListBuildsRequest`):
+            request (Union[google.chromeos.moblab_v1beta1.types.ListBuildsRequest, dict]):
                 The request object. Request message for listing builds.
             parent (:class:`str`):
                 Required. The full resource name of
@@ -396,10 +398,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def check_build_stage_status(self,
-            request: build_service.CheckBuildStageStatusRequest = None,
+            request: Union[build_service.CheckBuildStageStatusRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> build_service.CheckBuildStageStatusResponse:
@@ -407,7 +409,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         a partner Google Cloud Storage bucket.
 
         Args:
-            request (:class:`google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest`):
+            request (Union[google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest, dict]):
                 The request object. Request message for checking if the
                 build artifact is staged.
             name (:class:`str`):
@@ -480,10 +482,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def stage_build(self,
-            request: build_service.StageBuildRequest = None,
+            request: Union[build_service.StageBuildRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -496,7 +498,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]>
 
         Args:
-            request (:class:`google.chromeos.moblab_v1beta1.types.StageBuildRequest`):
+            request (Union[google.chromeos.moblab_v1beta1.types.StageBuildRequest, dict]):
                 The request object. Request message for staging a build
                 artifact.
             name (:class:`str`):
@@ -574,10 +576,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def find_most_stable_build(self,
-            request: build_service.FindMostStableBuildRequest = None,
+            request: Union[build_service.FindMostStableBuildRequest, dict] = None,
             *,
             build_target: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> build_service.FindMostStableBuildResponse:
@@ -597,7 +599,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         build status Pass
 
         Args:
-            request (:class:`google.chromeos.moblab_v1beta1.types.FindMostStableBuildRequest`):
+            request (Union[google.chromeos.moblab_v1beta1.types.FindMostStableBuildRequest, dict]):
                 The request object. Request message for finding the most
                 stable build.
             build_target (:class:`str`):

@@ -45,10 +45,12 @@ class ConversionAction(proto.Message):
             ``customers/{customer_id}/conversionActions/{conversion_action_id}``
         id (int):
             Output only. The ID of the conversion action.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the conversion action.
             This field is required and should not be empty
             when creating new conversion actions.
+            This field is a member of `oneof`_ ``_name``.
         status (google.ads.googleads.v8.enums.types.ConversionActionStatusEnum.ConversionActionStatus):
             The status of this conversion action for
             conversion event accrual.
@@ -62,17 +64,21 @@ class ConversionAction(proto.Message):
             Output only. The resource name of the
             conversion action owner customer, or null if
             this is a system-defined conversion action.
+            This field is a member of `oneof`_ ``_owner_customer``.
         include_in_conversions_metric (bool):
             Whether this conversion action should be
             included in the "conversions" metric.
+            This field is a member of `oneof`_ ``_include_in_conversions_metric``.
         click_through_lookback_window_days (int):
             The maximum number of days that may elapse
             between an interaction (e.g., a click) and a
             conversion event.
+            This field is a member of `oneof`_ ``_click_through_lookback_window_days``.
         view_through_lookback_window_days (int):
             The maximum number of days which may elapse
             between an impression and a conversion without
             an interaction.
+            This field is a member of `oneof`_ ``_view_through_lookback_window_days``.
         value_settings (google.ads.googleads.v8.resources.types.ConversionAction.ValueSettings):
             Settings related to the value for conversion
             events associated with this conversion action.
@@ -91,8 +97,10 @@ class ConversionAction(proto.Message):
             conversion action.
             The value must be between 0 and 10000,
             inclusive.
+            This field is a member of `oneof`_ ``_phone_call_duration_seconds``.
         app_id (str):
             App ID for an app conversion action.
+            This field is a member of `oneof`_ ``_app_id``.
         mobile_app_vendor (google.ads.googleads.v8.enums.types.MobileAppVendorEnum.MobileAppVendor):
             Output only. Mobile app vendor for an app
             conversion action.
@@ -139,17 +147,20 @@ class ConversionAction(proto.Message):
                 disallowed or missing value, or when this
                 conversion action is configured to always use
                 the default value.
+                This field is a member of `oneof`_ ``_default_value``.
             default_currency_code (str):
                 The currency code to use when conversion
                 events for this conversion action are sent with
                 an invalid or missing currency code, or when
                 this conversion action is configured to always
                 use the default value.
+                This field is a member of `oneof`_ ``_default_currency_code``.
             always_use_default_value (bool):
                 Controls whether the default value and
                 default currency code are used in place of the
                 value and currency code specified in conversion
                 events for this conversion action.
+                This field is a member of `oneof`_ ``_always_use_default_value``.
         """
 
         default_value = proto.Field(
@@ -175,9 +186,11 @@ class ConversionAction(proto.Message):
             event_name (str):
                 Output only. The event name of a Firebase
                 conversion.
+                This field is a member of `oneof`_ ``_event_name``.
             project_id (str):
                 Output only. The Firebase project ID of the
                 conversion.
+                This field is a member of `oneof`_ ``_project_id``.
         """
 
         event_name = proto.Field(
@@ -199,6 +212,7 @@ class ConversionAction(proto.Message):
             event_name (str):
                 Output only. The event name of a third-party
                 app analytics conversion.
+                This field is a member of `oneof`_ ``_event_name``.
             provider_name (str):
                 Output only. Name of the third-party app
                 analytics provider.

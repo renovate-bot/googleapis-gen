@@ -28,13 +28,22 @@ __protobuf__ = proto.module(
 class QueryDriveActivityRequest(proto.Message):
     r"""The request message for querying Drive activity.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         item_name (str):
             Return activities for this Drive item. The format is
             ``items/ITEM_ID``.
+            This field is a member of `oneof`_ ``key``.
         ancestor_name (str):
             Return activities for this Drive folder and all children and
             descendants. The format is ``items/ITEM_ID``.
+            This field is a member of `oneof`_ ``key``.
         consolidation_strategy (google.apps.drive.activity_v2.types.ConsolidationStrategy):
             Details on how to consolidate related actions
             that make up the activity. If not set, then
@@ -112,13 +121,22 @@ class ConsolidationStrategy(proto.Message):
     the same action on a single target. The strategy defines the
     rules for which activities are related.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         none (google.apps.drive.activity_v2.types.ConsolidationStrategy.NoConsolidation):
             The individual activities are not
             consolidated.
+            This field is a member of `oneof`_ ``strategy``.
         legacy (google.apps.drive.activity_v2.types.ConsolidationStrategy.Legacy):
             The individual activities are consolidated
             using the legacy strategy.
+            This field is a member of `oneof`_ ``strategy``.
     """
 
     class NoConsolidation(proto.Message):

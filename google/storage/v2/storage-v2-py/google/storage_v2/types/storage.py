@@ -102,6 +102,7 @@ class ReadObjectRequest(proto.Message):
             given value. Setting to 0 makes the operation
             succeed only if there are no live versions of
             the object.
+            This field is a member of `oneof`_ ``_if_generation_match``.
         if_generation_not_match (int):
             Makes the operation conditional on whether
             the object's current generation does not match
@@ -109,14 +110,17 @@ class ReadObjectRequest(proto.Message):
             precondition fails. Setting to 0 makes the
             operation succeed only if there is a live
             version of the object.
+            This field is a member of `oneof`_ ``_if_generation_not_match``.
         if_metageneration_match (int):
             Makes the operation conditional on whether
             the object's current metageneration matches the
             given value.
+            This field is a member of `oneof`_ ``_if_metageneration_match``.
         if_metageneration_not_match (int):
             Makes the operation conditional on whether
             the object's current metageneration does not
             match the given value.
+            This field is a member of `oneof`_ ``_if_metageneration_not_match``.
         common_object_request_params (google.storage_v2.types.CommonObjectRequestParams):
             A set of parameters common to Storage API
             requests concerning an object.
@@ -130,6 +134,7 @@ class ReadObjectRequest(proto.Message):
             and metadata.acl.
 
             -  may be used to mean "all fields".
+            This field is a member of `oneof`_ ``_read_mask``.
     """
 
     bucket = proto.Field(
@@ -254,6 +259,7 @@ class WriteObjectSpec(proto.Message):
             given value. Setting to 0 makes the operation
             succeed only if there are no live versions of
             the object.
+            This field is a member of `oneof`_ ``_if_generation_match``.
         if_generation_not_match (int):
             Makes the operation conditional on whether
             the object's current generation does not match
@@ -261,14 +267,17 @@ class WriteObjectSpec(proto.Message):
             precondition fails. Setting to 0 makes the
             operation succeed only if there is a live
             version of the object.
+            This field is a member of `oneof`_ ``_if_generation_not_match``.
         if_metageneration_match (int):
             Makes the operation conditional on whether
             the object's current metageneration matches the
             given value.
+            This field is a member of `oneof`_ ``_if_metageneration_match``.
         if_metageneration_not_match (int):
             Makes the operation conditional on whether
             the object's current metageneration does not
             match the given value.
+            This field is a member of `oneof`_ ``_if_metageneration_not_match``.
     """
 
     resource = proto.Field(
@@ -306,14 +315,23 @@ class WriteObjectSpec(proto.Message):
 class WriteObjectRequest(proto.Message):
     r"""Request message for WriteObject.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         upload_id (str):
             For resumable uploads. This should be the ``upload_id``
             returned from a call to ``StartResumableWriteResponse``.
+            This field is a member of `oneof`_ ``first_message``.
         write_object_spec (google.storage_v2.types.WriteObjectSpec):
             For non-resumable uploads. Describes the
             overall upload, including the destination bucket
             and object name, preconditions, etc.
+            This field is a member of `oneof`_ ``first_message``.
         write_offset (int):
             Required. The offset from the beginning of the object at
             which the data should be written.
@@ -333,6 +351,7 @@ class WriteObjectRequest(proto.Message):
             The data to insert. If a crc32c checksum is
             provided that doesn't match the checksum
             computed by the service, the request will fail.
+            This field is a member of `oneof`_ ``data``.
         object_checksums (google.storage_v2.types.ObjectChecksums):
             Checksums for the complete object. If the checksums computed
             by the service don't match the specifified checksums the
@@ -398,15 +417,24 @@ class WriteObjectRequest(proto.Message):
 class WriteObjectResponse(proto.Message):
     r"""Response message for WriteObject.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         persisted_size (int):
             The total number of bytes that have been processed for the
             given object from all ``WriteObject`` calls. Only set if the
             upload has not finalized.
+            This field is a member of `oneof`_ ``write_status``.
         resource (google.storage_v2.types.Object):
             A resource containing the metadata for the
             uploaded object. Only set if the upload has
             finalized.
+            This field is a member of `oneof`_ ``write_status``.
     """
 
     persisted_size = proto.Field(
@@ -457,6 +485,13 @@ class QueryWriteStatusRequest(proto.Message):
 class QueryWriteStatusResponse(proto.Message):
     r"""Response object for ``QueryWriteStatus``.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         persisted_size (int):
             The total number of bytes that have been processed for the
@@ -464,10 +499,12 @@ class QueryWriteStatusResponse(proto.Message):
             correct value for the 'write_offset' field to use when
             resuming the ``WriteObject`` operation. Only set if the
             upload has not finalized.
+            This field is a member of `oneof`_ ``write_status``.
         resource (google.storage_v2.types.Object):
             A resource containing the metadata for the
             uploaded object. Only set if the upload has
             finalized.
+            This field is a member of `oneof`_ ``write_status``.
     """
 
     persisted_size = proto.Field(
@@ -922,6 +959,7 @@ class Bucket(proto.Message):
                         satisfied when an object reaches the specified
                         age. A value of 0 indicates that all objects
                         immediately match this condition.
+                        This field is a member of `oneof`_ ``_age_days``.
                     created_before (google.type.date_pb2.Date):
                         This condition is satisfied when an object is
                         created before midnight of the specified date in
@@ -930,12 +968,14 @@ class Bucket(proto.Message):
                         Relevant only for versioned objects. If the value is
                         ``true``, this condition matches live objects; if the value
                         is ``false``, it matches archived objects.
+                        This field is a member of `oneof`_ ``_is_live``.
                     num_newer_versions (int):
                         Relevant only for versioned objects. If the
                         value is N, this condition is satisfied when
                         there are at least N versions (including the
                         live version) newer than this version of the
                         object.
+                        This field is a member of `oneof`_ ``_num_newer_versions``.
                     matches_storage_class (Sequence[str]):
                         Objects having any of the storage classes specified by this
                         condition will be matched. Values include
@@ -947,6 +987,7 @@ class Bucket(proto.Message):
                         custom timestamp set on an object.
                         The value of the field must be a nonnegative
                         integer.
+                        This field is a member of `oneof`_ ``_days_since_custom_time``.
                     custom_time_before (google.type.date_pb2.Date):
                         An object matches this condition if the
                         custom timestamp set on the object is before the
@@ -960,6 +1001,7 @@ class Bucket(proto.Message):
                         zero, the object version will become eligible
                         for Lifecycle action as soon as it becomes
                         noncurrent.
+                        This field is a member of `oneof`_ ``_days_since_noncurrent_time``.
                     noncurrent_time_before (google.type.date_pb2.Date):
                         This condition is relevant only for versioned
                         objects. An object version satisfies this
@@ -1327,6 +1369,7 @@ class ChecksummedData(proto.Message):
         crc32c (int):
             If set, the CRC32C digest of the content
             field.
+            This field is a member of `oneof`_ ``_crc32c``.
     """
 
     content = proto.Field(
@@ -1351,6 +1394,7 @@ class ObjectChecksums(proto.Message):
             objects. If set in an WriteObjectRequest,
             service will validate that the stored object
             matches this checksum.
+            This field is a member of `oneof`_ ``_crc32c``.
         md5_hash (bytes):
             128 bit MD5 hash of the object data. For more information
             about using the MD5 hash, see
@@ -1501,6 +1545,7 @@ class Object(proto.Message):
             that the value should be taken from the parent bucket's
             "default_event_based_hold" field. In a response, this field
             will always be set to true or false.
+            This field is a member of `oneof`_ ``_event_based_hold``.
         owner (google.storage_v2.types.Owner):
             Output only. The owner of the object. This will always be
             the uploader of the object. Attempting to set or update this

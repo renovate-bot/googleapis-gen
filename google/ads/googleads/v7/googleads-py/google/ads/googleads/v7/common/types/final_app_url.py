@@ -44,6 +44,7 @@ class FinalAppUrl(proto.Message):
             path specify the unique location in the app where your
             content exists. Example: "exampleapp://productid_1234".
             Required.
+            This field is a member of `oneof`_ ``_url``.
     """
 
     os_type = proto.Field(

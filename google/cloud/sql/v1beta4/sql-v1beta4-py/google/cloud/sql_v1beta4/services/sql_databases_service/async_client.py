@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.sql_v1beta4.types import cloud_sql
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
@@ -144,16 +146,16 @@ class SqlDatabasesServiceAsyncClient:
         )
 
     async def delete(self,
-            request: cloud_sql.SqlDatabasesDeleteRequest = None,
+            request: Union[cloud_sql.SqlDatabasesDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
         r"""Deletes a database from a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlDatabasesDeleteRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlDatabasesDeleteRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -193,9 +195,9 @@ class SqlDatabasesServiceAsyncClient:
         return response
 
     async def get(self,
-            request: cloud_sql.SqlDatabasesGetRequest = None,
+            request: Union[cloud_sql.SqlDatabasesGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Database:
@@ -203,7 +205,7 @@ class SqlDatabasesServiceAsyncClient:
         database inside a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlDatabasesGetRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlDatabasesGetRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -240,9 +242,9 @@ class SqlDatabasesServiceAsyncClient:
         return response
 
     async def insert(self,
-            request: cloud_sql.SqlDatabasesInsertRequest = None,
+            request: Union[cloud_sql.SqlDatabasesInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -250,7 +252,7 @@ class SqlDatabasesServiceAsyncClient:
         database inside a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlDatabasesInsertRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlDatabasesInsertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -290,16 +292,16 @@ class SqlDatabasesServiceAsyncClient:
         return response
 
     async def list(self,
-            request: cloud_sql.SqlDatabasesListRequest = None,
+            request: Union[cloud_sql.SqlDatabasesListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.DatabasesListResponse:
         r"""Lists databases in the specified Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlDatabasesListRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlDatabasesListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -334,9 +336,9 @@ class SqlDatabasesServiceAsyncClient:
         return response
 
     async def patch(self,
-            request: cloud_sql.SqlDatabasesUpdateRequest = None,
+            request: Union[cloud_sql.SqlDatabasesUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -345,7 +347,7 @@ class SqlDatabasesServiceAsyncClient:
         method supports patch semantics.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlDatabasesUpdateRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlDatabasesUpdateRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -385,9 +387,9 @@ class SqlDatabasesServiceAsyncClient:
         return response
 
     async def update(self,
-            request: cloud_sql.SqlDatabasesUpdateRequest = None,
+            request: Union[cloud_sql.SqlDatabasesUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -395,7 +397,7 @@ class SqlDatabasesServiceAsyncClient:
         database inside a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlDatabasesUpdateRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlDatabasesUpdateRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

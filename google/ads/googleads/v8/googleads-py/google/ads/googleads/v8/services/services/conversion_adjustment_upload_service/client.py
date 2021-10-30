@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.services.types import conversion_adjustment_upload_service
 from google.rpc import status_pb2  # type: ignore
 from .transports.base import ConversionAdjustmentUploadServiceTransport, DEFAULT_CLIENT_INFO
@@ -329,7 +331,7 @@ class ConversionAdjustmentUploadServiceClient(metaclass=ConversionAdjustmentUplo
             customer_id: str = None,
             conversion_adjustments: Sequence[conversion_adjustment_upload_service.ConversionAdjustment] = None,
             partial_failure: bool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_adjustment_upload_service.UploadConversionAdjustmentsResponse:

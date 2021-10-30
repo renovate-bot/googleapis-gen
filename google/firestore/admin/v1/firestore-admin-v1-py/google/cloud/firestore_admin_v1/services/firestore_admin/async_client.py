@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -161,11 +163,11 @@ class FirestoreAdminAsyncClient:
         )
 
     async def create_index(self,
-            request: firestore_admin.CreateIndexRequest = None,
+            request: Union[firestore_admin.CreateIndexRequest, dict] = None,
             *,
             parent: str = None,
             index: gfa_index.Index = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -176,7 +178,7 @@ class FirestoreAdminAsyncClient:
         [IndexOperationMetadata][google.firestore.admin.v1.IndexOperationMetadata].
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.CreateIndexRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.CreateIndexRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.CreateIndex][google.firestore.admin.v1.FirestoreAdmin.CreateIndex].
             parent (:class:`str`):
@@ -260,17 +262,17 @@ class FirestoreAdminAsyncClient:
         return response
 
     async def list_indexes(self,
-            request: firestore_admin.ListIndexesRequest = None,
+            request: Union[firestore_admin.ListIndexesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIndexesAsyncPager:
         r"""Lists composite indexes.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.ListIndexesRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.ListIndexesRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.ListIndexes][google.firestore.admin.v1.FirestoreAdmin.ListIndexes].
             parent (:class:`str`):
@@ -355,17 +357,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_index(self,
-            request: firestore_admin.GetIndexRequest = None,
+            request: Union[firestore_admin.GetIndexRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> index.Index:
         r"""Gets a composite index.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.GetIndexRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.GetIndexRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.GetIndex][google.firestore.admin.v1.FirestoreAdmin.GetIndex].
             name (:class:`str`):
@@ -439,17 +441,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_index(self,
-            request: firestore_admin.DeleteIndexRequest = None,
+            request: Union[firestore_admin.DeleteIndexRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a composite index.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.DeleteIndexRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.DeleteIndexRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.DeleteIndex][google.firestore.admin.v1.FirestoreAdmin.DeleteIndex].
             name (:class:`str`):
@@ -513,17 +515,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def get_field(self,
-            request: firestore_admin.GetFieldRequest = None,
+            request: Union[firestore_admin.GetFieldRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> field.Field:
         r"""Gets the metadata and configuration for a Field.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.GetFieldRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.GetFieldRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.GetField][google.firestore.admin.v1.FirestoreAdmin.GetField].
             name (:class:`str`):
@@ -599,10 +601,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_field(self,
-            request: firestore_admin.UpdateFieldRequest = None,
+            request: Union[firestore_admin.UpdateFieldRequest, dict] = None,
             *,
             field: gfa_field.Field = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -624,7 +626,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ``projects/{project_id}/databases/{database_id}/collectionGroups/__default__/fields/*``.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.UpdateFieldRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.UpdateFieldRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.UpdateField][google.firestore.admin.v1.FirestoreAdmin.UpdateField].
             field (:class:`google.cloud.firestore_admin_v1.types.Field`):
@@ -702,10 +704,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_fields(self,
-            request: firestore_admin.ListFieldsRequest = None,
+            request: Union[firestore_admin.ListFieldsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFieldsAsyncPager:
@@ -719,7 +721,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         with the filter set to ``indexConfig.usesAncestorConfig:false``.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.ListFieldsRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.ListFieldsRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields].
             parent (:class:`str`):
@@ -804,10 +806,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def export_documents(self,
-            request: firestore_admin.ExportDocumentsRequest = None,
+            request: Union[firestore_admin.ExportDocumentsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -823,7 +825,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Google Cloud Storage.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.ExportDocumentsRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.ExportDocumentsRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.ExportDocuments][google.firestore.admin.v1.FirestoreAdmin.ExportDocuments].
             name (:class:`str`):
@@ -901,10 +903,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def import_documents(self,
-            request: firestore_admin.ImportDocumentsRequest = None,
+            request: Union[firestore_admin.ImportDocumentsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -917,7 +919,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         already been imported to Cloud Firestore.
 
         Args:
-            request (:class:`google.cloud.firestore_admin_v1.types.ImportDocumentsRequest`):
+            request (Union[google.cloud.firestore_admin_v1.types.ImportDocumentsRequest, dict]):
                 The request object. The request for
                 [FirestoreAdmin.ImportDocuments][google.firestore.admin.v1.FirestoreAdmin.ImportDocuments].
             name (:class:`str`):

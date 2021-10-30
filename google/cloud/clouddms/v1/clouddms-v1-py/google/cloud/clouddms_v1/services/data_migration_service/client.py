@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.clouddms_v1.services.data_migration_service import pagers
@@ -355,7 +357,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             request: Union[clouddms.ListMigrationJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMigrationJobsPager:
@@ -442,7 +444,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             request: Union[clouddms.GetMigrationJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> clouddms_resources.MigrationJob:
@@ -519,7 +521,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             parent: str = None,
             migration_job: clouddms_resources.MigrationJob = None,
             migration_job_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -628,7 +630,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             *,
             migration_job: clouddms_resources.MigrationJob = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -726,7 +728,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             request: Union[clouddms.DeleteMigrationJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -821,7 +823,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def start_migration_job(self,
             request: Union[clouddms.StartMigrationJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -889,7 +891,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def stop_migration_job(self,
             request: Union[clouddms.StopMigrationJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -957,7 +959,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def resume_migration_job(self,
             request: Union[clouddms.ResumeMigrationJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1026,7 +1028,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def promote_migration_job(self,
             request: Union[clouddms.PromoteMigrationJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1096,7 +1098,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def verify_migration_job(self,
             request: Union[clouddms.VerifyMigrationJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1166,7 +1168,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def restart_migration_job(self,
             request: Union[clouddms.RestartMigrationJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1236,7 +1238,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
     def generate_ssh_script(self,
             request: Union[clouddms.GenerateSshScriptRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> clouddms.SshScript:
@@ -1294,7 +1296,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             request: Union[clouddms.ListConnectionProfilesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConnectionProfilesPager:
@@ -1382,7 +1384,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             request: Union[clouddms.GetConnectionProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> clouddms_resources.ConnectionProfile:
@@ -1457,7 +1459,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             parent: str = None,
             connection_profile: clouddms_resources.ConnectionProfile = None,
             connection_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1563,7 +1565,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             *,
             connection_profile: clouddms_resources.ConnectionProfile = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1661,7 +1663,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
             request: Union[clouddms.DeleteConnectionProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

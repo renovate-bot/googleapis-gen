@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.services.types import user_data_service
 from .transports.base import UserDataServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import UserDataServiceGrpcTransport
@@ -327,7 +329,7 @@ class UserDataServiceClient(metaclass=UserDataServiceClientMeta):
     def upload_user_data(self,
             request: Union[user_data_service.UploadUserDataRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> user_data_service.UploadUserDataResponse:

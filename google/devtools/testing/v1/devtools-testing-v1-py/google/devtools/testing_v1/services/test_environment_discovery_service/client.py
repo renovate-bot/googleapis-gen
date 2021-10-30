@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.devtools.testing_v1.types import test_environment_discovery
 from .transports.base import TestEnvironmentDiscoveryServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TestEnvironmentDiscoveryServiceGrpcTransport
@@ -359,7 +361,7 @@ class TestEnvironmentDiscoveryServiceClient(metaclass=TestEnvironmentDiscoverySe
     def get_test_environment_catalog(self,
             request: Union[test_environment_discovery.GetTestEnvironmentCatalogRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_environment_discovery.TestEnvironmentCatalog:

@@ -38,6 +38,7 @@ class PaidOrganicSearchTermView(proto.Message):
             ``customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~ {ad_group_id}~{URL-base64 search term}``
         search_term (str):
             Output only. The search term.
+            This field is a member of `oneof`_ ``_search_term``.
     """
 
     resource_name = proto.Field(

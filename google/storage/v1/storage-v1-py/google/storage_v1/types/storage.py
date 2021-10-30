@@ -2152,14 +2152,23 @@ class InsertObjectSpec(proto.Message):
 class InsertObjectRequest(proto.Message):
     r"""Message for writing an object.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         upload_id (str):
             For resumable uploads. This should be the ``upload_id``
             returned from a call to ``StartResumableWriteResponse``.
+            This field is a member of `oneof`_ ``first_message``.
         insert_object_spec (google.storage_v1.types.InsertObjectSpec):
             For non-resumable uploads. Describes the
             overall upload, including the destination bucket
             and object name, preconditions, etc.
+            This field is a member of `oneof`_ ``first_message``.
         write_offset (int):
             Required. The offset from the beginning of the object at
             which the data should be written.
@@ -2179,6 +2188,7 @@ class InsertObjectRequest(proto.Message):
             The data to insert. If a crc32c checksum is
             provided that doesn't match the checksum
             computed by the service, the request will fail.
+            This field is a member of `oneof`_ ``data``.
         reference (google.storage_v1.types.GetObjectMediaRequest):
             A reference to an existing object. This can
             be used to support several use cases:
@@ -2196,6 +2206,7 @@ class InsertObjectRequest(proto.Message):
             (created as noted     above) followed by a data
             buffer followed by another object     slice can
             be used to support delta upload functionality.
+            This field is a member of `oneof`_ ``data``.
         object_checksums (google.storage_v1.types.ObjectChecksums):
             Checksums for the complete object. If the checksums computed
             by the service don't match the specifified checksums the

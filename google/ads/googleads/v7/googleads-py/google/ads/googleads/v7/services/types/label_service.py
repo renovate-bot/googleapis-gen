@@ -103,6 +103,13 @@ class MutateLabelsRequest(proto.Message):
 class LabelOperation(proto.Message):
     r"""A single operation (create, remove, update) on a label.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -110,14 +117,17 @@ class LabelOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.Label):
             Create operation: No resource name is
             expected for the new label.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.Label):
             Update operation: The label is expected to
             have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the label being
             removed, in this format:
 
             ``customers/{customer_id}/labels/{label_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

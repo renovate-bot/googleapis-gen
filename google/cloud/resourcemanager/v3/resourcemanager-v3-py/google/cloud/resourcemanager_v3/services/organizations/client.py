@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.resourcemanager_v3.services.organizations import pagers
 from google.cloud.resourcemanager_v3.types import organizations
 from google.iam.v1 import iam_policy_pb2  # type: ignore
@@ -339,7 +341,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             request: Union[organizations.GetOrganizationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> organizations.Organization:
@@ -420,7 +422,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             request: Union[organizations.SearchOrganizationsRequest, dict] = None,
             *,
             query: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchOrganizationsPager:
@@ -524,7 +526,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -660,7 +662,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -797,7 +799,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

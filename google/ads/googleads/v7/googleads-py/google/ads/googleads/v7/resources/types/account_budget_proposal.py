@@ -41,6 +41,13 @@ class AccountBudgetProposal(proto.Message):
     Please note that the proposal type (proposal_type) changes which
     fields are required and which must remain empty.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the proposal.
@@ -49,12 +56,15 @@ class AccountBudgetProposal(proto.Message):
             ``customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}``
         id (int):
             Output only. The ID of the proposal.
+            This field is a member of `oneof`_ ``_id``.
         billing_setup (str):
             Immutable. The resource name of the billing
             setup associated with this proposal.
+            This field is a member of `oneof`_ ``_billing_setup``.
         account_budget (str):
             Immutable. The resource name of the account-
             evel budget associated with this proposal.
+            This field is a member of `oneof`_ ``_account_budget``.
         proposal_type (google.ads.googleads.v7.enums.types.AccountBudgetProposalTypeEnum.AccountBudgetProposalType):
             Immutable. The type of this proposal, e.g.
             END to end the budget associated with this
@@ -66,53 +76,69 @@ class AccountBudgetProposal(proto.Message):
         proposed_name (str):
             Immutable. The name to assign to the account-
             evel budget.
+            This field is a member of `oneof`_ ``_proposed_name``.
         approved_start_date_time (str):
             Output only. The approved start date time in
             yyyy-mm-dd hh:mm:ss format.
+            This field is a member of `oneof`_ ``_approved_start_date_time``.
         proposed_purchase_order_number (str):
             Immutable. A purchase order number is a value
             that enables the user to help them reference
             this budget in their monthly invoices.
+            This field is a member of `oneof`_ ``_proposed_purchase_order_number``.
         proposed_notes (str):
             Immutable. Notes associated with this budget.
+            This field is a member of `oneof`_ ``_proposed_notes``.
         creation_date_time (str):
             Output only. The date time when this account-
             evel budget proposal was created, which is not
             the same as its approval date time, if
             applicable.
+            This field is a member of `oneof`_ ``_creation_date_time``.
         approval_date_time (str):
             Output only. The date time when this account-
             evel budget was approved, if applicable.
+            This field is a member of `oneof`_ ``_approval_date_time``.
         proposed_start_date_time (str):
             Immutable. The proposed start date time in
             yyyy-mm-dd hh:mm:ss format.
+            This field is a member of `oneof`_ ``proposed_start_time``.
         proposed_start_time_type (google.ads.googleads.v7.enums.types.TimeTypeEnum.TimeType):
             Immutable. The proposed start date time as a
             well-defined type, e.g. NOW.
+            This field is a member of `oneof`_ ``proposed_start_time``.
         proposed_end_date_time (str):
             Immutable. The proposed end date time in
             yyyy-mm-dd hh:mm:ss format.
+            This field is a member of `oneof`_ ``proposed_end_time``.
         proposed_end_time_type (google.ads.googleads.v7.enums.types.TimeTypeEnum.TimeType):
             Immutable. The proposed end date time as a
             well-defined type, e.g. FOREVER.
+            This field is a member of `oneof`_ ``proposed_end_time``.
         approved_end_date_time (str):
             Output only. The approved end date time in
             yyyy-mm-dd hh:mm:ss format.
+            This field is a member of `oneof`_ ``approved_end_time``.
         approved_end_time_type (google.ads.googleads.v7.enums.types.TimeTypeEnum.TimeType):
             Output only. The approved end date time as a
             well-defined type, e.g. FOREVER.
+            This field is a member of `oneof`_ ``approved_end_time``.
         proposed_spending_limit_micros (int):
             Immutable. The proposed spending limit in
             micros.  One million is equivalent to one unit.
+            This field is a member of `oneof`_ ``proposed_spending_limit``.
         proposed_spending_limit_type (google.ads.googleads.v7.enums.types.SpendingLimitTypeEnum.SpendingLimitType):
             Immutable. The proposed spending limit as a
             well-defined type, e.g. INFINITE.
+            This field is a member of `oneof`_ ``proposed_spending_limit``.
         approved_spending_limit_micros (int):
             Output only. The approved spending limit in
             micros.  One million is equivalent to one unit.
+            This field is a member of `oneof`_ ``approved_spending_limit``.
         approved_spending_limit_type (google.ads.googleads.v7.enums.types.SpendingLimitTypeEnum.SpendingLimitType):
             Output only. The approved spending limit as a
             well-defined type, e.g. INFINITE.
+            This field is a member of `oneof`_ ``approved_spending_limit``.
     """
 
     resource_name = proto.Field(

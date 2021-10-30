@@ -31,6 +31,9 @@ class OperationMetadataV1(proto.Message):
     r"""Metadata for the given
     [google.longrunning.Operation][google.longrunning.Operation].
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         method (str):
             API method that initiated this operation. Example:
@@ -59,6 +62,7 @@ class OperationMetadataV1(proto.Message):
             operation poll. @OutputOnly
         create_version_metadata (google.cloud.appengine_admin_v1.types.CreateVersionMetadataV1):
 
+            This field is a member of `oneof`_ ``method_metadata``.
     """
 
     method = proto.Field(

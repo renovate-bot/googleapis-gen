@@ -342,6 +342,8 @@ class BackupContext(proto.Message):
 class Database(proto.Message):
     r"""Represents a SQL database on the Cloud SQL instance.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         kind (str):
             This is always **sql#database**.
@@ -367,6 +369,7 @@ class Database(proto.Message):
             prefixed if applicable.
         sqlserver_database_details (google.cloud.sql_v1.types.SqlServerDatabaseDetails):
 
+            This field is a member of `oneof`_ ``database_details``.
     """
 
     kind = proto.Field(

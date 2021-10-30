@@ -53,8 +53,10 @@ class FeedItem(proto.Message):
         feed (str):
             Immutable. The feed to which this feed item
             belongs.
+            This field is a member of `oneof`_ ``_feed``.
         id (int):
             Output only. The ID of this feed item.
+            This field is a member of `oneof`_ ``_id``.
         start_date_time (str):
             Start time in which this feed item is
             effective and can begin serving. The time is in
@@ -62,6 +64,7 @@ class FeedItem(proto.Message):
             MM-DD HH:MM:SS".
             Examples: "2018-03-05 09:15:00" or "2018-02-01
             14:34:30".
+            This field is a member of `oneof`_ ``_start_date_time``.
         end_date_time (str):
             End time in which this feed item is no longer
             effective and will stop serving. The time is in
@@ -69,6 +72,7 @@ class FeedItem(proto.Message):
             MM-DD HH:MM:SS".
             Examples: "2018-03-05 09:15:00" or "2018-02-01
             14:34:30".
+            This field is a member of `oneof`_ ``_end_date_time``.
         attribute_values (Sequence[google.ads.googleads.v8.resources.types.FeedItemAttributeValue]):
             The feed item's attribute values.
         geo_targeting_restriction (google.ads.googleads.v8.enums.types.GeoTargetingRestrictionEnum.GeoTargetingRestriction):
@@ -151,21 +155,26 @@ class FeedItemAttributeValue(proto.Message):
         feed_attribute_id (int):
             Id of the feed attribute for which the value
             is associated with.
+            This field is a member of `oneof`_ ``_feed_attribute_id``.
         integer_value (int):
             Int64 value. Should be set if feed_attribute_id refers to a
             feed attribute of type INT64.
+            This field is a member of `oneof`_ ``_integer_value``.
         boolean_value (bool):
             Bool value. Should be set if feed_attribute_id refers to a
             feed attribute of type BOOLEAN.
+            This field is a member of `oneof`_ ``_boolean_value``.
         string_value (str):
             String value. Should be set if feed_attribute_id refers to a
             feed attribute of type STRING, URL or DATE_TIME. For STRING
             the maximum length is 1500 characters. For URL the maximum
             length is 2076 characters. For DATE_TIME the string must be
             in the format "YYYYMMDD HHMMSS".
+            This field is a member of `oneof`_ ``_string_value``.
         double_value (float):
             Double value. Should be set if feed_attribute_id refers to a
             feed attribute of type DOUBLE.
+            This field is a member of `oneof`_ ``_double_value``.
         price_value (google.ads.googleads.v8.common.types.Money):
             Price value. Should be set if feed_attribute_id refers to a
             feed attribute of type PRICE.
@@ -249,6 +258,7 @@ class FeedItemPlaceholderPolicyInfo(proto.Message):
         feed_mapping_resource_name (str):
             Output only. The FeedMapping that contains
             the placeholder type.
+            This field is a member of `oneof`_ ``_feed_mapping_resource_name``.
         review_status (google.ads.googleads.v8.enums.types.PolicyReviewStatusEnum.PolicyReviewStatus):
             Output only. Where the placeholder type is in
             the review process.
@@ -334,6 +344,7 @@ class FeedItemValidationError(proto.Message):
         description (str):
             Output only. The description of the
             validation error.
+            This field is a member of `oneof`_ ``_description``.
         feed_attribute_ids (Sequence[int]):
             Output only. Set of feed attributes in the
             feed item flagged during validation. If empty,
@@ -346,6 +357,7 @@ class FeedItemValidationError(proto.Message):
             feed_attribute_id (e.g. placeholder field IDs when
             feed_attribute_id is not mapped). Note that extra_info is
             not localized.
+            This field is a member of `oneof`_ ``_extra_info``.
     """
 
     validation_error = proto.Field(

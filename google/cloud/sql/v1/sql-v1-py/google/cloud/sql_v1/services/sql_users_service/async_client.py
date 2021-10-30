@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.sql_v1.types import cloud_sql_resources
 from google.cloud.sql_v1.types import cloud_sql_users
@@ -144,16 +146,16 @@ class SqlUsersServiceAsyncClient:
         )
 
     async def delete(self,
-            request: cloud_sql_users.SqlUsersDeleteRequest = None,
+            request: Union[cloud_sql_users.SqlUsersDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
         r"""Deletes a user from a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlUsersDeleteRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlUsersDeleteRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -193,16 +195,16 @@ class SqlUsersServiceAsyncClient:
         return response
 
     async def insert(self,
-            request: cloud_sql_users.SqlUsersInsertRequest = None,
+            request: Union[cloud_sql_users.SqlUsersInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
         r"""Creates a new user in a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlUsersInsertRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlUsersInsertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -242,16 +244,16 @@ class SqlUsersServiceAsyncClient:
         return response
 
     async def list(self,
-            request: cloud_sql_users.SqlUsersListRequest = None,
+            request: Union[cloud_sql_users.SqlUsersListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_users.UsersListResponse:
         r"""Lists users in the specified Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlUsersListRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlUsersListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -286,16 +288,16 @@ class SqlUsersServiceAsyncClient:
         return response
 
     async def update(self,
-            request: cloud_sql_users.SqlUsersUpdateRequest = None,
+            request: Union[cloud_sql_users.SqlUsersUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
         r"""Updates an existing user in a Cloud SQL instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlUsersUpdateRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlUsersUpdateRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

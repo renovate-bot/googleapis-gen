@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.billing_v1.services.cloud_billing import pagers
 from google.cloud.billing_v1.types import cloud_billing
 from google.iam.v1 import iam_policy_pb2  # type: ignore
@@ -329,7 +331,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             request: Union[cloud_billing.GetBillingAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.BillingAccount:
@@ -407,7 +409,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
     def list_billing_accounts(self,
             request: Union[cloud_billing.ListBillingAccountsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBillingAccountsPager:
@@ -470,7 +472,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             *,
             name: str = None,
             account: cloud_billing.BillingAccount = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.BillingAccount:
@@ -561,7 +563,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             request: Union[cloud_billing.CreateBillingAccountRequest, dict] = None,
             *,
             billing_account: cloud_billing.BillingAccount = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.BillingAccount:
@@ -642,7 +644,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             request: Union[cloud_billing.ListProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProjectBillingInfoPager:
@@ -733,7 +735,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             request: Union[cloud_billing.GetProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.ProjectBillingInfo:
@@ -815,7 +817,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             *,
             name: str = None,
             project_billing_info: cloud_billing.ProjectBillingInfo = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.ProjectBillingInfo:
@@ -939,7 +941,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1071,7 +1073,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1205,7 +1207,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.datastore_v1.types import datastore
 from google.cloud.datastore_v1.types import entity
@@ -151,19 +153,19 @@ class DatastoreAsyncClient:
         )
 
     async def lookup(self,
-            request: datastore.LookupRequest = None,
+            request: Union[datastore.LookupRequest, dict] = None,
             *,
             project_id: str = None,
             read_options: datastore.ReadOptions = None,
             keys: Sequence[entity.Key] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.LookupResponse:
         r"""Looks up entities by key.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.LookupRequest`):
+            request (Union[google.cloud.datastore_v1.types.LookupRequest, dict]):
                 The request object. The request for
                 [Datastore.Lookup][google.datastore.v1.Datastore.Lookup].
             project_id (:class:`str`):
@@ -243,16 +245,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def run_query(self,
-            request: datastore.RunQueryRequest = None,
+            request: Union[datastore.RunQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.RunQueryResponse:
         r"""Queries for entities.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.RunQueryRequest`):
+            request (Union[google.cloud.datastore_v1.types.RunQueryRequest, dict]):
                 The request object. The request for
                 [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -297,17 +299,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def begin_transaction(self,
-            request: datastore.BeginTransactionRequest = None,
+            request: Union[datastore.BeginTransactionRequest, dict] = None,
             *,
             project_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.BeginTransactionResponse:
         r"""Begins a new transaction.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.BeginTransactionRequest`):
+            request (Union[google.cloud.datastore_v1.types.BeginTransactionRequest, dict]):
                 The request object. The request for
                 [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
             project_id (:class:`str`):
@@ -364,13 +366,13 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def commit(self,
-            request: datastore.CommitRequest = None,
+            request: Union[datastore.CommitRequest, dict] = None,
             *,
             project_id: str = None,
             mode: datastore.CommitRequest.Mode = None,
             transaction: bytes = None,
             mutations: Sequence[datastore.Mutation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.CommitResponse:
@@ -378,7 +380,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         or modifying some entities.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.CommitRequest`):
+            request (Union[google.cloud.datastore_v1.types.CommitRequest, dict]):
                 The request object. The request for
                 [Datastore.Commit][google.datastore.v1.Datastore.Commit].
             project_id (:class:`str`):
@@ -476,18 +478,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def rollback(self,
-            request: datastore.RollbackRequest = None,
+            request: Union[datastore.RollbackRequest, dict] = None,
             *,
             project_id: str = None,
             transaction: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.RollbackResponse:
         r"""Rolls back a transaction.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.RollbackRequest`):
+            request (Union[google.cloud.datastore_v1.types.RollbackRequest, dict]):
                 The request object. The request for
                 [Datastore.Rollback][google.datastore.v1.Datastore.Rollback].
             project_id (:class:`str`):
@@ -554,11 +556,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def allocate_ids(self,
-            request: datastore.AllocateIdsRequest = None,
+            request: Union[datastore.AllocateIdsRequest, dict] = None,
             *,
             project_id: str = None,
             keys: Sequence[entity.Key] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.AllocateIdsResponse:
@@ -566,7 +568,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         referencing an entity before it is inserted.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.AllocateIdsRequest`):
+            request (Union[google.cloud.datastore_v1.types.AllocateIdsRequest, dict]):
                 The request object. The request for
                 [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
             project_id (:class:`str`):
@@ -634,11 +636,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def reserve_ids(self,
-            request: datastore.ReserveIdsRequest = None,
+            request: Union[datastore.ReserveIdsRequest, dict] = None,
             *,
             project_id: str = None,
             keys: Sequence[entity.Key] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.ReserveIdsResponse:
@@ -646,7 +648,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         llocated by Cloud Datastore.
 
         Args:
-            request (:class:`google.cloud.datastore_v1.types.ReserveIdsRequest`):
+            request (Union[google.cloud.datastore_v1.types.ReserveIdsRequest, dict]):
                 The request object. The request for
                 [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
             project_id (:class:`str`):

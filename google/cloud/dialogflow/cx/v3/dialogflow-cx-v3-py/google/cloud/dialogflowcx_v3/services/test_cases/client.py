@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.dialogflowcx_v3.services.test_cases import pagers
@@ -443,7 +445,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             request: Union[test_case.ListTestCasesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTestCasesPager:
@@ -530,7 +532,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             request: Union[test_case.BatchDeleteTestCasesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -596,7 +598,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             request: Union[test_case.GetTestCaseRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_case.TestCase:
@@ -670,7 +672,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             *,
             parent: str = None,
             test_case: gcdc_test_case.TestCase = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_test_case.TestCase:
@@ -751,7 +753,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             *,
             test_case: gcdc_test_case.TestCase = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_test_case.TestCase:
@@ -834,7 +836,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
     def run_test_case(self,
             request: Union[test_case.RunTestCaseRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -912,7 +914,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
     def batch_run_test_cases(self,
             request: Union[test_case.BatchRunTestCasesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -990,7 +992,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
     def calculate_coverage(self,
             request: Union[test_case.CalculateCoverageRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_case.CalculateCoverageResponse:
@@ -1046,7 +1048,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
     def import_test_cases(self,
             request: Union[test_case.ImportTestCasesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1127,7 +1129,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
     def export_test_cases(self,
             request: Union[test_case.ExportTestCasesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1208,7 +1210,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             request: Union[test_case.ListTestCaseResultsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTestCaseResultsPager:
@@ -1297,7 +1299,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             request: Union[test_case.GetTestCaseResultRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_case.TestCaseResult:

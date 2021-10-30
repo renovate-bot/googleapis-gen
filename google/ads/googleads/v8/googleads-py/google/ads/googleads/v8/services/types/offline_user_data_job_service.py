@@ -131,6 +131,7 @@ class AddOfflineUserDataJobOperationsRequest(proto.Message):
         enable_partial_failure (bool):
             True to enable partial failure for the
             offline user data job.
+            This field is a member of `oneof`_ ``_enable_partial_failure``.
         operations (Sequence[google.ads.googleads.v8.services.types.OfflineUserDataJobOperation]):
             Required. The list of operations to be done.
         validate_only (bool):
@@ -162,17 +163,27 @@ class OfflineUserDataJobOperation(proto.Message):
     r"""Operation to be made for the
     AddOfflineUserDataJobOperationsRequest.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v8.common.types.UserData):
             Add the provided data to the transaction.
             Data cannot be retrieved after being uploaded.
+            This field is a member of `oneof`_ ``operation``.
         remove (google.ads.googleads.v8.common.types.UserData):
             Remove the provided data from the
             transaction. Data cannot be retrieved after
             being uploaded.
+            This field is a member of `oneof`_ ``operation``.
         remove_all (bool):
             Remove all previously provided data. This is
             only supported for Customer Match.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

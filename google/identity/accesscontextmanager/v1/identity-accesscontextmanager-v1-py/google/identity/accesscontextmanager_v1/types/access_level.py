@@ -38,6 +38,13 @@ class AccessLevel(proto.Message):
     Google Cloud services, along with a list of requirements necessary
     for the label to be applied.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Required. Resource name for the Access Level. The
@@ -54,8 +61,10 @@ class AccessLevel(proto.Message):
             affect behavior.
         basic (google.identity.accesscontextmanager_v1.types.BasicLevel):
             A ``BasicLevel`` composed of ``Conditions``.
+            This field is a member of `oneof`_ ``level``.
         custom (google.identity.accesscontextmanager_v1.types.CustomLevel):
             A ``CustomLevel`` written in the Common Expression Language.
+            This field is a member of `oneof`_ ``level``.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. Time the ``AccessLevel`` was created in UTC.
         update_time (google.protobuf.timestamp_pb2.Timestamp):

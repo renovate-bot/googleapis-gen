@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -147,17 +149,17 @@ class DocumentUnderstandingServiceAsyncClient:
         )
 
     async def batch_process_documents(self,
-            request: document_understanding.BatchProcessDocumentsRequest = None,
+            request: Union[document_understanding.BatchProcessDocumentsRequest, dict] = None,
             *,
             requests: Sequence[document_understanding.ProcessDocumentRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""LRO endpoint to batch process many documents.
 
         Args:
-            request (:class:`google.cloud.documentai_v1beta1.types.BatchProcessDocumentsRequest`):
+            request (Union[google.cloud.documentai_v1beta1.types.BatchProcessDocumentsRequest, dict]):
                 The request object. Request to batch process documents
                 as an asynchronous operation.
             requests (:class:`Sequence[google.cloud.documentai_v1beta1.types.ProcessDocumentRequest]`):

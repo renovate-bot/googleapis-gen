@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -159,17 +161,17 @@ class GkeHubAsyncClient:
         )
 
     async def list_memberships(self,
-            request: membership.ListMembershipsRequest = None,
+            request: Union[membership.ListMembershipsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMembershipsAsyncPager:
         r"""Lists Memberships in a given project and location.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.ListMembershipsRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.ListMembershipsRequest, dict]):
                 The request object. Request message for
                 `GkeHub.ListMemberships` method.
             parent (:class:`str`):
@@ -246,17 +248,17 @@ class GkeHubAsyncClient:
         return response
 
     async def get_membership(self,
-            request: membership.GetMembershipRequest = None,
+            request: Union[membership.GetMembershipRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.Membership:
         r"""Gets the details of a Membership.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.GetMembershipRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.GetMembershipRequest, dict]):
                 The request object. Request message for
                 `GkeHub.GetMembership` method.
             name (:class:`str`):
@@ -321,12 +323,12 @@ class GkeHubAsyncClient:
         return response
 
     async def create_membership(self,
-            request: membership.CreateMembershipRequest = None,
+            request: Union[membership.CreateMembershipRequest, dict] = None,
             *,
             parent: str = None,
             resource: membership.Membership = None,
             membership_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -337,7 +339,7 @@ class GkeHubAsyncClient:
         https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.CreateMembershipRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.CreateMembershipRequest, dict]):
                 The request object. Request message for the
                 `GkeHub.CreateMembership` method.
             parent (:class:`str`):
@@ -440,10 +442,10 @@ class GkeHubAsyncClient:
         return response
 
     async def delete_membership(self,
-            request: membership.DeleteMembershipRequest = None,
+            request: Union[membership.DeleteMembershipRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -455,7 +457,7 @@ class GkeHubAsyncClient:
         https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.DeleteMembershipRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.DeleteMembershipRequest, dict]):
                 The request object. Request message for
                 `GkeHub.DeleteMembership` method.
             name (:class:`str`):
@@ -541,19 +543,19 @@ class GkeHubAsyncClient:
         return response
 
     async def update_membership(self,
-            request: membership.UpdateMembershipRequest = None,
+            request: Union[membership.UpdateMembershipRequest, dict] = None,
             *,
             name: str = None,
             resource: membership.Membership = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates an existing Membership.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.UpdateMembershipRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.UpdateMembershipRequest, dict]):
                 The request object. Request message for
                 `GkeHub.UpdateMembership` method.
             name (:class:`str`):
@@ -652,9 +654,9 @@ class GkeHubAsyncClient:
         return response
 
     async def generate_connect_manifest(self,
-            request: membership.GenerateConnectManifestRequest = None,
+            request: Union[membership.GenerateConnectManifestRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.GenerateConnectManifestResponse:
@@ -664,7 +666,7 @@ class GkeHubAsyncClient:
         Most clients should not need to call this method directly.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.GenerateConnectManifestRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.GenerateConnectManifestRequest, dict]):
                 The request object. Request message for
                 `GkeHub.GenerateConnectManifest` method.
                 .
@@ -712,9 +714,9 @@ class GkeHubAsyncClient:
         return response
 
     async def initialize_hub(self,
-            request: membership.InitializeHubRequest = None,
+            request: Union[membership.InitializeHubRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.InitializeHubResponse:
@@ -730,7 +732,7 @@ class GkeHubAsyncClient:
         first.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1alpha2.types.InitializeHubRequest`):
+            request (Union[google.cloud.gkehub_v1alpha2.types.InitializeHubRequest, dict]):
                 The request object. Request message for the
                 InitializeHub method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.devtools.testing_v1.types import test_execution
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -168,9 +170,9 @@ class TestExecutionServiceAsyncClient:
         )
 
     async def create_test_matrix(self,
-            request: test_execution.CreateTestMatrixRequest = None,
+            request: Union[test_execution.CreateTestMatrixRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_execution.TestMatrix:
@@ -187,7 +189,7 @@ class TestExecutionServiceAsyncClient:
            matrix tries to use too many simultaneous devices.
 
         Args:
-            request (:class:`google.devtools.testing_v1.types.CreateTestMatrixRequest`):
+            request (Union[google.devtools.testing_v1.types.CreateTestMatrixRequest, dict]):
                 The request object. Request to submit a matrix of tests
                 for execution.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -228,9 +230,9 @@ class TestExecutionServiceAsyncClient:
         return response
 
     async def get_test_matrix(self,
-            request: test_execution.GetTestMatrixRequest = None,
+            request: Union[test_execution.GetTestMatrixRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_execution.TestMatrix:
@@ -244,7 +246,7 @@ class TestExecutionServiceAsyncClient:
         -  NOT_FOUND - if the Test Matrix does not exist
 
         Args:
-            request (:class:`google.devtools.testing_v1.types.GetTestMatrixRequest`):
+            request (Union[google.devtools.testing_v1.types.GetTestMatrixRequest, dict]):
                 The request object. Request to get the Test Matrix with
                 the given id.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -285,9 +287,9 @@ class TestExecutionServiceAsyncClient:
         return response
 
     async def cancel_test_matrix(self,
-            request: test_execution.CancelTestMatrixRequest = None,
+            request: Union[test_execution.CancelTestMatrixRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> test_execution.CancelTestMatrixResponse:
@@ -303,7 +305,7 @@ class TestExecutionServiceAsyncClient:
         -  NOT_FOUND - if the Test Matrix does not exist
 
         Args:
-            request (:class:`google.devtools.testing_v1.types.CancelTestMatrixRequest`):
+            request (Union[google.devtools.testing_v1.types.CancelTestMatrixRequest, dict]):
                 The request object. Request to stop running all of the
                 tests in the specified matrix.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

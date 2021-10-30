@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.bigtable_v2.types import bigtable
 from google.cloud.bigtable_v2.types import data
@@ -147,11 +149,11 @@ class BigtableAsyncClient:
         )
 
     def read_rows(self,
-            request: bigtable.ReadRowsRequest = None,
+            request: Union[bigtable.ReadRowsRequest, dict] = None,
             *,
             table_name: str = None,
             app_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[bigtable.ReadRowsResponse]]:
@@ -163,7 +165,7 @@ class BigtableAsyncClient:
         ReadRowsResponse documentation for details.
 
         Args:
-            request (:class:`google.cloud.bigtable_v2.types.ReadRowsRequest`):
+            request (Union[google.cloud.bigtable_v2.types.ReadRowsRequest, dict]):
                 The request object. Request message for
                 Bigtable.ReadRows.
             table_name (:class:`str`):
@@ -245,11 +247,11 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         return response
 
     def sample_row_keys(self,
-            request: bigtable.SampleRowKeysRequest = None,
+            request: Union[bigtable.SampleRowKeysRequest, dict] = None,
             *,
             table_name: str = None,
             app_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[bigtable.SampleRowKeysResponse]]:
@@ -260,7 +262,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         mapreduces.
 
         Args:
-            request (:class:`google.cloud.bigtable_v2.types.SampleRowKeysRequest`):
+            request (Union[google.cloud.bigtable_v2.types.SampleRowKeysRequest, dict]):
                 The request object. Request message for
                 Bigtable.SampleRowKeys.
             table_name (:class:`str`):
@@ -342,13 +344,13 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         return response
 
     async def mutate_row(self,
-            request: bigtable.MutateRowRequest = None,
+            request: Union[bigtable.MutateRowRequest, dict] = None,
             *,
             table_name: str = None,
             row_key: bytes = None,
             mutations: Sequence[data.Mutation] = None,
             app_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bigtable.MutateRowResponse:
@@ -356,7 +358,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         left unchanged unless explicitly changed by ``mutation``.
 
         Args:
-            request (:class:`google.cloud.bigtable_v2.types.MutateRowRequest`):
+            request (Union[google.cloud.bigtable_v2.types.MutateRowRequest, dict]):
                 The request object. Request message for
                 Bigtable.MutateRow.
             table_name (:class:`str`):
@@ -462,12 +464,12 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         return response
 
     def mutate_rows(self,
-            request: bigtable.MutateRowsRequest = None,
+            request: Union[bigtable.MutateRowsRequest, dict] = None,
             *,
             table_name: str = None,
             entries: Sequence[bigtable.MutateRowsRequest.Entry] = None,
             app_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[bigtable.MutateRowsResponse]]:
@@ -476,7 +478,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         batch is not executed atomically.
 
         Args:
-            request (:class:`google.cloud.bigtable_v2.types.MutateRowsRequest`):
+            request (Union[google.cloud.bigtable_v2.types.MutateRowsRequest, dict]):
                 The request object. Request message for
                 BigtableService.MutateRows.
             table_name (:class:`str`):
@@ -574,7 +576,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         return response
 
     async def check_and_mutate_row(self,
-            request: bigtable.CheckAndMutateRowRequest = None,
+            request: Union[bigtable.CheckAndMutateRowRequest, dict] = None,
             *,
             table_name: str = None,
             row_key: bytes = None,
@@ -582,7 +584,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
             true_mutations: Sequence[data.Mutation] = None,
             false_mutations: Sequence[data.Mutation] = None,
             app_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bigtable.CheckAndMutateRowResponse:
@@ -590,7 +592,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         predicate Reader filter.
 
         Args:
-            request (:class:`google.cloud.bigtable_v2.types.CheckAndMutateRowRequest`):
+            request (Union[google.cloud.bigtable_v2.types.CheckAndMutateRowRequest, dict]):
                 The request object. Request message for
                 Bigtable.CheckAndMutateRow.
             table_name (:class:`str`):
@@ -721,13 +723,13 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         return response
 
     async def read_modify_write_row(self,
-            request: bigtable.ReadModifyWriteRowRequest = None,
+            request: Union[bigtable.ReadModifyWriteRowRequest, dict] = None,
             *,
             table_name: str = None,
             row_key: bytes = None,
             rules: Sequence[data.ReadModifyWriteRule] = None,
             app_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bigtable.ReadModifyWriteRowResponse:
@@ -740,7 +742,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         contents of all modified cells.
 
         Args:
-            request (:class:`google.cloud.bigtable_v2.types.ReadModifyWriteRowRequest`):
+            request (Union[google.cloud.bigtable_v2.types.ReadModifyWriteRowRequest, dict]):
                 The request object. Request message for
                 Bigtable.ReadModifyWriteRow.
             table_name (:class:`str`):

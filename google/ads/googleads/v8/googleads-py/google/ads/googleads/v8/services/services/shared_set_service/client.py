@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import shared_set_status
 from google.ads.googleads.v8.enums.types import shared_set_type
 from google.ads.googleads.v8.resources.types import shared_set
@@ -340,7 +342,7 @@ class SharedSetServiceClient(metaclass=SharedSetServiceClientMeta):
             request: Union[shared_set_service.GetSharedSetRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> shared_set.SharedSet:
@@ -420,7 +422,7 @@ class SharedSetServiceClient(metaclass=SharedSetServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[shared_set_service.SharedSetOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> shared_set_service.MutateSharedSetsResponse:

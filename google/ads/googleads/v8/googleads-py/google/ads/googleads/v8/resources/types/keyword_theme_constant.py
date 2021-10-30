@@ -40,14 +40,17 @@ class KeywordThemeConstant(proto.Message):
             code of the constant, eg. "US". To display and
             query matching purpose, the keyword theme needs
             to be localized.
+            This field is a member of `oneof`_ ``_country_code``.
         language_code (str):
             Output only. The ISO-639-1 language code with
             2 letters of the constant, eg. "en". To display
             and query matching purpose, the keyword theme
             needs to be localized.
+            This field is a member of `oneof`_ ``_language_code``.
         display_name (str):
             Output only. The display name of the keyword
             theme or sub keyword theme.
+            This field is a member of `oneof`_ ``_display_name``.
     """
 
     resource_name = proto.Field(

@@ -98,6 +98,13 @@ class WorkloadIdentityPool(proto.Message):
 class WorkloadIdentityPoolProvider(proto.Message):
     r"""A configuration for an external identity provider.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Output only. The resource name of the
@@ -230,8 +237,10 @@ class WorkloadIdentityPoolProvider(proto.Message):
                "'admins' in google.groups".
         aws (google.iam_v1beta.types.WorkloadIdentityPoolProvider.Aws):
             An Amazon Web Services identity provider.
+            This field is a member of `oneof`_ ``provider_config``.
         oidc (google.iam_v1beta.types.WorkloadIdentityPoolProvider.Oidc):
             An OpenId Connect 1.0 identity provider.
+            This field is a member of `oneof`_ ``provider_config``.
     """
     class State(proto.Enum):
         r"""The current state of the provider."""

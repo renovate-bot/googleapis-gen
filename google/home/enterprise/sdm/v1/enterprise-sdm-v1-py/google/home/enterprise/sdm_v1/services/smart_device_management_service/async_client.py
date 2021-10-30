@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.home.enterprise.sdm_v1.services.smart_device_management_service import pagers
 from google.home.enterprise.sdm_v1.types import device
@@ -154,16 +156,16 @@ class SmartDeviceManagementServiceAsyncClient:
         )
 
     async def get_device(self,
-            request: smart_device_management_service.GetDeviceRequest = None,
+            request: Union[smart_device_management_service.GetDeviceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> device.Device:
         r"""Gets a device managed by the enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.GetDeviceRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.GetDeviceRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.GetDevice
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -216,16 +218,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_devices(self,
-            request: smart_device_management_service.ListDevicesRequest = None,
+            request: Union[smart_device_management_service.ListDevicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDevicesAsyncPager:
         r"""Lists devices managed by the enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.ListDevicesRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.ListDevicesRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ListDevices
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -289,9 +291,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def execute_device_command(self,
-            request: smart_device_management_service.ExecuteDeviceCommandRequest = None,
+            request: Union[smart_device_management_service.ExecuteDeviceCommandRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> smart_device_management_service.ExecuteDeviceCommandResponse:
@@ -299,7 +301,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ExecuteDeviceCommand
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -345,16 +347,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_structure(self,
-            request: smart_device_management_service.GetStructureRequest = None,
+            request: Union[smart_device_management_service.GetStructureRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> site.Structure:
         r"""Gets a structure managed by the enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.GetStructureRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.GetStructureRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.GetStructure
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -407,16 +409,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_structures(self,
-            request: smart_device_management_service.ListStructuresRequest = None,
+            request: Union[smart_device_management_service.ListStructuresRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListStructuresAsyncPager:
         r"""Lists structures managed by the enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.ListStructuresRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.ListStructuresRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ListStructures
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -480,16 +482,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_room(self,
-            request: smart_device_management_service.GetRoomRequest = None,
+            request: Union[smart_device_management_service.GetRoomRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> site.Room:
         r"""Gets a room managed by the enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.GetRoomRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.GetRoomRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.GetRoom
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -543,16 +545,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_rooms(self,
-            request: smart_device_management_service.ListRoomsRequest = None,
+            request: Union[smart_device_management_service.ListRoomsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRoomsAsyncPager:
         r"""Lists rooms managed by the enterprise.
 
         Args:
-            request (:class:`google.home.enterprise.sdm_v1.types.ListRoomsRequest`):
+            request (Union[google.home.enterprise.sdm_v1.types.ListRoomsRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ListRooms
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -37,6 +37,13 @@ class BiddingStrategySimulation(proto.Message):
     1. TARGET_CPA - UNIFORM
     2. TARGET_ROAS - UNIFORM
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the bidding strategy
@@ -62,9 +69,11 @@ class BiddingStrategySimulation(proto.Message):
         target_cpa_point_list (google.ads.googleads.v8.common.types.TargetCpaSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_CPA.
+            This field is a member of `oneof`_ ``point_list``.
         target_roas_point_list (google.ads.googleads.v8.common.types.TargetRoasSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_ROAS.
+            This field is a member of `oneof`_ ``point_list``.
     """
 
     resource_name = proto.Field(

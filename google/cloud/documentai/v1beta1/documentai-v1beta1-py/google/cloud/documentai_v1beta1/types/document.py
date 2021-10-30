@@ -35,6 +35,13 @@ class Document(proto.Message):
     documents and allows for collaboration between users and
     Document Understanding AI to iterate and optimize for quality.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         uri (str):
             Currently supports Google Cloud Storage URI of the form
@@ -42,11 +49,13 @@ class Document(proto.Message):
             supported. See `Google Cloud Storage Request
             URIs <https://cloud.google.com/storage/docs/reference-uris>`__
             for more info.
+            This field is a member of `oneof`_ ``source``.
         content (bytes):
             Inline document content, represented as a stream of bytes.
             Note: As with all ``bytes`` fields, protobuffers use a pure
             binary representation, whereas JSON representations use
             base64.
+            This field is a member of `oneof`_ ``source``.
         mime_type (str):
             An IANA published MIME type (also referred to
             as media type). For more information, see

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.datacatalog_v1.services.policy_tag_manager import pagers
 from google.cloud.datacatalog_v1.types import policytagmanager
 from google.cloud.datacatalog_v1.types import timestamps
@@ -357,7 +359,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             *,
             parent: str = None,
             taxonomy: policytagmanager.Taxonomy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.Taxonomy:
@@ -452,7 +454,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.DeleteTaxonomyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -522,7 +524,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.UpdateTaxonomyRequest, dict] = None,
             *,
             taxonomy: policytagmanager.Taxonomy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.Taxonomy:
@@ -609,7 +611,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.ListTaxonomiesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTaxonomiesPager:
@@ -697,7 +699,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.GetTaxonomyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.Taxonomy:
@@ -783,7 +785,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             *,
             parent: str = None,
             policy_tag: policytagmanager.PolicyTag = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.PolicyTag:
@@ -873,7 +875,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.DeletePolicyTagRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -946,7 +948,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.UpdatePolicyTagRequest, dict] = None,
             *,
             policy_tag: policytagmanager.PolicyTag = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.PolicyTag:
@@ -1030,7 +1032,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.ListPolicyTagsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPolicyTagsPager:
@@ -1117,7 +1119,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             request: Union[policytagmanager.GetPolicyTagRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.PolicyTag:
@@ -1198,7 +1200,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
     def get_iam_policy(self,
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1308,7 +1310,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
     def set_iam_policy(self,
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1418,7 +1420,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
     def test_iam_permissions(self,
             request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.osconfig.agentendpoint_v1beta.types import agentendpoint
 from google.cloud.osconfig.agentendpoint_v1beta.types import guest_policies
 from google.cloud.osconfig.agentendpoint_v1beta.types import tasks
@@ -327,7 +329,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             *,
             instance_id_token: str = None,
             agent_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[agentendpoint.ReceiveTaskNotificationResponse]:
@@ -410,7 +412,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             request: Union[agentendpoint.StartNextTaskRequest, dict] = None,
             *,
             instance_id_token: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.StartNextTaskResponse:
@@ -484,7 +486,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             instance_id_token: str = None,
             task_id: str = None,
             task_type: tasks.TaskType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportTaskProgressResponse:
@@ -581,7 +583,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             task_id: str = None,
             task_type: tasks.TaskType = None,
             error_message: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportTaskCompleteResponse:
@@ -686,7 +688,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             os_short_name: str = None,
             os_version: str = None,
             os_architecture: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> guest_policies.EffectiveGuestPolicy:
@@ -795,7 +797,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             instance_id_token: str = None,
             agent_version: str = None,
             supported_capabilities: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.RegisterAgentResponse:

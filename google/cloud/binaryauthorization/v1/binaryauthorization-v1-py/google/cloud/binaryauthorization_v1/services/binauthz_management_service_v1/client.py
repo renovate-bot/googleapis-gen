@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.binaryauthorization_v1.services.binauthz_management_service_v1 import pagers
 from google.cloud.binaryauthorization_v1.types import resources
 from google.cloud.binaryauthorization_v1.types import service
@@ -356,7 +358,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             request: Union[service.GetPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Policy:
@@ -442,7 +444,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             request: Union[service.UpdatePolicyRequest, dict] = None,
             *,
             policy: resources.Policy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Policy:
@@ -530,7 +532,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             parent: str = None,
             attestor_id: str = None,
             attestor: resources.Attestor = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Attestor:
@@ -636,7 +638,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             request: Union[service.GetAttestorRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Attestor:
@@ -717,7 +719,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             request: Union[service.UpdateAttestorRequest, dict] = None,
             *,
             attestor: resources.Attestor = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Attestor:
@@ -801,7 +803,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             request: Union[service.ListAttestorsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAttestorsPager:
@@ -891,7 +893,7 @@ class BinauthzManagementServiceV1Client(metaclass=BinauthzManagementServiceV1Cli
             request: Union[service.DeleteAttestorRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

@@ -112,6 +112,13 @@ class StartNextTaskResponse(proto.Message):
 class ReportTaskProgressRequest(proto.Message):
     r"""A request message for reporting the progress of current task.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -133,12 +140,15 @@ class ReportTaskProgressRequest(proto.Message):
         apply_patches_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ApplyPatchesTaskProgress):
             Details about the progress of the apply
             patches task.
+            This field is a member of `oneof`_ ``progress``.
         exec_step_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ExecStepTaskProgress):
             Details about the progress of the exec step
             task.
+            This field is a member of `oneof`_ ``progress``.
         apply_config_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ApplyConfigTaskProgress):
             Details about the progress of the apply
             config task.
+            This field is a member of `oneof`_ ``progress``.
     """
 
     instance_id_token = proto.Field(
@@ -194,6 +204,13 @@ class ReportTaskCompleteRequest(proto.Message):
     r"""A request message for signaling the completion of a task
     execution.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -218,11 +235,14 @@ class ReportTaskCompleteRequest(proto.Message):
         apply_patches_task_output (google.cloud.osconfig.agentendpoint_v1.types.ApplyPatchesTaskOutput):
             Final output details of the apply patches
             task;
+            This field is a member of `oneof`_ ``output``.
         exec_step_task_output (google.cloud.osconfig.agentendpoint_v1.types.ExecStepTaskOutput):
             Final output details of the exec step task;
+            This field is a member of `oneof`_ ``output``.
         apply_config_task_output (google.cloud.osconfig.agentendpoint_v1.types.ApplyConfigTaskOutput):
             Final output details of the apply config
             task;
+            This field is a member of `oneof`_ ``output``.
     """
 
     instance_id_token = proto.Field(

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.asset_v1p2beta1.types import asset_service
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AssetServiceGrpcTransport
@@ -335,7 +337,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
             request: Union[asset_service.CreateFeedRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> asset_service.Feed:
@@ -423,7 +425,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
             request: Union[asset_service.GetFeedRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> asset_service.Feed:
@@ -504,7 +506,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
             request: Union[asset_service.ListFeedsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> asset_service.ListFeedsResponse:
@@ -581,7 +583,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
             request: Union[asset_service.UpdateFeedRequest, dict] = None,
             *,
             feed: asset_service.Feed = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> asset_service.Feed:
@@ -663,7 +665,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
             request: Union[asset_service.DeleteFeedRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

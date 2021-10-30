@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import asset_field_type
 from google.ads.googleads.v8.enums.types import asset_performance_label
 from google.ads.googleads.v8.resources.types import ad_group_ad_asset_view
@@ -359,7 +361,7 @@ class AdGroupAdAssetViewServiceClient(metaclass=AdGroupAdAssetViewServiceClientM
             request: Union[ad_group_ad_asset_view_service.GetAdGroupAdAssetViewRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_ad_asset_view.AdGroupAdAssetView:

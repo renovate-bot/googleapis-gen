@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.datastore_admin_v1.services.datastore_admin import pagers
@@ -390,7 +392,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
             labels: Sequence[datastore_admin.ExportEntitiesRequest.LabelsEntry] = None,
             entity_filter: datastore_admin.EntityFilter = None,
             output_url_prefix: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -526,7 +528,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
             labels: Sequence[datastore_admin.ImportEntitiesRequest.LabelsEntry] = None,
             input_url: str = None,
             entity_filter: datastore_admin.EntityFilter = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -661,7 +663,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
     def create_index(self,
             request: Union[datastore_admin.CreateIndexRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -734,7 +736,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
     def delete_index(self,
             request: Union[datastore_admin.DeleteIndexRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -806,7 +808,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
     def get_index(self,
             request: Union[datastore_admin.GetIndexRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> index.Index:
@@ -852,7 +854,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
     def list_indexes(self,
             request: Union[datastore_admin.ListIndexesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIndexesPager:

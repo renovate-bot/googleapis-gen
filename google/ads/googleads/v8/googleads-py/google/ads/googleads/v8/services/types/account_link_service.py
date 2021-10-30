@@ -132,6 +132,13 @@ class MutateAccountLinkRequest(proto.Message):
 class AccountLinkOperation(proto.Message):
     r"""A single update on an account link.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -139,11 +146,13 @@ class AccountLinkOperation(proto.Message):
         update (google.ads.googleads.v8.resources.types.AccountLink):
             Update operation: The account link is
             expected to have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the account link to
             remove is expected, in this format:
 
             ``customers/{customer_id}/accountLinks/{account_link_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

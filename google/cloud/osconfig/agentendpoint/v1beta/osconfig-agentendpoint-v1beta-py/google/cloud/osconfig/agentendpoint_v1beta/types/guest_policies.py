@@ -263,15 +263,26 @@ class GooRepository(proto.Message):
 class PackageRepository(proto.Message):
     r"""A package repository.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         apt (google.cloud.osconfig.agentendpoint_v1beta.types.AptRepository):
             An Apt Repository.
+            This field is a member of `oneof`_ ``repository``.
         yum (google.cloud.osconfig.agentendpoint_v1beta.types.YumRepository):
             A Yum Repository.
+            This field is a member of `oneof`_ ``repository``.
         zypper (google.cloud.osconfig.agentendpoint_v1beta.types.ZypperRepository):
             A Zypper Repository.
+            This field is a member of `oneof`_ ``repository``.
         goo (google.cloud.osconfig.agentendpoint_v1beta.types.GooRepository):
             A Goo Repository.
+            This field is a member of `oneof`_ ``repository``.
     """
 
     apt = proto.Field(
@@ -376,6 +387,13 @@ class SoftwareRecipe(proto.Message):
     class Artifact(proto.Message):
         r"""Specifies a resource to be used in the recipe.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             id (str):
                 Id of the artifact, which the installation
@@ -383,8 +401,10 @@ class SoftwareRecipe(proto.Message):
                 Artifacts in a recipe cannot have the same id.
             remote (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Artifact.Remote):
                 A generic remote artifact.
+                This field is a member of `oneof`_ ``artifact``.
             gcs (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Artifact.Gcs):
                 A Cloud Storage artifact.
+                This field is a member of `oneof`_ ``artifact``.
             allow_insecure (bool):
                 Defaults to false. When false, recipes are
                 subject to validations based on the artifact
@@ -479,22 +499,36 @@ class SoftwareRecipe(proto.Message):
         r"""An action that can be taken as part of installing or updating
         a recipe.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             file_copy (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.CopyFile):
                 Copies a file onto the instance.
+                This field is a member of `oneof`_ ``step``.
             archive_extraction (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.ExtractArchive):
                 Extracts an archive into the specified
                 directory.
+                This field is a member of `oneof`_ ``step``.
             msi_installation (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.InstallMsi):
                 Installs an MSI file.
+                This field is a member of `oneof`_ ``step``.
             dpkg_installation (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.InstallDpkg):
                 Installs a deb file via dpkg.
+                This field is a member of `oneof`_ ``step``.
             rpm_installation (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.InstallRpm):
                 Installs an rpm file via the rpm utility.
+                This field is a member of `oneof`_ ``step``.
             file_exec (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.ExecFile):
                 Executes an artifact or local file.
+                This field is a member of `oneof`_ ``step``.
             script_run (google.cloud.osconfig.agentendpoint_v1beta.types.SoftwareRecipe.Step.RunScript):
                 Runs commands in a shell.
+                This field is a member of `oneof`_ ``step``.
         """
 
         class CopyFile(proto.Message):
@@ -645,13 +679,22 @@ class SoftwareRecipe(proto.Message):
         class ExecFile(proto.Message):
             r"""Executes an artifact or local file.
 
+            This message has `oneof`_ fields (mutually exclusive fields).
+            For each oneof, at most one member field can be set at the same time.
+            Setting any member of the oneof automatically clears all other
+            members.
+
+            .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
                     recipe.
+                    This field is a member of `oneof`_ ``location_type``.
                 local_path (str):
                     The absolute path of the file on the local
                     filesystem.
+                    This field is a member of `oneof`_ ``location_type``.
                 args (Sequence[str]):
                     Arguments to be passed to the provided
                     executable.

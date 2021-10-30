@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.projects import pagers
@@ -342,7 +344,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[projects.GetProjectRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> projects.Project:
@@ -424,7 +426,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[projects.ListProjectsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProjectsPager:
@@ -521,7 +523,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[projects.SearchProjectsRequest, dict] = None,
             *,
             query: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchProjectsPager:
@@ -656,7 +658,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[projects.CreateProjectRequest, dict] = None,
             *,
             project: projects.Project = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -749,7 +751,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             *,
             project: projects.Project = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -857,7 +859,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             *,
             name: str = None,
             destination_parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -964,7 +966,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[projects.DeleteProjectRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1084,7 +1086,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[projects.UndeleteProjectRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1181,7 +1183,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1312,7 +1314,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1493,7 +1495,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

@@ -38,9 +38,11 @@ class CustomerClientLink(proto.Message):
         client_customer (str):
             Immutable. The client customer linked to this
             customer.
+            This field is a member of `oneof`_ ``_client_customer``.
         manager_link_id (int):
             Output only. This is uniquely identifies a
             customer client link. Read only.
+            This field is a member of `oneof`_ ``_manager_link_id``.
         status (google.ads.googleads.v7.enums.types.ManagerLinkStatusEnum.ManagerLinkStatus):
             This is the status of the link between client
             and manager.
@@ -48,6 +50,7 @@ class CustomerClientLink(proto.Message):
             The visibility of the link. Users can choose
             whether or not to see hidden links in the Google
             Ads UI. Default value is false
+            This field is a member of `oneof`_ ``_hidden``.
     """
 
     resource_name = proto.Field(

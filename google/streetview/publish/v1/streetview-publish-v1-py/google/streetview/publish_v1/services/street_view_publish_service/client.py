@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -331,7 +333,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
     def start_upload(self,
             request: Union[empty_pb2.Empty, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UploadRef:
@@ -410,7 +412,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             request: Union[rpcmessages.CreatePhotoRequest, dict] = None,
             *,
             photo: resources.Photo = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Photo:
@@ -498,7 +500,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             *,
             photo_id: str = None,
             view: rpcmessages.PhotoView = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Photo:
@@ -596,7 +598,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             *,
             photo_ids: Sequence[str] = None,
             view: rpcmessages.PhotoView = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> rpcmessages.BatchGetPhotosResponse:
@@ -696,7 +698,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             *,
             view: rpcmessages.PhotoView = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPhotosPager:
@@ -807,7 +809,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             *,
             photo: resources.Photo = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Photo:
@@ -931,7 +933,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             request: Union[rpcmessages.BatchUpdatePhotosRequest, dict] = None,
             *,
             update_photo_requests: Sequence[rpcmessages.UpdatePhotoRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> rpcmessages.BatchUpdatePhotosResponse:
@@ -1033,7 +1035,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             request: Union[rpcmessages.DeletePhotoRequest, dict] = None,
             *,
             photo_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1099,7 +1101,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             request: Union[rpcmessages.BatchDeletePhotosRequest, dict] = None,
             *,
             photo_ids: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> rpcmessages.BatchDeletePhotosResponse:

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.apps.alertcenter_v1beta1.services.alert_center_service import pagers
 from google.apps.alertcenter_v1beta1.types import alertcenter
 from google.protobuf import any_pb2  # type: ignore
@@ -326,7 +328,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def list_alerts(self,
             request: Union[alertcenter.ListAlertsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAlertsPager:
@@ -385,7 +387,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def get_alert(self,
             request: Union[alertcenter.GetAlertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.Alert:
@@ -431,7 +433,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def delete_alert(self,
             request: Union[alertcenter.DeleteAlertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -474,7 +476,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def undelete_alert(self,
             request: Union[alertcenter.UndeleteAlertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.Alert:
@@ -525,7 +527,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def create_alert_feedback(self,
             request: Union[alertcenter.CreateAlertFeedbackRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.AlertFeedback:
@@ -574,7 +576,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def list_alert_feedback(self,
             request: Union[alertcenter.ListAlertFeedbackRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.ListAlertFeedbackResponse:
@@ -622,7 +624,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def get_alert_metadata(self,
             request: Union[alertcenter.GetAlertMetadataRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.AlertMetadata:
@@ -668,7 +670,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def get_settings(self,
             request: Union[alertcenter.GetSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.Settings:
@@ -713,7 +715,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def update_settings(self,
             request: Union[alertcenter.UpdateSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.Settings:
@@ -758,7 +760,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def batch_delete_alerts(self,
             request: Union[alertcenter.BatchDeleteAlertsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.BatchDeleteAlertsResponse:
@@ -806,7 +808,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
     def batch_undelete_alerts(self,
             request: Union[alertcenter.BatchUndeleteAlertsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alertcenter.BatchUndeleteAlertsResponse:

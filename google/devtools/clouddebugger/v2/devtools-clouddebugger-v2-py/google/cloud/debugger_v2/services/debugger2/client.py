@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.debugger_v2.types import data
 from google.cloud.debugger_v2.types import debugger
 from .transports.base import Debugger2Transport, DEFAULT_CLIENT_INFO
@@ -340,7 +342,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
             debuggee_id: str = None,
             breakpoint_: data.Breakpoint = None,
             client_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> debugger.SetBreakpointResponse:
@@ -425,7 +427,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
             debuggee_id: str = None,
             breakpoint_id: str = None,
             client_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> debugger.GetBreakpointResponse:
@@ -513,7 +515,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
             debuggee_id: str = None,
             breakpoint_id: str = None,
             client_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -590,7 +592,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
             *,
             debuggee_id: str = None,
             client_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> debugger.ListBreakpointsResponse:
@@ -665,7 +667,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
             *,
             project: str = None,
             client_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> debugger.ListDebuggeesResponse:

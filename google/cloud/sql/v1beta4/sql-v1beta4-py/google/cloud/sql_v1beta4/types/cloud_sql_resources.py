@@ -682,6 +682,8 @@ class CloneContext(proto.Message):
 class Database(proto.Message):
     r"""Represents a SQL database on the Cloud SQL instance.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         kind (str):
             This is always <b>sql#database</b>.
@@ -707,6 +709,7 @@ class Database(proto.Message):
             prefixed if applicable.
         sqlserver_database_details (google.cloud.sql_v1beta4.types.SqlServerDatabaseDetails):
 
+            This field is a member of `oneof`_ ``database_details``.
     """
 
     kind = proto.Field(
@@ -936,6 +939,7 @@ class DatabaseInstance(proto.Message):
                -- the proactive database wellness job for
             OOD. Readers:
                -- the proactive database wellness job
+            This field is a member of `oneof`_ ``_out_of_disk_report``.
     """
     class SqlInstanceState(proto.Enum):
         r"""The current serving state of the database instance."""
@@ -1015,12 +1019,14 @@ class DatabaseInstance(proto.Message):
                    -- the proactive database wellness job for
                 OOD. Readers:
                    -- the proactive database wellness job
+                This field is a member of `oneof`_ ``_sql_out_of_disk_state``.
             sql_min_recommended_increase_size_gb (int):
                 The minimum recommended increase size in
                 GigaBytes This field is consumed by the frontend
                 Writers:
                    -- the proactive database wellness job for
                 OOD.
+                This field is a member of `oneof`_ ``_sql_min_recommended_increase_size_gb``.
         """
         class SqlOutOfDiskState(proto.Enum):
             r"""This enum lists all possible states regarding out-of-disk

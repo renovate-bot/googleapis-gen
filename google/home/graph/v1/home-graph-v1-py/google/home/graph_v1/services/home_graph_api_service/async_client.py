@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.home.graph_v1.types import homegraph
 from .transports.base import HomeGraphApiServiceTransport, DEFAULT_CLIENT_INFO
@@ -151,10 +153,10 @@ class HomeGraphApiServiceAsyncClient:
         )
 
     async def request_sync_devices(self,
-            request: homegraph.RequestSyncDevicesRequest = None,
+            request: Union[homegraph.RequestSyncDevicesRequest, dict] = None,
             *,
             agent_user_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.RequestSyncDevicesResponse:
@@ -170,7 +172,7 @@ class HomeGraphApiServiceAsyncClient:
         credentials from your Actions console project.
 
         Args:
-            request (:class:`google.home.graph_v1.types.RequestSyncDevicesRequest`):
+            request (Union[google.home.graph_v1.types.RequestSyncDevicesRequest, dict]):
                 The request object. Request type for the
                 [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices)
                 call.
@@ -230,13 +232,13 @@ class HomeGraphApiServiceAsyncClient:
         return response
 
     async def report_state_and_notification(self,
-            request: homegraph.ReportStateAndNotificationRequest = None,
+            request: Union[homegraph.ReportStateAndNotificationRequest, dict] = None,
             *,
             request_id: str = None,
             event_id: str = None,
             agent_user_id: str = None,
             payload: homegraph.StateAndNotificationPayload = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.ReportStateAndNotificationResponse:
@@ -259,7 +261,7 @@ class HomeGraphApiServiceAsyncClient:
         credentials from your Actions console project.
 
         Args:
-            request (:class:`google.home.graph_v1.types.ReportStateAndNotificationRequest`):
+            request (Union[google.home.graph_v1.types.ReportStateAndNotificationRequest, dict]):
                 The request object. Request type for the
                 [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
                 call. It may include states, notifications, or both.
@@ -364,11 +366,11 @@ class HomeGraphApiServiceAsyncClient:
         return response
 
     async def delete_agent_user(self,
-            request: homegraph.DeleteAgentUserRequest = None,
+            request: Union[homegraph.DeleteAgentUserRequest, dict] = None,
             *,
             request_id: str = None,
             agent_user_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -386,7 +388,7 @@ class HomeGraphApiServiceAsyncClient:
         credentials from your Actions console project.
 
         Args:
-            request (:class:`google.home.graph_v1.types.DeleteAgentUserRequest`):
+            request (Union[google.home.graph_v1.types.DeleteAgentUserRequest, dict]):
                 The request object. Request type for the
                 [`DeleteAgentUser`](#google.home.graph.v1.HomeGraphApiService.DeleteAgentUser)
                 call.
@@ -455,12 +457,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def query(self,
-            request: homegraph.QueryRequest = None,
+            request: Union[homegraph.QueryRequest, dict] = None,
             *,
             request_id: str = None,
             agent_user_id: str = None,
             inputs: Sequence[homegraph.QueryRequestInput] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.QueryResponse:
@@ -474,7 +476,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Actions console project.
 
         Args:
-            request (:class:`google.home.graph_v1.types.QueryRequest`):
+            request (Union[google.home.graph_v1.types.QueryRequest, dict]):
                 The request object. Request type for the
                 [`Query`](#google.home.graph.v1.HomeGraphApiService.Query)
                 call.
@@ -560,11 +562,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def sync(self,
-            request: homegraph.SyncRequest = None,
+            request: Union[homegraph.SyncRequest, dict] = None,
             *,
             request_id: str = None,
             agent_user_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.SyncResponse:
@@ -577,7 +579,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Actions console project.
 
         Args:
-            request (:class:`google.home.graph_v1.types.SyncRequest`):
+            request (Union[google.home.graph_v1.types.SyncRequest, dict]):
                 The request object. Request type for the
                 [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
                 call.

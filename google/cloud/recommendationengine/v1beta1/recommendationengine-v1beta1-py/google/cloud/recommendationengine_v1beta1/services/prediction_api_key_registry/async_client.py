@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.recommendationengine_v1beta1.services.prediction_api_key_registry import pagers
 from google.cloud.recommendationengine_v1beta1.types import prediction_apikey_registry_service
@@ -153,18 +155,18 @@ class PredictionApiKeyRegistryAsyncClient:
         )
 
     async def create_prediction_api_key_registration(self,
-            request: prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest = None,
+            request: Union[prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest, dict] = None,
             *,
             parent: str = None,
             prediction_api_key_registration: prediction_apikey_registry_service.PredictionApiKeyRegistration = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> prediction_apikey_registry_service.PredictionApiKeyRegistration:
         r"""Register an API key for use with predict method.
 
         Args:
-            request (:class:`google.cloud.recommendationengine_v1beta1.types.CreatePredictionApiKeyRegistrationRequest`):
+            request (Union[google.cloud.recommendationengine_v1beta1.types.CreatePredictionApiKeyRegistrationRequest, dict]):
                 The request object. Request message for the
                 `CreatePredictionApiKeyRegistration` method.
             parent (:class:`str`):
@@ -243,10 +245,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_prediction_api_key_registrations(self,
-            request: prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest = None,
+            request: Union[prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPredictionApiKeyRegistrationsAsyncPager:
@@ -254,7 +256,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         method.
 
         Args:
-            request (:class:`google.cloud.recommendationengine_v1beta1.types.ListPredictionApiKeyRegistrationsRequest`):
+            request (Union[google.cloud.recommendationengine_v1beta1.types.ListPredictionApiKeyRegistrationsRequest, dict]):
                 The request object. Request message for the
                 `ListPredictionApiKeyRegistrations`.
             parent (:class:`str`):
@@ -338,17 +340,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_prediction_api_key_registration(self,
-            request: prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest = None,
+            request: Union[prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Unregister an apiKey from using for predict method.
 
         Args:
-            request (:class:`google.cloud.recommendationengine_v1beta1.types.DeletePredictionApiKeyRegistrationRequest`):
+            request (Union[google.cloud.recommendationengine_v1beta1.types.DeletePredictionApiKeyRegistrationRequest, dict]):
                 The request object. Request message for
                 `DeletePredictionApiKeyRegistration` method.
             name (:class:`str`):

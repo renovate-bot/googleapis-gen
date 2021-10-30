@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.data_fusion_v1.services.data_fusion import pagers
@@ -344,7 +346,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
             request: Union[datafusion.ListAvailableVersionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAvailableVersionsPager:
@@ -433,7 +435,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
     def list_instances(self,
             request: Union[datafusion.ListInstancesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInstancesPager:
@@ -502,7 +504,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
     def get_instance(self,
             request: Union[datafusion.GetInstanceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datafusion.Instance:
@@ -559,7 +561,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
             parent: str = None,
             instance: datafusion.Instance = None,
             instance_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -661,7 +663,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
             request: Union[datafusion.DeleteInstanceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -759,7 +761,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
             *,
             instance: datafusion.Instance = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -861,7 +863,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
     def restart_instance(self,
             request: Union[datafusion.RestartInstanceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

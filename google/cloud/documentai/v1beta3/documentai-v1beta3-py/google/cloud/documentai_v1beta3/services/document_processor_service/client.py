@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.documentai_v1beta3.services.document_processor_service import pagers
@@ -371,7 +373,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             request: Union[document_processor_service.ProcessRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> document_processor_service.ProcessResponse:
@@ -446,7 +448,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             request: Union[document_processor_service.BatchProcessRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -533,7 +535,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             request: Union[document_processor_service.FetchProcessorTypesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> document_processor_service.FetchProcessorTypesResponse:
@@ -609,7 +611,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             request: Union[document_processor_service.ListProcessorsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProcessorsPager:
@@ -698,7 +700,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             *,
             parent: str = None,
             processor: gcd_processor.Processor = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_processor.Processor:
@@ -791,7 +793,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             request: Union[document_processor_service.DeleteProcessorRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -888,7 +890,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
     def enable_processor(self,
             request: Union[document_processor_service.EnableProcessorRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -955,7 +957,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
     def disable_processor(self,
             request: Union[document_processor_service.DisableProcessorRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1023,7 +1025,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
             request: Union[document_processor_service.ReviewDocumentRequest, dict] = None,
             *,
             human_review_config: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

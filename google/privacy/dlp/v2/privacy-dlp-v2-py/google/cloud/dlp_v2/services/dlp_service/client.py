@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.dlp_v2.services.dlp_service import pagers
 from google.cloud.dlp_v2.types import dlp
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -412,7 +414,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def inspect_content(self,
             request: Union[dlp.InspectContentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.InspectContentResponse:
@@ -475,7 +477,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def redact_image(self,
             request: Union[dlp.RedactImageRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.RedactImageResponse:
@@ -539,7 +541,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def deidentify_content(self,
             request: Union[dlp.DeidentifyContentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DeidentifyContentResponse:
@@ -604,7 +606,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def reidentify_content(self,
             request: Union[dlp.ReidentifyContentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.ReidentifyContentResponse:
@@ -660,7 +662,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.ListInfoTypesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.ListInfoTypesResponse:
@@ -735,7 +737,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             parent: str = None,
             inspect_template: dlp.InspectTemplate = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.InspectTemplate:
@@ -851,7 +853,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             name: str = None,
             inspect_template: dlp.InspectTemplate = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.InspectTemplate:
@@ -951,7 +953,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.GetInspectTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.InspectTemplate:
@@ -1035,7 +1037,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.ListInspectTemplatesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInspectTemplatesPager:
@@ -1146,7 +1148,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.DeleteInspectTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1217,7 +1219,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             parent: str = None,
             deidentify_template: dlp.DeidentifyTemplate = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DeidentifyTemplate:
@@ -1332,7 +1334,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             name: str = None,
             deidentify_template: dlp.DeidentifyTemplate = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DeidentifyTemplate:
@@ -1430,7 +1432,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.GetDeidentifyTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DeidentifyTemplate:
@@ -1512,7 +1514,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.ListDeidentifyTemplatesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDeidentifyTemplatesPager:
@@ -1623,7 +1625,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.DeleteDeidentifyTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1694,7 +1696,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             parent: str = None,
             job_trigger: dlp.JobTrigger = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.JobTrigger:
@@ -1801,7 +1803,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             name: str = None,
             job_trigger: dlp.JobTrigger = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.JobTrigger:
@@ -1897,7 +1899,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.HybridInspectJobTriggerRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.HybridInspectResponse:
@@ -1980,7 +1982,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.GetJobTriggerRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.JobTrigger:
@@ -2059,7 +2061,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.ListJobTriggersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListJobTriggersPager:
@@ -2163,7 +2165,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.DeleteJobTriggerRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2231,7 +2233,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def activate_job_trigger(self,
             request: Union[dlp.ActivateJobTriggerRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DlpJob:
@@ -2292,7 +2294,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             parent: str = None,
             inspect_job: dlp.InspectJobConfig = None,
             risk_job: dlp.RiskAnalysisJobConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DlpJob:
@@ -2412,7 +2414,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.ListDlpJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDlpJobsPager:
@@ -2520,7 +2522,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.GetDlpJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.DlpJob:
@@ -2598,7 +2600,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.DeleteDlpJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2668,7 +2670,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def cancel_dlp_job(self,
             request: Union[dlp.CancelDlpJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2722,7 +2724,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             parent: str = None,
             config: dlp.StoredInfoTypeConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.StoredInfoType:
@@ -2834,7 +2836,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             name: str = None,
             config: dlp.StoredInfoTypeConfig = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.StoredInfoType:
@@ -2936,7 +2938,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.GetStoredInfoTypeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.StoredInfoType:
@@ -3016,7 +3018,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.ListStoredInfoTypesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListStoredInfoTypesPager:
@@ -3127,7 +3129,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.DeleteStoredInfoTypeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3197,7 +3199,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request: Union[dlp.HybridInspectDlpJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dlp.HybridInspectResponse:
@@ -3278,7 +3280,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     def finish_dlp_job(self,
             request: Union[dlp.FinishDlpJobRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

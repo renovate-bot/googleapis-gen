@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -153,10 +155,10 @@ class DocumentsAsyncClient:
         )
 
     async def list_documents(self,
-            request: document.ListDocumentsRequest = None,
+            request: Union[document.ListDocumentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDocumentsAsyncPager:
@@ -166,7 +168,7 @@ class DocumentsAsyncClient:
         is deprecated; only use ``projects.knowledgeBases.documents``.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.ListDocumentsRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.ListDocumentsRequest, dict]):
                 The request object. Request message for
                 [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
             parent (:class:`str`):
@@ -244,10 +246,10 @@ class DocumentsAsyncClient:
         return response
 
     async def get_document(self,
-            request: document.GetDocumentRequest = None,
+            request: Union[document.GetDocumentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> document.Document:
@@ -257,7 +259,7 @@ class DocumentsAsyncClient:
         is deprecated; only use ``projects.knowledgeBases.documents``.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.GetDocumentRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.GetDocumentRequest, dict]):
                 The request object. Request message for
                 [Documents.GetDocument][google.cloud.dialogflow.v2beta1.Documents.GetDocument].
             name (:class:`str`):
@@ -329,11 +331,11 @@ class DocumentsAsyncClient:
         return response
 
     async def create_document(self,
-            request: gcd_document.CreateDocumentRequest = None,
+            request: Union[gcd_document.CreateDocumentRequest, dict] = None,
             *,
             parent: str = None,
             document: gcd_document.Document = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -353,7 +355,7 @@ class DocumentsAsyncClient:
         is deprecated; only use ``projects.knowledgeBases.documents``.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.CreateDocumentRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.CreateDocumentRequest, dict]):
                 The request object. Request message for
                 [Documents.CreateDocument][google.cloud.dialogflow.v2beta1.Documents.CreateDocument].
             parent (:class:`str`):
@@ -445,9 +447,9 @@ class DocumentsAsyncClient:
         return response
 
     async def import_documents(self,
-            request: document.ImportDocumentsRequest = None,
+            request: Union[document.ImportDocumentsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -466,7 +468,7 @@ class DocumentsAsyncClient:
            [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.ImportDocumentsRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.ImportDocumentsRequest, dict]):
                 The request object. Request message for
                 [Documents.ImportDocuments][google.cloud.dialogflow.v2beta1.Documents.ImportDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -524,10 +526,10 @@ class DocumentsAsyncClient:
         return response
 
     async def delete_document(self,
-            request: document.DeleteDocumentRequest = None,
+            request: Union[document.DeleteDocumentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -547,7 +549,7 @@ class DocumentsAsyncClient:
         is deprecated; only use ``projects.knowledgeBases.documents``.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.DeleteDocumentRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.DeleteDocumentRequest, dict]):
                 The request object. Request message for
                 [Documents.DeleteDocument][google.cloud.dialogflow.v2beta1.Documents.DeleteDocument].
             name (:class:`str`):
@@ -633,11 +635,11 @@ class DocumentsAsyncClient:
         return response
 
     async def update_document(self,
-            request: gcd_document.UpdateDocumentRequest = None,
+            request: Union[gcd_document.UpdateDocumentRequest, dict] = None,
             *,
             document: gcd_document.Document = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -657,7 +659,7 @@ class DocumentsAsyncClient:
         is deprecated; only use ``projects.knowledgeBases.documents``.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.UpdateDocumentRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.UpdateDocumentRequest, dict]):
                 The request object. Request message for
                 [Documents.UpdateDocument][google.cloud.dialogflow.v2beta1.Documents.UpdateDocument].
             document (:class:`google.cloud.dialogflow_v2beta1.types.Document`):
@@ -749,11 +751,11 @@ class DocumentsAsyncClient:
         return response
 
     async def reload_document(self,
-            request: document.ReloadDocumentRequest = None,
+            request: Union[document.ReloadDocumentRequest, dict] = None,
             *,
             name: str = None,
             gcs_source: gcs.GcsSource = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -781,7 +783,7 @@ class DocumentsAsyncClient:
         is deprecated; only use ``projects.knowledgeBases.documents``.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2beta1.types.ReloadDocumentRequest`):
+            request (Union[google.cloud.dialogflow_v2beta1.types.ReloadDocumentRequest, dict]):
                 The request object. Request message for
                 [Documents.ReloadDocument][google.cloud.dialogflow.v2beta1.Documents.ReloadDocument].
             name (:class:`str`):

@@ -36,6 +36,13 @@ class SuggestSmartCampaignBudgetOptionsRequest(proto.Message):
     r"""Request message for
     [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         customer_id (str):
             Required. The ID of the customer whose budget
@@ -43,9 +50,11 @@ class SuggestSmartCampaignBudgetOptionsRequest(proto.Message):
         campaign (str):
             Required. The resource name of the campaign
             to get suggestion for.
+            This field is a member of `oneof`_ ``suggestion_data``.
         suggestion_info (google.ads.googleads.v8.services.types.SmartCampaignSuggestionInfo):
             Required. Information needed to get budget
             options
+            This field is a member of `oneof`_ ``suggestion_data``.
     """
 
     customer_id = proto.Field(
@@ -70,6 +79,13 @@ class SmartCampaignSuggestionInfo(proto.Message):
     information provided will help the system to derive better
     suggestions.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         final_url (str):
             Optional. Landing page URL of the campaign.
@@ -86,6 +102,7 @@ class SmartCampaignSuggestionInfo(proto.Message):
         business_context (google.ads.googleads.v8.services.types.SmartCampaignSuggestionInfo.BusinessContext):
             Optional. Context describing the business to
             advertise.
+            This field is a member of `oneof`_ ``business_setting``.
         business_location_id (int):
             Optional. The ID of the Google My Business (GMB) Location.
             The location ID can be fetched by GMB API with its form:
@@ -93,12 +110,15 @@ class SmartCampaignSuggestionInfo(proto.Message):
             {locationId} component from the GMB API represents the
             business_location_id. See the [Google My Business API]
             (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
+            This field is a member of `oneof`_ ``business_setting``.
         location_list (google.ads.googleads.v8.services.types.SmartCampaignSuggestionInfo.LocationList):
             Optional. The targeting geo location by
             locations.
+            This field is a member of `oneof`_ ``geo_target``.
         proximity (google.ads.googleads.v8.common.types.ProximityInfo):
             Optional. The targeting geo location by
             proximity.
+            This field is a member of `oneof`_ ``geo_target``.
     """
 
     class LocationList(proto.Message):
@@ -180,10 +200,13 @@ class SuggestSmartCampaignBudgetOptionsResponse(proto.Message):
     Attributes:
         low (google.ads.googleads.v8.services.types.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption):
             Optional. The lowest budget option.
+            This field is a member of `oneof`_ ``_low``.
         recommended (google.ads.googleads.v8.services.types.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption):
             Optional. The recommended budget option.
+            This field is a member of `oneof`_ ``_recommended``.
         high (google.ads.googleads.v8.services.types.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption):
             Optional. The highest budget option.
+            This field is a member of `oneof`_ ``_high``.
     """
 
     class Metrics(proto.Message):

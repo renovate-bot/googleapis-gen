@@ -81,6 +81,7 @@ class CriterionCategoryChannelAvailability(proto.Message):
             include_default_channel_sub_type being false means that the
             default display campaign where channel sub type is not set
             is not included in this availability configuration.
+            This field is a member of `oneof`_ ``_include_default_channel_sub_type``.
     """
 
     availability_mode = proto.Field(
@@ -117,8 +118,10 @@ class CriterionCategoryLocaleAvailability(proto.Message):
             set).
         country_code (str):
             Code of the country.
+            This field is a member of `oneof`_ ``_country_code``.
         language_code (str):
             Code of the language.
+            This field is a member of `oneof`_ ``_language_code``.
     """
 
     availability_mode = proto.Field(

@@ -1549,6 +1549,8 @@ class QueryAuditableServicesResponse(proto.Message):
 class LintPolicyRequest(proto.Message):
     r"""The request to lint a Cloud IAM policy object.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         full_resource_name (str):
             The full resource name of the policy this lint request is
@@ -1565,6 +1567,7 @@ class LintPolicyRequest(proto.Message):
         condition (google.type.expr_pb2.Expr):
             [google.iam.v1.Binding.condition]
             [google.iam.v1.Binding.condition] object to be linted.
+            This field is a member of `oneof`_ ``lint_object``.
     """
 
     full_resource_name = proto.Field(

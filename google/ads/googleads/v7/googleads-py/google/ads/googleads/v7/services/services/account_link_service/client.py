@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import account_link_status
 from google.ads.googleads.v7.enums.types import linked_account_type
 from google.ads.googleads.v7.resources.types import account_link
@@ -352,7 +354,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
             request: Union[account_link_service.GetAccountLinkRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_link.AccountLink:
@@ -432,7 +434,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
             *,
             customer_id: str = None,
             account_link: gagr_account_link.AccountLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_link_service.CreateAccountLinkResponse:
@@ -522,7 +524,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
             *,
             customer_id: str = None,
             operation: account_link_service.AccountLinkOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_link_service.MutateAccountLinkResponse:

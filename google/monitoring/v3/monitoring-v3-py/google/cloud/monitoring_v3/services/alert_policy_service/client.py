@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.monitoring_v3.services.alert_policy_service import pagers
 from google.cloud.monitoring_v3.types import alert
 from google.cloud.monitoring_v3.types import alert_service
@@ -361,7 +363,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
             request: Union[alert_service.ListAlertPoliciesRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAlertPoliciesPager:
@@ -459,7 +461,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
             request: Union[alert_service.GetAlertPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alert.AlertPolicy:
@@ -542,7 +544,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
             *,
             name: str = None,
             alert_policy: alert.AlertPolicy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alert.AlertPolicy:
@@ -646,7 +648,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
             request: Union[alert_service.DeleteAlertPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -719,7 +721,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
             *,
             update_mask: field_mask_pb2.FieldMask = None,
             alert_policy: alert.AlertPolicy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alert.AlertPolicy:

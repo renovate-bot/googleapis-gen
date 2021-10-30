@@ -38,25 +38,31 @@ class PaymentsAccount(proto.Message):
         payments_account_id (str):
             Output only. A 16 digit ID used to identify a
             payments account.
+            This field is a member of `oneof`_ ``_payments_account_id``.
         name (str):
             Output only. The name of the payments
             account.
+            This field is a member of `oneof`_ ``_name``.
         currency_code (str):
             Output only. The currency code of the
             payments account. A subset of the currency codes
             derived from the ISO 4217 standard is supported.
+            This field is a member of `oneof`_ ``_currency_code``.
         payments_profile_id (str):
             Output only. A 12 digit ID used to identify
             the payments profile associated with the
             payments account.
+            This field is a member of `oneof`_ ``_payments_profile_id``.
         secondary_payments_profile_id (str):
             Output only. A secondary payments profile ID
             present in uncommon situations, e.g. when a
             sequential liability agreement has been
             arranged.
+            This field is a member of `oneof`_ ``_secondary_payments_profile_id``.
         paying_manager_customer (str):
             Output only. Paying manager of this payment
             account.
+            This field is a member of `oneof`_ ``_paying_manager_customer``.
     """
 
     resource_name = proto.Field(

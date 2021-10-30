@@ -32,17 +32,29 @@ __protobuf__ = proto.module(
 class Actor(proto.Message):
     r"""The actor of a Drive activity.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             An end user.
+            This field is a member of `oneof`_ ``type``.
         anonymous (google.apps.drive.activity_v2.types.AnonymousUser):
             An anonymous user.
+            This field is a member of `oneof`_ ``type``.
         impersonation (google.apps.drive.activity_v2.types.Impersonation):
             An account acting on behalf of another.
+            This field is a member of `oneof`_ ``type``.
         system (google.apps.drive.activity_v2.types.SystemEvent):
             A non-user actor (i.e. system triggered).
+            This field is a member of `oneof`_ ``type``.
         administrator (google.apps.drive.activity_v2.types.Administrator):
             An administrator.
+            This field is a member of `oneof`_ ``type``.
     """
 
     user = proto.Field(
@@ -80,13 +92,23 @@ class Actor(proto.Message):
 class User(proto.Message):
     r"""Information about an end user.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         known_user (google.apps.drive.activity_v2.types.User.KnownUser):
             A known user.
+            This field is a member of `oneof`_ ``type``.
         deleted_user (google.apps.drive.activity_v2.types.User.DeletedUser):
             A user whose account has since been deleted.
+            This field is a member of `oneof`_ ``type``.
         unknown_user (google.apps.drive.activity_v2.types.User.UnknownUser):
             A user about whom nothing is currently known.
+            This field is a member of `oneof`_ ``type``.
     """
 
     class KnownUser(proto.Message):

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.iap_v1.services.identity_aware_proxy_o_auth_service import pagers
 from google.cloud.iap_v1.types import service
 from .transports.base import IdentityAwareProxyOAuthServiceTransport, DEFAULT_CLIENT_INFO
@@ -327,7 +329,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def list_brands(self,
             request: Union[service.ListBrandsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.ListBrandsResponse:
@@ -380,7 +382,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def create_brand(self,
             request: Union[service.CreateBrandRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.Brand:
@@ -445,7 +447,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def get_brand(self,
             request: Union[service.GetBrandRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.Brand:
@@ -501,7 +503,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def create_identity_aware_proxy_client(self,
             request: Union[service.CreateIdentityAwareProxyClientRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.IdentityAwareProxyClient:
@@ -560,7 +562,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def list_identity_aware_proxy_clients(self,
             request: Union[service.ListIdentityAwareProxyClientsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIdentityAwareProxyClientsPager:
@@ -628,7 +630,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def get_identity_aware_proxy_client(self,
             request: Union[service.GetIdentityAwareProxyClientRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.IdentityAwareProxyClient:
@@ -685,7 +687,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def reset_identity_aware_proxy_client_secret(self,
             request: Union[service.ResetIdentityAwareProxyClientSecretRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.IdentityAwareProxyClient:
@@ -743,7 +745,7 @@ class IdentityAwareProxyOAuthServiceClient(metaclass=IdentityAwareProxyOAuthServ
     def delete_identity_aware_proxy_client(self,
             request: Union[service.DeleteIdentityAwareProxyClientRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

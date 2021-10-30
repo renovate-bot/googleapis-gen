@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.types import library
@@ -159,17 +161,17 @@ class LibraryServiceAsyncClient:
         )
 
     async def create_shelf(self,
-            request: library.CreateShelfRequest = None,
+            request: Union[library.CreateShelfRequest, dict] = None,
             *,
             shelf: library.Shelf = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Shelf:
         r"""Creates a shelf, and returns the new Shelf.
 
         Args:
-            request (:class:`google.example.library_v1.types.CreateShelfRequest`):
+            request (Union[google.example.library_v1.types.CreateShelfRequest, dict]):
                 The request object. Request message for
                 LibraryService.CreateShelf.
             shelf (:class:`google.example.library_v1.types.Shelf`):
@@ -229,17 +231,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_shelf(self,
-            request: library.GetShelfRequest = None,
+            request: Union[library.GetShelfRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Shelf:
         r"""Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
 
         Args:
-            request (:class:`google.example.library_v1.types.GetShelfRequest`):
+            request (Union[google.example.library_v1.types.GetShelfRequest, dict]):
                 The request object. Request message for
                 LibraryService.GetShelf.
             name (:class:`str`):
@@ -309,9 +311,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_shelves(self,
-            request: library.ListShelvesRequest = None,
+            request: Union[library.ListShelvesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListShelvesAsyncPager:
@@ -320,7 +322,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         necessarily be added to the end of this list.
 
         Args:
-            request (:class:`google.example.library_v1.types.ListShelvesRequest`):
+            request (Union[google.example.library_v1.types.ListShelvesRequest, dict]):
                 The request object. Request message for
                 LibraryService.ListShelves.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -377,17 +379,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_shelf(self,
-            request: library.DeleteShelfRequest = None,
+            request: Union[library.DeleteShelfRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
 
         Args:
-            request (:class:`google.example.library_v1.types.DeleteShelfRequest`):
+            request (Union[google.example.library_v1.types.DeleteShelfRequest, dict]):
                 The request object. Request message for
                 LibraryService.DeleteShelf.
             name (:class:`str`):
@@ -448,11 +450,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def merge_shelves(self,
-            request: library.MergeShelvesRequest = None,
+            request: Union[library.MergeShelvesRequest, dict] = None,
             *,
             name: str = None,
             other_shelf: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Shelf:
@@ -465,7 +467,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         no-op if the specified shelves are the same.
 
         Args:
-            request (:class:`google.example.library_v1.types.MergeShelvesRequest`):
+            request (Union[google.example.library_v1.types.MergeShelvesRequest, dict]):
                 The request object. Describes the shelf being removed
                 (other_shelf_name) and updated (name) in this merge.
             name (:class:`str`):
@@ -544,18 +546,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_book(self,
-            request: library.CreateBookRequest = None,
+            request: Union[library.CreateBookRequest, dict] = None,
             *,
             parent: str = None,
             book: library.Book = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
         r"""Creates a book, and returns the new Book.
 
         Args:
-            request (:class:`google.example.library_v1.types.CreateBookRequest`):
+            request (Union[google.example.library_v1.types.CreateBookRequest, dict]):
                 The request object. Request message for
                 LibraryService.CreateBook.
             parent (:class:`str`):
@@ -630,17 +632,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_book(self,
-            request: library.GetBookRequest = None,
+            request: Union[library.GetBookRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
         r"""Gets a book. Returns NOT_FOUND if the book does not exist.
 
         Args:
-            request (:class:`google.example.library_v1.types.GetBookRequest`):
+            request (Union[google.example.library_v1.types.GetBookRequest, dict]):
                 The request object. Request message for
                 LibraryService.GetBook.
             name (:class:`str`):
@@ -708,10 +710,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_books(self,
-            request: library.ListBooksRequest = None,
+            request: Union[library.ListBooksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBooksAsyncPager:
@@ -721,7 +723,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         exist.
 
         Args:
-            request (:class:`google.example.library_v1.types.ListBooksRequest`):
+            request (Union[google.example.library_v1.types.ListBooksRequest, dict]):
                 The request object. Request message for
                 LibraryService.ListBooks.
             parent (:class:`str`):
@@ -805,17 +807,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_book(self,
-            request: library.DeleteBookRequest = None,
+            request: Union[library.DeleteBookRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a book. Returns NOT_FOUND if the book does not exist.
 
         Args:
-            request (:class:`google.example.library_v1.types.DeleteBookRequest`):
+            request (Union[google.example.library_v1.types.DeleteBookRequest, dict]):
                 The request object. Request message for
                 LibraryService.DeleteBook.
             name (:class:`str`):
@@ -876,11 +878,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def update_book(self,
-            request: library.UpdateBookRequest = None,
+            request: Union[library.UpdateBookRequest, dict] = None,
             *,
             book: library.Book = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
@@ -888,7 +890,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         is non-empty and does not equal the existing name.
 
         Args:
-            request (:class:`google.example.library_v1.types.UpdateBookRequest`):
+            request (Union[google.example.library_v1.types.UpdateBookRequest, dict]):
                 The request object. Request message for
                 LibraryService.UpdateBook.
             book (:class:`google.example.library_v1.types.Book`):
@@ -963,11 +965,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def move_book(self,
-            request: library.MoveBookRequest = None,
+            request: Union[library.MoveBookRequest, dict] = None,
             *,
             name: str = None,
             other_shelf_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
@@ -976,7 +978,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         the original book.
 
         Args:
-            request (:class:`google.example.library_v1.types.MoveBookRequest`):
+            request (Union[google.example.library_v1.types.MoveBookRequest, dict]):
                 The request object. Describes what book to move (name)
                 and what shelf we're moving it to (other_shelf_name).
             name (:class:`str`):

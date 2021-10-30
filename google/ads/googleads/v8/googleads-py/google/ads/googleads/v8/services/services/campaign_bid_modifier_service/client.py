@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import criteria
 from google.ads.googleads.v8.resources.types import campaign_bid_modifier
 from google.ads.googleads.v8.services.types import campaign_bid_modifier_service
@@ -349,7 +351,7 @@ class CampaignBidModifierServiceClient(metaclass=CampaignBidModifierServiceClien
             request: Union[campaign_bid_modifier_service.GetCampaignBidModifierRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_bid_modifier.CampaignBidModifier:
@@ -428,7 +430,7 @@ class CampaignBidModifierServiceClient(metaclass=CampaignBidModifierServiceClien
             *,
             customer_id: str = None,
             operations: Sequence[campaign_bid_modifier_service.CampaignBidModifierOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_bid_modifier_service.MutateCampaignBidModifiersResponse:

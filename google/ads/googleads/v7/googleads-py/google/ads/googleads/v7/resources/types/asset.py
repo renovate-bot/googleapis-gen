@@ -40,6 +40,13 @@ class Asset(proto.Message):
     removed. To stop an asset from serving, remove the asset from
     the entity that is using it.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the asset. Asset resource
@@ -48,8 +55,10 @@ class Asset(proto.Message):
             ``customers/{customer_id}/assets/{asset_id}``
         id (int):
             Output only. The ID of the asset.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             Optional name of the asset.
+            This field is a member of `oneof`_ ``_name``.
         type_ (google.ads.googleads.v7.enums.types.AssetTypeEnum.AssetType):
             Output only. Type of the asset.
         final_urls (Sequence[str]):
@@ -60,6 +69,7 @@ class Asset(proto.Message):
             all cross domain redirects.
         tracking_url_template (str):
             URL template for constructing a tracking URL.
+            This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v7.common.types.CustomParameter]):
             A list of mappings to be used for substituting URL custom
             parameter tags in the tracking_url_template, final_urls,
@@ -67,29 +77,40 @@ class Asset(proto.Message):
         final_url_suffix (str):
             URL template for appending params to landing
             page URLs served with parallel tracking.
+            This field is a member of `oneof`_ ``_final_url_suffix``.
         policy_summary (google.ads.googleads.v7.resources.types.AssetPolicySummary):
             Output only. Policy information for the
             asset.
         youtube_video_asset (google.ads.googleads.v7.common.types.YoutubeVideoAsset):
             Immutable. A YouTube video asset.
+            This field is a member of `oneof`_ ``asset_data``.
         media_bundle_asset (google.ads.googleads.v7.common.types.MediaBundleAsset):
             Immutable. A media bundle asset.
+            This field is a member of `oneof`_ ``asset_data``.
         image_asset (google.ads.googleads.v7.common.types.ImageAsset):
             Output only. An image asset.
+            This field is a member of `oneof`_ ``asset_data``.
         text_asset (google.ads.googleads.v7.common.types.TextAsset):
             Output only. A text asset.
+            This field is a member of `oneof`_ ``asset_data``.
         lead_form_asset (google.ads.googleads.v7.common.types.LeadFormAsset):
             A lead form asset.
+            This field is a member of `oneof`_ ``asset_data``.
         book_on_google_asset (google.ads.googleads.v7.common.types.BookOnGoogleAsset):
             A book on google asset.
+            This field is a member of `oneof`_ ``asset_data``.
         promotion_asset (google.ads.googleads.v7.common.types.PromotionAsset):
             A promotion asset.
+            This field is a member of `oneof`_ ``asset_data``.
         callout_asset (google.ads.googleads.v7.common.types.CalloutAsset):
             A callout asset.
+            This field is a member of `oneof`_ ``asset_data``.
         structured_snippet_asset (google.ads.googleads.v7.common.types.StructuredSnippetAsset):
             A structured snippet asset.
+            This field is a member of `oneof`_ ``asset_data``.
         sitelink_asset (google.ads.googleads.v7.common.types.SitelinkAsset):
             A sitelink asset.
+            This field is a member of `oneof`_ ``asset_data``.
     """
 
     resource_name = proto.Field(

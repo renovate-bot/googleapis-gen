@@ -82,6 +82,13 @@ class MutateCustomAudiencesRequest(proto.Message):
 class CustomAudienceOperation(proto.Message):
     r"""A single operation (create, update) on a custom audience.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -89,14 +96,17 @@ class CustomAudienceOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CustomAudience):
             Create operation: No resource name is
             expected for the new custom audience.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.CustomAudience):
             Update operation: The custom audience is
             expected to have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed custom
             audience is expected, in this format:
 
             ``customers/{customer_id}/customAudiences/{custom_audience_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

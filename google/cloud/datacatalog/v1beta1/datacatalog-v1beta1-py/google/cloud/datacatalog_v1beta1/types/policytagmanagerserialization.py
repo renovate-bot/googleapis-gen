@@ -101,12 +101,16 @@ class ImportTaxonomiesRequest(proto.Message):
     r"""Request message for
     [ImportTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization.ImportTaxonomies].
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             Required. Resource name of project that the
             newly created taxonomies will belong to.
         inline_source (google.cloud.datacatalog_v1beta1.types.InlineSource):
             Inline source used for taxonomies import
+            This field is a member of `oneof`_ ``source``.
     """
 
     parent = proto.Field(
@@ -156,6 +160,9 @@ class ExportTaxonomiesRequest(proto.Message):
     r"""Request message for
     [ExportTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization.ExportTaxonomies].
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             Required. Resource name of the project that
@@ -165,6 +172,7 @@ class ExportTaxonomiesRequest(proto.Message):
             be exported.
         serialized_taxonomies (bool):
             Export taxonomies as serialized taxonomies.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     parent = proto.Field(

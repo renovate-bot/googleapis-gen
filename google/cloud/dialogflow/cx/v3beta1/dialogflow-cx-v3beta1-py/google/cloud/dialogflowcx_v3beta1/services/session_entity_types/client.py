@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.dialogflowcx_v3beta1.services.session_entity_types import pagers
 from google.cloud.dialogflowcx_v3beta1.types import entity_type
 from google.cloud.dialogflowcx_v3beta1.types import session_entity_type
@@ -341,7 +343,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             request: Union[session_entity_type.ListSessionEntityTypesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSessionEntityTypesPager:
@@ -434,7 +436,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             request: Union[session_entity_type.GetSessionEntityTypeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> session_entity_type.SessionEntityType:
@@ -529,7 +531,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             *,
             parent: str = None,
             session_entity_type: gcdc_session_entity_type.SessionEntityType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_session_entity_type.SessionEntityType:
@@ -634,7 +636,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             *,
             session_entity_type: gcdc_session_entity_type.SessionEntityType = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_session_entity_type.SessionEntityType:
@@ -737,7 +739,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             request: Union[session_entity_type.DeleteSessionEntityTypeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

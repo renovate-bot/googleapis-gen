@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.talent_v4beta1.services.tenant_service import pagers
 from google.cloud.talent_v4beta1.types import tenant
@@ -149,18 +151,18 @@ class TenantServiceAsyncClient:
         )
 
     async def create_tenant(self,
-            request: tenant_service.CreateTenantRequest = None,
+            request: Union[tenant_service.CreateTenantRequest, dict] = None,
             *,
             parent: str = None,
             tenant: gct_tenant.Tenant = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_tenant.Tenant:
         r"""Creates a new tenant entity.
 
         Args:
-            request (:class:`google.cloud.talent_v4beta1.types.CreateTenantRequest`):
+            request (Union[google.cloud.talent_v4beta1.types.CreateTenantRequest, dict]):
                 The request object. The Request of the CreateTenant
                 method.
             parent (:class:`str`):
@@ -240,17 +242,17 @@ class TenantServiceAsyncClient:
         return response
 
     async def get_tenant(self,
-            request: tenant_service.GetTenantRequest = None,
+            request: Union[tenant_service.GetTenantRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tenant.Tenant:
         r"""Retrieves specified tenant.
 
         Args:
-            request (:class:`google.cloud.talent_v4beta1.types.GetTenantRequest`):
+            request (Union[google.cloud.talent_v4beta1.types.GetTenantRequest, dict]):
                 The request object. Request for getting a tenant by
                 name.
             name (:class:`str`):
@@ -331,17 +333,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_tenant(self,
-            request: tenant_service.UpdateTenantRequest = None,
+            request: Union[tenant_service.UpdateTenantRequest, dict] = None,
             *,
             tenant: gct_tenant.Tenant = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_tenant.Tenant:
         r"""Updates specified tenant.
 
         Args:
-            request (:class:`google.cloud.talent_v4beta1.types.UpdateTenantRequest`):
+            request (Union[google.cloud.talent_v4beta1.types.UpdateTenantRequest, dict]):
                 The request object. Request for updating a specified
                 tenant.
             tenant (:class:`google.cloud.talent_v4beta1.types.Tenant`):
@@ -412,17 +414,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_tenant(self,
-            request: tenant_service.DeleteTenantRequest = None,
+            request: Union[tenant_service.DeleteTenantRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes specified tenant.
 
         Args:
-            request (:class:`google.cloud.talent_v4beta1.types.DeleteTenantRequest`):
+            request (Union[google.cloud.talent_v4beta1.types.DeleteTenantRequest, dict]):
                 The request object. Request to delete a tenant.
             name (:class:`str`):
                 Required. The resource name of the tenant to be deleted.
@@ -487,17 +489,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def list_tenants(self,
-            request: tenant_service.ListTenantsRequest = None,
+            request: Union[tenant_service.ListTenantsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTenantsAsyncPager:
         r"""Lists all tenants associated with the project.
 
         Args:
-            request (:class:`google.cloud.talent_v4beta1.types.ListTenantsRequest`):
+            request (Union[google.cloud.talent_v4beta1.types.ListTenantsRequest, dict]):
                 The request object. List tenants for which the client
                 has ACL visibility.
             parent (:class:`str`):

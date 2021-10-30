@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.maps.roads_v1.types import roads
 from .transports.base import RoadsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import RoadsServiceGrpcTransport
@@ -324,7 +326,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
             request: Union[roads.SnapToRoadsRequest, dict] = None,
             *,
             path: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> roads.SnapToRoadsResponse:
@@ -397,7 +399,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
             request: Union[roads.ListNearestRoadsRequest, dict] = None,
             *,
             points: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> roads.ListNearestRoadsResponse:

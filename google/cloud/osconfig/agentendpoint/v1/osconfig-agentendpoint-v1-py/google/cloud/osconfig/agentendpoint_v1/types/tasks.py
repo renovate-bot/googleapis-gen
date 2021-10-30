@@ -57,6 +57,13 @@ class TaskType(proto.Enum):
 class Task(proto.Message):
     r"""A unit of work to be performed by the agent.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         task_id (str):
             Unique task id.
@@ -72,11 +79,14 @@ class Task(proto.Message):
         apply_patches_task (google.cloud.osconfig.agentendpoint_v1.types.ApplyPatchesTask):
             Details about the apply patches task to
             perform.
+            This field is a member of `oneof`_ ``task_details``.
         exec_step_task (google.cloud.osconfig.agentendpoint_v1.types.ExecStepTask):
             Details about the exec step task to perform.
+            This field is a member of `oneof`_ ``task_details``.
         apply_config_task (google.cloud.osconfig.agentendpoint_v1.types.ApplyConfigTask):
             Details about the apply config step task to
             perform.
+            This field is a member of `oneof`_ ``task_details``.
         service_labels (Sequence[google.cloud.osconfig.agentendpoint_v1.types.Task.ServiceLabelsEntry]):
             Labels describing the task.  Used for logging
             by the agent.

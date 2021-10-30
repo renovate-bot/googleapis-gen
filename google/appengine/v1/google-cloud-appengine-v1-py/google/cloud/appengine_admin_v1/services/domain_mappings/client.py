@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.appengine_admin_v1.services.domain_mappings import pagers
@@ -329,7 +331,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
     def list_domain_mappings(self,
             request: Union[appengine.ListDomainMappingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDomainMappingsPager:
@@ -396,7 +398,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
     def get_domain_mapping(self,
             request: Union[appengine.GetDomainMappingRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> domain_mapping.DomainMapping:
@@ -452,7 +454,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
     def create_domain_mapping(self,
             request: Union[appengine.CreateDomainMappingRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -522,7 +524,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
     def update_domain_mapping(self,
             request: Union[appengine.UpdateDomainMappingRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -593,7 +595,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
     def delete_domain_mapping(self,
             request: Union[appengine.DeleteDomainMappingRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:

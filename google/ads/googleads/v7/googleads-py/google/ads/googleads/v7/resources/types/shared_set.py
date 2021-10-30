@@ -41,6 +41,7 @@ class SharedSet(proto.Message):
         id (int):
             Output only. The ID of this shared set. Read
             only.
+            This field is a member of `oneof`_ ``_id``.
         type_ (google.ads.googleads.v7.enums.types.SharedSetTypeEnum.SharedSetType):
             Immutable. The type of this shared set: each
             shared set holds only a single kind of resource.
@@ -51,15 +52,18 @@ class SharedSet(proto.Message):
             among active shared sets of the same type.
             The length of this string should be between 1
             and 255 UTF-8 bytes, inclusive.
+            This field is a member of `oneof`_ ``_name``.
         status (google.ads.googleads.v7.enums.types.SharedSetStatusEnum.SharedSetStatus):
             Output only. The status of this shared set.
             Read only.
         member_count (int):
             Output only. The number of shared criteria
             within this shared set. Read only.
+            This field is a member of `oneof`_ ``_member_count``.
         reference_count (int):
             Output only. The number of campaigns
             associated with this shared set. Read only.
+            This field is a member of `oneof`_ ``_reference_count``.
     """
 
     resource_name = proto.Field(

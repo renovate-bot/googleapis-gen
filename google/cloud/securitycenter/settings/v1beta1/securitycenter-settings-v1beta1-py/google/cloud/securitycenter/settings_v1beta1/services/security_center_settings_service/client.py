@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.securitycenter.settings_v1beta1.services.security_center_settings_service import pagers
 from google.cloud.securitycenter.settings_v1beta1.types import billing_settings
 from google.cloud.securitycenter.settings_v1beta1.types import component_settings
@@ -374,7 +376,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.GetServiceAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> securitycenter_settings_service.ServiceAccount:
@@ -464,7 +466,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.GetSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> settings.Settings:
@@ -545,7 +547,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             *,
             settings: gcss_settings.Settings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcss_settings.Settings:
@@ -636,7 +638,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
     def reset_settings(self,
             request: Union[securitycenter_settings_service.ResetSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -692,7 +694,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
     def batch_get_settings(self,
             request: Union[securitycenter_settings_service.BatchGetSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> securitycenter_settings_service.BatchGetSettingsResponse:
@@ -749,7 +751,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.CalculateEffectiveSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> settings.Settings:
@@ -841,7 +843,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
     def batch_calculate_effective_settings(self,
             request: Union[securitycenter_settings_service.BatchCalculateEffectiveSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> securitycenter_settings_service.BatchCalculateEffectiveSettingsResponse:
@@ -898,7 +900,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.GetComponentSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> component_settings.ComponentSettings:
@@ -982,7 +984,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             *,
             component_settings: gcss_component_settings.ComponentSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcss_component_settings.ComponentSettings:
@@ -1074,7 +1076,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
     def reset_component_settings(self,
             request: Union[securitycenter_settings_service.ResetComponentSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1127,7 +1129,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.CalculateEffectiveComponentSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> component_settings.ComponentSettings:
@@ -1210,7 +1212,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.ListDetectorsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDetectorsPager:
@@ -1297,7 +1299,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
             request: Union[securitycenter_settings_service.ListComponentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListComponentsPager:

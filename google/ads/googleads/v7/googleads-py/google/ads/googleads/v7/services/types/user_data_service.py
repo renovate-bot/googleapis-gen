@@ -33,6 +33,9 @@ class UploadUserDataRequest(proto.Message):
     r"""Request message for
     [UserDataService.UploadUserData][google.ads.googleads.v7.services.UserDataService.UploadUserData]
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         customer_id (str):
             Required. The ID of the customer for which to
@@ -42,6 +45,7 @@ class UploadUserDataRequest(proto.Message):
         customer_match_user_list_metadata (google.ads.googleads.v7.common.types.CustomerMatchUserListMetadata):
             Metadata for data updates to a Customer Match
             user list.
+            This field is a member of `oneof`_ ``metadata``.
     """
 
     customer_id = proto.Field(
@@ -64,13 +68,22 @@ class UploadUserDataRequest(proto.Message):
 class UserDataOperation(proto.Message):
     r"""Operation to be made for the UploadUserDataRequest.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v7.common.types.UserData):
             The list of user data to be appended to the
             user list.
+            This field is a member of `oneof`_ ``operation``.
         remove (google.ads.googleads.v7.common.types.UserData):
             The list of user data to be removed from the
             user list.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(
@@ -96,9 +109,11 @@ class UploadUserDataResponse(proto.Message):
             The date time at which the request was received by API,
             formatted as "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+            This field is a member of `oneof`_ ``_upload_date_time``.
         received_operations_count (int):
             Number of upload data operations received by
             API.
+            This field is a member of `oneof`_ ``_received_operations_count``.
     """
 
     upload_date_time = proto.Field(

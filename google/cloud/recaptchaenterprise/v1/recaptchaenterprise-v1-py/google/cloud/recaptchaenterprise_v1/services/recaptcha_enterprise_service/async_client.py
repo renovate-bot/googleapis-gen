@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service import pagers
 from google.cloud.recaptchaenterprise_v1.types import recaptchaenterprise
@@ -150,11 +152,11 @@ class RecaptchaEnterpriseServiceAsyncClient:
         )
 
     async def create_assessment(self,
-            request: recaptchaenterprise.CreateAssessmentRequest = None,
+            request: Union[recaptchaenterprise.CreateAssessmentRequest, dict] = None,
             *,
             parent: str = None,
             assessment: recaptchaenterprise.Assessment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.Assessment:
@@ -162,7 +164,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         legitimate.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.CreateAssessmentRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.CreateAssessmentRequest, dict]):
                 The request object. The create assessment request
                 message.
             parent (:class:`str`):
@@ -233,11 +235,11 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def annotate_assessment(self,
-            request: recaptchaenterprise.AnnotateAssessmentRequest = None,
+            request: Union[recaptchaenterprise.AnnotateAssessmentRequest, dict] = None,
             *,
             name: str = None,
             annotation: recaptchaenterprise.AnnotateAssessmentRequest.Annotation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.AnnotateAssessmentResponse:
@@ -246,7 +248,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         to be authentic or fraudulent.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.AnnotateAssessmentRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.AnnotateAssessmentRequest, dict]):
                 The request object. The request message to annotate an
                 Assessment.
             name (:class:`str`):
@@ -324,16 +326,16 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def create_key(self,
-            request: recaptchaenterprise.CreateKeyRequest = None,
+            request: Union[recaptchaenterprise.CreateKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.Key:
         r"""Creates a new reCAPTCHA Enterprise key.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.CreateKeyRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.CreateKeyRequest, dict]):
                 The request object. The create key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -379,9 +381,9 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def list_keys(self,
-            request: recaptchaenterprise.ListKeysRequest = None,
+            request: Union[recaptchaenterprise.ListKeysRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListKeysAsyncPager:
@@ -389,7 +391,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         project.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.ListKeysRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.ListKeysRequest, dict]):
                 The request object. The list keys request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -446,16 +448,16 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def get_key(self,
-            request: recaptchaenterprise.GetKeyRequest = None,
+            request: Union[recaptchaenterprise.GetKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.Key:
         r"""Returns the specified key.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.GetKeyRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.GetKeyRequest, dict]):
                 The request object. The get key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -501,16 +503,16 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def update_key(self,
-            request: recaptchaenterprise.UpdateKeyRequest = None,
+            request: Union[recaptchaenterprise.UpdateKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.Key:
         r"""Updates the specified key.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.UpdateKeyRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.UpdateKeyRequest, dict]):
                 The request object. The update key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -556,16 +558,16 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def delete_key(self,
-            request: recaptchaenterprise.DeleteKeyRequest = None,
+            request: Union[recaptchaenterprise.DeleteKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes the specified key.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.DeleteKeyRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.DeleteKeyRequest, dict]):
                 The request object. The delete key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -601,9 +603,9 @@ class RecaptchaEnterpriseServiceAsyncClient:
         )
 
     async def migrate_key(self,
-            request: recaptchaenterprise.MigrateKeyRequest = None,
+            request: Union[recaptchaenterprise.MigrateKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.Key:
@@ -616,7 +618,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         role in the destination project.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.MigrateKeyRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.MigrateKeyRequest, dict]):
                 The request object. The migrate key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -662,10 +664,10 @@ class RecaptchaEnterpriseServiceAsyncClient:
         return response
 
     async def get_metrics(self,
-            request: recaptchaenterprise.GetMetricsRequest = None,
+            request: Union[recaptchaenterprise.GetMetricsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> recaptchaenterprise.Metrics:
@@ -673,7 +675,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         be used to build dashboards.
 
         Args:
-            request (:class:`google.cloud.recaptchaenterprise_v1.types.GetMetricsRequest`):
+            request (Union[google.cloud.recaptchaenterprise_v1.types.GetMetricsRequest, dict]):
                 The request object. The get metrics request message.
             name (:class:`str`):
                 Required. The name of the requested

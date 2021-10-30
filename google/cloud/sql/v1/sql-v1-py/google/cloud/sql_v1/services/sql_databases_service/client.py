@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1.types import cloud_sql_databases
 from google.cloud.sql_v1.types import cloud_sql_resources
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -325,7 +327,7 @@ class SqlDatabasesServiceClient(metaclass=SqlDatabasesServiceClientMeta):
     def delete(self,
             request: Union[cloud_sql_databases.SqlDatabasesDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -375,7 +377,7 @@ class SqlDatabasesServiceClient(metaclass=SqlDatabasesServiceClientMeta):
     def get(self,
             request: Union[cloud_sql_databases.SqlDatabasesGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Database:
@@ -423,7 +425,7 @@ class SqlDatabasesServiceClient(metaclass=SqlDatabasesServiceClientMeta):
     def insert(self,
             request: Union[cloud_sql_databases.SqlDatabasesInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -474,7 +476,7 @@ class SqlDatabasesServiceClient(metaclass=SqlDatabasesServiceClientMeta):
     def list(self,
             request: Union[cloud_sql_databases.SqlDatabasesListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_databases.DatabasesListResponse:
@@ -519,7 +521,7 @@ class SqlDatabasesServiceClient(metaclass=SqlDatabasesServiceClientMeta):
     def patch(self,
             request: Union[cloud_sql_databases.SqlDatabasesUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -571,7 +573,7 @@ class SqlDatabasesServiceClient(metaclass=SqlDatabasesServiceClientMeta):
     def update(self,
             request: Union[cloud_sql_databases.SqlDatabasesUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:

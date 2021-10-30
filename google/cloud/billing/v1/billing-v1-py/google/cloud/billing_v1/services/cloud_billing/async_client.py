@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.billing_v1.services.cloud_billing import pagers
 from google.cloud.billing_v1.types import cloud_billing
@@ -147,10 +149,10 @@ class CloudBillingAsyncClient:
         )
 
     async def get_billing_account(self,
-            request: cloud_billing.GetBillingAccountRequest = None,
+            request: Union[cloud_billing.GetBillingAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.BillingAccount:
@@ -159,7 +161,7 @@ class CloudBillingAsyncClient:
         account <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.GetBillingAccountRequest`):
+            request (Union[google.cloud.billing_v1.types.GetBillingAccountRequest, dict]):
                 The request object. Request message for
                 `GetBillingAccount`.
             name (:class:`str`):
@@ -233,9 +235,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_billing_accounts(self,
-            request: cloud_billing.ListBillingAccountsRequest = None,
+            request: Union[cloud_billing.ListBillingAccountsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBillingAccountsAsyncPager:
@@ -244,7 +246,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         `view <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.ListBillingAccountsRequest`):
+            request (Union[google.cloud.billing_v1.types.ListBillingAccountsRequest, dict]):
                 The request object. Request message for
                 `ListBillingAccounts`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -300,11 +302,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_billing_account(self,
-            request: cloud_billing.UpdateBillingAccountRequest = None,
+            request: Union[cloud_billing.UpdateBillingAccountRequest, dict] = None,
             *,
             name: str = None,
             account: cloud_billing.BillingAccount = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.BillingAccount:
@@ -316,7 +318,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         of the billing account.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.UpdateBillingAccountRequest`):
+            request (Union[google.cloud.billing_v1.types.UpdateBillingAccountRequest, dict]):
                 The request object. Request message for
                 `UpdateBillingAccount`.
             name (:class:`str`):
@@ -399,10 +401,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_billing_account(self,
-            request: cloud_billing.CreateBillingAccountRequest = None,
+            request: Union[cloud_billing.CreateBillingAccountRequest, dict] = None,
             *,
             billing_account: cloud_billing.BillingAccount = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.BillingAccount:
@@ -418,7 +420,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         been provisioned as a reseller account.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.CreateBillingAccountRequest`):
+            request (Union[google.cloud.billing_v1.types.CreateBillingAccountRequest, dict]):
                 The request object. Request message for
                 `CreateBillingAccount`.
             billing_account (:class:`google.cloud.billing_v1.types.BillingAccount`):
@@ -480,10 +482,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_project_billing_info(self,
-            request: cloud_billing.ListProjectBillingInfoRequest = None,
+            request: Union[cloud_billing.ListProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProjectBillingInfoAsyncPager:
@@ -494,7 +496,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         `viewers <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.ListProjectBillingInfoRequest`):
+            request (Union[google.cloud.billing_v1.types.ListProjectBillingInfoRequest, dict]):
                 The request object. Request message for
                 `ListProjectBillingInfo`.
             name (:class:`str`):
@@ -578,10 +580,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_project_billing_info(self,
-            request: cloud_billing.GetProjectBillingInfoRequest = None,
+            request: Union[cloud_billing.GetProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.ProjectBillingInfo:
@@ -590,7 +592,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         project <https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo>`__.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.GetProjectBillingInfoRequest`):
+            request (Union[google.cloud.billing_v1.types.GetProjectBillingInfoRequest, dict]):
                 The request object. Request message for
                 `GetProjectBillingInfo`.
             name (:class:`str`):
@@ -666,11 +668,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_project_billing_info(self,
-            request: cloud_billing.UpdateProjectBillingInfoRequest = None,
+            request: Union[cloud_billing.UpdateProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
             project_billing_info: cloud_billing.ProjectBillingInfo = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_billing.ProjectBillingInfo:
@@ -712,7 +714,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         account.
 
         Args:
-            request (:class:`google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest`):
+            request (Union[google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest, dict]):
                 The request object. Request message for
                 `UpdateProjectBillingInfo`.
             name (:class:`str`):
@@ -798,10 +800,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -811,7 +813,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         `viewers <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -938,10 +940,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -952,7 +954,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         `administrators <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -1079,11 +1081,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -1094,7 +1096,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         resource.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):

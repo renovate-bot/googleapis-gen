@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.home.graph_v1.types import homegraph
 from .transports.base import HomeGraphApiServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import HomeGraphApiServiceGrpcTransport
@@ -342,7 +344,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
             request: Union[homegraph.RequestSyncDevicesRequest, dict] = None,
             *,
             agent_user_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.RequestSyncDevicesResponse:
@@ -424,7 +426,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
             event_id: str = None,
             agent_user_id: str = None,
             payload: homegraph.StateAndNotificationPayload = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.ReportStateAndNotificationResponse:
@@ -556,7 +558,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
             *,
             request_id: str = None,
             agent_user_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -641,7 +643,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
             request_id: str = None,
             agent_user_id: str = None,
             inputs: Sequence[homegraph.QueryRequestInput] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.QueryResponse:
@@ -738,7 +740,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
             *,
             request_id: str = None,
             agent_user_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> homegraph.SyncResponse:

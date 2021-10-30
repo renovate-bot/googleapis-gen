@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.dialogflow_v2beta1.services.documents import pagers
@@ -344,7 +346,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             request: Union[document.ListDocumentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDocumentsPager:
@@ -435,7 +437,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             request: Union[document.GetDocumentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> document.Document:
@@ -521,7 +523,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             *,
             parent: str = None,
             document: gcd_document.Document = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -635,7 +637,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
     def import_documents(self,
             request: Union[document.ImportDocumentsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -716,7 +718,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             request: Union[document.DeleteDocumentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -826,7 +828,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             *,
             document: gcd_document.Document = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -942,7 +944,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             *,
             name: str = None,
             gcs_source: gcs.GcsSource = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

@@ -32,6 +32,8 @@ __protobuf__ = proto.module(
 class FinalizeMfaSignInRequest(proto.Message):
     r"""Finalizes sign-in by verifying MFA challenge.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         mfa_pending_credential (str):
             Required. Pending credential from first
@@ -39,6 +41,7 @@ class FinalizeMfaSignInRequest(proto.Message):
         phone_verification_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneRequestInfo):
             Proof of completion of the SMS based MFA
             challenge.
+            This field is a member of `oneof`_ ``verification_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant the
             user is signing in to. If not set, the user will
@@ -65,6 +68,8 @@ class FinalizeMfaSignInRequest(proto.Message):
 class FinalizeMfaSignInResponse(proto.Message):
     r"""FinalizeMfaSignIn response.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         id_token (str):
             ID token for the authenticated user.
@@ -73,6 +78,7 @@ class FinalizeMfaSignInResponse(proto.Message):
         phone_auth_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneResponseInfo):
             Extra phone auth info, including android
             verification proof.
+            This field is a member of `oneof`_ ``auxiliary_auth_info``.
     """
 
     id_token = proto.Field(
@@ -95,6 +101,9 @@ class StartMfaSignInRequest(proto.Message):
     r"""Starts multi-factor sign-in by sending the multi-factor auth
     challenge.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         mfa_pending_credential (str):
             Required. Pending credential from first
@@ -105,6 +114,7 @@ class StartMfaSignInRequest(proto.Message):
         phone_sign_in_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneRequestInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+            This field is a member of `oneof`_ ``sign_in_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant the
             user is signing in to. If not set, the user will
@@ -135,6 +145,8 @@ class StartMfaSignInRequest(proto.Message):
 class StartMfaSignInResponse(proto.Message):
     r"""StartMfaSignIn response.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         phone_response_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneResponseInfo):
             MultiFactor sign-in session information
@@ -143,6 +155,7 @@ class StartMfaSignInResponse(proto.Message):
             the contents of this session information should
             be passed to FinalizeMfaSignIn to complete the
             sign in.
+            This field is a member of `oneof`_ ``response_info``.
     """
 
     phone_response_info = proto.Field(

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api import httpbody_pb2  # type: ignore
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -347,7 +349,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
             *,
             parent: str = None,
             user_event: gcr_user_event.UserEvent = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcr_user_event.UserEvent:
@@ -434,7 +436,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
             user_event: str = None,
             uri: str = None,
             ets: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
@@ -595,7 +597,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUserEventsPager:
@@ -728,7 +730,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
             parent: str = None,
             filter: str = None,
             force: bool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -860,7 +862,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
             request_id: str = None,
             input_config: import_.InputConfig = None,
             errors_config: import_.ImportErrorsConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

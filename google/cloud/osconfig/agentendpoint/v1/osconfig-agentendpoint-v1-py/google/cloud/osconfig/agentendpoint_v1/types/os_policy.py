@@ -44,6 +44,13 @@ class OSPolicy(proto.Message):
         state by taking necessary actions if they have drifted from
         their desired state.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             id (str):
                 Required. The id of the resource with the following
@@ -57,24 +64,38 @@ class OSPolicy(proto.Message):
                 -  Must be unique within the OS policy.
             pkg (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource):
                 Package resource
+                This field is a member of `oneof`_ ``resource_type``.
             repository (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource):
                 Package repository resource
+                This field is a member of `oneof`_ ``resource_type``.
             exec_ (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.ExecResource):
                 Exec resource
+                This field is a member of `oneof`_ ``resource_type``.
             file (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.FileResource):
                 File resource
+                This field is a member of `oneof`_ ``resource_type``.
         """
 
         class File(proto.Message):
             r"""A remote or local file.
 
+            This message has `oneof`_ fields (mutually exclusive fields).
+            For each oneof, at most one member field can be set at the same time.
+            Setting any member of the oneof automatically clears all other
+            members.
+
+            .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
             Attributes:
                 remote (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File.Remote):
                     A generic remote file.
+                    This field is a member of `oneof`_ ``type``.
                 gcs (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File.Gcs):
                     A Cloud Storage object.
+                    This field is a member of `oneof`_ ``type``.
                 local_path (str):
                     A local path to use.
+                    This field is a member of `oneof`_ ``type``.
                 allow_insecure (bool):
                     Defaults to false. When false, files are
                     subject to validations based on the file type:
@@ -155,6 +176,13 @@ class OSPolicy(proto.Message):
         class PackageResource(proto.Message):
             r"""A resource that manages a system package.
 
+            This message has `oneof`_ fields (mutually exclusive fields).
+            For each oneof, at most one member field can be set at the same time.
+            Setting any member of the oneof automatically clears all other
+            members.
+
+            .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
             Attributes:
                 desired_state (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.DesiredState):
                     Required. The desired state the agent should
@@ -162,18 +190,25 @@ class OSPolicy(proto.Message):
                     ensure the package is installed.
                 apt (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.APT):
                     A package managed by Apt.
+                    This field is a member of `oneof`_ ``system_package``.
                 deb (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.Deb):
                     A deb package file.
+                    This field is a member of `oneof`_ ``system_package``.
                 yum (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.YUM):
                     A package managed by YUM.
+                    This field is a member of `oneof`_ ``system_package``.
                 zypper (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.Zypper):
                     A package managed by Zypper.
+                    This field is a member of `oneof`_ ``system_package``.
                 rpm (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.RPM):
                     An rpm package file.
+                    This field is a member of `oneof`_ ``system_package``.
                 googet (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.GooGet):
                     A package managed by GooGet.
+                    This field is a member of `oneof`_ ``system_package``.
                 msi (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.MSI):
                     An MSI package.
+                    This field is a member of `oneof`_ ``system_package``.
             """
             class DesiredState(proto.Enum):
                 r"""The desired state that the OS Config agent maintains on the
@@ -363,15 +398,26 @@ class OSPolicy(proto.Message):
         class RepositoryResource(proto.Message):
             r"""A resource that manages a package repository.
 
+            This message has `oneof`_ fields (mutually exclusive fields).
+            For each oneof, at most one member field can be set at the same time.
+            Setting any member of the oneof automatically clears all other
+            members.
+
+            .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
             Attributes:
                 apt (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource.AptRepository):
                     An Apt Repository.
+                    This field is a member of `oneof`_ ``repository``.
                 yum (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource.YumRepository):
                     A Yum Repository.
+                    This field is a member of `oneof`_ ``repository``.
                 zypper (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource.ZypperRepository):
                     A Zypper Repository.
+                    This field is a member of `oneof`_ ``repository``.
                 goo (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource.GooRepository):
                     A Goo Repository.
+                    This field is a member of `oneof`_ ``repository``.
             """
 
             class AptRepository(proto.Message):
@@ -567,11 +613,20 @@ class OSPolicy(proto.Message):
             class Exec(proto.Message):
                 r"""A file or script to execute.
 
+                This message has `oneof`_ fields (mutually exclusive fields).
+                For each oneof, at most one member field can be set at the same time.
+                Setting any member of the oneof automatically clears all other
+                members.
+
+                .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
                 Attributes:
                     file (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File):
                         A remote or local file.
+                        This field is a member of `oneof`_ ``source``.
                     script (str):
                         An inline script.
+                        This field is a member of `oneof`_ ``source``.
                     args (Sequence[str]):
                         Optional arguments to pass to the source
                         during execution.
@@ -632,11 +687,20 @@ class OSPolicy(proto.Message):
         class FileResource(proto.Message):
             r"""A resource that manages the state of a file.
 
+            This message has `oneof`_ fields (mutually exclusive fields).
+            For each oneof, at most one member field can be set at the same time.
+            Setting any member of the oneof automatically clears all other
+            members.
+
+            .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
             Attributes:
                 file (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File):
                     A remote or local source.
+                    This field is a member of `oneof`_ ``source``.
                 content (str):
                     A a file with this content.
+                    This field is a member of `oneof`_ ``source``.
                 path (str):
                     Required. The absolute path of the file.
                 state (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.FileResource.DesiredState):

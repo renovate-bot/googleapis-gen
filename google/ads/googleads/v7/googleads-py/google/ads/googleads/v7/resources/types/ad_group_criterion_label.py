@@ -37,9 +37,11 @@ class AdGroupCriterionLabel(proto.Message):
         ad_group_criterion (str):
             Immutable. The ad group criterion to which
             the label is attached.
+            This field is a member of `oneof`_ ``_ad_group_criterion``.
         label (str):
             Immutable. The label assigned to the ad group
             criterion.
+            This field is a member of `oneof`_ ``_label``.
     """
 
     resource_name = proto.Field(

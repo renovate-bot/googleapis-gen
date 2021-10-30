@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -162,17 +164,17 @@ class ApiGatewayServiceAsyncClient:
         )
 
     async def list_gateways(self,
-            request: apigateway.ListGatewaysRequest = None,
+            request: Union[apigateway.ListGatewaysRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGatewaysAsyncPager:
         r"""Lists Gateways in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.ListGatewaysRequest`):
+            request (Union[google.cloud.apigateway_v1.types.ListGatewaysRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.ListGateways
             parent (:class:`str`):
@@ -249,17 +251,17 @@ class ApiGatewayServiceAsyncClient:
         return response
 
     async def get_gateway(self,
-            request: apigateway.GetGatewayRequest = None,
+            request: Union[apigateway.GetGatewayRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> apigateway.Gateway:
         r"""Gets details of a single Gateway.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.GetGatewayRequest`):
+            request (Union[google.cloud.apigateway_v1.types.GetGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.GetGateway
             name (:class:`str`):
@@ -328,12 +330,12 @@ class ApiGatewayServiceAsyncClient:
         return response
 
     async def create_gateway(self,
-            request: apigateway.CreateGatewayRequest = None,
+            request: Union[apigateway.CreateGatewayRequest, dict] = None,
             *,
             parent: str = None,
             gateway: apigateway.Gateway = None,
             gateway_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -341,7 +343,7 @@ class ApiGatewayServiceAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.CreateGatewayRequest`):
+            request (Union[google.cloud.apigateway_v1.types.CreateGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.CreateGateway
             parent (:class:`str`):
@@ -442,18 +444,18 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def update_gateway(self,
-            request: apigateway.UpdateGatewayRequest = None,
+            request: Union[apigateway.UpdateGatewayRequest, dict] = None,
             *,
             gateway: apigateway.Gateway = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single Gateway.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.UpdateGatewayRequest`):
+            request (Union[google.cloud.apigateway_v1.types.UpdateGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.UpdateGateway
             gateway (:class:`google.cloud.apigateway_v1.types.Gateway`):
@@ -548,17 +550,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def delete_gateway(self,
-            request: apigateway.DeleteGatewayRequest = None,
+            request: Union[apigateway.DeleteGatewayRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single Gateway.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.DeleteGatewayRequest`):
+            request (Union[google.cloud.apigateway_v1.types.DeleteGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.DeleteGateway
             name (:class:`str`):
@@ -651,17 +653,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def list_apis(self,
-            request: apigateway.ListApisRequest = None,
+            request: Union[apigateway.ListApisRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListApisAsyncPager:
         r"""Lists Apis in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.ListApisRequest`):
+            request (Union[google.cloud.apigateway_v1.types.ListApisRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.ListApis
             parent (:class:`str`):
@@ -738,17 +740,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def get_api(self,
-            request: apigateway.GetApiRequest = None,
+            request: Union[apigateway.GetApiRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> apigateway.Api:
         r"""Gets details of a single Api.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.GetApiRequest`):
+            request (Union[google.cloud.apigateway_v1.types.GetApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.GetApi
             name (:class:`str`):
@@ -813,19 +815,19 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def create_api(self,
-            request: apigateway.CreateApiRequest = None,
+            request: Union[apigateway.CreateApiRequest, dict] = None,
             *,
             parent: str = None,
             api: apigateway.Api = None,
             api_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Creates a new Api in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.CreateApiRequest`):
+            request (Union[google.cloud.apigateway_v1.types.CreateApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.CreateApi
             parent (:class:`str`):
@@ -925,18 +927,18 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def update_api(self,
-            request: apigateway.UpdateApiRequest = None,
+            request: Union[apigateway.UpdateApiRequest, dict] = None,
             *,
             api: apigateway.Api = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single Api.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.UpdateApiRequest`):
+            request (Union[google.cloud.apigateway_v1.types.UpdateApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.UpdateApi
             api (:class:`google.cloud.apigateway_v1.types.Api`):
@@ -1030,17 +1032,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def delete_api(self,
-            request: apigateway.DeleteApiRequest = None,
+            request: Union[apigateway.DeleteApiRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single Api.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.DeleteApiRequest`):
+            request (Union[google.cloud.apigateway_v1.types.DeleteApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.DeleteApi
             name (:class:`str`):
@@ -1133,17 +1135,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def list_api_configs(self,
-            request: apigateway.ListApiConfigsRequest = None,
+            request: Union[apigateway.ListApiConfigsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListApiConfigsAsyncPager:
         r"""Lists ApiConfigs in a given project and location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.ListApiConfigsRequest`):
+            request (Union[google.cloud.apigateway_v1.types.ListApiConfigsRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.ListApiConfigs
             parent (:class:`str`):
@@ -1220,17 +1222,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def get_api_config(self,
-            request: apigateway.GetApiConfigRequest = None,
+            request: Union[apigateway.GetApiConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> apigateway.ApiConfig:
         r"""Gets details of a single ApiConfig.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.GetApiConfigRequest`):
+            request (Union[google.cloud.apigateway_v1.types.GetApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.GetApiConfig
             name (:class:`str`):
@@ -1296,12 +1298,12 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def create_api_config(self,
-            request: apigateway.CreateApiConfigRequest = None,
+            request: Union[apigateway.CreateApiConfigRequest, dict] = None,
             *,
             parent: str = None,
             api_config: apigateway.ApiConfig = None,
             api_config_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1309,7 +1311,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         location.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.CreateApiConfigRequest`):
+            request (Union[google.cloud.apigateway_v1.types.CreateApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.CreateApiConfig
             parent (:class:`str`):
@@ -1408,18 +1410,18 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def update_api_config(self,
-            request: apigateway.UpdateApiConfigRequest = None,
+            request: Union[apigateway.UpdateApiConfigRequest, dict] = None,
             *,
             api_config: apigateway.ApiConfig = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single ApiConfig.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.UpdateApiConfigRequest`):
+            request (Union[google.cloud.apigateway_v1.types.UpdateApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (:class:`google.cloud.apigateway_v1.types.ApiConfig`):
@@ -1512,17 +1514,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def delete_api_config(self,
-            request: apigateway.DeleteApiConfigRequest = None,
+            request: Union[apigateway.DeleteApiConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single ApiConfig.
 
         Args:
-            request (:class:`google.cloud.apigateway_v1.types.DeleteApiConfigRequest`):
+            request (Union[google.cloud.apigateway_v1.types.DeleteApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.DeleteApiConfig
             name (:class:`str`):

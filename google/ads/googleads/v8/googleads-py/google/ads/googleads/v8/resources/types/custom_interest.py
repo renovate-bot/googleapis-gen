@@ -41,6 +41,7 @@ class CustomInterest(proto.Message):
             ``customers/{customer_id}/customInterests/{custom_interest_id}``
         id (int):
             Output only. Id of the custom interest.
+            This field is a member of `oneof`_ ``_id``.
         status (google.ads.googleads.v8.enums.types.CustomInterestStatusEnum.CustomInterestStatus):
             Status of this custom interest. Indicates
             whether the custom interest is enabled or
@@ -49,12 +50,14 @@ class CustomInterest(proto.Message):
             Name of the custom interest. It should be
             unique across the same custom affinity audience.
             This field is required for create operations.
+            This field is a member of `oneof`_ ``_name``.
         type_ (google.ads.googleads.v8.enums.types.CustomInterestTypeEnum.CustomInterestType):
             Type of the custom interest, CUSTOM_AFFINITY or
             CUSTOM_INTENT. By default the type is set to
             CUSTOM_AFFINITY.
         description (str):
             Description of this custom interest audience.
+            This field is a member of `oneof`_ ``_description``.
         members (Sequence[google.ads.googleads.v8.resources.types.CustomInterestMember]):
             List of custom interest members that this
             custom interest is composed of. Members can be
@@ -111,6 +114,7 @@ class CustomInterestMember(proto.Message):
         parameter (str):
             Keyword text when member_type is KEYWORD or URL string when
             member_type is URL.
+            This field is a member of `oneof`_ ``_parameter``.
     """
 
     member_type = proto.Field(

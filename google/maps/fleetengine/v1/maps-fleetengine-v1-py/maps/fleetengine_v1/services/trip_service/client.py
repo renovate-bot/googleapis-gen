@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
@@ -341,7 +343,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
     def create_trip(self,
             request: Union[trip_api.CreateTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trips.Trip:
@@ -395,7 +397,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
     def get_trip(self,
             request: Union[trip_api.GetTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trips.Trip:
@@ -448,7 +450,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
     def report_billable_trip(self,
             request: Union[trip_api.ReportBillableTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -494,7 +496,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
     def search_trips(self,
             request: Union[trip_api.SearchTripsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchTripsPager:
@@ -560,7 +562,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
     def update_trip(self,
             request: Union[trip_api.UpdateTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trips.Trip:

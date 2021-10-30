@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -192,11 +194,11 @@ class JobServiceAsyncClient:
         )
 
     async def create_custom_job(self,
-            request: job_service.CreateCustomJobRequest = None,
+            request: Union[job_service.CreateCustomJobRequest, dict] = None,
             *,
             parent: str = None,
             custom_job: gca_custom_job.CustomJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_custom_job.CustomJob:
@@ -204,7 +206,7 @@ class JobServiceAsyncClient:
         will be attempted to be run.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CreateCustomJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CreateCustomJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
             parent (:class:`str`):
@@ -283,17 +285,17 @@ class JobServiceAsyncClient:
         return response
 
     async def get_custom_job(self,
-            request: job_service.GetCustomJobRequest = None,
+            request: Union[job_service.GetCustomJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> custom_job.CustomJob:
         r"""Gets a CustomJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.GetCustomJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.GetCustomJobRequest, dict]):
                 The request object. Request message for
                 [JobService.GetCustomJob][google.cloud.aiplatform.v1.JobService.GetCustomJob].
             name (:class:`str`):
@@ -364,17 +366,17 @@ class JobServiceAsyncClient:
         return response
 
     async def list_custom_jobs(self,
-            request: job_service.ListCustomJobsRequest = None,
+            request: Union[job_service.ListCustomJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCustomJobsAsyncPager:
         r"""Lists CustomJobs in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.ListCustomJobsRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.ListCustomJobsRequest, dict]):
                 The request object. Request message for
                 [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs].
             parent (:class:`str`):
@@ -452,17 +454,17 @@ class JobServiceAsyncClient:
         return response
 
     async def delete_custom_job(self,
-            request: job_service.DeleteCustomJobRequest = None,
+            request: Union[job_service.DeleteCustomJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a CustomJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.DeleteCustomJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteCustomJobRequest, dict]):
                 The request object. Request message for
                 [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
             name (:class:`str`):
@@ -549,10 +551,10 @@ class JobServiceAsyncClient:
         return response
 
     async def cancel_custom_job(self,
-            request: job_service.CancelCustomJobRequest = None,
+            request: Union[job_service.CancelCustomJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -571,7 +573,7 @@ class JobServiceAsyncClient:
         set to ``CANCELLED``.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CancelCustomJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CancelCustomJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
             name (:class:`str`):
@@ -627,18 +629,18 @@ class JobServiceAsyncClient:
         )
 
     async def create_data_labeling_job(self,
-            request: job_service.CreateDataLabelingJobRequest = None,
+            request: Union[job_service.CreateDataLabelingJobRequest, dict] = None,
             *,
             parent: str = None,
             data_labeling_job: gca_data_labeling_job.DataLabelingJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_data_labeling_job.DataLabelingJob:
         r"""Creates a DataLabelingJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CreateDataLabelingJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CreateDataLabelingJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1.JobService.CreateDataLabelingJob].
             parent (:class:`str`):
@@ -713,17 +715,17 @@ class JobServiceAsyncClient:
         return response
 
     async def get_data_labeling_job(self,
-            request: job_service.GetDataLabelingJobRequest = None,
+            request: Union[job_service.GetDataLabelingJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> data_labeling_job.DataLabelingJob:
         r"""Gets a DataLabelingJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.GetDataLabelingJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.GetDataLabelingJobRequest, dict]):
                 The request object. Request message for
                 [JobService.GetDataLabelingJob][google.cloud.aiplatform.v1.JobService.GetDataLabelingJob].
             name (:class:`str`):
@@ -789,17 +791,17 @@ class JobServiceAsyncClient:
         return response
 
     async def list_data_labeling_jobs(self,
-            request: job_service.ListDataLabelingJobsRequest = None,
+            request: Union[job_service.ListDataLabelingJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDataLabelingJobsAsyncPager:
         r"""Lists DataLabelingJobs in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.ListDataLabelingJobsRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.ListDataLabelingJobsRequest, dict]):
                 The request object. Request message for
                 [JobService.ListDataLabelingJobs][google.cloud.aiplatform.v1.JobService.ListDataLabelingJobs].
             parent (:class:`str`):
@@ -876,17 +878,17 @@ class JobServiceAsyncClient:
         return response
 
     async def delete_data_labeling_job(self,
-            request: job_service.DeleteDataLabelingJobRequest = None,
+            request: Union[job_service.DeleteDataLabelingJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a DataLabelingJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.DeleteDataLabelingJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteDataLabelingJobRequest, dict]):
                 The request object. Request message for
                 [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1.JobService.DeleteDataLabelingJob].
             name (:class:`str`):
@@ -973,10 +975,10 @@ class JobServiceAsyncClient:
         return response
 
     async def cancel_data_labeling_job(self,
-            request: job_service.CancelDataLabelingJobRequest = None,
+            request: Union[job_service.CancelDataLabelingJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -984,7 +986,7 @@ class JobServiceAsyncClient:
         not guaranteed.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CancelDataLabelingJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CancelDataLabelingJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CancelDataLabelingJob][google.cloud.aiplatform.v1.JobService.CancelDataLabelingJob].
             name (:class:`str`):
@@ -1040,18 +1042,18 @@ class JobServiceAsyncClient:
         )
 
     async def create_hyperparameter_tuning_job(self,
-            request: job_service.CreateHyperparameterTuningJobRequest = None,
+            request: Union[job_service.CreateHyperparameterTuningJobRequest, dict] = None,
             *,
             parent: str = None,
             hyperparameter_tuning_job: gca_hyperparameter_tuning_job.HyperparameterTuningJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_hyperparameter_tuning_job.HyperparameterTuningJob:
         r"""Creates a HyperparameterTuningJob
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CreateHyperparameterTuningJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CreateHyperparameterTuningJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
             parent (:class:`str`):
@@ -1128,17 +1130,17 @@ class JobServiceAsyncClient:
         return response
 
     async def get_hyperparameter_tuning_job(self,
-            request: job_service.GetHyperparameterTuningJobRequest = None,
+            request: Union[job_service.GetHyperparameterTuningJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> hyperparameter_tuning_job.HyperparameterTuningJob:
         r"""Gets a HyperparameterTuningJob
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.GetHyperparameterTuningJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.GetHyperparameterTuningJobRequest, dict]):
                 The request object. Request message for
                 [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.GetHyperparameterTuningJob].
             name (:class:`str`):
@@ -1206,17 +1208,17 @@ class JobServiceAsyncClient:
         return response
 
     async def list_hyperparameter_tuning_jobs(self,
-            request: job_service.ListHyperparameterTuningJobsRequest = None,
+            request: Union[job_service.ListHyperparameterTuningJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListHyperparameterTuningJobsAsyncPager:
         r"""Lists HyperparameterTuningJobs in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.ListHyperparameterTuningJobsRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.ListHyperparameterTuningJobsRequest, dict]):
                 The request object. Request message for
                 [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs].
             parent (:class:`str`):
@@ -1294,17 +1296,17 @@ class JobServiceAsyncClient:
         return response
 
     async def delete_hyperparameter_tuning_job(self,
-            request: job_service.DeleteHyperparameterTuningJobRequest = None,
+            request: Union[job_service.DeleteHyperparameterTuningJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a HyperparameterTuningJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.DeleteHyperparameterTuningJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteHyperparameterTuningJobRequest, dict]):
                 The request object. Request message for
                 [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
             name (:class:`str`):
@@ -1391,10 +1393,10 @@ class JobServiceAsyncClient:
         return response
 
     async def cancel_hyperparameter_tuning_job(self,
-            request: job_service.CancelHyperparameterTuningJobRequest = None,
+            request: Union[job_service.CancelHyperparameterTuningJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1414,7 +1416,7 @@ class JobServiceAsyncClient:
         is set to ``CANCELLED``.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CancelHyperparameterTuningJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CancelHyperparameterTuningJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CancelHyperparameterTuningJob].
             name (:class:`str`):
@@ -1471,11 +1473,11 @@ class JobServiceAsyncClient:
         )
 
     async def create_batch_prediction_job(self,
-            request: job_service.CreateBatchPredictionJobRequest = None,
+            request: Union[job_service.CreateBatchPredictionJobRequest, dict] = None,
             *,
             parent: str = None,
             batch_prediction_job: gca_batch_prediction_job.BatchPredictionJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_batch_prediction_job.BatchPredictionJob:
@@ -1483,7 +1485,7 @@ class JobServiceAsyncClient:
         once created will right away be attempted to start.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CreateBatchPredictionJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CreateBatchPredictionJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
             parent (:class:`str`):
@@ -1562,17 +1564,17 @@ class JobServiceAsyncClient:
         return response
 
     async def get_batch_prediction_job(self,
-            request: job_service.GetBatchPredictionJobRequest = None,
+            request: Union[job_service.GetBatchPredictionJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> batch_prediction_job.BatchPredictionJob:
         r"""Gets a BatchPredictionJob
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.GetBatchPredictionJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.GetBatchPredictionJobRequest, dict]):
                 The request object. Request message for
                 [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1.JobService.GetBatchPredictionJob].
             name (:class:`str`):
@@ -1642,17 +1644,17 @@ class JobServiceAsyncClient:
         return response
 
     async def list_batch_prediction_jobs(self,
-            request: job_service.ListBatchPredictionJobsRequest = None,
+            request: Union[job_service.ListBatchPredictionJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBatchPredictionJobsAsyncPager:
         r"""Lists BatchPredictionJobs in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.ListBatchPredictionJobsRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.ListBatchPredictionJobsRequest, dict]):
                 The request object. Request message for
                 [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
             parent (:class:`str`):
@@ -1730,10 +1732,10 @@ class JobServiceAsyncClient:
         return response
 
     async def delete_batch_prediction_job(self,
-            request: job_service.DeleteBatchPredictionJobRequest = None,
+            request: Union[job_service.DeleteBatchPredictionJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1741,7 +1743,7 @@ class JobServiceAsyncClient:
         jobs that already finished.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.DeleteBatchPredictionJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteBatchPredictionJobRequest, dict]):
                 The request object. Request message for
                 [JobService.DeleteBatchPredictionJob][google.cloud.aiplatform.v1.JobService.DeleteBatchPredictionJob].
             name (:class:`str`):
@@ -1828,10 +1830,10 @@ class JobServiceAsyncClient:
         return response
 
     async def cancel_batch_prediction_job(self,
-            request: job_service.CancelBatchPredictionJobRequest = None,
+            request: Union[job_service.CancelBatchPredictionJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1849,7 +1851,7 @@ class JobServiceAsyncClient:
         are not deleted.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CancelBatchPredictionJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CancelBatchPredictionJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
             name (:class:`str`):
@@ -1906,11 +1908,11 @@ class JobServiceAsyncClient:
         )
 
     async def create_model_deployment_monitoring_job(self,
-            request: job_service.CreateModelDeploymentMonitoringJobRequest = None,
+            request: Union[job_service.CreateModelDeploymentMonitoringJobRequest, dict] = None,
             *,
             parent: str = None,
             model_deployment_monitoring_job: gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob:
@@ -1918,7 +1920,7 @@ class JobServiceAsyncClient:
         periodically on a configured interval.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.CreateModelDeploymentMonitoringJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.CreateModelDeploymentMonitoringJobRequest, dict]):
                 The request object. Request message for
                 [JobService.CreateModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.CreateModelDeploymentMonitoringJob].
             parent (:class:`str`):
@@ -1996,11 +1998,11 @@ class JobServiceAsyncClient:
         return response
 
     async def search_model_deployment_monitoring_stats_anomalies(self,
-            request: job_service.SearchModelDeploymentMonitoringStatsAnomaliesRequest = None,
+            request: Union[job_service.SearchModelDeploymentMonitoringStatsAnomaliesRequest, dict] = None,
             *,
             model_deployment_monitoring_job: str = None,
             deployed_model_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchModelDeploymentMonitoringStatsAnomaliesAsyncPager:
@@ -2008,7 +2010,7 @@ class JobServiceAsyncClient:
         a given time window.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.SearchModelDeploymentMonitoringStatsAnomaliesRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.SearchModelDeploymentMonitoringStatsAnomaliesRequest, dict]):
                 The request object. Request message for
                 [JobService.SearchModelDeploymentMonitoringStatsAnomalies][google.cloud.aiplatform.v1.JobService.SearchModelDeploymentMonitoringStatsAnomalies].
             model_deployment_monitoring_job (:class:`str`):
@@ -2095,17 +2097,17 @@ class JobServiceAsyncClient:
         return response
 
     async def get_model_deployment_monitoring_job(self,
-            request: job_service.GetModelDeploymentMonitoringJobRequest = None,
+            request: Union[job_service.GetModelDeploymentMonitoringJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model_deployment_monitoring_job.ModelDeploymentMonitoringJob:
         r"""Gets a ModelDeploymentMonitoringJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.GetModelDeploymentMonitoringJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.GetModelDeploymentMonitoringJobRequest, dict]):
                 The request object. Request message for
                 [JobService.GetModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.GetModelDeploymentMonitoringJob].
             name (:class:`str`):
@@ -2174,17 +2176,17 @@ class JobServiceAsyncClient:
         return response
 
     async def list_model_deployment_monitoring_jobs(self,
-            request: job_service.ListModelDeploymentMonitoringJobsRequest = None,
+            request: Union[job_service.ListModelDeploymentMonitoringJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListModelDeploymentMonitoringJobsAsyncPager:
         r"""Lists ModelDeploymentMonitoringJobs in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.ListModelDeploymentMonitoringJobsRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.ListModelDeploymentMonitoringJobsRequest, dict]):
                 The request object. Request message for
                 [JobService.ListModelDeploymentMonitoringJobs][google.cloud.aiplatform.v1.JobService.ListModelDeploymentMonitoringJobs].
             parent (:class:`str`):
@@ -2262,18 +2264,18 @@ class JobServiceAsyncClient:
         return response
 
     async def update_model_deployment_monitoring_job(self,
-            request: job_service.UpdateModelDeploymentMonitoringJobRequest = None,
+            request: Union[job_service.UpdateModelDeploymentMonitoringJobRequest, dict] = None,
             *,
             model_deployment_monitoring_job: gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates a ModelDeploymentMonitoringJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.UpdateModelDeploymentMonitoringJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.UpdateModelDeploymentMonitoringJobRequest, dict]):
                 The request object. Request message for
                 [JobService.UpdateModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.UpdateModelDeploymentMonitoringJob].
             model_deployment_monitoring_job (:class:`google.cloud.aiplatform_v1.types.ModelDeploymentMonitoringJob`):
@@ -2385,17 +2387,17 @@ class JobServiceAsyncClient:
         return response
 
     async def delete_model_deployment_monitoring_job(self,
-            request: job_service.DeleteModelDeploymentMonitoringJobRequest = None,
+            request: Union[job_service.DeleteModelDeploymentMonitoringJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a ModelDeploymentMonitoringJob.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.DeleteModelDeploymentMonitoringJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteModelDeploymentMonitoringJobRequest, dict]):
                 The request object. Request message for
                 [JobService.DeleteModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.DeleteModelDeploymentMonitoringJob].
             name (:class:`str`):
@@ -2482,10 +2484,10 @@ class JobServiceAsyncClient:
         return response
 
     async def pause_model_deployment_monitoring_job(self,
-            request: job_service.PauseModelDeploymentMonitoringJobRequest = None,
+            request: Union[job_service.PauseModelDeploymentMonitoringJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2495,7 +2497,7 @@ class JobServiceAsyncClient:
         to 'PAUSED'.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.PauseModelDeploymentMonitoringJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.PauseModelDeploymentMonitoringJobRequest, dict]):
                 The request object. Request message for
                 [JobService.PauseModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.PauseModelDeploymentMonitoringJob].
             name (:class:`str`):
@@ -2552,10 +2554,10 @@ class JobServiceAsyncClient:
         )
 
     async def resume_model_deployment_monitoring_job(self,
-            request: job_service.ResumeModelDeploymentMonitoringJobRequest = None,
+            request: Union[job_service.ResumeModelDeploymentMonitoringJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2564,7 +2566,7 @@ class JobServiceAsyncClient:
         ModelDeploymentMonitoringJob can't be resumed.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1.types.ResumeModelDeploymentMonitoringJobRequest`):
+            request (Union[google.cloud.aiplatform_v1.types.ResumeModelDeploymentMonitoringJobRequest, dict]):
                 The request object. Request message for
                 [JobService.ResumeModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.ResumeModelDeploymentMonitoringJob].
             name (:class:`str`):

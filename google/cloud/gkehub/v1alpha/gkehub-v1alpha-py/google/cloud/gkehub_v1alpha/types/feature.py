@@ -223,11 +223,20 @@ class FeatureState(proto.Message):
 class CommonFeatureSpec(proto.Message):
     r"""CommonFeatureSpec contains Hub-wide configuration information
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         multiclusteringress (google.cloud.gkehub.multiclusteringress.v1alpha.multiclusteringress_pb2.FeatureSpec):
             Multicluster Ingress-specific spec.
+            This field is a member of `oneof`_ ``feature_spec``.
         cloudauditlogging (google.cloud.gkehub.cloudauditlogging.v1alpha.cloudauditlogging_pb2.FeatureSpec):
             Cloud Audit Logging-specific spec.
+            This field is a member of `oneof`_ ``feature_spec``.
     """
 
     multiclusteringress = proto.Field(
@@ -248,9 +257,13 @@ class CommonFeatureState(proto.Message):
     r"""CommonFeatureState contains Hub-wide Feature status
     information.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         servicemesh (google.cloud.gkehub.servicemesh.v1alpha.servicemesh_pb2.FeatureState):
             Service Mesh-specific state.
+            This field is a member of `oneof`_ ``feature_state``.
         state (google.cloud.gkehub_v1alpha.types.FeatureState):
             Output only. The "running state" of the
             Feature in this Hub.
@@ -273,9 +286,13 @@ class MembershipFeatureSpec(proto.Message):
     r"""MembershipFeatureSpec contains configuration information for
     a single Membership.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         configmanagement (google.cloud.gkehub.configmanagement.v1alpha.configmanagement_pb2.MembershipSpec):
             Config Management-specific spec.
+            This field is a member of `oneof`_ ``feature_spec``.
     """
 
     configmanagement = proto.Field(
@@ -290,13 +307,23 @@ class MembershipFeatureState(proto.Message):
     r"""MembershipFeatureState contains Feature status information
     for a single Membership.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         servicemesh (google.cloud.gkehub.servicemesh.v1alpha.servicemesh_pb2.MembershipState):
             Service Mesh-specific state.
+            This field is a member of `oneof`_ ``feature_state``.
         metering (google.cloud.gkehub.metering.v1alpha.metering_pb2.MembershipState):
             Metering-specific spec.
+            This field is a member of `oneof`_ ``feature_state``.
         configmanagement (google.cloud.gkehub.configmanagement.v1alpha.configmanagement_pb2.MembershipState):
             Config Management-specific state.
+            This field is a member of `oneof`_ ``feature_state``.
         state (google.cloud.gkehub_v1alpha.types.FeatureState):
             The high-level state of this Feature for a
             single membership.

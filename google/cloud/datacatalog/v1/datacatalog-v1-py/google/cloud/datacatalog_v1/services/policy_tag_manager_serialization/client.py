@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.datacatalog_v1.types import policytagmanager
 from google.cloud.datacatalog_v1.types import policytagmanagerserialization
 from google.cloud.datacatalog_v1.types import timestamps
@@ -340,7 +342,7 @@ class PolicyTagManagerSerializationClient(metaclass=PolicyTagManagerSerializatio
     def replace_taxonomy(self,
             request: Union[policytagmanagerserialization.ReplaceTaxonomyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.Taxonomy:
@@ -418,7 +420,7 @@ class PolicyTagManagerSerializationClient(metaclass=PolicyTagManagerSerializatio
     def import_taxonomies(self,
             request: Union[policytagmanagerserialization.ImportTaxonomiesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanagerserialization.ImportTaxonomiesResponse:
@@ -481,7 +483,7 @@ class PolicyTagManagerSerializationClient(metaclass=PolicyTagManagerSerializatio
     def export_taxonomies(self,
             request: Union[policytagmanagerserialization.ExportTaxonomiesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanagerserialization.ExportTaxonomiesResponse:

@@ -119,6 +119,13 @@ class ContainerSpec(proto.Message):
 class LaunchFlexTemplateParameter(proto.Message):
     r"""Launch FlexTemplate Parameter.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         job_name (str):
             Required. The job name to use for the created
@@ -126,9 +133,11 @@ class LaunchFlexTemplateParameter(proto.Message):
             same as the existing running job.
         container_spec (google.cloud.dataflow_v1beta3.types.ContainerSpec):
             Spec about the container image to launch.
+            This field is a member of `oneof`_ ``template``.
         container_spec_gcs_path (str):
             Cloud Storage path to a file with json
             serialized ContainerSpec as content.
+            This field is a member of `oneof`_ ``template``.
         parameters (Sequence[google.cloud.dataflow_v1beta3.types.LaunchFlexTemplateParameter.ParametersEntry]):
             The parameters for FlexTemplate. Ex. {"num_workers":"5"}
         launch_options (Sequence[google.cloud.dataflow_v1beta3.types.LaunchFlexTemplateParameter.LaunchOptionsEntry]):
@@ -669,6 +678,8 @@ class RuntimeMetadata(proto.Message):
 class CreateJobFromTemplateRequest(proto.Message):
     r"""A request to create a Cloud Dataflow job from a template.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         project_id (str):
             Required. The ID of the Cloud Platform
@@ -680,6 +691,7 @@ class CreateJobFromTemplateRequest(proto.Message):
             Required. A Cloud Storage path to the template from which to
             create the job. Must be a valid Cloud Storage URL, beginning
             with ``gs://``.
+            This field is a member of `oneof`_ ``template``.
         parameters (Sequence[google.cloud.dataflow_v1beta3.types.CreateJobFromTemplateRequest.ParametersEntry]):
             The runtime parameters to pass to the job.
         environment (google.cloud.dataflow_v1beta3.types.RuntimeEnvironment):
@@ -722,6 +734,8 @@ class CreateJobFromTemplateRequest(proto.Message):
 class GetTemplateRequest(proto.Message):
     r"""A request to retrieve a Cloud Dataflow job template.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         project_id (str):
             Required. The ID of the Cloud Platform
@@ -731,6 +745,7 @@ class GetTemplateRequest(proto.Message):
             template from which to create the job.
             Must be valid Cloud Storage URL, beginning with
             'gs://'.
+            This field is a member of `oneof`_ ``template``.
         view (google.cloud.dataflow_v1beta3.types.GetTemplateRequest.TemplateView):
             The view to retrieve. Defaults to METADATA_ONLY.
         location (str):
@@ -856,6 +871,13 @@ class LaunchTemplateParameters(proto.Message):
 class LaunchTemplateRequest(proto.Message):
     r"""A request to launch a template.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         project_id (str):
             Required. The ID of the Cloud Platform
@@ -868,8 +890,10 @@ class LaunchTemplateRequest(proto.Message):
             which to create the job.
             Must be valid Cloud Storage URL, beginning with
             'gs://'.
+            This field is a member of `oneof`_ ``template``.
         dynamic_template (google.cloud.dataflow_v1beta3.types.DynamicTemplateLaunchParams):
             Params for launching a dynamic template.
+            This field is a member of `oneof`_ ``template``.
         launch_parameters (google.cloud.dataflow_v1beta3.types.LaunchTemplateParameters):
             The parameters of the template to launch.
             This should be part of the body of the POST

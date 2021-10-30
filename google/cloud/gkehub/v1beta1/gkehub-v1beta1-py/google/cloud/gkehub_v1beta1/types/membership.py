@@ -57,6 +57,8 @@ __protobuf__ = proto.module(
 class Membership(proto.Message):
     r"""Membership contains information about a member cluster.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Output only. The full, unique name of this Membership
@@ -84,6 +86,7 @@ class Membership(proto.Message):
         endpoint (google.cloud.gkehub_v1beta1.types.MembershipEndpoint):
             Optional. Endpoint information to reach this
             member.
+            This field is a member of `oneof`_ ``type``.
         state (google.cloud.gkehub_v1beta1.types.MembershipState):
             Output only. State of the Membership
             resource.
@@ -209,16 +212,26 @@ class MembershipEndpoint(proto.Message):
     r"""MembershipEndpoint contains information needed to contact a
     Kubernetes API, endpoint and any additional Kubernetes metadata.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gke_cluster (google.cloud.gkehub_v1beta1.types.GkeCluster):
             Optional. Specific information for a GKE-on-
             CP cluster.
+            This field is a member of `oneof`_ ``type``.
         on_prem_cluster (google.cloud.gkehub_v1beta1.types.OnPremCluster):
             Optional. Specific information for a GKE On-
             rem cluster.
+            This field is a member of `oneof`_ ``type``.
         multi_cloud_cluster (google.cloud.gkehub_v1beta1.types.MultiCloudCluster):
             Optional. Specific information for a GKE
             Multi-Cloud cluster.
+            This field is a member of `oneof`_ ``type``.
         kubernetes_metadata (google.cloud.gkehub_v1beta1.types.KubernetesMetadata):
             Output only. Useful Kubernetes-specific
             metadata.

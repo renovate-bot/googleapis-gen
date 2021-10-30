@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.networkservices_v1beta1.services.network_services import pagers
@@ -376,7 +378,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
             request: Union[endpoint_policy.ListEndpointPoliciesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEndpointPoliciesPager:
@@ -465,7 +467,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
             request: Union[endpoint_policy.GetEndpointPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> endpoint_policy.EndpointPolicy:
@@ -547,7 +549,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
             parent: str = None,
             endpoint_policy: gcn_endpoint_policy.EndpointPolicy = None,
             endpoint_policy_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -656,7 +658,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
             *,
             endpoint_policy: gcn_endpoint_policy.EndpointPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -758,7 +760,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
             request: Union[endpoint_policy.DeleteEndpointPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

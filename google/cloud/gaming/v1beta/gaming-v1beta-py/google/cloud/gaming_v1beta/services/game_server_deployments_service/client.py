@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.gaming_v1beta.services.game_server_deployments_service import pagers
@@ -355,7 +357,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             request: Union[game_server_deployments.ListGameServerDeploymentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGameServerDeploymentsPager:
@@ -443,7 +445,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             request: Union[game_server_deployments.GetGameServerDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> game_server_deployments.GameServerDeployment:
@@ -519,7 +521,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             *,
             parent: str = None,
             game_server_deployment: game_server_deployments.GameServerDeployment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -615,7 +617,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             request: Union[game_server_deployments.DeleteGameServerDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -714,7 +716,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             *,
             game_server_deployment: game_server_deployments.GameServerDeployment = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -814,7 +816,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             request: Union[game_server_deployments.GetGameServerDeploymentRolloutRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> game_server_deployments.GameServerDeploymentRollout:
@@ -893,7 +895,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
             *,
             rollout: game_server_deployments.GameServerDeploymentRollout = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -998,7 +1000,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
     def preview_game_server_deployment_rollout(self,
             request: Union[game_server_deployments.PreviewGameServerDeploymentRolloutRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> game_server_deployments.PreviewGameServerDeploymentRolloutResponse:
@@ -1057,7 +1059,7 @@ class GameServerDeploymentsServiceClient(metaclass=GameServerDeploymentsServiceC
     def fetch_deployment_state(self,
             request: Union[game_server_deployments.FetchDeploymentStateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> game_server_deployments.FetchDeploymentStateResponse:

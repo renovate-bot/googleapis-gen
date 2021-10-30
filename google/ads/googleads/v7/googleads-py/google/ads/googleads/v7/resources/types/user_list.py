@@ -36,6 +36,13 @@ __protobuf__ = proto.module(
 class UserList(proto.Message):
     r"""A user list. This is a list of users a customer may target.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the user list. User list
@@ -44,6 +51,7 @@ class UserList(proto.Message):
             ``customers/{customer_id}/userLists/{user_list_id}``
         id (int):
             Output only. Id of the user list.
+            This field is a member of `oneof`_ ``_id``.
         read_only (bool):
             Output only. A flag that indicates if a user
             may edit a list. Depends on the list ownership
@@ -51,12 +59,15 @@ class UserList(proto.Message):
             user lists are not editable.
 
             This field is read-only.
+            This field is a member of `oneof`_ ``_read_only``.
         name (str):
             Name of this user list. Depending on its access_reason, the
             user list name may not be unique (e.g. if
             access_reason=SHARED)
+            This field is a member of `oneof`_ ``_name``.
         description (str):
             Description of this user list.
+            This field is a member of `oneof`_ ``_description``.
         membership_status (google.ads.googleads.v7.enums.types.UserListMembershipStatusEnum.UserListMembershipStatus):
             Membership status of this user list.
             Indicates whether a user list is open or active.
@@ -66,6 +77,7 @@ class UserList(proto.Message):
             An ID from external system. It is used by
             user list sellers to correlate IDs on their
             systems.
+            This field is a member of `oneof`_ ``_integration_code``.
         membership_life_span (int):
             Number of days a user's cookie stays on your list since its
             most recent addition to the list. This field must be between
@@ -73,12 +85,14 @@ class UserList(proto.Message):
             field can be set to 10000 which means no expiration.
 
             It'll be ignored for logical_user_list.
+            This field is a member of `oneof`_ ``_membership_life_span``.
         size_for_display (int):
             Output only. Estimated number of users in
             this user list, on the Google Display Network.
             This value is null if the number of users has
             not yet been determined.
             This field is read-only.
+            This field is a member of `oneof`_ ``_size_for_display``.
         size_range_for_display (google.ads.googleads.v7.enums.types.UserListSizeRangeEnum.UserListSizeRange):
             Output only. Size range in terms of number of
             users of the UserList, on the Google Display
@@ -91,6 +105,7 @@ class UserList(proto.Message):
             campaigns. This value is null if the number of
             users has not yet been determined.
             This field is read-only.
+            This field is a member of `oneof`_ ``_size_for_search``.
         size_range_for_search (google.ads.googleads.v7.enums.types.UserListSizeRangeEnum.UserListSizeRange):
             Output only. Size range in terms of number of
             users of the UserList, for Search ads.
@@ -121,10 +136,12 @@ class UserList(proto.Message):
         eligible_for_search (bool):
             Indicates if this user list is eligible for
             Google Search Network.
+            This field is a member of `oneof`_ ``_eligible_for_search``.
         eligible_for_display (bool):
             Output only. Indicates this user list is
             eligible for Google Display Network.
             This field is read-only.
+            This field is a member of `oneof`_ ``_eligible_for_display``.
         match_rate_percentage (int):
             Output only. Indicates match rate for Customer Match lists.
             The range of this field is [0-100]. This will be null for
@@ -132,21 +149,27 @@ class UserList(proto.Message):
             match rate.
 
             This field is read-only.
+            This field is a member of `oneof`_ ``_match_rate_percentage``.
         crm_based_user_list (google.ads.googleads.v7.common.types.CrmBasedUserListInfo):
             User list of CRM users provided by the
             advertiser.
+            This field is a member of `oneof`_ ``user_list``.
         similar_user_list (google.ads.googleads.v7.common.types.SimilarUserListInfo):
             Output only. User list which are similar to
             users from another UserList. These lists are
             readonly and automatically created by google.
+            This field is a member of `oneof`_ ``user_list``.
         rule_based_user_list (google.ads.googleads.v7.common.types.RuleBasedUserListInfo):
             User list generated by a rule.
+            This field is a member of `oneof`_ ``user_list``.
         logical_user_list (google.ads.googleads.v7.common.types.LogicalUserListInfo):
             User list that is a custom combination of
             user lists and user interests.
+            This field is a member of `oneof`_ ``user_list``.
         basic_user_list (google.ads.googleads.v7.common.types.BasicUserListInfo):
             User list targeting as a collection of
             conversion or remarketing actions.
+            This field is a member of `oneof`_ ``user_list``.
     """
 
     resource_name = proto.Field(

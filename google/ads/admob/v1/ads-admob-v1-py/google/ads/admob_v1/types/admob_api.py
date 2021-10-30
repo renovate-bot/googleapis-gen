@@ -162,16 +162,26 @@ class GenerateMediationReportResponse(proto.Message):
           "footer": {"matching_row_count": 1}
         }]
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         header (google.ads.admob_v1.types.ReportHeader):
             Report generation settings that describes the
             report contents, such as the report date range
             and localization settings.
+            This field is a member of `oneof`_ ``payload``.
         row (google.ads.admob_v1.types.ReportRow):
             Actual report data.
+            This field is a member of `oneof`_ ``payload``.
         footer (google.ads.admob_v1.types.ReportFooter):
             Additional information about the generated
             report, such as warnings about the data.
+            This field is a member of `oneof`_ ``payload``.
     """
 
     header = proto.Field(
@@ -256,16 +266,26 @@ class GenerateNetworkReportResponse(proto.Message):
           "footer": {"matchingRowCount": 1}
         }]
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         header (google.ads.admob_v1.types.ReportHeader):
             Report generation settings that describes the
             report contents, such as the report date range
             and localization settings.
+            This field is a member of `oneof`_ ``payload``.
         row (google.ads.admob_v1.types.ReportRow):
             Actual report data.
+            This field is a member of `oneof`_ ``payload``.
         footer (google.ads.admob_v1.types.ReportFooter):
             Additional information about the generated
             report, such as warnings about the data.
+            This field is a member of `oneof`_ ``payload``.
     """
 
     header = proto.Field(

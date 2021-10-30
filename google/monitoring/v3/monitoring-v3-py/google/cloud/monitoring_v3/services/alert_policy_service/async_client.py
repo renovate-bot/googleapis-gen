@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.monitoring_v3.services.alert_policy_service import pagers
 from google.cloud.monitoring_v3.types import alert
@@ -161,10 +163,10 @@ class AlertPolicyServiceAsyncClient:
         )
 
     async def list_alert_policies(self,
-            request: alert_service.ListAlertPoliciesRequest = None,
+            request: Union[alert_service.ListAlertPoliciesRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAlertPoliciesAsyncPager:
@@ -172,7 +174,7 @@ class AlertPolicyServiceAsyncClient:
         workspace.
 
         Args:
-            request (:class:`google.cloud.monitoring_v3.types.ListAlertPoliciesRequest`):
+            request (Union[google.cloud.monitoring_v3.types.ListAlertPoliciesRequest, dict]):
                 The request object. The protocol for the
                 `ListAlertPolicies` request.
             name (:class:`str`):
@@ -265,17 +267,17 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_alert_policy(self,
-            request: alert_service.GetAlertPolicyRequest = None,
+            request: Union[alert_service.GetAlertPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alert.AlertPolicy:
         r"""Gets a single alerting policy.
 
         Args:
-            request (:class:`google.cloud.monitoring_v3.types.GetAlertPolicyRequest`):
+            request (Union[google.cloud.monitoring_v3.types.GetAlertPolicyRequest, dict]):
                 The request object. The protocol for the
                 `GetAlertPolicy` request.
             name (:class:`str`):
@@ -353,18 +355,18 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_alert_policy(self,
-            request: alert_service.CreateAlertPolicyRequest = None,
+            request: Union[alert_service.CreateAlertPolicyRequest, dict] = None,
             *,
             name: str = None,
             alert_policy: alert.AlertPolicy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alert.AlertPolicy:
         r"""Creates a new alerting policy.
 
         Args:
-            request (:class:`google.cloud.monitoring_v3.types.CreateAlertPolicyRequest`):
+            request (Union[google.cloud.monitoring_v3.types.CreateAlertPolicyRequest, dict]):
                 The request object. The protocol for the
                 `CreateAlertPolicy` request.
             name (:class:`str`):
@@ -458,17 +460,17 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_alert_policy(self,
-            request: alert_service.DeleteAlertPolicyRequest = None,
+            request: Union[alert_service.DeleteAlertPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes an alerting policy.
 
         Args:
-            request (:class:`google.cloud.monitoring_v3.types.DeleteAlertPolicyRequest`):
+            request (Union[google.cloud.monitoring_v3.types.DeleteAlertPolicyRequest, dict]):
                 The request object. The protocol for the
                 `DeleteAlertPolicy` request.
             name (:class:`str`):
@@ -536,11 +538,11 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def update_alert_policy(self,
-            request: alert_service.UpdateAlertPolicyRequest = None,
+            request: Union[alert_service.UpdateAlertPolicyRequest, dict] = None,
             *,
             update_mask: field_mask_pb2.FieldMask = None,
             alert_policy: alert.AlertPolicy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> alert.AlertPolicy:
@@ -550,7 +552,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         via ``updateMask``. Returns the updated alerting policy.
 
         Args:
-            request (:class:`google.cloud.monitoring_v3.types.UpdateAlertPolicyRequest`):
+            request (Union[google.cloud.monitoring_v3.types.UpdateAlertPolicyRequest, dict]):
                 The request object. The protocol for the
                 `UpdateAlertPolicy` request.
             update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):

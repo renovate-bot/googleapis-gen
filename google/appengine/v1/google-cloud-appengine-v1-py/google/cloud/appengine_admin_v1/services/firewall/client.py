@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.appengine_admin_v1.services.firewall import pagers
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import firewall
@@ -336,7 +338,7 @@ class FirewallClient(metaclass=FirewallClientMeta):
     def list_ingress_rules(self,
             request: Union[appengine.ListIngressRulesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIngressRulesPager:
@@ -403,7 +405,7 @@ class FirewallClient(metaclass=FirewallClientMeta):
     def batch_update_ingress_rules(self,
             request: Union[appengine.BatchUpdateIngressRulesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> appengine.BatchUpdateIngressRulesResponse:
@@ -463,7 +465,7 @@ class FirewallClient(metaclass=FirewallClientMeta):
     def create_ingress_rule(self,
             request: Union[appengine.CreateIngressRuleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> firewall.FirewallRule:
@@ -521,7 +523,7 @@ class FirewallClient(metaclass=FirewallClientMeta):
     def get_ingress_rule(self,
             request: Union[appengine.GetIngressRuleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> firewall.FirewallRule:
@@ -579,7 +581,7 @@ class FirewallClient(metaclass=FirewallClientMeta):
     def update_ingress_rule(self,
             request: Union[appengine.UpdateIngressRuleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> firewall.FirewallRule:
@@ -637,7 +639,7 @@ class FirewallClient(metaclass=FirewallClientMeta):
     def delete_ingress_rule(self,
             request: Union[appengine.DeleteIngressRuleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

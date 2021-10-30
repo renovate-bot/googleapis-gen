@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.retail_v2beta.services.search_service import pagers
 from google.cloud.retail_v2beta.types import search_service
@@ -153,9 +155,9 @@ class SearchServiceAsyncClient:
         )
 
     async def search(self,
-            request: search_service.SearchRequest = None,
+            request: Union[search_service.SearchRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchAsyncPager:
@@ -167,7 +169,7 @@ class SearchServiceAsyncClient:
         sales if you are interested in using Retail Search.
 
         Args:
-            request (:class:`google.cloud.retail_v2beta.types.SearchRequest`):
+            request (Union[google.cloud.retail_v2beta.types.SearchRequest, dict]):
                 The request object. Request message for
                 [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search]
                 method.

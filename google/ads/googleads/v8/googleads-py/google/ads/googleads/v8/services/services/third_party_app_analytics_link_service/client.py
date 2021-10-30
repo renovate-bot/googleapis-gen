@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.resources.types import third_party_app_analytics_link
 from google.ads.googleads.v8.services.types import third_party_app_analytics_link_service
 from .transports.base import ThirdPartyAppAnalyticsLinkServiceTransport, DEFAULT_CLIENT_INFO
@@ -338,7 +340,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
     def get_third_party_app_analytics_link(self,
             request: Union[third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> third_party_app_analytics_link.ThirdPartyAppAnalyticsLink:
@@ -399,7 +401,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
     def regenerate_shareable_link_id(self,
             request: Union[third_party_app_analytics_link_service.RegenerateShareableLinkIdRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> third_party_app_analytics_link_service.RegenerateShareableLinkIdResponse:

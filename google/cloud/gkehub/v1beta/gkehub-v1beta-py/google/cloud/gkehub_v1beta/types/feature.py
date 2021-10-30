@@ -221,9 +221,12 @@ class FeatureState(proto.Message):
 class CommonFeatureSpec(proto.Message):
     r"""CommonFeatureSpec contains Hub-wide configuration information
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         multiclusteringress (google.cloud.gkehub.multiclusteringress.v1beta.multiclusteringress_pb2.FeatureSpec):
             Multicluster Ingress-specific spec.
+            This field is a member of `oneof`_ ``feature_spec``.
     """
 
     multiclusteringress = proto.Field(
@@ -255,9 +258,13 @@ class MembershipFeatureSpec(proto.Message):
     r"""MembershipFeatureSpec contains configuration information for
     a single Membership.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         configmanagement (google.cloud.gkehub.configmanagement.v1beta.configmanagement_pb2.MembershipSpec):
             Config Management-specific spec.
+            This field is a member of `oneof`_ ``feature_spec``.
     """
 
     configmanagement = proto.Field(
@@ -272,11 +279,20 @@ class MembershipFeatureState(proto.Message):
     r"""MembershipFeatureState contains Feature status information
     for a single Membership.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         metering (google.cloud.gkehub.metering.v1beta.metering_pb2.MembershipState):
             Metering-specific spec.
+            This field is a member of `oneof`_ ``feature_state``.
         configmanagement (google.cloud.gkehub.configmanagement.v1beta.configmanagement_pb2.MembershipState):
             Config Management-specific state.
+            This field is a member of `oneof`_ ``feature_state``.
         state (google.cloud.gkehub_v1beta.types.FeatureState):
             The high-level state of this Feature for a
             single membership.

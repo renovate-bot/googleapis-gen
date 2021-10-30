@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.resources.types import topic_view
 from google.ads.googleads.v8.services.types import topic_view_service
 from .transports.base import TopicViewServiceTransport, DEFAULT_CLIENT_INFO
@@ -337,7 +339,7 @@ class TopicViewServiceClient(metaclass=TopicViewServiceClientMeta):
             request: Union[topic_view_service.GetTopicViewRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> topic_view.TopicView:

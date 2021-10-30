@@ -32,18 +32,23 @@ class ClickLocation(proto.Message):
         city (str):
             The city location criterion associated with
             the impression.
+            This field is a member of `oneof`_ ``_city``.
         country (str):
             The country location criterion associated
             with the impression.
+            This field is a member of `oneof`_ ``_country``.
         metro (str):
             The metro location criterion associated with
             the impression.
+            This field is a member of `oneof`_ ``_metro``.
         most_specific (str):
             The most specific location criterion
             associated with the impression.
+            This field is a member of `oneof`_ ``_most_specific``.
         region (str):
             The region location criterion associated with
             the impression.
+            This field is a member of `oneof`_ ``_region``.
     """
 
     city = proto.Field(

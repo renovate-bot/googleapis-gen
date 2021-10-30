@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1beta4.services.sql_instances_service import pagers
 from google.cloud.sql_v1beta4.types import cloud_sql
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
@@ -327,7 +329,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def add_server_ca(self,
             request: Union[cloud_sql.SqlInstancesAddServerCaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -382,7 +384,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def clone(self,
             request: Union[cloud_sql.SqlInstancesCloneRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -434,7 +436,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def delete(self,
             request: Union[cloud_sql.SqlInstancesDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -484,7 +486,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def demote_master(self,
             request: Union[cloud_sql.SqlInstancesDemoteMasterRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -535,7 +537,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def export(self,
             request: Union[cloud_sql.SqlInstancesExportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -586,7 +588,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def failover(self,
             request: Union[cloud_sql.SqlInstancesFailoverRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -638,7 +640,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def get(self,
             request: Union[cloud_sql.SqlInstancesGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.DatabaseInstance:
@@ -684,7 +686,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def import(self,
             request: Union[cloud_sql.SqlInstancesImportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -735,7 +737,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def insert(self,
             request: Union[cloud_sql.SqlInstancesInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -785,7 +787,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def list(self,
             request: Union[cloud_sql.SqlInstancesListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPager:
@@ -843,7 +845,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def list_server_cas(self,
             request: Union[cloud_sql.SqlInstancesListServerCasRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.InstancesListServerCasResponse:
@@ -894,7 +896,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def patch(self,
             request: Union[cloud_sql.SqlInstancesPatchRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -945,7 +947,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def promote_replica(self,
             request: Union[cloud_sql.SqlInstancesPromoteReplicaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -997,7 +999,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def reset_ssl_config(self,
             request: Union[cloud_sql.SqlInstancesResetSslConfigRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1048,7 +1050,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def restart(self,
             request: Union[cloud_sql.SqlInstancesRestartRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1098,7 +1100,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def restore_backup(self,
             request: Union[cloud_sql.SqlInstancesRestoreBackupRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1149,7 +1151,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def rotate_server_ca(self,
             request: Union[cloud_sql.SqlInstancesRotateServerCaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1201,7 +1203,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def start_replica(self,
             request: Union[cloud_sql.SqlInstancesStartReplicaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1251,7 +1253,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def stop_replica(self,
             request: Union[cloud_sql.SqlInstancesStopReplicaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1301,7 +1303,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def truncate_log(self,
             request: Union[cloud_sql.SqlInstancesTruncateLogRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1352,7 +1354,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def update(self,
             request: Union[cloud_sql.SqlInstancesUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1403,7 +1405,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def create_ephemeral(self,
             request: Union[cloud_sql.SqlInstancesCreateEphemeralCertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCert:
@@ -1452,7 +1454,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def reschedule_maintenance(self,
             request: Union[cloud_sql.SqlInstancesRescheduleMaintenanceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -1502,7 +1504,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def verify_external_sync_settings(self,
             request: Union[cloud_sql.SqlInstancesVerifyExternalSyncSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SqlInstancesVerifyExternalSyncSettingsResponse:
@@ -1550,7 +1552,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
     def start_external_sync(self,
             request: Union[cloud_sql.SqlInstancesStartExternalSyncRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:

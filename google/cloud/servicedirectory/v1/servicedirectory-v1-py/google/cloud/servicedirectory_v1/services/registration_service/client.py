@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.servicedirectory_v1.services.registration_service import pagers
 from google.cloud.servicedirectory_v1.types import endpoint
 from google.cloud.servicedirectory_v1.types import endpoint as gcs_endpoint
@@ -384,7 +386,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             parent: str = None,
             namespace: gcs_namespace.Namespace = None,
             namespace_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_namespace.Namespace:
@@ -486,7 +488,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.ListNamespacesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNamespacesPager:
@@ -574,7 +576,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.GetNamespaceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> namespace.Namespace:
@@ -652,7 +654,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             *,
             namespace: gcs_namespace.Namespace = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_namespace.Namespace:
@@ -736,7 +738,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.DeleteNamespaceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -805,7 +807,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             parent: str = None,
             service: gcs_service.Service = None,
             service_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_service.Service:
@@ -906,7 +908,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.ListServicesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesPager:
@@ -994,7 +996,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.GetServiceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.Service:
@@ -1075,7 +1077,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             *,
             service: gcs_service.Service = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_service.Service:
@@ -1159,7 +1161,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.DeleteServiceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1228,7 +1230,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             parent: str = None,
             endpoint: gcs_endpoint.Endpoint = None,
             endpoint_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_endpoint.Endpoint:
@@ -1328,7 +1330,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.ListEndpointsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEndpointsPager:
@@ -1416,7 +1418,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.GetEndpointRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> endpoint.Endpoint:
@@ -1495,7 +1497,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             *,
             endpoint: gcs_endpoint.Endpoint = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_endpoint.Endpoint:
@@ -1578,7 +1580,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             request: Union[registration_service.DeleteEndpointRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1643,7 +1645,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
     def get_iam_policy(self,
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1754,7 +1756,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
     def set_iam_policy(self,
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1865,7 +1867,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
     def test_iam_permissions(self,
             request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

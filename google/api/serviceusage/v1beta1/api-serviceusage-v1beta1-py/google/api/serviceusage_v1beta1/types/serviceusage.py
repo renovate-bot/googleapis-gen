@@ -561,6 +561,8 @@ class BatchCreateAdminOverridesResponse(proto.Message):
 class ImportAdminOverridesRequest(proto.Message):
     r"""Request message for ImportAdminOverrides
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             The resource name of the consumer.
@@ -570,6 +572,7 @@ class ImportAdminOverridesRequest(proto.Message):
         inline_source (google.api.serviceusage_v1beta1.types.OverrideInlineSource):
             The import data is specified in the request
             message itself
+            This field is a member of `oneof`_ ``source``.
         force (bool):
             Whether to force the creation of the quota
             overrides. Setting the force parameter to 'true'
@@ -842,6 +845,8 @@ class BatchCreateConsumerOverridesResponse(proto.Message):
 class ImportConsumerOverridesRequest(proto.Message):
     r"""Request message for ImportConsumerOverrides
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             The resource name of the consumer.
@@ -851,6 +856,7 @@ class ImportConsumerOverridesRequest(proto.Message):
         inline_source (google.api.serviceusage_v1beta1.types.OverrideInlineSource):
             The import data is specified in the request
             message itself
+            This field is a member of `oneof`_ ``source``.
         force (bool):
             Whether to force the creation of the quota
             overrides. Setting the force parameter to 'true'

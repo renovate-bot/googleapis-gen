@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.admob_v1.services.ad_mob_api import pagers
 from google.ads.admob_v1.types import admob_api
 from google.ads.admob_v1.types import admob_resources
@@ -339,7 +341,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
             request: Union[admob_api.GetPublisherAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> admob_resources.PublisherAccount:
@@ -417,7 +419,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
     def list_publisher_accounts(self,
             request: Union[admob_api.ListPublisherAccountsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPublisherAccountsPager:
@@ -481,7 +483,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
     def generate_network_report(self,
             request: Union[admob_api.GenerateNetworkReportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[admob_api.GenerateNetworkReportResponse]:
@@ -561,7 +563,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
     def generate_mediation_report(self,
             request: Union[admob_api.GenerateMediationReportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[admob_api.GenerateMediationReportResponse]:

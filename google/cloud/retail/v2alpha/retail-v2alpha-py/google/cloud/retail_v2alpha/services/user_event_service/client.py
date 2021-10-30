@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api import httpbody_pb2  # type: ignore
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -356,7 +358,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
     def write_user_event(self,
             request: Union[user_event_service.WriteUserEventRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> user_event.UserEvent:
@@ -414,7 +416,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
     def collect_user_event(self,
             request: Union[user_event_service.CollectUserEventRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
@@ -519,7 +521,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
     def purge_user_events(self,
             request: Union[purge_config.PurgeUserEventsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -590,7 +592,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
     def import_user_events(self,
             request: Union[import_config.ImportUserEventsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -665,7 +667,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
     def rejoin_user_events(self,
             request: Union[user_event_service.RejoinUserEventsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

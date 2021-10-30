@@ -181,49 +181,63 @@ class BidModifierSimulationPoint(proto.Message):
         bid_modifier (float):
             The simulated bid modifier upon which
             projected metrics are based.
+            This field is a member of `oneof`_ ``_bid_modifier``.
         biddable_conversions (float):
             Projected number of biddable conversions.
             Only search advertising channel type supports
             this field.
+            This field is a member of `oneof`_ ``_biddable_conversions``.
         biddable_conversions_value (float):
             Projected total value of biddable
             conversions. Only search advertising channel
             type supports this field.
+            This field is a member of `oneof`_ ``_biddable_conversions_value``.
         clicks (int):
             Projected number of clicks.
+            This field is a member of `oneof`_ ``_clicks``.
         cost_micros (int):
             Projected cost in micros.
+            This field is a member of `oneof`_ ``_cost_micros``.
         impressions (int):
             Projected number of impressions.
+            This field is a member of `oneof`_ ``_impressions``.
         top_slot_impressions (int):
             Projected number of top slot impressions.
             Only search advertising channel type supports
             this field.
+            This field is a member of `oneof`_ ``_top_slot_impressions``.
         parent_biddable_conversions (float):
             Projected number of biddable conversions for
             the parent resource. Only search advertising
             channel type supports this field.
+            This field is a member of `oneof`_ ``_parent_biddable_conversions``.
         parent_biddable_conversions_value (float):
             Projected total value of biddable conversions
             for the parent resource. Only search advertising
             channel type supports this field.
+            This field is a member of `oneof`_ ``_parent_biddable_conversions_value``.
         parent_clicks (int):
             Projected number of clicks for the parent
             resource.
+            This field is a member of `oneof`_ ``_parent_clicks``.
         parent_cost_micros (int):
             Projected cost in micros for the parent
             resource.
+            This field is a member of `oneof`_ ``_parent_cost_micros``.
         parent_impressions (int):
             Projected number of impressions for the
             parent resource.
+            This field is a member of `oneof`_ ``_parent_impressions``.
         parent_top_slot_impressions (int):
             Projected number of top slot impressions for
             the parent resource. Only search advertising
             channel type supports this field.
+            This field is a member of `oneof`_ ``_parent_top_slot_impressions``.
         parent_required_budget_micros (int):
             Projected minimum daily budget that must be
             available to the parent resource to realize this
             simulation.
+            This field is a member of `oneof`_ ``_parent_required_budget_micros``.
     """
 
     bid_modifier = proto.Field(
@@ -301,6 +315,13 @@ class BidModifierSimulationPoint(proto.Message):
 class CpcBidSimulationPoint(proto.Message):
     r"""Projected metrics for a specific CPC bid amount.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         required_budget_amount_micros (int):
             Projected required daily budget that the
@@ -309,27 +330,35 @@ class CpcBidSimulationPoint(proto.Message):
             currency.
         biddable_conversions (float):
             Projected number of biddable conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions``.
         biddable_conversions_value (float):
             Projected total value of biddable
             conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions_value``.
         clicks (int):
             Projected number of clicks.
+            This field is a member of `oneof`_ ``_clicks``.
         cost_micros (int):
             Projected cost in micros.
+            This field is a member of `oneof`_ ``_cost_micros``.
         impressions (int):
             Projected number of impressions.
+            This field is a member of `oneof`_ ``_impressions``.
         top_slot_impressions (int):
             Projected number of top slot impressions.
             Only search advertising channel type supports
             this field.
+            This field is a member of `oneof`_ ``_top_slot_impressions``.
         cpc_bid_micros (int):
             The simulated CPC bid upon which projected
             metrics are based.
+            This field is a member of `oneof`_ ``cpc_simulation_key_value``.
         cpc_bid_scaling_modifier (float):
             The simulated scaling modifier upon which
             projected metrics are based. All CPC bids
             relevant to the simulated entity are scaled by
             this modifier.
+            This field is a member of `oneof`_ ``cpc_simulation_key_value``.
     """
 
     required_budget_amount_micros = proto.Field(
@@ -385,12 +414,16 @@ class CpvBidSimulationPoint(proto.Message):
         cpv_bid_micros (int):
             The simulated CPV bid upon which projected
             metrics are based.
+            This field is a member of `oneof`_ ``_cpv_bid_micros``.
         cost_micros (int):
             Projected cost in micros.
+            This field is a member of `oneof`_ ``_cost_micros``.
         impressions (int):
             Projected number of impressions.
+            This field is a member of `oneof`_ ``_impressions``.
         views (int):
             Projected number of views.
+            This field is a member of `oneof`_ ``_views``.
     """
 
     cpv_bid_micros = proto.Field(
@@ -418,6 +451,13 @@ class CpvBidSimulationPoint(proto.Message):
 class TargetCpaSimulationPoint(proto.Message):
     r"""Projected metrics for a specific target CPA amount.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         required_budget_amount_micros (int):
             Projected required daily budget that the
@@ -426,31 +466,39 @@ class TargetCpaSimulationPoint(proto.Message):
             currency.
         biddable_conversions (float):
             Projected number of biddable conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions``.
         biddable_conversions_value (float):
             Projected total value of biddable
             conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions_value``.
         app_installs (float):
             Projected number of app installs.
         in_app_actions (float):
             Projected number of in-app actions.
         clicks (int):
             Projected number of clicks.
+            This field is a member of `oneof`_ ``_clicks``.
         cost_micros (int):
             Projected cost in micros.
+            This field is a member of `oneof`_ ``_cost_micros``.
         impressions (int):
             Projected number of impressions.
+            This field is a member of `oneof`_ ``_impressions``.
         top_slot_impressions (int):
             Projected number of top slot impressions.
             Only search advertising channel type supports
             this field.
+            This field is a member of `oneof`_ ``_top_slot_impressions``.
         target_cpa_micros (int):
             The simulated target CPA upon which projected
             metrics are based.
+            This field is a member of `oneof`_ ``target_cpa_simulation_key_value``.
         target_cpa_scaling_modifier (float):
             The simulated scaling modifier upon which
             projected metrics are based. All CPA targets
             relevant to the simulated entity are scaled by
             this modifier.
+            This field is a member of `oneof`_ ``target_cpa_simulation_key_value``.
     """
 
     required_budget_amount_micros = proto.Field(
@@ -514,6 +562,7 @@ class TargetRoasSimulationPoint(proto.Message):
         target_roas (float):
             The simulated target ROAS upon which
             projected metrics are based.
+            This field is a member of `oneof`_ ``_target_roas``.
         required_budget_amount_micros (int):
             Projected required daily budget that the
             advertiser must set in order to receive the
@@ -521,19 +570,25 @@ class TargetRoasSimulationPoint(proto.Message):
             currency.
         biddable_conversions (float):
             Projected number of biddable conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions``.
         biddable_conversions_value (float):
             Projected total value of biddable
             conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions_value``.
         clicks (int):
             Projected number of clicks.
+            This field is a member of `oneof`_ ``_clicks``.
         cost_micros (int):
             Projected cost in micros.
+            This field is a member of `oneof`_ ``_cost_micros``.
         impressions (int):
             Projected number of impressions.
+            This field is a member of `oneof`_ ``_impressions``.
         top_slot_impressions (int):
             Projected number of top slot impressions.
             Only Search advertising channel type supports
             this field.
+            This field is a member of `oneof`_ ``_top_slot_impressions``.
     """
 
     target_roas = proto.Field(
@@ -587,19 +642,26 @@ class PercentCpcBidSimulationPoint(proto.Message):
             based. Percent CPC expressed as fraction of the advertised
             price for some good or service. The value stored here is
             1,000,000 \* [fraction].
+            This field is a member of `oneof`_ ``_percent_cpc_bid_micros``.
         biddable_conversions (float):
             Projected number of biddable conversions.
+            This field is a member of `oneof`_ ``_biddable_conversions``.
         biddable_conversions_value (float):
             Projected total value of biddable conversions
             in local currency.
+            This field is a member of `oneof`_ ``_biddable_conversions_value``.
         clicks (int):
             Projected number of clicks.
+            This field is a member of `oneof`_ ``_clicks``.
         cost_micros (int):
             Projected cost in micros.
+            This field is a member of `oneof`_ ``_cost_micros``.
         impressions (int):
             Projected number of impressions.
+            This field is a member of `oneof`_ ``_impressions``.
         top_slot_impressions (int):
             Projected number of top slot impressions.
+            This field is a member of `oneof`_ ``_top_slot_impressions``.
     """
 
     percent_cpc_bid_micros = proto.Field(

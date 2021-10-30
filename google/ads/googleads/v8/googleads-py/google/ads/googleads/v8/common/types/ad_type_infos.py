@@ -68,10 +68,13 @@ class TextAdInfo(proto.Message):
     Attributes:
         headline (str):
             The headline of the ad.
+            This field is a member of `oneof`_ ``_headline``.
         description1 (str):
             The first line of the ad's description.
+            This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             The second line of the ad's description.
+            This field is a member of `oneof`_ ``_description2``.
     """
 
     headline = proto.Field(
@@ -97,20 +100,27 @@ class ExpandedTextAdInfo(proto.Message):
     Attributes:
         headline_part1 (str):
             The first part of the ad's headline.
+            This field is a member of `oneof`_ ``_headline_part1``.
         headline_part2 (str):
             The second part of the ad's headline.
+            This field is a member of `oneof`_ ``_headline_part2``.
         headline_part3 (str):
             The third part of the ad's headline.
+            This field is a member of `oneof`_ ``_headline_part3``.
         description (str):
             The description of the ad.
+            This field is a member of `oneof`_ ``_description``.
         description2 (str):
             The second description of the ad.
+            This field is a member of `oneof`_ ``_description2``.
         path1 (str):
             The text that can appear alongside the ad's
             displayed URL.
+            This field is a member of `oneof`_ ``_path1``.
         path2 (str):
             Additional text that can appear alongside the
             ad's displayed URL.
+            This field is a member of `oneof`_ ``_path2``.
     """
 
     headline_part1 = proto.Field(
@@ -156,8 +166,10 @@ class ExpandedDynamicSearchAdInfo(proto.Message):
     Attributes:
         description (str):
             The description of the ad.
+            This field is a member of `oneof`_ ``_description``.
         description2 (str):
             The second description of the ad.
+            This field is a member of `oneof`_ ``_description2``.
     """
 
     description = proto.Field(
@@ -194,6 +206,7 @@ class ShoppingComparisonListingAdInfo(proto.Message):
         headline (str):
             Headline of the ad. This field is required.
             Allowed length is between 25 and 45 characters.
+            This field is a member of `oneof`_ ``_headline``.
     """
 
     headline = proto.Field(
@@ -214,6 +227,7 @@ class GmailAdInfo(proto.Message):
             image. Valid image types are GIF, JPEG and PNG.
             The minimum size is 300x100 pixels and the
             aspect ratio must be between 3:1 and 5:1 (+-1%).
+            This field is a member of `oneof`_ ``_header_image``.
         marketing_image (str):
             The MediaFile resource name of the marketing
             image. Valid image types are GIF, JPEG and PNG.
@@ -221,10 +235,13 @@ class GmailAdInfo(proto.Message):
             minimum size of 600x314 pixels and aspect ratio
             of 600:314 (+-1%) or square with a minimum size
             of 300x300 pixels and aspect ratio of 1:1 (+-1%)
+            This field is a member of `oneof`_ ``_marketing_image``.
         marketing_image_headline (str):
             Headline of the marketing image.
+            This field is a member of `oneof`_ ``_marketing_image_headline``.
         marketing_image_description (str):
             Description of the marketing image.
+            This field is a member of `oneof`_ ``_marketing_image_description``.
         marketing_image_display_call_to_action (google.ads.googleads.v8.common.types.DisplayCallToAction):
             Display-call-to-action of the marketing
             image.
@@ -286,15 +303,19 @@ class GmailTeaser(proto.Message):
     Attributes:
         headline (str):
             Headline of the teaser.
+            This field is a member of `oneof`_ ``_headline``.
         description (str):
             Description of the teaser.
+            This field is a member of `oneof`_ ``_description``.
         business_name (str):
             Business name of the advertiser.
+            This field is a member of `oneof`_ ``_business_name``.
         logo_image (str):
             The MediaFile resource name of the logo
             image. Valid image types are GIF, JPEG and PNG.
             The minimum size is 144x144 pixels and the
             aspect ratio must be 1:1 (+-1%).
+            This field is a member of `oneof`_ ``_logo_image``.
     """
 
     headline = proto.Field(
@@ -327,12 +348,15 @@ class DisplayCallToAction(proto.Message):
     Attributes:
         text (str):
             Text for the display-call-to-action.
+            This field is a member of `oneof`_ ``_text``.
         text_color (str):
             Text color for the display-call-to-action in
             hexadecimal, e.g. #ffffff for white.
+            This field is a member of `oneof`_ ``_text_color``.
         url_collection_id (str):
             Identifies the URL collection in the ``ad.url_collections``
             field. If not set, the URL defaults to ``final_url``.
+            This field is a member of `oneof`_ ``_url_collection_id``.
     """
 
     text = proto.Field(
@@ -361,8 +385,10 @@ class ProductImage(proto.Message):
             image. Valid image types are GIF, JPEG and PNG.
             The minimum size is 300x300 pixels and the
             aspect ratio must be 1:1 (+-1%).
+            This field is a member of `oneof`_ ``_product_image``.
         description (str):
             Description of the product.
+            This field is a member of `oneof`_ ``_description``.
         display_call_to_action (google.ads.googleads.v8.common.types.DisplayCallToAction):
             Display-call-to-action of the product image.
     """
@@ -391,6 +417,7 @@ class ProductVideo(proto.Message):
         product_video (str):
             The MediaFile resource name of a video which
             must be hosted on YouTube.
+            This field is a member of `oneof`_ ``_product_video``.
     """
 
     product_video = proto.Field(
@@ -403,19 +430,32 @@ class ProductVideo(proto.Message):
 class ImageAdInfo(proto.Message):
     r"""An image ad.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         pixel_width (int):
             Width in pixels of the full size image.
+            This field is a member of `oneof`_ ``_pixel_width``.
         pixel_height (int):
             Height in pixels of the full size image.
+            This field is a member of `oneof`_ ``_pixel_height``.
         image_url (str):
             URL of the full size image.
+            This field is a member of `oneof`_ ``_image_url``.
         preview_pixel_width (int):
             Width in pixels of the preview size image.
+            This field is a member of `oneof`_ ``_preview_pixel_width``.
         preview_pixel_height (int):
             Height in pixels of the preview size image.
+            This field is a member of `oneof`_ ``_preview_pixel_height``.
         preview_image_url (str):
             URL of the preview size image.
+            This field is a member of `oneof`_ ``_preview_image_url``.
         mime_type (google.ads.googleads.v8.enums.types.MimeTypeEnum.MimeType):
             The mime type of the image.
         name (str):
@@ -423,12 +463,16 @@ class ImageAdInfo(proto.Message):
             created from a MediaFile, this is the
             MediaFile's name. If the image was created from
             bytes, this is empty.
+            This field is a member of `oneof`_ ``_name``.
         media_file (str):
             The MediaFile resource to use for the image.
+            This field is a member of `oneof`_ ``image``.
         data (bytes):
             Raw image data as bytes.
+            This field is a member of `oneof`_ ``image``.
         ad_id_to_copy_image_from (int):
             An ad ID to copy the image from.
+            This field is a member of `oneof`_ ``image``.
     """
 
     pixel_width = proto.Field(
@@ -496,6 +540,7 @@ class VideoBumperInStreamAdInfo(proto.Message):
         companion_banner (str):
             The MediaFile resource name of the companion
             banner used with the ad.
+            This field is a member of `oneof`_ ``_companion_banner``.
     """
 
     companion_banner = proto.Field(
@@ -513,6 +558,7 @@ class VideoNonSkippableInStreamAdInfo(proto.Message):
         companion_banner (str):
             The MediaFile resource name of the companion
             banner used with the ad.
+            This field is a member of `oneof`_ ``_companion_banner``.
     """
 
     companion_banner = proto.Field(
@@ -533,13 +579,16 @@ class VideoTrueViewInStreamAdInfo(proto.Message):
             taking the user to the video ad's final URL.
             Required for TrueView for action campaigns,
             optional otherwise.
+            This field is a member of `oneof`_ ``_action_button_label``.
         action_headline (str):
             Additional text displayed with the CTA (call-
             o-action) button to give context and encourage
             clicking on the button.
+            This field is a member of `oneof`_ ``_action_headline``.
         companion_banner (str):
             The MediaFile resource name of the companion
             banner used with the ad.
+            This field is a member of `oneof`_ ``_companion_banner``.
     """
 
     action_button_label = proto.Field(
@@ -566,8 +615,10 @@ class VideoOutstreamAdInfo(proto.Message):
     Attributes:
         headline (str):
             The headline of the ad.
+            This field is a member of `oneof`_ ``_headline``.
         description (str):
             The description line.
+            This field is a member of `oneof`_ ``_description``.
     """
 
     headline = proto.Field(
@@ -588,12 +639,15 @@ class VideoTrueViewDiscoveryAdInfo(proto.Message):
     Attributes:
         headline (str):
             The headline of the ad.
+            This field is a member of `oneof`_ ``_headline``.
         description1 (str):
             First text line for a TrueView video
             discovery ad.
+            This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             Second text line for a TrueView video
             discovery ad.
+            This field is a member of `oneof`_ ``_description2``.
     """
 
     headline = proto.Field(
@@ -616,19 +670,32 @@ class VideoTrueViewDiscoveryAdInfo(proto.Message):
 class VideoAdInfo(proto.Message):
     r"""A video ad.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         media_file (str):
             The MediaFile resource to use for the video.
+            This field is a member of `oneof`_ ``_media_file``.
         in_stream (google.ads.googleads.v8.common.types.VideoTrueViewInStreamAdInfo):
             Video TrueView in-stream ad format.
+            This field is a member of `oneof`_ ``format``.
         bumper (google.ads.googleads.v8.common.types.VideoBumperInStreamAdInfo):
             Video bumper in-stream ad format.
+            This field is a member of `oneof`_ ``format``.
         out_stream (google.ads.googleads.v8.common.types.VideoOutstreamAdInfo):
             Video out-stream ad format.
+            This field is a member of `oneof`_ ``format``.
         non_skippable (google.ads.googleads.v8.common.types.VideoNonSkippableInStreamAdInfo):
             Video non-skippable in-stream ad format.
+            This field is a member of `oneof`_ ``format``.
         discovery (google.ads.googleads.v8.common.types.VideoTrueViewDiscoveryAdInfo):
             Video TrueView discovery ad format.
+            This field is a member of `oneof`_ ``format``.
     """
 
     media_file = proto.Field(
@@ -757,9 +824,11 @@ class ResponsiveSearchAdInfo(proto.Message):
         path1 (str):
             First part of text that can be appended to
             the URL in the ad.
+            This field is a member of `oneof`_ ``_path1``.
         path2 (str):
             Second part of text that can be appended to the URL in the
             ad. This field can only be set when ``path1`` is also set.
+            This field is a member of `oneof`_ ``_path2``.
     """
 
     headlines = proto.RepeatedField(
@@ -791,49 +860,63 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
     Attributes:
         short_headline (str):
             The short version of the ad's headline.
+            This field is a member of `oneof`_ ``_short_headline``.
         long_headline (str):
             The long version of the ad's headline.
+            This field is a member of `oneof`_ ``_long_headline``.
         description (str):
             The description of the ad.
+            This field is a member of `oneof`_ ``_description``.
         business_name (str):
             The business name in the ad.
+            This field is a member of `oneof`_ ``_business_name``.
         allow_flexible_color (bool):
             Advertiser's consent to allow flexible color. When true, the
             ad may be served with different color if necessary. When
             false, the ad will be served with the specified colors or a
             neutral color. The default value is ``true``. Must be true
             if ``main_color`` and ``accent_color`` are not set.
+            This field is a member of `oneof`_ ``_allow_flexible_color``.
         accent_color (str):
             The accent color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of ``main_color`` and ``accent_color`` is set,
             the other is required as well.
+            This field is a member of `oneof`_ ``_accent_color``.
         main_color (str):
             The main color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of ``main_color`` and ``accent_color`` is set,
             the other is required as well.
+            This field is a member of `oneof`_ ``_main_color``.
         call_to_action_text (str):
             The call-to-action text for the ad.
+            This field is a member of `oneof`_ ``_call_to_action_text``.
         logo_image (str):
             The MediaFile resource name of the logo image
             used in the ad.
+            This field is a member of `oneof`_ ``_logo_image``.
         square_logo_image (str):
             The MediaFile resource name of the square
             logo image used in the ad.
+            This field is a member of `oneof`_ ``_square_logo_image``.
         marketing_image (str):
             The MediaFile resource name of the marketing
             image used in the ad.
+            This field is a member of `oneof`_ ``_marketing_image``.
         square_marketing_image (str):
             The MediaFile resource name of the square
             marketing image used in the ad.
+            This field is a member of `oneof`_ ``_square_marketing_image``.
         format_setting (google.ads.googleads.v8.enums.types.DisplayAdFormatSettingEnum.DisplayAdFormatSetting):
             Specifies which format the ad will be served in. Default is
             ALL_FORMATS.
         price_prefix (str):
             Prefix before price. E.g. 'as low as'.
+            This field is a member of `oneof`_ ``_price_prefix``.
         promo_text (str):
             Promotion text used for dynamic formats of
             responsive ads. For example 'Free two-day
             shipping'.
+            This field is a member of `oneof`_ ``_promo_text``.
     """
 
     short_headline = proto.Field(
@@ -1023,14 +1106,18 @@ class LegacyAppInstallAdInfo(proto.Message):
     Attributes:
         app_id (str):
             The ID of the mobile app.
+            This field is a member of `oneof`_ ``_app_id``.
         app_store (google.ads.googleads.v8.enums.types.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore):
             The app store the mobile app is available in.
         headline (str):
             The headline of the ad.
+            This field is a member of `oneof`_ ``_headline``.
         description1 (str):
             The first description line of the ad.
+            This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             The second description line of the ad.
+            This field is a member of `oneof`_ ``_description2``.
     """
 
     app_id = proto.Field(
@@ -1103,29 +1190,36 @@ class ResponsiveDisplayAdInfo(proto.Message):
         business_name (str):
             The advertiser/brand name. Maximum display
             width is 25.
+            This field is a member of `oneof`_ ``_business_name``.
         main_color (str):
             The main color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of ``main_color`` and ``accent_color`` is set,
             the other is required as well.
+            This field is a member of `oneof`_ ``_main_color``.
         accent_color (str):
             The accent color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of ``main_color`` and ``accent_color`` is set,
             the other is required as well.
+            This field is a member of `oneof`_ ``_accent_color``.
         allow_flexible_color (bool):
             Advertiser's consent to allow flexible color. When true, the
             ad may be served with different color if necessary. When
             false, the ad will be served with the specified colors or a
             neutral color. The default value is ``true``. Must be true
             if ``main_color`` and ``accent_color`` are not set.
+            This field is a member of `oneof`_ ``_allow_flexible_color``.
         call_to_action_text (str):
             The call-to-action text for the ad. Maximum
             display width is 30.
+            This field is a member of `oneof`_ ``_call_to_action_text``.
         price_prefix (str):
             Prefix before price. E.g. 'as low as'.
+            This field is a member of `oneof`_ ``_price_prefix``.
         promo_text (str):
             Promotion text used for dynamic formats of
             responsive ads. For example 'Free two-day
             shipping'.
+            This field is a member of `oneof`_ ``_promo_text``.
         format_setting (google.ads.googleads.v8.enums.types.DisplayAdFormatSettingEnum.DisplayAdFormatSetting):
             Specifies which format the ad will be served in. Default is
             ALL_FORMATS.
@@ -1257,10 +1351,12 @@ class LocalAdInfo(proto.Message):
         path1 (str):
             First part of optional text that can be
             appended to the URL in the ad.
+            This field is a member of `oneof`_ ``_path1``.
         path2 (str):
             Second part of optional text that can be appended to the URL
             in the ad. This field can only be set when ``path1`` is also
             set.
+            This field is a member of `oneof`_ ``_path2``.
     """
 
     headlines = proto.RepeatedField(
@@ -1310,6 +1406,9 @@ class DisplayUploadAdInfo(proto.Message):
     the ``display_upload_product_type`` field, which determines what
     kinds of data need to be included with the ad.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         display_upload_product_type (google.ads.googleads.v8.enums.types.DisplayUploadProductTypeEnum.DisplayUploadProductType):
             The product type of this ad. See comments on
@@ -1323,6 +1422,7 @@ class DisplayUploadAdInfo(proto.Message):
             Designer. See
             https://support.google.com/webdesigner/answer/7543898 for
             more information.
+            This field is a member of `oneof`_ ``media_asset``.
     """
 
     display_upload_product_type = proto.Field(

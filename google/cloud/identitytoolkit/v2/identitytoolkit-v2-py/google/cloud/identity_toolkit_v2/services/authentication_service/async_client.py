@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.identity_toolkit_v2.types import authentication_service
 from google.cloud.identity_toolkit_v2.types import mfa_info
@@ -143,16 +145,16 @@ class AuthenticationServiceAsyncClient:
         )
 
     async def finalize_mfa_sign_in(self,
-            request: authentication_service.FinalizeMfaSignInRequest = None,
+            request: Union[authentication_service.FinalizeMfaSignInRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> authentication_service.FinalizeMfaSignInResponse:
         r"""Verifies the MFA challenge and performs sign-in
 
         Args:
-            request (:class:`google.cloud.identity_toolkit_v2.types.FinalizeMfaSignInRequest`):
+            request (Union[google.cloud.identity_toolkit_v2.types.FinalizeMfaSignInRequest, dict]):
                 The request object. Finalizes sign-in by verifying MFA
                 challenge.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -188,16 +190,16 @@ class AuthenticationServiceAsyncClient:
         return response
 
     async def start_mfa_sign_in(self,
-            request: authentication_service.StartMfaSignInRequest = None,
+            request: Union[authentication_service.StartMfaSignInRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> authentication_service.StartMfaSignInResponse:
         r"""Sends the MFA challenge
 
         Args:
-            request (:class:`google.cloud.identity_toolkit_v2.types.StartMfaSignInRequest`):
+            request (Union[google.cloud.identity_toolkit_v2.types.StartMfaSignInRequest, dict]):
                 The request object. Starts multi-factor sign-in by
                 sending the multi-factor auth challenge.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

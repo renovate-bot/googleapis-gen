@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.artifactregistry_v1.services.artifact_registry import pagers
 from google.cloud.artifactregistry_v1.types import artifact
 from google.cloud.artifactregistry_v1.types import repository
@@ -362,7 +364,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             request: Union[artifact.ListDockerImagesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDockerImagesPager:
@@ -449,7 +451,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             request: Union[repository.ListRepositoriesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRepositoriesPager:
@@ -536,7 +538,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             request: Union[repository.GetRepositoryRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> repository.Repository:

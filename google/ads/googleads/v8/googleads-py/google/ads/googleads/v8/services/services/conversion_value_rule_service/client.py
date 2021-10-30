@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import conversion_value_rule_status
 from google.ads.googleads.v8.resources.types import conversion_value_rule
 from google.ads.googleads.v8.services.types import conversion_value_rule_service
@@ -379,7 +381,7 @@ class ConversionValueRuleServiceClient(metaclass=ConversionValueRuleServiceClien
             request: Union[conversion_value_rule_service.GetConversionValueRuleRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_value_rule.ConversionValueRule:
@@ -452,7 +454,7 @@ class ConversionValueRuleServiceClient(metaclass=ConversionValueRuleServiceClien
             *,
             customer_id: str = None,
             operations: Sequence[conversion_value_rule_service.ConversionValueRuleOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_value_rule_service.MutateConversionValueRulesResponse:

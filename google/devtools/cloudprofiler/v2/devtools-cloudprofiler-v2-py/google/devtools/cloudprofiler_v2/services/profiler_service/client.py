@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.devtools.cloudprofiler_v2.types import profiler
 from google.protobuf import duration_pb2  # type: ignore
 from .transports.base import ProfilerServiceTransport, DEFAULT_CLIENT_INFO
@@ -334,7 +336,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
     def create_profile(self,
             request: Union[profiler.CreateProfileRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> profiler.Profile:
@@ -406,7 +408,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
     def create_offline_profile(self,
             request: Union[profiler.CreateOfflineProfileRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> profiler.Profile:
@@ -464,7 +466,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
     def update_profile(self,
             request: Union[profiler.UpdateProfileRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> profiler.Profile:

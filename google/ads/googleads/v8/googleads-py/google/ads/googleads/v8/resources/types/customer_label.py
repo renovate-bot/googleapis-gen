@@ -40,12 +40,14 @@ class CustomerLabel(proto.Message):
             Output only. The resource name of the
             customer to which the label is attached. Read
             only.
+            This field is a member of `oneof`_ ``_customer``.
         label (str):
             Output only. The resource name of the label
             assigned to the customer.
             Note: the Customer ID portion of the label
             resource name is not validated when creating a
             new CustomerLabel.
+            This field is a member of `oneof`_ ``_label``.
     """
 
     resource_name = proto.Field(

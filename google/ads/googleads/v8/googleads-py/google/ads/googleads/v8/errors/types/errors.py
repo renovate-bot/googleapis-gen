@@ -231,277 +231,405 @@ class GoogleAdsError(proto.Message):
 class ErrorCode(proto.Message):
     r"""The error reason represented by type and enum.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         request_error (google.ads.googleads.v8.errors.types.RequestErrorEnum.RequestError):
             An error caused by the request
+            This field is a member of `oneof`_ ``error_code``.
         bidding_strategy_error (google.ads.googleads.v8.errors.types.BiddingStrategyErrorEnum.BiddingStrategyError):
             An error with a Bidding Strategy mutate.
+            This field is a member of `oneof`_ ``error_code``.
         url_field_error (google.ads.googleads.v8.errors.types.UrlFieldErrorEnum.UrlFieldError):
             An error with a URL field mutate.
+            This field is a member of `oneof`_ ``error_code``.
         list_operation_error (google.ads.googleads.v8.errors.types.ListOperationErrorEnum.ListOperationError):
             An error with a list operation.
+            This field is a member of `oneof`_ ``error_code``.
         query_error (google.ads.googleads.v8.errors.types.QueryErrorEnum.QueryError):
             An error with an AWQL query
+            This field is a member of `oneof`_ ``error_code``.
         mutate_error (google.ads.googleads.v8.errors.types.MutateErrorEnum.MutateError):
             An error with a mutate
+            This field is a member of `oneof`_ ``error_code``.
         field_mask_error (google.ads.googleads.v8.errors.types.FieldMaskErrorEnum.FieldMaskError):
             An error with a field mask
+            This field is a member of `oneof`_ ``error_code``.
         authorization_error (google.ads.googleads.v8.errors.types.AuthorizationErrorEnum.AuthorizationError):
             An error encountered when trying to authorize
             a user.
+            This field is a member of `oneof`_ ``error_code``.
         internal_error (google.ads.googleads.v8.errors.types.InternalErrorEnum.InternalError):
             An unexpected server-side error.
+            This field is a member of `oneof`_ ``error_code``.
         quota_error (google.ads.googleads.v8.errors.types.QuotaErrorEnum.QuotaError):
             An error with the amonut of quota remaining.
+            This field is a member of `oneof`_ ``error_code``.
         ad_error (google.ads.googleads.v8.errors.types.AdErrorEnum.AdError):
             An error with an Ad Group Ad mutate.
+            This field is a member of `oneof`_ ``error_code``.
         ad_group_error (google.ads.googleads.v8.errors.types.AdGroupErrorEnum.AdGroupError):
             An error with an Ad Group mutate.
+            This field is a member of `oneof`_ ``error_code``.
         campaign_budget_error (google.ads.googleads.v8.errors.types.CampaignBudgetErrorEnum.CampaignBudgetError):
             An error with a Campaign Budget mutate.
+            This field is a member of `oneof`_ ``error_code``.
         campaign_error (google.ads.googleads.v8.errors.types.CampaignErrorEnum.CampaignError):
             An error with a Campaign mutate.
+            This field is a member of `oneof`_ ``error_code``.
         authentication_error (google.ads.googleads.v8.errors.types.AuthenticationErrorEnum.AuthenticationError):
             Indicates failure to properly authenticate
             user.
+            This field is a member of `oneof`_ ``error_code``.
         ad_group_criterion_error (google.ads.googleads.v8.errors.types.AdGroupCriterionErrorEnum.AdGroupCriterionError):
             Indicates failure to properly authenticate
             user.
+            This field is a member of `oneof`_ ``error_code``.
         ad_customizer_error (google.ads.googleads.v8.errors.types.AdCustomizerErrorEnum.AdCustomizerError):
             The reasons for the ad customizer error
+            This field is a member of `oneof`_ ``error_code``.
         ad_group_ad_error (google.ads.googleads.v8.errors.types.AdGroupAdErrorEnum.AdGroupAdError):
             The reasons for the ad group ad error
+            This field is a member of `oneof`_ ``error_code``.
         ad_sharing_error (google.ads.googleads.v8.errors.types.AdSharingErrorEnum.AdSharingError):
             The reasons for the ad sharing error
+            This field is a member of `oneof`_ ``error_code``.
         adx_error (google.ads.googleads.v8.errors.types.AdxErrorEnum.AdxError):
             The reasons for the adx error
+            This field is a member of `oneof`_ ``error_code``.
         asset_error (google.ads.googleads.v8.errors.types.AssetErrorEnum.AssetError):
             The reasons for the asset error
+            This field is a member of `oneof`_ ``error_code``.
         bidding_error (google.ads.googleads.v8.errors.types.BiddingErrorEnum.BiddingError):
             The reasons for the bidding errors
+            This field is a member of `oneof`_ ``error_code``.
         campaign_criterion_error (google.ads.googleads.v8.errors.types.CampaignCriterionErrorEnum.CampaignCriterionError):
             The reasons for the campaign criterion error
+            This field is a member of `oneof`_ ``error_code``.
         collection_size_error (google.ads.googleads.v8.errors.types.CollectionSizeErrorEnum.CollectionSizeError):
             The reasons for the collection size error
+            This field is a member of `oneof`_ ``error_code``.
         country_code_error (google.ads.googleads.v8.errors.types.CountryCodeErrorEnum.CountryCodeError):
             The reasons for the country code error
+            This field is a member of `oneof`_ ``error_code``.
         criterion_error (google.ads.googleads.v8.errors.types.CriterionErrorEnum.CriterionError):
             The reasons for the criterion error
+            This field is a member of `oneof`_ ``error_code``.
         customer_error (google.ads.googleads.v8.errors.types.CustomerErrorEnum.CustomerError):
             The reasons for the customer error
+            This field is a member of `oneof`_ ``error_code``.
         date_error (google.ads.googleads.v8.errors.types.DateErrorEnum.DateError):
             The reasons for the date error
+            This field is a member of `oneof`_ ``error_code``.
         date_range_error (google.ads.googleads.v8.errors.types.DateRangeErrorEnum.DateRangeError):
             The reasons for the date range error
+            This field is a member of `oneof`_ ``error_code``.
         distinct_error (google.ads.googleads.v8.errors.types.DistinctErrorEnum.DistinctError):
             The reasons for the distinct error
+            This field is a member of `oneof`_ ``error_code``.
         feed_attribute_reference_error (google.ads.googleads.v8.errors.types.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError):
             The reasons for the feed attribute reference
             error
+            This field is a member of `oneof`_ ``error_code``.
         function_error (google.ads.googleads.v8.errors.types.FunctionErrorEnum.FunctionError):
             The reasons for the function error
+            This field is a member of `oneof`_ ``error_code``.
         function_parsing_error (google.ads.googleads.v8.errors.types.FunctionParsingErrorEnum.FunctionParsingError):
             The reasons for the function parsing error
+            This field is a member of `oneof`_ ``error_code``.
         id_error (google.ads.googleads.v8.errors.types.IdErrorEnum.IdError):
             The reasons for the id error
+            This field is a member of `oneof`_ ``error_code``.
         image_error (google.ads.googleads.v8.errors.types.ImageErrorEnum.ImageError):
             The reasons for the image error
+            This field is a member of `oneof`_ ``error_code``.
         language_code_error (google.ads.googleads.v8.errors.types.LanguageCodeErrorEnum.LanguageCodeError):
             The reasons for the language code error
+            This field is a member of `oneof`_ ``error_code``.
         media_bundle_error (google.ads.googleads.v8.errors.types.MediaBundleErrorEnum.MediaBundleError):
             The reasons for the media bundle error
+            This field is a member of `oneof`_ ``error_code``.
         media_upload_error (google.ads.googleads.v8.errors.types.MediaUploadErrorEnum.MediaUploadError):
             The reasons for media uploading errors.
+            This field is a member of `oneof`_ ``error_code``.
         media_file_error (google.ads.googleads.v8.errors.types.MediaFileErrorEnum.MediaFileError):
             The reasons for the media file error
+            This field is a member of `oneof`_ ``error_code``.
         multiplier_error (google.ads.googleads.v8.errors.types.MultiplierErrorEnum.MultiplierError):
             The reasons for the multiplier error
+            This field is a member of `oneof`_ ``error_code``.
         new_resource_creation_error (google.ads.googleads.v8.errors.types.NewResourceCreationErrorEnum.NewResourceCreationError):
             The reasons for the new resource creation
             error
+            This field is a member of `oneof`_ ``error_code``.
         not_empty_error (google.ads.googleads.v8.errors.types.NotEmptyErrorEnum.NotEmptyError):
             The reasons for the not empty error
+            This field is a member of `oneof`_ ``error_code``.
         null_error (google.ads.googleads.v8.errors.types.NullErrorEnum.NullError):
             The reasons for the null error
+            This field is a member of `oneof`_ ``error_code``.
         operator_error (google.ads.googleads.v8.errors.types.OperatorErrorEnum.OperatorError):
             The reasons for the operator error
+            This field is a member of `oneof`_ ``error_code``.
         range_error (google.ads.googleads.v8.errors.types.RangeErrorEnum.RangeError):
             The reasons for the range error
+            This field is a member of `oneof`_ ``error_code``.
         recommendation_error (google.ads.googleads.v8.errors.types.RecommendationErrorEnum.RecommendationError):
             The reasons for error in applying a
             recommendation
+            This field is a member of `oneof`_ ``error_code``.
         region_code_error (google.ads.googleads.v8.errors.types.RegionCodeErrorEnum.RegionCodeError):
             The reasons for the region code error
+            This field is a member of `oneof`_ ``error_code``.
         setting_error (google.ads.googleads.v8.errors.types.SettingErrorEnum.SettingError):
             The reasons for the setting error
+            This field is a member of `oneof`_ ``error_code``.
         string_format_error (google.ads.googleads.v8.errors.types.StringFormatErrorEnum.StringFormatError):
             The reasons for the string format error
+            This field is a member of `oneof`_ ``error_code``.
         string_length_error (google.ads.googleads.v8.errors.types.StringLengthErrorEnum.StringLengthError):
             The reasons for the string length error
+            This field is a member of `oneof`_ ``error_code``.
         operation_access_denied_error (google.ads.googleads.v8.errors.types.OperationAccessDeniedErrorEnum.OperationAccessDeniedError):
             The reasons for the operation access denied
             error
+            This field is a member of `oneof`_ ``error_code``.
         resource_access_denied_error (google.ads.googleads.v8.errors.types.ResourceAccessDeniedErrorEnum.ResourceAccessDeniedError):
             The reasons for the resource access denied
             error
+            This field is a member of `oneof`_ ``error_code``.
         resource_count_limit_exceeded_error (google.ads.googleads.v8.errors.types.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError):
             The reasons for the resource count limit
             exceeded error
+            This field is a member of `oneof`_ ``error_code``.
         youtube_video_registration_error (google.ads.googleads.v8.errors.types.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError):
             The reasons for YouTube video registration
             errors.
+            This field is a member of `oneof`_ ``error_code``.
         ad_group_bid_modifier_error (google.ads.googleads.v8.errors.types.AdGroupBidModifierErrorEnum.AdGroupBidModifierError):
             The reasons for the ad group bid modifier
             error
+            This field is a member of `oneof`_ ``error_code``.
         context_error (google.ads.googleads.v8.errors.types.ContextErrorEnum.ContextError):
             The reasons for the context error
+            This field is a member of `oneof`_ ``error_code``.
         field_error (google.ads.googleads.v8.errors.types.FieldErrorEnum.FieldError):
             The reasons for the field error
+            This field is a member of `oneof`_ ``error_code``.
         shared_set_error (google.ads.googleads.v8.errors.types.SharedSetErrorEnum.SharedSetError):
             The reasons for the shared set error
+            This field is a member of `oneof`_ ``error_code``.
         shared_criterion_error (google.ads.googleads.v8.errors.types.SharedCriterionErrorEnum.SharedCriterionError):
             The reasons for the shared criterion error
+            This field is a member of `oneof`_ ``error_code``.
         campaign_shared_set_error (google.ads.googleads.v8.errors.types.CampaignSharedSetErrorEnum.CampaignSharedSetError):
             The reasons for the campaign shared set error
+            This field is a member of `oneof`_ ``error_code``.
         conversion_action_error (google.ads.googleads.v8.errors.types.ConversionActionErrorEnum.ConversionActionError):
             The reasons for the conversion action error
+            This field is a member of `oneof`_ ``error_code``.
         conversion_adjustment_upload_error (google.ads.googleads.v8.errors.types.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError):
             The reasons for the conversion adjustment
             upload error
+            This field is a member of `oneof`_ ``error_code``.
         conversion_custom_variable_error (google.ads.googleads.v8.errors.types.ConversionCustomVariableErrorEnum.ConversionCustomVariableError):
             The reasons for the conversion custom
             variable error
+            This field is a member of `oneof`_ ``error_code``.
         conversion_upload_error (google.ads.googleads.v8.errors.types.ConversionUploadErrorEnum.ConversionUploadError):
             The reasons for the conversion upload error
+            This field is a member of `oneof`_ ``error_code``.
         conversion_value_rule_error (google.ads.googleads.v8.errors.types.ConversionValueRuleErrorEnum.ConversionValueRuleError):
             The reasons for the conversion value rule
             error
+            This field is a member of `oneof`_ ``error_code``.
         conversion_value_rule_set_error (google.ads.googleads.v8.errors.types.ConversionValueRuleSetErrorEnum.ConversionValueRuleSetError):
             The reasons for the conversion value rule set
             error
+            This field is a member of `oneof`_ ``error_code``.
         header_error (google.ads.googleads.v8.errors.types.HeaderErrorEnum.HeaderError):
             The reasons for the header error.
+            This field is a member of `oneof`_ ``error_code``.
         database_error (google.ads.googleads.v8.errors.types.DatabaseErrorEnum.DatabaseError):
             The reasons for the database error.
+            This field is a member of `oneof`_ ``error_code``.
         policy_finding_error (google.ads.googleads.v8.errors.types.PolicyFindingErrorEnum.PolicyFindingError):
             The reasons for the policy finding error.
+            This field is a member of `oneof`_ ``error_code``.
         enum_error (google.ads.googleads.v8.errors.types.EnumErrorEnum.EnumError):
             The reason for enum error.
+            This field is a member of `oneof`_ ``error_code``.
         keyword_plan_error (google.ads.googleads.v8.errors.types.KeywordPlanErrorEnum.KeywordPlanError):
             The reason for keyword plan error.
+            This field is a member of `oneof`_ ``error_code``.
         keyword_plan_campaign_error (google.ads.googleads.v8.errors.types.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError):
             The reason for keyword plan campaign error.
+            This field is a member of `oneof`_ ``error_code``.
         keyword_plan_campaign_keyword_error (google.ads.googleads.v8.errors.types.KeywordPlanCampaignKeywordErrorEnum.KeywordPlanCampaignKeywordError):
             The reason for keyword plan campaign keyword
             error.
+            This field is a member of `oneof`_ ``error_code``.
         keyword_plan_ad_group_error (google.ads.googleads.v8.errors.types.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError):
             The reason for keyword plan ad group error.
+            This field is a member of `oneof`_ ``error_code``.
         keyword_plan_ad_group_keyword_error (google.ads.googleads.v8.errors.types.KeywordPlanAdGroupKeywordErrorEnum.KeywordPlanAdGroupKeywordError):
             The reason for keyword plan ad group keyword
             error.
+            This field is a member of `oneof`_ ``error_code``.
         keyword_plan_idea_error (google.ads.googleads.v8.errors.types.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError):
             The reason for keyword idea error.
+            This field is a member of `oneof`_ ``error_code``.
         account_budget_proposal_error (google.ads.googleads.v8.errors.types.AccountBudgetProposalErrorEnum.AccountBudgetProposalError):
             The reasons for account budget proposal
             errors.
+            This field is a member of `oneof`_ ``error_code``.
         user_list_error (google.ads.googleads.v8.errors.types.UserListErrorEnum.UserListError):
             The reasons for the user list error
+            This field is a member of `oneof`_ ``error_code``.
         change_event_error (google.ads.googleads.v8.errors.types.ChangeEventErrorEnum.ChangeEventError):
             The reasons for the change event error
+            This field is a member of `oneof`_ ``error_code``.
         change_status_error (google.ads.googleads.v8.errors.types.ChangeStatusErrorEnum.ChangeStatusError):
             The reasons for the change status error
+            This field is a member of `oneof`_ ``error_code``.
         feed_error (google.ads.googleads.v8.errors.types.FeedErrorEnum.FeedError):
             The reasons for the feed error
+            This field is a member of `oneof`_ ``error_code``.
         geo_target_constant_suggestion_error (google.ads.googleads.v8.errors.types.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError):
             The reasons for the geo target constant
             suggestion error.
+            This field is a member of `oneof`_ ``error_code``.
         campaign_draft_error (google.ads.googleads.v8.errors.types.CampaignDraftErrorEnum.CampaignDraftError):
             The reasons for the campaign draft error
+            This field is a member of `oneof`_ ``error_code``.
         feed_item_error (google.ads.googleads.v8.errors.types.FeedItemErrorEnum.FeedItemError):
             The reasons for the feed item error
+            This field is a member of `oneof`_ ``error_code``.
         label_error (google.ads.googleads.v8.errors.types.LabelErrorEnum.LabelError):
             The reason for the label error.
+            This field is a member of `oneof`_ ``error_code``.
         billing_setup_error (google.ads.googleads.v8.errors.types.BillingSetupErrorEnum.BillingSetupError):
             The reasons for the billing setup error
+            This field is a member of `oneof`_ ``error_code``.
         customer_client_link_error (google.ads.googleads.v8.errors.types.CustomerClientLinkErrorEnum.CustomerClientLinkError):
             The reasons for the customer client link
             error
+            This field is a member of `oneof`_ ``error_code``.
         customer_manager_link_error (google.ads.googleads.v8.errors.types.CustomerManagerLinkErrorEnum.CustomerManagerLinkError):
             The reasons for the customer manager link
             error
+            This field is a member of `oneof`_ ``error_code``.
         feed_mapping_error (google.ads.googleads.v8.errors.types.FeedMappingErrorEnum.FeedMappingError):
             The reasons for the feed mapping error
+            This field is a member of `oneof`_ ``error_code``.
         customer_feed_error (google.ads.googleads.v8.errors.types.CustomerFeedErrorEnum.CustomerFeedError):
             The reasons for the customer feed error
+            This field is a member of `oneof`_ ``error_code``.
         ad_group_feed_error (google.ads.googleads.v8.errors.types.AdGroupFeedErrorEnum.AdGroupFeedError):
             The reasons for the ad group feed error
+            This field is a member of `oneof`_ ``error_code``.
         campaign_feed_error (google.ads.googleads.v8.errors.types.CampaignFeedErrorEnum.CampaignFeedError):
             The reasons for the campaign feed error
+            This field is a member of `oneof`_ ``error_code``.
         custom_interest_error (google.ads.googleads.v8.errors.types.CustomInterestErrorEnum.CustomInterestError):
             The reasons for the custom interest error
+            This field is a member of `oneof`_ ``error_code``.
         campaign_experiment_error (google.ads.googleads.v8.errors.types.CampaignExperimentErrorEnum.CampaignExperimentError):
             The reasons for the campaign experiment error
+            This field is a member of `oneof`_ ``error_code``.
         extension_feed_item_error (google.ads.googleads.v8.errors.types.ExtensionFeedItemErrorEnum.ExtensionFeedItemError):
             The reasons for the extension feed item error
+            This field is a member of `oneof`_ ``error_code``.
         ad_parameter_error (google.ads.googleads.v8.errors.types.AdParameterErrorEnum.AdParameterError):
             The reasons for the ad parameter error
+            This field is a member of `oneof`_ ``error_code``.
         feed_item_validation_error (google.ads.googleads.v8.errors.types.FeedItemValidationErrorEnum.FeedItemValidationError):
             The reasons for the feed item validation
             error
+            This field is a member of `oneof`_ ``error_code``.
         extension_setting_error (google.ads.googleads.v8.errors.types.ExtensionSettingErrorEnum.ExtensionSettingError):
             The reasons for the extension setting error
+            This field is a member of `oneof`_ ``error_code``.
         feed_item_set_error (google.ads.googleads.v8.errors.types.FeedItemSetErrorEnum.FeedItemSetError):
             The reasons for the feed item set error
+            This field is a member of `oneof`_ ``error_code``.
         feed_item_set_link_error (google.ads.googleads.v8.errors.types.FeedItemSetLinkErrorEnum.FeedItemSetLinkError):
             The reasons for the feed item set link error
+            This field is a member of `oneof`_ ``error_code``.
         feed_item_target_error (google.ads.googleads.v8.errors.types.FeedItemTargetErrorEnum.FeedItemTargetError):
             The reasons for the feed item target error
+            This field is a member of `oneof`_ ``error_code``.
         policy_violation_error (google.ads.googleads.v8.errors.types.PolicyViolationErrorEnum.PolicyViolationError):
             The reasons for the policy violation error
+            This field is a member of `oneof`_ ``error_code``.
         partial_failure_error (google.ads.googleads.v8.errors.types.PartialFailureErrorEnum.PartialFailureError):
             The reasons for the mutate job error
+            This field is a member of `oneof`_ ``error_code``.
         policy_validation_parameter_error (google.ads.googleads.v8.errors.types.PolicyValidationParameterErrorEnum.PolicyValidationParameterError):
             The reasons for the policy validation
             parameter error
+            This field is a member of `oneof`_ ``error_code``.
         size_limit_error (google.ads.googleads.v8.errors.types.SizeLimitErrorEnum.SizeLimitError):
             The reasons for the size limit error
+            This field is a member of `oneof`_ ``error_code``.
         offline_user_data_job_error (google.ads.googleads.v8.errors.types.OfflineUserDataJobErrorEnum.OfflineUserDataJobError):
             The reasons for the offline user data job
             error.
+            This field is a member of `oneof`_ ``error_code``.
         not_allowlisted_error (google.ads.googleads.v8.errors.types.NotAllowlistedErrorEnum.NotAllowlistedError):
             The reasons for the not allowlisted error
+            This field is a member of `oneof`_ ``error_code``.
         manager_link_error (google.ads.googleads.v8.errors.types.ManagerLinkErrorEnum.ManagerLinkError):
             The reasons for the manager link error
+            This field is a member of `oneof`_ ``error_code``.
         currency_code_error (google.ads.googleads.v8.errors.types.CurrencyCodeErrorEnum.CurrencyCodeError):
             The reasons for the currency code error
+            This field is a member of `oneof`_ ``error_code``.
         access_invitation_error (google.ads.googleads.v8.errors.types.AccessInvitationErrorEnum.AccessInvitationError):
             The reasons for the access invitation error
+            This field is a member of `oneof`_ ``error_code``.
         reach_plan_error (google.ads.googleads.v8.errors.types.ReachPlanErrorEnum.ReachPlanError):
             The reasons for the reach plan error
+            This field is a member of `oneof`_ ``error_code``.
         invoice_error (google.ads.googleads.v8.errors.types.InvoiceErrorEnum.InvoiceError):
             The reasons for the invoice error
+            This field is a member of `oneof`_ ``error_code``.
         payments_account_error (google.ads.googleads.v8.errors.types.PaymentsAccountErrorEnum.PaymentsAccountError):
             The reasons for errors in payments accounts
             service
+            This field is a member of `oneof`_ ``error_code``.
         time_zone_error (google.ads.googleads.v8.errors.types.TimeZoneErrorEnum.TimeZoneError):
             The reasons for the time zone error
+            This field is a member of `oneof`_ ``error_code``.
         asset_link_error (google.ads.googleads.v8.errors.types.AssetLinkErrorEnum.AssetLinkError):
             The reasons for the asset link error
+            This field is a member of `oneof`_ ``error_code``.
         user_data_error (google.ads.googleads.v8.errors.types.UserDataErrorEnum.UserDataError):
             The reasons for the user data error.
+            This field is a member of `oneof`_ ``error_code``.
         batch_job_error (google.ads.googleads.v8.errors.types.BatchJobErrorEnum.BatchJobError):
             The reasons for the batch job error
+            This field is a member of `oneof`_ ``error_code``.
         account_link_error (google.ads.googleads.v8.errors.types.AccountLinkErrorEnum.AccountLinkError):
             The reasons for the account link status
             change error
+            This field is a member of `oneof`_ ``error_code``.
         third_party_app_analytics_link_error (google.ads.googleads.v8.errors.types.ThirdPartyAppAnalyticsLinkErrorEnum.ThirdPartyAppAnalyticsLinkError):
             The reasons for the third party app analytics
             link mutate error
+            This field is a member of `oneof`_ ``error_code``.
         customer_user_access_error (google.ads.googleads.v8.errors.types.CustomerUserAccessErrorEnum.CustomerUserAccessError):
             The reasons for the customer user access
             mutate error
+            This field is a member of `oneof`_ ``error_code``.
         custom_audience_error (google.ads.googleads.v8.errors.types.CustomAudienceErrorEnum.CustomAudienceError):
             The reasons for the custom audience error
+            This field is a member of `oneof`_ ``error_code``.
     """
 
     request_error = proto.Field(
@@ -1251,6 +1379,7 @@ class ErrorLocation(proto.Message):
             index (int):
                 If field_name is a repeated field, this is the element that
                 failed
+                This field is a member of `oneof`_ ``_index``.
         """
 
         field_name = proto.Field(

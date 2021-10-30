@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1beta4.services.sql_operations_service import pagers
 from google.cloud.sql_v1beta4.types import cloud_sql
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
@@ -326,7 +328,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
     def get(self,
             request: Union[cloud_sql.SqlOperationsGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -377,7 +379,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
     def list(self,
             request: Union[cloud_sql.SqlOperationsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPager:

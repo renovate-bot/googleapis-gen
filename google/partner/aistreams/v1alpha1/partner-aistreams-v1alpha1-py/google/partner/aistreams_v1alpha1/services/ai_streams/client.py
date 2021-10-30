@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.partner.aistreams_v1alpha1.services.ai_streams import pagers
@@ -352,7 +354,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             request: Union[aistreams.ListClustersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListClustersPager:
@@ -437,7 +439,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             request: Union[aistreams.GetClusterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> aistreams.Cluster:
@@ -511,7 +513,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             parent: str = None,
             cluster: aistreams.Cluster = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -614,7 +616,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             *,
             cluster: aistreams.Cluster = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -712,7 +714,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             request: Union[aistreams.DeleteClusterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -807,7 +809,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             request: Union[aistreams.ListStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListStreamsPager:
@@ -893,7 +895,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             request: Union[aistreams.GetStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> aistreams.Stream:
@@ -965,7 +967,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             parent: str = None,
             stream: aistreams.Stream = None,
             stream_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1065,7 +1067,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             *,
             stream: aistreams.Stream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1163,7 +1165,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             request: Union[aistreams.DeleteStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

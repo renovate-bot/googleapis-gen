@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.datalabeling_v1beta1.services.data_labeling_service import pagers
@@ -431,7 +433,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             dataset: gcd_dataset.Dataset = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_dataset.Dataset:
@@ -515,7 +517,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetDatasetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dataset.Dataset:
@@ -592,7 +594,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDatasetsPager:
@@ -688,7 +690,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.DeleteDatasetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -754,7 +756,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             name: str = None,
             input_config: dataset.InputConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -856,7 +858,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             annotated_dataset: str = None,
             filter: str = None,
             output_config: dataset.OutputConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -971,7 +973,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetDataItemRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dataset.DataItem:
@@ -1047,7 +1049,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDataItemsPager:
@@ -1144,7 +1146,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetAnnotatedDatasetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dataset.AnnotatedDataset:
@@ -1224,7 +1226,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAnnotatedDatasetsPager:
@@ -1321,7 +1323,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
     def delete_annotated_dataset(self,
             request: Union[data_labeling_service.DeleteAnnotatedDatasetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1371,7 +1373,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             parent: str = None,
             basic_config: human_annotation_config.HumanAnnotationConfig = None,
             feature: data_labeling_service.LabelImageRequest.Feature = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1478,7 +1480,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             parent: str = None,
             basic_config: human_annotation_config.HumanAnnotationConfig = None,
             feature: data_labeling_service.LabelVideoRequest.Feature = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1584,7 +1586,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             parent: str = None,
             basic_config: human_annotation_config.HumanAnnotationConfig = None,
             feature: data_labeling_service.LabelTextRequest.Feature = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1689,7 +1691,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             name: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dataset.Example:
@@ -1777,7 +1779,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListExamplesPager:
@@ -1874,7 +1876,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             annotation_spec_set: gcd_annotation_spec_set.AnnotationSpecSet = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_annotation_spec_set.AnnotationSpecSet:
@@ -1964,7 +1966,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetAnnotationSpecSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> annotation_spec_set.AnnotationSpecSet:
@@ -2044,7 +2046,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAnnotationSpecSetsPager:
@@ -2141,7 +2143,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.DeleteAnnotationSpecSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2208,7 +2210,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             instruction: gcd_instruction.Instruction = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2303,7 +2305,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetInstructionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> instruction.Instruction:
@@ -2380,7 +2382,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInstructionsPager:
@@ -2477,7 +2479,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.DeleteInstructionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2543,7 +2545,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetEvaluationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> evaluation.Evaluation:
@@ -2622,7 +2624,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchEvaluationsPager:
@@ -2750,7 +2752,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.SearchExampleComparisonsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchExampleComparisonsPager:
@@ -2844,7 +2846,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             job: evaluation_job.EvaluationJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> evaluation_job.EvaluationJob:
@@ -2933,7 +2935,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             evaluation_job: gcd_evaluation_job.EvaluationJob = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_evaluation_job.EvaluationJob:
@@ -3035,7 +3037,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.GetEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> evaluation_job.EvaluationJob:
@@ -3115,7 +3117,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.PauseEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3184,7 +3186,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.ResumeEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3253,7 +3255,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: Union[data_labeling_service.DeleteEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3321,7 +3323,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEvaluationJobsPager:

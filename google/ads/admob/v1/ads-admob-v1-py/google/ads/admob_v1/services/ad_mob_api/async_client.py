@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.ads.admob_v1.services.ad_mob_api import pagers
 from google.ads.admob_v1.types import admob_api
@@ -148,10 +150,10 @@ class AdMobApiAsyncClient:
         )
 
     async def get_publisher_account(self,
-            request: admob_api.GetPublisherAccountRequest = None,
+            request: Union[admob_api.GetPublisherAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> admob_resources.PublisherAccount:
@@ -159,7 +161,7 @@ class AdMobApiAsyncClient:
         account.
 
         Args:
-            request (:class:`google.ads.admob_v1.types.GetPublisherAccountRequest`):
+            request (Union[google.ads.admob_v1.types.GetPublisherAccountRequest, dict]):
                 The request object. Request to retrieve the specified
                 publisher account.
             name (:class:`str`):
@@ -227,9 +229,9 @@ class AdMobApiAsyncClient:
         return response
 
     async def list_publisher_accounts(self,
-            request: admob_api.ListPublisherAccountsRequest = None,
+            request: Union[admob_api.ListPublisherAccountsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPublisherAccountsAsyncPager:
@@ -238,7 +240,7 @@ class AdMobApiAsyncClient:
         access to at most one AdMob account.
 
         Args:
-            request (:class:`google.ads.admob_v1.types.ListPublisherAccountsRequest`):
+            request (Union[google.ads.admob_v1.types.ListPublisherAccountsRequest, dict]):
                 The request object. Request to retrieve the AdMob
                 publisher account accessible with the client credential.
                 Currently all credentials have access to at most 1
@@ -290,9 +292,9 @@ class AdMobApiAsyncClient:
         return response
 
     def generate_network_report(self,
-            request: admob_api.GenerateNetworkReportRequest = None,
+            request: Union[admob_api.GenerateNetworkReportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[admob_api.GenerateNetworkReportResponse]]:
@@ -300,7 +302,7 @@ class AdMobApiAsyncClient:
         provided report specification.
 
         Args:
-            request (:class:`google.ads.admob_v1.types.GenerateNetworkReportRequest`):
+            request (Union[google.ads.admob_v1.types.GenerateNetworkReportRequest, dict]):
                 The request object. Request to generate an AdMob Network
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -369,9 +371,9 @@ class AdMobApiAsyncClient:
         return response
 
     def generate_mediation_report(self,
-            request: admob_api.GenerateMediationReportRequest = None,
+            request: Union[admob_api.GenerateMediationReportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[admob_api.GenerateMediationReportResponse]]:
@@ -379,7 +381,7 @@ class AdMobApiAsyncClient:
         provided report specification.
 
         Args:
-            request (:class:`google.ads.admob_v1.types.GenerateMediationReportRequest`):
+            request (Union[google.ads.admob_v1.types.GenerateMediationReportRequest, dict]):
                 The request object. Request to generate an AdMob
                 Mediation report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

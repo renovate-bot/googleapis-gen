@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -176,17 +178,17 @@ class GrafeasAsyncClient:
         )
 
     async def get_occurrence(self,
-            request: grafeas.GetOccurrenceRequest = None,
+            request: Union[grafeas.GetOccurrenceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Occurrence:
         r"""Gets the specified occurrence.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.GetOccurrenceRequest`):
+            request (Union[grafeas.grafeas_v1.types.GetOccurrenceRequest, dict]):
                 The request object. Request to get an occurrence.
             name (:class:`str`):
                 The name of the occurrence in the form of
@@ -257,18 +259,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_occurrences(self,
-            request: grafeas.ListOccurrencesRequest = None,
+            request: Union[grafeas.ListOccurrencesRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListOccurrencesAsyncPager:
         r"""Lists occurrences for the specified project.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.ListOccurrencesRequest`):
+            request (Union[grafeas.grafeas_v1.types.ListOccurrencesRequest, dict]):
                 The request object. Request to list occurrences.
             parent (:class:`str`):
                 The name of the project to list occurrences for in the
@@ -357,10 +359,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_occurrence(self,
-            request: grafeas.DeleteOccurrenceRequest = None,
+            request: Union[grafeas.DeleteOccurrenceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -369,7 +371,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         is no longer applicable for the given resource.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.DeleteOccurrenceRequest`):
+            request (Union[grafeas.grafeas_v1.types.DeleteOccurrenceRequest, dict]):
                 The request object. Request to delete an occurrence.
             name (:class:`str`):
                 The name of the occurrence in the form of
@@ -431,18 +433,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def create_occurrence(self,
-            request: grafeas.CreateOccurrenceRequest = None,
+            request: Union[grafeas.CreateOccurrenceRequest, dict] = None,
             *,
             parent: str = None,
             occurrence: grafeas.Occurrence = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Occurrence:
         r"""Creates a new occurrence.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.CreateOccurrenceRequest`):
+            request (Union[grafeas.grafeas_v1.types.CreateOccurrenceRequest, dict]):
                 The request object. Request to create a new occurrence.
             parent (:class:`str`):
                 The name of the project in the form of
@@ -514,18 +516,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_create_occurrences(self,
-            request: grafeas.BatchCreateOccurrencesRequest = None,
+            request: Union[grafeas.BatchCreateOccurrencesRequest, dict] = None,
             *,
             parent: str = None,
             occurrences: Sequence[grafeas.Occurrence] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.BatchCreateOccurrencesResponse:
         r"""Creates new occurrences in batch.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.BatchCreateOccurrencesRequest`):
+            request (Union[grafeas.grafeas_v1.types.BatchCreateOccurrencesRequest, dict]):
                 The request object. Request to create occurrences in
                 batch.
             parent (:class:`str`):
@@ -600,19 +602,19 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_occurrence(self,
-            request: grafeas.UpdateOccurrenceRequest = None,
+            request: Union[grafeas.UpdateOccurrenceRequest, dict] = None,
             *,
             name: str = None,
             occurrence: grafeas.Occurrence = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Occurrence:
         r"""Updates the specified occurrence.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.UpdateOccurrenceRequest`):
+            request (Union[grafeas.grafeas_v1.types.UpdateOccurrenceRequest, dict]):
                 The request object. Request to update an occurrence.
             name (:class:`str`):
                 The name of the occurrence in the form of
@@ -690,10 +692,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_occurrence_note(self,
-            request: grafeas.GetOccurrenceNoteRequest = None,
+            request: Union[grafeas.GetOccurrenceNoteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
@@ -702,7 +704,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         belongs to a provider project.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.GetOccurrenceNoteRequest`):
+            request (Union[grafeas.grafeas_v1.types.GetOccurrenceNoteRequest, dict]):
                 The request object. Request to get the note to which the
                 specified occurrence is attached.
             name (:class:`str`):
@@ -774,17 +776,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_note(self,
-            request: grafeas.GetNoteRequest = None,
+            request: Union[grafeas.GetNoteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
         r"""Gets the specified note.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.GetNoteRequest`):
+            request (Union[grafeas.grafeas_v1.types.GetNoteRequest, dict]):
                 The request object. Request to get a note.
             name (:class:`str`):
                 The name of the note in the form of
@@ -855,18 +857,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_notes(self,
-            request: grafeas.ListNotesRequest = None,
+            request: Union[grafeas.ListNotesRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNotesAsyncPager:
         r"""Lists notes for the specified project.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.ListNotesRequest`):
+            request (Union[grafeas.grafeas_v1.types.ListNotesRequest, dict]):
                 The request object. Request to list notes.
             parent (:class:`str`):
                 The name of the project to list notes for in the form of
@@ -955,17 +957,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_note(self,
-            request: grafeas.DeleteNoteRequest = None,
+            request: Union[grafeas.DeleteNoteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes the specified note.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.DeleteNoteRequest`):
+            request (Union[grafeas.grafeas_v1.types.DeleteNoteRequest, dict]):
                 The request object. Request to delete a note.
             name (:class:`str`):
                 The name of the note in the form of
@@ -1027,19 +1029,19 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def create_note(self,
-            request: grafeas.CreateNoteRequest = None,
+            request: Union[grafeas.CreateNoteRequest, dict] = None,
             *,
             parent: str = None,
             note_id: str = None,
             note: grafeas.Note = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
         r"""Creates a new note.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.CreateNoteRequest`):
+            request (Union[grafeas.grafeas_v1.types.CreateNoteRequest, dict]):
                 The request object. Request to create a new note.
             parent (:class:`str`):
                 The name of the project in the form of
@@ -1118,18 +1120,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_create_notes(self,
-            request: grafeas.BatchCreateNotesRequest = None,
+            request: Union[grafeas.BatchCreateNotesRequest, dict] = None,
             *,
             parent: str = None,
             notes: Sequence[grafeas.BatchCreateNotesRequest.NotesEntry] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.BatchCreateNotesResponse:
         r"""Creates new notes in batch.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.BatchCreateNotesRequest`):
+            request (Union[grafeas.grafeas_v1.types.BatchCreateNotesRequest, dict]):
                 The request object. Request to create notes in batch.
             parent (:class:`str`):
                 The name of the project in the form of
@@ -1202,19 +1204,19 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_note(self,
-            request: grafeas.UpdateNoteRequest = None,
+            request: Union[grafeas.UpdateNoteRequest, dict] = None,
             *,
             name: str = None,
             note: grafeas.Note = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
         r"""Updates the specified note.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.UpdateNoteRequest`):
+            request (Union[grafeas.grafeas_v1.types.UpdateNoteRequest, dict]):
                 The request object. Request to update a note.
             name (:class:`str`):
                 The name of the note in the form of
@@ -1292,11 +1294,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_note_occurrences(self,
-            request: grafeas.ListNoteOccurrencesRequest = None,
+            request: Union[grafeas.ListNoteOccurrencesRequest, dict] = None,
             *,
             name: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNoteOccurrencesAsyncPager:
@@ -1306,7 +1308,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         specified note.
 
         Args:
-            request (:class:`grafeas.grafeas_v1.types.ListNoteOccurrencesRequest`):
+            request (Union[grafeas.grafeas_v1.types.ListNoteOccurrencesRequest, dict]):
                 The request object. Request to list occurrences for a
                 note.
             name (:class:`str`):

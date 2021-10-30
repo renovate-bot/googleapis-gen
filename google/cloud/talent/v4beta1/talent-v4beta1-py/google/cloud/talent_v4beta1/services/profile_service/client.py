@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.talent_v4beta1.services.profile_service import pagers
 from google.cloud.talent_v4beta1.types import common
 from google.cloud.talent_v4beta1.types import histogram
@@ -355,7 +357,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
             request: Union[profile_service.ListProfilesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProfilesPager:
@@ -445,7 +447,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
             *,
             parent: str = None,
             profile: gct_profile.Profile = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_profile.Profile:
@@ -532,7 +534,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
             request: Union[profile_service.GetProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> profile.Profile:
@@ -611,7 +613,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
             request: Union[profile_service.UpdateProfileRequest, dict] = None,
             *,
             profile: gct_profile.Profile = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_profile.Profile:
@@ -686,7 +688,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
             request: Union[profile_service.DeleteProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -755,7 +757,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
     def search_profiles(self,
             request: Union[profile_service.SearchProfilesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchProfilesPager:

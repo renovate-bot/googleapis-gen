@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import placement_type
 from google.ads.googleads.v8.resources.types import group_placement_view
 from google.ads.googleads.v8.services.types import group_placement_view_service
@@ -338,7 +340,7 @@ class GroupPlacementViewServiceClient(metaclass=GroupPlacementViewServiceClientM
             request: Union[group_placement_view_service.GetGroupPlacementViewRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> group_placement_view.GroupPlacementView:

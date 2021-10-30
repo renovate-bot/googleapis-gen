@@ -250,6 +250,13 @@ class ServicePerimeterConfig(proto.Message):
         [ApiOperation]
         [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation].
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             method (str):
                 Value for ``method`` should be a valid method name for the
@@ -257,11 +264,13 @@ class ServicePerimeterConfig(proto.Message):
                 [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation].
                 If ``*`` used as value for ``method``, then ALL methods and
                 permissions are allowed.
+                This field is a member of `oneof`_ ``kind``.
             permission (str):
                 Value for ``permission`` should be a valid Cloud IAM
                 permission for the corresponding ``service_name`` in
                 [ApiOperation]
                 [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation].
+                This field is a member of `oneof`_ ``kind``.
         """
 
         method = proto.Field(
@@ -314,6 +323,13 @@ class ServicePerimeterConfig(proto.Message):
         [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
         authorizes access from.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             access_level (str):
                 An [AccessLevel]
@@ -337,6 +353,7 @@ class ServicePerimeterConfig(proto.Message):
                 [IngressSources]
                 [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource]
                 will be allowed.
+                This field is a member of `oneof`_ ``source``.
             resource (str):
                 A Google Cloud resource that is allowed to ingress the
                 perimeter. Requests from these resources will be allowed to
@@ -346,6 +363,7 @@ class ServicePerimeterConfig(proto.Message):
                 that the perimeter is defined in. ``*`` is not allowed, the
                 case of allowing all Google Cloud resources only is not
                 supported.
+                This field is a member of `oneof`_ ``source``.
         """
 
         access_level = proto.Field(

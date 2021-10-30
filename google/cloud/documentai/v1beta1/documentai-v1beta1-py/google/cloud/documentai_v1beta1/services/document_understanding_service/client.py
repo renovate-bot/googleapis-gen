@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.documentai_v1beta1.types import document_understanding
@@ -329,7 +331,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
             request: Union[document_understanding.BatchProcessDocumentsRequest, dict] = None,
             *,
             requests: Sequence[document_understanding.ProcessDocumentRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

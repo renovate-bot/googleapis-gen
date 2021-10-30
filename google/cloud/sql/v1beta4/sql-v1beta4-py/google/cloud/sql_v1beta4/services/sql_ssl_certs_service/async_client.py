@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.sql_v1beta4.types import cloud_sql
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
@@ -144,9 +146,9 @@ class SqlSslCertsServiceAsyncClient:
         )
 
     async def delete(self,
-            request: cloud_sql.SqlSslCertsDeleteRequest = None,
+            request: Union[cloud_sql.SqlSslCertsDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -155,7 +157,7 @@ class SqlSslCertsServiceAsyncClient:
         instance is restarted.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlSslCertsDeleteRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlSslCertsDeleteRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -195,9 +197,9 @@ class SqlSslCertsServiceAsyncClient:
         return response
 
     async def get(self,
-            request: cloud_sql.SqlSslCertsGetRequest = None,
+            request: Union[cloud_sql.SqlSslCertsGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCert:
@@ -207,7 +209,7 @@ class SqlSslCertsServiceAsyncClient:
         creation.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlSslCertsGetRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlSslCertsGetRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -242,9 +244,9 @@ class SqlSslCertsServiceAsyncClient:
         return response
 
     async def insert(self,
-            request: cloud_sql.SqlSslCertsInsertRequest = None,
+            request: Union[cloud_sql.SqlSslCertsInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCertsInsertResponse:
@@ -254,7 +256,7 @@ class SqlSslCertsServiceAsyncClient:
         restarted.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlSslCertsInsertRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlSslCertsInsertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -289,9 +291,9 @@ class SqlSslCertsServiceAsyncClient:
         return response
 
     async def list(self,
-            request: cloud_sql.SqlSslCertsListRequest = None,
+            request: Union[cloud_sql.SqlSslCertsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCertsListResponse:
@@ -299,7 +301,7 @@ class SqlSslCertsServiceAsyncClient:
         instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1beta4.types.SqlSslCertsListRequest`):
+            request (Union[google.cloud.sql_v1beta4.types.SqlSslCertsListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

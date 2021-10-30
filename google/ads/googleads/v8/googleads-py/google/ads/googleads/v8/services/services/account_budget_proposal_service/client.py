@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import account_budget_proposal_status
 from google.ads.googleads.v8.enums.types import account_budget_proposal_type
 from google.ads.googleads.v8.enums.types import spending_limit_type
@@ -374,7 +376,7 @@ class AccountBudgetProposalServiceClient(metaclass=AccountBudgetProposalServiceC
             request: Union[account_budget_proposal_service.GetAccountBudgetProposalRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_budget_proposal.AccountBudgetProposal:
@@ -462,7 +464,7 @@ class AccountBudgetProposalServiceClient(metaclass=AccountBudgetProposalServiceC
             *,
             customer_id: str = None,
             operation: account_budget_proposal_service.AccountBudgetProposalOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_budget_proposal_service.MutateAccountBudgetProposalResponse:

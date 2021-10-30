@@ -102,15 +102,24 @@ class MutateSharedCriteriaRequest(proto.Message):
 class SharedCriterionOperation(proto.Message):
     r"""A single operation (create, remove) on an shared criterion.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v8.resources.types.SharedCriterion):
             Create operation: No resource name is
             expected for the new shared criterion.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed shared
             criterion is expected, in this format:
 
             ``customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

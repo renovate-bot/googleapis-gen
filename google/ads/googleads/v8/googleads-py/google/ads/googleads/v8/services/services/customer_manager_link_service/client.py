@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import manager_link_status
 from google.ads.googleads.v8.resources.types import customer_manager_link
 from google.ads.googleads.v8.services.types import customer_manager_link_service
@@ -348,7 +350,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
             request: Union[customer_manager_link_service.GetCustomerManagerLinkRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_manager_link.CustomerManagerLink:
@@ -427,7 +429,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
             *,
             customer_id: str = None,
             operations: Sequence[customer_manager_link_service.CustomerManagerLinkOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_manager_link_service.MutateCustomerManagerLinkResponse:
@@ -521,7 +523,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
             customer_id: str = None,
             previous_customer_manager_link: str = None,
             new_manager: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_manager_link_service.MoveManagerLinkResponse:

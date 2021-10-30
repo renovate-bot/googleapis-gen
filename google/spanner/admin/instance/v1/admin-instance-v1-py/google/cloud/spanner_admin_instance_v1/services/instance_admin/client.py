@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.spanner_admin_instance_v1.services.instance_admin import pagers
@@ -373,7 +375,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[spanner_instance_admin.ListInstanceConfigsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInstanceConfigsPager:
@@ -462,7 +464,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[spanner_instance_admin.GetInstanceConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner_instance_admin.InstanceConfig:
@@ -541,7 +543,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[spanner_instance_admin.ListInstancesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInstancesPager:
@@ -629,7 +631,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[spanner_instance_admin.GetInstanceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner_instance_admin.Instance:
@@ -707,7 +709,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             parent: str = None,
             instance_id: str = None,
             instance: spanner_instance_admin.Instance = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -852,7 +854,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             *,
             instance: spanner_instance_admin.Instance = None,
             field_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1000,7 +1002,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[spanner_instance_admin.DeleteInstanceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1077,7 +1079,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1210,7 +1212,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1345,7 +1347,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

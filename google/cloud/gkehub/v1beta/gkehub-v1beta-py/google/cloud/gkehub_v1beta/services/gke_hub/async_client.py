@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -165,17 +167,17 @@ class GkeHubAsyncClient:
         )
 
     async def list_features(self,
-            request: service.ListFeaturesRequest = None,
+            request: Union[service.ListFeaturesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFeaturesAsyncPager:
         r"""Lists Features in a given project and location.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1beta.types.ListFeaturesRequest`):
+            request (Union[google.cloud.gkehub_v1beta.types.ListFeaturesRequest, dict]):
                 The request object. Request message for
                 `GkeHub.ListFeatures` method.
             parent (:class:`str`):
@@ -252,17 +254,17 @@ class GkeHubAsyncClient:
         return response
 
     async def get_feature(self,
-            request: service.GetFeatureRequest = None,
+            request: Union[service.GetFeatureRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> feature.Feature:
         r"""Gets details of a single Feature.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1beta.types.GetFeatureRequest`):
+            request (Union[google.cloud.gkehub_v1beta.types.GetFeatureRequest, dict]):
                 The request object. Request message for
                 `GkeHub.GetFeature` method.
             name (:class:`str`):
@@ -327,19 +329,19 @@ class GkeHubAsyncClient:
         return response
 
     async def create_feature(self,
-            request: service.CreateFeatureRequest = None,
+            request: Union[service.CreateFeatureRequest, dict] = None,
             *,
             parent: str = None,
             resource: feature.Feature = None,
             feature_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Adds a new Feature.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1beta.types.CreateFeatureRequest`):
+            request (Union[google.cloud.gkehub_v1beta.types.CreateFeatureRequest, dict]):
                 The request object. Request message for the
                 `GkeHub.CreateFeature` method.
             parent (:class:`str`):
@@ -431,17 +433,17 @@ class GkeHubAsyncClient:
         return response
 
     async def delete_feature(self,
-            request: service.DeleteFeatureRequest = None,
+            request: Union[service.DeleteFeatureRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Removes a Feature.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1beta.types.DeleteFeatureRequest`):
+            request (Union[google.cloud.gkehub_v1beta.types.DeleteFeatureRequest, dict]):
                 The request object. Request message for
                 `GkeHub.DeleteFeature` method.
             name (:class:`str`):
@@ -527,19 +529,19 @@ class GkeHubAsyncClient:
         return response
 
     async def update_feature(self,
-            request: service.UpdateFeatureRequest = None,
+            request: Union[service.UpdateFeatureRequest, dict] = None,
             *,
             name: str = None,
             resource: feature.Feature = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates an existing Feature.
 
         Args:
-            request (:class:`google.cloud.gkehub_v1beta.types.UpdateFeatureRequest`):
+            request (Union[google.cloud.gkehub_v1beta.types.UpdateFeatureRequest, dict]):
                 The request object. Request message for
                 `GkeHub.UpdateFeature` method.
             name (:class:`str`):

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons import pagers
 from google.cloud.workspace_add_ons_v1.types import gsuiteaddons
@@ -179,10 +181,10 @@ class GSuiteAddOnsAsyncClient:
         )
 
     async def get_authorization(self,
-            request: gsuiteaddons.GetAuthorizationRequest = None,
+            request: Union[gsuiteaddons.GetAuthorizationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Authorization:
@@ -190,7 +192,7 @@ class GSuiteAddOnsAsyncClient:
         a given project.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.GetAuthorizationRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.GetAuthorizationRequest, dict]):
                 The request object. Request message to get Google
                 Workspace Add-ons authorization information.
             name (:class:`str`):
@@ -257,12 +259,12 @@ class GSuiteAddOnsAsyncClient:
         return response
 
     async def create_deployment(self,
-            request: gsuiteaddons.CreateDeploymentRequest = None,
+            request: Union[gsuiteaddons.CreateDeploymentRequest, dict] = None,
             *,
             parent: str = None,
             deployment: gsuiteaddons.Deployment = None,
             deployment_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Deployment:
@@ -270,7 +272,7 @@ class GSuiteAddOnsAsyncClient:
         configuration.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.CreateDeploymentRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.CreateDeploymentRequest, dict]):
                 The request object. Request message to create a
                 deployment.
             parent (:class:`str`):
@@ -354,10 +356,10 @@ class GSuiteAddOnsAsyncClient:
         return response
 
     async def replace_deployment(self,
-            request: gsuiteaddons.ReplaceDeploymentRequest = None,
+            request: Union[gsuiteaddons.ReplaceDeploymentRequest, dict] = None,
             *,
             deployment: gsuiteaddons.Deployment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Deployment:
@@ -365,7 +367,7 @@ class GSuiteAddOnsAsyncClient:
         name.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.ReplaceDeploymentRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.ReplaceDeploymentRequest, dict]):
                 The request object. Request message to create or replace
                 a deployment.
             deployment (:class:`google.cloud.workspace_add_ons_v1.types.Deployment`):
@@ -428,17 +430,17 @@ class GSuiteAddOnsAsyncClient:
         return response
 
     async def get_deployment(self,
-            request: gsuiteaddons.GetDeploymentRequest = None,
+            request: Union[gsuiteaddons.GetDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Deployment:
         r"""Gets the deployment with the specified name.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.GetDeploymentRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.GetDeploymentRequest, dict]):
                 The request object. Request message to get a deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -503,17 +505,17 @@ class GSuiteAddOnsAsyncClient:
         return response
 
     async def list_deployments(self,
-            request: gsuiteaddons.ListDeploymentsRequest = None,
+            request: Union[gsuiteaddons.ListDeploymentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDeploymentsAsyncPager:
         r"""Lists all deployments in a particular project.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.ListDeploymentsRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.ListDeploymentsRequest, dict]):
                 The request object. Request message to list deployments
                 for a project.
             parent (:class:`str`):
@@ -591,17 +593,17 @@ class GSuiteAddOnsAsyncClient:
         return response
 
     async def delete_deployment(self,
-            request: gsuiteaddons.DeleteDeploymentRequest = None,
+            request: Union[gsuiteaddons.DeleteDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes the deployment with the given name.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.DeleteDeploymentRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.DeleteDeploymentRequest, dict]):
                 The request object. Request message to delete a
                 deployment.
             name (:class:`str`):
@@ -660,10 +662,10 @@ class GSuiteAddOnsAsyncClient:
         )
 
     async def install_deployment(self,
-            request: gsuiteaddons.InstallDeploymentRequest = None,
+            request: Union[gsuiteaddons.InstallDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -673,7 +675,7 @@ class GSuiteAddOnsAsyncClient:
         tos/testing-gsuite-addons.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.InstallDeploymentRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.InstallDeploymentRequest, dict]):
                 The request object. Request message to install a
                 developer mode deployment.
             name (:class:`str`):
@@ -732,10 +734,10 @@ class GSuiteAddOnsAsyncClient:
         )
 
     async def uninstall_deployment(self,
-            request: gsuiteaddons.UninstallDeploymentRequest = None,
+            request: Union[gsuiteaddons.UninstallDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -745,7 +747,7 @@ class GSuiteAddOnsAsyncClient:
         tos/testing-gsuite-addons.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.UninstallDeploymentRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.UninstallDeploymentRequest, dict]):
                 The request object. Request message to uninstall a
                 developer mode deployment.
             name (:class:`str`):
@@ -804,10 +806,10 @@ class GSuiteAddOnsAsyncClient:
         )
 
     async def get_install_status(self,
-            request: gsuiteaddons.GetInstallStatusRequest = None,
+            request: Union[gsuiteaddons.GetInstallStatusRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.InstallStatus:
@@ -815,7 +817,7 @@ class GSuiteAddOnsAsyncClient:
         deployment.
 
         Args:
-            request (:class:`google.cloud.workspace_add_ons_v1.types.GetInstallStatusRequest`):
+            request (Union[google.cloud.workspace_add_ons_v1.types.GetInstallStatusRequest, dict]):
                 The request object. Request message to get the install
                 status of a developer mode deployment.
             name (:class:`str`):

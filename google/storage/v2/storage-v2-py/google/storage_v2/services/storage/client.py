@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.storage_v2.types import storage
 from .transports.base import StorageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import StorageGrpcTransport
@@ -348,7 +350,7 @@ class StorageClient(metaclass=StorageClientMeta):
             bucket: str = None,
             object_: str = None,
             generation: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[storage.ReadObjectResponse]:
@@ -428,7 +430,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def write_object(self,
             requests: Iterator[storage.WriteObjectRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.WriteObjectResponse:
@@ -491,7 +493,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def start_resumable_write(self,
             request: Union[storage.StartResumableWriteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.StartResumableWriteResponse:
@@ -539,7 +541,7 @@ class StorageClient(metaclass=StorageClientMeta):
             request: Union[storage.QueryWriteStatusRequest, dict] = None,
             *,
             upload_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.QueryWriteStatusResponse:

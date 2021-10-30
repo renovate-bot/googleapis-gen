@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import criterion_category_availability
 from google.ads.googleads.v8.resources.types import detailed_demographic
 from google.ads.googleads.v8.services.types import detailed_demographic_service
@@ -338,7 +340,7 @@ class DetailedDemographicServiceClient(metaclass=DetailedDemographicServiceClien
             request: Union[detailed_demographic_service.GetDetailedDemographicRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> detailed_demographic.DetailedDemographic:

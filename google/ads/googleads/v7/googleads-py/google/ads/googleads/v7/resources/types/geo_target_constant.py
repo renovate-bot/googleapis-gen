@@ -39,25 +39,31 @@ class GeoTargetConstant(proto.Message):
         id (int):
             Output only. The ID of the geo target
             constant.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             Output only. Geo target constant English
             name.
+            This field is a member of `oneof`_ ``_name``.
         country_code (str):
             Output only. The ISO-3166-1 alpha-2 country
             code that is associated with the target.
+            This field is a member of `oneof`_ ``_country_code``.
         target_type (str):
             Output only. Geo target constant target type.
+            This field is a member of `oneof`_ ``_target_type``.
         status (google.ads.googleads.v7.enums.types.GeoTargetConstantStatusEnum.GeoTargetConstantStatus):
             Output only. Geo target constant status.
         canonical_name (str):
             Output only. The fully qualified English
             name, consisting of the target's name and that
             of its parent and country.
+            This field is a member of `oneof`_ ``_canonical_name``.
         parent_geo_target (str):
             Output only. The resource name of the parent geo target
             constant. Geo target constant resource names have the form:
 
             ``geoTargetConstants/{parent_geo_target_constant_id}``
+            This field is a member of `oneof`_ ``_parent_geo_target``.
     """
 
     resource_name = proto.Field(

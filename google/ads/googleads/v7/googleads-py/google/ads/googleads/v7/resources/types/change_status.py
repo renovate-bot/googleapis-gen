@@ -41,6 +41,7 @@ class ChangeStatus(proto.Message):
         last_change_date_time (str):
             Output only. Time at which the most recent
             change has occurred on this resource.
+            This field is a member of `oneof`_ ``_last_change_date_time``.
         resource_type (google.ads.googleads.v7.enums.types.ChangeStatusResourceTypeEnum.ChangeStatusResourceType):
             Output only. Represents the type of the changed resource.
             This dictates what fields will be set. For example, for
@@ -48,36 +49,46 @@ class ChangeStatus(proto.Message):
         campaign (str):
             Output only. The Campaign affected by this
             change.
+            This field is a member of `oneof`_ ``_campaign``.
         ad_group (str):
             Output only. The AdGroup affected by this
             change.
+            This field is a member of `oneof`_ ``_ad_group``.
         resource_status (google.ads.googleads.v7.enums.types.ChangeStatusOperationEnum.ChangeStatusOperation):
             Output only. Represents the status of the
             changed resource.
         ad_group_ad (str):
             Output only. The AdGroupAd affected by this
             change.
+            This field is a member of `oneof`_ ``_ad_group_ad``.
         ad_group_criterion (str):
             Output only. The AdGroupCriterion affected by
             this change.
+            This field is a member of `oneof`_ ``_ad_group_criterion``.
         campaign_criterion (str):
             Output only. The CampaignCriterion affected
             by this change.
+            This field is a member of `oneof`_ ``_campaign_criterion``.
         feed (str):
             Output only. The Feed affected by this
             change.
+            This field is a member of `oneof`_ ``_feed``.
         feed_item (str):
             Output only. The FeedItem affected by this
             change.
+            This field is a member of `oneof`_ ``_feed_item``.
         ad_group_feed (str):
             Output only. The AdGroupFeed affected by this
             change.
+            This field is a member of `oneof`_ ``_ad_group_feed``.
         campaign_feed (str):
             Output only. The CampaignFeed affected by
             this change.
+            This field is a member of `oneof`_ ``_campaign_feed``.
         ad_group_bid_modifier (str):
             Output only. The AdGroupBidModifier affected
             by this change.
+            This field is a member of `oneof`_ ``_ad_group_bid_modifier``.
     """
 
     resource_name = proto.Field(

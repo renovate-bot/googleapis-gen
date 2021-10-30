@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.types import library
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -359,7 +361,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: Union[library.CreateShelfRequest, dict] = None,
             *,
             shelf: library.Shelf = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Shelf:
@@ -424,7 +426,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: Union[library.GetShelfRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Shelf:
@@ -496,7 +498,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
     def list_shelves(self,
             request: Union[library.ListShelvesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListShelvesPager:
@@ -559,7 +561,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: Union[library.DeleteShelfRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -624,7 +626,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             *,
             name: str = None,
             other_shelf: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Shelf:
@@ -715,7 +717,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             *,
             parent: str = None,
             book: library.Book = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
@@ -795,7 +797,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: Union[library.GetBookRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
@@ -866,7 +868,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: Union[library.ListBooksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBooksPager:
@@ -956,7 +958,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: Union[library.DeleteBookRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1021,7 +1023,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             *,
             book: library.Book = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:
@@ -1101,7 +1103,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             *,
             name: str = None,
             other_shelf_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> library.Book:

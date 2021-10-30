@@ -400,15 +400,24 @@ class TransitionCoverage(proto.Message):
     class TransitionNode(proto.Message):
         r"""The source or target of a transition.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             page (google.cloud.dialogflowcx_v3beta1.types.Page):
                 Indicates a transition to a
                 [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Only some
                 fields such as name and displayname will be set.
+                This field is a member of `oneof`_ ``kind``.
             flow (google.cloud.dialogflowcx_v3beta1.types.Flow):
                 Indicates a transition to a
                 [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Only some
                 fields such as name and displayname will be set.
+                This field is a member of `oneof`_ ``kind``.
         """
 
         page = proto.Field(
@@ -427,6 +436,13 @@ class TransitionCoverage(proto.Message):
     class Transition(proto.Message):
         r"""A transition in a page.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             source (google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage.TransitionNode):
                 The start node of a transition.
@@ -440,8 +456,10 @@ class TransitionCoverage(proto.Message):
                 at least one of the agent's test cases.
             transition_route (google.cloud.dialogflowcx_v3beta1.types.TransitionRoute):
                 Intent route or condition route.
+                This field is a member of `oneof`_ ``detail``.
             event_handler (google.cloud.dialogflowcx_v3beta1.types.EventHandler):
                 Event handler.
+                This field is a member of `oneof`_ ``detail``.
         """
 
         source = proto.Field(
@@ -640,17 +658,27 @@ class CalculateCoverageResponse(proto.Message):
     r"""The response message for
     [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3beta1.TestCases.CalculateCoverage].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         agent (str):
             The agent to calculate coverage for. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>``.
         intent_coverage (google.cloud.dialogflowcx_v3beta1.types.IntentCoverage):
             Intent coverage.
+            This field is a member of `oneof`_ ``coverage_type``.
         transition_coverage (google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage):
             Transition (excluding transition route
             groups) coverage.
+            This field is a member of `oneof`_ ``coverage_type``.
         route_group_coverage (google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroupCoverage):
             Transition route group coverage.
+            This field is a member of `oneof`_ ``coverage_type``.
     """
 
     agent = proto.Field(
@@ -989,6 +1017,13 @@ class ImportTestCasesRequest(proto.Message):
     r"""The request message for
     [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ImportTestCases].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             Required. The agent to import test cases to. Format:
@@ -998,8 +1033,10 @@ class ImportTestCasesRequest(proto.Message):
             Storage <https://cloud.google.com/storage/docs/>`__ URI to
             import test cases from. The format of this URI must be
             ``gs://<bucket-name>/<object-name>``.
+            This field is a member of `oneof`_ ``source``.
         content (bytes):
             Uncompressed raw byte content for test cases.
+            This field is a member of `oneof`_ ``source``.
     """
 
     parent = proto.Field(
@@ -1077,6 +1114,9 @@ class ExportTestCasesRequest(proto.Message):
     r"""The request message for
     [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ExportTestCases].
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             Required. The agent where to export test cases from. Format:
@@ -1087,6 +1127,7 @@ class ExportTestCasesRequest(proto.Message):
             export the test cases to. The format of this URI must be
             ``gs://<bucket-name>/<object-name>``. If unspecified, the
             serialized test cases is returned inline.
+            This field is a member of `oneof`_ ``destination``.
         data_format (google.cloud.dialogflowcx_v3beta1.types.ExportTestCasesRequest.DataFormat):
             The data format of the exported test cases. If not
             specified, ``BLOB`` is assumed.
@@ -1132,13 +1173,22 @@ class ExportTestCasesResponse(proto.Message):
     r"""The response message for
     [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ExportTestCases].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_uri (str):
             The URI to a file containing the exported test cases. This
             field is populated only if ``gcs_uri`` is specified in
             [ExportTestCasesRequest][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest].
+            This field is a member of `oneof`_ ``destination``.
         content (bytes):
             Uncompressed raw byte content for test cases.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     gcs_uri = proto.Field(

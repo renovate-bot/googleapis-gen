@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import manager_link_status
 from google.ads.googleads.v8.resources.types import customer_client_link
 from google.ads.googleads.v8.services.types import customer_client_link_service
@@ -348,7 +350,7 @@ class CustomerClientLinkServiceClient(metaclass=CustomerClientLinkServiceClientM
             request: Union[customer_client_link_service.GetCustomerClientLinkRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_client_link.CustomerClientLink:
@@ -427,7 +429,7 @@ class CustomerClientLinkServiceClient(metaclass=CustomerClientLinkServiceClientM
             *,
             customer_id: str = None,
             operation: customer_client_link_service.CustomerClientLinkOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_client_link_service.MutateCustomerClientLinkResponse:

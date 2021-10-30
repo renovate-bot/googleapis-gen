@@ -113,6 +113,13 @@ class KeywordPlanOperation(proto.Message):
     r"""A single operation (create, update, remove) on a keyword
     plan.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             The FieldMask that determines which resource
@@ -120,14 +127,17 @@ class KeywordPlanOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.KeywordPlan):
             Create operation: No resource name is
             expected for the new keyword plan.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.KeywordPlan):
             Update operation: The keyword plan is
             expected to have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed keyword
             plan is expected in this format:
 
             ``customers/{customer_id}/keywordPlans/{keyword_plan_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(
@@ -316,6 +326,7 @@ class KeywordPlanCampaignForecast(proto.Message):
             the forecast.
 
             ``customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}``
+            This field is a member of `oneof`_ ``_keyword_plan_campaign``.
         campaign_forecast (google.ads.googleads.v7.services.types.ForecastMetrics):
             The forecast for the Keyword Plan campaign.
     """
@@ -341,6 +352,7 @@ class KeywordPlanAdGroupForecast(proto.Message):
             the forecast.
 
             ``customers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}``
+            This field is a member of `oneof`_ ``_keyword_plan_ad_group``.
         ad_group_forecast (google.ads.googleads.v7.services.types.ForecastMetrics):
             The forecast for the Keyword Plan ad group.
     """
@@ -366,6 +378,7 @@ class KeywordPlanKeywordForecast(proto.Message):
             forecast.
 
             ``customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}``
+            This field is a member of `oneof`_ ``_keyword_plan_ad_group_keyword``.
         keyword_forecast (google.ads.googleads.v7.services.types.ForecastMetrics):
             The forecast for the Keyword Plan keyword.
     """
@@ -391,6 +404,7 @@ class KeywordPlanCampaignForecastCurve(proto.Message):
             the forecast.
 
             ``customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}``
+            This field is a member of `oneof`_ ``_keyword_plan_campaign``.
         max_cpc_bid_forecast_curve (google.ads.googleads.v7.services.types.KeywordPlanMaxCpcBidForecastCurve):
             The max cpc bid forecast curve for the
             campaign.
@@ -430,6 +444,7 @@ class KeywordPlanMaxCpcBidForecast(proto.Message):
     Attributes:
         max_cpc_bid_micros (int):
             The max cpc bid in micros.
+            This field is a member of `oneof`_ ``_max_cpc_bid_micros``.
         max_cpc_bid_forecast (google.ads.googleads.v7.services.types.ForecastMetrics):
             The forecast for the Keyword Plan campaign at
             the specific bid.
@@ -457,6 +472,7 @@ class KeywordPlanWeeklyTimeSeriesForecast(proto.Message):
             the forecast.
 
             ``customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}``
+            This field is a member of `oneof`_ ``_keyword_plan_campaign``.
         weekly_forecasts (Sequence[google.ads.googleads.v7.services.types.KeywordPlanWeeklyForecast]):
             The forecasts for the Keyword Plan campaign
             at different max CPC bids.
@@ -481,6 +497,7 @@ class KeywordPlanWeeklyForecast(proto.Message):
         start_date (str):
             The start date, in yyyy-mm-dd format. This
             date is inclusive.
+            This field is a member of `oneof`_ ``_start_date``.
         forecast (google.ads.googleads.v7.services.types.ForecastMetrics):
             The forecast for the Keyword Plan campaign
             for the week.
@@ -504,14 +521,19 @@ class ForecastMetrics(proto.Message):
     Attributes:
         impressions (float):
             Impressions
+            This field is a member of `oneof`_ ``_impressions``.
         ctr (float):
             Ctr
+            This field is a member of `oneof`_ ``_ctr``.
         average_cpc (int):
             AVG cpc
+            This field is a member of `oneof`_ ``_average_cpc``.
         clicks (float):
             Clicks
+            This field is a member of `oneof`_ ``_clicks``.
         cost_micros (int):
             Cost
+            This field is a member of `oneof`_ ``_cost_micros``.
     """
 
     impressions = proto.Field(
@@ -609,6 +631,7 @@ class KeywordPlanKeywordHistoricalMetrics(proto.Message):
             'car' and 'cars', the returned search query will only
             contain 'cars'. Starting V5, the list of de-duped queries
             will be included in close_variants field.
+            This field is a member of `oneof`_ ``_search_query``.
         close_variants (Sequence[str]):
             The list of close variant queries for search_query whose
             search results are combined into the search_query.

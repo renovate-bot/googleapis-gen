@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.dialogflow_v2.services.conversation_profiles import pagers
 from google.cloud.dialogflow_v2.types import audio_config
 from google.cloud.dialogflow_v2.types import conversation_profile
@@ -386,7 +388,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
             request: Union[conversation_profile.ListConversationProfilesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConversationProfilesPager:
@@ -475,7 +477,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
             request: Union[conversation_profile.GetConversationProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversation_profile.ConversationProfile:
@@ -552,7 +554,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
             *,
             parent: str = None,
             conversation_profile: gcd_conversation_profile.ConversationProfile = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_conversation_profile.ConversationProfile:
@@ -644,7 +646,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
             *,
             conversation_profile: gcd_conversation_profile.ConversationProfile = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_conversation_profile.ConversationProfile:
@@ -734,7 +736,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
             request: Union[conversation_profile.DeleteConversationProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

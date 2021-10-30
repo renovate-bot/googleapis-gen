@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.firestore_admin_v1.services.firestore_admin import pagers
@@ -380,7 +382,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             *,
             parent: str = None,
             index: gfa_index.Index = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -478,7 +480,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.ListIndexesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIndexesPager:
@@ -565,7 +567,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.GetIndexRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> index.Index:
@@ -641,7 +643,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.DeleteIndexRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -707,7 +709,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.GetFieldRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> field.Field:
@@ -785,7 +787,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.UpdateFieldRequest, dict] = None,
             *,
             field: gfa_field.Field = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -888,7 +890,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.ListFieldsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFieldsPager:
@@ -982,7 +984,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.ExportDocumentsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -1079,7 +1081,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
             request: Union[firestore_admin.ImportDocumentsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:

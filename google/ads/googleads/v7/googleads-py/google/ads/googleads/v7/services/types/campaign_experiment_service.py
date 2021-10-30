@@ -111,6 +111,13 @@ class MutateCampaignExperimentsRequest(proto.Message):
 class CampaignExperimentOperation(proto.Message):
     r"""A single update operation on a campaign experiment.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -118,11 +125,13 @@ class CampaignExperimentOperation(proto.Message):
         update (google.ads.googleads.v7.resources.types.CampaignExperiment):
             Update operation: The campaign experiment is
             expected to have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: The campaign experiment is expected to
             have a valid resource name, in this format:
 
             ``customers/{customer_id}/campaignExperiments/{campaign_experiment_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

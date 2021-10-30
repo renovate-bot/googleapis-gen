@@ -1169,12 +1169,20 @@ class BeginTransactionRequest(proto.Message):
 class CommitRequest(proto.Message):
     r"""The request for [Commit][google.spanner.v1.Spanner.Commit].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         session (str):
             Required. The session in which the
             transaction to be committed is running.
         transaction_id (bytes):
             Commit a previously-started transaction.
+            This field is a member of `oneof`_ ``transaction``.
         single_use_transaction (google.cloud.spanner_v1.types.TransactionOptions):
             Execute mutations in a temporary transaction. Note that
             unlike commit of a previously-started transaction, commit
@@ -1185,6 +1193,7 @@ class CommitRequest(proto.Message):
             are executed more than once. If this is undesirable, use
             [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction]
             and [Commit][google.spanner.v1.Spanner.Commit] instead.
+            This field is a member of `oneof`_ ``transaction``.
         mutations (Sequence[google.cloud.spanner_v1.types.Mutation]):
             The mutations to be executed when this
             transaction commits. All mutations are applied

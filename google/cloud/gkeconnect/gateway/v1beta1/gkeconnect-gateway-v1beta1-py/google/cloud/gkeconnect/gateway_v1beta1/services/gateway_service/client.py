@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api import httpbody_pb2  # type: ignore
 from google.protobuf import any_pb2  # type: ignore
 from .transports.base import GatewayServiceTransport, DEFAULT_CLIENT_INFO
@@ -330,7 +332,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
     def get_resource(self,
             request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
@@ -467,7 +469,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
     def post_resource(self,
             request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
@@ -604,7 +606,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
     def delete_resource(self,
             request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
@@ -741,7 +743,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
     def put_resource(self,
             request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
@@ -878,7 +880,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
     def patch_resource(self,
             request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:

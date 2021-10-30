@@ -39,6 +39,13 @@ class GenerateKeywordIdeasRequest(proto.Message):
     r"""Request message for
     [KeywordPlanIdeaService.GenerateKeywordIdeas][google.ads.googleads.v8.services.KeywordPlanIdeaService.GenerateKeywordIdeas].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         customer_id (str):
             The ID of the customer with the
@@ -46,6 +53,7 @@ class GenerateKeywordIdeasRequest(proto.Message):
         language (str):
             The resource name of the language to target.
             Required
+            This field is a member of `oneof`_ ``_language``.
         geo_target_constants (Sequence[str]):
             The resource names of the location to target.
             Max 10
@@ -78,15 +86,19 @@ class GenerateKeywordIdeasRequest(proto.Message):
         keyword_and_url_seed (google.ads.googleads.v8.services.types.KeywordAndUrlSeed):
             A Keyword and a specific Url to generate
             ideas from e.g. cars, www.example.com/cars.
+            This field is a member of `oneof`_ ``seed``.
         keyword_seed (google.ads.googleads.v8.services.types.KeywordSeed):
             A Keyword or phrase to generate ideas from,
             e.g. cars.
+            This field is a member of `oneof`_ ``seed``.
         url_seed (google.ads.googleads.v8.services.types.UrlSeed):
             A specific url to generate ideas from, e.g.
             www.example.com/cars.
+            This field is a member of `oneof`_ ``seed``.
         site_seed (google.ads.googleads.v8.services.types.SiteSeed):
             The site to generate ideas from, e.g.
             www.example.com.
+            This field is a member of `oneof`_ ``seed``.
     """
 
     customer_id = proto.Field(
@@ -167,6 +179,7 @@ class KeywordAndUrlSeed(proto.Message):
         url (str):
             The URL to crawl in order to generate keyword
             ideas.
+            This field is a member of `oneof`_ ``_url``.
         keywords (Sequence[str]):
             Requires at least one keyword.
     """
@@ -204,6 +217,7 @@ class SiteSeed(proto.Message):
             The domain name of the site. If the customer
             requesting the ideas doesn't own the site
             provided only public information is returned.
+            This field is a member of `oneof`_ ``_site``.
     """
 
     site = proto.Field(
@@ -220,6 +234,7 @@ class UrlSeed(proto.Message):
         url (str):
             The URL to crawl in order to generate keyword
             ideas.
+            This field is a member of `oneof`_ ``_url``.
     """
 
     url = proto.Field(
@@ -282,6 +297,7 @@ class GenerateKeywordIdeaResult(proto.Message):
             form of multiple keywords. See
             KeywordPlanKeywordHistoricalMetrics message in
             KeywordPlanService.
+            This field is a member of `oneof`_ ``_text``.
         keyword_idea_metrics (google.ads.googleads.v8.common.types.KeywordPlanHistoricalMetrics):
             The historical metrics for the keyword.
         keyword_annotations (google.ads.googleads.v8.common.types.KeywordAnnotations):

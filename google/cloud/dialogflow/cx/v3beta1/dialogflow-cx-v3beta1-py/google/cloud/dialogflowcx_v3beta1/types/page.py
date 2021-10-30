@@ -324,6 +324,13 @@ class EventHandler(proto.Message):
        associated with the event, the session will transition into the
        specified flow.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Output only. The unique identifier of this
@@ -339,9 +346,11 @@ class EventHandler(proto.Message):
         target_page (str):
             The target page to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>``.
+            This field is a member of `oneof`_ ``target``.
         target_flow (str):
             The target flow to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
+            This field is a member of `oneof`_ ``target``.
     """
 
     name = proto.Field(
@@ -388,6 +397,13 @@ class TransitionRoute(proto.Message):
        associated with the transition, the session will transition into
        the specified flow.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Output only. The unique identifier of this
@@ -421,9 +437,11 @@ class TransitionRoute(proto.Message):
         target_page (str):
             The target page to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>``.
+            This field is a member of `oneof`_ ``target``.
         target_flow (str):
             The target flow to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
+            This field is a member of `oneof`_ ``target``.
     """
 
     name = proto.Field(

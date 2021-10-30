@@ -101,6 +101,13 @@ class StreamPosition(proto.Message):
 class ReadSession(proto.Message):
     r"""Information returned from a ``CreateReadSession`` request.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Unique identifier for the session, in the form
@@ -111,8 +118,10 @@ class ReadSession(proto.Message):
             this Session will return errors.
         avro_schema (google.cloud.bigquery.storage_v1beta1.types.AvroSchema):
             Avro schema.
+            This field is a member of `oneof`_ ``schema``.
         arrow_schema (google.cloud.bigquery.storage_v1beta1.types.ArrowSchema):
             Arrow schema.
+            This field is a member of `oneof`_ ``schema``.
         streams (Sequence[google.cloud.bigquery.storage_v1beta1.types.Stream]):
             Streams associated with this session.
         table_reference (google.cloud.bigquery.storage_v1beta1.types.TableReference):
@@ -362,12 +371,21 @@ class ReadRowsResponse(proto.Message):
     r"""Response from calling ``ReadRows`` may include row data, progress
     and throttling information.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         avro_rows (google.cloud.bigquery.storage_v1beta1.types.AvroRows):
             Serialized row data in AVRO format.
+            This field is a member of `oneof`_ ``rows``.
         arrow_record_batch (google.cloud.bigquery.storage_v1beta1.types.ArrowRecordBatch):
             Serialized row data in Arrow RecordBatch
             format.
+            This field is a member of `oneof`_ ``rows``.
         row_count (int):
             Number of serialized rows in the rows block. This value is
             recorded here, in addition to the row_count values in the

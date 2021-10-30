@@ -36,13 +36,16 @@ class CarrierConstant(proto.Message):
             ``carrierConstants/{criterion_id}``
         id (int):
             Output only. The ID of the carrier criterion.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             Output only. The full name of the carrier in
             English.
+            This field is a member of `oneof`_ ``_name``.
         country_code (str):
             Output only. The country code of the country
             where the carrier is located, e.g., "AR", "FR",
             etc.
+            This field is a member of `oneof`_ ``_country_code``.
     """
 
     resource_name = proto.Field(

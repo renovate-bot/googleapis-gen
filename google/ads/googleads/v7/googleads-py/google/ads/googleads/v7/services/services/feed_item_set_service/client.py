@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.common.types import feed_item_set_filter_type_infos
 from google.ads.googleads.v7.enums.types import feed_item_set_status
 from google.ads.googleads.v7.resources.types import feed_item_set
@@ -349,7 +351,7 @@ class FeedItemSetServiceClient(metaclass=FeedItemSetServiceClientMeta):
             request: Union[feed_item_set_service.GetFeedItemSetRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> feed_item_set.FeedItemSet:
@@ -432,7 +434,7 @@ class FeedItemSetServiceClient(metaclass=FeedItemSetServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[feed_item_set_service.FeedItemSetOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> feed_item_set_service.MutateFeedItemSetsResponse:

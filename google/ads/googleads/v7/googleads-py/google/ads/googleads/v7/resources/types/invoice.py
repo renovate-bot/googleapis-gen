@@ -45,6 +45,7 @@ class Invoice(proto.Message):
         id (str):
             Output only. The ID of the invoice. It
             appears on the invoice PDF as "Invoice number".
+            This field is a member of `oneof`_ ``_id``.
         type_ (google.ads.googleads.v7.enums.types.InvoiceTypeEnum.InvoiceType):
             Output only. The type of invoice.
         billing_setup (str):
@@ -52,23 +53,28 @@ class Invoice(proto.Message):
             setup.
 
             ``customers/{customer_id}/billingSetups/{billing_setup_id}``
+            This field is a member of `oneof`_ ``_billing_setup``.
         payments_account_id (str):
             Output only. A 16 digit ID used to identify
             the payments account associated with the billing
             setup, e.g. "1234-5678-9012-3456". It appears on
             the invoice PDF as "Billing Account Number".
+            This field is a member of `oneof`_ ``_payments_account_id``.
         payments_profile_id (str):
             Output only. A 12 digit ID used to identify
             the payments profile associated with the billing
             setup, e.g. "1234-5678-9012". It appears on the
             invoice PDF as "Billing ID".
+            This field is a member of `oneof`_ ``_payments_profile_id``.
         issue_date (str):
             Output only. The issue date in yyyy-mm-dd
             format. It appears on the invoice PDF as either
             "Issue date" or "Invoice date".
+            This field is a member of `oneof`_ ``_issue_date``.
         due_date (str):
             Output only. The due date in yyyy-mm-dd
             format.
+            This field is a member of `oneof`_ ``_due_date``.
         service_date_range (google.ads.googleads.v7.common.types.DateRange):
             Output only. The service period date range of
             this invoice. The end date is inclusive.
@@ -77,6 +83,7 @@ class Invoice(proto.Message):
             returned in this currency. A subset of the
             currency codes derived from the ISO 4217
             standard is supported.
+            This field is a member of `oneof`_ ``_currency_code``.
         adjustments_subtotal_amount_micros (int):
             Output only. The pretax subtotal amount of
             invoice level adjustments, in micros.
@@ -102,11 +109,13 @@ class Invoice(proto.Message):
             Invoice.regulatory_costs_subtotal_amount_micros. Starting
             with v6, the Invoice.regulatory_costs_subtotal_amount_micros
             is no longer included.
+            This field is a member of `oneof`_ ``_subtotal_amount_micros``.
         tax_amount_micros (int):
             Output only. The sum of all taxes on the
             invoice, in micros. This equals the sum of the
             AccountBudgetSummary tax amounts, plus taxes not
             associated with a specific account budget.
+            This field is a member of `oneof`_ ``_tax_amount_micros``.
         total_amount_micros (int):
             Output only. The total amount, in micros. This equals the
             sum of Invoice.subtotal_amount_micros and
@@ -114,6 +123,7 @@ class Invoice(proto.Message):
             Invoice.regulatory_costs_subtotal_amount_micros is also
             added as it is no longer already included in
             Invoice.tax_amount_micros.
+            This field is a member of `oneof`_ ``_total_amount_micros``.
         corrected_invoice (str):
             Output only. The resource name of the original invoice
             corrected, wrote off, or canceled by this invoice, if
@@ -122,6 +132,7 @@ class Invoice(proto.Message):
             names have the form:
 
             ``customers/{customer_id}/invoices/{invoice_id}``
+            This field is a member of `oneof`_ ``_corrected_invoice``.
         replaced_invoices (Sequence[str]):
             Output only. The resource name of the original invoice(s)
             being rebilled or replaced by this invoice, if applicable.
@@ -136,6 +147,7 @@ class Invoice(proto.Message):
             Output only. The URL to a PDF copy of the
             invoice. Users need to pass in their OAuth token
             to request the PDF with this URL.
+            This field is a member of `oneof`_ ``_pdf_url``.
         account_budget_summaries (Sequence[google.ads.googleads.v7.resources.types.Invoice.AccountBudgetSummary]):
             Output only. The list of summarized account
             budget information associated with this invoice.
@@ -152,38 +164,46 @@ class Invoice(proto.Message):
                 resource names have the form:
 
                 ``customers/{customer_id}``
+                This field is a member of `oneof`_ ``_customer``.
             customer_descriptive_name (str):
                 Output only. The descriptive name of the
                 account budget’s customer. It appears on the
                 invoice PDF as "Account".
+                This field is a member of `oneof`_ ``_customer_descriptive_name``.
             account_budget (str):
                 Output only. The resource name of the account budget
                 associated with this summarized billable cost. AccountBudget
                 resource names have the form:
 
                 ``customers/{customer_id}/accountBudgets/{account_budget_id}``
+                This field is a member of `oneof`_ ``_account_budget``.
             account_budget_name (str):
                 Output only. The name of the account budget.
                 It appears on the invoice PDF as "Account
                 budget".
+                This field is a member of `oneof`_ ``_account_budget_name``.
             purchase_order_number (str):
                 Output only. The purchase order number of the
                 account budget. It appears on the invoice PDF as
                 "Purchase order".
+                This field is a member of `oneof`_ ``_purchase_order_number``.
             subtotal_amount_micros (int):
                 Output only. The pretax subtotal amount
                 attributable to this budget during the service
                 period, in micros.
+                This field is a member of `oneof`_ ``_subtotal_amount_micros``.
             tax_amount_micros (int):
                 Output only. The tax amount attributable to
                 this budget during the service period, in
                 micros.
+                This field is a member of `oneof`_ ``_tax_amount_micros``.
             total_amount_micros (int):
                 Output only. The total amount attributable to
                 this budget during the service period, in
                 micros. This equals the sum of the account
                 budget subtotal amount and the account budget
                 tax amount.
+                This field is a member of `oneof`_ ``_total_amount_micros``.
             billable_activity_date_range (google.ads.googleads.v7.common.types.DateRange):
                 Output only. The billable activity date range
                 of the account budget, within the service date

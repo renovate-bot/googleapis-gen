@@ -67,10 +67,13 @@ class MutateBatchJobRequest(proto.Message):
 class BatchJobOperation(proto.Message):
     r"""A single operation on a batch job.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v8.resources.types.BatchJob):
             Create operation: No resource name is
             expected for the new batch job.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

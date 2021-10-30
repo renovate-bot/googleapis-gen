@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.services.types import reach_plan_service
 from .transports.base import ReachPlanServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ReachPlanServiceGrpcTransport
@@ -331,7 +333,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
     def list_plannable_locations(self,
             request: Union[reach_plan_service.ListPlannableLocationsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reach_plan_service.ListPlannableLocationsResponse:
@@ -383,7 +385,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
             request: Union[reach_plan_service.ListPlannableProductsRequest, dict] = None,
             *,
             plannable_location_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reach_plan_service.ListPlannableProductsResponse:
@@ -459,7 +461,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
             plannable_location_id: str = None,
             currency_code: str = None,
             budget_micros: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reach_plan_service.GenerateProductMixIdeasResponse:
@@ -567,7 +569,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
             customer_id: str = None,
             campaign_duration: reach_plan_service.CampaignDuration = None,
             planned_products: Sequence[reach_plan_service.PlannedProduct] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> reach_plan_service.GenerateReachForecastResponse:

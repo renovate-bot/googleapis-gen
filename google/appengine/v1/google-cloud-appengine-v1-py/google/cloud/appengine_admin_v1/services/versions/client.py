@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.appengine_admin_v1.services.versions import pagers
@@ -333,7 +335,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
     def list_versions(self,
             request: Union[appengine.ListVersionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListVersionsPager:
@@ -400,7 +402,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
     def get_version(self,
             request: Union[appengine.GetVersionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> version.Version:
@@ -459,7 +461,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
     def create_version(self,
             request: Union[appengine.CreateVersionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -525,7 +527,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
     def update_version(self,
             request: Union[appengine.UpdateVersionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -626,7 +628,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
     def delete_version(self,
             request: Union[appengine.DeleteVersionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:

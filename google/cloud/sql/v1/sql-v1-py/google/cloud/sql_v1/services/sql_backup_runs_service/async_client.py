@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.sql_v1.services.sql_backup_runs_service import pagers
 from google.cloud.sql_v1.types import cloud_sql_backup_runs
@@ -145,16 +147,16 @@ class SqlBackupRunsServiceAsyncClient:
         )
 
     async def delete(self,
-            request: cloud_sql_backup_runs.SqlBackupRunsDeleteRequest = None,
+            request: Union[cloud_sql_backup_runs.SqlBackupRunsDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
         r"""Deletes the backup taken by a backup run.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlBackupRunsDeleteRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlBackupRunsDeleteRequest, dict]):
                 The request object. Backup runs delete request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -194,9 +196,9 @@ class SqlBackupRunsServiceAsyncClient:
         return response
 
     async def get(self,
-            request: cloud_sql_backup_runs.SqlBackupRunsGetRequest = None,
+            request: Union[cloud_sql_backup_runs.SqlBackupRunsGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_backup_runs.BackupRun:
@@ -204,7 +206,7 @@ class SqlBackupRunsServiceAsyncClient:
         backup run.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlBackupRunsGetRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlBackupRunsGetRequest, dict]):
                 The request object. Backup runs get request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -239,16 +241,16 @@ class SqlBackupRunsServiceAsyncClient:
         return response
 
     async def insert(self,
-            request: cloud_sql_backup_runs.SqlBackupRunsInsertRequest = None,
+            request: Union[cloud_sql_backup_runs.SqlBackupRunsInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
         r"""Creates a new backup run on demand.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlBackupRunsInsertRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlBackupRunsInsertRequest, dict]):
                 The request object. Backup runs insert request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -288,9 +290,9 @@ class SqlBackupRunsServiceAsyncClient:
         return response
 
     async def list(self,
-            request: cloud_sql_backup_runs.SqlBackupRunsListRequest = None,
+            request: Union[cloud_sql_backup_runs.SqlBackupRunsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAsyncPager:
@@ -299,7 +301,7 @@ class SqlBackupRunsServiceAsyncClient:
         chronological order of the backup initiation time.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlBackupRunsListRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlBackupRunsListRequest, dict]):
                 The request object. Backup runs list request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

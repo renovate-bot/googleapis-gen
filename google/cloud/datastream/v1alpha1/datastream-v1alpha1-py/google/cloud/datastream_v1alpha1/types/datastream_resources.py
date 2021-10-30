@@ -196,6 +196,13 @@ class StaticServiceIpConnectivity(proto.Message):
 class ForwardSshTunnelConnectivity(proto.Message):
     r"""Forward SSH Tunnel connectivity.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         hostname (str):
             Required. Hostname for the SSH tunnel.
@@ -205,8 +212,10 @@ class ForwardSshTunnelConnectivity(proto.Message):
             Port for the SSH tunnel, default value is 22.
         password (str):
             Input only. SSH password.
+            This field is a member of `oneof`_ ``authentication_method``.
         private_key (str):
             Input only. SSH private key.
+            This field is a member of `oneof`_ ``authentication_method``.
     """
 
     hostname = proto.Field(
@@ -453,6 +462,13 @@ class MysqlSslConfig(proto.Message):
 class ConnectionProfile(proto.Message):
     r"""
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Output only. The resource's name.
@@ -466,19 +482,26 @@ class ConnectionProfile(proto.Message):
             Required. Display name.
         oracle_profile (google.cloud.datastream_v1alpha1.types.OracleProfile):
             Oracle ConnectionProfile configuration.
+            This field is a member of `oneof`_ ``profile``.
         gcs_profile (google.cloud.datastream_v1alpha1.types.GcsProfile):
             Cloud Storage ConnectionProfile
             configuration.
+            This field is a member of `oneof`_ ``profile``.
         mysql_profile (google.cloud.datastream_v1alpha1.types.MysqlProfile):
             MySQL ConnectionProfile configuration.
+            This field is a member of `oneof`_ ``profile``.
         no_connectivity (google.cloud.datastream_v1alpha1.types.NoConnectivitySettings):
             No connectivity option chosen.
+            This field is a member of `oneof`_ ``connectivity``.
         static_service_ip_connectivity (google.cloud.datastream_v1alpha1.types.StaticServiceIpConnectivity):
             Static Service IP connectivity.
+            This field is a member of `oneof`_ ``connectivity``.
         forward_ssh_connectivity (google.cloud.datastream_v1alpha1.types.ForwardSshTunnelConnectivity):
             Forward SSH tunnel connectivity.
+            This field is a member of `oneof`_ ``connectivity``.
         private_connectivity (google.cloud.datastream_v1alpha1.types.PrivateConnectivity):
             Private connectivity.
+            This field is a member of `oneof`_ ``connectivity``.
     """
 
     name = proto.Field(
@@ -835,14 +858,23 @@ class MysqlSourceConfig(proto.Message):
 class SourceConfig(proto.Message):
     r"""The configuration of the stream source.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         source_connection_profile_name (str):
             Required. Source connection profile
             identifier.
         oracle_source_config (google.cloud.datastream_v1alpha1.types.OracleSourceConfig):
             Oracle data source configuration
+            This field is a member of `oneof`_ ``source_stream_config``.
         mysql_source_config (google.cloud.datastream_v1alpha1.types.MysqlSourceConfig):
             MySQL data source configuration
+            This field is a member of `oneof`_ ``source_stream_config``.
     """
 
     source_connection_profile_name = proto.Field(
@@ -898,6 +930,13 @@ class JsonFileFormat(proto.Message):
 class GcsDestinationConfig(proto.Message):
     r"""Google Cloud Storage destination configuration
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         path (str):
             Path inside the Cloud Storage bucket to write
@@ -914,8 +953,10 @@ class GcsDestinationConfig(proto.Message):
             created.
         avro_file_format (google.cloud.datastream_v1alpha1.types.AvroFileFormat):
             AVRO file format configuration.
+            This field is a member of `oneof`_ ``file_format``.
         json_file_format (google.cloud.datastream_v1alpha1.types.JsonFileFormat):
             JSON file format configuration.
+            This field is a member of `oneof`_ ``file_format``.
     """
 
     path = proto.Field(
@@ -953,12 +994,15 @@ class GcsDestinationConfig(proto.Message):
 class DestinationConfig(proto.Message):
     r"""The configuration of the stream destination.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         destination_connection_profile_name (str):
             Required. Destination connection profile
             identifier.
         gcs_destination_config (google.cloud.datastream_v1alpha1.types.GcsDestinationConfig):
 
+            This field is a member of `oneof`_ ``destination_stream_config``.
     """
 
     destination_connection_profile_name = proto.Field(
@@ -975,6 +1019,13 @@ class DestinationConfig(proto.Message):
 
 class Stream(proto.Message):
     r"""
+
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
 
     Attributes:
         name (str):
@@ -1000,8 +1051,10 @@ class Stream(proto.Message):
             Automatically backfill objects included in
             the stream source configuration. Specific
             objects can be excluded.
+            This field is a member of `oneof`_ ``backfill_strategy``.
         backfill_none (google.cloud.datastream_v1alpha1.types.Stream.BackfillNoneStrategy):
             Do not automatically backfill any objects.
+            This field is a member of `oneof`_ ``backfill_strategy``.
         errors (Sequence[google.cloud.datastream_v1alpha1.types.Error]):
             Output only. Errors on the Stream.
     """
@@ -1021,13 +1074,22 @@ class Stream(proto.Message):
         r"""Backfill strategy to automatically backfill the Stream's
         objects. Specific objects can be excluded.
 
+        This message has `oneof`_ fields (mutually exclusive fields).
+        For each oneof, at most one member field can be set at the same time.
+        Setting any member of the oneof automatically clears all other
+        members.
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             oracle_excluded_objects (google.cloud.datastream_v1alpha1.types.OracleRdbms):
                 Oracle data source objects to avoid
                 backfilling.
+                This field is a member of `oneof`_ ``excluded_objects``.
             mysql_excluded_objects (google.cloud.datastream_v1alpha1.types.MysqlRdbms):
                 MySQL data source objects to avoid
                 backfilling.
+                This field is a member of `oneof`_ ``excluded_objects``.
         """
 
         oracle_excluded_objects = proto.Field(

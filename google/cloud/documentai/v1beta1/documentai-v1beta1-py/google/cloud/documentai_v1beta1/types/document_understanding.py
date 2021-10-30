@@ -356,10 +356,13 @@ class EntityExtractionParams(proto.Message):
 class InputConfig(proto.Message):
     r"""The desired input location and metadata.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_source (google.cloud.documentai_v1beta1.types.GcsSource):
             The Google Cloud Storage location to read the
             input from. This must be a single file.
+            This field is a member of `oneof`_ ``source``.
         mime_type (str):
             Required. Mimetype of the input. Current
             supported mimetypes are application/pdf,
@@ -381,10 +384,13 @@ class InputConfig(proto.Message):
 class OutputConfig(proto.Message):
     r"""The desired output location and metadata.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_destination (google.cloud.documentai_v1beta1.types.GcsDestination):
             The Google Cloud Storage location to write
             the output to.
+            This field is a member of `oneof`_ ``destination``.
         pages_per_shard (int):
             The max number of pages to include into each output Document
             shard JSON on Google Cloud Storage.

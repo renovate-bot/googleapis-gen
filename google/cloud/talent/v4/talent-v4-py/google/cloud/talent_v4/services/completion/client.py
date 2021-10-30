@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.talent_v4.types import common
 from google.cloud.talent_v4.types import completion_service
 from .transports.base import CompletionTransport, DEFAULT_CLIENT_INFO
@@ -346,7 +348,7 @@ class CompletionClient(metaclass=CompletionClientMeta):
     def complete_query(self,
             request: Union[completion_service.CompleteQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> completion_service.CompleteQueryResponse:

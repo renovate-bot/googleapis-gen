@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.aiplatform_v1beta1.services.tensorboard_service import pagers
@@ -386,7 +388,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             parent: str = None,
             tensorboard: gca_tensorboard.Tensorboard = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -481,7 +483,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.GetTensorboardRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard.Tensorboard:
@@ -561,7 +563,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             tensorboard: gca_tensorboard.Tensorboard = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -663,7 +665,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ListTensorboardsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardsPager:
@@ -751,7 +753,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.DeleteTensorboardRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -850,7 +852,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             parent: str = None,
             tensorboard_experiment: gca_tensorboard_experiment.TensorboardExperiment = None,
             tensorboard_experiment_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_experiment.TensorboardExperiment:
@@ -948,7 +950,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.GetTensorboardExperimentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_experiment.TensorboardExperiment:
@@ -1027,7 +1029,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             tensorboard_experiment: gca_tensorboard_experiment.TensorboardExperiment = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_experiment.TensorboardExperiment:
@@ -1120,7 +1122,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ListTensorboardExperimentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardExperimentsPager:
@@ -1209,7 +1211,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.DeleteTensorboardExperimentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -1308,7 +1310,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             parent: str = None,
             tensorboard_run: gca_tensorboard_run.TensorboardRun = None,
             tensorboard_run_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_run.TensorboardRun:
@@ -1409,7 +1411,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             parent: str = None,
             requests: Sequence[tensorboard_service.CreateTensorboardRunRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.BatchCreateTensorboardRunsResponse:
@@ -1499,7 +1501,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.GetTensorboardRunRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_run.TensorboardRun:
@@ -1578,7 +1580,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             tensorboard_run: gca_tensorboard_run.TensorboardRun = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_run.TensorboardRun:
@@ -1670,7 +1672,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ListTensorboardRunsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardRunsPager:
@@ -1759,7 +1761,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.DeleteTensorboardRunRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -1857,7 +1859,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             parent: str = None,
             requests: Sequence[tensorboard_service.CreateTensorboardTimeSeriesRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.BatchCreateTensorboardTimeSeriesResponse:
@@ -1950,7 +1952,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             parent: str = None,
             tensorboard_time_series: gca_tensorboard_time_series.TensorboardTimeSeries = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_time_series.TensorboardTimeSeries:
@@ -2035,7 +2037,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.GetTensorboardTimeSeriesRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_time_series.TensorboardTimeSeries:
@@ -2112,7 +2114,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             tensorboard_time_series: gca_tensorboard_time_series.TensorboardTimeSeries = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_time_series.TensorboardTimeSeries:
@@ -2203,7 +2205,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ListTensorboardTimeSeriesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardTimeSeriesPager:
@@ -2292,7 +2294,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.DeleteTensorboardTimeSeriesRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
@@ -2389,7 +2391,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.BatchReadTensorboardTimeSeriesDataRequest, dict] = None,
             *,
             tensorboard: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.BatchReadTensorboardTimeSeriesDataResponse:
@@ -2474,7 +2476,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ReadTensorboardTimeSeriesDataRequest, dict] = None,
             *,
             tensorboard_time_series: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.ReadTensorboardTimeSeriesDataResponse:
@@ -2554,7 +2556,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ReadTensorboardBlobDataRequest, dict] = None,
             *,
             time_series: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[tensorboard_service.ReadTensorboardBlobDataResponse]:
@@ -2634,7 +2636,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             tensorboard_experiment: str = None,
             write_run_data_requests: Sequence[tensorboard_service.WriteTensorboardRunDataRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.WriteTensorboardExperimentDataResponse:
@@ -2722,7 +2724,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             *,
             tensorboard_run: str = None,
             time_series_data: Sequence[tensorboard_data.TimeSeriesData] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.WriteTensorboardRunDataResponse:
@@ -2815,7 +2817,7 @@ class TensorboardServiceClient(metaclass=TensorboardServiceClientMeta):
             request: Union[tensorboard_service.ExportTensorboardTimeSeriesDataRequest, dict] = None,
             *,
             tensorboard_time_series: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ExportTensorboardTimeSeriesDataPager:

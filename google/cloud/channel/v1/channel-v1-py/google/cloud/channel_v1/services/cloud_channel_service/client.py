@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.channel_v1.services.cloud_channel_service import pagers
@@ -425,7 +427,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_customers(self,
             request: Union[service.ListCustomersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCustomersPager:
@@ -505,7 +507,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request: Union[service.GetCustomerRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customers.Customer:
@@ -593,7 +595,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def check_cloud_identity_accounts_exist(self,
             request: Union[service.CheckCloudIdentityAccountsExistRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.CheckCloudIdentityAccountsExistResponse:
@@ -668,7 +670,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def create_customer(self,
             request: Union[service.CreateCustomerRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customers.Customer:
@@ -737,7 +739,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def update_customer(self,
             request: Union[service.UpdateCustomerRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customers.Customer:
@@ -807,7 +809,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request: Union[service.DeleteCustomerRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -883,7 +885,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def import_customer(self,
             request: Union[service.ImportCustomerRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customers.Customer:
@@ -955,7 +957,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def provision_cloud_identity(self,
             request: Union[service.ProvisionCloudIdentityRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1044,7 +1046,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_entitlements(self,
             request: Union[service.ListEntitlementsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEntitlementsPager:
@@ -1123,7 +1125,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_transferable_skus(self,
             request: Union[service.ListTransferableSkusRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTransferableSkusPager:
@@ -1213,7 +1215,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_transferable_offers(self,
             request: Union[service.ListTransferableOffersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTransferableOffersPager:
@@ -1305,7 +1307,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def get_entitlement(self,
             request: Union[service.GetEntitlementRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> entitlements.Entitlement:
@@ -1373,7 +1375,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def create_entitlement(self,
             request: Union[service.CreateEntitlementRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1485,7 +1487,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def change_parameters(self,
             request: Union[service.ChangeParametersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1577,7 +1579,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def change_renewal_settings(self,
             request: Union[service.ChangeRenewalSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1671,7 +1673,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def change_offer(self,
             request: Union[service.ChangeOfferRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1761,7 +1763,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def start_paid_service(self,
             request: Union[service.StartPaidServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1854,7 +1856,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def suspend_entitlement(self,
             request: Union[service.SuspendEntitlementRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1944,7 +1946,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def cancel_entitlement(self,
             request: Union[service.CancelEntitlementRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2048,7 +2050,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def activate_entitlement(self,
             request: Union[service.ActivateEntitlementRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2145,7 +2147,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def transfer_entitlements(self,
             request: Union[service.TransferEntitlementsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2247,7 +2249,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def transfer_entitlements_to_google(self,
             request: Union[service.TransferEntitlementsToGoogleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2359,7 +2361,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_channel_partner_links(self,
             request: Union[service.ListChannelPartnerLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListChannelPartnerLinksPager:
@@ -2441,7 +2443,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def get_channel_partner_link(self,
             request: Union[service.GetChannelPartnerLinkRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> channel_partner_links.ChannelPartnerLink:
@@ -2513,7 +2515,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def create_channel_partner_link(self,
             request: Union[service.CreateChannelPartnerLinkRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> channel_partner_links.ChannelPartnerLink:
@@ -2594,7 +2596,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def update_channel_partner_link(self,
             request: Union[service.UpdateChannelPartnerLinkRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> channel_partner_links.ChannelPartnerLink:
@@ -2675,7 +2677,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def lookup_offer(self,
             request: Union[service.LookupOfferRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> offers.Offer:
@@ -2745,7 +2747,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_products(self,
             request: Union[service.ListProductsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductsPager:
@@ -2808,7 +2810,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_skus(self,
             request: Union[service.ListSkusRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSkusPager:
@@ -2879,7 +2881,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_offers(self,
             request: Union[service.ListOffersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListOffersPager:
@@ -2950,7 +2952,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_purchasable_skus(self,
             request: Union[service.ListPurchasableSkusRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPurchasableSkusPager:
@@ -3028,7 +3030,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_purchasable_offers(self,
             request: Union[service.ListPurchasableOffersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPurchasableOffersPager:
@@ -3106,7 +3108,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def register_subscriber(self,
             request: Union[service.RegisterSubscriberRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.RegisterSubscriberResponse:
@@ -3180,7 +3182,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def unregister_subscriber(self,
             request: Union[service.UnregisterSubscriberRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.UnregisterSubscriberResponse:
@@ -3257,7 +3259,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     def list_subscribers(self,
             request: Union[service.ListSubscribersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSubscribersPager:

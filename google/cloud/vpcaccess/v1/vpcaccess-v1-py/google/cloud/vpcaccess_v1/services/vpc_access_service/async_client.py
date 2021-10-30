@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -151,12 +153,12 @@ class VpcAccessServiceAsyncClient:
         )
 
     async def create_connector(self,
-            request: vpc_access.CreateConnectorRequest = None,
+            request: Union[vpc_access.CreateConnectorRequest, dict] = None,
             *,
             parent: str = None,
             connector_id: str = None,
             connector: vpc_access.Connector = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -164,7 +166,7 @@ class VpcAccessServiceAsyncClient:
         operation.
 
         Args:
-            request (:class:`google.cloud.vpcaccess_v1.types.CreateConnectorRequest`):
+            request (Union[google.cloud.vpcaccess_v1.types.CreateConnectorRequest, dict]):
                 The request object. Request for creating a Serverless
                 VPC Access connector.
             parent (:class:`str`):
@@ -257,10 +259,10 @@ class VpcAccessServiceAsyncClient:
         return response
 
     async def get_connector(self,
-            request: vpc_access.GetConnectorRequest = None,
+            request: Union[vpc_access.GetConnectorRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vpc_access.Connector:
@@ -268,7 +270,7 @@ class VpcAccessServiceAsyncClient:
         resource does not exist.
 
         Args:
-            request (:class:`google.cloud.vpcaccess_v1.types.GetConnectorRequest`):
+            request (Union[google.cloud.vpcaccess_v1.types.GetConnectorRequest, dict]):
                 The request object. Request for getting a Serverless VPC
                 Access connector.
             name (:class:`str`):
@@ -333,17 +335,17 @@ class VpcAccessServiceAsyncClient:
         return response
 
     async def list_connectors(self,
-            request: vpc_access.ListConnectorsRequest = None,
+            request: Union[vpc_access.ListConnectorsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConnectorsAsyncPager:
         r"""Lists Serverless VPC Access connectors.
 
         Args:
-            request (:class:`google.cloud.vpcaccess_v1.types.ListConnectorsRequest`):
+            request (Union[google.cloud.vpcaccess_v1.types.ListConnectorsRequest, dict]):
                 The request object. Request for listing Serverless VPC
                 Access connectors in a location.
             parent (:class:`str`):
@@ -420,10 +422,10 @@ class VpcAccessServiceAsyncClient:
         return response
 
     async def delete_connector(self,
-            request: vpc_access.DeleteConnectorRequest = None,
+            request: Union[vpc_access.DeleteConnectorRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -431,7 +433,7 @@ class VpcAccessServiceAsyncClient:
         the resource does not exist.
 
         Args:
-            request (:class:`google.cloud.vpcaccess_v1.types.DeleteConnectorRequest`):
+            request (Union[google.cloud.vpcaccess_v1.types.DeleteConnectorRequest, dict]):
                 The request object. Request for deleting a Serverless
                 VPC Access connector.
             name (:class:`str`):

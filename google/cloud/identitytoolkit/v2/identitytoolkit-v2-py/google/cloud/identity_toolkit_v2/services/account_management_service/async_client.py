@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.identity_toolkit_v2.types import account_management_service
 from google.cloud.identity_toolkit_v2.types import mfa_info
@@ -143,16 +145,16 @@ class AccountManagementServiceAsyncClient:
         )
 
     async def finalize_mfa_enrollment(self,
-            request: account_management_service.FinalizeMfaEnrollmentRequest = None,
+            request: Union[account_management_service.FinalizeMfaEnrollmentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_management_service.FinalizeMfaEnrollmentResponse:
         r"""Finishes enrolling a second factor for the user.
 
         Args:
-            request (:class:`google.cloud.identity_toolkit_v2.types.FinalizeMfaEnrollmentRequest`):
+            request (Union[google.cloud.identity_toolkit_v2.types.FinalizeMfaEnrollmentRequest, dict]):
                 The request object. Finishes enrolling a second factor
                 for the user.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -188,9 +190,9 @@ class AccountManagementServiceAsyncClient:
         return response
 
     async def start_mfa_enrollment(self,
-            request: account_management_service.StartMfaEnrollmentRequest = None,
+            request: Union[account_management_service.StartMfaEnrollmentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_management_service.StartMfaEnrollmentResponse:
@@ -198,7 +200,7 @@ class AccountManagementServiceAsyncClient:
         this sends an SMS verification code to the user.
 
         Args:
-            request (:class:`google.cloud.identity_toolkit_v2.types.StartMfaEnrollmentRequest`):
+            request (Union[google.cloud.identity_toolkit_v2.types.StartMfaEnrollmentRequest, dict]):
                 The request object. Sends MFA enrollment verification
                 SMS for a user.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -234,9 +236,9 @@ class AccountManagementServiceAsyncClient:
         return response
 
     async def withdraw_mfa(self,
-            request: account_management_service.WithdrawMfaRequest = None,
+            request: Union[account_management_service.WithdrawMfaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_management_service.WithdrawMfaResponse:
@@ -244,7 +246,7 @@ class AccountManagementServiceAsyncClient:
         factors for an account.
 
         Args:
-            request (:class:`google.cloud.identity_toolkit_v2.types.WithdrawMfaRequest`):
+            request (Union[google.cloud.identity_toolkit_v2.types.WithdrawMfaRequest, dict]):
                 The request object. Withdraws MFA.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

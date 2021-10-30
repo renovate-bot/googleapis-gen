@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.resources.types import ad_group_ad_label
 from google.ads.googleads.v8.services.types import ad_group_ad_label_service
 from google.rpc import status_pb2  # type: ignore
@@ -358,7 +360,7 @@ class AdGroupAdLabelServiceClient(metaclass=AdGroupAdLabelServiceClientMeta):
             request: Union[ad_group_ad_label_service.GetAdGroupAdLabelRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_ad_label.AdGroupAdLabel:
@@ -437,7 +439,7 @@ class AdGroupAdLabelServiceClient(metaclass=AdGroupAdLabelServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_ad_label_service.AdGroupAdLabelOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_ad_label_service.MutateAdGroupAdLabelsResponse:

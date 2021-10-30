@@ -38,6 +38,7 @@ class LandingPageView(proto.Message):
         unexpanded_final_url (str):
             Output only. The advertiser-specified final
             URL.
+            This field is a member of `oneof`_ ``_unexpanded_final_url``.
     """
 
     resource_name = proto.Field(

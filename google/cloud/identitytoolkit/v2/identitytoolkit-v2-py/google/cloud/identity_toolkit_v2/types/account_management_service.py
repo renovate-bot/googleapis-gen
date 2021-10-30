@@ -34,6 +34,8 @@ __protobuf__ = proto.module(
 class FinalizeMfaEnrollmentRequest(proto.Message):
     r"""Finishes enrolling a second factor for the user.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         id_token (str):
             Required. ID token.
@@ -44,6 +46,7 @@ class FinalizeMfaEnrollmentRequest(proto.Message):
         phone_verification_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneRequestInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+            This field is a member of `oneof`_ ``verification_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant that
             the user enrolling MFA belongs to. If not set,
@@ -74,6 +77,8 @@ class FinalizeMfaEnrollmentRequest(proto.Message):
 class FinalizeMfaEnrollmentResponse(proto.Message):
     r"""FinalizeMfaEnrollment response.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         id_token (str):
             ID token updated to reflect MFA enrollment.
@@ -82,6 +87,7 @@ class FinalizeMfaEnrollmentResponse(proto.Message):
             enrollment.
         phone_auth_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneResponseInfo):
 
+            This field is a member of `oneof`_ ``auxiliary_auth_info``.
     """
 
     id_token = proto.Field(
@@ -103,12 +109,15 @@ class FinalizeMfaEnrollmentResponse(proto.Message):
 class StartMfaEnrollmentRequest(proto.Message):
     r"""Sends MFA enrollment verification SMS for a user.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         id_token (str):
             Required. User's ID token.
         phone_enrollment_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneRequestInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+            This field is a member of `oneof`_ ``enrollment_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant that
             the user enrolling MFA belongs to. If not set,
@@ -135,10 +144,13 @@ class StartMfaEnrollmentRequest(proto.Message):
 class StartMfaEnrollmentResponse(proto.Message):
     r"""StartMfaEnrollment response.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         phone_session_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneResponseInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+            This field is a member of `oneof`_ ``enrollment_response``.
     """
 
     phone_session_info = proto.Field(

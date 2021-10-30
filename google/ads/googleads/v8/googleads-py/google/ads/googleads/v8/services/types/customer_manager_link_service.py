@@ -128,6 +128,9 @@ class CustomerManagerLinkOperation(proto.Message):
     pending invitation. 3. Update operation with status INACTIVE
     terminates link to manager.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -135,6 +138,7 @@ class CustomerManagerLinkOperation(proto.Message):
         update (google.ads.googleads.v8.resources.types.CustomerManagerLink):
             Update operation: The link is expected to
             have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

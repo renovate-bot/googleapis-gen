@@ -37,6 +37,13 @@ class OfflineUserDataJob(proto.Message):
     only be read using
     OfflineUserDataJobService.GetOfflineUserDataJob.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the offline user data job.
@@ -46,8 +53,10 @@ class OfflineUserDataJob(proto.Message):
         id (int):
             Output only. ID of this offline user data
             job.
+            This field is a member of `oneof`_ ``_id``.
         external_id (int):
             Immutable. User specified job ID.
+            This field is a member of `oneof`_ ``_external_id``.
         type_ (google.ads.googleads.v7.enums.types.OfflineUserDataJobTypeEnum.OfflineUserDataJobType):
             Immutable. Type of the job.
         status (google.ads.googleads.v7.enums.types.OfflineUserDataJobStatusEnum.OfflineUserDataJobStatus):
@@ -58,9 +67,11 @@ class OfflineUserDataJob(proto.Message):
         customer_match_user_list_metadata (google.ads.googleads.v7.common.types.CustomerMatchUserListMetadata):
             Immutable. Metadata for data updates to a
             CRM-based user list.
+            This field is a member of `oneof`_ ``metadata``.
         store_sales_metadata (google.ads.googleads.v7.common.types.StoreSalesMetadata):
             Immutable. Metadata for store sales data
             update.
+            This field is a member of `oneof`_ ``metadata``.
     """
 
     resource_name = proto.Field(

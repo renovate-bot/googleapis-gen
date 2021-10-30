@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import billing_setup_status
 from google.ads.googleads.v8.enums.types import time_type
 from google.ads.googleads.v8.resources.types import billing_setup
@@ -359,7 +361,7 @@ class BillingSetupServiceClient(metaclass=BillingSetupServiceClientMeta):
             request: Union[billing_setup_service.GetBillingSetupRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> billing_setup.BillingSetup:
@@ -440,7 +442,7 @@ class BillingSetupServiceClient(metaclass=BillingSetupServiceClientMeta):
             *,
             customer_id: str = None,
             operation: billing_setup_service.BillingSetupOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> billing_setup_service.MutateBillingSetupResponse:

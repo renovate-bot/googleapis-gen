@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -329,7 +331,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_bucket_access_control(self,
             request: Union[storage.DeleteBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -369,7 +371,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_bucket_access_control(self,
             request: Union[storage.GetBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
@@ -416,7 +418,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def insert_bucket_access_control(self,
             request: Union[storage.InsertBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
@@ -462,7 +464,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_bucket_access_controls(self,
             request: Union[storage.ListBucketAccessControlsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListBucketAccessControlsResponse:
@@ -510,7 +512,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def update_bucket_access_control(self,
             request: Union[storage.UpdateBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
@@ -559,7 +561,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def patch_bucket_access_control(self,
             request: Union[storage.PatchBucketAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.BucketAccessControl:
@@ -605,7 +607,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_bucket(self,
             request: Union[storage.DeleteBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -643,7 +645,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_bucket(self,
             request: Union[storage.GetBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -688,7 +690,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def insert_bucket(self,
             request: Union[storage.InsertBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -733,7 +735,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_channels(self,
             request: Union[storage.ListChannelsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListChannelsResponse:
@@ -781,7 +783,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_buckets(self,
             request: Union[storage.ListBucketsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBucketsPager:
@@ -840,7 +842,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def lock_bucket_retention_policy(self,
             request: Union[storage.LockRetentionPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -886,7 +888,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_bucket_iam_policy(self,
             request: Union[storage.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -987,7 +989,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def set_bucket_iam_policy(self,
             request: Union[storage.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1088,7 +1090,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def test_bucket_iam_permissions(self,
             request: Union[storage.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -1136,7 +1138,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def patch_bucket(self,
             request: Union[storage.PatchBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -1183,7 +1185,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def update_bucket(self,
             request: Union[storage.UpdateBucketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Bucket:
@@ -1234,7 +1236,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def stop_channel(self,
             request: Union[storage.StopChannelRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1276,7 +1278,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_default_object_access_control(self,
             request: Union[storage.DeleteDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1316,7 +1318,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_default_object_access_control(self,
             request: Union[storage.GetDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1363,7 +1365,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def insert_default_object_access_control(self,
             request: Union[storage.InsertDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1410,7 +1412,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_default_object_access_controls(self,
             request: Union[storage.ListDefaultObjectAccessControlsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListObjectAccessControlsResponse:
@@ -1459,7 +1461,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def patch_default_object_access_control(self,
             request: Union[storage.PatchDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1506,7 +1508,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def update_default_object_access_control(self,
             request: Union[storage.UpdateDefaultObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1555,7 +1557,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_notification(self,
             request: Union[storage.DeleteNotificationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1597,7 +1599,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_notification(self,
             request: Union[storage.GetNotificationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Notification:
@@ -1644,7 +1646,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def insert_notification(self,
             request: Union[storage.InsertNotificationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Notification:
@@ -1696,7 +1698,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_notifications(self,
             request: Union[storage.ListNotificationsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListNotificationsResponse:
@@ -1745,7 +1747,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_object_access_control(self,
             request: Union[storage.DeleteObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1785,7 +1787,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_object_access_control(self,
             request: Union[storage.GetObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1832,7 +1834,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def insert_object_access_control(self,
             request: Union[storage.InsertObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1878,7 +1880,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_object_access_controls(self,
             request: Union[storage.ListObjectAccessControlsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ListObjectAccessControlsResponse:
@@ -1926,7 +1928,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def patch_object_access_control(self,
             request: Union[storage.PatchObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -1974,7 +1976,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def update_object_access_control(self,
             request: Union[storage.UpdateObjectAccessControlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ObjectAccessControl:
@@ -2020,7 +2022,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def compose_object(self,
             request: Union[storage.ComposeObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2066,7 +2068,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def copy_object(self,
             request: Union[storage.CopyObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2112,7 +2114,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_object(self,
             request: Union[storage.DeleteObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2154,7 +2156,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_object(self,
             request: Union[storage.GetObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2199,7 +2201,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_object_media(self,
             request: Union[storage.GetObjectMediaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[storage.GetObjectMediaResponse]:
@@ -2244,7 +2246,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def insert_object(self,
             requests: Iterator[storage.InsertObjectRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2307,7 +2309,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_objects(self,
             request: Union[storage.ListObjectsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListObjectsPager:
@@ -2366,7 +2368,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def rewrite_object(self,
             request: Union[storage.RewriteObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.RewriteResponse:
@@ -2412,7 +2414,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def start_resumable_write(self,
             request: Union[storage.StartResumableWriteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.StartResumableWriteResponse:
@@ -2461,7 +2463,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def query_write_status(self,
             request: Union[storage.QueryWriteStatusRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.QueryWriteStatusResponse:
@@ -2521,7 +2523,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def patch_object(self,
             request: Union[storage.PatchObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2566,7 +2568,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def update_object(self,
             request: Union[storage.UpdateObjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Object:
@@ -2614,7 +2616,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_object_iam_policy(self,
             request: Union[storage.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -2715,7 +2717,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def set_object_iam_policy(self,
             request: Union[storage.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -2816,7 +2818,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def test_object_iam_permissions(self,
             request: Union[storage.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -2864,7 +2866,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def watch_all_objects(self,
             request: Union[storage.WatchAllObjectsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.Channel:
@@ -2911,7 +2913,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_service_account(self,
             request: Union[storage.GetProjectServiceAccountRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.ServiceAccount:
@@ -2960,7 +2962,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def create_hmac_key(self,
             request: Union[storage.CreateHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.CreateHmacKeyResponse:
@@ -3007,7 +3009,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def delete_hmac_key(self,
             request: Union[storage.DeleteHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3047,7 +3049,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def get_hmac_key(self,
             request: Union[storage.GetHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.HmacKeyMetadata:
@@ -3095,7 +3097,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def list_hmac_keys(self,
             request: Union[storage.ListHmacKeysRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListHmacKeysPager:
@@ -3156,7 +3158,7 @@ class StorageClient(metaclass=StorageClientMeta):
     def update_hmac_key(self,
             request: Union[storage.UpdateHmacKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage_resources.HmacKeyMetadata:

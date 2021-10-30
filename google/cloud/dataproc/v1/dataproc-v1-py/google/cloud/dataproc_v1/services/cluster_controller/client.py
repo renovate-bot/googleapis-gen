@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.dataproc_v1.services.cluster_controller import pagers
@@ -356,7 +358,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             project_id: str = None,
             region: str = None,
             cluster: clusters.Cluster = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -456,7 +458,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             cluster_name: str = None,
             cluster: clusters.Cluster = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -629,7 +631,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
     def stop_cluster(self,
             request: Union[clusters.StopClusterRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -686,7 +688,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
     def start_cluster(self,
             request: Union[clusters.StartClusterRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -746,7 +748,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             project_id: str = None,
             region: str = None,
             cluster_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -855,7 +857,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             project_id: str = None,
             region: str = None,
             cluster_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> clusters.Cluster:
@@ -943,7 +945,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             project_id: str = None,
             region: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListClustersPager:
@@ -1065,7 +1067,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             project_id: str = None,
             region: str = None,
             cluster_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

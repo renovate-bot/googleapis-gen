@@ -42,10 +42,12 @@ class KeywordPlan(proto.Message):
             ``customers/{customer_id}/keywordPlans/{kp_plan_id}``
         id (int):
             Output only. The ID of the keyword plan.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the keyword plan.
             This field is required and should not be empty
             when creating new keyword plans.
+            This field is a member of `oneof`_ ``_name``.
         forecast_period (google.ads.googleads.v8.resources.types.KeywordPlanForecastPeriod):
             The date period used for forecasting the
             plan.
@@ -75,16 +77,25 @@ class KeywordPlan(proto.Message):
 class KeywordPlanForecastPeriod(proto.Message):
     r"""The forecasting period associated with the keyword plan.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         date_interval (google.ads.googleads.v8.enums.types.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval):
             A future date range relative to the current
             date used for forecasting.
+            This field is a member of `oneof`_ ``interval``.
         date_range (google.ads.googleads.v8.common.types.DateRange):
             The custom date range used for forecasting.
             The start and end dates must be in the future.
             Otherwise, an error will be returned when the
             forecasting action is performed. The start and
             end dates are inclusive.
+            This field is a member of `oneof`_ ``interval``.
     """
 
     date_interval = proto.Field(

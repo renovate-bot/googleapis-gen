@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.functions_v1.services.cloud_functions_service import pagers
@@ -345,7 +347,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
     def list_functions(self,
             request: Union[functions.ListFunctionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFunctionsPager:
@@ -414,7 +416,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
             request: Union[functions.GetFunctionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> functions.CloudFunction:
@@ -493,7 +495,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
             *,
             location: str = None,
             function: functions.CloudFunction = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -589,7 +591,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
             request: Union[functions.UpdateFunctionRequest, dict] = None,
             *,
             function: functions.CloudFunction = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -675,7 +677,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
             request: Union[functions.DeleteFunctionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -775,7 +777,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
             *,
             name: str = None,
             data: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> functions.CallFunctionResponse:
@@ -859,7 +861,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
     def generate_upload_url(self,
             request: Union[functions.GenerateUploadUrlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> functions.GenerateUploadUrlResponse:
@@ -940,7 +942,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
     def generate_download_url(self,
             request: Union[functions.GenerateDownloadUrlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> functions.GenerateDownloadUrlResponse:
@@ -1000,7 +1002,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
     def set_iam_policy(self,
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1111,7 +1113,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
     def get_iam_policy(self,
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1223,7 +1225,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
     def test_iam_permissions(self,
             request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

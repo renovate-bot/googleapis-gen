@@ -104,6 +104,13 @@ class CampaignFeedOperation(proto.Message):
     r"""A single operation (create, update, remove) on a campaign
     feed.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -111,14 +118,17 @@ class CampaignFeedOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CampaignFeed):
             Create operation: No resource name is
             expected for the new campaign feed.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.CampaignFeed):
             Update operation: The campaign feed is
             expected to have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             feed is expected, in this format:
 
             ``customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

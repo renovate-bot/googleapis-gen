@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, AsyncIterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.bigquery_storage_v1.types import storage
 from google.cloud.bigquery_storage_v1.types import stream
@@ -154,11 +156,11 @@ class BigQueryWriteAsyncClient:
         )
 
     async def create_write_stream(self,
-            request: storage.CreateWriteStreamRequest = None,
+            request: Union[storage.CreateWriteStreamRequest, dict] = None,
             *,
             parent: str = None,
             write_stream: stream.WriteStream = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> stream.WriteStream:
@@ -171,7 +173,7 @@ class BigQueryWriteAsyncClient:
         received.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1.types.CreateWriteStreamRequest`):
+            request (Union[google.cloud.bigquery_storage_v1.types.CreateWriteStreamRequest, dict]):
                 The request object. Request message for
                 `CreateWriteStream`.
             parent (:class:`str`):
@@ -254,7 +256,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
     def append_rows(self,
             requests: AsyncIterator[storage.AppendRowsRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[storage.AppendRowsResponse]]:
@@ -344,17 +346,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_write_stream(self,
-            request: storage.GetWriteStreamRequest = None,
+            request: Union[storage.GetWriteStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> stream.WriteStream:
         r"""Gets information about a write stream.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1.types.GetWriteStreamRequest`):
+            request (Union[google.cloud.bigquery_storage_v1.types.GetWriteStreamRequest, dict]):
                 The request object. Request message for
                 `GetWriteStreamRequest`.
             name (:class:`str`):
@@ -427,10 +429,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def finalize_write_stream(self,
-            request: storage.FinalizeWriteStreamRequest = None,
+            request: Union[storage.FinalizeWriteStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.FinalizeWriteStreamResponse:
@@ -438,7 +440,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         the stream. Finalize is not supported on the '_default' stream.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1.types.FinalizeWriteStreamRequest`):
+            request (Union[google.cloud.bigquery_storage_v1.types.FinalizeWriteStreamRequest, dict]):
                 The request object. Request message for invoking
                 `FinalizeWriteStream`.
             name (:class:`str`):
@@ -508,10 +510,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_commit_write_streams(self,
-            request: storage.BatchCommitWriteStreamsRequest = None,
+            request: Union[storage.BatchCommitWriteStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.BatchCommitWriteStreamsResponse:
@@ -523,7 +525,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         becomes available for read operations.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1.types.BatchCommitWriteStreamsRequest`):
+            request (Union[google.cloud.bigquery_storage_v1.types.BatchCommitWriteStreamsRequest, dict]):
                 The request object. Request message for
                 `BatchCommitWriteStreams`.
             parent (:class:`str`):
@@ -594,10 +596,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def flush_rows(self,
-            request: storage.FlushRowsRequest = None,
+            request: Union[storage.FlushRowsRequest, dict] = None,
             *,
             write_stream: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.FlushRowsResponse:
@@ -613,7 +615,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         BUFFERED.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1.types.FlushRowsRequest`):
+            request (Union[google.cloud.bigquery_storage_v1.types.FlushRowsRequest, dict]):
                 The request object. Request message for `FlushRows`.
             write_stream (:class:`str`):
                 Required. The stream that is the

@@ -18,7 +18,7 @@ import os
 import nox  # type: ignore
 
 
-@nox.session(python=['3.7', '3.8'])
+@nox.session(python=['3.7', '3.8', '3.9'])
 def unit(session):
     """Run the unit test suite."""
 
@@ -36,7 +36,7 @@ def unit(session):
     )
 
 
-@nox.session(python=['3.7', '3.8'])
+@nox.session(python=['3.7', '3.8', '3.9'])
 def mypy(session):
     """Run the type checker."""
     session.install('mypy')

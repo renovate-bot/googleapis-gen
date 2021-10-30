@@ -73,15 +73,24 @@ class BillingSetupOperation(proto.Message):
     r"""A single operation on a billing setup, which describes the
     cancellation of an existing billing setup.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v8.resources.types.BillingSetup):
             Creates a billing setup. No resource name is
             expected for the new billing setup.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Resource name of the billing setup to remove. A setup cannot
             be removed unless it is in a pending state or its scheduled
             start time is in the future. The resource name looks like
             ``customers/{customer_id}/billingSetups/{billing_id}``.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

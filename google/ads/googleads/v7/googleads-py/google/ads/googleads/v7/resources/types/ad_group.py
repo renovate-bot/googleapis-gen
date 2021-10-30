@@ -46,6 +46,7 @@ class AdGroup(proto.Message):
             ``customers/{customer_id}/adGroups/{ad_group_id}``
         id (int):
             Output only. The ID of the ad group.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the ad group.
             This field is required and should not be empty
@@ -56,6 +57,7 @@ class AdGroup(proto.Message):
             It must not contain any null (code point 0x0),
             NL line feed (code point 0xA) or carriage return
             (code point 0xD) characters.
+            This field is a member of `oneof`_ ``_name``.
         status (google.ads.googleads.v7.enums.types.AdGroupStatusEnum.AdGroupStatus):
             The status of the ad group.
         type_ (google.ads.googleads.v7.enums.types.AdGroupTypeEnum.AdGroupType):
@@ -72,9 +74,11 @@ class AdGroup(proto.Message):
             For base ad groups, this field equals the ad
             group resource name.
             This field is read-only.
+            This field is a member of `oneof`_ ``_base_ad_group``.
         tracking_url_template (str):
             The URL template for constructing a tracking
             URL.
+            This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v7.common.types.CustomParameter]):
             The list of mappings used to substitute custom parameter
             tags in a ``tracking_url_template``, ``final_urls``, or
@@ -82,19 +86,25 @@ class AdGroup(proto.Message):
         campaign (str):
             Immutable. The campaign to which the ad group
             belongs.
+            This field is a member of `oneof`_ ``_campaign``.
         cpc_bid_micros (int):
             The maximum CPC (cost-per-click) bid.
+            This field is a member of `oneof`_ ``_cpc_bid_micros``.
         cpm_bid_micros (int):
             The maximum CPM (cost-per-thousand viewable
             impressions) bid.
+            This field is a member of `oneof`_ ``_cpm_bid_micros``.
         target_cpa_micros (int):
             The target CPA (cost-per-acquisition).
+            This field is a member of `oneof`_ ``_target_cpa_micros``.
         cpv_bid_micros (int):
             Output only. The CPV (cost-per-view) bid.
+            This field is a member of `oneof`_ ``_cpv_bid_micros``.
         target_cpm_micros (int):
             Average amount in micros that the advertiser
             is willing to pay for every thousand times the
             ad is shown.
+            This field is a member of `oneof`_ ``_target_cpm_micros``.
         target_roas (float):
             The target ROAS (return-on-ad-spend)
             override. If the ad group's campaign bidding
@@ -102,11 +112,13 @@ class AdGroup(proto.Message):
             then this field overrides the target ROAS
             specified in the campaign's bidding strategy.
             Otherwise, this value is ignored.
+            This field is a member of `oneof`_ ``_target_roas``.
         percent_cpc_bid_micros (int):
             The percent cpc bid amount, expressed as a fraction of the
             advertised price for some good or service. The valid range
             for the fraction is [0,1) and the value stored here is
             1,000,000 \* [fraction].
+            This field is a member of `oneof`_ ``_percent_cpc_bid_micros``.
         explorer_auto_optimizer_setting (google.ads.googleads.v7.common.types.ExplorerAutoOptimizerSetting):
             Settings for the Display Campaign Optimizer,
             initially termed "Explorer".
@@ -118,17 +130,20 @@ class AdGroup(proto.Message):
         final_url_suffix (str):
             URL template for appending params to Final
             URL.
+            This field is a member of `oneof`_ ``_final_url_suffix``.
         targeting_setting (google.ads.googleads.v7.common.types.TargetingSetting):
             Setting for targeting related features.
         effective_target_cpa_micros (int):
             Output only. The effective target CPA (cost-
             er-acquisition). This field is read-only.
+            This field is a member of `oneof`_ ``_effective_target_cpa_micros``.
         effective_target_cpa_source (google.ads.googleads.v7.enums.types.BiddingSourceEnum.BiddingSource):
             Output only. Source of the effective target
             CPA. This field is read-only.
         effective_target_roas (float):
             Output only. The effective target ROAS
             (return-on-ad-spend). This field is read-only.
+            This field is a member of `oneof`_ ``_effective_target_roas``.
         effective_target_roas_source (google.ads.googleads.v7.enums.types.BiddingSourceEnum.BiddingSource):
             Output only. Source of the effective target
             ROAS. This field is read-only.

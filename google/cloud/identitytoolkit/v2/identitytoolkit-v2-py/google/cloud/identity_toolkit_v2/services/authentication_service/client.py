@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.identity_toolkit_v2.types import authentication_service
 from google.cloud.identity_toolkit_v2.types import mfa_info
 from .transports.base import AuthenticationServiceTransport, DEFAULT_CLIENT_INFO
@@ -324,7 +326,7 @@ class AuthenticationServiceClient(metaclass=AuthenticationServiceClientMeta):
     def finalize_mfa_sign_in(self,
             request: Union[authentication_service.FinalizeMfaSignInRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> authentication_service.FinalizeMfaSignInResponse:
@@ -370,7 +372,7 @@ class AuthenticationServiceClient(metaclass=AuthenticationServiceClientMeta):
     def start_mfa_sign_in(self,
             request: Union[authentication_service.StartMfaSignInRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> authentication_service.StartMfaSignInResponse:

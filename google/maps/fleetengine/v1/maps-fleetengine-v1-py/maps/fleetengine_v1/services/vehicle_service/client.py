@@ -31,6 +31,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
 from google.type import latlng_pb2  # type: ignore
@@ -341,7 +343,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def create_vehicle(self,
             request: Union[vehicle_api.CreateVehicleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicles.Vehicle:
@@ -420,7 +422,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def get_vehicle(self,
             request: Union[vehicle_api.GetVehicleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicles.Vehicle:
@@ -473,7 +475,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def update_vehicle(self,
             request: Union[vehicle_api.UpdateVehicleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicles.Vehicle:
@@ -539,7 +541,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def update_vehicle_location(self,
             request: Union[vehicle_api.UpdateVehicleLocationRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> fleetengine.VehicleLocation:
@@ -600,7 +602,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def update_vehicle_attributes(self,
             request: Union[vehicle_api.UpdateVehicleAttributesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicle_api.UpdateVehicleAttributesResponse:
@@ -661,7 +663,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def list_vehicles(self,
             request: Union[vehicle_api.ListVehiclesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListVehiclesPager:
@@ -729,7 +731,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def search_vehicles(self,
             request: Union[vehicle_api.SearchVehiclesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicle_api.SearchVehiclesResponse:
@@ -783,7 +785,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
     def search_fuzzed_vehicles(self,
             request: Union[vehicle_api.SearchVehiclesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicle_api.SearchVehiclesResponse:

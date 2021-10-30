@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1beta4.types import cloud_sql
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -325,7 +327,7 @@ class SqlSslCertsServiceClient(metaclass=SqlSslCertsServiceClientMeta):
     def delete(self,
             request: Union[cloud_sql.SqlSslCertsDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -377,7 +379,7 @@ class SqlSslCertsServiceClient(metaclass=SqlSslCertsServiceClientMeta):
     def get(self,
             request: Union[cloud_sql.SqlSslCertsGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCert:
@@ -425,7 +427,7 @@ class SqlSslCertsServiceClient(metaclass=SqlSslCertsServiceClientMeta):
     def insert(self,
             request: Union[cloud_sql.SqlSslCertsInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCertsInsertResponse:
@@ -473,7 +475,7 @@ class SqlSslCertsServiceClient(metaclass=SqlSslCertsServiceClientMeta):
     def list(self,
             request: Union[cloud_sql.SqlSslCertsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.SslCertsListResponse:

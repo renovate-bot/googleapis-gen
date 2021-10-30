@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.spanner_admin_database_v1.services.database_admin import pagers
@@ -397,7 +399,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[spanner_database_admin.ListDatabasesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDatabasesPager:
@@ -486,7 +488,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             *,
             parent: str = None,
             create_statement: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -596,7 +598,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[spanner_database_admin.GetDatabaseRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner_database_admin.Database:
@@ -671,7 +673,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             *,
             database: str = None,
             statements: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -799,7 +801,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[spanner_database_admin.DropDatabaseRequest, dict] = None,
             *,
             database: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -865,7 +867,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[spanner_database_admin.GetDatabaseDdlRequest, dict] = None,
             *,
             database: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner_database_admin.GetDatabaseDdlResponse:
@@ -944,7 +946,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1081,7 +1083,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1220,7 +1222,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -1316,7 +1318,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             parent: str = None,
             backup: gsad_backup.Backup = None,
             backup_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1437,7 +1439,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[backup.GetBackupRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> backup.Backup:
@@ -1512,7 +1514,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             *,
             backup: gsad_backup.Backup = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsad_backup.Backup:
@@ -1604,7 +1606,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[backup.DeleteBackupRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1672,7 +1674,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[backup.ListBackupsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBackupsPager:
@@ -1763,7 +1765,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             parent: str = None,
             database_id: str = None,
             backup: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1892,7 +1894,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[spanner_database_admin.ListDatabaseOperationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDatabaseOperationsPager:
@@ -1989,7 +1991,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
             request: Union[backup.ListBackupOperationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBackupOperationsPager:

@@ -159,6 +159,8 @@ class SqlUsersUpdateRequest(proto.Message):
 class User(proto.Message):
     r"""A Cloud SQL user resource.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         kind (str):
             This is always **sql#user**.
@@ -192,6 +194,7 @@ class User(proto.Message):
             is the database's built-in user type.
         sqlserver_user_details (google.cloud.sql_v1.types.SqlServerUserDetails):
 
+            This field is a member of `oneof`_ ``user_details``.
     """
     class SqlUserType(proto.Enum):
         r"""The user type."""

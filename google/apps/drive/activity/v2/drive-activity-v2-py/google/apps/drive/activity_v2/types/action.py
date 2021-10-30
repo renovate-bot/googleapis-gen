@@ -45,6 +45,13 @@ __protobuf__ = proto.module(
 class Action(proto.Message):
     r"""Information about the action.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         detail (google.apps.drive.activity_v2.types.ActionDetail):
             The type and detailed information about the
@@ -59,8 +66,10 @@ class Action(proto.Message):
             action occurred.
         timestamp (google.protobuf.timestamp_pb2.Timestamp):
             The action occurred at this specific time.
+            This field is a member of `oneof`_ ``time``.
         time_range (google.apps.drive.activity_v2.types.TimeRange):
             The action occurred over this time range.
+            This field is a member of `oneof`_ ``time``.
     """
 
     detail = proto.Field(
@@ -96,31 +105,49 @@ class ActionDetail(proto.Message):
     r"""Data describing the type and additional information of an
     action.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.apps.drive.activity_v2.types.Create):
             An object was created.
+            This field is a member of `oneof`_ ``action_detail``.
         edit (google.apps.drive.activity_v2.types.Edit):
             An object was edited.
+            This field is a member of `oneof`_ ``action_detail``.
         move (google.apps.drive.activity_v2.types.Move):
             An object was moved.
+            This field is a member of `oneof`_ ``action_detail``.
         rename (google.apps.drive.activity_v2.types.Rename):
             An object was renamed.
+            This field is a member of `oneof`_ ``action_detail``.
         delete (google.apps.drive.activity_v2.types.Delete):
             An object was deleted.
+            This field is a member of `oneof`_ ``action_detail``.
         restore (google.apps.drive.activity_v2.types.Restore):
             A deleted object was restored.
+            This field is a member of `oneof`_ ``action_detail``.
         permission_change (google.apps.drive.activity_v2.types.PermissionChange):
             The permission on an object was changed.
+            This field is a member of `oneof`_ ``action_detail``.
         comment (google.apps.drive.activity_v2.types.Comment):
             A change about comments was made.
+            This field is a member of `oneof`_ ``action_detail``.
         dlp_change (google.apps.drive.activity_v2.types.DataLeakPreventionChange):
             A change happened in data leak prevention
             status.
+            This field is a member of `oneof`_ ``action_detail``.
         reference (google.apps.drive.activity_v2.types.ApplicationReference):
             An object was referenced in an application
             outside of Drive/Docs.
+            This field is a member of `oneof`_ ``action_detail``.
         settings_change (google.apps.drive.activity_v2.types.SettingsChange):
             Settings were changed.
+            This field is a member of `oneof`_ ``action_detail``.
     """
 
     create = proto.Field(
@@ -194,17 +221,27 @@ class ActionDetail(proto.Message):
 class Create(proto.Message):
     r"""An object was created.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         new (google.apps.drive.activity_v2.types.Create.New):
             If present, indicates the object was newly
             created (e.g. as a blank document), not derived
             from a Drive object or external object.
+            This field is a member of `oneof`_ ``origin``.
         upload (google.apps.drive.activity_v2.types.Create.Upload):
             If present, indicates the object originated
             externally and was uploaded to Drive.
+            This field is a member of `oneof`_ ``origin``.
         copy (google.apps.drive.activity_v2.types.Create.Copy):
             If present, indicates the object was created
             by copying an existing Drive object.
+            This field is a member of `oneof`_ ``origin``.
     """
 
     class New(proto.Message):
@@ -361,6 +398,13 @@ class PermissionChange(proto.Message):
 class Permission(proto.Message):
     r"""The permission setting of an object.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         role (google.apps.drive.activity_v2.types.Permission.Role):
             Indicates the `Google Drive permissions
@@ -369,13 +413,17 @@ class Permission(proto.Message):
             comment on items.
         user (google.apps.drive.activity_v2.types.User):
             The user to whom this permission applies.
+            This field is a member of `oneof`_ ``scope``.
         group (google.apps.drive.activity_v2.types.Group):
             The group to whom this permission applies.
+            This field is a member of `oneof`_ ``scope``.
         domain (google.apps.drive.activity_v2.types.Domain):
             The domain to whom this permission applies.
+            This field is a member of `oneof`_ ``scope``.
         anyone (google.apps.drive.activity_v2.types.Permission.Anyone):
             If set, this permission applies to anyone,
             even logged out users.
+            This field is a member of `oneof`_ ``scope``.
         allow_discovery (bool):
             If true, the item can be discovered (e.g. in
             the user's "Shared with me" collection) without
@@ -436,13 +484,23 @@ class Permission(proto.Message):
 class Comment(proto.Message):
     r"""A change about comments on an object.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         post (google.apps.drive.activity_v2.types.Comment.Post):
             A change on a regular posted comment.
+            This field is a member of `oneof`_ ``type``.
         assignment (google.apps.drive.activity_v2.types.Comment.Assignment):
             A change on an assignment.
+            This field is a member of `oneof`_ ``type``.
         suggestion (google.apps.drive.activity_v2.types.Comment.Suggestion):
             A change on a suggestion.
+            This field is a member of `oneof`_ ``type``.
         mentioned_users (Sequence[google.apps.drive.activity_v2.types.User]):
             Users who are mentioned in this comment.
     """

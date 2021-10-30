@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.resources.types import carrier_constant
 from google.ads.googleads.v8.services.types import carrier_constant_service
 from .transports.base import CarrierConstantServiceTransport, DEFAULT_CLIENT_INFO
@@ -337,7 +339,7 @@ class CarrierConstantServiceClient(metaclass=CarrierConstantServiceClientMeta):
             request: Union[carrier_constant_service.GetCarrierConstantRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> carrier_constant.CarrierConstant:

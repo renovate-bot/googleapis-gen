@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.orgpolicy_v2.services.org_policy import pagers
 from google.cloud.orgpolicy_v2.types import constraint
@@ -170,10 +172,10 @@ class OrgPolicyAsyncClient:
         )
 
     async def list_constraints(self,
-            request: orgpolicy.ListConstraintsRequest = None,
+            request: Union[orgpolicy.ListConstraintsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConstraintsAsyncPager:
@@ -181,7 +183,7 @@ class OrgPolicyAsyncClient:
         resource.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.ListConstraintsRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.ListConstraintsRequest, dict]):
                 The request object. The request sent to the
                 [ListConstraints]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListConstraints]
@@ -273,10 +275,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_policies(self,
-            request: orgpolicy.ListPoliciesRequest = None,
+            request: Union[orgpolicy.ListPoliciesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPoliciesAsyncPager:
@@ -284,7 +286,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         resource.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.ListPoliciesRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.ListPoliciesRequest, dict]):
                 The request object. The request sent to the
                 [ListPolicies]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies]
@@ -378,10 +380,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_policy(self,
-            request: orgpolicy.GetPolicyRequest = None,
+            request: Union[orgpolicy.GetPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> orgpolicy.Policy:
@@ -392,7 +394,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         a ``Policy`` during read-modify-write.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.GetPolicyRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.GetPolicyRequest, dict]):
                 The request object. The request sent to the [GetPolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetPolicy] method.
             name (:class:`str`):
@@ -464,10 +466,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_effective_policy(self,
-            request: orgpolicy.GetEffectivePolicyRequest = None,
+            request: Union[orgpolicy.GetEffectivePolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> orgpolicy.Policy:
@@ -479,7 +481,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         hierarchy with 'under:' prefix will not be expanded.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest, dict]):
                 The request object. The request sent to the
                 [GetEffectivePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetEffectivePolicy]
@@ -553,11 +555,11 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_policy(self,
-            request: orgpolicy.CreatePolicyRequest = None,
+            request: Union[orgpolicy.CreatePolicyRequest, dict] = None,
             *,
             parent: str = None,
             policy: orgpolicy.Policy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> orgpolicy.Policy:
@@ -570,7 +572,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         on the given Cloud resource.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.CreatePolicyRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.CreatePolicyRequest, dict]):
                 The request object. The request sent to the
                 [CreatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.CreatePolicy]
@@ -656,10 +658,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_policy(self,
-            request: orgpolicy.UpdatePolicyRequest = None,
+            request: Union[orgpolicy.UpdatePolicyRequest, dict] = None,
             *,
             policy: orgpolicy.Policy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> orgpolicy.Policy:
@@ -675,7 +677,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         fields.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.UpdatePolicyRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.UpdatePolicyRequest, dict]):
                 The request object. The request sent to the
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
@@ -747,10 +749,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_policy(self,
-            request: orgpolicy.DeletePolicyRequest = None,
+            request: Union[orgpolicy.DeletePolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -761,7 +763,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         does not exist.
 
         Args:
-            request (:class:`google.cloud.orgpolicy_v2.types.DeletePolicyRequest`):
+            request (Union[google.cloud.orgpolicy_v2.types.DeletePolicyRequest, dict]):
                 The request object. The request sent to the
                 [DeletePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.DeletePolicy]

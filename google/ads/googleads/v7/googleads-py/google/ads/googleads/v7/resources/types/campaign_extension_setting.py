@@ -47,6 +47,7 @@ class CampaignExtensionSetting(proto.Message):
             Campaign resource names have the form:
 
             ``customers/{customer_id}/campaigns/{campaign_id}``
+            This field is a member of `oneof`_ ``_campaign``.
         extension_feed_items (Sequence[str]):
             The resource names of the extension feed items to serve
             under the campaign. ExtensionFeedItem resource names have

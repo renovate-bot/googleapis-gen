@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -157,10 +159,10 @@ class DatastreamAsyncClient:
         )
 
     async def list_connection_profiles(self,
-            request: datastream.ListConnectionProfilesRequest = None,
+            request: Union[datastream.ListConnectionProfilesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConnectionProfilesAsyncPager:
@@ -168,7 +170,7 @@ class DatastreamAsyncClient:
         in a project and location.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.ListConnectionProfilesRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.ListConnectionProfilesRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -242,10 +244,10 @@ class DatastreamAsyncClient:
         return response
 
     async def get_connection_profile(self,
-            request: datastream.GetConnectionProfileRequest = None,
+            request: Union[datastream.GetConnectionProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastream_resources.ConnectionProfile:
@@ -253,7 +255,7 @@ class DatastreamAsyncClient:
         profile.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.GetConnectionProfileRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.GetConnectionProfileRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the connection
@@ -315,12 +317,12 @@ class DatastreamAsyncClient:
         return response
 
     async def create_connection_profile(self,
-            request: datastream.CreateConnectionProfileRequest = None,
+            request: Union[datastream.CreateConnectionProfileRequest, dict] = None,
             *,
             parent: str = None,
             connection_profile: datastream_resources.ConnectionProfile = None,
             connection_profile_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -328,7 +330,7 @@ class DatastreamAsyncClient:
         project and location.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.CreateConnectionProfileRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.CreateConnectionProfileRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -420,11 +422,11 @@ class DatastreamAsyncClient:
         return response
 
     async def update_connection_profile(self,
-            request: datastream.UpdateConnectionProfileRequest = None,
+            request: Union[datastream.UpdateConnectionProfileRequest, dict] = None,
             *,
             connection_profile: datastream_resources.ConnectionProfile = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -432,7 +434,7 @@ class DatastreamAsyncClient:
         connection profile.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.UpdateConnectionProfileRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.UpdateConnectionProfileRequest, dict]):
                 The request object.
             connection_profile (:class:`google.cloud.datastream_v1alpha1.types.ConnectionProfile`):
                 Required. The ConnectionProfile to
@@ -520,17 +522,17 @@ class DatastreamAsyncClient:
         return response
 
     async def delete_connection_profile(self,
-            request: datastream.DeleteConnectionProfileRequest = None,
+            request: Union[datastream.DeleteConnectionProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Use this method to delete a connection profile..
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.DeleteConnectionProfileRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.DeleteConnectionProfileRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the connection
@@ -615,9 +617,9 @@ class DatastreamAsyncClient:
         return response
 
     async def discover_connection_profile(self,
-            request: datastream.DiscoverConnectionProfileRequest = None,
+            request: Union[datastream.DiscoverConnectionProfileRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastream.DiscoverConnectionProfileResponse:
@@ -628,7 +630,7 @@ class DatastreamAsyncClient:
         that's optionally supplied in the request.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.DiscoverConnectionProfileRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.DiscoverConnectionProfileRequest, dict]):
                 The request object. Request message for 'discover'
                 ConnectionProfile request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -672,10 +674,10 @@ class DatastreamAsyncClient:
         return response
 
     async def list_streams(self,
-            request: datastream.ListStreamsRequest = None,
+            request: Union[datastream.ListStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListStreamsAsyncPager:
@@ -683,7 +685,7 @@ class DatastreamAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.ListStreamsRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.ListStreamsRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -757,17 +759,17 @@ class DatastreamAsyncClient:
         return response
 
     async def get_stream(self,
-            request: datastream.GetStreamRequest = None,
+            request: Union[datastream.GetStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastream_resources.Stream:
         r"""Use this method to get details about a stream.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.GetStreamRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.GetStreamRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the stream
@@ -829,19 +831,19 @@ class DatastreamAsyncClient:
         return response
 
     async def create_stream(self,
-            request: datastream.CreateStreamRequest = None,
+            request: Union[datastream.CreateStreamRequest, dict] = None,
             *,
             parent: str = None,
             stream: datastream_resources.Stream = None,
             stream_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Use this method to create a stream.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.CreateStreamRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.CreateStreamRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -931,11 +933,11 @@ class DatastreamAsyncClient:
         return response
 
     async def update_stream(self,
-            request: datastream.UpdateStreamRequest = None,
+            request: Union[datastream.UpdateStreamRequest, dict] = None,
             *,
             stream: datastream_resources.Stream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -943,7 +945,7 @@ class DatastreamAsyncClient:
         stream.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.UpdateStreamRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.UpdateStreamRequest, dict]):
                 The request object.
             stream (:class:`google.cloud.datastream_v1alpha1.types.Stream`):
                 Required. The stream resource to
@@ -1030,17 +1032,17 @@ class DatastreamAsyncClient:
         return response
 
     async def delete_stream(self,
-            request: datastream.DeleteStreamRequest = None,
+            request: Union[datastream.DeleteStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Use this method to delete a stream.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.DeleteStreamRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.DeleteStreamRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the stream
@@ -1125,9 +1127,9 @@ class DatastreamAsyncClient:
         return response
 
     async def fetch_errors(self,
-            request: datastream.FetchErrorsRequest = None,
+            request: Union[datastream.FetchErrorsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1135,7 +1137,7 @@ class DatastreamAsyncClient:
         stream.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.FetchErrorsRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.FetchErrorsRequest, dict]):
                 The request object. Request message for 'FetchErrors'
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1192,10 +1194,10 @@ class DatastreamAsyncClient:
         return response
 
     async def fetch_static_ips(self,
-            request: datastream.FetchStaticIpsRequest = None,
+            request: Union[datastream.FetchStaticIpsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.FetchStaticIpsAsyncPager:
@@ -1205,7 +1207,7 @@ class DatastreamAsyncClient:
         optionally supplied in the request.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.FetchStaticIpsRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.FetchStaticIpsRequest, dict]):
                 The request object. Request message for 'FetchStaticIps'
                 request.
             name (:class:`str`):
@@ -1282,12 +1284,12 @@ class DatastreamAsyncClient:
         return response
 
     async def create_private_connection(self,
-            request: datastream.CreatePrivateConnectionRequest = None,
+            request: Union[datastream.CreatePrivateConnectionRequest, dict] = None,
             *,
             parent: str = None,
             private_connection: datastream_resources.PrivateConnection = None,
             private_connection_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1295,7 +1297,7 @@ class DatastreamAsyncClient:
         configuration.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.CreatePrivateConnectionRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.CreatePrivateConnectionRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -1387,10 +1389,10 @@ class DatastreamAsyncClient:
         return response
 
     async def get_private_connection(self,
-            request: datastream.GetPrivateConnectionRequest = None,
+            request: Union[datastream.GetPrivateConnectionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastream_resources.PrivateConnection:
@@ -1398,7 +1400,7 @@ class DatastreamAsyncClient:
         connectivity configuration.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.GetPrivateConnectionRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.GetPrivateConnectionRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the  private
@@ -1464,10 +1466,10 @@ class DatastreamAsyncClient:
         return response
 
     async def list_private_connections(self,
-            request: datastream.ListPrivateConnectionsRequest = None,
+            request: Union[datastream.ListPrivateConnectionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPrivateConnectionsAsyncPager:
@@ -1475,7 +1477,7 @@ class DatastreamAsyncClient:
         configurations in a project and location.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.ListPrivateConnectionsRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.ListPrivateConnectionsRequest, dict]):
                 The request object.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -1550,10 +1552,10 @@ class DatastreamAsyncClient:
         return response
 
     async def delete_private_connection(self,
-            request: datastream.DeletePrivateConnectionRequest = None,
+            request: Union[datastream.DeletePrivateConnectionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1561,7 +1563,7 @@ class DatastreamAsyncClient:
         configuration.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.DeletePrivateConnectionRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.DeletePrivateConnectionRequest, dict]):
                 The request object.
             name (:class:`str`):
                 Required. The name of the private
@@ -1646,12 +1648,12 @@ class DatastreamAsyncClient:
         return response
 
     async def create_route(self,
-            request: datastream.CreateRouteRequest = None,
+            request: Union[datastream.CreateRouteRequest, dict] = None,
             *,
             parent: str = None,
             route: datastream_resources.Route = None,
             route_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1659,7 +1661,7 @@ class DatastreamAsyncClient:
         connectivity in a project and location.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.CreateRouteRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.CreateRouteRequest, dict]):
                 The request object. route creation request
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -1750,17 +1752,17 @@ class DatastreamAsyncClient:
         return response
 
     async def get_route(self,
-            request: datastream.GetRouteRequest = None,
+            request: Union[datastream.GetRouteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastream_resources.Route:
         r"""Use this method to get details about a route.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.GetRouteRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.GetRouteRequest, dict]):
                 The request object. route get request
             name (:class:`str`):
                 Required. The name of the Route
@@ -1826,10 +1828,10 @@ class DatastreamAsyncClient:
         return response
 
     async def list_routes(self,
-            request: datastream.ListRoutesRequest = None,
+            request: Union[datastream.ListRoutesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRoutesAsyncPager:
@@ -1837,7 +1839,7 @@ class DatastreamAsyncClient:
         connectivity in a project and location.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.ListRoutesRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.ListRoutesRequest, dict]):
                 The request object. route list request
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -1912,17 +1914,17 @@ class DatastreamAsyncClient:
         return response
 
     async def delete_route(self,
-            request: datastream.DeleteRouteRequest = None,
+            request: Union[datastream.DeleteRouteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Use this method to delete a route.
 
         Args:
-            request (:class:`google.cloud.datastream_v1alpha1.types.DeleteRouteRequest`):
+            request (Union[google.cloud.datastream_v1alpha1.types.DeleteRouteRequest, dict]):
                 The request object. route deletion request
             name (:class:`str`):
                 Required. The name of the Route

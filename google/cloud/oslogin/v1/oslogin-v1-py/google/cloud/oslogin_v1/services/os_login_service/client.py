@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.oslogin.common import common_pb2  # type: ignore
 from google.cloud.oslogin_v1.types import oslogin
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -352,7 +354,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             request: Union[oslogin.DeletePosixAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -420,7 +422,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             request: Union[oslogin.DeleteSshPublicKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -488,7 +490,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             request: Union[oslogin.GetLoginProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> oslogin.LoginProfile:
@@ -565,7 +567,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             request: Union[oslogin.GetSshPublicKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common_pb2.SshPublicKey:
@@ -644,7 +646,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             parent: str = None,
             ssh_public_key: common_pb2.SshPublicKey = None,
             project_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> oslogin.ImportSshPublicKeyResponse:
@@ -742,7 +744,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             name: str = None,
             ssh_public_key: common_pb2.SshPublicKey = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common_pb2.SshPublicKey:

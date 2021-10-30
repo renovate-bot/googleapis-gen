@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.identity.accesscontextmanager_v1.services.access_context_manager import pagers
@@ -393,7 +395,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
     def list_access_policies(self,
             request: Union[access_context_manager.ListAccessPoliciesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccessPoliciesPager:
@@ -455,7 +457,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.GetAccessPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> access_policy.AccessPolicy:
@@ -536,7 +538,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
     def create_access_policy(self,
             request: Union[access_policy.AccessPolicy, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -610,7 +612,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             policy: access_policy.AccessPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -713,7 +715,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.DeleteAccessPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -815,7 +817,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.ListAccessLevelsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccessLevelsPager:
@@ -907,7 +909,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.GetAccessLevelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> access_level.AccessLevel:
@@ -989,7 +991,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             parent: str = None,
             access_level: gia_access_level.AccessLevel = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1099,7 +1101,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             access_level: gia_access_level.AccessLevel = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1205,7 +1207,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.DeleteAccessLevelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1308,7 +1310,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
     def replace_access_levels(self,
             request: Union[access_context_manager.ReplaceAccessLevelsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1394,7 +1396,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.ListServicePerimetersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicePerimetersPager:
@@ -1486,7 +1488,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.GetServicePerimeterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service_perimeter.ServicePerimeter:
@@ -1578,7 +1580,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             parent: str = None,
             service_perimeter: gia_service_perimeter.ServicePerimeter = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1699,7 +1701,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             service_perimeter: gia_service_perimeter.ServicePerimeter = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1813,7 +1815,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.DeleteServicePerimeterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1916,7 +1918,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
     def replace_service_perimeters(self,
             request: Union[access_context_manager.ReplaceServicePerimetersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1997,7 +1999,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
     def commit_service_perimeters(self,
             request: Union[access_context_manager.CommitServicePerimetersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2085,7 +2087,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.ListGcpUserAccessBindingsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGcpUserAccessBindingsPager:
@@ -2175,7 +2177,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.GetGcpUserAccessBindingRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcp_user_access_binding.GcpUserAccessBinding:
@@ -2254,7 +2256,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             parent: str = None,
             gcp_user_access_binding: gia_gcp_user_access_binding.GcpUserAccessBinding = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2359,7 +2361,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             *,
             gcp_user_access_binding: gia_gcp_user_access_binding.GcpUserAccessBinding = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2461,7 +2463,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             request: Union[access_context_manager.DeleteGcpUserAccessBindingRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

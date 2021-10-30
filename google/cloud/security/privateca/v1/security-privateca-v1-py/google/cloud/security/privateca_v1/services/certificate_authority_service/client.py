@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.security.privateca_v1.services.certificate_authority_service import pagers
@@ -392,7 +394,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             parent: str = None,
             certificate: resources.Certificate = None,
             certificate_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -496,7 +498,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.GetCertificateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -575,7 +577,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.ListCertificatesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificatesPager:
@@ -665,7 +667,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.RevokeCertificateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -744,7 +746,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             *,
             certificate: resources.Certificate = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -833,7 +835,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.ActivateCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -934,7 +936,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             parent: str = None,
             certificate_authority: resources.CertificateAuthority = None,
             certificate_authority_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1046,7 +1048,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.DisableCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1137,7 +1139,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.EnableCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1228,7 +1230,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.FetchCertificateAuthorityCsrRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.FetchCertificateAuthorityCsrResponse:
@@ -1315,7 +1317,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.GetCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CertificateAuthority:
@@ -1397,7 +1399,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.ListCertificateAuthoritiesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificateAuthoritiesPager:
@@ -1488,7 +1490,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.UndeleteCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1580,7 +1582,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.DeleteCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1672,7 +1674,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             *,
             certificate_authority: resources.CertificateAuthority = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1773,7 +1775,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             parent: str = None,
             ca_pool: resources.CaPool = None,
             ca_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1887,7 +1889,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             *,
             ca_pool: resources.CaPool = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1989,7 +1991,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.GetCaPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CaPool:
@@ -2074,7 +2076,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.ListCaPoolsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCaPoolsPager:
@@ -2163,7 +2165,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.DeleteCaPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2260,7 +2262,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.FetchCaCertsRequest, dict] = None,
             *,
             ca_pool: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.FetchCaCertsResponse:
@@ -2341,7 +2343,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.GetCertificateRevocationListRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CertificateRevocationList:
@@ -2422,7 +2424,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.ListCertificateRevocationListsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificateRevocationListsPager:
@@ -2514,7 +2516,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             *,
             certificate_revocation_list: resources.CertificateRevocationList = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2614,7 +2616,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             parent: str = None,
             certificate_template: resources.CertificateTemplate = None,
             certificate_template_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2722,7 +2724,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.DeleteCertificateTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2821,7 +2823,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.GetCertificateTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CertificateTemplate:
@@ -2900,7 +2902,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: Union[service.ListCertificateTemplatesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificateTemplatesPager:
@@ -2991,7 +2993,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             *,
             certificate_template: resources.CertificateTemplate = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -176,9 +178,9 @@ class AccessContextManagerAsyncClient:
         )
 
     async def list_access_policies(self,
-            request: access_context_manager.ListAccessPoliciesRequest = None,
+            request: Union[access_context_manager.ListAccessPoliciesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccessPoliciesAsyncPager:
@@ -187,7 +189,7 @@ class AccessContextManagerAsyncClient:
         container.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.ListAccessPoliciesRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListAccessPoliciesRequest, dict]):
                 The request object. A request to list all
                 `AccessPolicies` for a container.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -236,10 +238,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def get_access_policy(self,
-            request: access_context_manager.GetAccessPolicyRequest = None,
+            request: Union[access_context_manager.GetAccessPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> access_policy.AccessPolicy:
@@ -247,7 +249,7 @@ class AccessContextManagerAsyncClient:
         [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.GetAccessPolicyRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetAccessPolicyRequest, dict]):
                 The request object. A request to get a particular
                 `AccessPolicy`.
             name (:class:`str`):
@@ -318,9 +320,9 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def create_access_policy(self,
-            request: access_policy.AccessPolicy = None,
+            request: Union[access_policy.AccessPolicy, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -331,7 +333,7 @@ class AccessContextManagerAsyncClient:
         be returned in ``metadata`` as a BadRequest proto.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.AccessPolicy`):
+            request (Union[google.identity.accesscontextmanager_v1.types.AccessPolicy, dict]):
                 The request object. `AccessPolicy` is a container for
                 `AccessLevels` (which define the necessary attributes to
                 use Google Cloud services) and `ServicePerimeters`
@@ -389,11 +391,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def update_access_policy(self,
-            request: access_context_manager.UpdateAccessPolicyRequest = None,
+            request: Union[access_context_manager.UpdateAccessPolicyRequest, dict] = None,
             *,
             policy: access_policy.AccessPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -406,7 +408,7 @@ class AccessContextManagerAsyncClient:
         errors will be returned in ``metadata`` as a BadRequest proto.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.UpdateAccessPolicyRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateAccessPolicyRequest, dict]):
                 The request object. A request to update an
                 `AccessPolicy`.
             policy (:class:`google.identity.accesscontextmanager_v1.types.AccessPolicy`):
@@ -493,10 +495,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def delete_access_policy(self,
-            request: access_context_manager.DeleteAccessPolicyRequest = None,
+            request: Union[access_context_manager.DeleteAccessPolicyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -508,7 +510,7 @@ class AccessContextManagerAsyncClient:
         removed from long-lasting storage.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.DeleteAccessPolicyRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteAccessPolicyRequest, dict]):
                 The request object. A request to delete an
                 `AccessPolicy`.
             name (:class:`str`):
@@ -595,10 +597,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def list_access_levels(self,
-            request: access_context_manager.ListAccessLevelsRequest = None,
+            request: Union[access_context_manager.ListAccessLevelsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccessLevelsAsyncPager:
@@ -607,7 +609,7 @@ class AccessContextManagerAsyncClient:
         access policy.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.ListAccessLevelsRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListAccessLevelsRequest, dict]):
                 The request object. A request to list all `AccessLevels`
                 in an `AccessPolicy`.
             parent (:class:`str`):
@@ -687,10 +689,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def get_access_level(self,
-            request: access_context_manager.GetAccessLevelRequest = None,
+            request: Union[access_context_manager.GetAccessLevelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> access_level.AccessLevel:
@@ -699,7 +701,7 @@ class AccessContextManagerAsyncClient:
         resource name.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.GetAccessLevelRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetAccessLevelRequest, dict]):
                 The request object. A request to get a particular
                 `AccessLevel`.
             name (:class:`str`):
@@ -768,11 +770,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def create_access_level(self,
-            request: access_context_manager.CreateAccessLevelRequest = None,
+            request: Union[access_context_manager.CreateAccessLevelRequest, dict] = None,
             *,
             parent: str = None,
             access_level: gia_access_level.AccessLevel = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -787,7 +789,7 @@ class AccessContextManagerAsyncClient:
         encountered.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.CreateAccessLevelRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.CreateAccessLevelRequest, dict]):
                 The request object. A request to create an
                 `AccessLevel`.
             parent (:class:`str`):
@@ -878,11 +880,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def update_access_level(self,
-            request: access_context_manager.UpdateAccessLevelRequest = None,
+            request: Union[access_context_manager.UpdateAccessLevelRequest, dict] = None,
             *,
             access_level: gia_access_level.AccessLevel = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -897,7 +899,7 @@ class AccessContextManagerAsyncClient:
         encountered.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.UpdateAccessLevelRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateAccessLevelRequest, dict]):
                 The request object. A request to update an
                 `AccessLevel`.
             access_level (:class:`google.identity.accesscontextmanager_v1.types.AccessLevel`):
@@ -985,10 +987,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def delete_access_level(self,
-            request: access_context_manager.DeleteAccessLevelRequest = None,
+            request: Union[access_context_manager.DeleteAccessLevelRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1000,7 +1002,7 @@ class AccessContextManagerAsyncClient:
         removed from long-lasting storage.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.DeleteAccessLevelRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteAccessLevelRequest, dict]):
                 The request object. A request to delete an
                 `AccessLevel`.
             name (:class:`str`):
@@ -1089,9 +1091,9 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def replace_access_levels(self,
-            request: access_context_manager.ReplaceAccessLevelsRequest = None,
+            request: Union[access_context_manager.ReplaceAccessLevelsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1116,7 +1118,7 @@ class AccessContextManagerAsyncClient:
         result in error.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.ReplaceAccessLevelsRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.ReplaceAccessLevelsRequest, dict]):
                 The request object. A request to replace all existing
                 Access Levels in an Access Policy with the Access Levels
                 provided. This is done atomically.
@@ -1173,10 +1175,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def list_service_perimeters(self,
-            request: access_context_manager.ListServicePerimetersRequest = None,
+            request: Union[access_context_manager.ListServicePerimetersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicePerimetersAsyncPager:
@@ -1185,7 +1187,7 @@ class AccessContextManagerAsyncClient:
         an access policy.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.ListServicePerimetersRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListServicePerimetersRequest, dict]):
                 The request object. A request to list all
                 `ServicePerimeters` in an `AccessPolicy`.
             parent (:class:`str`):
@@ -1265,10 +1267,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def get_service_perimeter(self,
-            request: access_context_manager.GetServicePerimeterRequest = None,
+            request: Union[access_context_manager.GetServicePerimeterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service_perimeter.ServicePerimeter:
@@ -1277,7 +1279,7 @@ class AccessContextManagerAsyncClient:
         resource name.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.GetServicePerimeterRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetServicePerimeterRequest, dict]):
                 The request object. A request to get a particular
                 `ServicePerimeter`.
             name (:class:`str`):
@@ -1356,11 +1358,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def create_service_perimeter(self,
-            request: access_context_manager.CreateServicePerimeterRequest = None,
+            request: Union[access_context_manager.CreateServicePerimeterRequest, dict] = None,
             *,
             parent: str = None,
             service_perimeter: gia_service_perimeter.ServicePerimeter = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1375,7 +1377,7 @@ class AccessContextManagerAsyncClient:
         error encountered.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.CreateServicePerimeterRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.CreateServicePerimeterRequest, dict]):
                 The request object. A request to create a
                 `ServicePerimeter`.
             parent (:class:`str`):
@@ -1477,11 +1479,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def update_service_perimeter(self,
-            request: access_context_manager.UpdateServicePerimeterRequest = None,
+            request: Union[access_context_manager.UpdateServicePerimeterRequest, dict] = None,
             *,
             service_perimeter: gia_service_perimeter.ServicePerimeter = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1496,7 +1498,7 @@ class AccessContextManagerAsyncClient:
         error encountered.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.UpdateServicePerimeterRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateServicePerimeterRequest, dict]):
                 The request object. A request to update a
                 `ServicePerimeter`.
             service_perimeter (:class:`google.identity.accesscontextmanager_v1.types.ServicePerimeter`):
@@ -1592,10 +1594,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def delete_service_perimeter(self,
-            request: access_context_manager.DeleteServicePerimeterRequest = None,
+            request: Union[access_context_manager.DeleteServicePerimeterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1607,7 +1609,7 @@ class AccessContextManagerAsyncClient:
         been removed from long-lasting storage.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.DeleteServicePerimeterRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteServicePerimeterRequest, dict]):
                 The request object. A request to delete a
                 `ServicePerimeter`.
             name (:class:`str`):
@@ -1696,9 +1698,9 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def replace_service_perimeters(self,
-            request: access_context_manager.ReplaceServicePerimetersRequest = None,
+            request: Union[access_context_manager.ReplaceServicePerimetersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1719,7 +1721,7 @@ class AccessContextManagerAsyncClient:
         ReplaceServicePerimetersResponse.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.ReplaceServicePerimetersRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.ReplaceServicePerimetersRequest, dict]):
                 The request object. A request to replace all existing
                 Service Perimeters in an Access Policy with the Service
                 Perimeters provided. This is done atomically.
@@ -1776,9 +1778,9 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def commit_service_perimeters(self,
-            request: access_context_manager.CommitServicePerimetersRequest = None,
+            request: Union[access_context_manager.CommitServicePerimetersRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1803,7 +1805,7 @@ class AccessContextManagerAsyncClient:
         successful commit operation.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.CommitServicePerimetersRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.CommitServicePerimetersRequest, dict]):
                 The request object. A request to commit dry-run specs in
                 all [Service Perimeters]
                 [google.identity.accesscontextmanager.v1.ServicePerimeter]
@@ -1862,10 +1864,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def list_gcp_user_access_bindings(self,
-            request: access_context_manager.ListGcpUserAccessBindingsRequest = None,
+            request: Union[access_context_manager.ListGcpUserAccessBindingsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGcpUserAccessBindingsAsyncPager:
@@ -1874,7 +1876,7 @@ class AccessContextManagerAsyncClient:
         for a Google Cloud organization.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.ListGcpUserAccessBindingsRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListGcpUserAccessBindingsRequest, dict]):
                 The request object. Request of
                 [ListGcpUserAccessBindings]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.ListGcpUserAccessBindings].
@@ -1952,10 +1954,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def get_gcp_user_access_binding(self,
-            request: access_context_manager.GetGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.GetGcpUserAccessBindingRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcp_user_access_binding.GcpUserAccessBinding:
@@ -1964,7 +1966,7 @@ class AccessContextManagerAsyncClient:
         with the given name.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.GetGcpUserAccessBindingRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetGcpUserAccessBindingRequest, dict]):
                 The request object. Request of [GetGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.GetGcpUserAccessBinding].
             name (:class:`str`):
@@ -2030,11 +2032,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def create_gcp_user_access_binding(self,
-            request: access_context_manager.CreateGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.CreateGcpUserAccessBindingRequest, dict] = None,
             *,
             parent: str = None,
             gcp_user_access_binding: gia_gcp_user_access_binding.GcpUserAccessBinding = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -2050,7 +2052,7 @@ class AccessContextManagerAsyncClient:
         users, which may take more time.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.CreateGcpUserAccessBindingRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.CreateGcpUserAccessBindingRequest, dict]):
                 The request object. Request of
                 [CreateGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.CreateGcpUserAccessBinding].
@@ -2135,11 +2137,11 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def update_gcp_user_access_binding(self,
-            request: access_context_manager.UpdateGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.UpdateGcpUserAccessBindingRequest, dict] = None,
             *,
             gcp_user_access_binding: gia_gcp_user_access_binding.GcpUserAccessBinding = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -2150,7 +2152,7 @@ class AccessContextManagerAsyncClient:
         users, which may take more time.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.UpdateGcpUserAccessBindingRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateGcpUserAccessBindingRequest, dict]):
                 The request object. Request of
                 [UpdateGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.UpdateGcpUserAccessBinding].
@@ -2238,10 +2240,10 @@ class AccessContextManagerAsyncClient:
         return response
 
     async def delete_gcp_user_access_binding(self,
-            request: access_context_manager.DeleteGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.DeleteGcpUserAccessBindingRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -2252,7 +2254,7 @@ class AccessContextManagerAsyncClient:
         users, which may take more time.
 
         Args:
-            request (:class:`google.identity.accesscontextmanager_v1.types.DeleteGcpUserAccessBindingRequest`):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteGcpUserAccessBindingRequest, dict]):
                 The request object. Request of
                 [DeleteGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.DeleteGcpUserAccessBinding].

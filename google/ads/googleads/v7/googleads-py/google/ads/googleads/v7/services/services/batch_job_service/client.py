@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import batch_job_status
 from google.ads.googleads.v7.resources.types import batch_job
 from google.ads.googleads.v7.services.services.batch_job_service import pagers
@@ -874,7 +876,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
             *,
             customer_id: str = None,
             operation: batch_job_service.BatchJobOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> batch_job_service.MutateBatchJobResponse:
@@ -962,7 +964,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
             request: Union[batch_job_service.GetBatchJobRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> batch_job.BatchJob:
@@ -1044,7 +1046,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
             request: Union[batch_job_service.ListBatchJobResultsRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBatchJobResultsPager:
@@ -1137,7 +1139,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
             request: Union[batch_job_service.RunBatchJobRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1244,7 +1246,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
             resource_name: str = None,
             sequence_token: str = None,
             mutate_operations: Sequence[google_ads_service.MutateOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> batch_job_service.AddBatchJobOperationsResponse:

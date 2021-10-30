@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.network_management_v1.services.reachability_service import pagers
@@ -352,7 +354,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
             request: Union[reachability.ListConnectivityTestsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConnectivityTestsPager:
@@ -438,7 +440,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
             request: Union[reachability.GetConnectivityTestRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> connectivity_test.ConnectivityTest:
@@ -516,7 +518,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
             parent: str = None,
             test_id: str = None,
             resource: connectivity_test.ConnectivityTest = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -639,7 +641,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
             *,
             update_mask: field_mask_pb2.FieldMask = None,
             resource: connectivity_test.ConnectivityTest = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -749,7 +751,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
     def rerun_connectivity_test(self,
             request: Union[reachability.RerunConnectivityTestRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -830,7 +832,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
             request: Union[reachability.DeleteConnectivityTestRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

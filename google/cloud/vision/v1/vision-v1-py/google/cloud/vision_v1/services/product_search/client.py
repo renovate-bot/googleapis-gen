@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.vision_v1.services.product_search import pagers
@@ -385,7 +387,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             parent: str = None,
             product_set: product_search_service.ProductSet = None,
             product_set_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ProductSet:
@@ -489,7 +491,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.ListProductSetsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductSetsPager:
@@ -582,7 +584,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.GetProductSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ProductSet:
@@ -667,7 +669,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             *,
             product_set: product_search_service.ProductSet = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ProductSet:
@@ -764,7 +766,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.DeleteProductSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -837,7 +839,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             parent: str = None,
             product: product_search_service.Product = None,
             product_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.Product:
@@ -940,7 +942,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.ListProductsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductsPager:
@@ -1033,7 +1035,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.GetProductRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.Product:
@@ -1113,7 +1115,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             *,
             product: product_search_service.Product = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.Product:
@@ -1214,7 +1216,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.DeleteProductRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1289,7 +1291,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             parent: str = None,
             reference_image: product_search_service.ReferenceImage = None,
             reference_image_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ReferenceImage:
@@ -1410,7 +1412,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.DeleteReferenceImageRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1485,7 +1487,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.ListReferenceImagesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListReferenceImagesPager:
@@ -1580,7 +1582,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.GetReferenceImageRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ReferenceImage:
@@ -1663,7 +1665,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             *,
             name: str = None,
             product: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1753,7 +1755,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             *,
             name: str = None,
             product: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1834,7 +1836,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.ListProductsInProductSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductsInProductSetPager:
@@ -1932,7 +1934,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             *,
             parent: str = None,
             input_config: product_search_service.ImportProductSetsInputConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2046,7 +2048,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             request: Union[product_search_service.PurgeProductsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

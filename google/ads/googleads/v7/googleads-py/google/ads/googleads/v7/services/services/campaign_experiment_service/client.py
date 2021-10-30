@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import campaign_experiment_status
 from google.ads.googleads.v7.enums.types import campaign_experiment_traffic_split_type
 from google.ads.googleads.v7.resources.types import campaign_experiment
@@ -376,7 +378,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             request: Union[campaign_experiment_service.GetCampaignExperimentRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_experiment.CampaignExperiment:
@@ -457,7 +459,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             *,
             customer_id: str = None,
             campaign_experiment: gagr_campaign_experiment.CampaignExperiment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -580,7 +582,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             *,
             customer_id: str = None,
             operations: Sequence[campaign_experiment_service.CampaignExperimentOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_experiment_service.MutateCampaignExperimentsResponse:
@@ -671,7 +673,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             *,
             campaign_experiment: str = None,
             campaign_budget: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_experiment_service.GraduateCampaignExperimentResponse:
@@ -762,7 +764,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             request: Union[campaign_experiment_service.PromoteCampaignExperimentRequest, dict] = None,
             *,
             campaign_experiment: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -868,7 +870,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             request: Union[campaign_experiment_service.EndCampaignExperimentRequest, dict] = None,
             *,
             campaign_experiment: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -940,7 +942,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
             request: Union[campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCampaignExperimentAsyncErrorsPager:

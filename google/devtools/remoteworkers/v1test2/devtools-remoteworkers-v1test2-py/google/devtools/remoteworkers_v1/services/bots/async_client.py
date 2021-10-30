@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.devtools.remoteworkers_v1.types import bots
 from google.devtools.remoteworkers_v1.types import worker
@@ -177,11 +179,11 @@ class BotsAsyncClient:
         )
 
     async def create_bot_session(self,
-            request: bots.CreateBotSessionRequest = None,
+            request: Union[bots.CreateBotSessionRequest, dict] = None,
             *,
             parent: str = None,
             bot_session: bots.BotSession = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bots.BotSession:
@@ -191,7 +193,7 @@ class BotsAsyncClient:
         accidentally.
 
         Args:
-            request (:class:`google.devtools.remoteworkers_v1.types.CreateBotSessionRequest`):
+            request (Union[google.devtools.remoteworkers_v1.types.CreateBotSessionRequest, dict]):
                 The request object. Request message for
                 CreateBotSession.
             parent (:class:`str`):
@@ -271,12 +273,12 @@ class BotsAsyncClient:
         return response
 
     async def update_bot_session(self,
-            request: bots.UpdateBotSessionRequest = None,
+            request: Union[bots.UpdateBotSessionRequest, dict] = None,
             *,
             name: str = None,
             bot_session: bots.BotSession = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bots.BotSession:
@@ -286,7 +288,7 @@ class BotsAsyncClient:
         requests from the server.
 
         Args:
-            request (:class:`google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest`):
+            request (Union[google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest, dict]):
                 The request object. Request message for
                 UpdateBotSession.
             name (:class:`str`):

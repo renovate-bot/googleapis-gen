@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.securitycenter.settings_v1beta1.services.security_center_settings_service import pagers
 from google.cloud.securitycenter.settings_v1beta1.types import billing_settings
@@ -165,10 +167,10 @@ class SecurityCenterSettingsServiceAsyncClient:
         )
 
     async def get_service_account(self,
-            request: securitycenter_settings_service.GetServiceAccountRequest = None,
+            request: Union[securitycenter_settings_service.GetServiceAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> securitycenter_settings_service.ServiceAccount:
@@ -187,7 +189,7 @@ class SecurityCenterSettingsServiceAsyncClient:
         workflow.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetServiceAccountRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.GetServiceAccountRequest, dict]):
                 The request object. Request message for
                 GetServiceAccount.
             name (:class:`str`):
@@ -262,17 +264,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_settings(self,
-            request: securitycenter_settings_service.GetSettingsRequest = None,
+            request: Union[securitycenter_settings_service.GetSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> settings.Settings:
         r"""Gets the Settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.GetSettingsRequest, dict]):
                 The request object. Request message for GetSettings.
             name (:class:`str`):
                 Required. The name of the settings to retrieve. Formats:
@@ -349,18 +351,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_settings(self,
-            request: securitycenter_settings_service.UpdateSettingsRequest = None,
+            request: Union[securitycenter_settings_service.UpdateSettingsRequest, dict] = None,
             *,
             settings: gcss_settings.Settings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcss_settings.Settings:
         r"""Updates the Settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.UpdateSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.UpdateSettingsRequest, dict]):
                 The request object. Request message for UpdateSettings.
             settings (:class:`google.cloud.securitycenter.settings_v1beta1.types.Settings`):
                 Required. The settings to update.
@@ -449,9 +451,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def reset_settings(self,
-            request: securitycenter_settings_service.ResetSettingsRequest = None,
+            request: Union[securitycenter_settings_service.ResetSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -468,7 +470,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         that was set and result in default settings being used.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ResetSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.ResetSettingsRequest, dict]):
                 The request object. Request message for ResetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -511,16 +513,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def batch_get_settings(self,
-            request: securitycenter_settings_service.BatchGetSettingsRequest = None,
+            request: Union[securitycenter_settings_service.BatchGetSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> securitycenter_settings_service.BatchGetSettingsResponse:
         r"""Gets a list of settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.BatchGetSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.BatchGetSettingsRequest, dict]):
                 The request object. Request message for
                 BatchGetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -573,10 +575,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def calculate_effective_settings(self,
-            request: securitycenter_settings_service.CalculateEffectiveSettingsRequest = None,
+            request: Union[securitycenter_settings_service.CalculateEffectiveSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> settings.Settings:
@@ -594,7 +596,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            tier the customer has not configured.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveSettingsRequest, dict]):
                 The request object. Request message for
                 CalculateEffectiveSettings.
             name (:class:`str`):
@@ -673,16 +675,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_calculate_effective_settings(self,
-            request: securitycenter_settings_service.BatchCalculateEffectiveSettingsRequest = None,
+            request: Union[securitycenter_settings_service.BatchCalculateEffectiveSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> securitycenter_settings_service.BatchCalculateEffectiveSettingsResponse:
         r"""Gets a list of effective settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.BatchCalculateEffectiveSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.BatchCalculateEffectiveSettingsRequest, dict]):
                 The request object. Request message for
                 BatchGetEffectiveSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -735,17 +737,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_component_settings(self,
-            request: securitycenter_settings_service.GetComponentSettingsRequest = None,
+            request: Union[securitycenter_settings_service.GetComponentSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> component_settings.ComponentSettings:
         r"""Gets the Component Settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetComponentSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.GetComponentSettingsRequest, dict]):
                 The request object. Request message for
                 GetComponentSettings.
             name (:class:`str`):
@@ -825,18 +827,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_component_settings(self,
-            request: securitycenter_settings_service.UpdateComponentSettingsRequest = None,
+            request: Union[securitycenter_settings_service.UpdateComponentSettingsRequest, dict] = None,
             *,
             component_settings: gcss_component_settings.ComponentSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcss_component_settings.ComponentSettings:
         r"""Updates the Component Settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.UpdateComponentSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.UpdateComponentSettingsRequest, dict]):
                 The request object. Request message for
                 UpdateComponentSettings.
             component_settings (:class:`google.cloud.securitycenter.settings_v1beta1.types.ComponentSettings`):
@@ -926,9 +928,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def reset_component_settings(self,
-            request: securitycenter_settings_service.ResetComponentSettingsRequest = None,
+            request: Union[securitycenter_settings_service.ResetComponentSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -940,7 +942,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         organization-level settings being used.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ResetComponentSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.ResetComponentSettingsRequest, dict]):
                 The request object. Request message for
                 ResetComponentSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -984,17 +986,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def calculate_effective_component_settings(self,
-            request: securitycenter_settings_service.CalculateEffectiveComponentSettingsRequest = None,
+            request: Union[securitycenter_settings_service.CalculateEffectiveComponentSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> component_settings.ComponentSettings:
         r"""Gets the Effective Component Settings.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveComponentSettingsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveComponentSettingsRequest, dict]):
                 The request object. Request message for
                 CalculateEffectiveComponentSettings.
             name (:class:`str`):
@@ -1074,17 +1076,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_detectors(self,
-            request: securitycenter_settings_service.ListDetectorsRequest = None,
+            request: Union[securitycenter_settings_service.ListDetectorsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDetectorsAsyncPager:
         r"""Retrieves an unordered list of available detectors.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ListDetectorsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.ListDetectorsRequest, dict]):
                 The request object. Request message for ListDetectors.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
@@ -1168,10 +1170,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_components(self,
-            request: securitycenter_settings_service.ListComponentsRequest = None,
+            request: Union[securitycenter_settings_service.ListComponentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListComponentsAsyncPager:
@@ -1179,7 +1181,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         components.
 
         Args:
-            request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ListComponentsRequest`):
+            request (Union[google.cloud.securitycenter.settings_v1beta1.types.ListComponentsRequest, dict]):
                 The request object. Request message for ListComponents.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of

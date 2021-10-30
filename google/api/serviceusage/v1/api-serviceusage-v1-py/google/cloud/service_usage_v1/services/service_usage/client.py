@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.service_usage_v1.services.service_usage import pagers
@@ -333,7 +335,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def enable_service(self,
             request: Union[serviceusage.EnableServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -402,7 +404,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def disable_service(self,
             request: Union[serviceusage.DisableServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -477,7 +479,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def get_service(self,
             request: Union[serviceusage.GetServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Service:
@@ -534,7 +536,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def list_services(self,
             request: Union[serviceusage.ListServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesPager:
@@ -614,7 +616,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def batch_enable_services(self,
             request: Union[serviceusage.BatchEnableServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -685,7 +687,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def batch_get_services(self,
             request: Union[serviceusage.BatchGetServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> serviceusage.BatchGetServicesResponse:

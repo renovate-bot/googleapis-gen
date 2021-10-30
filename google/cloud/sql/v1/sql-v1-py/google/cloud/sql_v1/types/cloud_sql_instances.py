@@ -676,6 +676,8 @@ class SqlInstancesRescheduleMaintenanceRequest(proto.Message):
 class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
     r"""Instance verify external sync settings request.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -693,6 +695,7 @@ class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
         mysql_sync_config (google.cloud.sql_v1.types.MySqlSyncConfig):
             Optional. MySQL-specific settings for start
             external sync.
+            This field is a member of `oneof`_ ``sync_config``.
     """
     class ExternalSyncMode(proto.Enum):
         r""""""
@@ -732,6 +735,8 @@ class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
 class SqlInstancesStartExternalSyncRequest(proto.Message):
     r"""Instance start external sync request.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -745,6 +750,7 @@ class SqlInstancesStartExternalSyncRequest(proto.Message):
         mysql_sync_config (google.cloud.sql_v1.types.MySqlSyncConfig):
             MySQL-specific settings for start external
             sync.
+            This field is a member of `oneof`_ ``sync_config``.
     """
 
     instance = proto.Field(
@@ -1268,6 +1274,7 @@ class DatabaseInstance(proto.Message):
             -  the proactive database wellness job for OOD.
             -  Readers:
             -  the proactive database wellness job
+            This field is a member of `oneof`_ ``_out_of_disk_report``.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time when the instance was created in `RFC
             3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
@@ -1326,6 +1333,7 @@ class DatabaseInstance(proto.Message):
             schedule_deadline_time (google.protobuf.timestamp_pb2.Timestamp):
                 Maintenance cannot be rescheduled to start
                 beyond this deadline.
+                This field is a member of `oneof`_ ``_schedule_deadline_time``.
         """
 
         start_time = proto.Field(
@@ -1361,6 +1369,7 @@ class DatabaseInstance(proto.Message):
                 -  the proactive database wellness job for OOD.
                 -  Readers:
                 -  the proactive database wellness job
+                This field is a member of `oneof`_ ``_sql_out_of_disk_state``.
             sql_min_recommended_increase_size_gb (int):
                 The minimum recommended increase size in GigaBytes This
                 field is consumed by the frontend
@@ -1368,6 +1377,7 @@ class DatabaseInstance(proto.Message):
                 -  Writers:
                 -  the proactive database wellness job for OOD.
                 -  Readers:
+                This field is a member of `oneof`_ ``_sql_min_recommended_increase_size_gb``.
         """
         class SqlOutOfDiskState(proto.Enum):
             r"""This enum lists all possible states regarding out-of-disk

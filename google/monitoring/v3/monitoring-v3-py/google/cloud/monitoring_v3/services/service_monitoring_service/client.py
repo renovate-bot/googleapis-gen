@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.monitoring_v3.services.service_monitoring_service import pagers
 from google.cloud.monitoring_v3.types import service
 from google.cloud.monitoring_v3.types import service as gm_service
@@ -356,7 +358,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             *,
             parent: str = None,
             service: gm_service.Service = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gm_service.Service:
@@ -446,7 +448,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.GetServiceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.Service:
@@ -528,7 +530,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.ListServicesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesPager:
@@ -620,7 +622,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.UpdateServiceRequest, dict] = None,
             *,
             service: gm_service.Service = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gm_service.Service:
@@ -698,7 +700,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.DeleteServiceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -768,7 +770,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             *,
             parent: str = None,
             service_level_objective: service.ServiceLevelObjective = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.ServiceLevelObjective:
@@ -868,7 +870,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.GetServiceLevelObjectiveRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.ServiceLevelObjective:
@@ -958,7 +960,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.ListServiceLevelObjectivesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServiceLevelObjectivesPager:
@@ -1050,7 +1052,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.UpdateServiceLevelObjectiveRequest, dict] = None,
             *,
             service_level_objective: service.ServiceLevelObjective = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.ServiceLevelObjective:
@@ -1137,7 +1139,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
             request: Union[service_service.DeleteServiceLevelObjectiveRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

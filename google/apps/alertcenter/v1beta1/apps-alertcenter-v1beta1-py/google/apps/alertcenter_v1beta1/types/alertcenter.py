@@ -326,9 +326,13 @@ class Settings(proto.Message):
         Workspace Alert
         Notification <https://developers.google.com/admin-sdk/alertcenter/guides/notifications>`__.
 
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             cloud_pubsub_topic (google.apps.alertcenter_v1beta1.types.Settings.Notification.CloudPubsubTopic):
                 A Google Cloud Pub/sub topic destination.
+                This field is a member of `oneof`_ ``destination``.
         """
         class PayloadFormat(proto.Enum):
             r"""The format of the payload."""

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
@@ -154,10 +156,10 @@ class PublisherAsyncClient:
         )
 
     async def create_topic(self,
-            request: pubsub.Topic = None,
+            request: Union[pubsub.Topic, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Topic:
@@ -166,7 +168,7 @@ class PublisherAsyncClient:
         (https://cloud.google.com/pubsub/docs/admin#resource_names).
 
         Args:
-            request (:class:`google.pubsub_v1.types.Topic`):
+            request (Union[google.pubsub_v1.types.Topic, dict]):
                 The request object. A topic resource.
             name (:class:`str`):
                 Required. The name of the topic. It must have the format
@@ -240,9 +242,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_topic(self,
-            request: pubsub.UpdateTopicRequest = None,
+            request: Union[pubsub.UpdateTopicRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Topic:
@@ -250,7 +252,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         properties of a topic are not modifiable.
 
         Args:
-            request (:class:`google.pubsub_v1.types.UpdateTopicRequest`):
+            request (Union[google.pubsub_v1.types.UpdateTopicRequest, dict]):
                 The request object. Request for the UpdateTopic method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -299,11 +301,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def publish(self,
-            request: pubsub.PublishRequest = None,
+            request: Union[pubsub.PublishRequest, dict] = None,
             *,
             topic: str = None,
             messages: Sequence[pubsub.PubsubMessage] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.PublishResponse:
@@ -311,7 +313,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         the topic does not exist.
 
         Args:
-            request (:class:`google.pubsub_v1.types.PublishRequest`):
+            request (Union[google.pubsub_v1.types.PublishRequest, dict]):
                 The request object. Request for the Publish method.
             topic (:class:`str`):
                 Required. The messages in the request will be published
@@ -393,17 +395,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_topic(self,
-            request: pubsub.GetTopicRequest = None,
+            request: Union[pubsub.GetTopicRequest, dict] = None,
             *,
             topic: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.Topic:
         r"""Gets the configuration of a topic.
 
         Args:
-            request (:class:`google.pubsub_v1.types.GetTopicRequest`):
+            request (Union[google.pubsub_v1.types.GetTopicRequest, dict]):
                 The request object. Request for the GetTopic method.
             topic (:class:`str`):
                 Required. The name of the topic to get. Format is
@@ -473,17 +475,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_topics(self,
-            request: pubsub.ListTopicsRequest = None,
+            request: Union[pubsub.ListTopicsRequest, dict] = None,
             *,
             project: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTopicsAsyncPager:
         r"""Lists matching topics.
 
         Args:
-            request (:class:`google.pubsub_v1.types.ListTopicsRequest`):
+            request (Union[google.pubsub_v1.types.ListTopicsRequest, dict]):
                 The request object. Request for the `ListTopics` method.
             project (:class:`str`):
                 Required. The name of the project in which to list
@@ -566,10 +568,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_topic_subscriptions(self,
-            request: pubsub.ListTopicSubscriptionsRequest = None,
+            request: Union[pubsub.ListTopicSubscriptionsRequest, dict] = None,
             *,
             topic: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTopicSubscriptionsAsyncPager:
@@ -577,7 +579,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         topic.
 
         Args:
-            request (:class:`google.pubsub_v1.types.ListTopicSubscriptionsRequest`):
+            request (Union[google.pubsub_v1.types.ListTopicSubscriptionsRequest, dict]):
                 The request object. Request for the
                 `ListTopicSubscriptions` method.
             topic (:class:`str`):
@@ -662,10 +664,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_topic_snapshots(self,
-            request: pubsub.ListTopicSnapshotsRequest = None,
+            request: Union[pubsub.ListTopicSnapshotsRequest, dict] = None,
             *,
             topic: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTopicSnapshotsAsyncPager:
@@ -677,7 +679,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         in an existing subscription to the state captured by a snapshot.
 
         Args:
-            request (:class:`google.pubsub_v1.types.ListTopicSnapshotsRequest`):
+            request (Union[google.pubsub_v1.types.ListTopicSnapshotsRequest, dict]):
                 The request object. Request for the `ListTopicSnapshots`
                 method.
             topic (:class:`str`):
@@ -762,10 +764,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_topic(self,
-            request: pubsub.DeleteTopicRequest = None,
+            request: Union[pubsub.DeleteTopicRequest, dict] = None,
             *,
             topic: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -777,7 +779,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         field is set to ``_deleted-topic_``.
 
         Args:
-            request (:class:`google.pubsub_v1.types.DeleteTopicRequest`):
+            request (Union[google.pubsub_v1.types.DeleteTopicRequest, dict]):
                 The request object. Request for the `DeleteTopic`
                 method.
             topic (:class:`str`):
@@ -839,9 +841,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def detach_subscription(self,
-            request: pubsub.DetachSubscriptionRequest = None,
+            request: Union[pubsub.DetachSubscriptionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pubsub.DetachSubscriptionResponse:
@@ -852,7 +854,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         will stop.
 
         Args:
-            request (:class:`google.pubsub_v1.types.DetachSubscriptionRequest`):
+            request (Union[google.pubsub_v1.types.DetachSubscriptionRequest, dict]):
                 The request object. Request for the DetachSubscription
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -907,7 +909,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         self,
         request: iam_policy_pb2.SetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -1015,7 +1017,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         self,
         request: iam_policy_pb2.GetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -1124,7 +1126,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         self,
         request: iam_policy_pb2.TestIamPermissionsRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:

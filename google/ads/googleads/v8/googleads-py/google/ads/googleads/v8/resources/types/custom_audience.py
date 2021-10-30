@@ -102,6 +102,13 @@ class CustomAudienceMember(proto.Message):
     PLACE_CATEGORY or APP. It can only be created or removed but not
     changed.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         member_type (google.ads.googleads.v8.enums.types.CustomAudienceMemberTypeEnum.CustomAudienceMemberType):
             The type of custom audience member, KEYWORD, URL,
@@ -112,16 +119,20 @@ class CustomAudienceMember(proto.Message):
             width characters such as Chinese, Japanese, or
             Korean, are allowed 40 characters, which
             describes the user's interests or actions.
+            This field is a member of `oneof`_ ``value``.
         url (str):
             An HTTP URL, protocol-included — at most 2048
             characters, which includes contents users have
             interests in.
+            This field is a member of `oneof`_ ``value``.
         place_category (int):
             A place type described by a place category
             users visit.
+            This field is a member of `oneof`_ ``value``.
         app (str):
             A package name of Android apps which users
             installed such as com.google.example.
+            This field is a member of `oneof`_ ``value``.
     """
 
     member_type = proto.Field(

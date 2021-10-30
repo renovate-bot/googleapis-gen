@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.devtools.cloudbuild_v1.services.cloud_build import pagers
@@ -439,7 +441,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             build: cloudbuild.Build = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -548,7 +550,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.Build:
@@ -645,7 +647,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBuildsPager:
@@ -732,7 +734,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.Build:
@@ -825,7 +827,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -961,7 +963,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             name: str = None,
             approval_result: cloudbuild.ApprovalResult = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1081,7 +1083,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             trigger: cloudbuild.BuildTrigger = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.BuildTrigger:
@@ -1159,7 +1161,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             trigger_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.BuildTrigger:
@@ -1238,7 +1240,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             request: Union[cloudbuild.ListBuildTriggersRequest, dict] = None,
             *,
             project_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBuildTriggersPager:
@@ -1319,7 +1321,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             project_id: str = None,
             trigger_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1387,7 +1389,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             project_id: str = None,
             trigger_id: str = None,
             trigger: cloudbuild.BuildTrigger = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.BuildTrigger:
@@ -1473,7 +1475,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             project_id: str = None,
             trigger_id: str = None,
             source: cloudbuild.RepoSource = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1584,7 +1586,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
     def receive_trigger_webhook(self,
             request: Union[cloudbuild.ReceiveTriggerWebhookRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.ReceiveTriggerWebhookResponse:
@@ -1637,7 +1639,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             parent: str = None,
             worker_pool: cloudbuild.WorkerPool = None,
             worker_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1758,7 +1760,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             request: Union[cloudbuild.GetWorkerPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloudbuild.WorkerPool:
@@ -1847,7 +1849,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             request: Union[cloudbuild.DeleteWorkerPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1944,7 +1946,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             *,
             worker_pool: cloudbuild.WorkerPool = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -2055,7 +2057,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
             request: Union[cloudbuild.ListWorkerPoolsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWorkerPoolsPager:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.osconfig.agentendpoint_v1.types import agentendpoint
 from google.cloud.osconfig.agentendpoint_v1.types import inventory as gcoa_inventory
@@ -146,11 +148,11 @@ class AgentEndpointServiceAsyncClient:
         )
 
     def receive_task_notification(self,
-            request: agentendpoint.ReceiveTaskNotificationRequest = None,
+            request: Union[agentendpoint.ReceiveTaskNotificationRequest, dict] = None,
             *,
             instance_id_token: str = None,
             agent_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[agentendpoint.ReceiveTaskNotificationResponse]]:
@@ -158,7 +160,7 @@ class AgentEndpointServiceAsyncClient:
         notifications.
 
         Args:
-            request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReceiveTaskNotificationRequest`):
+            request (Union[google.cloud.osconfig.agentendpoint_v1.types.ReceiveTaskNotificationRequest, dict]):
                 The request object. A request message to receive task
                 notifications.
             instance_id_token (:class:`str`):
@@ -239,10 +241,10 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def start_next_task(self,
-            request: agentendpoint.StartNextTaskRequest = None,
+            request: Union[agentendpoint.StartNextTaskRequest, dict] = None,
             *,
             instance_id_token: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.StartNextTaskResponse:
@@ -250,7 +252,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         task info.
 
         Args:
-            request (:class:`google.cloud.osconfig.agentendpoint_v1.types.StartNextTaskRequest`):
+            request (Union[google.cloud.osconfig.agentendpoint_v1.types.StartNextTaskRequest, dict]):
                 The request object. A request message for signaling the
                 start of a task execution.
             instance_id_token (:class:`str`):
@@ -311,12 +313,12 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def report_task_progress(self,
-            request: agentendpoint.ReportTaskProgressRequest = None,
+            request: Union[agentendpoint.ReportTaskProgressRequest, dict] = None,
             *,
             instance_id_token: str = None,
             task_id: str = None,
             task_type: tasks.TaskType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportTaskProgressResponse:
@@ -324,7 +326,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         execution.
 
         Args:
-            request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReportTaskProgressRequest`):
+            request (Union[google.cloud.osconfig.agentendpoint_v1.types.ReportTaskProgressRequest, dict]):
                 The request object. A request message for reporting the
                 progress of current task.
             instance_id_token (:class:`str`):
@@ -408,13 +410,13 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def report_task_complete(self,
-            request: agentendpoint.ReportTaskCompleteRequest = None,
+            request: Union[agentendpoint.ReportTaskCompleteRequest, dict] = None,
             *,
             instance_id_token: str = None,
             task_id: str = None,
             task_type: tasks.TaskType = None,
             error_message: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportTaskCompleteResponse:
@@ -422,7 +424,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         optionally returns the next task.
 
         Args:
-            request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReportTaskCompleteRequest`):
+            request (Union[google.cloud.osconfig.agentendpoint_v1.types.ReportTaskCompleteRequest, dict]):
                 The request object. A request message for signaling the
                 completion of a task execution.
             instance_id_token (:class:`str`):
@@ -514,19 +516,19 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def register_agent(self,
-            request: agentendpoint.RegisterAgentRequest = None,
+            request: Union[agentendpoint.RegisterAgentRequest, dict] = None,
             *,
             instance_id_token: str = None,
             agent_version: str = None,
             supported_capabilities: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.RegisterAgentResponse:
         r"""Registers the agent running on the VM.
 
         Args:
-            request (:class:`google.cloud.osconfig.agentendpoint_v1.types.RegisterAgentRequest`):
+            request (Union[google.cloud.osconfig.agentendpoint_v1.types.RegisterAgentRequest, dict]):
                 The request object. The request message for registering
                 the agent.
             instance_id_token (:class:`str`):
@@ -604,19 +606,19 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def report_inventory(self,
-            request: agentendpoint.ReportInventoryRequest = None,
+            request: Union[agentendpoint.ReportInventoryRequest, dict] = None,
             *,
             instance_id_token: str = None,
             inventory_checksum: str = None,
             inventory: gcoa_inventory.Inventory = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportInventoryResponse:
         r"""Reports the VMs current inventory.
 
         Args:
-            request (:class:`google.cloud.osconfig.agentendpoint_v1.types.ReportInventoryRequest`):
+            request (Union[google.cloud.osconfig.agentendpoint_v1.types.ReportInventoryRequest, dict]):
                 The request object. The request message for having the
                 agent report inventory.
             instance_id_token (:class:`str`):

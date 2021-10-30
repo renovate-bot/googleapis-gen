@@ -115,6 +115,13 @@ class RunQueryRequest(proto.Message):
     r"""The request for
     [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         project_id (str):
             Required. The ID of the project against which
@@ -129,8 +136,10 @@ class RunQueryRequest(proto.Message):
             The options for this query.
         query (google.cloud.datastore_v1.types.Query):
             The query to run.
+            This field is a member of `oneof`_ ``query_type``.
         gql_query (google.cloud.datastore_v1.types.GqlQuery):
             The GQL query to run.
+            This field is a member of `oneof`_ ``query_type``.
     """
 
     project_id = proto.Field(
@@ -258,6 +267,9 @@ class CommitRequest(proto.Message):
     r"""The request for
     [Datastore.Commit][google.datastore.v1.Datastore.Commit].
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         project_id (str):
             Required. The ID of the project against which
@@ -269,6 +281,7 @@ class CommitRequest(proto.Message):
             The identifier of the transaction associated with the
             commit. A transaction identifier is returned by a call to
             [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+            This field is a member of `oneof`_ ``transaction_selector``.
         mutations (Sequence[google.cloud.datastore_v1.types.Mutation]):
             The mutations to perform.
 
@@ -422,28 +435,40 @@ class ReserveIdsResponse(proto.Message):
 class Mutation(proto.Message):
     r"""A mutation to apply to an entity.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         insert (google.cloud.datastore_v1.types.Entity):
             The entity to insert. The entity must not
             already exist. The entity key's final path
             element may be incomplete.
+            This field is a member of `oneof`_ ``operation``.
         update (google.cloud.datastore_v1.types.Entity):
             The entity to update. The entity must already
             exist. Must have a complete key path.
+            This field is a member of `oneof`_ ``operation``.
         upsert (google.cloud.datastore_v1.types.Entity):
             The entity to upsert. The entity may or may
             not already exist. The entity key's final path
             element may be incomplete.
+            This field is a member of `oneof`_ ``operation``.
         delete (google.cloud.datastore_v1.types.Key):
             The key of the entity to delete. The entity
             may or may not already exist. Must have a
             complete key path and must not be reserved/read-
             only.
+            This field is a member of `oneof`_ ``operation``.
         base_version (int):
             The version of the entity that this mutation
             is being applied to. If this does not match the
             current version on the server, the mutation
             conflicts.
+            This field is a member of `oneof`_ ``conflict_detection_strategy``.
     """
 
     insert = proto.Field(
@@ -517,14 +542,23 @@ class MutationResult(proto.Message):
 class ReadOptions(proto.Message):
     r"""The options shared by read requests.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         read_consistency (google.cloud.datastore_v1.types.ReadOptions.ReadConsistency):
             The non-transactional read consistency to use. Cannot be set
             to ``STRONG`` for global queries.
+            This field is a member of `oneof`_ ``consistency_type``.
         transaction (bytes):
             The identifier of the transaction in which to read. A
             transaction identifier is returned by a call to
             [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+            This field is a member of `oneof`_ ``consistency_type``.
     """
     class ReadConsistency(proto.Enum):
         r"""The possible values for read consistencies."""
@@ -554,12 +588,21 @@ class TransactionOptions(proto.Message):
     [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
     in read requests.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         read_write (google.cloud.datastore_v1.types.TransactionOptions.ReadWrite):
             The transaction should allow both reads and
             writes.
+            This field is a member of `oneof`_ ``mode``.
         read_only (google.cloud.datastore_v1.types.TransactionOptions.ReadOnly):
             The transaction should only allow reads.
+            This field is a member of `oneof`_ ``mode``.
     """
 
     class ReadWrite(proto.Message):

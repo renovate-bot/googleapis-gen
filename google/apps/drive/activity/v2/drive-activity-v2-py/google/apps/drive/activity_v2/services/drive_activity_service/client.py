@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.apps.drive.activity_v2.services.drive_activity_service import pagers
 from google.apps.drive.activity_v2.types import query_drive_activity_request
 from google.apps.drive.activity_v2.types import query_drive_activity_response
@@ -328,7 +330,7 @@ class DriveActivityServiceClient(metaclass=DriveActivityServiceClientMeta):
     def query_drive_activity(self,
             request: Union[query_drive_activity_request.QueryDriveActivityRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.QueryDriveActivityPager:

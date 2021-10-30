@@ -61,6 +61,13 @@ class GetDocumentRequest(proto.Message):
     r"""The request for
     [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Required. The resource name of the Document to get. In the
@@ -74,10 +81,12 @@ class GetDocumentRequest(proto.Message):
             the response.
         transaction (bytes):
             Reads the document in a transaction.
+            This field is a member of `oneof`_ ``consistency_selector``.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads the version of the document at the
             given time. This may not be older than 270
             seconds.
+            This field is a member of `oneof`_ ``consistency_selector``.
     """
 
     name = proto.Field(
@@ -105,6 +114,13 @@ class GetDocumentRequest(proto.Message):
 class ListDocumentsRequest(proto.Message):
     r"""The request for
     [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
+
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
 
     Attributes:
         parent (str):
@@ -134,9 +150,11 @@ class ListDocumentsRequest(proto.Message):
             the response.
         transaction (bytes):
             Reads documents in a transaction.
+            This field is a member of `oneof`_ ``consistency_selector``.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads documents as they were at the given
             time. This may not be older than 270 seconds.
+            This field is a member of `oneof`_ ``consistency_selector``.
         show_missing (bool):
             If the list should show missing documents. A missing
             document is a document that does not exist but has
@@ -354,6 +372,13 @@ class BatchGetDocumentsRequest(proto.Message):
     r"""The request for
     [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         database (str):
             Required. The database name. In the format:
@@ -372,14 +397,17 @@ class BatchGetDocumentsRequest(proto.Message):
             the response.
         transaction (bytes):
             Reads documents in a transaction.
+            This field is a member of `oneof`_ ``consistency_selector``.
         new_transaction (google.cloud.firestore_v1.types.TransactionOptions):
             Starts a new transaction and reads the
             documents. Defaults to a read-only transaction.
             The new transaction ID will be returned as the
             first response in the stream.
+            This field is a member of `oneof`_ ``consistency_selector``.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads documents as they were at the given
             time. This may not be older than 270 seconds.
+            This field is a member of `oneof`_ ``consistency_selector``.
     """
 
     database = proto.Field(
@@ -418,13 +446,22 @@ class BatchGetDocumentsResponse(proto.Message):
     r"""The streamed response for
     [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         found (google.cloud.firestore_v1.types.Document):
             A document that was requested.
+            This field is a member of `oneof`_ ``result``.
         missing (str):
             A document name that was requested but does not exist. In
             the format:
             ``projects/{project_id}/databases/{database_id}/documents/{document_path}``.
+            This field is a member of `oneof`_ ``result``.
         transaction (bytes):
             The transaction that was started as part of this request.
             Will only be set in the first response, and only if
@@ -582,6 +619,13 @@ class RunQueryRequest(proto.Message):
     r"""The request for
     [Firestore.RunQuery][google.firestore.v1.Firestore.RunQuery].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             Required. The parent resource name. In the format:
@@ -593,16 +637,20 @@ class RunQueryRequest(proto.Message):
             ``projects/my-project/databases/my-database/documents/chatrooms/my-chatroom``
         structured_query (google.cloud.firestore_v1.types.StructuredQuery):
             A structured query.
+            This field is a member of `oneof`_ ``query_type``.
         transaction (bytes):
             Reads documents in a transaction.
+            This field is a member of `oneof`_ ``consistency_selector``.
         new_transaction (google.cloud.firestore_v1.types.TransactionOptions):
             Starts a new transaction and reads the
             documents. Defaults to a read-only transaction.
             The new transaction ID will be returned as the
             first response in the stream.
+            This field is a member of `oneof`_ ``consistency_selector``.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Reads documents as they were at the given
             time. This may not be older than 270 seconds.
+            This field is a member of `oneof`_ ``consistency_selector``.
     """
 
     parent = proto.Field(
@@ -687,6 +735,9 @@ class PartitionQueryRequest(proto.Message):
     r"""The request for
     [Firestore.PartitionQuery][google.firestore.v1.Firestore.PartitionQuery].
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         parent (str):
             Required. The parent resource name. In the format:
@@ -699,6 +750,7 @@ class PartitionQueryRequest(proto.Message):
             descendants and be ordered by name ascending.
             Other filters, order bys, limits, offsets, and
             start/end cursors are not supported.
+            This field is a member of `oneof`_ ``query_type``.
         partition_count (int):
             The desired maximum number of partition
             points. The partitions may be returned across
@@ -931,15 +983,24 @@ class ListenRequest(proto.Message):
     r"""A request for
     [Firestore.Listen][google.firestore.v1.Firestore.Listen]
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         database (str):
             Required. The database name. In the format:
             ``projects/{project_id}/databases/{database_id}``.
         add_target (google.cloud.firestore_v1.types.Target):
             A target to add to this stream.
+            This field is a member of `oneof`_ ``target_change``.
         remove_target (int):
             The ID of a target to remove from this
             stream.
+            This field is a member of `oneof`_ ``target_change``.
         labels (Sequence[google.cloud.firestore_v1.types.ListenRequest.LabelsEntry]):
             Labels associated with this target change.
     """
@@ -970,17 +1031,28 @@ class ListenResponse(proto.Message):
     r"""The response for
     [Firestore.Listen][google.firestore.v1.Firestore.Listen].
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         target_change (google.cloud.firestore_v1.types.TargetChange):
             Targets have changed.
+            This field is a member of `oneof`_ ``response_type``.
         document_change (google.cloud.firestore_v1.types.DocumentChange):
             A [Document][google.firestore.v1.Document] has changed.
+            This field is a member of `oneof`_ ``response_type``.
         document_delete (google.cloud.firestore_v1.types.DocumentDelete):
             A [Document][google.firestore.v1.Document] has been deleted.
+            This field is a member of `oneof`_ ``response_type``.
         document_remove (google.cloud.firestore_v1.types.DocumentRemove):
             A [Document][google.firestore.v1.Document] has been removed
             from a target (because it is no longer relevant to that
             target).
+            This field is a member of `oneof`_ ``response_type``.
         filter (google.cloud.firestore_v1.types.ExistenceFilter):
             A filter to apply to the set of documents
             previously returned for the given target.
@@ -988,6 +1060,7 @@ class ListenResponse(proto.Message):
             Returned when documents may have been removed
             from the given target, but the exact documents
             are unknown.
+            This field is a member of `oneof`_ ``response_type``.
     """
 
     target_change = proto.Field(
@@ -1025,12 +1098,21 @@ class ListenResponse(proto.Message):
 class Target(proto.Message):
     r"""A specification of a set of documents to listen to.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         query (google.cloud.firestore_v1.types.Target.QueryTarget):
             A target specified by a query.
+            This field is a member of `oneof`_ ``target_type``.
         documents (google.cloud.firestore_v1.types.Target.DocumentsTarget):
             A target specified by a set of document
             names.
+            This field is a member of `oneof`_ ``target_type``.
         resume_token (bytes):
             A resume token from a prior
             [TargetChange][google.firestore.v1.TargetChange] for an
@@ -1038,11 +1120,13 @@ class Target(proto.Message):
 
             Using a resume token with a different target is unsupported
             and may fail.
+            This field is a member of `oneof`_ ``resume_type``.
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Start listening after a specific ``read_time``.
 
             The client must know the state of matching documents at this
             time.
+            This field is a member of `oneof`_ ``resume_type``.
         target_id (int):
             The target ID that identifies the target on
             the stream. Must be a positive number and non-
@@ -1072,6 +1156,8 @@ class Target(proto.Message):
     class QueryTarget(proto.Message):
         r"""A target specified by a query.
 
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
         Attributes:
             parent (str):
                 The parent resource name. In the format:
@@ -1083,6 +1169,7 @@ class Target(proto.Message):
                 ``projects/my-project/databases/my-database/documents/chatrooms/my-chatroom``
             structured_query (google.cloud.firestore_v1.types.StructuredQuery):
                 A structured query.
+                This field is a member of `oneof`_ ``query_type``.
         """
 
         parent = proto.Field(

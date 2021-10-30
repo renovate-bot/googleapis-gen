@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -164,20 +166,20 @@ class BigtableInstanceAdminAsyncClient:
         )
 
     async def create_instance(self,
-            request: bigtable_instance_admin.CreateInstanceRequest = None,
+            request: Union[bigtable_instance_admin.CreateInstanceRequest, dict] = None,
             *,
             parent: str = None,
             instance_id: str = None,
             instance: gba_instance.Instance = None,
             clusters: Sequence[bigtable_instance_admin.CreateInstanceRequest.ClustersEntry] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Create an instance within a project.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.CreateInstanceRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.CreateInstanceRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.CreateInstance.
             parent (:class:`str`):
@@ -289,17 +291,17 @@ class BigtableInstanceAdminAsyncClient:
         return response
 
     async def get_instance(self,
-            request: bigtable_instance_admin.GetInstanceRequest = None,
+            request: Union[bigtable_instance_admin.GetInstanceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> instance.Instance:
         r"""Gets information about an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.GetInstanceRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.GetInstanceRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.GetInstance.
             name (:class:`str`):
@@ -375,17 +377,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def list_instances(self,
-            request: bigtable_instance_admin.ListInstancesRequest = None,
+            request: Union[bigtable_instance_admin.ListInstancesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bigtable_instance_admin.ListInstancesResponse:
         r"""Lists information about instances in a project.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.ListInstancesRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.ListInstancesRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.ListInstances.
             parent (:class:`str`):
@@ -458,9 +460,9 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def update_instance(self,
-            request: instance.Instance = None,
+            request: Union[instance.Instance, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> instance.Instance:
@@ -470,7 +472,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         PartialUpdateInstance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.Instance`):
+            request (Union[google.cloud.bigtable_admin_v2.types.Instance, dict]):
                 The request object. A collection of Bigtable
                 [Tables][google.bigtable.admin.v2.Table] and the
                 resources that serve them. All tables in an instance are
@@ -530,11 +532,11 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def partial_update_instance(self,
-            request: bigtable_instance_admin.PartialUpdateInstanceRequest = None,
+            request: Union[bigtable_instance_admin.PartialUpdateInstanceRequest, dict] = None,
             *,
             instance: gba_instance.Instance = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -543,7 +545,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         preferred way to update an Instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.PartialUpdateInstanceRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.PartialUpdateInstanceRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.PartialUpdateInstance.
             instance (:class:`google.cloud.bigtable_admin_v2.types.Instance`):
@@ -638,17 +640,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def delete_instance(self,
-            request: bigtable_instance_admin.DeleteInstanceRequest = None,
+            request: Union[bigtable_instance_admin.DeleteInstanceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Delete an instance from a project.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.DeleteInstanceRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.DeleteInstanceRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.DeleteInstance.
             name (:class:`str`):
@@ -705,19 +707,19 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         )
 
     async def create_cluster(self,
-            request: bigtable_instance_admin.CreateClusterRequest = None,
+            request: Union[bigtable_instance_admin.CreateClusterRequest, dict] = None,
             *,
             parent: str = None,
             cluster_id: str = None,
             cluster: instance.Cluster = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Creates a cluster within an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.CreateClusterRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.CreateClusterRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.CreateCluster.
             parent (:class:`str`):
@@ -815,17 +817,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def get_cluster(self,
-            request: bigtable_instance_admin.GetClusterRequest = None,
+            request: Union[bigtable_instance_admin.GetClusterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> instance.Cluster:
         r"""Gets information about a cluster.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.GetClusterRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.GetClusterRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.GetCluster.
             name (:class:`str`):
@@ -900,17 +902,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def list_clusters(self,
-            request: bigtable_instance_admin.ListClustersRequest = None,
+            request: Union[bigtable_instance_admin.ListClustersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> bigtable_instance_admin.ListClustersResponse:
         r"""Lists information about clusters in an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.ListClustersRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.ListClustersRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.ListClusters.
             parent (:class:`str`):
@@ -985,16 +987,16 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def update_cluster(self,
-            request: instance.Cluster = None,
+            request: Union[instance.Cluster, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates a cluster within an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.Cluster`):
+            request (Union[google.cloud.bigtable_admin_v2.types.Cluster, dict]):
                 The request object. A resizable group of nodes in a
                 particular cloud location, capable of serving all
                 [Tables][google.bigtable.admin.v2.Table] in the parent
@@ -1061,17 +1063,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def delete_cluster(self,
-            request: bigtable_instance_admin.DeleteClusterRequest = None,
+            request: Union[bigtable_instance_admin.DeleteClusterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a cluster from an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.DeleteClusterRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.DeleteClusterRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.DeleteCluster.
             name (:class:`str`):
@@ -1128,19 +1130,19 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         )
 
     async def create_app_profile(self,
-            request: bigtable_instance_admin.CreateAppProfileRequest = None,
+            request: Union[bigtable_instance_admin.CreateAppProfileRequest, dict] = None,
             *,
             parent: str = None,
             app_profile_id: str = None,
             app_profile: instance.AppProfile = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> instance.AppProfile:
         r"""Creates an app profile within an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.CreateAppProfileRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.CreateAppProfileRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.CreateAppProfile.
             parent (:class:`str`):
@@ -1227,17 +1229,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def get_app_profile(self,
-            request: bigtable_instance_admin.GetAppProfileRequest = None,
+            request: Union[bigtable_instance_admin.GetAppProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> instance.AppProfile:
         r"""Gets information about an app profile.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.GetAppProfileRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.GetAppProfileRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.GetAppProfile.
             name (:class:`str`):
@@ -1311,17 +1313,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def list_app_profiles(self,
-            request: bigtable_instance_admin.ListAppProfilesRequest = None,
+            request: Union[bigtable_instance_admin.ListAppProfilesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAppProfilesAsyncPager:
         r"""Lists information about app profiles in an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.ListAppProfilesRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.ListAppProfilesRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.ListAppProfiles.
             parent (:class:`str`):
@@ -1409,18 +1411,18 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def update_app_profile(self,
-            request: bigtable_instance_admin.UpdateAppProfileRequest = None,
+            request: Union[bigtable_instance_admin.UpdateAppProfileRequest, dict] = None,
             *,
             app_profile: instance.AppProfile = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates an app profile within an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.UpdateAppProfileRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.UpdateAppProfileRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.UpdateAppProfile.
             app_profile (:class:`google.cloud.bigtable_admin_v2.types.AppProfile`):
@@ -1512,17 +1514,17 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def delete_app_profile(self,
-            request: bigtable_instance_admin.DeleteAppProfileRequest = None,
+            request: Union[bigtable_instance_admin.DeleteAppProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes an app profile from an instance.
 
         Args:
-            request (:class:`google.cloud.bigtable_admin_v2.types.DeleteAppProfileRequest`):
+            request (Union[google.cloud.bigtable_admin_v2.types.DeleteAppProfileRequest, dict]):
                 The request object. Request message for
                 BigtableInstanceAdmin.DeleteAppProfile.
             name (:class:`str`):
@@ -1579,10 +1581,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         )
 
     async def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1591,7 +1593,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         but does not have a policy set.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -1718,10 +1720,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1729,7 +1731,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         resource. Replaces any existing policy.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -1849,11 +1851,11 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -1861,7 +1863,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         specified instance resource.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):

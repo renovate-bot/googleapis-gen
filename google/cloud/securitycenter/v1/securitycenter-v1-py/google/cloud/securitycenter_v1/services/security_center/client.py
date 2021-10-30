@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.securitycenter_v1.services.security_center import pagers
@@ -423,7 +425,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             *,
             parent: str = None,
             source: gcs_source.Source = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_source.Source:
@@ -514,7 +516,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             parent: str = None,
             finding_id: str = None,
             finding: gcs_finding.Finding = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_finding.Finding:
@@ -622,7 +624,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             parent: str = None,
             config_id: str = None,
             notification_config: gcs_notification_config.NotificationConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_notification_config.NotificationConfig:
@@ -725,7 +727,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.DeleteNotificationConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -792,7 +794,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -922,7 +924,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.GetNotificationConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> notification_config.NotificationConfig:
@@ -1002,7 +1004,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.GetOrganizationSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> organization_settings.OrganizationSettings:
@@ -1079,7 +1081,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.GetSourceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> source.Source:
@@ -1158,7 +1160,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
     def group_assets(self,
             request: Union[securitycenter_service.GroupAssetsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.GroupAssetsPager:
@@ -1229,7 +1231,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             *,
             parent: str = None,
             group_by: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.GroupFindingsPager:
@@ -1351,7 +1353,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
     def list_assets(self,
             request: Union[securitycenter_service.ListAssetsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAssetsPager:
@@ -1417,7 +1419,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
     def list_findings(self,
             request: Union[securitycenter_service.ListFindingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFindingsPager:
@@ -1489,7 +1491,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.ListNotificationConfigsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNotificationConfigsPager:
@@ -1577,7 +1579,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.ListSourcesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSourcesPager:
@@ -1664,7 +1666,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.RunAssetDiscoveryRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1758,7 +1760,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             name: str = None,
             state: finding.Finding.State = None,
             start_time: timestamp_pb2.Timestamp = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> finding.Finding:
@@ -1861,7 +1863,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1992,7 +1994,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -2078,7 +2080,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.UpdateFindingRequest, dict] = None,
             *,
             finding: gcs_finding.Finding = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_finding.Finding:
@@ -2167,7 +2169,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             *,
             notification_config: gcs_notification_config.NotificationConfig = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_notification_config.NotificationConfig:
@@ -2258,7 +2260,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.UpdateOrganizationSettingsRequest, dict] = None,
             *,
             organization_settings: gcs_organization_settings.OrganizationSettings = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_organization_settings.OrganizationSettings:
@@ -2334,7 +2336,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.UpdateSourceRequest, dict] = None,
             *,
             source: gcs_source.Source = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_source.Source:
@@ -2413,7 +2415,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             request: Union[securitycenter_service.UpdateSecurityMarksRequest, dict] = None,
             *,
             security_marks: gcs_security_marks.SecurityMarks = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcs_security_marks.SecurityMarks:

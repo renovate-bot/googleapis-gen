@@ -33,12 +33,15 @@ __protobuf__ = proto.module(
 class ExportErrorsConfig(proto.Message):
     r"""Configuration of destination for Export related errors.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_prefix (str):
             Google Cloud Storage path for import errors. This must be an
             empty, existing Cloud Storage bucket. Export errors will be
             written to a file in this bucket, one per line, as a
             JSON-encoded ``google.rpc.Status`` message.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     gcs_prefix = proto.Field(

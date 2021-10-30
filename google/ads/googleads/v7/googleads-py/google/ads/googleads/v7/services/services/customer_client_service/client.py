@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.resources.types import customer_client
 from google.ads.googleads.v7.services.types import customer_client_service
 from .transports.base import CustomerClientServiceTransport, DEFAULT_CLIENT_INFO
@@ -347,7 +349,7 @@ class CustomerClientServiceClient(metaclass=CustomerClientServiceClientMeta):
             request: Union[customer_client_service.GetCustomerClientRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_client.CustomerClient:

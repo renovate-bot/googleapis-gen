@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1.types import cloud_sql_flags
 from .transports.base import SqlFlagsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SqlFlagsServiceGrpcTransport
@@ -323,7 +325,7 @@ class SqlFlagsServiceClient(metaclass=SqlFlagsServiceClientMeta):
     def list(self,
             request: Union[cloud_sql_flags.SqlFlagsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_flags.FlagsListResponse:

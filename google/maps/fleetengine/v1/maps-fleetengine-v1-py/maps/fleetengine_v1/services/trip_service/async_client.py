@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -151,9 +153,9 @@ class TripServiceAsyncClient:
         )
 
     async def create_trip(self,
-            request: trip_api.CreateTripRequest = None,
+            request: Union[trip_api.CreateTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trips.Trip:
@@ -161,7 +163,7 @@ class TripServiceAsyncClient:
         new trip.
 
         Args:
-            request (:class:`maps.fleetengine_v1.types.CreateTripRequest`):
+            request (Union[maps.fleetengine_v1.types.CreateTripRequest, dict]):
                 The request object. CreateTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -210,16 +212,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_trip(self,
-            request: trip_api.GetTripRequest = None,
+            request: Union[trip_api.GetTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trips.Trip:
         r"""Get information about a single trip.
 
         Args:
-            request (:class:`maps.fleetengine_v1.types.GetTripRequest`):
+            request (Union[maps.fleetengine_v1.types.GetTripRequest, dict]):
                 The request object. GetTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -268,16 +270,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def report_billable_trip(self,
-            request: trip_api.ReportBillableTripRequest = None,
+            request: Union[trip_api.ReportBillableTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Report billable trip usage.
 
         Args:
-            request (:class:`maps.fleetengine_v1.types.ReportBillableTripRequest`):
+            request (Union[maps.fleetengine_v1.types.ReportBillableTripRequest, dict]):
                 The request object. ReportBillableTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -313,16 +315,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def search_trips(self,
-            request: trip_api.SearchTripsRequest = None,
+            request: Union[trip_api.SearchTripsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchTripsAsyncPager:
         r"""Get all the trips for a specific vehicle.
 
         Args:
-            request (:class:`maps.fleetengine_v1.types.SearchTripsRequest`):
+            request (Union[maps.fleetengine_v1.types.SearchTripsRequest, dict]):
                 The request object. SearchTrips request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -384,16 +386,16 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_trip(self,
-            request: trip_api.UpdateTripRequest = None,
+            request: Union[trip_api.UpdateTripRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> trips.Trip:
         r"""Updates trip data.
 
         Args:
-            request (:class:`maps.fleetengine_v1.types.UpdateTripRequest`):
+            request (Union[maps.fleetengine_v1.types.UpdateTripRequest, dict]):
                 The request object. UpdateTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

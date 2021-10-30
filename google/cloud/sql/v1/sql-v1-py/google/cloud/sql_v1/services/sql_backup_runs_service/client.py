@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1.services.sql_backup_runs_service import pagers
 from google.cloud.sql_v1.types import cloud_sql_backup_runs
 from google.cloud.sql_v1.types import cloud_sql_resources
@@ -326,7 +328,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
     def delete(self,
             request: Union[cloud_sql_backup_runs.SqlBackupRunsDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -376,7 +378,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
     def get(self,
             request: Union[cloud_sql_backup_runs.SqlBackupRunsGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_backup_runs.BackupRun:
@@ -422,7 +424,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
     def insert(self,
             request: Union[cloud_sql_backup_runs.SqlBackupRunsInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -472,7 +474,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
     def list(self,
             request: Union[cloud_sql_backup_runs.SqlBackupRunsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPager:

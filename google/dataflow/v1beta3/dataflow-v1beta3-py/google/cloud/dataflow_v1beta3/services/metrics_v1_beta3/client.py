@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.dataflow_v1beta3.services.metrics_v1_beta3 import pagers
 from google.cloud.dataflow_v1beta3.types import metrics
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -327,7 +329,7 @@ class MetricsV1Beta3Client(metaclass=MetricsV1Beta3ClientMeta):
     def get_job_metrics(self,
             request: Union[metrics.GetJobMetricsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> metrics.JobMetrics:
@@ -391,7 +393,7 @@ class MetricsV1Beta3Client(metaclass=MetricsV1Beta3ClientMeta):
     def get_job_execution_details(self,
             request: Union[metrics.GetJobExecutionDetailsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.GetJobExecutionDetailsPager:
@@ -454,7 +456,7 @@ class MetricsV1Beta3Client(metaclass=MetricsV1Beta3ClientMeta):
     def get_stage_execution_details(self,
             request: Union[metrics.GetStageExecutionDetailsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.GetStageExecutionDetailsPager:

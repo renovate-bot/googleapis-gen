@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, AsyncIterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.storage_v2.types import storage
 from .transports.base import StorageTransport, DEFAULT_CLIENT_INFO
@@ -146,19 +148,19 @@ class StorageAsyncClient:
         )
 
     def read_object(self,
-            request: storage.ReadObjectRequest = None,
+            request: Union[storage.ReadObjectRequest, dict] = None,
             *,
             bucket: str = None,
             object_: str = None,
             generation: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[storage.ReadObjectResponse]]:
         r"""Reads an object's data.
 
         Args:
-            request (:class:`google.storage_v2.types.ReadObjectRequest`):
+            request (Union[google.storage_v2.types.ReadObjectRequest, dict]):
                 The request object. Request message for ReadObject.
             bucket (:class:`str`):
                 The name of the bucket containing the
@@ -231,7 +233,7 @@ class StorageAsyncClient:
     async def write_object(self,
             requests: AsyncIterator[storage.WriteObjectRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.WriteObjectResponse:
@@ -296,9 +298,9 @@ class StorageAsyncClient:
         return response
 
     async def start_resumable_write(self,
-            request: storage.StartResumableWriteRequest = None,
+            request: Union[storage.StartResumableWriteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.StartResumableWriteResponse:
@@ -307,7 +309,7 @@ class StorageAsyncClient:
         operation becomes invalid, are service-dependent.
 
         Args:
-            request (:class:`google.storage_v2.types.StartResumableWriteRequest`):
+            request (Union[google.storage_v2.types.StartResumableWriteRequest, dict]):
                 The request object. Request message StartResumableWrite.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -342,10 +344,10 @@ class StorageAsyncClient:
         return response
 
     async def query_write_status(self,
-            request: storage.QueryWriteStatusRequest = None,
+            request: Union[storage.QueryWriteStatusRequest, dict] = None,
             *,
             upload_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.QueryWriteStatusResponse:
@@ -366,7 +368,7 @@ class StorageAsyncClient:
         non-decreasing.
 
         Args:
-            request (:class:`google.storage_v2.types.QueryWriteStatusRequest`):
+            request (Union[google.storage_v2.types.QueryWriteStatusRequest, dict]):
                 The request object. Request object for
                 `QueryWriteStatus`.
             upload_id (:class:`str`):

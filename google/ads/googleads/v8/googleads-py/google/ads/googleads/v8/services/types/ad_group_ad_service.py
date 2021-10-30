@@ -105,6 +105,13 @@ class AdGroupAdOperation(proto.Message):
     r"""A single operation (create, update, remove) on an ad group
     ad.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -114,14 +121,17 @@ class AdGroupAdOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.AdGroupAd):
             Create operation: No resource name is
             expected for the new ad.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.AdGroupAd):
             Update operation: The ad is expected to have
             a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed ad is
             expected, in this format:
 
             ``customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

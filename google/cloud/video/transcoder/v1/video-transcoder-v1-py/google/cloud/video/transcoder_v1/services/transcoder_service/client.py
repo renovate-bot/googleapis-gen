@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.video.transcoder_v1.services.transcoder_service import pagers
 from google.cloud.video.transcoder_v1.types import resources
 from google.cloud.video.transcoder_v1.types import services
@@ -358,7 +360,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             *,
             parent: str = None,
             job: resources.Job = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Job:
@@ -440,7 +442,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             request: Union[services.ListJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListJobsPager:
@@ -527,7 +529,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             request: Union[services.GetJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Job:
@@ -600,7 +602,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             request: Union[services.DeleteJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -668,7 +670,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             parent: str = None,
             job_template: resources.JobTemplate = None,
             job_template_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.JobTemplate:
@@ -765,7 +767,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             request: Union[services.ListJobTemplatesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListJobTemplatesPager:
@@ -852,7 +854,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             request: Union[services.GetJobTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.JobTemplate:
@@ -926,7 +928,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
             request: Union[services.DeleteJobTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

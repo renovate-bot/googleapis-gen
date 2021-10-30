@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.privatecatalog_v1beta1.services.private_catalog import pagers
 from google.cloud.privatecatalog_v1beta1.types import private_catalog
 from .transports.base import PrivateCatalogTransport, DEFAULT_CLIENT_INFO
@@ -379,7 +381,7 @@ class PrivateCatalogClient(metaclass=PrivateCatalogClientMeta):
     def search_catalogs(self,
             request: Union[private_catalog.SearchCatalogsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchCatalogsPager:
@@ -449,7 +451,7 @@ class PrivateCatalogClient(metaclass=PrivateCatalogClientMeta):
     def search_products(self,
             request: Union[private_catalog.SearchProductsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchProductsPager:
@@ -519,7 +521,7 @@ class PrivateCatalogClient(metaclass=PrivateCatalogClientMeta):
     def search_versions(self,
             request: Union[private_catalog.SearchVersionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchVersionsPager:

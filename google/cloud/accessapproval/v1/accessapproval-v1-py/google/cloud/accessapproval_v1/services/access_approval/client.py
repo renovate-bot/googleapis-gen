@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.accessapproval_v1.services.access_approval import pagers
 from google.cloud.accessapproval_v1.types import accessapproval
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -362,7 +364,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
             request: Union[accessapproval.ListApprovalRequestsMessage, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListApprovalRequestsPager:
@@ -452,7 +454,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
             request: Union[accessapproval.GetApprovalRequestMessage, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> accessapproval.ApprovalRequest:
@@ -526,7 +528,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
     def approve_approval_request(self,
             request: Union[accessapproval.ApproveApprovalRequestMessage, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> accessapproval.ApprovalRequest:
@@ -586,7 +588,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
     def dismiss_approval_request(self,
             request: Union[accessapproval.DismissApprovalRequestMessage, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> accessapproval.ApprovalRequest:
@@ -652,7 +654,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
             request: Union[accessapproval.GetAccessApprovalSettingsMessage, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> accessapproval.AccessApprovalSettings:
@@ -730,7 +732,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
             *,
             settings: accessapproval.AccessApprovalSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> accessapproval.AccessApprovalSettings:
@@ -824,7 +826,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
             request: Union[accessapproval.DeleteAccessApprovalSettingsMessage, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

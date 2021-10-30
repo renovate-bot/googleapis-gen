@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import criteria
 from google.ads.googleads.v8.enums.types import criterion_type
 from google.ads.googleads.v8.resources.types import shared_criterion
@@ -350,7 +352,7 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
             request: Union[shared_criterion_service.GetSharedCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> shared_criterion.SharedCriterion:
@@ -429,7 +431,7 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[shared_criterion_service.SharedCriterionOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> shared_criterion_service.MutateSharedCriteriaResponse:

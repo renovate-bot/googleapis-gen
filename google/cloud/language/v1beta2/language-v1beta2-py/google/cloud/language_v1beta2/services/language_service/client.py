@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.language_v1beta2.types import language_service
 from .transports.base import LanguageServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import LanguageServiceGrpcTransport
@@ -327,7 +329,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
             *,
             document: language_service.Document = None,
             encoding_type: language_service.EncodingType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> language_service.AnalyzeSentimentResponse:
@@ -403,7 +405,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
             *,
             document: language_service.Document = None,
             encoding_type: language_service.EncodingType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> language_service.AnalyzeEntitiesResponse:
@@ -478,7 +480,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
             *,
             document: language_service.Document = None,
             encoding_type: language_service.EncodingType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> language_service.AnalyzeEntitySentimentResponse:
@@ -556,7 +558,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
             *,
             document: language_service.Document = None,
             encoding_type: language_service.EncodingType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> language_service.AnalyzeSyntaxResponse:
@@ -629,7 +631,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
             request: Union[language_service.ClassifyTextRequest, dict] = None,
             *,
             document: language_service.Document = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> language_service.ClassifyTextResponse:
@@ -696,7 +698,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
             document: language_service.Document = None,
             features: language_service.AnnotateTextRequest.Features = None,
             encoding_type: language_service.EncodingType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> language_service.AnnotateTextResponse:

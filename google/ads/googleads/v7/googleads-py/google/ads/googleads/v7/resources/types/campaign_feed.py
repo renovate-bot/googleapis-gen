@@ -41,9 +41,11 @@ class CampaignFeed(proto.Message):
         feed (str):
             Immutable. The feed to which the CampaignFeed
             belongs.
+            This field is a member of `oneof`_ ``_feed``.
         campaign (str):
             Immutable. The campaign to which the
             CampaignFeed belongs.
+            This field is a member of `oneof`_ ``_campaign``.
         placeholder_types (Sequence[google.ads.googleads.v7.enums.types.PlaceholderTypeEnum.PlaceholderType]):
             Indicates which placeholder types the feed
             may populate under the connected campaign.

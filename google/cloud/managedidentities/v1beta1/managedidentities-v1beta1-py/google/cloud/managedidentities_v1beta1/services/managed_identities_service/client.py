@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.managedidentities_v1beta1.services.managed_identities_service import pagers
@@ -329,7 +331,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def create_microsoft_ad_domain(self,
             request: Union[managed_identities_service.CreateMicrosoftAdDomainRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -396,7 +398,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def reset_admin_password(self,
             request: Union[managed_identities_service.ResetAdminPasswordRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> managed_identities_service.ResetAdminPasswordResponse:
@@ -452,7 +454,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def list_domains(self,
             request: Union[managed_identities_service.ListDomainsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDomainsPager:
@@ -520,7 +522,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def get_domain(self,
             request: Union[managed_identities_service.GetDomainRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resource.Domain:
@@ -576,7 +578,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def update_domain(self,
             request: Union[managed_identities_service.UpdateDomainRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -643,7 +645,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def delete_domain(self,
             request: Union[managed_identities_service.DeleteDomainRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -720,7 +722,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def attach_trust(self,
             request: Union[managed_identities_service.AttachTrustRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -787,7 +789,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def reconfigure_trust(self,
             request: Union[managed_identities_service.ReconfigureTrustRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -854,7 +856,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def detach_trust(self,
             request: Union[managed_identities_service.DetachTrustRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -921,7 +923,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     def validate_trust(self,
             request: Union[managed_identities_service.ValidateTrustRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

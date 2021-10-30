@@ -104,6 +104,13 @@ class ConversionActionOperation(proto.Message):
     r"""A single operation (create, update, remove) on a conversion
     action.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -111,14 +118,17 @@ class ConversionActionOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.ConversionAction):
             Create operation: No resource name is
             expected for the new conversion action.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.ConversionAction):
             Update operation: The conversion action is
             expected to have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed conversion
             action is expected, in this format:
 
             ``customers/{customer_id}/conversionActions/{conversion_action_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

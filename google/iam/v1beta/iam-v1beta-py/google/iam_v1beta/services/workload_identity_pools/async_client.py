@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -151,10 +153,10 @@ class WorkloadIdentityPoolsAsyncClient:
         )
 
     async def list_workload_identity_pools(self,
-            request: workload_identity_pool.ListWorkloadIdentityPoolsRequest = None,
+            request: Union[workload_identity_pool.ListWorkloadIdentityPoolsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWorkloadIdentityPoolsAsyncPager:
@@ -164,7 +166,7 @@ class WorkloadIdentityPoolsAsyncClient:
         deleted pools are also listed.
 
         Args:
-            request (:class:`google.iam_v1beta.types.ListWorkloadIdentityPoolsRequest`):
+            request (Union[google.iam_v1beta.types.ListWorkloadIdentityPoolsRequest, dict]):
                 The request object. Request message for
                 ListWorkloadIdentityPools.
             parent (:class:`str`):
@@ -248,10 +250,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_workload_identity_pool(self,
-            request: workload_identity_pool.GetWorkloadIdentityPoolRequest = None,
+            request: Union[workload_identity_pool.GetWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> workload_identity_pool.WorkloadIdentityPool:
@@ -259,7 +261,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
 
         Args:
-            request (:class:`google.iam_v1beta.types.GetWorkloadIdentityPoolRequest`):
+            request (Union[google.iam_v1beta.types.GetWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 GetWorkloadIdentityPool.
             name (:class:`str`):
@@ -333,12 +335,12 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_workload_identity_pool(self,
-            request: gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest = None,
+            request: Union[gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest, dict] = None,
             *,
             parent: str = None,
             workload_identity_pool: gi_workload_identity_pool.WorkloadIdentityPool = None,
             workload_identity_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -349,7 +351,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         deletion.
 
         Args:
-            request (:class:`google.iam_v1beta.types.CreateWorkloadIdentityPoolRequest`):
+            request (Union[google.iam_v1beta.types.CreateWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 CreateWorkloadIdentityPool.
             parent (:class:`str`):
@@ -451,11 +453,11 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_workload_identity_pool(self,
-            request: gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest = None,
+            request: Union[gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest, dict] = None,
             *,
             workload_identity_pool: gi_workload_identity_pool.WorkloadIdentityPool = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -463,7 +465,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
 
         Args:
-            request (:class:`google.iam_v1beta.types.UpdateWorkloadIdentityPoolRequest`):
+            request (Union[google.iam_v1beta.types.UpdateWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 UpdateWorkloadIdentityPool.
             workload_identity_pool (:class:`google.iam_v1beta.types.WorkloadIdentityPool`):
@@ -553,10 +555,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_workload_identity_pool(self,
-            request: workload_identity_pool.DeleteWorkloadIdentityPoolRequest = None,
+            request: Union[workload_identity_pool.DeleteWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -573,7 +575,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         However, you can view and list them.
 
         Args:
-            request (:class:`google.iam_v1beta.types.DeleteWorkloadIdentityPoolRequest`):
+            request (Union[google.iam_v1beta.types.DeleteWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 DeleteWorkloadIdentityPool.
             name (:class:`str`):
@@ -656,10 +658,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def undelete_workload_identity_pool(self,
-            request: workload_identity_pool.UndeleteWorkloadIdentityPoolRequest = None,
+            request: Union[workload_identity_pool.UndeleteWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -668,7 +670,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         as long as it was deleted fewer than 30 days ago.
 
         Args:
-            request (:class:`google.iam_v1beta.types.UndeleteWorkloadIdentityPoolRequest`):
+            request (Union[google.iam_v1beta.types.UndeleteWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 UndeleteWorkloadIdentityPool.
             name (:class:`str`):
@@ -751,10 +753,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_workload_identity_pool_providers(self,
-            request: workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest = None,
+            request: Union[workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWorkloadIdentityPoolProvidersAsyncPager:
@@ -766,7 +768,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         are also listed.
 
         Args:
-            request (:class:`google.iam_v1beta.types.ListWorkloadIdentityPoolProvidersRequest`):
+            request (Union[google.iam_v1beta.types.ListWorkloadIdentityPoolProvidersRequest, dict]):
                 The request object. Request message for
                 ListWorkloadIdentityPoolProviders.
             parent (:class:`str`):
@@ -850,10 +852,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_workload_identity_pool_provider(self,
-            request: workload_identity_pool.GetWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.GetWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> workload_identity_pool.WorkloadIdentityPoolProvider:
@@ -861,7 +863,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
 
         Args:
-            request (:class:`google.iam_v1beta.types.GetWorkloadIdentityPoolProviderRequest`):
+            request (Union[google.iam_v1beta.types.GetWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 GetWorkloadIdentityPoolProvider.
             name (:class:`str`):
@@ -933,12 +935,12 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_workload_identity_pool_provider(self,
-            request: workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             parent: str = None,
             workload_identity_pool_provider: workload_identity_pool.WorkloadIdentityPoolProvider = None,
             workload_identity_pool_provider_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -951,7 +953,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         after deletion.
 
         Args:
-            request (:class:`google.iam_v1beta.types.CreateWorkloadIdentityPoolProviderRequest`):
+            request (Union[google.iam_v1beta.types.CreateWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 CreateWorkloadIdentityPoolProvider.
             parent (:class:`str`):
@@ -1053,11 +1055,11 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_workload_identity_pool_provider(self,
-            request: workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             workload_identity_pool_provider: workload_identity_pool.WorkloadIdentityPoolProvider = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1065,7 +1067,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
 
         Args:
-            request (:class:`google.iam_v1beta.types.UpdateWorkloadIdentityPoolProviderRequest`):
+            request (Union[google.iam_v1beta.types.UpdateWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 UpdateWorkloadIdentityPoolProvider.
             workload_identity_pool_provider (:class:`google.iam_v1beta.types.WorkloadIdentityPoolProvider`):
@@ -1155,10 +1157,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_workload_identity_pool_provider(self,
-            request: workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1171,7 +1173,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         view and list them.
 
         Args:
-            request (:class:`google.iam_v1beta.types.DeleteWorkloadIdentityPoolProviderRequest`):
+            request (Union[google.iam_v1beta.types.DeleteWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 DeleteWorkloadIdentityPoolProvider.
             name (:class:`str`):
@@ -1254,10 +1256,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def undelete_workload_identity_pool_provider(self,
-            request: workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1266,7 +1268,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         as long as it was deleted fewer than 30 days ago.
 
         Args:
-            request (:class:`google.iam_v1beta.types.UndeleteWorkloadIdentityPoolProviderRequest`):
+            request (Union[google.iam_v1beta.types.UndeleteWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 UndeleteWorkloadIdentityPoolProvider.
             name (:class:`str`):

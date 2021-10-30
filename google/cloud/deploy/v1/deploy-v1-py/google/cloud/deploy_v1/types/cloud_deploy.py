@@ -74,6 +74,9 @@ class DeliveryPipeline(proto.Message):
     A ``DeliveryPipeline`` defines a pipeline through which a Skaffold
     configuration can progress.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Optional. Name of the ``DeliveryPipeline``. Format is
@@ -107,6 +110,7 @@ class DeliveryPipeline(proto.Message):
         serial_pipeline (google.cloud.deploy_v1.types.SerialPipeline):
             SerialPipeline defines a sequential set of stages for a
             ``DeliveryPipeline``.
+            This field is a member of `oneof`_ ``pipeline``.
         condition (google.cloud.deploy_v1.types.PipelineCondition):
             Output only. Information around the state of
             the Delivery Pipeline.
@@ -590,6 +594,9 @@ class Target(proto.Message):
     A ``Target`` defines a location to which a Skaffold configuration
     can be deployed.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             Optional. Name of the ``Target``. Format is
@@ -625,6 +632,7 @@ class Target(proto.Message):
             updated.
         gke (google.cloud.deploy_v1.types.GkeCluster):
             Information specifying a GKE Cluster.
+            This field is a member of `oneof`_ ``deployment_target``.
         etag (str):
             Optional. This checksum is computed by the
             server based on the value of other fields, and
@@ -703,14 +711,23 @@ class ExecutionConfig(proto.Message):
     r"""Configuration of the environment to use when calling
     Skaffold.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         usages (Sequence[google.cloud.deploy_v1.types.ExecutionConfig.ExecutionEnvironmentUsage]):
             Required. Usages when this configuration
             should be applied.
         default_pool (google.cloud.deploy_v1.types.DefaultPool):
             Optional. Use default Cloud Build pool.
+            This field is a member of `oneof`_ ``execution_environment``.
         private_pool (google.cloud.deploy_v1.types.PrivatePool):
             Optional. Use private Cloud Build pool.
+            This field is a member of `oneof`_ ``execution_environment``.
     """
     class ExecutionEnvironmentUsage(proto.Enum):
         r"""Possible usages of this configuration."""
@@ -1329,12 +1346,15 @@ class BuildArtifact(proto.Message):
 class TargetArtifact(proto.Message):
     r"""The artifacts produced by a target render operation.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         artifact_uri (str):
             Output only. URI of a directory containing
             the artifacts. This contains deployment
             configuration used by Skaffold during a rollout,
             and all paths are relative to this location.
+            This field is a member of `oneof`_ ``uri``.
         skaffold_config_path (str):
             Output only. File path of the resolved
             Skaffold configuration relative to the URI.

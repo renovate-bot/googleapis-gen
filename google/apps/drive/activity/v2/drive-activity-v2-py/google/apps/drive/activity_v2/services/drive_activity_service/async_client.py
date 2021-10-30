@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.apps.drive.activity_v2.services.drive_activity_service import pagers
 from google.apps.drive.activity_v2.types import query_drive_activity_request
@@ -147,16 +149,16 @@ class DriveActivityServiceAsyncClient:
         )
 
     async def query_drive_activity(self,
-            request: query_drive_activity_request.QueryDriveActivityRequest = None,
+            request: Union[query_drive_activity_request.QueryDriveActivityRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.QueryDriveActivityAsyncPager:
         r"""Query past activity in Google Drive.
 
         Args:
-            request (:class:`google.apps.drive.activity_v2.types.QueryDriveActivityRequest`):
+            request (Union[google.apps.drive.activity_v2.types.QueryDriveActivityRequest, dict]):
                 The request object. The request message for querying
                 Drive activity.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

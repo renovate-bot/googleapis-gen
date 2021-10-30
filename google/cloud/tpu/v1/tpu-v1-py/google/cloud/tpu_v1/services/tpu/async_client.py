@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -154,17 +156,17 @@ class TpuAsyncClient:
         )
 
     async def list_nodes(self,
-            request: cloud_tpu.ListNodesRequest = None,
+            request: Union[cloud_tpu.ListNodesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNodesAsyncPager:
         r"""Lists nodes.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.ListNodesRequest`):
+            request (Union[google.cloud.tpu_v1.types.ListNodesRequest, dict]):
                 The request object. Request for
                 [ListNodes][google.cloud.tpu.v1.Tpu.ListNodes].
             parent (:class:`str`):
@@ -239,17 +241,17 @@ class TpuAsyncClient:
         return response
 
     async def get_node(self,
-            request: cloud_tpu.GetNodeRequest = None,
+            request: Union[cloud_tpu.GetNodeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_tpu.Node:
         r"""Gets the details of a node.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.GetNodeRequest`):
+            request (Union[google.cloud.tpu_v1.types.GetNodeRequest, dict]):
                 The request object. Request for
                 [GetNode][google.cloud.tpu.v1.Tpu.GetNode].
             name (:class:`str`):
@@ -310,19 +312,19 @@ class TpuAsyncClient:
         return response
 
     async def create_node(self,
-            request: cloud_tpu.CreateNodeRequest = None,
+            request: Union[cloud_tpu.CreateNodeRequest, dict] = None,
             *,
             parent: str = None,
             node: cloud_tpu.Node = None,
             node_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Creates a node.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.CreateNodeRequest`):
+            request (Union[google.cloud.tpu_v1.types.CreateNodeRequest, dict]):
                 The request object. Request for
                 [CreateNode][google.cloud.tpu.v1.Tpu.CreateNode].
             parent (:class:`str`):
@@ -409,17 +411,17 @@ class TpuAsyncClient:
         return response
 
     async def delete_node(self,
-            request: cloud_tpu.DeleteNodeRequest = None,
+            request: Union[cloud_tpu.DeleteNodeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a node.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.DeleteNodeRequest`):
+            request (Union[google.cloud.tpu_v1.types.DeleteNodeRequest, dict]):
                 The request object. Request for
                 [DeleteNode][google.cloud.tpu.v1.Tpu.DeleteNode].
             name (:class:`str`):
@@ -492,16 +494,16 @@ class TpuAsyncClient:
         return response
 
     async def reimage_node(self,
-            request: cloud_tpu.ReimageNodeRequest = None,
+            request: Union[cloud_tpu.ReimageNodeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Reimages a node's OS.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.ReimageNodeRequest`):
+            request (Union[google.cloud.tpu_v1.types.ReimageNodeRequest, dict]):
                 The request object. Request for
                 [ReimageNode][google.cloud.tpu.v1.Tpu.ReimageNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -557,16 +559,16 @@ class TpuAsyncClient:
         return response
 
     async def stop_node(self,
-            request: cloud_tpu.StopNodeRequest = None,
+            request: Union[cloud_tpu.StopNodeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Stops a node.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.StopNodeRequest`):
+            request (Union[google.cloud.tpu_v1.types.StopNodeRequest, dict]):
                 The request object. Request for
                 [StopNode][google.cloud.tpu.v1.Tpu.StopNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -622,16 +624,16 @@ class TpuAsyncClient:
         return response
 
     async def start_node(self,
-            request: cloud_tpu.StartNodeRequest = None,
+            request: Union[cloud_tpu.StartNodeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Starts a node.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.StartNodeRequest`):
+            request (Union[google.cloud.tpu_v1.types.StartNodeRequest, dict]):
                 The request object. Request for
                 [StartNode][google.cloud.tpu.v1.Tpu.StartNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -687,17 +689,17 @@ class TpuAsyncClient:
         return response
 
     async def list_tensor_flow_versions(self,
-            request: cloud_tpu.ListTensorFlowVersionsRequest = None,
+            request: Union[cloud_tpu.ListTensorFlowVersionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorFlowVersionsAsyncPager:
         r"""List TensorFlow versions supported by this API.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.ListTensorFlowVersionsRequest`):
+            request (Union[google.cloud.tpu_v1.types.ListTensorFlowVersionsRequest, dict]):
                 The request object. Request for
                 [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
             parent (:class:`str`):
@@ -772,17 +774,17 @@ class TpuAsyncClient:
         return response
 
     async def get_tensor_flow_version(self,
-            request: cloud_tpu.GetTensorFlowVersionRequest = None,
+            request: Union[cloud_tpu.GetTensorFlowVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_tpu.TensorFlowVersion:
         r"""Gets TensorFlow Version.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.GetTensorFlowVersionRequest`):
+            request (Union[google.cloud.tpu_v1.types.GetTensorFlowVersionRequest, dict]):
                 The request object. Request for
                 [GetTensorFlowVersion][google.cloud.tpu.v1.Tpu.GetTensorFlowVersion].
             name (:class:`str`):
@@ -845,17 +847,17 @@ class TpuAsyncClient:
         return response
 
     async def list_accelerator_types(self,
-            request: cloud_tpu.ListAcceleratorTypesRequest = None,
+            request: Union[cloud_tpu.ListAcceleratorTypesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAcceleratorTypesAsyncPager:
         r"""Lists accelerator types supported by this API.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.ListAcceleratorTypesRequest`):
+            request (Union[google.cloud.tpu_v1.types.ListAcceleratorTypesRequest, dict]):
                 The request object. Request for
                 [ListAcceleratorTypes][google.cloud.tpu.v1.Tpu.ListAcceleratorTypes].
             parent (:class:`str`):
@@ -930,17 +932,17 @@ class TpuAsyncClient:
         return response
 
     async def get_accelerator_type(self,
-            request: cloud_tpu.GetAcceleratorTypeRequest = None,
+            request: Union[cloud_tpu.GetAcceleratorTypeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_tpu.AcceleratorType:
         r"""Gets AcceleratorType.
 
         Args:
-            request (:class:`google.cloud.tpu_v1.types.GetAcceleratorTypeRequest`):
+            request (Union[google.cloud.tpu_v1.types.GetAcceleratorTypeRequest, dict]):
                 The request object. Request for
                 [GetAcceleratorType][google.cloud.tpu.v1.Tpu.GetAcceleratorType].
             name (:class:`str`):

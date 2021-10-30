@@ -36,9 +36,11 @@ class CampaignLabel(proto.Message):
         campaign (str):
             Immutable. The campaign to which the label is
             attached.
+            This field is a member of `oneof`_ ``_campaign``.
         label (str):
             Immutable. The label assigned to the
             campaign.
+            This field is a member of `oneof`_ ``_label``.
     """
 
     resource_name = proto.Field(

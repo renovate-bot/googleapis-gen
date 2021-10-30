@@ -364,6 +364,13 @@ class TestExecution(proto.Message):
 class TestSpecification(proto.Message):
     r"""A description of how to run the test.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         test_timeout (google.protobuf.duration_pb2.Duration):
             Max time a test execution is allowed to run
@@ -372,18 +379,25 @@ class TestSpecification(proto.Message):
         test_setup (google.devtools.testing_v1.types.TestSetup):
             Test setup requirements for Android e.g.
             files to install, bootstrap scripts.
+            This field is a member of `oneof`_ ``setup``.
         ios_test_setup (google.devtools.testing_v1.types.IosTestSetup):
             Test setup requirements for iOS.
+            This field is a member of `oneof`_ ``setup``.
         android_instrumentation_test (google.devtools.testing_v1.types.AndroidInstrumentationTest):
             An Android instrumentation test.
+            This field is a member of `oneof`_ ``test``.
         android_robo_test (google.devtools.testing_v1.types.AndroidRoboTest):
             An Android robo test.
+            This field is a member of `oneof`_ ``test``.
         android_test_loop (google.devtools.testing_v1.types.AndroidTestLoop):
             An Android Application with a Test Loop.
+            This field is a member of `oneof`_ ``test``.
         ios_xc_test (google.devtools.testing_v1.types.IosXcTest):
             An iOS XCTest, via an .xctestrun file.
+            This field is a member of `oneof`_ ``test``.
         ios_test_loop (google.devtools.testing_v1.types.IosTestLoop):
             An iOS application with a test loop.
+            This field is a member of `oneof`_ ``test``.
         disable_video_recording (bool):
             Disables video recording. May reduce test
             latency.
@@ -621,9 +635,12 @@ class EnvironmentVariable(proto.Message):
 class Account(proto.Message):
     r"""Identifies an account and how to log into it.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         google_auto (google.devtools.testing_v1.types.GoogleAuto):
             An automatic google login account.
+            This field is a member of `oneof`_ ``account_type``.
     """
 
     google_auto = proto.Field(
@@ -677,10 +694,14 @@ class AppBundle(proto.Message):
     https://developer.android.com/guide/app-bundle/build for
     guidance on building App Bundles.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         bundle_location (google.devtools.testing_v1.types.FileReference):
             .aab file representing the app bundle under
             test.
+            This field is a member of `oneof`_ ``bundle``.
     """
 
     bundle_location = proto.Field(
@@ -694,11 +715,20 @@ class AppBundle(proto.Message):
 class DeviceFile(proto.Message):
     r"""A single device file description.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         obb_file (google.devtools.testing_v1.types.ObbFile):
             A reference to an opaque binary blob file.
+            This field is a member of `oneof`_ ``device_file``.
         regular_file (google.devtools.testing_v1.types.RegularFile):
             A reference to a regular file.
+            This field is a member of `oneof`_ ``device_file``.
     """
 
     obb_file = proto.Field(
@@ -825,12 +855,21 @@ class AndroidTestLoop(proto.Message):
     The intent \<intent-name\> will be implicitly added, since Games
     is the only user of this api, for the time being.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         app_apk (google.devtools.testing_v1.types.FileReference):
             The APK for the application under test.
+            This field is a member of `oneof`_ ``app_under_test``.
         app_bundle (google.devtools.testing_v1.types.AppBundle):
             A multi-apk app bundle for the application
             under test.
+            This field is a member of `oneof`_ ``app_under_test``.
         app_package_id (str):
             The java package for the application under
             test. The default is determined by examining the
@@ -984,12 +1023,21 @@ class AndroidInstrumentationTest(proto.Message):
     See http://developer.android.com/tools/testing/testing_android.html
     for more information on types of Android tests.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         app_apk (google.devtools.testing_v1.types.FileReference):
             The APK for the application under test.
+            This field is a member of `oneof`_ ``app_under_test``.
         app_bundle (google.devtools.testing_v1.types.AppBundle):
             A multi-apk app bundle for the application
             under test.
+            This field is a member of `oneof`_ ``app_under_test``.
         test_apk (google.devtools.testing_v1.types.FileReference):
             Required. The APK containing the test code to
             be executed.
@@ -1085,12 +1133,21 @@ class AndroidRoboTest(proto.Message):
     application on a virtual or physical Android Device, finding
     culprits and crashes as it goes. Next tag: 30
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         app_apk (google.devtools.testing_v1.types.FileReference):
             The APK for the application under test.
+            This field is a member of `oneof`_ ``app_under_test``.
         app_bundle (google.devtools.testing_v1.types.AppBundle):
             A multi-apk app bundle for the application
             under test.
+            This field is a member of `oneof`_ ``app_under_test``.
         app_package_id (str):
             The java package for the application under
             test. The default value is determined by
@@ -1210,13 +1267,22 @@ class RoboDirective(proto.Message):
 class RoboStartingIntent(proto.Message):
     r"""Message for specifying the start activities to crawl.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         launcher_activity (google.devtools.testing_v1.types.LauncherActivityIntent):
             An intent that starts the main launcher
             activity.
+            This field is a member of `oneof`_ ``starting_intent``.
         start_activity (google.devtools.testing_v1.types.StartActivityIntent):
             An intent that starts an activity with
             specific details.
+            This field is a member of `oneof`_ ``starting_intent``.
         timeout (google.protobuf.duration_pb2.Duration):
             Timeout in seconds for each intent.
     """
@@ -1276,14 +1342,24 @@ class EnvironmentMatrix(proto.Message):
     r"""The matrix of environments in which the test is to be
     executed.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         android_matrix (google.devtools.testing_v1.types.AndroidMatrix):
             A matrix of Android devices.
+            This field is a member of `oneof`_ ``environment_matrix``.
         android_device_list (google.devtools.testing_v1.types.AndroidDeviceList):
             A list of Android devices; the test will be
             run only on the specified devices.
+            This field is a member of `oneof`_ ``environment_matrix``.
         ios_device_list (google.devtools.testing_v1.types.IosDeviceList):
             A list of iOS devices.
+            This field is a member of `oneof`_ ``environment_matrix``.
     """
 
     android_matrix = proto.Field(
@@ -1577,6 +1653,8 @@ class GoogleCloudStorage(proto.Message):
 class FileReference(proto.Message):
     r"""A reference to a file, used for user inputs.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_path (str):
             A path to a file in Google Cloud Storage.
@@ -1584,6 +1662,7 @@ class FileReference(proto.Message):
             app-1414623860166/app%40debug-unaligned.apk
             These paths are expected to be url encoded
             (percent encoding)
+            This field is a member of `oneof`_ ``file``.
     """
 
     gcs_path = proto.Field(
@@ -1596,13 +1675,22 @@ class FileReference(proto.Message):
 class Environment(proto.Message):
     r"""The environment in which the test is run.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         android_device (google.devtools.testing_v1.types.AndroidDevice):
             An Android device which must be used with an
             Android test.
+            This field is a member of `oneof`_ ``environment``.
         ios_device (google.devtools.testing_v1.types.IosDevice):
             An iOS device which must be used with an iOS
             test.
+            This field is a member of `oneof`_ ``environment``.
     """
 
     android_device = proto.Field(
@@ -1755,13 +1843,22 @@ class InvalidRequestDetail(proto.Message):
 class ShardingOption(proto.Message):
     r"""Options for enabling sharding.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         uniform_sharding (google.devtools.testing_v1.types.UniformSharding):
             Uniformly shards test cases given a total
             number of shards.
+            This field is a member of `oneof`_ ``option``.
         manual_sharding (google.devtools.testing_v1.types.ManualSharding):
             Shards test cases into the specified groups
             of packages, classes, and/or methods.
+            This field is a member of `oneof`_ ``option``.
     """
 
     uniform_sharding = proto.Field(

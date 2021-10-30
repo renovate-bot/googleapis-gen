@@ -32,8 +32,10 @@ class CustomParameter(proto.Message):
     Attributes:
         key (str):
             The key matching the parameter tag name.
+            This field is a member of `oneof`_ ``_key``.
         value (str):
             The value to be substituted.
+            This field is a member of `oneof`_ ``_value``.
     """
 
     key = proto.Field(

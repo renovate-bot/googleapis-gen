@@ -33,6 +33,7 @@ class ExplorerAutoOptimizerSetting(proto.Message):
     Attributes:
         opt_in (bool):
             Indicates whether the optimizer is turned on.
+            This field is a member of `oneof`_ ``_opt_in``.
     """
 
     opt_in = proto.Field(

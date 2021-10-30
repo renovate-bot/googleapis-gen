@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.dialogflowcx_v3.services.flows import pagers
@@ -401,7 +403,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             *,
             parent: str = None,
             flow: gcdc_flow.Flow = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_flow.Flow:
@@ -508,7 +510,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request: Union[flow.DeleteFlowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -574,7 +576,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request: Union[flow.ListFlowsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFlowsPager:
@@ -661,7 +663,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request: Union[flow.GetFlowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> flow.Flow:
@@ -758,7 +760,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             *,
             flow: gcdc_flow.Flow = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_flow.Flow:
@@ -866,7 +868,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request: Union[flow.TrainFlowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -976,7 +978,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
     def validate_flow(self,
             request: Union[flow.ValidateFlowRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> flow.FlowValidationResult:
@@ -1036,7 +1038,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request: Union[flow.GetFlowValidationResultRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> flow.FlowValidationResult:
@@ -1111,7 +1113,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
     def import_flow(self,
             request: Union[flow.ImportFlowRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1194,7 +1196,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
     def export_flow(self,
             request: Union[flow.ExportFlowRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

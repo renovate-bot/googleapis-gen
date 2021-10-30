@@ -34,6 +34,13 @@ class FeedItemSet(proto.Message):
     can be referenced within the matching functions of CustomerFeed,
     CampaignFeed, and AdGroupFeed.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed item set. Feed item
@@ -54,11 +61,13 @@ class FeedItemSet(proto.Message):
         dynamic_location_set_filter (google.ads.googleads.v8.common.types.DynamicLocationSetFilter):
             Filter for dynamic location set.
             It is only used for sets of locations.
+            This field is a member of `oneof`_ ``dynamic_set_filter``.
         dynamic_affiliate_location_set_filter (google.ads.googleads.v8.common.types.DynamicAffiliateLocationSetFilter):
             Filter for dynamic affiliate location set.
             This field doesn't apply generally to feed item
             sets. It is only used for sets of affiliate
             locations.
+            This field is a member of `oneof`_ ``dynamic_set_filter``.
     """
 
     resource_name = proto.Field(

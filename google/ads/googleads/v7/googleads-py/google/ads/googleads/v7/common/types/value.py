@@ -28,17 +28,29 @@ __protobuf__ = proto.module(
 class Value(proto.Message):
     r"""A generic data container.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         boolean_value (bool):
             A boolean.
+            This field is a member of `oneof`_ ``value``.
         int64_value (int):
             An int64.
+            This field is a member of `oneof`_ ``value``.
         float_value (float):
             A float.
+            This field is a member of `oneof`_ ``value``.
         double_value (float):
             A double.
+            This field is a member of `oneof`_ ``value``.
         string_value (str):
             A string.
+            This field is a member of `oneof`_ ``value``.
     """
 
     boolean_value = proto.Field(

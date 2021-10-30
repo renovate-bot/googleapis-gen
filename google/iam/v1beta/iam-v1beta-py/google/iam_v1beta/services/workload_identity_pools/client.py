@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.iam_v1beta.services.workload_identity_pools import pagers
@@ -351,7 +353,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.ListWorkloadIdentityPoolsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWorkloadIdentityPoolsPager:
@@ -441,7 +443,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.GetWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> workload_identity_pool.WorkloadIdentityPool:
@@ -521,7 +523,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             parent: str = None,
             workload_identity_pool: gi_workload_identity_pool.WorkloadIdentityPool = None,
             workload_identity_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -631,7 +633,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             *,
             workload_identity_pool: gi_workload_identity_pool.WorkloadIdentityPool = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -725,7 +727,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.DeleteWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -821,7 +823,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.UndeleteWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -909,7 +911,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWorkloadIdentityPoolProvidersPager:
@@ -1001,7 +1003,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.GetWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> workload_identity_pool.WorkloadIdentityPoolProvider:
@@ -1079,7 +1081,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             parent: str = None,
             workload_identity_pool_provider: workload_identity_pool.WorkloadIdentityPoolProvider = None,
             workload_identity_pool_provider_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1191,7 +1193,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             *,
             workload_identity_pool_provider: workload_identity_pool.WorkloadIdentityPoolProvider = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1285,7 +1287,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1377,7 +1379,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             request: Union[workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.bigquery_storage_v1beta2.types import arrow
 from google.cloud.bigquery_storage_v1beta2.types import avro
@@ -156,12 +158,12 @@ class BigQueryReadAsyncClient:
         )
 
     async def create_read_session(self,
-            request: storage.CreateReadSessionRequest = None,
+            request: Union[storage.CreateReadSessionRequest, dict] = None,
             *,
             parent: str = None,
             read_session: stream.ReadSession = None,
             max_stream_count: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> stream.ReadSession:
@@ -190,7 +192,7 @@ class BigQueryReadAsyncClient:
         caller.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1beta2.types.CreateReadSessionRequest`):
+            request (Union[google.cloud.bigquery_storage_v1beta2.types.CreateReadSessionRequest, dict]):
                 The request object. Request message for
                 `CreateReadSession`.
             parent (:class:`str`):
@@ -288,11 +290,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     def read_rows(self,
-            request: storage.ReadRowsRequest = None,
+            request: Union[storage.ReadRowsRequest, dict] = None,
             *,
             read_stream: str = None,
             offset: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[storage.ReadRowsResponse]]:
@@ -306,7 +308,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         reflecting the current state of the stream.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1beta2.types.ReadRowsRequest`):
+            request (Union[google.cloud.bigquery_storage_v1beta2.types.ReadRowsRequest, dict]):
                 The request object. Request message for `ReadRows`.
             read_stream (:class:`str`):
                 Required. Stream to read rows from.
@@ -386,9 +388,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def split_read_stream(self,
-            request: storage.SplitReadStreamRequest = None,
+            request: Union[storage.SplitReadStreamRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> storage.SplitReadStreamResponse:
@@ -407,7 +409,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         once the streams have been read to completion.
 
         Args:
-            request (:class:`google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest`):
+            request (Union[google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest, dict]):
                 The request object. Request message for
                 `SplitReadStream`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

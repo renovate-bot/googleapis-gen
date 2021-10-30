@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.bigquery_migration_v2alpha.services.migration_service import pagers
 from google.cloud.bigquery_migration_v2alpha.types import migration_entities
 from google.cloud.bigquery_migration_v2alpha.types import migration_error_details
@@ -353,7 +355,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             *,
             parent: str = None,
             migration_workflow: migration_entities.MigrationWorkflow = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> migration_entities.MigrationWorkflow:
@@ -439,7 +441,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             request: Union[migration_service.GetMigrationWorkflowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> migration_entities.MigrationWorkflow:
@@ -516,7 +518,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             request: Union[migration_service.ListMigrationWorkflowsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMigrationWorkflowsPager:
@@ -603,7 +605,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             request: Union[migration_service.DeleteMigrationWorkflowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -670,7 +672,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             request: Union[migration_service.StartMigrationWorkflowRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -741,7 +743,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             request: Union[migration_service.GetMigrationSubtaskRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> migration_entities.MigrationSubtask:
@@ -821,7 +823,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             request: Union[migration_service.ListMigrationSubtasksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMigrationSubtasksPager:

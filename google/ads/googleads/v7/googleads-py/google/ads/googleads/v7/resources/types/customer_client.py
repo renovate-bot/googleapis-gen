@@ -40,33 +40,42 @@ class CustomerClient(proto.Message):
             Output only. The resource name of the client-
             ustomer which is linked to the given customer.
             Read only.
+            This field is a member of `oneof`_ ``_client_customer``.
         hidden (bool):
             Output only. Specifies whether this is a `hidden
             account <https://support.google.com/google-ads/answer/7519830>`__.
             Read only.
+            This field is a member of `oneof`_ ``_hidden``.
         level (int):
             Output only. Distance between given customer
             and client. For self link, the level value will
             be 0. Read only.
+            This field is a member of `oneof`_ ``_level``.
         time_zone (str):
             Output only. Common Locale Data Repository (CLDR) string
             representation of the time zone of the client, e.g.
             America/Los_Angeles. Read only.
+            This field is a member of `oneof`_ ``_time_zone``.
         test_account (bool):
             Output only. Identifies if the client is a
             test account. Read only.
+            This field is a member of `oneof`_ ``_test_account``.
         manager (bool):
             Output only. Identifies if the client is a
             manager. Read only.
+            This field is a member of `oneof`_ ``_manager``.
         descriptive_name (str):
             Output only. Descriptive name for the client.
             Read only.
+            This field is a member of `oneof`_ ``_descriptive_name``.
         currency_code (str):
             Output only. Currency code (e.g. 'USD',
             'EUR') for the client. Read only.
+            This field is a member of `oneof`_ ``_currency_code``.
         id (int):
             Output only. The ID of the client customer.
             Read only.
+            This field is a member of `oneof`_ ``_id``.
     """
 
     resource_name = proto.Field(

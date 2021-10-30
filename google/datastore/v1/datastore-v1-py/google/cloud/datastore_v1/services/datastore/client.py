@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.datastore_v1.types import datastore
 from google.cloud.datastore_v1.types import entity
 from google.cloud.datastore_v1.types import query
@@ -335,7 +337,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
             project_id: str = None,
             read_options: datastore.ReadOptions = None,
             keys: Sequence[entity.Key] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.LookupResponse:
@@ -417,7 +419,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
     def run_query(self,
             request: Union[datastore.RunQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.RunQueryResponse:
@@ -466,7 +468,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
             request: Union[datastore.BeginTransactionRequest, dict] = None,
             *,
             project_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.BeginTransactionResponse:
@@ -536,7 +538,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
             mode: datastore.CommitRequest.Mode = None,
             transaction: bytes = None,
             mutations: Sequence[datastore.Mutation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.CommitResponse:
@@ -646,7 +648,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
             *,
             project_id: str = None,
             transaction: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.RollbackResponse:
@@ -724,7 +726,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
             *,
             project_id: str = None,
             keys: Sequence[entity.Key] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.AllocateIdsResponse:
@@ -804,7 +806,7 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
             *,
             project_id: str = None,
             keys: Sequence[entity.Key] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datastore.ReserveIdsResponse:

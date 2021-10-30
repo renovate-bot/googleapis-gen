@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.pubsublite_v1.services.cursor_service import pagers
 from google.cloud.pubsublite_v1.types import cursor
 from .transports.base import CursorServiceTransport, DEFAULT_CLIENT_INFO
@@ -339,7 +341,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
     def streaming_commit_cursor(self,
             requests: Iterator[cursor.StreamingCommitCursorRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[cursor.StreamingCommitCursorResponse]:
@@ -381,7 +383,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
     def commit_cursor(self,
             request: Union[cursor.CommitCursorRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cursor.CommitCursorResponse:
@@ -435,7 +437,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
             request: Union[cursor.ListPartitionCursorsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPartitionCursorsPager:

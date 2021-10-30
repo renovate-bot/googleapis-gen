@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -175,12 +177,12 @@ class ProductSearchAsyncClient:
         )
 
     async def create_product_set(self,
-            request: product_search_service.CreateProductSetRequest = None,
+            request: Union[product_search_service.CreateProductSetRequest, dict] = None,
             *,
             parent: str = None,
             product_set: product_search_service.ProductSet = None,
             product_set_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ProductSet:
@@ -192,7 +194,7 @@ class ProductSearchAsyncClient:
            longer than 4096 characters.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.CreateProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.CreateProductSetRequest, dict]):
                 The request object. Request message for the
                 `CreateProductSet` method.
             parent (:class:`str`):
@@ -286,10 +288,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_product_sets(self,
-            request: product_search_service.ListProductSetsRequest = None,
+            request: Union[product_search_service.ListProductSetsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductSetsAsyncPager:
@@ -301,7 +303,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.ListProductSetsRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.ListProductSetsRequest, dict]):
                 The request object. Request message for the
                 `ListProductSets` method.
             parent (:class:`str`):
@@ -386,10 +388,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_product_set(self,
-            request: product_search_service.GetProductSetRequest = None,
+            request: Union[product_search_service.GetProductSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ProductSet:
@@ -400,7 +402,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         -  Returns NOT_FOUND if the ProductSet does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.GetProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.GetProductSetRequest, dict]):
                 The request object. Request message for the
                 `GetProductSet` method.
             name (:class:`str`):
@@ -477,11 +479,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_product_set(self,
-            request: product_search_service.UpdateProductSetRequest = None,
+            request: Union[product_search_service.UpdateProductSetRequest, dict] = None,
             *,
             product_set: product_search_service.ProductSet = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ProductSet:
@@ -496,7 +498,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            characters.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.UpdateProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.UpdateProductSetRequest, dict]):
                 The request object. Request message for the
                 `UpdateProductSet` method.
             product_set (:class:`google.cloud.vision_v1p3beta1.types.ProductSet`):
@@ -580,10 +582,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_product_set(self,
-            request: product_search_service.DeleteProductSetRequest = None,
+            request: Union[product_search_service.DeleteProductSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -598,7 +600,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         -  Returns NOT_FOUND if the ProductSet does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.DeleteProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.DeleteProductSetRequest, dict]):
                 The request object. Request message for the
                 `DeleteProductSet` method.
             name (:class:`str`):
@@ -663,12 +665,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def create_product(self,
-            request: product_search_service.CreateProductRequest = None,
+            request: Union[product_search_service.CreateProductRequest, dict] = None,
             *,
             parent: str = None,
             product: product_search_service.Product = None,
             product_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.Product:
@@ -684,7 +686,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            invalid.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.CreateProductRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.CreateProductRequest, dict]):
                 The request object. Request message for the
                 `CreateProduct` method.
             parent (:class:`str`):
@@ -773,10 +775,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_products(self,
-            request: product_search_service.ListProductsRequest = None,
+            request: Union[product_search_service.ListProductsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductsAsyncPager:
@@ -788,7 +790,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.ListProductsRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.ListProductsRequest, dict]):
                 The request object. Request message for the
                 `ListProducts` method.
             parent (:class:`str`):
@@ -873,10 +875,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_product(self,
-            request: product_search_service.GetProductRequest = None,
+            request: Union[product_search_service.GetProductRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.Product:
@@ -887,7 +889,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         -  Returns NOT_FOUND if the Product does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.GetProductRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.GetProductRequest, dict]):
                 The request object. Request message for the `GetProduct`
                 method.
             name (:class:`str`):
@@ -959,11 +961,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_product(self,
-            request: product_search_service.UpdateProductRequest = None,
+            request: Union[product_search_service.UpdateProductRequest, dict] = None,
             *,
             product: product_search_service.Product = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.Product:
@@ -985,7 +987,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            update_mask.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.UpdateProductRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.UpdateProductRequest, dict]):
                 The request object. Request message for the
                 `UpdateProduct` method.
             product (:class:`google.cloud.vision_v1p3beta1.types.Product`):
@@ -1066,10 +1068,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_product(self,
-            request: product_search_service.DeleteProductRequest = None,
+            request: Union[product_search_service.DeleteProductRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1084,7 +1086,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         -  Returns NOT_FOUND if the product does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.DeleteProductRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.DeleteProductRequest, dict]):
                 The request object. Request message for the
                 `DeleteProduct` method.
             name (:class:`str`):
@@ -1149,12 +1151,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def create_reference_image(self,
-            request: product_search_service.CreateReferenceImageRequest = None,
+            request: Union[product_search_service.CreateReferenceImageRequest, dict] = None,
             *,
             parent: str = None,
             reference_image: product_search_service.ReferenceImage = None,
             reference_image_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ReferenceImage:
@@ -1182,7 +1184,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            10 polygons.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.CreateReferenceImageRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.CreateReferenceImageRequest, dict]):
                 The request object. Request message for the
                 `CreateReferenceImage` method.
             parent (:class:`str`):
@@ -1277,10 +1279,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_reference_image(self,
-            request: product_search_service.DeleteReferenceImageRequest = None,
+            request: Union[product_search_service.DeleteReferenceImageRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1298,7 +1300,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         -  Returns NOT_FOUND if the reference image does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.DeleteReferenceImageRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.DeleteReferenceImageRequest, dict]):
                 The request object. Request message for the
                 `DeleteReferenceImage` method.
             name (:class:`str`):
@@ -1365,10 +1367,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def list_reference_images(self,
-            request: product_search_service.ListReferenceImagesRequest = None,
+            request: Union[product_search_service.ListReferenceImagesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListReferenceImagesAsyncPager:
@@ -1381,7 +1383,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            100, or less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.ListReferenceImagesRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.ListReferenceImagesRequest, dict]):
                 The request object. Request message for the
                 `ListReferenceImages` method.
             parent (:class:`str`):
@@ -1467,10 +1469,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_reference_image(self,
-            request: product_search_service.GetReferenceImageRequest = None,
+            request: Union[product_search_service.GetReferenceImageRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> product_search_service.ReferenceImage:
@@ -1481,7 +1483,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         -  Returns NOT_FOUND if the specified image does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.GetReferenceImageRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.GetReferenceImageRequest, dict]):
                 The request object. Request message for the
                 `GetReferenceImage` method.
             name (:class:`str`):
@@ -1557,11 +1559,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def add_product_to_product_set(self,
-            request: product_search_service.AddProductToProductSetRequest = None,
+            request: Union[product_search_service.AddProductToProductSetRequest, dict] = None,
             *,
             name: str = None,
             product: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1576,7 +1578,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.AddProductToProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.AddProductToProductSetRequest, dict]):
                 The request object. Request message for the
                 `AddProductToProductSet` method.
             name (:class:`str`):
@@ -1652,11 +1654,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def remove_product_from_product_set(self,
-            request: product_search_service.RemoveProductFromProductSetRequest = None,
+            request: Union[product_search_service.RemoveProductFromProductSetRequest, dict] = None,
             *,
             name: str = None,
             product: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1668,7 +1670,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            ProductSet.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.RemoveProductFromProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.RemoveProductFromProductSetRequest, dict]):
                 The request object. Request message for the
                 `RemoveProductFromProductSet` method.
             name (:class:`str`):
@@ -1744,10 +1746,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def list_products_in_product_set(self,
-            request: product_search_service.ListProductsInProductSetRequest = None,
+            request: Union[product_search_service.ListProductsInProductSetRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListProductsInProductSetAsyncPager:
@@ -1761,7 +1763,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.ListProductsInProductSetRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.ListProductsInProductSetRequest, dict]):
                 The request object. Request message for the
                 `ListProductsInProductSet` method.
             name (:class:`str`):
@@ -1848,11 +1850,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def import_product_sets(self,
-            request: product_search_service.ImportProductSetsRequest = None,
+            request: Union[product_search_service.ImportProductSetsRequest, dict] = None,
             *,
             parent: str = None,
             input_config: product_search_service.ImportProductSetsInputConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1870,7 +1872,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.csv_file_uri].
 
         Args:
-            request (:class:`google.cloud.vision_v1p3beta1.types.ImportProductSetsRequest`):
+            request (Union[google.cloud.vision_v1p3beta1.types.ImportProductSetsRequest, dict]):
                 The request object. Request message for the
                 `ImportProductSets` method.
             parent (:class:`str`):

@@ -44,6 +44,7 @@ class ClickView(proto.Message):
             ``customers/{customer_id}/clickViews/{date (yyyy-MM-dd)}~{gclid}``
         gclid (str):
             Output only. The Google Click ID.
+            This field is a member of `oneof`_ ``_gclid``.
         area_of_interest (google.ads.googleads.v7.common.types.ClickLocation):
             Output only. The location criteria matching
             the area of interest associated with the
@@ -55,14 +56,18 @@ class ClickView(proto.Message):
         page_number (int):
             Output only. Page number in search results
             where the ad was shown.
+            This field is a member of `oneof`_ ``_page_number``.
         ad_group_ad (str):
             Output only. The associated ad.
+            This field is a member of `oneof`_ ``_ad_group_ad``.
         campaign_location_target (str):
             Output only. The associated campaign location
             target, if one exists.
+            This field is a member of `oneof`_ ``_campaign_location_target``.
         user_list (str):
             Output only. The associated user list, if one
             exists.
+            This field is a member of `oneof`_ ``_user_list``.
         keyword (str):
             Output only. The associated keyword, if one
             exists and the click corresponds to the SEARCH

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.datacatalog_v1.services.data_catalog import pagers
 from google.cloud.datacatalog_v1.types import common
 from google.cloud.datacatalog_v1.types import data_source
@@ -406,7 +408,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             scope: datacatalog.SearchCatalogRequest.Scope = None,
             query: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchCatalogPager:
@@ -527,7 +529,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             parent: str = None,
             entry_group_id: str = None,
             entry_group: datacatalog.EntryGroup = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.EntryGroup:
@@ -661,7 +663,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             name: str = None,
             read_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.EntryGroup:
@@ -749,7 +751,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             entry_group: datacatalog.EntryGroup = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.EntryGroup:
@@ -846,7 +848,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.DeleteEntryGroupRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -917,7 +919,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.ListEntryGroupsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEntryGroupsPager:
@@ -1007,7 +1009,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             parent: str = None,
             entry_id: str = None,
             entry: datacatalog.Entry = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.Entry:
@@ -1126,7 +1128,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             entry: datacatalog.Entry = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.Entry:
@@ -1252,7 +1254,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.DeleteEntryRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1327,7 +1329,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.GetEntryRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.Entry:
@@ -1410,7 +1412,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
     def lookup_entry(self,
             request: Union[datacatalog.LookupEntryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> datacatalog.Entry:
@@ -1470,7 +1472,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.ListEntriesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListEntriesPager:
@@ -1560,7 +1562,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             parent: str = None,
             tag_template_id: str = None,
             tag_template: tags.TagTemplate = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplate:
@@ -1670,7 +1672,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.GetTagTemplateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplate:
@@ -1755,7 +1757,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             tag_template: tags.TagTemplate = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplate:
@@ -1864,7 +1866,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             name: str = None,
             force: bool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1948,7 +1950,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             parent: str = None,
             tag_template_field_id: str = None,
             tag_template_field: tags.TagTemplateField = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplateField:
@@ -2057,7 +2059,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             name: str = None,
             tag_template_field: tags.TagTemplateField = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplateField:
@@ -2172,7 +2174,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             name: str = None,
             new_tag_template_field_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplateField:
@@ -2262,7 +2264,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             name: str = None,
             new_enum_value_display_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.TagTemplateField:
@@ -2348,7 +2350,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             name: str = None,
             force: bool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2432,7 +2434,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             parent: str = None,
             tag: tags.Tag = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.Tag:
@@ -2541,7 +2543,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             *,
             tag: tags.Tag = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tags.Tag:
@@ -2636,7 +2638,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.DeleteTagRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2702,7 +2704,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[datacatalog.ListTagsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTagsPager:
@@ -2795,7 +2797,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -2943,7 +2945,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -3094,7 +3096,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
     def test_iam_permissions(self,
             request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

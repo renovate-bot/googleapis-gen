@@ -68,10 +68,12 @@ class Segments(proto.Message):
             Click type.
         conversion_action (str):
             Resource name of the conversion action.
+            This field is a member of `oneof`_ ``_conversion_action``.
         conversion_action_category (google.ads.googleads.v8.enums.types.ConversionActionCategoryEnum.ConversionActionCategory):
             Conversion action category.
         conversion_action_name (str):
             Conversion action name.
+            This field is a member of `oneof`_ ``_conversion_action_name``.
         conversion_adjustment (bool):
             This segments your conversion columns by the
             original conversion and conversion value vs. the
@@ -80,6 +82,7 @@ class Segments(proto.Message):
             row has the delta between data now and the data
             as originally stated. Summing the two together
             results post-adjustment data.
+            This field is a member of `oneof`_ ``_conversion_adjustment``.
         conversion_attribution_event_type (google.ads.googleads.v8.enums.types.ConversionAttributionEventTypeEnum.ConversionAttributionEventType):
             Conversion attribution event type.
         conversion_lag_bucket (google.ads.googleads.v8.enums.types.ConversionLagBucketEnum.ConversionLagBucket):
@@ -93,6 +96,7 @@ class Segments(proto.Message):
         date (str):
             Date to which metrics apply.
             yyyy-MM-dd format, e.g., 2018-04-17.
+            This field is a member of `oneof`_ ``_date``.
         day_of_week (google.ads.googleads.v8.enums.types.DayOfWeekEnum.DayOfWeek):
             Day of the week, e.g., MONDAY.
         device (google.ads.googleads.v8.enums.types.DeviceEnum.Device):
@@ -102,99 +106,131 @@ class Segments(proto.Message):
         geo_target_airport (str):
             Resource name of the geo target constant that
             represents an airport.
+            This field is a member of `oneof`_ ``_geo_target_airport``.
         geo_target_canton (str):
             Resource name of the geo target constant that
             represents a canton.
+            This field is a member of `oneof`_ ``_geo_target_canton``.
         geo_target_city (str):
             Resource name of the geo target constant that
             represents a city.
+            This field is a member of `oneof`_ ``_geo_target_city``.
         geo_target_country (str):
             Resource name of the geo target constant that
             represents a country.
+            This field is a member of `oneof`_ ``_geo_target_country``.
         geo_target_county (str):
             Resource name of the geo target constant that
             represents a county.
+            This field is a member of `oneof`_ ``_geo_target_county``.
         geo_target_district (str):
             Resource name of the geo target constant that
             represents a district.
+            This field is a member of `oneof`_ ``_geo_target_district``.
         geo_target_metro (str):
             Resource name of the geo target constant that
             represents a metro.
+            This field is a member of `oneof`_ ``_geo_target_metro``.
         geo_target_most_specific_location (str):
             Resource name of the geo target constant that
             represents the most specific location.
+            This field is a member of `oneof`_ ``_geo_target_most_specific_location``.
         geo_target_postal_code (str):
             Resource name of the geo target constant that
             represents a postal code.
+            This field is a member of `oneof`_ ``_geo_target_postal_code``.
         geo_target_province (str):
             Resource name of the geo target constant that
             represents a province.
+            This field is a member of `oneof`_ ``_geo_target_province``.
         geo_target_region (str):
             Resource name of the geo target constant that
             represents a region.
+            This field is a member of `oneof`_ ``_geo_target_region``.
         geo_target_state (str):
             Resource name of the geo target constant that
             represents a state.
+            This field is a member of `oneof`_ ``_geo_target_state``.
         hotel_booking_window_days (int):
             Hotel booking window in days.
+            This field is a member of `oneof`_ ``_hotel_booking_window_days``.
         hotel_center_id (int):
             Hotel center ID.
+            This field is a member of `oneof`_ ``_hotel_center_id``.
         hotel_check_in_date (str):
             Hotel check-in date. Formatted as yyyy-MM-dd.
+            This field is a member of `oneof`_ ``_hotel_check_in_date``.
         hotel_check_in_day_of_week (google.ads.googleads.v8.enums.types.DayOfWeekEnum.DayOfWeek):
             Hotel check-in day of week.
         hotel_city (str):
             Hotel city.
+            This field is a member of `oneof`_ ``_hotel_city``.
         hotel_class (int):
             Hotel class.
+            This field is a member of `oneof`_ ``_hotel_class``.
         hotel_country (str):
             Hotel country.
+            This field is a member of `oneof`_ ``_hotel_country``.
         hotel_date_selection_type (google.ads.googleads.v8.enums.types.HotelDateSelectionTypeEnum.HotelDateSelectionType):
             Hotel date selection type.
         hotel_length_of_stay (int):
             Hotel length of stay.
+            This field is a member of `oneof`_ ``_hotel_length_of_stay``.
         hotel_rate_rule_id (str):
             Hotel rate rule ID.
+            This field is a member of `oneof`_ ``_hotel_rate_rule_id``.
         hotel_rate_type (google.ads.googleads.v8.enums.types.HotelRateTypeEnum.HotelRateType):
             Hotel rate type.
         hotel_price_bucket (google.ads.googleads.v8.enums.types.HotelPriceBucketEnum.HotelPriceBucket):
             Hotel price bucket.
         hotel_state (str):
             Hotel state.
+            This field is a member of `oneof`_ ``_hotel_state``.
         hour (int):
             Hour of day as a number between 0 and 23,
             inclusive.
+            This field is a member of `oneof`_ ``_hour``.
         interaction_on_this_extension (bool):
             Only used with feed item metrics.
             Indicates whether the interaction metrics
             occurred on the feed item itself or a different
             extension or ad unit.
+            This field is a member of `oneof`_ ``_interaction_on_this_extension``.
         keyword (google.ads.googleads.v8.common.types.Keyword):
             Keyword criterion.
         month (str):
             Month as represented by the date of the first
             day of a month. Formatted as yyyy-MM-dd.
+            This field is a member of `oneof`_ ``_month``.
         month_of_year (google.ads.googleads.v8.enums.types.MonthOfYearEnum.MonthOfYear):
             Month of the year, e.g., January.
         partner_hotel_id (str):
             Partner hotel ID.
+            This field is a member of `oneof`_ ``_partner_hotel_id``.
         placeholder_type (google.ads.googleads.v8.enums.types.PlaceholderTypeEnum.PlaceholderType):
             Placeholder type. This is only used with feed
             item metrics.
         product_aggregator_id (int):
             Aggregator ID of the product.
+            This field is a member of `oneof`_ ``_product_aggregator_id``.
         product_bidding_category_level1 (str):
             Bidding category (level 1) of the product.
+            This field is a member of `oneof`_ ``_product_bidding_category_level1``.
         product_bidding_category_level2 (str):
             Bidding category (level 2) of the product.
+            This field is a member of `oneof`_ ``_product_bidding_category_level2``.
         product_bidding_category_level3 (str):
             Bidding category (level 3) of the product.
+            This field is a member of `oneof`_ ``_product_bidding_category_level3``.
         product_bidding_category_level4 (str):
             Bidding category (level 4) of the product.
+            This field is a member of `oneof`_ ``_product_bidding_category_level4``.
         product_bidding_category_level5 (str):
             Bidding category (level 5) of the product.
+            This field is a member of `oneof`_ ``_product_bidding_category_level5``.
         product_brand (str):
             Brand of the product.
+            This field is a member of `oneof`_ ``_product_brand``.
         product_channel (google.ads.googleads.v8.enums.types.ProductChannelEnum.ProductChannel):
             Channel of the product.
         product_channel_exclusivity (google.ads.googleads.v8.enums.types.ProductChannelExclusivityEnum.ProductChannelExclusivity):
@@ -204,42 +240,59 @@ class Segments(proto.Message):
         product_country (str):
             Resource name of the geo target constant for
             the country of sale of the product.
+            This field is a member of `oneof`_ ``_product_country``.
         product_custom_attribute0 (str):
             Custom attribute 0 of the product.
+            This field is a member of `oneof`_ ``_product_custom_attribute0``.
         product_custom_attribute1 (str):
             Custom attribute 1 of the product.
+            This field is a member of `oneof`_ ``_product_custom_attribute1``.
         product_custom_attribute2 (str):
             Custom attribute 2 of the product.
+            This field is a member of `oneof`_ ``_product_custom_attribute2``.
         product_custom_attribute3 (str):
             Custom attribute 3 of the product.
+            This field is a member of `oneof`_ ``_product_custom_attribute3``.
         product_custom_attribute4 (str):
             Custom attribute 4 of the product.
+            This field is a member of `oneof`_ ``_product_custom_attribute4``.
         product_item_id (str):
             Item ID of the product.
+            This field is a member of `oneof`_ ``_product_item_id``.
         product_language (str):
             Resource name of the language constant for
             the language of the product.
+            This field is a member of `oneof`_ ``_product_language``.
         product_merchant_id (int):
             Merchant ID of the product.
+            This field is a member of `oneof`_ ``_product_merchant_id``.
         product_store_id (str):
             Store ID of the product.
+            This field is a member of `oneof`_ ``_product_store_id``.
         product_title (str):
             Title of the product.
+            This field is a member of `oneof`_ ``_product_title``.
         product_type_l1 (str):
             Type (level 1) of the product.
+            This field is a member of `oneof`_ ``_product_type_l1``.
         product_type_l2 (str):
             Type (level 2) of the product.
+            This field is a member of `oneof`_ ``_product_type_l2``.
         product_type_l3 (str):
             Type (level 3) of the product.
+            This field is a member of `oneof`_ ``_product_type_l3``.
         product_type_l4 (str):
             Type (level 4) of the product.
+            This field is a member of `oneof`_ ``_product_type_l4``.
         product_type_l5 (str):
             Type (level 5) of the product.
+            This field is a member of `oneof`_ ``_product_type_l5``.
         quarter (str):
             Quarter as represented by the date of the
             first day of a quarter. Uses the calendar year
             for quarters, e.g., the second quarter of 2018
             starts on 2018-04-01. Formatted as yyyy-MM-dd.
+            This field is a member of `oneof`_ ``_quarter``.
         recommendation_type (google.ads.googleads.v8.enums.types.RecommendationTypeEnum.RecommendationType):
             Recommendation type.
         search_engine_results_page_type (google.ads.googleads.v8.enums.types.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType):
@@ -259,16 +312,20 @@ class Segments(proto.Message):
         webpage (str):
             Resource name of the ad group criterion that
             represents webpage criterion.
+            This field is a member of `oneof`_ ``_webpage``.
         week (str):
             Week as defined as Monday through Sunday, and
             represented by the date of Monday. Formatted as
             yyyy-MM-dd.
+            This field is a member of `oneof`_ ``_week``.
         year (int):
             Year, formatted as yyyy.
+            This field is a member of `oneof`_ ``_year``.
         sk_ad_network_conversion_value (int):
             iOS Store Kit Ad Network conversion value.
             Null value means this segment is not applicable,
             e.g. non-iOS campaign.
+            This field is a member of `oneof`_ ``_sk_ad_network_conversion_value``.
         asset_interaction_target (google.ads.googleads.v8.common.types.AssetInteractionTarget):
             Only used with CustomerAsset, CampaignAsset and AdGroupAsset
             metrics. Indicates whether the interaction metrics occurred
@@ -281,6 +338,7 @@ class Segments(proto.Message):
             interaction_on_this_asset is false, it means the
             interactions is not on this specific asset but on other
             parts of the served ad this asset is served with.
+            This field is a member of `oneof`_ ``_asset_interaction_target``.
     """
 
     ad_destination_type = proto.Field(
@@ -712,6 +770,7 @@ class Keyword(proto.Message):
     Attributes:
         ad_group_criterion (str):
             The AdGroupCriterion resource name.
+            This field is a member of `oneof`_ ``_ad_group_criterion``.
         info (google.ads.googleads.v8.common.types.KeywordInfo):
             Keyword info.
     """
@@ -734,6 +793,7 @@ class BudgetCampaignAssociationStatus(proto.Message):
     Attributes:
         campaign (str):
             The campaign resource name.
+            This field is a member of `oneof`_ ``_campaign``.
         status (google.ads.googleads.v8.enums.types.BudgetCampaignAssociationStatusEnum.BudgetCampaignAssociationStatus):
             Budget campaign association status.
     """

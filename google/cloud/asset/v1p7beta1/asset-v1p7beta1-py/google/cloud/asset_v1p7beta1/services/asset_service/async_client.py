@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -146,9 +148,9 @@ class AssetServiceAsyncClient:
         )
 
     async def export_assets(self,
-            request: asset_service.ExportAssetsRequest = None,
+            request: Union[asset_service.ExportAssetsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -167,7 +169,7 @@ class AssetServiceAsyncClient:
         the export operation usually finishes within 5 minutes.
 
         Args:
-            request (:class:`google.cloud.asset_v1p7beta1.types.ExportAssetsRequest`):
+            request (Union[google.cloud.asset_v1p7beta1.types.ExportAssetsRequest, dict]):
                 The request object. Export asset request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

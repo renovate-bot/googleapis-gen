@@ -111,10 +111,14 @@ class EndpointMatcher(proto.Message):
     r"""A definition of a matcher that selects endpoints to which the
     policies should be applied.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         metadata_label_matcher (google.cloud.networkservices_v1beta1.types.EndpointMatcher.MetadataLabelMatcher):
             The matcher is based on node metadata
             presented by xDS clients.
+            This field is a member of `oneof`_ ``matcher_type``.
     """
 
     class MetadataLabelMatcher(proto.Message):

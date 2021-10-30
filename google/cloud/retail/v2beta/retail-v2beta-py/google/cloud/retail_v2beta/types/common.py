@@ -170,6 +170,7 @@ class CustomAttribute(proto.Message):
             Only set if type
             [text][google.cloud.retail.v2beta.CustomAttribute.text] is
             set. Otherwise, a INVALID_ARGUMENT error is returned.
+            This field is a member of `oneof`_ ``_searchable``.
         indexable (bool):
             If true, custom attribute values are indexed, so that it can
             be filtered, faceted or boosted in
@@ -184,6 +185,7 @@ class CustomAttribute(proto.Message):
             and
             [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
             for more details.
+            This field is a member of `oneof`_ ``_indexable``.
     """
 
     text = proto.RepeatedField(
@@ -300,15 +302,26 @@ class Image(proto.Message):
 class Interval(proto.Message):
     r"""A floating point interval.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         minimum (float):
             Inclusive lower bound.
+            This field is a member of `oneof`_ ``min``.
         exclusive_minimum (float):
             Exclusive lower bound.
+            This field is a member of `oneof`_ ``min``.
         maximum (float):
             Inclusive upper bound.
+            This field is a member of `oneof`_ ``max``.
         exclusive_maximum (float):
             Exclusive upper bound.
+            This field is a member of `oneof`_ ``max``.
     """
 
     minimum = proto.Field(

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.services.services.keyword_plan_idea_service import pagers
 from google.ads.googleads.v8.services.types import keyword_plan_idea_service
 from .transports.base import KeywordPlanIdeaServiceTransport, DEFAULT_CLIENT_INFO
@@ -326,7 +328,7 @@ class KeywordPlanIdeaServiceClient(metaclass=KeywordPlanIdeaServiceClientMeta):
     def generate_keyword_ideas(self,
             request: Union[keyword_plan_idea_service.GenerateKeywordIdeasRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.GenerateKeywordIdeasPager:

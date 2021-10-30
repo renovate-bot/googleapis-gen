@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.maps.roads_v1.types import roads
 from .transports.base import RoadsServiceTransport, DEFAULT_CLIENT_INFO
@@ -142,10 +144,10 @@ class RoadsServiceAsyncClient:
         )
 
     async def snap_to_roads(self,
-            request: roads.SnapToRoadsRequest = None,
+            request: Union[roads.SnapToRoadsRequest, dict] = None,
             *,
             path: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> roads.SnapToRoadsResponse:
@@ -156,7 +158,7 @@ class RoadsServiceAsyncClient:
         point.
 
         Args:
-            request (:class:`google.maps.roads_v1.types.SnapToRoadsRequest`):
+            request (Union[google.maps.roads_v1.types.SnapToRoadsRequest, dict]):
                 The request object. A request to the SnapToRoads method,
                 requesting that a sequence of points be snapped to road
                 segments.
@@ -215,10 +217,10 @@ class RoadsServiceAsyncClient:
         return response
 
     async def list_nearest_roads(self,
-            request: roads.ListNearestRoadsRequest = None,
+            request: Union[roads.ListNearestRoadsRequest, dict] = None,
             *,
             points: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> roads.ListNearestRoadsResponse:
@@ -227,7 +229,7 @@ class RoadsServiceAsyncClient:
         a place ID for each snapped point.
 
         Args:
-            request (:class:`google.maps.roads_v1.types.ListNearestRoadsRequest`):
+            request (Union[google.maps.roads_v1.types.ListNearestRoadsRequest, dict]):
                 The request object. A request to the ListNearestRoads
                 method, requesting that a sequence of points be snapped
                 individually to the road segment that each is closest

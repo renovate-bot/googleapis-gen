@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
 from .transports.base import IdentityAwareProxyAdminV1Beta1Transport, DEFAULT_CLIENT_INFO
@@ -324,7 +326,7 @@ class IdentityAwareProxyAdminV1Beta1Client(metaclass=IdentityAwareProxyAdminV1Be
     def set_iam_policy(self,
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -437,7 +439,7 @@ class IdentityAwareProxyAdminV1Beta1Client(metaclass=IdentityAwareProxyAdminV1Be
     def get_iam_policy(self,
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -550,7 +552,7 @@ class IdentityAwareProxyAdminV1Beta1Client(metaclass=IdentityAwareProxyAdminV1Be
     def test_iam_permissions(self,
             request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:

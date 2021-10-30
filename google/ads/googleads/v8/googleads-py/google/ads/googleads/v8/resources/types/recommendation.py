@@ -35,6 +35,13 @@ __protobuf__ = proto.module(
 class Recommendation(proto.Message):
     r"""A recommendation.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the recommendation.
@@ -54,6 +61,7 @@ class Recommendation(proto.Message):
             This field will be set for the following recommendation
             types: CAMPAIGN_BUDGET, FORECASTING_CAMPAIGN_BUDGET,
             MARGINAL_ROI_CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
+            This field is a member of `oneof`_ ``_campaign_budget``.
         campaign (str):
             Output only. The campaign targeted by this recommendation.
             This will be set only when the recommendation affects a
@@ -66,6 +74,7 @@ class Recommendation(proto.Message):
             OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD,
             SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
             TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+            This field is a member of `oneof`_ ``_campaign``.
         ad_group (str):
             Output only. The ad group targeted by this recommendation.
             This will be set only when the recommendation affects a
@@ -74,62 +83,82 @@ class Recommendation(proto.Message):
             This field will be set for the following recommendation
             types: KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD,
             TEXT_AD
+            This field is a member of `oneof`_ ``_ad_group``.
         dismissed (bool):
             Output only. Whether the recommendation is
             dismissed or not.
+            This field is a member of `oneof`_ ``_dismissed``.
         campaign_budget_recommendation (google.ads.googleads.v8.resources.types.Recommendation.CampaignBudgetRecommendation):
             Output only. The campaign budget
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         forecasting_campaign_budget_recommendation (google.ads.googleads.v8.resources.types.Recommendation.CampaignBudgetRecommendation):
             Output only. The forecasting campaign budget
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         keyword_recommendation (google.ads.googleads.v8.resources.types.Recommendation.KeywordRecommendation):
             Output only. The keyword recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         text_ad_recommendation (google.ads.googleads.v8.resources.types.Recommendation.TextAdRecommendation):
             Output only. Add expanded text ad
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         target_cpa_opt_in_recommendation (google.ads.googleads.v8.resources.types.Recommendation.TargetCpaOptInRecommendation):
             Output only. The TargetCPA opt-in
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         maximize_conversions_opt_in_recommendation (google.ads.googleads.v8.resources.types.Recommendation.MaximizeConversionsOptInRecommendation):
             Output only. The MaximizeConversions Opt-In
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         enhanced_cpc_opt_in_recommendation (google.ads.googleads.v8.resources.types.Recommendation.EnhancedCpcOptInRecommendation):
             Output only. The Enhanced Cost-Per-Click Opt-
             n recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         search_partners_opt_in_recommendation (google.ads.googleads.v8.resources.types.Recommendation.SearchPartnersOptInRecommendation):
             Output only. The Search Partners Opt-In
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         maximize_clicks_opt_in_recommendation (google.ads.googleads.v8.resources.types.Recommendation.MaximizeClicksOptInRecommendation):
             Output only. The MaximizeClicks Opt-In
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         optimize_ad_rotation_recommendation (google.ads.googleads.v8.resources.types.Recommendation.OptimizeAdRotationRecommendation):
             Output only. The Optimize Ad Rotation
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         callout_extension_recommendation (google.ads.googleads.v8.resources.types.Recommendation.CalloutExtensionRecommendation):
             Output only. The Callout extension
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         sitelink_extension_recommendation (google.ads.googleads.v8.resources.types.Recommendation.SitelinkExtensionRecommendation):
             Output only. The Sitelink extension
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         call_extension_recommendation (google.ads.googleads.v8.resources.types.Recommendation.CallExtensionRecommendation):
             Output only. The Call extension
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         keyword_match_type_recommendation (google.ads.googleads.v8.resources.types.Recommendation.KeywordMatchTypeRecommendation):
             Output only. The keyword match type
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         move_unused_budget_recommendation (google.ads.googleads.v8.resources.types.Recommendation.MoveUnusedBudgetRecommendation):
             Output only. The move unused budget
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         target_roas_opt_in_recommendation (google.ads.googleads.v8.resources.types.Recommendation.TargetRoasOptInRecommendation):
             Output only. The Target ROAS opt-in
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         responsive_search_ad_recommendation (google.ads.googleads.v8.resources.types.Recommendation.ResponsiveSearchAdRecommendation):
             Output only. The add responsive search ad
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
         marginal_roi_campaign_budget_recommendation (google.ads.googleads.v8.resources.types.Recommendation.CampaignBudgetRecommendation):
             Output only. The marginal ROI campaign budget
             recommendation.
+            This field is a member of `oneof`_ ``recommendation``.
     """
 
     class RecommendationImpact(proto.Message):
@@ -165,17 +194,22 @@ class Recommendation(proto.Message):
         Attributes:
             impressions (float):
                 Output only. Number of ad impressions.
+                This field is a member of `oneof`_ ``_impressions``.
             clicks (float):
                 Output only. Number of ad clicks.
+                This field is a member of `oneof`_ ``_clicks``.
             cost_micros (int):
                 Output only. Cost (in micros) for
                 advertising, in the local currency for the
                 account.
+                This field is a member of `oneof`_ ``_cost_micros``.
             conversions (float):
                 Output only. Number of conversions.
+                This field is a member of `oneof`_ ``_conversions``.
             video_views (float):
                 Output only. Number of video views for a
                 video ad campaign.
+                This field is a member of `oneof`_ ``_video_views``.
         """
 
         impressions = proto.Field(
@@ -211,9 +245,11 @@ class Recommendation(proto.Message):
             current_budget_amount_micros (int):
                 Output only. The current budget amount in
                 micros.
+                This field is a member of `oneof`_ ``_current_budget_amount_micros``.
             recommended_budget_amount_micros (int):
                 Output only. The recommended budget amount in
                 micros.
+                This field is a member of `oneof`_ ``_recommended_budget_amount_micros``.
             budget_options (Sequence[google.ads.googleads.v8.resources.types.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption]):
                 Output only. The budget amounts and
                 associated impact estimates for some values of
@@ -227,6 +263,7 @@ class Recommendation(proto.Message):
                 budget_amount_micros (int):
                     Output only. The budget amount for this
                     option.
+                    This field is a member of `oneof`_ ``_budget_amount_micros``.
                 impact (google.ads.googleads.v8.resources.types.Recommendation.RecommendationImpact):
                     Output only. The impact estimate if budget is
                     changed to amount specified in this option.
@@ -268,6 +305,7 @@ class Recommendation(proto.Message):
             recommended_cpc_bid_micros (int):
                 Output only. The recommended CPC (cost-per-
                 lick) bid.
+                This field is a member of `oneof`_ ``_recommended_cpc_bid_micros``.
         """
 
         keyword = proto.Field(
@@ -312,10 +350,12 @@ class Recommendation(proto.Message):
             creation_date (str):
                 Output only. Creation date of the recommended
                 ad. YYYY-MM-DD format, e.g., 2018-04-17.
+                This field is a member of `oneof`_ ``_creation_date``.
             auto_apply_date (str):
                 Output only. Date, if present, is the
                 earliest when the recommendation will be auto
                 applied. YYYY-MM-DD format, e.g., 2018-04-17.
+                This field is a member of `oneof`_ ``_auto_apply_date``.
         """
 
         ad = proto.Field(
@@ -340,6 +380,7 @@ class Recommendation(proto.Message):
         Attributes:
             excess_campaign_budget (str):
                 Output only. The excess budget's resource_name.
+                This field is a member of `oneof`_ ``_excess_campaign_budget``.
             budget_recommendation (google.ads.googleads.v8.resources.types.Recommendation.CampaignBudgetRecommendation):
                 Output only. The recommendation for the
                 constrained budget to increase.
@@ -367,6 +408,7 @@ class Recommendation(proto.Message):
                 Output only. The recommended average CPA
                 target. See required budget amount and impact of
                 using this recommendation in options list.
+                This field is a member of `oneof`_ ``_recommended_target_cpa_micros``.
         """
 
         class TargetCpaOptInRecommendationOption(proto.Message):
@@ -378,12 +420,14 @@ class Recommendation(proto.Message):
                     option.
                 target_cpa_micros (int):
                     Output only. Average CPA target.
+                    This field is a member of `oneof`_ ``_target_cpa_micros``.
                 required_campaign_budget_amount_micros (int):
                     Output only. The minimum campaign budget, in
                     local currency for the account, required to
                     achieve the target CPA. Amount is specified in
                     micros, where one million is equivalent to one
                     currency unit.
+                    This field is a member of `oneof`_ ``_required_campaign_budget_amount_micros``.
                 impact (google.ads.googleads.v8.resources.types.Recommendation.RecommendationImpact):
                     Output only. The impact estimate if this
                     option is selected.
@@ -442,6 +486,7 @@ class Recommendation(proto.Message):
             recommended_budget_amount_micros (int):
                 Output only. The recommended new budget
                 amount.
+                This field is a member of `oneof`_ ``_recommended_budget_amount_micros``.
         """
 
         recommended_budget_amount_micros = proto.Field(
@@ -485,6 +530,7 @@ class Recommendation(proto.Message):
                 Output only. The recommended new budget
                 amount. Only set if the current budget is too
                 high.
+                This field is a member of `oneof`_ ``_recommended_budget_amount_micros``.
         """
 
         recommended_budget_amount_micros = proto.Field(
@@ -516,12 +562,14 @@ class Recommendation(proto.Message):
                 Output only. The recommended target ROAS
                 (revenue per unit of spend). The value is
                 between 0.01 and 1000.0, inclusive.
+                This field is a member of `oneof`_ ``_recommended_target_roas``.
             required_campaign_budget_amount_micros (int):
                 Output only. The minimum campaign budget, in
                 local currency for the account, required to
                 achieve the target ROAS. Amount is specified in
                 micros, where one million is equivalent to one
                 currency unit.
+                This field is a member of `oneof`_ ``_required_campaign_budget_amount_micros``.
         """
 
         recommended_target_roas = proto.Field(

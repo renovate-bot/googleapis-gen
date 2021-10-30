@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.analytics.admin_v1alpha.services.analytics_admin_service import pagers
 from google.analytics.admin_v1alpha.types import analytics_admin
 from google.analytics.admin_v1alpha.types import resources
@@ -549,7 +551,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Account:
@@ -623,7 +625,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def list_accounts(self,
             request: Union[analytics_admin.ListAccountsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccountsPager:
@@ -687,7 +689,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -765,7 +767,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             account: resources.Account = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Account:
@@ -851,7 +853,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def provision_account_ticket(self,
             request: Union[analytics_admin.ProvisionAccountTicketRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.ProvisionAccountTicketResponse:
@@ -899,7 +901,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def list_account_summaries(self,
             request: Union[analytics_admin.ListAccountSummariesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAccountSummariesPager:
@@ -961,7 +963,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetPropertyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
@@ -1034,7 +1036,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def list_properties(self,
             request: Union[analytics_admin.ListPropertiesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPropertiesPager:
@@ -1101,7 +1103,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.CreatePropertyRequest, dict] = None,
             *,
             property: resources.Property = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
@@ -1170,7 +1172,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeletePropertyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
@@ -1258,7 +1260,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             property: resources.Property = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Property:
@@ -1346,7 +1348,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetUserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UserLink:
@@ -1421,7 +1423,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def batch_get_user_links(self,
             request: Union[analytics_admin.BatchGetUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.BatchGetUserLinksResponse:
@@ -1479,7 +1481,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListUserLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUserLinksPager:
@@ -1565,7 +1567,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def audit_user_links(self,
             request: Union[analytics_admin.AuditUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.AuditUserLinksPager:
@@ -1645,7 +1647,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             user_link: resources.UserLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UserLink:
@@ -1739,7 +1741,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def batch_create_user_links(self,
             request: Union[analytics_admin.BatchCreateUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.BatchCreateUserLinksResponse:
@@ -1799,7 +1801,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.UpdateUserLinkRequest, dict] = None,
             *,
             user_link: resources.UserLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UserLink:
@@ -1872,7 +1874,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def batch_update_user_links(self,
             request: Union[analytics_admin.BatchUpdateUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.BatchUpdateUserLinksResponse:
@@ -1930,7 +1932,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteUserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1995,7 +1997,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def batch_delete_user_links(self,
             request: Union[analytics_admin.BatchDeleteUserLinksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2044,7 +2046,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetWebDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.WebDataStream:
@@ -2121,7 +2123,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteWebDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2190,7 +2192,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             web_data_stream: resources.WebDataStream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.WebDataStream:
@@ -2278,7 +2280,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             web_data_stream: resources.WebDataStream = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.WebDataStream:
@@ -2362,7 +2364,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListWebDataStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListWebDataStreamsPager:
@@ -2455,7 +2457,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetIosAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IosAppDataStream:
@@ -2532,7 +2534,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteIosAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2601,7 +2603,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             ios_app_data_stream: resources.IosAppDataStream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IosAppDataStream:
@@ -2689,7 +2691,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListIosAppDataStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIosAppDataStreamsPager:
@@ -2782,7 +2784,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetAndroidAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.AndroidAppDataStream:
@@ -2859,7 +2861,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteAndroidAppDataStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -2928,7 +2930,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             android_app_data_stream: resources.AndroidAppDataStream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.AndroidAppDataStream:
@@ -3016,7 +3018,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListAndroidAppDataStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAndroidAppDataStreamsPager:
@@ -3109,7 +3111,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetEnhancedMeasurementSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.EnhancedMeasurementSettings:
@@ -3191,7 +3193,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             enhanced_measurement_settings: resources.EnhancedMeasurementSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.EnhancedMeasurementSettings:
@@ -3283,7 +3285,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             firebase_link: resources.FirebaseLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.FirebaseLink:
@@ -3368,7 +3370,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteFirebaseLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3435,7 +3437,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListFirebaseLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListFirebaseLinksPager:
@@ -3523,7 +3525,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetGlobalSiteTagRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GlobalSiteTag:
@@ -3605,7 +3607,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             google_ads_link: resources.GoogleAdsLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleAdsLink:
@@ -3690,7 +3692,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             google_ads_link: resources.GoogleAdsLink = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleAdsLink:
@@ -3775,7 +3777,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteGoogleAdsLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -3841,7 +3843,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListGoogleAdsLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGoogleAdsLinksPager:
@@ -3928,7 +3930,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetDataSharingSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DataSharingSettings:
@@ -4008,7 +4010,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetMeasurementProtocolSecretRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.MeasurementProtocolSecret:
@@ -4087,7 +4089,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListMeasurementProtocolSecretsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMeasurementProtocolSecretsPager:
@@ -4180,7 +4182,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             measurement_protocol_secret: resources.MeasurementProtocolSecret = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.MeasurementProtocolSecret:
@@ -4268,7 +4270,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteMeasurementProtocolSecretRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -4340,7 +4342,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             measurement_protocol_secret: resources.MeasurementProtocolSecret = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.MeasurementProtocolSecret:
@@ -4423,7 +4425,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def search_change_history_events(self,
             request: Union[analytics_admin.SearchChangeHistoryEventsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.SearchChangeHistoryEventsPager:
@@ -4493,7 +4495,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetGoogleSignalsSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleSignalsSettings:
@@ -4570,7 +4572,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             google_signals_settings: resources.GoogleSignalsSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.GoogleSignalsSettings:
@@ -4658,7 +4660,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             conversion_event: resources.ConversionEvent = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConversionEvent:
@@ -4745,7 +4747,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetConversionEventRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConversionEvent:
@@ -4822,7 +4824,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteConversionEventRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -4890,7 +4892,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListConversionEventsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConversionEventsPager:
@@ -4980,7 +4982,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetDisplayVideo360AdvertiserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLink:
@@ -5057,7 +5059,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListDisplayVideo360AdvertiserLinksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDisplayVideo360AdvertiserLinksPager:
@@ -5146,7 +5148,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             display_video_360_advertiser_link: resources.DisplayVideo360AdvertiserLink = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLink:
@@ -5235,7 +5237,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteDisplayVideo360AdvertiserLinkRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -5305,7 +5307,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             display_video_360_advertiser_link: resources.DisplayVideo360AdvertiserLink = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLink:
@@ -5392,7 +5394,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLinkProposal:
@@ -5477,7 +5479,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListDisplayVideo360AdvertiserLinkProposalsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDisplayVideo360AdvertiserLinkProposalsPager:
@@ -5566,7 +5568,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             display_video_360_advertiser_link_proposal: resources.DisplayVideo360AdvertiserLinkProposal = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLinkProposal:
@@ -5658,7 +5660,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.DeleteDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -5726,7 +5728,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def approve_display_video360_advertiser_link_proposal(self,
             request: Union[analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalResponse:
@@ -5786,7 +5788,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     def cancel_display_video360_advertiser_link_proposal(self,
             request: Union[analytics_admin.CancelDisplayVideo360AdvertiserLinkProposalRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DisplayVideo360AdvertiserLinkProposal:
@@ -5856,7 +5858,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             custom_dimension: resources.CustomDimension = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomDimension:
@@ -5939,7 +5941,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             custom_dimension: resources.CustomDimension = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomDimension:
@@ -6021,7 +6023,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListCustomDimensionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCustomDimensionsPager:
@@ -6108,7 +6110,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ArchiveCustomDimensionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -6176,7 +6178,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetCustomDimensionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomDimension:
@@ -6251,7 +6253,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             parent: str = None,
             custom_metric: resources.CustomMetric = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomMetric:
@@ -6332,7 +6334,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             custom_metric: resources.CustomMetric = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomMetric:
@@ -6414,7 +6416,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ListCustomMetricsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCustomMetricsPager:
@@ -6501,7 +6503,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.ArchiveCustomMetricRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -6568,7 +6570,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetCustomMetricRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CustomMetric:
@@ -6642,7 +6644,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             request: Union[analytics_admin.GetDataRetentionSettingsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DataRetentionSettings:
@@ -6722,7 +6724,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             *,
             data_retention_settings: resources.DataRetentionSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.DataRetentionSettings:

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.chromeos.moblab_v1beta1.services.build_service import pagers
@@ -382,7 +384,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
     def list_build_targets(self,
             request: Union[build_service.ListBuildTargetsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBuildTargetsPager:
@@ -443,7 +445,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
             request: Union[build_service.ListModelsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListModelsPager:
@@ -528,7 +530,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
             request: Union[build_service.ListBuildsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListBuildsPager:
@@ -618,7 +620,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
             request: Union[build_service.CheckBuildStageStatusRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> build_service.CheckBuildStageStatusResponse:
@@ -696,7 +698,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
             request: Union[build_service.StageBuildRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -790,7 +792,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
             request: Union[build_service.FindMostStableBuildRequest, dict] = None,
             *,
             build_target: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> build_service.FindMostStableBuildResponse:

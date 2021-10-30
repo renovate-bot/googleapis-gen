@@ -55,6 +55,13 @@ __protobuf__ = proto.module(
 class FeedMapping(proto.Message):
     r"""A feed mapping.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed mapping. Feed
@@ -63,6 +70,7 @@ class FeedMapping(proto.Message):
             ``customers/{customer_id}/feedMappings/{feed_id}~{feed_mapping_id}``
         feed (str):
             Immutable. The feed of this feed mapping.
+            This field is a member of `oneof`_ ``_feed``.
         attribute_field_mappings (Sequence[google.ads.googleads.v8.resources.types.AttributeFieldMapping]):
             Immutable. Feed attributes to field mappings.
             These mappings are a one-to-many relationship
@@ -79,10 +87,12 @@ class FeedMapping(proto.Message):
             Immutable. The placeholder type of this
             mapping (i.e., if the mapping maps feed
             attributes to placeholder fields).
+            This field is a member of `oneof`_ ``target``.
         criterion_type (google.ads.googleads.v8.enums.types.FeedMappingCriterionTypeEnum.FeedMappingCriterionType):
             Immutable. The criterion type of this mapping
             (i.e., if the mapping maps feed attributes to
             criterion fields).
+            This field is a member of `oneof`_ ``target``.
     """
 
     resource_name = proto.Field(
@@ -122,63 +132,94 @@ class AttributeFieldMapping(proto.Message):
     r"""Maps from feed attribute id to a placeholder or criterion
     field id.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         feed_attribute_id (int):
             Immutable. Feed attribute from which to map.
+            This field is a member of `oneof`_ ``_feed_attribute_id``.
         field_id (int):
             Output only. The placeholder field ID. If a
             placeholder field enum is not published in the
             current API version, then this field will be
             populated and the field oneof will be empty.
             This field is read-only.
+            This field is a member of `oneof`_ ``_field_id``.
         sitelink_field (google.ads.googleads.v8.enums.types.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField):
             Immutable. Sitelink Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         call_field (google.ads.googleads.v8.enums.types.CallPlaceholderFieldEnum.CallPlaceholderField):
             Immutable. Call Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         app_field (google.ads.googleads.v8.enums.types.AppPlaceholderFieldEnum.AppPlaceholderField):
             Immutable. App Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         location_field (google.ads.googleads.v8.enums.types.LocationPlaceholderFieldEnum.LocationPlaceholderField):
             Output only. Location Placeholder Fields.
             This field is read-only.
+            This field is a member of `oneof`_ ``field``.
         affiliate_location_field (google.ads.googleads.v8.enums.types.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField):
             Output only. Affiliate Location Placeholder
             Fields. This field is read-only.
+            This field is a member of `oneof`_ ``field``.
         callout_field (google.ads.googleads.v8.enums.types.CalloutPlaceholderFieldEnum.CalloutPlaceholderField):
             Immutable. Callout Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         structured_snippet_field (google.ads.googleads.v8.enums.types.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField):
             Immutable. Structured Snippet Placeholder
             Fields.
+            This field is a member of `oneof`_ ``field``.
         message_field (google.ads.googleads.v8.enums.types.MessagePlaceholderFieldEnum.MessagePlaceholderField):
             Immutable. Message Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         price_field (google.ads.googleads.v8.enums.types.PricePlaceholderFieldEnum.PricePlaceholderField):
             Immutable. Price Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         promotion_field (google.ads.googleads.v8.enums.types.PromotionPlaceholderFieldEnum.PromotionPlaceholderField):
             Immutable. Promotion Placeholder Fields.
+            This field is a member of `oneof`_ ``field``.
         ad_customizer_field (google.ads.googleads.v8.enums.types.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField):
             Immutable. Ad Customizer Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         dsa_page_feed_field (google.ads.googleads.v8.enums.types.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField):
             Immutable. Dynamic Search Ad Page Feed
             Fields.
+            This field is a member of `oneof`_ ``field``.
         location_extension_targeting_field (google.ads.googleads.v8.enums.types.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField):
             Immutable. Location Target Fields.
+            This field is a member of `oneof`_ ``field``.
         education_field (google.ads.googleads.v8.enums.types.EducationPlaceholderFieldEnum.EducationPlaceholderField):
             Immutable. Education Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         flight_field (google.ads.googleads.v8.enums.types.FlightPlaceholderFieldEnum.FlightPlaceholderField):
             Immutable. Flight Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         custom_field (google.ads.googleads.v8.enums.types.CustomPlaceholderFieldEnum.CustomPlaceholderField):
             Immutable. Custom Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         hotel_field (google.ads.googleads.v8.enums.types.HotelPlaceholderFieldEnum.HotelPlaceholderField):
             Immutable. Hotel Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         real_estate_field (google.ads.googleads.v8.enums.types.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField):
             Immutable. Real Estate Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         travel_field (google.ads.googleads.v8.enums.types.TravelPlaceholderFieldEnum.TravelPlaceholderField):
             Immutable. Travel Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         local_field (google.ads.googleads.v8.enums.types.LocalPlaceholderFieldEnum.LocalPlaceholderField):
             Immutable. Local Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         job_field (google.ads.googleads.v8.enums.types.JobPlaceholderFieldEnum.JobPlaceholderField):
             Immutable. Job Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
         image_field (google.ads.googleads.v8.enums.types.ImagePlaceholderFieldEnum.ImagePlaceholderField):
             Immutable. Image Placeholder Fields
+            This field is a member of `oneof`_ ``field``.
     """
 
     feed_attribute_id = proto.Field(

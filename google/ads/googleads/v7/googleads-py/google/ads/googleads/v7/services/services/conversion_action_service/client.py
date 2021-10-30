@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.common.types import tag_snippet
 from google.ads.googleads.v7.enums.types import conversion_action_category
 from google.ads.googleads.v7.enums.types import conversion_action_counting_type
@@ -354,7 +356,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
             request: Union[conversion_action_service.GetConversionActionRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_action.ConversionAction:
@@ -431,7 +433,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
             *,
             customer_id: str = None,
             operations: Sequence[conversion_action_service.ConversionActionOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> conversion_action_service.MutateConversionActionsResponse:

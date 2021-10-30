@@ -20,12 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 import warnings
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.container_v1.services.cluster_manager import pagers
 from google.container_v1.types import cluster_service
@@ -144,12 +146,12 @@ class ClusterManagerAsyncClient:
         )
 
     async def list_clusters(self,
-            request: cluster_service.ListClustersRequest = None,
+            request: Union[cluster_service.ListClustersRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListClustersResponse:
@@ -157,7 +159,7 @@ class ClusterManagerAsyncClient:
         specified zone or all zones.
 
         Args:
-            request (:class:`google.container_v1.types.ListClustersRequest`):
+            request (Union[google.container_v1.types.ListClustersRequest, dict]):
                 The request object. ListClustersRequest lists clusters.
             project_id (:class:`str`):
                 Deprecated. The Google Developers Console `project ID or
@@ -254,20 +256,20 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_cluster(self,
-            request: cluster_service.GetClusterRequest = None,
+            request: Union[cluster_service.GetClusterRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Cluster:
         r"""Gets the details of a specific cluster.
 
         Args:
-            request (:class:`google.container_v1.types.GetClusterRequest`):
+            request (Union[google.container_v1.types.GetClusterRequest, dict]):
                 The request object. GetClusterRequest gets the settings
                 of a cluster.
             project_id (:class:`str`):
@@ -372,13 +374,13 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_cluster(self,
-            request: cluster_service.CreateClusterRequest = None,
+            request: Union[cluster_service.CreateClusterRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster: cluster_service.Cluster = None,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -397,7 +399,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         indicating which CIDR range the cluster is using.
 
         Args:
-            request (:class:`google.container_v1.types.CreateClusterRequest`):
+            request (Union[google.container_v1.types.CreateClusterRequest, dict]):
                 The request object. CreateClusterRequest creates a
                 cluster.
             project_id (:class:`str`):
@@ -497,21 +499,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_cluster(self,
-            request: cluster_service.UpdateClusterRequest = None,
+            request: Union[cluster_service.UpdateClusterRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             update: cluster_service.ClusterUpdate = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Updates the settings of a specific cluster.
 
         Args:
-            request (:class:`google.container_v1.types.UpdateClusterRequest`):
+            request (Union[google.container_v1.types.UpdateClusterRequest, dict]):
                 The request object. UpdateClusterRequest updates the
                 settings of a cluster.
             project_id (:class:`str`):
@@ -622,9 +624,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_node_pool(self,
-            request: cluster_service.UpdateNodePoolRequest = None,
+            request: Union[cluster_service.UpdateNodePoolRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -632,7 +634,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         specified node pool.
 
         Args:
-            request (:class:`google.container_v1.types.UpdateNodePoolRequest`):
+            request (Union[google.container_v1.types.UpdateNodePoolRequest, dict]):
                 The request object. UpdateNodePoolRequests update a node
                 pool's image and/or version.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -680,9 +682,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_node_pool_autoscaling(self,
-            request: cluster_service.SetNodePoolAutoscalingRequest = None,
+            request: Union[cluster_service.SetNodePoolAutoscalingRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -690,7 +692,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         pool.
 
         Args:
-            request (:class:`google.container_v1.types.SetNodePoolAutoscalingRequest`):
+            request (Union[google.container_v1.types.SetNodePoolAutoscalingRequest, dict]):
                 The request object. SetNodePoolAutoscalingRequest sets
                 the autoscaler settings of a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -738,21 +740,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_logging_service(self,
-            request: cluster_service.SetLoggingServiceRequest = None,
+            request: Union[cluster_service.SetLoggingServiceRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             logging_service: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets the logging service for a specific cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetLoggingServiceRequest`):
+            request (Union[google.container_v1.types.SetLoggingServiceRequest, dict]):
                 The request object. SetLoggingServiceRequest sets the
                 logging service of a cluster.
             project_id (:class:`str`):
@@ -875,21 +877,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_monitoring_service(self,
-            request: cluster_service.SetMonitoringServiceRequest = None,
+            request: Union[cluster_service.SetMonitoringServiceRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             monitoring_service: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets the monitoring service for a specific cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetMonitoringServiceRequest`):
+            request (Union[google.container_v1.types.SetMonitoringServiceRequest, dict]):
                 The request object. SetMonitoringServiceRequest sets the
                 monitoring service of a cluster.
             project_id (:class:`str`):
@@ -1014,21 +1016,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_addons_config(self,
-            request: cluster_service.SetAddonsConfigRequest = None,
+            request: Union[cluster_service.SetAddonsConfigRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             addons_config: cluster_service.AddonsConfig = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets the addons for a specific cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetAddonsConfigRequest`):
+            request (Union[google.container_v1.types.SetAddonsConfigRequest, dict]):
                 The request object. SetAddonsConfigRequest sets the
                 addons associated with the cluster.
             project_id (:class:`str`):
@@ -1140,14 +1142,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_locations(self,
-            request: cluster_service.SetLocationsRequest = None,
+            request: Union[cluster_service.SetLocationsRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             locations: Sequence[str] = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1156,7 +1158,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         instead.
 
         Args:
-            request (:class:`google.container_v1.types.SetLocationsRequest`):
+            request (Union[google.container_v1.types.SetLocationsRequest, dict]):
                 The request object. SetLocationsRequest sets the
                 locations of the cluster.
             project_id (:class:`str`):
@@ -1277,21 +1279,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_master(self,
-            request: cluster_service.UpdateMasterRequest = None,
+            request: Union[cluster_service.UpdateMasterRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             master_version: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Updates the master for a specific cluster.
 
         Args:
-            request (:class:`google.container_v1.types.UpdateMasterRequest`):
+            request (Union[google.container_v1.types.UpdateMasterRequest, dict]):
                 The request object. UpdateMasterRequest updates the
                 master of the cluster.
             project_id (:class:`str`):
@@ -1414,9 +1416,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_master_auth(self,
-            request: cluster_service.SetMasterAuthRequest = None,
+            request: Union[cluster_service.SetMasterAuthRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1426,7 +1428,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         password.
 
         Args:
-            request (:class:`google.container_v1.types.SetMasterAuthRequest`):
+            request (Union[google.container_v1.types.SetMasterAuthRequest, dict]):
                 The request object. SetMasterAuthRequest updates the
                 admin password of a cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1474,13 +1476,13 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_cluster(self,
-            request: cluster_service.DeleteClusterRequest = None,
+            request: Union[cluster_service.DeleteClusterRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1496,7 +1498,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         initially created.
 
         Args:
-            request (:class:`google.container_v1.types.DeleteClusterRequest`):
+            request (Union[google.container_v1.types.DeleteClusterRequest, dict]):
                 The request object. DeleteClusterRequest deletes a
                 cluster.
             project_id (:class:`str`):
@@ -1605,11 +1607,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_operations(self,
-            request: cluster_service.ListOperationsRequest = None,
+            request: Union[cluster_service.ListOperationsRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListOperationsResponse:
@@ -1617,7 +1619,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         or all zones.
 
         Args:
-            request (:class:`google.container_v1.types.ListOperationsRequest`):
+            request (Union[google.container_v1.types.ListOperationsRequest, dict]):
                 The request object. ListOperationsRequest lists
                 operations.
             project_id (:class:`str`):
@@ -1704,20 +1706,20 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_operation(self,
-            request: cluster_service.GetOperationRequest = None,
+            request: Union[cluster_service.GetOperationRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             operation_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Gets the specified operation.
 
         Args:
-            request (:class:`google.container_v1.types.GetOperationRequest`):
+            request (Union[google.container_v1.types.GetOperationRequest, dict]):
                 The request object. GetOperationRequest gets a single
                 operation.
             project_id (:class:`str`):
@@ -1825,20 +1827,20 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def cancel_operation(self,
-            request: cluster_service.CancelOperationRequest = None,
+            request: Union[cluster_service.CancelOperationRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             operation_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Cancels the specified operation.
 
         Args:
-            request (:class:`google.container_v1.types.CancelOperationRequest`):
+            request (Union[google.container_v1.types.CancelOperationRequest, dict]):
                 The request object. CancelOperationRequest cancels a
                 single operation.
             project_id (:class:`str`):
@@ -1928,12 +1930,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def get_server_config(self,
-            request: cluster_service.GetServerConfigRequest = None,
+            request: Union[cluster_service.GetServerConfigRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ServerConfig:
@@ -1941,7 +1943,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Kubernetes Engine service.
 
         Args:
-            request (:class:`google.container_v1.types.GetServerConfigRequest`):
+            request (Union[google.container_v1.types.GetServerConfigRequest, dict]):
                 The request object. Gets the current Kubernetes Engine
                 service configuration.
             project_id (:class:`str`):
@@ -2036,9 +2038,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_json_web_keys(self,
-            request: cluster_service.GetJSONWebKeysRequest = None,
+            request: Union[cluster_service.GetJSONWebKeysRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.GetJSONWebKeysResponse:
@@ -2048,7 +2050,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         available for all clusters.
 
         Args:
-            request (:class:`google.container_v1.types.GetJSONWebKeysRequest`):
+            request (Union[google.container_v1.types.GetJSONWebKeysRequest, dict]):
                 The request object. GetJSONWebKeysRequest gets the
                 public component of the keys used by the cluster to sign
                 token requests. This will be the jwks_uri for the
@@ -2098,20 +2100,20 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_node_pools(self,
-            request: cluster_service.ListNodePoolsRequest = None,
+            request: Union[cluster_service.ListNodePoolsRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListNodePoolsResponse:
         r"""Lists the node pools for a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.ListNodePoolsRequest`):
+            request (Union[google.container_v1.types.ListNodePoolsRequest, dict]):
                 The request object. ListNodePoolsRequest lists the node
                 pool(s) for a cluster.
             project_id (:class:`str`):
@@ -2217,21 +2219,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_node_pool(self,
-            request: cluster_service.GetNodePoolRequest = None,
+            request: Union[cluster_service.GetNodePoolRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             node_pool_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.NodePool:
         r"""Retrieves the requested node pool.
 
         Args:
-            request (:class:`google.container_v1.types.GetNodePoolRequest`):
+            request (Union[google.container_v1.types.GetNodePoolRequest, dict]):
                 The request object. GetNodePoolRequest retrieves a node
                 pool for a cluster.
             project_id (:class:`str`):
@@ -2355,21 +2357,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_node_pool(self,
-            request: cluster_service.CreateNodePoolRequest = None,
+            request: Union[cluster_service.CreateNodePoolRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             node_pool: cluster_service.NodePool = None,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Creates a node pool for a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.CreateNodePoolRequest`):
+            request (Union[google.container_v1.types.CreateNodePoolRequest, dict]):
                 The request object. CreateNodePoolRequest creates a node
                 pool for a cluster.
             project_id (:class:`str`):
@@ -2477,21 +2479,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_node_pool(self,
-            request: cluster_service.DeleteNodePoolRequest = None,
+            request: Union[cluster_service.DeleteNodePoolRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             node_pool_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Deletes a node pool from a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.DeleteNodePoolRequest`):
+            request (Union[google.container_v1.types.DeleteNodePoolRequest, dict]):
                 The request object. DeleteNodePoolRequest deletes a node
                 pool for a cluster.
             project_id (:class:`str`):
@@ -2610,14 +2612,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def rollback_node_pool_upgrade(self,
-            request: cluster_service.RollbackNodePoolUpgradeRequest = None,
+            request: Union[cluster_service.RollbackNodePoolUpgradeRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             node_pool_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2626,7 +2628,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         successfully completed.
 
         Args:
-            request (:class:`google.container_v1.types.RollbackNodePoolUpgradeRequest`):
+            request (Union[google.container_v1.types.RollbackNodePoolUpgradeRequest, dict]):
                 The request object. RollbackNodePoolUpgradeRequest
                 rollbacks the previously Aborted or Failed NodePool
                 upgrade. This will be an no-op if the last upgrade
@@ -2742,16 +2744,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_node_pool_management(self,
-            request: cluster_service.SetNodePoolManagementRequest = None,
+            request: Union[cluster_service.SetNodePoolManagementRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets the NodeManagement options for a node pool.
 
         Args:
-            request (:class:`google.container_v1.types.SetNodePoolManagementRequest`):
+            request (Union[google.container_v1.types.SetNodePoolManagementRequest, dict]):
                 The request object. SetNodePoolManagementRequest sets
                 the node management properties of a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2799,16 +2801,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_labels(self,
-            request: cluster_service.SetLabelsRequest = None,
+            request: Union[cluster_service.SetLabelsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets labels on a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetLabelsRequest`):
+            request (Union[google.container_v1.types.SetLabelsRequest, dict]):
                 The request object. SetLabelsRequest sets the Google
                 Cloud Platform labels on a Google Container Engine
                 cluster, which will in turn set them for Google Compute
@@ -2858,14 +2860,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_legacy_abac(self,
-            request: cluster_service.SetLegacyAbacRequest = None,
+            request: Union[cluster_service.SetLegacyAbacRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             enabled: bool = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2873,7 +2875,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         on a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetLegacyAbacRequest`):
+            request (Union[google.container_v1.types.SetLegacyAbacRequest, dict]):
                 The request object. SetLegacyAbacRequest enables or
                 disables the ABAC authorization mechanism for a cluster.
             project_id (:class:`str`):
@@ -2984,20 +2986,20 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def start_ip_rotation(self,
-            request: cluster_service.StartIPRotationRequest = None,
+            request: Union[cluster_service.StartIPRotationRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Starts master IP rotation.
 
         Args:
-            request (:class:`google.container_v1.types.StartIPRotationRequest`):
+            request (Union[google.container_v1.types.StartIPRotationRequest, dict]):
                 The request object. StartIPRotationRequest creates a new
                 IP for the cluster and then performs a node upgrade on
                 each node pool to point to the new IP.
@@ -3099,20 +3101,20 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def complete_ip_rotation(self,
-            request: cluster_service.CompleteIPRotationRequest = None,
+            request: Union[cluster_service.CompleteIPRotationRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Completes master IP rotation.
 
         Args:
-            request (:class:`google.container_v1.types.CompleteIPRotationRequest`):
+            request (Union[google.container_v1.types.CompleteIPRotationRequest, dict]):
                 The request object. CompleteIPRotationRequest moves the
                 cluster master back into single-IP mode.
             project_id (:class:`str`):
@@ -3213,16 +3215,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_node_pool_size(self,
-            request: cluster_service.SetNodePoolSizeRequest = None,
+            request: Union[cluster_service.SetNodePoolSizeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets the size for a specific node pool.
 
         Args:
-            request (:class:`google.container_v1.types.SetNodePoolSizeRequest`):
+            request (Union[google.container_v1.types.SetNodePoolSizeRequest, dict]):
                 The request object. SetNodePoolSizeRequest sets the size
                 a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -3270,21 +3272,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_network_policy(self,
-            request: cluster_service.SetNetworkPolicyRequest = None,
+            request: Union[cluster_service.SetNetworkPolicyRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             network_policy: cluster_service.NetworkPolicy = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Enables or disables Network Policy for a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetNetworkPolicyRequest`):
+            request (Union[google.container_v1.types.SetNetworkPolicyRequest, dict]):
                 The request object. SetNetworkPolicyRequest
                 enables/disables network policy for a cluster.
             project_id (:class:`str`):
@@ -3394,21 +3396,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_maintenance_policy(self,
-            request: cluster_service.SetMaintenancePolicyRequest = None,
+            request: Union[cluster_service.SetMaintenancePolicyRequest, dict] = None,
             *,
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
             maintenance_policy: cluster_service.MaintenancePolicy = None,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
         r"""Sets the maintenance policy for a cluster.
 
         Args:
-            request (:class:`google.container_v1.types.SetMaintenancePolicyRequest`):
+            request (Union[google.container_v1.types.SetMaintenancePolicyRequest, dict]):
                 The request object. SetMaintenancePolicyRequest sets the
                 maintenance policy for a cluster.
             project_id (:class:`str`):
@@ -3515,9 +3517,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_usable_subnetworks(self,
-            request: cluster_service.ListUsableSubnetworksRequest = None,
+            request: Union[cluster_service.ListUsableSubnetworksRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUsableSubnetworksAsyncPager:
@@ -3525,7 +3527,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         clusters in a project.
 
         Args:
-            request (:class:`google.container_v1.types.ListUsableSubnetworksRequest`):
+            request (Union[google.container_v1.types.ListUsableSubnetworksRequest, dict]):
                 The request object. ListUsableSubnetworksRequest
                 requests the list of usable subnetworks available to a
                 user for creating clusters.

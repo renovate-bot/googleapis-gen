@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.apigateway_v1.services.api_gateway_service import pagers
@@ -398,7 +400,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.ListGatewaysRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListGatewaysPager:
@@ -485,7 +487,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.GetGatewayRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> apigateway.Gateway:
@@ -566,7 +568,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             parent: str = None,
             gateway: apigateway.Gateway = None,
             gateway_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -672,7 +674,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             *,
             gateway: apigateway.Gateway = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -770,7 +772,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.DeleteGatewayRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -866,7 +868,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.ListApisRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListApisPager:
@@ -953,7 +955,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.GetApiRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> apigateway.Api:
@@ -1030,7 +1032,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             parent: str = None,
             api: apigateway.Api = None,
             api_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1134,7 +1136,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             *,
             api: apigateway.Api = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1231,7 +1233,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.DeleteApiRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1327,7 +1329,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.ListApiConfigsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListApiConfigsPager:
@@ -1414,7 +1416,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.GetApiConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> apigateway.ApiConfig:
@@ -1492,7 +1494,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             parent: str = None,
             api_config: apigateway.ApiConfig = None,
             api_config_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1596,7 +1598,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             *,
             api_config: apigateway.ApiConfig = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1692,7 +1694,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             request: Union[apigateway.DeleteApiConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

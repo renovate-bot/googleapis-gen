@@ -86,11 +86,20 @@ class LocationSensor(proto.Enum):
 class TerminalPointId(proto.Message):
     r"""Identifies a terminal point.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         place_id (str):
             Deprecated.
+            This field is a member of `oneof`_ ``Id``.
         generated_id (str):
             Deprecated.
+            This field is a member of `oneof`_ ``Id``.
         value (str):
             Unique ID of the terminal point.
     """

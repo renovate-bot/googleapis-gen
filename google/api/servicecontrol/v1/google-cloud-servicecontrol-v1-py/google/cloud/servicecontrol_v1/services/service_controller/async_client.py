@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.servicecontrol_v1.types import check_error
 from google.cloud.servicecontrol_v1.types import service_controller
@@ -147,9 +149,9 @@ class ServiceControllerAsyncClient:
         )
 
     async def check(self,
-            request: service_controller.CheckRequest = None,
+            request: Union[service_controller.CheckRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service_controller.CheckResponse:
@@ -174,7 +176,7 @@ class ServiceControllerAsyncClient:
         `Cloud IAM <https://cloud.google.com/iam>`__.
 
         Args:
-            request (:class:`google.cloud.servicecontrol_v1.types.CheckRequest`):
+            request (Union[google.cloud.servicecontrol_v1.types.CheckRequest, dict]):
                 The request object. Request message for the Check
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -218,9 +220,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def report(self,
-            request: service_controller.ReportRequest = None,
+            request: Union[service_controller.ReportRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service_controller.ReportResponse:
@@ -244,7 +246,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         `Google Cloud IAM <https://cloud.google.com/iam>`__.
 
         Args:
-            request (:class:`google.cloud.servicecontrol_v1.types.ReportRequest`):
+            request (Union[google.cloud.servicecontrol_v1.types.ReportRequest, dict]):
                 The request object. Request message for the Report
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

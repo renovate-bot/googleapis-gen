@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.common.types import offline_user_data
 from google.ads.googleads.v7.enums.types import offline_user_data_job_failure_reason
 from google.ads.googleads.v7.enums.types import offline_user_data_job_status
@@ -346,7 +348,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             *,
             customer_id: str = None,
             job: offline_user_data_job.OfflineUserDataJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> offline_user_data_job_service.CreateOfflineUserDataJobResponse:
@@ -436,7 +438,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             request: Union[offline_user_data_job_service.GetOfflineUserDataJobRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> offline_user_data_job.OfflineUserDataJob:
@@ -520,7 +522,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             *,
             resource_name: str = None,
             operations: Sequence[offline_user_data_job_service.OfflineUserDataJobOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse:
@@ -609,7 +611,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             request: Union[offline_user_data_job_service.RunOfflineUserDataJobRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

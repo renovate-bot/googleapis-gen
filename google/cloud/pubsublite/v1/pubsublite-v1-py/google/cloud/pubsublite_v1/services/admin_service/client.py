@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.pubsublite_v1.services.admin_service import pagers
@@ -367,7 +369,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             parent: str = None,
             topic: common.Topic = None,
             topic_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Topic:
@@ -460,7 +462,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.GetTopicRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Topic:
@@ -532,7 +534,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.GetTopicPartitionsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> admin.TopicPartitions:
@@ -605,7 +607,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.ListTopicsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTopicsPager:
@@ -692,7 +694,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             *,
             topic: common.Topic = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Topic:
@@ -773,7 +775,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.DeleteTopicRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -838,7 +840,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.ListTopicSubscriptionsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTopicSubscriptionsPager:
@@ -926,7 +928,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             parent: str = None,
             subscription: common.Subscription = None,
             subscription_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Subscription:
@@ -1021,7 +1023,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.GetSubscriptionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Subscription:
@@ -1096,7 +1098,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.ListSubscriptionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSubscriptionsPager:
@@ -1184,7 +1186,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             *,
             subscription: common.Subscription = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Subscription:
@@ -1267,7 +1269,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.DeleteSubscriptionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1331,7 +1333,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
     def seek_subscription(self,
             request: Union[admin.SeekSubscriptionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1426,7 +1428,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             parent: str = None,
             reservation: common.Reservation = None,
             reservation_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Reservation:
@@ -1521,7 +1523,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.GetReservationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Reservation:
@@ -1596,7 +1598,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.ListReservationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListReservationsPager:
@@ -1684,7 +1686,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             *,
             reservation: common.Reservation = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common.Reservation:
@@ -1767,7 +1769,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.DeleteReservationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1833,7 +1835,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             request: Union[admin.ListReservationTopicsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListReservationTopicsPager:

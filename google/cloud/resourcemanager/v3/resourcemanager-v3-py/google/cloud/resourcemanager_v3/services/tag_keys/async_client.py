@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -151,17 +153,17 @@ class TagKeysAsyncClient:
         )
 
     async def list_tag_keys(self,
-            request: tag_keys.ListTagKeysRequest = None,
+            request: Union[tag_keys.ListTagKeysRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTagKeysAsyncPager:
         r"""Lists all TagKeys for a parent resource.
 
         Args:
-            request (:class:`google.cloud.resourcemanager_v3.types.ListTagKeysRequest`):
+            request (Union[google.cloud.resourcemanager_v3.types.ListTagKeysRequest, dict]):
                 The request object. The request message for listing all
                 TagKeys under a parent resource.
             parent (:class:`str`):
@@ -236,10 +238,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_tag_key(self,
-            request: tag_keys.GetTagKeyRequest = None,
+            request: Union[tag_keys.GetTagKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tag_keys.TagKey:
@@ -248,7 +250,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         not have permission to view it.
 
         Args:
-            request (:class:`google.cloud.resourcemanager_v3.types.GetTagKeyRequest`):
+            request (Union[google.cloud.resourcemanager_v3.types.GetTagKeyRequest, dict]):
                 The request object. The request message for getting a
                 TagKey.
             name (:class:`str`):
@@ -319,10 +321,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_tag_key(self,
-            request: tag_keys.CreateTagKeyRequest = None,
+            request: Union[tag_keys.CreateTagKeyRequest, dict] = None,
             *,
             tag_key: tag_keys.TagKey = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -333,7 +335,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         given time.
 
         Args:
-            request (:class:`google.cloud.resourcemanager_v3.types.CreateTagKeyRequest`):
+            request (Union[google.cloud.resourcemanager_v3.types.CreateTagKeyRequest, dict]):
                 The request object. The request message for creating a
                 TagKey.
             tag_key (:class:`google.cloud.resourcemanager_v3.types.TagKey`):
@@ -402,18 +404,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_tag_key(self,
-            request: tag_keys.UpdateTagKeyRequest = None,
+            request: Union[tag_keys.UpdateTagKeyRequest, dict] = None,
             *,
             tag_key: tag_keys.TagKey = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the attributes of the TagKey resource.
 
         Args:
-            request (:class:`google.cloud.resourcemanager_v3.types.UpdateTagKeyRequest`):
+            request (Union[google.cloud.resourcemanager_v3.types.UpdateTagKeyRequest, dict]):
                 The request object. The request message for updating a
                 TagKey.
             tag_key (:class:`google.cloud.resourcemanager_v3.types.TagKey`):
@@ -503,10 +505,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_tag_key(self,
-            request: tag_keys.DeleteTagKeyRequest = None,
+            request: Union[tag_keys.DeleteTagKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -514,7 +516,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         has any child TagValues.
 
         Args:
-            request (:class:`google.cloud.resourcemanager_v3.types.DeleteTagKeyRequest`):
+            request (Union[google.cloud.resourcemanager_v3.types.DeleteTagKeyRequest, dict]):
                 The request object. The request message for deleting a
                 TagKey.
             name (:class:`str`):
@@ -592,10 +594,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -607,7 +609,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         permission on the specified TagKey.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -733,10 +735,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -747,7 +749,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         identified tagValue.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
@@ -867,11 +869,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -882,7 +884,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         There are no permissions required for making this API call.
 
         Args:
-            request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.devtools.build_v1.types import build_events
 from google.devtools.build_v1.types import publish_build_event
 from .transports.base import PublishBuildEventTransport, DEFAULT_CLIENT_INFO
@@ -341,7 +343,7 @@ class PublishBuildEventClient(metaclass=PublishBuildEventClientMeta):
     def publish_lifecycle_event(self,
             request: Union[publish_build_event.PublishLifecycleEventRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -402,7 +404,7 @@ class PublishBuildEventClient(metaclass=PublishBuildEventClientMeta):
     def publish_build_tool_event_stream(self,
             requests: Iterator[publish_build_event.PublishBuildToolEventStreamRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[publish_build_event.PublishBuildToolEventStreamResponse]:

@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from grafeas.grafeas_v1.services.grafeas import pagers
@@ -385,7 +387,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             request: Union[grafeas.GetOccurrenceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Occurrence:
@@ -460,7 +462,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListOccurrencesPager:
@@ -552,7 +554,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             request: Union[grafeas.DeleteOccurrenceRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -620,7 +622,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             parent: str = None,
             occurrence: grafeas.Occurrence = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Occurrence:
@@ -703,7 +705,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             parent: str = None,
             occurrences: Sequence[grafeas.Occurrence] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.BatchCreateOccurrencesResponse:
@@ -790,7 +792,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             name: str = None,
             occurrence: grafeas.Occurrence = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Occurrence:
@@ -878,7 +880,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             request: Union[grafeas.GetOccurrenceNoteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
@@ -955,7 +957,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             request: Union[grafeas.GetNoteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
@@ -1030,7 +1032,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             parent: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNotesPager:
@@ -1122,7 +1124,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             request: Union[grafeas.DeleteNoteRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1189,7 +1191,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             parent: str = None,
             note_id: str = None,
             note: grafeas.Note = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
@@ -1279,7 +1281,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             parent: str = None,
             notes: Sequence[grafeas.BatchCreateNotesRequest.NotesEntry] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.BatchCreateNotesResponse:
@@ -1363,7 +1365,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             name: str = None,
             note: grafeas.Note = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> grafeas.Note:
@@ -1452,7 +1454,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             name: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListNoteOccurrencesPager:

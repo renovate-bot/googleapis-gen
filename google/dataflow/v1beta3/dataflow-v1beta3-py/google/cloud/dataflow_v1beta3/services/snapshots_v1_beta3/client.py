@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.dataflow_v1beta3.types import snapshots
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -327,7 +329,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
     def get_snapshot(self,
             request: Union[snapshots.GetSnapshotRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> snapshots.Snapshot:
@@ -373,7 +375,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
     def delete_snapshot(self,
             request: Union[snapshots.DeleteSnapshotRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> snapshots.DeleteSnapshotResponse:
@@ -418,7 +420,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
     def list_snapshots(self,
             request: Union[snapshots.ListSnapshotsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> snapshots.ListSnapshotsResponse:

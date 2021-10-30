@@ -37,12 +37,14 @@ class Label(proto.Message):
             the form: ``customers/{customer_id}/labels/{label_id}``
         id (int):
             Output only. Id of the label. Read only.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the label.
             This field is required and should not be empty
             when creating a new label.
             The length of this string should be between 1
             and 80, inclusive.
+            This field is a member of `oneof`_ ``_name``.
         status (google.ads.googleads.v8.enums.types.LabelStatusEnum.LabelStatus):
             Output only. Status of the label. Read only.
         text_label (google.ads.googleads.v8.common.types.TextLabel):

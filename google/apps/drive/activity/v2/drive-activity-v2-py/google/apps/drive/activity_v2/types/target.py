@@ -39,13 +39,23 @@ __protobuf__ = proto.module(
 class Target(proto.Message):
     r"""Information about the target of activity.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItem):
             The target is a Drive item.
+            This field is a member of `oneof`_ ``object``.
         drive (google.apps.drive.activity_v2.types.Drive):
             The target is a shared drive.
+            This field is a member of `oneof`_ ``object``.
         file_comment (google.apps.drive.activity_v2.types.FileComment):
             The target is a comment on a Drive file.
+            This field is a member of `oneof`_ ``object``.
         team_drive (google.apps.drive.activity_v2.types.TeamDrive):
             This field is deprecated; please use the ``drive`` field
             instead.
@@ -79,11 +89,20 @@ class Target(proto.Message):
 class TargetReference(proto.Message):
     r"""A lightweight reference to the target of activity.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItemReference):
             The target is a Drive item.
+            This field is a member of `oneof`_ ``object``.
         drive (google.apps.drive.activity_v2.types.DriveReference):
             The target is a shared drive.
+            This field is a member of `oneof`_ ``object``.
         team_drive (google.apps.drive.activity_v2.types.TeamDriveReference):
             This field is deprecated; please use the ``drive`` field
             instead.
@@ -153,6 +172,13 @@ class FileComment(proto.Message):
 class DriveItem(proto.Message):
     r"""A Drive item, such as a file or folder.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             The target Drive item. The format is ``items/ITEM_ID``.
@@ -166,9 +192,11 @@ class DriveItem(proto.Message):
             field instead.
         drive_file (google.apps.drive.activity_v2.types.DriveItem.DriveFile):
             The Drive item is a file.
+            This field is a member of `oneof`_ ``item_type``.
         drive_folder (google.apps.drive.activity_v2.types.DriveItem.DriveFolder):
             The Drive item is a folder. Includes
             information about the type of folder.
+            This field is a member of `oneof`_ ``item_type``.
         mime_type (str):
             The MIME type of the Drive item.  See
             https://developers.google.com/drive/v3/web/mime-
@@ -272,11 +300,20 @@ class DriveItem(proto.Message):
 class Owner(proto.Message):
     r"""Information about the owner of a Drive item.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             The user that owns the Drive item.
+            This field is a member of `oneof`_ ``owner``.
         drive (google.apps.drive.activity_v2.types.DriveReference):
             The drive that owns the item.
+            This field is a member of `oneof`_ ``owner``.
         team_drive (google.apps.drive.activity_v2.types.TeamDriveReference):
             This field is deprecated; please use the ``drive`` field
             instead.
@@ -369,6 +406,13 @@ class DriveItemReference(proto.Message):
     r"""A lightweight reference to a Drive item, such as a file or
     folder.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             The target Drive item. The format is ``items/ITEM_ID``.
@@ -382,9 +426,11 @@ class DriveItemReference(proto.Message):
             field instead.
         drive_file (google.apps.drive.activity_v2.types.DriveItem.DriveFile):
             The Drive item is a file.
+            This field is a member of `oneof`_ ``item_type``.
         drive_folder (google.apps.drive.activity_v2.types.DriveItem.DriveFolder):
             The Drive item is a folder. Includes
             information about the type of folder.
+            This field is a member of `oneof`_ ``item_type``.
     """
 
     name = proto.Field(

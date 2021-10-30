@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import ad_group_ad_status
 from google.ads.googleads.v7.enums.types import ad_strength
 from google.ads.googleads.v7.resources.types import ad
@@ -371,7 +373,7 @@ class AdGroupAdServiceClient(metaclass=AdGroupAdServiceClientMeta):
             request: Union[ad_group_ad_service.GetAdGroupAdRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_ad.AdGroupAd:
@@ -448,7 +450,7 @@ class AdGroupAdServiceClient(metaclass=AdGroupAdServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_ad_service.AdGroupAdOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_ad_service.MutateAdGroupAdsResponse:

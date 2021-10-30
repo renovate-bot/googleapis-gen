@@ -213,6 +213,9 @@ class Connection(proto.Message):
     r"""Configuration parameters to establish connection with an
     external data source, except the credential attributes.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         name (str):
             The resource name of the connection in the form of:
@@ -224,6 +227,7 @@ class Connection(proto.Message):
             User provided description.
         cloud_sql (google.cloud.bigquery.connection_v1beta1.types.CloudSqlProperties):
             Cloud SQL properties.
+            This field is a member of `oneof`_ ``properties``.
         creation_time (int):
             Output only. The creation timestamp of the
             connection.
@@ -270,9 +274,12 @@ class Connection(proto.Message):
 class ConnectionCredential(proto.Message):
     r"""Credential to use with a connection.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         cloud_sql (google.cloud.bigquery.connection_v1beta1.types.CloudSqlCredential):
             Credential for Cloud SQL database.
+            This field is a member of `oneof`_ ``credential``.
     """
 
     cloud_sql = proto.Field(

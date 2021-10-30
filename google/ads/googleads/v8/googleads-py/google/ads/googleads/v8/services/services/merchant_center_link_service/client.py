@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import merchant_center_link_status
 from google.ads.googleads.v8.resources.types import merchant_center_link
 from google.ads.googleads.v8.services.types import merchant_center_link_service
@@ -340,7 +342,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
             request: Union[merchant_center_link_service.ListMerchantCenterLinksRequest, dict] = None,
             *,
             customer_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> merchant_center_link_service.ListMerchantCenterLinksResponse:
@@ -419,7 +421,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
             request: Union[merchant_center_link_service.GetMerchantCenterLinkRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> merchant_center_link.MerchantCenterLink:
@@ -499,7 +501,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
             *,
             customer_id: str = None,
             operation: merchant_center_link_service.MerchantCenterLinkOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> merchant_center_link_service.MutateMerchantCenterLinkResponse:

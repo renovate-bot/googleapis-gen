@@ -31,6 +31,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.iam.admin_v1.services.iam import pagers
 from google.iam.admin_v1.types import iam
 from google.iam.v1 import iam_policy_pb2  # type: ignore
@@ -371,7 +373,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam.ListServiceAccountsRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServiceAccountsPager:
@@ -458,7 +460,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam.GetServiceAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccount:
@@ -550,7 +552,7 @@ class IAMClient(metaclass=IAMClientMeta):
             name: str = None,
             account_id: str = None,
             service_account: iam.ServiceAccount = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccount:
@@ -658,7 +660,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def update_service_account(self,
             request: Union[iam.ServiceAccount, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccount:
@@ -742,7 +744,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def patch_service_account(self,
             request: Union[iam.PatchServiceAccountRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccount:
@@ -816,7 +818,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam.DeleteServiceAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -903,7 +905,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def undelete_service_account(self,
             request: Union[iam.UndeleteServiceAccountRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.UndeleteServiceAccountResponse:
@@ -965,7 +967,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def enable_service_account(self,
             request: Union[iam.EnableServiceAccountRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1021,7 +1023,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def disable_service_account(self,
             request: Union[iam.DisableServiceAccountRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1087,7 +1089,7 @@ class IAMClient(metaclass=IAMClientMeta):
             *,
             name: str = None,
             key_types: Sequence[iam.ListServiceAccountKeysRequest.KeyType] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ListServiceAccountKeysResponse:
@@ -1183,7 +1185,7 @@ class IAMClient(metaclass=IAMClientMeta):
             *,
             name: str = None,
             public_key_type: iam.ServiceAccountPublicKeyType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccountKey:
@@ -1308,7 +1310,7 @@ class IAMClient(metaclass=IAMClientMeta):
             name: str = None,
             private_key_type: iam.ServiceAccountPrivateKeyType = None,
             key_algorithm: iam.ServiceAccountKeyAlgorithm = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccountKey:
@@ -1441,7 +1443,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def upload_service_account_key(self,
             request: Union[iam.UploadServiceAccountKeyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.ServiceAccountKey:
@@ -1532,7 +1534,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam.DeleteServiceAccountKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1608,7 +1610,7 @@ class IAMClient(metaclass=IAMClientMeta):
             *,
             name: str = None,
             bytes_to_sign: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.SignBlobResponse:
@@ -1721,7 +1723,7 @@ class IAMClient(metaclass=IAMClientMeta):
             *,
             name: str = None,
             payload: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.SignJwtResponse:
@@ -1843,7 +1845,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -1983,7 +1985,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policy_pb2.Policy:
@@ -2133,7 +2135,7 @@ class IAMClient(metaclass=IAMClientMeta):
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
@@ -2219,7 +2221,7 @@ class IAMClient(metaclass=IAMClientMeta):
             request: Union[iam.QueryGrantableRolesRequest, dict] = None,
             *,
             full_resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.QueryGrantableRolesPager:
@@ -2302,7 +2304,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def list_roles(self,
             request: Union[iam.ListRolesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRolesPager:
@@ -2364,7 +2366,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def get_role(self,
             request: Union[iam.GetRoleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
@@ -2420,7 +2422,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def create_role(self,
             request: Union[iam.CreateRoleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
@@ -2475,7 +2477,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def update_role(self,
             request: Union[iam.UpdateRoleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
@@ -2531,7 +2533,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def delete_role(self,
             request: Union[iam.DeleteRoleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
@@ -2606,7 +2608,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def undelete_role(self,
             request: Union[iam.UndeleteRoleRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.Role:
@@ -2662,7 +2664,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def query_testable_permissions(self,
             request: Union[iam.QueryTestablePermissionsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.QueryTestablePermissionsPager:
@@ -2724,7 +2726,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def query_auditable_services(self,
             request: Union[iam.QueryAuditableServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.QueryAuditableServicesResponse:
@@ -2776,7 +2778,7 @@ class IAMClient(metaclass=IAMClientMeta):
     def lint_policy(self,
             request: Union[iam.LintPolicyRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam.LintPolicyResponse:

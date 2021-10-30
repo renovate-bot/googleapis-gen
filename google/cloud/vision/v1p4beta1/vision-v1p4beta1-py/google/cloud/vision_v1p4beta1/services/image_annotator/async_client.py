@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -152,10 +154,10 @@ class ImageAnnotatorAsyncClient:
         )
 
     async def batch_annotate_images(self,
-            request: image_annotator.BatchAnnotateImagesRequest = None,
+            request: Union[image_annotator.BatchAnnotateImagesRequest, dict] = None,
             *,
             requests: Sequence[image_annotator.AnnotateImageRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> image_annotator.BatchAnnotateImagesResponse:
@@ -163,7 +165,7 @@ class ImageAnnotatorAsyncClient:
         images.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.BatchAnnotateImagesRequest`):
+            request (Union[google.cloud.vision_v1p4beta1.types.BatchAnnotateImagesRequest, dict]):
                 The request object. Multiple image annotation requests
                 are batched into a single service call.
             requests (:class:`Sequence[google.cloud.vision_v1p4beta1.types.AnnotateImageRequest]`):
@@ -225,10 +227,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_annotate_files(self,
-            request: image_annotator.BatchAnnotateFilesRequest = None,
+            request: Union[image_annotator.BatchAnnotateFilesRequest, dict] = None,
             *,
             requests: Sequence[image_annotator.AnnotateFileRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> image_annotator.BatchAnnotateFilesResponse:
@@ -242,7 +244,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         extracted.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.BatchAnnotateFilesRequest`):
+            request (Union[google.cloud.vision_v1p4beta1.types.BatchAnnotateFilesRequest, dict]):
                 The request object. A list of requests to annotate files
                 using the BatchAnnotateFiles API.
             requests (:class:`Sequence[google.cloud.vision_v1p4beta1.types.AnnotateFileRequest]`):
@@ -304,11 +306,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def async_batch_annotate_images(self,
-            request: image_annotator.AsyncBatchAnnotateImagesRequest = None,
+            request: Union[image_annotator.AsyncBatchAnnotateImagesRequest, dict] = None,
             *,
             requests: Sequence[image_annotator.AnnotateImageRequest] = None,
             output_config: image_annotator.OutputConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -326,7 +328,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         BatchAnnotateImagesResponse proto.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateImagesRequest`):
+            request (Union[google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateImagesRequest, dict]):
                 The request object. Request for async image annotation
                 for a list of images.
             requests (:class:`Sequence[google.cloud.vision_v1p4beta1.types.AnnotateImageRequest]`):
@@ -408,10 +410,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def async_batch_annotate_files(self,
-            request: image_annotator.AsyncBatchAnnotateFilesRequest = None,
+            request: Union[image_annotator.AsyncBatchAnnotateFilesRequest, dict] = None,
             *,
             requests: Sequence[image_annotator.AsyncAnnotateFileRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -424,7 +426,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ``AsyncBatchAnnotateFilesResponse`` (results).
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateFilesRequest`):
+            request (Union[google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateFilesRequest, dict]):
                 The request object. Multiple async file annotation
                 requests are batched into a single service call.
             requests (:class:`Sequence[google.cloud.vision_v1p4beta1.types.AsyncAnnotateFileRequest]`):

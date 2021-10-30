@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.bigquery_v2.types import encryption_config
 from google.cloud.bigquery_v2.types import model
@@ -147,19 +149,19 @@ class ModelServiceAsyncClient:
         )
 
     async def get_model(self,
-            request: model.GetModelRequest = None,
+            request: Union[model.GetModelRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
             model_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model.Model:
         r"""Gets the specified model resource by model ID.
 
         Args:
-            request (:class:`google.cloud.bigquery_v2.types.GetModelRequest`):
+            request (Union[google.cloud.bigquery_v2.types.GetModelRequest, dict]):
                 The request object.
             project_id (:class:`str`):
                 Required. Project ID of the requested
@@ -241,12 +243,12 @@ class ModelServiceAsyncClient:
         return response
 
     async def list_models(self,
-            request: model.ListModelsRequest = None,
+            request: Union[model.ListModelsRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
             max_results: wrappers_pb2.UInt32Value = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model.ListModelsResponse:
@@ -256,7 +258,7 @@ class ModelServiceAsyncClient:
         by calling the models.get method.
 
         Args:
-            request (:class:`google.cloud.bigquery_v2.types.ListModelsRequest`):
+            request (Union[google.cloud.bigquery_v2.types.ListModelsRequest, dict]):
                 The request object.
             project_id (:class:`str`):
                 Required. Project ID of the models to
@@ -339,20 +341,20 @@ class ModelServiceAsyncClient:
         return response
 
     async def patch_model(self,
-            request: gcb_model.PatchModelRequest = None,
+            request: Union[gcb_model.PatchModelRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
             model_id: str = None,
             model: gcb_model.Model = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcb_model.Model:
         r"""Patch specific fields in the specified model.
 
         Args:
-            request (:class:`google.cloud.bigquery_v2.types.PatchModelRequest`):
+            request (Union[google.cloud.bigquery_v2.types.PatchModelRequest, dict]):
                 The request object.
             project_id (:class:`str`):
                 Required. Project ID of the model to
@@ -445,12 +447,12 @@ class ModelServiceAsyncClient:
         return response
 
     async def delete_model(self,
-            request: model.DeleteModelRequest = None,
+            request: Union[model.DeleteModelRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
             model_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -458,7 +460,7 @@ class ModelServiceAsyncClient:
         dataset.
 
         Args:
-            request (:class:`google.cloud.bigquery_v2.types.DeleteModelRequest`):
+            request (Union[google.cloud.bigquery_v2.types.DeleteModelRequest, dict]):
                 The request object.
             project_id (:class:`str`):
                 Required. Project ID of the model to

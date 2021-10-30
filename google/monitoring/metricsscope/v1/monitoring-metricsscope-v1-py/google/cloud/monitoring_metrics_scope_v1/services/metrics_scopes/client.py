@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.monitoring_metrics_scope_v1.types import metrics_scope
@@ -353,7 +355,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
             request: Union[metrics_scopes.GetMetricsScopeRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> metrics_scope.MetricsScope:
@@ -431,7 +433,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
     def list_metrics_scopes_by_monitored_project(self,
             request: Union[metrics_scopes.ListMetricsScopesByMonitoredProjectRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> metrics_scopes.ListMetricsScopesByMonitoredProjectResponse:
@@ -484,7 +486,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
             *,
             parent: str = None,
             monitored_project: metrics_scope.MonitoredProject = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -586,7 +588,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
             request: Union[metrics_scopes.DeleteMonitoredProjectRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

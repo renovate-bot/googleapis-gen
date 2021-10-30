@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1.types import cloud_sql_resources
 from google.cloud.sql_v1.types import cloud_sql_users
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -325,7 +327,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
     def delete(self,
             request: Union[cloud_sql_users.SqlUsersDeleteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -375,7 +377,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
     def insert(self,
             request: Union[cloud_sql_users.SqlUsersInsertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -425,7 +427,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
     def list(self,
             request: Union[cloud_sql_users.SqlUsersListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_users.UsersListResponse:
@@ -470,7 +472,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
     def update(self,
             request: Union[cloud_sql_users.SqlUsersUpdateRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:

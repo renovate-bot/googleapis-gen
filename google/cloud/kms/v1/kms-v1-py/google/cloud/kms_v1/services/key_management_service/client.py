@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.kms_v1.services.key_management_service import pagers
 from google.cloud.kms_v1.types import resources
 from google.cloud.kms_v1.types import service
@@ -399,7 +401,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.ListKeyRingsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListKeyRingsPager:
@@ -487,7 +489,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.ListCryptoKeysRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCryptoKeysPager:
@@ -575,7 +577,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.ListCryptoKeyVersionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCryptoKeyVersionsPager:
@@ -664,7 +666,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.ListImportJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListImportJobsPager:
@@ -752,7 +754,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.GetKeyRingRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.KeyRing:
@@ -829,7 +831,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.GetCryptoKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -914,7 +916,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.GetCryptoKeyVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1003,7 +1005,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.GetPublicKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.PublicKey:
@@ -1086,7 +1088,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.GetImportJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ImportJob:
@@ -1208,7 +1210,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             parent: str = None,
             key_ring_id: str = None,
             key_ring: resources.KeyRing = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.KeyRing:
@@ -1306,7 +1308,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             parent: str = None,
             crypto_key_id: str = None,
             crypto_key: resources.CryptoKey = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -1412,7 +1414,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             parent: str = None,
             crypto_key_version: resources.CryptoKeyVersion = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1516,7 +1518,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
     def import_crypto_key_version(self,
             request: Union[service.ImportCryptoKeyVersionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1595,7 +1597,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             parent: str = None,
             import_job_id: str = None,
             import_job: resources.ImportJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ImportJob:
@@ -1737,7 +1739,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             crypto_key: resources.CryptoKey = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -1828,7 +1830,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             crypto_key_version: resources.CryptoKeyVersion = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1938,7 +1940,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             name: str = None,
             crypto_key_version_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -2034,7 +2036,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.DestroyCryptoKeyVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -2143,7 +2145,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             request: Union[service.RestoreCryptoKeyVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -2242,7 +2244,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             name: str = None,
             plaintext: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.EncryptResponse:
@@ -2347,7 +2349,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             name: str = None,
             ciphertext: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.DecryptResponse:
@@ -2438,7 +2440,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             name: str = None,
             digest: service.Digest = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.AsymmetricSignResponse:
@@ -2531,7 +2533,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             name: str = None,
             ciphertext: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.AsymmetricDecryptResponse:
@@ -2624,7 +2626,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             *,
             name: str = None,
             data: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.MacSignResponse:
@@ -2716,7 +2718,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             name: str = None,
             data: bytes = None,
             mac: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.MacVerifyResponse:
@@ -2815,7 +2817,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
             location: str = None,
             length_bytes: int = None,
             protection_level: resources.ProtectionLevel = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.GenerateRandomBytesResponse:
@@ -2927,7 +2929,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         self,
         request: iam_policy_pb2.SetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -3037,7 +3039,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         self,
         request: iam_policy_pb2.GetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -3148,7 +3150,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         self,
         request: iam_policy_pb2.TestIamPermissionsRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:

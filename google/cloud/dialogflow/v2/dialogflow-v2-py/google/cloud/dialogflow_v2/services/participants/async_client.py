@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.dialogflow_v2.services.participants import pagers
 from google.cloud.dialogflow_v2.types import participant
@@ -158,18 +160,18 @@ class ParticipantsAsyncClient:
         )
 
     async def create_participant(self,
-            request: gcd_participant.CreateParticipantRequest = None,
+            request: Union[gcd_participant.CreateParticipantRequest, dict] = None,
             *,
             parent: str = None,
             participant: gcd_participant.Participant = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_participant.Participant:
         r"""Creates a new participant in a conversation.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.CreateParticipantRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.CreateParticipantRequest, dict]):
                 The request object. The request message for
                 [Participants.CreateParticipant][google.cloud.dialogflow.v2.Participants.CreateParticipant].
             parent (:class:`str`):
@@ -242,17 +244,17 @@ class ParticipantsAsyncClient:
         return response
 
     async def get_participant(self,
-            request: participant.GetParticipantRequest = None,
+            request: Union[participant.GetParticipantRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> participant.Participant:
         r"""Retrieves a conversation participant.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.GetParticipantRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.GetParticipantRequest, dict]):
                 The request object. The request message for
                 [Participants.GetParticipant][google.cloud.dialogflow.v2.Participants.GetParticipant].
             name (:class:`str`):
@@ -317,10 +319,10 @@ class ParticipantsAsyncClient:
         return response
 
     async def list_participants(self,
-            request: participant.ListParticipantsRequest = None,
+            request: Union[participant.ListParticipantsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListParticipantsAsyncPager:
@@ -328,7 +330,7 @@ class ParticipantsAsyncClient:
         conversation.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.ListParticipantsRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.ListParticipantsRequest, dict]):
                 The request object. The request message for
                 [Participants.ListParticipants][google.cloud.dialogflow.v2.Participants.ListParticipants].
             parent (:class:`str`):
@@ -406,18 +408,18 @@ class ParticipantsAsyncClient:
         return response
 
     async def update_participant(self,
-            request: gcd_participant.UpdateParticipantRequest = None,
+            request: Union[gcd_participant.UpdateParticipantRequest, dict] = None,
             *,
             participant: gcd_participant.Participant = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_participant.Participant:
         r"""Updates the specified participant.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.UpdateParticipantRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.UpdateParticipantRequest, dict]):
                 The request object. The request message for
                 [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
             participant (:class:`google.cloud.dialogflow_v2.types.Participant`):
@@ -489,12 +491,12 @@ class ParticipantsAsyncClient:
         return response
 
     async def analyze_content(self,
-            request: gcd_participant.AnalyzeContentRequest = None,
+            request: Union[gcd_participant.AnalyzeContentRequest, dict] = None,
             *,
             participant: str = None,
             text_input: session.TextInput = None,
             event_input: session.EventInput = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcd_participant.AnalyzeContentResponse:
@@ -506,7 +508,7 @@ class ParticipantsAsyncClient:
         environments <https://cloud.google.com/dialogflow/es/docs/agents-versions>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.AnalyzeContentRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.AnalyzeContentRequest, dict]):
                 The request object. The request message for
                 [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
             participant (:class:`str`):
@@ -594,10 +596,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def suggest_articles(self,
-            request: participant.SuggestArticlesRequest = None,
+            request: Union[participant.SuggestArticlesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> participant.SuggestArticlesResponse:
@@ -605,7 +607,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         specific historical messages.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.SuggestArticlesRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.SuggestArticlesRequest, dict]):
                 The request object. The request message for
                 [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
             parent (:class:`str`):
@@ -671,10 +673,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def suggest_faq_answers(self,
-            request: participant.SuggestFaqAnswersRequest = None,
+            request: Union[participant.SuggestFaqAnswersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> participant.SuggestFaqAnswersResponse:
@@ -682,7 +684,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         specific historical messages.
 
         Args:
-            request (:class:`google.cloud.dialogflow_v2.types.SuggestFaqAnswersRequest`):
+            request (Union[google.cloud.dialogflow_v2.types.SuggestFaqAnswersRequest, dict]):
                 The request object. The request message for
                 [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
             parent (:class:`str`):

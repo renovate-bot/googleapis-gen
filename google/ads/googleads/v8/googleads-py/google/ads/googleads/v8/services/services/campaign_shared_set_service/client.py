@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import campaign_shared_set_status
 from google.ads.googleads.v8.resources.types import campaign_shared_set
 from google.ads.googleads.v8.services.types import campaign_shared_set_service
@@ -359,7 +361,7 @@ class CampaignSharedSetServiceClient(metaclass=CampaignSharedSetServiceClientMet
             request: Union[campaign_shared_set_service.GetCampaignSharedSetRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_shared_set.CampaignSharedSet:
@@ -439,7 +441,7 @@ class CampaignSharedSetServiceClient(metaclass=CampaignSharedSetServiceClientMet
             *,
             customer_id: str = None,
             operations: Sequence[campaign_shared_set_service.CampaignSharedSetOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_shared_set_service.MutateCampaignSharedSetsResponse:

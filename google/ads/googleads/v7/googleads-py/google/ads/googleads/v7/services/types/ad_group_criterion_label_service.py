@@ -93,15 +93,24 @@ class AdGroupCriterionLabelOperation(proto.Message):
     r"""A single operation (create, remove) on an ad group criterion
     label.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v7.resources.types.AdGroupCriterionLabel):
             Create operation: No resource name is
             expected for the new ad group label.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the ad group criterion
             label being removed, in this format:
 
             ``customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

@@ -42,10 +42,12 @@ class TagSnippet(proto.Message):
             The site tag that adds visitors to your basic
             remarketing lists and sets new cookies on your
             domain.
+            This field is a member of `oneof`_ ``_global_site_tag``.
         event_snippet (str):
             The event snippet that works with the site
             tag to track actions that should be counted as
             conversions.
+            This field is a member of `oneof`_ ``_event_snippet``.
     """
 
     type_ = proto.Field(

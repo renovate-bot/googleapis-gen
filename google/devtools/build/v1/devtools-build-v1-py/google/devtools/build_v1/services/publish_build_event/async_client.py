@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, AsyncIterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.devtools.build_v1.types import build_events
 from google.devtools.build_v1.types import publish_build_event
@@ -160,9 +162,9 @@ class PublishBuildEventAsyncClient:
         )
 
     async def publish_lifecycle_event(self,
-            request: publish_build_event.PublishLifecycleEventRequest = None,
+            request: Union[publish_build_event.PublishLifecycleEventRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -178,7 +180,7 @@ class PublishBuildEventAsyncClient:
         code defined in //util/task/codes.proto.
 
         Args:
-            request (:class:`google.devtools.build_v1.types.PublishLifecycleEventRequest`):
+            request (Union[google.devtools.build_v1.types.PublishLifecycleEventRequest, dict]):
                 The request object. Publishes 'lifecycle events' that
                 update the high-level state of a build: - BuildEnqueued:
                 When a build is scheduled. - InvocationAttemptStarted:
@@ -222,7 +224,7 @@ class PublishBuildEventAsyncClient:
     def publish_build_tool_event_stream(self,
             requests: AsyncIterator[publish_build_event.PublishBuildToolEventStreamRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[publish_build_event.PublishBuildToolEventStreamResponse]]:

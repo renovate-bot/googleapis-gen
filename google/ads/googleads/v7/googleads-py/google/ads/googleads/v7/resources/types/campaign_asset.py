@@ -40,9 +40,11 @@ class CampaignAsset(proto.Message):
         campaign (str):
             Immutable. The campaign to which the asset is
             linked.
+            This field is a member of `oneof`_ ``_campaign``.
         asset (str):
             Immutable. The asset which is linked to the
             campaign.
+            This field is a member of `oneof`_ ``_asset``.
         field_type (google.ads.googleads.v7.enums.types.AssetFieldTypeEnum.AssetFieldType):
             Immutable. Role that the asset takes under
             the linked campaign. Required.

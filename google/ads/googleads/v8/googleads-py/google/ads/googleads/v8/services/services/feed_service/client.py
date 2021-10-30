@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import feed_origin
 from google.ads.googleads.v8.enums.types import feed_status
 from google.ads.googleads.v8.resources.types import feed
@@ -340,7 +342,7 @@ class FeedServiceClient(metaclass=FeedServiceClientMeta):
             request: Union[feed_service.GetFeedRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> feed.Feed:
@@ -417,7 +419,7 @@ class FeedServiceClient(metaclass=FeedServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[feed_service.FeedOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> feed_service.MutateFeedsResponse:

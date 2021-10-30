@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.sql_v1.services.sql_operations_service import pagers
 from google.cloud.sql_v1.types import cloud_sql_operations
@@ -145,9 +147,9 @@ class SqlOperationsServiceAsyncClient:
         )
 
     async def get(self,
-            request: cloud_sql_operations.SqlOperationsGetRequest = None,
+            request: Union[cloud_sql_operations.SqlOperationsGetRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
@@ -155,7 +157,7 @@ class SqlOperationsServiceAsyncClient:
         performed on an instance.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlOperationsGetRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlOperationsGetRequest, dict]):
                 The request object. Operations get request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -195,9 +197,9 @@ class SqlOperationsServiceAsyncClient:
         return response
 
     async def list(self,
-            request: cloud_sql_operations.SqlOperationsListRequest = None,
+            request: Union[cloud_sql_operations.SqlOperationsListRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAsyncPager:
@@ -206,7 +208,7 @@ class SqlOperationsServiceAsyncClient:
         chronological order of the start time.
 
         Args:
-            request (:class:`google.cloud.sql_v1.types.SqlOperationsListRequest`):
+            request (Union[google.cloud.sql_v1.types.SqlOperationsListRequest, dict]):
                 The request object. Operations list request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

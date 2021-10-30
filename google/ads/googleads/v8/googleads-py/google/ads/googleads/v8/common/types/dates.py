@@ -36,9 +36,11 @@ class DateRange(proto.Message):
         start_date (str):
             The start date, in yyyy-mm-dd format. This
             date is inclusive.
+            This field is a member of `oneof`_ ``_start_date``.
         end_date (str):
             The end date, in yyyy-mm-dd format. This date
             is inclusive.
+            This field is a member of `oneof`_ ``_end_date``.
     """
 
     start_date = proto.Field(

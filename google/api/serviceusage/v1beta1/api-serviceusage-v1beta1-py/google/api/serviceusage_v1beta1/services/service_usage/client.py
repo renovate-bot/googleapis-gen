@@ -31,6 +31,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api.serviceusage_v1beta1.services.service_usage import pagers
 from google.api.serviceusage_v1beta1.types import resources
 from google.api.serviceusage_v1beta1.types import serviceusage
@@ -331,7 +333,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def enable_service(self,
             request: Union[serviceusage.EnableServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -413,7 +415,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def disable_service(self,
             request: Union[serviceusage.DisableServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -502,7 +504,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def get_service(self,
             request: Union[serviceusage.GetServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Service:
@@ -562,7 +564,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def list_services(self,
             request: Union[serviceusage.ListServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesPager:
@@ -639,7 +641,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def batch_enable_services(self,
             request: Union[serviceusage.BatchEnableServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -723,7 +725,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def list_consumer_quota_metrics(self,
             request: Union[serviceusage.ListConsumerQuotaMetricsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConsumerQuotaMetricsPager:
@@ -797,7 +799,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def get_consumer_quota_metric(self,
             request: Union[serviceusage.GetConsumerQuotaMetricRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConsumerQuotaMetric:
@@ -854,7 +856,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def get_consumer_quota_limit(self,
             request: Union[serviceusage.GetConsumerQuotaLimitRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ConsumerQuotaLimit:
@@ -911,7 +913,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def create_admin_override(self,
             request: Union[serviceusage.CreateAdminOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -984,7 +986,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def update_admin_override(self,
             request: Union[serviceusage.UpdateAdminOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1051,7 +1053,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def delete_admin_override(self,
             request: Union[serviceusage.DeleteAdminOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1128,7 +1130,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def list_admin_overrides(self,
             request: Union[serviceusage.ListAdminOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAdminOverridesPager:
@@ -1196,7 +1198,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def import_admin_overrides(self,
             request: Union[serviceusage.ImportAdminOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1266,7 +1268,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def create_consumer_override(self,
             request: Union[serviceusage.CreateConsumerOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1338,7 +1340,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def update_consumer_override(self,
             request: Union[serviceusage.UpdateConsumerOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1405,7 +1407,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def delete_consumer_override(self,
             request: Union[serviceusage.DeleteConsumerOverrideRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1482,7 +1484,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def list_consumer_overrides(self,
             request: Union[serviceusage.ListConsumerOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListConsumerOverridesPager:
@@ -1550,7 +1552,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def import_consumer_overrides(self,
             request: Union[serviceusage.ImportConsumerOverridesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1620,7 +1622,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
     def generate_service_identity(self,
             request: Union[serviceusage.GenerateServiceIdentityRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

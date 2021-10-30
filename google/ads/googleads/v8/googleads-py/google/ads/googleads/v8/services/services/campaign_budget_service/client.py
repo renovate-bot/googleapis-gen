@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import budget_delivery_method
 from google.ads.googleads.v8.enums.types import budget_period
 from google.ads.googleads.v8.enums.types import budget_status
@@ -342,7 +344,7 @@ class CampaignBudgetServiceClient(metaclass=CampaignBudgetServiceClientMeta):
             request: Union[campaign_budget_service.GetCampaignBudgetRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_budget.CampaignBudget:
@@ -419,7 +421,7 @@ class CampaignBudgetServiceClient(metaclass=CampaignBudgetServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[campaign_budget_service.CampaignBudgetOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_budget_service.MutateCampaignBudgetsResponse:

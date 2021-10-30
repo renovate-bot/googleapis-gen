@@ -131,19 +131,31 @@ class GetTestEnvironmentCatalogRequest(proto.Message):
 class TestEnvironmentCatalog(proto.Message):
     r"""A description of a test environment.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         android_device_catalog (google.devtools.testing_v1.types.AndroidDeviceCatalog):
             Supported Android devices.
+            This field is a member of `oneof`_ ``environment_catalog``.
         ios_device_catalog (google.devtools.testing_v1.types.IosDeviceCatalog):
             Supported iOS devices.
+            This field is a member of `oneof`_ ``environment_catalog``.
         network_configuration_catalog (google.devtools.testing_v1.types.NetworkConfigurationCatalog):
             Supported network configurations.
+            This field is a member of `oneof`_ ``environment_catalog``.
         software_catalog (google.devtools.testing_v1.types.ProvidedSoftwareCatalog):
             The software test environment provided by
             TestExecutionService.
+            This field is a member of `oneof`_ ``environment_catalog``.
         device_ip_block_catalog (google.devtools.testing_v1.types.DeviceIpBlockCatalog):
             The IP blocks used by devices in the test
             environment.
+            This field is a member of `oneof`_ ``environment_catalog``.
     """
 
     android_device_catalog = proto.Field(

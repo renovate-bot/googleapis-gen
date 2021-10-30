@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import simulation
 from google.ads.googleads.v8.enums.types import simulation_modification_method
 from google.ads.googleads.v8.enums.types import simulation_type
@@ -340,7 +342,7 @@ class CampaignCriterionSimulationServiceClient(metaclass=CampaignCriterionSimula
             request: Union[campaign_criterion_simulation_service.GetCampaignCriterionSimulationRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_criterion_simulation.CampaignCriterionSimulation:

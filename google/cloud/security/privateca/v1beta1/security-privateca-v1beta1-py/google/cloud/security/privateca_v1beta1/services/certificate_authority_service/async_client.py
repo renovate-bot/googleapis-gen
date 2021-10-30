@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -160,12 +162,12 @@ class CertificateAuthorityServiceAsyncClient:
         )
 
     async def create_certificate(self,
-            request: service.CreateCertificateRequest = None,
+            request: Union[service.CreateCertificateRequest, dict] = None,
             *,
             parent: str = None,
             certificate: resources.Certificate = None,
             certificate_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -175,7 +177,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.CreateCertificateRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.CreateCertificateRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.CreateCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.CreateCertificate].
             parent (:class:`str`):
@@ -268,10 +270,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def get_certificate(self,
-            request: service.GetCertificateRequest = None,
+            request: Union[service.GetCertificateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -279,7 +281,7 @@ class CertificateAuthorityServiceAsyncClient:
         [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.GetCertificateRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.GetCertificateRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.GetCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetCertificate].
             name (:class:`str`):
@@ -347,10 +349,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def list_certificates(self,
-            request: service.ListCertificatesRequest = None,
+            request: Union[service.ListCertificatesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificatesAsyncPager:
@@ -358,7 +360,7 @@ class CertificateAuthorityServiceAsyncClient:
         [Certificates][google.cloud.security.privateca.v1beta1.Certificate].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.ListCertificatesRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.ListCertificatesRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListCertificates].
             parent (:class:`str`):
@@ -438,10 +440,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def revoke_certificate(self,
-            request: service.RevokeCertificateRequest = None,
+            request: Union[service.RevokeCertificateRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -449,7 +451,7 @@ class CertificateAuthorityServiceAsyncClient:
         [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.RevokeCertificateRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.RevokeCertificateRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.RevokeCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.RevokeCertificate].
             name (:class:`str`):
@@ -516,11 +518,11 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def update_certificate(self,
-            request: service.UpdateCertificateRequest = None,
+            request: Union[service.UpdateCertificateRequest, dict] = None,
             *,
             certificate: resources.Certificate = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Certificate:
@@ -531,7 +533,7 @@ class CertificateAuthorityServiceAsyncClient:
         field.
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.UpdateCertificateRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.UpdateCertificateRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.UpdateCertificate].
             certificate (:class:`google.cloud.security.privateca_v1beta1.types.Certificate`):
@@ -606,10 +608,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def activate_certificate_authority(self,
-            request: service.ActivateCertificateAuthorityRequest = None,
+            request: Union[service.ActivateCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -625,7 +627,7 @@ class CertificateAuthorityServiceAsyncClient:
         this method can complete the activation process.
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.ActivateCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.ActivateCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.ActivateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ActivateCertificateAuthority].
             name (:class:`str`):
@@ -705,12 +707,12 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def create_certificate_authority(self,
-            request: service.CreateCertificateAuthorityRequest = None,
+            request: Union[service.CreateCertificateAuthorityRequest, dict] = None,
             *,
             parent: str = None,
             certificate_authority: resources.CertificateAuthority = None,
             certificate_authority_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -719,7 +721,7 @@ class CertificateAuthorityServiceAsyncClient:
         in a given Project and Location.
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.CreateCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.CreateCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.CreateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.CreateCertificateAuthority].
             parent (:class:`str`):
@@ -818,10 +820,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def disable_certificate_authority(self,
-            request: service.DisableCertificateAuthorityRequest = None,
+            request: Union[service.DisableCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -829,7 +831,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.DisableCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.DisableCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.DisableCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.DisableCertificateAuthority].
             name (:class:`str`):
@@ -909,10 +911,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def enable_certificate_authority(self,
-            request: service.EnableCertificateAuthorityRequest = None,
+            request: Union[service.EnableCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -920,7 +922,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.EnableCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.EnableCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.EnableCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.EnableCertificateAuthority].
             name (:class:`str`):
@@ -1000,10 +1002,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def fetch_certificate_authority_csr(self,
-            request: service.FetchCertificateAuthorityCsrRequest = None,
+            request: Union[service.FetchCertificateAuthorityCsrRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.FetchCertificateAuthorityCsrResponse:
@@ -1020,7 +1022,7 @@ class CertificateAuthorityServiceAsyncClient:
         [ActivateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ActivateCertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.FetchCertificateAuthorityCsrRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.FetchCertificateAuthorityCsrRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.FetchCertificateAuthorityCsr].
             name (:class:`str`):
@@ -1087,10 +1089,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def get_certificate_authority(self,
-            request: service.GetCertificateAuthorityRequest = None,
+            request: Union[service.GetCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CertificateAuthority:
@@ -1098,7 +1100,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.GetCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.GetCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetCertificateAuthority].
             name (:class:`str`):
@@ -1169,10 +1171,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def list_certificate_authorities(self,
-            request: service.ListCertificateAuthoritiesRequest = None,
+            request: Union[service.ListCertificateAuthoritiesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificateAuthoritiesAsyncPager:
@@ -1180,7 +1182,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateAuthorities][google.cloud.security.privateca.v1beta1.CertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.ListCertificateAuthoritiesRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.ListCertificateAuthoritiesRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.ListCertificateAuthorities][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListCertificateAuthorities].
             parent (:class:`str`):
@@ -1259,10 +1261,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def restore_certificate_authority(self,
-            request: service.RestoreCertificateAuthorityRequest = None,
+            request: Union[service.RestoreCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1271,7 +1273,7 @@ class CertificateAuthorityServiceAsyncClient:
         that is scheduled for deletion.
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.RestoreCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.RestoreCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.RestoreCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.RestoreCertificateAuthority].
             name (:class:`str`):
@@ -1351,10 +1353,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def schedule_delete_certificate_authority(self,
-            request: service.ScheduleDeleteCertificateAuthorityRequest = None,
+            request: Union[service.ScheduleDeleteCertificateAuthorityRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1363,7 +1365,7 @@ class CertificateAuthorityServiceAsyncClient:
         for deletion.
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.ScheduleDeleteCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.ScheduleDeleteCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.ScheduleDeleteCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ScheduleDeleteCertificateAuthority].
             name (:class:`str`):
@@ -1443,11 +1445,11 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def update_certificate_authority(self,
-            request: service.UpdateCertificateAuthorityRequest = None,
+            request: Union[service.UpdateCertificateAuthorityRequest, dict] = None,
             *,
             certificate_authority: resources.CertificateAuthority = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1455,7 +1457,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.UpdateCertificateAuthorityRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.UpdateCertificateAuthorityRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.UpdateCertificateAuthority].
             certificate_authority (:class:`google.cloud.security.privateca_v1beta1.types.CertificateAuthority`):
@@ -1543,10 +1545,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def get_certificate_revocation_list(self,
-            request: service.GetCertificateRevocationListRequest = None,
+            request: Union[service.GetCertificateRevocationListRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CertificateRevocationList:
@@ -1554,7 +1556,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.GetCertificateRevocationListRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.GetCertificateRevocationListRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.GetCertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetCertificateRevocationList].
             name (:class:`str`):
@@ -1624,10 +1626,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def list_certificate_revocation_lists(self,
-            request: service.ListCertificateRevocationListsRequest = None,
+            request: Union[service.ListCertificateRevocationListsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCertificateRevocationListsAsyncPager:
@@ -1635,7 +1637,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateRevocationLists][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.ListCertificateRevocationListsRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.ListCertificateRevocationListsRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.ListCertificateRevocationLists][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListCertificateRevocationLists].
             parent (:class:`str`):
@@ -1715,11 +1717,11 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def update_certificate_revocation_list(self,
-            request: service.UpdateCertificateRevocationListRequest = None,
+            request: Union[service.UpdateCertificateRevocationListRequest, dict] = None,
             *,
             certificate_revocation_list: resources.CertificateRevocationList = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -1727,7 +1729,7 @@ class CertificateAuthorityServiceAsyncClient:
         [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.UpdateCertificateRevocationListRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.UpdateCertificateRevocationListRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.UpdateCertificateRevocationList].
             certificate_revocation_list (:class:`google.cloud.security.privateca_v1beta1.types.CertificateRevocationList`):
@@ -1814,10 +1816,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def get_reusable_config(self,
-            request: service.GetReusableConfigRequest = None,
+            request: Union[service.GetReusableConfigRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ReusableConfig:
@@ -1825,7 +1827,7 @@ class CertificateAuthorityServiceAsyncClient:
         [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.GetReusableConfigRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.GetReusableConfigRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.GetReusableConfig][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetReusableConfig].
             name (:class:`str`):
@@ -1893,10 +1895,10 @@ class CertificateAuthorityServiceAsyncClient:
         return response
 
     async def list_reusable_configs(self,
-            request: service.ListReusableConfigsRequest = None,
+            request: Union[service.ListReusableConfigsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListReusableConfigsAsyncPager:
@@ -1904,7 +1906,7 @@ class CertificateAuthorityServiceAsyncClient:
         [ReusableConfigs][google.cloud.security.privateca.v1beta1.ReusableConfig].
 
         Args:
-            request (:class:`google.cloud.security.privateca_v1beta1.types.ListReusableConfigsRequest`):
+            request (Union[google.cloud.security.privateca_v1beta1.types.ListReusableConfigsRequest, dict]):
                 The request object. Request message for
                 [CertificateAuthorityService.ListReusableConfigs][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListReusableConfigs].
             parent (:class:`str`):

@@ -115,6 +115,7 @@ class KeywordInfo(proto.Message):
         text (str):
             The text of the keyword (at most 80
             characters and 10 words).
+            This field is a member of `oneof`_ ``_text``.
         match_type (google.ads.googleads.v8.enums.types.KeywordMatchTypeEnum.KeywordMatchType):
             The match type of the keyword.
     """
@@ -139,6 +140,7 @@ class PlacementInfo(proto.Message):
         url (str):
             URL of the placement.
             For example, "http://www.domain.com".
+            This field is a member of `oneof`_ ``_url``.
     """
 
     url = proto.Field(
@@ -155,6 +157,7 @@ class MobileAppCategoryInfo(proto.Message):
         mobile_app_category_constant (str):
             The mobile app category constant resource
             name.
+            This field is a member of `oneof`_ ``_mobile_app_category_constant``.
     """
 
     mobile_app_category_constant = proto.Field(
@@ -187,8 +190,10 @@ class MobileApplicationInfo(proto.Message):
             "1-476943146" for iOS and "2-com.labpixies.colordrips" for
             Android. This field is required and must be set in CREATE
             operations.
+            This field is a member of `oneof`_ ``_app_id``.
         name (str):
             Name of this mobile application.
+            This field is a member of `oneof`_ ``_name``.
     """
 
     app_id = proto.Field(
@@ -209,6 +214,7 @@ class LocationInfo(proto.Message):
     Attributes:
         geo_target_constant (str):
             The geo target constant resource name.
+            This field is a member of `oneof`_ ``_geo_target_constant``.
     """
 
     geo_target_constant = proto.Field(
@@ -262,6 +268,7 @@ class ListingGroupInfo(proto.Message):
             Resource name of ad group criterion which is
             the parent listing group subdivision. Null for
             the root group.
+            This field is a member of `oneof`_ ``_parent_ad_group_criterion``.
     """
 
     type_ = proto.Field(
@@ -299,37 +306,58 @@ class ListingScopeInfo(proto.Message):
 class ListingDimensionInfo(proto.Message):
     r"""Listing dimensions for listing group criterion.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         hotel_id (google.ads.googleads.v8.common.types.HotelIdInfo):
             Advertiser-specific hotel ID.
+            This field is a member of `oneof`_ ``dimension``.
         hotel_class (google.ads.googleads.v8.common.types.HotelClassInfo):
             Class of the hotel as a number of stars 1 to
             5.
+            This field is a member of `oneof`_ ``dimension``.
         hotel_country_region (google.ads.googleads.v8.common.types.HotelCountryRegionInfo):
             Country or Region the hotel is located in.
+            This field is a member of `oneof`_ ``dimension``.
         hotel_state (google.ads.googleads.v8.common.types.HotelStateInfo):
             State the hotel is located in.
+            This field is a member of `oneof`_ ``dimension``.
         hotel_city (google.ads.googleads.v8.common.types.HotelCityInfo):
             City the hotel is located in.
+            This field is a member of `oneof`_ ``dimension``.
         product_bidding_category (google.ads.googleads.v8.common.types.ProductBiddingCategoryInfo):
             Bidding category of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_brand (google.ads.googleads.v8.common.types.ProductBrandInfo):
             Brand of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_channel (google.ads.googleads.v8.common.types.ProductChannelInfo):
             Locality of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_channel_exclusivity (google.ads.googleads.v8.common.types.ProductChannelExclusivityInfo):
             Availability of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_condition (google.ads.googleads.v8.common.types.ProductConditionInfo):
             Condition of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_custom_attribute (google.ads.googleads.v8.common.types.ProductCustomAttributeInfo):
             Custom attribute of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_item_id (google.ads.googleads.v8.common.types.ProductItemIdInfo):
             Item id of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         product_type (google.ads.googleads.v8.common.types.ProductTypeInfo):
             Type of a product offer.
+            This field is a member of `oneof`_ ``dimension``.
         unknown_listing_dimension (google.ads.googleads.v8.common.types.UnknownListingDimensionInfo):
             Unknown dimension. Set when no other listing
             dimension is set.
+            This field is a member of `oneof`_ ``dimension``.
     """
 
     hotel_id = proto.Field(
@@ -424,6 +452,7 @@ class HotelIdInfo(proto.Message):
     Attributes:
         value (str):
             String value of the hotel ID.
+            This field is a member of `oneof`_ ``_value``.
     """
 
     value = proto.Field(
@@ -439,6 +468,7 @@ class HotelClassInfo(proto.Message):
     Attributes:
         value (int):
             Long value of the hotel class.
+            This field is a member of `oneof`_ ``_value``.
     """
 
     value = proto.Field(
@@ -454,6 +484,7 @@ class HotelCountryRegionInfo(proto.Message):
     Attributes:
         country_region_criterion (str):
             The Geo Target Constant resource name.
+            This field is a member of `oneof`_ ``_country_region_criterion``.
     """
 
     country_region_criterion = proto.Field(
@@ -469,6 +500,7 @@ class HotelStateInfo(proto.Message):
     Attributes:
         state_criterion (str):
             The Geo Target Constant resource name.
+            This field is a member of `oneof`_ ``_state_criterion``.
     """
 
     state_criterion = proto.Field(
@@ -484,6 +516,7 @@ class HotelCityInfo(proto.Message):
     Attributes:
         city_criterion (str):
             The Geo Target Constant resource name.
+            This field is a member of `oneof`_ ``_city_criterion``.
     """
 
     city_criterion = proto.Field(
@@ -503,10 +536,12 @@ class ProductBiddingCategoryInfo(proto.Message):
             This ID is equivalent to the google_product_category ID as
             described in this article:
             https://support.google.com/merchants/answer/6324436
+            This field is a member of `oneof`_ ``_id``.
         country_code (str):
             Two-letter upper-case country code of the product bidding
             category. It must match the
             campaign.shopping_setting.sales_country field.
+            This field is a member of `oneof`_ ``_country_code``.
         level (google.ads.googleads.v8.enums.types.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel):
             Level of the product bidding category.
     """
@@ -534,6 +569,7 @@ class ProductBrandInfo(proto.Message):
     Attributes:
         value (str):
             String value of the product brand.
+            This field is a member of `oneof`_ ``_value``.
     """
 
     value = proto.Field(
@@ -594,6 +630,7 @@ class ProductCustomAttributeInfo(proto.Message):
     Attributes:
         value (str):
             String value of the product custom attribute.
+            This field is a member of `oneof`_ ``_value``.
         index (google.ads.googleads.v8.enums.types.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex):
             Indicates the index of the custom attribute.
     """
@@ -616,6 +653,7 @@ class ProductItemIdInfo(proto.Message):
     Attributes:
         value (str):
             Value of the id.
+            This field is a member of `oneof`_ ``_value``.
     """
 
     value = proto.Field(
@@ -631,6 +669,7 @@ class ProductTypeInfo(proto.Message):
     Attributes:
         value (str):
             Value of the type.
+            This field is a member of `oneof`_ ``_value``.
         level (google.ads.googleads.v8.enums.types.ProductTypeLevelEnum.ProductTypeLevel):
             Level of the type.
     """
@@ -676,9 +715,11 @@ class HotelAdvanceBookingWindowInfo(proto.Message):
         min_days (int):
             Low end of the number of days prior to the
             stay.
+            This field is a member of `oneof`_ ``_min_days``.
         max_days (int):
             High end of the number of days prior to the
             stay.
+            This field is a member of `oneof`_ ``_max_days``.
     """
 
     min_days = proto.Field(
@@ -699,8 +740,10 @@ class HotelLengthOfStayInfo(proto.Message):
     Attributes:
         min_nights (int):
             Low end of the number of nights in the stay.
+            This field is a member of `oneof`_ ``_min_nights``.
         max_nights (int):
             High end of the number of nights in the stay.
+            This field is a member of `oneof`_ ``_max_nights``.
     """
 
     min_nights = proto.Field(
@@ -789,12 +832,14 @@ class AdScheduleInfo(proto.Message):
             This field must be between 0 and 23, inclusive.
             This field is required for CREATE operations and
             is prohibited on UPDATE operations.
+            This field is a member of `oneof`_ ``_start_hour``.
         end_hour (int):
             Ending hour in 24 hour time; 24 signifies end
             of the day. This field must be between 0 and 24,
             inclusive.
             This field is required for CREATE operations and
             is prohibited on UPDATE operations.
+            This field is a member of `oneof`_ ``_end_hour``.
         day_of_week (google.ads.googleads.v8.enums.types.DayOfWeekEnum.DayOfWeek):
             Day of the week the schedule applies to.
             This field is required for CREATE operations and
@@ -895,6 +940,7 @@ class YouTubeVideoInfo(proto.Message):
         video_id (str):
             YouTube video id as it appears on the YouTube
             watch page.
+            This field is a member of `oneof`_ ``_video_id``.
     """
 
     video_id = proto.Field(
@@ -911,6 +957,7 @@ class YouTubeChannelInfo(proto.Message):
         channel_id (str):
             The YouTube uploader channel id or the
             channel code of a YouTube channel.
+            This field is a member of `oneof`_ ``_channel_id``.
     """
 
     channel_id = proto.Field(
@@ -927,6 +974,7 @@ class UserListInfo(proto.Message):
     Attributes:
         user_list (str):
             The User List resource name.
+            This field is a member of `oneof`_ ``_user_list``.
     """
 
     user_list = proto.Field(
@@ -951,6 +999,7 @@ class ProximityInfo(proto.Message):
             Latitude and longitude.
         radius (float):
             The radius of the proximity.
+            This field is a member of `oneof`_ ``_radius``.
         radius_units (google.ads.googleads.v8.enums.types.ProximityRadiusUnitsEnum.ProximityRadiusUnits):
             The unit of measurement of the radius.
             Default is KILOMETERS.
@@ -986,8 +1035,10 @@ class GeoPointInfo(proto.Message):
     Attributes:
         longitude_in_micro_degrees (int):
             Micro degrees for the longitude.
+            This field is a member of `oneof`_ ``_longitude_in_micro_degrees``.
         latitude_in_micro_degrees (int):
             Micro degrees for the latitude.
+            This field is a member of `oneof`_ ``_latitude_in_micro_degrees``.
     """
 
     longitude_in_micro_degrees = proto.Field(
@@ -1008,20 +1059,27 @@ class AddressInfo(proto.Message):
     Attributes:
         postal_code (str):
             Postal code.
+            This field is a member of `oneof`_ ``_postal_code``.
         province_code (str):
             Province or state code.
+            This field is a member of `oneof`_ ``_province_code``.
         country_code (str):
             Country code.
+            This field is a member of `oneof`_ ``_country_code``.
         province_name (str):
             Province or state name.
+            This field is a member of `oneof`_ ``_province_name``.
         street_address (str):
             Street address line 1.
+            This field is a member of `oneof`_ ``_street_address``.
         street_address2 (str):
             Street address line 2. This field is write-only. It is only
             used for calculating the longitude and latitude of an
             address when geo_point is empty.
+            This field is a member of `oneof`_ ``_street_address2``.
         city_name (str):
             Name of the city.
+            This field is a member of `oneof`_ ``_city_name``.
     """
 
     postal_code = proto.Field(
@@ -1069,6 +1127,7 @@ class TopicInfo(proto.Message):
     Attributes:
         topic_constant (str):
             The Topic Constant resource name.
+            This field is a member of `oneof`_ ``_topic_constant``.
         path (Sequence[str]):
             The category to target or exclude. Each
             subsequent element in the array describes a more
@@ -1094,6 +1153,7 @@ class LanguageInfo(proto.Message):
     Attributes:
         language_constant (str):
             The language constant resource name.
+            This field is a member of `oneof`_ ``_language_constant``.
     """
 
     language_constant = proto.Field(
@@ -1113,6 +1173,7 @@ class IpBlockInfo(proto.Message):
     Attributes:
         ip_address (str):
             The IP address of this IP block.
+            This field is a member of `oneof`_ ``_ip_address``.
     """
 
     ip_address = proto.Field(
@@ -1144,6 +1205,7 @@ class CarrierInfo(proto.Message):
     Attributes:
         carrier_constant (str):
             The Carrier constant resource name.
+            This field is a member of `oneof`_ ``_carrier_constant``.
     """
 
     carrier_constant = proto.Field(
@@ -1159,6 +1221,7 @@ class UserInterestInfo(proto.Message):
     Attributes:
         user_interest_category (str):
             The UserInterest resource name.
+            This field is a member of `oneof`_ ``_user_interest_category``.
     """
 
     user_interest_category = proto.Field(
@@ -1181,6 +1244,7 @@ class WebpageInfo(proto.Message):
 
             This field is required for CREATE operations and
             is prohibited on UPDATE operations.
+            This field is a member of `oneof`_ ``_criterion_name``.
         conditions (Sequence[google.ads.googleads.v8.common.types.WebpageConditionInfo]):
             Conditions, or logical expressions, for
             webpage targeting. The list of webpage targeting
@@ -1234,6 +1298,7 @@ class WebpageConditionInfo(proto.Message):
             Operator of webpage targeting condition.
         argument (str):
             Argument of webpage targeting condition.
+            This field is a member of `oneof`_ ``_argument``.
     """
 
     operand = proto.Field(
@@ -1274,6 +1339,7 @@ class OperatingSystemVersionInfo(proto.Message):
         operating_system_version_constant (str):
             The operating system version constant
             resource name.
+            This field is a member of `oneof`_ ``_operating_system_version_constant``.
     """
 
     operating_system_version_constant = proto.Field(
@@ -1304,6 +1370,7 @@ class MobileDeviceInfo(proto.Message):
     Attributes:
         mobile_device_constant (str):
             The mobile device constant resource name.
+            This field is a member of `oneof`_ ``_mobile_device_constant``.
     """
 
     mobile_device_constant = proto.Field(
@@ -1320,6 +1387,7 @@ class CustomAffinityInfo(proto.Message):
     Attributes:
         custom_affinity (str):
             The CustomInterest resource name.
+            This field is a member of `oneof`_ ``_custom_affinity``.
     """
 
     custom_affinity = proto.Field(
@@ -1336,6 +1404,7 @@ class CustomIntentInfo(proto.Message):
     Attributes:
         custom_intent (str):
             The CustomInterest resource name.
+            This field is a member of `oneof`_ ``_custom_intent``.
     """
 
     custom_intent = proto.Field(
@@ -1353,6 +1422,7 @@ class LocationGroupInfo(proto.Message):
             Feed specifying locations for targeting.
             This is required and must be set in CREATE
             operations.
+            This field is a member of `oneof`_ ``_feed``.
         geo_target_constants (Sequence[str]):
             Geo target constant(s) restricting the scope
             of the geographic area within the feed.
@@ -1362,6 +1432,7 @@ class LocationGroupInfo(proto.Message):
             Distance in units specifying the radius
             around targeted locations. This is required and
             must be set in CREATE operations.
+            This field is a member of `oneof`_ ``_radius``.
         radius_units (google.ads.googleads.v8.enums.types.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits):
             Unit of the radius. Miles and meters are
             supported for geo target constants. Milli miles
@@ -1432,15 +1503,24 @@ class CombinedAudienceInfo(proto.Message):
 class KeywordThemeInfo(proto.Message):
     r"""A Smart Campaign keyword theme.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         keyword_theme_constant (str):
             The resource name of a Smart Campaign keyword theme
             constant.
             ``keywordThemeConstants/{keyword_theme_id}~{sub_keyword_theme_id}``
+            This field is a member of `oneof`_ ``keyword_theme``.
         free_form_keyword_theme (str):
             Free-form text to be matched to a Smart
             Campaign keyword theme constant on a best-effort
             basis.
+            This field is a member of `oneof`_ ``keyword_theme``.
     """
 
     keyword_theme_constant = proto.Field(

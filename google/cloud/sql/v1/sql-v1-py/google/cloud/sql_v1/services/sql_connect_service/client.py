@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.sql_v1.types import cloud_sql_connect
 from google.cloud.sql_v1.types import cloud_sql_resources
 from .transports.base import SqlConnectServiceTransport, DEFAULT_CLIENT_INFO
@@ -324,7 +326,7 @@ class SqlConnectServiceClient(metaclass=SqlConnectServiceClientMeta):
     def get_connect_settings(self,
             request: Union[cloud_sql_connect.GetConnectSettingsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_connect.ConnectSettings:
@@ -370,7 +372,7 @@ class SqlConnectServiceClient(metaclass=SqlConnectServiceClientMeta):
     def generate_ephemeral_cert(self,
             request: Union[cloud_sql_connect.GenerateEphemeralCertRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_connect.GenerateEphemeralCertResponse:

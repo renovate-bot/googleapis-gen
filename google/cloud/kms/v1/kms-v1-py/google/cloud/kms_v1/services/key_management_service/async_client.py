@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.kms_v1.services.key_management_service import pagers
 from google.cloud.kms_v1.types import resources
@@ -172,17 +174,17 @@ class KeyManagementServiceAsyncClient:
         )
 
     async def list_key_rings(self,
-            request: service.ListKeyRingsRequest = None,
+            request: Union[service.ListKeyRingsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListKeyRingsAsyncPager:
         r"""Lists [KeyRings][google.cloud.kms.v1.KeyRing].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.ListKeyRingsRequest`):
+            request (Union[google.cloud.kms_v1.types.ListKeyRingsRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
             parent (:class:`str`):
@@ -267,17 +269,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_crypto_keys(self,
-            request: service.ListCryptoKeysRequest = None,
+            request: Union[service.ListCryptoKeysRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCryptoKeysAsyncPager:
         r"""Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.ListCryptoKeysRequest`):
+            request (Union[google.cloud.kms_v1.types.ListCryptoKeysRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
             parent (:class:`str`):
@@ -362,17 +364,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_crypto_key_versions(self,
-            request: service.ListCryptoKeyVersionsRequest = None,
+            request: Union[service.ListCryptoKeyVersionsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCryptoKeyVersionsAsyncPager:
         r"""Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.ListCryptoKeyVersionsRequest`):
+            request (Union[google.cloud.kms_v1.types.ListCryptoKeyVersionsRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
             parent (:class:`str`):
@@ -458,17 +460,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_import_jobs(self,
-            request: service.ListImportJobsRequest = None,
+            request: Union[service.ListImportJobsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListImportJobsAsyncPager:
         r"""Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.ListImportJobsRequest`):
+            request (Union[google.cloud.kms_v1.types.ListImportJobsRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
             parent (:class:`str`):
@@ -553,10 +555,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_key_ring(self,
-            request: service.GetKeyRingRequest = None,
+            request: Union[service.GetKeyRingRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.KeyRing:
@@ -564,7 +566,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [KeyRing][google.cloud.kms.v1.KeyRing].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.GetKeyRingRequest`):
+            request (Union[google.cloud.kms_v1.types.GetKeyRingRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
             name (:class:`str`):
@@ -637,10 +639,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_crypto_key(self,
-            request: service.GetCryptoKeyRequest = None,
+            request: Union[service.GetCryptoKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -650,7 +652,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.GetCryptoKeyRequest`):
+            request (Union[google.cloud.kms_v1.types.GetCryptoKeyRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
             name (:class:`str`):
@@ -729,10 +731,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_crypto_key_version(self,
-            request: service.GetCryptoKeyVersionRequest = None,
+            request: Union[service.GetCryptoKeyVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -740,7 +742,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.GetCryptoKeyVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.GetCryptoKeyVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
             name (:class:`str`):
@@ -825,10 +827,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_public_key(self,
-            request: service.GetPublicKeyRequest = None,
+            request: Union[service.GetPublicKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.PublicKey:
@@ -841,7 +843,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.GetPublicKeyRequest`):
+            request (Union[google.cloud.kms_v1.types.GetPublicKeyRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
             name (:class:`str`):
@@ -915,10 +917,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_import_job(self,
-            request: service.GetImportJobRequest = None,
+            request: Union[service.GetImportJobRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ImportJob:
@@ -926,7 +928,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ImportJob][google.cloud.kms.v1.ImportJob].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.GetImportJobRequest`):
+            request (Union[google.cloud.kms_v1.types.GetImportJobRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
             name (:class:`str`):
@@ -1042,12 +1044,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_key_ring(self,
-            request: service.CreateKeyRingRequest = None,
+            request: Union[service.CreateKeyRingRequest, dict] = None,
             *,
             parent: str = None,
             key_ring_id: str = None,
             key_ring: resources.KeyRing = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.KeyRing:
@@ -1055,7 +1057,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Project and Location.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.CreateKeyRingRequest`):
+            request (Union[google.cloud.kms_v1.types.CreateKeyRingRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.CreateKeyRing][google.cloud.kms.v1.KeyManagementService.CreateKeyRing].
             parent (:class:`str`):
@@ -1147,12 +1149,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_crypto_key(self,
-            request: service.CreateCryptoKeyRequest = None,
+            request: Union[service.CreateCryptoKeyRequest, dict] = None,
             *,
             parent: str = None,
             crypto_key_id: str = None,
             crypto_key: resources.CryptoKey = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -1164,7 +1166,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         are required.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.CreateCryptoKeyRequest`):
+            request (Union[google.cloud.kms_v1.types.CreateCryptoKeyRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
             parent (:class:`str`):
@@ -1261,11 +1263,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_crypto_key_version(self,
-            request: service.CreateCryptoKeyVersionRequest = None,
+            request: Union[service.CreateCryptoKeyVersionRequest, dict] = None,
             *,
             parent: str = None,
             crypto_key_version: resources.CryptoKeyVersion = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1279,7 +1281,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.CreateCryptoKeyVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.CreateCryptoKeyVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion].
             parent (:class:`str`):
@@ -1367,9 +1369,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def import_crypto_key_version(self,
-            request: service.ImportCryptoKeyVersionRequest = None,
+            request: Union[service.ImportCryptoKeyVersionRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1385,7 +1387,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [CryptoKey][google.cloud.kms.v1.CryptoKey].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.ImportCryptoKeyVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.ImportCryptoKeyVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1442,12 +1444,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_import_job(self,
-            request: service.CreateImportJobRequest = None,
+            request: Union[service.CreateImportJobRequest, dict] = None,
             *,
             parent: str = None,
             import_job_id: str = None,
             import_job: resources.ImportJob = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ImportJob:
@@ -1458,7 +1460,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         is required.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.CreateImportJobRequest`):
+            request (Union[google.cloud.kms_v1.types.CreateImportJobRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
             parent (:class:`str`):
@@ -1592,18 +1594,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_crypto_key(self,
-            request: service.UpdateCryptoKeyRequest = None,
+            request: Union[service.UpdateCryptoKeyRequest, dict] = None,
             *,
             crypto_key: resources.CryptoKey = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
         r"""Update a [CryptoKey][google.cloud.kms.v1.CryptoKey].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.UpdateCryptoKeyRequest`):
+            request (Union[google.cloud.kms_v1.types.UpdateCryptoKeyRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
             crypto_key (:class:`google.cloud.kms_v1.types.CryptoKey`):
@@ -1690,11 +1692,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_crypto_key_version(self,
-            request: service.UpdateCryptoKeyVersionRequest = None,
+            request: Union[service.UpdateCryptoKeyVersionRequest, dict] = None,
             *,
             crypto_key_version: resources.CryptoKeyVersion = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1714,7 +1716,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         to move between other states.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.UpdateCryptoKeyVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.UpdateCryptoKeyVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.UpdateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyVersion].
             crypto_key_version (:class:`google.cloud.kms_v1.types.CryptoKeyVersion`):
@@ -1807,11 +1809,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_crypto_key_primary_version(self,
-            request: service.UpdateCryptoKeyPrimaryVersionRequest = None,
+            request: Union[service.UpdateCryptoKeyPrimaryVersionRequest, dict] = None,
             *,
             name: str = None,
             crypto_key_version_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKey:
@@ -1823,7 +1825,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.UpdateCryptoKeyPrimaryVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.UpdateCryptoKeyPrimaryVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
             name (:class:`str`):
@@ -1911,10 +1913,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def destroy_crypto_key_version(self,
-            request: service.DestroyCryptoKeyVersionRequest = None,
+            request: Union[service.DestroyCryptoKeyVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -1943,7 +1945,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         may be called to reverse the process.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.DestroyCryptoKeyVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.DestroyCryptoKeyVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
             name (:class:`str`):
@@ -2027,10 +2029,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def restore_crypto_key_version(self,
-            request: service.RestoreCryptoKeyVersionRequest = None,
+            request: Union[service.RestoreCryptoKeyVersionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.CryptoKeyVersion:
@@ -2048,7 +2050,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         will be cleared.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.RestoreCryptoKeyVersionRequest`):
+            request (Union[google.cloud.kms_v1.types.RestoreCryptoKeyVersionRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
             name (:class:`str`):
@@ -2132,11 +2134,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def encrypt(self,
-            request: service.EncryptRequest = None,
+            request: Union[service.EncryptRequest, dict] = None,
             *,
             name: str = None,
             plaintext: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.EncryptResponse:
@@ -2147,7 +2149,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.EncryptRequest`):
+            request (Union[google.cloud.kms_v1.types.EncryptRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
             name (:class:`str`):
@@ -2244,11 +2246,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def decrypt(self,
-            request: service.DecryptRequest = None,
+            request: Union[service.DecryptRequest, dict] = None,
             *,
             name: str = None,
             ciphertext: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.DecryptResponse:
@@ -2259,7 +2261,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.DecryptRequest`):
+            request (Union[google.cloud.kms_v1.types.DecryptRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
             name (:class:`str`):
@@ -2342,11 +2344,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def asymmetric_sign(self,
-            request: service.AsymmetricSignRequest = None,
+            request: Union[service.AsymmetricSignRequest, dict] = None,
             *,
             name: str = None,
             digest: service.Digest = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.AsymmetricSignResponse:
@@ -2358,7 +2360,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.AsymmetricSignRequest`):
+            request (Union[google.cloud.kms_v1.types.AsymmetricSignRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
             name (:class:`str`):
@@ -2442,11 +2444,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def asymmetric_decrypt(self,
-            request: service.AsymmetricDecryptRequest = None,
+            request: Union[service.AsymmetricDecryptRequest, dict] = None,
             *,
             name: str = None,
             ciphertext: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.AsymmetricDecryptResponse:
@@ -2459,7 +2461,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         ASYMMETRIC_DECRYPT.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.AsymmetricDecryptRequest`):
+            request (Union[google.cloud.kms_v1.types.AsymmetricDecryptRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
             name (:class:`str`):
@@ -2542,11 +2544,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def mac_sign(self,
-            request: service.MacSignRequest = None,
+            request: Union[service.MacSignRequest, dict] = None,
             *,
             name: str = None,
             data: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.MacSignResponse:
@@ -2557,7 +2559,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         same key.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.MacSignRequest`):
+            request (Union[google.cloud.kms_v1.types.MacSignRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
             name (:class:`str`):
@@ -2640,12 +2642,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def mac_verify(self,
-            request: service.MacVerifyRequest = None,
+            request: Union[service.MacVerifyRequest, dict] = None,
             *,
             name: str = None,
             data: bytes = None,
             mac: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.MacVerifyResponse:
@@ -2656,7 +2658,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         verification was successful.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.MacVerifyRequest`):
+            request (Union[google.cloud.kms_v1.types.MacVerifyRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.MacVerify][google.cloud.kms.v1.KeyManagementService.MacVerify].
             name (:class:`str`):
@@ -2746,12 +2748,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def generate_random_bytes(self,
-            request: service.GenerateRandomBytesRequest = None,
+            request: Union[service.GenerateRandomBytesRequest, dict] = None,
             *,
             location: str = None,
             length_bytes: int = None,
             protection_level: resources.ProtectionLevel = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.GenerateRandomBytesResponse:
@@ -2759,7 +2761,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         source in the provided location.
 
         Args:
-            request (:class:`google.cloud.kms_v1.types.GenerateRandomBytesRequest`):
+            request (Union[google.cloud.kms_v1.types.GenerateRandomBytesRequest, dict]):
                 The request object. Request message for
                 [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
             location (:class:`str`):
@@ -2857,7 +2859,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         self,
         request: iam_policy_pb2.SetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -2965,7 +2967,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         self,
         request: iam_policy_pb2.GetIamPolicyRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
@@ -3074,7 +3076,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         self,
         request: iam_policy_pb2.TestIamPermissionsRequest = None,
         *,
-        retry: retries.Retry = gapic_v1.method.DEFAULT,
+        retry: OptionalRetry = gapic_v1.method.DEFAULT,
         timeout: float = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:

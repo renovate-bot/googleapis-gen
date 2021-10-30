@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.home.enterprise.sdm_v1.services.smart_device_management_service import pagers
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
@@ -362,7 +364,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def get_device(self,
             request: Union[smart_device_management_service.GetDeviceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> device.Device:
@@ -419,7 +421,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def list_devices(self,
             request: Union[smart_device_management_service.ListDevicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDevicesPager:
@@ -487,7 +489,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def execute_device_command(self,
             request: Union[smart_device_management_service.ExecuteDeviceCommandRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> smart_device_management_service.ExecuteDeviceCommandResponse:
@@ -544,7 +546,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def get_structure(self,
             request: Union[smart_device_management_service.GetStructureRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> site.Structure:
@@ -601,7 +603,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def list_structures(self,
             request: Union[smart_device_management_service.ListStructuresRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListStructuresPager:
@@ -669,7 +671,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def get_room(self,
             request: Union[smart_device_management_service.GetRoomRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> site.Room:
@@ -727,7 +729,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
     def list_rooms(self,
             request: Union[smart_device_management_service.ListRoomsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListRoomsPager:

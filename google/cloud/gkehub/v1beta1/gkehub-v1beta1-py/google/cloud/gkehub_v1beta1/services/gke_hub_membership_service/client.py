@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.gkehub_v1beta1.services.gke_hub_membership_service import pagers
@@ -351,7 +353,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
             request: Union[membership.ListMembershipsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListMembershipsPager:
@@ -439,7 +441,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
             request: Union[membership.GetMembershipRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.Membership:
@@ -516,7 +518,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
             parent: str = None,
             resource: membership.Membership = None,
             membership_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -633,7 +635,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
             request: Union[membership.DeleteMembershipRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -736,7 +738,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
             name: str = None,
             resource: membership.Membership = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -847,7 +849,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
     def generate_connect_manifest(self,
             request: Union[membership.GenerateConnectManifestRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.GenerateConnectManifestResponse:
@@ -908,7 +910,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
     def validate_exclusivity(self,
             request: Union[membership.ValidateExclusivityRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.ValidateExclusivityResponse:
@@ -966,7 +968,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
     def generate_exclusivity_manifest(self,
             request: Union[membership.GenerateExclusivityManifestRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.GenerateExclusivityManifestResponse:

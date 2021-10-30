@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, AsyncIterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.firestore_v1beta1.services.firestore import pagers
 from google.firestore_v1beta1.types import common
@@ -158,16 +160,16 @@ class FirestoreAsyncClient:
         )
 
     async def get_document(self,
-            request: firestore.GetDocumentRequest = None,
+            request: Union[firestore.GetDocumentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> document.Document:
         r"""Gets a single document.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.GetDocumentRequest`):
+            request (Union[google.firestore_v1beta1.types.GetDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.GetDocument][google.firestore.v1beta1.Firestore.GetDocument].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -220,16 +222,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_documents(self,
-            request: firestore.ListDocumentsRequest = None,
+            request: Union[firestore.ListDocumentsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDocumentsAsyncPager:
         r"""Lists documents.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.ListDocumentsRequest`):
+            request (Union[google.firestore_v1beta1.types.ListDocumentsRequest, dict]):
                 The request object. The request for
                 [Firestore.ListDocuments][google.firestore.v1beta1.Firestore.ListDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -294,18 +296,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_document(self,
-            request: firestore.UpdateDocumentRequest = None,
+            request: Union[firestore.UpdateDocumentRequest, dict] = None,
             *,
             document: gf_document.Document = None,
             update_mask: common.DocumentMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gf_document.Document:
         r"""Updates or inserts a document.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.UpdateDocumentRequest`):
+            request (Union[google.firestore_v1beta1.types.UpdateDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.UpdateDocument][google.firestore.v1beta1.Firestore.UpdateDocument].
             document (:class:`google.firestore_v1beta1.types.Document`):
@@ -387,17 +389,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_document(self,
-            request: firestore.DeleteDocumentRequest = None,
+            request: Union[firestore.DeleteDocumentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a document.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.DeleteDocumentRequest`):
+            request (Union[google.firestore_v1beta1.types.DeleteDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.DeleteDocument][google.firestore.v1beta1.Firestore.DeleteDocument].
             name (:class:`str`):
@@ -461,9 +463,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     def batch_get_documents(self,
-            request: firestore.BatchGetDocumentsRequest = None,
+            request: Union[firestore.BatchGetDocumentsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[firestore.BatchGetDocumentsResponse]]:
@@ -472,7 +474,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         be returned in the same order that they were requested.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.BatchGetDocumentsRequest`):
+            request (Union[google.firestore_v1beta1.types.BatchGetDocumentsRequest, dict]):
                 The request object. The request for
                 [Firestore.BatchGetDocuments][google.firestore.v1beta1.Firestore.BatchGetDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -525,17 +527,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def begin_transaction(self,
-            request: firestore.BeginTransactionRequest = None,
+            request: Union[firestore.BeginTransactionRequest, dict] = None,
             *,
             database: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> firestore.BeginTransactionResponse:
         r"""Starts a new transaction.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.BeginTransactionRequest`):
+            request (Union[google.firestore_v1beta1.types.BeginTransactionRequest, dict]):
                 The request object. The request for
                 [Firestore.BeginTransaction][google.firestore.v1beta1.Firestore.BeginTransaction].
             database (:class:`str`):
@@ -607,11 +609,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def commit(self,
-            request: firestore.CommitRequest = None,
+            request: Union[firestore.CommitRequest, dict] = None,
             *,
             database: str = None,
             writes: Sequence[gf_write.Write] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> firestore.CommitResponse:
@@ -619,7 +621,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         documents.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.CommitRequest`):
+            request (Union[google.firestore_v1beta1.types.CommitRequest, dict]):
                 The request object. The request for
                 [Firestore.Commit][google.firestore.v1beta1.Firestore.Commit].
             database (:class:`str`):
@@ -693,18 +695,18 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def rollback(self,
-            request: firestore.RollbackRequest = None,
+            request: Union[firestore.RollbackRequest, dict] = None,
             *,
             database: str = None,
             transaction: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Rolls back a transaction.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.RollbackRequest`):
+            request (Union[google.firestore_v1beta1.types.RollbackRequest, dict]):
                 The request object. The request for
                 [Firestore.Rollback][google.firestore.v1beta1.Firestore.Rollback].
             database (:class:`str`):
@@ -776,16 +778,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     def run_query(self,
-            request: firestore.RunQueryRequest = None,
+            request: Union[firestore.RunQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[firestore.RunQueryResponse]]:
         r"""Runs a query.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.RunQueryRequest`):
+            request (Union[google.firestore_v1beta1.types.RunQueryRequest, dict]):
                 The request object. The request for
                 [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -838,9 +840,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def partition_query(self,
-            request: firestore.PartitionQueryRequest = None,
+            request: Union[firestore.PartitionQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.PartitionQueryAsyncPager:
@@ -851,7 +853,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         results.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.PartitionQueryRequest`):
+            request (Union[google.firestore_v1beta1.types.PartitionQueryRequest, dict]):
                 The request object. The request for
                 [Firestore.PartitionQuery][google.firestore.v1beta1.Firestore.PartitionQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -911,7 +913,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
     def write(self,
             requests: AsyncIterator[firestore.WriteRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[firestore.WriteResponse]]:
@@ -974,7 +976,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
     def listen(self,
             requests: AsyncIterator[firestore.ListenRequest] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[firestore.ListenResponse]]:
@@ -1031,17 +1033,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_collection_ids(self,
-            request: firestore.ListCollectionIdsRequest = None,
+            request: Union[firestore.ListCollectionIdsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListCollectionIdsAsyncPager:
         r"""Lists all the collection IDs underneath a document.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.ListCollectionIdsRequest`):
+            request (Union[google.firestore_v1beta1.types.ListCollectionIdsRequest, dict]):
                 The request object. The request for
                 [Firestore.ListCollectionIds][google.firestore.v1beta1.Firestore.ListCollectionIds].
             parent (:class:`str`):
@@ -1127,9 +1129,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_write(self,
-            request: firestore.BatchWriteRequest = None,
+            request: Union[firestore.BatchWriteRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> firestore.BatchWriteResponse:
@@ -1146,7 +1148,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.BatchWriteRequest`):
+            request (Union[google.firestore_v1beta1.types.BatchWriteRequest, dict]):
                 The request object. The request for
                 [Firestore.BatchWrite][google.firestore.v1beta1.Firestore.BatchWrite].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1192,16 +1194,16 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_document(self,
-            request: firestore.CreateDocumentRequest = None,
+            request: Union[firestore.CreateDocumentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> document.Document:
         r"""Creates a new document.
 
         Args:
-            request (:class:`google.firestore_v1beta1.types.CreateDocumentRequest`):
+            request (Union[google.firestore_v1beta1.types.CreateDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

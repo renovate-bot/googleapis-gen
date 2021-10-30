@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.resources.types import keyword_plan_ad_group
 from google.ads.googleads.v7.services.types import keyword_plan_ad_group_service
 from google.rpc import status_pb2  # type: ignore
@@ -348,7 +350,7 @@ class KeywordPlanAdGroupServiceClient(metaclass=KeywordPlanAdGroupServiceClientM
             request: Union[keyword_plan_ad_group_service.GetKeywordPlanAdGroupRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_ad_group.KeywordPlanAdGroup:
@@ -428,7 +430,7 @@ class KeywordPlanAdGroupServiceClient(metaclass=KeywordPlanAdGroupServiceClientM
             *,
             customer_id: str = None,
             operations: Sequence[keyword_plan_ad_group_service.KeywordPlanAdGroupOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> keyword_plan_ad_group_service.MutateKeywordPlanAdGroupsResponse:

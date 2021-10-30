@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.spanner_v1.services.spanner import pagers
 from google.cloud.spanner_v1.types import commit_response
@@ -157,10 +159,10 @@ class SpannerAsyncClient:
         )
 
     async def create_session(self,
-            request: spanner.CreateSessionRequest = None,
+            request: Union[spanner.CreateSessionRequest, dict] = None,
             *,
             database: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner.Session:
@@ -185,7 +187,7 @@ class SpannerAsyncClient:
         periodically, e.g., ``"SELECT 1"``.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.CreateSessionRequest`):
+            request (Union[google.cloud.spanner_v1.types.CreateSessionRequest, dict]):
                 The request object. The request for
                 [CreateSession][google.spanner.v1.Spanner.CreateSession].
             database (:class:`str`):
@@ -254,11 +256,11 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def batch_create_sessions(self,
-            request: spanner.BatchCreateSessionsRequest = None,
+            request: Union[spanner.BatchCreateSessionsRequest, dict] = None,
             *,
             database: str = None,
             session_count: int = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner.BatchCreateSessionsResponse:
@@ -268,7 +270,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         practices on session cache management.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.BatchCreateSessionsRequest`):
+            request (Union[google.cloud.spanner_v1.types.BatchCreateSessionsRequest, dict]):
                 The request object. The request for
                 [BatchCreateSessions][google.spanner.v1.Spanner.BatchCreateSessions].
             database (:class:`str`):
@@ -353,10 +355,10 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def get_session(self,
-            request: spanner.GetSessionRequest = None,
+            request: Union[spanner.GetSessionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner.Session:
@@ -365,7 +367,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         is still alive.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.GetSessionRequest`):
+            request (Union[google.cloud.spanner_v1.types.GetSessionRequest, dict]):
                 The request object. The request for
                 [GetSession][google.spanner.v1.Spanner.GetSession].
             name (:class:`str`):
@@ -434,17 +436,17 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def list_sessions(self,
-            request: spanner.ListSessionsRequest = None,
+            request: Union[spanner.ListSessionsRequest, dict] = None,
             *,
             database: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListSessionsAsyncPager:
         r"""Lists all sessions in a given database.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.ListSessionsRequest`):
+            request (Union[google.cloud.spanner_v1.types.ListSessionsRequest, dict]):
                 The request object. The request for
                 [ListSessions][google.spanner.v1.Spanner.ListSessions].
             database (:class:`str`):
@@ -527,10 +529,10 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def delete_session(self,
-            request: spanner.DeleteSessionRequest = None,
+            request: Union[spanner.DeleteSessionRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -539,7 +541,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         of any operations that are running with this session.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.DeleteSessionRequest`):
+            request (Union[google.cloud.spanner_v1.types.DeleteSessionRequest, dict]):
                 The request object. The request for
                 [DeleteSession][google.spanner.v1.Spanner.DeleteSession].
             name (:class:`str`):
@@ -601,9 +603,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         )
 
     async def execute_sql(self,
-            request: spanner.ExecuteSqlRequest = None,
+            request: Union[spanner.ExecuteSqlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> result_set.ResultSet:
@@ -623,7 +625,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         instead.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.ExecuteSqlRequest`):
+            request (Union[google.cloud.spanner_v1.types.ExecuteSqlRequest, dict]):
                 The request object. The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
@@ -676,9 +678,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     def execute_streaming_sql(self,
-            request: spanner.ExecuteSqlRequest = None,
+            request: Union[spanner.ExecuteSqlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[result_set.PartialResultSet]]:
@@ -690,7 +692,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         column value can exceed 10 MiB.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.ExecuteSqlRequest`):
+            request (Union[google.cloud.spanner_v1.types.ExecuteSqlRequest, dict]):
                 The request object. The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
@@ -740,9 +742,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def execute_batch_dml(self,
-            request: spanner.ExecuteBatchDmlRequest = None,
+            request: Union[spanner.ExecuteBatchDmlRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner.ExecuteBatchDmlResponse:
@@ -762,7 +764,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         statements are not executed.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.ExecuteBatchDmlRequest`):
+            request (Union[google.cloud.spanner_v1.types.ExecuteBatchDmlRequest, dict]):
                 The request object. The request for
                 [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -851,9 +853,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def read(self,
-            request: spanner.ReadRequest = None,
+            request: Union[spanner.ReadRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> result_set.ResultSet:
@@ -874,7 +876,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         instead.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.ReadRequest`):
+            request (Union[google.cloud.spanner_v1.types.ReadRequest, dict]):
                 The request object. The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
@@ -927,9 +929,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     def streaming_read(self,
-            request: spanner.ReadRequest = None,
+            request: Union[spanner.ReadRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[result_set.PartialResultSet]]:
@@ -941,7 +943,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         exceed 10 MiB.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.ReadRequest`):
+            request (Union[google.cloud.spanner_v1.types.ReadRequest, dict]):
                 The request object. The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
@@ -991,11 +993,11 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def begin_transaction(self,
-            request: spanner.BeginTransactionRequest = None,
+            request: Union[spanner.BeginTransactionRequest, dict] = None,
             *,
             session: str = None,
             options: transaction.TransactionOptions = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> transaction.Transaction:
@@ -1006,7 +1008,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         transaction as a side-effect.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.BeginTransactionRequest`):
+            request (Union[google.cloud.spanner_v1.types.BeginTransactionRequest, dict]):
                 The request object. The request for
                 [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
             session (:class:`str`):
@@ -1084,13 +1086,13 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def commit(self,
-            request: spanner.CommitRequest = None,
+            request: Union[spanner.CommitRequest, dict] = None,
             *,
             session: str = None,
             transaction_id: bytes = None,
             mutations: Sequence[mutation.Mutation] = None,
             single_use_transaction: transaction.TransactionOptions = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> commit_response.CommitResponse:
@@ -1112,7 +1114,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         things as they are now.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.CommitRequest`):
+            request (Union[google.cloud.spanner_v1.types.CommitRequest, dict]):
                 The request object. The request for
                 [Commit][google.spanner.v1.Spanner.Commit].
             session (:class:`str`):
@@ -1220,11 +1222,11 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def rollback(self,
-            request: spanner.RollbackRequest = None,
+            request: Union[spanner.RollbackRequest, dict] = None,
             *,
             session: str = None,
             transaction_id: bytes = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1240,7 +1242,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         ``ABORTED``.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.RollbackRequest`):
+            request (Union[google.cloud.spanner_v1.types.RollbackRequest, dict]):
                 The request object. The request for
                 [Rollback][google.spanner.v1.Spanner.Rollback].
             session (:class:`str`):
@@ -1311,9 +1313,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         )
 
     async def partition_query(self,
-            request: spanner.PartitionQueryRequest = None,
+            request: Union[spanner.PartitionQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner.PartitionResponse:
@@ -1333,7 +1335,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         from the beginning.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.PartitionQueryRequest`):
+            request (Union[google.cloud.spanner_v1.types.PartitionQueryRequest, dict]):
                 The request object. The request for
                 [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1386,9 +1388,9 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         return response
 
     async def partition_read(self,
-            request: spanner.PartitionReadRequest = None,
+            request: Union[spanner.PartitionReadRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> spanner.PartitionResponse:
@@ -1411,7 +1413,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         from the beginning.
 
         Args:
-            request (:class:`google.cloud.spanner_v1.types.PartitionReadRequest`):
+            request (Union[google.cloud.spanner_v1.types.PartitionReadRequest, dict]):
                 The request object. The request for
                 [PartitionRead][google.spanner.v1.Spanner.PartitionRead]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

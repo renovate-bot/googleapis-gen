@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import media_type
 from google.ads.googleads.v8.enums.types import mime_type
 from google.ads.googleads.v8.resources.types import media_file
@@ -340,7 +342,7 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
             request: Union[media_file_service.GetMediaFileRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> media_file.MediaFile:
@@ -417,7 +419,7 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[media_file_service.MediaFileOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> media_file_service.MutateMediaFilesResponse:

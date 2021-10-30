@@ -34,9 +34,11 @@ class TextLabel(proto.Message):
             must match the regular expression
             '^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'. Note: The background
             color may not be visible for manager accounts.
+            This field is a member of `oneof`_ ``_background_color``.
         description (str):
             A short description of the label. The length
             must be no more than 200 characters.
+            This field is a member of `oneof`_ ``_description``.
     """
 
     background_color = proto.Field(

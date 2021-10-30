@@ -35,6 +35,13 @@ __protobuf__ = proto.module(
 class Feed(proto.Message):
     r"""A feed.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed. Feed resource
@@ -44,8 +51,10 @@ class Feed(proto.Message):
         id (int):
             Output only. The ID of the feed.
             This field is read-only.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             Immutable. Name of the feed. Required.
+            This field is a member of `oneof`_ ``_name``.
         attributes (Sequence[google.ads.googleads.v8.resources.types.FeedAttribute]):
             The Feed's attributes. Required on CREATE, unless
             system_feed_generation_data is provided, in which case
@@ -65,9 +74,11 @@ class Feed(proto.Message):
         places_location_feed_data (google.ads.googleads.v8.resources.types.Feed.PlacesLocationFeedData):
             Data used to configure a location feed
             populated from Google My Business Locations.
+            This field is a member of `oneof`_ ``system_feed_generation_data``.
         affiliate_location_feed_data (google.ads.googleads.v8.resources.types.Feed.AffiliateLocationFeedData):
             Data used to configure an affiliate location
             feed populated with the specified chains.
+            This field is a member of `oneof`_ ``system_feed_generation_data``.
     """
 
     class PlacesLocationFeedData(proto.Message):
@@ -84,6 +95,7 @@ class Feed(proto.Message):
                 Email address of a Google My Business account
                 or email address of a manager of the Google My
                 Business account. Required.
+                This field is a member of `oneof`_ ``_email_address``.
             business_account_id (str):
                 Plus page ID of the managed business whose locations should
                 be used. If this field is not set, then all businesses
@@ -94,6 +106,7 @@ class Feed(proto.Message):
                 If business_name_filter is set, only listings with a
                 matching business name are candidates to be sync'd into
                 FeedItems.
+                This field is a member of `oneof`_ ``_business_name_filter``.
             category_filters (Sequence[str]):
                 Used to filter Google My Business listings by categories. If
                 entries exist in category_filters, only listings that belong
@@ -114,12 +127,15 @@ class Feed(proto.Message):
             Attributes:
                 http_method (str):
                     The HTTP method used to obtain authorization.
+                    This field is a member of `oneof`_ ``_http_method``.
                 http_request_url (str):
                     The HTTP request URL used to obtain
                     authorization.
+                    This field is a member of `oneof`_ ``_http_request_url``.
                 http_authorization_header (str):
                     The HTTP authorization header used to obtain
                     authorization.
+                    This field is a member of `oneof`_ ``_http_authorization_header``.
             """
 
             http_method = proto.Field(
@@ -247,8 +263,10 @@ class FeedAttribute(proto.Message):
     Attributes:
         id (int):
             ID of the attribute.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the attribute. Required.
+            This field is a member of `oneof`_ ``_name``.
         type_ (google.ads.googleads.v8.enums.types.FeedAttributeTypeEnum.FeedAttributeType):
             Data type for feed attribute. Required.
         is_part_of_key (bool):
@@ -257,6 +275,7 @@ class FeedAttribute(proto.Message):
             unspecified. Note that a unique key is not required in a
             Feed's schema, in which case the FeedItems must be
             referenced by their feed_item_id.
+            This field is a member of `oneof`_ ``_is_part_of_key``.
     """
 
     id = proto.Field(

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -149,16 +151,16 @@ class ServicesAsyncClient:
         )
 
     async def list_services(self,
-            request: appengine.ListServicesRequest = None,
+            request: Union[appengine.ListServicesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesAsyncPager:
         r"""Lists all the services in the application.
 
         Args:
-            request (:class:`google.cloud.appengine_admin_v1.types.ListServicesRequest`):
+            request (Union[google.cloud.appengine_admin_v1.types.ListServicesRequest, dict]):
                 The request object. Request message for
                 `Services.ListServices`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -215,9 +217,9 @@ class ServicesAsyncClient:
         return response
 
     async def get_service(self,
-            request: appengine.GetServiceRequest = None,
+            request: Union[appengine.GetServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service.Service:
@@ -225,7 +227,7 @@ class ServicesAsyncClient:
         service.
 
         Args:
-            request (:class:`google.cloud.appengine_admin_v1.types.GetServiceRequest`):
+            request (Union[google.cloud.appengine_admin_v1.types.GetServiceRequest, dict]):
                 The request object. Request message for
                 `Services.GetService`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -281,16 +283,16 @@ class ServicesAsyncClient:
         return response
 
     async def update_service(self,
-            request: appengine.UpdateServiceRequest = None,
+            request: Union[appengine.UpdateServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the configuration of the specified service.
 
         Args:
-            request (:class:`google.cloud.appengine_admin_v1.types.UpdateServiceRequest`):
+            request (Union[google.cloud.appengine_admin_v1.types.UpdateServiceRequest, dict]):
                 The request object. Request message for
                 `Services.UpdateService`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -353,9 +355,9 @@ class ServicesAsyncClient:
         return response
 
     async def delete_service(self,
-            request: appengine.DeleteServiceRequest = None,
+            request: Union[appengine.DeleteServiceRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -363,7 +365,7 @@ class ServicesAsyncClient:
         versions.
 
         Args:
-            request (:class:`google.cloud.appengine_admin_v1.types.DeleteServiceRequest`):
+            request (Union[google.cloud.appengine_admin_v1.types.DeleteServiceRequest, dict]):
                 The request object. Request message for
                 `Services.DeleteService`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -178,13 +178,22 @@ class ExportAssetsResponse(proto.Message):
 class OutputConfig(proto.Message):
     r"""Output configuration for export assets destination.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_destination (google.cloud.asset_v1p7beta1.types.GcsDestination):
             Destination on Cloud Storage.
+            This field is a member of `oneof`_ ``destination``.
         bigquery_destination (google.cloud.asset_v1p7beta1.types.BigQueryDestination):
             Destination on BigQuery. The output table
             stores the fields in asset proto as columns in
             BigQuery.
+            This field is a member of `oneof`_ ``destination``.
     """
 
     gcs_destination = proto.Field(
@@ -204,9 +213,12 @@ class OutputConfig(proto.Message):
 class OutputResult(proto.Message):
     r"""Output result of export assets.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         gcs_result (google.cloud.asset_v1p7beta1.types.GcsOutputResult):
             Export result on Cloud Storage.
+            This field is a member of `oneof`_ ``result``.
     """
 
     gcs_result = proto.Field(
@@ -235,6 +247,13 @@ class GcsOutputResult(proto.Message):
 class GcsDestination(proto.Message):
     r"""A Cloud Storage location.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         uri (str):
             The uri of the Cloud Storage object. It's the same uri that
@@ -242,6 +261,7 @@ class GcsDestination(proto.Message):
             See `Viewing and Editing Object
             Metadata <https://cloud.google.com/storage/docs/viewing-editing-metadata>`__
             for more information.
+            This field is a member of `oneof`_ ``object_uri``.
         uri_prefix (str):
             The uri prefix of all generated Cloud Storage objects.
             Example: "gs://bucket_name/object_name_prefix". Each object
@@ -254,6 +274,7 @@ class GcsDestination(proto.Message):
             compute.googleapis.com/Disk assets. An INVALID_ARGUMENT
             error will be returned if file with the same name
             "gs://bucket_name/object_name_prefix" already exists.
+            This field is a member of `oneof`_ ``object_uri``.
     """
 
     uri = proto.Field(

@@ -19,12 +19,14 @@ import re
 from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation as gac_operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -167,18 +169,18 @@ class TensorboardServiceAsyncClient:
         )
 
     async def create_tensorboard(self,
-            request: tensorboard_service.CreateTensorboardRequest = None,
+            request: Union[tensorboard_service.CreateTensorboardRequest, dict] = None,
             *,
             parent: str = None,
             tensorboard: gca_tensorboard.Tensorboard = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Creates a Tensorboard.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.CreateTensorboardRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateTensorboardRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.CreateTensorboard][google.cloud.aiplatform.v1beta1.TensorboardService.CreateTensorboard].
             parent (:class:`str`):
@@ -263,17 +265,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def get_tensorboard(self,
-            request: tensorboard_service.GetTensorboardRequest = None,
+            request: Union[tensorboard_service.GetTensorboardRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard.Tensorboard:
         r"""Gets a Tensorboard.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.GetTensorboardRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetTensorboardRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.GetTensorboard][google.cloud.aiplatform.v1beta1.TensorboardService.GetTensorboard].
             name (:class:`str`):
@@ -342,18 +344,18 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def update_tensorboard(self,
-            request: tensorboard_service.UpdateTensorboardRequest = None,
+            request: Union[tensorboard_service.UpdateTensorboardRequest, dict] = None,
             *,
             tensorboard: gca_tensorboard.Tensorboard = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates a Tensorboard.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.UpdateTensorboardRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateTensorboardRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.UpdateTensorboard][google.cloud.aiplatform.v1beta1.TensorboardService.UpdateTensorboard].
             tensorboard (:class:`google.cloud.aiplatform_v1beta1.types.Tensorboard`):
@@ -445,17 +447,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def list_tensorboards(self,
-            request: tensorboard_service.ListTensorboardsRequest = None,
+            request: Union[tensorboard_service.ListTensorboardsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardsAsyncPager:
         r"""Lists Tensorboards in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ListTensorboardsRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListTensorboardsRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ListTensorboards][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboards].
             parent (:class:`str`):
@@ -533,17 +535,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def delete_tensorboard(self,
-            request: tensorboard_service.DeleteTensorboardRequest = None,
+            request: Union[tensorboard_service.DeleteTensorboardRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a Tensorboard.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.DeleteTensorboardRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteTensorboardRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.DeleteTensorboard][google.cloud.aiplatform.v1beta1.TensorboardService.DeleteTensorboard].
             name (:class:`str`):
@@ -630,19 +632,19 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def create_tensorboard_experiment(self,
-            request: tensorboard_service.CreateTensorboardExperimentRequest = None,
+            request: Union[tensorboard_service.CreateTensorboardExperimentRequest, dict] = None,
             *,
             parent: str = None,
             tensorboard_experiment: gca_tensorboard_experiment.TensorboardExperiment = None,
             tensorboard_experiment_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_experiment.TensorboardExperiment:
         r"""Creates a TensorboardExperiment.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.CreateTensorboardExperimentRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateTensorboardExperimentRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.CreateTensorboardExperiment][google.cloud.aiplatform.v1beta1.TensorboardService.CreateTensorboardExperiment].
             parent (:class:`str`):
@@ -730,17 +732,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def get_tensorboard_experiment(self,
-            request: tensorboard_service.GetTensorboardExperimentRequest = None,
+            request: Union[tensorboard_service.GetTensorboardExperimentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_experiment.TensorboardExperiment:
         r"""Gets a TensorboardExperiment.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.GetTensorboardExperimentRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetTensorboardExperimentRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.GetTensorboardExperiment][google.cloud.aiplatform.v1beta1.TensorboardService.GetTensorboardExperiment].
             name (:class:`str`):
@@ -808,18 +810,18 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def update_tensorboard_experiment(self,
-            request: tensorboard_service.UpdateTensorboardExperimentRequest = None,
+            request: Union[tensorboard_service.UpdateTensorboardExperimentRequest, dict] = None,
             *,
             tensorboard_experiment: gca_tensorboard_experiment.TensorboardExperiment = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_experiment.TensorboardExperiment:
         r"""Updates a TensorboardExperiment.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.UpdateTensorboardExperimentRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateTensorboardExperimentRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.UpdateTensorboardExperiment][google.cloud.aiplatform.v1beta1.TensorboardService.UpdateTensorboardExperiment].
             tensorboard_experiment (:class:`google.cloud.aiplatform_v1beta1.types.TensorboardExperiment`):
@@ -902,17 +904,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def list_tensorboard_experiments(self,
-            request: tensorboard_service.ListTensorboardExperimentsRequest = None,
+            request: Union[tensorboard_service.ListTensorboardExperimentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardExperimentsAsyncPager:
         r"""Lists TensorboardExperiments in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ListTensorboardExperimentsRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListTensorboardExperimentsRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ListTensorboardExperiments][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardExperiments].
             parent (:class:`str`):
@@ -991,17 +993,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def delete_tensorboard_experiment(self,
-            request: tensorboard_service.DeleteTensorboardExperimentRequest = None,
+            request: Union[tensorboard_service.DeleteTensorboardExperimentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a TensorboardExperiment.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.DeleteTensorboardExperimentRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteTensorboardExperimentRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.DeleteTensorboardExperiment][google.cloud.aiplatform.v1beta1.TensorboardService.DeleteTensorboardExperiment].
             name (:class:`str`):
@@ -1088,19 +1090,19 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def create_tensorboard_run(self,
-            request: tensorboard_service.CreateTensorboardRunRequest = None,
+            request: Union[tensorboard_service.CreateTensorboardRunRequest, dict] = None,
             *,
             parent: str = None,
             tensorboard_run: gca_tensorboard_run.TensorboardRun = None,
             tensorboard_run_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_run.TensorboardRun:
         r"""Creates a TensorboardRun.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.CreateTensorboardRunRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateTensorboardRunRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.CreateTensorboardRun][google.cloud.aiplatform.v1beta1.TensorboardService.CreateTensorboardRun].
             parent (:class:`str`):
@@ -1190,18 +1192,18 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def batch_create_tensorboard_runs(self,
-            request: tensorboard_service.BatchCreateTensorboardRunsRequest = None,
+            request: Union[tensorboard_service.BatchCreateTensorboardRunsRequest, dict] = None,
             *,
             parent: str = None,
             requests: Sequence[tensorboard_service.CreateTensorboardRunRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.BatchCreateTensorboardRunsResponse:
         r"""Batch create TensorboardRuns.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.BatchCreateTensorboardRunsRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.BatchCreateTensorboardRunsRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.BatchCreateTensorboardRuns][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardRuns].
             parent (:class:`str`):
@@ -1281,17 +1283,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def get_tensorboard_run(self,
-            request: tensorboard_service.GetTensorboardRunRequest = None,
+            request: Union[tensorboard_service.GetTensorboardRunRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_run.TensorboardRun:
         r"""Gets a TensorboardRun.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.GetTensorboardRunRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetTensorboardRunRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.GetTensorboardRun][google.cloud.aiplatform.v1beta1.TensorboardService.GetTensorboardRun].
             name (:class:`str`):
@@ -1359,18 +1361,18 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def update_tensorboard_run(self,
-            request: tensorboard_service.UpdateTensorboardRunRequest = None,
+            request: Union[tensorboard_service.UpdateTensorboardRunRequest, dict] = None,
             *,
             tensorboard_run: gca_tensorboard_run.TensorboardRun = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_run.TensorboardRun:
         r"""Updates a TensorboardRun.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.UpdateTensorboardRunRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateTensorboardRunRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.UpdateTensorboardRun][google.cloud.aiplatform.v1beta1.TensorboardService.UpdateTensorboardRun].
             tensorboard_run (:class:`google.cloud.aiplatform_v1beta1.types.TensorboardRun`):
@@ -1452,17 +1454,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def list_tensorboard_runs(self,
-            request: tensorboard_service.ListTensorboardRunsRequest = None,
+            request: Union[tensorboard_service.ListTensorboardRunsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardRunsAsyncPager:
         r"""Lists TensorboardRuns in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ListTensorboardRunsRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListTensorboardRunsRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ListTensorboardRuns][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardRuns].
             parent (:class:`str`):
@@ -1541,17 +1543,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def delete_tensorboard_run(self,
-            request: tensorboard_service.DeleteTensorboardRunRequest = None,
+            request: Union[tensorboard_service.DeleteTensorboardRunRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a TensorboardRun.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.DeleteTensorboardRunRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteTensorboardRunRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.DeleteTensorboardRun][google.cloud.aiplatform.v1beta1.TensorboardService.DeleteTensorboardRun].
             name (:class:`str`):
@@ -1638,11 +1640,11 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def batch_create_tensorboard_time_series(self,
-            request: tensorboard_service.BatchCreateTensorboardTimeSeriesRequest = None,
+            request: Union[tensorboard_service.BatchCreateTensorboardTimeSeriesRequest, dict] = None,
             *,
             parent: str = None,
             requests: Sequence[tensorboard_service.CreateTensorboardTimeSeriesRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.BatchCreateTensorboardTimeSeriesResponse:
@@ -1650,7 +1652,7 @@ class TensorboardServiceAsyncClient:
         TensorboardExperiment.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.BatchCreateTensorboardTimeSeriesRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.BatchCreateTensorboardTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
             parent (:class:`str`):
@@ -1731,18 +1733,18 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def create_tensorboard_time_series(self,
-            request: tensorboard_service.CreateTensorboardTimeSeriesRequest = None,
+            request: Union[tensorboard_service.CreateTensorboardTimeSeriesRequest, dict] = None,
             *,
             parent: str = None,
             tensorboard_time_series: gca_tensorboard_time_series.TensorboardTimeSeries = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_time_series.TensorboardTimeSeries:
         r"""Creates a TensorboardTimeSeries.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.CreateTensorboardTimeSeriesRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateTensorboardTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.CreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.CreateTensorboardTimeSeries].
             parent (:class:`str`):
@@ -1817,17 +1819,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def get_tensorboard_time_series(self,
-            request: tensorboard_service.GetTensorboardTimeSeriesRequest = None,
+            request: Union[tensorboard_service.GetTensorboardTimeSeriesRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_time_series.TensorboardTimeSeries:
         r"""Gets a TensorboardTimeSeries.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.GetTensorboardTimeSeriesRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetTensorboardTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.GetTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.GetTensorboardTimeSeries].
             name (:class:`str`):
@@ -1893,18 +1895,18 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def update_tensorboard_time_series(self,
-            request: tensorboard_service.UpdateTensorboardTimeSeriesRequest = None,
+            request: Union[tensorboard_service.UpdateTensorboardTimeSeriesRequest, dict] = None,
             *,
             tensorboard_time_series: gca_tensorboard_time_series.TensorboardTimeSeries = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gca_tensorboard_time_series.TensorboardTimeSeries:
         r"""Updates a TensorboardTimeSeries.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.UpdateTensorboardTimeSeriesRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateTensorboardTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.UpdateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.UpdateTensorboardTimeSeries].
             tensorboard_time_series (:class:`google.cloud.aiplatform_v1beta1.types.TensorboardTimeSeries`):
@@ -1985,17 +1987,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def list_tensorboard_time_series(self,
-            request: tensorboard_service.ListTensorboardTimeSeriesRequest = None,
+            request: Union[tensorboard_service.ListTensorboardTimeSeriesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTensorboardTimeSeriesAsyncPager:
         r"""Lists TensorboardTimeSeries in a Location.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ListTensorboardTimeSeriesRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListTensorboardTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardTimeSeries].
             parent (:class:`str`):
@@ -2074,17 +2076,17 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def delete_tensorboard_time_series(self,
-            request: tensorboard_service.DeleteTensorboardTimeSeriesRequest = None,
+            request: Union[tensorboard_service.DeleteTensorboardTimeSeriesRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a TensorboardTimeSeries.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.DeleteTensorboardTimeSeriesRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteTensorboardTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.DeleteTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.DeleteTensorboardTimeSeries].
             name (:class:`str`):
@@ -2171,10 +2173,10 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def batch_read_tensorboard_time_series_data(self,
-            request: tensorboard_service.BatchReadTensorboardTimeSeriesDataRequest = None,
+            request: Union[tensorboard_service.BatchReadTensorboardTimeSeriesDataRequest, dict] = None,
             *,
             tensorboard: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.BatchReadTensorboardTimeSeriesDataResponse:
@@ -2186,7 +2188,7 @@ class TensorboardServiceAsyncClient:
         randomly selected from this time series and returned.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.BatchReadTensorboardTimeSeriesDataRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.BatchReadTensorboardTimeSeriesDataRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.BatchReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.BatchReadTensorboardTimeSeriesData].
             tensorboard (:class:`str`):
@@ -2256,10 +2258,10 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def read_tensorboard_time_series_data(self,
-            request: tensorboard_service.ReadTensorboardTimeSeriesDataRequest = None,
+            request: Union[tensorboard_service.ReadTensorboardTimeSeriesDataRequest, dict] = None,
             *,
             tensorboard_time_series: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.ReadTensorboardTimeSeriesDataResponse:
@@ -2270,7 +2272,7 @@ class TensorboardServiceAsyncClient:
         changing max_data_points, which can't be greater than 10k.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ReadTensorboardTimeSeriesDataRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ReadTensorboardTimeSeriesDataRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ReadTensorboardTimeSeriesData].
             tensorboard_time_series (:class:`str`):
@@ -2336,10 +2338,10 @@ class TensorboardServiceAsyncClient:
         return response
 
     def read_tensorboard_blob_data(self,
-            request: tensorboard_service.ReadTensorboardBlobDataRequest = None,
+            request: Union[tensorboard_service.ReadTensorboardBlobDataRequest, dict] = None,
             *,
             time_series: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Awaitable[AsyncIterable[tensorboard_service.ReadTensorboardBlobDataResponse]]:
@@ -2349,7 +2351,7 @@ class TensorboardServiceAsyncClient:
         obtain Cloud Storage access permission.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ReadTensorboardBlobDataRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ReadTensorboardBlobDataRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ReadTensorboardBlobData][google.cloud.aiplatform.v1beta1.TensorboardService.ReadTensorboardBlobData].
             time_series (:class:`str`):
@@ -2415,11 +2417,11 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def write_tensorboard_experiment_data(self,
-            request: tensorboard_service.WriteTensorboardExperimentDataRequest = None,
+            request: Union[tensorboard_service.WriteTensorboardExperimentDataRequest, dict] = None,
             *,
             tensorboard_experiment: str = None,
             write_run_data_requests: Sequence[tensorboard_service.WriteTensorboardRunDataRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.WriteTensorboardExperimentDataResponse:
@@ -2428,7 +2430,7 @@ class TensorboardServiceAsyncClient:
         any data fail to be ingested, an error will be returned.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.WriteTensorboardExperimentDataRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.WriteTensorboardExperimentDataRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.WriteTensorboardExperimentData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardExperimentData].
             tensorboard_experiment (:class:`str`):
@@ -2503,11 +2505,11 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def write_tensorboard_run_data(self,
-            request: tensorboard_service.WriteTensorboardRunDataRequest = None,
+            request: Union[tensorboard_service.WriteTensorboardRunDataRequest, dict] = None,
             *,
             tensorboard_run: str = None,
             time_series_data: Sequence[tensorboard_data.TimeSeriesData] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> tensorboard_service.WriteTensorboardRunDataResponse:
@@ -2516,7 +2518,7 @@ class TensorboardServiceAsyncClient:
         data fail to be ingested, an error will be returned.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.WriteTensorboardRunDataRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.WriteTensorboardRunDataRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.WriteTensorboardRunData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardRunData].
             tensorboard_run (:class:`str`):
@@ -2597,10 +2599,10 @@ class TensorboardServiceAsyncClient:
         return response
 
     async def export_tensorboard_time_series_data(self,
-            request: tensorboard_service.ExportTensorboardTimeSeriesDataRequest = None,
+            request: Union[tensorboard_service.ExportTensorboardTimeSeriesDataRequest, dict] = None,
             *,
             tensorboard_time_series: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ExportTensorboardTimeSeriesDataAsyncPager:
@@ -2608,7 +2610,7 @@ class TensorboardServiceAsyncClient:
         returned in paginated responses.
 
         Args:
-            request (:class:`google.cloud.aiplatform_v1beta1.types.ExportTensorboardTimeSeriesDataRequest`):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ExportTensorboardTimeSeriesDataRequest, dict]):
                 The request object. Request message for
                 [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ExportTensorboardTimeSeriesData].
             tensorboard_time_series (:class:`str`):

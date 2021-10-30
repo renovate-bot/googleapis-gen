@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import asset_field_type
 from google.ads.googleads.v8.enums.types import asset_link_status
 from google.ads.googleads.v8.resources.types import customer_asset
@@ -350,7 +352,7 @@ class CustomerAssetServiceClient(metaclass=CustomerAssetServiceClientMeta):
             request: Union[customer_asset_service.GetCustomerAssetRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_asset.CustomerAsset:
@@ -429,7 +431,7 @@ class CustomerAssetServiceClient(metaclass=CustomerAssetServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[customer_asset_service.CustomerAssetOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_asset_service.MutateCustomerAssetsResponse:

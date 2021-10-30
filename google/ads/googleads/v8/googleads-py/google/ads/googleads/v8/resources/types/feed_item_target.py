@@ -33,6 +33,13 @@ __protobuf__ = proto.module(
 class FeedItemTarget(proto.Message):
     r"""A feed item target.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed item target. Feed
@@ -41,28 +48,36 @@ class FeedItemTarget(proto.Message):
         feed_item (str):
             Immutable. The feed item to which this feed
             item target belongs.
+            This field is a member of `oneof`_ ``_feed_item``.
         feed_item_target_type (google.ads.googleads.v8.enums.types.FeedItemTargetTypeEnum.FeedItemTargetType):
             Output only. The target type of this feed
             item target. This field is read-only.
         feed_item_target_id (int):
             Output only. The ID of the targeted resource.
             This field is read-only.
+            This field is a member of `oneof`_ ``_feed_item_target_id``.
         status (google.ads.googleads.v8.enums.types.FeedItemTargetStatusEnum.FeedItemTargetStatus):
             Output only. Status of the feed item target.
             This field is read-only.
         campaign (str):
             Immutable. The targeted campaign.
+            This field is a member of `oneof`_ ``target``.
         ad_group (str):
             Immutable. The targeted ad group.
+            This field is a member of `oneof`_ ``target``.
         keyword (google.ads.googleads.v8.common.types.KeywordInfo):
             Immutable. The targeted keyword.
+            This field is a member of `oneof`_ ``target``.
         geo_target_constant (str):
             Immutable. The targeted geo target constant
             resource name.
+            This field is a member of `oneof`_ ``target``.
         device (google.ads.googleads.v8.enums.types.FeedItemTargetDeviceEnum.FeedItemTargetDevice):
             Immutable. The targeted device.
+            This field is a member of `oneof`_ ``target``.
         ad_schedule (google.ads.googleads.v8.common.types.AdScheduleInfo):
             Immutable. The targeted schedule.
+            This field is a member of `oneof`_ ``target``.
     """
 
     resource_name = proto.Field(

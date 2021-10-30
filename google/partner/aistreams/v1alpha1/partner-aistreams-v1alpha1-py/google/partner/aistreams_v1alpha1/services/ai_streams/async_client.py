@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -152,17 +154,17 @@ class AIStreamsAsyncClient:
         )
 
     async def list_clusters(self,
-            request: aistreams.ListClustersRequest = None,
+            request: Union[aistreams.ListClustersRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListClustersAsyncPager:
         r"""Lists Clusters in a given project and location.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.ListClustersRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.ListClustersRequest, dict]):
                 The request object. Request message for 'ListClusters'.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -237,17 +239,17 @@ class AIStreamsAsyncClient:
         return response
 
     async def get_cluster(self,
-            request: aistreams.GetClusterRequest = None,
+            request: Union[aistreams.GetClusterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> aistreams.Cluster:
         r"""Gets details of a single Cluster.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.GetClusterRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.GetClusterRequest, dict]):
                 The request object. Request message for 'GetCluster'.
             name (:class:`str`):
                 Required. The name of the Cluster
@@ -309,12 +311,12 @@ class AIStreamsAsyncClient:
         return response
 
     async def create_cluster(self,
-            request: aistreams.CreateClusterRequest = None,
+            request: Union[aistreams.CreateClusterRequest, dict] = None,
             *,
             parent: str = None,
             cluster: aistreams.Cluster = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -322,7 +324,7 @@ class AIStreamsAsyncClient:
         location.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.CreateClusterRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.CreateClusterRequest, dict]):
                 The request object. Request message for 'CreateCluster'.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -413,18 +415,18 @@ class AIStreamsAsyncClient:
         return response
 
     async def update_cluster(self,
-            request: aistreams.UpdateClusterRequest = None,
+            request: Union[aistreams.UpdateClusterRequest, dict] = None,
             *,
             cluster: aistreams.Cluster = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single Cluster.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.UpdateClusterRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.UpdateClusterRequest, dict]):
                 The request object. Request message for 'UpdateCluster'.
             cluster (:class:`google.partner.aistreams_v1alpha1.types.Cluster`):
                 Required. The Cluster resource to
@@ -512,17 +514,17 @@ class AIStreamsAsyncClient:
         return response
 
     async def delete_cluster(self,
-            request: aistreams.DeleteClusterRequest = None,
+            request: Union[aistreams.DeleteClusterRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single Cluster.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.DeleteClusterRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.DeleteClusterRequest, dict]):
                 The request object. Request message for 'DeleteCluster'.
             name (:class:`str`):
                 Required. The name of cluster to
@@ -607,10 +609,10 @@ class AIStreamsAsyncClient:
         return response
 
     async def list_streams(self,
-            request: aistreams.ListStreamsRequest = None,
+            request: Union[aistreams.ListStreamsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListStreamsAsyncPager:
@@ -618,7 +620,7 @@ class AIStreamsAsyncClient:
         cluster.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.ListStreamsRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.ListStreamsRequest, dict]):
                 The request object. Request message for 'ListStreams'.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -693,17 +695,17 @@ class AIStreamsAsyncClient:
         return response
 
     async def get_stream(self,
-            request: aistreams.GetStreamRequest = None,
+            request: Union[aistreams.GetStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> aistreams.Stream:
         r"""Gets details of a single Stream.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.GetStreamRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.GetStreamRequest, dict]):
                 The request object. Request message for 'GetStream'.
             name (:class:`str`):
                 Required. The name of the stream.
@@ -763,19 +765,19 @@ class AIStreamsAsyncClient:
         return response
 
     async def create_stream(self,
-            request: aistreams.CreateStreamRequest = None,
+            request: Union[aistreams.CreateStreamRequest, dict] = None,
             *,
             parent: str = None,
             stream: aistreams.Stream = None,
             stream_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Creates a new Stream in a given project and location.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.CreateStreamRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.CreateStreamRequest, dict]):
                 The request object. Request message for 'CreateStream'.
             parent (:class:`str`):
                 Required. The parent that owns the
@@ -864,18 +866,18 @@ class AIStreamsAsyncClient:
         return response
 
     async def update_stream(self,
-            request: aistreams.UpdateStreamRequest = None,
+            request: Union[aistreams.UpdateStreamRequest, dict] = None,
             *,
             stream: aistreams.Stream = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single Stream.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.UpdateStreamRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.UpdateStreamRequest, dict]):
                 The request object. Request message for 'UpdateStream'.
             stream (:class:`google.partner.aistreams_v1alpha1.types.Stream`):
                 Required. The stream resource to
@@ -963,17 +965,17 @@ class AIStreamsAsyncClient:
         return response
 
     async def delete_stream(self,
-            request: aistreams.DeleteStreamRequest = None,
+            request: Union[aistreams.DeleteStreamRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
         r"""Deletes a single Stream.
 
         Args:
-            request (:class:`google.partner.aistreams_v1alpha1.types.DeleteStreamRequest`):
+            request (Union[google.partner.aistreams_v1alpha1.types.DeleteStreamRequest, dict]):
                 The request object. Request message for 'DeleteStream'.
             name (:class:`str`):
                 Required. The name of the stream.

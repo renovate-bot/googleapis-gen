@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.monitoring.dashboard_v1.services.dashboards_service import pagers
 from google.monitoring.dashboard_v1.types import dashboard
 from google.monitoring.dashboard_v1.types import dashboards_service
@@ -350,7 +352,7 @@ class DashboardsServiceClient(metaclass=DashboardsServiceClientMeta):
     def create_dashboard(self,
             request: Union[dashboards_service.CreateDashboardRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dashboard.Dashboard:
@@ -413,7 +415,7 @@ class DashboardsServiceClient(metaclass=DashboardsServiceClientMeta):
     def list_dashboards(self,
             request: Union[dashboards_service.ListDashboardsRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDashboardsPager:
@@ -484,7 +486,7 @@ class DashboardsServiceClient(metaclass=DashboardsServiceClientMeta):
     def get_dashboard(self,
             request: Union[dashboards_service.GetDashboardRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dashboard.Dashboard:
@@ -546,7 +548,7 @@ class DashboardsServiceClient(metaclass=DashboardsServiceClientMeta):
     def delete_dashboard(self,
             request: Union[dashboards_service.DeleteDashboardRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -597,7 +599,7 @@ class DashboardsServiceClient(metaclass=DashboardsServiceClientMeta):
     def update_dashboard(self,
             request: Union[dashboards_service.UpdateDashboardRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> dashboard.Dashboard:

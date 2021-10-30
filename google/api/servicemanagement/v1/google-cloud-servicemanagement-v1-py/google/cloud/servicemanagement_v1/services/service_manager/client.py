@@ -31,6 +31,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.api import auth_pb2  # type: ignore
 from google.api import backend_pb2  # type: ignore
 from google.api import billing_pb2  # type: ignore
@@ -356,7 +358,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             producer_project_id: str = None,
             consumer_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServicesPager:
@@ -455,7 +457,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             request: Union[servicemanager.GetServiceRequest, dict] = None,
             *,
             service_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.ManagedService:
@@ -525,7 +527,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             request: Union[servicemanager.CreateServiceRequest, dict] = None,
             *,
             service: resources.ManagedService = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -605,7 +607,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             request: Union[servicemanager.DeleteServiceRequest, dict] = None,
             *,
             service_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -702,7 +704,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             request: Union[servicemanager.UndeleteServiceRequest, dict] = None,
             *,
             service_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -788,7 +790,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             request: Union[servicemanager.ListServiceConfigsRequest, dict] = None,
             *,
             service_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServiceConfigsPager:
@@ -872,7 +874,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             service_name: str = None,
             config_id: str = None,
             view: servicemanager.GetServiceConfigRequest.ConfigView = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service_pb2.Service:
@@ -981,7 +983,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             service_name: str = None,
             service_config: service_pb2.Service = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> service_pb2.Service:
@@ -1086,7 +1088,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             service_name: str = None,
             config_source: resources.ConfigSource = None,
             validate_only: bool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1199,7 +1201,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             service_name: str = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListServiceRolloutsPager:
@@ -1299,7 +1301,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             service_name: str = None,
             rollout_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Rollout:
@@ -1383,7 +1385,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             service_name: str = None,
             rollout: resources.Rollout = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1490,7 +1492,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             new_config: any_pb2.Any = None,
             old_config: any_pb2.Any = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> servicemanager.GenerateConfigReportResponse:
@@ -1586,7 +1588,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             service_name: str = None,
             consumer_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
@@ -1692,7 +1694,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
             *,
             service_name: str = None,
             consumer_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:

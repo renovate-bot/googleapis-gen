@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import asset_field_type
 from google.ads.googleads.v7.enums.types import asset_link_status
 from google.ads.googleads.v7.resources.types import ad_group_asset
@@ -360,7 +362,7 @@ class AdGroupAssetServiceClient(metaclass=AdGroupAssetServiceClientMeta):
             request: Union[ad_group_asset_service.GetAdGroupAssetRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_asset.AdGroupAsset:
@@ -439,7 +441,7 @@ class AdGroupAssetServiceClient(metaclass=AdGroupAssetServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_asset_service.AdGroupAssetOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_asset_service.MutateAdGroupAssetsResponse:

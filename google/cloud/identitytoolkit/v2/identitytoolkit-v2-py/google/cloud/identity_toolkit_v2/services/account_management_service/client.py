@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.identity_toolkit_v2.types import account_management_service
 from google.cloud.identity_toolkit_v2.types import mfa_info
 from .transports.base import AccountManagementServiceTransport, DEFAULT_CLIENT_INFO
@@ -324,7 +326,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
     def finalize_mfa_enrollment(self,
             request: Union[account_management_service.FinalizeMfaEnrollmentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_management_service.FinalizeMfaEnrollmentResponse:
@@ -370,7 +372,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
     def start_mfa_enrollment(self,
             request: Union[account_management_service.StartMfaEnrollmentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_management_service.StartMfaEnrollmentResponse:
@@ -417,7 +419,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
     def withdraw_mfa(self,
             request: Union[account_management_service.WithdrawMfaRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> account_management_service.WithdrawMfaResponse:

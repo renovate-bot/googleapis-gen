@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.bigquery_v2.types import encryption_config
 from google.cloud.bigquery_v2.types import model
 from google.cloud.bigquery_v2.types import model as gcb_model
@@ -331,7 +333,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             project_id: str = None,
             dataset_id: str = None,
             model_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model.Model:
@@ -425,7 +427,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             project_id: str = None,
             dataset_id: str = None,
             max_results: wrappers_pb2.UInt32Value = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model.ListModelsResponse:
@@ -524,7 +526,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             dataset_id: str = None,
             model_id: str = None,
             model: gcb_model.Model = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcb_model.Model:
@@ -629,7 +631,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             project_id: str = None,
             dataset_id: str = None,
             model_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:

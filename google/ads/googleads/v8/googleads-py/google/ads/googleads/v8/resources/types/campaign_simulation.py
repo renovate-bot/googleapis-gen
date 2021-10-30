@@ -42,6 +42,13 @@ class CampaignSimulation(proto.Message):
     OWNED_AND_OPERATED - TARGET_CPA - DEFAULT DISPLAY - TARGET_CPA -
     UNIFORM
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the campaign simulation.
@@ -65,18 +72,23 @@ class CampaignSimulation(proto.Message):
         cpc_bid_point_list (google.ads.googleads.v8.common.types.CpcBidSimulationPointList):
             Output only. Simulation points if the simulation type is
             CPC_BID.
+            This field is a member of `oneof`_ ``point_list``.
         target_cpa_point_list (google.ads.googleads.v8.common.types.TargetCpaSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_CPA.
+            This field is a member of `oneof`_ ``point_list``.
         target_roas_point_list (google.ads.googleads.v8.common.types.TargetRoasSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_ROAS.
+            This field is a member of `oneof`_ ``point_list``.
         target_impression_share_point_list (google.ads.googleads.v8.common.types.TargetImpressionShareSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_IMPRESSION_SHARE.
+            This field is a member of `oneof`_ ``point_list``.
         budget_point_list (google.ads.googleads.v8.common.types.BudgetSimulationPointList):
             Output only. Simulation points if the
             simulation type is BUDGET.
+            This field is a member of `oneof`_ ``point_list``.
     """
 
     resource_name = proto.Field(

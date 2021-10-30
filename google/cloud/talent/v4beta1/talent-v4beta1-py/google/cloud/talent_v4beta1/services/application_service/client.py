@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.talent_v4beta1.services.application_service import pagers
 from google.cloud.talent_v4beta1.types import application
 from google.cloud.talent_v4beta1.types import application as gct_application
@@ -378,7 +380,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
             *,
             parent: str = None,
             application: gct_application.Application = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_application.Application:
@@ -466,7 +468,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
             request: Union[application_service.GetApplicationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> application.Application:
@@ -546,7 +548,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
             request: Union[application_service.UpdateApplicationRequest, dict] = None,
             *,
             application: gct_application.Application = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gct_application.Application:
@@ -622,7 +624,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
             request: Union[application_service.DeleteApplicationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -692,7 +694,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
             request: Union[application_service.ListApplicationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListApplicationsPager:

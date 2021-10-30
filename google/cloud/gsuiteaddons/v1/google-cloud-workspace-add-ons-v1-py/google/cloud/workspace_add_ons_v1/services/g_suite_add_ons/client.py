@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons import pagers
 from google.cloud.workspace_add_ons_v1.types import gsuiteaddons
 from google.protobuf import wrappers_pb2  # type: ignore
@@ -388,7 +390,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.GetAuthorizationRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Authorization:
@@ -468,7 +470,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             parent: str = None,
             deployment: gsuiteaddons.Deployment = None,
             deployment_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Deployment:
@@ -563,7 +565,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.ReplaceDeploymentRequest, dict] = None,
             *,
             deployment: gsuiteaddons.Deployment = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Deployment:
@@ -637,7 +639,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.GetDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.Deployment:
@@ -712,7 +714,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.ListDeploymentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListDeploymentsPager:
@@ -800,7 +802,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.DeleteDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -869,7 +871,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.InstallDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -941,7 +943,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.UninstallDeploymentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1013,7 +1015,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
             request: Union[gsuiteaddons.GetInstallStatusRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gsuiteaddons.InstallStatus:

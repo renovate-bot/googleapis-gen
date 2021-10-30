@@ -31,6 +31,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.container_v1beta1.services.cluster_manager import pagers
 from google.container_v1beta1.types import cluster_service
 from google.rpc import status_pb2  # type: ignore
@@ -339,7 +341,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             *,
             project_id: str = None,
             zone: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListClustersResponse:
@@ -432,7 +434,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Cluster:
@@ -533,7 +535,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             cluster: cluster_service.Cluster = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -649,7 +651,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             update: cluster_service.ClusterUpdate = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -760,7 +762,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
     def update_node_pool(self,
             request: Union[cluster_service.UpdateNodePoolRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -819,7 +821,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
     def set_node_pool_autoscaling(self,
             request: Union[cluster_service.SetNodePoolAutoscalingRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -882,7 +884,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             logging_service: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1009,7 +1011,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             monitoring_service: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1138,7 +1140,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             addons_config: cluster_service.AddonsConfig = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1254,7 +1256,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             locations: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1381,7 +1383,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             master_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1504,7 +1506,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
     def set_master_auth(self,
             request: Union[cluster_service.SetMasterAuthRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1568,7 +1570,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1681,7 +1683,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             *,
             project_id: str = None,
             zone: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListOperationsResponse:
@@ -1775,7 +1777,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             operation_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -1879,7 +1881,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             operation_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -1971,7 +1973,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             *,
             project_id: str = None,
             zone: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ServerConfig:
@@ -2064,7 +2066,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListNodePoolsResponse:
@@ -2163,7 +2165,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
     def get_json_web_keys(self,
             request: Union[cluster_service.GetJSONWebKeysRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.GetJSONWebKeysResponse:
@@ -2230,7 +2232,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             node_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.NodePool:
@@ -2385,7 +2387,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             node_pool: cluster_service.NodePool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2497,7 +2499,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             node_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2613,7 +2615,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             node_pool_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2735,7 +2737,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             cluster_id: str = None,
             node_pool_id: str = None,
             management: cluster_service.NodeManagement = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2862,7 +2864,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             cluster_id: str = None,
             resource_labels: Sequence[cluster_service.SetLabelsRequest.ResourceLabelsEntry] = None,
             label_fingerprint: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -2993,7 +2995,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             enabled: bool = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -3108,7 +3110,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -3213,7 +3215,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             project_id: str = None,
             zone: str = None,
             cluster_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -3314,7 +3316,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
     def set_node_pool_size(self,
             request: Union[cluster_service.SetNodePoolSizeRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -3379,7 +3381,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             network_policy: cluster_service.NetworkPolicy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -3493,7 +3495,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             zone: str = None,
             cluster_id: str = None,
             maintenance_policy: cluster_service.MaintenancePolicy = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.Operation:
@@ -3600,7 +3602,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request: Union[cluster_service.ListUsableSubnetworksRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListUsableSubnetworksPager:
@@ -3691,7 +3693,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request: Union[cluster_service.ListLocationsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cluster_service.ListLocationsResponse:

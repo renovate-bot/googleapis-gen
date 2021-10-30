@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.common.types import criteria
 from google.ads.googleads.v8.common.types import custom_parameter
 from google.ads.googleads.v8.enums.types import ad_group_criterion_approval_status
@@ -365,7 +367,7 @@ class AdGroupCriterionServiceClient(metaclass=AdGroupCriterionServiceClientMeta)
             request: Union[ad_group_criterion_service.GetAdGroupCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_criterion.AdGroupCriterion:
@@ -442,7 +444,7 @@ class AdGroupCriterionServiceClient(metaclass=AdGroupCriterionServiceClientMeta)
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_criterion_service.AdGroupCriterionOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> ad_group_criterion_service.MutateAdGroupCriteriaResponse:

@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -205,13 +207,13 @@ class DatastoreAdminAsyncClient:
         )
 
     async def export_entities(self,
-            request: datastore_admin.ExportEntitiesRequest = None,
+            request: Union[datastore_admin.ExportEntitiesRequest, dict] = None,
             *,
             project_id: str = None,
             labels: Sequence[datastore_admin.ExportEntitiesRequest.LabelsEntry] = None,
             entity_filter: datastore_admin.EntityFilter = None,
             output_url_prefix: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -227,7 +229,7 @@ class DatastoreAdminAsyncClient:
         Google Cloud Storage.
 
         Args:
-            request (:class:`google.cloud.datastore_admin_v1.types.ExportEntitiesRequest`):
+            request (Union[google.cloud.datastore_admin_v1.types.ExportEntitiesRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ExportEntities][google.datastore.admin.v1.DatastoreAdmin.ExportEntities].
             project_id (:class:`str`):
@@ -342,13 +344,13 @@ class DatastoreAdminAsyncClient:
         return response
 
     async def import_entities(self,
-            request: datastore_admin.ImportEntitiesRequest = None,
+            request: Union[datastore_admin.ImportEntitiesRequest, dict] = None,
             *,
             project_id: str = None,
             labels: Sequence[datastore_admin.ImportEntitiesRequest.LabelsEntry] = None,
             input_url: str = None,
             entity_filter: datastore_admin.EntityFilter = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -361,7 +363,7 @@ class DatastoreAdminAsyncClient:
         imported to Cloud Datastore.
 
         Args:
-            request (:class:`google.cloud.datastore_admin_v1.types.ImportEntitiesRequest`):
+            request (Union[google.cloud.datastore_admin_v1.types.ImportEntitiesRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ImportEntities][google.datastore.admin.v1.DatastoreAdmin.ImportEntities].
             project_id (:class:`str`):
@@ -482,9 +484,9 @@ class DatastoreAdminAsyncClient:
         return response
 
     async def create_index(self,
-            request: datastore_admin.CreateIndexRequest = None,
+            request: Union[datastore_admin.CreateIndexRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -505,7 +507,7 @@ class DatastoreAdminAsyncClient:
         Indexes with a single property cannot be created.
 
         Args:
-            request (:class:`google.cloud.datastore_admin_v1.types.CreateIndexRequest`):
+            request (Union[google.cloud.datastore_admin_v1.types.CreateIndexRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.CreateIndex][google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -554,9 +556,9 @@ class DatastoreAdminAsyncClient:
         return response
 
     async def delete_index(self,
-            request: datastore_admin.DeleteIndexRequest = None,
+            request: Union[datastore_admin.DeleteIndexRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -576,7 +578,7 @@ class DatastoreAdminAsyncClient:
         again.
 
         Args:
-            request (:class:`google.cloud.datastore_admin_v1.types.DeleteIndexRequest`):
+            request (Union[google.cloud.datastore_admin_v1.types.DeleteIndexRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.DeleteIndex][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -625,16 +627,16 @@ class DatastoreAdminAsyncClient:
         return response
 
     async def get_index(self,
-            request: datastore_admin.GetIndexRequest = None,
+            request: Union[datastore_admin.GetIndexRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> index.Index:
         r"""Gets an index.
 
         Args:
-            request (:class:`google.cloud.datastore_admin_v1.types.GetIndexRequest`):
+            request (Union[google.cloud.datastore_admin_v1.types.GetIndexRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -677,9 +679,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_indexes(self,
-            request: datastore_admin.ListIndexesRequest = None,
+            request: Union[datastore_admin.ListIndexesRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListIndexesAsyncPager:
@@ -689,7 +691,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         results.
 
         Args:
-            request (:class:`google.cloud.datastore_admin_v1.types.ListIndexesRequest`):
+            request (Union[google.cloud.datastore_admin_v1.types.ListIndexesRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ListIndexes][google.datastore.admin.v1.DatastoreAdmin.ListIndexes].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

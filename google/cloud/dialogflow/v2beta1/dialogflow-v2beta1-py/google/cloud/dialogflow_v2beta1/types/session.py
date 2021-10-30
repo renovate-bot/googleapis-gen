@@ -332,17 +332,28 @@ class QueryInput(proto.Message):
 
     3.  An event that specifies which intent to trigger.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         audio_config (google.cloud.dialogflow_v2beta1.types.InputAudioConfig):
             Instructs the speech recognizer how to
             process the speech audio.
+            This field is a member of `oneof`_ ``input``.
         text (google.cloud.dialogflow_v2beta1.types.TextInput):
             The natural language text to be processed.
+            This field is a member of `oneof`_ ``input``.
         event (google.cloud.dialogflow_v2beta1.types.EventInput):
             The event to be processed.
+            This field is a member of `oneof`_ ``input``.
         dtmf (google.cloud.dialogflow_v2beta1.types.TelephonyDtmfEvents):
             The DTMF digits used to invoke intent and
             fill in parameter value.
+            This field is a member of `oneof`_ ``input``.
     """
 
     audio_config = proto.Field(

@@ -102,10 +102,13 @@ class MutateMediaFilesRequest(proto.Message):
 class MediaFileOperation(proto.Message):
     r"""A single operation to create media file.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v7.resources.types.MediaFile):
             Create operation: No resource name is
             expected for the new media file.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

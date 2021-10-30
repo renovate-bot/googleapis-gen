@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.resources.types import campaign_label
 from google.ads.googleads.v7.services.types import campaign_label_service
 from google.rpc import status_pb2  # type: ignore
@@ -358,7 +360,7 @@ class CampaignLabelServiceClient(metaclass=CampaignLabelServiceClientMeta):
             request: Union[campaign_label_service.GetCampaignLabelRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_label.CampaignLabel:
@@ -438,7 +440,7 @@ class CampaignLabelServiceClient(metaclass=CampaignLabelServiceClientMeta):
             *,
             customer_id: str = None,
             operations: Sequence[campaign_label_service.CampaignLabelOperation] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> campaign_label_service.MutateCampaignLabelsResponse:

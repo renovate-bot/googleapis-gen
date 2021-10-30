@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -153,9 +155,9 @@ class CompletionServiceAsyncClient:
         )
 
     async def complete_query(self,
-            request: completion_service.CompleteQueryRequest = None,
+            request: Union[completion_service.CompleteQueryRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> completion_service.CompleteQueryResponse:
@@ -167,7 +169,7 @@ class CompletionServiceAsyncClient:
         sales if you are interested in using Retail Search.
 
         Args:
-            request (:class:`google.cloud.retail_v2.types.CompleteQueryRequest`):
+            request (Union[google.cloud.retail_v2.types.CompleteQueryRequest, dict]):
                 The request object. Auto-complete parameters.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -210,9 +212,9 @@ class CompletionServiceAsyncClient:
         return response
 
     async def import_completion_data(self,
-            request: import_config.ImportCompletionDataRequest = None,
+            request: Union[import_config.ImportCompletionDataRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -227,7 +229,7 @@ class CompletionServiceAsyncClient:
         sales if you are interested in using Retail Search.
 
         Args:
-            request (:class:`google.cloud.retail_v2.types.ImportCompletionDataRequest`):
+            request (Union[google.cloud.retail_v2.types.ImportCompletionDataRequest, dict]):
                 The request object. Request message for
                 ImportCompletionData methods.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

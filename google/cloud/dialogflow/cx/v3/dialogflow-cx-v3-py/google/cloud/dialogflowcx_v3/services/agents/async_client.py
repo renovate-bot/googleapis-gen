@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
@@ -163,10 +165,10 @@ class AgentsAsyncClient:
         )
 
     async def list_agents(self,
-            request: agent.ListAgentsRequest = None,
+            request: Union[agent.ListAgentsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAgentsAsyncPager:
@@ -174,7 +176,7 @@ class AgentsAsyncClient:
         location.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ListAgentsRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ListAgentsRequest, dict]):
                 The request object. The request message for
                 [Agents.ListAgents][google.cloud.dialogflow.cx.v3.Agents.ListAgents].
             parent (:class:`str`):
@@ -251,17 +253,17 @@ class AgentsAsyncClient:
         return response
 
     async def get_agent(self,
-            request: agent.GetAgentRequest = None,
+            request: Union[agent.GetAgentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agent.Agent:
         r"""Retrieves the specified agent.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.GetAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.GetAgent][google.cloud.dialogflow.cx.v3.Agents.GetAgent].
             name (:class:`str`):
@@ -338,11 +340,11 @@ class AgentsAsyncClient:
         return response
 
     async def create_agent(self,
-            request: gcdc_agent.CreateAgentRequest = None,
+            request: Union[gcdc_agent.CreateAgentRequest, dict] = None,
             *,
             parent: str = None,
             agent: gcdc_agent.Agent = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_agent.Agent:
@@ -353,7 +355,7 @@ class AgentsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.CreateAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.CreateAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
             parent (:class:`str`):
@@ -437,11 +439,11 @@ class AgentsAsyncClient:
         return response
 
     async def update_agent(self,
-            request: gcdc_agent.UpdateAgentRequest = None,
+            request: Union[gcdc_agent.UpdateAgentRequest, dict] = None,
             *,
             agent: gcdc_agent.Agent = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gcdc_agent.Agent:
@@ -452,7 +454,7 @@ class AgentsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.UpdateAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.UpdateAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent].
             agent (:class:`google.cloud.dialogflowcx_v3.types.Agent`):
@@ -537,17 +539,17 @@ class AgentsAsyncClient:
         return response
 
     async def delete_agent(self,
-            request: agent.DeleteAgentRequest = None,
+            request: Union[agent.DeleteAgentRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes the specified agent.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.DeleteAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.DeleteAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.DeleteAgent][google.cloud.dialogflow.cx.v3.Agents.DeleteAgent].
             name (:class:`str`):
@@ -603,9 +605,9 @@ class AgentsAsyncClient:
         )
 
     async def export_agent(self,
-            request: agent.ExportAgentRequest = None,
+            request: Union[agent.ExportAgentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -622,7 +624,7 @@ class AgentsAsyncClient:
            [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ExportAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ExportAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.ExportAgent][google.cloud.dialogflow.cx.v3.Agents.ExportAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -680,9 +682,9 @@ class AgentsAsyncClient:
         return response
 
     async def restore_agent(self,
-            request: agent.RestoreAgentRequest = None,
+            request: Union[agent.RestoreAgentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation_async.AsyncOperation:
@@ -707,7 +709,7 @@ class AgentsAsyncClient:
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.RestoreAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.RestoreAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.RestoreAgent][google.cloud.dialogflow.cx.v3.Agents.RestoreAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -774,9 +776,9 @@ class AgentsAsyncClient:
         return response
 
     async def validate_agent(self,
-            request: agent.ValidateAgentRequest = None,
+            request: Union[agent.ValidateAgentRequest, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agent.AgentValidationResult:
@@ -786,7 +788,7 @@ class AgentsAsyncClient:
         completed to get the complete validation results.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.ValidateAgentRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.ValidateAgentRequest, dict]):
                 The request object. The request message for
                 [Agents.ValidateAgent][google.cloud.dialogflow.cx.v3.Agents.ValidateAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -832,10 +834,10 @@ class AgentsAsyncClient:
         return response
 
     async def get_agent_validation_result(self,
-            request: agent.GetAgentValidationResultRequest = None,
+            request: Union[agent.GetAgentValidationResultRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agent.AgentValidationResult:
@@ -843,7 +845,7 @@ class AgentsAsyncClient:
         validation is performed when ValidateAgent is called.
 
         Args:
-            request (:class:`google.cloud.dialogflowcx_v3.types.GetAgentValidationResultRequest`):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetAgentValidationResultRequest, dict]):
                 The request object. The request message for
                 [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3.Agents.GetAgentValidationResult].
             name (:class:`str`):

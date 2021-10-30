@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import access_invitation_status
 from google.ads.googleads.v8.enums.types import access_role
 from google.ads.googleads.v8.resources.types import customer_user_access_invitation
@@ -341,7 +343,7 @@ class CustomerUserAccessInvitationServiceClient(metaclass=CustomerUserAccessInvi
             request: Union[customer_user_access_invitation_service.GetCustomerUserAccessInvitationRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_user_access_invitation.CustomerUserAccessInvitation:
@@ -420,7 +422,7 @@ class CustomerUserAccessInvitationServiceClient(metaclass=CustomerUserAccessInvi
             *,
             customer_id: str = None,
             operation: customer_user_access_invitation_service.CustomerUserAccessInvitationOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_user_access_invitation_service.MutateCustomerUserAccessInvitationResponse:

@@ -68,6 +68,13 @@ class DriveActivity(proto.Message):
     selection of a ConsolidationStrategy in the
     QueryDriveActivityRequest.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         primary_action_detail (google.apps.drive.activity_v2.types.ActionDetail):
             Key information about the primary action for
@@ -86,8 +93,10 @@ class DriveActivity(proto.Message):
             after the actions occurred.
         timestamp (google.protobuf.timestamp_pb2.Timestamp):
             The activity occurred at this specific time.
+            This field is a member of `oneof`_ ``time``.
         time_range (google.apps.drive.activity_v2.types.TimeRange):
             The activity occurred over this time range.
+            This field is a member of `oneof`_ ``time``.
     """
 
     primary_action_detail = proto.Field(

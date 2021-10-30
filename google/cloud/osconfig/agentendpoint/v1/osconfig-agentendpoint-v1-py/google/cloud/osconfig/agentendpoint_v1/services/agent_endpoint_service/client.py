@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.osconfig.agentendpoint_v1.types import agentendpoint
 from google.cloud.osconfig.agentendpoint_v1.types import inventory as gcoa_inventory
 from google.cloud.osconfig.agentendpoint_v1.types import tasks
@@ -338,7 +340,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             *,
             instance_id_token: str = None,
             agent_version: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> Iterable[agentendpoint.ReceiveTaskNotificationResponse]:
@@ -420,7 +422,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             request: Union[agentendpoint.StartNextTaskRequest, dict] = None,
             *,
             instance_id_token: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.StartNextTaskResponse:
@@ -494,7 +496,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             instance_id_token: str = None,
             task_id: str = None,
             task_type: tasks.TaskType = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportTaskProgressResponse:
@@ -592,7 +594,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             task_id: str = None,
             task_type: tasks.TaskType = None,
             error_message: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportTaskCompleteResponse:
@@ -697,7 +699,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             instance_id_token: str = None,
             agent_version: str = None,
             supported_capabilities: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.RegisterAgentResponse:
@@ -787,7 +789,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             instance_id_token: str = None,
             inventory_checksum: str = None,
             inventory: gcoa_inventory.Inventory = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> agentendpoint.ReportInventoryResponse:

@@ -92,15 +92,24 @@ class MutateAdGroupLabelsRequest(proto.Message):
 class AdGroupLabelOperation(proto.Message):
     r"""A single operation (create, remove) on an ad group label.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         create (google.ads.googleads.v8.resources.types.AdGroupLabel):
             Create operation: No resource name is
             expected for the new ad group label.
+            This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the ad group label
             being removed, in this format:
 
             ``customers/{customer_id}/adGroupLabels/{ad_group_id}~{label_id}``
+            This field is a member of `oneof`_ ``operation``.
     """
 
     create = proto.Field(

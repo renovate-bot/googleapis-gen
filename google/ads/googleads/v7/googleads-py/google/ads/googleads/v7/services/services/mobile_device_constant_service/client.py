@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.enums.types import mobile_device_type
 from google.ads.googleads.v7.resources.types import mobile_device_constant
 from google.ads.googleads.v7.services.types import mobile_device_constant_service
@@ -338,7 +340,7 @@ class MobileDeviceConstantServiceClient(metaclass=MobileDeviceConstantServiceCli
             request: Union[mobile_device_constant_service.GetMobileDeviceConstantRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> mobile_device_constant.MobileDeviceConstant:

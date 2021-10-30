@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.cloud.osconfig_v1.services.os_config_zonal_service import pagers
 from google.cloud.osconfig_v1.types import inventory
 from google.cloud.osconfig_v1.types import vulnerability
@@ -364,7 +366,7 @@ class OsConfigZonalServiceClient(metaclass=OsConfigZonalServiceClientMeta):
             request: Union[inventory.GetInventoryRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> inventory.Inventory:
@@ -455,7 +457,7 @@ class OsConfigZonalServiceClient(metaclass=OsConfigZonalServiceClientMeta):
             request: Union[inventory.ListInventoriesRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInventoriesPager:
@@ -549,7 +551,7 @@ class OsConfigZonalServiceClient(metaclass=OsConfigZonalServiceClientMeta):
             request: Union[vulnerability.GetVulnerabilityReportRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vulnerability.VulnerabilityReport:
@@ -637,7 +639,7 @@ class OsConfigZonalServiceClient(metaclass=OsConfigZonalServiceClientMeta):
             request: Union[vulnerability.ListVulnerabilityReportsRequest, dict] = None,
             *,
             parent: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListVulnerabilityReportsPager:

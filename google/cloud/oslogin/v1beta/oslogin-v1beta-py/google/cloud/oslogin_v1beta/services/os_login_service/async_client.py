@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.oslogin.common import common_pb2  # type: ignore
 from google.cloud.oslogin_v1beta.types import oslogin
@@ -154,17 +156,17 @@ class OsLoginServiceAsyncClient:
         )
 
     async def delete_posix_account(self,
-            request: oslogin.DeletePosixAccountRequest = None,
+            request: Union[oslogin.DeletePosixAccountRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes a POSIX account.
 
         Args:
-            request (:class:`google.cloud.oslogin_v1beta.types.DeletePosixAccountRequest`):
+            request (Union[google.cloud.oslogin_v1beta.types.DeletePosixAccountRequest, dict]):
                 The request object. A request message for deleting a
                 POSIX account entry.
             name (:class:`str`):
@@ -229,17 +231,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def delete_ssh_public_key(self,
-            request: oslogin.DeleteSshPublicKeyRequest = None,
+            request: Union[oslogin.DeleteSshPublicKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
         r"""Deletes an SSH public key.
 
         Args:
-            request (:class:`google.cloud.oslogin_v1beta.types.DeleteSshPublicKeyRequest`):
+            request (Union[google.cloud.oslogin_v1beta.types.DeleteSshPublicKeyRequest, dict]):
                 The request object. A request message for deleting an
                 SSH public key.
             name (:class:`str`):
@@ -304,10 +306,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def get_login_profile(self,
-            request: oslogin.GetLoginProfileRequest = None,
+            request: Union[oslogin.GetLoginProfileRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> oslogin.LoginProfile:
@@ -315,7 +317,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         to a virtual machine on Google Compute Engine.
 
         Args:
-            request (:class:`google.cloud.oslogin_v1beta.types.GetLoginProfileRequest`):
+            request (Union[google.cloud.oslogin_v1beta.types.GetLoginProfileRequest, dict]):
                 The request object. A request message for retrieving the
                 login profile information for a user.
             name (:class:`str`):
@@ -388,17 +390,17 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_ssh_public_key(self,
-            request: oslogin.GetSshPublicKeyRequest = None,
+            request: Union[oslogin.GetSshPublicKeyRequest, dict] = None,
             *,
             name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common_pb2.SshPublicKey:
         r"""Retrieves an SSH public key.
 
         Args:
-            request (:class:`google.cloud.oslogin_v1beta.types.GetSshPublicKeyRequest`):
+            request (Union[google.cloud.oslogin_v1beta.types.GetSshPublicKeyRequest, dict]):
                 The request object. A request message for retrieving an
                 SSH public key.
             name (:class:`str`):
@@ -472,12 +474,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def import_ssh_public_key(self,
-            request: oslogin.ImportSshPublicKeyRequest = None,
+            request: Union[oslogin.ImportSshPublicKeyRequest, dict] = None,
             *,
             parent: str = None,
             ssh_public_key: common_pb2.SshPublicKey = None,
             project_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> oslogin.ImportSshPublicKeyResponse:
@@ -487,7 +489,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         profile.
 
         Args:
-            request (:class:`google.cloud.oslogin_v1beta.types.ImportSshPublicKeyRequest`):
+            request (Union[google.cloud.oslogin_v1beta.types.ImportSshPublicKeyRequest, dict]):
                 The request object. A request message for importing an
                 SSH public key.
             parent (:class:`str`):
@@ -575,12 +577,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_ssh_public_key(self,
-            request: oslogin.UpdateSshPublicKeyRequest = None,
+            request: Union[oslogin.UpdateSshPublicKeyRequest, dict] = None,
             *,
             name: str = None,
             ssh_public_key: common_pb2.SshPublicKey = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> common_pb2.SshPublicKey:
@@ -588,7 +590,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         information. This method supports patch semantics.
 
         Args:
-            request (:class:`google.cloud.oslogin_v1beta.types.UpdateSshPublicKeyRequest`):
+            request (Union[google.cloud.oslogin_v1beta.types.UpdateSshPublicKeyRequest, dict]):
                 The request object. A request message for updating an
                 SSH public key.
             name (:class:`str`):

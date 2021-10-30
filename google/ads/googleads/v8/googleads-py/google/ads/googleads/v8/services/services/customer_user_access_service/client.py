@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v8.enums.types import access_role
 from google.ads.googleads.v8.resources.types import customer_user_access
 from google.ads.googleads.v8.services.types import customer_user_access_service
@@ -340,7 +342,7 @@ class CustomerUserAccessServiceClient(metaclass=CustomerUserAccessServiceClientM
             request: Union[customer_user_access_service.GetCustomerUserAccessRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_user_access.CustomerUserAccess:
@@ -419,7 +421,7 @@ class CustomerUserAccessServiceClient(metaclass=CustomerUserAccessServiceClientM
             *,
             customer_id: str = None,
             operation: customer_user_access_service.CustomerUserAccessOperation = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> customer_user_access_service.MutateCustomerUserAccessResponse:

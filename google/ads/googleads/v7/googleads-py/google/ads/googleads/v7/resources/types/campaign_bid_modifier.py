@@ -31,6 +31,9 @@ class CampaignBidModifier(proto.Message):
     r"""Represents a bid-modifiable only criterion at the campaign
     level.
 
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign bid modifier.
@@ -40,16 +43,20 @@ class CampaignBidModifier(proto.Message):
         campaign (str):
             Output only. The campaign to which this
             criterion belongs.
+            This field is a member of `oneof`_ ``_campaign``.
         criterion_id (int):
             Output only. The ID of the criterion to bid
             modify.
             This field is ignored for mutates.
+            This field is a member of `oneof`_ ``_criterion_id``.
         bid_modifier (float):
             The modifier for the bid when the criterion
             matches.
+            This field is a member of `oneof`_ ``_bid_modifier``.
         interaction_type (google.ads.googleads.v7.common.types.InteractionTypeInfo):
             Immutable. Criterion for interaction type.
             Only supported for search campaigns.
+            This field is a member of `oneof`_ ``criterion``.
     """
 
     resource_name = proto.Field(

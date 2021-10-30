@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.cloud.webrisk_v1.types import webrisk
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -145,12 +147,12 @@ class WebRiskServiceAsyncClient:
         )
 
     async def compute_threat_list_diff(self,
-            request: webrisk.ComputeThreatListDiffRequest = None,
+            request: Union[webrisk.ComputeThreatListDiffRequest, dict] = None,
             *,
             threat_type: webrisk.ThreatType = None,
             version_token: bytes = None,
             constraints: webrisk.ComputeThreatListDiffRequest.Constraints = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> webrisk.ComputeThreatListDiffResponse:
@@ -164,7 +166,7 @@ class WebRiskServiceAsyncClient:
         once for each list.
 
         Args:
-            request (:class:`google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest`):
+            request (Union[google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest, dict]):
                 The request object. Describes an API diff request.
             threat_type (:class:`google.cloud.webrisk_v1.types.ThreatType`):
                 Required. The threat list to update.
@@ -251,11 +253,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def search_uris(self,
-            request: webrisk.SearchUrisRequest = None,
+            request: Union[webrisk.SearchUrisRequest, dict] = None,
             *,
             uri: str = None,
             threat_types: Sequence[webrisk.ThreatType] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> webrisk.SearchUrisResponse:
@@ -267,7 +269,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         response will be returned.
 
         Args:
-            request (:class:`google.cloud.webrisk_v1.types.SearchUrisRequest`):
+            request (Union[google.cloud.webrisk_v1.types.SearchUrisRequest, dict]):
                 The request object. Request to check URI entries against
                 threatLists.
             uri (:class:`str`):
@@ -339,11 +341,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def search_hashes(self,
-            request: webrisk.SearchHashesRequest = None,
+            request: Union[webrisk.SearchHashesRequest, dict] = None,
             *,
             hash_prefix: bytes = None,
             threat_types: Sequence[webrisk.ThreatType] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> webrisk.SearchHashesResponse:
@@ -355,7 +357,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         match of a threat.
 
         Args:
-            request (:class:`google.cloud.webrisk_v1.types.SearchHashesRequest`):
+            request (Union[google.cloud.webrisk_v1.types.SearchHashesRequest, dict]):
                 The request object. Request to return full hashes
                 matched by the provided hash prefixes.
             hash_prefix (:class:`bytes`):
@@ -429,11 +431,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_submission(self,
-            request: webrisk.CreateSubmissionRequest = None,
+            request: Union[webrisk.CreateSubmissionRequest, dict] = None,
             *,
             parent: str = None,
             submission: webrisk.Submission = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> webrisk.Submission:
@@ -447,7 +449,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         visibility can use this method.
 
         Args:
-            request (:class:`google.cloud.webrisk_v1.types.CreateSubmissionRequest`):
+            request (Union[google.cloud.webrisk_v1.types.CreateSubmissionRequest, dict]):
                 The request object. Request to send a potentially phishy
                 URI to WebRisk.
             parent (:class:`str`):

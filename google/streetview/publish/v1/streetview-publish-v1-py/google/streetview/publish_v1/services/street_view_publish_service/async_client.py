@@ -19,12 +19,14 @@ import re
 from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core.client_options import ClientOptions # type: ignore
 from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
+
+OptionalRetry = Union[retries.Retry, object]
 
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -150,9 +152,9 @@ class StreetViewPublishServiceAsyncClient:
         )
 
     async def start_upload(self,
-            request: empty_pb2.Empty = None,
+            request: Union[empty_pb2.Empty, dict] = None,
             *,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.UploadRef:
@@ -181,7 +183,7 @@ class StreetViewPublishServiceAsyncClient:
         entry.
 
         Args:
-            request (:class:`google.protobuf.empty_pb2.Empty`):
+            request (Union[google.protobuf.empty_pb2.Empty, dict]):
                 The request object. A generic empty message that you can
                 re-use to avoid defining duplicated empty messages in
                 your APIs. A typical example is to use it as the request
@@ -234,10 +236,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def create_photo(self,
-            request: rpcmessages.CreatePhotoRequest = None,
+            request: Union[rpcmessages.CreatePhotoRequest, dict] = None,
             *,
             photo: resources.Photo = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Photo:
@@ -266,7 +268,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            if the account has reached the storage limit.
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.CreatePhotoRequest`):
+            request (Union[google.streetview.publish_v1.types.CreatePhotoRequest, dict]):
                 The request object. Request to create a
                 [Photo][google.streetview.publish.v1.Photo].
             photo (:class:`google.streetview.publish_v1.types.Photo`):
@@ -326,11 +328,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def get_photo(self,
-            request: rpcmessages.GetPhotoRequest = None,
+            request: Union[rpcmessages.GetPhotoRequest, dict] = None,
             *,
             photo_id: str = None,
             view: rpcmessages.PhotoView = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Photo:
@@ -350,7 +352,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            still being indexed.
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.GetPhotoRequest`):
+            request (Union[google.streetview.publish_v1.types.GetPhotoRequest, dict]):
                 The request object. Request to get a
                 [Photo][google.streetview.publish.v1.Photo].
                 By default
@@ -431,11 +433,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_get_photos(self,
-            request: rpcmessages.BatchGetPhotosRequest = None,
+            request: Union[rpcmessages.BatchGetPhotosRequest, dict] = None,
             *,
             photo_ids: Sequence[str] = None,
             view: rpcmessages.PhotoView = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> rpcmessages.BatchGetPhotosResponse:
@@ -457,7 +459,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         for specific failures that can occur per photo.
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.BatchGetPhotosRequest`):
+            request (Union[google.streetview.publish_v1.types.BatchGetPhotosRequest, dict]):
                 The request object. Request to get one or more
                 [Photos][google.streetview.publish.v1.Photo]. By default
                 * does not return the download URL for the photo bytes.
@@ -538,11 +540,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def list_photos(self,
-            request: rpcmessages.ListPhotosRequest = None,
+            request: Union[rpcmessages.ListPhotosRequest, dict] = None,
             *,
             view: rpcmessages.PhotoView = None,
             filter: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListPhotosAsyncPager:
@@ -555,7 +557,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             being indexed are not returned in the response.</aside>
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.ListPhotosRequest`):
+            request (Union[google.streetview.publish_v1.types.ListPhotosRequest, dict]):
                 The request object. Request to list all photos that
                 belong to the user sending the request.
                 By default
@@ -656,11 +658,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def update_photo(self,
-            request: rpcmessages.UpdatePhotoRequest = None,
+            request: Union[rpcmessages.UpdatePhotoRequest, dict] = None,
             *,
             photo: resources.Photo = None,
             update_mask: field_mask_pb2.FieldMask = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.Photo:
@@ -687,7 +689,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            still being indexed.
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.UpdatePhotoRequest`):
+            request (Union[google.streetview.publish_v1.types.UpdatePhotoRequest, dict]):
                 The request object. Request to update the metadata of a
                 [Photo][google.streetview.publish.v1.Photo]. Updating
                 the pixels of a photo is not supported.
@@ -788,10 +790,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def batch_update_photos(self,
-            request: rpcmessages.BatchUpdatePhotosRequest = None,
+            request: Union[rpcmessages.BatchUpdatePhotosRequest, dict] = None,
             *,
             update_photo_requests: Sequence[rpcmessages.UpdatePhotoRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> rpcmessages.BatchUpdatePhotosResponse:
@@ -833,7 +835,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             filled as well. Otherwise, the request will fail.</aside>
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.BatchUpdatePhotosRequest`):
+            request (Union[google.streetview.publish_v1.types.BatchUpdatePhotosRequest, dict]):
                 The request object. Request to update the metadata of
                 photos. Updating the pixels of photos is not supported.
             update_photo_requests (:class:`Sequence[google.streetview.publish_v1.types.UpdatePhotoRequest]`):
@@ -895,10 +897,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         return response
 
     async def delete_photo(self,
-            request: rpcmessages.DeletePhotoRequest = None,
+            request: Union[rpcmessages.DeletePhotoRequest, dict] = None,
             *,
             photo_id: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
@@ -913,7 +915,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
            photo ID does not exist.
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.DeletePhotoRequest`):
+            request (Union[google.streetview.publish_v1.types.DeletePhotoRequest, dict]):
                 The request object. Request to delete a
                 [Photo][google.streetview.publish.v1.Photo].
             photo_id (:class:`str`):
@@ -968,10 +970,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
     async def batch_delete_photos(self,
-            request: rpcmessages.BatchDeletePhotosRequest = None,
+            request: Union[rpcmessages.BatchDeletePhotosRequest, dict] = None,
             *,
             photo_ids: Sequence[str] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> rpcmessages.BatchDeletePhotosResponse:
@@ -993,7 +995,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         for specific failures that can occur per photo.
 
         Args:
-            request (:class:`google.streetview.publish_v1.types.BatchDeletePhotosRequest`):
+            request (Union[google.streetview.publish_v1.types.BatchDeletePhotosRequest, dict]):
                 The request object. Request to delete multiple
                 [Photos][google.streetview.publish.v1.Photo].
             photo_ids (:class:`Sequence[str]`):

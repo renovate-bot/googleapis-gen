@@ -30,6 +30,8 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
+OptionalRetry = Union[retries.Retry, object]
+
 from google.ads.googleads.v7.common.types import criterion_category_availability
 from google.ads.googleads.v7.enums.types import user_interest_taxonomy_type
 from google.ads.googleads.v7.resources.types import user_interest
@@ -339,7 +341,7 @@ class UserInterestServiceClient(metaclass=UserInterestServiceClientMeta):
             request: Union[user_interest_service.GetUserInterestRequest, dict] = None,
             *,
             resource_name: str = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> user_interest.UserInterest:

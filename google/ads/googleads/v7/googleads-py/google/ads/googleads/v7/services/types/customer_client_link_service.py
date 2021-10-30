@@ -82,6 +82,13 @@ class MutateCustomerClientLinkRequest(proto.Message):
 class CustomerClientLinkOperation(proto.Message):
     r"""A single operation (create, update) on a CustomerClientLink.
 
+    This message has `oneof`_ fields (mutually exclusive fields).
+    For each oneof, at most one member field can be set at the same time.
+    Setting any member of the oneof automatically clears all other
+    members.
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -89,9 +96,11 @@ class CustomerClientLinkOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CustomerClientLink):
             Create operation: No resource name is
             expected for the new link.
+            This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.CustomerClientLink):
             Update operation: The link is expected to
             have a valid resource name.
+            This field is a member of `oneof`_ ``operation``.
     """
 
     update_mask = proto.Field(

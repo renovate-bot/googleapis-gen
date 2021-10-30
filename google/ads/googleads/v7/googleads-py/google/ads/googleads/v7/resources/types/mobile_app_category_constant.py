@@ -38,8 +38,10 @@ class MobileAppCategoryConstant(proto.Message):
         id (int):
             Output only. The ID of the mobile app
             category constant.
+            This field is a member of `oneof`_ ``_id``.
         name (str):
             Output only. Mobile app category name.
+            This field is a member of `oneof`_ ``_name``.
     """
 
     resource_name = proto.Field(
