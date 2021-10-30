@@ -116,6 +116,7 @@ class PipelineJob(proto.Message):
 
         Attributes:
             parameters (Sequence[google.cloud.aiplatform_v1.types.PipelineJob.RuntimeConfig.ParametersEntry]):
+                Deprecated. Use [RuntimeConfig.parameter_values] instead.
                 The runtime parameters of the PipelineJob. The parameters
                 will be passed into
                 [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
@@ -129,6 +130,11 @@ class PipelineJob(proto.Message):
                 specified output directory. The service account specified in
                 this pipeline must have the ``storage.objects.get`` and
                 ``storage.objects.create`` permissions for this bucket.
+            parameter_values (Sequence[google.cloud.aiplatform_v1.types.PipelineJob.RuntimeConfig.ParameterValuesEntry]):
+                The runtime parameters of the PipelineJob. The parameters
+                will be passed into
+                [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+                to replace the placeholders at runtime.
         """
 
         parameters = proto.MapField(
@@ -140,6 +146,12 @@ class PipelineJob(proto.Message):
         gcs_output_directory = proto.Field(
             proto.STRING,
             number=2,
+        )
+        parameter_values = proto.MapField(
+            proto.STRING,
+            proto.MESSAGE,
+            number=3,
+            message=struct_pb2.Value,
         )
 
     name = proto.Field(
@@ -277,6 +289,10 @@ class PipelineTaskDetail(proto.Message):
             Output only. The error that occurred during
             task execution. Only populated when the task's
             state is FAILED or CANCELLED.
+        pipeline_task_status (Sequence[google.cloud.aiplatform_v1.types.PipelineTaskDetail.PipelineTaskStatus]):
+            Output only. A list of task status. This
+            field keeps a record of task status evolving
+            over time.
         inputs (Sequence[google.cloud.aiplatform_v1.types.PipelineTaskDetail.InputsEntry]):
             Output only. The runtime input artifacts of
             the task.
@@ -296,6 +312,40 @@ class PipelineTaskDetail(proto.Message):
         FAILED = 7
         SKIPPED = 8
         NOT_TRIGGERED = 9
+
+    class PipelineTaskStatus(proto.Message):
+        r"""A single record of the task status.
+
+        Attributes:
+            update_time (google.protobuf.timestamp_pb2.Timestamp):
+                Output only. Update time of this status.
+            state (google.cloud.aiplatform_v1.types.PipelineTaskDetail.State):
+                Output only. The state of the task.
+            error (google.rpc.status_pb2.Status):
+                Output only. The error that occurred during
+                the state. May be set when the state is any of
+                the non-final state (PENDING/RUNNING/CANCELLING)
+                or FAILED state. If the state is FAILED, the
+                error here is final and not going to be retried.
+                If the state is a non-final state, the error
+                indicates a system-error being retried.
+        """
+
+        update_time = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=timestamp_pb2.Timestamp,
+        )
+        state = proto.Field(
+            proto.ENUM,
+            number=2,
+            enum='PipelineTaskDetail.State',
+        )
+        error = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            message=status_pb2.Status,
+        )
 
     class ArtifactList(proto.Message):
         r"""A list of artifact metadata.
@@ -357,6 +407,11 @@ class PipelineTaskDetail(proto.Message):
         proto.MESSAGE,
         number=9,
         message=status_pb2.Status,
+    )
+    pipeline_task_status = proto.RepeatedField(
+        proto.MESSAGE,
+        number=13,
+        message=PipelineTaskStatus,
     )
     inputs = proto.MapField(
         proto.STRING,

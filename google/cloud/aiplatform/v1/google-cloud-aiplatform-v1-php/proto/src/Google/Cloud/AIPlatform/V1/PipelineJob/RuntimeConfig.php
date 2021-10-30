@@ -16,11 +16,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class RuntimeConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      *
-     * Generated from protobuf field <code>map<string, .google.cloud.aiplatform.v1.Value> parameters = 1;</code>
+     * Generated from protobuf field <code>map<string, .google.cloud.aiplatform.v1.Value> parameters = 1 [deprecated = true];</code>
+     * @deprecated
      */
     private $parameters;
     /**
@@ -35,6 +36,14 @@ class RuntimeConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string gcs_output_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $gcs_output_directory = '';
+    /**
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     *
+     * Generated from protobuf field <code>map<string, .google.protobuf.Value> parameter_values = 3;</code>
+     */
+    private $parameter_values;
 
     /**
      * Constructor.
@@ -43,9 +52,9 @@ class RuntimeConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array|\Google\Protobuf\Internal\MapField $parameters
-     *           The runtime parameters of the PipelineJob. The parameters will be
-     *           passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     *           at runtime.
+     *           Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     *           parameters of the PipelineJob. The parameters will be passed into
+     *           [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      *     @type string $gcs_output_directory
      *           Required. A path in a Cloud Storage bucket, which will be treated as the root
      *           output directory of the pipeline. It is used by the system to
@@ -54,6 +63,10 @@ class RuntimeConfig extends \Google\Protobuf\Internal\Message
      *           specified output directory. The service account specified in this
      *           pipeline must have the `storage.objects.get` and `storage.objects.create`
      *           permissions for this bucket.
+     *     @type array|\Google\Protobuf\Internal\MapField $parameter_values
+     *           The runtime parameters of the PipelineJob. The parameters will be
+     *           passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     *           at runtime.
      * }
      */
     public function __construct($data = NULL) {
@@ -62,29 +75,33 @@ class RuntimeConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      *
-     * Generated from protobuf field <code>map<string, .google.cloud.aiplatform.v1.Value> parameters = 1;</code>
+     * Generated from protobuf field <code>map<string, .google.cloud.aiplatform.v1.Value> parameters = 1 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\MapField
+     * @deprecated
      */
     public function getParameters()
     {
+        @trigger_error('parameters is deprecated.', E_USER_DEPRECATED);
         return $this->parameters;
     }
 
     /**
-     * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * parameters of the PipelineJob. The parameters will be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
      *
-     * Generated from protobuf field <code>map<string, .google.cloud.aiplatform.v1.Value> parameters = 1;</code>
+     * Generated from protobuf field <code>map<string, .google.cloud.aiplatform.v1.Value> parameters = 1 [deprecated = true];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
+     * @deprecated
      */
     public function setParameters($var)
     {
+        @trigger_error('parameters is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\AIPlatform\V1\Value::class);
         $this->parameters = $arr;
 
@@ -125,6 +142,36 @@ class RuntimeConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->gcs_output_directory = $var;
+
+        return $this;
+    }
+
+    /**
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     *
+     * Generated from protobuf field <code>map<string, .google.protobuf.Value> parameter_values = 3;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getParameterValues()
+    {
+        return $this->parameter_values;
+    }
+
+    /**
+     * The runtime parameters of the PipelineJob. The parameters will be
+     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
+     * at runtime.
+     *
+     * Generated from protobuf field <code>map<string, .google.protobuf.Value> parameter_values = 3;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setParameterValues($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Value::class);
+        $this->parameter_values = $arr;
 
         return $this;
     }

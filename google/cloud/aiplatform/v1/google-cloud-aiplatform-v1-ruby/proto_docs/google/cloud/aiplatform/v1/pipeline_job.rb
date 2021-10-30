@@ -104,9 +104,9 @@ module Google
           # The runtime config of a PipelineJob.
           # @!attribute [rw] parameters
           #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1::Value}]
-          #     The runtime parameters of the PipelineJob. The parameters will be
-          #     passed into {::Google::Cloud::AIPlatform::V1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders
-          #     at runtime.
+          #     Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+          #     parameters of the PipelineJob. The parameters will be passed into
+          #     {::Google::Cloud::AIPlatform::V1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders at runtime.
           # @!attribute [rw] gcs_output_directory
           #   @return [::String]
           #     Required. A path in a Cloud Storage bucket, which will be treated as the root
@@ -116,6 +116,11 @@ module Google
           #     specified output directory. The service account specified in this
           #     pipeline must have the `storage.objects.get` and `storage.objects.create`
           #     permissions for this bucket.
+          # @!attribute [rw] parameter_values
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Protobuf::Value}]
+          #     The runtime parameters of the PipelineJob. The parameters will be
+          #     passed into {::Google::Cloud::AIPlatform::V1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders
+          #     at runtime.
           class RuntimeConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -125,6 +130,15 @@ module Google
             # @!attribute [rw] value
             #   @return [::Google::Cloud::AIPlatform::V1::Value]
             class ParametersEntry
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # @!attribute [rw] key
+            #   @return [::String]
+            # @!attribute [rw] value
+            #   @return [::Google::Protobuf::Value]
+            class ParameterValuesEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -189,6 +203,10 @@ module Google
         #   @return [::Google::Rpc::Status]
         #     Output only. The error that occurred during task execution.
         #     Only populated when the task's state is FAILED or CANCELLED.
+        # @!attribute [r] pipeline_task_status
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::PipelineTaskDetail::PipelineTaskStatus>]
+        #     Output only. A list of task status. This field keeps a record of task status evolving
+        #     over time.
         # @!attribute [r] inputs
         #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1::PipelineTaskDetail::ArtifactList}]
         #     Output only. The runtime input artifacts of the task.
@@ -198,6 +216,26 @@ module Google
         class PipelineTaskDetail
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # A single record of the task status.
+          # @!attribute [r] update_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     Output only. Update time of this status.
+          # @!attribute [r] state
+          #   @return [::Google::Cloud::AIPlatform::V1::PipelineTaskDetail::State]
+          #     Output only. The state of the task.
+          # @!attribute [r] error
+          #   @return [::Google::Rpc::Status]
+          #     Output only. The error that occurred during the state. May be set when the state is
+          #     any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
+          #     If the state is FAILED, the error here is final and not going to be
+          #     retried.
+          #     If the state is a non-final state, the error indicates a system-error
+          #     being retried.
+          class PipelineTaskStatus
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
 
           # A list of artifact metadata.
           # @!attribute [r] artifacts
