@@ -104,9 +104,9 @@ module Google
           # The runtime config of a PipelineJob.
           # @!attribute [rw] parameters
           #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::Value}]
-          #     The runtime parameters of the PipelineJob. The parameters will be
-          #     passed into {::Google::Cloud::AIPlatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders
-          #     at runtime.
+          #     Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+          #     parameters of the PipelineJob. The parameters will be passed into
+          #     {::Google::Cloud::AIPlatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders at runtime.
           # @!attribute [rw] gcs_output_directory
           #   @return [::String]
           #     Required. A path in a Cloud Storage bucket, which will be treated as the root
@@ -116,6 +116,11 @@ module Google
           #     specified output directory. The service account specified in this
           #     pipeline must have the `storage.objects.get` and `storage.objects.create`
           #     permissions for this bucket.
+          # @!attribute [rw] parameter_values
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Protobuf::Value}]
+          #     The runtime parameters of the PipelineJob. The parameters will be
+          #     passed into {::Google::Cloud::AIPlatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders
+          #     at runtime.
           class RuntimeConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -125,6 +130,15 @@ module Google
             # @!attribute [rw] value
             #   @return [::Google::Cloud::AIPlatform::V1beta1::Value]
             class ParametersEntry
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # @!attribute [rw] key
+            #   @return [::String]
+            # @!attribute [rw] value
+            #   @return [::Google::Protobuf::Value]
+            class ParameterValuesEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

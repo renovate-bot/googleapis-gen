@@ -37,6 +37,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig" do
       map :parameters, :string, :message, 1, "google.cloud.aiplatform.v1beta1.Value"
       optional :gcs_output_directory, :string, 2
+      map :parameter_values, :string, :message, 3, "google.protobuf.Value"
     end
     add_message "google.cloud.aiplatform.v1beta1.PipelineJobDetail" do
       optional :pipeline_context, :message, 1, "google.cloud.aiplatform.v1beta1.Context"
