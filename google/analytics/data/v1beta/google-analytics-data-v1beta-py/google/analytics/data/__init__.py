@@ -63,6 +63,7 @@ from google.analytics.data_v1beta.types.data import Row
 from google.analytics.data_v1beta.types.data import Compatibility
 from google.analytics.data_v1beta.types.data import MetricAggregation
 from google.analytics.data_v1beta.types.data import MetricType
+from google.analytics.data_v1beta.types.data import RestrictedMetricType
 
 __all__ = ('BetaAnalyticsDataClient',
     'BetaAnalyticsDataAsyncClient',
@@ -112,4 +113,5 @@ __all__ = ('BetaAnalyticsDataClient',
     'Compatibility',
     'MetricAggregation',
     'MetricType',
+    'RestrictedMetricType',
 )
