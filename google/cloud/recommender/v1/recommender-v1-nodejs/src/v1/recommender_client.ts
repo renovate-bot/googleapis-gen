@@ -608,8 +608,8 @@ export class RecommenderClient {
  * @param {number[]} request.stateMetadata
  *   State properties to include with this state. Overwrites any existing
  *   `state_metadata`.
- *   Keys must match the regex /^{@link a-z0-9_.-|a-z0-9}{0,62}$/.
- *   Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+ *   Keys must match the regex `/^{@link a-z0-9_.-|a-z0-9}{0,62}$/`.
+ *   Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
  * @param {string} request.etag
  *   Required. Fingerprint of the Recommendation. Provides optimistic locking.
  * @param {object} [options]
@@ -696,8 +696,8 @@ export class RecommenderClient {
  * @param {number[]} request.stateMetadata
  *   State properties to include with this state. Overwrites any existing
  *   `state_metadata`.
- *   Keys must match the regex /^{@link a-z0-9_.-|a-z0-9}{0,62}$/.
- *   Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+ *   Keys must match the regex `/^{@link a-z0-9_.-|a-z0-9}{0,62}$/`.
+ *   Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
  * @param {string} request.etag
  *   Required. Fingerprint of the Recommendation. Provides optimistic locking.
  * @param {object} [options]
@@ -784,8 +784,8 @@ export class RecommenderClient {
  * @param {number[]} request.stateMetadata
  *   State properties to include with this state. Overwrites any existing
  *   `state_metadata`.
- *   Keys must match the regex /^{@link a-z0-9_.-|a-z0-9}{0,62}$/.
- *   Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+ *   Keys must match the regex `/^{@link a-z0-9_.-|a-z0-9}{0,62}$/`.
+ *   Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
  * @param {string} request.etag
  *   Required. Fingerprint of the Recommendation. Provides optimistic locking.
  * @param {object} [options]

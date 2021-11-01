@@ -200,8 +200,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
-   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+   * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+   * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -225,8 +225,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
-   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+   * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+   * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -240,8 +240,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
-   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+   * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+   * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -260,8 +260,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * State properties to include with this state. Overwrites any existing
    * `state_metadata`.
-   * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-   * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+   * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+   * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -825,8 +825,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -850,8 +850,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -865,8 +865,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -885,8 +885,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -913,8 +913,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -939,8 +939,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
@@ -958,8 +958,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * State properties to include with this state. Overwrites any existing
      * `state_metadata`.
-     * Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-     * Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+     * Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+     * Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>

@@ -2025,8 +2025,8 @@ namespace Google.Cloud.Recommender.V1Beta1 {
     /// <summary>
     /// State properties to include with this state. Overwrites any existing
     /// `state_metadata`.
-    /// Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-    /// Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+    /// Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+    /// Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2292,8 +2292,8 @@ namespace Google.Cloud.Recommender.V1Beta1 {
     /// <summary>
     /// State properties to include with this state. Overwrites any existing
     /// `state_metadata`.
-    /// Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-    /// Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+    /// Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+    /// Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2559,8 +2559,8 @@ namespace Google.Cloud.Recommender.V1Beta1 {
     /// <summary>
     /// State properties to include with this state. Overwrites any existing
     /// `state_metadata`.
-    /// Keys must match the regex /^[a-z0-9][a-z0-9_.-]{0,62}$/.
-    /// Values must match the regex /^[a-zA-Z0-9_./-]{0,255}$/.
+    /// Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
+    /// Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
