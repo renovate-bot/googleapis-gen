@@ -363,9 +363,11 @@ module Google
                 gapic_version: ::Google::Cloud::Publish::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "photo_id" => request.photo_id
-              }
+              header_params = {}
+              if request.photo_id
+                header_params["photo_id"] = request.photo_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -656,9 +658,11 @@ module Google
                 gapic_version: ::Google::Cloud::Publish::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "photo.photo_id.id" => request.photo.photo_id.id
-              }
+              header_params = {}
+              if request.photo&.photo_id&.id
+                header_params["photo.photo_id.id"] = request.photo.photo_id.id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -826,9 +830,11 @@ module Google
                 gapic_version: ::Google::Cloud::Publish::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "photo_id" => request.photo_id
-              }
+              header_params = {}
+              if request.photo_id
+                header_params["photo_id"] = request.photo_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

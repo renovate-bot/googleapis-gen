@@ -194,10 +194,14 @@ module Ccc
                 gapic_version: ::Google::Cloud::Hosted::Marketplace::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "application_id" => request.application_id,
-                "customer_id" => request.customer_id
-              }
+              header_params = {}
+              if request.application_id
+                header_params["application_id"] = request.application_id
+              end
+              if request.customer_id
+                header_params["customer_id"] = request.customer_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

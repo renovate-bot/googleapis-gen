@@ -232,9 +232,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "parent" => request.parent
-              }
+              header_params = {}
+              if request.parent
+                header_params["parent"] = request.parent
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -309,9 +311,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "name" => request.name
-              }
+              header_params = {}
+              if request.name
+                header_params["name"] = request.name
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -458,9 +462,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "parent" => request.parent
-              }
+              header_params = {}
+              if request.parent
+                header_params["parent"] = request.parent
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -548,9 +554,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "product.name" => request.product.name
-              }
+              header_params = {}
+              if request.product&.name
+                header_params["product.name"] = request.product.name
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -637,9 +645,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "name" => request.name
-              }
+              header_params = {}
+              if request.name
+                header_params["name"] = request.name
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -746,9 +756,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "parent" => request.parent
-              }
+              header_params = {}
+              if request.parent
+                header_params["parent"] = request.parent
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -908,9 +920,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "inventory.name" => request.inventory.name
-              }
+              header_params = {}
+              if request.inventory&.name
+                header_params["inventory.name"] = request.inventory.name
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -1044,9 +1058,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "product" => request.product
-              }
+              header_params = {}
+              if request.product
+                header_params["product"] = request.product
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -1175,9 +1191,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "product" => request.product
-              }
+              header_params = {}
+              if request.product
+                header_params["product"] = request.product
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -1302,9 +1320,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "product" => request.product
-              }
+              header_params = {}
+              if request.product
+                header_params["product"] = request.product
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -1410,9 +1430,11 @@ module Google
                 gapic_version: ::Google::Cloud::Retail::V2alpha::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "product" => request.product
-              }
+              header_params = {}
+              if request.product
+                header_params["product"] = request.product
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

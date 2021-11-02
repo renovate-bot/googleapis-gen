@@ -211,9 +211,11 @@ module Google
                 gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "endpoint" => request.endpoint
-              }
+              header_params = {}
+              if request.endpoint
+                header_params["endpoint"] = request.endpoint
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -295,9 +297,11 @@ module Google
                 gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "endpoint" => request.endpoint
-              }
+              header_params = {}
+              if request.endpoint
+                header_params["endpoint"] = request.endpoint
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -401,9 +405,11 @@ module Google
                 gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "endpoint" => request.endpoint
-              }
+              header_params = {}
+              if request.endpoint
+                header_params["endpoint"] = request.endpoint
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

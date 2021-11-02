@@ -190,11 +190,17 @@ module Google
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project_id" => request.project_id,
-                "dataset_id" => request.dataset_id,
-                "model_id" => request.model_id
-              }
+              header_params = {}
+              if request.project_id
+                header_params["project_id"] = request.project_id
+              end
+              if request.dataset_id
+                header_params["dataset_id"] = request.dataset_id
+              end
+              if request.model_id
+                header_params["model_id"] = request.model_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -270,10 +276,14 @@ module Google
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project_id" => request.project_id,
-                "dataset_id" => request.dataset_id
-              }
+              header_params = {}
+              if request.project_id
+                header_params["project_id"] = request.project_id
+              end
+              if request.dataset_id
+                header_params["dataset_id"] = request.dataset_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -347,11 +357,17 @@ module Google
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project_id" => request.project_id,
-                "dataset_id" => request.dataset_id,
-                "model_id" => request.model_id
-              }
+              header_params = {}
+              if request.project_id
+                header_params["project_id"] = request.project_id
+              end
+              if request.dataset_id
+                header_params["dataset_id"] = request.dataset_id
+              end
+              if request.model_id
+                header_params["model_id"] = request.model_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -421,11 +437,17 @@ module Google
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project_id" => request.project_id,
-                "dataset_id" => request.dataset_id,
-                "model_id" => request.model_id
-              }
+              header_params = {}
+              if request.project_id
+                header_params["project_id"] = request.project_id
+              end
+              if request.dataset_id
+                header_params["dataset_id"] = request.dataset_id
+              end
+              if request.model_id
+                header_params["model_id"] = request.model_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

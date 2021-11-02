@@ -219,9 +219,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "resource_name" => request.resource_name
-                }
+                header_params = {}
+                if request.resource_name
+                  header_params["resource_name"] = request.resource_name
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -317,9 +319,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "customer_id" => request.customer_id
-                }
+                header_params = {}
+                if request.customer_id
+                  header_params["customer_id"] = request.customer_id
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -410,9 +414,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "customer_id" => request.customer_id
-                }
+                header_params = {}
+                if request.customer_id
+                  header_params["customer_id"] = request.customer_id
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -497,9 +503,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "campaign_experiment" => request.campaign_experiment
-                }
+                header_params = {}
+                if request.campaign_experiment
+                  header_params["campaign_experiment"] = request.campaign_experiment
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -583,9 +591,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "campaign_experiment" => request.campaign_experiment
-                }
+                header_params = {}
+                if request.campaign_experiment
+                  header_params["campaign_experiment"] = request.campaign_experiment
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -668,9 +678,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "campaign_experiment" => request.campaign_experiment
-                }
+                header_params = {}
+                if request.campaign_experiment
+                  header_params["campaign_experiment"] = request.campaign_experiment
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -758,9 +770,11 @@ module Google
                   gapic_version: ::Google::Ads::GoogleAds::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-                header_params = {
-                  "resource_name" => request.resource_name
-                }
+                header_params = {}
+                if request.resource_name
+                  header_params["resource_name"] = request.resource_name
+                end
+
                 request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
                 metadata[:"x-goog-request-params"] ||= request_params_header
 

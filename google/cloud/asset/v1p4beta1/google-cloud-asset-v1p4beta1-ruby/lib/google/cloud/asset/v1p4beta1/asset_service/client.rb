@@ -203,9 +203,11 @@ module Google
                 gapic_version: ::Google::Cloud::Asset::V1p4beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "analysis_query.parent" => request.analysis_query.parent
-              }
+              header_params = {}
+              if request.analysis_query&.parent
+                header_params["analysis_query.parent"] = request.analysis_query.parent
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -278,9 +280,11 @@ module Google
                 gapic_version: ::Google::Cloud::Asset::V1p4beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "analysis_query.parent" => request.analysis_query.parent
-              }
+              header_params = {}
+              if request.analysis_query&.parent
+                header_params["analysis_query.parent"] = request.analysis_query.parent
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

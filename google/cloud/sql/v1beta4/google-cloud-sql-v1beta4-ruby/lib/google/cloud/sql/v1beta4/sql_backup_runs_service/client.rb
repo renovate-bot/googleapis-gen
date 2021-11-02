@@ -194,11 +194,17 @@ module Google
                 gapic_version: ::Google::Cloud::Sql::V1beta4::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project" => request.project,
-                "instance" => request.instance,
-                "id" => request.id
-              }
+              header_params = {}
+              if request.project
+                header_params["project"] = request.project
+              end
+              if request.instance
+                header_params["instance"] = request.instance
+              end
+              if request.id
+                header_params["id"] = request.id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -268,11 +274,17 @@ module Google
                 gapic_version: ::Google::Cloud::Sql::V1beta4::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project" => request.project,
-                "instance" => request.instance,
-                "id" => request.id
-              }
+              header_params = {}
+              if request.project
+                header_params["project"] = request.project
+              end
+              if request.instance
+                header_params["instance"] = request.instance
+              end
+              if request.id
+                header_params["id"] = request.id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -342,10 +354,14 @@ module Google
                 gapic_version: ::Google::Cloud::Sql::V1beta4::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project" => request.project,
-                "instance" => request.instance
-              }
+              header_params = {}
+              if request.project
+                header_params["project"] = request.project
+              end
+              if request.instance
+                header_params["instance"] = request.instance
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
@@ -419,10 +435,14 @@ module Google
                 gapic_version: ::Google::Cloud::Sql::V1beta4::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "project" => request.project,
-                "instance" => request.instance
-              }
+              header_params = {}
+              if request.project
+                header_params["project"] = request.project
+              end
+              if request.instance
+                header_params["instance"] = request.instance
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

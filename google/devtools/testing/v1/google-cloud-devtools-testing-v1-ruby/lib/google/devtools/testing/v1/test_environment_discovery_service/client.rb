@@ -229,9 +229,11 @@ module Google
                 gapic_version: ::Google::Cloud::Devtools::Testing::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "environment_type" => request.environment_type
-              }
+              header_params = {}
+              if request.environment_type
+                header_params["environment_type"] = request.environment_type
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 

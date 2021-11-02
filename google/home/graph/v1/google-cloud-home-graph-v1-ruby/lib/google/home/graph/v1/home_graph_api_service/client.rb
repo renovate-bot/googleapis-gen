@@ -374,9 +374,11 @@ module Google
                 gapic_version: ::Google::Cloud::Graph::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
-              header_params = {
-                "agent_user_id" => request.agent_user_id
-              }
+              header_params = {}
+              if request.agent_user_id
+                header_params["agent_user_id"] = request.agent_user_id
+              end
+
               request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
               metadata[:"x-goog-request-params"] ||= request_params_header
 
