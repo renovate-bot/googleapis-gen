@@ -72,6 +72,32 @@ private static final long serialVersionUID = 0L;
             provenanceBytes_ = s;
             break;
           }
+          case 26: {
+            io.grafeas.v1.InTotoProvenance.Builder subBuilder = null;
+            if (intotoProvenance_ != null) {
+              subBuilder = intotoProvenance_.toBuilder();
+            }
+            intotoProvenance_ = input.readMessage(io.grafeas.v1.InTotoProvenance.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(intotoProvenance_);
+              intotoProvenance_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 34: {
+            io.grafeas.v1.InTotoStatement.Builder subBuilder = null;
+            if (intotoStatement_ != null) {
+              subBuilder = intotoStatement_.toBuilder();
+            }
+            intotoStatement_ = input.readMessage(io.grafeas.v1.InTotoStatement.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(intotoStatement_);
+              intotoStatement_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -108,7 +134,7 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1.BuildProvenance provenance_;
   /**
    * <pre>
-   * Required. The actual provenance for the build.
+   * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -120,7 +146,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The actual provenance for the build.
+   * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -132,7 +158,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The actual provenance for the build.
+   * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -206,6 +232,94 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int INTOTO_PROVENANCE_FIELD_NUMBER = 3;
+  private io.grafeas.v1.InTotoProvenance intotoProvenance_;
+  /**
+   * <pre>
+   * Deprecated. See InTotoStatement for the replacement.
+   * In-toto Provenance representation as defined in spec.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+   * @return Whether the intotoProvenance field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntotoProvenance() {
+    return intotoProvenance_ != null;
+  }
+  /**
+   * <pre>
+   * Deprecated. See InTotoStatement for the replacement.
+   * In-toto Provenance representation as defined in spec.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+   * @return The intotoProvenance.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.InTotoProvenance getIntotoProvenance() {
+    return intotoProvenance_ == null ? io.grafeas.v1.InTotoProvenance.getDefaultInstance() : intotoProvenance_;
+  }
+  /**
+   * <pre>
+   * Deprecated. See InTotoStatement for the replacement.
+   * In-toto Provenance representation as defined in spec.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.InTotoProvenanceOrBuilder getIntotoProvenanceOrBuilder() {
+    return getIntotoProvenance();
+  }
+
+  public static final int INTOTO_STATEMENT_FIELD_NUMBER = 4;
+  private io.grafeas.v1.InTotoStatement intotoStatement_;
+  /**
+   * <pre>
+   * In-toto Statement representation as defined in spec.
+   * The intoto_statement can contain any type of provenance. The serialized
+   * payload of the statement can be stored and signed in the Occurrence's
+   * envelope.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+   * @return Whether the intotoStatement field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntotoStatement() {
+    return intotoStatement_ != null;
+  }
+  /**
+   * <pre>
+   * In-toto Statement representation as defined in spec.
+   * The intoto_statement can contain any type of provenance. The serialized
+   * payload of the statement can be stored and signed in the Occurrence's
+   * envelope.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+   * @return The intotoStatement.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.InTotoStatement getIntotoStatement() {
+    return intotoStatement_ == null ? io.grafeas.v1.InTotoStatement.getDefaultInstance() : intotoStatement_;
+  }
+  /**
+   * <pre>
+   * In-toto Statement representation as defined in spec.
+   * The intoto_statement can contain any type of provenance. The serialized
+   * payload of the statement can be stored and signed in the Occurrence's
+   * envelope.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.InTotoStatementOrBuilder getIntotoStatementOrBuilder() {
+    return getIntotoStatement();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -226,6 +340,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provenanceBytes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, provenanceBytes_);
     }
+    if (intotoProvenance_ != null) {
+      output.writeMessage(3, getIntotoProvenance());
+    }
+    if (intotoStatement_ != null) {
+      output.writeMessage(4, getIntotoStatement());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -241,6 +361,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provenanceBytes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, provenanceBytes_);
+    }
+    if (intotoProvenance_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getIntotoProvenance());
+    }
+    if (intotoStatement_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getIntotoStatement());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -264,6 +392,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!getProvenanceBytes()
         .equals(other.getProvenanceBytes())) return false;
+    if (hasIntotoProvenance() != other.hasIntotoProvenance()) return false;
+    if (hasIntotoProvenance()) {
+      if (!getIntotoProvenance()
+          .equals(other.getIntotoProvenance())) return false;
+    }
+    if (hasIntotoStatement() != other.hasIntotoStatement()) return false;
+    if (hasIntotoStatement()) {
+      if (!getIntotoStatement()
+          .equals(other.getIntotoStatement())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,6 +419,14 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PROVENANCE_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + getProvenanceBytes().hashCode();
+    if (hasIntotoProvenance()) {
+      hash = (37 * hash) + INTOTO_PROVENANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getIntotoProvenance().hashCode();
+    }
+    if (hasIntotoStatement()) {
+      hash = (37 * hash) + INTOTO_STATEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getIntotoStatement().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -426,6 +572,18 @@ private static final long serialVersionUID = 0L;
       }
       provenanceBytes_ = "";
 
+      if (intotoProvenanceBuilder_ == null) {
+        intotoProvenance_ = null;
+      } else {
+        intotoProvenance_ = null;
+        intotoProvenanceBuilder_ = null;
+      }
+      if (intotoStatementBuilder_ == null) {
+        intotoStatement_ = null;
+      } else {
+        intotoStatement_ = null;
+        intotoStatementBuilder_ = null;
+      }
       return this;
     }
 
@@ -458,6 +616,16 @@ private static final long serialVersionUID = 0L;
         result.provenance_ = provenanceBuilder_.build();
       }
       result.provenanceBytes_ = provenanceBytes_;
+      if (intotoProvenanceBuilder_ == null) {
+        result.intotoProvenance_ = intotoProvenance_;
+      } else {
+        result.intotoProvenance_ = intotoProvenanceBuilder_.build();
+      }
+      if (intotoStatementBuilder_ == null) {
+        result.intotoStatement_ = intotoStatement_;
+      } else {
+        result.intotoStatement_ = intotoStatementBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -513,6 +681,12 @@ private static final long serialVersionUID = 0L;
         provenanceBytes_ = other.provenanceBytes_;
         onChanged();
       }
+      if (other.hasIntotoProvenance()) {
+        mergeIntotoProvenance(other.getIntotoProvenance());
+      }
+      if (other.hasIntotoStatement()) {
+        mergeIntotoStatement(other.getIntotoStatement());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -547,7 +721,7 @@ private static final long serialVersionUID = 0L;
         io.grafeas.v1.BuildProvenance, io.grafeas.v1.BuildProvenance.Builder, io.grafeas.v1.BuildProvenanceOrBuilder> provenanceBuilder_;
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -558,7 +732,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -573,7 +747,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -593,7 +767,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -611,7 +785,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -633,7 +807,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -651,7 +825,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -663,7 +837,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -678,7 +852,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The actual provenance for the build.
+     * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
@@ -836,6 +1010,352 @@ private static final long serialVersionUID = 0L;
       provenanceBytes_ = value;
       onChanged();
       return this;
+    }
+
+    private io.grafeas.v1.InTotoProvenance intotoProvenance_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder> intotoProvenanceBuilder_;
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     * @return Whether the intotoProvenance field is set.
+     */
+    public boolean hasIntotoProvenance() {
+      return intotoProvenanceBuilder_ != null || intotoProvenance_ != null;
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     * @return The intotoProvenance.
+     */
+    public io.grafeas.v1.InTotoProvenance getIntotoProvenance() {
+      if (intotoProvenanceBuilder_ == null) {
+        return intotoProvenance_ == null ? io.grafeas.v1.InTotoProvenance.getDefaultInstance() : intotoProvenance_;
+      } else {
+        return intotoProvenanceBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    public Builder setIntotoProvenance(io.grafeas.v1.InTotoProvenance value) {
+      if (intotoProvenanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        intotoProvenance_ = value;
+        onChanged();
+      } else {
+        intotoProvenanceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    public Builder setIntotoProvenance(
+        io.grafeas.v1.InTotoProvenance.Builder builderForValue) {
+      if (intotoProvenanceBuilder_ == null) {
+        intotoProvenance_ = builderForValue.build();
+        onChanged();
+      } else {
+        intotoProvenanceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    public Builder mergeIntotoProvenance(io.grafeas.v1.InTotoProvenance value) {
+      if (intotoProvenanceBuilder_ == null) {
+        if (intotoProvenance_ != null) {
+          intotoProvenance_ =
+            io.grafeas.v1.InTotoProvenance.newBuilder(intotoProvenance_).mergeFrom(value).buildPartial();
+        } else {
+          intotoProvenance_ = value;
+        }
+        onChanged();
+      } else {
+        intotoProvenanceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    public Builder clearIntotoProvenance() {
+      if (intotoProvenanceBuilder_ == null) {
+        intotoProvenance_ = null;
+        onChanged();
+      } else {
+        intotoProvenance_ = null;
+        intotoProvenanceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    public io.grafeas.v1.InTotoProvenance.Builder getIntotoProvenanceBuilder() {
+      
+      onChanged();
+      return getIntotoProvenanceFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    public io.grafeas.v1.InTotoProvenanceOrBuilder getIntotoProvenanceOrBuilder() {
+      if (intotoProvenanceBuilder_ != null) {
+        return intotoProvenanceBuilder_.getMessageOrBuilder();
+      } else {
+        return intotoProvenance_ == null ?
+            io.grafeas.v1.InTotoProvenance.getDefaultInstance() : intotoProvenance_;
+      }
+    }
+    /**
+     * <pre>
+     * Deprecated. See InTotoStatement for the replacement.
+     * In-toto Provenance representation as defined in spec.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder> 
+        getIntotoProvenanceFieldBuilder() {
+      if (intotoProvenanceBuilder_ == null) {
+        intotoProvenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder>(
+                getIntotoProvenance(),
+                getParentForChildren(),
+                isClean());
+        intotoProvenance_ = null;
+      }
+      return intotoProvenanceBuilder_;
+    }
+
+    private io.grafeas.v1.InTotoStatement intotoStatement_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder> intotoStatementBuilder_;
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     * @return Whether the intotoStatement field is set.
+     */
+    public boolean hasIntotoStatement() {
+      return intotoStatementBuilder_ != null || intotoStatement_ != null;
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     * @return The intotoStatement.
+     */
+    public io.grafeas.v1.InTotoStatement getIntotoStatement() {
+      if (intotoStatementBuilder_ == null) {
+        return intotoStatement_ == null ? io.grafeas.v1.InTotoStatement.getDefaultInstance() : intotoStatement_;
+      } else {
+        return intotoStatementBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    public Builder setIntotoStatement(io.grafeas.v1.InTotoStatement value) {
+      if (intotoStatementBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        intotoStatement_ = value;
+        onChanged();
+      } else {
+        intotoStatementBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    public Builder setIntotoStatement(
+        io.grafeas.v1.InTotoStatement.Builder builderForValue) {
+      if (intotoStatementBuilder_ == null) {
+        intotoStatement_ = builderForValue.build();
+        onChanged();
+      } else {
+        intotoStatementBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    public Builder mergeIntotoStatement(io.grafeas.v1.InTotoStatement value) {
+      if (intotoStatementBuilder_ == null) {
+        if (intotoStatement_ != null) {
+          intotoStatement_ =
+            io.grafeas.v1.InTotoStatement.newBuilder(intotoStatement_).mergeFrom(value).buildPartial();
+        } else {
+          intotoStatement_ = value;
+        }
+        onChanged();
+      } else {
+        intotoStatementBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    public Builder clearIntotoStatement() {
+      if (intotoStatementBuilder_ == null) {
+        intotoStatement_ = null;
+        onChanged();
+      } else {
+        intotoStatement_ = null;
+        intotoStatementBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    public io.grafeas.v1.InTotoStatement.Builder getIntotoStatementBuilder() {
+      
+      onChanged();
+      return getIntotoStatementFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    public io.grafeas.v1.InTotoStatementOrBuilder getIntotoStatementOrBuilder() {
+      if (intotoStatementBuilder_ != null) {
+        return intotoStatementBuilder_.getMessageOrBuilder();
+      } else {
+        return intotoStatement_ == null ?
+            io.grafeas.v1.InTotoStatement.getDefaultInstance() : intotoStatement_;
+      }
+    }
+    /**
+     * <pre>
+     * In-toto Statement representation as defined in spec.
+     * The intoto_statement can contain any type of provenance. The serialized
+     * payload of the statement can be stored and signed in the Occurrence's
+     * envelope.
+     * </pre>
+     *
+     * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder> 
+        getIntotoStatementFieldBuilder() {
+      if (intotoStatementBuilder_ == null) {
+        intotoStatementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder>(
+                getIntotoStatement(),
+                getParentForChildren(),
+                isClean());
+        intotoStatement_ = null;
+      }
+      return intotoStatementBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

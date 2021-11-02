@@ -27,16 +27,19 @@ namespace Grafeas.V1 {
             "ChxncmFmZWFzL3YxL2F0dGVzdGF0aW9uLnByb3RvEgpncmFmZWFzLnYxGhdn",
             "cmFmZWFzL3YxL2NvbW1vbi5wcm90byJmCg9BdHRlc3RhdGlvbk5vdGUSLgoE",
             "aGludBgBIAEoCzIgLmdyYWZlYXMudjEuQXR0ZXN0YXRpb25Ob3RlLkhpbnQa",
-            "IwoESGludBIbChNodW1hbl9yZWFkYWJsZV9uYW1lGAEgASgJIl4KFUF0dGVz",
-            "dGF0aW9uT2NjdXJyZW5jZRIaChJzZXJpYWxpemVkX3BheWxvYWQYASABKAwS",
-            "KQoKc2lnbmF0dXJlcxgCIAMoCzIVLmdyYWZlYXMudjEuU2lnbmF0dXJlQlEK",
-            "DWlvLmdyYWZlYXMudjFQAVo4Z29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
-            "Z29vZ2xlYXBpcy9ncmFmZWFzL3YxO2dyYWZlYXOiAgNHUkFiBnByb3RvMw=="));
+            "IwoESGludBIbChNodW1hbl9yZWFkYWJsZV9uYW1lGAEgASgJIhoKA0p3dBIT",
+            "Cgtjb21wYWN0X2p3dBgBIAEoCSJ9ChVBdHRlc3RhdGlvbk9jY3VycmVuY2US",
+            "GgoSc2VyaWFsaXplZF9wYXlsb2FkGAEgASgMEikKCnNpZ25hdHVyZXMYAiAD",
+            "KAsyFS5ncmFmZWFzLnYxLlNpZ25hdHVyZRIdCgRqd3RzGAMgAygLMg8uZ3Jh",
+            "ZmVhcy52MS5Kd3RCUQoNaW8uZ3JhZmVhcy52MVABWjhnb29nbGUuZ29sYW5n",
+            "Lm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2dyYWZlYXMvdjE7Z3JhZmVhc6IC",
+            "A0dSQWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grafeas.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1.AttestationNote), global::Grafeas.V1.AttestationNote.Parser, new[]{ "Hint" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1.AttestationNote.Types.Hint), global::Grafeas.V1.AttestationNote.Types.Hint.Parser, new[]{ "HumanReadableName" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1.AttestationOccurrence), global::Grafeas.V1.AttestationOccurrence.Parser, new[]{ "SerializedPayload", "Signatures" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1.Jwt), global::Grafeas.V1.Jwt.Parser, new[]{ "CompactJwt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grafeas.V1.AttestationOccurrence), global::Grafeas.V1.AttestationOccurrence.Parser, new[]{ "SerializedPayload", "Signatures", "Jwts" }, null, null, null, null)
           }));
     }
     #endregion
@@ -464,6 +467,200 @@ namespace Grafeas.V1 {
 
   }
 
+  public sealed partial class Jwt : pb::IMessage<Jwt>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Jwt> _parser = new pb::MessageParser<Jwt>(() => new Jwt());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Jwt> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Grafeas.V1.AttestationReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Jwt() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Jwt(Jwt other) : this() {
+      compactJwt_ = other.compactJwt_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Jwt Clone() {
+      return new Jwt(this);
+    }
+
+    /// <summary>Field number for the "compact_jwt" field.</summary>
+    public const int CompactJwtFieldNumber = 1;
+    private string compactJwt_ = "";
+    /// <summary>
+    /// The compact encoding of a JWS, which is always three base64 encoded strings
+    /// joined by periods. For details, see:
+    /// https://tools.ietf.org/html/rfc7515.html#section-3.1
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CompactJwt {
+      get { return compactJwt_; }
+      set {
+        compactJwt_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Jwt);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Jwt other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CompactJwt != other.CompactJwt) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CompactJwt.Length != 0) hash ^= CompactJwt.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CompactJwt.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(CompactJwt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CompactJwt.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(CompactJwt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CompactJwt.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CompactJwt);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Jwt other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CompactJwt.Length != 0) {
+        CompactJwt = other.CompactJwt;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            CompactJwt = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            CompactJwt = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// Occurrence that represents a single "attestation". The authenticity of an
   /// attestation can be verified using the attached signature. If the verifier
@@ -488,7 +685,7 @@ namespace Grafeas.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grafeas.V1.AttestationReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Grafeas.V1.AttestationReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -510,6 +707,7 @@ namespace Grafeas.V1 {
     public AttestationOccurrence(AttestationOccurrence other) : this() {
       serializedPayload_ = other.serializedPayload_;
       signatures_ = other.signatures_.Clone();
+      jwts_ = other.jwts_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -552,6 +750,28 @@ namespace Grafeas.V1 {
       get { return signatures_; }
     }
 
+    /// <summary>Field number for the "jwts" field.</summary>
+    public const int JwtsFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Grafeas.V1.Jwt> _repeated_jwts_codec
+        = pb::FieldCodec.ForMessage(26, global::Grafeas.V1.Jwt.Parser);
+    private readonly pbc::RepeatedField<global::Grafeas.V1.Jwt> jwts_ = new pbc::RepeatedField<global::Grafeas.V1.Jwt>();
+    /// <summary>
+    /// One or more JWTs encoding a self-contained attestation.
+    /// Each JWT encodes the payload that it verifies within the JWT itself.
+    /// Verifier implementation SHOULD ignore the `serialized_payload` field
+    /// when verifying these JWTs.
+    /// If only JWTs are present on this AttestationOccurrence, then the
+    /// `serialized_payload` SHOULD be left empty.
+    /// Each JWT SHOULD encode a claim specific to the `resource_uri` of this
+    /// Occurrence, but this is not validated by Grafeas metadata API
+    /// implementations.  The JWT itself is opaque to Grafeas.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Grafeas.V1.Jwt> Jwts {
+      get { return jwts_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -569,6 +789,7 @@ namespace Grafeas.V1 {
       }
       if (SerializedPayload != other.SerializedPayload) return false;
       if(!signatures_.Equals(other.signatures_)) return false;
+      if(!jwts_.Equals(other.jwts_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -578,6 +799,7 @@ namespace Grafeas.V1 {
       int hash = 1;
       if (SerializedPayload.Length != 0) hash ^= SerializedPayload.GetHashCode();
       hash ^= signatures_.GetHashCode();
+      hash ^= jwts_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -601,6 +823,7 @@ namespace Grafeas.V1 {
         output.WriteBytes(SerializedPayload);
       }
       signatures_.WriteTo(output, _repeated_signatures_codec);
+      jwts_.WriteTo(output, _repeated_jwts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -616,6 +839,7 @@ namespace Grafeas.V1 {
         output.WriteBytes(SerializedPayload);
       }
       signatures_.WriteTo(ref output, _repeated_signatures_codec);
+      jwts_.WriteTo(ref output, _repeated_jwts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -630,6 +854,7 @@ namespace Grafeas.V1 {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(SerializedPayload);
       }
       size += signatures_.CalculateSize(_repeated_signatures_codec);
+      size += jwts_.CalculateSize(_repeated_jwts_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -646,6 +871,7 @@ namespace Grafeas.V1 {
         SerializedPayload = other.SerializedPayload;
       }
       signatures_.Add(other.signatures_);
+      jwts_.Add(other.jwts_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -669,6 +895,10 @@ namespace Grafeas.V1 {
             signatures_.AddEntriesFrom(input, _repeated_signatures_codec);
             break;
           }
+          case 26: {
+            jwts_.AddEntriesFrom(input, _repeated_jwts_codec);
+            break;
+          }
         }
       }
     #endif
@@ -690,6 +920,10 @@ namespace Grafeas.V1 {
           }
           case 18: {
             signatures_.AddEntriesFrom(ref input, _repeated_signatures_codec);
+            break;
+          }
+          case 26: {
+            jwts_.AddEntriesFrom(ref input, _repeated_jwts_codec);
             break;
           }
         }

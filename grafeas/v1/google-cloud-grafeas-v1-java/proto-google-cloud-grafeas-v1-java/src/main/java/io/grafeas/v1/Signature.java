@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The identifier for the public key that verifies this signature.
    *   * The `public_key_id` is required.
-   *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+   *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
    *   * When possible, the `public_key_id` SHOULD be an immutable reference,
    *     such as a cryptographic digest.
    * Examples of valid `public_key_id`s:
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The identifier for the public key that verifies this signature.
    *   * The `public_key_id` is required.
-   *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+   *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
    *   * When possible, the `public_key_id` SHOULD be an immutable reference,
    *     such as a cryptographic digest.
    * Examples of valid `public_key_id`s:
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
-     *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+     *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
      * Examples of valid `public_key_id`s:
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
-     *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+     *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
      * Examples of valid `public_key_id`s:
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
-     *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+     *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
      * Examples of valid `public_key_id`s:
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
-     *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+     *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
      * Examples of valid `public_key_id`s:
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
-     *   * The `public_key_id` MUST be an RFC3986 conformant URI.
+     *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
      * Examples of valid `public_key_id`s:
