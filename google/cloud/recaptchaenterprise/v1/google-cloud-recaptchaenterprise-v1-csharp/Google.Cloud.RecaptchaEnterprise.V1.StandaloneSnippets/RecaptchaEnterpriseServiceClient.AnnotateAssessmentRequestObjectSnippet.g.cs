@@ -17,6 +17,7 @@
 namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
 {
     using Google.Cloud.RecaptchaEnterprise.V1;
+    using Google.Protobuf;
 
     public sealed partial class GeneratedRecaptchaEnterpriseServiceClientStandaloneSnippets
     {
@@ -38,6 +39,7 @@ namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
                 {
                     AnnotateAssessmentRequest.Types.Reason.Unspecified,
                 },
+                HashedAccountId = ByteString.Empty,
             };
             // Make the request
             AnnotateAssessmentResponse response = recaptchaEnterpriseServiceClient.AnnotateAssessment(request);

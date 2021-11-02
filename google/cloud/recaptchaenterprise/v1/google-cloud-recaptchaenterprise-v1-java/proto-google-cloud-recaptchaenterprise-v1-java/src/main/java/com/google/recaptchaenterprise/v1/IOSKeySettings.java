@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   private boolean allowAllBundleIds_;
   /**
    * <pre>
-   * If set to true, it means allowed_bundle_ids will not be enforced.
+   * If set to true, allowed_bundle_ids are not enforced.
    * </pre>
    *
    * <code>bool allow_all_bundle_ids = 2;</code>
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
     private boolean allowAllBundleIds_ ;
     /**
      * <pre>
-     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * If set to true, allowed_bundle_ids are not enforced.
      * </pre>
      *
      * <code>bool allow_all_bundle_ids = 2;</code>
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * If set to true, allowed_bundle_ids are not enforced.
      * </pre>
      *
      * <code>bool allow_all_bundle_ids = 2;</code>
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * If set to true, allowed_bundle_ids are not enforced.
      * </pre>
      *
      * <code>bool allow_all_bundle_ids = 2;</code>

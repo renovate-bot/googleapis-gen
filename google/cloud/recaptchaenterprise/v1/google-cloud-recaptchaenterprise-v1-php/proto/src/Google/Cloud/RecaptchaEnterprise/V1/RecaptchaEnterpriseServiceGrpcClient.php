@@ -174,4 +174,49 @@ class RecaptchaEnterpriseServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * List groups of related accounts.
+     * @param \Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListRelatedAccountGroups(\Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListRelatedAccountGroups',
+        $argument,
+        ['\Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the memberships in a group of related accounts.
+     * @param \Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupMembershipsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListRelatedAccountGroupMemberships(\Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupMembershipsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListRelatedAccountGroupMemberships',
+        $argument,
+        ['\Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupMembershipsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Search group memberships related to a given account.
+     * @param \Google\Cloud\RecaptchaEnterprise\V1\SearchRelatedAccountGroupMembershipsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SearchRelatedAccountGroupMemberships(\Google\Cloud\RecaptchaEnterprise\V1\SearchRelatedAccountGroupMembershipsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/SearchRelatedAccountGroupMemberships',
+        $argument,
+        ['\Google\Cloud\RecaptchaEnterprise\V1\SearchRelatedAccountGroupMembershipsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

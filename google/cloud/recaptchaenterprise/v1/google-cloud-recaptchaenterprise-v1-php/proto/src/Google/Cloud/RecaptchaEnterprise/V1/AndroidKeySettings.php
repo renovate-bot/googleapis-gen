@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AndroidKeySettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * If set to true, it means allowed_package_names will not be enforced.
+     * If set to true, allowed_package_names are not enforced.
      *
      * Generated from protobuf field <code>bool allow_all_package_names = 2;</code>
      */
@@ -36,7 +36,7 @@ class AndroidKeySettings extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $allow_all_package_names
-     *           If set to true, it means allowed_package_names will not be enforced.
+     *           If set to true, allowed_package_names are not enforced.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $allowed_package_names
      *           Android package names of apps allowed to use the key.
      *           Example: 'com.companyname.appname'
@@ -48,7 +48,7 @@ class AndroidKeySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, it means allowed_package_names will not be enforced.
+     * If set to true, allowed_package_names are not enforced.
      *
      * Generated from protobuf field <code>bool allow_all_package_names = 2;</code>
      * @return bool
@@ -59,7 +59,7 @@ class AndroidKeySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, it means allowed_package_names will not be enforced.
+     * If set to true, allowed_package_names are not enforced.
      *
      * Generated from protobuf field <code>bool allow_all_package_names = 2;</code>
      * @param bool $var

@@ -47,8 +47,14 @@ use Google\Cloud\RecaptchaEnterprise\V1\GetMetricsRequest;
 use Google\Cloud\RecaptchaEnterprise\V1\Key;
 use Google\Cloud\RecaptchaEnterprise\V1\ListKeysRequest;
 use Google\Cloud\RecaptchaEnterprise\V1\ListKeysResponse;
+use Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupMembershipsRequest;
+use Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupMembershipsResponse;
+use Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupsRequest;
+use Google\Cloud\RecaptchaEnterprise\V1\ListRelatedAccountGroupsResponse;
 use Google\Cloud\RecaptchaEnterprise\V1\Metrics;
 use Google\Cloud\RecaptchaEnterprise\V1\MigrateKeyRequest;
+use Google\Cloud\RecaptchaEnterprise\V1\SearchRelatedAccountGroupMembershipsRequest;
+use Google\Cloud\RecaptchaEnterprise\V1\SearchRelatedAccountGroupMembershipsResponse;
 use Google\Cloud\RecaptchaEnterprise\V1\UpdateKeyRequest;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -113,6 +119,8 @@ class RecaptchaEnterpriseServiceGapicClient
 
     private static $projectNameTemplate;
 
+    private static $relatedAccountGroupNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -170,6 +178,15 @@ class RecaptchaEnterpriseServiceGapicClient
         return self::$projectNameTemplate;
     }
 
+    private static function getRelatedAccountGroupNameTemplate()
+    {
+        if (self::$relatedAccountGroupNameTemplate == null) {
+            self::$relatedAccountGroupNameTemplate = new PathTemplate('projects/{project}/relatedaccountgroups/{relatedaccountgroup}');
+        }
+
+        return self::$relatedAccountGroupNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -178,6 +195,7 @@ class RecaptchaEnterpriseServiceGapicClient
                 'key' => self::getKeyNameTemplate(),
                 'metrics' => self::getMetricsNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
+                'relatedAccountGroup' => self::getRelatedAccountGroupNameTemplate(),
             ];
         }
 
@@ -251,6 +269,23 @@ class RecaptchaEnterpriseServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * related_account_group resource.
+     *
+     * @param string $project
+     * @param string $relatedaccountgroup
+     *
+     * @return string The formatted related_account_group resource.
+     */
+    public static function relatedAccountGroupName($project, $relatedaccountgroup)
+    {
+        return self::getRelatedAccountGroupNameTemplate()->render([
+            'project' => $project,
+            'relatedaccountgroup' => $relatedaccountgroup,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -258,6 +293,7 @@ class RecaptchaEnterpriseServiceGapicClient
      * - key: projects/{project}/keys/{key}
      * - metrics: projects/{project}/keys/{key}/metrics
      * - project: projects/{project}
+     * - relatedAccountGroup: projects/{project}/relatedaccountgroups/{relatedaccountgroup}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -382,6 +418,12 @@ class RecaptchaEnterpriseServiceGapicClient
      *     @type int[] $reasons
      *           Optional. Optional reasons for the annotation that will be assigned to the Event.
      *           For allowed values, use constants defined on {@see \Google\Cloud\RecaptchaEnterprise\V1\AnnotateAssessmentRequest\Reason}
+     *     @type string $hashedAccountId
+     *           Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     *           This is an alternative to setting the hashed_account_id in
+     *           CreateAssessment, for example when the account identifier is not yet known
+     *           in the initial request. It is recommended that the identifier is hashed
+     *           using hmac-sha256 with stable secret.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -405,6 +447,10 @@ class RecaptchaEnterpriseServiceGapicClient
 
         if (isset($optionalArgs['reasons'])) {
             $request->setReasons($optionalArgs['reasons']);
+        }
+
+        if (isset($optionalArgs['hashedAccountId'])) {
+            $request->setHashedAccountId($optionalArgs['hashedAccountId']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
@@ -693,6 +739,146 @@ class RecaptchaEnterpriseServiceGapicClient
     }
 
     /**
+     * Get the memberships in a group of related accounts.
+     *
+     * Sample code:
+     * ```
+     * $recaptchaEnterpriseServiceClient = new RecaptchaEnterpriseServiceClient();
+     * try {
+     *     $formattedParent = $recaptchaEnterpriseServiceClient->relatedAccountGroupName('[PROJECT]', '[RELATEDACCOUNTGROUP]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $recaptchaEnterpriseServiceClient->listRelatedAccountGroupMemberships($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $recaptchaEnterpriseServiceClient->listRelatedAccountGroupMemberships($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $recaptchaEnterpriseServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The resource name for the related account group in the format
+     *                             `projects/{project}/relatedaccountgroups/{relatedaccountgroup}`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listRelatedAccountGroupMemberships($parent, array $optionalArgs = [])
+    {
+        $request = new ListRelatedAccountGroupMembershipsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListRelatedAccountGroupMemberships', $optionalArgs, ListRelatedAccountGroupMembershipsResponse::class, $request);
+    }
+
+    /**
+     * List groups of related accounts.
+     *
+     * Sample code:
+     * ```
+     * $recaptchaEnterpriseServiceClient = new RecaptchaEnterpriseServiceClient();
+     * try {
+     *     $formattedParent = $recaptchaEnterpriseServiceClient->projectName('[PROJECT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $recaptchaEnterpriseServiceClient->listRelatedAccountGroups($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $recaptchaEnterpriseServiceClient->listRelatedAccountGroups($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $recaptchaEnterpriseServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The name of the project to list related account groups from, in the format
+     *                             "projects/{project}".
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listRelatedAccountGroups($parent, array $optionalArgs = [])
+    {
+        $request = new ListRelatedAccountGroupsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListRelatedAccountGroups', $optionalArgs, ListRelatedAccountGroupsResponse::class, $request);
+    }
+
+    /**
      * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
      * Once a key is migrated, it can be used from either product. SiteVerify
      * requests are billed as CreateAssessment calls. You must be
@@ -736,6 +922,84 @@ class RecaptchaEnterpriseServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('MigrateKey', Key::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Search group memberships related to a given account.
+     *
+     * Sample code:
+     * ```
+     * $recaptchaEnterpriseServiceClient = new RecaptchaEnterpriseServiceClient();
+     * try {
+     *     $formattedParent = $recaptchaEnterpriseServiceClient->relatedAccountGroupName('[PROJECT]', '[RELATEDACCOUNTGROUP]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $recaptchaEnterpriseServiceClient->searchRelatedAccountGroupMemberships($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $recaptchaEnterpriseServiceClient->searchRelatedAccountGroupMemberships($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $recaptchaEnterpriseServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The name of the project to search related account group memberships from,
+     *                             in the format "projects/{project}".
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $hashedAccountId
+     *           Optional. The unique stable hashed user identifier we should search connections to.
+     *           The identifier should correspond to a `hashed_account_id` provided in a
+     *           previous CreateAssessment or AnnotateAssessment call.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function searchRelatedAccountGroupMemberships($parent, array $optionalArgs = [])
+    {
+        $request = new SearchRelatedAccountGroupMembershipsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['hashedAccountId'])) {
+            $request->setHashedAccountId($optionalArgs['hashedAccountId']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('SearchRelatedAccountGroupMemberships', $optionalArgs, SearchRelatedAccountGroupMembershipsResponse::class, $request);
     }
 
     /**

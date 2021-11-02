@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
     TESTING_CHALLENGE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Challenge requests for this key will always return a nocaptcha, which
+     * Challenge requests for this key always return a nocaptcha, which
      * does not require a solution.
      * </pre>
      *
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
     NOCAPTCHA(1),
     /**
      * <pre>
-     * Challenge requests for this key will always return an unsolvable
+     * Challenge requests for this key always return an unsolvable
      * challenge.
      * </pre>
      *
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
     public static final int TESTING_CHALLENGE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Challenge requests for this key will always return a nocaptcha, which
+     * Challenge requests for this key always return a nocaptcha, which
      * does not require a solution.
      * </pre>
      *
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     public static final int NOCAPTCHA_VALUE = 1;
     /**
      * <pre>
-     * Challenge requests for this key will always return an unsolvable
+     * Challenge requests for this key always return an unsolvable
      * challenge.
      * </pre>
      *

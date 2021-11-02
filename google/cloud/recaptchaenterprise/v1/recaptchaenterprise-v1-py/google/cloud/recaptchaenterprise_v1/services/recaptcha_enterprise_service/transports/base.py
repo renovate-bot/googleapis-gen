@@ -161,6 +161,21 @@ class RecaptchaEnterpriseServiceTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.list_related_account_groups: gapic_v1.method.wrap_method(
+                self.list_related_account_groups,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.list_related_account_group_memberships: gapic_v1.method.wrap_method(
+                self.list_related_account_group_memberships,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.search_related_account_group_memberships: gapic_v1.method.wrap_method(
+                self.search_related_account_group_memberships,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     def close(self):
@@ -250,6 +265,33 @@ class RecaptchaEnterpriseServiceTransport(abc.ABC):
             Union[
                 recaptchaenterprise.Metrics,
                 Awaitable[recaptchaenterprise.Metrics]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_related_account_groups(self) -> Callable[
+            [recaptchaenterprise.ListRelatedAccountGroupsRequest],
+            Union[
+                recaptchaenterprise.ListRelatedAccountGroupsResponse,
+                Awaitable[recaptchaenterprise.ListRelatedAccountGroupsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_related_account_group_memberships(self) -> Callable[
+            [recaptchaenterprise.ListRelatedAccountGroupMembershipsRequest],
+            Union[
+                recaptchaenterprise.ListRelatedAccountGroupMembershipsResponse,
+                Awaitable[recaptchaenterprise.ListRelatedAccountGroupMembershipsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def search_related_account_group_memberships(self) -> Callable[
+            [recaptchaenterprise.SearchRelatedAccountGroupMembershipsRequest],
+            Union[
+                recaptchaenterprise.SearchRelatedAccountGroupMembershipsResponse,
+                Awaitable[recaptchaenterprise.SearchRelatedAccountGroupMembershipsResponse]
             ]]:
         raise NotImplementedError()
 

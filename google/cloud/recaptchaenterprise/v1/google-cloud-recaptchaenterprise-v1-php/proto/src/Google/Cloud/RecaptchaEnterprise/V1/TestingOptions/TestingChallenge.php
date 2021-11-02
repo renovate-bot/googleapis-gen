@@ -22,14 +22,14 @@ class TestingChallenge
      */
     const TESTING_CHALLENGE_UNSPECIFIED = 0;
     /**
-     * Challenge requests for this key will always return a nocaptcha, which
+     * Challenge requests for this key always return a nocaptcha, which
      * does not require a solution.
      *
      * Generated from protobuf enum <code>NOCAPTCHA = 1;</code>
      */
     const NOCAPTCHA = 1;
     /**
-     * Challenge requests for this key will always return an unsolvable
+     * Challenge requests for this key always return an unsolvable
      * challenge.
      *
      * Generated from protobuf enum <code>UNSOLVABLE_CHALLENGE = 2;</code>

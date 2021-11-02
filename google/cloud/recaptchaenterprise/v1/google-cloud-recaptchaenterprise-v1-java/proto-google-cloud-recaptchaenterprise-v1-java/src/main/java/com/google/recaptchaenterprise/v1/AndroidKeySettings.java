@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   private boolean allowAllPackageNames_;
   /**
    * <pre>
-   * If set to true, it means allowed_package_names will not be enforced.
+   * If set to true, allowed_package_names are not enforced.
    * </pre>
    *
    * <code>bool allow_all_package_names = 2;</code>
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
     private boolean allowAllPackageNames_ ;
     /**
      * <pre>
-     * If set to true, it means allowed_package_names will not be enforced.
+     * If set to true, allowed_package_names are not enforced.
      * </pre>
      *
      * <code>bool allow_all_package_names = 2;</code>
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, it means allowed_package_names will not be enforced.
+     * If set to true, allowed_package_names are not enforced.
      * </pre>
      *
      * <code>bool allow_all_package_names = 2;</code>
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, it means allowed_package_names will not be enforced.
+     * If set to true, allowed_package_names are not enforced.
      * </pre>
      *
      * <code>bool allow_all_package_names = 2;</code>

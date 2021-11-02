@@ -45,9 +45,24 @@
                                 "listKeys"
                             ]
                         },
+                        "ListRelatedAccountGroupMemberships": {
+                            "methods": [
+                                "listRelatedAccountGroupMemberships"
+                            ]
+                        },
+                        "ListRelatedAccountGroups": {
+                            "methods": [
+                                "listRelatedAccountGroups"
+                            ]
+                        },
                         "MigrateKey": {
                             "methods": [
                                 "migrateKey"
+                            ]
+                        },
+                        "SearchRelatedAccountGroupMemberships": {
+                            "methods": [
+                                "searchRelatedAccountGroupMemberships"
                             ]
                         },
                         "UpdateKey": {

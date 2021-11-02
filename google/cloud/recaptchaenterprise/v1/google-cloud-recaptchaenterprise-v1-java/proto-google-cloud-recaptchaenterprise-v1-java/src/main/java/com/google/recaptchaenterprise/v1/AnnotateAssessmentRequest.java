@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     annotation_ = 0;
     reasons_ = java.util.Collections.emptyList();
+    hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -89,6 +90,11 @@ private static final long serialVersionUID = 0L;
               reasons_.add(rawValue);
             }
             input.popLimit(oldLimit);
+            break;
+          }
+          case 34: {
+
+            hashedAccountId_ = input.readBytes();
             break;
           }
           default: {
@@ -714,6 +720,25 @@ private static final long serialVersionUID = 0L;
   }
   private int reasonsMemoizedSerializedSize;
 
+  public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 4;
+  private com.google.protobuf.ByteString hashedAccountId_;
+  /**
+   * <pre>
+   * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+   * This is an alternative to setting the hashed_account_id in
+   * CreateAssessment, for example when the account identifier is not yet known
+   * in the initial request. It is recommended that the identifier is hashed
+   * using hmac-sha256 with stable secret.
+   * </pre>
+   *
+   * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The hashedAccountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHashedAccountId() {
+    return hashedAccountId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -741,6 +766,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < reasons_.size(); i++) {
       output.writeEnumNoTag(reasons_.get(i));
+    }
+    if (!hashedAccountId_.isEmpty()) {
+      output.writeBytes(4, hashedAccountId_);
     }
     unknownFields.writeTo(output);
   }
@@ -770,6 +798,10 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }reasonsMemoizedSerializedSize = dataSize;
     }
+    if (!hashedAccountId_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(4, hashedAccountId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -789,6 +821,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (annotation_ != other.annotation_) return false;
     if (!reasons_.equals(other.reasons_)) return false;
+    if (!getHashedAccountId()
+        .equals(other.getHashedAccountId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -808,6 +842,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REASONS_FIELD_NUMBER;
       hash = (53 * hash) + reasons_.hashCode();
     }
+    hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getHashedAccountId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -951,6 +987,8 @@ private static final long serialVersionUID = 0L;
 
       reasons_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -985,6 +1023,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.reasons_ = reasons_;
+      result.hashedAccountId_ = hashedAccountId_;
       onBuilt();
       return result;
     }
@@ -1049,6 +1088,9 @@ private static final long serialVersionUID = 0L;
           reasons_.addAll(other.reasons_);
         }
         onChanged();
+      }
+      if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
+        setHashedAccountId(other.getHashedAccountId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1449,6 +1491,64 @@ private static final long serialVersionUID = 0L;
       for (int value : values) {
         reasons_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
+     * CreateAssessment, for example when the account identifier is not yet known
+     * in the initial request. It is recommended that the identifier is hashed
+     * using hmac-sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The hashedAccountId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHashedAccountId() {
+      return hashedAccountId_;
+    }
+    /**
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
+     * CreateAssessment, for example when the account identifier is not yet known
+     * in the initial request. It is recommended that the identifier is hashed
+     * using hmac-sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The hashedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHashedAccountId(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      hashedAccountId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
+     * CreateAssessment, for example when the account identifier is not yet known
+     * in the initial request. It is recommended that the identifier is hashed
+     * using hmac-sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHashedAccountId() {
+      
+      hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;
     }

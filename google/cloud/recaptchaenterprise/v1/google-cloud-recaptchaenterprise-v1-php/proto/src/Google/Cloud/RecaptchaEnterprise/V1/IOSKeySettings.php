@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class IOSKeySettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * If set to true, allowed_bundle_ids are not enforced.
      *
      * Generated from protobuf field <code>bool allow_all_bundle_ids = 2;</code>
      */
@@ -36,7 +36,7 @@ class IOSKeySettings extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $allow_all_bundle_ids
-     *           If set to true, it means allowed_bundle_ids will not be enforced.
+     *           If set to true, allowed_bundle_ids are not enforced.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $allowed_bundle_ids
      *           iOS bundle ids of apps allowed to use the key.
      *           Example: 'com.companyname.productname.appname'
@@ -48,7 +48,7 @@ class IOSKeySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * If set to true, allowed_bundle_ids are not enforced.
      *
      * Generated from protobuf field <code>bool allow_all_bundle_ids = 2;</code>
      * @return bool
@@ -59,7 +59,7 @@ class IOSKeySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * If set to true, allowed_bundle_ids are not enforced.
      *
      * Generated from protobuf field <code>bool allow_all_bundle_ids = 2;</code>
      * @param bool $var

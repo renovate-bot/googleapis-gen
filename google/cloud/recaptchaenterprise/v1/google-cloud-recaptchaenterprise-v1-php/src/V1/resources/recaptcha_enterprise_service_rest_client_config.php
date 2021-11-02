@@ -83,6 +83,28 @@ return [
                     ],
                 ],
             ],
+            'ListRelatedAccountGroupMemberships' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*/relatedaccountgroups/*}/memberships',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListRelatedAccountGroups' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{parent=projects/*}/relatedaccountgroups',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'MigrateKey' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{name=projects/*/keys/*}:migrate',
@@ -91,6 +113,18 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'SearchRelatedAccountGroupMemberships' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*}/relatedaccountgroupmemberships:search',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
