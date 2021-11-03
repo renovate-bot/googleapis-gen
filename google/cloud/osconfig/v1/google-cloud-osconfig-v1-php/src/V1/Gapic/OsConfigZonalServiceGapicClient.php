@@ -28,21 +28,39 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 
+use Google\ApiCore\LongRunning\OperationsClient;
+use Google\ApiCore\OperationResponse;
+
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\OsConfig\V1\CreateOSPolicyAssignmentRequest;
+use Google\Cloud\OsConfig\V1\DeleteOSPolicyAssignmentRequest;
 use Google\Cloud\OsConfig\V1\GetInventoryRequest;
+use Google\Cloud\OsConfig\V1\GetOSPolicyAssignmentReportRequest;
+use Google\Cloud\OsConfig\V1\GetOSPolicyAssignmentRequest;
 use Google\Cloud\OsConfig\V1\GetVulnerabilityReportRequest;
 use Google\Cloud\OsConfig\V1\Inventory;
 use Google\Cloud\OsConfig\V1\ListInventoriesRequest;
-
 use Google\Cloud\OsConfig\V1\ListInventoriesResponse;
+use Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentReportsRequest;
+use Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentReportsResponse;
+use Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentRevisionsRequest;
+use Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentRevisionsResponse;
+use Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentsRequest;
+use Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentsResponse;
+
 use Google\Cloud\OsConfig\V1\ListVulnerabilityReportsRequest;
 use Google\Cloud\OsConfig\V1\ListVulnerabilityReportsResponse;
+use Google\Cloud\OsConfig\V1\OSPolicyAssignment;
+use Google\Cloud\OsConfig\V1\OSPolicyAssignmentReport;
+use Google\Cloud\OsConfig\V1\UpdateOSPolicyAssignmentRequest;
 use Google\Cloud\OsConfig\V1\VulnerabilityReport;
+use Google\LongRunning\Operation;
+use Google\Protobuf\FieldMask;
 
 /**
  * Service Description: Zonal OS Config API
@@ -56,8 +74,35 @@ use Google\Cloud\OsConfig\V1\VulnerabilityReport;
  * ```
  * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
  * try {
- *     $formattedName = $osConfigZonalServiceClient->inventoryName('[PROJECT]', '[LOCATION]', '[INSTANCE]');
- *     $response = $osConfigZonalServiceClient->getInventory($formattedName);
+ *     $formattedParent = $osConfigZonalServiceClient->locationName('[PROJECT]', '[LOCATION]');
+ *     $osPolicyAssignment = new OSPolicyAssignment();
+ *     $osPolicyAssignmentId = 'os_policy_assignment_id';
+ *     $operationResponse = $osConfigZonalServiceClient->createOSPolicyAssignment($formattedParent, $osPolicyAssignment, $osPolicyAssignmentId);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         $result = $operationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $osConfigZonalServiceClient->createOSPolicyAssignment($formattedParent, $osPolicyAssignment, $osPolicyAssignmentId);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $osConfigZonalServiceClient->resumeOperation($operationName, 'createOSPolicyAssignment');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         $result = $newOperationResponse->getResult();
+ *     // doSomethingWith($result)
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $osConfigZonalServiceClient->close();
  * }
@@ -101,7 +146,15 @@ class OsConfigZonalServiceGapicClient
 
     private static $instanceNameTemplate;
 
+    private static $instanceOSPolicyAssignmentNameTemplate;
+
     private static $inventoryNameTemplate;
+
+    private static $locationNameTemplate;
+
+    private static $oSPolicyAssignmentNameTemplate;
+
+    private static $oSPolicyAssignmentReportNameTemplate;
 
     private static $projectLocationInstanceNameTemplate;
 
@@ -110,6 +163,8 @@ class OsConfigZonalServiceGapicClient
     private static $vulnerabilityReportNameTemplate;
 
     private static $pathTemplateMap;
+
+    private $operationsClient;
 
     private static function getClientDefaults()
     {
@@ -139,6 +194,15 @@ class OsConfigZonalServiceGapicClient
         return self::$instanceNameTemplate;
     }
 
+    private static function getInstanceOSPolicyAssignmentNameTemplate()
+    {
+        if (self::$instanceOSPolicyAssignmentNameTemplate == null) {
+            self::$instanceOSPolicyAssignmentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}');
+        }
+
+        return self::$instanceOSPolicyAssignmentNameTemplate;
+    }
+
     private static function getInventoryNameTemplate()
     {
         if (self::$inventoryNameTemplate == null) {
@@ -146,6 +210,33 @@ class OsConfigZonalServiceGapicClient
         }
 
         return self::$inventoryNameTemplate;
+    }
+
+    private static function getLocationNameTemplate()
+    {
+        if (self::$locationNameTemplate == null) {
+            self::$locationNameTemplate = new PathTemplate('projects/{project}/locations/{location}');
+        }
+
+        return self::$locationNameTemplate;
+    }
+
+    private static function getOSPolicyAssignmentNameTemplate()
+    {
+        if (self::$oSPolicyAssignmentNameTemplate == null) {
+            self::$oSPolicyAssignmentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}');
+        }
+
+        return self::$oSPolicyAssignmentNameTemplate;
+    }
+
+    private static function getOSPolicyAssignmentReportNameTemplate()
+    {
+        if (self::$oSPolicyAssignmentReportNameTemplate == null) {
+            self::$oSPolicyAssignmentReportNameTemplate = new PathTemplate('projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report');
+        }
+
+        return self::$oSPolicyAssignmentReportNameTemplate;
     }
 
     private static function getProjectLocationInstanceNameTemplate()
@@ -180,7 +271,11 @@ class OsConfigZonalServiceGapicClient
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'instance' => self::getInstanceNameTemplate(),
+                'instanceOSPolicyAssignment' => self::getInstanceOSPolicyAssignmentNameTemplate(),
                 'inventory' => self::getInventoryNameTemplate(),
+                'location' => self::getLocationNameTemplate(),
+                'oSPolicyAssignment' => self::getOSPolicyAssignmentNameTemplate(),
+                'oSPolicyAssignmentReport' => self::getOSPolicyAssignmentReportNameTemplate(),
                 'projectLocationInstance' => self::getProjectLocationInstanceNameTemplate(),
                 'projectZoneInstance' => self::getProjectZoneInstanceNameTemplate(),
                 'vulnerabilityReport' => self::getVulnerabilityReportNameTemplate(),
@@ -210,6 +305,27 @@ class OsConfigZonalServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * instance_os_policy_assignment resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $instance
+     * @param string $assignment
+     *
+     * @return string The formatted instance_os_policy_assignment resource.
+     */
+    public static function instanceOSPolicyAssignmentName($project, $location, $instance, $assignment)
+    {
+        return self::getInstanceOSPolicyAssignmentNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'instance' => $instance,
+            'assignment' => $assignment,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a inventory
      * resource.
      *
@@ -225,6 +341,63 @@ class OsConfigZonalServiceGapicClient
             'project' => $project,
             'location' => $location,
             'instance' => $instance,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a location
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     *
+     * @return string The formatted location resource.
+     */
+    public static function locationName($project, $location)
+    {
+        return self::getLocationNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * os_policy_assignment resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $osPolicyAssignment
+     *
+     * @return string The formatted os_policy_assignment resource.
+     */
+    public static function oSPolicyAssignmentName($project, $location, $osPolicyAssignment)
+    {
+        return self::getOSPolicyAssignmentNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'os_policy_assignment' => $osPolicyAssignment,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * os_policy_assignment_report resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $instance
+     * @param string $assignment
+     *
+     * @return string The formatted os_policy_assignment_report resource.
+     */
+    public static function oSPolicyAssignmentReportName($project, $location, $instance, $assignment)
+    {
+        return self::getOSPolicyAssignmentReportNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'instance' => $instance,
+            'assignment' => $assignment,
         ]);
     }
 
@@ -290,7 +463,11 @@ class OsConfigZonalServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - instance: projects/{project}/zones/{zone}/instances/{instance}
+     * - instanceOSPolicyAssignment: projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}
      * - inventory: projects/{project}/locations/{location}/instances/{instance}/inventory
+     * - location: projects/{project}/locations/{location}
+     * - oSPolicyAssignment: projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}
+     * - oSPolicyAssignmentReport: projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report
      * - projectLocationInstance: projects/{project}/locations/{location}/instances/{instance}
      * - projectZoneInstance: projects/{project}/zones/{zone}/instances/{instance}
      * - vulnerabilityReport: projects/{project}/locations/{location}/instances/{instance}/vulnerabilityReport
@@ -328,6 +505,35 @@ class OsConfigZonalServiceGapicClient
         }
 
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
+    }
+
+    /**
+     * Return an OperationsClient object with the same endpoint as $this.
+     *
+     * @return OperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -388,6 +594,168 @@ class OsConfigZonalServiceGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
+    }
+
+    /**
+     * Create an OS policy assignment.
+     *
+     * This method also creates the first revision of the OS policy assignment.
+     *
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     *
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedParent = $osConfigZonalServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $osPolicyAssignment = new OSPolicyAssignment();
+     *     $osPolicyAssignmentId = 'os_policy_assignment_id';
+     *     $operationResponse = $osConfigZonalServiceClient->createOSPolicyAssignment($formattedParent, $osPolicyAssignment, $osPolicyAssignmentId);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $osConfigZonalServiceClient->createOSPolicyAssignment($formattedParent, $osPolicyAssignment, $osPolicyAssignmentId);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $osConfigZonalServiceClient->resumeOperation($operationName, 'createOSPolicyAssignment');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string             $parent               Required. The parent resource name in the form:
+     *                                                 projects/{project}/locations/{location}
+     * @param OSPolicyAssignment $osPolicyAssignment   Required. The OS policy assignment to be created.
+     * @param string             $osPolicyAssignmentId Required. The logical name of the OS policy assignment in the project
+     *                                                 with the following restrictions:
+     *
+     *                                                 * Must contain only lowercase letters, numbers, and hyphens.
+     *                                                 * Must start with a letter.
+     *                                                 * Must be between 1-63 characters.
+     *                                                 * Must end with a number or a letter.
+     *                                                 * Must be unique within the project.
+     * @param array              $optionalArgs         {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function createOSPolicyAssignment($parent, $osPolicyAssignment, $osPolicyAssignmentId, array $optionalArgs = [])
+    {
+        $request = new CreateOSPolicyAssignmentRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setOsPolicyAssignment($osPolicyAssignment);
+        $request->setOsPolicyAssignmentId($osPolicyAssignmentId);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('CreateOSPolicyAssignment', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Delete the OS policy assignment.
+     *
+     * This method creates a new revision of the OS policy assignment.
+     *
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     *
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     *
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedName = $osConfigZonalServiceClient->oSPolicyAssignmentName('[PROJECT]', '[LOCATION]', '[OS_POLICY_ASSIGNMENT]');
+     *     $operationResponse = $osConfigZonalServiceClient->deleteOSPolicyAssignment($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $osConfigZonalServiceClient->deleteOSPolicyAssignment($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $osConfigZonalServiceClient->resumeOperation($operationName, 'deleteOSPolicyAssignment');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the OS policy assignment to be deleted
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deleteOSPolicyAssignment($name, array $optionalArgs = [])
+    {
+        $request = new DeleteOSPolicyAssignmentRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteOSPolicyAssignment', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -444,6 +812,102 @@ class OsConfigZonalServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetInventory', Inventory::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Retrieve an existing OS policy assignment.
+     *
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedName = $osConfigZonalServiceClient->oSPolicyAssignmentName('[PROJECT]', '[LOCATION]', '[OS_POLICY_ASSIGNMENT]');
+     *     $response = $osConfigZonalServiceClient->getOSPolicyAssignment($formattedName);
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of OS policy assignment.
+     *
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\OsConfig\V1\OSPolicyAssignment
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getOSPolicyAssignment($name, array $optionalArgs = [])
+    {
+        $request = new GetOSPolicyAssignmentRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetOSPolicyAssignment', OSPolicyAssignment::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedName = $osConfigZonalServiceClient->oSPolicyAssignmentReportName('[PROJECT]', '[LOCATION]', '[INSTANCE]', '[ASSIGNMENT]');
+     *     $response = $osConfigZonalServiceClient->getOSPolicyAssignmentReport($formattedName);
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. API resource name for OS policy assignment report.
+     *
+     *                             Format:
+     *                             `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
+     *
+     *                             For `{project}`, either `project-number` or `project-id` can be provided.
+     *                             For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
+     *                             can be provided.
+     *                             For `{assignment_id}`, the OSPolicyAssignment id must be provided.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\OsConfig\V1\OSPolicyAssignmentReport
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getOSPolicyAssignmentReport($name, array $optionalArgs = [])
+    {
+        $request = new GetOSPolicyAssignmentReportRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetOSPolicyAssignmentReport', OSPolicyAssignmentReport::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -583,6 +1047,243 @@ class OsConfigZonalServiceGapicClient
     }
 
     /**
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedParent = $osConfigZonalServiceClient->instanceOSPolicyAssignmentName('[PROJECT]', '[LOCATION]', '[INSTANCE]', '[ASSIGNMENT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $osConfigZonalServiceClient->listOSPolicyAssignmentReports($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $osConfigZonalServiceClient->listOSPolicyAssignmentReports($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent resource name.
+     *
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+     *
+     *                             For `{project}`, either `project-number` or `project-id` can be provided.
+     *                             For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
+     *                             provided. If '-' is provided, the response will include
+     *                             OSPolicyAssignmentReports for all instances in the project/location.
+     *                             For `{assignment}`, either `assignment-id` or `-` can be provided. If '-'
+     *                             is provided, the response will include OSPolicyAssignmentReports for all
+     *                             OSPolicyAssignments in the project/location.
+     *                             Either {instance} or {assignment} must be `-`.
+     *
+     *                             For example:
+     *                             `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
+     *                             returns all reports for the instance
+     *                             `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/{assignment-id}/reports`
+     *                             returns all the reports for the given assignment across all instances.
+     *                             `projects/{project}/locations/{location}/instances/-/osPolicyAssignments/-/reports`
+     *                             returns all the reports for all assignments across all instances.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $filter
+     *           If provided, this field specifies the criteria that must be met by the
+     *           `OSPolicyAssignmentReport` API resource that is included in the response.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listOSPolicyAssignmentReports($parent, array $optionalArgs = [])
+    {
+        $request = new ListOSPolicyAssignmentReportsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListOSPolicyAssignmentReports', $optionalArgs, ListOSPolicyAssignmentReportsResponse::class, $request);
+    }
+
+    /**
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedName = $osConfigZonalServiceClient->oSPolicyAssignmentName('[PROJECT]', '[LOCATION]', '[OS_POLICY_ASSIGNMENT]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $osConfigZonalServiceClient->listOSPolicyAssignmentRevisions($formattedName);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $osConfigZonalServiceClient->listOSPolicyAssignmentRevisions($formattedName);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the OS policy assignment to list revisions for.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listOSPolicyAssignmentRevisions($name, array $optionalArgs = [])
+    {
+        $request = new ListOSPolicyAssignmentRevisionsRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListOSPolicyAssignmentRevisions', $optionalArgs, ListOSPolicyAssignmentRevisionsResponse::class, $request);
+    }
+
+    /**
+     * List the OS policy assignments under the parent resource.
+     *
+     * For each OS policy assignment, the latest revision is returned.
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $formattedParent = $osConfigZonalServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $osConfigZonalServiceClient->listOSPolicyAssignments($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $osConfigZonalServiceClient->listOSPolicyAssignments($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent resource name.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listOSPolicyAssignments($parent, array $optionalArgs = [])
+    {
+        $request = new ListOSPolicyAssignmentsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListOSPolicyAssignments', $optionalArgs, ListOSPolicyAssignmentsResponse::class, $request);
+    }
+
+    /**
      * List vulnerability reports for all VM instances in the specified zone.
      *
      * Sample code:
@@ -660,5 +1361,85 @@ class OsConfigZonalServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListVulnerabilityReports', $optionalArgs, ListVulnerabilityReportsResponse::class, $request);
+    }
+
+    /**
+     * Update an existing OS policy assignment.
+     *
+     * This method creates a new revision of the OS policy assignment.
+     *
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     *
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     *
+     * Sample code:
+     * ```
+     * $osConfigZonalServiceClient = new OsConfigZonalServiceClient();
+     * try {
+     *     $osPolicyAssignment = new OSPolicyAssignment();
+     *     $operationResponse = $osConfigZonalServiceClient->updateOSPolicyAssignment($osPolicyAssignment);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $osConfigZonalServiceClient->updateOSPolicyAssignment($osPolicyAssignment);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $osConfigZonalServiceClient->resumeOperation($operationName, 'updateOSPolicyAssignment');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $osConfigZonalServiceClient->close();
+     * }
+     * ```
+     *
+     * @param OSPolicyAssignment $osPolicyAssignment Required. The updated OS policy assignment.
+     * @param array              $optionalArgs       {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           Optional. Field mask that controls which fields of the assignment should be
+     *           updated.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateOSPolicyAssignment($osPolicyAssignment, array $optionalArgs = [])
+    {
+        $request = new UpdateOSPolicyAssignmentRequest();
+        $requestParamHeaders = [];
+        $request->setOsPolicyAssignment($osPolicyAssignment);
+        $requestParamHeaders['os_policy_assignment.name'] = $osPolicyAssignment->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('UpdateOSPolicyAssignment', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 }

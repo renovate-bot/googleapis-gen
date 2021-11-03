@@ -36,6 +36,161 @@ class OsConfigZonalServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Create an OS policy assignment.
+     *
+     * This method also creates the first revision of the OS policy assignment.
+     *
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     *
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * @param \Google\Cloud\OsConfig\V1\CreateOSPolicyAssignmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateOSPolicyAssignment(\Google\Cloud\OsConfig\V1\CreateOSPolicyAssignmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/CreateOSPolicyAssignment',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update an existing OS policy assignment.
+     *
+     * This method creates a new revision of the OS policy assignment.
+     *
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     *
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * @param \Google\Cloud\OsConfig\V1\UpdateOSPolicyAssignmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateOSPolicyAssignment(\Google\Cloud\OsConfig\V1\UpdateOSPolicyAssignmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/UpdateOSPolicyAssignment',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Retrieve an existing OS policy assignment.
+     *
+     * This method always returns the latest revision. In order to retrieve a
+     * previous revision of the assignment, also provide the revision ID in the
+     * `name` parameter.
+     * @param \Google\Cloud\OsConfig\V1\GetOSPolicyAssignmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetOSPolicyAssignment(\Google\Cloud\OsConfig\V1\GetOSPolicyAssignmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/GetOSPolicyAssignment',
+        $argument,
+        ['\Google\Cloud\OsConfig\V1\OSPolicyAssignment', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the OS policy assignments under the parent resource.
+     *
+     * For each OS policy assignment, the latest revision is returned.
+     * @param \Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOSPolicyAssignments(\Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/ListOSPolicyAssignments',
+        $argument,
+        ['\Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the OS policy assignment revisions for a given OS policy assignment.
+     * @param \Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentRevisionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOSPolicyAssignmentRevisions(\Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentRevisionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/ListOSPolicyAssignmentRevisions',
+        $argument,
+        ['\Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentRevisionsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete the OS policy assignment.
+     *
+     * This method creates a new revision of the OS policy assignment.
+     *
+     * This method returns a long running operation (LRO) that contains the
+     * rollout details. The rollout can be cancelled by cancelling the LRO.
+     *
+     * If the LRO completes and is not cancelled, all revisions associated with
+     * the OS policy assignment are deleted.
+     *
+     * For more information, see [Method:
+     * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
+     * @param \Google\Cloud\OsConfig\V1\DeleteOSPolicyAssignmentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteOSPolicyAssignment(\Google\Cloud\OsConfig\V1\DeleteOSPolicyAssignmentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/DeleteOSPolicyAssignment',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the OS policy asssignment report for the specified Compute Engine VM
+     * instance.
+     * @param \Google\Cloud\OsConfig\V1\GetOSPolicyAssignmentReportRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetOSPolicyAssignmentReport(\Google\Cloud\OsConfig\V1\GetOSPolicyAssignmentReportRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/GetOSPolicyAssignmentReport',
+        $argument,
+        ['\Google\Cloud\OsConfig\V1\OSPolicyAssignmentReport', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List OS policy asssignment reports for all Compute Engine VM instances in
+     * the specified zone.
+     * @param \Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentReportsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOSPolicyAssignmentReports(\Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentReportsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.osconfig.v1.OsConfigZonalService/ListOSPolicyAssignmentReports',
+        $argument,
+        ['\Google\Cloud\OsConfig\V1\ListOSPolicyAssignmentReportsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Get inventory data for the specified VM instance. If the VM has no
      * associated inventory, the message `NOT_FOUND` is returned.
      * @param \Google\Cloud\OsConfig\V1\GetInventoryRequest $argument input argument

@@ -20,6 +20,27 @@ from .inventory import (
     ListInventoriesResponse,
     InventoryView,
 )
+from .os_policy import (
+    OSPolicy,
+)
+from .os_policy_assignment_reports import (
+    GetOSPolicyAssignmentReportRequest,
+    ListOSPolicyAssignmentReportsRequest,
+    ListOSPolicyAssignmentReportsResponse,
+    OSPolicyAssignmentReport,
+)
+from .os_policy_assignments import (
+    CreateOSPolicyAssignmentRequest,
+    DeleteOSPolicyAssignmentRequest,
+    GetOSPolicyAssignmentRequest,
+    ListOSPolicyAssignmentRevisionsRequest,
+    ListOSPolicyAssignmentRevisionsResponse,
+    ListOSPolicyAssignmentsRequest,
+    ListOSPolicyAssignmentsResponse,
+    OSPolicyAssignment,
+    OSPolicyAssignmentOperationMetadata,
+    UpdateOSPolicyAssignmentRequest,
+)
 from .osconfig_common import (
     FixedOrPercent,
 )
@@ -73,6 +94,21 @@ __all__ = (
     'ListInventoriesRequest',
     'ListInventoriesResponse',
     'InventoryView',
+    'OSPolicy',
+    'GetOSPolicyAssignmentReportRequest',
+    'ListOSPolicyAssignmentReportsRequest',
+    'ListOSPolicyAssignmentReportsResponse',
+    'OSPolicyAssignmentReport',
+    'CreateOSPolicyAssignmentRequest',
+    'DeleteOSPolicyAssignmentRequest',
+    'GetOSPolicyAssignmentRequest',
+    'ListOSPolicyAssignmentRevisionsRequest',
+    'ListOSPolicyAssignmentRevisionsResponse',
+    'ListOSPolicyAssignmentsRequest',
+    'ListOSPolicyAssignmentsResponse',
+    'OSPolicyAssignment',
+    'OSPolicyAssignmentOperationMetadata',
+    'UpdateOSPolicyAssignmentRequest',
     'FixedOrPercent',
     'CreatePatchDeploymentRequest',
     'DeletePatchDeploymentRequest',
