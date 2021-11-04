@@ -32,6 +32,8 @@ from google.cloud.functions_v1.types.functions import GetFunctionRequest
 from google.cloud.functions_v1.types.functions import HttpsTrigger
 from google.cloud.functions_v1.types.functions import ListFunctionsRequest
 from google.cloud.functions_v1.types.functions import ListFunctionsResponse
+from google.cloud.functions_v1.types.functions import SecretEnvVar
+from google.cloud.functions_v1.types.functions import SecretVolume
 from google.cloud.functions_v1.types.functions import SourceRepository
 from google.cloud.functions_v1.types.functions import UpdateFunctionRequest
 from google.cloud.functions_v1.types.functions import CloudFunctionStatus
@@ -55,6 +57,8 @@ __all__ = ('CloudFunctionsServiceClient',
     'HttpsTrigger',
     'ListFunctionsRequest',
     'ListFunctionsResponse',
+    'SecretEnvVar',
+    'SecretVolume',
     'SourceRepository',
     'UpdateFunctionRequest',
     'CloudFunctionStatus',

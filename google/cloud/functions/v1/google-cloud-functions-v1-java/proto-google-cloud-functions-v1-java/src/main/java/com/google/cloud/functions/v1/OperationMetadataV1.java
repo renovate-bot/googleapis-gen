@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     target_ = "";
     type_ = 0;
     buildId_ = "";
+    sourceToken_ = "";
+    buildName_ = "";
   }
 
   @java.lang.Override
@@ -102,6 +104,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             buildId_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sourceToken_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            buildName_ = s;
             break;
           }
           default: {
@@ -351,6 +365,104 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SOURCE_TOKEN_FIELD_NUMBER = 7;
+  private volatile java.lang.Object sourceToken_;
+  /**
+   * <pre>
+   * An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 7;</code>
+   * @return The sourceToken.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceToken() {
+    java.lang.Object ref = sourceToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * An identifier for Firebase function sources. Disclaimer: This field is only
+   * supported for Firebase function deployments.
+   * </pre>
+   *
+   * <code>string source_token = 7;</code>
+   * @return The bytes for sourceToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceTokenBytes() {
+    java.lang.Object ref = sourceToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BUILD_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object buildName_;
+  /**
+   * <pre>
+   * The Cloud Build Name of the function deployment.
+   * This field is only populated for Create and Update operations.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 8;</code>
+   * @return The buildName.
+   */
+  @java.lang.Override
+  public java.lang.String getBuildName() {
+    java.lang.Object ref = buildName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      buildName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The Cloud Build Name of the function deployment.
+   * This field is only populated for Create and Update operations.
+   * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+   * </pre>
+   *
+   * <code>string build_name = 8;</code>
+   * @return The bytes for buildName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBuildNameBytes() {
+    java.lang.Object ref = buildName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      buildName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -383,6 +495,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, buildId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sourceToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, buildName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -413,6 +531,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, buildId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sourceToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, buildName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -446,6 +570,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBuildId()
         .equals(other.getBuildId())) return false;
+    if (!getSourceToken()
+        .equals(other.getSourceToken())) return false;
+    if (!getBuildName()
+        .equals(other.getBuildName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -474,6 +602,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + BUILD_ID_FIELD_NUMBER;
     hash = (53 * hash) + getBuildId().hashCode();
+    hash = (37 * hash) + SOURCE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceToken().hashCode();
+    hash = (37 * hash) + BUILD_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBuildName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,6 +763,10 @@ private static final long serialVersionUID = 0L;
       }
       buildId_ = "";
 
+      sourceToken_ = "";
+
+      buildName_ = "";
+
       return this;
     }
 
@@ -671,6 +807,8 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.buildId_ = buildId_;
+      result.sourceToken_ = sourceToken_;
+      result.buildName_ = buildName_;
       onBuilt();
       return result;
     }
@@ -737,6 +875,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getBuildId().isEmpty()) {
         buildId_ = other.buildId_;
+        onChanged();
+      }
+      if (!other.getSourceToken().isEmpty()) {
+        sourceToken_ = other.sourceToken_;
+        onChanged();
+      }
+      if (!other.getBuildName().isEmpty()) {
+        buildName_ = other.buildName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1396,6 +1542,213 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       buildId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceToken_ = "";
+    /**
+     * <pre>
+     * An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 7;</code>
+     * @return The sourceToken.
+     */
+    public java.lang.String getSourceToken() {
+      java.lang.Object ref = sourceToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 7;</code>
+     * @return The bytes for sourceToken.
+     */
+    public com.google.protobuf.ByteString
+        getSourceTokenBytes() {
+      java.lang.Object ref = sourceToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 7;</code>
+     * @param value The sourceToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sourceToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceToken() {
+      
+      sourceToken_ = getDefaultInstance().getSourceToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An identifier for Firebase function sources. Disclaimer: This field is only
+     * supported for Firebase function deployments.
+     * </pre>
+     *
+     * <code>string source_token = 7;</code>
+     * @param value The bytes for sourceToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sourceToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object buildName_ = "";
+    /**
+     * <pre>
+     * The Cloud Build Name of the function deployment.
+     * This field is only populated for Create and Update operations.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 8;</code>
+     * @return The buildName.
+     */
+    public java.lang.String getBuildName() {
+      java.lang.Object ref = buildName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        buildName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The Cloud Build Name of the function deployment.
+     * This field is only populated for Create and Update operations.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 8;</code>
+     * @return The bytes for buildName.
+     */
+    public com.google.protobuf.ByteString
+        getBuildNameBytes() {
+      java.lang.Object ref = buildName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        buildName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The Cloud Build Name of the function deployment.
+     * This field is only populated for Create and Update operations.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 8;</code>
+     * @param value The buildName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      buildName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The Cloud Build Name of the function deployment.
+     * This field is only populated for Create and Update operations.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBuildName() {
+      
+      buildName_ = getDefaultInstance().getBuildName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The Cloud Build Name of the function deployment.
+     * This field is only populated for Create and Update operations.
+     * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/builds/&lt;build-id&gt;`.
+     * </pre>
+     *
+     * <code>string build_name = 8;</code>
+     * @param value The bytes for buildName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuildNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      buildName_ = value;
       onChanged();
       return this;
     }

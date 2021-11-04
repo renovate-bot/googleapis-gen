@@ -55,6 +55,10 @@ class CloudFunctionsServiceAsyncClient:
 
     cloud_function_path = staticmethod(CloudFunctionsServiceClient.cloud_function_path)
     parse_cloud_function_path = staticmethod(CloudFunctionsServiceClient.parse_cloud_function_path)
+    crypto_key_path = staticmethod(CloudFunctionsServiceClient.crypto_key_path)
+    parse_crypto_key_path = staticmethod(CloudFunctionsServiceClient.parse_crypto_key_path)
+    repository_path = staticmethod(CloudFunctionsServiceClient.repository_path)
+    parse_repository_path = staticmethod(CloudFunctionsServiceClient.parse_repository_path)
     common_billing_account_path = staticmethod(CloudFunctionsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudFunctionsServiceClient.parse_common_billing_account_path)
     common_folder_path = staticmethod(CloudFunctionsServiceClient.common_folder_path)
@@ -264,6 +268,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 contains user computation executed in
                 response to an event. It encapsulate
                 function and triggers configurations.
+                Next tag: 36
 
         """
         # Create or coerce a protobuf request object.
@@ -357,7 +362,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
                 The result type for the operation will be :class:`google.cloud.functions_v1.types.CloudFunction` Describes a Cloud Function that contains user computation executed in
                    response to an event. It encapsulate function and
-                   triggers configurations.
+                   triggers configurations. Next tag: 36
 
         """
         # Create or coerce a protobuf request object.
@@ -445,7 +450,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
                 The result type for the operation will be :class:`google.cloud.functions_v1.types.CloudFunction` Describes a Cloud Function that contains user computation executed in
                    response to an event. It encapsulate function and
-                   triggers configurations.
+                   triggers configurations. Next tag: 36
 
         """
         # Create or coerce a protobuf request object.

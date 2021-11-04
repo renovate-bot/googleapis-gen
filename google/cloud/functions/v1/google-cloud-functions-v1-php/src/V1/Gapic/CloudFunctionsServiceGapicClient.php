@@ -114,7 +114,11 @@ class CloudFunctionsServiceGapicClient
 
     private static $cloudFunctionNameTemplate;
 
+    private static $cryptoKeyNameTemplate;
+
     private static $locationNameTemplate;
+
+    private static $repositoryNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -148,6 +152,15 @@ class CloudFunctionsServiceGapicClient
         return self::$cloudFunctionNameTemplate;
     }
 
+    private static function getCryptoKeyNameTemplate()
+    {
+        if (self::$cryptoKeyNameTemplate == null) {
+            self::$cryptoKeyNameTemplate = new PathTemplate('projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}');
+        }
+
+        return self::$cryptoKeyNameTemplate;
+    }
+
     private static function getLocationNameTemplate()
     {
         if (self::$locationNameTemplate == null) {
@@ -157,12 +170,23 @@ class CloudFunctionsServiceGapicClient
         return self::$locationNameTemplate;
     }
 
+    private static function getRepositoryNameTemplate()
+    {
+        if (self::$repositoryNameTemplate == null) {
+            self::$repositoryNameTemplate = new PathTemplate('projects/{project}/locations/{location}/repositories/{repository}');
+        }
+
+        return self::$repositoryNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'cloudFunction' => self::getCloudFunctionNameTemplate(),
+                'cryptoKey' => self::getCryptoKeyNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
+                'repository' => self::getRepositoryNameTemplate(),
             ];
         }
 
@@ -189,6 +213,27 @@ class CloudFunctionsServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a crypto_key
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $keyRing
+     * @param string $cryptoKey
+     *
+     * @return string The formatted crypto_key resource.
+     */
+    public static function cryptoKeyName($project, $location, $keyRing, $cryptoKey)
+    {
+        return self::getCryptoKeyNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'key_ring' => $keyRing,
+            'crypto_key' => $cryptoKey,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a location
      * resource.
      *
@@ -206,11 +251,32 @@ class CloudFunctionsServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a repository
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $repository
+     *
+     * @return string The formatted repository resource.
+     */
+    public static function repositoryName($project, $location, $repository)
+    {
+        return self::getRepositoryNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'repository' => $repository,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - cloudFunction: projects/{project}/locations/{location}/functions/{function}
+     * - cryptoKey: projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}
      * - location: projects/{project}/locations/{location}
+     * - repository: projects/{project}/locations/{location}/repositories/{repository}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

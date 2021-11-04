@@ -58,6 +58,14 @@ class OperationMetadataV1(proto.Message):
             The Cloud Build ID of the function created or
             updated by an API call. This field is only
             populated for Create and Update operations.
+        source_token (str):
+            An identifier for Firebase function sources.
+            Disclaimer: This field is only supported for
+            Firebase function deployments.
+        build_name (str):
+            The Cloud Build Name of the function deployment. This field
+            is only populated for Create and Update operations.
+            ``projects/<project-number>/locations/<region>/builds/<build-id>``.
     """
 
     target = proto.Field(
@@ -86,6 +94,14 @@ class OperationMetadataV1(proto.Message):
     build_id = proto.Field(
         proto.STRING,
         number=6,
+    )
+    source_token = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    build_name = proto.Field(
+        proto.STRING,
+        number=8,
     )
 
 
