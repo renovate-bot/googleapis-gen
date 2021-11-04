@@ -62,6 +62,8 @@ module Google
               # - `response`: An [Empty
               #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
               rpc :LoadVersion, ::Google::Cloud::Dialogflow::CX::V3beta1::LoadVersionRequest, ::Google::Longrunning::Operation
+              # Compares the specified base version with target version.
+              rpc :CompareVersions, ::Google::Cloud::Dialogflow::CX::V3beta1::CompareVersionsRequest, ::Google::Cloud::Dialogflow::CX::V3beta1::CompareVersionsResponse
             end
 
             Stub = Service.rpc_stub_class

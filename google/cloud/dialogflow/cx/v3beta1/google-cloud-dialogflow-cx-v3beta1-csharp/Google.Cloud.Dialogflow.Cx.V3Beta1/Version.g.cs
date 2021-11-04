@@ -68,45 +68,58 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             "NwoEbmFtZRgBIAEoCUIp4EEC+kEjCiFkaWFsb2dmbG93Lmdvb2dsZWFwaXMu",
             "Y29tL1ZlcnNpb24idQoSTG9hZFZlcnNpb25SZXF1ZXN0EjcKBG5hbWUYASAB",
             "KAlCKeBBAvpBIwohZGlhbG9nZmxvdy5nb29nbGVhcGlzLmNvbS9WZXJzaW9u",
-            "EiYKHmFsbG93X292ZXJyaWRlX2FnZW50X3Jlc291cmNlcxgCIAEoCDK5CwoI",
-            "VmVyc2lvbnMS1gEKDExpc3RWZXJzaW9ucxI3Lmdvb2dsZS5jbG91ZC5kaWFs",
-            "b2dmbG93LmN4LnYzYmV0YTEuTGlzdFZlcnNpb25zUmVxdWVzdBo4Lmdvb2ds",
-            "ZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTGlzdFZlcnNpb25zUmVz",
-            "cG9uc2UiU4LT5JMCRBJCL3YzYmV0YTEve3BhcmVudD1wcm9qZWN0cy8qL2xv",
-            "Y2F0aW9ucy8qL2FnZW50cy8qL2Zsb3dzLyp9L3ZlcnNpb25z2kEGcGFyZW50",
-            "EsMBCgpHZXRWZXJzaW9uEjUuZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gu",
-            "djNiZXRhMS5HZXRWZXJzaW9uUmVxdWVzdBorLmdvb2dsZS5jbG91ZC5kaWFs",
-            "b2dmbG93LmN4LnYzYmV0YTEuVmVyc2lvbiJRgtPkkwJEEkIvdjNiZXRhMS97",
-            "bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8qL2Zsb3dzLyov",
-            "dmVyc2lvbnMvKn3aQQRuYW1lEvsBCg1DcmVhdGVWZXJzaW9uEjguZ29vZ2xl",
-            "LmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5DcmVhdGVWZXJzaW9uUmVx",
-            "dWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24ikAGC0+STAk0i",
-            "Qi92M2JldGExL3twYXJlbnQ9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9hZ2Vu",
-            "dHMvKi9mbG93cy8qfS92ZXJzaW9uczoHdmVyc2lvbtpBDnBhcmVudCx2ZXJz",
-            "aW9uykEpCgdWZXJzaW9uEh5DcmVhdGVWZXJzaW9uT3BlcmF0aW9uTWV0YWRh",
-            "dGES6QEKDVVwZGF0ZVZlcnNpb24SOC5nb29nbGUuY2xvdWQuZGlhbG9nZmxv",
-            "dy5jeC52M2JldGExLlVwZGF0ZVZlcnNpb25SZXF1ZXN0GisuZ29vZ2xlLmNs",
-            "b3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5WZXJzaW9uInGC0+STAlUySi92",
-            "M2JldGExL3t2ZXJzaW9uLm5hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9h",
-            "Z2VudHMvKi9mbG93cy8qL3ZlcnNpb25zLyp9Ogd2ZXJzaW9u2kETdmVyc2lv",
-            "bix1cGRhdGVfbWFzaxK0AQoNRGVsZXRlVmVyc2lvbhI4Lmdvb2dsZS5jbG91",
-            "ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuRGVsZXRlVmVyc2lvblJlcXVlc3Qa",
-            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiUYLT5JMCRCpCL3YzYmV0YTEve25h",
-            "bWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9hZ2VudHMvKi9mbG93cy8qL3Zl",
-            "cnNpb25zLyp92kEEbmFtZRLyAQoLTG9hZFZlcnNpb24SNi5nb29nbGUuY2xv",
-            "dWQuZGlhbG9nZmxvdy5jeC52M2JldGExLkxvYWRWZXJzaW9uUmVxdWVzdBod",
-            "Lmdvb2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24iiwGC0+STAkwiRy92M2Jl",
-            "dGExL3tuYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyovYWdlbnRzLyovZmxv",
-            "d3MvKi92ZXJzaW9ucy8qfTpsb2FkOgEq2kEEbmFtZcpBLwoVZ29vZ2xlLnBy",
-            "b3RvYnVmLkVtcHR5EhZnb29nbGUucHJvdG9idWYuU3RydWN0GnjKQRlkaWFs",
-            "b2dmbG93Lmdvb2dsZWFwaXMuY29t0kFZaHR0cHM6Ly93d3cuZ29vZ2xlYXBp",
-            "cy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSxodHRwczovL3d3dy5nb29nbGVh",
-            "cGlzLmNvbS9hdXRoL2RpYWxvZ2Zsb3dC1AEKJmNvbS5nb29nbGUuY2xvdWQu",
-            "ZGlhbG9nZmxvdy5jeC52M2JldGExQgxWZXJzaW9uUHJvdG9QAVpEZ29vZ2xl",
-            "LmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9kaWFsb2dm",
-            "bG93L2N4L3YzYmV0YTE7Y3j4AQGiAgJERqoCIkdvb2dsZS5DbG91ZC5EaWFs",
-            "b2dmbG93LkN4LlYzQmV0YTHqAiZHb29nbGU6OkNsb3VkOjpEaWFsb2dmbG93",
-            "OjpDWDo6VjNiZXRhMWIGcHJvdG8z"));
+            "EiYKHmFsbG93X292ZXJyaWRlX2FnZW50X3Jlc291cmNlcxgCIAEoCCKzAQoW",
+            "Q29tcGFyZVZlcnNpb25zUmVxdWVzdBI/CgxiYXNlX3ZlcnNpb24YASABKAlC",
+            "KeBBAvpBIwohZGlhbG9nZmxvdy5nb29nbGVhcGlzLmNvbS9WZXJzaW9uEkEK",
+            "DnRhcmdldF92ZXJzaW9uGAIgASgJQingQQL6QSMKIWRpYWxvZ2Zsb3cuZ29v",
+            "Z2xlYXBpcy5jb20vVmVyc2lvbhIVCg1sYW5ndWFnZV9jb2RlGAMgASgJIpMB",
+            "ChdDb21wYXJlVmVyc2lvbnNSZXNwb25zZRIhChliYXNlX3ZlcnNpb25fY29u",
+            "dGVudF9qc29uGAEgASgJEiMKG3RhcmdldF92ZXJzaW9uX2NvbnRlbnRfanNv",
+            "bhgCIAEoCRIwCgxjb21wYXJlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuVGltZXN0YW1wMrwNCghWZXJzaW9ucxLWAQoMTGlzdFZlcnNpb25zEjcu",
+            "Z29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5MaXN0VmVyc2lv",
+            "bnNSZXF1ZXN0GjguZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRh",
+            "MS5MaXN0VmVyc2lvbnNSZXNwb25zZSJTgtPkkwJEEkIvdjNiZXRhMS97cGFy",
+            "ZW50PXByb2plY3RzLyovbG9jYXRpb25zLyovYWdlbnRzLyovZmxvd3MvKn0v",
+            "dmVyc2lvbnPaQQZwYXJlbnQSwwEKCkdldFZlcnNpb24SNS5nb29nbGUuY2xv",
+            "dWQuZGlhbG9nZmxvdy5jeC52M2JldGExLkdldFZlcnNpb25SZXF1ZXN0Gisu",
+            "Z29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5WZXJzaW9uIlGC",
+            "0+STAkQSQi92M2JldGExL3tuYW1lPXByb2plY3RzLyovbG9jYXRpb25zLyov",
+            "YWdlbnRzLyovZmxvd3MvKi92ZXJzaW9ucy8qfdpBBG5hbWUS+wEKDUNyZWF0",
+            "ZVZlcnNpb24SOC5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGEx",
+            "LkNyZWF0ZVZlcnNpb25SZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9w",
+            "ZXJhdGlvbiKQAYLT5JMCTSJCL3YzYmV0YTEve3BhcmVudD1wcm9qZWN0cy8q",
+            "L2xvY2F0aW9ucy8qL2FnZW50cy8qL2Zsb3dzLyp9L3ZlcnNpb25zOgd2ZXJz",
+            "aW9u2kEOcGFyZW50LHZlcnNpb27KQSkKB1ZlcnNpb24SHkNyZWF0ZVZlcnNp",
+            "b25PcGVyYXRpb25NZXRhZGF0YRLpAQoNVXBkYXRlVmVyc2lvbhI4Lmdvb2ds",
+            "ZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuVXBkYXRlVmVyc2lvblJl",
+            "cXVlc3QaKy5nb29nbGUuY2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGExLlZl",
+            "cnNpb24icYLT5JMCVTJKL3YzYmV0YTEve3ZlcnNpb24ubmFtZT1wcm9qZWN0",
+            "cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8qL2Zsb3dzLyovdmVyc2lvbnMvKn06",
+            "B3ZlcnNpb27aQRN2ZXJzaW9uLHVwZGF0ZV9tYXNrErQBCg1EZWxldGVWZXJz",
+            "aW9uEjguZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5EZWxl",
+            "dGVWZXJzaW9uUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSJRgtPk",
+            "kwJEKkIvdjNiZXRhMS97bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2Fn",
+            "ZW50cy8qL2Zsb3dzLyovdmVyc2lvbnMvKn3aQQRuYW1lEvIBCgtMb2FkVmVy",
+            "c2lvbhI2Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTG9h",
+            "ZFZlcnNpb25SZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlv",
+            "biKLAYLT5JMCTCJHL3YzYmV0YTEve25hbWU9cHJvamVjdHMvKi9sb2NhdGlv",
+            "bnMvKi9hZ2VudHMvKi9mbG93cy8qL3ZlcnNpb25zLyp9OmxvYWQ6ASraQQRu",
+            "YW1lykEvChVnb29nbGUucHJvdG9idWYuRW1wdHkSFmdvb2dsZS5wcm90b2J1",
+            "Zi5TdHJ1Y3QSgAIKD0NvbXBhcmVWZXJzaW9ucxI6Lmdvb2dsZS5jbG91ZC5k",
+            "aWFsb2dmbG93LmN4LnYzYmV0YTEuQ29tcGFyZVZlcnNpb25zUmVxdWVzdBo7",
+            "Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuQ29tcGFyZVZl",
+            "cnNpb25zUmVzcG9uc2UidILT5JMCXyJaL3YzYmV0YTEve2Jhc2VfdmVyc2lv",
+            "bj1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2FnZW50cy8qL2Zsb3dzLyovdmVy",
+            "c2lvbnMvKn06Y29tcGFyZVZlcnNpb25zOgEq2kEMYmFzZV92ZXJzaW9uGnjK",
+            "QRlkaWFsb2dmbG93Lmdvb2dsZWFwaXMuY29t0kFZaHR0cHM6Ly93d3cuZ29v",
+            "Z2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSxodHRwczovL3d3dy5n",
+            "b29nbGVhcGlzLmNvbS9hdXRoL2RpYWxvZ2Zsb3dC1AEKJmNvbS5nb29nbGUu",
+            "Y2xvdWQuZGlhbG9nZmxvdy5jeC52M2JldGExQgxWZXJzaW9uUHJvdG9QAVpE",
+            "Z29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9k",
+            "aWFsb2dmbG93L2N4L3YzYmV0YTE7Y3j4AQGiAgJERqoCIkdvb2dsZS5DbG91",
+            "ZC5EaWFsb2dmbG93LkN4LlYzQmV0YTHqAiZHb29nbGU6OkNsb3VkOjpEaWFs",
+            "b2dmbG93OjpDWDo6VjNiZXRhMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.EntityTypeReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.FlowReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.IntentReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.PageReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.TransitionRouteGroupReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.WebhookReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -118,7 +131,9 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.CreateVersionRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.CreateVersionRequest.Parser, new[]{ "Parent", "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.UpdateVersionRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.UpdateVersionRequest.Parser, new[]{ "Version", "UpdateMask" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.DeleteVersionRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.DeleteVersionRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.LoadVersionRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.LoadVersionRequest.Parser, new[]{ "Name", "AllowOverrideAgentResources" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.LoadVersionRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.LoadVersionRequest.Parser, new[]{ "Name", "AllowOverrideAgentResources" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.CompareVersionsRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.CompareVersionsRequest.Parser, new[]{ "BaseVersion", "TargetVersion", "LanguageCode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.CompareVersionsResponse), global::Google.Cloud.Dialogflow.Cx.V3Beta1.CompareVersionsResponse.Parser, new[]{ "BaseVersionContentJson", "TargetVersionContentJson", "CompareTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2400,6 +2415,578 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
           }
           case 16: {
             AllowOverrideAgentResources = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The request message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3beta1.Versions.CompareVersions].
+  /// </summary>
+  public sealed partial class CompareVersionsRequest : pb::IMessage<CompareVersionsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CompareVersionsRequest> _parser = new pb::MessageParser<CompareVersionsRequest>(() => new CompareVersionsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CompareVersionsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.VersionReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CompareVersionsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CompareVersionsRequest(CompareVersionsRequest other) : this() {
+      baseVersion_ = other.baseVersion_;
+      targetVersion_ = other.targetVersion_;
+      languageCode_ = other.languageCode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CompareVersionsRequest Clone() {
+      return new CompareVersionsRequest(this);
+    }
+
+    /// <summary>Field number for the "base_version" field.</summary>
+    public const int BaseVersionFieldNumber = 1;
+    private string baseVersion_ = "";
+    /// <summary>
+    /// Required. Name of the base flow version to compare with the target version. Use
+    /// version ID `0` to indicate the draft version of the specified flow.
+    ///
+    /// Format: `projects/&lt;Project ID>/locations/&lt;Location ID>/agents/
+    /// &lt;Agent ID>/flows/&lt;Flow ID>/versions/&lt;Version ID>`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BaseVersion {
+      get { return baseVersion_; }
+      set {
+        baseVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_version" field.</summary>
+    public const int TargetVersionFieldNumber = 2;
+    private string targetVersion_ = "";
+    /// <summary>
+    /// Required. Name of the target flow version to compare with the
+    /// base version. Use version ID `0` to indicate the draft version of the
+    /// specified flow. Format: `projects/&lt;Project ID>/locations/&lt;Location
+    /// ID>/agents/&lt;Agent ID>/flows/&lt;Flow ID>/versions/&lt;Version ID>`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TargetVersion {
+      get { return targetVersion_; }
+      set {
+        targetVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "language_code" field.</summary>
+    public const int LanguageCodeFieldNumber = 3;
+    private string languageCode_ = "";
+    /// <summary>
+    /// The language to compare the flow versions for.
+    ///
+    /// If not specified, the agent's default language is used.
+    /// [Many
+    /// languages](https://cloud.google.com/dialogflow/docs/reference/language) are
+    /// supported. Note: languages must be enabled in the agent before they can be
+    /// used.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LanguageCode {
+      get { return languageCode_; }
+      set {
+        languageCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CompareVersionsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CompareVersionsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BaseVersion != other.BaseVersion) return false;
+      if (TargetVersion != other.TargetVersion) return false;
+      if (LanguageCode != other.LanguageCode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BaseVersion.Length != 0) hash ^= BaseVersion.GetHashCode();
+      if (TargetVersion.Length != 0) hash ^= TargetVersion.GetHashCode();
+      if (LanguageCode.Length != 0) hash ^= LanguageCode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BaseVersion.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BaseVersion);
+      }
+      if (TargetVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TargetVersion);
+      }
+      if (LanguageCode.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(LanguageCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BaseVersion.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BaseVersion);
+      }
+      if (TargetVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TargetVersion);
+      }
+      if (LanguageCode.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(LanguageCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BaseVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BaseVersion);
+      }
+      if (TargetVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetVersion);
+      }
+      if (LanguageCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LanguageCode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CompareVersionsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BaseVersion.Length != 0) {
+        BaseVersion = other.BaseVersion;
+      }
+      if (other.TargetVersion.Length != 0) {
+        TargetVersion = other.TargetVersion;
+      }
+      if (other.LanguageCode.Length != 0) {
+        LanguageCode = other.LanguageCode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            BaseVersion = input.ReadString();
+            break;
+          }
+          case 18: {
+            TargetVersion = input.ReadString();
+            break;
+          }
+          case 26: {
+            LanguageCode = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            BaseVersion = input.ReadString();
+            break;
+          }
+          case 18: {
+            TargetVersion = input.ReadString();
+            break;
+          }
+          case 26: {
+            LanguageCode = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The response message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3beta1.Versions.CompareVersions].
+  /// </summary>
+  public sealed partial class CompareVersionsResponse : pb::IMessage<CompareVersionsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CompareVersionsResponse> _parser = new pb::MessageParser<CompareVersionsResponse>(() => new CompareVersionsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CompareVersionsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.VersionReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CompareVersionsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CompareVersionsResponse(CompareVersionsResponse other) : this() {
+      baseVersionContentJson_ = other.baseVersionContentJson_;
+      targetVersionContentJson_ = other.targetVersionContentJson_;
+      compareTime_ = other.compareTime_ != null ? other.compareTime_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CompareVersionsResponse Clone() {
+      return new CompareVersionsResponse(this);
+    }
+
+    /// <summary>Field number for the "base_version_content_json" field.</summary>
+    public const int BaseVersionContentJsonFieldNumber = 1;
+    private string baseVersionContentJson_ = "";
+    /// <summary>
+    /// JSON representation of the base version content.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BaseVersionContentJson {
+      get { return baseVersionContentJson_; }
+      set {
+        baseVersionContentJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_version_content_json" field.</summary>
+    public const int TargetVersionContentJsonFieldNumber = 2;
+    private string targetVersionContentJson_ = "";
+    /// <summary>
+    /// JSON representation of the target version content.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TargetVersionContentJson {
+      get { return targetVersionContentJson_; }
+      set {
+        targetVersionContentJson_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "compare_time" field.</summary>
+    public const int CompareTimeFieldNumber = 3;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp compareTime_;
+    /// <summary>
+    /// The timestamp when the two version compares.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CompareTime {
+      get { return compareTime_; }
+      set {
+        compareTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CompareVersionsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CompareVersionsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BaseVersionContentJson != other.BaseVersionContentJson) return false;
+      if (TargetVersionContentJson != other.TargetVersionContentJson) return false;
+      if (!object.Equals(CompareTime, other.CompareTime)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BaseVersionContentJson.Length != 0) hash ^= BaseVersionContentJson.GetHashCode();
+      if (TargetVersionContentJson.Length != 0) hash ^= TargetVersionContentJson.GetHashCode();
+      if (compareTime_ != null) hash ^= CompareTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BaseVersionContentJson.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BaseVersionContentJson);
+      }
+      if (TargetVersionContentJson.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TargetVersionContentJson);
+      }
+      if (compareTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(CompareTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BaseVersionContentJson.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BaseVersionContentJson);
+      }
+      if (TargetVersionContentJson.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TargetVersionContentJson);
+      }
+      if (compareTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(CompareTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BaseVersionContentJson.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BaseVersionContentJson);
+      }
+      if (TargetVersionContentJson.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetVersionContentJson);
+      }
+      if (compareTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CompareTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CompareVersionsResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BaseVersionContentJson.Length != 0) {
+        BaseVersionContentJson = other.BaseVersionContentJson;
+      }
+      if (other.TargetVersionContentJson.Length != 0) {
+        TargetVersionContentJson = other.TargetVersionContentJson;
+      }
+      if (other.compareTime_ != null) {
+        if (compareTime_ == null) {
+          CompareTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CompareTime.MergeFrom(other.CompareTime);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            BaseVersionContentJson = input.ReadString();
+            break;
+          }
+          case 18: {
+            TargetVersionContentJson = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (compareTime_ == null) {
+              CompareTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CompareTime);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            BaseVersionContentJson = input.ReadString();
+            break;
+          }
+          case 18: {
+            TargetVersionContentJson = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (compareTime_ == null) {
+              CompareTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CompareTime);
             break;
           }
         }

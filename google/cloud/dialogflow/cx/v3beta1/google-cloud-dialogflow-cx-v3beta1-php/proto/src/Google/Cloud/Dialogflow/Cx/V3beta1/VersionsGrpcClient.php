@@ -138,4 +138,19 @@ class VersionsGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Compares the specified base version with target version.
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CompareVersions(\Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3beta1.Versions/CompareVersions',
+        $argument,
+        ['\Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -42,6 +42,7 @@ class dialogflowcxCallTransformer(cst.CSTTransformer):
         'batch_delete_test_cases': ('parent', 'names', ),
         'batch_run_test_cases': ('parent', 'test_cases', 'environment', ),
         'calculate_coverage': ('agent', 'type_', ),
+        'compare_versions': ('base_version', 'target_version', 'language_code', ),
         'create_agent': ('parent', 'agent', ),
         'create_entity_type': ('parent', 'entity_type', 'language_code', ),
         'create_environment': ('parent', 'environment', ),

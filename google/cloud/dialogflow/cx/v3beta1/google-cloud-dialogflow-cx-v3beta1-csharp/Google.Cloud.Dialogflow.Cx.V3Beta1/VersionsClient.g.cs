@@ -54,6 +54,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             DeleteVersionSettings = existing.DeleteVersionSettings;
             LoadVersionSettings = existing.LoadVersionSettings;
             LoadVersionOperationsSettings = existing.LoadVersionOperationsSettings.Clone();
+            CompareVersionsSettings = existing.CompareVersionsSettings;
             OnCopy(existing);
         }
 
@@ -202,6 +203,24 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         {
             DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
         };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>VersionsClient.CompareVersions</c> and <c>VersionsClient.CompareVersionsAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>.</description>
+        /// </item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings CompareVersionsSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 2147483647, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>Creates a deep clone of this object, with all the same property values.</summary>
         /// <returns>A deep clone of this <see cref="VersionsSettings"/> object.</returns>
@@ -1252,6 +1271,135 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<lro::Operation<wkt::Empty, wkt::Struct>> LoadVersionAsync(VersionName name, st::CancellationToken cancellationToken) =>
             LoadVersionAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual CompareVersionsResponse CompareVersions(CompareVersionsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<CompareVersionsResponse> CompareVersionsAsync(CompareVersionsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<CompareVersionsResponse> CompareVersionsAsync(CompareVersionsRequest request, st::CancellationToken cancellationToken) =>
+            CompareVersionsAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="baseVersion">
+        /// Required. Name of the base flow version to compare with the target version. Use
+        /// version ID `0` to indicate the draft version of the specified flow.
+        /// 
+        /// Format: `projects/&amp;lt;Project ID&amp;gt;/locations/&amp;lt;Location ID&amp;gt;/agents/
+        /// &amp;lt;Agent ID&amp;gt;/flows/&amp;lt;Flow ID&amp;gt;/versions/&amp;lt;Version ID&amp;gt;`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual CompareVersionsResponse CompareVersions(string baseVersion, gaxgrpc::CallSettings callSettings = null) =>
+            CompareVersions(new CompareVersionsRequest
+            {
+                BaseVersion = gax::GaxPreconditions.CheckNotNullOrEmpty(baseVersion, nameof(baseVersion)),
+            }, callSettings);
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="baseVersion">
+        /// Required. Name of the base flow version to compare with the target version. Use
+        /// version ID `0` to indicate the draft version of the specified flow.
+        /// 
+        /// Format: `projects/&amp;lt;Project ID&amp;gt;/locations/&amp;lt;Location ID&amp;gt;/agents/
+        /// &amp;lt;Agent ID&amp;gt;/flows/&amp;lt;Flow ID&amp;gt;/versions/&amp;lt;Version ID&amp;gt;`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<CompareVersionsResponse> CompareVersionsAsync(string baseVersion, gaxgrpc::CallSettings callSettings = null) =>
+            CompareVersionsAsync(new CompareVersionsRequest
+            {
+                BaseVersion = gax::GaxPreconditions.CheckNotNullOrEmpty(baseVersion, nameof(baseVersion)),
+            }, callSettings);
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="baseVersion">
+        /// Required. Name of the base flow version to compare with the target version. Use
+        /// version ID `0` to indicate the draft version of the specified flow.
+        /// 
+        /// Format: `projects/&amp;lt;Project ID&amp;gt;/locations/&amp;lt;Location ID&amp;gt;/agents/
+        /// &amp;lt;Agent ID&amp;gt;/flows/&amp;lt;Flow ID&amp;gt;/versions/&amp;lt;Version ID&amp;gt;`.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<CompareVersionsResponse> CompareVersionsAsync(string baseVersion, st::CancellationToken cancellationToken) =>
+            CompareVersionsAsync(baseVersion, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="baseVersion">
+        /// Required. Name of the base flow version to compare with the target version. Use
+        /// version ID `0` to indicate the draft version of the specified flow.
+        /// 
+        /// Format: `projects/&amp;lt;Project ID&amp;gt;/locations/&amp;lt;Location ID&amp;gt;/agents/
+        /// &amp;lt;Agent ID&amp;gt;/flows/&amp;lt;Flow ID&amp;gt;/versions/&amp;lt;Version ID&amp;gt;`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual CompareVersionsResponse CompareVersions(VersionName baseVersion, gaxgrpc::CallSettings callSettings = null) =>
+            CompareVersions(new CompareVersionsRequest
+            {
+                BaseVersionAsVersionName = gax::GaxPreconditions.CheckNotNull(baseVersion, nameof(baseVersion)),
+            }, callSettings);
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="baseVersion">
+        /// Required. Name of the base flow version to compare with the target version. Use
+        /// version ID `0` to indicate the draft version of the specified flow.
+        /// 
+        /// Format: `projects/&amp;lt;Project ID&amp;gt;/locations/&amp;lt;Location ID&amp;gt;/agents/
+        /// &amp;lt;Agent ID&amp;gt;/flows/&amp;lt;Flow ID&amp;gt;/versions/&amp;lt;Version ID&amp;gt;`.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<CompareVersionsResponse> CompareVersionsAsync(VersionName baseVersion, gaxgrpc::CallSettings callSettings = null) =>
+            CompareVersionsAsync(new CompareVersionsRequest
+            {
+                BaseVersionAsVersionName = gax::GaxPreconditions.CheckNotNull(baseVersion, nameof(baseVersion)),
+            }, callSettings);
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="baseVersion">
+        /// Required. Name of the base flow version to compare with the target version. Use
+        /// version ID `0` to indicate the draft version of the specified flow.
+        /// 
+        /// Format: `projects/&amp;lt;Project ID&amp;gt;/locations/&amp;lt;Location ID&amp;gt;/agents/
+        /// &amp;lt;Agent ID&amp;gt;/flows/&amp;lt;Flow ID&amp;gt;/versions/&amp;lt;Version ID&amp;gt;`.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<CompareVersionsResponse> CompareVersionsAsync(VersionName baseVersion, st::CancellationToken cancellationToken) =>
+            CompareVersionsAsync(baseVersion, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
     }
 
     /// <summary>Versions client wrapper implementation, for convenient use.</summary>
@@ -1271,6 +1419,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         private readonly gaxgrpc::ApiCall<DeleteVersionRequest, wkt::Empty> _callDeleteVersion;
 
         private readonly gaxgrpc::ApiCall<LoadVersionRequest, lro::Operation> _callLoadVersion;
+
+        private readonly gaxgrpc::ApiCall<CompareVersionsRequest, CompareVersionsResponse> _callCompareVersions;
 
         /// <summary>
         /// Constructs a client wrapper for the Versions service, with the specified gRPC client and settings.
@@ -1302,6 +1452,9 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             _callLoadVersion = clientHelper.BuildApiCall<LoadVersionRequest, lro::Operation>(grpcClient.LoadVersionAsync, grpcClient.LoadVersion, effectiveSettings.LoadVersionSettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callLoadVersion);
             Modify_LoadVersionApiCall(ref _callLoadVersion);
+            _callCompareVersions = clientHelper.BuildApiCall<CompareVersionsRequest, CompareVersionsResponse>(grpcClient.CompareVersionsAsync, grpcClient.CompareVersions, effectiveSettings.CompareVersionsSettings).WithGoogleRequestParam("base_version", request => request.BaseVersion);
+            Modify_ApiCall(ref _callCompareVersions);
+            Modify_CompareVersionsApiCall(ref _callCompareVersions);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
         }
 
@@ -1319,6 +1472,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         partial void Modify_LoadVersionApiCall(ref gaxgrpc::ApiCall<LoadVersionRequest, lro::Operation> call);
 
+        partial void Modify_CompareVersionsApiCall(ref gaxgrpc::ApiCall<CompareVersionsRequest, CompareVersionsResponse> call);
+
         partial void OnConstruction(Versions.VersionsClient grpcClient, VersionsSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>The underlying gRPC Versions client</summary>
@@ -1335,6 +1490,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         partial void Modify_DeleteVersionRequest(ref DeleteVersionRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_LoadVersionRequest(ref LoadVersionRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_CompareVersionsRequest(ref CompareVersionsRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
@@ -1516,6 +1673,30 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         {
             Modify_LoadVersionRequest(ref request, ref callSettings);
             return new lro::Operation<wkt::Empty, wkt::Struct>(await _callLoadVersion.Async(request, callSettings).ConfigureAwait(false), LoadVersionOperationsClient);
+        }
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override CompareVersionsResponse CompareVersions(CompareVersionsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_CompareVersionsRequest(ref request, ref callSettings);
+            return _callCompareVersions.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Compares the specified base version with target version.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<CompareVersionsResponse> CompareVersionsAsync(CompareVersionsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_CompareVersionsRequest(ref request, ref callSettings);
+            return _callCompareVersions.Async(request, callSettings);
         }
     }
 

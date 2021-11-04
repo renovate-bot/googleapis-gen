@@ -29,9 +29,10 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListVersionsResponse;
-use Google\Cloud\Dialogflow\Cx\V3beta1\Version;
 
+use Google\Cloud\Dialogflow\Cx\V3beta1\Version;
 use Google\Cloud\Dialogflow\Cx\V3beta1\VersionsClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
@@ -73,6 +74,76 @@ class VersionsClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ];
         return new VersionsClient($options);
+    }
+
+    /**
+     * @test
+     */
+    public function compareVersionsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $baseVersionContentJson = 'baseVersionContentJson359428515';
+        $targetVersionContentJson = 'targetVersionContentJson-1079099677';
+        $expectedResponse = new CompareVersionsResponse();
+        $expectedResponse->setBaseVersionContentJson($baseVersionContentJson);
+        $expectedResponse->setTargetVersionContentJson($targetVersionContentJson);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedBaseVersion = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+        $formattedTargetVersion = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+        $response = $client->compareVersions($formattedBaseVersion, $formattedTargetVersion);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.dialogflow.cx.v3beta1.Versions/CompareVersions', $actualFuncCall);
+        $actualValue = $actualRequestObject->getBaseVersion();
+        $this->assertProtobufEquals($formattedBaseVersion, $actualValue);
+        $actualValue = $actualRequestObject->getTargetVersion();
+        $this->assertProtobufEquals($formattedTargetVersion, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function compareVersionsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedBaseVersion = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+        $formattedTargetVersion = $client->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+        try {
+            $client->compareVersions($formattedBaseVersion, $formattedTargetVersion);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
     }
 
     /**

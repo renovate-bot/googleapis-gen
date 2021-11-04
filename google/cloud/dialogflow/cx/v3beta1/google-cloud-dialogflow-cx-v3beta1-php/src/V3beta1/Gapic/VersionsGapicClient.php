@@ -38,6 +38,8 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CreateVersionOperationMetadata;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CreateVersionRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\DeleteVersionRequest;
@@ -61,34 +63,9 @@ use Google\Protobuf\Struct;
  * ```
  * $versionsClient = new VersionsClient();
  * try {
- *     $formattedParent = $versionsClient->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
- *     $version = new Version();
- *     $operationResponse = $versionsClient->createVersion($formattedParent, $version);
- *     $operationResponse->pollUntilComplete();
- *     if ($operationResponse->operationSucceeded()) {
- *         $result = $operationResponse->getResult();
- *     // doSomethingWith($result)
- *     } else {
- *         $error = $operationResponse->getError();
- *         // handleError($error)
- *     }
- *     // Alternatively:
- *     // start the operation, keep the operation name, and resume later
- *     $operationResponse = $versionsClient->createVersion($formattedParent, $version);
- *     $operationName = $operationResponse->getName();
- *     // ... do other work
- *     $newOperationResponse = $versionsClient->resumeOperation($operationName, 'createVersion');
- *     while (!$newOperationResponse->isDone()) {
- *         // ... do other work
- *         $newOperationResponse->reload();
- *     }
- *     if ($newOperationResponse->operationSucceeded()) {
- *         $result = $newOperationResponse->getResult();
- *     // doSomethingWith($result)
- *     } else {
- *         $error = $newOperationResponse->getError();
- *         // handleError($error)
- *     }
+ *     $formattedBaseVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+ *     $formattedTargetVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+ *     $response = $versionsClient->compareVersions($formattedBaseVersion, $formattedTargetVersion);
  * } finally {
  *     $versionsClient->close();
  * }
@@ -376,6 +353,70 @@ class VersionsGapicClient
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
+    }
+
+    /**
+     * Compares the specified base version with target version.
+     *
+     * Sample code:
+     * ```
+     * $versionsClient = new VersionsClient();
+     * try {
+     *     $formattedBaseVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+     *     $formattedTargetVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+     *     $response = $versionsClient->compareVersions($formattedBaseVersion, $formattedTargetVersion);
+     * } finally {
+     *     $versionsClient->close();
+     * }
+     * ```
+     *
+     * @param string $baseVersion   Required. Name of the base flow version to compare with the target version. Use
+     *                              version ID `0` to indicate the draft version of the specified flow.
+     *
+     *                              Format: `projects/<Project ID>/locations/<Location ID>/agents/
+     *                              <Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * @param string $targetVersion Required. Name of the target flow version to compare with the
+     *                              base version. Use version ID `0` to indicate the draft version of the
+     *                              specified flow. Format: `projects/<Project ID>/locations/<Location
+     *                              ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * @param array  $optionalArgs  {
+     *     Optional.
+     *
+     *     @type string $languageCode
+     *           The language to compare the flow versions for.
+     *
+     *           If not specified, the agent's default language is used.
+     *           [Many
+     *           languages](https://cloud.google.com/dialogflow/docs/reference/language) are
+     *           supported. Note: languages must be enabled in the agent before they can be
+     *           used.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\CompareVersionsResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function compareVersions($baseVersion, $targetVersion, array $optionalArgs = [])
+    {
+        $request = new CompareVersionsRequest();
+        $requestParamHeaders = [];
+        $request->setBaseVersion($baseVersion);
+        $request->setTargetVersion($targetVersion);
+        $requestParamHeaders['base_version'] = $baseVersion;
+        if (isset($optionalArgs['languageCode'])) {
+            $request->setLanguageCode($optionalArgs['languageCode']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CompareVersions', CompareVersionsResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**

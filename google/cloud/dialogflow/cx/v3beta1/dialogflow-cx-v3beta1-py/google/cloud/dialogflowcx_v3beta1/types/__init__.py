@@ -234,6 +234,8 @@ from .validation_message import (
     ValidationMessage,
 )
 from .version import (
+    CompareVersionsRequest,
+    CompareVersionsResponse,
     CreateVersionOperationMetadata,
     CreateVersionRequest,
     DeleteVersionRequest,
@@ -441,6 +443,8 @@ __all__ = (
     'UpdateTransitionRouteGroupRequest',
     'ResourceName',
     'ValidationMessage',
+    'CompareVersionsRequest',
+    'CompareVersionsResponse',
     'CreateVersionOperationMetadata',
     'CreateVersionRequest',
     'DeleteVersionRequest',
