@@ -100,11 +100,15 @@ private static final long serialVersionUID = 0L;
    * need to grant `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
    * Service Agent` role in this project.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
    * specified, the default `draft` environment is used. Refer to
    * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
    * for more details.
+   * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+   * or '-'&gt;`. If environment is not specified, the default `draft` environment
+   * is used.
    * </pre>
    *
    * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -130,11 +134,15 @@ private static final long serialVersionUID = 0L;
    * need to grant `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
    * Service Agent` role in this project.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
    * specified, the default `draft` environment is used. Refer to
    * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
    * for more details.
+   * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+   * or '-'&gt;`. If environment is not specified, the default `draft` environment
+   * is used.
    * </pre>
    *
    * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -469,11 +477,15 @@ private static final long serialVersionUID = 0L;
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+     * or '-'&gt;`. If environment is not specified, the default `draft` environment
+     * is used.
      * </pre>
      *
      * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -498,11 +510,15 @@ private static final long serialVersionUID = 0L;
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+     * or '-'&gt;`. If environment is not specified, the default `draft` environment
+     * is used.
      * </pre>
      *
      * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -528,11 +544,15 @@ private static final long serialVersionUID = 0L;
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+     * or '-'&gt;`. If environment is not specified, the default `draft` environment
+     * is used.
      * </pre>
      *
      * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -556,11 +576,15 @@ private static final long serialVersionUID = 0L;
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+     * or '-'&gt;`. If environment is not specified, the default `draft` environment
+     * is used.
      * </pre>
      *
      * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -579,11 +603,15 @@ private static final long serialVersionUID = 0L;
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
+     * or '-'&gt;`. If environment is not specified, the default `draft` environment
+     * is used.
      * </pre>
      *
      * <code>string agent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

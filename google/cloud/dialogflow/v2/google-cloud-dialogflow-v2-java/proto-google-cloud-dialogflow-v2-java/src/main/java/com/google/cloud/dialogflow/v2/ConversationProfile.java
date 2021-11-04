@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     languageCode_ = "";
+    timeZone_ = "";
+    securitySettings_ = "";
   }
 
   @java.lang.Override
@@ -188,6 +190,18 @@ private static final long serialVersionUID = 0L;
               updateTime_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            securitySettings_ = s;
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            timeZone_ = s;
             break;
           }
           default: {
@@ -673,9 +687,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object languageCode_;
   /**
    * <pre>
-   * Language which represents the conversationProfile.
-   * If unspecified, the default language code en-us applies. Users need to
-   * create a ConversationProfile for each language they want to support.
+   * Language code for the conversation profile. If not specified, the language
+   * is en-US. Language at ConversationProfile should be set for all non en-US
+   * languages.
+   * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag. Example: "en-US".
    * </pre>
    *
    * <code>string language_code = 10;</code>
@@ -696,9 +712,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Language which represents the conversationProfile.
-   * If unspecified, the default language code en-us applies. Users need to
-   * create a ConversationProfile for each language they want to support.
+   * Language code for the conversation profile. If not specified, the language
+   * is en-US. Language at ConversationProfile should be set for all non en-US
+   * languages.
+   * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag. Example: "en-US".
    * </pre>
    *
    * <code>string language_code = 10;</code>
@@ -713,6 +731,106 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TIME_ZONE_FIELD_NUMBER = 14;
+  private volatile java.lang.Object timeZone_;
+  /**
+   * <pre>
+   * The time zone of this conversational profile from the
+   * [time zone database](https://www.iana.org/time-zones), e.g.,
+   * America/New_York, Europe/Paris. Defaults to America/New_York.
+   * </pre>
+   *
+   * <code>string time_zone = 14;</code>
+   * @return The timeZone.
+   */
+  @java.lang.Override
+  public java.lang.String getTimeZone() {
+    java.lang.Object ref = timeZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      timeZone_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The time zone of this conversational profile from the
+   * [time zone database](https://www.iana.org/time-zones), e.g.,
+   * America/New_York, Europe/Paris. Defaults to America/New_York.
+   * </pre>
+   *
+   * <code>string time_zone = 14;</code>
+   * @return The bytes for timeZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTimeZoneBytes() {
+    java.lang.Object ref = timeZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      timeZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECURITY_SETTINGS_FIELD_NUMBER = 13;
+  private volatile java.lang.Object securitySettings_;
+  /**
+   * <pre>
+   * Name of the CX SecuritySettings reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+   * @return The securitySettings.
+   */
+  @java.lang.Override
+  public java.lang.String getSecuritySettings() {
+    java.lang.Object ref = securitySettings_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      securitySettings_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Name of the CX SecuritySettings reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for securitySettings.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSecuritySettingsBytes() {
+    java.lang.Object ref = securitySettings_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      securitySettings_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -769,6 +887,12 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(12, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securitySettings_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, securitySettings_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, timeZone_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -822,6 +946,12 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securitySettings_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, securitySettings_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, timeZone_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -889,6 +1019,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLanguageCode()
         .equals(other.getLanguageCode())) return false;
+    if (!getTimeZone()
+        .equals(other.getTimeZone())) return false;
+    if (!getSecuritySettings()
+        .equals(other.getSecuritySettings())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -942,6 +1076,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getTimeZone().hashCode();
+    hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
+    hash = (53 * hash) + getSecuritySettings().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1139,6 +1277,10 @@ private static final long serialVersionUID = 0L;
       }
       languageCode_ = "";
 
+      timeZone_ = "";
+
+      securitySettings_ = "";
+
       return this;
     }
 
@@ -1213,6 +1355,8 @@ private static final long serialVersionUID = 0L;
         result.sttConfig_ = sttConfigBuilder_.build();
       }
       result.languageCode_ = languageCode_;
+      result.timeZone_ = timeZone_;
+      result.securitySettings_ = securitySettings_;
       onBuilt();
       return result;
     }
@@ -1298,6 +1442,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        onChanged();
+      }
+      if (!other.getTimeZone().isEmpty()) {
+        timeZone_ = other.timeZone_;
+        onChanged();
+      }
+      if (!other.getSecuritySettings().isEmpty()) {
+        securitySettings_ = other.securitySettings_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2956,9 +3108,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object languageCode_ = "";
     /**
      * <pre>
-     * Language which represents the conversationProfile.
-     * If unspecified, the default language code en-us applies. Users need to
-     * create a ConversationProfile for each language they want to support.
+     * Language code for the conversation profile. If not specified, the language
+     * is en-US. Language at ConversationProfile should be set for all non en-US
+     * languages.
+     * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag. Example: "en-US".
      * </pre>
      *
      * <code>string language_code = 10;</code>
@@ -2978,9 +3132,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Language which represents the conversationProfile.
-     * If unspecified, the default language code en-us applies. Users need to
-     * create a ConversationProfile for each language they want to support.
+     * Language code for the conversation profile. If not specified, the language
+     * is en-US. Language at ConversationProfile should be set for all non en-US
+     * languages.
+     * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag. Example: "en-US".
      * </pre>
      *
      * <code>string language_code = 10;</code>
@@ -3001,9 +3157,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Language which represents the conversationProfile.
-     * If unspecified, the default language code en-us applies. Users need to
-     * create a ConversationProfile for each language they want to support.
+     * Language code for the conversation profile. If not specified, the language
+     * is en-US. Language at ConversationProfile should be set for all non en-US
+     * languages.
+     * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag. Example: "en-US".
      * </pre>
      *
      * <code>string language_code = 10;</code>
@@ -3022,9 +3180,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Language which represents the conversationProfile.
-     * If unspecified, the default language code en-us applies. Users need to
-     * create a ConversationProfile for each language they want to support.
+     * Language code for the conversation profile. If not specified, the language
+     * is en-US. Language at ConversationProfile should be set for all non en-US
+     * languages.
+     * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag. Example: "en-US".
      * </pre>
      *
      * <code>string language_code = 10;</code>
@@ -3038,9 +3198,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Language which represents the conversationProfile.
-     * If unspecified, the default language code en-us applies. Users need to
-     * create a ConversationProfile for each language they want to support.
+     * Language code for the conversation profile. If not specified, the language
+     * is en-US. Language at ConversationProfile should be set for all non en-US
+     * languages.
+     * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag. Example: "en-US".
      * </pre>
      *
      * <code>string language_code = 10;</code>
@@ -3055,6 +3217,218 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       languageCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object timeZone_ = "";
+    /**
+     * <pre>
+     * The time zone of this conversational profile from the
+     * [time zone database](https://www.iana.org/time-zones), e.g.,
+     * America/New_York, Europe/Paris. Defaults to America/New_York.
+     * </pre>
+     *
+     * <code>string time_zone = 14;</code>
+     * @return The timeZone.
+     */
+    public java.lang.String getTimeZone() {
+      java.lang.Object ref = timeZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timeZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The time zone of this conversational profile from the
+     * [time zone database](https://www.iana.org/time-zones), e.g.,
+     * America/New_York, Europe/Paris. Defaults to America/New_York.
+     * </pre>
+     *
+     * <code>string time_zone = 14;</code>
+     * @return The bytes for timeZone.
+     */
+    public com.google.protobuf.ByteString
+        getTimeZoneBytes() {
+      java.lang.Object ref = timeZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timeZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The time zone of this conversational profile from the
+     * [time zone database](https://www.iana.org/time-zones), e.g.,
+     * America/New_York, Europe/Paris. Defaults to America/New_York.
+     * </pre>
+     *
+     * <code>string time_zone = 14;</code>
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeZone(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      timeZone_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The time zone of this conversational profile from the
+     * [time zone database](https://www.iana.org/time-zones), e.g.,
+     * America/New_York, Europe/Paris. Defaults to America/New_York.
+     * </pre>
+     *
+     * <code>string time_zone = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimeZone() {
+      
+      timeZone_ = getDefaultInstance().getTimeZone();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The time zone of this conversational profile from the
+     * [time zone database](https://www.iana.org/time-zones), e.g.,
+     * America/New_York, Europe/Paris. Defaults to America/New_York.
+     * </pre>
+     *
+     * <code>string time_zone = 14;</code>
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeZoneBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      timeZone_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object securitySettings_ = "";
+    /**
+     * <pre>
+     * Name of the CX SecuritySettings reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+     * @return The securitySettings.
+     */
+    public java.lang.String getSecuritySettings() {
+      java.lang.Object ref = securitySettings_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        securitySettings_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the CX SecuritySettings reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for securitySettings.
+     */
+    public com.google.protobuf.ByteString
+        getSecuritySettingsBytes() {
+      java.lang.Object ref = securitySettings_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        securitySettings_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the CX SecuritySettings reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The securitySettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecuritySettings(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      securitySettings_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Name of the CX SecuritySettings reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSecuritySettings() {
+      
+      securitySettings_ = getDefaultInstance().getSecuritySettings();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Name of the CX SecuritySettings reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 13 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for securitySettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecuritySettingsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      securitySettings_ = value;
       onChanged();
       return this;
     }

@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * If it is unspeified, PROTO will be used.
+     * If it is unspecified, PROTO will be used.
      * </pre>
      *
      * <code>MESSAGE_FORMAT_UNSPECIFIED = 0;</code>
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
     MESSAGE_FORMAT_UNSPECIFIED(0),
     /**
      * <pre>
-     * Pubsub message will be serialized proto.
+     * Pub/Sub message will be serialized proto.
      * </pre>
      *
      * <code>PROTO = 1;</code>
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
     PROTO(1),
     /**
      * <pre>
-     * Pubsub message will be json.
+     * Pub/Sub message will be json.
      * </pre>
      *
      * <code>JSON = 2;</code>
@@ -136,7 +136,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * If it is unspeified, PROTO will be used.
+     * If it is unspecified, PROTO will be used.
      * </pre>
      *
      * <code>MESSAGE_FORMAT_UNSPECIFIED = 0;</code>
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
     public static final int MESSAGE_FORMAT_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Pubsub message will be serialized proto.
+     * Pub/Sub message will be serialized proto.
      * </pre>
      *
      * <code>PROTO = 1;</code>
@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
     public static final int PROTO_VALUE = 1;
     /**
      * <pre>
-     * Pubsub message will be json.
+     * Pub/Sub message will be json.
      * </pre>
      *
      * <code>JSON = 2;</code>
