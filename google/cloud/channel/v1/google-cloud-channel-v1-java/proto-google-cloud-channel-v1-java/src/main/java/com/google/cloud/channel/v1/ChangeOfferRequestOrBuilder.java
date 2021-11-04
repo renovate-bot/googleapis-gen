@@ -55,7 +55,8 @@ public interface ChangeOfferRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Parameters needed to purchase the Offer.
+   * Optional. Parameters needed to purchase the Offer. To view the available Parameters
+   * refer to the [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions] from the desired offer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -64,7 +65,8 @@ public interface ChangeOfferRequestOrBuilder extends
       getParametersList();
   /**
    * <pre>
-   * Optional. Parameters needed to purchase the Offer.
+   * Optional. Parameters needed to purchase the Offer. To view the available Parameters
+   * refer to the [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions] from the desired offer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -72,7 +74,8 @@ public interface ChangeOfferRequestOrBuilder extends
   com.google.cloud.channel.v1.Parameter getParameters(int index);
   /**
    * <pre>
-   * Optional. Parameters needed to purchase the Offer.
+   * Optional. Parameters needed to purchase the Offer. To view the available Parameters
+   * refer to the [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions] from the desired offer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80,7 +83,8 @@ public interface ChangeOfferRequestOrBuilder extends
   int getParametersCount();
   /**
    * <pre>
-   * Optional. Parameters needed to purchase the Offer.
+   * Optional. Parameters needed to purchase the Offer. To view the available Parameters
+   * refer to the [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions] from the desired offer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89,7 +93,8 @@ public interface ChangeOfferRequestOrBuilder extends
       getParametersOrBuilderList();
   /**
    * <pre>
-   * Optional. Parameters needed to purchase the Offer.
+   * Optional. Parameters needed to purchase the Offer. To view the available Parameters
+   * refer to the [Offer.parameter_definitions][google.cloud.channel.v1.Offer.parameter_definitions] from the desired offer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
