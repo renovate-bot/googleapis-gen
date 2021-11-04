@@ -60,6 +60,7 @@ from google.cloud.contact_center_insights_v1.types.contact_center_insights impor
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateConversationRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateIssueModelRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateIssueRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdatePhraseMatcherRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateSettingsRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ConversationView
 from google.cloud.contact_center_insights_v1.types.resources import Analysis
@@ -146,6 +147,7 @@ __all__ = ('ContactCenterInsightsClient',
     'UpdateConversationRequest',
     'UpdateIssueModelRequest',
     'UpdateIssueRequest',
+    'UpdatePhraseMatcherRequest',
     'UpdateSettingsRequest',
     'ConversationView',
     'Analysis',

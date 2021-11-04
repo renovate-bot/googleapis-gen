@@ -5,29 +5,28 @@ package com.google.cloud.contactcenterinsights.v1;
 
 /**
  * <pre>
- * Request to create a phrase matcher.
+ * The request to update a phrase matcher.
  * </pre>
  *
- * Protobuf type {@code google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest}
+ * Protobuf type {@code google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest}
  */
-public final class CreatePhraseMatcherRequest extends
+public final class UpdatePhraseMatcherRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest)
-    CreatePhraseMatcherRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest)
+    UpdatePhraseMatcherRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CreatePhraseMatcherRequest.newBuilder() to construct.
-  private CreatePhraseMatcherRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdatePhraseMatcherRequest.newBuilder() to construct.
+  private UpdatePhraseMatcherRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreatePhraseMatcherRequest() {
-    parent_ = "";
+  private UpdatePhraseMatcherRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CreatePhraseMatcherRequest();
+    return new UpdatePhraseMatcherRequest();
   }
 
   @java.lang.Override
@@ -35,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CreatePhraseMatcherRequest(
+  private UpdatePhraseMatcherRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,12 +53,6 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            parent_ = s;
-            break;
-          }
-          case 18: {
             com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder subBuilder = null;
             if (phraseMatcher_ != null) {
               subBuilder = phraseMatcher_.toBuilder();
@@ -68,6 +61,19 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(phraseMatcher_);
               phraseMatcher_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -93,77 +99,25 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_CreatePhraseMatcherRequest_descriptor;
+    return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_UpdatePhraseMatcherRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_CreatePhraseMatcherRequest_fieldAccessorTable
+    return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_UpdatePhraseMatcherRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.class, com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.Builder.class);
+            com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.class, com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
-  /**
-   * <pre>
-   * Required. The parent resource of the phrase matcher. Required. The location
-   * to create a phrase matcher for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-   * Number&gt;/locations/&lt;Location ID&gt;`
-   * </pre>
-   *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The parent.
-   */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Required. The parent resource of the phrase matcher. Required. The location
-   * to create a phrase matcher for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-   * Number&gt;/locations/&lt;Location ID&gt;`
-   * </pre>
-   *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for parent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      parent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PHRASE_MATCHER_FIELD_NUMBER = 2;
+  public static final int PHRASE_MATCHER_FIELD_NUMBER = 1;
   private com.google.cloud.contactcenterinsights.v1.PhraseMatcher phraseMatcher_;
   /**
    * <pre>
-   * Required. The phrase matcher resource to create.
+   * Required. The new values for the phrase matcher.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the phraseMatcher field is set.
    */
   @java.lang.Override
@@ -172,10 +126,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The phrase matcher resource to create.
+   * Required. The new values for the phrase matcher.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The phraseMatcher.
    */
   @java.lang.Override
@@ -184,14 +138,52 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The phrase matcher resource to create.
+   * Required. The new values for the phrase matcher.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloud.contactcenterinsights.v1.PhraseMatcherOrBuilder getPhraseMatcherOrBuilder() {
     return getPhraseMatcher();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * The list of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * The list of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * The list of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -208,11 +200,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
-    }
     if (phraseMatcher_ != null) {
-      output.writeMessage(2, getPhraseMatcher());
+      output.writeMessage(1, getPhraseMatcher());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -223,12 +215,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
-    }
     if (phraseMatcher_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPhraseMatcher());
+        .computeMessageSize(1, getPhraseMatcher());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -240,17 +233,20 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest)) {
+    if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest other = (com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest) obj;
+    com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest other = (com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest) obj;
 
-    if (!getParent()
-        .equals(other.getParent())) return false;
     if (hasPhraseMatcher() != other.hasPhraseMatcher()) return false;
     if (hasPhraseMatcher()) {
       if (!getPhraseMatcher()
           .equals(other.getPhraseMatcher())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -263,80 +259,82 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
     if (hasPhraseMatcher()) {
       hash = (37 * hash) + PHRASE_MATCHER_FIELD_NUMBER;
       hash = (53 * hash) + getPhraseMatcher().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(byte[] data)
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseDelimitedFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -349,7 +347,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -366,29 +364,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request to create a phrase matcher.
+   * The request to update a phrase matcher.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest}
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest)
-      com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest)
+      com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_CreatePhraseMatcherRequest_descriptor;
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_UpdatePhraseMatcherRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_CreatePhraseMatcherRequest_fieldAccessorTable
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_UpdatePhraseMatcherRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.class, com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.Builder.class);
+              com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.class, com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.newBuilder()
+    // Construct using com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -406,13 +404,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
-
       if (phraseMatcherBuilder_ == null) {
         phraseMatcher_ = null;
       } else {
         phraseMatcher_ = null;
         phraseMatcherBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -420,17 +422,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_CreatePhraseMatcherRequest_descriptor;
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_UpdatePhraseMatcherRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest getDefaultInstanceForType() {
-      return com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.getDefaultInstance();
+    public com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest getDefaultInstanceForType() {
+      return com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest build() {
-      com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest result = buildPartial();
+    public com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest build() {
+      com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -438,13 +440,17 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest buildPartial() {
-      com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest result = new com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest(this);
-      result.parent_ = parent_;
+    public com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest buildPartial() {
+      com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest result = new com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest(this);
       if (phraseMatcherBuilder_ == null) {
         result.phraseMatcher_ = phraseMatcher_;
       } else {
         result.phraseMatcher_ = phraseMatcherBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -484,22 +490,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest) {
-        return mergeFrom((com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest)other);
+      if (other instanceof com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest) {
+        return mergeFrom((com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest other) {
-      if (other == com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest.getDefaultInstance()) return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
-      }
+    public Builder mergeFrom(com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest other) {
+      if (other == com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest.getDefaultInstance()) return this;
       if (other.hasPhraseMatcher()) {
         mergePhraseMatcher(other.getPhraseMatcher());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -516,11 +521,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest parsedMessage = null;
+      com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -530,126 +535,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object parent_ = "";
-    /**
-     * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The parent.
-     */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for parent.
-     */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        parent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearParent() {
-      
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Required. The parent resource of the phrase matcher. Required. The location
-     * to create a phrase matcher for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-     * Number&gt;/locations/&lt;Location ID&gt;`
-     * </pre>
-     *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.cloud.contactcenterinsights.v1.PhraseMatcher phraseMatcher_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.contactcenterinsights.v1.PhraseMatcher, com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder, com.google.cloud.contactcenterinsights.v1.PhraseMatcherOrBuilder> phraseMatcherBuilder_;
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the phraseMatcher field is set.
      */
     public boolean hasPhraseMatcher() {
@@ -657,10 +551,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The phraseMatcher.
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher getPhraseMatcher() {
@@ -672,10 +566,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPhraseMatcher(com.google.cloud.contactcenterinsights.v1.PhraseMatcher value) {
       if (phraseMatcherBuilder_ == null) {
@@ -692,10 +586,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPhraseMatcher(
         com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder builderForValue) {
@@ -710,10 +604,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergePhraseMatcher(com.google.cloud.contactcenterinsights.v1.PhraseMatcher value) {
       if (phraseMatcherBuilder_ == null) {
@@ -732,10 +626,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPhraseMatcher() {
       if (phraseMatcherBuilder_ == null) {
@@ -750,10 +644,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder getPhraseMatcherBuilder() {
       
@@ -762,10 +656,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcherOrBuilder getPhraseMatcherOrBuilder() {
       if (phraseMatcherBuilder_ != null) {
@@ -777,10 +671,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The phrase matcher resource to create.
+     * Required. The new values for the phrase matcher.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.contactcenterinsights.v1.PhraseMatcher phrase_matcher = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.contactcenterinsights.v1.PhraseMatcher, com.google.cloud.contactcenterinsights.v1.PhraseMatcher.Builder, com.google.cloud.contactcenterinsights.v1.PhraseMatcherOrBuilder> 
@@ -795,6 +689,161 @@ private static final long serialVersionUID = 0L;
       }
       return phraseMatcherBuilder_;
     }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * The list of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -808,41 +857,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest)
-  private static final com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest)
+  private static final com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest();
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest getDefaultInstance() {
+  public static com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreatePhraseMatcherRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreatePhraseMatcherRequest>() {
+  private static final com.google.protobuf.Parser<UpdatePhraseMatcherRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdatePhraseMatcherRequest>() {
     @java.lang.Override
-    public CreatePhraseMatcherRequest parsePartialFrom(
+    public UpdatePhraseMatcherRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreatePhraseMatcherRequest(input, extensionRegistry);
+      return new UpdatePhraseMatcherRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CreatePhraseMatcherRequest> parser() {
+  public static com.google.protobuf.Parser<UpdatePhraseMatcherRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreatePhraseMatcherRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdatePhraseMatcherRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest getDefaultInstanceForType() {
+  public com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

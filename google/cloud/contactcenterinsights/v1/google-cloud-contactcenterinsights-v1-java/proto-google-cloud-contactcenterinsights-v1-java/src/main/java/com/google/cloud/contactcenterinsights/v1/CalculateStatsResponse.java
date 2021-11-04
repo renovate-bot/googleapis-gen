@@ -128,6 +128,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              issueMatchesStats_ = com.google.protobuf.MapField.newMapField(
+                  IssueMatchesStatsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000008;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+            issueMatchesStats__ = input.readMessage(
+                IssueMatchesStatsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            issueMatchesStats_.getMutableMap().put(
+                issueMatchesStats__.getKey(), issueMatchesStats__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -163,6 +176,8 @@ private static final long serialVersionUID = 0L;
         return internalGetCustomHighlighterMatches();
       case 6:
         return internalGetIssueMatches();
+      case 8:
+        return internalGetIssueMatchesStats();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -2573,6 +2588,111 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int ISSUE_MATCHES_STATS_FIELD_NUMBER = 8;
+  private static final class IssueMatchesStatsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>newDefaultInstance(
+                com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_CalculateStatsResponse_IssueMatchesStatsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> issueMatchesStats_;
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+  internalGetIssueMatchesStats() {
+    if (issueMatchesStats_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          IssueMatchesStatsDefaultEntryHolder.defaultEntry);
+    }
+    return issueMatchesStats_;
+  }
+
+  public int getIssueMatchesStatsCount() {
+    return internalGetIssueMatchesStats().getMap().size();
+  }
+  /**
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsIssueMatchesStats(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetIssueMatchesStats().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getIssueMatchesStatsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> getIssueMatchesStats() {
+    return getIssueMatchesStatsMap();
+  }
+  /**
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> getIssueMatchesStatsMap() {
+    return internalGetIssueMatchesStats().getMap();
+  }
+  /**
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+   */
+  @java.lang.Override
+
+  public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats getIssueMatchesStatsOrDefault(
+      java.lang.String key,
+      com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> map =
+        internalGetIssueMatchesStats().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * A map associating each issue resource name with its respective number of
+   * matches in the set of conversations. Key has the format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+   */
+  @java.lang.Override
+
+  public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats getIssueMatchesStatsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> map =
+        internalGetIssueMatchesStats().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int CONVERSATION_COUNT_TIME_SERIES_FIELD_NUMBER = 7;
   private com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversationCountTimeSeries_;
   /**
@@ -2658,6 +2778,12 @@ private static final long serialVersionUID = 0L;
     if (conversationCountTimeSeries_ != null) {
       output.writeMessage(7, getConversationCountTimeSeries());
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetIssueMatchesStats(),
+        IssueMatchesStatsDefaultEntryHolder.defaultEntry,
+        8);
     unknownFields.writeTo(output);
   }
 
@@ -2713,6 +2839,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getConversationCountTimeSeries());
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> entry
+         : internalGetIssueMatchesStats().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+      issueMatchesStats__ = IssueMatchesStatsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, issueMatchesStats__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2743,6 +2879,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetCustomHighlighterMatches())) return false;
     if (!internalGetIssueMatches().equals(
         other.internalGetIssueMatches())) return false;
+    if (!internalGetIssueMatchesStats().equals(
+        other.internalGetIssueMatchesStats())) return false;
     if (hasConversationCountTimeSeries() != other.hasConversationCountTimeSeries()) return false;
     if (hasConversationCountTimeSeries()) {
       if (!getConversationCountTimeSeries()
@@ -2778,6 +2916,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetIssueMatches().getMap().isEmpty()) {
       hash = (37 * hash) + ISSUE_MATCHES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetIssueMatches().hashCode();
+    }
+    if (!internalGetIssueMatchesStats().getMap().isEmpty()) {
+      hash = (37 * hash) + ISSUE_MATCHES_STATS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetIssueMatchesStats().hashCode();
     }
     if (hasConversationCountTimeSeries()) {
       hash = (37 * hash) + CONVERSATION_COUNT_TIME_SERIES_FIELD_NUMBER;
@@ -2904,6 +3046,8 @@ private static final long serialVersionUID = 0L;
           return internalGetCustomHighlighterMatches();
         case 6:
           return internalGetIssueMatches();
+        case 8:
+          return internalGetIssueMatchesStats();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -2919,6 +3063,8 @@ private static final long serialVersionUID = 0L;
           return internalGetMutableCustomHighlighterMatches();
         case 6:
           return internalGetMutableIssueMatches();
+        case 8:
+          return internalGetMutableIssueMatchesStats();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -2963,6 +3109,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableSmartHighlighterMatches().clear();
       internalGetMutableCustomHighlighterMatches().clear();
       internalGetMutableIssueMatches().clear();
+      internalGetMutableIssueMatchesStats().clear();
       if (conversationCountTimeSeriesBuilder_ == null) {
         conversationCountTimeSeries_ = null;
       } else {
@@ -3009,6 +3156,8 @@ private static final long serialVersionUID = 0L;
       result.customHighlighterMatches_.makeImmutable();
       result.issueMatches_ = internalGetIssueMatches();
       result.issueMatches_.makeImmutable();
+      result.issueMatchesStats_ = internalGetIssueMatchesStats();
+      result.issueMatchesStats_.makeImmutable();
       if (conversationCountTimeSeriesBuilder_ == null) {
         result.conversationCountTimeSeries_ = conversationCountTimeSeries_;
       } else {
@@ -3077,6 +3226,8 @@ private static final long serialVersionUID = 0L;
           other.internalGetCustomHighlighterMatches());
       internalGetMutableIssueMatches().mergeFrom(
           other.internalGetIssueMatches());
+      internalGetMutableIssueMatchesStats().mergeFrom(
+          other.internalGetIssueMatchesStats());
       if (other.hasConversationCountTimeSeries()) {
         mergeConversationCountTimeSeries(other.getConversationCountTimeSeries());
       }
@@ -3866,6 +4017,176 @@ private static final long serialVersionUID = 0L;
     public Builder putAllIssueMatches(
         java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableIssueMatches().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> issueMatchesStats_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+    internalGetIssueMatchesStats() {
+      if (issueMatchesStats_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            IssueMatchesStatsDefaultEntryHolder.defaultEntry);
+      }
+      return issueMatchesStats_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+    internalGetMutableIssueMatchesStats() {
+      onChanged();;
+      if (issueMatchesStats_ == null) {
+        issueMatchesStats_ = com.google.protobuf.MapField.newMapField(
+            IssueMatchesStatsDefaultEntryHolder.defaultEntry);
+      }
+      if (!issueMatchesStats_.isMutable()) {
+        issueMatchesStats_ = issueMatchesStats_.copy();
+      }
+      return issueMatchesStats_;
+    }
+
+    public int getIssueMatchesStatsCount() {
+      return internalGetIssueMatchesStats().getMap().size();
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsIssueMatchesStats(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetIssueMatchesStats().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getIssueMatchesStatsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> getIssueMatchesStats() {
+      return getIssueMatchesStatsMap();
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> getIssueMatchesStatsMap() {
+      return internalGetIssueMatchesStats().getMap();
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats getIssueMatchesStatsOrDefault(
+        java.lang.String key,
+        com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> map =
+          internalGetIssueMatchesStats().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats getIssueMatchesStatsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> map =
+          internalGetIssueMatchesStats().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearIssueMatchesStats() {
+      internalGetMutableIssueMatchesStats().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+
+    public Builder removeIssueMatchesStats(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableIssueMatchesStats().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
+    getMutableIssueMatchesStats() {
+      return internalGetMutableIssueMatchesStats().getMutableMap();
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+    public Builder putIssueMatchesStats(
+        java.lang.String key,
+        com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableIssueMatchesStats().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * A map associating each issue resource name with its respective number of
+     * matches in the set of conversations. Key has the format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
+     */
+
+    public Builder putAllIssueMatchesStats(
+        java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats> values) {
+      internalGetMutableIssueMatchesStats().getMutableMap()
           .putAll(values);
       return this;
     }

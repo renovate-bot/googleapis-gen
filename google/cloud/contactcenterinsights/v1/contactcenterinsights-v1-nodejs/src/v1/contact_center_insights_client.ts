@@ -296,7 +296,7 @@ export class ContactCenterInsightsClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const contactCenterInsightsStubMethods =
-        ['createConversation', 'updateConversation', 'getConversation', 'listConversations', 'deleteConversation', 'createAnalysis', 'getAnalysis', 'listAnalyses', 'deleteAnalysis', 'exportInsightsData', 'createIssueModel', 'updateIssueModel', 'getIssueModel', 'listIssueModels', 'deleteIssueModel', 'deployIssueModel', 'undeployIssueModel', 'getIssue', 'listIssues', 'updateIssue', 'calculateIssueModelStats', 'createPhraseMatcher', 'getPhraseMatcher', 'listPhraseMatchers', 'deletePhraseMatcher', 'calculateStats', 'getSettings', 'updateSettings'];
+        ['createConversation', 'updateConversation', 'getConversation', 'listConversations', 'deleteConversation', 'createAnalysis', 'getAnalysis', 'listAnalyses', 'deleteAnalysis', 'exportInsightsData', 'createIssueModel', 'updateIssueModel', 'getIssueModel', 'listIssueModels', 'deleteIssueModel', 'deployIssueModel', 'undeployIssueModel', 'getIssue', 'listIssues', 'updateIssue', 'calculateIssueModelStats', 'createPhraseMatcher', 'getPhraseMatcher', 'listPhraseMatchers', 'deletePhraseMatcher', 'updatePhraseMatcher', 'calculateStats', 'getSettings', 'updateSettings'];
     for (const methodName of contactCenterInsightsStubMethods) {
       const callPromise = this.contactCenterInsightsStub.then(
         stub => (...args: Array<{}>) => {
@@ -1350,10 +1350,10 @@ export class ContactCenterInsightsClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The parent resource of the phrase matcher. Required. The location to create
- *   a phrase matcher for.
- *   Format: `projects/<Project ID>/locations/<Location ID>` or
- *   `projects/<Project Number>/locations/<Location ID>`
+ *   Required. The parent resource of the phrase matcher. Required. The location
+ *   to create a phrase matcher for. Format: `projects/<Project
+ *   ID>/locations/<Location ID>` or `projects/<Project
+ *   Number>/locations/<Location ID>`
  * @param {google.cloud.contactcenterinsights.v1.PhraseMatcher} request.phraseMatcher
  *   Required. The phrase matcher resource to create.
  * @param {object} [options]
@@ -1541,6 +1541,79 @@ export class ContactCenterInsightsClient {
     });
     this.initialize();
     return this.innerApiCalls.deletePhraseMatcher(request, options, callback);
+  }
+  updatePhraseMatcher(
+      request?: protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
+        protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|undefined, {}|undefined
+      ]>;
+  updatePhraseMatcher(
+      request: protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
+          protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|null|undefined,
+          {}|null|undefined>): void;
+  updatePhraseMatcher(
+      request: protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest,
+      callback: Callback<
+          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
+          protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Updates a phrase matcher.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.contactcenterinsights.v1.PhraseMatcher} request.phraseMatcher
+ *   Required. The new values for the phrase matcher.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The list of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.updatePhraseMatcher(request);
+ */
+  updatePhraseMatcher(
+      request?: protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
+          protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
+          protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
+        protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'phrase_matcher.name': request.phraseMatcher!.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.updatePhraseMatcher(request, options, callback);
   }
   calculateStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,

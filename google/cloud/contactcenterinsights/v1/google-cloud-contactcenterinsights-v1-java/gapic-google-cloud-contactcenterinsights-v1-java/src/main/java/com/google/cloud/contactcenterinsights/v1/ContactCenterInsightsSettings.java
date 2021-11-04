@@ -256,6 +256,12 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     return ((ContactCenterInsightsStubSettings) getStubSettings()).deletePhraseMatcherSettings();
   }
 
+  /** Returns the object with the settings used for calls to updatePhraseMatcher. */
+  public UnaryCallSettings<UpdatePhraseMatcherRequest, PhraseMatcher>
+      updatePhraseMatcherSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).updatePhraseMatcherSettings();
+  }
+
   /** Returns the object with the settings used for calls to calculateStats. */
   public UnaryCallSettings<CalculateStatsRequest, CalculateStatsResponse> calculateStatsSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).calculateStatsSettings();
@@ -555,6 +561,12 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     public UnaryCallSettings.Builder<DeletePhraseMatcherRequest, Empty>
         deletePhraseMatcherSettings() {
       return getStubSettingsBuilder().deletePhraseMatcherSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePhraseMatcher. */
+    public UnaryCallSettings.Builder<UpdatePhraseMatcherRequest, PhraseMatcher>
+        updatePhraseMatcherSettings() {
+      return getStubSettingsBuilder().updatePhraseMatcherSettings();
     }
 
     /** Returns the builder for the settings used for calls to calculateStats. */

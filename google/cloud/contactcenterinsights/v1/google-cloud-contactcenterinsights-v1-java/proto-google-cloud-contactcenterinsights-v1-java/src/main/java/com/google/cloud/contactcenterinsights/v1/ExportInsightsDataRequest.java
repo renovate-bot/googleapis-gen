@@ -149,9 +149,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result should be
-     * exported to. If this dataset does not exist, the export call returns an
-     * INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result
+     * should be exported to. If this dataset does not exist, the export call
+     * returns an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -160,9 +160,9 @@ private static final long serialVersionUID = 0L;
     java.lang.String getDataset();
     /**
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result should be
-     * exported to. If this dataset does not exist, the export call returns an
-     * INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result
+     * should be exported to. If this dataset does not exist, the export call
+     * returns an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -351,9 +351,9 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object dataset_;
     /**
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result should be
-     * exported to. If this dataset does not exist, the export call returns an
-     * INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result
+     * should be exported to. If this dataset does not exist, the export call
+     * returns an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -374,9 +374,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the BigQuery dataset that the snapshot result should be
-     * exported to. If this dataset does not exist, the export call returns an
-     * INVALID_ARGUMENT error.
+     * Required. The name of the BigQuery dataset that the snapshot result
+     * should be exported to. If this dataset does not exist, the export call
+     * returns an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -896,9 +896,9 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object dataset_ = "";
       /**
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result should be
-       * exported to. If this dataset does not exist, the export call returns an
-       * INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result
+       * should be exported to. If this dataset does not exist, the export call
+       * returns an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -918,9 +918,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result should be
-       * exported to. If this dataset does not exist, the export call returns an
-       * INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result
+       * should be exported to. If this dataset does not exist, the export call
+       * returns an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -941,9 +941,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result should be
-       * exported to. If this dataset does not exist, the export call returns an
-       * INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result
+       * should be exported to. If this dataset does not exist, the export call
+       * returns an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -962,9 +962,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result should be
-       * exported to. If this dataset does not exist, the export call returns an
-       * INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result
+       * should be exported to. If this dataset does not exist, the export call
+       * returns an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -978,9 +978,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The name of the BigQuery dataset that the snapshot result should be
-       * exported to. If this dataset does not exist, the export call returns an
-       * INVALID_ARGUMENT error.
+       * Required. The name of the BigQuery dataset that the snapshot result
+       * should be exported to. If this dataset does not exist, the export call
+       * returns an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>

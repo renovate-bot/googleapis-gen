@@ -157,6 +157,26 @@ private static final long serialVersionUID = 0L;
      * @return The labeledConversationsCount.
      */
     long getLabeledConversationsCount();
+
+    /**
+     * <pre>
+     * Display name of the issue.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     * <pre>
+     * Display name of the issue.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString
+        getDisplayNameBytes();
   }
   /**
    * <pre>
@@ -176,6 +196,7 @@ private static final long serialVersionUID = 0L;
     }
     private IssueStats() {
       issue_ = "";
+      displayName_ = "";
     }
 
     @java.lang.Override
@@ -217,6 +238,12 @@ private static final long serialVersionUID = 0L;
             case 16: {
 
               labeledConversationsCount_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
               break;
             }
             default: {
@@ -316,6 +343,52 @@ private static final long serialVersionUID = 0L;
       return labeledConversationsCount_;
     }
 
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object displayName_;
+    /**
+     * <pre>
+     * Display name of the issue.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Display name of the issue.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -336,6 +409,9 @@ private static final long serialVersionUID = 0L;
       if (labeledConversationsCount_ != 0L) {
         output.writeInt64(2, labeledConversationsCount_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -351,6 +427,9 @@ private static final long serialVersionUID = 0L;
       if (labeledConversationsCount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, labeledConversationsCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -371,6 +450,8 @@ private static final long serialVersionUID = 0L;
           .equals(other.getIssue())) return false;
       if (getLabeledConversationsCount()
           != other.getLabeledConversationsCount()) return false;
+      if (!getDisplayName()
+          .equals(other.getDisplayName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -387,6 +468,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LABELED_CONVERSATIONS_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLabeledConversationsCount());
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -528,6 +611,8 @@ private static final long serialVersionUID = 0L;
 
         labeledConversationsCount_ = 0L;
 
+        displayName_ = "";
+
         return this;
       }
 
@@ -556,6 +641,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats result = new com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats(this);
         result.issue_ = issue_;
         result.labeledConversationsCount_ = labeledConversationsCount_;
+        result.displayName_ = displayName_;
         onBuilt();
         return result;
       }
@@ -610,6 +696,10 @@ private static final long serialVersionUID = 0L;
         }
         if (other.getLabeledConversationsCount() != 0L) {
           setLabeledConversationsCount(other.getLabeledConversationsCount());
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -785,6 +875,102 @@ private static final long serialVersionUID = 0L;
       public Builder clearLabeledConversationsCount() {
         
         labeledConversationsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       * <pre>
+       * Display name of the issue.
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Display name of the issue.
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString
+          getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Display name of the issue.
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Display name of the issue.
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Display name of the issue.
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        displayName_ = value;
         onChanged();
         return this;
       }
