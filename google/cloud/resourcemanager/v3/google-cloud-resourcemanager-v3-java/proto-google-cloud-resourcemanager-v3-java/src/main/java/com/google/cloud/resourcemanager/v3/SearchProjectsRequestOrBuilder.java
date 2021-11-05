@@ -13,6 +13,7 @@ public interface SearchProjectsRequestOrBuilder extends
    * `resourcemanager.projects.get` permission to. If multiple fields are
    * included in the query, the it will return results that match any of the
    * fields. Some eligible fields are:
+   * ```
    * | Field                   | Description                                  |
    * |-------------------------|----------------------------------------------|
    * | displayName, name       | Filters by displayName.                      |
@@ -25,6 +26,7 @@ public interface SearchProjectsRequestOrBuilder extends
    * | labels                  | Filters by label name or value.              |
    * | labels.&lt;key&gt; (where *key* is the name of a label) | Filters by label
    * name. |
+   * ```
    * Search expressions are case insensitive.
    * Some examples queries:
    * | Query            | Description                                         |
@@ -51,6 +53,7 @@ public interface SearchProjectsRequestOrBuilder extends
    * `resourcemanager.projects.get` permission to. If multiple fields are
    * included in the query, the it will return results that match any of the
    * fields. Some eligible fields are:
+   * ```
    * | Field                   | Description                                  |
    * |-------------------------|----------------------------------------------|
    * | displayName, name       | Filters by displayName.                      |
@@ -63,6 +66,7 @@ public interface SearchProjectsRequestOrBuilder extends
    * | labels                  | Filters by label name or value.              |
    * | labels.&lt;key&gt; (where *key* is the name of a label) | Filters by label
    * name. |
+   * ```
    * Search expressions are case insensitive.
    * Some examples queries:
    * | Query            | Description                                         |

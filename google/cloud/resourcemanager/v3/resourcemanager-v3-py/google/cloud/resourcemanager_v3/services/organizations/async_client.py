@@ -262,11 +262,13 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 Organizations to return in the response. Query rules are
                 case-insensitive.
 
-                \| Field \| Description \|
-                \|------------------|--------------------------------------------\|
-                \| directoryCustomerId, owner.directoryCustomerId \|
-                Filters by directory customer id. \| \| domain \|
-                Filters by domain. \|
+                ::
+
+                   | Field            | Description                                |
+                   |------------------|--------------------------------------------|
+                   | directoryCustomerId, owner.directoryCustomerId | Filters by directory
+                   customer id. |
+                   | domain           | Filters by domain.                         |
 
                 Organizations may be queried by ``directoryCustomerId``
                 or by ``domain``, where the domain is a G Suite domain,

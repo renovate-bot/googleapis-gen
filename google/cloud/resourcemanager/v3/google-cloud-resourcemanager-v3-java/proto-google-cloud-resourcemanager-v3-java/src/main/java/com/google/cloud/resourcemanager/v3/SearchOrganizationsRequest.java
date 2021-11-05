@@ -173,11 +173,13 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. An optional query string used to filter the Organizations to return in
    * the response. Query rules are case-insensitive.
+   * ```
    * | Field            | Description                                |
    * |------------------|--------------------------------------------|
    * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
    * customer id. |
    * | domain           | Filters by domain.                         |
+   * ```
    * Organizations may be queried by `directoryCustomerId` or by
    * `domain`, where the domain is a G Suite domain, for example:
    * * Query `directorycustomerid:123456789` returns Organization
@@ -206,11 +208,13 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. An optional query string used to filter the Organizations to return in
    * the response. Query rules are case-insensitive.
+   * ```
    * | Field            | Description                                |
    * |------------------|--------------------------------------------|
    * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
    * customer id. |
    * | domain           | Filters by domain.                         |
+   * ```
    * Organizations may be queried by `directoryCustomerId` or by
    * `domain`, where the domain is a G Suite domain, for example:
    * * Query `directorycustomerid:123456789` returns Organization
@@ -729,11 +733,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. An optional query string used to filter the Organizations to return in
      * the response. Query rules are case-insensitive.
+     * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
      * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
      * customer id. |
      * | domain           | Filters by domain.                         |
+     * ```
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
      * * Query `directorycustomerid:123456789` returns Organization
@@ -761,11 +767,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. An optional query string used to filter the Organizations to return in
      * the response. Query rules are case-insensitive.
+     * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
      * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
      * customer id. |
      * | domain           | Filters by domain.                         |
+     * ```
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
      * * Query `directorycustomerid:123456789` returns Organization
@@ -794,11 +802,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. An optional query string used to filter the Organizations to return in
      * the response. Query rules are case-insensitive.
+     * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
      * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
      * customer id. |
      * | domain           | Filters by domain.                         |
+     * ```
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
      * * Query `directorycustomerid:123456789` returns Organization
@@ -825,11 +835,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. An optional query string used to filter the Organizations to return in
      * the response. Query rules are case-insensitive.
+     * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
      * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
      * customer id. |
      * | domain           | Filters by domain.                         |
+     * ```
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
      * * Query `directorycustomerid:123456789` returns Organization
@@ -851,11 +863,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. An optional query string used to filter the Organizations to return in
      * the response. Query rules are case-insensitive.
+     * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
      * | directoryCustomerId, owner.directoryCustomerId | Filters by directory
      * customer id. |
      * | domain           | Filters by domain.                         |
+     * ```
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
      * * Query `directorycustomerid:123456789` returns Organization
