@@ -7,7 +7,7 @@ namespace Google\Cloud\Workflows\Executions\V1\Execution;
 use UnexpectedValueException;
 
 /**
- * Describes the current state of the execution. More states may be added
+ * Describes the current state of the execution. More states might be added
  * in the future.
  *
  * Protobuf type <code>google.cloud.workflows.executions.v1.Execution.State</code>

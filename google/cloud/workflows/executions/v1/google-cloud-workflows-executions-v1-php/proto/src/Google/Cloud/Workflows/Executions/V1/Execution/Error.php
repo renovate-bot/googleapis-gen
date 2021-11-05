@@ -16,17 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class Error extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      *
      * Generated from protobuf field <code>string payload = 1;</code>
      */
     protected $payload = '';
     /**
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      *
      * Generated from protobuf field <code>string context = 2;</code>
      */
     protected $context = '';
+    /**
+     * Stack trace with detailed information of where error was generated.
+     *
+     * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     */
+    protected $stack_trace = null;
 
     /**
      * Constructor.
@@ -35,9 +41,11 @@ class Error extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $payload
-     *           Error payload returned by the execution, represented as a JSON string.
+     *           Error message and data returned represented as a JSON string.
      *     @type string $context
-     *           Human readable error context, helpful for debugging purposes.
+     *           Human-readable stack trace string.
+     *     @type \Google\Cloud\Workflows\Executions\V1\Execution\StackTrace $stack_trace
+     *           Stack trace with detailed information of where error was generated.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +54,7 @@ class Error extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      *
      * Generated from protobuf field <code>string payload = 1;</code>
      * @return string
@@ -57,7 +65,7 @@ class Error extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Error payload returned by the execution, represented as a JSON string.
+     * Error message and data returned represented as a JSON string.
      *
      * Generated from protobuf field <code>string payload = 1;</code>
      * @param string $var
@@ -72,7 +80,7 @@ class Error extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      *
      * Generated from protobuf field <code>string context = 2;</code>
      * @return string
@@ -83,7 +91,7 @@ class Error extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Human readable error context, helpful for debugging purposes.
+     * Human-readable stack trace string.
      *
      * Generated from protobuf field <code>string context = 2;</code>
      * @param string $var
@@ -93,6 +101,42 @@ class Error extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->context = $var;
+
+        return $this;
+    }
+
+    /**
+     * Stack trace with detailed information of where error was generated.
+     *
+     * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     * @return \Google\Cloud\Workflows\Executions\V1\Execution\StackTrace|null
+     */
+    public function getStackTrace()
+    {
+        return $this->stack_trace;
+    }
+
+    public function hasStackTrace()
+    {
+        return isset($this->stack_trace);
+    }
+
+    public function clearStackTrace()
+    {
+        unset($this->stack_trace);
+    }
+
+    /**
+     * Stack trace with detailed information of where error was generated.
+     *
+     * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.StackTrace stack_trace = 3;</code>
+     * @param \Google\Cloud\Workflows\Executions\V1\Execution\StackTrace $var
+     * @return $this
+     */
+    public function setStackTrace($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Workflows\Executions\V1\Execution\StackTrace::class);
+        $this->stack_trace = $var;
 
         return $this;
     }

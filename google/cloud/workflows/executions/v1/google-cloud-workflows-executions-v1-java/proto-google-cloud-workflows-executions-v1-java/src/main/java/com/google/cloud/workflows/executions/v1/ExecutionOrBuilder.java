@@ -108,6 +108,9 @@ public interface ExecutionOrBuilder extends
    * <pre>
    * Input parameters of the execution represented as a JSON string.
    * The size limit is 32KB.
+   * *Note*: If you are using the REST API directly to run your workflow, you
+   * must escape any JSON string value of `argument`. Example:
+   * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
    * </pre>
    *
    * <code>string argument = 5;</code>
@@ -118,6 +121,9 @@ public interface ExecutionOrBuilder extends
    * <pre>
    * Input parameters of the execution represented as a JSON string.
    * The size limit is 32KB.
+   * *Note*: If you are using the REST API directly to run your workflow, you
+   * must escape any JSON string value of `argument`. Example:
+   * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
    * </pre>
    *
    * <code>string argument = 5;</code>
@@ -200,4 +206,23 @@ public interface ExecutionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getWorkflowRevisionIdBytes();
+
+  /**
+   * <pre>
+   * The call logging level associated to this execution.
+   * </pre>
+   *
+   * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+   * @return The enum numeric value on the wire for callLogLevel.
+   */
+  int getCallLogLevelValue();
+  /**
+   * <pre>
+   * The call logging level associated to this execution.
+   * </pre>
+   *
+   * <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+   * @return The callLogLevel.
+   */
+  com.google.cloud.workflows.executions.v1.Execution.CallLogLevel getCallLogLevel();
 }

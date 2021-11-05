@@ -45,6 +45,9 @@ class Execution extends \Google\Protobuf\Internal\Message
     /**
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
      *
      * Generated from protobuf field <code>string argument = 5;</code>
      */
@@ -70,6 +73,12 @@ class Execution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string workflow_revision_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $workflow_revision_id = '';
+    /**
+     * The call logging level associated to this execution.
+     *
+     * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     */
+    protected $call_log_level = 0;
 
     /**
      * Constructor.
@@ -90,6 +99,9 @@ class Execution extends \Google\Protobuf\Internal\Message
      *     @type string $argument
      *           Input parameters of the execution represented as a JSON string.
      *           The size limit is 32KB.
+     *           *Note*: If you are using the REST API directly to run your workflow, you
+     *           must escape any JSON string value of `argument`. Example:
+     *           `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
      *     @type string $result
      *           Output only. Output of the execution represented as a JSON string. The
      *           value can only be present if the execution's state is `SUCCEEDED`.
@@ -99,6 +111,8 @@ class Execution extends \Google\Protobuf\Internal\Message
      *           or `CANCELLED`.
      *     @type string $workflow_revision_id
      *           Output only. Revision of the workflow this execution is using.
+     *     @type int $call_log_level
+     *           The call logging level associated to this execution.
      * }
      */
     public function __construct($data = NULL) {
@@ -237,6 +251,9 @@ class Execution extends \Google\Protobuf\Internal\Message
     /**
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
      *
      * Generated from protobuf field <code>string argument = 5;</code>
      * @return string
@@ -249,6 +266,9 @@ class Execution extends \Google\Protobuf\Internal\Message
     /**
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     * *Note*: If you are using the REST API directly to run your workflow, you
+     * must escape any JSON string value of `argument`. Example:
+     * `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
      *
      * Generated from protobuf field <code>string argument = 5;</code>
      * @param string $var
@@ -352,6 +372,32 @@ class Execution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->workflow_revision_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The call logging level associated to this execution.
+     *
+     * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     * @return int
+     */
+    public function getCallLogLevel()
+    {
+        return $this->call_log_level;
+    }
+
+    /**
+     * The call logging level associated to this execution.
+     *
+     * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.CallLogLevel call_log_level = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCallLogLevel($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Workflows\Executions\V1\Execution\CallLogLevel::class);
+        $this->call_log_level = $var;
 
         return $this;
     }
