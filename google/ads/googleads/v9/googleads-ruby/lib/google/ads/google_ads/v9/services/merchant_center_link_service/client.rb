@@ -182,6 +182,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::MerchantCenterLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::ListMerchantCenterLinksRequest.new
+              #
+              #   # Call the list_merchant_center_links method.
+              #   result = client.list_merchant_center_links request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::ListMerchantCenterLinksResponse.
+              #   p result
+              #
               def list_merchant_center_links request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -261,6 +276,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Resources::MerchantCenterLink]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::MerchantCenterLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetMerchantCenterLinkRequest.new
+              #
+              #   # Call the get_merchant_center_link method.
+              #   result = client.get_merchant_center_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::MerchantCenterLink.
+              #   p result
               #
               def get_merchant_center_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -347,6 +377,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateMerchantCenterLinkResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::MerchantCenterLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateMerchantCenterLinkRequest.new
+              #
+              #   # Call the mutate_merchant_center_link method.
+              #   result = client.mutate_merchant_center_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateMerchantCenterLinkResponse.
+              #   p result
               #
               def mutate_merchant_center_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

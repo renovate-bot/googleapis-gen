@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::MediaFileService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetMediaFileRequest.new
+              #
+              #   # Call the get_media_file method.
+              #   result = client.get_media_file request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::MediaFile.
+              #   p result
+              #
               def get_media_file request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -286,6 +301,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateMediaFilesResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::MediaFileService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateMediaFilesRequest.new
+              #
+              #   # Call the mutate_media_files method.
+              #   result = client.mutate_media_files request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateMediaFilesResponse.
+              #   p result
               #
               def mutate_media_files request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

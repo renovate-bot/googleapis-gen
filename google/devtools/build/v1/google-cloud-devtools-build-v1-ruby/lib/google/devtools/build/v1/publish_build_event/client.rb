@@ -212,6 +212,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/devtools/build/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Build::V1::PublishBuildEvent::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Build::V1::PublishLifecycleEventRequest.new
+            #
+            #   # Call the publish_lifecycle_event method.
+            #   result = client.publish_lifecycle_event request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def publish_lifecycle_event request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -269,6 +284,30 @@ module Google
             # @return [::Enumerable<::Google::Devtools::Build::V1::PublishBuildToolEventStreamResponse>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/devtools/build/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Build::V1::PublishBuildEvent::Client.new
+            #
+            #   # Create an input stream
+            #   input = Gapic::StreamInput.new
+            #
+            #   # Call the publish_build_tool_event_stream method to start streaming.
+            #   output = client.publish_build_tool_event_stream input
+            #
+            #   # Send requests on the stream. For each request, pass in keyword
+            #   # arguments to set fields. Be sure to close the stream when done.
+            #   input << Google::Devtools::Build::V1::PublishBuildToolEventStreamRequest.new
+            #   input << Google::Devtools::Build::V1::PublishBuildToolEventStreamRequest.new
+            #   input.close
+            #
+            #   # Handle streamed responses. These may be interleaved with inputs.
+            #   # Each response is of type ::Google::Devtools::Build::V1::PublishBuildToolEventStreamResponse.
+            #   output.each do |response|
+            #     p response
+            #   end
             #
             def publish_build_tool_event_stream request, options = nil
               unless request.is_a? ::Enumerable

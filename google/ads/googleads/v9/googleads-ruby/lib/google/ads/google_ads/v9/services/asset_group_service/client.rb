@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AssetGroupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetAssetGroupRequest.new
+              #
+              #   # Call the get_asset_group method.
+              #   result = client.get_asset_group request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::AssetGroup.
+              #   p result
+              #
               def get_asset_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -248,6 +263,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateAssetGroupsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AssetGroupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateAssetGroupsRequest.new
+              #
+              #   # Call the mutate_asset_groups method.
+              #   result = client.mutate_asset_groups request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateAssetGroupsResponse.
+              #   p result
               #
               def mutate_asset_groups request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

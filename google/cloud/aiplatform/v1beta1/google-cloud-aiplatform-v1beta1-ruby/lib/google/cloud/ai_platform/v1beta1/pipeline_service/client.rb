@@ -201,6 +201,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateTrainingPipelineRequest.new
+            #
+            #   # Call the create_training_pipeline method.
+            #   result = client.create_training_pipeline request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TrainingPipeline.
+            #   p result
+            #
             def create_training_pipeline request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -272,6 +287,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetTrainingPipelineRequest.new
+            #
+            #   # Call the get_training_pipeline method.
+            #   result = client.get_training_pipeline request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TrainingPipeline.
+            #   p result
             #
             def get_training_pipeline request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -370,6 +400,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListTrainingPipelinesRequest.new
+            #
+            #   # Call the list_training_pipelines method.
+            #   result = client.list_training_pipelines request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline.
+            #     p response
+            #   end
+            #
             def list_training_pipelines request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -442,6 +493,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteTrainingPipelineRequest.new
+            #
+            #   # Call the delete_training_pipeline method.
+            #   result = client.delete_training_pipeline request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_training_pipeline request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -525,6 +598,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CancelTrainingPipelineRequest.new
+            #
+            #   # Call the cancel_training_pipeline method.
+            #   result = client.cancel_training_pipeline request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def cancel_training_pipeline request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -605,6 +693,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreatePipelineJobRequest.new
+            #
+            #   # Call the create_pipeline_job method.
+            #   result = client.create_pipeline_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::PipelineJob.
+            #   p result
+            #
             def create_pipeline_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -676,6 +779,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::PipelineJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetPipelineJobRequest.new
+            #
+            #   # Call the get_pipeline_job method.
+            #   result = client.get_pipeline_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::PipelineJob.
+            #   p result
             #
             def get_pipeline_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -798,6 +916,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListPipelineJobsRequest.new
+            #
+            #   # Call the list_pipeline_jobs method.
+            #   result = client.list_pipeline_jobs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::PipelineJob.
+            #     p response
+            #   end
+            #
             def list_pipeline_jobs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -870,6 +1009,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeletePipelineJobRequest.new
+            #
+            #   # Call the delete_pipeline_job method.
+            #   result = client.delete_pipeline_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_pipeline_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -952,6 +1113,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PipelineService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CancelPipelineJobRequest.new
+            #
+            #   # Call the cancel_pipeline_job method.
+            #   result = client.cancel_pipeline_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def cancel_pipeline_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

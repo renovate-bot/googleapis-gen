@@ -188,6 +188,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::UploadModelRequest.new
+            #
+            #   # Call the upload_model method.
+            #   result = client.upload_model request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def upload_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -259,6 +281,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Model]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetModelRequest.new
+            #
+            #   # Call the get_model method.
+            #   result = client.get_model request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Model.
+            #   p result
             #
             def get_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -365,6 +402,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListModelsRequest.new
+            #
+            #   # Call the list_models method.
+            #   result = client.list_models request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::Model.
+            #     p response
+            #   end
+            #
             def list_models request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -439,6 +497,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::UpdateModelRequest.new
+            #
+            #   # Call the update_model method.
+            #   result = client.update_model request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Model.
+            #   p result
+            #
             def update_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -512,6 +585,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::DeleteModelRequest.new
+            #
+            #   # Call the delete_model method.
+            #   result = client.delete_model request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -588,6 +683,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ExportModelRequest.new
+            #
+            #   # Call the export_model method.
+            #   result = client.export_model request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def export_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -660,6 +777,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::ModelEvaluation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetModelEvaluationRequest.new
+            #
+            #   # Call the get_model_evaluation method.
+            #   result = client.get_model_evaluation request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::ModelEvaluation.
+            #   p result
             #
             def get_model_evaluation request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -743,6 +875,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListModelEvaluationsRequest.new
+            #
+            #   # Call the list_model_evaluations method.
+            #   result = client.list_model_evaluations request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::ModelEvaluation.
+            #     p response
+            #   end
+            #
             def list_model_evaluations request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -815,6 +968,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::ModelEvaluationSlice]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetModelEvaluationSliceRequest.new
+            #
+            #   # Call the get_model_evaluation_slice method.
+            #   result = client.get_model_evaluation_slice request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::ModelEvaluationSlice.
+            #   p result
             #
             def get_model_evaluation_slice request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -900,6 +1068,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1::ModelEvaluationSlice>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListModelEvaluationSlicesRequest.new
+            #
+            #   # Call the list_model_evaluation_slices method.
+            #   result = client.list_model_evaluation_slices request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::ModelEvaluationSlice.
+            #     p response
+            #   end
             #
             def list_model_evaluation_slices request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

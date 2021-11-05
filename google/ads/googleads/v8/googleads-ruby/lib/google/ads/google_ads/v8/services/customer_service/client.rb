@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CustomerService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetCustomerRequest.new
+              #
+              #   # Call the get_customer method.
+              #   result = client.get_customer request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::Customer.
+              #   p result
+              #
               def get_customer request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -270,6 +285,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CustomerService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateCustomerRequest.new
+              #
+              #   # Call the mutate_customer method.
+              #   result = client.mutate_customer request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateCustomerResponse.
+              #   p result
+              #
               def mutate_customer request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -341,6 +371,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::ListAccessibleCustomersResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CustomerService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::ListAccessibleCustomersRequest.new
+              #
+              #   # Call the list_accessible_customers method.
+              #   result = client.list_accessible_customers request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::ListAccessibleCustomersResponse.
+              #   p result
               #
               def list_accessible_customers request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -430,6 +475,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::CreateCustomerClientResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CustomerService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::CreateCustomerClientRequest.new
+              #
+              #   # Call the create_customer_client method.
+              #   result = client.create_customer_client request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::CreateCustomerClientResponse.
+              #   p result
               #
               def create_customer_client request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

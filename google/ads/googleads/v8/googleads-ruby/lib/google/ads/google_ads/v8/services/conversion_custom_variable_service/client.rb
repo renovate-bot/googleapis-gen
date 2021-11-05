@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ConversionCustomVariableService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetConversionCustomVariableRequest.new
+              #
+              #   # Call the get_conversion_custom_variable method.
+              #   result = client.get_conversion_custom_variable request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::ConversionCustomVariable.
+              #   p result
+              #
               def get_conversion_custom_variable request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -277,6 +292,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateConversionCustomVariablesResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ConversionCustomVariableService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateConversionCustomVariablesRequest.new
+              #
+              #   # Call the mutate_conversion_custom_variables method.
+              #   result = client.mutate_conversion_custom_variables request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateConversionCustomVariablesResponse.
+              #   p result
               #
               def mutate_conversion_custom_variables request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

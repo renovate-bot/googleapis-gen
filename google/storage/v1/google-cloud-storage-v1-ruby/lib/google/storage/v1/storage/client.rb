@@ -181,6 +181,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteBucketAccessControlRequest.new
+          #
+          #   # Call the delete_bucket_access_control method.
+          #   result = client.delete_bucket_access_control request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
+          #
           def delete_bucket_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -253,6 +268,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetBucketAccessControlRequest.new
+          #
+          #   # Call the get_bucket_access_control method.
+          #   result = client.get_bucket_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::BucketAccessControl.
+          #   p result
+          #
           def get_bucket_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -319,6 +349,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::InsertBucketAccessControlRequest.new
+          #
+          #   # Call the insert_bucket_access_control method.
+          #   result = client.insert_bucket_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::BucketAccessControl.
+          #   p result
+          #
           def insert_bucket_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -382,6 +427,21 @@ module Google
           # @return [::Google::Storage::V1::ListBucketAccessControlsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListBucketAccessControlsRequest.new
+          #
+          #   # Call the list_bucket_access_controls method.
+          #   result = client.list_bucket_access_controls request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListBucketAccessControlsResponse.
+          #   p result
           #
           def list_bucket_access_controls request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -458,6 +518,21 @@ module Google
           # @return [::Google::Storage::V1::BucketAccessControl]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::UpdateBucketAccessControlRequest.new
+          #
+          #   # Call the update_bucket_access_control method.
+          #   result = client.update_bucket_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::BucketAccessControl.
+          #   p result
           #
           def update_bucket_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -543,6 +618,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::PatchBucketAccessControlRequest.new
+          #
+          #   # Call the patch_bucket_access_control method.
+          #   result = client.patch_bucket_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::BucketAccessControl.
+          #   p result
+          #
           def patch_bucket_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -611,6 +701,21 @@ module Google
           # @return [::Google::Protobuf::Empty]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteBucketRequest.new
+          #
+          #   # Call the delete_bucket method.
+          #   result = client.delete_bucket request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
           #
           def delete_bucket request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -683,6 +788,21 @@ module Google
           # @return [::Google::Storage::V1::Bucket]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetBucketRequest.new
+          #
+          #   # Call the get_bucket method.
+          #   result = client.get_bucket request
+          #
+          #   # The returned object is of type Google::Storage::V1::Bucket.
+          #   p result
           #
           def get_bucket request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -758,6 +878,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::InsertBucketRequest.new
+          #
+          #   # Call the insert_bucket method.
+          #   result = client.insert_bucket request
+          #
+          #   # The returned object is of type Google::Storage::V1::Bucket.
+          #   p result
+          #
           def insert_bucket request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -821,6 +956,21 @@ module Google
           # @return [::Google::Storage::V1::ListChannelsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListChannelsRequest.new
+          #
+          #   # Call the list_channels method.
+          #   result = client.list_channels request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListChannelsResponse.
+          #   p result
           #
           def list_channels request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -896,6 +1046,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListBucketsRequest.new
+          #
+          #   # Call the list_buckets method.
+          #   result = client.list_buckets request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListBucketsResponse.
+          #   p result
+          #
           def list_buckets request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -963,6 +1128,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::LockRetentionPolicyRequest.new
+          #
+          #   # Call the lock_bucket_retention_policy method.
+          #   result = client.lock_bucket_retention_policy request
+          #
+          #   # The returned object is of type Google::Storage::V1::Bucket.
+          #   p result
+          #
           def lock_bucket_retention_policy request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1026,6 +1206,21 @@ module Google
           # @return [::Google::Iam::V1::Policy]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetIamPolicyRequest.new
+          #
+          #   # Call the get_bucket_iam_policy method.
+          #   result = client.get_bucket_iam_policy request
+          #
+          #   # The returned object is of type Google::Iam::V1::Policy.
+          #   p result
           #
           def get_bucket_iam_policy request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1091,6 +1286,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::SetIamPolicyRequest.new
+          #
+          #   # Call the set_bucket_iam_policy method.
+          #   result = client.set_bucket_iam_policy request
+          #
+          #   # The returned object is of type Google::Iam::V1::Policy.
+          #   p result
+          #
           def set_bucket_iam_policy request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1155,6 +1365,21 @@ module Google
           # @return [::Google::Iam::V1::TestIamPermissionsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::TestIamPermissionsRequest.new
+          #
+          #   # Call the test_bucket_iam_permissions method.
+          #   result = client.test_bucket_iam_permissions request
+          #
+          #   # The returned object is of type Google::Iam::V1::TestIamPermissionsResponse.
+          #   p result
           #
           def test_bucket_iam_permissions request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1246,6 +1471,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::PatchBucketRequest.new
+          #
+          #   # Call the patch_bucket method.
+          #   result = client.patch_bucket request
+          #
+          #   # The returned object is of type Google::Storage::V1::Bucket.
+          #   p result
+          #
           def patch_bucket request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1328,6 +1568,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::UpdateBucketRequest.new
+          #
+          #   # Call the update_bucket method.
+          #   result = client.update_bucket request
+          #
+          #   # The returned object is of type Google::Storage::V1::Bucket.
+          #   p result
+          #
           def update_bucket request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1394,6 +1649,21 @@ module Google
           # @return [::Google::Protobuf::Empty]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::StopChannelRequest.new
+          #
+          #   # Call the stop_channel method.
+          #   result = client.stop_channel request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
           #
           def stop_channel request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1468,6 +1738,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteDefaultObjectAccessControlRequest.new
+          #
+          #   # Call the delete_default_object_access_control method.
+          #   result = client.delete_default_object_access_control request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
+          #
           def delete_default_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1541,6 +1826,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetDefaultObjectAccessControlRequest.new
+          #
+          #   # Call the get_default_object_access_control method.
+          #   result = client.get_default_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def get_default_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1606,6 +1906,21 @@ module Google
           # @return [::Google::Storage::V1::ObjectAccessControl]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::InsertDefaultObjectAccessControlRequest.new
+          #
+          #   # Call the insert_default_object_access_control method.
+          #   result = client.insert_default_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
           #
           def insert_default_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1676,6 +1991,21 @@ module Google
           # @return [::Google::Storage::V1::ListObjectAccessControlsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListDefaultObjectAccessControlsRequest.new
+          #
+          #   # Call the list_default_object_access_controls method.
+          #   result = client.list_default_object_access_controls request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListObjectAccessControlsResponse.
+          #   p result
           #
           def list_default_object_access_controls request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1762,6 +2092,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::PatchDefaultObjectAccessControlRequest.new
+          #
+          #   # Call the patch_default_object_access_control method.
+          #   result = client.patch_default_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def patch_default_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1838,6 +2183,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::UpdateDefaultObjectAccessControlRequest.new
+          #
+          #   # Call the update_default_object_access_control method.
+          #   result = client.update_default_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def update_default_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1906,6 +2266,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteNotificationRequest.new
+          #
+          #   # Call the delete_notification method.
+          #   result = client.delete_notification request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
+          #
           def delete_notification request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1972,6 +2347,21 @@ module Google
           # @return [::Google::Storage::V1::Notification]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetNotificationRequest.new
+          #
+          #   # Call the get_notification method.
+          #   result = client.get_notification request
+          #
+          #   # The returned object is of type Google::Storage::V1::Notification.
+          #   p result
           #
           def get_notification request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2042,6 +2432,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::InsertNotificationRequest.new
+          #
+          #   # Call the insert_notification method.
+          #   result = client.insert_notification request
+          #
+          #   # The returned object is of type Google::Storage::V1::Notification.
+          #   p result
+          #
           def insert_notification request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2105,6 +2510,21 @@ module Google
           # @return [::Google::Storage::V1::ListNotificationsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListNotificationsRequest.new
+          #
+          #   # Call the list_notifications method.
+          #   result = client.list_notifications request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListNotificationsResponse.
+          #   p result
           #
           def list_notifications request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2184,6 +2604,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteObjectAccessControlRequest.new
+          #
+          #   # Call the delete_object_access_control method.
+          #   result = client.delete_object_access_control request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
+          #
           def delete_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2261,6 +2696,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetObjectAccessControlRequest.new
+          #
+          #   # Call the get_object_access_control method.
+          #   result = client.get_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def get_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2332,6 +2782,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::InsertObjectAccessControlRequest.new
+          #
+          #   # Call the insert_object_access_control method.
+          #   result = client.insert_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def insert_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2400,6 +2865,21 @@ module Google
           # @return [::Google::Storage::V1::ListObjectAccessControlsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListObjectAccessControlsRequest.new
+          #
+          #   # Call the list_object_access_controls method.
+          #   result = client.list_object_access_controls request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListObjectAccessControlsResponse.
+          #   p result
           #
           def list_object_access_controls request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2494,6 +2974,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::PatchObjectAccessControlRequest.new
+          #
+          #   # Call the patch_object_access_control method.
+          #   result = client.patch_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def patch_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2585,6 +3080,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::UpdateObjectAccessControlRequest.new
+          #
+          #   # Call the update_object_access_control method.
+          #   result = client.update_object_access_control request
+          #
+          #   # The returned object is of type Google::Storage::V1::ObjectAccessControl.
+          #   p result
+          #
           def update_object_access_control request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2672,6 +3182,21 @@ module Google
           # @return [::Google::Storage::V1::Object]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ComposeObjectRequest.new
+          #
+          #   # Call the compose_object method.
+          #   result = client.compose_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::Object.
+          #   p result
           #
           def compose_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2794,6 +3319,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::CopyObjectRequest.new
+          #
+          #   # Call the copy_object method.
+          #   result = client.copy_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::Object.
+          #   p result
+          #
           def copy_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2886,6 +3426,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteObjectRequest.new
+          #
+          #   # Call the delete_object method.
+          #   result = client.delete_object request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
+          #
           def delete_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2973,6 +3528,21 @@ module Google
           # @return [::Google::Storage::V1::Object]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetObjectRequest.new
+          #
+          #   # Call the get_object method.
+          #   result = client.get_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::Object.
+          #   p result
           #
           def get_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -3076,6 +3646,24 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetObjectMediaRequest.new
+          #
+          #   # Call the get_object_media method.
+          #   result = client.get_object_media request
+          #
+          #   # The returned object is a streamed enumerable yielding elements of
+          #   # type ::Google::Storage::V1::GetObjectMediaResponse.
+          #   result.each do |response|
+          #     p response
+          #   end
+          #
           def get_object_media request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -3147,6 +3735,25 @@ module Google
           # @return [::Google::Storage::V1::Object]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a stream of requests, as an Enumerator.
+          #   # For each request, pass in keyword arguments to set fields.
+          #   request = [
+          #     Google::Storage::V1::InsertObjectRequest.new,
+          #     Google::Storage::V1::InsertObjectRequest.new
+          #   ].to_enum
+          #
+          #   # Call the insert_object method.
+          #   result = client.insert_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::Object.
+          #   p result
           #
           def insert_object request, options = nil
             unless request.is_a? ::Enumerable
@@ -3244,6 +3851,21 @@ module Google
           # @return [::Google::Storage::V1::ListObjectsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListObjectsRequest.new
+          #
+          #   # Call the list_objects method.
+          #   result = client.list_objects request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListObjectsResponse.
+          #   p result
           #
           def list_objects request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -3385,6 +4007,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::RewriteObjectRequest.new
+          #
+          #   # Call the rewrite_object method.
+          #   result = client.rewrite_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::RewriteResponse.
+          #   p result
+          #
           def rewrite_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -3452,6 +4089,21 @@ module Google
           # @return [::Google::Storage::V1::StartResumableWriteResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::StartResumableWriteRequest.new
+          #
+          #   # Call the start_resumable_write method.
+          #   result = client.start_resumable_write request
+          #
+          #   # The returned object is of type Google::Storage::V1::StartResumableWriteResponse.
+          #   p result
           #
           def start_resumable_write request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -3531,6 +4183,21 @@ module Google
           # @return [::Google::Storage::V1::QueryWriteStatusResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::QueryWriteStatusRequest.new
+          #
+          #   # Call the query_write_status method.
+          #   result = client.query_write_status request
+          #
+          #   # The returned object is of type Google::Storage::V1::QueryWriteStatusResponse.
+          #   p result
           #
           def query_write_status request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -3635,6 +4302,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::PatchObjectRequest.new
+          #
+          #   # Call the patch_object method.
+          #   result = client.patch_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::Object.
+          #   p result
+          #
           def patch_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -3729,6 +4411,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::UpdateObjectRequest.new
+          #
+          #   # Call the update_object method.
+          #   result = client.update_object request
+          #
+          #   # The returned object is of type Google::Storage::V1::Object.
+          #   p result
+          #
           def update_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -3792,6 +4489,21 @@ module Google
           # @return [::Google::Iam::V1::Policy]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetIamPolicyRequest.new
+          #
+          #   # Call the get_object_iam_policy method.
+          #   result = client.get_object_iam_policy request
+          #
+          #   # The returned object is of type Google::Iam::V1::Policy.
+          #   p result
           #
           def get_object_iam_policy request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -3857,6 +4569,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::SetIamPolicyRequest.new
+          #
+          #   # Call the set_object_iam_policy method.
+          #   result = client.set_object_iam_policy request
+          #
+          #   # The returned object is of type Google::Iam::V1::Policy.
+          #   p result
+          #
           def set_object_iam_policy request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -3921,6 +4648,21 @@ module Google
           # @return [::Google::Iam::V1::TestIamPermissionsResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::TestIamPermissionsRequest.new
+          #
+          #   # Call the test_object_iam_permissions method.
+          #   result = client.test_object_iam_permissions request
+          #
+          #   # The returned object is of type Google::Iam::V1::TestIamPermissionsResponse.
+          #   p result
           #
           def test_object_iam_permissions request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -4016,6 +4758,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::WatchAllObjectsRequest.new
+          #
+          #   # Call the watch_all_objects method.
+          #   result = client.watch_all_objects request
+          #
+          #   # The returned object is of type Google::Storage::V1::Channel.
+          #   p result
+          #
           def watch_all_objects request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -4079,6 +4836,21 @@ module Google
           # @return [::Google::Storage::V1::ServiceAccount]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetProjectServiceAccountRequest.new
+          #
+          #   # Call the get_service_account method.
+          #   result = client.get_service_account request
+          #
+          #   # The returned object is of type Google::Storage::V1::ServiceAccount.
+          #   p result
           #
           def get_service_account request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -4146,6 +4918,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::CreateHmacKeyRequest.new
+          #
+          #   # Call the create_hmac_key method.
+          #   result = client.create_hmac_key request
+          #
+          #   # The returned object is of type Google::Storage::V1::CreateHmacKeyResponse.
+          #   p result
+          #
           def create_hmac_key request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -4212,6 +4999,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::DeleteHmacKeyRequest.new
+          #
+          #   # Call the delete_hmac_key method.
+          #   result = client.delete_hmac_key request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
+          #
           def delete_hmac_key request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -4277,6 +5079,21 @@ module Google
           # @return [::Google::Storage::V1::HmacKeyMetadata]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::GetHmacKeyRequest.new
+          #
+          #   # Call the get_hmac_key method.
+          #   result = client.get_hmac_key request
+          #
+          #   # The returned object is of type Google::Storage::V1::HmacKeyMetadata.
+          #   p result
           #
           def get_hmac_key request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -4350,6 +5167,21 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::ListHmacKeysRequest.new
+          #
+          #   # Call the list_hmac_keys method.
+          #   result = client.list_hmac_keys request
+          #
+          #   # The returned object is of type Google::Storage::V1::ListHmacKeysResponse.
+          #   p result
+          #
           def list_hmac_keys request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -4417,6 +5249,21 @@ module Google
           # @return [::Google::Storage::V1::HmacKeyMetadata]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V1::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V1::UpdateHmacKeyRequest.new
+          #
+          #   # Call the update_hmac_key method.
+          #   result = client.update_hmac_key request
+          #
+          #   # The returned object is of type Google::Storage::V1::HmacKeyMetadata.
+          #   p result
           #
           def update_hmac_key request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?

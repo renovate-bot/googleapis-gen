@@ -187,6 +187,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::UserDataService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::UploadUserDataRequest.new
+              #
+              #   # Call the upload_user_data method.
+              #   result = client.upload_user_data request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::UploadUserDataResponse.
+              #   p result
+              #
               def upload_user_data request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::ConversionActionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetConversionActionRequest.new
+              #
+              #   # Call the get_conversion_action method.
+              #   result = client.get_conversion_action request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::ConversionAction.
+              #   p result
+              #
               def get_conversion_action request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -283,6 +298,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateConversionActionsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::ConversionActionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateConversionActionsRequest.new
+              #
+              #   # Call the mutate_conversion_actions method.
+              #   result = client.mutate_conversion_actions request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateConversionActionsResponse.
+              #   p result
               #
               def mutate_conversion_actions request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

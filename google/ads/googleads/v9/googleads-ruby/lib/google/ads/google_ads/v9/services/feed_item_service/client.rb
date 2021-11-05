@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::FeedItemService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetFeedItemRequest.new
+              #
+              #   # Call the get_feed_item method.
+              #   result = client.get_feed_item request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::FeedItem.
+              #   p result
+              #
               def get_feed_item request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -291,6 +306,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateFeedItemsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::FeedItemService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateFeedItemsRequest.new
+              #
+              #   # Call the mutate_feed_items method.
+              #   result = client.mutate_feed_items request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateFeedItemsResponse.
+              #   p result
               #
               def mutate_feed_items request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

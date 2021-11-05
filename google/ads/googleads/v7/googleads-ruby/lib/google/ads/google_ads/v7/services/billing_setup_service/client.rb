@@ -188,6 +188,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::BillingSetupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetBillingSetupRequest.new
+              #
+              #   # Call the get_billing_setup method.
+              #   result = client.get_billing_setup request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::BillingSetup.
+              #   p result
+              #
               def get_billing_setup request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -273,6 +288,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateBillingSetupResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::BillingSetupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateBillingSetupRequest.new
+              #
+              #   # Call the mutate_billing_setup method.
+              #   result = client.mutate_billing_setup request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateBillingSetupResponse.
+              #   p result
               #
               def mutate_billing_setup request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::ChangeStatusService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetChangeStatusRequest.new
+              #
+              #   # Call the get_change_status method.
+              #   result = client.get_change_status request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::ChangeStatus.
+              #   p result
+              #
               def get_change_status request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

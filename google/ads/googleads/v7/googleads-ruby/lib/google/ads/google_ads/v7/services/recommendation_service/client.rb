@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::RecommendationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetRecommendationRequest.new
+              #
+              #   # Call the get_recommendation method.
+              #   result = client.get_recommendation request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::Recommendation.
+              #   p result
+              #
               def get_recommendation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -274,6 +289,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::RecommendationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::ApplyRecommendationRequest.new
+              #
+              #   # Call the apply_recommendation method.
+              #   result = client.apply_recommendation request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::ApplyRecommendationResponse.
+              #   p result
+              #
               def apply_recommendation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -363,6 +393,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::DismissRecommendationResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::RecommendationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::DismissRecommendationRequest.new
+              #
+              #   # Call the dismiss_recommendation method.
+              #   result = client.dismiss_recommendation request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::DismissRecommendationResponse.
+              #   p result
               #
               def dismiss_recommendation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::KeywordThemeConstantService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetKeywordThemeConstantRequest.new
+              #
+              #   # Call the get_keyword_theme_constant method.
+              #   result = client.get_keyword_theme_constant request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::KeywordThemeConstant.
+              #   p result
+              #
               def get_keyword_theme_constant request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -258,6 +273,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::SuggestKeywordThemeConstantsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::KeywordThemeConstantService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::SuggestKeywordThemeConstantsRequest.new
+              #
+              #   # Call the suggest_keyword_theme_constants method.
+              #   result = client.suggest_keyword_theme_constants request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::SuggestKeywordThemeConstantsResponse.
+              #   p result
               #
               def suggest_keyword_theme_constants request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::DynamicSearchAdsSearchTermViewService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetDynamicSearchAdsSearchTermViewRequest.new
+              #
+              #   # Call the get_dynamic_search_ads_search_term_view method.
+              #   result = client.get_dynamic_search_ads_search_term_view request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::DynamicSearchAdsSearchTermView.
+              #   p result
+              #
               def get_dynamic_search_ads_search_term_view request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

@@ -219,6 +219,27 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanIdeaService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GenerateKeywordIdeasRequest.new
+              #
+              #   # Call the generate_keyword_ideas method.
+              #   result = client.generate_keyword_ideas request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Ads::GoogleAds::V9::Services::GenerateKeywordIdeaResult.
+              #     p response
+              #   end
+              #
               def generate_keyword_ideas request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

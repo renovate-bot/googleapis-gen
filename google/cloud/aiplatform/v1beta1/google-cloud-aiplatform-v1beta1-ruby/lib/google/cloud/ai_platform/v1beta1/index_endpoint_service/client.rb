@@ -202,6 +202,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateIndexEndpointRequest.new
+            #
+            #   # Call the create_index_endpoint method.
+            #   result = client.create_index_endpoint request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_index_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -274,6 +296,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetIndexEndpointRequest.new
+            #
+            #   # Call the get_index_endpoint method.
+            #   result = client.get_index_endpoint request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::IndexEndpoint.
+            #   p result
             #
             def get_index_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -374,6 +411,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListIndexEndpointsRequest.new
+            #
+            #   # Call the list_index_endpoints method.
+            #   result = client.list_index_endpoints request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint.
+            #     p response
+            #   end
+            #
             def list_index_endpoints request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -447,6 +505,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateIndexEndpointRequest.new
+            #
+            #   # Call the update_index_endpoint method.
+            #   result = client.update_index_endpoint request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::IndexEndpoint.
+            #   p result
+            #
             def update_index_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -518,6 +591,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteIndexEndpointRequest.new
+            #
+            #   # Call the delete_index_endpoint method.
+            #   result = client.delete_index_endpoint request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_index_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -596,6 +691,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeployIndexRequest.new
+            #
+            #   # Call the deploy_index method.
+            #   result = client.deploy_index request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def deploy_index request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -671,6 +788,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UndeployIndexRequest.new
+            #
+            #   # Call the undeploy_index method.
+            #   result = client.undeploy_index request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def undeploy_index request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

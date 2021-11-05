@@ -193,6 +193,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::CreateSpecialistPoolRequest.new
+            #
+            #   # Call the create_specialist_pool method.
+            #   result = client.create_specialist_pool request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_specialist_pool request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -265,6 +287,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::SpecialistPool]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetSpecialistPoolRequest.new
+            #
+            #   # Call the get_specialist_pool method.
+            #   result = client.get_specialist_pool request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::SpecialistPool.
+            #   p result
             #
             def get_specialist_pool request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -346,6 +383,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListSpecialistPoolsRequest.new
+            #
+            #   # Call the list_specialist_pools method.
+            #   result = client.list_specialist_pools request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::SpecialistPool.
+            #     p response
+            #   end
+            #
             def list_specialist_pools request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -422,6 +480,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::DeleteSpecialistPoolRequest.new
+            #
+            #   # Call the delete_specialist_pool method.
+            #   result = client.delete_specialist_pool request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def delete_specialist_pool request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -494,6 +574,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::SpecialistPoolService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::UpdateSpecialistPoolRequest.new
+            #
+            #   # Call the update_specialist_pool method.
+            #   result = client.update_specialist_pool request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def update_specialist_pool request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

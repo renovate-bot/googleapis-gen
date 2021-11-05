@@ -199,6 +199,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::CreateTopicRequest.new
+            #
+            #   # Call the create_topic method.
+            #   result = client.create_topic request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Topic.
+            #   p result
+            #
             def create_topic request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -269,6 +284,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::GetTopicRequest.new
+            #
+            #   # Call the get_topic method.
+            #   result = client.get_topic request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Topic.
+            #   p result
+            #
             def get_topic request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -338,6 +368,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::TopicPartitions]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::GetTopicPartitionsRequest.new
+            #
+            #   # Call the get_topic_partitions method.
+            #   result = client.get_topic_partitions request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::TopicPartitions.
+            #   p result
             #
             def get_topic_partitions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -420,6 +465,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ListTopicsRequest.new
+            #
+            #   # Call the list_topics method.
+            #   result = client.list_topics request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::PubSubLite::V1::Topic.
+            #     p response
+            #   end
+            #
             def list_topics request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -493,6 +559,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::UpdateTopicRequest.new
+            #
+            #   # Call the update_topic method.
+            #   result = client.update_topic request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Topic.
+            #   p result
+            #
             def update_topic request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -562,6 +643,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::DeleteTopicRequest.new
+            #
+            #   # Call the delete_topic method.
+            #   result = client.delete_topic request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_topic request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -642,6 +738,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::ListTopicSubscriptionsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ListTopicSubscriptionsRequest.new
+            #
+            #   # Call the list_topic_subscriptions method.
+            #   result = client.list_topic_subscriptions request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::ListTopicSubscriptionsResponse.
+            #   p result
             #
             def list_topic_subscriptions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -725,6 +836,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::CreateSubscriptionRequest.new
+            #
+            #   # Call the create_subscription method.
+            #   result = client.create_subscription request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Subscription.
+            #   p result
+            #
             def create_subscription request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -794,6 +920,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::Subscription]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::GetSubscriptionRequest.new
+            #
+            #   # Call the get_subscription method.
+            #   result = client.get_subscription request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Subscription.
+            #   p result
             #
             def get_subscription request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -876,6 +1017,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ListSubscriptionsRequest.new
+            #
+            #   # Call the list_subscriptions method.
+            #   result = client.list_subscriptions request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::PubSubLite::V1::Subscription.
+            #     p response
+            #   end
+            #
             def list_subscriptions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -950,6 +1112,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::UpdateSubscriptionRequest.new
+            #
+            #   # Call the update_subscription method.
+            #   result = client.update_subscription request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Subscription.
+            #   p result
+            #
             def update_subscription request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1019,6 +1196,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::DeleteSubscriptionRequest.new
+            #
+            #   # Call the delete_subscription method.
+            #   result = client.delete_subscription request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_subscription request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1116,6 +1308,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::SeekSubscriptionRequest.new
+            #
+            #   # Call the seek_subscription method.
+            #   result = client.seek_subscription request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def seek_subscription request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1195,6 +1409,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::CreateReservationRequest.new
+            #
+            #   # Call the create_reservation method.
+            #   result = client.create_reservation request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Reservation.
+            #   p result
+            #
             def create_reservation request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1266,6 +1495,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::Reservation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::GetReservationRequest.new
+            #
+            #   # Call the get_reservation method.
+            #   result = client.get_reservation request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Reservation.
+            #   p result
             #
             def get_reservation request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1348,6 +1592,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ListReservationsRequest.new
+            #
+            #   # Call the list_reservations method.
+            #   result = client.list_reservations request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::PubSubLite::V1::Reservation.
+            #     p response
+            #   end
+            #
             def list_reservations request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1421,6 +1686,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::UpdateReservationRequest.new
+            #
+            #   # Call the update_reservation method.
+            #   result = client.update_reservation request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::Reservation.
+            #   p result
+            #
             def update_reservation request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1492,6 +1772,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::DeleteReservationRequest.new
+            #
+            #   # Call the delete_reservation method.
+            #   result = client.delete_reservation request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_reservation request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1574,6 +1869,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::ListReservationTopicsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::AdminService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ListReservationTopicsRequest.new
+            #
+            #   # Call the list_reservation_topics method.
+            #   result = client.list_reservation_topics request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::ListReservationTopicsResponse.
+            #   p result
             #
             def list_reservation_topics request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

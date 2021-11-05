@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::DistanceViewService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetDistanceViewRequest.new
+              #
+              #   # Call the get_distance_view method.
+              #   result = client.get_distance_view request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::DistanceView.
+              #   p result
+              #
               def get_distance_view request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

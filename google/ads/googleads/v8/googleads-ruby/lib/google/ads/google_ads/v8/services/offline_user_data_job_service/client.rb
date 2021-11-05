@@ -201,6 +201,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::OfflineUserDataJobService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::CreateOfflineUserDataJobRequest.new
+              #
+              #   # Call the create_offline_user_data_job method.
+              #   result = client.create_offline_user_data_job request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::CreateOfflineUserDataJobResponse.
+              #   p result
+              #
               def create_offline_user_data_job request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -280,6 +295,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Resources::OfflineUserDataJob]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::OfflineUserDataJobService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetOfflineUserDataJobRequest.new
+              #
+              #   # Call the get_offline_user_data_job method.
+              #   result = client.get_offline_user_data_job request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::OfflineUserDataJob.
+              #   p result
               #
               def get_offline_user_data_job request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -372,6 +402,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::OfflineUserDataJobService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::AddOfflineUserDataJobOperationsRequest.new
+              #
+              #   # Call the add_offline_user_data_job_operations method.
+              #   result = client.add_offline_user_data_job_operations request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::AddOfflineUserDataJobOperationsResponse.
+              #   p result
+              #
               def add_offline_user_data_job_operations request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -459,6 +504,28 @@ module Google
               # @return [::Gapic::Operation]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::OfflineUserDataJobService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::RunOfflineUserDataJobRequest.new
+              #
+              #   # Call the run_offline_user_data_job method.
+              #   result = client.run_offline_user_data_job request
+              #
+              #   # The returned object is of type Gapic::Operation. You can use this
+              #   # object to check the status of an operation, cancel it, or wait
+              #   # for results. Here is how to block until completion:
+              #   result.wait_until_done! timeout: 60
+              #   if result.response?
+              #     p result.response
+              #   else
+              #     puts "Error!"
+              #   end
               #
               def run_offline_user_data_job request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

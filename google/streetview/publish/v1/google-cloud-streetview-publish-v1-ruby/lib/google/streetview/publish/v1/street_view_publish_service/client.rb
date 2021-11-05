@@ -182,6 +182,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Protobuf::Empty.new
+            #
+            #   # Call the start_upload method.
+            #   result = client.start_upload request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::UploadRef.
+            #   p result
+            #
             def start_upload request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -262,6 +277,21 @@ module Google
             # @return [::Google::Streetview::Publish::V1::Photo]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::CreatePhotoRequest.new
+            #
+            #   # Call the create_photo method.
+            #   result = client.create_photo request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::Photo.
+            #   p result
             #
             def create_photo request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -345,6 +375,21 @@ module Google
             # @return [::Google::Streetview::Publish::V1::Photo]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::GetPhotoRequest.new
+            #
+            #   # Call the get_photo method.
+            #   result = client.get_photo request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::Photo.
+            #   p result
             #
             def get_photo request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -442,6 +487,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::BatchGetPhotosRequest.new
+            #
+            #   # Call the batch_get_photos method.
+            #   result = client.batch_get_photos request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::BatchGetPhotosResponse.
+            #   p result
+            #
             def batch_get_photos request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -530,6 +590,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Streetview::Publish::V1::Photo>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::ListPhotosRequest.new
+            #
+            #   # Call the list_photos method.
+            #   result = client.list_photos request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Streetview::Publish::V1::Photo.
+            #     p response
+            #   end
             #
             def list_photos request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -641,6 +722,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::UpdatePhotoRequest.new
+            #
+            #   # Call the update_photo method.
+            #   result = client.update_photo request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::Photo.
+            #   p result
+            #
             def update_photo request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -744,6 +840,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::BatchUpdatePhotosRequest.new
+            #
+            #   # Call the batch_update_photos method.
+            #   result = client.batch_update_photos request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::BatchUpdatePhotosResponse.
+            #   p result
+            #
             def batch_update_photos request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -812,6 +923,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::DeletePhotoRequest.new
+            #
+            #   # Call the delete_photo method.
+            #   result = client.delete_photo request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_photo request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -899,6 +1025,21 @@ module Google
             # @return [::Google::Streetview::Publish::V1::BatchDeletePhotosResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/streetview/publish/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Streetview::Publish::V1::StreetViewPublishService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Streetview::Publish::V1::BatchDeletePhotosRequest.new
+            #
+            #   # Call the batch_delete_photos method.
+            #   result = client.batch_delete_photos request
+            #
+            #   # The returned object is of type Google::Streetview::Publish::V1::BatchDeletePhotosResponse.
+            #   p result
             #
             def batch_delete_photos request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

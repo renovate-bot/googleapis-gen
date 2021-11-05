@@ -221,6 +221,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::ListClustersRequest.new
+            #
+            #   # Call the list_clusters method.
+            #   result = client.list_clusters request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Partner::Aistreams::V1alpha1::Cluster.
+            #     p response
+            #   end
+            #
             def list_clusters request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -291,6 +312,21 @@ module Google
             # @return [::Google::Partner::Aistreams::V1alpha1::Cluster]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::GetClusterRequest.new
+            #
+            #   # Call the get_cluster method.
+            #   result = client.get_cluster request
+            #
+            #   # The returned object is of type Google::Partner::Aistreams::V1alpha1::Cluster.
+            #   p result
             #
             def get_cluster request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -379,6 +415,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::CreateClusterRequest.new
+            #
+            #   # Call the create_cluster method.
+            #   result = client.create_cluster request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def create_cluster request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -471,6 +529,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::UpdateClusterRequest.new
+            #
+            #   # Call the update_cluster method.
+            #   result = client.update_cluster request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def update_cluster request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -556,6 +636,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::DeleteClusterRequest.new
+            #
+            #   # Call the delete_cluster method.
+            #   result = client.delete_cluster request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def delete_cluster request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -638,6 +740,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::ListStreamsRequest.new
+            #
+            #   # Call the list_streams method.
+            #   result = client.list_streams request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Partner::Aistreams::V1alpha1::Stream.
+            #     p response
+            #   end
+            #
             def list_streams request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -708,6 +831,21 @@ module Google
             # @return [::Google::Partner::Aistreams::V1alpha1::Stream]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::GetStreamRequest.new
+            #
+            #   # Call the get_stream method.
+            #   result = client.get_stream request
+            #
+            #   # The returned object is of type Google::Partner::Aistreams::V1alpha1::Stream.
+            #   p result
             #
             def get_stream request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -796,6 +934,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::CreateStreamRequest.new
+            #
+            #   # Call the create_stream method.
+            #   result = client.create_stream request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def create_stream request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -888,6 +1048,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::UpdateStreamRequest.new
+            #
+            #   # Call the update_stream method.
+            #   result = client.update_stream request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def update_stream request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -972,6 +1154,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/partner/aistreams/v1alpha1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Partner::Aistreams::V1alpha1::AIStreams::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Partner::Aistreams::V1alpha1::DeleteStreamRequest.new
+            #
+            #   # Call the delete_stream method.
+            #   result = client.delete_stream request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_stream request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -234,6 +234,21 @@ module Maps
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::TripService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::CreateTripRequest.new
+          #
+          #   # Call the create_trip method.
+          #   result = client.create_trip request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::Trip.
+          #   p result
+          #
           def create_trip request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -325,6 +340,21 @@ module Maps
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::TripService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::GetTripRequest.new
+          #
+          #   # Call the get_trip method.
+          #   result = client.get_trip request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::Trip.
+          #   p result
+          #
           def get_trip request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -411,6 +441,21 @@ module Maps
           # @return [::Google::Protobuf::Empty]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::TripService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::ReportBillableTripRequest.new
+          #
+          #   # Call the report_billable_trip method.
+          #   result = client.report_billable_trip request
+          #
+          #   # The returned object is of type Google::Protobuf::Empty.
+          #   p result
           #
           def report_billable_trip request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -506,6 +551,27 @@ module Maps
           # @return [::Gapic::PagedEnumerable<::Maps::Fleetengine::V1::Trip>]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::TripService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::SearchTripsRequest.new
+          #
+          #   # Call the search_trips method.
+          #   result = client.search_trips request
+          #
+          #   # The returned object is of type Gapic::PagedEnumerable. You can
+          #   # iterate over all elements by calling #each, and the enumerable
+          #   # will lazily make API calls to fetch subsequent pages. Other
+          #   # methods are also available for managing paging directly.
+          #   result.each do |response|
+          #     # Each element is of type ::Maps::Fleetengine::V1::Trip.
+          #     p response
+          #   end
           #
           def search_trips request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -621,6 +687,21 @@ module Maps
           # @return [::Maps::Fleetengine::V1::Trip]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::TripService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::UpdateTripRequest.new
+          #
+          #   # Call the update_trip method.
+          #   result = client.update_trip request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::Trip.
+          #   p result
           #
           def update_trip request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?

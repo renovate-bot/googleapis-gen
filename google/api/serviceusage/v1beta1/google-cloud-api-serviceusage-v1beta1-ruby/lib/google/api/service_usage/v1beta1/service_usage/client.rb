@@ -199,6 +199,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::EnableServiceRequest.new
+            #
+            #   # Call the enable_service method.
+            #   result = client.enable_service request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def enable_service request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -286,6 +308,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::DisableServiceRequest.new
+            #
+            #   # Call the disable_service method.
+            #   result = client.disable_service request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def disable_service request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -362,6 +406,21 @@ module Google
             # @return [::Google::Api::ServiceUsage::V1beta1::Service]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::GetServiceRequest.new
+            #
+            #   # Call the get_service method.
+            #   result = client.get_service request
+            #
+            #   # The returned object is of type Google::Api::ServiceUsage::V1beta1::Service.
+            #   p result
             #
             def get_service request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -454,6 +513,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Api::ServiceUsage::V1beta1::Service>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::ListServicesRequest.new
+            #
+            #   # Call the list_services method.
+            #   result = client.list_services request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Api::ServiceUsage::V1beta1::Service.
+            #     p response
+            #   end
             #
             def list_services request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -553,6 +633,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::BatchEnableServicesRequest.new
+            #
+            #   # Call the batch_enable_services method.
+            #   result = client.batch_enable_services request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def batch_enable_services request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -640,6 +742,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::ListConsumerQuotaMetricsRequest.new
+            #
+            #   # Call the list_consumer_quota_metrics method.
+            #   result = client.list_consumer_quota_metrics request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Api::ServiceUsage::V1beta1::ConsumerQuotaMetric.
+            #     p response
+            #   end
+            #
             def list_consumer_quota_metrics request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -716,6 +839,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::GetConsumerQuotaMetricRequest.new
+            #
+            #   # Call the get_consumer_quota_metric method.
+            #   result = client.get_consumer_quota_metric request
+            #
+            #   # The returned object is of type Google::Api::ServiceUsage::V1beta1::ConsumerQuotaMetric.
+            #   p result
+            #
             def get_consumer_quota_metric request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -790,6 +928,21 @@ module Google
             # @return [::Google::Api::ServiceUsage::V1beta1::ConsumerQuotaLimit]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::GetConsumerQuotaLimitRequest.new
+            #
+            #   # Call the get_consumer_quota_limit method.
+            #   result = client.get_consumer_quota_limit request
+            #
+            #   # The returned object is of type Google::Api::ServiceUsage::V1beta1::ConsumerQuotaLimit.
+            #   p result
             #
             def get_consumer_quota_limit request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -881,6 +1034,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::CreateAdminOverrideRequest.new
+            #
+            #   # Call the create_admin_override method.
+            #   result = client.create_admin_override request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_admin_override request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -970,6 +1145,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::UpdateAdminOverrideRequest.new
+            #
+            #   # Call the update_admin_override method.
+            #   result = client.update_admin_override request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def update_admin_override request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1053,6 +1250,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::DeleteAdminOverrideRequest.new
+            #
+            #   # Call the delete_admin_override method.
+            #   result = client.delete_admin_override request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def delete_admin_override request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1132,6 +1351,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Api::ServiceUsage::V1beta1::QuotaOverride>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::ListAdminOverridesRequest.new
+            #
+            #   # Call the list_admin_overrides method.
+            #   result = client.list_admin_overrides request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Api::ServiceUsage::V1beta1::QuotaOverride.
+            #     p response
+            #   end
             #
             def list_admin_overrides request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1219,6 +1459,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::ImportAdminOverridesRequest.new
+            #
+            #   # Call the import_admin_overrides method.
+            #   result = client.import_admin_overrides request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def import_admin_overrides request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1310,6 +1572,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::CreateConsumerOverrideRequest.new
+            #
+            #   # Call the create_consumer_override method.
+            #   result = client.create_consumer_override request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_consumer_override request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1399,6 +1683,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::UpdateConsumerOverrideRequest.new
+            #
+            #   # Call the update_consumer_override method.
+            #   result = client.update_consumer_override request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def update_consumer_override request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1482,6 +1788,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::DeleteConsumerOverrideRequest.new
+            #
+            #   # Call the delete_consumer_override method.
+            #   result = client.delete_consumer_override request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def delete_consumer_override request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1561,6 +1889,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Api::ServiceUsage::V1beta1::QuotaOverride>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::ListConsumerOverridesRequest.new
+            #
+            #   # Call the list_consumer_overrides method.
+            #   result = client.list_consumer_overrides request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Api::ServiceUsage::V1beta1::QuotaOverride.
+            #     p response
+            #   end
             #
             def list_consumer_overrides request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1649,6 +1998,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::ImportConsumerOverridesRequest.new
+            #
+            #   # Call the import_consumer_overrides method.
+            #   result = client.import_consumer_overrides request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def import_consumer_overrides request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1725,6 +2096,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/api/service_usage/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Api::ServiceUsage::V1beta1::GenerateServiceIdentityRequest.new
+            #
+            #   # Call the generate_service_identity method.
+            #   result = client.generate_service_identity request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def generate_service_identity request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

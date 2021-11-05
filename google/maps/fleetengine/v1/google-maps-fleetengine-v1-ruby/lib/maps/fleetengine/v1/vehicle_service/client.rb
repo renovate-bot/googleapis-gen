@@ -252,6 +252,21 @@ module Maps
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::CreateVehicleRequest.new
+          #
+          #   # Call the create_vehicle method.
+          #   result = client.create_vehicle request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::Vehicle.
+          #   p result
+          #
           def create_vehicle request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -338,6 +353,21 @@ module Maps
           # @return [::Maps::Fleetengine::V1::Vehicle]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::GetVehicleRequest.new
+          #
+          #   # Call the get_vehicle method.
+          #   result = client.get_vehicle request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::Vehicle.
+          #   p result
           #
           def get_vehicle request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -444,6 +474,21 @@ module Maps
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::UpdateVehicleRequest.new
+          #
+          #   # Call the update_vehicle method.
+          #   result = client.update_vehicle request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::Vehicle.
+          #   p result
+          #
           def update_vehicle request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -529,6 +574,21 @@ module Maps
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::UpdateVehicleLocationRequest.new
+          #
+          #   # Call the update_vehicle_location method.
+          #   result = client.update_vehicle_location request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::VehicleLocation.
+          #   p result
+          #
           def update_vehicle_location request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -613,6 +673,21 @@ module Maps
           # @return [::Maps::Fleetengine::V1::UpdateVehicleAttributesResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::UpdateVehicleAttributesRequest.new
+          #
+          #   # Call the update_vehicle_attributes method.
+          #   result = client.update_vehicle_attributes request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::UpdateVehicleAttributesResponse.
+          #   p result
           #
           def update_vehicle_attributes request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -747,6 +822,27 @@ module Maps
           # @return [::Gapic::PagedEnumerable<::Maps::Fleetengine::V1::Vehicle>]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::ListVehiclesRequest.new
+          #
+          #   # Call the list_vehicles method.
+          #   result = client.list_vehicles request
+          #
+          #   # The returned object is of type Gapic::PagedEnumerable. You can
+          #   # iterate over all elements by calling #each, and the enumerable
+          #   # will lazily make API calls to fetch subsequent pages. Other
+          #   # methods are also available for managing paging directly.
+          #   result.each do |response|
+          #     # Each element is of type ::Maps::Fleetengine::V1::Vehicle.
+          #     p response
+          #   end
           #
           def list_vehicles request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -894,6 +990,21 @@ module Maps
           # @return [::Maps::Fleetengine::V1::SearchVehiclesResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::SearchVehiclesRequest.new
+          #
+          #   # Call the search_vehicles method.
+          #   result = client.search_vehicles request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::SearchVehiclesResponse.
+          #   p result
           #
           def search_vehicles request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1045,6 +1156,21 @@ module Maps
           # @return [::Maps::Fleetengine::V1::SearchVehiclesResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "maps/fleetengine/v1"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Maps::Fleetengine::V1::VehicleService::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Maps::Fleetengine::V1::SearchVehiclesRequest.new
+          #
+          #   # Call the search_fuzzed_vehicles method.
+          #   result = client.search_fuzzed_vehicles request
+          #
+          #   # The returned object is of type Maps::Fleetengine::V1::SearchVehiclesResponse.
+          #   p result
           #
           def search_fuzzed_vehicles request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?

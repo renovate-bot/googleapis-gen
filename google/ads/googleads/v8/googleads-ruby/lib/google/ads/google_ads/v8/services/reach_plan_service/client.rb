@@ -174,6 +174,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::ListPlannableLocationsRequest.new
+              #
+              #   # Call the list_plannable_locations method.
+              #   result = client.list_plannable_locations request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::ListPlannableLocationsResponse.
+              #   p result
+              #
               def list_plannable_locations request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -247,6 +262,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::ListPlannableProductsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::ListPlannableProductsRequest.new
+              #
+              #   # Call the list_plannable_products method.
+              #   result = client.list_plannable_products request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::ListPlannableProductsResponse.
+              #   p result
               #
               def list_plannable_products request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -335,6 +365,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::GenerateProductMixIdeasResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GenerateProductMixIdeasRequest.new
+              #
+              #   # Call the generate_product_mix_ideas method.
+              #   result = client.generate_product_mix_ideas request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::GenerateProductMixIdeasResponse.
+              #   p result
               #
               def generate_product_mix_ideas request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -468,6 +513,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::GenerateReachForecastResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GenerateReachForecastRequest.new
+              #
+              #   # Call the generate_reach_forecast method.
+              #   result = client.generate_reach_forecast request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::GenerateReachForecastResponse.
+              #   p result
               #
               def generate_reach_forecast request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::FeedItemSetLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetFeedItemSetLinkRequest.new
+              #
+              #   # Call the get_feed_item_set_link method.
+              #   result = client.get_feed_item_set_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::FeedItemSetLink.
+              #   p result
+              #
               def get_feed_item_set_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -269,6 +284,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateFeedItemSetLinksResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::FeedItemSetLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateFeedItemSetLinksRequest.new
+              #
+              #   # Call the mutate_feed_item_set_links method.
+              #   result = client.mutate_feed_item_set_links request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateFeedItemSetLinksResponse.
+              #   p result
               #
               def mutate_feed_item_set_links request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

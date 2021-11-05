@@ -232,6 +232,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha::ListFeaturesRequest.new
+            #
+            #   # Call the list_features method.
+            #   result = client.list_features request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::GkeHub::V1alpha::Feature.
+            #     p response
+            #   end
+            #
             def list_features request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -303,6 +324,21 @@ module Google
             # @return [::Google::Cloud::GkeHub::V1alpha::Feature]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha::GetFeatureRequest.new
+            #
+            #   # Call the get_feature method.
+            #   result = client.get_feature request
+            #
+            #   # The returned object is of type Google::Cloud::GkeHub::V1alpha::Feature.
+            #   p result
             #
             def get_feature request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -393,6 +429,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha::CreateFeatureRequest.new
+            #
+            #   # Call the create_feature method.
+            #   result = client.create_feature request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_feature request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -482,6 +540,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha::DeleteFeatureRequest.new
+            #
+            #   # Call the delete_feature method.
+            #   result = client.delete_feature request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_feature request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -579,6 +659,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha::UpdateFeatureRequest.new
+            #
+            #   # Call the update_feature method.
+            #   result = client.update_feature request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def update_feature request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

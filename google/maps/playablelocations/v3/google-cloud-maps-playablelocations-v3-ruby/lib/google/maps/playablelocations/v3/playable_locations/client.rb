@@ -178,6 +178,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/maps/playablelocations/v3"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Maps::Playablelocations::V3::PlayableLocations::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Maps::Playablelocations::V3::SamplePlayableLocationsRequest.new
+            #
+            #   # Call the sample_playable_locations method.
+            #   result = client.sample_playable_locations request
+            #
+            #   # The returned object is of type Google::Maps::Playablelocations::V3::SamplePlayableLocationsResponse.
+            #   p result
+            #
             def sample_playable_locations request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -254,6 +269,21 @@ module Google
             # @return [::Google::Maps::Playablelocations::V3::LogPlayerReportsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/maps/playablelocations/v3"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Maps::Playablelocations::V3::PlayableLocations::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Maps::Playablelocations::V3::LogPlayerReportsRequest.new
+            #
+            #   # Call the log_player_reports method.
+            #   result = client.log_player_reports request
+            #
+            #   # The returned object is of type Google::Maps::Playablelocations::V3::LogPlayerReportsResponse.
+            #   p result
             #
             def log_player_reports request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -332,6 +362,21 @@ module Google
             # @return [::Google::Maps::Playablelocations::V3::LogImpressionsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/maps/playablelocations/v3"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Maps::Playablelocations::V3::PlayableLocations::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Maps::Playablelocations::V3::LogImpressionsRequest.new
+            #
+            #   # Call the log_impressions method.
+            #   result = client.log_impressions request
+            #
+            #   # The returned object is of type Google::Maps::Playablelocations::V3::LogImpressionsResponse.
+            #   p result
             #
             def log_impressions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

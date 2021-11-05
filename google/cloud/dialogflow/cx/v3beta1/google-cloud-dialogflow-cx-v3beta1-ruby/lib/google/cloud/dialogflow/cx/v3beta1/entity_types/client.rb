@@ -198,6 +198,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/dialogflow/cx/v3beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Dialogflow::CX::V3beta1::ListEntityTypesRequest.new
+              #
+              #   # Call the list_entity_types method.
+              #   result = client.list_entity_types request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Dialogflow::CX::V3beta1::EntityType.
+              #     p response
+              #   end
+              #
               def list_entity_types request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -284,6 +305,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/dialogflow/cx/v3beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Dialogflow::CX::V3beta1::GetEntityTypeRequest.new
+              #
+              #   # Call the get_entity_type method.
+              #   result = client.get_entity_type request
+              #
+              #   # The returned object is of type Google::Cloud::Dialogflow::CX::V3beta1::EntityType.
+              #   p result
+              #
               def get_entity_type request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -368,6 +404,21 @@ module Google
               # @return [::Google::Cloud::Dialogflow::CX::V3beta1::EntityType]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/dialogflow/cx/v3beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Dialogflow::CX::V3beta1::CreateEntityTypeRequest.new
+              #
+              #   # Call the create_entity_type method.
+              #   result = client.create_entity_type request
+              #
+              #   # The returned object is of type Google::Cloud::Dialogflow::CX::V3beta1::EntityType.
+              #   p result
               #
               def create_entity_type request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -457,6 +508,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/dialogflow/cx/v3beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Dialogflow::CX::V3beta1::UpdateEntityTypeRequest.new
+              #
+              #   # Call the update_entity_type method.
+              #   result = client.update_entity_type request
+              #
+              #   # The returned object is of type Google::Cloud::Dialogflow::CX::V3beta1::EntityType.
+              #   p result
+              #
               def update_entity_type request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -543,6 +609,21 @@ module Google
               # @return [::Google::Protobuf::Empty]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/dialogflow/cx/v3beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Dialogflow::CX::V3beta1::DeleteEntityTypeRequest.new
+              #
+              #   # Call the delete_entity_type method.
+              #   result = client.delete_entity_type request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
               #
               def delete_entity_type request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

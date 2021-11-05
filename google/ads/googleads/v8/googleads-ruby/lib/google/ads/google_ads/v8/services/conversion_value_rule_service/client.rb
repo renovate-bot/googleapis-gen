@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ConversionValueRuleService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetConversionValueRuleRequest.new
+              #
+              #   # Call the get_conversion_value_rule method.
+              #   result = client.get_conversion_value_rule request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::ConversionValueRule.
+              #   p result
+              #
               def get_conversion_value_rule request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -257,6 +272,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateConversionValueRulesResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::ConversionValueRuleService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateConversionValueRulesRequest.new
+              #
+              #   # Call the mutate_conversion_value_rules method.
+              #   result = client.mutate_conversion_value_rules request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateConversionValueRulesResponse.
+              #   p result
               #
               def mutate_conversion_value_rules request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

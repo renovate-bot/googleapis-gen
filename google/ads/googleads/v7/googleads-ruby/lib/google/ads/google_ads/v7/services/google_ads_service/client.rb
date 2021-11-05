@@ -205,6 +205,27 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::GoogleAdsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::SearchGoogleAdsRequest.new
+              #
+              #   # Call the search method.
+              #   result = client.search request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Ads::GoogleAds::V7::Services::GoogleAdsRow.
+              #     p response
+              #   end
+              #
               def search request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -295,6 +316,24 @@ module Google
               # @return [::Enumerable<::Google::Ads::GoogleAds::V7::Services::SearchGoogleAdsStreamResponse>]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::GoogleAdsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::SearchGoogleAdsStreamRequest.new
+              #
+              #   # Call the search_stream method.
+              #   result = client.search_stream request
+              #
+              #   # The returned object is a streamed enumerable yielding elements of
+              #   # type ::Google::Ads::GoogleAds::V7::Services::SearchGoogleAdsStreamResponse.
+              #   result.each do |response|
+              #     p response
+              #   end
               #
               def search_stream request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -492,6 +531,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateGoogleAdsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::GoogleAdsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateGoogleAdsRequest.new
+              #
+              #   # Call the mutate method.
+              #   result = client.mutate request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateGoogleAdsResponse.
+              #   p result
               #
               def mutate request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

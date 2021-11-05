@@ -213,6 +213,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/devtools/testing/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Testing::V1::TestExecutionService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Testing::V1::CreateTestMatrixRequest.new
+            #
+            #   # Call the create_test_matrix method.
+            #   result = client.create_test_matrix request
+            #
+            #   # The returned object is of type Google::Devtools::Testing::V1::TestMatrix.
+            #   p result
+            #
             def create_test_matrix request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -290,6 +305,21 @@ module Google
             # @return [::Google::Devtools::Testing::V1::TestMatrix]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/devtools/testing/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Testing::V1::TestExecutionService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Testing::V1::GetTestMatrixRequest.new
+            #
+            #   # Call the get_test_matrix method.
+            #   result = client.get_test_matrix request
+            #
+            #   # The returned object is of type Google::Devtools::Testing::V1::TestMatrix.
+            #   p result
             #
             def get_test_matrix request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -373,6 +403,21 @@ module Google
             # @return [::Google::Devtools::Testing::V1::CancelTestMatrixResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/devtools/testing/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Testing::V1::TestExecutionService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Testing::V1::CancelTestMatrixRequest.new
+            #
+            #   # Call the cancel_test_matrix method.
+            #   result = client.cancel_test_matrix request
+            #
+            #   # The returned object is of type Google::Devtools::Testing::V1::CancelTestMatrixResponse.
+            #   p result
             #
             def cancel_test_matrix request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

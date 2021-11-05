@@ -183,6 +183,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::AnswerRecords::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::GetAnswerRecordRequest.new
+            #
+            #   # Call the get_answer_record method.
+            #   result = client.get_answer_record request
+            #
+            #   # The returned object is of type Google::Cloud::Dialogflow::V2beta1::AnswerRecord.
+            #   p result
+            #
             def get_answer_record request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -265,6 +280,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::AnswerRecords::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::ListAnswerRecordsRequest.new
+            #
+            #   # Call the list_answer_records method.
+            #   result = client.list_answer_records request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Dialogflow::V2beta1::AnswerRecord.
+            #     p response
+            #   end
+            #
             def list_answer_records request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -337,6 +373,21 @@ module Google
             # @return [::Google::Cloud::Dialogflow::V2beta1::AnswerRecord]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::AnswerRecords::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::UpdateAnswerRecordRequest.new
+            #
+            #   # Call the update_answer_record method.
+            #   result = client.update_answer_record request
+            #
+            #   # The returned object is of type Google::Cloud::Dialogflow::V2beta1::AnswerRecord.
+            #   p result
             #
             def update_answer_record request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

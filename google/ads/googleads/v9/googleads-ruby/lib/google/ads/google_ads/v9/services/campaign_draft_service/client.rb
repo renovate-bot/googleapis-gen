@@ -192,6 +192,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CampaignDraftService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetCampaignDraftRequest.new
+              #
+              #   # Call the get_campaign_draft method.
+              #   result = client.get_campaign_draft request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::CampaignDraft.
+              #   p result
+              #
               def get_campaign_draft request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -290,6 +305,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CampaignDraftService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateCampaignDraftsRequest.new
+              #
+              #   # Call the mutate_campaign_drafts method.
+              #   result = client.mutate_campaign_drafts request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateCampaignDraftsResponse.
+              #   p result
+              #
               def mutate_campaign_drafts request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -382,6 +412,28 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CampaignDraftService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::PromoteCampaignDraftRequest.new
+              #
+              #   # Call the promote_campaign_draft method.
+              #   result = client.promote_campaign_draft request
+              #
+              #   # The returned object is of type Gapic::Operation. You can use this
+              #   # object to check the status of an operation, cancel it, or wait
+              #   # for results. Here is how to block until completion:
+              #   result.wait_until_done! timeout: 60
+              #   if result.response?
+              #     p result.response
+              #   else
+              #     puts "Error!"
+              #   end
+              #
               def promote_campaign_draft request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -473,6 +525,27 @@ module Google
               # @return [::Gapic::PagedEnumerable<::Google::Rpc::Status>]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CampaignDraftService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::ListCampaignDraftAsyncErrorsRequest.new
+              #
+              #   # Call the list_campaign_draft_async_errors method.
+              #   result = client.list_campaign_draft_async_errors request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Rpc::Status.
+              #     p response
+              #   end
               #
               def list_campaign_draft_async_errors request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

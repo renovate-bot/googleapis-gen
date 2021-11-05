@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::LifeEventService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetLifeEventRequest.new
+              #
+              #   # Call the get_life_event method.
+              #   result = client.get_life_event request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::LifeEvent.
+              #   p result
+              #
               def get_life_event request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

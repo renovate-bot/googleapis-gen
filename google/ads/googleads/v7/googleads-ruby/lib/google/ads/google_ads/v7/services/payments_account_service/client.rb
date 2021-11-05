@@ -184,6 +184,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::PaymentsAccountService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::ListPaymentsAccountsRequest.new
+              #
+              #   # Call the list_payments_accounts method.
+              #   result = client.list_payments_accounts request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::ListPaymentsAccountsResponse.
+              #   p result
+              #
               def list_payments_accounts request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

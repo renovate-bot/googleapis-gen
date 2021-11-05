@@ -253,6 +253,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::ListServiceAccountsRequest.new
+            #
+            #   # Call the list_service_accounts method.
+            #   result = client.list_service_accounts request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Iam::Admin::V1::ServiceAccount.
+            #     p response
+            #   end
+            #
             def list_service_accounts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -327,6 +348,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::ServiceAccount]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::GetServiceAccountRequest.new
+            #
+            #   # Call the get_service_account method.
+            #   result = client.get_service_account request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccount.
+            #   p result
             #
             def get_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -407,6 +443,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::ServiceAccount]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::CreateServiceAccountRequest.new
+            #
+            #   # Call the create_service_account method.
+            #   result = client.create_service_account request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccount.
+            #   p result
             #
             def create_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -509,6 +560,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::ServiceAccount.new
+            #
+            #   # Call the update_service_account method.
+            #   result = client.update_service_account request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccount.
+            #   p result
+            #
             def update_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -578,6 +644,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::ServiceAccount]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::PatchServiceAccountRequest.new
+            #
+            #   # Call the patch_service_account method.
+            #   result = client.patch_service_account request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccount.
+            #   p result
             #
             def patch_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -667,6 +748,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::DeleteServiceAccountRequest.new
+            #
+            #   # Call the delete_service_account method.
+            #   result = client.delete_service_account request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def delete_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -746,6 +842,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::UndeleteServiceAccountResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::UndeleteServiceAccountRequest.new
+            #
+            #   # Call the undelete_service_account method.
+            #   result = client.undelete_service_account request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::UndeleteServiceAccountResponse.
+            #   p result
             #
             def undelete_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -827,6 +938,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::EnableServiceAccountRequest.new
+            #
+            #   # Call the enable_service_account method.
+            #   result = client.enable_service_account request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def enable_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -917,6 +1043,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::DisableServiceAccountRequest.new
+            #
+            #   # Call the disable_service_account method.
+            #   result = client.disable_service_account request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def disable_service_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -996,6 +1137,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::ListServiceAccountKeysRequest.new
+            #
+            #   # Call the list_service_account_keys method.
+            #   result = client.list_service_account_keys request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ListServiceAccountKeysResponse.
+            #   p result
+            #
             def list_service_account_keys request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1073,6 +1229,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::ServiceAccountKey]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::GetServiceAccountKeyRequest.new
+            #
+            #   # Call the get_service_account_key method.
+            #   result = client.get_service_account_key request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccountKey.
+            #   p result
             #
             def get_service_account_key request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1156,6 +1327,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::CreateServiceAccountKeyRequest.new
+            #
+            #   # Call the create_service_account_key method.
+            #   result = client.create_service_account_key request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccountKey.
+            #   p result
+            #
             def create_service_account_key request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1235,6 +1421,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::UploadServiceAccountKeyRequest.new
+            #
+            #   # Call the upload_service_account_key method.
+            #   result = client.upload_service_account_key request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::ServiceAccountKey.
+            #   p result
+            #
             def upload_service_account_key request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1310,6 +1511,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::DeleteServiceAccountKeyRequest.new
+            #
+            #   # Call the delete_service_account_key method.
+            #   result = client.delete_service_account_key request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_service_account_key request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1401,6 +1617,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::SignBlobResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::SignBlobRequest.new
+            #
+            #   # Call the sign_blob method.
+            #   result = client.sign_blob request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::SignBlobResponse.
+            #   p result
             #
             def sign_blob request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1503,6 +1734,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::SignJwtRequest.new
+            #
+            #   # Call the sign_jwt method.
+            #   result = client.sign_jwt request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::SignJwtResponse.
+            #   p result
+            #
             def sign_jwt request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1585,6 +1831,21 @@ module Google
             # @return [::Google::Iam::V1::Policy]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::V1::GetIamPolicyRequest.new
+            #
+            #   # Call the get_iam_policy method.
+            #   result = client.get_iam_policy request
+            #
+            #   # The returned object is of type Google::Iam::V1::Policy.
+            #   p result
             #
             def get_iam_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1678,6 +1939,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::V1::SetIamPolicyRequest.new
+            #
+            #   # Call the set_iam_policy method.
+            #   result = client.set_iam_policy request
+            #
+            #   # The returned object is of type Google::Iam::V1::Policy.
+            #   p result
+            #
             def set_iam_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1754,6 +2030,21 @@ module Google
             # @return [::Google::Iam::V1::TestIamPermissionsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::V1::TestIamPermissionsRequest.new
+            #
+            #   # Call the test_iam_permissions method.
+            #   result = client.test_iam_permissions request
+            #
+            #   # The returned object is of type Google::Iam::V1::TestIamPermissionsResponse.
+            #   p result
             #
             def test_iam_permissions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1838,6 +2129,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Iam::Admin::V1::Role>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::QueryGrantableRolesRequest.new
+            #
+            #   # Call the query_grantable_roles method.
+            #   result = client.query_grantable_roles request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Iam::Admin::V1::Role.
+            #     p response
+            #   end
             #
             def query_grantable_roles request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1942,6 +2254,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::ListRolesRequest.new
+            #
+            #   # Call the list_roles method.
+            #   result = client.list_roles request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Iam::Admin::V1::Role.
+            #     p response
+            #   end
+            #
             def list_roles request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2030,6 +2363,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::Role]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::GetRoleRequest.new
+            #
+            #   # Call the get_role method.
+            #   result = client.get_role request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::Role.
+            #   p result
             #
             def get_role request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2128,6 +2476,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::CreateRoleRequest.new
+            #
+            #   # Call the create_role method.
+            #   result = client.create_role request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::Role.
+            #   p result
+            #
             def create_role request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2220,6 +2583,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::Role]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::UpdateRoleRequest.new
+            #
+            #   # Call the update_role method.
+            #   result = client.update_role request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::Role.
+            #   p result
             #
             def update_role request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2328,6 +2706,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::DeleteRoleRequest.new
+            #
+            #   # Call the delete_role method.
+            #   result = client.delete_role request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::Role.
+            #   p result
+            #
             def delete_role request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2419,6 +2812,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::UndeleteRoleRequest.new
+            #
+            #   # Call the undelete_role method.
+            #   result = client.undelete_role request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::Role.
+            #   p result
+            #
             def undelete_role request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2503,6 +2911,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::QueryTestablePermissionsRequest.new
+            #
+            #   # Call the query_testable_permissions method.
+            #   result = client.query_testable_permissions request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Iam::Admin::V1::Permission.
+            #     p response
+            #   end
+            #
             def query_testable_permissions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2574,6 +3003,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::QueryAuditableServicesResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::QueryAuditableServicesRequest.new
+            #
+            #   # Call the query_auditable_services method.
+            #   result = client.query_auditable_services request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::QueryAuditableServicesResponse.
+            #   p result
             #
             def query_auditable_services request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2651,6 +3095,21 @@ module Google
             # @return [::Google::Iam::Admin::V1::LintPolicyResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/iam/admin/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Iam::Admin::V1::IAM::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::Admin::V1::LintPolicyRequest.new
+            #
+            #   # Call the lint_policy method.
+            #   result = client.lint_policy request
+            #
+            #   # The returned object is of type Google::Iam::Admin::V1::LintPolicyResponse.
+            #   p result
             #
             def lint_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

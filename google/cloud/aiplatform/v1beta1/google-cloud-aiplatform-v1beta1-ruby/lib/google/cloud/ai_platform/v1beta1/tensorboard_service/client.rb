@@ -188,6 +188,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateTensorboardRequest.new
+            #
+            #   # Call the create_tensorboard method.
+            #   result = client.create_tensorboard request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_tensorboard request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -260,6 +282,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::Tensorboard]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetTensorboardRequest.new
+            #
+            #   # Call the get_tensorboard method.
+            #   result = client.get_tensorboard request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Tensorboard.
+            #   p result
             #
             def get_tensorboard request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -339,6 +376,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateTensorboardRequest.new
+            #
+            #   # Call the update_tensorboard method.
+            #   result = client.update_tensorboard request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def update_tensorboard request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -432,6 +491,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListTensorboardsRequest.new
+            #
+            #   # Call the list_tensorboards method.
+            #   result = client.list_tensorboards request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::Tensorboard.
+            #     p response
+            #   end
+            #
             def list_tensorboards request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -504,6 +584,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardRequest.new
+            #
+            #   # Call the delete_tensorboard method.
+            #   result = client.delete_tensorboard request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_tensorboard request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -586,6 +688,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateTensorboardExperimentRequest.new
+            #
+            #   # Call the create_tensorboard_experiment method.
+            #   result = client.create_tensorboard_experiment request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment.
+            #   p result
+            #
             def create_tensorboard_experiment request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -657,6 +774,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetTensorboardExperimentRequest.new
+            #
+            #   # Call the get_tensorboard_experiment method.
+            #   result = client.get_tensorboard_experiment request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment.
+            #   p result
             #
             def get_tensorboard_experiment request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -736,6 +868,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateTensorboardExperimentRequest.new
+            #
+            #   # Call the update_tensorboard_experiment method.
+            #   result = client.update_tensorboard_experiment request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment.
+            #   p result
             #
             def update_tensorboard_experiment request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -828,6 +975,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListTensorboardExperimentsRequest.new
+            #
+            #   # Call the list_tensorboard_experiments method.
+            #   result = client.list_tensorboard_experiments request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment.
+            #     p response
+            #   end
+            #
             def list_tensorboard_experiments request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -900,6 +1068,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardExperimentRequest.new
+            #
+            #   # Call the delete_tensorboard_experiment method.
+            #   result = client.delete_tensorboard_experiment request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_tensorboard_experiment request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -982,6 +1172,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateTensorboardRunRequest.new
+            #
+            #   # Call the create_tensorboard_run method.
+            #   result = client.create_tensorboard_run request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardRun.
+            #   p result
+            #
             def create_tensorboard_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1059,6 +1264,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest.new
+            #
+            #   # Call the batch_create_tensorboard_runs method.
+            #   result = client.batch_create_tensorboard_runs request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsResponse.
+            #   p result
+            #
             def batch_create_tensorboard_runs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1130,6 +1350,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardRun]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetTensorboardRunRequest.new
+            #
+            #   # Call the get_tensorboard_run method.
+            #   result = client.get_tensorboard_run request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardRun.
+            #   p result
             #
             def get_tensorboard_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1209,6 +1444,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardRun]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateTensorboardRunRequest.new
+            #
+            #   # Call the update_tensorboard_run method.
+            #   result = client.update_tensorboard_run request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardRun.
+            #   p result
             #
             def update_tensorboard_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1301,6 +1551,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListTensorboardRunsRequest.new
+            #
+            #   # Call the list_tensorboard_runs method.
+            #   result = client.list_tensorboard_runs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::TensorboardRun.
+            #     p response
+            #   end
+            #
             def list_tensorboard_runs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1373,6 +1644,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardRunRequest.new
+            #
+            #   # Call the delete_tensorboard_run method.
+            #   result = client.delete_tensorboard_run request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_tensorboard_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1454,6 +1747,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest.new
+            #
+            #   # Call the batch_create_tensorboard_time_series method.
+            #   result = client.batch_create_tensorboard_time_series request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesResponse.
+            #   p result
+            #
             def batch_create_tensorboard_time_series request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1534,6 +1842,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateTensorboardTimeSeriesRequest.new
+            #
+            #   # Call the create_tensorboard_time_series method.
+            #   result = client.create_tensorboard_time_series request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries.
+            #   p result
+            #
             def create_tensorboard_time_series request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1605,6 +1928,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetTensorboardTimeSeriesRequest.new
+            #
+            #   # Call the get_tensorboard_time_series method.
+            #   result = client.get_tensorboard_time_series request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries.
+            #   p result
             #
             def get_tensorboard_time_series request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1685,6 +2023,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateTensorboardTimeSeriesRequest.new
+            #
+            #   # Call the update_tensorboard_time_series method.
+            #   result = client.update_tensorboard_time_series request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries.
+            #   p result
             #
             def update_tensorboard_time_series request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1777,6 +2130,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListTensorboardTimeSeriesRequest.new
+            #
+            #   # Call the list_tensorboard_time_series method.
+            #   result = client.list_tensorboard_time_series request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries.
+            #     p response
+            #   end
+            #
             def list_tensorboard_time_series request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1849,6 +2223,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardTimeSeriesRequest.new
+            #
+            #   # Call the delete_tensorboard_time_series method.
+            #   result = client.delete_tensorboard_time_series request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_tensorboard_time_series request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1931,6 +2327,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest.new
+            #
+            #   # Call the batch_read_tensorboard_time_series_data method.
+            #   result = client.batch_read_tensorboard_time_series_data request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataResponse.
+            #   p result
             #
             def batch_read_tensorboard_time_series_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2015,6 +2426,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ReadTensorboardTimeSeriesDataRequest.new
+            #
+            #   # Call the read_tensorboard_time_series_data method.
+            #   result = client.read_tensorboard_time_series_data request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::ReadTensorboardTimeSeriesDataResponse.
+            #   p result
+            #
             def read_tensorboard_time_series_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2092,6 +2518,24 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ReadTensorboardBlobDataRequest.new
+            #
+            #   # Call the read_tensorboard_blob_data method.
+            #   result = client.read_tensorboard_blob_data request
+            #
+            #   # The returned object is a streamed enumerable yielding elements of
+            #   # type ::Google::Cloud::AIPlatform::V1beta1::ReadTensorboardBlobDataResponse.
+            #   result.each do |response|
+            #     p response
+            #   end
+            #
             def read_tensorboard_blob_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2167,6 +2611,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest.new
+            #
+            #   # Call the write_tensorboard_experiment_data method.
+            #   result = client.write_tensorboard_experiment_data request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataResponse.
+            #   p result
             #
             def write_tensorboard_experiment_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2247,6 +2706,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardRunDataResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::WriteTensorboardRunDataRequest.new
+            #
+            #   # Call the write_tensorboard_run_data method.
+            #   result = client.write_tensorboard_run_data request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::WriteTensorboardRunDataResponse.
+            #   p result
             #
             def write_tensorboard_run_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2338,6 +2812,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1beta1::TimeSeriesDataPoint>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ExportTensorboardTimeSeriesDataRequest.new
+            #
+            #   # Call the export_tensorboard_time_series_data method.
+            #   result = client.export_tensorboard_time_series_data request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::TimeSeriesDataPoint.
+            #     p response
+            #   end
             #
             def export_tensorboard_time_series_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

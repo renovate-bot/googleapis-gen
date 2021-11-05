@@ -188,6 +188,24 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/osconfig/agentendpoint/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Osconfig::Agentendpoint::V1::ReceiveTaskNotificationRequest.new
+              #
+              #   # Call the receive_task_notification method.
+              #   result = client.receive_task_notification request
+              #
+              #   # The returned object is a streamed enumerable yielding elements of
+              #   # type ::Google::Cloud::Osconfig::Agentendpoint::V1::ReceiveTaskNotificationResponse.
+              #   result.each do |response|
+              #     p response
+              #   end
+              #
               def receive_task_notification request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -251,6 +269,21 @@ module Google
               # @return [::Google::Cloud::Osconfig::Agentendpoint::V1::StartNextTaskResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/osconfig/agentendpoint/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Osconfig::Agentendpoint::V1::StartNextTaskRequest.new
+              #
+              #   # Call the start_next_task method.
+              #   result = client.start_next_task request
+              #
+              #   # The returned object is of type Google::Cloud::Osconfig::Agentendpoint::V1::StartNextTaskResponse.
+              #   p result
               #
               def start_next_task request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -331,6 +364,21 @@ module Google
               # @return [::Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/osconfig/agentendpoint/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressRequest.new
+              #
+              #   # Call the report_task_progress method.
+              #   result = client.report_task_progress request
+              #
+              #   # The returned object is of type Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressResponse.
+              #   p result
               #
               def report_task_progress request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -415,6 +463,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/osconfig/agentendpoint/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskCompleteRequest.new
+              #
+              #   # Call the report_task_complete method.
+              #   result = client.report_task_complete request
+              #
+              #   # The returned object is of type Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskCompleteResponse.
+              #   p result
+              #
               def report_task_complete request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -497,6 +560,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/osconfig/agentendpoint/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentRequest.new
+              #
+              #   # Call the register_agent method.
+              #   result = client.register_agent request
+              #
+              #   # The returned object is of type Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentResponse.
+              #   p result
+              #
               def register_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -568,6 +646,21 @@ module Google
               # @return [::Google::Cloud::Osconfig::Agentendpoint::V1::ReportInventoryResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/osconfig/agentendpoint/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Osconfig::Agentendpoint::V1::ReportInventoryRequest.new
+              #
+              #   # Call the report_inventory method.
+              #   result = client.report_inventory request
+              #
+              #   # The returned object is of type Google::Cloud::Osconfig::Agentendpoint::V1::ReportInventoryResponse.
+              #   p result
               #
               def report_inventory request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

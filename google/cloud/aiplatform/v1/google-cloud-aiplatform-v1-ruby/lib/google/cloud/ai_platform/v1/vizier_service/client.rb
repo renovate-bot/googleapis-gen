@@ -193,6 +193,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::CreateStudyRequest.new
+            #
+            #   # Call the create_study method.
+            #   result = client.create_study request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Study.
+            #   p result
+            #
             def create_study request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -263,6 +278,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Study]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetStudyRequest.new
+            #
+            #   # Call the get_study method.
+            #   result = client.get_study request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Study.
+            #   p result
             #
             def get_study request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -341,6 +371,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListStudiesRequest.new
+            #
+            #   # Call the list_studies method.
+            #   result = client.list_studies request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::Study.
+            #     p response
+            #   end
+            #
             def list_studies request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -412,6 +463,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::DeleteStudyRequest.new
+            #
+            #   # Call the delete_study method.
+            #   result = client.delete_study request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_study request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -486,6 +552,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Study]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::LookupStudyRequest.new
+            #
+            #   # Call the lookup_study method.
+            #   result = client.lookup_study request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Study.
+            #   p result
             #
             def lookup_study request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -570,6 +651,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::SuggestTrialsRequest.new
+            #
+            #   # Call the suggest_trials method.
+            #   result = client.suggest_trials request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def suggest_trials request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -644,6 +747,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::CreateTrialRequest.new
+            #
+            #   # Call the create_trial method.
+            #   result = client.create_trial request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Trial.
+            #   p result
+            #
             def create_trial request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -715,6 +833,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Trial]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetTrialRequest.new
+            #
+            #   # Call the get_trial method.
+            #   result = client.get_trial request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Trial.
+            #   p result
             #
             def get_trial request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -793,6 +926,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListTrialsRequest.new
+            #
+            #   # Call the list_trials method.
+            #   result = client.list_trials request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::Trial.
+            #     p response
+            #   end
+            #
             def list_trials request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -868,6 +1022,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Trial]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::AddTrialMeasurementRequest.new
+            #
+            #   # Call the add_trial_measurement method.
+            #   result = client.add_trial_measurement request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Trial.
+            #   p result
             #
             def add_trial_measurement request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -951,6 +1120,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::CompleteTrialRequest.new
+            #
+            #   # Call the complete_trial method.
+            #   result = client.complete_trial request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Trial.
+            #   p result
+            #
             def complete_trial request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1022,6 +1206,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::DeleteTrialRequest.new
+            #
+            #   # Call the delete_trial method.
+            #   result = client.delete_trial request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_trial request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1098,6 +1297,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::CheckTrialEarlyStoppingStateRequest.new
+            #
+            #   # Call the check_trial_early_stopping_state method.
+            #   result = client.check_trial_early_stopping_state request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def check_trial_early_stopping_state request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1171,6 +1392,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::StopTrialRequest.new
+            #
+            #   # Call the stop_trial method.
+            #   result = client.stop_trial request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Trial.
+            #   p result
+            #
             def stop_trial request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1243,6 +1479,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::ListOptimalTrialsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::VizierService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListOptimalTrialsRequest.new
+            #
+            #   # Call the list_optimal_trials method.
+            #   result = client.list_optimal_trials request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::ListOptimalTrialsResponse.
+            #   p result
             #
             def list_optimal_trials request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

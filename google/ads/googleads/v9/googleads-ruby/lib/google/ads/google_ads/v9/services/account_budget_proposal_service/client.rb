@@ -193,6 +193,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AccountBudgetProposalService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetAccountBudgetProposalRequest.new
+              #
+              #   # Call the get_account_budget_proposal method.
+              #   result = client.get_account_budget_proposal request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::AccountBudgetProposal.
+              #   p result
+              #
               def get_account_budget_proposal request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -285,6 +300,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateAccountBudgetProposalResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AccountBudgetProposalService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateAccountBudgetProposalRequest.new
+              #
+              #   # Call the mutate_account_budget_proposal method.
+              #   result = client.mutate_account_budget_proposal request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateAccountBudgetProposalResponse.
+              #   p result
               #
               def mutate_account_budget_proposal request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

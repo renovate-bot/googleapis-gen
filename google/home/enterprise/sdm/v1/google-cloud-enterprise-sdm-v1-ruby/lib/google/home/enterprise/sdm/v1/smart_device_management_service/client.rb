@@ -206,6 +206,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::GetDeviceRequest.new
+              #
+              #   # Call the get_device method.
+              #   result = client.get_device request
+              #
+              #   # The returned object is of type Google::Home::Enterprise::Sdm::V1::Device.
+              #   p result
+              #
               def get_device request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -288,6 +303,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::ListDevicesRequest.new
+              #
+              #   # Call the list_devices method.
+              #   result = client.list_devices request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Home::Enterprise::Sdm::V1::Device.
+              #     p response
+              #   end
+              #
               def list_devices request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -365,6 +401,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::ExecuteDeviceCommandRequest.new
+              #
+              #   # Call the execute_device_command method.
+              #   result = client.execute_device_command request
+              #
+              #   # The returned object is of type Google::Home::Enterprise::Sdm::V1::ExecuteDeviceCommandResponse.
+              #   p result
+              #
               def execute_device_command request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -435,6 +486,21 @@ module Google
               # @return [::Google::Home::Enterprise::Sdm::V1::Structure]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::GetStructureRequest.new
+              #
+              #   # Call the get_structure method.
+              #   result = client.get_structure request
+              #
+              #   # The returned object is of type Google::Home::Enterprise::Sdm::V1::Structure.
+              #   p result
               #
               def get_structure request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -513,6 +579,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::ListStructuresRequest.new
+              #
+              #   # Call the list_structures method.
+              #   result = client.list_structures request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Home::Enterprise::Sdm::V1::Structure.
+              #     p response
+              #   end
+              #
               def list_structures request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -584,6 +671,21 @@ module Google
               # @return [::Google::Home::Enterprise::Sdm::V1::Room]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::GetRoomRequest.new
+              #
+              #   # Call the get_room method.
+              #   result = client.get_room request
+              #
+              #   # The returned object is of type Google::Home::Enterprise::Sdm::V1::Room.
+              #   p result
               #
               def get_room request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -660,6 +762,27 @@ module Google
               # @return [::Gapic::PagedEnumerable<::Google::Home::Enterprise::Sdm::V1::Room>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/home/enterprise/sdm/v1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Home::Enterprise::Sdm::V1::SmartDeviceManagementService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Home::Enterprise::Sdm::V1::ListRoomsRequest.new
+              #
+              #   # Call the list_rooms method.
+              #   result = client.list_rooms request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Home::Enterprise::Sdm::V1::Room.
+              #     p response
+              #   end
               #
               def list_rooms request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

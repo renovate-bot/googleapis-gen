@@ -194,6 +194,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::CreateReservationRequest.new
+              #
+              #   # Call the create_reservation method.
+              #   result = client.create_reservation request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::Reservation.
+              #   p result
+              #
               def create_reservation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -275,6 +290,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::ListReservationsRequest.new
+              #
+              #   # Call the list_reservations method.
+              #   result = client.list_reservations request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Bigquery::Reservation::V1beta1::Reservation.
+              #     p response
+              #   end
+              #
               def list_reservations request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -346,6 +382,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::Reservation]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::GetReservationRequest.new
+              #
+              #   # Call the get_reservation method.
+              #   result = client.get_reservation request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::Reservation.
+              #   p result
               #
               def get_reservation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -420,6 +471,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::DeleteReservationRequest.new
+              #
+              #   # Call the delete_reservation method.
+              #   result = client.delete_reservation request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
+              #
               def delete_reservation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -491,6 +557,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::Reservation]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::UpdateReservationRequest.new
+              #
+              #   # Call the update_reservation method.
+              #   result = client.update_reservation request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::Reservation.
+              #   p result
               #
               def update_reservation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -568,6 +649,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::CreateCapacityCommitmentRequest.new
+              #
+              #   # Call the create_capacity_commitment method.
+              #   result = client.create_capacity_commitment request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment.
+              #   p result
+              #
               def create_capacity_commitment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -643,6 +739,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::ListCapacityCommitmentsRequest.new
+              #
+              #   # Call the list_capacity_commitments method.
+              #   result = client.list_capacity_commitments request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment.
+              #     p response
+              #   end
+              #
               def list_capacity_commitments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -714,6 +831,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::GetCapacityCommitmentRequest.new
+              #
+              #   # Call the get_capacity_commitment method.
+              #   result = client.get_capacity_commitment request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment.
+              #   p result
               #
               def get_capacity_commitment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -787,6 +919,21 @@ module Google
               # @return [::Google::Protobuf::Empty]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::DeleteCapacityCommitmentRequest.new
+              #
+              #   # Call the delete_capacity_commitment method.
+              #   result = client.delete_capacity_commitment request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
               #
               def delete_capacity_commitment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -865,6 +1012,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::UpdateCapacityCommitmentRequest.new
+              #
+              #   # Call the update_capacity_commitment method.
+              #   result = client.update_capacity_commitment request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment.
+              #   p result
               #
               def update_capacity_commitment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -946,6 +1108,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::SplitCapacityCommitmentRequest.new
+              #
+              #   # Call the split_capacity_commitment method.
+              #   result = client.split_capacity_commitment request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::SplitCapacityCommitmentResponse.
+              #   p result
+              #
               def split_capacity_commitment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1026,6 +1203,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::MergeCapacityCommitmentsRequest.new
+              #
+              #   # Call the merge_capacity_commitments method.
+              #   result = client.merge_capacity_commitments request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::CapacityCommitment.
+              #   p result
               #
               def merge_capacity_commitments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1129,6 +1321,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::CreateAssignmentRequest.new
+              #
+              #   # Call the create_assignment method.
+              #   result = client.create_assignment request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::Assignment.
+              #   p result
+              #
               def create_assignment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1229,6 +1436,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::ListAssignmentsRequest.new
+              #
+              #   # Call the list_assignments method.
+              #   result = client.list_assignments request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Bigquery::Reservation::V1beta1::Assignment.
+              #     p response
+              #   end
+              #
               def list_assignments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1314,6 +1542,21 @@ module Google
               # @return [::Google::Protobuf::Empty]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::DeleteAssignmentRequest.new
+              #
+              #   # Call the delete_assignment method.
+              #   result = client.delete_assignment request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
               #
               def delete_assignment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1421,6 +1664,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::SearchAssignmentsRequest.new
+              #
+              #   # Call the search_assignments method.
+              #   result = client.search_assignments request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Bigquery::Reservation::V1beta1::Assignment.
+              #     p response
+              #   end
+              #
               def search_assignments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1501,6 +1765,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::MoveAssignmentRequest.new
+              #
+              #   # Call the move_assignment method.
+              #   result = client.move_assignment request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::Assignment.
+              #   p result
+              #
               def move_assignment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1571,6 +1850,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::BiReservation]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::GetBiReservationRequest.new
+              #
+              #   # Call the get_bi_reservation method.
+              #   result = client.get_bi_reservation request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::BiReservation.
+              #   p result
               #
               def get_bi_reservation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1650,6 +1944,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Reservation::V1beta1::BiReservation]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/reservation/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Reservation::V1beta1::UpdateBiReservationRequest.new
+              #
+              #   # Call the update_bi_reservation method.
+              #   result = client.update_bi_reservation request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Reservation::V1beta1::BiReservation.
+              #   p result
               #
               def update_bi_reservation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -200,6 +200,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::ListAvailableVersionsRequest.new
+            #
+            #   # Call the list_available_versions method.
+            #   result = client.list_available_versions request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataFusion::V1beta1::Version.
+            #     p response
+            #   end
+            #
             def list_available_versions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -283,6 +304,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::ListInstancesRequest.new
+            #
+            #   # Call the list_instances method.
+            #   result = client.list_instances request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataFusion::V1beta1::Instance.
+            #     p response
+            #   end
+            #
             def list_instances request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -354,6 +396,21 @@ module Google
             # @return [::Google::Cloud::DataFusion::V1beta1::Instance]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::GetInstanceRequest.new
+            #
+            #   # Call the get_instance method.
+            #   result = client.get_instance request
+            #
+            #   # The returned object is of type Google::Cloud::DataFusion::V1beta1::Instance.
+            #   p result
             #
             def get_instance request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -430,6 +487,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::CreateInstanceRequest.new
+            #
+            #   # Call the create_instance method.
+            #   result = client.create_instance request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_instance request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -501,6 +580,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::DeleteInstanceRequest.new
+            #
+            #   # Call the delete_instance method.
+            #   result = client.delete_instance request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_instance request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -582,6 +683,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::UpdateInstanceRequest.new
+            #
+            #   # Call the update_instance method.
+            #   result = client.update_instance request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def update_instance request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -654,6 +777,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::RestartInstanceRequest.new
+            #
+            #   # Call the restart_instance method.
+            #   result = client.restart_instance request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def restart_instance request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -730,6 +875,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::UpgradeInstanceRequest.new
+            #
+            #   # Call the upgrade_instance method.
+            #   result = client.upgrade_instance request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def upgrade_instance request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -800,6 +967,21 @@ module Google
             # @return [::Google::Cloud::DataFusion::V1beta1::RemoveIamPolicyResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::RemoveIamPolicyRequest.new
+            #
+            #   # Call the remove_iam_policy method.
+            #   result = client.remove_iam_policy request
+            #
+            #   # The returned object is of type Google::Cloud::DataFusion::V1beta1::RemoveIamPolicyResponse.
+            #   p result
             #
             def remove_iam_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -881,6 +1063,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::ListNamespacesRequest.new
+            #
+            #   # Call the list_namespaces method.
+            #   result = client.list_namespaces request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataFusion::V1beta1::Namespace.
+            #     p response
+            #   end
+            #
             def list_namespaces request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -954,6 +1157,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::AddDnsPeeringRequest.new
+            #
+            #   # Call the add_dns_peering method.
+            #   result = client.add_dns_peering request
+            #
+            #   # The returned object is of type Google::Cloud::DataFusion::V1beta1::AddDnsPeeringResponse.
+            #   p result
+            #
             def add_dns_peering request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1025,6 +1243,21 @@ module Google
             # @return [::Google::Cloud::DataFusion::V1beta1::RemoveDnsPeeringResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::RemoveDnsPeeringRequest.new
+            #
+            #   # Call the remove_dns_peering method.
+            #   result = client.remove_dns_peering request
+            #
+            #   # The returned object is of type Google::Cloud::DataFusion::V1beta1::RemoveDnsPeeringResponse.
+            #   p result
             #
             def remove_dns_peering request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1100,6 +1333,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::DataFusion::V1beta1::DnsPeering>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_fusion/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataFusion::V1beta1::ListDnsPeeringsRequest.new
+            #
+            #   # Call the list_dns_peerings method.
+            #   result = client.list_dns_peerings request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataFusion::V1beta1::DnsPeering.
+            #     p response
+            #   end
             #
             def list_dns_peerings request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::BiddingSeasonalityAdjustmentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetBiddingSeasonalityAdjustmentRequest.new
+              #
+              #   # Call the get_bidding_seasonality_adjustment method.
+              #   result = client.get_bidding_seasonality_adjustment request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::BiddingSeasonalityAdjustment.
+              #   p result
+              #
               def get_bidding_seasonality_adjustment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -257,6 +272,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateBiddingSeasonalityAdjustmentsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::BiddingSeasonalityAdjustmentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateBiddingSeasonalityAdjustmentsRequest.new
+              #
+              #   # Call the mutate_bidding_seasonality_adjustments method.
+              #   result = client.mutate_bidding_seasonality_adjustments request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateBiddingSeasonalityAdjustmentsResponse.
+              #   p result
               #
               def mutate_bidding_seasonality_adjustments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

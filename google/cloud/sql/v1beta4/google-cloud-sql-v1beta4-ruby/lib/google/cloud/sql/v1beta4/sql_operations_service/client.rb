@@ -173,6 +173,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/sql/v1beta4"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Sql::V1beta4::SqlOperationsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Sql::V1beta4::SqlOperationsGetRequest.new
+            #
+            #   # Call the get method.
+            #   result = client.get request
+            #
+            #   # The returned object is of type Google::Cloud::Sql::V1beta4::Operation.
+            #   p result
+            #
             def get request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -253,6 +268,21 @@ module Google
             # @return [::Google::Cloud::Sql::V1beta4::OperationsListResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/sql/v1beta4"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Sql::V1beta4::SqlOperationsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Sql::V1beta4::SqlOperationsListRequest.new
+            #
+            #   # Call the list method.
+            #   result = client.list request
+            #
+            #   # The returned object is of type Google::Cloud::Sql::V1beta4::OperationsListResponse.
+            #   p result
             #
             def list request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

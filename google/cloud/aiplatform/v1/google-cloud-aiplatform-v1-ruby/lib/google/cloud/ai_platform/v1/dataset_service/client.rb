@@ -189,6 +189,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::CreateDatasetRequest.new
+            #
+            #   # Call the create_dataset method.
+            #   result = client.create_dataset request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_dataset request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -261,6 +283,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Dataset]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetDatasetRequest.new
+            #
+            #   # Call the get_dataset method.
+            #   result = client.get_dataset request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Dataset.
+            #   p result
             #
             def get_dataset request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -339,6 +376,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::Dataset]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::UpdateDatasetRequest.new
+            #
+            #   # Call the update_dataset method.
+            #   result = client.update_dataset request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::Dataset.
+            #   p result
             #
             def update_dataset request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -438,6 +490,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListDatasetsRequest.new
+            #
+            #   # Call the list_datasets method.
+            #   result = client.list_datasets request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::Dataset.
+            #     p response
+            #   end
+            #
             def list_datasets request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -510,6 +583,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::DeleteDatasetRequest.new
+            #
+            #   # Call the delete_dataset method.
+            #   result = client.delete_dataset request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_dataset request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -587,6 +682,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ImportDataRequest.new
+            #
+            #   # Call the import_data method.
+            #   result = client.import_data request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def import_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -661,6 +778,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ExportDataRequest.new
+            #
+            #   # Call the export_data method.
+            #   result = client.export_data request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def export_data request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -746,6 +885,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListDataItemsRequest.new
+            #
+            #   # Call the list_data_items method.
+            #   result = client.list_data_items request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::DataItem.
+            #     p response
+            #   end
+            #
             def list_data_items request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -820,6 +980,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1::AnnotationSpec]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::GetAnnotationSpecRequest.new
+            #
+            #   # Call the get_annotation_spec method.
+            #   result = client.get_annotation_spec request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1::AnnotationSpec.
+            #   p result
             #
             def get_annotation_spec request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -903,6 +1078,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1::Annotation>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1::DatasetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1::ListAnnotationsRequest.new
+            #
+            #   # Call the list_annotations method.
+            #   result = client.list_annotations request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1::Annotation.
+            #     p response
+            #   end
             #
             def list_annotations request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -189,6 +189,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::FeaturestoreOnlineServingService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesRequest.new
+            #
+            #   # Call the read_feature_values method.
+            #   result = client.read_feature_values request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse.
+            #   p result
+            #
             def read_feature_values request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -272,6 +287,24 @@ module Google
             # @return [::Enumerable<::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::FeaturestoreOnlineServingService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::StreamingReadFeatureValuesRequest.new
+            #
+            #   # Call the streaming_read_feature_values method.
+            #   result = client.streaming_read_feature_values request
+            #
+            #   # The returned object is a streamed enumerable yielding elements of
+            #   # type ::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse.
+            #   result.each do |response|
+            #     p response
+            #   end
             #
             def streaming_read_feature_values request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

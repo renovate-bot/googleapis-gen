@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::AdGroupFeedService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetAdGroupFeedRequest.new
+              #
+              #   # Call the get_ad_group_feed method.
+              #   result = client.get_ad_group_feed request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::AdGroupFeed.
+              #   p result
+              #
               def get_ad_group_feed request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -289,6 +304,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateAdGroupFeedsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::AdGroupFeedService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateAdGroupFeedsRequest.new
+              #
+              #   # Call the mutate_ad_group_feeds method.
+              #   result = client.mutate_ad_group_feeds request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateAdGroupFeedsResponse.
+              #   p result
               #
               def mutate_ad_group_feeds request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

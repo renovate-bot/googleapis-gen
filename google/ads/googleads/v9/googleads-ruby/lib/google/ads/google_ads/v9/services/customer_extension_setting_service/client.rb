@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CustomerExtensionSettingService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetCustomerExtensionSettingRequest.new
+              #
+              #   # Call the get_customer_extension_setting method.
+              #   result = client.get_customer_extension_setting request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::CustomerExtensionSetting.
+              #   p result
+              #
               def get_customer_extension_setting request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -294,6 +309,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateCustomerExtensionSettingsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CustomerExtensionSettingService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateCustomerExtensionSettingsRequest.new
+              #
+              #   # Call the mutate_customer_extension_settings method.
+              #   result = client.mutate_customer_extension_settings request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateCustomerExtensionSettingsResponse.
+              #   p result
               #
               def mutate_customer_extension_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -230,6 +230,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::ListMembershipsRequest.new
+            #
+            #   # Call the list_memberships method.
+            #   result = client.list_memberships request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::GkeHub::V1alpha2::Membership.
+            #     p response
+            #   end
+            #
             def list_memberships request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -301,6 +322,21 @@ module Google
             # @return [::Google::Cloud::GkeHub::V1alpha2::Membership]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::GetMembershipRequest.new
+            #
+            #   # Call the get_membership method.
+            #   result = client.get_membership request
+            #
+            #   # The returned object is of type Google::Cloud::GkeHub::V1alpha2::Membership.
+            #   p result
             #
             def get_membership request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -389,6 +425,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::CreateMembershipRequest.new
+            #
+            #   # Call the create_membership method.
+            #   result = client.create_membership request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_membership request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -464,6 +522,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::DeleteMembershipRequest.new
+            #
+            #   # Call the delete_membership method.
+            #   result = client.delete_membership request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_membership request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -547,6 +627,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::UpdateMembershipRequest.new
+            #
+            #   # Call the update_membership method.
+            #   result = client.update_membership request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def update_membership request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -645,6 +747,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::GenerateConnectManifestRequest.new
+            #
+            #   # Call the generate_connect_manifest method.
+            #   result = client.generate_connect_manifest request
+            #
+            #   # The returned object is of type Google::Cloud::GkeHub::V1alpha2::GenerateConnectManifestResponse.
+            #   p result
+            #
             def generate_connect_manifest request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -722,6 +839,21 @@ module Google
             # @return [::Google::Cloud::GkeHub::V1alpha2::InitializeHubResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/gke_hub/v1alpha2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::GkeHub::V1alpha2::GkeHub::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::GkeHub::V1alpha2::InitializeHubRequest.new
+            #
+            #   # Call the initialize_hub method.
+            #   result = client.initialize_hub request
+            #
+            #   # The returned object is of type Google::Cloud::GkeHub::V1alpha2::InitializeHubResponse.
+            #   p result
             #
             def initialize_hub request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::SharedCriterionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetSharedCriterionRequest.new
+              #
+              #   # Call the get_shared_criterion method.
+              #   result = client.get_shared_criterion request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::SharedCriterion.
+              #   p result
+              #
               def get_shared_criterion request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -286,6 +301,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateSharedCriteriaResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::SharedCriterionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateSharedCriteriaRequest.new
+              #
+              #   # Call the mutate_shared_criteria method.
+              #   result = client.mutate_shared_criteria request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateSharedCriteriaResponse.
+              #   p result
               #
               def mutate_shared_criteria request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

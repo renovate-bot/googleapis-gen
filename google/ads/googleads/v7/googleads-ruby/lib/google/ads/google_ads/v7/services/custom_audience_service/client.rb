@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomAudienceService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetCustomAudienceRequest.new
+              #
+              #   # Call the get_custom_audience method.
+              #   result = client.get_custom_audience request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::CustomAudience.
+              #   p result
+              #
               def get_custom_audience request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -271,6 +286,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateCustomAudiencesResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomAudienceService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateCustomAudiencesRequest.new
+              #
+              #   # Call the mutate_custom_audiences method.
+              #   result = client.mutate_custom_audiences request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateCustomAudiencesResponse.
+              #   p result
               #
               def mutate_custom_audiences request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

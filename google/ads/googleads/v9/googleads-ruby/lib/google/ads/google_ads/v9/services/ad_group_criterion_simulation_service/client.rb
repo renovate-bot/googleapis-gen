@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AdGroupCriterionSimulationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetAdGroupCriterionSimulationRequest.new
+              #
+              #   # Call the get_ad_group_criterion_simulation method.
+              #   result = client.get_ad_group_criterion_simulation request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::AdGroupCriterionSimulation.
+              #   p result
+              #
               def get_ad_group_criterion_simulation request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

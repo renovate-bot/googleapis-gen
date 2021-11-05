@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::SharedSetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetSharedSetRequest.new
+              #
+              #   # Call the get_shared_set method.
+              #   result = client.get_shared_set request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::SharedSet.
+              #   p result
+              #
               def get_shared_set request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -288,6 +303,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateSharedSetsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::SharedSetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateSharedSetsRequest.new
+              #
+              #   # Call the mutate_shared_sets method.
+              #   result = client.mutate_shared_sets request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateSharedSetsResponse.
+              #   p result
               #
               def mutate_shared_sets request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

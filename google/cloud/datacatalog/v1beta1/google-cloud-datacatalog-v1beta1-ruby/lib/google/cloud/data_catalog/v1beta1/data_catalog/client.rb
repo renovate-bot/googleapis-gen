@@ -224,6 +224,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::SearchCatalogRequest.new
+            #
+            #   # Call the search_catalog method.
+            #   result = client.search_catalog request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataCatalog::V1beta1::SearchCatalogResult.
+            #     p response
+            #   end
+            #
             def search_catalog request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -304,6 +325,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::CreateEntryGroupRequest.new
+            #
+            #   # Call the create_entry_group method.
+            #   result = client.create_entry_group request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::EntryGroup.
+            #   p result
+            #
             def create_entry_group request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -381,6 +417,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::UpdateEntryGroupRequest.new
+            #
+            #   # Call the update_entry_group method.
+            #   result = client.update_entry_group request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::EntryGroup.
+            #   p result
+            #
             def update_entry_group request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -453,6 +504,21 @@ module Google
             # @return [::Google::Cloud::DataCatalog::V1beta1::EntryGroup]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::GetEntryGroupRequest.new
+            #
+            #   # Call the get_entry_group method.
+            #   result = client.get_entry_group request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::EntryGroup.
+            #   p result
             #
             def get_entry_group request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -530,6 +596,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::DeleteEntryGroupRequest.new
+            #
+            #   # Call the delete_entry_group method.
+            #   result = client.delete_entry_group request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_entry_group request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -609,6 +690,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::DataCatalog::V1beta1::EntryGroup>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::ListEntryGroupsRequest.new
+            #
+            #   # Call the list_entry_groups method.
+            #   result = client.list_entry_groups request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataCatalog::V1beta1::EntryGroup.
+            #     p response
+            #   end
             #
             def list_entry_groups request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -697,6 +799,21 @@ module Google
             # @return [::Google::Cloud::DataCatalog::V1beta1::Entry]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::CreateEntryRequest.new
+            #
+            #   # Call the create_entry method.
+            #   result = client.create_entry request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::Entry.
+            #   p result
             #
             def create_entry request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -793,6 +910,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::UpdateEntryRequest.new
+            #
+            #   # Call the update_entry method.
+            #   result = client.update_entry request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::Entry.
+            #   p result
+            #
             def update_entry request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -871,6 +1003,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::DeleteEntryRequest.new
+            #
+            #   # Call the delete_entry method.
+            #   result = client.delete_entry request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def delete_entry request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -942,6 +1089,21 @@ module Google
             # @return [::Google::Cloud::DataCatalog::V1beta1::Entry]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::GetEntryRequest.new
+            #
+            #   # Call the get_entry method.
+            #   result = client.get_entry request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::Entry.
+            #   p result
             #
             def get_entry request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1036,6 +1198,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::LookupEntryRequest.new
+            #
+            #   # Call the lookup_entry method.
+            #   result = client.lookup_entry request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::Entry.
+            #   p result
+            #
             def lookup_entry request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1111,6 +1288,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::DataCatalog::V1beta1::Entry>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::ListEntriesRequest.new
+            #
+            #   # Call the list_entries method.
+            #   result = client.list_entries request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataCatalog::V1beta1::Entry.
+            #     p response
+            #   end
             #
             def list_entries request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1196,6 +1394,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::CreateTagTemplateRequest.new
+            #
+            #   # Call the create_tag_template method.
+            #   result = client.create_tag_template request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::TagTemplate.
+            #   p result
+            #
             def create_tag_template request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1267,6 +1480,21 @@ module Google
             # @return [::Google::Cloud::DataCatalog::V1beta1::TagTemplate]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::GetTagTemplateRequest.new
+            #
+            #   # Call the get_tag_template method.
+            #   result = client.get_tag_template request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::TagTemplate.
+            #   p result
             #
             def get_tag_template request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1352,6 +1580,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::UpdateTagTemplateRequest.new
+            #
+            #   # Call the update_tag_template method.
+            #   result = client.update_tag_template request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::TagTemplate.
+            #   p result
+            #
             def update_tag_template request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1431,6 +1674,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::DeleteTagTemplateRequest.new
+            #
+            #   # Call the delete_tag_template method.
+            #   result = client.delete_tag_template request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_tag_template request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1518,6 +1776,21 @@ module Google
             # @return [::Google::Cloud::DataCatalog::V1beta1::TagTemplateField]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::CreateTagTemplateFieldRequest.new
+            #
+            #   # Call the create_tag_template_field method.
+            #   result = client.create_tag_template_field request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::TagTemplateField.
+            #   p result
             #
             def create_tag_template_field request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1612,6 +1885,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::UpdateTagTemplateFieldRequest.new
+            #
+            #   # Call the update_tag_template_field method.
+            #   result = client.update_tag_template_field request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::TagTemplateField.
+            #   p result
+            #
             def update_tag_template_field request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1689,6 +1977,21 @@ module Google
             # @return [::Google::Cloud::DataCatalog::V1beta1::TagTemplateField]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::RenameTagTemplateFieldRequest.new
+            #
+            #   # Call the rename_tag_template_field method.
+            #   result = client.rename_tag_template_field request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::TagTemplateField.
+            #   p result
             #
             def rename_tag_template_field request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1769,6 +2072,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::DeleteTagTemplateFieldRequest.new
+            #
+            #   # Call the delete_tag_template_field method.
+            #   result = client.delete_tag_template_field request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_tag_template_field request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1854,6 +2172,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::CreateTagRequest.new
+            #
+            #   # Call the create_tag method.
+            #   result = client.create_tag request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::Tag.
+            #   p result
+            #
             def create_tag request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1927,6 +2260,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::UpdateTagRequest.new
+            #
+            #   # Call the update_tag method.
+            #   result = client.update_tag request
+            #
+            #   # The returned object is of type Google::Cloud::DataCatalog::V1beta1::Tag.
+            #   p result
+            #
             def update_tag request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1998,6 +2346,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::DeleteTagRequest.new
+            #
+            #   # Call the delete_tag method.
+            #   result = client.delete_tag request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_tag request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2080,6 +2443,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::DataCatalog::V1beta1::Tag>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DataCatalog::V1beta1::ListTagsRequest.new
+            #
+            #   # Call the list_tags method.
+            #   result = client.list_tags request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::DataCatalog::V1beta1::Tag.
+            #     p response
+            #   end
             #
             def list_tags request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2171,6 +2555,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::V1::SetIamPolicyRequest.new
+            #
+            #   # Call the set_iam_policy method.
+            #   result = client.set_iam_policy request
+            #
+            #   # The returned object is of type Google::Iam::V1::Policy.
+            #   p result
+            #
             def set_iam_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2260,6 +2659,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::V1::GetIamPolicyRequest.new
+            #
+            #   # Call the get_iam_policy method.
+            #   result = client.get_iam_policy request
+            #
+            #   # The returned object is of type Google::Iam::V1::Policy.
+            #   p result
+            #
             def get_iam_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2347,6 +2761,21 @@ module Google
             # @return [::Google::Iam::V1::TestIamPermissionsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/data_catalog/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Iam::V1::TestIamPermissionsRequest.new
+            #
+            #   # Call the test_iam_permissions method.
+            #   result = client.test_iam_permissions request
+            #
+            #   # The returned object is of type Google::Iam::V1::TestIamPermissionsResponse.
+            #   p result
             #
             def test_iam_permissions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

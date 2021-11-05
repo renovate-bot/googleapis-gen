@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::FeedItemSetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetFeedItemSetRequest.new
+              #
+              #   # Call the get_feed_item_set method.
+              #   result = client.get_feed_item_set request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::FeedItemSet.
+              #   p result
+              #
               def get_feed_item_set request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -271,6 +286,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateFeedItemSetsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::FeedItemSetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateFeedItemSetsRequest.new
+              #
+              #   # Call the mutate_feed_item_sets method.
+              #   result = client.mutate_feed_item_sets request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateFeedItemSetsResponse.
+              #   p result
               #
               def mutate_feed_item_sets request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

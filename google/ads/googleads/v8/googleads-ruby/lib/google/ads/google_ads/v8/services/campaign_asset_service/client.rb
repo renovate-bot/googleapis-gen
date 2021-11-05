@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CampaignAssetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetCampaignAssetRequest.new
+              #
+              #   # Call the get_campaign_asset method.
+              #   result = client.get_campaign_asset request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::CampaignAsset.
+              #   p result
+              #
               def get_campaign_asset request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -279,6 +294,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateCampaignAssetsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CampaignAssetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateCampaignAssetsRequest.new
+              #
+              #   # Call the mutate_campaign_assets method.
+              #   result = client.mutate_campaign_assets request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateCampaignAssetsResponse.
+              #   p result
               #
               def mutate_campaign_assets request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

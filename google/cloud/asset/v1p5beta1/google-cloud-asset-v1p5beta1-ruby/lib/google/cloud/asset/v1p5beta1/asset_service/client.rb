@@ -197,6 +197,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p5beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p5beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p5beta1::ListAssetsRequest.new
+            #
+            #   # Call the list_assets method.
+            #   result = client.list_assets request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Asset::V1p5beta1::Asset.
+            #     p response
+            #   end
+            #
             def list_assets request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 

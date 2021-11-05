@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanAdGroupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetKeywordPlanAdGroupRequest.new
+              #
+              #   # Call the get_keyword_plan_ad_group method.
+              #   result = client.get_keyword_plan_ad_group request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::KeywordPlanAdGroup.
+              #   p result
+              #
               def get_keyword_plan_ad_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -278,6 +293,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateKeywordPlanAdGroupsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanAdGroupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateKeywordPlanAdGroupsRequest.new
+              #
+              #   # Call the mutate_keyword_plan_ad_groups method.
+              #   result = client.mutate_keyword_plan_ad_groups request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateKeywordPlanAdGroupsResponse.
+              #   p result
               #
               def mutate_keyword_plan_ad_groups request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

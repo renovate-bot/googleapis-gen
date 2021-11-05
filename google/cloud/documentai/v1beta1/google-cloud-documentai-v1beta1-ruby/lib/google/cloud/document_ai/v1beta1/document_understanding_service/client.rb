@@ -191,6 +191,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/document_ai/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::DocumentAI::V1beta1::DocumentUnderstandingService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::DocumentAI::V1beta1::BatchProcessDocumentsRequest.new
+            #
+            #   # Call the batch_process_documents method.
+            #   result = client.batch_process_documents request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def batch_process_documents request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 

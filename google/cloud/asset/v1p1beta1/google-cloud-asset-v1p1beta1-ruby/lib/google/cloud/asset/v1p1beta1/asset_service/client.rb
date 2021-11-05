@@ -201,6 +201,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p1beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p1beta1::SearchAllResourcesRequest.new
+            #
+            #   # Call the search_all_resources method.
+            #   result = client.search_all_resources request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Asset::V1p1beta1::StandardResourceMetadata.
+            #     p response
+            #   end
+            #
             def search_all_resources request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -296,6 +317,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::Asset::V1p1beta1::IamPolicySearchResult>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p1beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p1beta1::SearchAllIamPoliciesRequest.new
+            #
+            #   # Call the search_all_iam_policies method.
+            #   result = client.search_all_iam_policies request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Asset::V1p1beta1::IamPolicySearchResult.
+            #     p response
+            #   end
             #
             def search_all_iam_policies request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

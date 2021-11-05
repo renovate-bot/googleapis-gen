@@ -236,6 +236,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::CreateShelfRequest.new
+            #
+            #   # Call the create_shelf method.
+            #   result = client.create_shelf request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Shelf.
+            #   p result
+            #
             def create_shelf request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -297,6 +312,21 @@ module Google
             # @return [::Google::Example::Library::V1::Shelf]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::GetShelfRequest.new
+            #
+            #   # Call the get_shelf method.
+            #   result = client.get_shelf request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Shelf.
+            #   p result
             #
             def get_shelf request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -375,6 +405,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::ListShelvesRequest.new
+            #
+            #   # Call the list_shelves method.
+            #   result = client.list_shelves request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Example::Library::V1::Shelf.
+            #     p response
+            #   end
+            #
             def list_shelves request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -437,6 +488,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::DeleteShelfRequest.new
+            #
+            #   # Call the delete_shelf method.
+            #   result = client.delete_shelf request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_shelf request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -516,6 +582,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::MergeShelvesRequest.new
+            #
+            #   # Call the merge_shelves method.
+            #   result = client.merge_shelves request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Shelf.
+            #   p result
+            #
             def merge_shelves request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -588,6 +669,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::CreateBookRequest.new
+            #
+            #   # Call the create_book method.
+            #   result = client.create_book request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Book.
+            #   p result
+            #
             def create_book request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -657,6 +753,21 @@ module Google
             # @return [::Google::Example::Library::V1::Book]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::GetBookRequest.new
+            #
+            #   # Call the get_book method.
+            #   result = client.get_book request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Book.
+            #   p result
             #
             def get_book request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -738,6 +849,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::ListBooksRequest.new
+            #
+            #   # Call the list_books method.
+            #   result = client.list_books request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Example::Library::V1::Book.
+            #     p response
+            #   end
+            #
             def list_books request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -808,6 +940,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::DeleteBookRequest.new
+            #
+            #   # Call the delete_book method.
+            #   result = client.delete_book request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_book request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -882,6 +1029,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::UpdateBookRequest.new
+            #
+            #   # Call the update_book method.
+            #   result = client.update_book request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Book.
+            #   p result
+            #
             def update_book request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -954,6 +1116,21 @@ module Google
             # @return [::Google::Example::Library::V1::Book]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/example/library/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Example::Library::V1::LibraryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Example::Library::V1::MoveBookRequest.new
+            #
+            #   # Call the move_book method.
+            #   result = client.move_book request
+            #
+            #   # The returned object is of type Google::Example::Library::V1::Book.
+            #   p result
             #
             def move_book request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

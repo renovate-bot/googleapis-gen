@@ -195,6 +195,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::Contexts::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::ListContextsRequest.new
+            #
+            #   # Call the list_contexts method.
+            #   result = client.list_contexts request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Dialogflow::V2beta1::Context.
+            #     p response
+            #   end
+            #
             def list_contexts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -278,6 +299,21 @@ module Google
             # @return [::Google::Cloud::Dialogflow::V2beta1::Context]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::Contexts::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::GetContextRequest.new
+            #
+            #   # Call the get_context method.
+            #   result = client.get_context request
+            #
+            #   # The returned object is of type Google::Cloud::Dialogflow::V2beta1::Context.
+            #   p result
             #
             def get_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -365,6 +401,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::Contexts::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::CreateContextRequest.new
+            #
+            #   # Call the create_context method.
+            #   result = client.create_context request
+            #
+            #   # The returned object is of type Google::Cloud::Dialogflow::V2beta1::Context.
+            #   p result
+            #
             def create_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -436,6 +487,21 @@ module Google
             # @return [::Google::Cloud::Dialogflow::V2beta1::Context]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::Contexts::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::UpdateContextRequest.new
+            #
+            #   # Call the update_context method.
+            #   result = client.update_context request
+            #
+            #   # The returned object is of type Google::Cloud::Dialogflow::V2beta1::Context.
+            #   p result
             #
             def update_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -520,6 +586,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::Contexts::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::DeleteContextRequest.new
+            #
+            #   # Call the delete_context method.
+            #   result = client.delete_context request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def delete_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -601,6 +682,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/dialogflow/v2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Dialogflow::V2beta1::Contexts::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Dialogflow::V2beta1::DeleteAllContextsRequest.new
+            #
+            #   # Call the delete_all_contexts method.
+            #   result = client.delete_all_contexts request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_all_contexts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

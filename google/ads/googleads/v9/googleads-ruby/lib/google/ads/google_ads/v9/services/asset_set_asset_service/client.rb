@@ -186,6 +186,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AssetSetAssetService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateAssetSetAssetsRequest.new
+              #
+              #   # Call the mutate_asset_set_assets method.
+              #   result = client.mutate_asset_set_assets request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateAssetSetAssetsResponse.
+              #   p result
+              #
               def mutate_asset_set_assets request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

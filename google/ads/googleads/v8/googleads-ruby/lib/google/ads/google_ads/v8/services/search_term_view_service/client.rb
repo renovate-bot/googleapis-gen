@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::SearchTermViewService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetSearchTermViewRequest.new
+              #
+              #   # Call the get_search_term_view method.
+              #   result = client.get_search_term_view request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::SearchTermView.
+              #   p result
+              #
               def get_search_term_view request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

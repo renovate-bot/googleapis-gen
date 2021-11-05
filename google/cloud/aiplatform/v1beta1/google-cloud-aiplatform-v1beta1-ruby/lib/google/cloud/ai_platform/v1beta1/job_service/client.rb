@@ -245,6 +245,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateCustomJobRequest.new
+            #
+            #   # Call the create_custom_job method.
+            #   result = client.create_custom_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::CustomJob.
+            #   p result
+            #
             def create_custom_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -316,6 +331,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::CustomJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetCustomJobRequest.new
+            #
+            #   # Call the get_custom_job method.
+            #   result = client.get_custom_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::CustomJob.
+            #   p result
             #
             def get_custom_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -415,6 +445,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListCustomJobsRequest.new
+            #
+            #   # Call the list_custom_jobs method.
+            #   result = client.list_custom_jobs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::CustomJob.
+            #     p response
+            #   end
+            #
             def list_custom_jobs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -487,6 +538,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteCustomJobRequest.new
+            #
+            #   # Call the delete_custom_job method.
+            #   result = client.delete_custom_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_custom_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -570,6 +643,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CancelCustomJobRequest.new
+            #
+            #   # Call the cancel_custom_job method.
+            #   result = client.cancel_custom_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def cancel_custom_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -643,6 +731,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateDataLabelingJobRequest.new
+            #
+            #   # Call the create_data_labeling_job method.
+            #   result = client.create_data_labeling_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::DataLabelingJob.
+            #   p result
+            #
             def create_data_labeling_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -714,6 +817,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::DataLabelingJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetDataLabelingJobRequest.new
+            #
+            #   # Call the get_data_labeling_job method.
+            #   result = client.get_data_labeling_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::DataLabelingJob.
+            #   p result
             #
             def get_data_labeling_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -817,6 +935,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListDataLabelingJobsRequest.new
+            #
+            #   # Call the list_data_labeling_jobs method.
+            #   result = client.list_data_labeling_jobs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::DataLabelingJob.
+            #     p response
+            #   end
+            #
             def list_data_labeling_jobs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -889,6 +1028,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteDataLabelingJobRequest.new
+            #
+            #   # Call the delete_data_labeling_job method.
+            #   result = client.delete_data_labeling_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_data_labeling_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -963,6 +1124,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CancelDataLabelingJobRequest.new
+            #
+            #   # Call the cancel_data_labeling_job method.
+            #   result = client.cancel_data_labeling_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def cancel_data_labeling_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1036,6 +1212,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateHyperparameterTuningJobRequest.new
+            #
+            #   # Call the create_hyperparameter_tuning_job method.
+            #   result = client.create_hyperparameter_tuning_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::HyperparameterTuningJob.
+            #   p result
+            #
             def create_hyperparameter_tuning_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1107,6 +1298,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::HyperparameterTuningJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetHyperparameterTuningJobRequest.new
+            #
+            #   # Call the get_hyperparameter_tuning_job method.
+            #   result = client.get_hyperparameter_tuning_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::HyperparameterTuningJob.
+            #   p result
             #
             def get_hyperparameter_tuning_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1206,6 +1412,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListHyperparameterTuningJobsRequest.new
+            #
+            #   # Call the list_hyperparameter_tuning_jobs method.
+            #   result = client.list_hyperparameter_tuning_jobs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::HyperparameterTuningJob.
+            #     p response
+            #   end
+            #
             def list_hyperparameter_tuning_jobs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1278,6 +1505,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteHyperparameterTuningJobRequest.new
+            #
+            #   # Call the delete_hyperparameter_tuning_job method.
+            #   result = client.delete_hyperparameter_tuning_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_hyperparameter_tuning_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1361,6 +1610,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CancelHyperparameterTuningJobRequest.new
+            #
+            #   # Call the cancel_hyperparameter_tuning_job method.
+            #   result = client.cancel_hyperparameter_tuning_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def cancel_hyperparameter_tuning_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1435,6 +1699,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateBatchPredictionJobRequest.new
+            #
+            #   # Call the create_batch_prediction_job method.
+            #   result = client.create_batch_prediction_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::BatchPredictionJob.
+            #   p result
+            #
             def create_batch_prediction_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1506,6 +1785,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::BatchPredictionJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetBatchPredictionJobRequest.new
+            #
+            #   # Call the get_batch_prediction_job method.
+            #   result = client.get_batch_prediction_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::BatchPredictionJob.
+            #   p result
             #
             def get_batch_prediction_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1607,6 +1901,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListBatchPredictionJobsRequest.new
+            #
+            #   # Call the list_batch_prediction_jobs method.
+            #   result = client.list_batch_prediction_jobs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::BatchPredictionJob.
+            #     p response
+            #   end
+            #
             def list_batch_prediction_jobs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1680,6 +1995,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteBatchPredictionJobRequest.new
+            #
+            #   # Call the delete_batch_prediction_job method.
+            #   result = client.delete_batch_prediction_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_batch_prediction_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1763,6 +2100,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CancelBatchPredictionJobRequest.new
+            #
+            #   # Call the cancel_batch_prediction_job method.
+            #   result = client.cancel_batch_prediction_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def cancel_batch_prediction_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1836,6 +2188,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateModelDeploymentMonitoringJobRequest.new
+            #
+            #   # Call the create_model_deployment_monitoring_job method.
+            #   result = client.create_model_deployment_monitoring_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob.
+            #   p result
             #
             def create_model_deployment_monitoring_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1931,6 +2298,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::SearchModelDeploymentMonitoringStatsAnomaliesRequest.new
+            #
+            #   # Call the search_model_deployment_monitoring_stats_anomalies method.
+            #   result = client.search_model_deployment_monitoring_stats_anomalies request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringStatsAnomalies.
+            #     p response
+            #   end
+            #
             def search_model_deployment_monitoring_stats_anomalies request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2003,6 +2391,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetModelDeploymentMonitoringJobRequest.new
+            #
+            #   # Call the get_model_deployment_monitoring_job method.
+            #   result = client.get_model_deployment_monitoring_job request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob.
+            #   p result
             #
             def get_model_deployment_monitoring_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2082,6 +2485,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListModelDeploymentMonitoringJobsRequest.new
+            #
+            #   # Call the list_model_deployment_monitoring_jobs method.
+            #   result = client.list_model_deployment_monitoring_jobs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob.
+            #     p response
+            #   end
             #
             def list_model_deployment_monitoring_jobs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2183,6 +2607,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateModelDeploymentMonitoringJobRequest.new
+            #
+            #   # Call the update_model_deployment_monitoring_job method.
+            #   result = client.update_model_deployment_monitoring_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def update_model_deployment_monitoring_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2255,6 +2701,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteModelDeploymentMonitoringJobRequest.new
+            #
+            #   # Call the delete_model_deployment_monitoring_job method.
+            #   result = client.delete_model_deployment_monitoring_job request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_model_deployment_monitoring_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2331,6 +2799,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::PauseModelDeploymentMonitoringJobRequest.new
+            #
+            #   # Call the pause_model_deployment_monitoring_job method.
+            #   result = client.pause_model_deployment_monitoring_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def pause_model_deployment_monitoring_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2404,6 +2887,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ResumeModelDeploymentMonitoringJobRequest.new
+            #
+            #   # Call the resume_model_deployment_monitoring_job method.
+            #   result = client.resume_model_deployment_monitoring_job request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def resume_model_deployment_monitoring_job request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

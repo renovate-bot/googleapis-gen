@@ -173,6 +173,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/ads/admob/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Ads::Admob::V1::AdMobApi::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Ads::Admob::V1::GetPublisherAccountRequest.new
+            #
+            #   # Call the get_publisher_account method.
+            #   result = client.get_publisher_account request
+            #
+            #   # The returned object is of type Google::Ads::Admob::V1::PublisherAccount.
+            #   p result
+            #
             def get_publisher_account request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -248,6 +263,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/ads/admob/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Ads::Admob::V1::AdMobApi::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Ads::Admob::V1::ListPublisherAccountsRequest.new
+            #
+            #   # Call the list_publisher_accounts method.
+            #   result = client.list_publisher_accounts request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Ads::Admob::V1::PublisherAccount.
+            #     p response
+            #   end
+            #
             def list_publisher_accounts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -314,6 +350,24 @@ module Google
             # @return [::Enumerable<::Google::Ads::Admob::V1::GenerateNetworkReportResponse>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/ads/admob/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Ads::Admob::V1::AdMobApi::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Ads::Admob::V1::GenerateNetworkReportRequest.new
+            #
+            #   # Call the generate_network_report method.
+            #   result = client.generate_network_report request
+            #
+            #   # The returned object is a streamed enumerable yielding elements of
+            #   # type ::Google::Ads::Admob::V1::GenerateNetworkReportResponse.
+            #   result.each do |response|
+            #     p response
+            #   end
             #
             def generate_network_report request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -388,6 +442,24 @@ module Google
             # @return [::Enumerable<::Google::Ads::Admob::V1::GenerateMediationReportResponse>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/ads/admob/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Ads::Admob::V1::AdMobApi::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Ads::Admob::V1::GenerateMediationReportRequest.new
+            #
+            #   # Call the generate_mediation_report method.
+            #   result = client.generate_mediation_report request
+            #
+            #   # The returned object is a streamed enumerable yielding elements of
+            #   # type ::Google::Ads::Admob::V1::GenerateMediationReportResponse.
+            #   result.each do |response|
+            #     p response
+            #   end
             #
             def generate_mediation_report request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

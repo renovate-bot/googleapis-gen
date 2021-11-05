@@ -159,6 +159,30 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::SubscriberService::Client.new
+            #
+            #   # Create an input stream
+            #   input = Gapic::StreamInput.new
+            #
+            #   # Call the subscribe method to start streaming.
+            #   output = client.subscribe input
+            #
+            #   # Send requests on the stream. For each request, pass in keyword
+            #   # arguments to set fields. Be sure to close the stream when done.
+            #   input << Google::Cloud::PubSubLite::V1::SubscribeRequest.new
+            #   input << Google::Cloud::PubSubLite::V1::SubscribeRequest.new
+            #   input.close
+            #
+            #   # Handle streamed responses. These may be interleaved with inputs.
+            #   # Each response is of type ::Google::Cloud::PubSubLite::V1::SubscribeResponse.
+            #   output.each do |response|
+            #     p response
+            #   end
+            #
             def subscribe request, options = nil
               unless request.is_a? ::Enumerable
                 raise ::ArgumentError, "request must be an Enumerable" unless request.respond_to? :to_enum

@@ -186,6 +186,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CustomizerAttributeService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateCustomizerAttributesRequest.new
+              #
+              #   # Call the mutate_customizer_attributes method.
+              #   result = client.mutate_customizer_attributes request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateCustomizerAttributesResponse.
+              #   p result
+              #
               def mutate_customizer_attributes request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

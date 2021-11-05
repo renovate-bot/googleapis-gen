@@ -200,6 +200,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/chromeos/moblab/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest.new
+            #
+            #   # Call the list_build_targets method.
+            #   result = client.list_build_targets request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Chromeos::Moblab::V1beta1::BuildTarget.
+            #     p response
+            #   end
+            #
             def list_build_targets request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -267,6 +288,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Chromeos::Moblab::V1beta1::Model>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/chromeos/moblab/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Chromeos::Moblab::V1beta1::ListModelsRequest.new
+            #
+            #   # Call the list_models method.
+            #   result = client.list_models request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Chromeos::Moblab::V1beta1::Model.
+            #     p response
+            #   end
             #
             def list_models request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -363,6 +405,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/chromeos/moblab/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Chromeos::Moblab::V1beta1::ListBuildsRequest.new
+            #
+            #   # Call the list_builds method.
+            #   result = client.list_builds request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Chromeos::Moblab::V1beta1::Build.
+            #     p response
+            #   end
+            #
             def list_builds request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -440,6 +503,21 @@ module Google
             # @return [::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/chromeos/moblab/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusRequest.new
+            #
+            #   # Call the check_build_stage_status method.
+            #   result = client.check_build_stage_status request
+            #
+            #   # The returned object is of type Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusResponse.
+            #   p result
             #
             def check_build_stage_status request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -520,6 +598,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/chromeos/moblab/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Chromeos::Moblab::V1beta1::StageBuildRequest.new
+            #
+            #   # Call the stage_build method.
+            #   result = client.stage_build request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def stage_build request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -604,6 +704,21 @@ module Google
             # @return [::Google::Chromeos::Moblab::V1beta1::FindMostStableBuildResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/chromeos/moblab/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Chromeos::Moblab::V1beta1::BuildService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Chromeos::Moblab::V1beta1::FindMostStableBuildRequest.new
+            #
+            #   # Call the find_most_stable_build method.
+            #   result = client.find_most_stable_build request
+            #
+            #   # The returned object is of type Google::Chromeos::Moblab::V1beta1::FindMostStableBuildResponse.
+            #   p result
             #
             def find_most_stable_build request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::DetailedDemographicService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetDetailedDemographicRequest.new
+              #
+              #   # Call the get_detailed_demographic method.
+              #   result = client.get_detailed_demographic request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::DetailedDemographic.
+              #   p result
+              #
               def get_detailed_demographic request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

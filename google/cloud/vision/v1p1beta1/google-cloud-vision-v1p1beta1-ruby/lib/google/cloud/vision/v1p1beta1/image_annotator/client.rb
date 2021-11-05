@@ -173,6 +173,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/vision/v1p1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Vision::V1p1beta1::ImageAnnotator::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Vision::V1p1beta1::BatchAnnotateImagesRequest.new
+            #
+            #   # Call the batch_annotate_images method.
+            #   result = client.batch_annotate_images request
+            #
+            #   # The returned object is of type Google::Cloud::Vision::V1p1beta1::BatchAnnotateImagesResponse.
+            #   p result
+            #
             def batch_annotate_images request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 

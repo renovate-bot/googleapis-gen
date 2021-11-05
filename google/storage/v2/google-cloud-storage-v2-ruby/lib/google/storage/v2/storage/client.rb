@@ -225,6 +225,24 @@ module Google
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
           #
+          # @example Basic example
+          #   require "google/storage/v2"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V2::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V2::ReadObjectRequest.new
+          #
+          #   # Call the read_object method.
+          #   result = client.read_object request
+          #
+          #   # The returned object is a streamed enumerable yielding elements of
+          #   # type ::Google::Storage::V2::ReadObjectResponse.
+          #   result.each do |response|
+          #     p response
+          #   end
+          #
           def read_object request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -296,6 +314,25 @@ module Google
           # @return [::Google::Storage::V2::WriteObjectResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v2"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V2::Storage::Client.new
+          #
+          #   # Create a stream of requests, as an Enumerator.
+          #   # For each request, pass in keyword arguments to set fields.
+          #   request = [
+          #     Google::Storage::V2::WriteObjectRequest.new,
+          #     Google::Storage::V2::WriteObjectRequest.new
+          #   ].to_enum
+          #
+          #   # Call the write_object method.
+          #   result = client.write_object request
+          #
+          #   # The returned object is of type Google::Storage::V2::WriteObjectResponse.
+          #   p result
           #
           def write_object request, options = nil
             unless request.is_a? ::Enumerable
@@ -369,6 +406,21 @@ module Google
           # @return [::Google::Storage::V2::StartResumableWriteResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v2"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V2::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V2::StartResumableWriteRequest.new
+          #
+          #   # Call the start_resumable_write method.
+          #   result = client.start_resumable_write request
+          #
+          #   # The returned object is of type Google::Storage::V2::StartResumableWriteResponse.
+          #   p result
           #
           def start_resumable_write request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?
@@ -448,6 +500,21 @@ module Google
           # @return [::Google::Storage::V2::QueryWriteStatusResponse]
           #
           # @raise [::Google::Cloud::Error] if the RPC is aborted.
+          #
+          # @example Basic example
+          #   require "google/storage/v2"
+          #
+          #   # Create a client object. The client can be reused for multiple calls.
+          #   client = Google::Storage::V2::Storage::Client.new
+          #
+          #   # Create a request. To set request fields, pass in keyword arguments.
+          #   request = Google::Storage::V2::QueryWriteStatusRequest.new
+          #
+          #   # Call the query_write_status method.
+          #   result = client.query_write_status request
+          #
+          #   # The returned object is of type Google::Storage::V2::QueryWriteStatusResponse.
+          #   p result
           #
           def query_write_status request, options = nil
             raise ::ArgumentError, "request must be provided" if request.nil?

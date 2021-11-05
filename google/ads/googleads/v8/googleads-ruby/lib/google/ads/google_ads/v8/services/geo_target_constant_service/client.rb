@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::GeoTargetConstantService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetGeoTargetConstantRequest.new
+              #
+              #   # Call the get_geo_target_constant method.
+              #   result = client.get_geo_target_constant request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::GeoTargetConstant.
+              #   p result
+              #
               def get_geo_target_constant request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -268,6 +283,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::SuggestGeoTargetConstantsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::GeoTargetConstantService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::SuggestGeoTargetConstantsRequest.new
+              #
+              #   # Call the suggest_geo_target_constants method.
+              #   result = client.suggest_geo_target_constants request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::SuggestGeoTargetConstantsResponse.
+              #   p result
               #
               def suggest_geo_target_constants request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

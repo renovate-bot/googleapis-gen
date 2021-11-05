@@ -192,6 +192,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/home/graph/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Home::Graph::V1::HomeGraphApiService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Home::Graph::V1::RequestSyncDevicesRequest.new
+            #
+            #   # Call the request_sync_devices method.
+            #   result = client.request_sync_devices request
+            #
+            #   # The returned object is of type Google::Home::Graph::V1::RequestSyncDevicesResponse.
+            #   p result
+            #
             def request_sync_devices request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -282,6 +297,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/home/graph/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Home::Graph::V1::HomeGraphApiService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Home::Graph::V1::ReportStateAndNotificationRequest.new
+            #
+            #   # Call the report_state_and_notification method.
+            #   result = client.report_state_and_notification request
+            #
+            #   # The returned object is of type Google::Home::Graph::V1::ReportStateAndNotificationResponse.
+            #   p result
+            #
             def report_state_and_notification request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -356,6 +386,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/home/graph/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Home::Graph::V1::HomeGraphApiService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Home::Graph::V1::DeleteAgentUserRequest.new
+            #
+            #   # Call the delete_agent_user method.
+            #   result = client.delete_agent_user request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_agent_user request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -438,6 +483,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/home/graph/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Home::Graph::V1::HomeGraphApiService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Home::Graph::V1::QueryRequest.new
+            #
+            #   # Call the query method.
+            #   result = client.query request
+            #
+            #   # The returned object is of type Google::Home::Graph::V1::QueryResponse.
+            #   p result
+            #
             def query request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -506,6 +566,21 @@ module Google
             # @return [::Google::Home::Graph::V1::SyncResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/home/graph/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Home::Graph::V1::HomeGraphApiService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Home::Graph::V1::SyncRequest.new
+            #
+            #   # Call the sync method.
+            #   result = client.sync request
+            #
+            #   # The returned object is of type Google::Home::Graph::V1::SyncResponse.
+            #   p result
             #
             def sync request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

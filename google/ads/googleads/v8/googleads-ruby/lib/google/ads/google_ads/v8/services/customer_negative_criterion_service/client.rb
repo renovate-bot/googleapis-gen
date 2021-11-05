@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CustomerNegativeCriterionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetCustomerNegativeCriterionRequest.new
+              #
+              #   # Call the get_customer_negative_criterion method.
+              #   result = client.get_customer_negative_criterion request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::CustomerNegativeCriterion.
+              #   p result
+              #
               def get_customer_negative_criterion request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -276,6 +291,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateCustomerNegativeCriteriaResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::CustomerNegativeCriterionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateCustomerNegativeCriteriaRequest.new
+              #
+              #   # Call the mutate_customer_negative_criteria method.
+              #   result = client.mutate_customer_negative_criteria request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateCustomerNegativeCriteriaResponse.
+              #   p result
               #
               def mutate_customer_negative_criteria request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

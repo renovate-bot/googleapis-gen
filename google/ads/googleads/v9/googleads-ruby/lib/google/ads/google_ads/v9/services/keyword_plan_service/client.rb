@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetKeywordPlanRequest.new
+              #
+              #   # Call the get_keyword_plan method.
+              #   result = client.get_keyword_plan request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::KeywordPlan.
+              #   p result
+              #
               def get_keyword_plan request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -278,6 +293,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateKeywordPlansRequest.new
+              #
+              #   # Call the mutate_keyword_plans method.
+              #   result = client.mutate_keyword_plans request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateKeywordPlansResponse.
+              #   p result
+              #
               def mutate_keyword_plans request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -363,6 +393,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::GenerateForecastCurveResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GenerateForecastCurveRequest.new
+              #
+              #   # Call the generate_forecast_curve method.
+              #   result = client.generate_forecast_curve request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::GenerateForecastCurveResponse.
+              #   p result
               #
               def generate_forecast_curve request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -451,6 +496,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GenerateForecastTimeSeriesRequest.new
+              #
+              #   # Call the generate_forecast_time_series method.
+              #   result = client.generate_forecast_time_series request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::GenerateForecastTimeSeriesResponse.
+              #   p result
+              #
               def generate_forecast_time_series request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -531,6 +591,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::GenerateForecastMetricsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GenerateForecastMetricsRequest.new
+              #
+              #   # Call the generate_forecast_metrics method.
+              #   result = client.generate_forecast_metrics request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::GenerateForecastMetricsResponse.
+              #   p result
               #
               def generate_forecast_metrics request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -617,6 +692,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::GenerateHistoricalMetricsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::KeywordPlanService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GenerateHistoricalMetricsRequest.new
+              #
+              #   # Call the generate_historical_metrics method.
+              #   result = client.generate_historical_metrics request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::GenerateHistoricalMetricsResponse.
+              #   p result
               #
               def generate_historical_metrics request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

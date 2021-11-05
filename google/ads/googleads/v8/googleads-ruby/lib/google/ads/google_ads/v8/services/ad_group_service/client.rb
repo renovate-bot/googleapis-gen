@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::AdGroupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetAdGroupRequest.new
+              #
+              #   # Call the get_ad_group method.
+              #   result = client.get_ad_group request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::AdGroup.
+              #   p result
+              #
               def get_ad_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -296,6 +311,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateAdGroupsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::AdGroupService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateAdGroupsRequest.new
+              #
+              #   # Call the mutate_ad_groups method.
+              #   result = client.mutate_ad_groups request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateAdGroupsResponse.
+              #   p result
               #
               def mutate_ad_groups request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

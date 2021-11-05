@@ -181,6 +181,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::ThirdPartyAppAnalyticsLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetThirdPartyAppAnalyticsLinkRequest.new
+              #
+              #   # Call the get_third_party_app_analytics_link method.
+              #   result = client.get_third_party_app_analytics_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::ThirdPartyAppAnalyticsLink.
+              #   p result
+              #
               def get_third_party_app_analytics_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -261,6 +276,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::RegenerateShareableLinkIdResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::ThirdPartyAppAnalyticsLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::RegenerateShareableLinkIdRequest.new
+              #
+              #   # Call the regenerate_shareable_link_id method.
+              #   result = client.regenerate_shareable_link_id request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::RegenerateShareableLinkIdResponse.
+              #   p result
               #
               def regenerate_shareable_link_id request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

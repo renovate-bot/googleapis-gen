@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignCriterionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetCampaignCriterionRequest.new
+              #
+              #   # Call the get_campaign_criterion method.
+              #   result = client.get_campaign_criterion request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::CampaignCriterion.
+              #   p result
+              #
               def get_campaign_criterion request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -295,6 +310,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateCampaignCriteriaResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignCriterionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateCampaignCriteriaRequest.new
+              #
+              #   # Call the mutate_campaign_criteria method.
+              #   result = client.mutate_campaign_criteria request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateCampaignCriteriaResponse.
+              #   p result
               #
               def mutate_campaign_criteria request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

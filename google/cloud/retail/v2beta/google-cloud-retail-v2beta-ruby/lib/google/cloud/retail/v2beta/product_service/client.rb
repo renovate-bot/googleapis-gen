@@ -215,6 +215,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::CreateProductRequest.new
+            #
+            #   # Call the create_product method.
+            #   result = client.create_product request
+            #
+            #   # The returned object is of type Google::Cloud::Retail::V2beta::Product.
+            #   p result
+            #
             def create_product request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -293,6 +308,21 @@ module Google
             # @return [::Google::Cloud::Retail::V2beta::Product]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::GetProductRequest.new
+            #
+            #   # Call the get_product method.
+            #   result = client.get_product request
+            #
+            #   # The returned object is of type Google::Cloud::Retail::V2beta::Product.
+            #   p result
             #
             def get_product request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -437,6 +467,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::ListProductsRequest.new
+            #
+            #   # Call the list_products method.
+            #   result = client.list_products request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Retail::V2beta::Product.
+            #     p response
+            #   end
+            #
             def list_products request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -529,6 +580,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::UpdateProductRequest.new
+            #
+            #   # Call the update_product method.
+            #   result = client.update_product request
+            #
+            #   # The returned object is of type Google::Cloud::Retail::V2beta::Product.
+            #   p result
+            #
             def update_product request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -619,6 +685,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::DeleteProductRequest.new
+            #
+            #   # Call the delete_product method.
+            #   result = client.delete_product request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_product request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -730,6 +811,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::ImportProductsRequest.new
+            #
+            #   # Call the import_products method.
+            #   result = client.import_products request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def import_products request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -894,6 +997,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::SetInventoryRequest.new
+            #
+            #   # Call the set_inventory method.
+            #   result = client.set_inventory request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def set_inventory request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1032,6 +1157,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::AddFulfillmentPlacesRequest.new
+            #
+            #   # Call the add_fulfillment_places method.
+            #   result = client.add_fulfillment_places request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def add_fulfillment_places request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1164,6 +1311,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/retail/v2beta"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Retail::V2beta::ProductService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Retail::V2beta::RemoveFulfillmentPlacesRequest.new
+            #
+            #   # Call the remove_fulfillment_places method.
+            #   result = client.remove_fulfillment_places request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def remove_fulfillment_places request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

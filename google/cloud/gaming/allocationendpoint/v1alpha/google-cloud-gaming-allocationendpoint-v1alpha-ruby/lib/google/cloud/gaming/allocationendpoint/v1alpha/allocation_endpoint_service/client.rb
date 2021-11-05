@@ -189,6 +189,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/gaming/allocationendpoint/v1alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Gaming::Allocationendpoint::V1alpha::AllocationEndpointService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Gaming::Allocationendpoint::V1alpha::AllocationRequest.new
+              #
+              #   # Call the allocate method.
+              #   result = client.allocate request
+              #
+              #   # The returned object is of type Google::Cloud::Gaming::Allocationendpoint::V1alpha::AllocationResponse.
+              #   p result
+              #
               def allocate request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

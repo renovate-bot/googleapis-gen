@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerLabelService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetCustomerLabelRequest.new
+              #
+              #   # Call the get_customer_label method.
+              #   result = client.get_customer_label request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::CustomerLabel.
+              #   p result
+              #
               def get_customer_label request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -273,6 +288,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateCustomerLabelsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerLabelService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateCustomerLabelsRequest.new
+              #
+              #   # Call the mutate_customer_labels method.
+              #   result = client.mutate_customer_labels request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateCustomerLabelsResponse.
+              #   p result
               #
               def mutate_customer_labels request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

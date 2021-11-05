@@ -178,6 +178,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/identity_toolkit/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::IdentityToolkit::V2::AuthenticationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::IdentityToolkit::V2::FinalizeMfaSignInRequest.new
+            #
+            #   # Call the finalize_mfa_sign_in method.
+            #   result = client.finalize_mfa_sign_in request
+            #
+            #   # The returned object is of type Google::Cloud::IdentityToolkit::V2::FinalizeMfaSignInResponse.
+            #   p result
+            #
             def finalize_mfa_sign_in request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -246,6 +261,21 @@ module Google
             # @return [::Google::Cloud::IdentityToolkit::V2::StartMfaSignInResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/identity_toolkit/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::IdentityToolkit::V2::AuthenticationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::IdentityToolkit::V2::StartMfaSignInRequest.new
+            #
+            #   # Call the start_mfa_sign_in method.
+            #   result = client.start_mfa_sign_in request
+            #
+            #   # The returned object is of type Google::Cloud::IdentityToolkit::V2::StartMfaSignInResponse.
+            #   p result
             #
             def start_mfa_sign_in request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::BiddingStrategyService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetBiddingStrategyRequest.new
+              #
+              #   # Call the get_bidding_strategy method.
+              #   result = client.get_bidding_strategy request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::BiddingStrategy.
+              #   p result
+              #
               def get_bidding_strategy request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -293,6 +308,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateBiddingStrategiesResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::BiddingStrategyService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateBiddingStrategiesRequest.new
+              #
+              #   # Call the mutate_bidding_strategies method.
+              #   result = client.mutate_bidding_strategies request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateBiddingStrategiesResponse.
+              #   p result
               #
               def mutate_bidding_strategies request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

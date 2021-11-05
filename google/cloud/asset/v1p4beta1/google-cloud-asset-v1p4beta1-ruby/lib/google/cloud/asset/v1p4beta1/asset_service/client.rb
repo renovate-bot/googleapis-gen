@@ -186,6 +186,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p4beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p4beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p4beta1::AnalyzeIamPolicyRequest.new
+            #
+            #   # Call the analyze_iam_policy method.
+            #   result = client.analyze_iam_policy request
+            #
+            #   # The returned object is of type Google::Cloud::Asset::V1p4beta1::AnalyzeIamPolicyResponse.
+            #   p result
+            #
             def analyze_iam_policy request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -262,6 +277,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p4beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p4beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p4beta1::ExportIamPolicyAnalysisRequest.new
+            #
+            #   # Call the export_iam_policy_analysis method.
+            #   result = client.export_iam_policy_analysis request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def export_iam_policy_analysis request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

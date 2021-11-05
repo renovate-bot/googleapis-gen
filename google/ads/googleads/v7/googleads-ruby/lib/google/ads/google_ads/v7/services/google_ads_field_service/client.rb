@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::GoogleAdsFieldService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetGoogleAdsFieldRequest.new
+              #
+              #   # Call the get_google_ads_field method.
+              #   result = client.get_google_ads_field request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::GoogleAdsField.
+              #   p result
+              #
               def get_google_ads_field request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -268,6 +283,27 @@ module Google
               # @return [::Gapic::PagedEnumerable<::Google::Ads::GoogleAds::V7::Resources::GoogleAdsField>]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::GoogleAdsFieldService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::SearchGoogleAdsFieldsRequest.new
+              #
+              #   # Call the search_google_ads_fields method.
+              #   result = client.search_google_ads_fields request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Ads::GoogleAds::V7::Resources::GoogleAdsField.
+              #     p response
+              #   end
               #
               def search_google_ads_fields request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -196,6 +196,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::ListAlertsRequest.new
+            #
+            #   # Call the list_alerts method.
+            #   result = client.list_alerts request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Apps::AlertCenter::V1beta1::Alert.
+            #     p response
+            #   end
+            #
             def list_alerts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -263,6 +284,21 @@ module Google
             # @return [::Google::Apps::AlertCenter::V1beta1::Alert]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::GetAlertRequest.new
+            #
+            #   # Call the get_alert method.
+            #   result = client.get_alert request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::Alert.
+            #   p result
             #
             def get_alert request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -342,6 +378,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::DeleteAlertRequest.new
+            #
+            #   # Call the delete_alert method.
+            #   result = client.delete_alert request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def delete_alert request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -419,6 +470,21 @@ module Google
             # @return [::Google::Apps::AlertCenter::V1beta1::Alert]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::UndeleteAlertRequest.new
+            #
+            #   # Call the undelete_alert method.
+            #   result = client.undelete_alert request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::Alert.
+            #   p result
             #
             def undelete_alert request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -498,6 +564,21 @@ module Google
             # @return [::Google::Apps::AlertCenter::V1beta1::AlertFeedback]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::CreateAlertFeedbackRequest.new
+            #
+            #   # Call the create_alert_feedback method.
+            #   result = client.create_alert_feedback request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::AlertFeedback.
+            #   p result
             #
             def create_alert_feedback request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -581,6 +662,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::ListAlertFeedbackRequest.new
+            #
+            #   # Call the list_alert_feedback method.
+            #   result = client.list_alert_feedback request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::ListAlertFeedbackResponse.
+            #   p result
+            #
             def list_alert_feedback request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -656,6 +752,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::GetAlertMetadataRequest.new
+            #
+            #   # Call the get_alert_metadata method.
+            #   result = client.get_alert_metadata request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::AlertMetadata.
+            #   p result
+            #
             def get_alert_metadata request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -728,6 +839,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::GetSettingsRequest.new
+            #
+            #   # Call the get_settings method.
+            #   result = client.get_settings request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::Settings.
+            #   p result
+            #
             def get_settings request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -794,6 +920,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::UpdateSettingsRequest.new
+            #
+            #   # Call the update_settings method.
+            #   result = client.update_settings request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::Settings.
+            #   p result
+            #
             def update_settings request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -859,6 +1000,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::BatchDeleteAlertsRequest.new
+            #
+            #   # Call the batch_delete_alerts method.
+            #   result = client.batch_delete_alerts request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::BatchDeleteAlertsResponse.
+            #   p result
+            #
             def batch_delete_alerts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -923,6 +1079,21 @@ module Google
             # @return [::Google::Apps::AlertCenter::V1beta1::BatchUndeleteAlertsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/apps/alert_center/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Apps::AlertCenter::V1beta1::BatchUndeleteAlertsRequest.new
+            #
+            #   # Call the batch_undelete_alerts method.
+            #   result = client.batch_undelete_alerts request
+            #
+            #   # The returned object is of type Google::Apps::AlertCenter::V1beta1::BatchUndeleteAlertsResponse.
+            #   p result
             #
             def batch_undelete_alerts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -190,6 +190,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::GetServiceAccountRequest.new
+              #
+              #   # Call the get_service_account method.
+              #   result = client.get_service_account request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::ServiceAccount.
+              #   p result
+              #
               def get_service_account request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -266,6 +281,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::Settings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::GetSettingsRequest.new
+              #
+              #   # Call the get_settings method.
+              #   result = client.get_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::Settings.
+              #   p result
               #
               def get_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -347,6 +377,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::Settings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::UpdateSettingsRequest.new
+              #
+              #   # Call the update_settings method.
+              #   result = client.update_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::Settings.
+              #   p result
               #
               def update_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -437,6 +482,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::ResetSettingsRequest.new
+              #
+              #   # Call the reset_settings method.
+              #   result = client.reset_settings request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
+              #
               def reset_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -519,6 +579,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::BatchGetSettingsResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::BatchGetSettingsRequest.new
+              #
+              #   # Call the batch_get_settings method.
+              #   result = client.batch_get_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::BatchGetSettingsResponse.
+              #   p result
               #
               def batch_get_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -607,6 +682,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::CalculateEffectiveSettingsRequest.new
+              #
+              #   # Call the calculate_effective_settings method.
+              #   result = client.calculate_effective_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::Settings.
+              #   p result
+              #
               def calculate_effective_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -682,6 +772,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::BatchCalculateEffectiveSettingsResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::BatchCalculateEffectiveSettingsRequest.new
+              #
+              #   # Call the batch_calculate_effective_settings method.
+              #   result = client.batch_calculate_effective_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::BatchCalculateEffectiveSettingsResponse.
+              #   p result
               #
               def batch_calculate_effective_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -760,6 +865,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::ComponentSettings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::GetComponentSettingsRequest.new
+              #
+              #   # Call the get_component_settings method.
+              #   result = client.get_component_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::ComponentSettings.
+              #   p result
               #
               def get_component_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -841,6 +961,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::ComponentSettings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::UpdateComponentSettingsRequest.new
+              #
+              #   # Call the update_component_settings method.
+              #   result = client.update_component_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::ComponentSettings.
+              #   p result
               #
               def update_component_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -927,6 +1062,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::ResetComponentSettingsRequest.new
+              #
+              #   # Call the reset_component_settings method.
+              #   result = client.reset_component_settings request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
+              #
               def reset_component_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1004,6 +1154,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::ComponentSettings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::CalculateEffectiveComponentSettingsRequest.new
+              #
+              #   # Call the calculate_effective_component_settings method.
+              #   result = client.calculate_effective_component_settings request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::ComponentSettings.
+              #   p result
               #
               def calculate_effective_component_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1099,6 +1264,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::ListDetectorsRequest.new
+              #
+              #   # Call the list_detectors method.
+              #   result = client.list_detectors request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::SecurityCenter::Settings::V1beta1::Detector.
+              #     p response
+              #   end
+              #
               def list_detectors request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1181,6 +1367,21 @@ module Google
               # @return [::Google::Cloud::SecurityCenter::Settings::V1beta1::ListComponentsResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/security_center/settings/v1beta1"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::SecurityCenter::Settings::V1beta1::ListComponentsRequest.new
+              #
+              #   # Call the list_components method.
+              #   result = client.list_components request
+              #
+              #   # The returned object is of type Google::Cloud::SecurityCenter::Settings::V1beta1::ListComponentsResponse.
+              #   p result
               #
               def list_components request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

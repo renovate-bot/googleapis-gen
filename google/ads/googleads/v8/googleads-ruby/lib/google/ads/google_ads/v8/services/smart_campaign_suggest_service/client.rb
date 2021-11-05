@@ -176,6 +176,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::SuggestSmartCampaignBudgetOptionsRequest.new
+              #
+              #   # Call the suggest_smart_campaign_budget_options method.
+              #   result = client.suggest_smart_campaign_budget_options request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::SuggestSmartCampaignBudgetOptionsResponse.
+              #   p result
+              #
               def suggest_smart_campaign_budget_options request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -253,6 +268,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::SuggestSmartCampaignAdResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::SuggestSmartCampaignAdRequest.new
+              #
+              #   # Call the suggest_smart_campaign_ad method.
+              #   result = client.suggest_smart_campaign_ad request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::SuggestSmartCampaignAdResponse.
+              #   p result
               #
               def suggest_smart_campaign_ad request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

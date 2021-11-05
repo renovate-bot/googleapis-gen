@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CampaignFeedService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetCampaignFeedRequest.new
+              #
+              #   # Call the get_campaign_feed method.
+              #   result = client.get_campaign_feed request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::CampaignFeed.
+              #   p result
+              #
               def get_campaign_feed request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -290,6 +305,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V9::Services::MutateCampaignFeedsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::CampaignFeedService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::MutateCampaignFeedsRequest.new
+              #
+              #   # Call the mutate_campaign_feeds method.
+              #   result = client.mutate_campaign_feeds request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Services::MutateCampaignFeedsResponse.
+              #   p result
               #
               def mutate_campaign_feeds request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

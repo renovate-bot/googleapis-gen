@@ -212,6 +212,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/devtools/testing/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Testing::V1::TestEnvironmentDiscoveryService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Testing::V1::GetTestEnvironmentCatalogRequest.new
+            #
+            #   # Call the get_test_environment_catalog method.
+            #   result = client.get_test_environment_catalog request
+            #
+            #   # The returned object is of type Google::Devtools::Testing::V1::TestEnvironmentCatalog.
+            #   p result
+            #
             def get_test_environment_catalog request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 

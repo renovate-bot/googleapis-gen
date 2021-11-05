@@ -187,6 +187,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p2beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p2beta1::CreateFeedRequest.new
+            #
+            #   # Call the create_feed method.
+            #   result = client.create_feed request
+            #
+            #   # The returned object is of type Google::Cloud::Asset::V1p2beta1::Feed.
+            #   p result
+            #
             def create_feed request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -260,6 +275,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p2beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p2beta1::GetFeedRequest.new
+            #
+            #   # Call the get_feed method.
+            #   result = client.get_feed request
+            #
+            #   # The returned object is of type Google::Cloud::Asset::V1p2beta1::Feed.
+            #   p result
+            #
             def get_feed request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -331,6 +361,21 @@ module Google
             # @return [::Google::Cloud::Asset::V1p2beta1::ListFeedsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p2beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p2beta1::ListFeedsRequest.new
+            #
+            #   # Call the list_feeds method.
+            #   result = client.list_feeds request
+            #
+            #   # The returned object is of type Google::Cloud::Asset::V1p2beta1::ListFeedsResponse.
+            #   p result
             #
             def list_feeds request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -410,6 +455,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p2beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p2beta1::UpdateFeedRequest.new
+            #
+            #   # Call the update_feed method.
+            #   result = client.update_feed request
+            #
+            #   # The returned object is of type Google::Cloud::Asset::V1p2beta1::Feed.
+            #   p result
+            #
             def update_feed request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -482,6 +542,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/asset/v1p2beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Asset::V1p2beta1::AssetService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Asset::V1p2beta1::DeleteFeedRequest.new
+            #
+            #   # Call the delete_feed method.
+            #   result = client.delete_feed request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_feed request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -194,6 +194,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PredictionService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::PredictRequest.new
+            #
+            #   # Call the predict method.
+            #   result = client.predict request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::PredictResponse.
+            #   p result
+            #
             def predict request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -279,6 +294,21 @@ module Google
             # @return [::Google::Api::HttpBody]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PredictionService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::RawPredictRequest.new
+            #
+            #   # Call the raw_predict method.
+            #   result = client.raw_predict request
+            #
+            #   # The returned object is of type Google::Api::HttpBody.
+            #   p result
             #
             def raw_predict request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -387,6 +417,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::ExplainResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::PredictionService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ExplainRequest.new
+            #
+            #   # Call the explain method.
+            #   result = client.explain request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::ExplainResponse.
+            #   p result
             #
             def explain request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

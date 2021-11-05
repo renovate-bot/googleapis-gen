@@ -175,6 +175,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/sql/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Sql::V1::SqlConnectService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Sql::V1::GetConnectSettingsRequest.new
+            #
+            #   # Call the get_connect_settings method.
+            #   result = client.get_connect_settings request
+            #
+            #   # The returned object is of type Google::Cloud::Sql::V1::ConnectSettings.
+            #   p result
+            #
             def get_connect_settings request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -258,6 +273,21 @@ module Google
             # @return [::Google::Cloud::Sql::V1::GenerateEphemeralCertResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/sql/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Sql::V1::SqlConnectService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Sql::V1::GenerateEphemeralCertRequest.new
+            #
+            #   # Call the generate_ephemeral_cert method.
+            #   result = client.generate_ephemeral_cert request
+            #
+            #   # The returned object is of type Google::Cloud::Sql::V1::GenerateEphemeralCertResponse.
+            #   p result
             #
             def generate_ephemeral_cert request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

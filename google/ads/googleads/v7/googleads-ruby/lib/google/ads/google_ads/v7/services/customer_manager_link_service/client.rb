@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerManagerLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetCustomerManagerLinkRequest.new
+              #
+              #   # Call the get_customer_manager_link method.
+              #   result = client.get_customer_manager_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::CustomerManagerLink.
+              #   p result
+              #
               def get_customer_manager_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -269,6 +284,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateCustomerManagerLinkResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerManagerLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateCustomerManagerLinkRequest.new
+              #
+              #   # Call the mutate_customer_manager_link method.
+              #   result = client.mutate_customer_manager_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateCustomerManagerLinkResponse.
+              #   p result
               #
               def mutate_customer_manager_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -366,6 +396,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MoveManagerLinkResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerManagerLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MoveManagerLinkRequest.new
+              #
+              #   # Call the move_manager_link method.
+              #   result = client.move_manager_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MoveManagerLinkResponse.
+              #   p result
               #
               def move_manager_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

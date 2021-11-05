@@ -165,6 +165,30 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::PartitionAssignmentService::Client.new
+            #
+            #   # Create an input stream
+            #   input = Gapic::StreamInput.new
+            #
+            #   # Call the assign_partitions method to start streaming.
+            #   output = client.assign_partitions input
+            #
+            #   # Send requests on the stream. For each request, pass in keyword
+            #   # arguments to set fields. Be sure to close the stream when done.
+            #   input << Google::Cloud::PubSubLite::V1::PartitionAssignmentRequest.new
+            #   input << Google::Cloud::PubSubLite::V1::PartitionAssignmentRequest.new
+            #   input.close
+            #
+            #   # Handle streamed responses. These may be interleaved with inputs.
+            #   # Each response is of type ::Google::Cloud::PubSubLite::V1::PartitionAssignment.
+            #   output.each do |response|
+            #     p response
+            #   end
+            #
             def assign_partitions request, options = nil
               unless request.is_a? ::Enumerable
                 raise ::ArgumentError, "request must be an Enumerable" unless request.respond_to? :to_enum

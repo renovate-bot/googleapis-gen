@@ -179,6 +179,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/maps/roads/v1op"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Maps::Roads::V1op::RoadsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Maps::Roads::V1op::SnapToRoadsRequest.new
+            #
+            #   # Call the snap_to_roads method.
+            #   result = client.snap_to_roads request
+            #
+            #   # The returned object is of type Google::Maps::Roads::V1op::SnapToRoadsResponse.
+            #   p result
+            #
             def snap_to_roads request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -244,6 +259,21 @@ module Google
             # @return [::Google::Maps::Roads::V1op::ListNearestRoadsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/maps/roads/v1op"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Maps::Roads::V1op::RoadsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Maps::Roads::V1op::ListNearestRoadsRequest.new
+            #
+            #   # Call the list_nearest_roads method.
+            #   result = client.list_nearest_roads request
+            #
+            #   # The returned object is of type Google::Maps::Roads::V1op::ListNearestRoadsResponse.
+            #   p result
             #
             def list_nearest_roads request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

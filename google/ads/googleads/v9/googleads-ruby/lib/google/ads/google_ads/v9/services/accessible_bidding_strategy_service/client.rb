@@ -172,6 +172,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v9/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V9::Services::AccessibleBiddingStrategyService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V9::Services::GetAccessibleBiddingStrategyRequest.new
+              #
+              #   # Call the get_accessible_bidding_strategy method.
+              #   result = client.get_accessible_bidding_strategy request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V9::Resources::AccessibleBiddingStrategy.
+              #   p result
+              #
               def get_accessible_bidding_strategy request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

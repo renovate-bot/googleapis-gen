@@ -206,6 +206,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::CreateMigrationWorkflowRequest.new
+              #
+              #   # Call the create_migration_workflow method.
+              #   result = client.create_migration_workflow request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Migration::V2alpha::MigrationWorkflow.
+              #   p result
+              #
               def create_migration_workflow request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -278,6 +293,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Migration::V2alpha::MigrationWorkflow]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::GetMigrationWorkflowRequest.new
+              #
+              #   # Call the get_migration_workflow method.
+              #   result = client.get_migration_workflow request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Migration::V2alpha::MigrationWorkflow.
+              #   p result
               #
               def get_migration_workflow request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -361,6 +391,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::ListMigrationWorkflowsRequest.new
+              #
+              #   # Call the list_migration_workflows method.
+              #   result = client.list_migration_workflows request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Bigquery::Migration::V2alpha::MigrationWorkflow.
+              #     p response
+              #   end
+              #
               def list_migration_workflows request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -432,6 +483,21 @@ module Google
               # @return [::Google::Protobuf::Empty]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::DeleteMigrationWorkflowRequest.new
+              #
+              #   # Call the delete_migration_workflow method.
+              #   result = client.delete_migration_workflow request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
               #
               def delete_migration_workflow request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -507,6 +573,21 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::StartMigrationWorkflowRequest.new
+              #
+              #   # Call the start_migration_workflow method.
+              #   result = client.start_migration_workflow request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
+              #
               def start_migration_workflow request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -579,6 +660,21 @@ module Google
               # @return [::Google::Cloud::Bigquery::Migration::V2alpha::MigrationSubtask]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::GetMigrationSubtaskRequest.new
+              #
+              #   # Call the get_migration_subtask method.
+              #   result = client.get_migration_subtask request
+              #
+              #   # The returned object is of type Google::Cloud::Bigquery::Migration::V2alpha::MigrationSubtask.
+              #   p result
               #
               def get_migration_subtask request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -665,6 +761,27 @@ module Google
               # @return [::Gapic::PagedEnumerable<::Google::Cloud::Bigquery::Migration::V2alpha::MigrationSubtask>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/cloud/bigquery/migration/v2alpha"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Cloud::Bigquery::Migration::V2alpha::MigrationService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Cloud::Bigquery::Migration::V2alpha::ListMigrationSubtasksRequest.new
+              #
+              #   # Call the list_migration_subtasks method.
+              #   result = client.list_migration_subtasks request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Cloud::Bigquery::Migration::V2alpha::MigrationSubtask.
+              #     p response
+              #   end
               #
               def list_migration_subtasks request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

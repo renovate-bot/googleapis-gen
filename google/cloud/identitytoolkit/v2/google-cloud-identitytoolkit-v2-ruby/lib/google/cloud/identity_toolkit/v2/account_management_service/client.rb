@@ -181,6 +181,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/identity_toolkit/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::IdentityToolkit::V2::AccountManagementService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::IdentityToolkit::V2::FinalizeMfaEnrollmentRequest.new
+            #
+            #   # Call the finalize_mfa_enrollment method.
+            #   result = client.finalize_mfa_enrollment request
+            #
+            #   # The returned object is of type Google::Cloud::IdentityToolkit::V2::FinalizeMfaEnrollmentResponse.
+            #   p result
+            #
             def finalize_mfa_enrollment request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -249,6 +264,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/identity_toolkit/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::IdentityToolkit::V2::AccountManagementService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::IdentityToolkit::V2::StartMfaEnrollmentRequest.new
+            #
+            #   # Call the start_mfa_enrollment method.
+            #   result = client.start_mfa_enrollment request
+            #
+            #   # The returned object is of type Google::Cloud::IdentityToolkit::V2::StartMfaEnrollmentResponse.
+            #   p result
+            #
             def start_mfa_enrollment request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -316,6 +346,21 @@ module Google
             # @return [::Google::Cloud::IdentityToolkit::V2::WithdrawMfaResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/identity_toolkit/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::IdentityToolkit::V2::AccountManagementService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::IdentityToolkit::V2::WithdrawMfaRequest.new
+            #
+            #   # Call the withdraw_mfa method.
+            #   result = client.withdraw_mfa request
+            #
+            #   # The returned object is of type Google::Cloud::IdentityToolkit::V2::WithdrawMfaResponse.
+            #   p result
             #
             def withdraw_mfa request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

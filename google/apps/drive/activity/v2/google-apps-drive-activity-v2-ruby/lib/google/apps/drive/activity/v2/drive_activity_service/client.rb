@@ -216,6 +216,27 @@ module Google
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/apps/drive/activity/v2"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Apps::Drive::Activity::V2::DriveActivityService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Apps::Drive::Activity::V2::QueryDriveActivityRequest.new
+              #
+              #   # Call the query_drive_activity method.
+              #   result = client.query_drive_activity request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Apps::Drive::Activity::V2::DriveActivity.
+              #     p response
+              #   end
+              #
               def query_drive_activity request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

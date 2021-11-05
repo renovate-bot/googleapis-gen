@@ -176,6 +176,21 @@ module Ccc
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "ccc/hosted/marketplace/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Ccc::Hosted::Marketplace::V2::UserLicenseService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Ccc::Hosted::Marketplace::V2::UserLicenseGetRequest.new
+            #
+            #   # Call the get method.
+            #   result = client.get request
+            #
+            #   # The returned object is of type Ccc::Hosted::Marketplace::V2::UserLicense.
+            #   p result
+            #
             def get request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 

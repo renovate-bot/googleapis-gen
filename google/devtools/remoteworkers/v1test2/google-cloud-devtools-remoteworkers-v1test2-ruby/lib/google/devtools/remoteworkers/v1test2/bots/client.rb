@@ -203,6 +203,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/devtools/remoteworkers/v1test2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Remoteworkers::V1test2::Bots::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Remoteworkers::V1test2::CreateBotSessionRequest.new
+            #
+            #   # Call the create_bot_session method.
+            #   result = client.create_bot_session request
+            #
+            #   # The returned object is of type Google::Devtools::Remoteworkers::V1test2::BotSession.
+            #   p result
+            #
             def create_bot_session request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -279,6 +294,21 @@ module Google
             # @return [::Google::Devtools::Remoteworkers::V1test2::BotSession]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/devtools/remoteworkers/v1test2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Devtools::Remoteworkers::V1test2::Bots::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Devtools::Remoteworkers::V1test2::UpdateBotSessionRequest.new
+            #
+            #   # Call the update_bot_session method.
+            #   result = client.update_bot_session request
+            #
+            #   # The returned object is of type Google::Devtools::Remoteworkers::V1test2::BotSession.
+            #   p result
             #
             def update_bot_session request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::ExpandedLandingPageViewService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetExpandedLandingPageViewRequest.new
+              #
+              #   # Call the get_expanded_landing_page_view method.
+              #   result = client.get_expanded_landing_page_view request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::ExpandedLandingPageView.
+              #   p result
+              #
               def get_expanded_landing_page_view request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 

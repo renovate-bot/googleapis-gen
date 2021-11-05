@@ -173,6 +173,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/bigquery/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Bigquery::V2::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Bigquery::V2::GetModelRequest.new
+            #
+            #   # Call the get_model method.
+            #   result = client.get_model request
+            #
+            #   # The returned object is of type Google::Cloud::Bigquery::V2::Model.
+            #   p result
+            #
             def get_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -259,6 +274,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/bigquery/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Bigquery::V2::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Bigquery::V2::ListModelsRequest.new
+            #
+            #   # Call the list_models method.
+            #   result = client.list_models request
+            #
+            #   # The returned object is of type Google::Cloud::Bigquery::V2::ListModelsResponse.
+            #   p result
+            #
             def list_models request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -340,6 +370,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/bigquery/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Bigquery::V2::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Bigquery::V2::PatchModelRequest.new
+            #
+            #   # Call the patch_model method.
+            #   result = client.patch_model request
+            #
+            #   # The returned object is of type Google::Cloud::Bigquery::V2::Model.
+            #   p result
+            #
             def patch_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -419,6 +464,21 @@ module Google
             # @return [::Google::Protobuf::Empty]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/bigquery/v2"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Bigquery::V2::ModelService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Bigquery::V2::DeleteModelRequest.new
+            #
+            #   # Call the delete_model method.
+            #   result = client.delete_model request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
             #
             def delete_model request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

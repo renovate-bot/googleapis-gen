@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerClientLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetCustomerClientLinkRequest.new
+              #
+              #   # Call the get_customer_client_link method.
+              #   result = client.get_customer_client_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::CustomerClientLink.
+              #   p result
+              #
               def get_customer_client_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -270,6 +285,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V7::Services::MutateCustomerClientLinkResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CustomerClientLinkService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateCustomerClientLinkRequest.new
+              #
+              #   # Call the mutate_customer_client_link method.
+              #   result = client.mutate_customer_client_link request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateCustomerClientLinkResponse.
+              #   p result
               #
               def mutate_customer_client_link request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

@@ -183,6 +183,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::KeywordPlanCampaignKeywordService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetKeywordPlanCampaignKeywordRequest.new
+              #
+              #   # Call the get_keyword_plan_campaign_keyword method.
+              #   result = client.get_keyword_plan_campaign_keyword request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::KeywordPlanCampaignKeyword.
+              #   p result
+              #
               def get_keyword_plan_campaign_keyword request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -279,6 +294,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateKeywordPlanCampaignKeywordsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::KeywordPlanCampaignKeywordService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateKeywordPlanCampaignKeywordsRequest.new
+              #
+              #   # Call the mutate_keyword_plan_campaign_keywords method.
+              #   result = client.mutate_keyword_plan_campaign_keywords request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateKeywordPlanCampaignKeywordsResponse.
+              #   p result
               #
               def mutate_keyword_plan_campaign_keywords request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

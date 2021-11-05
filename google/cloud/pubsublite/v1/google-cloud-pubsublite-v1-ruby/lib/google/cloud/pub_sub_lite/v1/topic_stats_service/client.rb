@@ -187,6 +187,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::TopicStatsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ComputeMessageStatsRequest.new
+            #
+            #   # Call the compute_message_stats method.
+            #   result = client.compute_message_stats request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::ComputeMessageStatsResponse.
+            #   p result
+            #
             def compute_message_stats request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -264,6 +279,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::TopicStatsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ComputeHeadCursorRequest.new
+            #
+            #   # Call the compute_head_cursor method.
+            #   result = client.compute_head_cursor request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::ComputeHeadCursorResponse.
+            #   p result
+            #
             def compute_head_cursor request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -339,6 +369,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::ComputeTimeCursorResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::TopicStatsService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ComputeTimeCursorRequest.new
+            #
+            #   # Call the compute_time_cursor method.
+            #   result = client.compute_time_cursor request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::ComputeTimeCursorResponse.
+            #   p result
             #
             def compute_time_cursor request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

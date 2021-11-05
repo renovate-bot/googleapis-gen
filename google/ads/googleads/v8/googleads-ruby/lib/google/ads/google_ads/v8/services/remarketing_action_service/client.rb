@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::RemarketingActionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetRemarketingActionRequest.new
+              #
+              #   # Call the get_remarketing_action method.
+              #   result = client.get_remarketing_action request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::RemarketingAction.
+              #   p result
+              #
               def get_remarketing_action request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -270,6 +285,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateRemarketingActionsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::RemarketingActionService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateRemarketingActionsRequest.new
+              #
+              #   # Call the mutate_remarketing_actions method.
+              #   result = client.mutate_remarketing_actions request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateRemarketingActionsResponse.
+              #   p result
               #
               def mutate_remarketing_actions request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

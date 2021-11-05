@@ -178,6 +178,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::CreateScanConfigRequest.new
+            #
+            #   # Call the create_scan_config method.
+            #   result = client.create_scan_config request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ScanConfig.
+            #   p result
+            #
             def create_scan_config request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -249,6 +264,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::DeleteScanConfigRequest.new
+            #
+            #   # Call the delete_scan_config method.
+            #   result = client.delete_scan_config request
+            #
+            #   # The returned object is of type Google::Protobuf::Empty.
+            #   p result
+            #
             def delete_scan_config request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -319,6 +349,21 @@ module Google
             # @return [::Google::Cloud::Websecurityscanner::V1alpha::ScanConfig]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::GetScanConfigRequest.new
+            #
+            #   # Call the get_scan_config method.
+            #   result = client.get_scan_config request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ScanConfig.
+            #   p result
             #
             def get_scan_config request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -399,6 +444,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::ListScanConfigsRequest.new
+            #
+            #   # Call the list_scan_configs method.
+            #   result = client.list_scan_configs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Websecurityscanner::V1alpha::ScanConfig.
+            #     p response
+            #   end
+            #
             def list_scan_configs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -476,6 +542,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::UpdateScanConfigRequest.new
+            #
+            #   # Call the update_scan_config method.
+            #   result = client.update_scan_config request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ScanConfig.
+            #   p result
+            #
             def update_scan_config request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -546,6 +627,21 @@ module Google
             # @return [::Google::Cloud::Websecurityscanner::V1alpha::ScanRun]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::StartScanRunRequest.new
+            #
+            #   # Call the start_scan_run method.
+            #   result = client.start_scan_run request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ScanRun.
+            #   p result
             #
             def start_scan_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -618,6 +714,21 @@ module Google
             # @return [::Google::Cloud::Websecurityscanner::V1alpha::ScanRun]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::GetScanRunRequest.new
+            #
+            #   # Call the get_scan_run method.
+            #   result = client.get_scan_run request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ScanRun.
+            #   p result
             #
             def get_scan_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -699,6 +810,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::ListScanRunsRequest.new
+            #
+            #   # Call the list_scan_runs method.
+            #   result = client.list_scan_runs request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Websecurityscanner::V1alpha::ScanRun.
+            #     p response
+            #   end
+            #
             def list_scan_runs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -771,6 +903,21 @@ module Google
             # @return [::Google::Cloud::Websecurityscanner::V1alpha::ScanRun]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::StopScanRunRequest.new
+            #
+            #   # Call the stop_scan_run method.
+            #   result = client.stop_scan_run request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ScanRun.
+            #   p result
             #
             def stop_scan_run request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -852,6 +999,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::ListCrawledUrlsRequest.new
+            #
+            #   # Call the list_crawled_urls method.
+            #   result = client.list_crawled_urls request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Websecurityscanner::V1alpha::CrawledUrl.
+            #     p response
+            #   end
+            #
             def list_crawled_urls request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -924,6 +1092,21 @@ module Google
             # @return [::Google::Cloud::Websecurityscanner::V1alpha::Finding]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::GetFindingRequest.new
+            #
+            #   # Call the get_finding method.
+            #   result = client.get_finding request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::Finding.
+            #   p result
             #
             def get_finding request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1010,6 +1193,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::ListFindingsRequest.new
+            #
+            #   # Call the list_findings method.
+            #   result = client.list_findings request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Websecurityscanner::V1alpha::Finding.
+            #     p response
+            #   end
+            #
             def list_findings request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1082,6 +1286,21 @@ module Google
             # @return [::Google::Cloud::Websecurityscanner::V1alpha::ListFindingTypeStatsResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/websecurityscanner/v1alpha"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Websecurityscanner::V1alpha::WebSecurityScanner::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Websecurityscanner::V1alpha::ListFindingTypeStatsRequest.new
+            #
+            #   # Call the list_finding_type_stats method.
+            #   result = client.list_finding_type_stats request
+            #
+            #   # The returned object is of type Google::Cloud::Websecurityscanner::V1alpha::ListFindingTypeStatsResponse.
+            #   p result
             #
             def list_finding_type_stats request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

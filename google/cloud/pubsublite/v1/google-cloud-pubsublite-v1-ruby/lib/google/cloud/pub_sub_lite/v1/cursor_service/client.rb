@@ -172,6 +172,30 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::CursorService::Client.new
+            #
+            #   # Create an input stream
+            #   input = Gapic::StreamInput.new
+            #
+            #   # Call the streaming_commit_cursor method to start streaming.
+            #   output = client.streaming_commit_cursor input
+            #
+            #   # Send requests on the stream. For each request, pass in keyword
+            #   # arguments to set fields. Be sure to close the stream when done.
+            #   input << Google::Cloud::PubSubLite::V1::StreamingCommitCursorRequest.new
+            #   input << Google::Cloud::PubSubLite::V1::StreamingCommitCursorRequest.new
+            #   input.close
+            #
+            #   # Handle streamed responses. These may be interleaved with inputs.
+            #   # Each response is of type ::Google::Cloud::PubSubLite::V1::StreamingCommitCursorResponse.
+            #   output.each do |response|
+            #     p response
+            #   end
+            #
             def streaming_commit_cursor request, options = nil
               unless request.is_a? ::Enumerable
                 raise ::ArgumentError, "request must be an Enumerable" unless request.respond_to? :to_enum
@@ -243,6 +267,21 @@ module Google
             # @return [::Google::Cloud::PubSubLite::V1::CommitCursorResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::CursorService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::CommitCursorRequest.new
+            #
+            #   # Call the commit_cursor method.
+            #   result = client.commit_cursor request
+            #
+            #   # The returned object is of type Google::Cloud::PubSubLite::V1::CommitCursorResponse.
+            #   p result
             #
             def commit_cursor request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -325,6 +364,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::PubSubLite::V1::PartitionCursor>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/pub_sub_lite/v1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::PubSubLite::V1::CursorService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::PubSubLite::V1::ListPartitionCursorsRequest.new
+            #
+            #   # Call the list_partition_cursors method.
+            #   result = client.list_partition_cursors request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::PubSubLite::V1::PartitionCursor.
+            #     p response
+            #   end
             #
             def list_partition_cursors request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

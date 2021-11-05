@@ -248,6 +248,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateMetadataStoreRequest.new
+            #
+            #   # Call the create_metadata_store method.
+            #   result = client.create_metadata_store request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def create_metadata_store request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -320,6 +342,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::MetadataStore]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetMetadataStoreRequest.new
+            #
+            #   # Call the get_metadata_store method.
+            #   result = client.get_metadata_store request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::MetadataStore.
+            #   p result
             #
             def get_metadata_store request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -405,6 +442,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListMetadataStoresRequest.new
+            #
+            #   # Call the list_metadata_stores method.
+            #   result = client.list_metadata_stores request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::MetadataStore.
+            #     p response
+            #   end
+            #
             def list_metadata_stores request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -480,6 +538,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteMetadataStoreRequest.new
+            #
+            #   # Call the delete_metadata_store method.
+            #   result = client.delete_metadata_store request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_metadata_store request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -565,6 +645,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateArtifactRequest.new
+            #
+            #   # Call the create_artifact method.
+            #   result = client.create_artifact request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Artifact.
+            #   p result
+            #
             def create_artifact request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -636,6 +731,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::Artifact]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetArtifactRequest.new
+            #
+            #   # Call the get_artifact method.
+            #   result = client.get_artifact request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Artifact.
+            #   p result
             #
             def get_artifact request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -747,6 +857,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListArtifactsRequest.new
+            #
+            #   # Call the list_artifacts method.
+            #   result = client.list_artifacts request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::Artifact.
+            #     p response
+            #   end
+            #
             def list_artifacts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -828,6 +959,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateArtifactRequest.new
+            #
+            #   # Call the update_artifact method.
+            #   result = client.update_artifact request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Artifact.
+            #   p result
+            #
             def update_artifact request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -903,6 +1049,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteArtifactRequest.new
+            #
+            #   # Call the delete_artifact method.
+            #   result = client.delete_artifact request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_artifact request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -983,6 +1151,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::PurgeArtifactsRequest.new
+            #
+            #   # Call the purge_artifacts method.
+            #   result = client.purge_artifacts request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def purge_artifacts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1068,6 +1258,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateContextRequest.new
+            #
+            #   # Call the create_context method.
+            #   result = client.create_context request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Context.
+            #   p result
+            #
             def create_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1139,6 +1344,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::Context]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetContextRequest.new
+            #
+            #   # Call the get_context method.
+            #   result = client.get_context request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Context.
+            #   p result
             #
             def get_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1254,6 +1474,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListContextsRequest.new
+            #
+            #   # Call the list_contexts method.
+            #   result = client.list_contexts request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::Context.
+            #     p response
+            #   end
+            #
             def list_contexts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1335,6 +1576,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateContextRequest.new
+            #
+            #   # Call the update_context method.
+            #   result = client.update_context request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Context.
+            #   p result
+            #
             def update_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1413,6 +1669,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteContextRequest.new
+            #
+            #   # Call the delete_context method.
+            #   result = client.delete_context request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_context request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1493,6 +1771,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::PurgeContextsRequest.new
+            #
+            #   # Call the purge_contexts method.
+            #   result = client.purge_contexts request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def purge_contexts request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1581,6 +1881,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::AddContextArtifactsAndExecutionsRequest.new
+            #
+            #   # Call the add_context_artifacts_and_executions method.
+            #   result = client.add_context_artifacts_and_executions request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::AddContextArtifactsAndExecutionsResponse.
+            #   p result
+            #
             def add_context_artifacts_and_executions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1660,6 +1975,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::AddContextChildrenRequest.new
+            #
+            #   # Call the add_context_children method.
+            #   result = client.add_context_children request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::AddContextChildrenResponse.
+            #   p result
+            #
             def add_context_children request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1737,6 +2067,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::LineageSubgraph]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::QueryContextLineageSubgraphRequest.new
+            #
+            #   # Call the query_context_lineage_subgraph method.
+            #   result = client.query_context_lineage_subgraph request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::LineageSubgraph.
+            #   p result
             #
             def query_context_lineage_subgraph request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1822,6 +2167,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateExecutionRequest.new
+            #
+            #   # Call the create_execution method.
+            #   result = client.create_execution request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Execution.
+            #   p result
+            #
             def create_execution request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1893,6 +2253,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::Execution]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetExecutionRequest.new
+            #
+            #   # Call the get_execution method.
+            #   result = client.get_execution request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Execution.
+            #   p result
             #
             def get_execution request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2003,6 +2378,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListExecutionsRequest.new
+            #
+            #   # Call the list_executions method.
+            #   result = client.list_executions request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::Execution.
+            #     p response
+            #   end
+            #
             def list_executions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2084,6 +2480,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::UpdateExecutionRequest.new
+            #
+            #   # Call the update_execution method.
+            #   result = client.update_execution request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::Execution.
+            #   p result
+            #
             def update_execution request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2159,6 +2570,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::DeleteExecutionRequest.new
+            #
+            #   # Call the delete_execution method.
+            #   result = client.delete_execution request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_execution request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2240,6 +2673,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::PurgeExecutionsRequest.new
+            #
+            #   # Call the purge_executions method.
+            #   result = client.purge_executions request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def purge_executions request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2319,6 +2774,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::AddExecutionEventsRequest.new
+            #
+            #   # Call the add_execution_events method.
+            #   result = client.add_execution_events request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::AddExecutionEventsResponse.
+            #   p result
+            #
             def add_execution_events request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2393,6 +2863,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::LineageSubgraph]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::QueryExecutionInputsAndOutputsRequest.new
+            #
+            #   # Call the query_execution_inputs_and_outputs method.
+            #   result = client.query_execution_inputs_and_outputs request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::LineageSubgraph.
+            #   p result
             #
             def query_execution_inputs_and_outputs request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2478,6 +2963,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::CreateMetadataSchemaRequest.new
+            #
+            #   # Call the create_metadata_schema method.
+            #   result = client.create_metadata_schema request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::MetadataSchema.
+            #   p result
+            #
             def create_metadata_schema request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -2549,6 +3049,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::MetadataSchema]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::GetMetadataSchemaRequest.new
+            #
+            #   # Call the get_metadata_schema method.
+            #   result = client.get_metadata_schema request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::MetadataSchema.
+            #   p result
             #
             def get_metadata_schema request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2635,6 +3150,27 @@ module Google
             # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1beta1::MetadataSchema>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::ListMetadataSchemasRequest.new
+            #
+            #   # Call the list_metadata_schemas method.
+            #   result = client.list_metadata_schemas request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::AIPlatform::V1beta1::MetadataSchema.
+            #     p response
+            #   end
             #
             def list_metadata_schemas request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -2742,6 +3278,21 @@ module Google
             # @return [::Google::Cloud::AIPlatform::V1beta1::LineageSubgraph]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::QueryArtifactLineageSubgraphRequest.new
+            #
+            #   # Call the query_artifact_lineage_subgraph method.
+            #   result = client.query_artifact_lineage_subgraph request
+            #
+            #   # The returned object is of type Google::Cloud::AIPlatform::V1beta1::LineageSubgraph.
+            #   p result
             #
             def query_artifact_lineage_subgraph request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?

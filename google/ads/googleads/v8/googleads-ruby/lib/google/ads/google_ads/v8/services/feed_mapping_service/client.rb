@@ -180,6 +180,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::FeedMappingService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::GetFeedMappingRequest.new
+              #
+              #   # Call the get_feed_mapping method.
+              #   result = client.get_feed_mapping request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Resources::FeedMapping.
+              #   p result
+              #
               def get_feed_mapping request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -286,6 +301,21 @@ module Google
               # @return [::Google::Ads::GoogleAds::V8::Services::MutateFeedMappingsResponse]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v8/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V8::Services::FeedMappingService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V8::Services::MutateFeedMappingsRequest.new
+              #
+              #   # Call the mutate_feed_mappings method.
+              #   result = client.mutate_feed_mappings request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V8::Services::MutateFeedMappingsResponse.
+              #   p result
               #
               def mutate_feed_mappings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

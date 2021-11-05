@@ -201,6 +201,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GetCampaignExperimentRequest.new
+              #
+              #   # Call the get_campaign_experiment method.
+              #   result = client.get_campaign_experiment request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Resources::CampaignExperiment.
+              #   p result
+              #
               def get_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -301,6 +316,28 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::CreateCampaignExperimentRequest.new
+              #
+              #   # Call the create_campaign_experiment method.
+              #   result = client.create_campaign_experiment request
+              #
+              #   # The returned object is of type Gapic::Operation. You can use this
+              #   # object to check the status of an operation, cancel it, or wait
+              #   # for results. Here is how to block until completion:
+              #   result.wait_until_done! timeout: 60
+              #   if result.response?
+              #     p result.response
+              #   else
+              #     puts "Error!"
+              #   end
+              #
               def create_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -396,6 +433,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::MutateCampaignExperimentsRequest.new
+              #
+              #   # Call the mutate_campaign_experiments method.
+              #   result = client.mutate_campaign_experiments request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::MutateCampaignExperimentsResponse.
+              #   p result
+              #
               def mutate_campaign_experiments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -485,6 +537,21 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::GraduateCampaignExperimentRequest.new
+              #
+              #   # Call the graduate_campaign_experiment method.
+              #   result = client.graduate_campaign_experiment request
+              #
+              #   # The returned object is of type Google::Ads::GoogleAds::V7::Services::GraduateCampaignExperimentResponse.
+              #   p result
+              #
               def graduate_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -573,6 +640,28 @@ module Google
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
               #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::PromoteCampaignExperimentRequest.new
+              #
+              #   # Call the promote_campaign_experiment method.
+              #   result = client.promote_campaign_experiment request
+              #
+              #   # The returned object is of type Gapic::Operation. You can use this
+              #   # object to check the status of an operation, cancel it, or wait
+              #   # for results. Here is how to block until completion:
+              #   result.wait_until_done! timeout: 60
+              #   if result.response?
+              #     p result.response
+              #   else
+              #     puts "Error!"
+              #   end
+              #
               def promote_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -659,6 +748,21 @@ module Google
               # @return [::Google::Protobuf::Empty]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::EndCampaignExperimentRequest.new
+              #
+              #   # Call the end_campaign_experiment method.
+              #   result = client.end_campaign_experiment request
+              #
+              #   # The returned object is of type Google::Protobuf::Empty.
+              #   p result
               #
               def end_campaign_experiment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
@@ -751,6 +855,27 @@ module Google
               # @return [::Gapic::PagedEnumerable<::Google::Rpc::Status>]
               #
               # @raise [Google::Ads::GoogleAds::Error] if the RPC is aborted.
+              #
+              # @example Basic example
+              #   require "google/ads/google_ads/v7/services"
+              #
+              #   # Create a client object. The client can be reused for multiple calls.
+              #   client = Google::Ads::GoogleAds::V7::Services::CampaignExperimentService::Client.new
+              #
+              #   # Create a request. To set request fields, pass in keyword arguments.
+              #   request = Google::Ads::GoogleAds::V7::Services::ListCampaignExperimentAsyncErrorsRequest.new
+              #
+              #   # Call the list_campaign_experiment_async_errors method.
+              #   result = client.list_campaign_experiment_async_errors request
+              #
+              #   # The returned object is of type Gapic::PagedEnumerable. You can
+              #   # iterate over all elements by calling #each, and the enumerable
+              #   # will lazily make API calls to fetch subsequent pages. Other
+              #   # methods are also available for managing paging directly.
+              #   result.each do |response|
+              #     # Each element is of type ::Google::Rpc::Status.
+              #     p response
+              #   end
               #
               def list_campaign_experiment_async_errors request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?

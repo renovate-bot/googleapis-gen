@@ -277,6 +277,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::TranslateTextRequest.new
+            #
+            #   # Call the translate_text method.
+            #   result = client.translate_text request
+            #
+            #   # The returned object is of type Google::Cloud::Translate::V3beta1::TranslateTextResponse.
+            #   p result
+            #
             def translate_text request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -381,6 +396,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::DetectLanguageRequest.new
+            #
+            #   # Call the detect_language method.
+            #   result = client.detect_language request
+            #
+            #   # The returned object is of type Google::Cloud::Translate::V3beta1::DetectLanguageResponse.
+            #   p result
+            #
             def detect_language request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -480,6 +510,21 @@ module Google
             # @return [::Google::Cloud::Translate::V3beta1::SupportedLanguages]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::GetSupportedLanguagesRequest.new
+            #
+            #   # Call the get_supported_languages method.
+            #   result = client.get_supported_languages request
+            #
+            #   # The returned object is of type Google::Cloud::Translate::V3beta1::SupportedLanguages.
+            #   p result
             #
             def get_supported_languages request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -607,6 +652,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::TranslateDocumentRequest.new
+            #
+            #   # Call the translate_document method.
+            #   result = client.translate_document request
+            #
+            #   # The returned object is of type Google::Cloud::Translate::V3beta1::TranslateDocumentResponse.
+            #   p result
+            #
             def translate_document request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -731,6 +791,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::BatchTranslateTextRequest.new
+            #
+            #   # Call the batch_translate_text method.
+            #   result = client.batch_translate_text request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def batch_translate_text request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -862,6 +944,28 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::BatchTranslateDocumentRequest.new
+            #
+            #   # Call the batch_translate_document method.
+            #   result = client.batch_translate_document request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
             def batch_translate_document request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -935,6 +1039,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::CreateGlossaryRequest.new
+            #
+            #   # Call the create_glossary method.
+            #   result = client.create_glossary request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def create_glossary request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
@@ -1033,6 +1159,27 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::ListGlossariesRequest.new
+            #
+            #   # Call the list_glossaries method.
+            #   result = client.list_glossaries request
+            #
+            #   # The returned object is of type Gapic::PagedEnumerable. You can
+            #   # iterate over all elements by calling #each, and the enumerable
+            #   # will lazily make API calls to fetch subsequent pages. Other
+            #   # methods are also available for managing paging directly.
+            #   result.each do |response|
+            #     # Each element is of type ::Google::Cloud::Translate::V3beta1::Glossary.
+            #     p response
+            #   end
+            #
             def list_glossaries request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1105,6 +1252,21 @@ module Google
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::GetGlossaryRequest.new
+            #
+            #   # Call the get_glossary method.
+            #   result = client.get_glossary request
+            #
+            #   # The returned object is of type Google::Cloud::Translate::V3beta1::Glossary.
+            #   p result
+            #
             def get_glossary request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
@@ -1176,6 +1338,28 @@ module Google
             # @return [::Gapic::Operation]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/translate/v3beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::Translate::V3beta1::TranslationService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::Translate::V3beta1::DeleteGlossaryRequest.new
+            #
+            #   # Call the delete_glossary method.
+            #   result = client.delete_glossary request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
             #
             def delete_glossary request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
