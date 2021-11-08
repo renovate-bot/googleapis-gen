@@ -5,7 +5,8 @@ package com.google.cloud.redis.v1beta1;
 
 /**
  * <pre>
- * Request for [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
+ * Request for
+ * [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.UpgradeInstanceRequest}
@@ -360,7 +361,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
+   * Request for
+   * [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.UpgradeInstanceRequest}

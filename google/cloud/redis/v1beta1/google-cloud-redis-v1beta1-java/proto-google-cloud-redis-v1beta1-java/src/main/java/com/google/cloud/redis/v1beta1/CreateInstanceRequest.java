@@ -5,7 +5,8 @@ package com.google.cloud.redis.v1beta1;
 
 /**
  * <pre>
- * Request for [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
+ * Request for
+ * [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.CreateInstanceRequest}
@@ -439,7 +440,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
+   * Request for
+   * [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.CreateInstanceRequest}

@@ -16,6 +16,7 @@ public interface UpdateInstanceRequestOrBuilder extends
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -31,6 +32,7 @@ public interface UpdateInstanceRequestOrBuilder extends
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,6 +48,7 @@ public interface UpdateInstanceRequestOrBuilder extends
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>

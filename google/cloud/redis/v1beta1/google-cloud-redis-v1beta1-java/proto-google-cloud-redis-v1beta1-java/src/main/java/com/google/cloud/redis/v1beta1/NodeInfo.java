@@ -5,30 +5,30 @@ package com.google.cloud.redis.v1beta1;
 
 /**
  * <pre>
- * Request for
- * [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+ * Node specific properties.
  * </pre>
  *
- * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
+ * Protobuf type {@code google.cloud.redis.v1beta1.NodeInfo}
  */
-public final class DeleteInstanceRequest extends
+public final class NodeInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.DeleteInstanceRequest)
-    DeleteInstanceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.NodeInfo)
+    NodeInfoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DeleteInstanceRequest.newBuilder() to construct.
-  private DeleteInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use NodeInfo.newBuilder() to construct.
+  private NodeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DeleteInstanceRequest() {
-    name_ = "";
+  private NodeInfo() {
+    id_ = "";
+    zone_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new DeleteInstanceRequest();
+    return new NodeInfo();
   }
 
   @java.lang.Override
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DeleteInstanceRequest(
+  private NodeInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -57,7 +57,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            id_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            zone_ = s;
             break;
           }
           default: {
@@ -81,61 +87,103 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_descriptor;
+    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_NodeInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_fieldAccessorTable
+    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_NodeInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.redis.v1beta1.DeleteInstanceRequest.class, com.google.cloud.redis.v1beta1.DeleteInstanceRequest.Builder.class);
+            com.google.cloud.redis.v1beta1.NodeInfo.class, com.google.cloud.redis.v1beta1.NodeInfo.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
   /**
    * <pre>
-   * Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region.
+   * Output only. Node identifying string. e.g. 'node-0', 'node-1'
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The name.
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      id_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region.
+   * Output only. Node identifying string. e.g. 'node-0', 'node-1'
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for name.
+   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for id.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getIdBytes() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ZONE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object zone_;
+  /**
+   * <pre>
+   * Output only. Location of the node.
+   * </pre>
+   *
+   * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The zone.
+   */
+  @java.lang.Override
+  public java.lang.String getZone() {
+    java.lang.Object ref = zone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      zone_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. Location of the node.
+   * </pre>
+   *
+   * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for zone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getZoneBytes() {
+    java.lang.Object ref = zone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      zone_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -156,8 +204,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zone_);
     }
     unknownFields.writeTo(output);
   }
@@ -168,8 +219,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -181,13 +235,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.redis.v1beta1.DeleteInstanceRequest)) {
+    if (!(obj instanceof com.google.cloud.redis.v1beta1.NodeInfo)) {
       return super.equals(obj);
     }
-    com.google.cloud.redis.v1beta1.DeleteInstanceRequest other = (com.google.cloud.redis.v1beta1.DeleteInstanceRequest) obj;
+    com.google.cloud.redis.v1beta1.NodeInfo other = (com.google.cloud.redis.v1beta1.NodeInfo) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getZone()
+        .equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -199,76 +255,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(byte[] data)
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest parseFrom(
+  public static com.google.cloud.redis.v1beta1.NodeInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -281,7 +339,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.redis.v1beta1.DeleteInstanceRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.redis.v1beta1.NodeInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -298,30 +356,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for
-   * [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+   * Node specific properties.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
+   * Protobuf type {@code google.cloud.redis.v1beta1.NodeInfo}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.DeleteInstanceRequest)
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.NodeInfo)
+      com.google.cloud.redis.v1beta1.NodeInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_descriptor;
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_NodeInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_fieldAccessorTable
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_NodeInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.redis.v1beta1.DeleteInstanceRequest.class, com.google.cloud.redis.v1beta1.DeleteInstanceRequest.Builder.class);
+              com.google.cloud.redis.v1beta1.NodeInfo.class, com.google.cloud.redis.v1beta1.NodeInfo.Builder.class);
     }
 
-    // Construct using com.google.cloud.redis.v1beta1.DeleteInstanceRequest.newBuilder()
+    // Construct using com.google.cloud.redis.v1beta1.NodeInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -339,7 +396,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      id_ = "";
+
+      zone_ = "";
 
       return this;
     }
@@ -347,17 +406,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_DeleteInstanceRequest_descriptor;
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_NodeInfo_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.DeleteInstanceRequest getDefaultInstanceForType() {
-      return com.google.cloud.redis.v1beta1.DeleteInstanceRequest.getDefaultInstance();
+    public com.google.cloud.redis.v1beta1.NodeInfo getDefaultInstanceForType() {
+      return com.google.cloud.redis.v1beta1.NodeInfo.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.DeleteInstanceRequest build() {
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequest result = buildPartial();
+    public com.google.cloud.redis.v1beta1.NodeInfo build() {
+      com.google.cloud.redis.v1beta1.NodeInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -365,9 +424,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.redis.v1beta1.DeleteInstanceRequest buildPartial() {
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequest result = new com.google.cloud.redis.v1beta1.DeleteInstanceRequest(this);
-      result.name_ = name_;
+    public com.google.cloud.redis.v1beta1.NodeInfo buildPartial() {
+      com.google.cloud.redis.v1beta1.NodeInfo result = new com.google.cloud.redis.v1beta1.NodeInfo(this);
+      result.id_ = id_;
+      result.zone_ = zone_;
       onBuilt();
       return result;
     }
@@ -406,18 +466,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.redis.v1beta1.DeleteInstanceRequest) {
-        return mergeFrom((com.google.cloud.redis.v1beta1.DeleteInstanceRequest)other);
+      if (other instanceof com.google.cloud.redis.v1beta1.NodeInfo) {
+        return mergeFrom((com.google.cloud.redis.v1beta1.NodeInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.redis.v1beta1.DeleteInstanceRequest other) {
-      if (other == com.google.cloud.redis.v1beta1.DeleteInstanceRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.google.cloud.redis.v1beta1.NodeInfo other) {
+      if (other == com.google.cloud.redis.v1beta1.NodeInfo.getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
+      if (!other.getZone().isEmpty()) {
+        zone_ = other.zone_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -435,11 +499,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.redis.v1beta1.DeleteInstanceRequest parsedMessage = null;
+      com.google.cloud.redis.v1beta1.NodeInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.redis.v1beta1.DeleteInstanceRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.redis.v1beta1.NodeInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -449,24 +513,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object id_ = "";
     /**
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The name.
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The id.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        id_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -474,22 +536,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for name.
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -497,60 +557,150 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The name to set.
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearId() {
       
-      name_ = getDefaultInstance().getName();
+      id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. Redis instance resource name using the form:
-     *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region.
+     * Output only. Node identifying string. e.g. 'node-0', 'node-1'
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for name to set.
+     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object zone_ = "";
+    /**
+     * <pre>
+     * Output only. Location of the node.
+     * </pre>
+     *
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The zone.
+     */
+    public java.lang.String getZone() {
+      java.lang.Object ref = zone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        zone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Location of the node.
+     * </pre>
+     *
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for zone.
+     */
+    public com.google.protobuf.ByteString
+        getZoneBytes() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        zone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Location of the node.
+     * </pre>
+     *
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The zone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZone(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      zone_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Location of the node.
+     * </pre>
+     *
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearZone() {
+      
+      zone_ = getDefaultInstance().getZone();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Location of the node.
+     * </pre>
+     *
+     * <code>string zone = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for zone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZoneBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      zone_ = value;
       onChanged();
       return this;
     }
@@ -567,41 +717,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.DeleteInstanceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.NodeInfo)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.DeleteInstanceRequest)
-  private static final com.google.cloud.redis.v1beta1.DeleteInstanceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.NodeInfo)
+  private static final com.google.cloud.redis.v1beta1.NodeInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.DeleteInstanceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.NodeInfo();
   }
 
-  public static com.google.cloud.redis.v1beta1.DeleteInstanceRequest getDefaultInstance() {
+  public static com.google.cloud.redis.v1beta1.NodeInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteInstanceRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteInstanceRequest>() {
+  private static final com.google.protobuf.Parser<NodeInfo>
+      PARSER = new com.google.protobuf.AbstractParser<NodeInfo>() {
     @java.lang.Override
-    public DeleteInstanceRequest parsePartialFrom(
+    public NodeInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeleteInstanceRequest(input, extensionRegistry);
+      return new NodeInfo(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DeleteInstanceRequest> parser() {
+  public static com.google.protobuf.Parser<NodeInfo> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteInstanceRequest> getParserForType() {
+  public com.google.protobuf.Parser<NodeInfo> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.redis.v1beta1.DeleteInstanceRequest getDefaultInstanceForType() {
+  public com.google.cloud.redis.v1beta1.NodeInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

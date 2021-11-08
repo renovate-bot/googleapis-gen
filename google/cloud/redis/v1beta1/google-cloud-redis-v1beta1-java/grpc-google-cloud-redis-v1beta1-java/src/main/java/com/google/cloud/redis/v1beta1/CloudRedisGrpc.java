@@ -14,7 +14,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * Each location has a collection of Redis instances, named: `/instances/&#42;`
  * * As such, Redis instances are resources of the form:
  *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
- * Note that location_id must be refering to a GCP `region`; for example:
+ * Note that location_id must be referring to a GCP `region`; for example:
  * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
  * </pre>
  */
@@ -363,7 +363,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -401,7 +401,7 @@ public final class CloudRedisGrpc {
      * [default network](https://cloud.google.com/vpc/docs/vpc).
      * The creation is executed asynchronously and callers may check the returned
      * operation to track its progress. Once the operation is completed the Redis
-     * instance will be fully functional. Completed longrunning.Operation will
+     * instance will be fully functional. The completed longrunning.Operation will
      * contain the new instance object in the response field.
      * The returned operation is automatically deleted after a few hours, so there
      * is no need to call DeleteOperation.
@@ -466,7 +466,7 @@ public final class CloudRedisGrpc {
 
     /**
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
@@ -567,7 +567,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -617,7 +617,7 @@ public final class CloudRedisGrpc {
      * [default network](https://cloud.google.com/vpc/docs/vpc).
      * The creation is executed asynchronously and callers may check the returned
      * operation to track its progress. Once the operation is completed the Redis
-     * instance will be fully functional. Completed longrunning.Operation will
+     * instance will be fully functional. The completed longrunning.Operation will
      * contain the new instance object in the response field.
      * The returned operation is automatically deleted after a few hours, so there
      * is no need to call DeleteOperation.
@@ -687,7 +687,7 @@ public final class CloudRedisGrpc {
 
     /**
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
@@ -722,7 +722,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -770,7 +770,7 @@ public final class CloudRedisGrpc {
      * [default network](https://cloud.google.com/vpc/docs/vpc).
      * The creation is executed asynchronously and callers may check the returned
      * operation to track its progress. Once the operation is completed the Redis
-     * instance will be fully functional. Completed longrunning.Operation will
+     * instance will be fully functional. The completed longrunning.Operation will
      * contain the new instance object in the response field.
      * The returned operation is automatically deleted after a few hours, so there
      * is no need to call DeleteOperation.
@@ -835,7 +835,7 @@ public final class CloudRedisGrpc {
 
     /**
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
@@ -868,7 +868,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -918,7 +918,7 @@ public final class CloudRedisGrpc {
      * [default network](https://cloud.google.com/vpc/docs/vpc).
      * The creation is executed asynchronously and callers may check the returned
      * operation to track its progress. Once the operation is completed the Redis
-     * instance will be fully functional. Completed longrunning.Operation will
+     * instance will be fully functional. The completed longrunning.Operation will
      * contain the new instance object in the response field.
      * The returned operation is automatically deleted after a few hours, so there
      * is no need to call DeleteOperation.
@@ -988,7 +988,7 @@ public final class CloudRedisGrpc {
 
     /**
      * <pre>
-     * Initiates a failover of the master node to current replica node for a
+     * Initiates a failover of the primary node to current replica node for a
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */

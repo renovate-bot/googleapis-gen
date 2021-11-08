@@ -28,6 +28,7 @@ function main(updateMask, instance) {
    *   *   `labels`
    *   *   `memorySizeGb`
    *   *   `redisConfig`
+   *   *   `replica_count`
    */
   // const updateMask = ''
   /**

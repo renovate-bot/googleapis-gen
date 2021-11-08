@@ -34,6 +34,9 @@ private static final long serialVersionUID = 0L;
     authorizedNetwork_ = "";
     persistenceIamIdentity_ = "";
     connectMode_ = 0;
+    nodes_ = java.util.Collections.emptyList();
+    readEndpoint_ = "";
+    readReplicasMode_ = 0;
   }
 
   @java.lang.Override
@@ -200,6 +203,37 @@ private static final long serialVersionUID = 0L;
             connectMode_ = rawValue;
             break;
           }
+          case 248: {
+
+            replicaCount_ = input.readInt32();
+            break;
+          }
+          case 258: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              nodes_ = new java.util.ArrayList<com.google.cloud.redis.v1beta1.NodeInfo>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            nodes_.add(
+                input.readMessage(com.google.cloud.redis.v1beta1.NodeInfo.parser(), extensionRegistry));
+            break;
+          }
+          case 266: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            readEndpoint_ = s;
+            break;
+          }
+          case 272: {
+
+            readEndpointPort_ = input.readInt32();
+            break;
+          }
+          case 280: {
+            int rawValue = input.readEnum();
+
+            readReplicasMode_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -215,6 +249,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        nodes_ = java.util.Collections.unmodifiableList(nodes_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -661,7 +698,7 @@ private static final long serialVersionUID = 0L;
     CONNECT_MODE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Connect via directly peering with memorystore redis hosted service.
+     * Connect via direct peering to the Memorystore for Redis hosted service.
      * </pre>
      *
      * <code>DIRECT_PEERING = 1;</code>
@@ -669,8 +706,9 @@ private static final long serialVersionUID = 0L;
     DIRECT_PEERING(1),
     /**
      * <pre>
-     * Connect with google via private service access and share connection
-     * across google managed services.
+     * Connect your Memorystore for Redis instance using Private Service
+     * Access. Private services access provides an IP address range for multiple
+     * Google Cloud services, including Memorystore.
      * </pre>
      *
      * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
@@ -689,7 +727,7 @@ private static final long serialVersionUID = 0L;
     public static final int CONNECT_MODE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Connect via directly peering with memorystore redis hosted service.
+     * Connect via direct peering to the Memorystore for Redis hosted service.
      * </pre>
      *
      * <code>DIRECT_PEERING = 1;</code>
@@ -697,8 +735,9 @@ private static final long serialVersionUID = 0L;
     public static final int DIRECT_PEERING_VALUE = 1;
     /**
      * <pre>
-     * Connect with google via private service access and share connection
-     * across google managed services.
+     * Connect your Memorystore for Redis instance using Private Service
+     * Access. Private services access provides an IP address range for multiple
+     * Google Cloud services, including Memorystore.
      * </pre>
      *
      * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
@@ -789,6 +828,157 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1beta1.Instance.ConnectMode)
   }
 
+  /**
+   * <pre>
+   * Read replicas mode.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.redis.v1beta1.Instance.ReadReplicasMode}
+   */
+  public enum ReadReplicasMode
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * If not set, Memorystore for Redis backend will pick the mode based on
+     * other fields in the request.
+     * </pre>
+     *
+     * <code>READ_REPLICAS_MODE_UNSPECIFIED = 0;</code>
+     */
+    READ_REPLICAS_MODE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * If disabled, read endpoint will not be provided and the instance cannot
+     * scale up or down the number of replicas.
+     * </pre>
+     *
+     * <code>READ_REPLICAS_DISABLED = 1;</code>
+     */
+    READ_REPLICAS_DISABLED(1),
+    /**
+     * <pre>
+     * If enabled, read endpoint will be provided and the instance can scale
+     * up and down the number of replicas.
+     * </pre>
+     *
+     * <code>READ_REPLICAS_ENABLED = 2;</code>
+     */
+    READ_REPLICAS_ENABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * If not set, Memorystore for Redis backend will pick the mode based on
+     * other fields in the request.
+     * </pre>
+     *
+     * <code>READ_REPLICAS_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int READ_REPLICAS_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * If disabled, read endpoint will not be provided and the instance cannot
+     * scale up or down the number of replicas.
+     * </pre>
+     *
+     * <code>READ_REPLICAS_DISABLED = 1;</code>
+     */
+    public static final int READ_REPLICAS_DISABLED_VALUE = 1;
+    /**
+     * <pre>
+     * If enabled, read endpoint will be provided and the instance can scale
+     * up and down the number of replicas.
+     * </pre>
+     *
+     * <code>READ_REPLICAS_ENABLED = 2;</code>
+     */
+    public static final int READ_REPLICAS_ENABLED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ReadReplicasMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ReadReplicasMode forNumber(int value) {
+      switch (value) {
+        case 0: return READ_REPLICAS_MODE_UNSPECIFIED;
+        case 1: return READ_REPLICAS_DISABLED;
+        case 2: return READ_REPLICAS_ENABLED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ReadReplicasMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ReadReplicasMode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ReadReplicasMode>() {
+            public ReadReplicasMode findValueByNumber(int number) {
+              return ReadReplicasMode.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.redis.v1beta1.Instance.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final ReadReplicasMode[] VALUES = values();
+
+    public static ReadReplicasMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ReadReplicasMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1beta1.Instance.ReadReplicasMode)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -799,8 +989,10 @@ private static final long serialVersionUID = 0L;
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-   * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to
+   * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+   * fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -827,8 +1019,10 @@ private static final long serialVersionUID = 0L;
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-   * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to
+   * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+   * fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -997,10 +1191,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
-   * the service will choose a zone for the instance. For STANDARD_HA tier,
-   * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-   * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+   * the service will choose a zone from the specified region for the instance.
+   * For standard tier, additional nodes will be added across multiple zones for
+   * protection against zonal failures. If specified, at least one node will be
+   * provisioned in this zone.
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1022,10 +1216,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
-   * the service will choose a zone for the instance. For STANDARD_HA tier,
-   * instances will be created across two zones for protection against zonal
-   * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-   * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+   * the service will choose a zone from the specified region for the instance.
+   * For standard tier, additional nodes will be added across multiple zones for
+   * protection against zonal failures. If specified, at least one node will be
+   * provisioned in this zone.
    * </pre>
    *
    * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1050,9 +1244,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object alternativeLocationId_;
   /**
    * <pre>
-   * Optional. Only applicable to STANDARD_HA tier which protects the instance
-   * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+   * Optional. If specified, at least one node will be provisioned in this zone
+   * in addition to the zone specified in location_id. Only applicable to
+   * standard tier. If provided, it must be a different zone from the one
+   * provided in [location_id]. Additional nodes beyond the first 2 will be
+   * placed in zones selected by the service.
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1073,9 +1269,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Only applicable to STANDARD_HA tier which protects the instance
-   * against zonal failures by provisioning it across two zones. If provided, it
-   * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+   * Optional. If specified, at least one node will be provisioned in this zone
+   * in addition to the zone specified in location_id. Only applicable to
+   * standard tier. If provided, it must be a different zone from the one
+   * provided in [location_id]. Additional nodes beyond the first 2 will be
+   * placed in zones selected by the service.
    * </pre>
    *
    * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1106,6 +1304,7 @@ private static final long serialVersionUID = 0L;
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
+   *  *   `REDIS_6_X` for Redis 6.x compatibility
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1132,6 +1331,7 @@ private static final long serialVersionUID = 0L;
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
+   *  *   `REDIS_6_X` for Redis 6.x compatibility
    * </pre>
    *
    * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1156,10 +1356,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object reservedIpRange_;
   /**
    * <pre>
-   * Optional. The CIDR range of internal addresses that are reserved for this
-   * instance. If not provided, the service will choose an unused /29 block,
-   * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-   * and non-overlapping with existing subnets in an authorized network.
+   * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+   * that are reserved for this instance. Range must
+   * be unique and non-overlapping with existing subnets in an authorized
+   * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+   * address ranges associated with this private service access connection.
+   * If not provided, the service will choose an unused /29 block, for
+   * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+   * the default block size is /28.
    * </pre>
    *
    * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1180,10 +1384,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The CIDR range of internal addresses that are reserved for this
-   * instance. If not provided, the service will choose an unused /29 block,
-   * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-   * and non-overlapping with existing subnets in an authorized network.
+   * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+   * that are reserved for this instance. Range must
+   * be unique and non-overlapping with existing subnets in an authorized
+   * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+   * address ranges associated with this private service access connection.
+   * If not provided, the service will choose an unused /29 block, for
+   * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+   * the default block size is /28.
    * </pre>
    *
    * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1209,7 +1417,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Hostname or IP address of the exposed Redis endpoint used by
-   * clients to connect to the service.
+   *  clients to connect to the service.
    * </pre>
    *
    * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1231,7 +1439,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Hostname or IP address of the exposed Redis endpoint used by
-   * clients to connect to the service.
+   *  clients to connect to the service.
    * </pre>
    *
    * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1271,11 +1479,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object currentLocationId_;
   /**
    * <pre>
-   * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-   * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-   * change after a failover event.
+   * Output only. The current zone where the Redis primary node is located. In
+   * basic tier, this will always be the same as [location_id]. In
+   * standard tier, this can be the zone of any node in the instance.
    * </pre>
    *
    * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1296,11 +1502,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The current zone where the Redis endpoint is placed. For Basic
-   * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-   * provided by the user at creation time. For Standard Tier instances,
-   * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-   * change after a failover event.
+   * Output only. The current zone where the Redis primary node is located. In
+   * basic tier, this will always be the same as [location_id]. In
+   * standard tier, this can be the zone of any node in the instance.
    * </pre>
    *
    * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1735,9 +1939,8 @@ private static final long serialVersionUID = 0L;
   private int connectMode_;
   /**
    * <pre>
-   * Optional. The connect mode of Redis instance.
-   * If not provided, default one will be used.
-   * Current default: DIRECT_PEERING.
+   * Optional. The network connect mode of the Redis instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
    * </pre>
    *
    * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1748,9 +1951,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The connect mode of Redis instance.
-   * If not provided, default one will be used.
-   * Current default: DIRECT_PEERING.
+   * Optional. The network connect mode of the Redis instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
    * </pre>
    *
    * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1760,6 +1962,178 @@ private static final long serialVersionUID = 0L;
     @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.Instance.ConnectMode result = com.google.cloud.redis.v1beta1.Instance.ConnectMode.valueOf(connectMode_);
     return result == null ? com.google.cloud.redis.v1beta1.Instance.ConnectMode.UNRECOGNIZED : result;
+  }
+
+  public static final int REPLICA_COUNT_FIELD_NUMBER = 31;
+  private int replicaCount_;
+  /**
+   * <pre>
+   * Optional. The number of replica nodes. Valid range for standard tier
+   * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
+   * to 0.
+   * </pre>
+   *
+   * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The replicaCount.
+   */
+  @java.lang.Override
+  public int getReplicaCount() {
+    return replicaCount_;
+  }
+
+  public static final int NODES_FIELD_NUMBER = 32;
+  private java.util.List<com.google.cloud.redis.v1beta1.NodeInfo> nodes_;
+  /**
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.redis.v1beta1.NodeInfo> getNodesList() {
+    return nodes_;
+  }
+  /**
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.redis.v1beta1.NodeInfoOrBuilder> 
+      getNodesOrBuilderList() {
+    return nodes_;
+  }
+  /**
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public int getNodesCount() {
+    return nodes_.size();
+  }
+  /**
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1beta1.NodeInfo getNodes(int index) {
+    return nodes_.get(index);
+  }
+  /**
+   * <pre>
+   * Output only. Info per node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1beta1.NodeInfoOrBuilder getNodesOrBuilder(
+      int index) {
+    return nodes_.get(index);
+  }
+
+  public static final int READ_ENDPOINT_FIELD_NUMBER = 33;
+  private volatile java.lang.Object readEndpoint_;
+  /**
+   * <pre>
+   * Output only. Hostname or IP address of the exposed readonly Redis
+   * endpoint. Standard tier only. Targets all healthy replica nodes in
+   * instance. Replication is asynchronous and replica nodes will exhibit some
+   * lag behind the primary. Write requests must target 'host'.
+   * </pre>
+   *
+   * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The readEndpoint.
+   */
+  @java.lang.Override
+  public java.lang.String getReadEndpoint() {
+    java.lang.Object ref = readEndpoint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      readEndpoint_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. Hostname or IP address of the exposed readonly Redis
+   * endpoint. Standard tier only. Targets all healthy replica nodes in
+   * instance. Replication is asynchronous and replica nodes will exhibit some
+   * lag behind the primary. Write requests must target 'host'.
+   * </pre>
+   *
+   * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for readEndpoint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getReadEndpointBytes() {
+    java.lang.Object ref = readEndpoint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      readEndpoint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int READ_ENDPOINT_PORT_FIELD_NUMBER = 34;
+  private int readEndpointPort_;
+  /**
+   * <pre>
+   * Output only. The port number of the exposed readonly redis
+   * endpoint. Standard tier only. Write requests should target 'port'.
+   * </pre>
+   *
+   * <code>int32 read_endpoint_port = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The readEndpointPort.
+   */
+  @java.lang.Override
+  public int getReadEndpointPort() {
+    return readEndpointPort_;
+  }
+
+  public static final int READ_REPLICAS_MODE_FIELD_NUMBER = 35;
+  private int readReplicasMode_;
+  /**
+   * <pre>
+   * Optional. Read replica mode.
+   * </pre>
+   *
+   * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for readReplicasMode.
+   */
+  @java.lang.Override public int getReadReplicasModeValue() {
+    return readReplicasMode_;
+  }
+  /**
+   * <pre>
+   * Optional. Read replica mode.
+   * </pre>
+   *
+   * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The readReplicasMode.
+   */
+  @java.lang.Override public com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode getReadReplicasMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode result = com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.valueOf(readReplicasMode_);
+    return result == null ? com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1838,6 +2212,21 @@ private static final long serialVersionUID = 0L;
     }
     if (connectMode_ != com.google.cloud.redis.v1beta1.Instance.ConnectMode.CONNECT_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(22, connectMode_);
+    }
+    if (replicaCount_ != 0) {
+      output.writeInt32(31, replicaCount_);
+    }
+    for (int i = 0; i < nodes_.size(); i++) {
+      output.writeMessage(32, nodes_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(readEndpoint_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 33, readEndpoint_);
+    }
+    if (readEndpointPort_ != 0) {
+      output.writeInt32(34, readEndpointPort_);
+    }
+    if (readReplicasMode_ != com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.READ_REPLICAS_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(35, readReplicasMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -1925,6 +2314,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(22, connectMode_);
     }
+    if (replicaCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(31, replicaCount_);
+    }
+    for (int i = 0; i < nodes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(32, nodes_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(readEndpoint_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, readEndpoint_);
+    }
+    if (readEndpointPort_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(34, readEndpointPort_);
+    }
+    if (readReplicasMode_ != com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.READ_REPLICAS_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(35, readReplicasMode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1978,6 +2386,15 @@ private static final long serialVersionUID = 0L;
     if (!getPersistenceIamIdentity()
         .equals(other.getPersistenceIamIdentity())) return false;
     if (connectMode_ != other.connectMode_) return false;
+    if (getReplicaCount()
+        != other.getReplicaCount()) return false;
+    if (!getNodesList()
+        .equals(other.getNodesList())) return false;
+    if (!getReadEndpoint()
+        .equals(other.getReadEndpoint())) return false;
+    if (getReadEndpointPort()
+        != other.getReadEndpointPort()) return false;
+    if (readReplicasMode_ != other.readReplicasMode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2033,6 +2450,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPersistenceIamIdentity().hashCode();
     hash = (37 * hash) + CONNECT_MODE_FIELD_NUMBER;
     hash = (53 * hash) + connectMode_;
+    hash = (37 * hash) + REPLICA_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getReplicaCount();
+    if (getNodesCount() > 0) {
+      hash = (37 * hash) + NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getNodesList().hashCode();
+    }
+    hash = (37 * hash) + READ_ENDPOINT_FIELD_NUMBER;
+    hash = (53 * hash) + getReadEndpoint().hashCode();
+    hash = (37 * hash) + READ_ENDPOINT_PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getReadEndpointPort();
+    hash = (37 * hash) + READ_REPLICAS_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + readReplicasMode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2191,6 +2620,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getNodesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -2235,6 +2665,20 @@ private static final long serialVersionUID = 0L;
       persistenceIamIdentity_ = "";
 
       connectMode_ = 0;
+
+      replicaCount_ = 0;
+
+      if (nodesBuilder_ == null) {
+        nodes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        nodesBuilder_.clear();
+      }
+      readEndpoint_ = "";
+
+      readEndpointPort_ = 0;
+
+      readReplicasMode_ = 0;
 
       return this;
     }
@@ -2288,6 +2732,19 @@ private static final long serialVersionUID = 0L;
       result.authorizedNetwork_ = authorizedNetwork_;
       result.persistenceIamIdentity_ = persistenceIamIdentity_;
       result.connectMode_ = connectMode_;
+      result.replicaCount_ = replicaCount_;
+      if (nodesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          nodes_ = java.util.Collections.unmodifiableList(nodes_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.nodes_ = nodes_;
+      } else {
+        result.nodes_ = nodesBuilder_.build();
+      }
+      result.readEndpoint_ = readEndpoint_;
+      result.readEndpointPort_ = readEndpointPort_;
+      result.readReplicasMode_ = readReplicasMode_;
       onBuilt();
       return result;
     }
@@ -2402,6 +2859,45 @@ private static final long serialVersionUID = 0L;
       if (other.connectMode_ != 0) {
         setConnectModeValue(other.getConnectModeValue());
       }
+      if (other.getReplicaCount() != 0) {
+        setReplicaCount(other.getReplicaCount());
+      }
+      if (nodesBuilder_ == null) {
+        if (!other.nodes_.isEmpty()) {
+          if (nodes_.isEmpty()) {
+            nodes_ = other.nodes_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureNodesIsMutable();
+            nodes_.addAll(other.nodes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.nodes_.isEmpty()) {
+          if (nodesBuilder_.isEmpty()) {
+            nodesBuilder_.dispose();
+            nodesBuilder_ = null;
+            nodes_ = other.nodes_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            nodesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getNodesFieldBuilder() : null;
+          } else {
+            nodesBuilder_.addAllMessages(other.nodes_);
+          }
+        }
+      }
+      if (!other.getReadEndpoint().isEmpty()) {
+        readEndpoint_ = other.readEndpoint_;
+        onChanged();
+      }
+      if (other.getReadEndpointPort() != 0) {
+        setReadEndpointPort(other.getReadEndpointPort());
+      }
+      if (other.readReplicasMode_ != 0) {
+        setReadReplicasModeValue(other.getReadReplicasModeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2441,8 +2937,10 @@ private static final long serialVersionUID = 0L;
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2468,8 +2966,10 @@ private static final long serialVersionUID = 0L;
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2496,8 +2996,10 @@ private static final long serialVersionUID = 0L;
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2522,8 +3024,10 @@ private static final long serialVersionUID = 0L;
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2543,8 +3047,10 @@ private static final long serialVersionUID = 0L;
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1beta1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2819,10 +3325,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
-     * the service will choose a zone for the instance. For STANDARD_HA tier,
-     * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * the service will choose a zone from the specified region for the instance.
+     * For standard tier, additional nodes will be added across multiple zones for
+     * protection against zonal failures. If specified, at least one node will be
+     * provisioned in this zone.
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2843,10 +3349,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
-     * the service will choose a zone for the instance. For STANDARD_HA tier,
-     * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * the service will choose a zone from the specified region for the instance.
+     * For standard tier, additional nodes will be added across multiple zones for
+     * protection against zonal failures. If specified, at least one node will be
+     * provisioned in this zone.
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2868,10 +3374,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
-     * the service will choose a zone for the instance. For STANDARD_HA tier,
-     * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * the service will choose a zone from the specified region for the instance.
+     * For standard tier, additional nodes will be added across multiple zones for
+     * protection against zonal failures. If specified, at least one node will be
+     * provisioned in this zone.
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2891,10 +3397,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
-     * the service will choose a zone for the instance. For STANDARD_HA tier,
-     * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * the service will choose a zone from the specified region for the instance.
+     * For standard tier, additional nodes will be added across multiple zones for
+     * protection against zonal failures. If specified, at least one node will be
+     * provisioned in this zone.
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2909,10 +3415,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
-     * the service will choose a zone for the instance. For STANDARD_HA tier,
-     * instances will be created across two zones for protection against zonal
-     * failures. If [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] is also provided, it must be
-     * different from [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * the service will choose a zone from the specified region for the instance.
+     * For standard tier, additional nodes will be added across multiple zones for
+     * protection against zonal failures. If specified, at least one node will be
+     * provisioned in this zone.
      * </pre>
      *
      * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2934,9 +3440,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object alternativeLocationId_ = "";
     /**
      * <pre>
-     * Optional. Only applicable to STANDARD_HA tier which protects the instance
-     * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * Optional. If specified, at least one node will be provisioned in this zone
+     * in addition to the zone specified in location_id. Only applicable to
+     * standard tier. If provided, it must be a different zone from the one
+     * provided in [location_id]. Additional nodes beyond the first 2 will be
+     * placed in zones selected by the service.
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2956,9 +3464,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only applicable to STANDARD_HA tier which protects the instance
-     * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * Optional. If specified, at least one node will be provisioned in this zone
+     * in addition to the zone specified in location_id. Only applicable to
+     * standard tier. If provided, it must be a different zone from the one
+     * provided in [location_id]. Additional nodes beyond the first 2 will be
+     * placed in zones selected by the service.
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2979,9 +3489,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only applicable to STANDARD_HA tier which protects the instance
-     * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * Optional. If specified, at least one node will be provisioned in this zone
+     * in addition to the zone specified in location_id. Only applicable to
+     * standard tier. If provided, it must be a different zone from the one
+     * provided in [location_id]. Additional nodes beyond the first 2 will be
+     * placed in zones selected by the service.
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3000,9 +3512,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only applicable to STANDARD_HA tier which protects the instance
-     * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * Optional. If specified, at least one node will be provisioned in this zone
+     * in addition to the zone specified in location_id. Only applicable to
+     * standard tier. If provided, it must be a different zone from the one
+     * provided in [location_id]. Additional nodes beyond the first 2 will be
+     * placed in zones selected by the service.
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3016,9 +3530,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Only applicable to STANDARD_HA tier which protects the instance
-     * against zonal failures by provisioning it across two zones. If provided, it
-     * must be a different zone from the one provided in [location_id][google.cloud.redis.v1beta1.Instance.location_id].
+     * Optional. If specified, at least one node will be provisioned in this zone
+     * in addition to the zone specified in location_id. Only applicable to
+     * standard tier. If provided, it must be a different zone from the one
+     * provided in [location_id]. Additional nodes beyond the first 2 will be
+     * placed in zones selected by the service.
      * </pre>
      *
      * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3046,6 +3562,7 @@ private static final long serialVersionUID = 0L;
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
+     *  *   `REDIS_6_X` for Redis 6.x compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3071,6 +3588,7 @@ private static final long serialVersionUID = 0L;
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
+     *  *   `REDIS_6_X` for Redis 6.x compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3097,6 +3615,7 @@ private static final long serialVersionUID = 0L;
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
+     *  *   `REDIS_6_X` for Redis 6.x compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3121,6 +3640,7 @@ private static final long serialVersionUID = 0L;
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
+     *  *   `REDIS_6_X` for Redis 6.x compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3140,6 +3660,7 @@ private static final long serialVersionUID = 0L;
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
+     *  *   `REDIS_6_X` for Redis 6.x compatibility
      * </pre>
      *
      * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3161,10 +3682,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object reservedIpRange_ = "";
     /**
      * <pre>
-     * Optional. The CIDR range of internal addresses that are reserved for this
-     * instance. If not provided, the service will choose an unused /29 block,
-     * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in an authorized network.
+     * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+     * that are reserved for this instance. Range must
+     * be unique and non-overlapping with existing subnets in an authorized
+     * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+     * address ranges associated with this private service access connection.
+     * If not provided, the service will choose an unused /29 block, for
+     * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+     * the default block size is /28.
      * </pre>
      *
      * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3184,10 +3709,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The CIDR range of internal addresses that are reserved for this
-     * instance. If not provided, the service will choose an unused /29 block,
-     * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in an authorized network.
+     * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+     * that are reserved for this instance. Range must
+     * be unique and non-overlapping with existing subnets in an authorized
+     * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+     * address ranges associated with this private service access connection.
+     * If not provided, the service will choose an unused /29 block, for
+     * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+     * the default block size is /28.
      * </pre>
      *
      * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3208,10 +3737,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The CIDR range of internal addresses that are reserved for this
-     * instance. If not provided, the service will choose an unused /29 block,
-     * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in an authorized network.
+     * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+     * that are reserved for this instance. Range must
+     * be unique and non-overlapping with existing subnets in an authorized
+     * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+     * address ranges associated with this private service access connection.
+     * If not provided, the service will choose an unused /29 block, for
+     * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+     * the default block size is /28.
      * </pre>
      *
      * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3230,10 +3763,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The CIDR range of internal addresses that are reserved for this
-     * instance. If not provided, the service will choose an unused /29 block,
-     * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in an authorized network.
+     * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+     * that are reserved for this instance. Range must
+     * be unique and non-overlapping with existing subnets in an authorized
+     * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+     * address ranges associated with this private service access connection.
+     * If not provided, the service will choose an unused /29 block, for
+     * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+     * the default block size is /28.
      * </pre>
      *
      * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3247,10 +3784,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The CIDR range of internal addresses that are reserved for this
-     * instance. If not provided, the service will choose an unused /29 block,
-     * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in an authorized network.
+     * Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+     * that are reserved for this instance. Range must
+     * be unique and non-overlapping with existing subnets in an authorized
+     * network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP
+     * address ranges associated with this private service access connection.
+     * If not provided, the service will choose an unused /29 block, for
+     * example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED
+     * the default block size is /28.
      * </pre>
      *
      * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3273,7 +3814,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Hostname or IP address of the exposed Redis endpoint used by
-     * clients to connect to the service.
+     *  clients to connect to the service.
      * </pre>
      *
      * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3294,7 +3835,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Hostname or IP address of the exposed Redis endpoint used by
-     * clients to connect to the service.
+     *  clients to connect to the service.
      * </pre>
      *
      * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3316,7 +3857,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Hostname or IP address of the exposed Redis endpoint used by
-     * clients to connect to the service.
+     *  clients to connect to the service.
      * </pre>
      *
      * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3336,7 +3877,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Hostname or IP address of the exposed Redis endpoint used by
-     * clients to connect to the service.
+     *  clients to connect to the service.
      * </pre>
      *
      * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3351,7 +3892,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Hostname or IP address of the exposed Redis endpoint used by
-     * clients to connect to the service.
+     *  clients to connect to the service.
      * </pre>
      *
      * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3416,11 +3957,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object currentLocationId_ = "";
     /**
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-     * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-     * change after a failover event.
+     * Output only. The current zone where the Redis primary node is located. In
+     * basic tier, this will always be the same as [location_id]. In
+     * standard tier, this can be the zone of any node in the instance.
      * </pre>
      *
      * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3440,11 +3979,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-     * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-     * change after a failover event.
+     * Output only. The current zone where the Redis primary node is located. In
+     * basic tier, this will always be the same as [location_id]. In
+     * standard tier, this can be the zone of any node in the instance.
      * </pre>
      *
      * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3465,11 +4002,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-     * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-     * change after a failover event.
+     * Output only. The current zone where the Redis primary node is located. In
+     * basic tier, this will always be the same as [location_id]. In
+     * standard tier, this can be the zone of any node in the instance.
      * </pre>
      *
      * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3488,11 +4023,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-     * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-     * change after a failover event.
+     * Output only. The current zone where the Redis primary node is located. In
+     * basic tier, this will always be the same as [location_id]. In
+     * standard tier, this can be the zone of any node in the instance.
      * </pre>
      *
      * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3506,11 +4039,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. For Basic
-     * Tier instances, this will always be the same as the [location_id][google.cloud.redis.v1beta1.Instance.location_id]
-     * provided by the user at creation time. For Standard Tier instances,
-     * this can be either [location_id][google.cloud.redis.v1beta1.Instance.location_id] or [alternative_location_id][google.cloud.redis.v1beta1.Instance.alternative_location_id] and can
-     * change after a failover event.
+     * Output only. The current zone where the Redis primary node is located. In
+     * basic tier, this will always be the same as [location_id]. In
+     * standard tier, this can be the zone of any node in the instance.
      * </pre>
      *
      * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4453,9 +4984,8 @@ private static final long serialVersionUID = 0L;
     private int connectMode_ = 0;
     /**
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4466,9 +4996,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4483,9 +5012,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4499,9 +5027,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4519,9 +5046,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>.google.cloud.redis.v1beta1.Instance.ConnectMode connect_mode = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4530,6 +5056,598 @@ private static final long serialVersionUID = 0L;
     public Builder clearConnectMode() {
       
       connectMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int replicaCount_ ;
+    /**
+     * <pre>
+     * Optional. The number of replica nodes. Valid range for standard tier
+     * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
+     * to 0.
+     * </pre>
+     *
+     * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The replicaCount.
+     */
+    @java.lang.Override
+    public int getReplicaCount() {
+      return replicaCount_;
+    }
+    /**
+     * <pre>
+     * Optional. The number of replica nodes. Valid range for standard tier
+     * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
+     * to 0.
+     * </pre>
+     *
+     * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The replicaCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaCount(int value) {
+      
+      replicaCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The number of replica nodes. Valid range for standard tier
+     * is [1-5] and defaults to 1. Valid value for basic tier is 0 and defaults
+     * to 0.
+     * </pre>
+     *
+     * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaCount() {
+      
+      replicaCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.redis.v1beta1.NodeInfo> nodes_ =
+      java.util.Collections.emptyList();
+    private void ensureNodesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        nodes_ = new java.util.ArrayList<com.google.cloud.redis.v1beta1.NodeInfo>(nodes_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.redis.v1beta1.NodeInfo, com.google.cloud.redis.v1beta1.NodeInfo.Builder, com.google.cloud.redis.v1beta1.NodeInfoOrBuilder> nodesBuilder_;
+
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.util.List<com.google.cloud.redis.v1beta1.NodeInfo> getNodesList() {
+      if (nodesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(nodes_);
+      } else {
+        return nodesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public int getNodesCount() {
+      if (nodesBuilder_ == null) {
+        return nodes_.size();
+      } else {
+        return nodesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.redis.v1beta1.NodeInfo getNodes(int index) {
+      if (nodesBuilder_ == null) {
+        return nodes_.get(index);
+      } else {
+        return nodesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setNodes(
+        int index, com.google.cloud.redis.v1beta1.NodeInfo value) {
+      if (nodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodesIsMutable();
+        nodes_.set(index, value);
+        onChanged();
+      } else {
+        nodesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setNodes(
+        int index, com.google.cloud.redis.v1beta1.NodeInfo.Builder builderForValue) {
+      if (nodesBuilder_ == null) {
+        ensureNodesIsMutable();
+        nodes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        nodesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNodes(com.google.cloud.redis.v1beta1.NodeInfo value) {
+      if (nodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodesIsMutable();
+        nodes_.add(value);
+        onChanged();
+      } else {
+        nodesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNodes(
+        int index, com.google.cloud.redis.v1beta1.NodeInfo value) {
+      if (nodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodesIsMutable();
+        nodes_.add(index, value);
+        onChanged();
+      } else {
+        nodesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNodes(
+        com.google.cloud.redis.v1beta1.NodeInfo.Builder builderForValue) {
+      if (nodesBuilder_ == null) {
+        ensureNodesIsMutable();
+        nodes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        nodesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addNodes(
+        int index, com.google.cloud.redis.v1beta1.NodeInfo.Builder builderForValue) {
+      if (nodesBuilder_ == null) {
+        ensureNodesIsMutable();
+        nodes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        nodesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder addAllNodes(
+        java.lang.Iterable<? extends com.google.cloud.redis.v1beta1.NodeInfo> values) {
+      if (nodesBuilder_ == null) {
+        ensureNodesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nodes_);
+        onChanged();
+      } else {
+        nodesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearNodes() {
+      if (nodesBuilder_ == null) {
+        nodes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        nodesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder removeNodes(int index) {
+      if (nodesBuilder_ == null) {
+        ensureNodesIsMutable();
+        nodes_.remove(index);
+        onChanged();
+      } else {
+        nodesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.redis.v1beta1.NodeInfo.Builder getNodesBuilder(
+        int index) {
+      return getNodesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.redis.v1beta1.NodeInfoOrBuilder getNodesOrBuilder(
+        int index) {
+      if (nodesBuilder_ == null) {
+        return nodes_.get(index);  } else {
+        return nodesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.util.List<? extends com.google.cloud.redis.v1beta1.NodeInfoOrBuilder> 
+         getNodesOrBuilderList() {
+      if (nodesBuilder_ != null) {
+        return nodesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(nodes_);
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.redis.v1beta1.NodeInfo.Builder addNodesBuilder() {
+      return getNodesFieldBuilder().addBuilder(
+          com.google.cloud.redis.v1beta1.NodeInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.redis.v1beta1.NodeInfo.Builder addNodesBuilder(
+        int index) {
+      return getNodesFieldBuilder().addBuilder(
+          index, com.google.cloud.redis.v1beta1.NodeInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Output only. Info per node.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.redis.v1beta1.NodeInfo nodes = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.util.List<com.google.cloud.redis.v1beta1.NodeInfo.Builder> 
+         getNodesBuilderList() {
+      return getNodesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.redis.v1beta1.NodeInfo, com.google.cloud.redis.v1beta1.NodeInfo.Builder, com.google.cloud.redis.v1beta1.NodeInfoOrBuilder> 
+        getNodesFieldBuilder() {
+      if (nodesBuilder_ == null) {
+        nodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.redis.v1beta1.NodeInfo, com.google.cloud.redis.v1beta1.NodeInfo.Builder, com.google.cloud.redis.v1beta1.NodeInfoOrBuilder>(
+                nodes_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        nodes_ = null;
+      }
+      return nodesBuilder_;
+    }
+
+    private java.lang.Object readEndpoint_ = "";
+    /**
+     * <pre>
+     * Output only. Hostname or IP address of the exposed readonly Redis
+     * endpoint. Standard tier only. Targets all healthy replica nodes in
+     * instance. Replication is asynchronous and replica nodes will exhibit some
+     * lag behind the primary. Write requests must target 'host'.
+     * </pre>
+     *
+     * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The readEndpoint.
+     */
+    public java.lang.String getReadEndpoint() {
+      java.lang.Object ref = readEndpoint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        readEndpoint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Hostname or IP address of the exposed readonly Redis
+     * endpoint. Standard tier only. Targets all healthy replica nodes in
+     * instance. Replication is asynchronous and replica nodes will exhibit some
+     * lag behind the primary. Write requests must target 'host'.
+     * </pre>
+     *
+     * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for readEndpoint.
+     */
+    public com.google.protobuf.ByteString
+        getReadEndpointBytes() {
+      java.lang.Object ref = readEndpoint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        readEndpoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Hostname or IP address of the exposed readonly Redis
+     * endpoint. Standard tier only. Targets all healthy replica nodes in
+     * instance. Replication is asynchronous and replica nodes will exhibit some
+     * lag behind the primary. Write requests must target 'host'.
+     * </pre>
+     *
+     * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The readEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadEndpoint(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      readEndpoint_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Hostname or IP address of the exposed readonly Redis
+     * endpoint. Standard tier only. Targets all healthy replica nodes in
+     * instance. Replication is asynchronous and replica nodes will exhibit some
+     * lag behind the primary. Write requests must target 'host'.
+     * </pre>
+     *
+     * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReadEndpoint() {
+      
+      readEndpoint_ = getDefaultInstance().getReadEndpoint();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Hostname or IP address of the exposed readonly Redis
+     * endpoint. Standard tier only. Targets all healthy replica nodes in
+     * instance. Replication is asynchronous and replica nodes will exhibit some
+     * lag behind the primary. Write requests must target 'host'.
+     * </pre>
+     *
+     * <code>string read_endpoint = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for readEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadEndpointBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      readEndpoint_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int readEndpointPort_ ;
+    /**
+     * <pre>
+     * Output only. The port number of the exposed readonly redis
+     * endpoint. Standard tier only. Write requests should target 'port'.
+     * </pre>
+     *
+     * <code>int32 read_endpoint_port = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The readEndpointPort.
+     */
+    @java.lang.Override
+    public int getReadEndpointPort() {
+      return readEndpointPort_;
+    }
+    /**
+     * <pre>
+     * Output only. The port number of the exposed readonly redis
+     * endpoint. Standard tier only. Write requests should target 'port'.
+     * </pre>
+     *
+     * <code>int32 read_endpoint_port = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The readEndpointPort to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadEndpointPort(int value) {
+      
+      readEndpointPort_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The port number of the exposed readonly redis
+     * endpoint. Standard tier only. Write requests should target 'port'.
+     * </pre>
+     *
+     * <code>int32 read_endpoint_port = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReadEndpointPort() {
+      
+      readEndpointPort_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int readReplicasMode_ = 0;
+    /**
+     * <pre>
+     * Optional. Read replica mode.
+     * </pre>
+     *
+     * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enum numeric value on the wire for readReplicasMode.
+     */
+    @java.lang.Override public int getReadReplicasModeValue() {
+      return readReplicasMode_;
+    }
+    /**
+     * <pre>
+     * Optional. Read replica mode.
+     * </pre>
+     *
+     * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enum numeric value on the wire for readReplicasMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadReplicasModeValue(int value) {
+      
+      readReplicasMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Read replica mode.
+     * </pre>
+     *
+     * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The readReplicasMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode getReadReplicasMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode result = com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.valueOf(readReplicasMode_);
+      return result == null ? com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Optional. Read replica mode.
+     * </pre>
+     *
+     * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The readReplicasMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadReplicasMode(com.google.cloud.redis.v1beta1.Instance.ReadReplicasMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      readReplicasMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Read replica mode.
+     * </pre>
+     *
+     * <code>.google.cloud.redis.v1beta1.Instance.ReadReplicasMode read_replicas_mode = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReadReplicasMode() {
+      
+      readReplicasMode_ = 0;
       onChanged();
       return this;
     }
