@@ -21,7 +21,8 @@
     "cloud",
     "google binaryauthorization",
     "binaryauthorization",
-    "binauthz management service v1 beta1"
+    "binauthz management service v1 beta1",
+    "system policy v1 beta1"
   ],
   "scripts": {
     "clean": "gts clean",

@@ -5,9 +5,9 @@ package com.google.cloud.binaryauthorization.v1beta1;
 
 /**
  * <pre>
- * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
- * to container image artifacts. An existing attestor cannot be modified except
- * where indicated.
+ * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
+ * artifacts. An existing attestor cannot be modified except where
+ * indicated.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Attestor}
@@ -549,9 +549,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
-   * to container image artifacts. An existing attestor cannot be modified except
-   * where indicated.
+   * An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
+   * artifacts. An existing attestor cannot be modified except where
+   * indicated.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.Attestor}

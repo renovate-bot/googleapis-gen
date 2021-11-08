@@ -164,11 +164,14 @@ export class BinauthzManagementServiceV1Beta1Client {
       attestorPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/attestors/{attestor}'
       ),
-      policyPathTemplate: new this._gaxModule.PathTemplate(
-        'projects/{project}/policy'
+      locationPolicyPathTemplate: new this._gaxModule.PathTemplate(
+        'locations/{location}/policy'
       ),
       projectPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}'
+      ),
+      projectPolicyPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/policy'
       ),
     };
 
@@ -327,23 +330,19 @@ export class BinauthzManagementServiceV1Beta1Client {
           protos.google.cloud.binaryauthorization.v1beta1.IGetPolicyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * A {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} specifies the
- * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors} that must
- * attest to a container image, before the project is allowed to deploy that
+ * A {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} specifies the {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors} that must attest to
+ * a container image, before the project is allowed to deploy that
  * image. There is at most one policy per project. All image admission
  * requests are permitted if a project has no policy.
  *
- * Gets the {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} for this
- * project. Returns a default
- * {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} if the project
- * does not have one.
+ * Gets the {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} for this project. Returns a default
+ * {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} if the project does not have one.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The resource name of the
- *   {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} to retrieve, in
- *   the format `projects/* /policy`.
+ *   Required. The resource name of the {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} to retrieve,
+ *   in the format `projects/* /policy`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -409,22 +408,18 @@ export class BinauthzManagementServiceV1Beta1Client {
           protos.google.cloud.binaryauthorization.v1beta1.IUpdatePolicyRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Creates or updates a project's
- * {@link google.cloud.binaryauthorization.v1beta1.Policy|policy}, and returns a
- * copy of the new {@link google.cloud.binaryauthorization.v1beta1.Policy|policy}.
- * A policy is always updated as a whole, to avoid race conditions with
- * concurrent policy enforcement (or management!) requests. Returns NOT_FOUND
- * if the project does not exist, INVALID_ARGUMENT if the request is
- * malformed.
+ * Creates or updates a project's {@link google.cloud.binaryauthorization.v1beta1.Policy|policy}, and returns a copy of the
+ * new {@link google.cloud.binaryauthorization.v1beta1.Policy|policy}. A policy is always updated as a whole, to avoid race
+ * conditions with concurrent policy enforcement (or management!)
+ * requests. Returns NOT_FOUND if the project does not exist, INVALID_ARGUMENT
+ * if the request is malformed.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.binaryauthorization.v1beta1.Policy} request.policy
- *   Required. A new or updated
- *   {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} value. The
- *   service will overwrite the [policy
- *   name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the
- *   resource name in the request URL, in the format `projects/* /policy`.
+ *   Required. A new or updated {@link google.cloud.binaryauthorization.v1beta1.Policy|policy} value. The service will
+ *   overwrite the {@link google.cloud.binaryauthorization.v1beta1.Policy.name|policy name} field with the resource name in
+ *   the request URL, in the format `projects/* /policy`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -490,28 +485,21 @@ export class BinauthzManagementServiceV1Beta1Client {
           protos.google.cloud.binaryauthorization.v1beta1.ICreateAttestorRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Creates an {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor},
- * and returns a copy of the new
- * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}. Returns
- * NOT_FOUND if the project does not exist, INVALID_ARGUMENT if the request is
- * malformed, ALREADY_EXISTS if the
- * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} already
- * exists.
+ * Creates an {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}, and returns a copy of the new
+ * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}. Returns NOT_FOUND if the project does not exist,
+ * INVALID_ARGUMENT if the request is malformed, ALREADY_EXISTS if the
+ * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} already exists.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The parent of this
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}.
+ *   Required. The parent of this {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}.
  * @param {string} request.attestorId
- *   Required. The
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors} ID.
+ *   Required. The {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors} ID.
  * @param {google.cloud.binaryauthorization.v1beta1.Attestor} request.attestor
- *   Required. The initial
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} value. The
- *   service will overwrite the [attestor
- *   name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
- *   the resource name, in the format `projects/* /attestors/*`.
+ *   Required. The initial {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} value. The service will
+ *   overwrite the {@link google.cloud.binaryauthorization.v1beta1.Attestor.name|attestor name} field with the resource name,
+ *   in the format `projects/* /attestors/*`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -578,16 +566,13 @@ export class BinauthzManagementServiceV1Beta1Client {
           {}|null|undefined>): void;
 /**
  * Gets an {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}.
- * Returns NOT_FOUND if the
- * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} does not
- * exist.
+ * Returns NOT_FOUND if the {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} does not exist.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The name of the
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} to retrieve,
- *   in the format `projects/* /attestors/*`.
+ *   Required. The name of the {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} to retrieve, in the format
+ *   `projects/* /attestors/*`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -654,19 +639,14 @@ export class BinauthzManagementServiceV1Beta1Client {
           {}|null|undefined>): void;
 /**
  * Updates an {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}.
- * Returns NOT_FOUND if the
- * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} does not
- * exist.
+ * Returns NOT_FOUND if the {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} does not exist.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.binaryauthorization.v1beta1.Attestor} request.attestor
- *   Required. The updated
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} value. The
- *   service will overwrite the [attestor
- *   name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
- *   the resource name in the request URL, in the format
- *   `projects/* /attestors/*`.
+ *   Required. The updated {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} value. The service will
+ *   overwrite the {@link google.cloud.binaryauthorization.v1beta1.Attestor.name|attestor name} field with the resource name
+ *   in the request URL, in the format `projects/* /attestors/*`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -732,17 +712,14 @@ export class BinauthzManagementServiceV1Beta1Client {
           protos.google.cloud.binaryauthorization.v1beta1.IDeleteAttestorRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Deletes an {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}.
- * Returns NOT_FOUND if the
- * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} does not
- * exist.
+ * Deletes an {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor}. Returns NOT_FOUND if the
+ * {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestor} does not exist.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The name of the
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors} to delete,
- *   in the format `projects/* /attestors/*`.
+ *   Required. The name of the {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors} to delete, in the format
+ *   `projects/* /attestors/*`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -817,16 +794,14 @@ export class BinauthzManagementServiceV1Beta1Client {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the project associated with the
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors}, in the
- *   format `projects/*`.
+ *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors}, in the format `projects/*`.
  * @param {number} request.pageSize
  *   Requested page size. The server may return fewer results than requested. If
  *   unspecified, the server will pick an appropriate default.
  * @param {string} request.pageToken
  *   A token identifying a page of results the server should return. Typically,
- *   this is the value of
- *   {@link google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token|ListAttestorsResponse.next_page_token}
- *   returned from the previous call to the `ListAttestors` method.
+ *   this is the value of {@link google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token|ListAttestorsResponse.next_page_token} returned
+ *   from the previous call to the `ListAttestors` method.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -882,16 +857,14 @@ export class BinauthzManagementServiceV1Beta1Client {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the project associated with the
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors}, in the
- *   format `projects/*`.
+ *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors}, in the format `projects/*`.
  * @param {number} request.pageSize
  *   Requested page size. The server may return fewer results than requested. If
  *   unspecified, the server will pick an appropriate default.
  * @param {string} request.pageToken
  *   A token identifying a page of results the server should return. Typically,
- *   this is the value of
- *   {@link google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token|ListAttestorsResponse.next_page_token}
- *   returned from the previous call to the `ListAttestors` method.
+ *   this is the value of {@link google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token|ListAttestorsResponse.next_page_token} returned
+ *   from the previous call to the `ListAttestors` method.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Stream}
@@ -935,16 +908,14 @@ export class BinauthzManagementServiceV1Beta1Client {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The resource name of the project associated with the
- *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors}, in the
- *   format `projects/*`.
+ *   {@link google.cloud.binaryauthorization.v1beta1.Attestor|attestors}, in the format `projects/*`.
  * @param {number} request.pageSize
  *   Requested page size. The server may return fewer results than requested. If
  *   unspecified, the server will pick an appropriate default.
  * @param {string} request.pageToken
  *   A token identifying a page of results the server should return. Typically,
- *   this is the value of
- *   {@link google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token|ListAttestorsResponse.next_page_token}
- *   returned from the previous call to the `ListAttestors` method.
+ *   this is the value of {@link google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse.next_page_token|ListAttestorsResponse.next_page_token} returned
+ *   from the previous call to the `ListAttestors` method.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Object}
@@ -1025,26 +996,26 @@ export class BinauthzManagementServiceV1Beta1Client {
   }
 
   /**
-   * Return a fully-qualified policy resource name string.
+   * Return a fully-qualified locationPolicy resource name string.
    *
-   * @param {string} project
+   * @param {string} location
    * @returns {string} Resource name string.
    */
-  policyPath(project:string) {
-    return this.pathTemplates.policyPathTemplate.render({
-      project: project,
+  locationPolicyPath(location:string) {
+    return this.pathTemplates.locationPolicyPathTemplate.render({
+      location: location,
     });
   }
 
   /**
-   * Parse the project from Policy resource.
+   * Parse the location from LocationPolicy resource.
    *
-   * @param {string} policyName
-   *   A fully-qualified path representing Policy resource.
-   * @returns {string} A string representing the project.
+   * @param {string} locationPolicyName
+   *   A fully-qualified path representing location_policy resource.
+   * @returns {string} A string representing the location.
    */
-  matchProjectFromPolicyName(policyName: string) {
-    return this.pathTemplates.policyPathTemplate.match(policyName).project;
+  matchLocationFromLocationPolicyName(locationPolicyName: string) {
+    return this.pathTemplates.locationPolicyPathTemplate.match(locationPolicyName).location;
   }
 
   /**
@@ -1068,6 +1039,29 @@ export class BinauthzManagementServiceV1Beta1Client {
    */
   matchProjectFromProjectName(projectName: string) {
     return this.pathTemplates.projectPathTemplate.match(projectName).project;
+  }
+
+  /**
+   * Return a fully-qualified projectPolicy resource name string.
+   *
+   * @param {string} project
+   * @returns {string} Resource name string.
+   */
+  projectPolicyPath(project:string) {
+    return this.pathTemplates.projectPolicyPathTemplate.render({
+      project: project,
+    });
+  }
+
+  /**
+   * Parse the project from ProjectPolicy resource.
+   *
+   * @param {string} projectPolicyName
+   *   A fully-qualified path representing project_policy resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromProjectPolicyName(projectPolicyName: string) {
+    return this.pathTemplates.projectPolicyPathTemplate.match(projectPolicyName).project;
   }
 
   /**

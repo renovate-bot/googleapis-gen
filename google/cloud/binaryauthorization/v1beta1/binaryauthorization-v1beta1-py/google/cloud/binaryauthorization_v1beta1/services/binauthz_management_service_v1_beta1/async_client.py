@@ -199,8 +199,9 @@ class BinauthzManagementServiceV1Beta1AsyncClient:
 
         Returns:
             google.cloud.binaryauthorization_v1beta1.types.Policy:
-                A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for container
-                   image binary authorization.
+                A
+                [policy][google.cloud.binaryauthorization.v1beta1.Policy]
+                for Binary Authorization.
 
         """
         # Create or coerce a protobuf request object.
@@ -292,8 +293,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Returns:
             google.cloud.binaryauthorization_v1beta1.types.Policy:
-                A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for container
-                   image binary authorization.
+                A
+                [policy][google.cloud.binaryauthorization.v1beta1.Policy]
+                for Binary Authorization.
 
         """
         # Create or coerce a protobuf request object.
@@ -403,9 +405,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Returns:
             google.cloud.binaryauthorization_v1beta1.types.Attestor:
-                An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
-                   to container image artifacts. An existing attestor
-                   cannot be modified except where indicated.
+                An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
+                   artifacts. An existing attestor cannot be modified
+                   except where indicated.
 
         """
         # Create or coerce a protobuf request object.
@@ -488,9 +490,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Returns:
             google.cloud.binaryauthorization_v1beta1.types.Attestor:
-                An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
-                   to container image artifacts. An existing attestor
-                   cannot be modified except where indicated.
+                An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
+                   artifacts. An existing attestor cannot be modified
+                   except where indicated.
 
         """
         # Create or coerce a protobuf request object.
@@ -579,9 +581,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Returns:
             google.cloud.binaryauthorization_v1beta1.types.Attestor:
-                An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests
-                   to container image artifacts. An existing attestor
-                   cannot be modified except where indicated.
+                An [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] that attests to container image
+                   artifacts. An existing attestor cannot be modified
+                   except where indicated.
 
         """
         # Create or coerce a protobuf request object.

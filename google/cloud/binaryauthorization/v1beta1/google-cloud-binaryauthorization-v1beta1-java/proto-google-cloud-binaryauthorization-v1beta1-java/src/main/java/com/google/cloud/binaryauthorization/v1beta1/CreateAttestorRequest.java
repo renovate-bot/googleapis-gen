@@ -115,8 +115,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The parent of this
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+   * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -137,8 +136,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The parent of this
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+   * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -163,8 +161,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object attestorId_;
   /**
    * <pre>
-   * Required. The
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+   * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
    * </pre>
    *
    * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -185,8 +182,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+   * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
    * </pre>
    *
    * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -211,11 +207,9 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.binaryauthorization.v1beta1.Attestor attestor_;
   /**
    * <pre>
-   * Required. The initial
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -227,11 +221,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The initial
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -243,11 +235,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The initial
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -613,8 +603,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The parent of this
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -634,8 +623,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent of this
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -656,8 +644,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent of this
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -676,8 +663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent of this
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -691,8 +677,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent of this
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -714,8 +699,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object attestorId_ = "";
     /**
      * <pre>
-     * Required. The
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+     * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
      * </pre>
      *
      * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -735,8 +719,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+     * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
      * </pre>
      *
      * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -757,8 +740,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+     * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
      * </pre>
      *
      * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -777,8 +759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+     * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
      * </pre>
      *
      * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -792,8 +773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+     * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
      * </pre>
      *
      * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -817,11 +797,9 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.binaryauthorization.v1beta1.Attestor, com.google.cloud.binaryauthorization.v1beta1.Attestor.Builder, com.google.cloud.binaryauthorization.v1beta1.AttestorOrBuilder> attestorBuilder_;
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -832,11 +810,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -851,11 +827,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -875,11 +849,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -897,11 +869,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -923,11 +893,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -945,11 +913,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -961,11 +927,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -980,11 +944,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The initial
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>

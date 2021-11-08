@@ -16,6 +16,8 @@
 
 from google.cloud.binaryauthorization_v1beta1.services.binauthz_management_service_v1_beta1.client import BinauthzManagementServiceV1Beta1Client
 from google.cloud.binaryauthorization_v1beta1.services.binauthz_management_service_v1_beta1.async_client import BinauthzManagementServiceV1Beta1AsyncClient
+from google.cloud.binaryauthorization_v1beta1.services.system_policy_v1_beta1.client import SystemPolicyV1Beta1Client
+from google.cloud.binaryauthorization_v1beta1.services.system_policy_v1_beta1.async_client import SystemPolicyV1Beta1AsyncClient
 
 from google.cloud.binaryauthorization_v1beta1.types.continuous_validation_logging import ContinuousValidationEvent
 from google.cloud.binaryauthorization_v1beta1.types.resources import AdmissionRule
@@ -29,6 +31,7 @@ from google.cloud.binaryauthorization_v1beta1.types.service import CreateAttesto
 from google.cloud.binaryauthorization_v1beta1.types.service import DeleteAttestorRequest
 from google.cloud.binaryauthorization_v1beta1.types.service import GetAttestorRequest
 from google.cloud.binaryauthorization_v1beta1.types.service import GetPolicyRequest
+from google.cloud.binaryauthorization_v1beta1.types.service import GetSystemPolicyRequest
 from google.cloud.binaryauthorization_v1beta1.types.service import ListAttestorsRequest
 from google.cloud.binaryauthorization_v1beta1.types.service import ListAttestorsResponse
 from google.cloud.binaryauthorization_v1beta1.types.service import UpdateAttestorRequest
@@ -36,6 +39,8 @@ from google.cloud.binaryauthorization_v1beta1.types.service import UpdatePolicyR
 
 __all__ = ('BinauthzManagementServiceV1Beta1Client',
     'BinauthzManagementServiceV1Beta1AsyncClient',
+    'SystemPolicyV1Beta1Client',
+    'SystemPolicyV1Beta1AsyncClient',
     'ContinuousValidationEvent',
     'AdmissionRule',
     'AdmissionWhitelistPattern',
@@ -48,6 +53,7 @@ __all__ = ('BinauthzManagementServiceV1Beta1Client',
     'DeleteAttestorRequest',
     'GetAttestorRequest',
     'GetPolicyRequest',
+    'GetSystemPolicyRequest',
     'ListAttestorsRequest',
     'ListAttestorsResponse',
     'UpdateAttestorRequest',

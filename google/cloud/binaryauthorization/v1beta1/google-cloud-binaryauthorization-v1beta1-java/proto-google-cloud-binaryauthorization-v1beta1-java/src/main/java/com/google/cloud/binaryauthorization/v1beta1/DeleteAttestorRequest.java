@@ -95,9 +95,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The name of the
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-   * in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+   * `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -118,9 +117,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-   * in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+   * `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -450,9 +448,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The name of the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -472,9 +469,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -495,9 +491,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -516,9 +511,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -532,9 +526,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
+     * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

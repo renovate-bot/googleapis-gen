@@ -101,12 +101,9 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.binaryauthorization.v1beta1.Attestor attestor_;
   /**
    * <pre>
-   * Required. The updated
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name in the request URL, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+   * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -118,12 +115,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The updated
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name in the request URL, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+   * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -135,12 +129,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The updated
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name in the request URL, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+   * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -474,12 +465,9 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.binaryauthorization.v1beta1.Attestor, com.google.cloud.binaryauthorization.v1beta1.Attestor.Builder, com.google.cloud.binaryauthorization.v1beta1.AttestorOrBuilder> attestorBuilder_;
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -490,12 +478,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -510,12 +495,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -535,12 +517,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -558,12 +537,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -585,12 +561,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -608,12 +581,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -625,12 +595,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -645,12 +612,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated
-     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-     * service will overwrite the [attestor
-     * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-     * the resource name in the request URL, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+     * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name
+     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 1 [(.google.api.field_behavior) = REQUIRED];</code>

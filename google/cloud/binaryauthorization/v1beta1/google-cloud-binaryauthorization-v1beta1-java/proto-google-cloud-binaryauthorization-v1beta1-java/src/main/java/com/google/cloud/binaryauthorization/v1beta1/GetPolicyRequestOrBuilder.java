@@ -9,9 +9,8 @@ public interface GetPolicyRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the
-   * [policy][google.cloud.binaryauthorization.v1beta1.Policy] to retrieve, in
-   * the format `projects/&#42;&#47;policy`.
+   * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1beta1.Policy] to retrieve,
+   * in the format `projects/&#42;&#47;policy`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +19,8 @@ public interface GetPolicyRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The resource name of the
-   * [policy][google.cloud.binaryauthorization.v1beta1.Policy] to retrieve, in
-   * the format `projects/&#42;&#47;policy`.
+   * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1beta1.Policy] to retrieve,
+   * in the format `projects/&#42;&#47;policy`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

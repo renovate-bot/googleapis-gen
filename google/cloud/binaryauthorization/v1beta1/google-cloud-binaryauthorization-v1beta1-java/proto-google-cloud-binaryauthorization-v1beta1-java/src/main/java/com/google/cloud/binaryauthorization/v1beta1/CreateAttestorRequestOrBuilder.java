@@ -9,8 +9,7 @@ public interface CreateAttestorRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The parent of this
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+   * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +18,7 @@ public interface CreateAttestorRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The parent of this
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
+   * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -31,8 +29,7 @@ public interface CreateAttestorRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+   * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
    * </pre>
    *
    * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,8 +38,7 @@ public interface CreateAttestorRequestOrBuilder extends
   java.lang.String getAttestorId();
   /**
    * <pre>
-   * Required. The
-   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
+   * Required. The [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] ID.
    * </pre>
    *
    * <code>string attestor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -53,11 +49,9 @@ public interface CreateAttestorRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The initial
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -66,11 +60,9 @@ public interface CreateAttestorRequestOrBuilder extends
   boolean hasAttestor();
   /**
    * <pre>
-   * Required. The initial
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -79,11 +71,9 @@ public interface CreateAttestorRequestOrBuilder extends
   com.google.cloud.binaryauthorization.v1beta1.Attestor getAttestor();
   /**
    * <pre>
-   * Required. The initial
-   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The
-   * service will overwrite the [attestor
-   * name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with
-   * the resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The initial [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] value. The service will
+   * overwrite the [attestor name][google.cloud.binaryauthorization.v1beta1.Attestor.name] field with the resource name,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>

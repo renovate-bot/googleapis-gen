@@ -5,9 +5,8 @@ package com.google.cloud.binaryauthorization.v1beta1;
 
 /**
  * <pre>
- * An [user owned drydock
- * note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote]
- * references a Drydock ATTESTATION_AUTHORITY Note created by the user.
+ * An [user owned drydock note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote] references a Drydock
+ * ATTESTATION_AUTHORITY Note created by the user.
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote}
@@ -499,9 +498,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An [user owned drydock
-   * note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote]
-   * references a Drydock ATTESTATION_AUTHORITY Note created by the user.
+   * An [user owned drydock note][google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote] references a Drydock
+   * ATTESTATION_AUTHORITY Note created by the user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote}

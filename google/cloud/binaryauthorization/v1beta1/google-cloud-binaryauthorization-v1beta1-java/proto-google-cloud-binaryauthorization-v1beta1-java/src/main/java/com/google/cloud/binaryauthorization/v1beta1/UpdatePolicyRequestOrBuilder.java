@@ -9,11 +9,9 @@ public interface UpdatePolicyRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. A new or updated
-   * [policy][google.cloud.binaryauthorization.v1beta1.Policy] value. The
-   * service will overwrite the [policy
-   * name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the
-   * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
+   * Required. A new or updated [policy][google.cloud.binaryauthorization.v1beta1.Policy] value. The service will
+   * overwrite the [policy name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the resource name in
+   * the request URL, in the format `projects/&#42;&#47;policy`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -22,11 +20,9 @@ public interface UpdatePolicyRequestOrBuilder extends
   boolean hasPolicy();
   /**
    * <pre>
-   * Required. A new or updated
-   * [policy][google.cloud.binaryauthorization.v1beta1.Policy] value. The
-   * service will overwrite the [policy
-   * name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the
-   * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
+   * Required. A new or updated [policy][google.cloud.binaryauthorization.v1beta1.Policy] value. The service will
+   * overwrite the [policy name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the resource name in
+   * the request URL, in the format `projects/&#42;&#47;policy`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -35,11 +31,9 @@ public interface UpdatePolicyRequestOrBuilder extends
   com.google.cloud.binaryauthorization.v1beta1.Policy getPolicy();
   /**
    * <pre>
-   * Required. A new or updated
-   * [policy][google.cloud.binaryauthorization.v1beta1.Policy] value. The
-   * service will overwrite the [policy
-   * name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the
-   * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
+   * Required. A new or updated [policy][google.cloud.binaryauthorization.v1beta1.Policy] value. The service will
+   * overwrite the [policy name][google.cloud.binaryauthorization.v1beta1.Policy.name] field with the resource name in
+   * the request URL, in the format `projects/&#42;&#47;policy`.
    * </pre>
    *
    * <code>.google.cloud.binaryauthorization.v1beta1.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];</code>

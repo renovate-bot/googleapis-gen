@@ -16,10 +16,13 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {BinauthzManagementServiceV1Beta1Client} from '@google-cloud/binary-authorization';
+import {BinauthzManagementServiceV1Beta1Client, SystemPolicyV1Beta1Client} from '@google-cloud/binary-authorization';
 
 // check that the client class type name can be used
 function doStuffWithBinauthzManagementServiceV1Beta1Client(client: BinauthzManagementServiceV1Beta1Client) {
+  client.close();
+}
+function doStuffWithSystemPolicyV1Beta1Client(client: SystemPolicyV1Beta1Client) {
   client.close();
 }
 
@@ -27,6 +30,9 @@ function main() {
   // check that the client instance can be created
   const binauthzManagementServiceV1Beta1Client = new BinauthzManagementServiceV1Beta1Client();
   doStuffWithBinauthzManagementServiceV1Beta1Client(binauthzManagementServiceV1Beta1Client);
+  // check that the client instance can be created
+  const systemPolicyV1Beta1Client = new SystemPolicyV1Beta1Client();
+  doStuffWithSystemPolicyV1Beta1Client(systemPolicyV1Beta1Client);
 }
 
 main();

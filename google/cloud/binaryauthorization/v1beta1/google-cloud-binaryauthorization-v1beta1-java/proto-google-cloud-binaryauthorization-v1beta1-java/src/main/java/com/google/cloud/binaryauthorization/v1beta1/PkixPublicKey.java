@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>SIGNATURE_ALGORITHM_UNSPECIFIED = 0;</code>
      */
-    SIGNATURE_ALGORITHM_UNSPECIFIED(0),
+    SIGNATURE_ALGORITHM_UNSPECIFIED(0, 0),
     /**
      * <pre>
      * RSASSA-PSS 2048 bit key with a SHA256 digest.
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_PSS_2048_SHA256 = 1;</code>
      */
-    RSA_PSS_2048_SHA256(1),
+    RSA_PSS_2048_SHA256(1, 1),
     /**
      * <pre>
      * RSASSA-PSS 3072 bit key with a SHA256 digest.
@@ -138,7 +138,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_PSS_3072_SHA256 = 2;</code>
      */
-    RSA_PSS_3072_SHA256(2),
+    RSA_PSS_3072_SHA256(2, 2),
     /**
      * <pre>
      * RSASSA-PSS 4096 bit key with a SHA256 digest.
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_PSS_4096_SHA256 = 3;</code>
      */
-    RSA_PSS_4096_SHA256(3),
+    RSA_PSS_4096_SHA256(3, 3),
     /**
      * <pre>
      * RSASSA-PSS 4096 bit key with a SHA512 digest.
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_PSS_4096_SHA512 = 4;</code>
      */
-    RSA_PSS_4096_SHA512(4),
+    RSA_PSS_4096_SHA512(4, 4),
     /**
      * <pre>
      * RSASSA-PKCS1-v1_5 with a 2048 bit key and a SHA256 digest.
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
      */
-    RSA_SIGN_PKCS1_2048_SHA256(5),
+    RSA_SIGN_PKCS1_2048_SHA256(5, 5),
     /**
      * <pre>
      * RSASSA-PKCS1-v1_5 with a 3072 bit key and a SHA256 digest.
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
      */
-    RSA_SIGN_PKCS1_3072_SHA256(6),
+    RSA_SIGN_PKCS1_3072_SHA256(6, 6),
     /**
      * <pre>
      * RSASSA-PKCS1-v1_5 with a 4096 bit key and a SHA256 digest.
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
      */
-    RSA_SIGN_PKCS1_4096_SHA256(7),
+    RSA_SIGN_PKCS1_4096_SHA256(7, 7),
     /**
      * <pre>
      * RSASSA-PKCS1-v1_5 with a 4096 bit key and a SHA512 digest.
@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>RSA_SIGN_PKCS1_4096_SHA512 = 8;</code>
      */
-    RSA_SIGN_PKCS1_4096_SHA512(8),
+    RSA_SIGN_PKCS1_4096_SHA512(8, 8),
     /**
      * <pre>
      * ECDSA on the NIST P-256 curve with a SHA256 digest.
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>ECDSA_P256_SHA256 = 9;</code>
      */
-    ECDSA_P256_SHA256(9),
+    ECDSA_P256_SHA256(9, 9),
     /**
      * <pre>
      * ECDSA on the NIST P-384 curve with a SHA384 digest.
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>ECDSA_P384_SHA384 = 10;</code>
      */
-    ECDSA_P384_SHA384(10),
+    ECDSA_P384_SHA384(11, 10),
     /**
      * <pre>
      * ECDSA on the NIST P-521 curve with a SHA512 digest.
@@ -210,10 +210,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>ECDSA_P521_SHA512 = 11;</code>
      */
-    ECDSA_P521_SHA512(11),
-    UNRECOGNIZED(-1),
+    ECDSA_P521_SHA512(13, 11),
+    UNRECOGNIZED(-1, -1),
     ;
 
+    /**
+     * <pre>
+     * ECDSA on the NIST P-256 curve with a SHA256 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P256_SHA256 = 9;</code>
+     */
+    public static final SignatureAlgorithm EC_SIGN_P256_SHA256 = ECDSA_P256_SHA256;
+    /**
+     * <pre>
+     * ECDSA on the NIST P-384 curve with a SHA384 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P384_SHA384 = 10;</code>
+     */
+    public static final SignatureAlgorithm EC_SIGN_P384_SHA384 = ECDSA_P384_SHA384;
+    /**
+     * <pre>
+     * ECDSA on the NIST P-521 curve with a SHA512 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P521_SHA512 = 11;</code>
+     */
+    public static final SignatureAlgorithm EC_SIGN_P521_SHA512 = ECDSA_P521_SHA512;
     /**
      * <pre>
      * Not specified.
@@ -296,6 +320,14 @@ private static final long serialVersionUID = 0L;
     public static final int ECDSA_P256_SHA256_VALUE = 9;
     /**
      * <pre>
+     * ECDSA on the NIST P-256 curve with a SHA256 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P256_SHA256 = 9;</code>
+     */
+    public static final int EC_SIGN_P256_SHA256_VALUE = 9;
+    /**
+     * <pre>
      * ECDSA on the NIST P-384 curve with a SHA384 digest.
      * </pre>
      *
@@ -304,16 +336,32 @@ private static final long serialVersionUID = 0L;
     public static final int ECDSA_P384_SHA384_VALUE = 10;
     /**
      * <pre>
+     * ECDSA on the NIST P-384 curve with a SHA384 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P384_SHA384 = 10;</code>
+     */
+    public static final int EC_SIGN_P384_SHA384_VALUE = 10;
+    /**
+     * <pre>
      * ECDSA on the NIST P-521 curve with a SHA512 digest.
      * </pre>
      *
      * <code>ECDSA_P521_SHA512 = 11;</code>
      */
     public static final int ECDSA_P521_SHA512_VALUE = 11;
+    /**
+     * <pre>
+     * ECDSA on the NIST P-521 curve with a SHA512 digest.
+     * </pre>
+     *
+     * <code>EC_SIGN_P521_SHA512 = 11;</code>
+     */
+    public static final int EC_SIGN_P521_SHA512_VALUE = 11;
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
@@ -366,11 +414,11 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return getDescriptor().getValues().get(index);
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
@@ -381,8 +429,12 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final SignatureAlgorithm[] VALUES = values();
-
+    private static final SignatureAlgorithm[] VALUES = getStaticValuesArray();
+    private static SignatureAlgorithm[] getStaticValuesArray() {
+      return new SignatureAlgorithm[] {
+        SIGNATURE_ALGORITHM_UNSPECIFIED, RSA_PSS_2048_SHA256, RSA_PSS_3072_SHA256, RSA_PSS_4096_SHA256, RSA_PSS_4096_SHA512, RSA_SIGN_PKCS1_2048_SHA256, RSA_SIGN_PKCS1_3072_SHA256, RSA_SIGN_PKCS1_4096_SHA256, RSA_SIGN_PKCS1_4096_SHA512, ECDSA_P256_SHA256, EC_SIGN_P256_SHA256, ECDSA_P384_SHA384, EC_SIGN_P384_SHA384, ECDSA_P521_SHA512, EC_SIGN_P521_SHA512, 
+      };
+    }
     public static SignatureAlgorithm valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -395,9 +447,11 @@ private static final long serialVersionUID = 0L;
       return VALUES[desc.getIndex()];
     }
 
+    private final int index;
     private final int value;
 
-    private SignatureAlgorithm(int value) {
+    private SignatureAlgorithm(int index, int value) {
+      this.index = index;
       this.value = value;
     }
 
