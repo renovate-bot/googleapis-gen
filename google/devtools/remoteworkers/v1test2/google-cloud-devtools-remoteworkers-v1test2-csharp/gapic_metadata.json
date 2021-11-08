@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.devtools.remoteworkers.v1test2",
+  "libraryPackage": "Google.DevTools.RemoteWorkers.V1Test2",
+  "services": {
+    "Bots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BotsClient",
+          "rpcs": {
+            "CreateBotSession": {
+              "methods": [
+                "CreateBotSession",
+                "CreateBotSessionAsync"
+              ]
+            },
+            "UpdateBotSession": {
+              "methods": [
+                "UpdateBotSession",
+                "UpdateBotSessionAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

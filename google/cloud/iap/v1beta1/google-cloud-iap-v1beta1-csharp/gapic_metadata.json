@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.iap.v1beta1",
+  "libraryPackage": "Google.Cloud.Iap.V1Beta1",
+  "services": {
+    "IdentityAwareProxyAdminV1Beta1": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityAwareProxyAdminV1Beta1Client",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": [
+                "GetIamPolicy",
+                "GetIamPolicyAsync"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "SetIamPolicy",
+                "SetIamPolicyAsync"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "TestIamPermissions",
+                "TestIamPermissionsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

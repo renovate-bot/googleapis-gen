@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.home.graph.v1",
+  "libraryPackage": "Google.Home.Graph.V1",
+  "services": {
+    "HomeGraphApiService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HomeGraphApiServiceClient",
+          "rpcs": {
+            "DeleteAgentUser": {
+              "methods": [
+                "DeleteAgentUser",
+                "DeleteAgentUserAsync"
+              ]
+            },
+            "Query": {
+              "methods": [
+                "Query",
+                "QueryAsync"
+              ]
+            },
+            "ReportStateAndNotification": {
+              "methods": [
+                "ReportStateAndNotification",
+                "ReportStateAndNotificationAsync"
+              ]
+            },
+            "RequestSyncDevices": {
+              "methods": [
+                "RequestSyncDevices",
+                "RequestSyncDevicesAsync"
+              ]
+            },
+            "Sync": {
+              "methods": [
+                "Sync",
+                "SyncAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

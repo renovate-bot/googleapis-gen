@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.bigquery.storage.v1beta1",
+  "libraryPackage": "Google.Cloud.Bigquery.Storage.V1Beta1",
+  "services": {
+    "BigQueryStorage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BigQueryStorageClient",
+          "rpcs": {
+            "BatchCreateReadSessionStreams": {
+              "methods": [
+                "BatchCreateReadSessionStreams",
+                "BatchCreateReadSessionStreamsAsync"
+              ]
+            },
+            "CreateReadSession": {
+              "methods": [
+                "CreateReadSession",
+                "CreateReadSessionAsync"
+              ]
+            },
+            "FinalizeStream": {
+              "methods": [
+                "FinalizeStream",
+                "FinalizeStreamAsync"
+              ]
+            },
+            "ReadRows": {
+              "methods": [
+                "ReadRows",
+                "ReadRowsAsync"
+              ]
+            },
+            "SplitReadStream": {
+              "methods": [
+                "SplitReadStream",
+                "SplitReadStreamAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

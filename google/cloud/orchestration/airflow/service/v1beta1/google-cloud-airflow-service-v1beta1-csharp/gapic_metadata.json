@@ -1,0 +1,75 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.orchestration.airflow.service.v1beta1",
+  "libraryPackage": "Google.Cloud.Orchestration.Airflow.Service.V1Beta1",
+  "services": {
+    "Environments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EnvironmentsClient",
+          "rpcs": {
+            "CheckUpgrade": {
+              "methods": [
+                "CheckUpgrade",
+                "CheckUpgradeAsync"
+              ]
+            },
+            "CreateEnvironment": {
+              "methods": [
+                "CreateEnvironment",
+                "CreateEnvironmentAsync"
+              ]
+            },
+            "DeleteEnvironment": {
+              "methods": [
+                "DeleteEnvironment",
+                "DeleteEnvironmentAsync"
+              ]
+            },
+            "GetEnvironment": {
+              "methods": [
+                "GetEnvironment",
+                "GetEnvironmentAsync"
+              ]
+            },
+            "ListEnvironments": {
+              "methods": [
+                "ListEnvironments",
+                "ListEnvironmentsAsync"
+              ]
+            },
+            "RestartWebServer": {
+              "methods": [
+                "RestartWebServer",
+                "RestartWebServerAsync"
+              ]
+            },
+            "UpdateEnvironment": {
+              "methods": [
+                "UpdateEnvironment",
+                "UpdateEnvironmentAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ImageVersions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageVersionsClient",
+          "rpcs": {
+            "ListImageVersions": {
+              "methods": [
+                "ListImageVersions",
+                "ListImageVersionsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

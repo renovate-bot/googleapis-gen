@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.identitytoolkit.v2",
+  "libraryPackage": "Google.Cloud.IdentityToolkit.V2",
+  "services": {
+    "AccountManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountManagementServiceClient",
+          "rpcs": {
+            "FinalizeMfaEnrollment": {
+              "methods": [
+                "FinalizeMfaEnrollment",
+                "FinalizeMfaEnrollmentAsync"
+              ]
+            },
+            "StartMfaEnrollment": {
+              "methods": [
+                "StartMfaEnrollment",
+                "StartMfaEnrollmentAsync"
+              ]
+            },
+            "WithdrawMfa": {
+              "methods": [
+                "WithdrawMfa",
+                "WithdrawMfaAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AuthenticationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuthenticationServiceClient",
+          "rpcs": {
+            "FinalizeMfaSignIn": {
+              "methods": [
+                "FinalizeMfaSignIn",
+                "FinalizeMfaSignInAsync"
+              ]
+            },
+            "StartMfaSignIn": {
+              "methods": [
+                "StartMfaSignIn",
+                "StartMfaSignInAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

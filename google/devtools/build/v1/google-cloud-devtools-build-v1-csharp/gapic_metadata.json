@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.devtools.build.v1",
+  "libraryPackage": "Google.Devtools.Build.V1",
+  "services": {
+    "PublishBuildEvent": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PublishBuildEventClient",
+          "rpcs": {
+            "PublishBuildToolEventStream": {
+              "methods": [
+                "PublishBuildToolEventStream",
+                "PublishBuildToolEventStreamAsync"
+              ]
+            },
+            "PublishLifecycleEvent": {
+              "methods": [
+                "PublishLifecycleEvent",
+                "PublishLifecycleEventAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.gkehub.v1alpha",
+  "libraryPackage": "Google.Cloud.GkeHub.V1Alpha",
+  "services": {
+    "GkeHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GkeHubClient",
+          "rpcs": {
+            "CreateFeature": {
+              "methods": [
+                "CreateFeature",
+                "CreateFeatureAsync"
+              ]
+            },
+            "DeleteFeature": {
+              "methods": [
+                "DeleteFeature",
+                "DeleteFeatureAsync"
+              ]
+            },
+            "GetFeature": {
+              "methods": [
+                "GetFeature",
+                "GetFeatureAsync"
+              ]
+            },
+            "ListFeatures": {
+              "methods": [
+                "ListFeatures",
+                "ListFeaturesAsync"
+              ]
+            },
+            "UpdateFeature": {
+              "methods": [
+                "UpdateFeature",
+                "UpdateFeatureAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.streetview.publish.v1",
+  "libraryPackage": "Google.Streetview.Publish.V1",
+  "services": {
+    "StreetViewPublishService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StreetViewPublishServiceClient",
+          "rpcs": {
+            "BatchDeletePhotos": {
+              "methods": [
+                "BatchDeletePhotos",
+                "BatchDeletePhotosAsync"
+              ]
+            },
+            "BatchGetPhotos": {
+              "methods": [
+                "BatchGetPhotos",
+                "BatchGetPhotosAsync"
+              ]
+            },
+            "BatchUpdatePhotos": {
+              "methods": [
+                "BatchUpdatePhotos",
+                "BatchUpdatePhotosAsync"
+              ]
+            },
+            "CreatePhoto": {
+              "methods": [
+                "CreatePhoto",
+                "CreatePhotoAsync"
+              ]
+            },
+            "DeletePhoto": {
+              "methods": [
+                "DeletePhoto",
+                "DeletePhotoAsync"
+              ]
+            },
+            "GetPhoto": {
+              "methods": [
+                "GetPhoto",
+                "GetPhotoAsync"
+              ]
+            },
+            "ListPhotos": {
+              "methods": [
+                "ListPhotos",
+                "ListPhotosAsync"
+              ]
+            },
+            "StartUpload": {
+              "methods": [
+                "StartUpload",
+                "StartUploadAsync"
+              ]
+            },
+            "UpdatePhoto": {
+              "methods": [
+                "UpdatePhoto",
+                "UpdatePhotoAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

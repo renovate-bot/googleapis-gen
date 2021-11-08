@@ -1,0 +1,126 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.securitycenter.v1beta1",
+  "libraryPackage": "Google.Cloud.Securitycenter.V1Beta1",
+  "services": {
+    "SecurityCenter": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecurityCenterClient",
+          "rpcs": {
+            "CreateFinding": {
+              "methods": [
+                "CreateFinding",
+                "CreateFindingAsync"
+              ]
+            },
+            "CreateSource": {
+              "methods": [
+                "CreateSource",
+                "CreateSourceAsync"
+              ]
+            },
+            "GetIamPolicy": {
+              "methods": [
+                "GetIamPolicy",
+                "GetIamPolicyAsync"
+              ]
+            },
+            "GetOrganizationSettings": {
+              "methods": [
+                "GetOrganizationSettings",
+                "GetOrganizationSettingsAsync"
+              ]
+            },
+            "GetSource": {
+              "methods": [
+                "GetSource",
+                "GetSourceAsync"
+              ]
+            },
+            "GroupAssets": {
+              "methods": [
+                "GroupAssets",
+                "GroupAssetsAsync"
+              ]
+            },
+            "GroupFindings": {
+              "methods": [
+                "GroupFindings",
+                "GroupFindingsAsync"
+              ]
+            },
+            "ListAssets": {
+              "methods": [
+                "ListAssets",
+                "ListAssetsAsync"
+              ]
+            },
+            "ListFindings": {
+              "methods": [
+                "ListFindings",
+                "ListFindingsAsync"
+              ]
+            },
+            "ListSources": {
+              "methods": [
+                "ListSources",
+                "ListSourcesAsync"
+              ]
+            },
+            "RunAssetDiscovery": {
+              "methods": [
+                "RunAssetDiscovery",
+                "RunAssetDiscoveryAsync"
+              ]
+            },
+            "SetFindingState": {
+              "methods": [
+                "SetFindingState",
+                "SetFindingStateAsync"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "SetIamPolicy",
+                "SetIamPolicyAsync"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "TestIamPermissions",
+                "TestIamPermissionsAsync"
+              ]
+            },
+            "UpdateFinding": {
+              "methods": [
+                "UpdateFinding",
+                "UpdateFindingAsync"
+              ]
+            },
+            "UpdateOrganizationSettings": {
+              "methods": [
+                "UpdateOrganizationSettings",
+                "UpdateOrganizationSettingsAsync"
+              ]
+            },
+            "UpdateSecurityMarks": {
+              "methods": [
+                "UpdateSecurityMarks",
+                "UpdateSecurityMarksAsync"
+              ]
+            },
+            "UpdateSource": {
+              "methods": [
+                "UpdateSource",
+                "UpdateSourceAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

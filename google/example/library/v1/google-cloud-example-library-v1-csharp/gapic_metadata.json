@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.example.library.v1",
+  "libraryPackage": "Google.Example.Library.V1",
+  "services": {
+    "LibraryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LibraryServiceClient",
+          "rpcs": {
+            "CreateBook": {
+              "methods": [
+                "CreateBook",
+                "CreateBookAsync"
+              ]
+            },
+            "CreateShelf": {
+              "methods": [
+                "CreateShelf",
+                "CreateShelfAsync"
+              ]
+            },
+            "DeleteBook": {
+              "methods": [
+                "DeleteBook",
+                "DeleteBookAsync"
+              ]
+            },
+            "DeleteShelf": {
+              "methods": [
+                "DeleteShelf",
+                "DeleteShelfAsync"
+              ]
+            },
+            "GetBook": {
+              "methods": [
+                "GetBook",
+                "GetBookAsync"
+              ]
+            },
+            "GetShelf": {
+              "methods": [
+                "GetShelf",
+                "GetShelfAsync"
+              ]
+            },
+            "ListBooks": {
+              "methods": [
+                "ListBooks",
+                "ListBooksAsync"
+              ]
+            },
+            "ListShelves": {
+              "methods": [
+                "ListShelves",
+                "ListShelvesAsync"
+              ]
+            },
+            "MergeShelves": {
+              "methods": [
+                "MergeShelves",
+                "MergeShelvesAsync"
+              ]
+            },
+            "MoveBook": {
+              "methods": [
+                "MoveBook",
+                "MoveBookAsync"
+              ]
+            },
+            "UpdateBook": {
+              "methods": [
+                "UpdateBook",
+                "UpdateBookAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

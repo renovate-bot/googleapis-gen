@@ -1,0 +1,132 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.api.serviceusage.v1beta1",
+  "libraryPackage": "Google.Api.ServiceUsage.V1Beta1",
+  "services": {
+    "ServiceUsage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceUsageClient",
+          "rpcs": {
+            "BatchEnableServices": {
+              "methods": [
+                "BatchEnableServices",
+                "BatchEnableServicesAsync"
+              ]
+            },
+            "CreateAdminOverride": {
+              "methods": [
+                "CreateAdminOverride",
+                "CreateAdminOverrideAsync"
+              ]
+            },
+            "CreateConsumerOverride": {
+              "methods": [
+                "CreateConsumerOverride",
+                "CreateConsumerOverrideAsync"
+              ]
+            },
+            "DeleteAdminOverride": {
+              "methods": [
+                "DeleteAdminOverride",
+                "DeleteAdminOverrideAsync"
+              ]
+            },
+            "DeleteConsumerOverride": {
+              "methods": [
+                "DeleteConsumerOverride",
+                "DeleteConsumerOverrideAsync"
+              ]
+            },
+            "DisableService": {
+              "methods": [
+                "DisableService",
+                "DisableServiceAsync"
+              ]
+            },
+            "EnableService": {
+              "methods": [
+                "EnableService",
+                "EnableServiceAsync"
+              ]
+            },
+            "GenerateServiceIdentity": {
+              "methods": [
+                "GenerateServiceIdentity",
+                "GenerateServiceIdentityAsync"
+              ]
+            },
+            "GetConsumerQuotaLimit": {
+              "methods": [
+                "GetConsumerQuotaLimit",
+                "GetConsumerQuotaLimitAsync"
+              ]
+            },
+            "GetConsumerQuotaMetric": {
+              "methods": [
+                "GetConsumerQuotaMetric",
+                "GetConsumerQuotaMetricAsync"
+              ]
+            },
+            "GetService": {
+              "methods": [
+                "GetService",
+                "GetServiceAsync"
+              ]
+            },
+            "ImportAdminOverrides": {
+              "methods": [
+                "ImportAdminOverrides",
+                "ImportAdminOverridesAsync"
+              ]
+            },
+            "ImportConsumerOverrides": {
+              "methods": [
+                "ImportConsumerOverrides",
+                "ImportConsumerOverridesAsync"
+              ]
+            },
+            "ListAdminOverrides": {
+              "methods": [
+                "ListAdminOverrides",
+                "ListAdminOverridesAsync"
+              ]
+            },
+            "ListConsumerOverrides": {
+              "methods": [
+                "ListConsumerOverrides",
+                "ListConsumerOverridesAsync"
+              ]
+            },
+            "ListConsumerQuotaMetrics": {
+              "methods": [
+                "ListConsumerQuotaMetrics",
+                "ListConsumerQuotaMetricsAsync"
+              ]
+            },
+            "ListServices": {
+              "methods": [
+                "ListServices",
+                "ListServicesAsync"
+              ]
+            },
+            "UpdateAdminOverride": {
+              "methods": [
+                "UpdateAdminOverride",
+                "UpdateAdminOverrideAsync"
+              ]
+            },
+            "UpdateConsumerOverride": {
+              "methods": [
+                "UpdateConsumerOverride",
+                "UpdateConsumerOverrideAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

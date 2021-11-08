@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.maps.roads.v1op",
+  "libraryPackage": "Google.Maps.Roads.V1Op",
+  "services": {
+    "RoadsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RoadsServiceClient",
+          "rpcs": {
+            "ListNearestRoads": {
+              "methods": [
+                "ListNearestRoads",
+                "ListNearestRoadsAsync"
+              ]
+            },
+            "SnapToRoads": {
+              "methods": [
+                "SnapToRoads",
+                "SnapToRoadsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

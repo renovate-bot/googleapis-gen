@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.home.enterprise.sdm.v1",
+  "libraryPackage": "Google.Home.Enterprise.Sdm.V1",
+  "services": {
+    "SmartDeviceManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartDeviceManagementServiceClient",
+          "rpcs": {
+            "ExecuteDeviceCommand": {
+              "methods": [
+                "ExecuteDeviceCommand",
+                "ExecuteDeviceCommandAsync"
+              ]
+            },
+            "GetDevice": {
+              "methods": [
+                "GetDevice",
+                "GetDeviceAsync"
+              ]
+            },
+            "GetRoom": {
+              "methods": [
+                "GetRoom",
+                "GetRoomAsync"
+              ]
+            },
+            "GetStructure": {
+              "methods": [
+                "GetStructure",
+                "GetStructureAsync"
+              ]
+            },
+            "ListDevices": {
+              "methods": [
+                "ListDevices",
+                "ListDevicesAsync"
+              ]
+            },
+            "ListRooms": {
+              "methods": [
+                "ListRooms",
+                "ListRoomsAsync"
+              ]
+            },
+            "ListStructures": {
+              "methods": [
+                "ListStructures",
+                "ListStructuresAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

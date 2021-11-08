@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.gkehub.v1alpha2",
+  "libraryPackage": "Google.Cloud.GkeHub.V1Alpha2",
+  "services": {
+    "GkeHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GkeHubClient",
+          "rpcs": {
+            "CreateMembership": {
+              "methods": [
+                "CreateMembership",
+                "CreateMembershipAsync"
+              ]
+            },
+            "DeleteMembership": {
+              "methods": [
+                "DeleteMembership",
+                "DeleteMembershipAsync"
+              ]
+            },
+            "GenerateConnectManifest": {
+              "methods": [
+                "GenerateConnectManifest",
+                "GenerateConnectManifestAsync"
+              ]
+            },
+            "GetMembership": {
+              "methods": [
+                "GetMembership",
+                "GetMembershipAsync"
+              ]
+            },
+            "InitializeHub": {
+              "methods": [
+                "InitializeHub",
+                "InitializeHubAsync"
+              ]
+            },
+            "ListMemberships": {
+              "methods": [
+                "ListMemberships",
+                "ListMembershipsAsync"
+              ]
+            },
+            "UpdateMembership": {
+              "methods": [
+                "UpdateMembership",
+                "UpdateMembershipAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

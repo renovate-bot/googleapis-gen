@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "ccc.hosted.marketplace.v2",
+  "libraryPackage": "Ccc.Hosted.Marketplace.V2",
+  "services": {
+    "CustomerLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerLicenseServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "Get",
+                "GetAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LicenseNotificationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LicenseNotificationServiceClient",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "List",
+                "ListAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserLicenseServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "Get",
+                "GetAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

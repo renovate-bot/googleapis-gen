@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.chromeos.moblab.v1beta1",
+  "libraryPackage": "Google.Chromeos.Moblab.V1Beta1",
+  "services": {
+    "BuildService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BuildServiceClient",
+          "rpcs": {
+            "CheckBuildStageStatus": {
+              "methods": [
+                "CheckBuildStageStatus",
+                "CheckBuildStageStatusAsync"
+              ]
+            },
+            "FindMostStableBuild": {
+              "methods": [
+                "FindMostStableBuild",
+                "FindMostStableBuildAsync"
+              ]
+            },
+            "ListBuildTargets": {
+              "methods": [
+                "ListBuildTargets",
+                "ListBuildTargetsAsync"
+              ]
+            },
+            "ListBuilds": {
+              "methods": [
+                "ListBuilds",
+                "ListBuildsAsync"
+              ]
+            },
+            "ListModels": {
+              "methods": [
+                "ListModels",
+                "ListModelsAsync"
+              ]
+            },
+            "StageBuild": {
+              "methods": [
+                "StageBuild",
+                "StageBuildAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

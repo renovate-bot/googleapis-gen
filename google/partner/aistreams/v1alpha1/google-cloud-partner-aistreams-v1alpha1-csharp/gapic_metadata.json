@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.partner.aistreams.v1alpha1",
+  "libraryPackage": "Google.Partner.Aistreams.V1Alpha1",
+  "services": {
+    "AIStreams": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AIStreamsClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": [
+                "CreateCluster",
+                "CreateClusterAsync"
+              ]
+            },
+            "CreateStream": {
+              "methods": [
+                "CreateStream",
+                "CreateStreamAsync"
+              ]
+            },
+            "DeleteCluster": {
+              "methods": [
+                "DeleteCluster",
+                "DeleteClusterAsync"
+              ]
+            },
+            "DeleteStream": {
+              "methods": [
+                "DeleteStream",
+                "DeleteStreamAsync"
+              ]
+            },
+            "GetCluster": {
+              "methods": [
+                "GetCluster",
+                "GetClusterAsync"
+              ]
+            },
+            "GetStream": {
+              "methods": [
+                "GetStream",
+                "GetStreamAsync"
+              ]
+            },
+            "ListClusters": {
+              "methods": [
+                "ListClusters",
+                "ListClustersAsync"
+              ]
+            },
+            "ListStreams": {
+              "methods": [
+                "ListStreams",
+                "ListStreamsAsync"
+              ]
+            },
+            "UpdateCluster": {
+              "methods": [
+                "UpdateCluster",
+                "UpdateClusterAsync"
+              ]
+            },
+            "UpdateStream": {
+              "methods": [
+                "UpdateStream",
+                "UpdateStreamAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

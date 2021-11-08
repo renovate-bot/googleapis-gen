@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.networkservices.v1beta1",
+  "libraryPackage": "Google.Cloud.NetworkServices.V1Beta1",
+  "services": {
+    "NetworkServices": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkServicesClient",
+          "rpcs": {
+            "CreateEndpointPolicy": {
+              "methods": [
+                "CreateEndpointPolicy",
+                "CreateEndpointPolicyAsync"
+              ]
+            },
+            "DeleteEndpointPolicy": {
+              "methods": [
+                "DeleteEndpointPolicy",
+                "DeleteEndpointPolicyAsync"
+              ]
+            },
+            "GetEndpointPolicy": {
+              "methods": [
+                "GetEndpointPolicy",
+                "GetEndpointPolicyAsync"
+              ]
+            },
+            "ListEndpointPolicies": {
+              "methods": [
+                "ListEndpointPolicies",
+                "ListEndpointPoliciesAsync"
+              ]
+            },
+            "UpdateEndpointPolicy": {
+              "methods": [
+                "UpdateEndpointPolicy",
+                "UpdateEndpointPolicyAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

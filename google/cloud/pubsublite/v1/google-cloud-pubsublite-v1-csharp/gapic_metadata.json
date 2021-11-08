@@ -1,0 +1,231 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.pubsublite.v1",
+  "libraryPackage": "Google.Cloud.PubSubLite.V1",
+  "services": {
+    "AdminService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdminServiceClient",
+          "rpcs": {
+            "CreateReservation": {
+              "methods": [
+                "CreateReservation",
+                "CreateReservationAsync"
+              ]
+            },
+            "CreateSubscription": {
+              "methods": [
+                "CreateSubscription",
+                "CreateSubscriptionAsync"
+              ]
+            },
+            "CreateTopic": {
+              "methods": [
+                "CreateTopic",
+                "CreateTopicAsync"
+              ]
+            },
+            "DeleteReservation": {
+              "methods": [
+                "DeleteReservation",
+                "DeleteReservationAsync"
+              ]
+            },
+            "DeleteSubscription": {
+              "methods": [
+                "DeleteSubscription",
+                "DeleteSubscriptionAsync"
+              ]
+            },
+            "DeleteTopic": {
+              "methods": [
+                "DeleteTopic",
+                "DeleteTopicAsync"
+              ]
+            },
+            "GetReservation": {
+              "methods": [
+                "GetReservation",
+                "GetReservationAsync"
+              ]
+            },
+            "GetSubscription": {
+              "methods": [
+                "GetSubscription",
+                "GetSubscriptionAsync"
+              ]
+            },
+            "GetTopic": {
+              "methods": [
+                "GetTopic",
+                "GetTopicAsync"
+              ]
+            },
+            "GetTopicPartitions": {
+              "methods": [
+                "GetTopicPartitions",
+                "GetTopicPartitionsAsync"
+              ]
+            },
+            "ListReservationTopics": {
+              "methods": [
+                "ListReservationTopics",
+                "ListReservationTopicsAsync"
+              ]
+            },
+            "ListReservations": {
+              "methods": [
+                "ListReservations",
+                "ListReservationsAsync"
+              ]
+            },
+            "ListSubscriptions": {
+              "methods": [
+                "ListSubscriptions",
+                "ListSubscriptionsAsync"
+              ]
+            },
+            "ListTopicSubscriptions": {
+              "methods": [
+                "ListTopicSubscriptions",
+                "ListTopicSubscriptionsAsync"
+              ]
+            },
+            "ListTopics": {
+              "methods": [
+                "ListTopics",
+                "ListTopicsAsync"
+              ]
+            },
+            "SeekSubscription": {
+              "methods": [
+                "SeekSubscription",
+                "SeekSubscriptionAsync"
+              ]
+            },
+            "UpdateReservation": {
+              "methods": [
+                "UpdateReservation",
+                "UpdateReservationAsync"
+              ]
+            },
+            "UpdateSubscription": {
+              "methods": [
+                "UpdateSubscription",
+                "UpdateSubscriptionAsync"
+              ]
+            },
+            "UpdateTopic": {
+              "methods": [
+                "UpdateTopic",
+                "UpdateTopicAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CursorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CursorServiceClient",
+          "rpcs": {
+            "CommitCursor": {
+              "methods": [
+                "CommitCursor",
+                "CommitCursorAsync"
+              ]
+            },
+            "ListPartitionCursors": {
+              "methods": [
+                "ListPartitionCursors",
+                "ListPartitionCursorsAsync"
+              ]
+            },
+            "StreamingCommitCursor": {
+              "methods": [
+                "StreamingCommitCursor",
+                "StreamingCommitCursorAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PartitionAssignmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PartitionAssignmentServiceClient",
+          "rpcs": {
+            "AssignPartitions": {
+              "methods": [
+                "AssignPartitions",
+                "AssignPartitionsAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "PublisherService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PublisherServiceClient",
+          "rpcs": {
+            "Publish": {
+              "methods": [
+                "Publish",
+                "PublishAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SubscriberService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SubscriberServiceClient",
+          "rpcs": {
+            "Subscribe": {
+              "methods": [
+                "Subscribe",
+                "SubscribeAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TopicStatsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TopicStatsServiceClient",
+          "rpcs": {
+            "ComputeHeadCursor": {
+              "methods": [
+                "ComputeHeadCursor",
+                "ComputeHeadCursorAsync"
+              ]
+            },
+            "ComputeMessageStats": {
+              "methods": [
+                "ComputeMessageStats",
+                "ComputeMessageStatsAsync"
+              ]
+            },
+            "ComputeTimeCursor": {
+              "methods": [
+                "ComputeTimeCursor",
+                "ComputeTimeCursorAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

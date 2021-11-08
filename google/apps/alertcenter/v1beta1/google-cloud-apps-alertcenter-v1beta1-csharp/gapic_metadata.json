@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.apps.alertcenter.v1beta1",
+  "libraryPackage": "Google.Apps.AlertCenter.V1Beta1",
+  "services": {
+    "AlertCenterService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlertCenterServiceClient",
+          "rpcs": {
+            "BatchDeleteAlerts": {
+              "methods": [
+                "BatchDeleteAlerts",
+                "BatchDeleteAlertsAsync"
+              ]
+            },
+            "BatchUndeleteAlerts": {
+              "methods": [
+                "BatchUndeleteAlerts",
+                "BatchUndeleteAlertsAsync"
+              ]
+            },
+            "CreateAlertFeedback": {
+              "methods": [
+                "CreateAlertFeedback",
+                "CreateAlertFeedbackAsync"
+              ]
+            },
+            "DeleteAlert": {
+              "methods": [
+                "DeleteAlert",
+                "DeleteAlertAsync"
+              ]
+            },
+            "GetAlert": {
+              "methods": [
+                "GetAlert",
+                "GetAlertAsync"
+              ]
+            },
+            "GetAlertMetadata": {
+              "methods": [
+                "GetAlertMetadata",
+                "GetAlertMetadataAsync"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "GetSettings",
+                "GetSettingsAsync"
+              ]
+            },
+            "ListAlertFeedback": {
+              "methods": [
+                "ListAlertFeedback",
+                "ListAlertFeedbackAsync"
+              ]
+            },
+            "ListAlerts": {
+              "methods": [
+                "ListAlerts",
+                "ListAlertsAsync"
+              ]
+            },
+            "UndeleteAlert": {
+              "methods": [
+                "UndeleteAlert",
+                "UndeleteAlertAsync"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "UpdateSettings",
+                "UpdateSettingsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

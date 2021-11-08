@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.monitoring.dashboard.v1",
+  "libraryPackage": "Google.Cloud.Monitoring.Dashboard.V1",
+  "services": {
+    "DashboardsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DashboardsServiceClient",
+          "rpcs": {
+            "CreateDashboard": {
+              "methods": [
+                "CreateDashboard",
+                "CreateDashboardAsync"
+              ]
+            },
+            "DeleteDashboard": {
+              "methods": [
+                "DeleteDashboard",
+                "DeleteDashboardAsync"
+              ]
+            },
+            "GetDashboard": {
+              "methods": [
+                "GetDashboard",
+                "GetDashboardAsync"
+              ]
+            },
+            "ListDashboards": {
+              "methods": [
+                "ListDashboards",
+                "ListDashboardsAsync"
+              ]
+            },
+            "UpdateDashboard": {
+              "methods": [
+                "UpdateDashboard",
+                "UpdateDashboardAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

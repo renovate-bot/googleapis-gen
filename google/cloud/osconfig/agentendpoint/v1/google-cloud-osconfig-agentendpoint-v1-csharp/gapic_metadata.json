@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "csharp",
+  "protoPackage": "google.cloud.osconfig.agentendpoint.v1",
+  "libraryPackage": "Google.Cloud.Osconfig.Agentendpoint.V1",
+  "services": {
+    "AgentEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentEndpointServiceClient",
+          "rpcs": {
+            "ReceiveTaskNotification": {
+              "methods": [
+                "ReceiveTaskNotification",
+                "ReceiveTaskNotificationAsync"
+              ]
+            },
+            "RegisterAgent": {
+              "methods": [
+                "RegisterAgent",
+                "RegisterAgentAsync"
+              ]
+            },
+            "ReportInventory": {
+              "methods": [
+                "ReportInventory",
+                "ReportInventoryAsync"
+              ]
+            },
+            "ReportTaskComplete": {
+              "methods": [
+                "ReportTaskComplete",
+                "ReportTaskCompleteAsync"
+              ]
+            },
+            "ReportTaskProgress": {
+              "methods": [
+                "ReportTaskProgress",
+                "ReportTaskProgressAsync"
+              ]
+            },
+            "StartNextTask": {
+              "methods": [
+                "StartNextTask",
+                "StartNextTaskAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
