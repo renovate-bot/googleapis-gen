@@ -10,11 +10,6 @@ public interface BucketOrBuilder extends
   /**
    * <pre>
    * Immutable. The name of the bucket.
-   * Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-   * Other sorts of buckets in the future are not guaranteed to follow this
-   * pattern.
-   * For globally unique bucket names, a `_` may be substituted for the project
-   * ID.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -24,11 +19,6 @@ public interface BucketOrBuilder extends
   /**
    * <pre>
    * Immutable. The name of the bucket.
-   * Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-   * Other sorts of buckets in the future are not guaranteed to follow this
-   * pattern.
-   * For globally unique bucket names, a `_` may be substituted for the project
-   * ID.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -64,8 +54,6 @@ public interface BucketOrBuilder extends
   /**
    * <pre>
    * Immutable. The project which owns this bucket.
-   * Format: projects/{project_number}
-   * Example: `projects/123456`.
    * </pre>
    *
    * <code>string project = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -75,8 +63,6 @@ public interface BucketOrBuilder extends
   /**
    * <pre>
    * Immutable. The project which owns this bucket.
-   * Format: projects/{project_number}
-   * Example: `projects/123456`.
    * </pre>
    *
    * <code>string project = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>

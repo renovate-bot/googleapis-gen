@@ -1108,7 +1108,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The name of the bucket containing this object.
-   * Example: `projects/_/buckets/foo`.
    * </pre>
    *
    * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -1130,7 +1129,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The name of the bucket containing this object.
-   * Example: `projects/_/buckets/foo`.
    * </pre>
    *
    * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -3264,7 +3262,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      * </pre>
      *
      * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -3285,7 +3282,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      * </pre>
      *
      * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -3307,7 +3303,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      * </pre>
      *
      * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -3327,7 +3322,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      * </pre>
      *
      * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -3342,7 +3336,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      * </pre>
      *
      * <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>

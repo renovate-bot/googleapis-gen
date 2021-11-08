@@ -29,7 +29,6 @@ class Object extends \Google\Protobuf\Internal\Message
     protected $name = '';
     /**
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      *
      * Generated from protobuf field <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -253,7 +252,6 @@ class Object extends \Google\Protobuf\Internal\Message
      *           (bucket, object, generation).
      *     @type string $bucket
      *           Immutable. The name of the bucket containing this object.
-     *           Example: `projects/_/buckets/foo`.
      *     @type int|string $generation
      *           Immutable. The content generation of this object. Used for object versioning.
      *           Attempting to set or update this field will result in a
@@ -407,7 +405,6 @@ class Object extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      *
      * Generated from protobuf field <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -419,7 +416,6 @@ class Object extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The name of the bucket containing this object.
-     * Example: `projects/_/buckets/foo`.
      *
      * Generated from protobuf field <code>string bucket = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var

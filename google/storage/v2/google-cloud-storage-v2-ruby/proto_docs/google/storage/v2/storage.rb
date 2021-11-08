@@ -290,7 +290,6 @@ module Google
       # @!attribute [rw] user_project
       #   @return [::String]
       #     Required. Required when using buckets with Requestor Pays feature enabled.
-      #     Example: `projects/123456`.
       class CommonRequestParams
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -384,11 +383,6 @@ module Google
       # @!attribute [rw] name
       #   @return [::String]
       #     Immutable. The name of the bucket.
-      #     Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-      #     Other sorts of buckets in the future are not guaranteed to follow this
-      #     pattern.
-      #     For globally unique bucket names, a `_` may be substituted for the project
-      #     ID.
       # @!attribute [r] bucket_id
       #   @return [::String]
       #     Output only. The user-chosen part of the bucket name. The `{bucket}` portion of the
@@ -397,8 +391,6 @@ module Google
       # @!attribute [rw] project
       #   @return [::String]
       #     Immutable. The project which owns this bucket.
-      #     Format: projects/\\{project_number}
-      #     Example: `projects/123456`.
       # @!attribute [r] metageneration
       #   @return [::Integer]
       #     Output only. The metadata generation of this bucket.
@@ -864,7 +856,6 @@ module Google
       # @!attribute [rw] bucket
       #   @return [::String]
       #     Immutable. The name of the bucket containing this object.
-      #     Example: `projects/_/buckets/foo`.
       # @!attribute [rw] generation
       #   @return [::Integer]
       #     Immutable. The content generation of this object. Used for object versioning.

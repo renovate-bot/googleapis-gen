@@ -603,8 +603,8 @@ class CommonRequestParams(proto.Message):
 
     Attributes:
         user_project (str):
-            Required. Required when using buckets with Requestor Pays
-            feature enabled. Example: ``projects/123456``.
+            Required. Required when using buckets with
+            Requestor Pays feature enabled.
     """
 
     user_project = proto.Field(
@@ -646,19 +646,15 @@ class Bucket(proto.Message):
 
     Attributes:
         name (str):
-            Immutable. The name of the bucket. Global buckets will be of
-            the format ``projects/{project}/buckets/{bucket}``. Other
-            sorts of buckets in the future are not guaranteed to follow
-            this pattern. For globally unique bucket names, a ``_`` may
-            be substituted for the project ID.
+            Immutable. The name of the bucket.
         bucket_id (str):
             Output only. The user-chosen part of the bucket name. The
             ``{bucket}`` portion of the ``name`` field. For globally
             unique buckets, this is equal to the "bucket name" of other
             Cloud Storage APIs. Example: "pub".
         project (str):
-            Immutable. The project which owns this bucket. Format:
-            projects/{project_number} Example: ``projects/123456``.
+            Immutable. The project which owns this
+            bucket.
         metageneration (int):
             Output only. The metadata generation of this bucket.
             Attempting to set or update this field will result in a
@@ -1429,8 +1425,8 @@ class Object(proto.Message):
             object is uniquely identified by the tuple of (bucket,
             object, generation).
         bucket (str):
-            Immutable. The name of the bucket containing this object.
-            Example: ``projects/_/buckets/foo``.
+            Immutable. The name of the bucket containing
+            this object.
         generation (int):
             Immutable. The content generation of this object. Used for
             object versioning. Attempting to set or update this field

@@ -17,11 +17,6 @@ class Bucket extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. The name of the bucket.
-     * Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-     * Other sorts of buckets in the future are not guaranteed to follow this
-     * pattern.
-     * For globally unique bucket names, a `_` may be substituted for the project
-     * ID.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -36,8 +31,6 @@ class Bucket extends \Google\Protobuf\Internal\Message
     protected $bucket_id = '';
     /**
      * Immutable. The project which owns this bucket.
-     * Format: projects/{project_number}
-     * Example: `projects/123456`.
      *
      * Generated from protobuf field <code>string project = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -235,19 +228,12 @@ class Bucket extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Immutable. The name of the bucket.
-     *           Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-     *           Other sorts of buckets in the future are not guaranteed to follow this
-     *           pattern.
-     *           For globally unique bucket names, a `_` may be substituted for the project
-     *           ID.
      *     @type string $bucket_id
      *           Output only. The user-chosen part of the bucket name. The `{bucket}` portion of the
      *           `name` field. For globally unique buckets, this is equal to the "bucket
      *           name" of other Cloud Storage APIs. Example: "pub".
      *     @type string $project
      *           Immutable. The project which owns this bucket.
-     *           Format: projects/{project_number}
-     *           Example: `projects/123456`.
      *     @type int|string $metageneration
      *           Output only. The metadata generation of this bucket.
      *           Attempting to set or update this field will result in a
@@ -352,11 +338,6 @@ class Bucket extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The name of the bucket.
-     * Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-     * Other sorts of buckets in the future are not guaranteed to follow this
-     * pattern.
-     * For globally unique bucket names, a `_` may be substituted for the project
-     * ID.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -368,11 +349,6 @@ class Bucket extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The name of the bucket.
-     * Global buckets will be of the format `projects/{project}/buckets/{bucket}`.
-     * Other sorts of buckets in the future are not guaranteed to follow this
-     * pattern.
-     * For globally unique bucket names, a `_` may be substituted for the project
-     * ID.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -418,8 +394,6 @@ class Bucket extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The project which owns this bucket.
-     * Format: projects/{project_number}
-     * Example: `projects/123456`.
      *
      * Generated from protobuf field <code>string project = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -431,8 +405,6 @@ class Bucket extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The project which owns this bucket.
-     * Format: projects/{project_number}
-     * Example: `projects/123456`.
      *
      * Generated from protobuf field <code>string project = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var

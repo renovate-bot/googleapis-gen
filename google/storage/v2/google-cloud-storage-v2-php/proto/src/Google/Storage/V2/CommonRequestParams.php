@@ -17,7 +17,6 @@ class CommonRequestParams extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      *
      * Generated from protobuf field <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -31,7 +30,6 @@ class CommonRequestParams extends \Google\Protobuf\Internal\Message
      *
      *     @type string $user_project
      *           Required. Required when using buckets with Requestor Pays feature enabled.
-     *           Example: `projects/123456`.
      * }
      */
     public function __construct($data = NULL) {
@@ -41,7 +39,6 @@ class CommonRequestParams extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      *
      * Generated from protobuf field <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -53,7 +50,6 @@ class CommonRequestParams extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      *
      * Generated from protobuf field <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -96,7 +96,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Required when using buckets with Requestor Pays feature enabled.
-   * Example: `projects/123456`.
    * </pre>
    *
    * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -118,7 +117,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Required when using buckets with Requestor Pays feature enabled.
-   * Example: `projects/123456`.
    * </pre>
    *
    * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -449,7 +447,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      * </pre>
      *
      * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -470,7 +467,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      * </pre>
      *
      * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -492,7 +488,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      * </pre>
      *
      * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -512,7 +507,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      * </pre>
      *
      * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -527,7 +521,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Required when using buckets with Requestor Pays feature enabled.
-     * Example: `projects/123456`.
      * </pre>
      *
      * <code>string user_project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
