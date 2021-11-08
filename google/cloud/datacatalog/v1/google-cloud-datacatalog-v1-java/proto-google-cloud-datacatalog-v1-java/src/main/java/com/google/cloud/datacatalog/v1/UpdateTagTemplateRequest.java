@@ -154,10 +154,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
-   * only `display_name` can be overwritten.
+   * only `display_name` and `is_publicly_readable` can be overwritten.
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   * Note: Updating the ``is_publicly_readable`` field may require up to 12
+   * hours to take effect in search results. Additionally, it also requires
+   * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+   * permissions.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -170,10 +174,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
-   * only `display_name` can be overwritten.
+   * only `display_name` and `is_publicly_readable` can be overwritten.
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   * Note: Updating the ``is_publicly_readable`` field may require up to 12
+   * hours to take effect in search results. Additionally, it also requires
+   * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+   * permissions.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -186,10 +194,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
-   * only `display_name` can be overwritten.
+   * only `display_name` and `is_publicly_readable` can be overwritten.
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   * Note: Updating the ``is_publicly_readable`` field may require up to 12
+   * hours to take effect in search results. Additionally, it also requires
+   * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+   * permissions.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -710,10 +722,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -725,10 +741,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -744,10 +764,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -768,10 +792,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -790,10 +818,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -816,10 +848,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -838,10 +874,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -854,10 +894,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -873,10 +917,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -139,8 +139,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Resource name of this policy tag in the URL format.
-   * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-   * /&gt;&lt;br /&gt;
+   * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -162,8 +161,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Resource name of this policy tag in the URL format.
-   * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-   * /&gt;&lt;br /&gt;
+   * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -798,8 +796,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-     * /&gt;&lt;br /&gt;
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -820,8 +817,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-     * /&gt;&lt;br /&gt;
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -843,8 +839,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-     * /&gt;&lt;br /&gt;
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -864,8 +859,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-     * /&gt;&lt;br /&gt;
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -880,8 +874,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.&lt;br
-     * /&gt;&lt;br /&gt;
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -9,8 +9,7 @@ public interface CreatePolicyTagRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +18,7 @@ public interface CreatePolicyTagRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

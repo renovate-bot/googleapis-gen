@@ -135,6 +135,9 @@ class BigQueryDateShardedSpec(proto.Message):
             ``table_prefix`` is ``MyTable``.
         shard_count (int):
             Output only. Total number of shards.
+        latest_shard_resource (str):
+            Output only. BigQuery resource name of the
+            latest shard.
     """
 
     dataset = proto.Field(
@@ -148,6 +151,10 @@ class BigQueryDateShardedSpec(proto.Message):
     shard_count = proto.Field(
         proto.INT64,
         number=3,
+    )
+    latest_shard_resource = proto.Field(
+        proto.STRING,
+        number=4,
     )
 
 

@@ -21,8 +21,7 @@ function main(parent) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
-   *  />
+   *  Required. Resource name of the taxonomy that the policy tag will belong to.
    */
   // const parent = 'abc123'
   /**

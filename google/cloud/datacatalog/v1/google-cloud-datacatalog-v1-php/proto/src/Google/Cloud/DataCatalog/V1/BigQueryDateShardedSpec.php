@@ -41,6 +41,12 @@ class BigQueryDateShardedSpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $shard_count = 0;
+    /**
+     * Output only. BigQuery resource name of the latest shard.
+     *
+     * Generated from protobuf field <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $latest_shard_resource = '';
 
     /**
      * Constructor.
@@ -59,6 +65,8 @@ class BigQueryDateShardedSpec extends \Google\Protobuf\Internal\Message
      *           `table_prefix` is `MyTable`.
      *     @type int|string $shard_count
      *           Output only. Total number of shards.
+     *     @type string $latest_shard_resource
+     *           Output only. BigQuery resource name of the latest shard.
      * }
      */
     public function __construct($data = NULL) {
@@ -150,6 +158,32 @@ class BigQueryDateShardedSpec extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->shard_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. BigQuery resource name of the latest shard.
+     *
+     * Generated from protobuf field <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getLatestShardResource()
+    {
+        return $this->latest_shard_resource;
+    }
+
+    /**
+     * Output only. BigQuery resource name of the latest shard.
+     *
+     * Generated from protobuf field <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLatestShardResource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->latest_shard_resource = $var;
 
         return $this;
     }

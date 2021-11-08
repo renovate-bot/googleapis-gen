@@ -24,10 +24,14 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     protected $tag_template = null;
     /**
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
@@ -43,10 +47,14 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
      *           Required. The template to update. The `name` field must be set.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Names of fields whose values to overwrite on a tag template. Currently,
-     *           only `display_name` can be overwritten.
+     *           only `display_name` and `is_publicly_readable` can be overwritten.
      *           If this parameter is absent or empty, all modifiable fields
      *           are overwritten. If such fields are non-required and omitted in the
      *           request body, their values are emptied.
+     *           Note: Updating the ``is_publicly_readable`` field may require up to 12
+     *           hours to take effect in search results. Additionally, it also requires
+     *           the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     *           permissions.
      * }
      */
     public function __construct($data = NULL) {
@@ -92,10 +100,14 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -117,10 +129,14 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Names of fields whose values to overwrite on a tag template. Currently,
-     * only `display_name` can be overwritten.
+     * only `display_name` and `is_publicly_readable` can be overwritten.
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     * Note: Updating the ``is_publicly_readable`` field may require up to 12
+     * hours to take effect in search results. Additionally, it also requires
+     * the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+     * permissions.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @param \Google\Protobuf\FieldMask $var

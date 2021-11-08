@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
   private BigQueryDateShardedSpec() {
     dataset_ = "";
     tablePrefix_ = "";
+    latestShardResource_ = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             shardCount_ = input.readInt64();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            latestShardResource_ = s;
             break;
           }
           default: {
@@ -223,6 +230,52 @@ private static final long serialVersionUID = 0L;
     return shardCount_;
   }
 
+  public static final int LATEST_SHARD_RESOURCE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object latestShardResource_;
+  /**
+   * <pre>
+   * Output only. BigQuery resource name of the latest shard.
+   * </pre>
+   *
+   * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The latestShardResource.
+   */
+  @java.lang.Override
+  public java.lang.String getLatestShardResource() {
+    java.lang.Object ref = latestShardResource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      latestShardResource_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. BigQuery resource name of the latest shard.
+   * </pre>
+   *
+   * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for latestShardResource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLatestShardResourceBytes() {
+    java.lang.Object ref = latestShardResource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      latestShardResource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -246,6 +299,9 @@ private static final long serialVersionUID = 0L;
     if (shardCount_ != 0L) {
       output.writeInt64(3, shardCount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestShardResource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, latestShardResource_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -264,6 +320,9 @@ private static final long serialVersionUID = 0L;
     if (shardCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, shardCount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestShardResource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, latestShardResource_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -286,6 +345,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTablePrefix())) return false;
     if (getShardCount()
         != other.getShardCount()) return false;
+    if (!getLatestShardResource()
+        .equals(other.getLatestShardResource())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -304,6 +365,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SHARD_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getShardCount());
+    hash = (37 * hash) + LATEST_SHARD_RESOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getLatestShardResource().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -450,6 +513,8 @@ private static final long serialVersionUID = 0L;
 
       shardCount_ = 0L;
 
+      latestShardResource_ = "";
+
       return this;
     }
 
@@ -479,6 +544,7 @@ private static final long serialVersionUID = 0L;
       result.dataset_ = dataset_;
       result.tablePrefix_ = tablePrefix_;
       result.shardCount_ = shardCount_;
+      result.latestShardResource_ = latestShardResource_;
       onBuilt();
       return result;
     }
@@ -537,6 +603,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getShardCount() != 0L) {
         setShardCount(other.getShardCount());
+      }
+      if (!other.getLatestShardResource().isEmpty()) {
+        latestShardResource_ = other.latestShardResource_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -823,6 +893,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearShardCount() {
       
       shardCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object latestShardResource_ = "";
+    /**
+     * <pre>
+     * Output only. BigQuery resource name of the latest shard.
+     * </pre>
+     *
+     * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The latestShardResource.
+     */
+    public java.lang.String getLatestShardResource() {
+      java.lang.Object ref = latestShardResource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        latestShardResource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. BigQuery resource name of the latest shard.
+     * </pre>
+     *
+     * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for latestShardResource.
+     */
+    public com.google.protobuf.ByteString
+        getLatestShardResourceBytes() {
+      java.lang.Object ref = latestShardResource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        latestShardResource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. BigQuery resource name of the latest shard.
+     * </pre>
+     *
+     * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The latestShardResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLatestShardResource(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      latestShardResource_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. BigQuery resource name of the latest shard.
+     * </pre>
+     *
+     * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLatestShardResource() {
+      
+      latestShardResource_ = getDefaultInstance().getLatestShardResource();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. BigQuery resource name of the latest shard.
+     * </pre>
+     *
+     * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for latestShardResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLatestShardResourceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      latestShardResource_ = value;
       onChanged();
       return this;
     }

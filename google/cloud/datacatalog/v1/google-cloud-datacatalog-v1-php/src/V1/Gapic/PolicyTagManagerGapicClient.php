@@ -355,8 +355,7 @@ class PolicyTagManagerGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
-     *                             />
+     * @param string $parent       Required. Resource name of the taxonomy that the policy tag will belong to.
      * @param array  $optionalArgs {
      *     Optional.
      *

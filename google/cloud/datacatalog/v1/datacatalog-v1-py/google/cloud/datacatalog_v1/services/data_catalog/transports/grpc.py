@@ -601,6 +601,10 @@ class DataCatalogGrpcTransport(DataCatalogTransport):
 
         Lists entries.
 
+        Note: Currently, this method can list only custom entries. To
+        get a list of both custom and automatically created entries, use
+        [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
+
         Returns:
             Callable[[~.ListEntriesRequest],
                     ~.ListEntriesResponse]:

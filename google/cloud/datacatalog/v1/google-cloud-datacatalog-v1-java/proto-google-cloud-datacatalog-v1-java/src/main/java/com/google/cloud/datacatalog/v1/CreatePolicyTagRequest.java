@@ -109,8 +109,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -131,8 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-   * /&gt;
+   * Required. Resource name of the taxonomy that the policy tag will belong to.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -531,8 +529,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -552,8 +549,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -574,8 +570,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -594,8 +589,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -609,8 +603,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
-     * /&gt;
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

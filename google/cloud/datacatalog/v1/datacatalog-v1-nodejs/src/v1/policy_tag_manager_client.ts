@@ -651,8 +651,7 @@ export class PolicyTagManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
- *   />
+ *   Required. Resource name of the taxonomy that the policy tag will belong to.
  * @param {google.cloud.datacatalog.v1.PolicyTag} request.policyTag
  *   The policy tag to create.
  * @param {object} [options]

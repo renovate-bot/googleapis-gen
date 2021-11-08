@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreatePolicyTagRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
-     * />
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,8 +36,7 @@ class CreatePolicyTagRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
-     *           />
+     *           Required. Resource name of the taxonomy that the policy tag will belong to.
      *     @type \Google\Cloud\DataCatalog\V1\PolicyTag $policy_tag
      *           The policy tag to create.
      * }
@@ -49,8 +47,7 @@ class CreatePolicyTagRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
-     * />
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,8 +58,7 @@ class CreatePolicyTagRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
-     * />
+     * Required. Resource name of the taxonomy that the policy tag will belong to.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

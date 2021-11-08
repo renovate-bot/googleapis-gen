@@ -1314,11 +1314,16 @@ export class DataCatalogClient {
  *   Required. The template to update. The `name` field must be set.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Names of fields whose values to overwrite on a tag template. Currently,
- *   only `display_name` can be overwritten.
+ *   only `display_name` and `is_publicly_readable` can be overwritten.
  *
  *   If this parameter is absent or empty, all modifiable fields
  *   are overwritten. If such fields are non-required and omitted in the
  *   request body, their values are emptied.
+ *
+ *   Note: Updating the ``is_publicly_readable`` field may require up to 12
+ *   hours to take effect in search results. Additionally, it also requires
+ *   the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+ *   permissions.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1656,7 +1661,7 @@ export class DataCatalogClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The name of the tag template.
+ *   Required. The name of the tag template field.
  * @param {string} request.newTagTemplateFieldId
  *   Required. The new ID of this tag template field. For example, `my_new_field`.
  * @param {object} [options]
@@ -2425,7 +2430,7 @@ export class DataCatalogClient {
  * @param {string} [request.query]
  *   Optional. The query string with a minimum of 3 characters and specific syntax.
  *   For more information, see
- *   [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+ *   [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
  *
  *   An empty query string returns all data assets (in the specified scope)
  *   that you have access to.
@@ -2513,7 +2518,7 @@ export class DataCatalogClient {
  * @param {string} [request.query]
  *   Optional. The query string with a minimum of 3 characters and specific syntax.
  *   For more information, see
- *   [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+ *   [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
  *
  *   An empty query string returns all data assets (in the specified scope)
  *   that you have access to.
@@ -2589,7 +2594,7 @@ export class DataCatalogClient {
  * @param {string} [request.query]
  *   Optional. The query string with a minimum of 3 characters and specific syntax.
  *   For more information, see
- *   [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+ *   [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
  *
  *   An empty query string returns all data assets (in the specified scope)
  *   that you have access to.
@@ -2872,6 +2877,10 @@ export class DataCatalogClient {
           protos.google.cloud.datacatalog.v1.IEntry>): void;
 /**
  * Lists entries.
+ *
+ * Note: Currently, this method can list only custom entries.
+ * To get a list of both custom and automatically created entries, use
+ * {@link google.cloud.datacatalog.v1.DataCatalog.SearchCatalog|SearchCatalog}.
  *
  * @param {Object} request
  *   The request object that will be sent.

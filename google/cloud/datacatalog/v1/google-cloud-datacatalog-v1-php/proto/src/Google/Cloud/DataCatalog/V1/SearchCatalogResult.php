@@ -71,6 +71,19 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string fully_qualified_name = 10;</code>
      */
     protected $fully_qualified_name = '';
+    /**
+     * The display name of the result.
+     *
+     * Generated from protobuf field <code>string display_name = 12;</code>
+     */
+    protected $display_name = '';
+    /**
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     *
+     * Generated from protobuf field <code>string description = 13;</code>
+     */
+    protected $description = '';
     protected $system;
 
     /**
@@ -115,6 +128,11 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
      *             `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      *           Example for a DPMS table:
      *           `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
+     *     @type string $display_name
+     *           The display name of the result.
+     *     @type string $description
+     *           Entry description that can consist of several sentences or paragraphs that
+     *           describe entry contents.
      * }
      */
     public function __construct($data = NULL) {
@@ -386,6 +404,60 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->fully_qualified_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The display name of the result.
+     *
+     * Generated from protobuf field <code>string display_name = 12;</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+    /**
+     * The display name of the result.
+     *
+     * Generated from protobuf field <code>string display_name = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     *
+     * Generated from protobuf field <code>string description = 13;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Entry description that can consist of several sentences or paragraphs that
+     * describe entry contents.
+     *
+     * Generated from protobuf field <code>string description = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

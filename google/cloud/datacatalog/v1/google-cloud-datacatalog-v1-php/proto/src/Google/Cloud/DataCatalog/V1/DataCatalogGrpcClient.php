@@ -276,6 +276,10 @@ class DataCatalogGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Lists entries.
+     *
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * @param \Google\Cloud\DataCatalog\V1\ListEntriesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

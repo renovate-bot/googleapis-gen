@@ -314,7 +314,7 @@ type SearchCatalogRequest struct {
 	Scope *SearchCatalogRequest_Scope `protobuf:"bytes,6,opt,name=scope,proto3" json:"scope,omitempty"`
 	// Optional. The query string with a minimum of 3 characters and specific syntax.
 	// For more information, see
-	// [Data Catalog search syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+	// [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
 	//
 	// An empty query string returns all data assets (in the specified scope)
 	// that you have access to.
@@ -2163,11 +2163,16 @@ type UpdateTagTemplateRequest struct {
 	// Required. The template to update. The `name` field must be set.
 	TagTemplate *TagTemplate `protobuf:"bytes,1,opt,name=tag_template,json=tagTemplate,proto3" json:"tag_template,omitempty"`
 	// Names of fields whose values to overwrite on a tag template. Currently,
-	// only `display_name` can be overwritten.
+	// only `display_name` and `is_publicly_readable` can be overwritten.
 	//
 	// If this parameter is absent or empty, all modifiable fields
 	// are overwritten. If such fields are non-required and omitted in the
 	// request body, their values are emptied.
+	//
+	// Note: Updating the ``is_publicly_readable`` field may require up to 12
+	// hours to take effect in search results. Additionally, it also requires
+	// the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+	// permissions.
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
 
@@ -2623,7 +2628,7 @@ type RenameTagTemplateFieldRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Required. The name of the tag template.
+	// Required. The name of the tag template field.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// Required. The new ID of this tag template field. For example, `my_new_field`.
 	NewTagTemplateFieldId string `protobuf:"bytes,2,opt,name=new_tag_template_field_id,json=newTagTemplateFieldId,proto3" json:"new_tag_template_field_id,omitempty"`
@@ -5026,6 +5031,10 @@ type DataCatalogClient interface {
 	// The resource name comes from the source Google Cloud Platform service.
 	LookupEntry(ctx context.Context, in *LookupEntryRequest, opts ...grpc.CallOption) (*Entry, error)
 	// Lists entries.
+	//
+	// Note: Currently, this method can list only custom entries.
+	// To get a list of both custom and automatically created entries, use
+	// [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
 	ListEntries(ctx context.Context, in *ListEntriesRequest, opts ...grpc.CallOption) (*ListEntriesResponse, error)
 	// Creates a tag template.
 	//
@@ -5521,6 +5530,10 @@ type DataCatalogServer interface {
 	// The resource name comes from the source Google Cloud Platform service.
 	LookupEntry(context.Context, *LookupEntryRequest) (*Entry, error)
 	// Lists entries.
+	//
+	// Note: Currently, this method can list only custom entries.
+	// To get a list of both custom and automatically created entries, use
+	// [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
 	ListEntries(context.Context, *ListEntriesRequest) (*ListEntriesResponse, error)
 	// Creates a tag template.
 	//

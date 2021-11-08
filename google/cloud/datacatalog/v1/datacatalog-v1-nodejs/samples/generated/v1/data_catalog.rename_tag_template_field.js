@@ -21,7 +21,7 @@ function main(name, newTagTemplateFieldId) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the tag template.
+   *  Required. The name of the tag template field.
    */
   // const name = 'abc123'
   /**

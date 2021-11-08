@@ -106,6 +106,12 @@ class SearchCatalogResult(proto.Message):
             Example for a DPMS table:
 
             ``dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID``
+        display_name (str):
+            The display name of the result.
+        description (str):
+            Entry description that can consist of several
+            sentences or paragraphs that describe entry
+            contents.
     """
 
     search_result_type = proto.Field(
@@ -144,6 +150,14 @@ class SearchCatalogResult(proto.Message):
     fully_qualified_name = proto.Field(
         proto.STRING,
         number=10,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=13,
     )
 
 

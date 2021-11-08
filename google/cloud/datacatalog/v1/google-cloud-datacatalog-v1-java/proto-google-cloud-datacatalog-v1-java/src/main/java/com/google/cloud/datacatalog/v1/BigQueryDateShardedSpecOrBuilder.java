@@ -66,4 +66,24 @@ public interface BigQueryDateShardedSpecOrBuilder extends
    * @return The shardCount.
    */
   long getShardCount();
+
+  /**
+   * <pre>
+   * Output only. BigQuery resource name of the latest shard.
+   * </pre>
+   *
+   * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The latestShardResource.
+   */
+  java.lang.String getLatestShardResource();
+  /**
+   * <pre>
+   * Output only. BigQuery resource name of the latest shard.
+   * </pre>
+   *
+   * <code>string latest_shard_resource = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for latestShardResource.
+   */
+  com.google.protobuf.ByteString
+      getLatestShardResourceBytes();
 }

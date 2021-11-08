@@ -25,8 +25,7 @@ class PolicyTag extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.<br
-     * /><br />
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -74,8 +73,7 @@ class PolicyTag extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Output only. Resource name of this policy tag in the URL format.
-     *           The policy tag manager generates unique taxonomy IDs and policy tag IDs.<br
-     *           /><br />
+     *           The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      *     @type string $display_name
      *           Required. User-defined name of this policy tag.
      *           The name can't start or end with spaces and must be unique within the
@@ -103,8 +101,7 @@ class PolicyTag extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.<br
-     * /><br />
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -116,8 +113,7 @@ class PolicyTag extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Resource name of this policy tag in the URL format.
-     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.<br
-     * /><br />
+     * The policy tag manager generates unique taxonomy IDs and policy tag IDs.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

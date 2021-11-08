@@ -1108,6 +1108,9 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public void listEntries(com.google.cloud.datacatalog.v1.ListEntriesRequest request,
@@ -1746,6 +1749,9 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public void listEntries(com.google.cloud.datacatalog.v1.ListEntriesRequest request,
@@ -2189,6 +2195,9 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListEntriesResponse listEntries(com.google.cloud.datacatalog.v1.ListEntriesRequest request) {
@@ -2626,6 +2635,9 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Lists entries.
+     * Note: Currently, this method can list only custom entries.
+     * To get a list of both custom and automatically created entries, use
+     * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.ListEntriesResponse> listEntries(

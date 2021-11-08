@@ -9,7 +9,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the tag template.
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -18,7 +18,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the tag template.
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
